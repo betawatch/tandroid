@@ -1,26 +1,27 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class nr0 extends org.telegram.ui.Components.nx0 {
-    public final /* synthetic */ or0 r0;
+public final /* synthetic */ class nr0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wr0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nr0(or0 or0Var, Activity activity, MessageObject messageObject, TLObject tLObject, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity, messageObject, tLObject, c6Var);
-        this.r0 = or0Var;
+    public /* synthetic */ nr0(wr0 wr0Var, int i10) {
+        this.a = i10;
+        this.b = wr0Var;
     }
 
-    @Override // org.telegram.ui.Components.nx0, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        PhotoViewer photoViewer = this.r0.b;
-        if (photoViewer.Q3 == this) {
-            photoViewer.Q3 = null;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                new org.telegram.ui.Components.qc(this.b.b.b0, null).m(org.telegram.ui.Components.pc.r, 1, -115203550, -1, null).j();
+                break;
+            default:
+                new org.telegram.ui.Components.qc(this.b.b.b0, null).m(org.telegram.ui.Components.pc.r, 1, -115203550, -1, null).j();
+                break;
         }
     }
 }

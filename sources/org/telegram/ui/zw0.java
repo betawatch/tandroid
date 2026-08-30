@@ -1,20 +1,16 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zw0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ bx0 b;
+public final class zw0 extends f2.l {
+    public final /* synthetic */ PrivacyControlActivity F;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.getClass();
-                throw null;
-            default:
-                this.b.getClass();
-                throw null;
-        }
+    public zw0(PrivacyControlActivity privacyControlActivity) {
+        this.F = privacyControlActivity;
+    }
+
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        this.F.d.invalidate();
     }
 }

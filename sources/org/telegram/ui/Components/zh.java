@@ -1,37 +1,88 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zh implements ij {
-    public final /* synthetic */ ni a;
+public final class zh extends pa0 {
+    public final /* synthetic */ int S;
+    public final /* synthetic */ KeyEvent.Callback T;
 
-    public zh(ni niVar) {
-        this.a = niVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zh(KeyEvent.Callback callback, Context context, long j10, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, j10, 0L, p2Var, f6Var);
+        this.S = i10;
+        this.T = callback;
     }
 
-    @Override // org.telegram.ui.Components.ij
-    public final void a(TLRPC.User user, boolean z10, int i10, long j10) {
-        org.telegram.ui.tn tnVar = (org.telegram.ui.tn) this.a.b0;
-        if (tnVar.f7()) {
-            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, tnVar.P5, tnVar.j5, tnVar.T3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
-            of2.sendMessageChatArguments = tnVar.C8();
-            of2.effect_id = 0L;
-            of2.invert_media = false;
-            of2.payStars = j10;
-            of2.monoForumPeer = tnVar.N8();
-            of2.suggestionParams = tnVar.c5;
-            tnVar.getSendMessagesHelper().sendMessage(of2);
-            tnVar.y6();
+    @Override // org.telegram.ui.Components.pa0
+    public void f(Canvas canvas, Rect rect, float f10) {
+        switch (this.S) {
+            case 1:
+                ph.k kVar = (ph.k) this.T;
+                Paint paint = kVar.e;
+                RectF rectF = kVar.w0;
+                rectF.set(rect);
+                if (!kVar.g()) {
+                    Paint c3 = kVar.Q.c(1.0f);
+                    if (c3 != null) {
+                        canvas.drawRoundRect(rectF, f10, f10, c3);
+                        paint.setAlpha(80);
+                        canvas.drawRoundRect(rectF, f10, f10, paint);
+                        break;
+                    } else {
+                        paint.setAlpha(128);
+                        canvas.drawRoundRect(rectF, f10, f10, paint);
+                        break;
+                    }
+                } else {
+                    kVar.h(kVar.Q, canvas, kVar.w0, f10, false, -kVar.J.getX(), -kVar.J.getY(), false);
+                    break;
+                }
+            default:
+                super.f(canvas, rect, f10);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ij
-    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
-        ((org.telegram.ui.tn) this.a.b0).db(arrayList, str, z10, i10, j10, z11);
+    @Override // org.telegram.ui.Components.pa0
+    public boolean h() {
+        switch (this.S) {
+            case 1:
+                return true;
+            default:
+                return super.h();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pa0
+    public void i() {
+        switch (this.S) {
+            case 0:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((li) this.T).g0;
+                if (chatAttachAlertPhotoLayout != null) {
+                    chatAttachAlertPhotoLayout.V();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pa0
+    public void n(boolean z4) {
+        switch (this.S) {
+            case 0:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((li) this.T).g0;
+                if (chatAttachAlertPhotoLayout != null) {
+                    chatAttachAlertPhotoLayout.V();
+                    break;
+                }
+                break;
+        }
     }
 }

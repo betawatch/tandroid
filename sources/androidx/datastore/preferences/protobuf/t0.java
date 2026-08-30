@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class t0 implements c1 {
     public static final int[] o = new int[0];
@@ -32,13 +32,13 @@ public final class t0 implements c1 {
     public final k1 m;
     public final p0 n;
 
-    public t0(int[] iArr, Object[] objArr, int i10, int i11, a aVar, boolean z10, int[] iArr2, int i12, int i13, v0 v0Var, i0 i0Var, k1 k1Var, o oVar, p0 p0Var) {
+    public t0(int[] iArr, Object[] objArr, int i10, int i11, a aVar, boolean z4, int[] iArr2, int i12, int i13, v0 v0Var, i0 i0Var, k1 k1Var, o oVar, p0 p0Var) {
         this.a = iArr;
         this.b = objArr;
         this.c = i10;
         this.d = i11;
         this.f = aVar instanceof x;
-        this.g = z10;
+        this.g = z4;
         this.h = iArr2;
         this.i = i12;
         this.j = i13;
@@ -63,11 +63,11 @@ public final class t0 implements c1 {
                     return field;
                 }
             }
-            StringBuilder s10 = a4.w.s("Field ", str, " for ");
-            s10.append(cls.getName());
-            s10.append(" not found. Known fields are ");
-            s10.append(Arrays.toString(declaredFields));
-            throw new RuntimeException(s10.toString());
+            StringBuilder t6 = android.support.v4.media.a.t("Field ", str, " for ");
+            t6.append(cls.getName());
+            t6.append(" not found. Known fields are ");
+            t6.append(Arrays.toString(declaredFields));
+            throw new RuntimeException(t6.toString());
         }
     }
 
@@ -134,7 +134,7 @@ public final class t0 implements c1 {
         int i24;
         int i25;
         int i26;
-        boolean z10;
+        boolean z4;
         int i27;
         int objectFieldOffset;
         int i28;
@@ -159,7 +159,7 @@ public final class t0 implements c1 {
         char charAt15;
         char charAt16;
         int i38 = 0;
-        boolean z11 = (b1Var.d & 1) != 1;
+        boolean z10 = (b1Var.d & 1) != 1;
         String str = b1Var.b;
         int length = str.length();
         int charAt17 = str.charAt(0);
@@ -485,7 +485,7 @@ public final class t0 implements c1 {
                     }
                     i27 = i12;
                     objectFieldOffset = objectFieldOffset2;
-                    z10 = z11;
+                    z4 = z10;
                     i28 = i97;
                     i30 = (int) unsafe.objectFieldOffset(D3);
                     i26 = i14;
@@ -504,7 +504,7 @@ public final class t0 implements c1 {
                 }
                 i27 = i12;
                 objectFieldOffset = objectFieldOffset22;
-                z10 = z11;
+                z4 = z10;
                 i28 = i972;
                 i30 = (int) unsafe.objectFieldOffset(D3);
                 i26 = i14;
@@ -536,10 +536,10 @@ public final class t0 implements c1 {
                             i27 = i12 + 3;
                             objArr2[i101 + 1] = objArr3[i102];
                             i26 = i14;
-                            z10 = z11;
+                            z4 = z10;
                             i75 = i100;
                         } else {
-                            z10 = z11;
+                            z4 = z10;
                             i27 = i102;
                             i75 = i100;
                             i26 = i14;
@@ -588,7 +588,7 @@ public final class t0 implements c1 {
                         i26 = i14;
                     }
                     i27 = i31;
-                    z10 = z11;
+                    z4 = z10;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
                     if ((i73 & 1) == 1) {
                     }
@@ -600,7 +600,7 @@ public final class t0 implements c1 {
                         i76++;
                     }
                 }
-                z10 = z11;
+                z4 = z10;
                 i27 = i99;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
                 if ((i73 & 1) == 1) {
@@ -618,7 +618,7 @@ public final class t0 implements c1 {
             iArr2[i107] = ((charAt26 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i89 << 20) | objectFieldOffset;
             i78 += 3;
             iArr2[i108] = (i29 << 20) | i30;
-            z11 = z10;
+            z10 = z4;
             i13 = i88;
             length = i80;
             iArr4 = iArr2;
@@ -628,7 +628,7 @@ public final class t0 implements c1 {
             i12 = i27;
             objArr = objArr3;
         }
-        return new t0(iArr4, objArr2, i13, i14, b1Var.a, z11, iArr, i15, i74, v0Var, i0Var, k1Var, oVar, p0Var);
+        return new t0(iArr4, objArr2, i13, i14, b1Var.a, z10, iArr, i15, i74, v0Var, i0Var, k1Var, oVar, p0Var);
     }
 
     public static long y(int i10) {
@@ -640,7 +640,7 @@ public final class t0 implements c1 {
     }
 
     public final void B(Object obj, int i10, i iVar, c1 c1Var, n nVar) {
-        int z10;
+        int z4;
         List c3 = this.l.c(obj, i10 & 1048575);
         h hVar = (h) iVar.d;
         int i11 = iVar.a;
@@ -652,10 +652,10 @@ public final class t0 implements c1 {
             if (hVar.c() || iVar.c != 0) {
                 return;
             } else {
-                z10 = hVar.z();
+                z4 = hVar.z();
             }
-        } while (z10 == i11);
-        iVar.c = z10;
+        } while (z4 == i11);
+        iVar.c = z4;
     }
 
     public final void C(Object obj, int i10, i iVar) {
@@ -721,19 +721,19 @@ public final class t0 implements c1 {
                     if ((i12 & i15) == 0) {
                         break;
                     } else {
-                        double e10 = s1.d.e(obj, j10);
+                        double e = s1.d.e(obj, j10);
                         k kVar = (k) l0Var.a;
                         kVar.getClass();
-                        kVar.K(i17, Double.doubleToRawLongBits(e10));
+                        kVar.K(i17, Double.doubleToRawLongBits(e));
                         continue;
                     }
                 case 1:
                     i13 = i10;
                     if ((i12 & i15) != 0) {
-                        float f9 = s1.d.f(obj, j10);
+                        float f10 = s1.d.f(obj, j10);
                         k kVar2 = (k) l0Var.a;
                         kVar2.getClass();
-                        kVar2.I(i17, Float.floatToRawIntBits(f9));
+                        kVar2.I(i17, Float.floatToRawIntBits(f10));
                         break;
                     } else {
                         continue;
@@ -1114,8 +1114,8 @@ public final class t0 implements c1 {
                 case 66:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
-                        int z10 = z(obj, j10);
-                        ((k) l0Var.a).S(i17, (z10 >> 31) ^ (z10 << 1));
+                        int z4 = z(obj, j10);
+                        ((k) l0Var.a).S(i17, (z4 >> 31) ^ (z4 << 1));
                         break;
                     }
                     break;
@@ -1169,13 +1169,13 @@ public final class t0 implements c1 {
     public final void J(l0 l0Var, int i10, Object obj, int i11) {
         int A;
         int size;
-        int z10;
+        int z4;
         int size2;
-        int z11;
+        int z10;
         if (obj != null) {
-            Object m10 = m(i11);
+            Object m9 = m(i11);
             this.n.getClass();
-            m0 m0Var = ((n0) m10).a;
+            m0 m0Var = ((n0) m9).a;
             a2 a2Var = m0Var.b;
             a2 a2Var2 = m0Var.a;
             k kVar = (k) l0Var.a;
@@ -1185,25 +1185,25 @@ public final class t0 implements c1 {
                 Object key = entry.getKey();
                 Object value = entry.getValue();
                 int i12 = q.c;
-                int y8 = k.y(1);
+                int y10 = k.y(1);
                 x1 x1Var = a2.d;
                 if (a2Var2 == x1Var) {
-                    y8 *= 2;
+                    y10 *= 2;
                 }
                 int i13 = 8;
                 switch (a2Var2.ordinal()) {
                     case 0:
                         ((Double) key).getClass();
                         A = 8;
-                        int i14 = A + y8;
-                        int y10 = k.y(2);
+                        int i14 = A + y10;
+                        int y11 = k.y(2);
                         if (a2Var == x1Var) {
-                            y10 *= 2;
+                            y11 *= 2;
                         }
                         switch (a2Var.ordinal()) {
                             case 0:
                                 ((Double) value).getClass();
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key2 = entry.getKey();
                                 Object value2 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key2);
@@ -1211,35 +1211,35 @@ public final class t0 implements c1 {
                             case 1:
                                 ((Float) value).getClass();
                                 i13 = 4;
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key22 = entry.getKey();
                                 Object value22 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key22);
                                 q.b(kVar, a2Var, 2, value22);
                             case 2:
                                 i13 = k.A(((Long) value).longValue());
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key222 = entry.getKey();
                                 Object value222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key222);
                                 q.b(kVar, a2Var, 2, value222);
                             case 3:
                                 i13 = k.A(((Long) value).longValue());
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key2222 = entry.getKey();
                                 Object value2222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key2222);
                                 q.b(kVar, a2Var, 2, value2222);
                             case 4:
                                 i13 = k.w(((Integer) value).intValue());
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key22222 = entry.getKey();
                                 Object value22222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key22222);
                                 q.b(kVar, a2Var, 2, value22222);
                             case 5:
                                 ((Long) value).getClass();
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key222222 = entry.getKey();
                                 Object value222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key222222);
@@ -1247,7 +1247,7 @@ public final class t0 implements c1 {
                             case 6:
                                 ((Integer) value).getClass();
                                 i13 = 4;
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key2222222 = entry.getKey();
                                 Object value2222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key2222222);
@@ -1255,7 +1255,7 @@ public final class t0 implements c1 {
                             case 7:
                                 ((Boolean) value).getClass();
                                 i13 = 1;
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key22222222 = entry.getKey();
                                 Object value22222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key22222222);
@@ -1263,16 +1263,16 @@ public final class t0 implements c1 {
                             case 8:
                                 if (value instanceof g) {
                                     size2 = ((g) value).size();
-                                    z11 = k.z(size2);
-                                    i13 = z11 + size2;
-                                    kVar.T(i13 + y10 + i14);
+                                    z10 = k.z(size2);
+                                    i13 = z10 + size2;
+                                    kVar.T(i13 + y11 + i14);
                                     Object key222222222 = entry.getKey();
                                     Object value222222222 = entry.getValue();
                                     q.b(kVar, a2Var2, 1, key222222222);
                                     q.b(kVar, a2Var, 2, value222222222);
                                 } else {
                                     i13 = k.x((String) value);
-                                    kVar.T(i13 + y10 + i14);
+                                    kVar.T(i13 + y11 + i14);
                                     Object key2222222222 = entry.getKey();
                                     Object value2222222222 = entry.getValue();
                                     q.b(kVar, a2Var2, 1, key2222222222);
@@ -1280,16 +1280,16 @@ public final class t0 implements c1 {
                                 }
                             case 9:
                                 i13 = ((a) value).a();
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key22222222222 = entry.getKey();
                                 Object value22222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key22222222222);
                                 q.b(kVar, a2Var, 2, value22222222222);
                             case 10:
                                 size2 = ((a) value).a();
-                                z11 = k.z(size2);
-                                i13 = z11 + size2;
-                                kVar.T(i13 + y10 + i14);
+                                z10 = k.z(size2);
+                                i13 = z10 + size2;
+                                kVar.T(i13 + y11 + i14);
                                 Object key222222222222 = entry.getKey();
                                 Object value222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key222222222222);
@@ -1297,27 +1297,27 @@ public final class t0 implements c1 {
                             case 11:
                                 if (value instanceof g) {
                                     size2 = ((g) value).size();
-                                    z11 = k.z(size2);
+                                    z10 = k.z(size2);
                                 } else {
                                     size2 = ((byte[]) value).length;
-                                    z11 = k.z(size2);
+                                    z10 = k.z(size2);
                                 }
-                                i13 = z11 + size2;
-                                kVar.T(i13 + y10 + i14);
+                                i13 = z10 + size2;
+                                kVar.T(i13 + y11 + i14);
                                 Object key2222222222222 = entry.getKey();
                                 Object value2222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key2222222222222);
                                 q.b(kVar, a2Var, 2, value2222222222222);
                             case 12:
                                 i13 = k.z(((Integer) value).intValue());
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key22222222222222 = entry.getKey();
                                 Object value22222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key22222222222222);
                                 q.b(kVar, a2Var, 2, value22222222222222);
                             case 13:
                                 i13 = k.w(((Integer) value).intValue());
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key222222222222222 = entry.getKey();
                                 Object value222222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key222222222222222);
@@ -1325,14 +1325,14 @@ public final class t0 implements c1 {
                             case 14:
                                 ((Integer) value).getClass();
                                 i13 = 4;
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key2222222222222222 = entry.getKey();
                                 Object value2222222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key2222222222222222);
                                 q.b(kVar, a2Var, 2, value2222222222222222);
                             case 15:
                                 ((Long) value).getClass();
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key22222222222222222 = entry.getKey();
                                 Object value22222222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key22222222222222222);
@@ -1340,7 +1340,7 @@ public final class t0 implements c1 {
                             case 16:
                                 int intValue = ((Integer) value).intValue();
                                 i13 = k.z((intValue >> 31) ^ (intValue << 1));
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key222222222222222222 = entry.getKey();
                                 Object value222222222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key222222222222222222);
@@ -1348,7 +1348,7 @@ public final class t0 implements c1 {
                             case 17:
                                 long longValue = ((Long) value).longValue();
                                 i13 = k.A((longValue >> 63) ^ (longValue << 1));
-                                kVar.T(i13 + y10 + i14);
+                                kVar.T(i13 + y11 + i14);
                                 Object key2222222222222222222 = entry.getKey();
                                 Object value2222222222222222222 = entry.getValue();
                                 q.b(kVar, a2Var2, 1, key2222222222222222222);
@@ -1359,32 +1359,32 @@ public final class t0 implements c1 {
                     case 1:
                         ((Float) key).getClass();
                         A = 4;
-                        int i142 = A + y8;
-                        int y102 = k.y(2);
+                        int i142 = A + y10;
+                        int y112 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
                         }
                     case 2:
                         A = k.A(((Long) key).longValue());
-                        int i1422 = A + y8;
-                        int y1022 = k.y(2);
+                        int i1422 = A + y10;
+                        int y1122 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
                         }
                     case 3:
                         A = k.A(((Long) key).longValue());
-                        int i14222 = A + y8;
-                        int y10222 = k.y(2);
+                        int i14222 = A + y10;
+                        int y11222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
                         }
                     case 4:
                         A = k.w(((Integer) key).intValue());
-                        int i142222 = A + y8;
-                        int y102222 = k.y(2);
+                        int i142222 = A + y10;
+                        int y112222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1392,8 +1392,8 @@ public final class t0 implements c1 {
                     case 5:
                         ((Long) key).getClass();
                         A = 8;
-                        int i1422222 = A + y8;
-                        int y1022222 = k.y(2);
+                        int i1422222 = A + y10;
+                        int y1122222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1401,8 +1401,8 @@ public final class t0 implements c1 {
                     case 6:
                         ((Integer) key).getClass();
                         A = 4;
-                        int i14222222 = A + y8;
-                        int y10222222 = k.y(2);
+                        int i14222222 = A + y10;
+                        int y11222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1410,8 +1410,8 @@ public final class t0 implements c1 {
                     case 7:
                         ((Boolean) key).getClass();
                         A = 1;
-                        int i142222222 = A + y8;
-                        int y102222222 = k.y(2);
+                        int i142222222 = A + y10;
+                        int y112222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1419,18 +1419,18 @@ public final class t0 implements c1 {
                     case 8:
                         if (key instanceof g) {
                             size = ((g) key).size();
-                            z10 = k.z(size);
-                            A = size + z10;
-                            int i1422222222 = A + y8;
-                            int y1022222222 = k.y(2);
+                            z4 = k.z(size);
+                            A = size + z4;
+                            int i1422222222 = A + y10;
+                            int y1122222222 = k.y(2);
                             if (a2Var == x1Var) {
                             }
                             switch (a2Var.ordinal()) {
                             }
                         } else {
                             A = k.x((String) key);
-                            int i14222222222 = A + y8;
-                            int y10222222222 = k.y(2);
+                            int i14222222222 = A + y10;
+                            int y11222222222 = k.y(2);
                             if (a2Var == x1Var) {
                             }
                             switch (a2Var.ordinal()) {
@@ -1438,18 +1438,18 @@ public final class t0 implements c1 {
                         }
                     case 9:
                         A = ((a) key).a();
-                        int i142222222222 = A + y8;
-                        int y102222222222 = k.y(2);
+                        int i142222222222 = A + y10;
+                        int y112222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
                         }
                     case 10:
                         size = ((a) key).a();
-                        z10 = k.z(size);
-                        A = size + z10;
-                        int i1422222222222 = A + y8;
-                        int y1022222222222 = k.y(2);
+                        z4 = k.z(size);
+                        A = size + z4;
+                        int i1422222222222 = A + y10;
+                        int y1122222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1457,30 +1457,30 @@ public final class t0 implements c1 {
                     case 11:
                         if (key instanceof g) {
                             size = ((g) key).size();
-                            z10 = k.z(size);
+                            z4 = k.z(size);
                         } else {
                             size = ((byte[]) key).length;
-                            z10 = k.z(size);
+                            z4 = k.z(size);
                         }
-                        A = size + z10;
-                        int i14222222222222 = A + y8;
-                        int y10222222222222 = k.y(2);
+                        A = size + z4;
+                        int i14222222222222 = A + y10;
+                        int y11222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
                         }
                     case 12:
                         A = k.z(((Integer) key).intValue());
-                        int i142222222222222 = A + y8;
-                        int y102222222222222 = k.y(2);
+                        int i142222222222222 = A + y10;
+                        int y112222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
                         }
                     case 13:
                         A = k.w(((Integer) key).intValue());
-                        int i1422222222222222 = A + y8;
-                        int y1022222222222222 = k.y(2);
+                        int i1422222222222222 = A + y10;
+                        int y1122222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1488,8 +1488,8 @@ public final class t0 implements c1 {
                     case 14:
                         ((Integer) key).getClass();
                         A = 4;
-                        int i14222222222222222 = A + y8;
-                        int y10222222222222222 = k.y(2);
+                        int i14222222222222222 = A + y10;
+                        int y11222222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1497,8 +1497,8 @@ public final class t0 implements c1 {
                     case 15:
                         ((Long) key).getClass();
                         A = 8;
-                        int i142222222222222222 = A + y8;
-                        int y102222222222222222 = k.y(2);
+                        int i142222222222222222 = A + y10;
+                        int y112222222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1506,8 +1506,8 @@ public final class t0 implements c1 {
                     case 16:
                         int intValue2 = ((Integer) key).intValue();
                         A = k.z((intValue2 >> 31) ^ (intValue2 << 1));
-                        int i1422222222222222222 = A + y8;
-                        int y1022222222222222222 = k.y(2);
+                        int i1422222222222222222 = A + y10;
+                        int y1122222222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1515,8 +1515,8 @@ public final class t0 implements c1 {
                     case 17:
                         long longValue2 = ((Long) key).longValue();
                         A = k.A((longValue2 << 1) ^ (longValue2 >> 63));
-                        int i14222222222222222222 = A + y8;
-                        int y10222222222222222222 = k.y(2);
+                        int i14222222222222222222 = A + y10;
+                        int y11222222222222222222 = k.y(2);
                         if (a2Var == x1Var) {
                         }
                         switch (a2Var.ordinal()) {
@@ -1550,18 +1550,18 @@ public final class t0 implements c1 {
             switch (G(H)) {
                 case 0:
                     if (q(i10, obj)) {
-                        double e10 = s1.d.e(obj, H & 1048575);
+                        double e = s1.d.e(obj, H & 1048575);
                         kVar.getClass();
-                        kVar.K(i11, Double.doubleToRawLongBits(e10));
+                        kVar.K(i11, Double.doubleToRawLongBits(e));
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if (q(i10, obj)) {
-                        float f9 = s1.d.f(obj, H & 1048575);
+                        float f10 = s1.d.f(obj, H & 1048575);
                         kVar.getClass();
-                        kVar.I(i11, Float.floatToRawIntBits(f9));
+                        kVar.I(i11, Float.floatToRawIntBits(f10));
                         break;
                     } else {
                         break;
@@ -1890,8 +1890,8 @@ public final class t0 implements c1 {
                     }
                 case 66:
                     if (r(i11, i10, obj)) {
-                        int z10 = z(obj, H & 1048575);
-                        kVar.S(i11, (z10 >> 31) ^ (z10 << 1));
+                        int z4 = z(obj, H & 1048575);
+                        kVar.S(i11, (z4 >> 31) ^ (z4 << 1));
                         break;
                     } else {
                         break;
@@ -1958,7 +1958,7 @@ public final class t0 implements c1 {
         int i12 = 0;
         int i13 = 0;
         loop0: while (true) {
-            boolean z10 = true;
+            boolean z4 = true;
             if (i12 >= this.i) {
                 return true;
             }
@@ -1966,8 +1966,8 @@ public final class t0 implements c1 {
             int[] iArr = this.a;
             int i15 = iArr[i14];
             int H = H(i14);
-            boolean z11 = this.g;
-            if (z11) {
+            boolean z10 = this.g;
+            if (z10) {
                 i10 = 0;
             } else {
                 int i16 = iArr[i14 + 2];
@@ -1979,18 +1979,18 @@ public final class t0 implements c1 {
                 }
             }
             if ((268435456 & H) != 0) {
-                if (!(z11 ? q(i14, obj) : (i13 & i10) != 0)) {
+                if (!(z10 ? q(i14, obj) : (i13 & i10) != 0)) {
                     break;
                 }
             }
             int G = G(H);
             if (G == 9 || G == 17) {
-                if (z11) {
-                    z10 = q(i14, obj);
-                } else if ((i10 & i13) == 0) {
-                    z10 = false;
-                }
                 if (z10) {
+                    z4 = q(i14, obj);
+                } else if ((i10 & i13) == 0) {
+                    z4 = false;
+                }
+                if (z4) {
                     if (!n(i14).e(s1.d.i(obj, H & 1048575))) {
                         break;
                     }
@@ -2704,7 +2704,7 @@ public final class t0 implements c1 {
         int length = iArr.length;
         int i10 = 0;
         while (true) {
-            boolean z10 = true;
+            boolean z4 = true;
             if (i10 < length) {
                 int H = H(i10);
                 long j10 = H & 1048575;
@@ -2714,126 +2714,126 @@ public final class t0 implements c1 {
                             r1 r1Var = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 1:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var2 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 2:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var3 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 3:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var4 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 4:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var5 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 5:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var6 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 6:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var7 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 7:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var8 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 8:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var9 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 9:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var10 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 10:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var11 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 11:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var12 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 12:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var13 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 13:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var14 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 14:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var15 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 15:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var16 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 16:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var17 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 17:
                         if (j(xVar, xVar2, i10)) {
                             r1 r1Var18 = s1.d;
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                     case 18:
                     case 19:
@@ -2868,11 +2868,11 @@ public final class t0 implements c1 {
                     case 48:
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
                         r1 r1Var19 = s1.d;
-                        z10 = d1.x(r1Var19.i(xVar, j10), r1Var19.i(xVar2, j10));
+                        z4 = d1.x(r1Var19.i(xVar, j10), r1Var19.i(xVar2, j10));
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                         r1 r1Var20 = s1.d;
-                        z10 = d1.x(r1Var20.i(xVar, j10), r1Var20.i(xVar2, j10));
+                        z4 = d1.x(r1Var20.i(xVar, j10), r1Var20.i(xVar2, j10));
                         break;
                     case 51:
                     case 52:
@@ -2897,10 +2897,10 @@ public final class t0 implements c1 {
                         if (r1Var21.g(xVar, j11) == r1Var21.g(xVar2, j11)) {
                             break;
                         }
-                        z10 = false;
+                        z4 = false;
                         break;
                 }
-                if (z10) {
+                if (z4) {
                     i10 += 3;
                 }
             } else {
@@ -3114,9 +3114,9 @@ public final class t0 implements c1 {
                                         int i19 = i10;
                                         iVar2 = iVar3;
                                         t0Var = t0Var2;
-                                        int k9 = iVar2.k();
+                                        int k10 = iVar2.k();
                                         t0Var.l(i19);
-                                        s1.m(y(H), obj2, k9);
+                                        s1.m(y(H), obj2, k10);
                                         t0Var.E(i19, obj2);
                                         nVar2 = nVar;
                                         t0Var2 = t0Var;
@@ -3583,9 +3583,9 @@ public final class t0 implements c1 {
                                         t0Var2 = t0Var;
                                         iVar3 = iVar2;
                                     case 63:
-                                        int k10 = iVar3.k();
+                                        int k11 = iVar3.k();
                                         t0Var2.l(i10);
-                                        s1.o(obj2, H & 1048575, Integer.valueOf(k10));
+                                        s1.o(obj2, H & 1048575, Integer.valueOf(k11));
                                         t0Var2.F(c3, i10, obj2);
                                         t0Var = t0Var2;
                                         iVar2 = iVar3;
@@ -3732,15 +3732,15 @@ public final class t0 implements c1 {
 
     public final int o(Object obj) {
         int i10;
-        int y8;
-        int A;
         int y10;
+        int A;
+        int y11;
         int w10;
         int u10;
-        int y11;
-        int x4;
-        int f9;
         int y12;
+        int x10;
+        int f10;
+        int y13;
         int i11;
         Unsafe unsafe = p;
         int i12 = -1;
@@ -3771,14 +3771,14 @@ public final class t0 implements c1 {
             switch (G) {
                 case 0:
                     if ((i10 & i15) != 0) {
-                        i14 = a4.w.e(i16, 8, i14);
+                        i14 = android.support.v4.media.a.e(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if ((i15 & i10) != 0) {
-                        i14 = a4.w.e(i16, 4, i14);
+                        i14 = android.support.v4.media.a.e(i16, 4, i14);
                         break;
                     } else {
                         break;
@@ -3786,10 +3786,10 @@ public final class t0 implements c1 {
                 case 2:
                     if ((i15 & i10) != 0) {
                         long j11 = unsafe.getLong(obj, j10);
-                        y8 = k.y(i16);
+                        y10 = k.y(i16);
                         A = k.A(j11);
-                        y12 = A + y8;
-                        i14 += y12;
+                        y13 = A + y10;
+                        i14 += y13;
                         break;
                     } else {
                         break;
@@ -3797,10 +3797,10 @@ public final class t0 implements c1 {
                 case 3:
                     if ((i15 & i10) != 0) {
                         long j12 = unsafe.getLong(obj, j10);
-                        y8 = k.y(i16);
+                        y10 = k.y(i16);
                         A = k.A(j12);
-                        y12 = A + y8;
-                        i14 += y12;
+                        y13 = A + y10;
+                        i14 += y13;
                         break;
                     } else {
                         break;
@@ -3808,9 +3808,9 @@ public final class t0 implements c1 {
                 case 4:
                     if ((i15 & i10) != 0) {
                         int i19 = unsafe.getInt(obj, j10);
-                        y10 = k.y(i16);
+                        y11 = k.y(i16);
                         w10 = k.w(i19);
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -3834,7 +3834,7 @@ public final class t0 implements c1 {
                     }
                 case 7:
                     if ((i15 & i10) != 0) {
-                        i14 = a4.w.e(i16, 1, i14);
+                        i14 = android.support.v4.media.a.e(i16, 1, i14);
                         break;
                     } else {
                         break;
@@ -3845,16 +3845,16 @@ public final class t0 implements c1 {
                     } else {
                         Object object = unsafe.getObject(obj, j10);
                         if (object instanceof g) {
-                            int y13 = k.y(i16);
+                            int y14 = k.y(i16);
                             int size = ((g) object).size();
-                            f9 = a4.w.f(size, size, y13, i14);
-                            i14 = f9;
+                            f10 = android.support.v4.media.a.f(size, size, y14, i14);
+                            i14 = f10;
                             break;
                         } else {
-                            y11 = k.y(i16);
-                            x4 = k.x((String) object);
-                            f9 = x4 + y11 + i14;
-                            i14 = f9;
+                            y12 = k.y(i16);
+                            x10 = k.x((String) object);
+                            f10 = x10 + y12 + i14;
+                            i14 = f10;
                         }
                     }
                 case 9:
@@ -3862,9 +3862,9 @@ public final class t0 implements c1 {
                         Object object2 = unsafe.getObject(obj, j10);
                         c1 n10 = n(i13);
                         Class cls = d1.a;
-                        int y14 = k.y(i16);
+                        int y15 = k.y(i16);
                         int b10 = ((a) object2).b(n10);
-                        i14 = a4.w.f(b10, b10, y14, i14);
+                        i14 = android.support.v4.media.a.f(b10, b10, y15, i14);
                         break;
                     } else {
                         break;
@@ -3880,9 +3880,9 @@ public final class t0 implements c1 {
                 case 11:
                     if ((i15 & i10) != 0) {
                         int i20 = unsafe.getInt(obj, j10);
-                        y10 = k.y(i16);
+                        y11 = k.y(i16);
                         w10 = k.z(i20);
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -3891,9 +3891,9 @@ public final class t0 implements c1 {
                 case 12:
                     if ((i15 & i10) != 0) {
                         int i21 = unsafe.getInt(obj, j10);
-                        y10 = k.y(i16);
+                        y11 = k.y(i16);
                         w10 = k.w(i21);
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -3901,14 +3901,14 @@ public final class t0 implements c1 {
                     }
                 case 13:
                     if ((i15 & i10) != 0) {
-                        i14 = a4.w.e(i16, 4, i14);
+                        i14 = android.support.v4.media.a.e(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if ((i10 & i15) != 0) {
-                        i14 = a4.w.e(i16, 8, i14);
+                        i14 = android.support.v4.media.a.e(i16, 8, i14);
                         break;
                     } else {
                         break;
@@ -3916,9 +3916,9 @@ public final class t0 implements c1 {
                 case 15:
                     if ((i15 & i10) != 0) {
                         int i22 = unsafe.getInt(obj, j10);
-                        y10 = k.y(i16);
+                        y11 = k.y(i16);
                         w10 = k.z((i22 >> 31) ^ (i22 << 1));
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -3927,10 +3927,10 @@ public final class t0 implements c1 {
                 case 16:
                     if ((i15 & i10) != 0) {
                         long j13 = unsafe.getLong(obj, j10);
-                        y8 = k.y(i16);
+                        y10 = k.y(i16);
                         A = k.A((j13 >> 63) ^ (j13 << 1));
-                        y12 = A + y8;
-                        i14 += y12;
+                        y13 = A + y10;
+                        i14 += y13;
                         break;
                     } else {
                         break;
@@ -3975,8 +3975,8 @@ public final class t0 implements c1 {
                     List list = (List) unsafe.getObject(obj, j10);
                     Class cls2 = d1.a;
                     int size2 = list.size();
-                    y12 = size2 == 0 ? 0 : (k.y(i16) + 1) * size2;
-                    i14 += y12;
+                    y13 = size2 == 0 ? 0 : (k.y(i16) + 1) * size2;
+                    i14 += y13;
                     break;
                 case 26:
                     u10 = d1.q(i16, (List) unsafe.getObject(obj, j10));
@@ -4017,23 +4017,23 @@ public final class t0 implements c1 {
                 case 35:
                     int g10 = d1.g((List) unsafe.getObject(obj, j10));
                     if (g10 > 0) {
-                        i14 = a4.w.f(g10, k.y(i16), g10, i14);
+                        i14 = android.support.v4.media.a.f(g10, k.y(i16), g10, i14);
                         break;
                     } else {
                         break;
                     }
                 case 36:
-                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e10 > 0) {
-                        i14 = a4.w.f(e10, k.y(i16), e10, i14);
+                    int e = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e > 0) {
+                        i14 = android.support.v4.media.a.f(e, k.y(i16), e, i14);
                         break;
                     } else {
                         break;
                     }
                 case 37:
-                    int k9 = d1.k((List) unsafe.getObject(obj, j10));
-                    if (k9 > 0) {
-                        i14 = a4.w.f(k9, k.y(i16), k9, i14);
+                    int k10 = d1.k((List) unsafe.getObject(obj, j10));
+                    if (k10 > 0) {
+                        i14 = android.support.v4.media.a.f(k10, k.y(i16), k10, i14);
                         break;
                     } else {
                         break;
@@ -4041,7 +4041,7 @@ public final class t0 implements c1 {
                 case 38:
                     int u11 = d1.u((List) unsafe.getObject(obj, j10));
                     if (u11 > 0) {
-                        i14 = a4.w.f(u11, k.y(i16), u11, i14);
+                        i14 = android.support.v4.media.a.f(u11, k.y(i16), u11, i14);
                         break;
                     } else {
                         break;
@@ -4049,7 +4049,7 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int i23 = d1.i((List) unsafe.getObject(obj, j10));
                     if (i23 > 0) {
-                        i14 = a4.w.f(i23, k.y(i16), i23, i14);
+                        i14 = android.support.v4.media.a.f(i23, k.y(i16), i23, i14);
                         break;
                     } else {
                         break;
@@ -4057,15 +4057,15 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int g11 = d1.g((List) unsafe.getObject(obj, j10));
                     if (g11 > 0) {
-                        i14 = a4.w.f(g11, k.y(i16), g11, i14);
+                        i14 = android.support.v4.media.a.f(g11, k.y(i16), g11, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e11 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e11 > 0) {
-                        i14 = a4.w.f(e11, k.y(i16), e11, i14);
+                    int e6 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e6 > 0) {
+                        i14 = android.support.v4.media.a.f(e6, k.y(i16), e6, i14);
                         break;
                     } else {
                         break;
@@ -4075,15 +4075,15 @@ public final class t0 implements c1 {
                     Class cls3 = d1.a;
                     int size3 = list2.size();
                     if (size3 > 0) {
-                        i14 = a4.w.f(size3, k.y(i16), size3, i14);
+                        i14 = android.support.v4.media.a.f(size3, k.y(i16), size3, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                    int s10 = d1.s((List) unsafe.getObject(obj, j10));
-                    if (s10 > 0) {
-                        i14 = a4.w.f(s10, k.y(i16), s10, i14);
+                    int s6 = d1.s((List) unsafe.getObject(obj, j10));
+                    if (s6 > 0) {
+                        i14 = android.support.v4.media.a.f(s6, k.y(i16), s6, i14);
                         break;
                     } else {
                         break;
@@ -4091,15 +4091,15 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int c3 = d1.c((List) unsafe.getObject(obj, j10));
                     if (c3 > 0) {
-                        i14 = a4.w.f(c3, k.y(i16), c3, i14);
+                        i14 = android.support.v4.media.a.f(c3, k.y(i16), c3, i14);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e12 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e12 > 0) {
-                        i14 = a4.w.f(e12, k.y(i16), e12, i14);
+                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e10 > 0) {
+                        i14 = android.support.v4.media.a.f(e10, k.y(i16), e10, i14);
                         break;
                     } else {
                         break;
@@ -4107,7 +4107,7 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int g12 = d1.g((List) unsafe.getObject(obj, j10));
                     if (g12 > 0) {
-                        i14 = a4.w.f(g12, k.y(i16), g12, i14);
+                        i14 = android.support.v4.media.a.f(g12, k.y(i16), g12, i14);
                         break;
                     } else {
                         break;
@@ -4115,7 +4115,7 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int n11 = d1.n((List) unsafe.getObject(obj, j10));
                     if (n11 > 0) {
-                        i14 = a4.w.f(n11, k.y(i16), n11, i14);
+                        i14 = android.support.v4.media.a.f(n11, k.y(i16), n11, i14);
                         break;
                     } else {
                         break;
@@ -4123,7 +4123,7 @@ public final class t0 implements c1 {
                 case 48:
                     int p10 = d1.p((List) unsafe.getObject(obj, j10));
                     if (p10 > 0) {
-                        i14 = a4.w.f(p10, k.y(i16), p10, i14);
+                        i14 = android.support.v4.media.a.f(p10, k.y(i16), p10, i14);
                         break;
                     } else {
                         break;
@@ -4145,21 +4145,21 @@ public final class t0 implements c1 {
                     break;
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                     Object object3 = unsafe.getObject(obj, j10);
-                    Object m10 = m(i13);
+                    Object m9 = m(i13);
                     this.n.getClass();
-                    u10 = p0.a(i16, object3, m10);
+                    u10 = p0.a(i16, object3, m9);
                     i14 += u10;
                     break;
                 case 51:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.w.e(i16, 8, i14);
+                        i14 = android.support.v4.media.a.e(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.w.e(i16, 4, i14);
+                        i14 = android.support.v4.media.a.e(i16, 4, i14);
                         break;
                     } else {
                         break;
@@ -4167,10 +4167,10 @@ public final class t0 implements c1 {
                 case 53:
                     if (r(i16, i13, obj)) {
                         long A2 = A(obj, j10);
-                        y8 = k.y(i16);
+                        y10 = k.y(i16);
                         A = k.A(A2);
-                        y12 = A + y8;
-                        i14 += y12;
+                        y13 = A + y10;
+                        i14 += y13;
                         break;
                     } else {
                         break;
@@ -4178,20 +4178,20 @@ public final class t0 implements c1 {
                 case 54:
                     if (r(i16, i13, obj)) {
                         long A3 = A(obj, j10);
-                        y8 = k.y(i16);
+                        y10 = k.y(i16);
                         A = k.A(A3);
-                        y12 = A + y8;
-                        i14 += y12;
+                        y13 = A + y10;
+                        i14 += y13;
                         break;
                     } else {
                         break;
                     }
                 case 55:
                     if (r(i16, i13, obj)) {
-                        int z10 = z(obj, j10);
-                        y10 = k.y(i16);
-                        w10 = k.w(z10);
-                        u10 = w10 + y10;
+                        int z4 = z(obj, j10);
+                        y11 = k.y(i16);
+                        w10 = k.w(z4);
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -4215,7 +4215,7 @@ public final class t0 implements c1 {
                     }
                 case 58:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.w.e(i16, 1, i14);
+                        i14 = android.support.v4.media.a.e(i16, 1, i14);
                         break;
                     } else {
                         break;
@@ -4226,16 +4226,16 @@ public final class t0 implements c1 {
                     } else {
                         Object object4 = unsafe.getObject(obj, j10);
                         if (object4 instanceof g) {
-                            int y15 = k.y(i16);
+                            int y16 = k.y(i16);
                             int size5 = ((g) object4).size();
-                            f9 = a4.w.f(size5, size5, y15, i14);
-                            i14 = f9;
+                            f10 = android.support.v4.media.a.f(size5, size5, y16, i14);
+                            i14 = f10;
                             break;
                         } else {
-                            y11 = k.y(i16);
-                            x4 = k.x((String) object4);
-                            f9 = x4 + y11 + i14;
-                            i14 = f9;
+                            y12 = k.y(i16);
+                            x10 = k.x((String) object4);
+                            f10 = x10 + y12 + i14;
+                            i14 = f10;
                         }
                     }
                 case 60:
@@ -4243,9 +4243,9 @@ public final class t0 implements c1 {
                         Object object5 = unsafe.getObject(obj, j10);
                         c1 n13 = n(i13);
                         Class cls5 = d1.a;
-                        int y16 = k.y(i16);
+                        int y17 = k.y(i16);
                         int b11 = ((a) object5).b(n13);
-                        i14 = a4.w.f(b11, b11, y16, i14);
+                        i14 = android.support.v4.media.a.f(b11, b11, y17, i14);
                         break;
                     } else {
                         break;
@@ -4260,10 +4260,10 @@ public final class t0 implements c1 {
                     }
                 case 62:
                     if (r(i16, i13, obj)) {
-                        int z11 = z(obj, j10);
-                        y10 = k.y(i16);
-                        w10 = k.z(z11);
-                        u10 = w10 + y10;
+                        int z10 = z(obj, j10);
+                        y11 = k.y(i16);
+                        w10 = k.z(z10);
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -4271,10 +4271,10 @@ public final class t0 implements c1 {
                     }
                 case 63:
                     if (r(i16, i13, obj)) {
-                        int z12 = z(obj, j10);
-                        y10 = k.y(i16);
-                        w10 = k.w(z12);
-                        u10 = w10 + y10;
+                        int z11 = z(obj, j10);
+                        y11 = k.y(i16);
+                        w10 = k.w(z11);
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -4282,24 +4282,24 @@ public final class t0 implements c1 {
                     }
                 case 64:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.w.e(i16, 4, i14);
+                        i14 = android.support.v4.media.a.e(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.w.e(i16, 8, i14);
+                        i14 = android.support.v4.media.a.e(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 66:
                     if (r(i16, i13, obj)) {
-                        int z13 = z(obj, j10);
-                        y10 = k.y(i16);
-                        w10 = k.z((z13 >> 31) ^ (z13 << 1));
-                        u10 = w10 + y10;
+                        int z12 = z(obj, j10);
+                        y11 = k.y(i16);
+                        w10 = k.z((z12 >> 31) ^ (z12 << 1));
+                        u10 = w10 + y11;
                         i14 += u10;
                         break;
                     } else {
@@ -4308,10 +4308,10 @@ public final class t0 implements c1 {
                 case 67:
                     if (r(i16, i13, obj)) {
                         long A4 = A(obj, j10);
-                        y8 = k.y(i16);
+                        y10 = k.y(i16);
                         A = k.A((A4 >> 63) ^ (A4 << 1));
-                        y12 = A + y8;
-                        i14 += y12;
+                        y13 = A + y10;
+                        i14 += y13;
                         break;
                     } else {
                         break;
@@ -4330,14 +4330,14 @@ public final class t0 implements c1 {
     }
 
     public final int p(Object obj) {
-        int y8;
-        int A;
         int y10;
+        int A;
+        int y11;
         int w10;
         int u10;
-        int y11;
-        int x4;
         int y12;
+        int x10;
+        int y13;
         int A2;
         int i10;
         Unsafe unsafe = p;
@@ -4359,14 +4359,14 @@ public final class t0 implements c1 {
             switch (G) {
                 case 0:
                     if (q(i11, obj)) {
-                        i12 = a4.w.e(i13, 8, i12);
+                        i12 = android.support.v4.media.a.e(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if (q(i11, obj)) {
-                        i12 = a4.w.e(i13, 4, i12);
+                        i12 = android.support.v4.media.a.e(i13, 4, i12);
                         break;
                     } else {
                         break;
@@ -4374,9 +4374,9 @@ public final class t0 implements c1 {
                 case 2:
                     if (q(i11, obj)) {
                         long h = s1.d.h(obj, j10);
-                        y8 = k.y(i13);
+                        y10 = k.y(i13);
                         A = k.A(h);
-                        u10 = A + y8;
+                        u10 = A + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4384,10 +4384,10 @@ public final class t0 implements c1 {
                     }
                 case 3:
                     if (q(i11, obj)) {
-                        long h10 = s1.d.h(obj, j10);
-                        y8 = k.y(i13);
-                        A = k.A(h10);
-                        u10 = A + y8;
+                        long h9 = s1.d.h(obj, j10);
+                        y10 = k.y(i13);
+                        A = k.A(h9);
+                        u10 = A + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4396,9 +4396,9 @@ public final class t0 implements c1 {
                 case 4:
                     if (q(i11, obj)) {
                         int g10 = s1.d.g(obj, j10);
-                        y10 = k.y(i13);
+                        y11 = k.y(i13);
                         w10 = k.w(g10);
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4422,7 +4422,7 @@ public final class t0 implements c1 {
                     }
                 case 7:
                     if (q(i11, obj)) {
-                        i12 = a4.w.e(i13, 1, i12);
+                        i12 = android.support.v4.media.a.e(i13, 1, i12);
                         break;
                     } else {
                         break;
@@ -4431,14 +4431,14 @@ public final class t0 implements c1 {
                     if (q(i11, obj)) {
                         Object i15 = s1.d.i(obj, j10);
                         if (i15 instanceof g) {
-                            int y13 = k.y(i13);
+                            int y14 = k.y(i13);
                             int size = ((g) i15).size();
-                            i12 = a4.w.f(size, size, y13, i12);
+                            i12 = android.support.v4.media.a.f(size, size, y14, i12);
                             break;
                         } else {
-                            y11 = k.y(i13);
-                            x4 = k.x((String) i15);
-                            i12 = x4 + y11 + i12;
+                            y12 = k.y(i13);
+                            x10 = k.x((String) i15);
+                            i12 = x10 + y12 + i12;
                             break;
                         }
                     } else {
@@ -4449,9 +4449,9 @@ public final class t0 implements c1 {
                         Object i16 = s1.d.i(obj, j10);
                         c1 n10 = n(i11);
                         Class cls = d1.a;
-                        int y14 = k.y(i13);
+                        int y15 = k.y(i13);
                         int b10 = ((a) i16).b(n10);
-                        i12 = a4.w.f(b10, b10, y14, i12);
+                        i12 = android.support.v4.media.a.f(b10, b10, y15, i12);
                         break;
                     } else {
                         break;
@@ -4467,9 +4467,9 @@ public final class t0 implements c1 {
                 case 11:
                     if (q(i11, obj)) {
                         int g11 = s1.d.g(obj, j10);
-                        y10 = k.y(i13);
+                        y11 = k.y(i13);
                         w10 = k.z(g11);
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4478,9 +4478,9 @@ public final class t0 implements c1 {
                 case 12:
                     if (q(i11, obj)) {
                         int g12 = s1.d.g(obj, j10);
-                        y10 = k.y(i13);
+                        y11 = k.y(i13);
                         w10 = k.w(g12);
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4488,14 +4488,14 @@ public final class t0 implements c1 {
                     }
                 case 13:
                     if (q(i11, obj)) {
-                        i12 = a4.w.e(i13, 4, i12);
+                        i12 = android.support.v4.media.a.e(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if (q(i11, obj)) {
-                        i12 = a4.w.e(i13, 8, i12);
+                        i12 = android.support.v4.media.a.e(i13, 8, i12);
                         break;
                     } else {
                         break;
@@ -4503,9 +4503,9 @@ public final class t0 implements c1 {
                 case 15:
                     if (q(i11, obj)) {
                         int g13 = s1.d.g(obj, j10);
-                        y10 = k.y(i13);
+                        y11 = k.y(i13);
                         w10 = k.z((g13 >> 31) ^ (g13 << 1));
-                        u10 = w10 + y10;
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4513,10 +4513,10 @@ public final class t0 implements c1 {
                     }
                 case 16:
                     if (q(i11, obj)) {
-                        long h11 = s1.d.h(obj, j10);
-                        y12 = k.y(i13);
-                        A2 = k.A((h11 >> 63) ^ (h11 << 1));
-                        u10 = A2 + y12;
+                        long h10 = s1.d.h(obj, j10);
+                        y13 = k.y(i13);
+                        A2 = k.A((h10 >> 63) ^ (h10 << 1));
+                        u10 = A2 + y13;
                         i12 += u10;
                         break;
                     } else {
@@ -4559,9 +4559,9 @@ public final class t0 implements c1 {
                     i12 += u10;
                     break;
                 case 25:
-                    List s10 = s(obj, j10);
+                    List s6 = s(obj, j10);
                     Class cls2 = d1.a;
-                    int size2 = s10.size();
+                    int size2 = s6.size();
                     i12 += size2 == 0 ? 0 : (k.y(i13) + 1) * size2;
                     break;
                 case 26:
@@ -4603,23 +4603,23 @@ public final class t0 implements c1 {
                 case 35:
                     int g14 = d1.g((List) unsafe.getObject(obj, j10));
                     if (g14 > 0) {
-                        i12 = a4.w.f(g14, k.y(i13), g14, i12);
+                        i12 = android.support.v4.media.a.f(g14, k.y(i13), g14, i12);
                         break;
                     } else {
                         break;
                     }
                 case 36:
-                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e10 > 0) {
-                        i12 = a4.w.f(e10, k.y(i13), e10, i12);
+                    int e = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e > 0) {
+                        i12 = android.support.v4.media.a.f(e, k.y(i13), e, i12);
                         break;
                     } else {
                         break;
                     }
                 case 37:
-                    int k9 = d1.k((List) unsafe.getObject(obj, j10));
-                    if (k9 > 0) {
-                        i12 = a4.w.f(k9, k.y(i13), k9, i12);
+                    int k10 = d1.k((List) unsafe.getObject(obj, j10));
+                    if (k10 > 0) {
+                        i12 = android.support.v4.media.a.f(k10, k.y(i13), k10, i12);
                         break;
                     } else {
                         break;
@@ -4627,7 +4627,7 @@ public final class t0 implements c1 {
                 case 38:
                     int u11 = d1.u((List) unsafe.getObject(obj, j10));
                     if (u11 > 0) {
-                        i12 = a4.w.f(u11, k.y(i13), u11, i12);
+                        i12 = android.support.v4.media.a.f(u11, k.y(i13), u11, i12);
                         break;
                     } else {
                         break;
@@ -4635,7 +4635,7 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int i17 = d1.i((List) unsafe.getObject(obj, j10));
                     if (i17 > 0) {
-                        i12 = a4.w.f(i17, k.y(i13), i17, i12);
+                        i12 = android.support.v4.media.a.f(i17, k.y(i13), i17, i12);
                         break;
                     } else {
                         break;
@@ -4643,15 +4643,15 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int g15 = d1.g((List) unsafe.getObject(obj, j10));
                     if (g15 > 0) {
-                        i12 = a4.w.f(g15, k.y(i13), g15, i12);
+                        i12 = android.support.v4.media.a.f(g15, k.y(i13), g15, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e11 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e11 > 0) {
-                        i12 = a4.w.f(e11, k.y(i13), e11, i12);
+                    int e6 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e6 > 0) {
+                        i12 = android.support.v4.media.a.f(e6, k.y(i13), e6, i12);
                         break;
                     } else {
                         break;
@@ -4661,15 +4661,15 @@ public final class t0 implements c1 {
                     Class cls3 = d1.a;
                     int size3 = list.size();
                     if (size3 > 0) {
-                        i12 = a4.w.f(size3, k.y(i13), size3, i12);
+                        i12 = android.support.v4.media.a.f(size3, k.y(i13), size3, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                    int s11 = d1.s((List) unsafe.getObject(obj, j10));
-                    if (s11 > 0) {
-                        i12 = a4.w.f(s11, k.y(i13), s11, i12);
+                    int s9 = d1.s((List) unsafe.getObject(obj, j10));
+                    if (s9 > 0) {
+                        i12 = android.support.v4.media.a.f(s9, k.y(i13), s9, i12);
                         break;
                     } else {
                         break;
@@ -4677,15 +4677,15 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int c3 = d1.c((List) unsafe.getObject(obj, j10));
                     if (c3 > 0) {
-                        i12 = a4.w.f(c3, k.y(i13), c3, i12);
+                        i12 = android.support.v4.media.a.f(c3, k.y(i13), c3, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e12 = d1.e((List) unsafe.getObject(obj, j10));
-                    if (e12 > 0) {
-                        i12 = a4.w.f(e12, k.y(i13), e12, i12);
+                    int e10 = d1.e((List) unsafe.getObject(obj, j10));
+                    if (e10 > 0) {
+                        i12 = android.support.v4.media.a.f(e10, k.y(i13), e10, i12);
                         break;
                     } else {
                         break;
@@ -4693,7 +4693,7 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int g16 = d1.g((List) unsafe.getObject(obj, j10));
                     if (g16 > 0) {
-                        i12 = a4.w.f(g16, k.y(i13), g16, i12);
+                        i12 = android.support.v4.media.a.f(g16, k.y(i13), g16, i12);
                         break;
                     } else {
                         break;
@@ -4701,7 +4701,7 @@ public final class t0 implements c1 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int n11 = d1.n((List) unsafe.getObject(obj, j10));
                     if (n11 > 0) {
-                        i12 = a4.w.f(n11, k.y(i13), n11, i12);
+                        i12 = android.support.v4.media.a.f(n11, k.y(i13), n11, i12);
                         break;
                     } else {
                         break;
@@ -4709,43 +4709,43 @@ public final class t0 implements c1 {
                 case 48:
                     int p10 = d1.p((List) unsafe.getObject(obj, j10));
                     if (p10 > 0) {
-                        i12 = a4.w.f(p10, k.y(i13), p10, i12);
+                        i12 = android.support.v4.media.a.f(p10, k.y(i13), p10, i12);
                         break;
                     } else {
                         break;
                     }
                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                    List s12 = s(obj, j10);
+                    List s10 = s(obj, j10);
                     c1 n12 = n(i11);
                     Class cls4 = d1.a;
-                    int size4 = s12.size();
+                    int size4 = s10.size();
                     if (size4 == 0) {
                         i10 = 0;
                     } else {
                         i10 = 0;
                         for (int i18 = 0; i18 < size4; i18++) {
-                            i10 += k.v(i13, (a) s12.get(i18), n12);
+                            i10 += k.v(i13, (a) s10.get(i18), n12);
                         }
                     }
                     i12 += i10;
                     break;
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                     Object i19 = s1.d.i(obj, j10);
-                    Object m10 = m(i11);
+                    Object m9 = m(i11);
                     this.n.getClass();
-                    u10 = p0.a(i13, i19, m10);
+                    u10 = p0.a(i13, i19, m9);
                     i12 += u10;
                     break;
                 case 51:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.w.e(i13, 8, i12);
+                        i12 = android.support.v4.media.a.e(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.w.e(i13, 4, i12);
+                        i12 = android.support.v4.media.a.e(i13, 4, i12);
                         break;
                     } else {
                         break;
@@ -4753,9 +4753,9 @@ public final class t0 implements c1 {
                 case 53:
                     if (r(i13, i11, obj)) {
                         long A3 = A(obj, j10);
-                        y8 = k.y(i13);
+                        y10 = k.y(i13);
                         A = k.A(A3);
-                        u10 = A + y8;
+                        u10 = A + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4764,9 +4764,9 @@ public final class t0 implements c1 {
                 case 54:
                     if (r(i13, i11, obj)) {
                         long A4 = A(obj, j10);
-                        y8 = k.y(i13);
+                        y10 = k.y(i13);
                         A = k.A(A4);
-                        u10 = A + y8;
+                        u10 = A + y10;
                         i12 += u10;
                         break;
                     } else {
@@ -4774,10 +4774,10 @@ public final class t0 implements c1 {
                     }
                 case 55:
                     if (r(i13, i11, obj)) {
-                        int z10 = z(obj, j10);
-                        y10 = k.y(i13);
-                        w10 = k.w(z10);
-                        u10 = w10 + y10;
+                        int z4 = z(obj, j10);
+                        y11 = k.y(i13);
+                        w10 = k.w(z4);
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4801,7 +4801,7 @@ public final class t0 implements c1 {
                     }
                 case 58:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.w.e(i13, 1, i12);
+                        i12 = android.support.v4.media.a.e(i13, 1, i12);
                         break;
                     } else {
                         break;
@@ -4810,14 +4810,14 @@ public final class t0 implements c1 {
                     if (r(i13, i11, obj)) {
                         Object i20 = s1.d.i(obj, j10);
                         if (i20 instanceof g) {
-                            int y15 = k.y(i13);
+                            int y16 = k.y(i13);
                             int size5 = ((g) i20).size();
-                            i12 = a4.w.f(size5, size5, y15, i12);
+                            i12 = android.support.v4.media.a.f(size5, size5, y16, i12);
                             break;
                         } else {
-                            y11 = k.y(i13);
-                            x4 = k.x((String) i20);
-                            i12 = x4 + y11 + i12;
+                            y12 = k.y(i13);
+                            x10 = k.x((String) i20);
+                            i12 = x10 + y12 + i12;
                             break;
                         }
                     } else {
@@ -4828,9 +4828,9 @@ public final class t0 implements c1 {
                         Object i21 = s1.d.i(obj, j10);
                         c1 n13 = n(i11);
                         Class cls5 = d1.a;
-                        int y16 = k.y(i13);
+                        int y17 = k.y(i13);
                         int b11 = ((a) i21).b(n13);
-                        i12 = a4.w.f(b11, b11, y16, i12);
+                        i12 = android.support.v4.media.a.f(b11, b11, y17, i12);
                         break;
                     } else {
                         break;
@@ -4845,10 +4845,10 @@ public final class t0 implements c1 {
                     }
                 case 62:
                     if (r(i13, i11, obj)) {
-                        int z11 = z(obj, j10);
-                        y10 = k.y(i13);
-                        w10 = k.z(z11);
-                        u10 = w10 + y10;
+                        int z10 = z(obj, j10);
+                        y11 = k.y(i13);
+                        w10 = k.z(z10);
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4856,10 +4856,10 @@ public final class t0 implements c1 {
                     }
                 case 63:
                     if (r(i13, i11, obj)) {
-                        int z12 = z(obj, j10);
-                        y10 = k.y(i13);
-                        w10 = k.w(z12);
-                        u10 = w10 + y10;
+                        int z11 = z(obj, j10);
+                        y11 = k.y(i13);
+                        w10 = k.w(z11);
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4867,24 +4867,24 @@ public final class t0 implements c1 {
                     }
                 case 64:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.w.e(i13, 4, i12);
+                        i12 = android.support.v4.media.a.e(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.w.e(i13, 8, i12);
+                        i12 = android.support.v4.media.a.e(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 66:
                     if (r(i13, i11, obj)) {
-                        int z13 = z(obj, j10);
-                        y10 = k.y(i13);
-                        w10 = k.z((z13 >> 31) ^ (z13 << 1));
-                        u10 = w10 + y10;
+                        int z12 = z(obj, j10);
+                        y11 = k.y(i13);
+                        w10 = k.z((z12 >> 31) ^ (z12 << 1));
+                        u10 = w10 + y11;
                         i12 += u10;
                         break;
                     } else {
@@ -4893,9 +4893,9 @@ public final class t0 implements c1 {
                 case 67:
                     if (r(i13, i11, obj)) {
                         long A5 = A(obj, j10);
-                        y12 = k.y(i13);
+                        y13 = k.y(i13);
                         A2 = k.A((A5 >> 63) ^ (A5 << 1));
-                        u10 = A2 + y12;
+                        u10 = A2 + y13;
                         i12 += u10;
                         break;
                     } else {
@@ -5059,7 +5059,7 @@ public final class t0 implements c1 {
         m0 m0Var = ((n0) obj2).a;
         iVar.S(2);
         h hVar = (h) iVar.d;
-        int e10 = hVar.e(hVar.A());
+        int e = hVar.e(hVar.A());
         Object obj3 = m0Var.c;
         Object obj4 = "";
         Object obj5 = obj3;
@@ -5085,7 +5085,7 @@ public final class t0 implements c1 {
                     obj5 = iVar.m(m0Var.b, obj3.getClass(), nVar);
                 }
             } catch (Throwable th2) {
-                hVar.d(e10);
+                hVar.d(e);
                 throw th2;
             }
         }

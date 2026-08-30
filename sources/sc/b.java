@@ -1,120 +1,33 @@
 package sc;
 
-import bd.p;
-import java.io.Serializable;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b implements h, Serializable {
-    public final h a;
-    public final f b;
+public final class b implements Comparable {
+    public static final b b = new b();
+    public final int a = 131348;
 
-    public b(f element, h left) {
-        j.e(left, "left");
-        j.e(element, "element");
-        this.a = left;
-        this.b = element;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        b other = (b) obj;
+        j.e(other, "other");
+        return this.a - other.a;
     }
 
     public final boolean equals(Object obj) {
-        boolean z10;
         if (this == obj) {
             return true;
         }
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            int i10 = 2;
-            b bVar2 = bVar;
-            int i11 = 2;
-            while (true) {
-                h hVar = bVar2.a;
-                bVar2 = hVar instanceof b ? (b) hVar : null;
-                if (bVar2 == null) {
-                    break;
-                }
-                i11++;
-            }
-            b bVar3 = this;
-            while (true) {
-                h hVar2 = bVar3.a;
-                bVar3 = hVar2 instanceof b ? (b) hVar2 : null;
-                if (bVar3 == null) {
-                    break;
-                }
-                i10++;
-            }
-            if (i11 == i10) {
-                b bVar4 = this;
-                while (true) {
-                    f fVar = bVar4.b;
-                    if (!j.a(bVar.get(fVar.getKey()), fVar)) {
-                        z10 = false;
-                        break;
-                    }
-                    h hVar3 = bVar4.a;
-                    if (!(hVar3 instanceof b)) {
-                        j.c(hVar3, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element");
-                        f fVar2 = (f) hVar3;
-                        z10 = j.a(bVar.get(fVar2.getKey()), fVar2);
-                        break;
-                    }
-                    bVar4 = (b) hVar3;
-                }
-                if (z10) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // sc.h
-    public final Object fold(Object obj, p pVar) {
-        return pVar.invoke(this.a.fold(obj, pVar), this.b);
-    }
-
-    @Override // sc.h
-    public final f get(g key) {
-        j.e(key, "key");
-        b bVar = this;
-        while (true) {
-            f fVar = bVar.b.get(key);
-            if (fVar != null) {
-                return fVar;
-            }
-            h hVar = bVar.a;
-            if (!(hVar instanceof b)) {
-                return hVar.get(key);
-            }
-            bVar = (b) hVar;
-        }
+        b bVar = obj instanceof b ? (b) obj : null;
+        return bVar != null && this.a == bVar.a;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + this.a.hashCode();
-    }
-
-    @Override // sc.h
-    public final h minusKey(g key) {
-        j.e(key, "key");
-        f fVar = this.b;
-        f fVar2 = fVar.get(key);
-        h hVar = this.a;
-        if (fVar2 != null) {
-            return hVar;
-        }
-        h minusKey = hVar.minusKey(key);
-        return minusKey == hVar ? this : minusKey == i.a ? fVar : new b(fVar, minusKey);
-    }
-
-    @Override // sc.h
-    public final h plus(h context) {
-        j.e(context, "context");
-        return context == i.a ? this : (h) context.fold(this, new b1.e(5));
+        return this.a;
     }
 
     public final String toString() {
-        return "[" + ((String) fold("", new b1.e(4))) + ']';
+        return "2.1.20";
     }
 }

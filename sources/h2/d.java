@@ -1,6 +1,5 @@
 package h2;
 
-import a0.g;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +20,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static volatile ArrayList a;
@@ -38,7 +37,7 @@ public abstract class d {
     }
 
     public static a0.f c(File file, Context context) {
-        f f9;
+        h f10;
         a0.f fVar = new a0.f(0);
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -51,8 +50,8 @@ public abstract class d {
                         if (next == 1) {
                             break;
                         }
-                        if (next == 2 && newPullParser.getName().equals("target") && (f9 = f(newPullParser, context)) != null) {
-                            fVar.put(f9.c.b, f9);
+                        if (next == 2 && newPullParser.getName().equals("target") && (f10 = f(newPullParser, context)) != null) {
+                            fVar.put(f10.c.b, f10);
                         }
                     }
                 }
@@ -60,9 +59,9 @@ public abstract class d {
                 return fVar;
             } finally {
             }
-        } catch (Exception e10) {
+        } catch (Exception e) {
             file.delete();
-            Log.e("ShortcutInfoCompatSaver", "Failed to load saved values from file " + file.getAbsolutePath() + ". Old state removed, new added", e10);
+            Log.e("ShortcutInfoCompatSaver", "Failed to load saved values from file " + file.getAbsolutePath() + ". Old state removed, new added", e);
             return fVar;
         }
     }
@@ -130,8 +129,8 @@ public abstract class d {
                             if (next == 2 && loadXmlMetaData.getName().equals("share-target") && (d = d(loadXmlMetaData)) != null) {
                                 arrayList2.add(d);
                             }
-                        } catch (Exception e10) {
-                            Log.e("ShareTargetXmlParser", "Failed to parse the Xml resource: ", e10);
+                        } catch (Exception e) {
+                            Log.e("ShareTargetXmlParser", "Failed to parse the Xml resource: ", e);
                         }
                     }
                     loadXmlMetaData.close();
@@ -142,7 +141,7 @@ public abstract class d {
         return arrayList;
     }
 
-    public static f f(XmlPullParser xmlPullParser, Context context) {
+    public static h f(XmlPullParser xmlPullParser, Context context) {
         Intent intent;
         if (!xmlPullParser.getName().equals("target")) {
             return null;
@@ -215,7 +214,7 @@ public abstract class d {
             cVar.c = (Intent[]) arrayList.toArray(new Intent[0]);
         }
         if (!hashSet.isEmpty()) {
-            g gVar = new g(0);
+            a0.g gVar = new a0.g(0);
             gVar.addAll(hashSet);
             cVar.j = gVar;
         }
@@ -226,7 +225,7 @@ public abstract class d {
         if (intentArr == null || intentArr.length == 0) {
             throw new IllegalArgumentException("Shortcut must have an intent");
         }
-        return new f(cVar, b15, b16);
+        return new h(cVar, b15, b16);
     }
 
     public static void g(XmlSerializer xmlSerializer, String str, String str2) {
@@ -236,11 +235,11 @@ public abstract class d {
         xmlSerializer.attribute(null, str, str2);
     }
 
-    public static void h(XmlSerializer xmlSerializer, f fVar) {
+    public static void h(XmlSerializer xmlSerializer, h hVar) {
         xmlSerializer.startTag(null, "target");
-        g0.c cVar = fVar.c;
-        String str = fVar.b;
-        String str2 = fVar.a;
+        g0.c cVar = hVar.c;
+        String str = hVar.b;
+        String str2 = hVar.a;
         g(xmlSerializer, "id", cVar.b);
         g(xmlSerializer, "short_label", cVar.e.toString());
         g(xmlSerializer, "rank", Integer.toString(cVar.m));

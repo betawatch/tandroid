@@ -1,49 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class he1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class he1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ze1 c;
+    public final /* synthetic */ kf1 b;
 
-    public /* synthetic */ he1(ze1 ze1Var, boolean z10, int i10) {
+    public /* synthetic */ he1(kf1 kf1Var, int i10) {
         this.a = i10;
-        this.c = ze1Var;
-        this.b = z10;
+        this.b = kf1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                boolean z10 = this.b;
-                float f9 = z10 ? 1.0f : 0.0f;
-                ze1 ze1Var = this.c;
-                ze1Var.S0(f9);
-                if (!z10) {
-                    Activity parentActivity = ze1Var.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.o2) ze1Var).classGuid;
-                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
-                    ze1Var.n0.setVisibility(8);
-                    ze1Var.Q0(true);
-                    break;
-                } else {
-                    ze1Var.m0.setVisibility(8);
-                    break;
-                }
+                kf1 kf1Var = this.b;
+                kf1Var.x0();
+                kf1Var.B0();
+                break;
+            case 1:
+                this.b.x0();
+                break;
+            case 2:
+                this.b.O0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                kf1 kf1Var2 = this.b;
+                kf1Var2.x0 = null;
+                kf1Var2.U0(true, false);
+                break;
             default:
-                if (!this.b) {
-                    this.c.k0.setVisibility(8);
-                    break;
-                }
+                kf1 kf1Var3 = this.b;
+                kf1Var3.K.postOnAnimation(new he1(kf1Var3, 1));
                 break;
         }
     }

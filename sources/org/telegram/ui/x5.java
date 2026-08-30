@@ -1,43 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.CacheByChatsController;
+import j$.util.Objects;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x5 implements v70 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a6 b;
-    public final /* synthetic */ CacheByChatsController.KeepMediaException c;
+public final class x5 extends bg.b {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    public /* synthetic */ x5(a6 a6Var, CacheByChatsController.KeepMediaException keepMediaException, int i10) {
-        this.a = i10;
-        this.b = a6Var;
-        this.c = keepMediaException;
+    public x5(int i10, String str) {
+        super(i10, false);
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.v70
-    public final void a(int i10) {
-        switch (this.a) {
-            case 0:
-                int i11 = CacheByChatsController.KEEP_MEDIA_DELETE;
-                a6 a6Var = this.b;
-                CacheByChatsController.KeepMediaException keepMediaException = this.c;
-                if (i10 == i11) {
-                    a6Var.d.remove(keepMediaException);
-                    a6Var.U();
-                } else {
-                    keepMediaException.keepMedia = i10;
-                    AndroidUtilities.updateVisibleRows(a6Var.b);
-                }
-                a6Var.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(a6Var.e, a6Var.d);
-                break;
-            default:
-                this.c.keepMedia = i10;
-                a6 a6Var2 = this.b;
-                a6Var2.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(a6Var2.e, a6Var2.d);
-                AndroidUtilities.updateVisibleRows(a6Var2.b);
-                break;
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z4 = this.f;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || x5.class != obj.getClass()) {
+            return false;
+        }
+        x5 x5Var = (x5) obj;
+        TL_stories.Boost boost = x5Var.d;
+        boolean z10 = x5Var.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = x5Var.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z4 == z10;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z4 == z10 && this.g == x5Var.g;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public x5(TL_stories.Boost boost, boolean z4, int i10) {
+        super(5, true);
+        this.d = boost;
+        this.f = z4;
+        this.g = i10;
     }
 }

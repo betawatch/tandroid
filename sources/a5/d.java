@@ -1,47 +1,50 @@
 package a5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.graphics.PointF;
+import h5.d0;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d {
-    public final int a;
-    public final int b;
-    public float c;
+    public static final Pattern a = Pattern.compile("\\{([^}]*)\\}");
+    public static final Pattern b;
+    public static final Pattern c;
+    public static final Pattern d;
 
-    public d(float f9, int i10, int i11) {
-        this.c = f9;
-        this.a = i10;
-        this.b = i11;
+    static {
+        int i10 = d0.a;
+        Locale locale = Locale.US;
+        b = Pattern.compile(String.format(locale, "\\\\pos\\((%1$s),(%1$s)\\)", "\\s*\\d+(?:\\.\\d+)?\\s*"));
+        c = Pattern.compile(String.format(locale, "\\\\move\\(%1$s,%1$s,(%1$s),(%1$s)(?:,%1$s,%1$s)?\\)", "\\s*\\d+(?:\\.\\d+)?\\s*"));
+        d = Pattern.compile("\\\\an(\\d+)");
     }
 
-    public float a(int i10) {
-        int i11 = this.a;
-        int i12 = this.b;
-        if (i12 == i10 && i11 == i10) {
-            return 1.0f;
+    public static PointF a(String str) {
+        String group;
+        String group2;
+        Matcher matcher = b.matcher(str);
+        Matcher matcher2 = c.matcher(str);
+        boolean find = matcher.find();
+        boolean find2 = matcher2.find();
+        if (find) {
+            if (find2) {
+                h5.a.v("SsaStyle.Overrides", "Override has both \\pos(x,y) and \\move(x1,y1,x2,y2); using \\pos values. override='" + str + "'");
+            }
+            group = matcher.group(1);
+            group2 = matcher.group(2);
+        } else {
+            if (!find2) {
+                return null;
+            }
+            group = matcher2.group(1);
+            group2 = matcher2.group(2);
         }
-        if (i12 == i10) {
-            return this.c;
-        }
-        if (i11 == i10) {
-            return 1.0f - this.c;
-        }
-        return 0.0f;
-    }
-
-    public boolean b(int i10) {
-        return this.a == i10 || this.b == i10;
-    }
-
-    public boolean c(int i10) {
-        return this.b == i10;
-    }
-
-    public boolean d(int i10) {
-        return this.b == i10;
-    }
-
-    public d(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+        group.getClass();
+        float parseFloat = Float.parseFloat(group.trim());
+        group2.getClass();
+        return new PointF(parseFloat, Float.parseFloat(group2.trim()));
     }
 }

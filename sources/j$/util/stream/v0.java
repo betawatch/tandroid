@@ -28,9 +28,9 @@ public final class v0 extends d5 {
         IntStream intStream = (IntStream) ((k0) this.d.t).apply(i10);
         if (intStream != null) {
             try {
-                boolean z10 = this.b;
+                boolean z4 = this.b;
                 j$.util.i0 i0Var = this.c;
-                if (!z10) {
+                if (!z4) {
                     intStream.sequential().forEach(i0Var);
                 } else {
                     j$.util.x0 spliterator = intStream.sequential().spliterator();

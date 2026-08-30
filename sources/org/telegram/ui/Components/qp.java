@@ -1,31 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.Random;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class qp extends m2.g {
-    public pp s0;
+public final class qp {
+    public float g;
+    public float k;
+    public final Path a = new Path();
+    public final float[] b = new float[4];
+    public final float[] c = new float[4];
+    public final Matrix d = new Matrix();
+    public final float h = 1.0f;
+    public final Random i = new Random();
+    public final int f = 6;
+    public final float e = (float) (Math.tan(3.141592653589793d / 12) * 1.3333333333333333d);
+    public final float[] j = new float[6];
 
-    public qp(Context context) {
-        super(context);
-        b(new op((kh0) this));
-    }
-
-    @Override // m2.g
-    @Deprecated
-    public void setAdapter(m2.a aVar) {
-        if (!(aVar instanceof pp)) {
-            throw new IllegalArgumentException();
+    public qp() {
+        for (int i10 = 0; i10 < this.f; i10++) {
+            this.j[i10] = (this.i.nextInt() % 100) / 100.0f;
         }
-        setAdapter((pp) aVar);
     }
 
-    public void setAdapter(pp ppVar) {
-        this.s0 = ppVar;
-        super.setAdapter((m2.a) ppVar);
-        if (ppVar != null) {
-            x(ppVar.j(), false);
+    public final void a(float f10, float f11, Canvas canvas, Paint paint) {
+        qp qpVar = this;
+        float f12 = qpVar.g;
+        float f13 = (f12 - 0.0f) - 0.0f;
+        float f14 = f12 + 0.0f + 0.0f;
+        float max = Math.max(f13, f14);
+        float f15 = qpVar.e;
+        float f16 = max * f15 * qpVar.h;
+        Path path = qpVar.a;
+        path.reset();
+        int i10 = 0;
+        while (true) {
+            int i11 = qpVar.f;
+            if (i10 >= i11) {
+                canvas.save();
+                canvas.rotate(0.0f, f10, f11);
+                canvas.drawPath(path, paint);
+                canvas.restore();
+                return;
+            }
+            Matrix matrix = qpVar.d;
+            matrix.reset();
+            float f17 = 360.0f / i11;
+            matrix.setRotate(i10 * f17, f10, f11);
+            float f18 = i10 % 2 == 0 ? f13 : f14;
+            float f19 = qpVar.k;
+            float[] fArr = qpVar.j;
+            float f20 = (fArr[i10] * f19) + f18;
+            float[] fArr2 = qpVar.b;
+            fArr2[0] = f10;
+            float f21 = f11 - f20;
+            fArr2[1] = f21;
+            float f22 = f14;
+            fArr2[2] = e2.c.u(f19, fArr[i10], f15, f10 + f16);
+            fArr2[3] = f21;
+            matrix.mapPoints(fArr2);
+            int i12 = i10 + 1;
+            int i13 = i12 >= i11 ? 0 : i12;
+            float f23 = i13 % 2 == 0 ? f13 : f22;
+            float f24 = qpVar.k;
+            float f25 = (fArr[i13] * f24) + f23;
+            float[] fArr3 = qpVar.c;
+            fArr3[0] = f10;
+            float f26 = f11 - f25;
+            fArr3[1] = f26;
+            float f27 = f13;
+            fArr3[2] = e2.c.u(f24, fArr[i13], f15, f10 - f16);
+            fArr3[3] = f26;
+            matrix.reset();
+            matrix.setRotate(f17 * i13, f10, f11);
+            matrix.mapPoints(fArr3);
+            if (i10 == 0) {
+                path.moveTo(fArr2[0], fArr2[1]);
+            }
+            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
+            i10 = i12;
+            f14 = f22;
+            f13 = f27;
+            qpVar = this;
         }
     }
 }

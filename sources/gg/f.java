@@ -1,52 +1,247 @@
 package gg;
 
-import i7.f6;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.util.Log;
+import android.view.Display;
+import android.view.View;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import lh.i5;
+import lh.t4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.t9;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.y4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f extends e {
-    @Override // gg.e, gg.d
-    public final void d() {
-        this.c.setLayoutParams(f6.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        boolean z10 = LocaleController.isRTL;
-        this.d.setLayoutParams(f6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 69.0f, 0.0f, z10 ? 69.0f : 20.0f, 0.0f));
-        boolean z11 = LocaleController.isRTL;
-        this.e.setLayoutParams(f6.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 69.0f, 0.0f, z11 ? 69.0f : 20.0f, 0.0f));
+public final /* synthetic */ class f implements org.telegram.ui.ActionBar.c2, jl0, hh.a, Continuation, r8.i, h5.j, lf.o, r0.o, BillingController.ProductDetailsResponseListenerLegacy, v2.e, y4, xd.b {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ f(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        this.e.setTextColor(g6.v0(g6.r5, this.a));
-        boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        c cVar = this.d;
-        e9 e9Var = this.b;
-        if (z10) {
-            TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
-            e9Var.g(26);
-            cVar.k(LocaleController.formatPluralStringComma("BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
-            setSubtitle(LocaleController.formatPluralString("AmongWinners", tL_prepaidStarsGiveaway.quantity, new Object[0]));
-        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            cVar.k(LocaleController.getString(R.string.BoostingPreparedGiveawayOne));
-            e9Var.g(16);
-            TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
-            int i10 = tL_prepaidGiveaway.months;
-            if (i10 == 12) {
-                e9Var.i(-31392, -2796986);
-            } else if (i10 == 6) {
-                e9Var.i(-10703110, -12481584);
-            } else {
-                e9Var.i(-6631068, -11945404);
+    @Override // org.telegram.ui.Components.y4
+    public void J(int i10, int i11, boolean z4) {
+        lh.s0 s0Var = (lh.s0) this.b;
+        if (z4) {
+            long j10 = i10;
+            if (s0Var.F != j10) {
+                s0Var.F = j10;
+                s0Var.r.setText(lh.s0.o(j10));
             }
-            setSubtitle(LocaleController.formatPluralString("BoostingPreparedGiveawaySubscriptionsPlural", prepaidGiveaway.quantity, LocaleController.formatPluralString("Months", tL_prepaidGiveaway.months, new Object[0])));
+            s0Var.n(true);
         }
-        t9 t9Var = this.c;
-        t9Var.setImageDrawable(e9Var);
-        t9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+    }
+
+    @Override // xd.b
+    public void L(int i10, float f10, float f11, xd.c cVar) {
+        View view = ((i5) this.b).b;
+        if (view instanceof org.telegram.ui.Cells.v0) {
+            ((org.telegram.ui.Cells.v0) view).J();
+        } else {
+            view.invalidate();
+        }
+    }
+
+    @Override // r0.o
+    public r0.m1 N0(View view, r0.m1 m1Var) {
+        ((kh.u0) this.b).h.i(m1Var);
+        return r0.m1.b;
+    }
+
+    public void a(Display display) {
+        i5.s sVar = (i5.s) this.b;
+        sVar.getClass();
+        if (display != null) {
+            long refreshRate = (long) (1.0E9d / display.getRefreshRate());
+            sVar.k = refreshRate;
+            sVar.l = (refreshRate * 80) / 100;
+        } else {
+            h5.a.K("VideoFrameReleaseHelper", "Unable to query display refresh rate");
+            sVar.k = -9223372036854775807L;
+            sVar.l = -9223372036854775807L;
+        }
+    }
+
+    @Override // v2.e
+    public Object apply(Object obj) {
+        ((ja.c) this.b).getClass();
+        String e = la.c0.b.e((la.b0) obj);
+        kotlin.jvm.internal.j.d(e, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
+        Log.d("EventGDTLogger", "Session Event: ".concat(e));
+        byte[] bytes = e.getBytes(jd.a.a);
+        kotlin.jvm.internal.j.d(bytes, "this as java.lang.String).getBytes(charset)");
+        return bytes;
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public void c(float f10, float f11, int i10, View view) {
+        f2.Q((f2) this.b, view);
+    }
+
+    @Override // lf.o
+    public void d(long j10) {
+        switch (this.a) {
+            case 19:
+                ((kh.e) this.b).a(j10, true);
+                break;
+            default:
+                ((t4) this.b).h();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ boolean e1(View view) {
+        return false;
+    }
+
+    @Override // r8.i
+    public Object get() {
+        switch (this.a) {
+            case 6:
+                return (j3.j) this.b;
+            case 7:
+                return (f5.t) this.b;
+            case 8:
+                return (j3.l) this.b;
+            default:
+                return Boolean.valueOf(((j3.k0) this.b).L);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                ((s0) this.b).run();
+                break;
+            case 1:
+                ((x1) this.b).run();
+                break;
+            case 20:
+                ((kh.x) this.b).run();
+                break;
+            default:
+                ((Utilities.Callback) this.b).run(d2Var.g(i10, true, true));
+                break;
+        }
+    }
+
+    @Override // h5.j
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 9:
+                ((j3.y1) obj).onMediaMetadataChanged((j3.e1) this.b);
+                break;
+            case 10:
+                ((j3.y1) obj).onAudioAttributesChanged((l3.d) this.b);
+                break;
+            case 11:
+                ((j3.y1) obj).onCues((v4.c) this.b);
+                break;
+            case 12:
+                ((j3.y1) obj).onMediaMetadataChanged(((j3.c0) this.b).a.M);
+                break;
+            case 13:
+                ((j3.y1) obj).onMetadata((e4.c) this.b);
+                break;
+            case 14:
+            default:
+                ((k3.b) obj).d((n3.f) this.b);
+                break;
+            case 15:
+                ((k3.b) obj).onSeekStarted((k3.a) this.b);
+                break;
+            case 16:
+                ((k3.b) obj).f((o4.r) this.b);
+                break;
+            case 17:
+                ((k3.b) obj).b((j3.t1) this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
+    public void onProductDetailsResponse(p2.h hVar, List list) {
+        int i10;
+        kh.h2 h2Var = (kh.h2) this.b;
+        ArrayList arrayList = h2Var.k0;
+        Iterator it = list.iterator();
+        long j10 = 0;
+        while (true) {
+            i10 = 0;
+            if (!it.hasNext()) {
+                break;
+            }
+            p2.n nVar = (p2.n) it.next();
+            int size = arrayList.size();
+            while (true) {
+                if (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    eg.n nVar2 = (eg.n) obj;
+                    if (nVar2.h() != null && nVar2.h().equals(nVar.c)) {
+                        nVar2.h = nVar;
+                        if (nVar2.f() > j10) {
+                            j10 = nVar2.f();
+                        }
+                    }
+                }
+            }
+        }
+        int size2 = arrayList.size();
+        while (i10 < size2) {
+            Object obj2 = arrayList.get(i10);
+            i10++;
+            ((eg.n) obj2).g = j10;
+        }
+        AndroidUtilities.runOnUIThread(new ef.e(h2Var, 24));
+    }
+
+    @Override // hh.a
+    public void p(Canvas canvas, int i10) {
+        hh.j jVar = (hh.j) this.b;
+        jVar.getClass();
+        canvas.save();
+        RectF rectF = jVar.r;
+        canvas.translate(-rectF.left, (-rectF.top) + AndroidUtilities.dp(30.0f));
+        jVar.e(canvas, true, i10);
+        canvas.restore();
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        ((CountDownLatch) this.b).countDown();
+        return null;
+    }
+
+    public /* synthetic */ f(k3.a aVar, Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    public /* synthetic */ f(k3.a aVar, o4.j jVar, o4.r rVar, IOException iOException, boolean z4) {
+        this.a = 16;
+        this.b = rVar;
+    }
+
+    @Override // xd.b
+    public /* synthetic */ void z(float f10, int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ void o0(View view, float f10, float f11) {
     }
 }

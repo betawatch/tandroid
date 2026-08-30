@@ -1,148 +1,121 @@
 package org.telegram.ui.ActionBar;
 
-import android.R;
 import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.content.Context;
-import android.view.ContextThemeWrapper;
+import android.os.SystemClock;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.Components.jr;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class q1 {
-    public static final jr w = uh.m.V;
-    public final FrameLayout a;
-    public FrameLayout b;
-    public ViewGroup c;
-    public View d;
-    public boolean f;
-    public boolean g;
-    public View l;
-    public ValueAnimator m;
-    public float p;
-    public float q;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean e = false;
-    public final v2 h = new v2(this, 2);
-    public int i = -1;
-    public int j = -1;
-    public int k = -1;
-    public final AnimationNotificationsLocker n = new AnimationNotificationsLocker();
-    public final ArrayList o = new ArrayList();
-    public final p1 t = new p1(this);
-    public final boolean u = true;
+public final class q1 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ r1 a;
 
-    public q1(FrameLayout frameLayout) {
-        this.a = frameLayout;
-        AndroidUtilities.runOnUIThread(new q(this, 4));
+    public q1(r1 r1Var) {
+        this.a = r1Var;
     }
 
-    public static Activity a(Context context) {
-        if (context instanceof Activity) {
-            return (Activity) context;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        r1 r1Var = this.a;
+        FrameLayout frameLayout = r1Var.a;
+        int height = frameLayout.getHeight();
+        int i10 = height - r1Var.i();
+        int i11 = r1Var.i;
+        if (i10 == i11 - r1Var.k || height == i11 || r1Var.m != null) {
+            if (r1Var.m == null) {
+                r1Var.i = height;
+                r1Var.j = r1Var.c.getHeight();
+                r1Var.k = r1Var.i();
+                r1Var.e = false;
+            }
+            return true;
         }
-        if (context instanceof ContextThemeWrapper) {
-            return a(((ContextThemeWrapper) context).getBaseContext());
+        if (!r1Var.b() || Math.abs(r1Var.i - height) < AndroidUtilities.dp(20.0f)) {
+            r1Var.i = height;
+            r1Var.j = r1Var.c.getHeight();
+            r1Var.k = r1Var.i();
+            r1Var.e = false;
+            return true;
         }
-        return null;
-    }
-
-    public abstract boolean b();
-
-    public final void c() {
-        d();
-        View view = this.a;
-        Activity a2 = a(view.getContext());
-        if (a2 != null) {
-            this.c = (ViewGroup) ((ViewGroup) a2.getWindow().getDecorView()).findViewById(R.id.content);
+        if (r1Var.i == -1 || r1Var.j != r1Var.c.getHeight()) {
+            r1Var.i = height;
+            r1Var.j = r1Var.c.getHeight();
+            r1Var.k = r1Var.i();
+            return false;
         }
-        View view2 = this.b;
-        if (view2 == null) {
-            while (true) {
-                view2 = null;
-                if (view != null) {
-                    if (!(view.getParent() instanceof x3)) {
-                        if (!(view.getParent() instanceof View)) {
-                            break;
-                        } else {
-                            view = (View) view.getParent();
-                        }
-                    } else {
-                        view2 = view;
-                        break;
-                    }
-                } else {
+        boolean z4 = height < r1Var.c.getBottom();
+        r1Var.s = z4;
+        int i12 = r1Var.i;
+        if (r1Var.v) {
+            r1Var.v = false;
+        } else if (r1Var.u) {
+            ValueAnimator valueAnimator = r1Var.m;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            int i13 = r1Var.i();
+            ArrayList arrayList = r1Var.o;
+            arrayList.clear();
+            View view = frameLayout;
+            while (view != null) {
+                arrayList.add(view);
+                if (view == r1Var.d) {
                     break;
                 }
+                view = view.getParent() instanceof View ? (View) view.getParent() : null;
+            }
+            LaunchActivity launchActivity = LaunchActivity.D1;
+            int expandedHeight = (launchActivity == null || launchActivity.P() == null) ? 0 : LaunchActivity.D1.P().getExpandedHeight();
+            boolean z10 = r1Var instanceof mg.o;
+            if (!z10) {
+                r1Var.h(Math.max(i12, height + expandedHeight));
+            }
+            r1Var.d.requestLayout();
+            r1Var.g(height, z4);
+            float f10 = height - i12;
+            Math.abs(f10);
+            r1Var.f = true;
+            if (height > i12) {
+                float f11 = f10 - i13;
+                if (!z10) {
+                    frameLayout.setTranslationY(-f11);
+                }
+                r1Var.e(f11, 1.0f, z4);
+                r1Var.p = -f11;
+                r1Var.q = -expandedHeight;
+                r1Var.r = true;
+            } else {
+                if (!z10) {
+                    frameLayout.setTranslationY(r1Var.k);
+                }
+                r1Var.e(-r1Var.k, 0.0f, z4);
+                r1Var.q = -r1Var.k;
+                r1Var.p = f10;
+                r1Var.r = false;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            r1Var.m = ofFloat;
+            r1Var.e = false;
+            ofFloat.addUpdateListener(new x0(r1Var, 3));
+            r1Var.m.addListener(new h(r1Var, 2));
+            r1Var.m.setDuration(250L);
+            r1Var.m.setInterpolator(r1.w);
+            r1Var.n.lock();
+            if (r1Var.g) {
+                r1Var.g = false;
+                SystemClock.elapsedRealtime();
+                AndroidUtilities.runOnUIThread(r1Var.h, 100L);
+            } else {
+                r1Var.m.start();
             }
         }
-        this.d = view2;
-        if (view2 != null) {
-            this.l = view2;
-            view2.getViewTreeObserver().addOnPreDrawListener(this.t);
-        }
-    }
-
-    public final void d() {
-        ValueAnimator valueAnimator = this.m;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        View view = this.l;
-        if (view != null) {
-            view.getViewTreeObserver().removeOnPreDrawListener(this.t);
-            this.l = null;
-        }
-    }
-
-    public abstract void e(float f9, float f10, boolean z10);
-
-    public abstract void f();
-
-    public abstract void g(int i10, boolean z10);
-
-    public final void h(int i10) {
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.o;
-            if (i11 >= arrayList.size()) {
-                return;
-            }
-            ((View) arrayList.get(i11)).getLayoutParams().height = i10;
-            ((View) arrayList.get(i11)).requestLayout();
-            i11++;
-        }
-    }
-
-    public int i() {
-        return 0;
-    }
-
-    public final void j() {
-        ValueAnimator valueAnimator = this.m;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.f = false;
-        this.e = false;
-        this.n.unlock();
-        this.m = null;
-        h(-1);
-        this.o.clear();
-        this.d.requestLayout();
-        boolean z10 = this.s;
-        e(0.0f, z10 ? 1.0f : 0.0f, z10);
-        if (!(this instanceof kg.o)) {
-            this.a.setTranslationY(0.0f);
-        }
-        f();
+        r1Var.i = height;
+        r1Var.j = r1Var.c.getHeight();
+        r1Var.k = r1Var.i();
+        return false;
     }
 }

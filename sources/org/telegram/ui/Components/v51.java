@@ -1,46 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class v51 extends View {
+    public int a;
 
-    public /* synthetic */ v51(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                w51 w51Var = (w51) this.b;
-                w51Var.getClass();
-                w51Var.C = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w51Var.invalidate();
-                break;
-            case 1:
-                d61 d61Var = (d61) this.b;
-                d61Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d61Var.b = floatValue;
-                d61Var.setTranslationY(floatValue);
-                break;
-            default:
-                y71 y71Var = (y71) this.b;
-                y71Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y71Var.setAnimationIdicatorProgress(floatValue2);
-                x71 x71Var = y71Var.y;
-                if (x71Var != null) {
-                    ((n) x71Var).j(floatValue2);
-                    break;
-                }
-                break;
+    public void setHeight(int i10) {
+        if (this.a == i10) {
+            return;
         }
+        this.a = i10;
+        requestLayout();
     }
 }

@@ -1,66 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public class o5 extends Drawable {
-    public final Drawable a;
-    public final int b;
-    public final int c;
-    public int d = 255;
+public final class o5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u5 b;
 
-    public o5(int i10, int i11, Drawable drawable) {
-        this.a = drawable;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ o5(u5 u5Var, int i10) {
+        this.a = i10;
+        this.b = u5Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            drawable.setAlpha(this.d);
-            drawable.draw(canvas);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.c;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            return drawable.getOpacity();
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setAlpha(i10);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setColorFilter(colorFilter);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        Runnable runnable2;
+        switch (this.a) {
+            case 0:
+                this.b.scaleAnimator = null;
+                boolean unused = u5.lockPositionChanging = false;
+                break;
+            case 1:
+                u5 u5Var = this.b;
+                u5Var.scaleAnimator = null;
+                runnable = u5Var.removedAction;
+                if (runnable != null) {
+                    runnable2 = u5Var.removedAction;
+                    runnable2.run();
+                    u5Var.removedAction = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.moveAnimator = null;
+                break;
         }
     }
 }

@@ -1,27 +1,51 @@
 package h7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class c extends j9 {
-    public final transient Object[] c;
-    public final transient int d;
-    public final transient int e = 1;
+import j7.t7;
 
-    public c(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class c extends d {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ d e;
+
+    public c(d dVar, int i10, int i11) {
+        this.e = dVar;
+        this.c = i10;
+        this.d = i11;
     }
 
     @Override // java.util.List
     public final Object get(int i10) {
-        t7.a(i10, this.e);
-        Object obj = this.c[i10 + i10 + this.d];
-        obj.getClass();
-        return obj;
+        t7.a(i10, this.d);
+        return this.e.get(i10 + this.c);
+    }
+
+    @Override // h7.a
+    public final int n() {
+        return this.e.o() + this.c + this.d;
+    }
+
+    @Override // h7.a
+    public final int o() {
+        return this.e.o() + this.c;
+    }
+
+    @Override // h7.a
+    public final Object[] p() {
+        return this.e.p();
+    }
+
+    @Override // h7.d, java.util.List
+    /* renamed from: q, reason: merged with bridge method [inline-methods] */
+    public final d subList(int i10, int i11) {
+        t7.c(i10, i11, this.d);
+        int i12 = this.c;
+        return this.e.subList(i10 + i12, i11 + i12);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.e;
+        return this.d;
     }
 }

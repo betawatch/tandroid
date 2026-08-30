@@ -1,83 +1,62 @@
 package x3;
 
-import f5.w;
-import java.io.EOFException;
-import o3.l;
+import r3.l;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e {
-    public final f a = new f();
-    public final w b = new w(new byte[65025], 0);
-    public int c = -1;
-    public int d;
-    public boolean e;
+    public static final long[] d = {128, 64, 32, 16, 8, 4, 2, 1};
+    public final byte[] a = new byte[8];
+    public int b;
+    public int c;
 
-    public final int a(int i10) {
-        int i11;
-        int i12 = 0;
-        this.d = 0;
-        do {
-            int i13 = this.d;
-            int i14 = i10 + i13;
-            f fVar = this.a;
-            if (i14 >= fVar.c) {
-                break;
-            }
-            int[] iArr = fVar.f;
-            this.d = i13 + 1;
-            i11 = iArr[i14];
-            i12 += i11;
-        } while (i11 == 255);
-        return i12;
+    public static long a(int i10, boolean z4, byte[] bArr) {
+        long j10 = bArr[0] & 255;
+        if (z4) {
+            j10 &= ~d[i10 - 1];
+        }
+        for (int i11 = 1; i11 < i10; i11++) {
+            j10 = (j10 << 8) | (bArr[i11] & 255);
+        }
+        return j10;
     }
 
-    public final boolean b(l lVar) {
-        int i10;
-        f5.a.i(lVar != null);
-        boolean z10 = this.e;
-        w wVar = this.b;
-        if (z10) {
-            this.e = false;
-            wVar.z(0);
-        }
-        while (!this.e) {
-            int i11 = this.c;
-            f fVar = this.a;
-            if (i11 < 0) {
-                if (fVar.b(lVar, -1L) && fVar.a(lVar, true)) {
-                    int i12 = fVar.d;
-                    if ((fVar.a & 1) == 1 && wVar.c == 0) {
-                        i12 += a(0);
-                        i10 = this.d;
-                    } else {
-                        i10 = 0;
-                    }
-                    try {
-                        lVar.t(i12);
-                        this.c = i10;
-                    } catch (EOFException unused) {
-                    }
+    public final long b(l lVar, boolean z4, boolean z10, int i10) {
+        int i11;
+        int i12 = this.b;
+        byte[] bArr = this.a;
+        if (i12 == 0) {
+            if (!lVar.d(bArr, 0, 1, z4)) {
+                return -1L;
+            }
+            int i13 = bArr[0] & 255;
+            int i14 = 0;
+            while (true) {
+                if (i14 >= 8) {
+                    i11 = -1;
+                    break;
                 }
-                return false;
-            }
-            int a2 = a(this.c);
-            int i13 = this.c + this.d;
-            if (a2 > 0) {
-                wVar.b(wVar.c + a2);
-                try {
-                    lVar.readFully(wVar.a, wVar.c, a2);
-                    wVar.B(wVar.c + a2);
-                    this.e = fVar.f[i13 + (-1)] != 255;
-                } catch (EOFException unused2) {
-                    return false;
+                if ((d[i14] & i13) != 0) {
+                    i11 = i14 + 1;
+                    break;
                 }
+                i14++;
             }
-            if (i13 == fVar.c) {
-                i13 = -1;
+            this.c = i11;
+            if (i11 == -1) {
+                throw new IllegalStateException("No valid varint length mask found");
             }
-            this.c = i13;
+            this.b = 1;
         }
-        return true;
+        int i15 = this.c;
+        if (i15 > i10) {
+            this.b = 0;
+            return -2L;
+        }
+        if (i15 != 1) {
+            lVar.readFully(bArr, 1, i15 - 1);
+        }
+        this.b = 0;
+        return a(this.c, z10, bArr);
     }
 }

@@ -3,7 +3,7 @@ package androidx.activity.result;
 import androidx.fragment.app.e0;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final class c {
                     try {
                         fVar.b(num.intValue(), e0Var, obj);
                         return;
-                    } catch (Exception e10) {
+                    } catch (Exception e) {
                         fVar.d.remove(str);
-                        throw e10;
+                        throw e;
                     }
                 }
                 throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + e0Var + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
@@ -48,9 +48,9 @@ public final class c {
                     try {
                         fVar2.b(num2.intValue(), e0Var2, obj);
                         return;
-                    } catch (Exception e11) {
+                    } catch (Exception e6) {
                         fVar2.d.remove(str2);
-                        throw e11;
+                        throw e6;
                     }
                 }
                 throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + e0Var2 + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");

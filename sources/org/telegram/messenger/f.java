@@ -2,12 +2,12 @@ package org.telegram.messenger;
 
 import com.android.billingclient.api.Purchase;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements wk0, p2.h {
+public final /* synthetic */ class f implements fl0, p2.j {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -18,15 +18,15 @@ public final /* synthetic */ class f implements wk0, p2.h {
         this.c = obj3;
     }
 
-    @Override // p2.h
-    public void a(p2.g gVar, String str) {
-        BillingController.lambda$consumeGiftPurchase$12((TLRPC.InputStorePaymentPurpose) this.a, (Purchase) this.b, (Runnable) this.c, gVar, str);
+    @Override // p2.j
+    public void a(p2.h hVar, String str) {
+        BillingController.lambda$consumeGiftPurchase$12((TLRPC.InputStorePaymentPurpose) this.a, (Purchase) this.b, (Runnable) this.c, hVar, str);
     }
 
-    @Override // org.telegram.ui.Components.wk0
+    @Override // org.telegram.ui.Components.fl0
     public int run() {
         int lambda$scrollToFragmentRow$24;
-        lambda$scrollToFragmentRow$24 = AndroidUtilities.lambda$scrollToFragmentRow$24((org.telegram.ui.ActionBar.o2) this.a, (String) this.b, (jl0) this.c);
+        lambda$scrollToFragmentRow$24 = AndroidUtilities.lambda$scrollToFragmentRow$24((org.telegram.ui.ActionBar.p2) this.a, (String) this.b, (sl0) this.c);
         return lambda$scrollToFragmentRow$24;
     }
 }

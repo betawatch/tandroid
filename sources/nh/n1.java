@@ -1,206 +1,50 @@
 package nh;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.util.SparseArray;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.jl0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.rp;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class n1 extends jl0 {
-    public c2.z T2;
-    public boolean U2;
-    public float V2;
-    public float W2;
-    public boolean X2;
-    public final SparseArray Y2;
-    public final ArrayList Z2;
-    public final ArrayList a3;
-    public final ArrayList b3;
-    public final ArrayList c3;
-    public final PorterDuffColorFilter d3;
+public final class n1 extends View {
+    public final /* synthetic */ int a = 1;
+    public final rp b;
 
     public n1(Context context) {
-        super(context, null);
-        this.X2 = false;
-        this.Y2 = new SparseArray();
-        this.Z2 = new ArrayList();
-        this.a3 = new ArrayList();
-        this.b3 = new ArrayList();
-        this.c3 = new ArrayList();
-        this.d3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+        super(context);
+        this.b = new rp(AndroidUtilities.dp(36.0f), AndroidUtilities.dp(2.0f), -13522392);
     }
 
-    public static void w1(n1 n1Var, int i10, int i11) {
-        if (n1Var.T2 == null || !(n1Var.getLayoutManager() instanceof f2.w)) {
-            return;
-        }
-        f2.w wVar = (f2.w) n1Var.getLayoutManager();
-        View m10 = wVar.m(i10);
-        int L0 = wVar.L0();
-        if ((m10 == null && Math.abs(i10 - L0) > wVar.J * 9.0f) || !SharedConfig.animationsEnabled()) {
-            n1Var.T2.b = wVar.L0() < i10 ? 0 : 1;
-            n1Var.T2.c(i10, i11, false, false);
-        } else {
-            k1 k1Var = new k1(n1Var, n1Var.getContext(), 0);
-            k1Var.a = i10;
-            k1Var.p = i11;
-            wVar.w0(k1Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        SparseArray sparseArray;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        l1 l1Var;
-        if (getVisibility() != 0) {
-            return;
-        }
-        int saveCount = canvas.getSaveCount();
-        canvas.save();
-        canvas.clipRect(0.0f, this.V2, getWidth(), this.W2);
-        if (!this.U2) {
-            super.dispatchDraw(canvas);
-            canvas.restore();
-            return;
-        }
-        Rect rect = this.C1;
-        if (!rect.isEmpty()) {
-            this.z1.setBounds(rect);
-            canvas.save();
-            q0.a aVar = this.k2;
-            if (aVar != null) {
-                aVar.accept(canvas);
-            }
-            this.z1.draw(canvas);
-            canvas.restore();
-        }
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            sparseArray = this.Y2;
-            int size = sparseArray.size();
-            arrayList = this.Z2;
-            if (i11 >= size) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                int dp = AndroidUtilities.dp(1.0f);
+                int width = (getWidth() - dp) - dp;
+                int height = (getHeight() - dp) - dp;
+                rp rpVar = this.b;
+                rpVar.setBounds(dp, dp, width, height);
+                rpVar.draw(canvas);
+                invalidate();
                 break;
-            }
-            ArrayList arrayList3 = (ArrayList) sparseArray.valueAt(i11);
-            arrayList3.clear();
-            arrayList.add(arrayList3);
-            i11++;
-        }
-        sparseArray.clear();
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt instanceof m1) {
-                m1 m1Var = (m1) childAt;
-                if (m1Var.getY() < this.W2 && m1Var.getY() + m1Var.getHeight() > this.V2) {
-                    int y8 = this.X2 ? (int) m1Var.getY() : m1Var.getTop();
-                    ArrayList arrayList4 = (ArrayList) sparseArray.get(y8);
-                    if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) com.google.android.recaptcha.internal.a.j(1, arrayList) : new ArrayList();
-                        sparseArray.put(y8, arrayList4);
-                    }
-                    arrayList4.add(m1Var);
-                }
-            }
-        }
-        ArrayList arrayList5 = this.c3;
-        arrayList5.clear();
-        ArrayList arrayList6 = this.b3;
-        arrayList5.addAll(arrayList6);
-        arrayList6.clear();
-        canvas.save();
-        canvas.clipRect(0, getPaddingTop(), getWidth(), getHeight() - getPaddingBottom());
-        long currentTimeMillis = System.currentTimeMillis();
-        int i13 = 0;
-        while (true) {
-            int size2 = sparseArray.size();
-            arrayList2 = this.a3;
-            if (i13 >= size2) {
+            default:
+                int width2 = getWidth();
+                int height2 = getHeight();
+                rp rpVar2 = this.b;
+                rpVar2.setBounds(0, 0, width2, height2);
+                rpVar2.setAlpha(255);
+                rpVar2.draw(canvas);
+                invalidate();
+                super.onDraw(canvas);
                 break;
-            }
-            ArrayList arrayList7 = (ArrayList) sparseArray.valueAt(i13);
-            m1 m1Var2 = (m1) arrayList7.get(i10);
-            int R = RecyclerView.R(m1Var2);
-            while (true) {
-                if (i10 >= arrayList5.size()) {
-                    l1Var = null;
-                    break;
-                } else {
-                    if (((l1) arrayList5.get(i10)).I == R) {
-                        l1Var = (l1) arrayList5.get(i10);
-                        arrayList5.remove(i10);
-                        break;
-                    }
-                    i10++;
-                }
-            }
-            if (l1Var == null) {
-                if (arrayList2.isEmpty()) {
-                    l1Var = new l1(this);
-                    l1Var.l(7);
-                } else {
-                    l1Var = (l1) com.google.android.recaptcha.internal.a.j(1, arrayList2);
-                }
-                l1Var.I = R;
-                l1Var.e();
-            }
-            arrayList6.add(l1Var);
-            l1Var.K = arrayList7;
-            canvas.save();
-            canvas.translate(m1Var2.getLeft(), m1Var2.getY());
-            l1Var.J = m1Var2.getLeft();
-            int measuredWidth = getMeasuredWidth() - (m1Var2.getLeft() * 2);
-            int measuredHeight = m1Var2.getMeasuredHeight();
-            if (measuredWidth > 0 && measuredHeight > 0) {
-                l1Var.a(canvas, currentTimeMillis, measuredWidth, measuredHeight, getAlpha());
-            }
-            canvas.restore();
-            i13++;
-            i10 = 0;
         }
-        for (int i14 = 0; i14 < arrayList5.size(); i14++) {
-            if (arrayList2.size() < 3) {
-                arrayList2.add((l1) arrayList5.get(i14));
-                ((l1) arrayList5.get(i14)).K = null;
-                ((l1) arrayList5.get(i14)).k();
-            } else {
-                ((l1) arrayList5.get(i14)).f();
-            }
-        }
-        arrayList5.clear();
-        for (int i15 = 0; i15 < getChildCount(); i15++) {
-            View childAt2 = getChildAt(i15);
-            if (childAt2 != null && !(childAt2 instanceof m1) && childAt2.getY() <= getHeight() - getPaddingBottom() && childAt2.getY() + childAt2.getHeight() >= getPaddingTop()) {
-                canvas.save();
-                canvas.translate((int) childAt2.getX(), (int) childAt2.getY());
-                childAt2.draw(canvas);
-                canvas.restore();
-            }
-        }
-        canvas.restore();
-        canvas.restoreToCount(saveCount);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void setLayoutManager(f2.w0 w0Var) {
-        super.setLayoutManager(w0Var);
-        this.T2 = null;
-        if (w0Var instanceof f2.j0) {
-            c2.z zVar = new c2.z(this, (f2.j0) w0Var);
-            this.T2 = zVar;
-            zVar.i = new j1(this, 0);
-            zVar.h = new l4.s0(this, 13);
-        }
+    public n1(Activity activity) {
+        super(activity);
+        this.b = new rp(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.m5, false));
     }
 }

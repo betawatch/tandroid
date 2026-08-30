@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import m8.g0;
+import o8.f0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class bf extends bm {
     final /* synthetic */ long a;
@@ -21,9 +21,9 @@ final class bf extends bm {
         this.c = bnVar;
     }
 
-    @Override // m8.h0
+    @Override // o8.g0
     public final void b() {
-        g0 g0Var;
+        f0 f0Var;
         if (bn.l(this.c)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -34,24 +34,24 @@ final class bf extends bm {
         }
         try {
             bn bnVar = this.c;
-            m8.w wVar = (m8.w) bnVar.a.n;
+            o8.v vVar = (o8.v) bnVar.a.n;
             Bundle b10 = bn.b(bnVar, this.a, 0);
             bl blVar = new bl(this.c, this.b);
-            m8.u uVar = (m8.u) wVar;
-            uVar.getClass();
+            o8.t tVar = (o8.t) vVar;
+            tVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(uVar.c);
-            int i10 = m8.s.a;
+            obtain.writeInterfaceToken(tVar.c);
+            int i10 = o8.r.a;
             obtain.writeInt(1);
             b10.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(blVar);
-            uVar.F0(obtain, 2);
-        } catch (RemoteException e10) {
+            tVar.F0(obtain, 2);
+        } catch (RemoteException e) {
             bn bnVar2 = this.c;
             long j10 = this.a;
-            g0Var = bnVar2.b;
-            g0Var.a(e10, "warmUpIntegrityToken(%s)", Long.valueOf(j10));
-            this.b.trySetException(new StandardIntegrityException(-100, e10));
+            f0Var = bnVar2.b;
+            f0Var.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j10));
+            this.b.trySetException(new StandardIntegrityException(-100, e));
         }
     }
 }

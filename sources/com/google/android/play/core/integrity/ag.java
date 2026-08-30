@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import m8.b0;
-import m8.g0;
-import m8.h0;
+import o8.a0;
+import o8.f0;
+import o8.g0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-final class ag extends h0 {
+final class ag extends g0 {
     final /* synthetic */ Bundle a;
     final /* synthetic */ Activity b;
     final /* synthetic */ TaskCompletionSource c;
@@ -28,31 +28,31 @@ final class ag extends h0 {
         this.e = ajVar;
     }
 
-    @Override // m8.h0
+    @Override // o8.g0
     public final void b() {
-        g0 g0Var;
+        f0 f0Var;
         at atVar;
         try {
             aj ajVar = this.e;
-            b0 b0Var = (b0) ajVar.a.n;
+            a0 a0Var = (a0) ajVar.a.n;
             Bundle bundle = this.a;
             atVar = ajVar.e;
             as a2 = atVar.a(this.b, this.c, ajVar.a);
-            m8.z zVar = (m8.z) b0Var;
-            zVar.getClass();
+            o8.y yVar = (o8.y) a0Var;
+            yVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(zVar.c);
-            int i10 = m8.s.a;
+            obtain.writeInterfaceToken(yVar.c);
+            int i10 = o8.r.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a2);
-            zVar.F0(obtain, 3);
-        } catch (RemoteException e10) {
+            yVar.F0(obtain, 3);
+        } catch (RemoteException e) {
             aj ajVar2 = this.e;
             int i11 = this.d;
-            g0Var = ajVar2.b;
-            g0Var.a(e10, "requestAndShowDialog(%s)", Integer.valueOf(i11));
-            this.c.trySetException(new IntegrityServiceException(-100, e10));
+            f0Var = ajVar2.b;
+            f0Var.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i11));
+            this.c.trySetException(new IntegrityServiceException(-100, e));
         }
     }
 }

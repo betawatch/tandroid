@@ -82,9 +82,9 @@ public final class t8 extends v8 implements LongConsumer, j$.util.a1 {
     public final boolean tryAdvance(LongConsumer longConsumer) {
         switch (this.f) {
             case 0:
-                boolean z10 = this.c;
+                boolean z4 = this.c;
                 Spliterator spliterator = this.a;
-                if (z10) {
+                if (z4) {
                     this.c = false;
                     boolean tryAdvance = ((j$.util.a1) spliterator).tryAdvance((LongConsumer) this);
                     if (tryAdvance && a()) {

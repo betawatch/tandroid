@@ -1,36 +1,45 @@
 package af;
 
-import android.app.Activity;
-import android.content.ComponentCallbacks2;
-import android.view.View;
-import j3.k0;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f {
-    public final Activity a;
-    public final cf.a b;
-    public String c;
-    public int d;
-    public int e = 0;
-    public boolean f = false;
-    public k0 g;
-    public int h;
-    public int i;
-    public View j;
-    public View k;
+public class f {
+    public Runnable a;
+    public Runnable b;
+    public Runnable c;
 
-    public f(Activity activity, cf.a aVar) {
-        this.a = activity;
-        this.b = aVar;
+    public f(Runnable runnable, Runnable runnable2) {
+        this.a = runnable;
+        this.c = runnable2;
     }
 
-    public final g a() {
-        ComponentCallbacks2 componentCallbacks2 = this.a;
-        if (componentCallbacks2 instanceof bf.a) {
-            return new g(((LaunchActivity) ((bf.a) componentCallbacks2)).i0, this);
+    public final void a(boolean z4) {
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
         }
-        return null;
+        c(z4);
+    }
+
+    public void b() {
+        c(false);
+    }
+
+    public void c(boolean z4) {
+        Runnable runnable = this.c;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    public void d() {
+        Runnable runnable = this.a;
+        if (runnable != null) {
+            runnable.run();
+            this.a = null;
+        }
+    }
+
+    public final void e(Runnable runnable) {
+        this.b = runnable;
     }
 }

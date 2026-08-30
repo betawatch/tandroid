@@ -1,29 +1,50 @@
 package eg;
 
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import gg.v2;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c0 implements Runnable {
+public final /* synthetic */ class c0 implements org.telegram.ui.ActionBar.c2, kl0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ v0 b;
 
-    public /* synthetic */ c0(Utilities.Callback callback, HashMap hashMap, int i10) {
+    public /* synthetic */ c0(v0 v0Var, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = hashMap;
+        this.b = v0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.kl0
+    public boolean f(int i10, View view) {
+        v0 v0Var = this.b;
+        v0Var.d.getOnItemClickListener().f(i10, view);
+        if (v0Var.e0 != 19) {
+            try {
+                view.performHapticFeedback(0);
+            } catch (Exception unused) {
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                v0 v0Var = this.b;
+                v0Var.H0.presentFragment(new PremiumPreviewFragment(0, null));
+                v0Var.dismiss();
+                d2Var.dismiss();
+                break;
+            case 1:
+                d2Var.dismiss();
+                this.b.n1();
                 break;
             default:
-                this.b.run(this.c);
+                this.b.dismiss();
+                v2.e0(0, null);
                 break;
         }
     }

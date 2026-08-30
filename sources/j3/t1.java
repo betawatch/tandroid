@@ -1,28 +1,23 @@
 package j3;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class t1 extends IOException {
-    public final boolean a;
-    public final int b;
+public abstract class t1 extends Exception implements g {
+    public final int a;
+    public final long b;
 
-    public t1(String str, Throwable th2, boolean z10, int i10) {
+    static {
+        int i10 = h5.d0.a;
+        Integer.toString(0, 36);
+        Integer.toString(1, 36);
+        Integer.toString(2, 36);
+        Integer.toString(3, 36);
+        Integer.toString(4, 36);
+    }
+
+    public t1(String str, Throwable th2, int i10, long j10) {
         super(str, th2);
-        this.a = z10;
-        this.b = i10;
-    }
-
-    public static t1 a(String str, Exception exc) {
-        return new t1(str, exc, true, 1);
-    }
-
-    public static t1 b(String str, Exception exc) {
-        return new t1(str, exc, true, 4);
-    }
-
-    public static t1 c(String str) {
-        return new t1(str, null, false, 1);
+        this.a = i10;
+        this.b = j10;
     }
 }

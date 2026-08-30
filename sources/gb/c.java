@@ -1,29 +1,16 @@
 package gb;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
-import z5.l;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c {
-    public final HashMap a = new HashMap();
+public final /* synthetic */ class c implements Comparator {
+    public static final /* synthetic */ c a = new c();
 
-    public c(Set set) {
-        HashMap hashMap = new HashMap();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            b bVar = (b) it.next();
-            bVar.getClass();
-            if (this.a.containsKey(ib.b.class)) {
-                Integer num = (Integer) hashMap.get(ib.b.class);
-                l.h(num);
-                if (num.intValue() <= 0) {
-                }
-            }
-            this.a.put(ib.b.class, bVar.a);
-            hashMap.put(ib.b.class, 0);
-        }
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        ((fb.a) obj2).getClass();
+        ((fb.a) obj).getClass();
+        return 0;
     }
 }

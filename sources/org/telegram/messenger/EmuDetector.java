@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class EmuDetector {
     private static final String IP = "10.0.2.15";
@@ -38,7 +38,7 @@ public class EmuDetector {
     private boolean isTelephony = false;
     private boolean isCheckPackage = true;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public enum EmulatorTypes {
         GENY,
         ANDY,
@@ -48,12 +48,12 @@ public class EmuDetector {
         X86
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface OnEmulatorDetectorListener {
-        void onResult(boolean z10);
+        void onResult(boolean z4);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class Property {
         public String name;
         public String seek_value;
@@ -87,8 +87,8 @@ public class EmuDetector {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private boolean checkBasic() {
-        boolean z10;
-        boolean z11 = false;
+        boolean z4;
+        boolean z10 = false;
         if (!Build.BOARD.toLowerCase().contains("nox") && !Build.BOOTLOADER.toLowerCase().contains("nox") && !Build.FINGERPRINT.startsWith("generic")) {
             String str = Build.MODEL;
             if (!str.toLowerCase().contains("google_sdk") && !str.toLowerCase().contains("droid4x") && !str.toLowerCase().contains("emulator") && !str.contains("Android SDK built for x86") && !Build.MANUFACTURER.toLowerCase().contains("genymotion")) {
@@ -96,24 +96,24 @@ public class EmuDetector {
                 if (!str2.toLowerCase().contains("goldfish") && !str2.toLowerCase().contains("vbox86") && !str2.toLowerCase().contains("android_x86") && !str2.toLowerCase().contains("nox") && !str2.toLowerCase().contains("ranchu")) {
                     String str3 = Build.PRODUCT;
                     if (!str3.equals("sdk") && !str3.equals("google_sdk") && !str3.equals("sdk_x86") && !str3.equals("vbox86p") && !str3.toLowerCase().contains("nox") && !Build.SERIAL.toLowerCase().contains("nox")) {
-                        z10 = false;
-                        if (!z10) {
+                        z4 = false;
+                        if (!z4) {
                             return true;
                         }
                         if (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) {
-                            z11 = true;
+                            z10 = true;
                         }
-                        boolean z12 = z10 | z11;
-                        if (z12) {
+                        boolean z11 = z4 | z10;
+                        if (z11) {
                             return true;
                         }
-                        return z12 | "google_sdk".equals(Build.PRODUCT);
+                        return z11 | "google_sdk".equals(Build.PRODUCT);
                     }
                 }
             }
         }
-        z10 = true;
-        if (!z10) {
+        z4 = true;
+        if (!z4) {
         }
     }
 
@@ -130,7 +130,7 @@ public class EmuDetector {
     private boolean checkFiles(String[] strArr, EmulatorTypes emulatorTypes) {
         File file;
         for (String str : strArr) {
-            if (f0.e.b(this.mContext, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
+            if (f0.f.b(this.mContext, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
                 file = new File(str);
             } else if ((str.contains("/") && emulatorTypes == EmulatorTypes.NOX) || emulatorTypes == EmulatorTypes.BLUE) {
                 file = new File(Environment.getExternalStorageDirectory() + str);
@@ -155,11 +155,11 @@ public class EmuDetector {
     }
 
     private boolean checkIp() {
-        if (f0.e.b(this.mContext, "android.permission.INTERNET") != 0) {
+        if (f0.f.b(this.mContext, "android.permission.INTERNET") != 0) {
             return false;
         }
         String[] strArr = {"/system/bin/netcfg"};
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         try {
             ProcessBuilder processBuilder = new ProcessBuilder(strArr);
             processBuilder.directory(new File("/system/bin/"));
@@ -167,16 +167,16 @@ public class EmuDetector {
             InputStream inputStream = processBuilder.start().getInputStream();
             byte[] bArr = new byte[1024];
             while (inputStream.read(bArr) != -1) {
-                sb2.append(new String(bArr));
+                sb.append(new String(bArr));
             }
             inputStream.close();
         } catch (Exception unused) {
         }
-        String sb3 = sb2.toString();
-        if (TextUtils.isEmpty(sb3)) {
+        String sb2 = sb.toString();
+        if (TextUtils.isEmpty(sb2)) {
             return false;
         }
-        for (String str : sb3.split("\n")) {
+        for (String str : sb2.split("\n")) {
             if ((str.contains("wlan0") || str.contains("tunl0") || str.contains("eth0")) && str.contains(IP)) {
                 return true;
             }
@@ -222,8 +222,8 @@ public class EmuDetector {
                     FileInputStream fileInputStream = new FileInputStream(file);
                     fileInputStream.read(bArr);
                     fileInputStream.close();
-                } catch (Exception e10) {
-                    e10.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
                 String str = new String(bArr);
                 for (String str2 : QEMU_DRIVERS) {
@@ -252,7 +252,7 @@ public class EmuDetector {
     }
 
     private boolean checkTelephony() {
-        if (f0.e.b(this.mContext, "android.permission.READ_PHONE_STATE") == 0 && this.isTelephony && isSupportTelePhony()) {
+        if (f0.f.b(this.mContext, "android.permission.READ_PHONE_STATE") == 0 && this.isTelephony && isSupportTelePhony()) {
             return checkPhoneNumber() || checkDeviceId() || checkImsi() || checkOperatorNameAndroid();
         }
         return false;
@@ -318,13 +318,13 @@ public class EmuDetector {
         return this.isTelephony;
     }
 
-    public EmuDetector setCheckPackage(boolean z10) {
-        this.isCheckPackage = z10;
+    public EmuDetector setCheckPackage(boolean z4) {
+        this.isCheckPackage = z4;
         return this;
     }
 
-    public EmuDetector setCheckTelephony(boolean z10) {
-        this.isTelephony = z10;
+    public EmuDetector setCheckTelephony(boolean z4) {
+        this.isTelephony = z4;
         return this;
     }
 

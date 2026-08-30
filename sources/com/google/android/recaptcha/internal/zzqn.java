@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzqn extends zzqq {
     private final byte[] zzf;
@@ -13,7 +13,7 @@ final class zzqn extends zzqq {
     private int zzj;
     private int zzk;
 
-    public /* synthetic */ zzqn(byte[] bArr, int i10, int i11, boolean z10, zzqp zzqpVar) {
+    public /* synthetic */ zzqn(byte[] bArr, int i10, int i11, boolean z4, zzqp zzqpVar) {
         super(null);
         this.zzk = ConnectionsManager.DEFAULT_DATACENTER_ID;
         this.zzf = bArr;

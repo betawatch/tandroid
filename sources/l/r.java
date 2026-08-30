@@ -13,7 +13,7 @@ import android.view.SubMenu;
 import android.view.View;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class r extends f2.v implements MenuItem {
     public final l0.a c;
@@ -193,14 +193,14 @@ public final class r extends f2.v implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setCheckable(boolean z10) {
-        this.c.setCheckable(z10);
+    public final MenuItem setCheckable(boolean z4) {
+        this.c.setCheckable(z4);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setChecked(boolean z10) {
-        this.c.setChecked(z10);
+    public final MenuItem setChecked(boolean z4) {
+        this.c.setChecked(z4);
         return this;
     }
 
@@ -211,8 +211,8 @@ public final class r extends f2.v implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setEnabled(boolean z10) {
-        this.c.setEnabled(z10);
+    public final MenuItem setEnabled(boolean z4) {
+        this.c.setEnabled(z4);
         return this;
     }
 
@@ -259,8 +259,8 @@ public final class r extends f2.v implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c3, char c6) {
-        this.c.setShortcut(c3, c6);
+    public final MenuItem setShortcut(char c3, char c10) {
+        this.c.setShortcut(c3, c10);
         return this;
     }
 
@@ -294,8 +294,8 @@ public final class r extends f2.v implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setVisible(boolean z10) {
-        return this.c.setVisible(z10);
+    public final MenuItem setVisible(boolean z4) {
+        return this.c.setVisible(z4);
     }
 
     @Override // android.view.MenuItem
@@ -317,8 +317,8 @@ public final class r extends f2.v implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c3, char c6, int i10, int i11) {
-        this.c.setShortcut(c3, c6, i10, i11);
+    public final MenuItem setShortcut(char c3, char c10, int i10, int i11) {
+        this.c.setShortcut(c3, c10, i10, i11);
         return this;
     }
 

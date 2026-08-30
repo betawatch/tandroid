@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import o5.p;
-import p5.a;
-import p5.c;
-import p5.f;
-import p5.g;
-import q5.h;
-import q5.i;
-import s5.b;
-import z5.l;
+import b6.m;
+import q5.p;
+import r5.a;
+import r5.c;
+import r5.f;
+import r5.g;
+import s5.h;
+import s5.i;
+import u5.b;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -33,7 +33,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (cVar == null || !cVar.b()) {
             return null;
         }
-        l.e("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         return cVar.j;
     }
 
@@ -54,11 +54,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+    java.lang.NullPointerException
      */
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
@@ -131,7 +127,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     public void onReceiveActionMediaButton(f fVar, Intent intent) {
         if ((fVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
             Bundle extras = intent.getExtras();
-            l.h(extras);
+            m.h(extras);
             KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
             if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
                 togglePlayback((c) fVar);
@@ -150,7 +146,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        l.e("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
             h.x(new i(remoteMediaClient, 2));
         } else {
@@ -163,7 +159,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        l.e("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
             h.x(new i(remoteMediaClient, 1));
         } else {

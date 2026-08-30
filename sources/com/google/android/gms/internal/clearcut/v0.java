@@ -1,83 +1,99 @@
 package com.google.android.gms.internal.clearcut;
 
-import android.content.Context;
-import android.content.Intent;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.tasks.Task;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.charset.Charset;
 
 /* loaded from: classes.dex */
-public final class v0 extends com.google.android.gms.common.api.j {
-    public static int k = 1;
+public final class v0 {
+    public static final v0 c = new v0();
+    public final k0 a;
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
 
-    public v0(Context context, com.google.android.gms.common.api.i iVar) {
-        super(context, j8.j.a, j8.i.a, iVar);
-    }
-
-    public Intent f() {
-        int h = h();
-        int i10 = h - 1;
-        if (h == 0) {
-            throw null;
-        }
-        com.google.android.gms.common.api.b bVar = this.d;
-        Context context = this.a;
-        if (i10 == 2) {
-            m5.h.a.g("getFallbackSignInIntent()", new Object[0]);
-            Intent a2 = m5.h.a(context, (GoogleSignInOptions) bVar);
-            a2.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
-            return a2;
-        }
-        if (i10 == 3) {
-            return m5.h.a(context, (GoogleSignInOptions) bVar);
-        }
-        m5.h.a.g("getNoImplementationSignInIntent()", new Object[0]);
-        Intent a10 = m5.h.a(context, (GoogleSignInOptions) bVar);
-        a10.setAction("com.google.android.gms.auth.NO_IMPL");
-        return a10;
-    }
-
-    public Task g() {
-        BasePendingResult basePendingResult;
-        boolean z10 = h() == 3;
-        m5.h.a.g("Signing out", new Object[0]);
-        m5.h.b(this.a);
-        com.google.android.gms.common.api.internal.t0 t0Var = this.h;
-        if (z10) {
-            BasePendingResult uVar = new com.google.android.gms.common.api.internal.u(t0Var, 0);
-            uVar.a(Status.e);
-            basePendingResult = uVar;
-        } else {
-            m5.g gVar = new m5.g(t0Var, 0);
-            t0Var.b.d(1, gVar);
-            basePendingResult = gVar;
-        }
-        return z5.l.n(basePendingResult, new ab.b(27));
-    }
-
-    public synchronized int h() {
-        int i10;
-        try {
-            i10 = k;
-            if (i10 == 1) {
-                Context context = this.a;
-                w5.d dVar = w5.d.d;
-                int d = dVar.d(context, 12451000);
-                if (d == 0) {
-                    i10 = 4;
-                    k = 4;
-                } else if (dVar.b(context, null, d) != null || k6.e.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
-                    i10 = 2;
-                    k = 2;
-                } else {
-                    i10 = 3;
-                    k = 3;
-                }
+    public v0() {
+        String[] strArr = {"com.google.protobuf.AndroidProto3SchemaFactory"};
+        k0 k0Var = null;
+        for (int i10 = 0; i10 <= 0; i10++) {
+            try {
+                k0Var = (k0) Class.forName(strArr[0]).getConstructor(null).newInstance(null);
+            } catch (Throwable unused) {
+                k0Var = null;
             }
-        } catch (Throwable th2) {
-            throw th2;
+            if (k0Var != null) {
+                break;
+            }
         }
-        return i10;
+        this.a = k0Var == null ? new k0() : k0Var;
+    }
+
+    public final a1 a(Class cls) {
+        s0 s0Var;
+        h0 h0Var;
+        d1 d1Var;
+        r rVar;
+        n0 n0Var;
+        a1 n10;
+        Class cls2;
+        Charset charset = a0.a;
+        if (cls == null) {
+            throw new NullPointerException("messageType");
+        }
+        ConcurrentHashMap concurrentHashMap = this.b;
+        a1 a1Var = (a1) concurrentHashMap.get(cls);
+        if (a1Var != null) {
+            return a1Var;
+        }
+        k0 k0Var = this.a;
+        k0Var.getClass();
+        Class cls3 = b1.a;
+        if (!z.class.isAssignableFrom(cls) && (cls2 = b1.a) != null && !cls2.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+        }
+        x0 zzb = k0Var.a.zzb(cls);
+        y0 y0Var = zzb.b;
+        j jVar = zzb.a;
+        if ((y0Var.d & 2) != 2) {
+            if (z.class.isAssignableFrom(cls)) {
+                if ((zzb.b.d & 1) == 1) {
+                    s0Var = t0.b;
+                    h0Var = h0.b;
+                    d1Var = b1.d;
+                    rVar = s.a;
+                } else {
+                    s0Var = t0.b;
+                    h0Var = h0.b;
+                    d1Var = b1.d;
+                    rVar = null;
+                }
+                n0Var = o0.b;
+            } else {
+                if ((zzb.b.d & 1) == 1) {
+                    s0Var = t0.a;
+                    h0Var = h0.a;
+                    d1Var = b1.b;
+                    rVar = s.b;
+                    if (rVar == null) {
+                        throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+                    }
+                } else {
+                    s0Var = t0.a;
+                    h0Var = h0.a;
+                    d1Var = b1.c;
+                    rVar = null;
+                }
+                n0Var = o0.a;
+            }
+            n10 = q0.n(zzb, s0Var, h0Var, d1Var, rVar, n0Var);
+        } else if (z.class.isAssignableFrom(cls)) {
+            n10 = new r0(b1.d, s.a, jVar);
+        } else {
+            d1 d1Var2 = b1.b;
+            r rVar2 = s.b;
+            if (rVar2 == null) {
+                throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+            }
+            n10 = new r0(d1Var2, rVar2, jVar);
+        }
+        a1 a1Var2 = (a1) concurrentHashMap.putIfAbsent(cls, n10);
+        return a1Var2 != null ? a1Var2 : n10;
     }
 }

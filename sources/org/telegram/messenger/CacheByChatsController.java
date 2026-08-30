@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class CacheByChatsController {
     public static int KEEP_MEDIA_DELETE = 4;
@@ -26,7 +26,7 @@ public class CacheByChatsController {
     private boolean gotKeepMediaByTypes = false;
     private final int[] keepMediaByTypes = {-1, -1, -1, -1};
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class KeepMediaException {
         public final long dialogId;
         public int keepMedia;
@@ -37,7 +37,7 @@ public class CacheByChatsController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class KeepMediaFile {
         final File file;
         boolean isStory;
@@ -81,7 +81,7 @@ public class CacheByChatsController {
         if (!this.gotKeepMediaByTypes) {
             this.gotKeepMediaByTypes = true;
             for (int i11 = 0; i11 < 4; i11++) {
-                this.keepMediaByTypes[i11] = SharedConfig.getPreferences().getInt(j7.l1.k(i11, "keep_media_type_"), getDefault(i11));
+                this.keepMediaByTypes[i11] = SharedConfig.getPreferences().getInt(kh.a2.j(i11, "keep_media_type_"), getDefault(i11));
             }
         }
         int i12 = this.keepMediaByTypes[i10];
@@ -152,9 +152,9 @@ public class CacheByChatsController {
     }
 
     public void saveKeepMediaExceptions(int i10, ArrayList<KeepMediaException> arrayList) {
-        String k9 = j7.l1.k(i10, "keep_media_exceptions_");
+        String j10 = kh.a2.j(i10, "keep_media_exceptions_");
         if (arrayList.isEmpty()) {
-            UserConfig.getInstance(this.currentAccount).getPreferences().edit().remove(k9).apply();
+            UserConfig.getInstance(this.currentAccount).getPreferences().edit().remove(j10).apply();
             return;
         }
         int size = arrayList.size();
@@ -164,7 +164,7 @@ public class CacheByChatsController {
             allocate.putLong(arrayList.get(i11).dialogId);
             allocate.putInt(arrayList.get(i11).keepMedia);
         }
-        UserConfig.getInstance(this.currentAccount).getPreferences().edit().putString(k9, Utilities.bytesToHex(allocate.array())).apply();
+        UserConfig.getInstance(this.currentAccount).getPreferences().edit().putString(j10, Utilities.bytesToHex(allocate.array())).apply();
         allocate.clear();
     }
 
@@ -172,7 +172,7 @@ public class CacheByChatsController {
         if (!this.gotKeepMediaByTypes) {
             this.gotKeepMediaByTypes = true;
             for (int i12 = 0; i12 < 4; i12++) {
-                this.keepMediaByTypes[i12] = SharedConfig.getPreferences().getInt(j7.l1.k(i12, "keep_media_type_"), getDefault(i12));
+                this.keepMediaByTypes[i12] = SharedConfig.getPreferences().getInt(kh.a2.j(i12, "keep_media_type_"), getDefault(i12));
             }
         }
         this.keepMediaByTypes[i10] = i11;

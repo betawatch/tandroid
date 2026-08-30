@@ -1,19 +1,13 @@
 package qa;
 
-import java.lang.reflect.GenericArrayType;
-import java.lang.reflect.Type;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+@Retention(RetentionPolicy.RUNTIME)
 /* loaded from: classes.dex */
-public class a implements na.v {
-    @Override // na.v
-    public final na.u create(na.g gVar, ua.a aVar) {
-        Type type = aVar.b;
-        boolean z10 = type instanceof GenericArrayType;
-        if (!z10 && (!(type instanceof Class) || !((Class) type).isArray())) {
-            return null;
-        }
-        Type genericComponentType = z10 ? ((GenericArrayType) type).getGenericComponentType() : ((Class) type).getComponentType();
-        return new b(gVar, gVar.b(new ua.a(genericComponentType)), pa.d.h(genericComponentType));
-    }
+public @interface a {
+    boolean nullSafe() default true;
+
+    Class value();
 }

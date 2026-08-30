@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.e0;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import ld.e0;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzlu extends i implements p {
     int zza;
@@ -19,28 +20,28 @@ final class zzlu extends i implements p {
         this.zzb = zzlyVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzlu zzluVar = new zzlu(this.zzb, cVar);
         zzluVar.zzc = obj;
         return zzluVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlu) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzlu) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzhk zzhkVar2;
         zzcr zzD;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
-        qc.i iVar = qc.i.a;
+        sc.i iVar = sc.i.a;
         if (i10 == 0) {
-            c7.b(obj);
+            p7.b(obj);
             zzhk zzhkVar3 = (zzhk) this.zzc;
             zzdj zzn = this.zzb.zzn();
             zzmc[] zzmcVarArr = {zzmc.zzd, zzmc.zzc, zzmc.zzb};
@@ -55,7 +56,7 @@ final class zzlu extends i implements p {
         }
         if (i10 != 1) {
             zzhkVar2 = (zzhk) this.zzc;
-            c7.b(obj);
+            p7.b(obj);
             zzly zzlyVar = this.zzb;
             zzlyVar.zza = e0.a();
             zzD = zzlyVar.zzD();
@@ -63,7 +64,7 @@ final class zzlu extends i implements p {
             return iVar;
         }
         zzhkVar = (zzhk) this.zzc;
-        c7.b(obj);
+        p7.b(obj);
         if (((Boolean) obj).booleanValue()) {
             return iVar;
         }

@@ -1,18 +1,61 @@
 package cg;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class e {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final int d;
-    public int e;
+import org.telegram.messenger.R;
 
-    public e(int i10, int i11, String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        this.c = i10;
-        this.d = i11;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class e extends m {
+    @Override // cg.m
+    public final float a() {
+        return 0.7f;
+    }
+
+    @Override // cg.m
+    public final int c() {
+        return -13318311;
+    }
+
+    @Override // cg.m
+    public final float d() {
+        return 0.5f;
+    }
+
+    @Override // cg.m
+    public final int e() {
+        return R.raw.photo_neon;
+    }
+
+    @Override // cg.m
+    public final float g() {
+        return 0.2f;
+    }
+
+    @Override // cg.m
+    public final float h() {
+        return 1.45f;
+    }
+
+    @Override // cg.m
+    public final String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMaskLight";
+        }
+        if (i10 == 1) {
+            return "compositeWithMaskLight";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brushLight";
+    }
+
+    @Override // cg.m
+    public final float k() {
+        return 0.07f;
+    }
+
+    @Override // cg.m
+    public final int l() {
+        return R.drawable.paint_neon_brush;
     }
 }

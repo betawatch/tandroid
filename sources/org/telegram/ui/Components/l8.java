@@ -1,11 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface l8 {
-    void T0(int i10, int i11);
+public final class l8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w8 b;
 
-    void dismiss();
+    public /* synthetic */ l8(w8 w8Var, int i10) {
+        this.a = i10;
+        this.b = w8Var;
+    }
 
-    void e1();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.f = false;
+                break;
+            default:
+                w8 w8Var = this.b;
+                w8Var.i0(w8Var.C ? 1.0f : 0.0f, false);
+                w8Var.C = false;
+                break;
+        }
+    }
 }

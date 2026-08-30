@@ -1,33 +1,66 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.regex.Pattern;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e6 implements RequestDelegate {
+public final /* synthetic */ class e6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
 
-    public /* synthetic */ e6(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = notificationCenterDelegate;
+    public /* synthetic */ e6(int i10, int i11) {
+        this.a = i11;
         this.b = i10;
-        this.c = i11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController) this.d).lambda$loadMoreMusic$12(this.b, this.c, tLObject, tL_error);
+                MediaController.lambda$loadGalleryPhotosAlbums$57(this.b);
+                break;
+            case 1:
+                MediaController.lambda$checkGallery$1(this.b);
+                break;
+            case 2:
+                NotificationRepeat.lambda$onHandleIntent$0(this.b);
+                break;
+            case 3:
+                PushListenerController.lambda$processRemoteMessage$3(this.b);
+                break;
+            case 4:
+                PushListenerController.lambda$processRemoteMessage$4(this.b);
+                break;
+            case 5:
+                SharedConfig.lambda$checkLogsToDelete$3(this.b);
+                break;
+            case 6:
+                ConnectionsManager.lambda$onUpdate$13(this.b);
+                break;
+            case 7:
+                ConnectionsManager.lambda$onSessionCreated$14(this.b);
+                break;
+            case 8:
+                ConnectionsManager.lambda$onLogout$16(this.b);
+                break;
+            case 9:
+                MediaDataController.getInstance(this.b).checkStickers(5);
+                break;
+            case 10:
+                int i10 = this.b;
+                Pattern pattern = LaunchActivity.y1;
+                ApplicationLoader.mainInterfacePausedStageQueue = true;
+                ApplicationLoader.mainInterfacePausedStageQueueTime = 0L;
+                if (VoIPService.getSharedInstance() == null) {
+                    MessagesController.getInstance(i10).ignoreSetOnline = false;
+                    break;
+                }
                 break;
             default:
-                ((MessagesController) this.d).lambda$getDifference$359(this.b, this.c, tLObject, tL_error);
+                MediaDataController.getInstance(this.b).loadAttachMenuBots(false, true);
                 break;
         }
     }

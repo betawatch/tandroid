@@ -1,66 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g41 implements ValueAnimator.AnimatorUpdateListener {
+public final class g41 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d61 b;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public /* synthetic */ g41(d61 d61Var, int i10) {
+    public /* synthetic */ g41(SecretMediaViewer secretMediaViewer, int i10) {
         this.a = i10;
-        this.b = d61Var;
+        this.b = secretMediaViewer;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                d61 d61Var = this.b;
-                d61Var.getClass();
-                d61Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.l0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.l0 = null;
+                    break;
+                }
                 break;
             case 1:
-                this.b.m();
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.D;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.C.setVisibility(8);
+                    secretMediaViewer2.D = null;
+                    secretMediaViewer2.X.scrollTo(0, 0);
+                    break;
+                }
                 break;
             case 2:
-                d61 d61Var2 = this.b;
-                View view = d61Var2.p0;
-                if (view != null) {
-                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                }
-                int v = org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G8, d61Var2.V0), i0.a.k(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
-                View view2 = d61Var2.i0;
-                if (view2 != null) {
-                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                }
-                org.telegram.ui.Components.fn fnVar = d61Var2.j0;
-                if (fnVar != null) {
-                    fnVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.l0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.l0 = null;
                     break;
                 }
                 break;
             default:
-                d61 d61Var3 = this.b;
-                x41 x41Var = d61Var3.T;
-                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d61Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
-                View view3 = d61Var3.i0;
-                if (view3 != null) {
-                    view3.setAlpha(floatValue);
-                }
-                org.telegram.ui.Components.fn fnVar2 = d61Var3.j0;
-                if (fnVar2 != null) {
-                    fnVar2.setAlpha(floatValue * floatValue);
-                }
-                x41Var.setAlpha(floatValue);
-                x41Var.invalidate();
-                d61Var3.invalidate();
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.H0 = null;
+                secretMediaViewer4.e.invalidate();
                 break;
         }
     }

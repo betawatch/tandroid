@@ -1,58 +1,105 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import java.util.regex.Pattern;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ja0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ x60 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.ChatInvite d;
-    public final /* synthetic */ LaunchActivity e;
+public final /* synthetic */ class ja0 implements h5.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ g00 c;
+    public final /* synthetic */ Long d;
 
-    public ja0(LaunchActivity launchActivity, x60 x60Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
-        this.e = launchActivity;
-        this.a = x60Var;
-        this.b = zArr;
-        this.c = bundle;
-        this.d = chatInvite;
+    public /* synthetic */ ja0(LaunchActivity launchActivity, g00 g00Var, Long l10, int i10) {
+        this.a = i10;
+        this.b = launchActivity;
+        this.c = g00Var;
+        this.d = l10;
     }
 
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onError() {
-        LaunchActivity launchActivity = this.e;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.c5.u0((org.telegram.ui.ActionBar.o2) j7.l1.i(1, launchActivity.Z), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
+    @Override // h5.d
+    public final void accept(Object obj) {
+        org.telegram.ui.Components.qc X;
+        int i10;
+        int i11;
+        org.telegram.ui.Components.qc X2;
+        int i12;
+        int i13;
+        int i14 = this.a;
+        Long l10 = this.d;
+        g00 g00Var = this.c;
+        LaunchActivity launchActivity = this.b;
+        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
+        switch (i14) {
+            case 0:
+                Pattern pattern = LaunchActivity.y1;
+                try {
+                    g00Var.run();
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R != null) {
+                            storyItem.dialogId = l10.longValue();
+                            nh.i9 createOverlayStoryViewer = R.createOverlayStoryViewer();
+                            createOverlayStoryViewer.v();
+                            createOverlayStoryViewer.G(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        X = org.telegram.ui.Components.qc.X();
+                        if (X != null) {
+                            i10 = R.raw.story_bomb1;
+                            i11 = R.string.StoryNotFound;
+                        }
+                    }
+                } else {
+                    X = org.telegram.ui.Components.qc.X();
+                    if (X != null) {
+                        i10 = R.raw.story_bomb2;
+                        i11 = R.string.StoryNotFound;
+                    }
+                }
+                kh.a2.v(i11, X, i10, 36);
+                break;
+            default:
+                Pattern pattern2 = LaunchActivity.y1;
+                try {
+                    g00Var.run();
+                } catch (Exception e6) {
+                    FileLog.e(e6);
+                }
+                org.telegram.ui.ActionBar.p2 R2 = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R2 != null) {
+                            storyItem.dialogId = l10.longValue();
+                            nh.i9 createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
+                            createOverlayStoryViewer2.v();
+                            createOverlayStoryViewer2.G(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        X2 = org.telegram.ui.Components.qc.X();
+                        if (X2 != null) {
+                            i12 = R.raw.story_bomb1;
+                            i13 = R.string.StoryNotFound;
+                        }
+                    }
+                } else {
+                    X2 = org.telegram.ui.Components.qc.X();
+                    if (X2 != null) {
+                        i12 = R.raw.story_bomb2;
+                        i13 = R.string.StoryNotFound;
+                    }
+                }
+                kh.a2.v(i13, X2, i12, 36);
+                break;
         }
-        try {
-            this.a.run();
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onMessagesLoaded(boolean z10) {
-        try {
-            this.a.run();
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
-        if (this.b[0]) {
-            return;
-        }
-        tn tnVar = new tn(this.c);
-        TLRPC.ChatInvite chatInvite = this.d;
-        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
-            tnVar.G5 = chatInvite;
-        }
-        ((ActionBarLayout) this.e.O()).P(tnVar);
     }
 }

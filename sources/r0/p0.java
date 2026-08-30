@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.animation.PathInterpolator;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class p0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ w0 a;
@@ -39,10 +39,10 @@ public final class p0 implements ValueAnimator.AnimatorUpdateListener {
             if ((this.d & i11) == 0) {
                 b1Var.c(i11, j1Var.f(i11));
             } else {
-                i0.b f9 = j1Var.f(i11);
-                i0.b f10 = this.c.a.f(i11);
-                float f11 = 1.0f - b10;
-                b1Var.c(i11, m1.e(f9, (int) (((f9.a - f10.a) * f11) + 0.5d), (int) (((f9.b - f10.b) * f11) + 0.5d), (int) (((f9.c - f10.c) * f11) + 0.5d), (int) (((f9.d - f10.d) * f11) + 0.5d)));
+                i0.b f10 = j1Var.f(i11);
+                i0.b f11 = this.c.a.f(i11);
+                float f12 = 1.0f - b10;
+                b1Var.c(i11, m1.e(f10, (int) (((f10.a - f11.a) * f12) + 0.5d), (int) (((f10.b - f11.b) * f12) + 0.5d), (int) (((f10.c - f11.c) * f12) + 0.5d), (int) (((f10.d - f11.d) * f12) + 0.5d)));
             }
         }
         r0.g(this.e, b1Var.b(), Collections.singletonList(w0Var));

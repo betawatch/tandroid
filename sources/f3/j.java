@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j extends SQLiteOpenHelper {
     public static final String c = "INSERT INTO global_log_event_state VALUES (" + System.currentTimeMillis() + ")";
@@ -24,10 +24,10 @@ public final class j extends SQLiteOpenHelper {
     public static void a(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
         List list = e;
         if (i11 > list.size()) {
-            StringBuilder o10 = com.google.android.recaptcha.internal.a.o("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
-            o10.append(list.size());
-            o10.append(" migrations are provided");
-            throw new IllegalArgumentException(o10.toString());
+            StringBuilder m9 = e2.c.m("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
+            m9.append(list.size());
+            m9.append(" migrations are provided");
+            throw new IllegalArgumentException(m9.toString());
         }
         while (i10 < i11) {
             switch (((i) list.get(i10)).a) {

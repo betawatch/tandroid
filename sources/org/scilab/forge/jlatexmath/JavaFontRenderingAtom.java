@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class JavaFontRenderingAtom extends Atom {
     private TeXFormula.FontInfos fontInfos;
@@ -25,7 +25,7 @@ public class JavaFontRenderingAtom extends Atom {
         }
         DefaultTeXFont defaultTeXFont = (DefaultTeXFont) teXEnvironment.getTeXFont();
         int i10 = (defaultTeXFont.isIt ? 2 : 0) | (defaultTeXFont.isBold ? 1 : 0);
-        boolean z10 = defaultTeXFont.isRoman;
+        boolean z4 = defaultTeXFont.isRoman;
         if (defaultTeXFont.isSs) {
             TeXFormula.FontInfos fontInfos = this.fontInfos;
             String str = fontInfos.sansserif;
@@ -47,7 +47,7 @@ public class JavaFontRenderingAtom extends Atom {
                 font3 = font;
             }
         }
-        return new JavaFontRenderingBox(this.str, i10, DefaultTeXFont.getSizeFactor(teXEnvironment.getStyle()), font3, z10);
+        return new JavaFontRenderingBox(this.str, i10, DefaultTeXFont.getSizeFactor(teXEnvironment.getStyle()), font3, z4);
     }
 
     public JavaFontRenderingAtom(String str, TeXFormula.FontInfos fontInfos) {

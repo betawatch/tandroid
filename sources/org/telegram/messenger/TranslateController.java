@@ -34,12 +34,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k31;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.b31;
+import org.telegram.ui.n31;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class TranslateController extends BaseController {
     private static final int GROUPING_TRANSLATIONS_TIMEOUT = 80;
@@ -78,7 +78,7 @@ public class TranslateController extends BaseController {
     private static final List<String> allLanguages = Arrays.asList("af", "sq", "am", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "zh-cn", "zh", "zh-tw", "co", "hr", "cs", "da", "nl", "en", "eo", "et", "fi", "fr", "fy", ImageLoader.AUTOPLAY_FILTER_NONLOOP, "ka", "de", "el", "gu", "ht", "ha", "haw", "he", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jv", "kn", "kk", "km", "rw", "ko", "ku", "ky", "lo", "la", "lv", "lt", "lb", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "ny", "or", "ps", "fa", "pl", "pt", "pt-br", "pa", "ro", "ru", "sm", "gd", "sr", "st", "sn", "sd", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tl", "tg", "ta", "tt", "te", "th", "tr", "tk", "uk", "ur", "ug", "uz", "vi", "cy", "xh", "yi", "yo", "zu");
     private static LinkedHashSet<String> suggestedLanguageCodes = null;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class Language {
         public String code;
         public String displayName;
@@ -86,7 +86,7 @@ public class TranslateController extends BaseController {
         public String q;
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class MessageKey {
         public long dialogId;
         public int id;
@@ -97,7 +97,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class PendingPollTranslation {
         ArrayList<Utilities.Callback3<Integer, PollText, String>> callbacks;
         int delay;
@@ -117,7 +117,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class PendingRichTranslation {
         ArrayList<Utilities.Callback3<Integer, TL_iv.RichMessage, String>> callbacks;
         int delay;
@@ -134,7 +134,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class PendingTranslation {
         ArrayList<Utilities.Callback4<Boolean, Integer, TLRPC.TL_textWithEntities, String>> callbacks;
         int delay;
@@ -154,15 +154,15 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class PollText extends TLObject {
         public static final int constructor = 613759672;
         public ArrayList<TLRPC.PollAnswer> answers = new ArrayList<>();
         public TLRPC.TL_textWithEntities question;
         public TLRPC.TL_textWithEntities solution;
 
-        public static PollText TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (PollText) TLObject.TLdeserialize(PollText.class, 613759672 != i10 ? null : new PollText(), inputSerializedData, i10, z10);
+        public static PollText TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
+            return (PollText) TLObject.TLdeserialize(PollText.class, 613759672 != i10 ? null : new PollText(), inputSerializedData, i10, z4);
         }
 
         public static PollText fromMessage(MessageObject messageObject) {
@@ -220,16 +220,16 @@ public class TranslateController extends BaseController {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+            int readInt32 = inputSerializedData.readInt32(z4);
             if ((readInt32 & 1) != 0) {
-                this.question = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.question = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
             }
             if ((readInt32 & 2) != 0) {
-                this.answers = Vector.deserialize(inputSerializedData, new yg(), z10);
+                this.answers = Vector.deserialize(inputSerializedData, new bh(), z4);
             }
             if ((readInt32 & 4) != 0) {
-                this.solution = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.solution = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
             }
         }
 
@@ -257,7 +257,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class StoryKey {
         public long dialogId;
         public int storyId;
@@ -268,7 +268,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TranslatableDecision {
         Set<Integer> certainlyTranslatable = new HashSet();
         Set<Integer> unknown = new HashSet();
@@ -297,25 +297,25 @@ public class TranslateController extends BaseController {
         this.detectingPhotos = new HashSet<>();
         this.translatingPhotos = new HashSet<>();
         this.messagesController = messagesController;
-        AndroidUtilities.runOnUIThread(new ug(this, 16), 150L);
+        AndroidUtilities.runOnUIThread(new xg(this, 16), 150L);
     }
 
     public static void analyzeSuggestedLanguageCodes() {
         LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
         try {
             linkedHashSet.add(LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         try {
             linkedHashSet.add(Resources.getSystem().getConfiguration().locale.getLanguage());
-        } catch (Exception e11) {
-            FileLog.e(e11);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
         try {
-            linkedHashSet.addAll(b31.Y());
-        } catch (Exception e12) {
-            FileLog.e(e12);
+            linkedHashSet.addAll(n31.Y());
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) ApplicationLoader.applicationContext.getSystemService("input_method");
@@ -327,14 +327,14 @@ public class TranslateController extends BaseController {
                         if (locale != null && locale.contains("_")) {
                             locale = locale.split("_")[0];
                         }
-                        if (k31.D(locale, null, null) != null) {
+                        if (v31.D(locale, null, null) != null) {
                             linkedHashSet.add(locale);
                         }
                     }
                 }
             }
-        } catch (Exception e13) {
-            FileLog.e(e13);
+        } catch (Exception e11) {
+            FileLog.e(e11);
         }
         suggestedLanguageCodes = linkedHashSet;
     }
@@ -354,17 +354,17 @@ public class TranslateController extends BaseController {
             hashMap.put(valueOf, translatableDecision2);
             translatableDecision = translatableDecision2;
         }
-        boolean z10 = false;
-        boolean z11 = isTranslatable(messageObject) && ((str2 = messageObject.messageOwner.originalLanguage) == null || UNKNOWN_LANGUAGE.equals(str2));
+        boolean z4 = false;
+        boolean z10 = isTranslatable(messageObject) && ((str2 = messageObject.messageOwner.originalLanguage) == null || UNKNOWN_LANGUAGE.equals(str2));
         if (isTranslatable(messageObject) && (str = messageObject.messageOwner.originalLanguage) != null && !UNKNOWN_LANGUAGE.equals(str) && !isLanguageRestricted(messageObject.messageOwner.originalLanguage)) {
-            z10 = true;
+            z4 = true;
         }
-        if (z11) {
+        if (z10) {
             translatableDecision.unknown.add(Integer.valueOf(messageObject.getId()));
         } else {
-            (z10 ? translatableDecision.certainlyTranslatable : translatableDecision.certainlyNotTranslatable).add(Integer.valueOf(messageObject.getId()));
+            (z4 ? translatableDecision.certainlyTranslatable : translatableDecision.certainlyNotTranslatable).add(Integer.valueOf(messageObject.getId()));
         }
-        if (!z11) {
+        if (!z10) {
             this.detectedDialogLanguage.put(Long.valueOf(dialogId), messageObject.messageOwner.originalLanguage);
         }
         int size = translatableDecision.certainlyTranslatable.size();
@@ -382,7 +382,7 @@ public class TranslateController extends BaseController {
             if (size2 / size3 < (isChatAutoTranslated ? REQUIRED_MIN_PERCENTAGE_MESSAGES_UNKNOWN_AUTOTRANSLATE : REQUIRED_MIN_PERCENTAGE_MESSAGES_UNKNOWN)) {
                 this.translatableDialogs.add(Long.valueOf(dialogId));
                 this.translatableDialogMessages.remove(Long.valueOf(dialogId));
-                AndroidUtilities.runOnUIThread(new zk(this, dialogId, 0), 450L);
+                AndroidUtilities.runOnUIThread(new dl(this, dialogId, 0), 450L);
             }
         }
     }
@@ -403,7 +403,7 @@ public class TranslateController extends BaseController {
                 return;
             }
             this.pendingLanguageChecks.add(Integer.valueOf(hash));
-            Utilities.stageQueue.postRunnable(new yk(this, detectLanguageText, messageObject, dialogId, hash, 0));
+            Utilities.stageQueue.postRunnable(new cl(this, detectLanguageText, messageObject, dialogId, hash, 0));
         }
     }
 
@@ -443,27 +443,27 @@ public class TranslateController extends BaseController {
             if ("no".equals(str)) {
                 language.code = "nb";
             }
-            language.displayName = k31.y(k31.D(language.code, null, null));
-            language.ownDisplayName = k31.y(k31.K(language.code, true));
+            language.displayName = v31.y(v31.D(language.code, null, null));
+            language.ownDisplayName = v31.y(v31.K(language.code, true));
             if (language.displayName != null) {
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(language.displayName);
-                sb2.append(" ");
+                StringBuilder sb = new StringBuilder();
+                sb.append(language.displayName);
+                sb.append(" ");
                 String str2 = language.ownDisplayName;
                 if (str2 == null) {
                     str2 = "";
                 }
-                sb2.append(str2);
-                language.q = sb2.toString().toLowerCase();
+                sb.append(str2);
+                language.q = sb.toString().toLowerCase();
                 arrayList.add(language);
             }
             i10++;
         }
         if (Build.VERSION.SDK_INT >= 24) {
-            Collections.sort(arrayList, new pk(Collator.getInstance(Locale.getDefault()), 2));
+            Collections.sort(arrayList, new tk(Collator.getInstance(Locale.getDefault()), 2));
             return arrayList;
         }
-        Collections.sort(arrayList, Comparator$-CC.comparing(new ka(4)));
+        Collections.sort(arrayList, Comparator$-CC.comparing(new la(4)));
         return arrayList;
     }
 
@@ -479,7 +479,7 @@ public class TranslateController extends BaseController {
             }
             i10++;
         }
-        Collections.sort(arrayList, new pk(LocaleController.getInstance().getCurrentLocaleInfo(), 1));
+        Collections.sort(arrayList, new tk(LocaleController.getInstance().getCurrentLocaleInfo(), 1));
         return arrayList;
     }
 
@@ -505,8 +505,8 @@ public class TranslateController extends BaseController {
                     if ("no".equals(next)) {
                         language.code = "nb";
                     }
-                    language.displayName = k31.y(k31.D(language.code, null, null));
-                    language.ownDisplayName = k31.y(k31.K(language.code, true));
+                    language.displayName = v31.y(v31.D(language.code, null, null));
+                    language.ownDisplayName = v31.y(v31.K(language.code, true));
                     if (language.displayName != null) {
                         language.q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
                         arrayList.add(language);
@@ -535,7 +535,7 @@ public class TranslateController extends BaseController {
 
     private boolean isLanguageRestricted(String str) {
         if (getUserConfig().isPremium()) {
-            return b31.Y().contains(str);
+            return n31.Y().contains(str);
         }
         try {
             return TextUtils.equals(LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode, str);
@@ -588,7 +588,7 @@ public class TranslateController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDialogMessageSure$10(ArrayList arrayList, ArrayList arrayList2) {
         TLRPC.Message message;
-        boolean z10 = false;
+        boolean z4 = false;
         for (int i10 = 0; i10 < Math.min(arrayList.size(), arrayList2.size()); i10++) {
             MessageObject messageObject = (MessageObject) arrayList2.get(i10);
             TLRPC.Message message2 = (TLRPC.Message) arrayList.get(i10);
@@ -597,11 +597,11 @@ public class TranslateController extends BaseController {
                 message.translatedPoll = message2.translatedPoll;
                 message.translatedToLanguage = message2.translatedToLanguage;
                 if (messageObject.updateTranslation(false)) {
-                    z10 = true;
+                    z4 = true;
                 }
             }
         }
-        if (z10) {
+        if (z4) {
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
         }
     }
@@ -621,7 +621,7 @@ public class TranslateController extends BaseController {
                 arrayList2.add(getMessagesStorage().getMessageWithCustomParamsOnlyInternal(messageObject.getId(), messageObject.getDialogId()));
             }
         }
-        AndroidUtilities.runOnUIThread(new c9(this, arrayList2, arrayList, 26));
+        AndroidUtilities.runOnUIThread(new d9(this, arrayList2, arrayList, 26));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -642,7 +642,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkLanguage$13(MessageObject messageObject, long j10, int i10, String str) {
-        AndroidUtilities.runOnUIThread(new yk(this, str, messageObject, j10, i10, 1));
+        AndroidUtilities.runOnUIThread(new cl(this, str, messageObject, j10, i10, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -654,12 +654,12 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkLanguage$15(MessageObject messageObject, long j10, int i10, Exception exc) {
-        AndroidUtilities.runOnUIThread(new jh.x8(this, messageObject, j10, i10, 11));
+        AndroidUtilities.runOnUIThread(new lh.y8(this, messageObject, j10, i10, 11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkLanguage$16(String str, MessageObject messageObject, long j10, int i10) {
-        LanguageDetector.detectLanguage(str, new bl(this, messageObject, j10, i10), new bl(this, messageObject, j10, i10));
+        LanguageDetector.detectLanguage(str, new fl(this, messageObject, j10, i10), new fl(this, messageObject, j10, i10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -674,7 +674,7 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkTranslation$5(MessageObject messageObject, boolean z10, long j10, Integer num, TL_iv.RichMessage richMessage, String str) {
+    public /* synthetic */ void lambda$checkTranslation$5(MessageObject messageObject, boolean z4, long j10, Integer num, TL_iv.RichMessage richMessage, String str) {
         if (messageObject.getId() != num.intValue()) {
             FileLog.e("wtf, asked to translate " + messageObject.getId() + " rich message but got " + num + "!");
         }
@@ -684,7 +684,7 @@ public class TranslateController extends BaseController {
         message.translatedVoiceTranscription = null;
         message.translatedPoll = null;
         message.translatedRichMessage = richMessage;
-        if (z10) {
+        if (z4) {
             keepReplyMessage(messageObject);
         }
         getMessagesStorage().updateMessageCustomParams(j10, messageObject.messageOwner);
@@ -723,7 +723,7 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkTranslation$7(MessageObject messageObject, boolean z10, long j10, Integer num, PollText pollText, String str) {
+    public /* synthetic */ void lambda$checkTranslation$7(MessageObject messageObject, boolean z4, long j10, Integer num, PollText pollText, String str) {
         if (messageObject.getId() != num.intValue()) {
             FileLog.e("wtf, asked to translate " + messageObject.getId() + " poll but got " + num + "!");
         }
@@ -732,7 +732,7 @@ public class TranslateController extends BaseController {
         message.translatedText = null;
         message.translatedVoiceTranscription = null;
         message.translatedPoll = pollText;
-        if (z10) {
+        if (z4) {
             keepReplyMessage(messageObject);
         }
         getMessagesStorage().updateMessageCustomParams(j10, messageObject.messageOwner);
@@ -758,7 +758,7 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkTranslation$8(MessageObject messageObject, boolean z10, long j10, Boolean bool, Integer num, TLRPC.TL_textWithEntities tL_textWithEntities, String str) {
+    public /* synthetic */ void lambda$checkTranslation$8(MessageObject messageObject, boolean z4, long j10, Boolean bool, Integer num, TLRPC.TL_textWithEntities tL_textWithEntities, String str) {
         if (messageObject.getId() != num.intValue()) {
             FileLog.e("wtf, asked to translate " + messageObject.getId() + " but got " + num + "!");
         }
@@ -769,7 +769,7 @@ public class TranslateController extends BaseController {
             messageObject.messageOwner.translatedText = tL_textWithEntities;
         }
         messageObject.messageOwner.translatedPoll = null;
-        if (z10) {
+        if (z4) {
             keepReplyMessage(messageObject);
         }
         getMessagesStorage().updateMessageCustomParams(j10, messageObject.messageOwner);
@@ -808,7 +808,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$detectPhotoLanguage$40(MessageObject messageObject, MessageKey messageKey, Utilities.Callback callback, String str) {
-        AndroidUtilities.runOnUIThread(new c5(str, messageObject, messageKey, this, callback));
+        AndroidUtilities.runOnUIThread(new d5(str, messageObject, messageKey, this, callback));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -823,7 +823,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$detectPhotoLanguage$42(MessageObject messageObject, MessageKey messageKey, Utilities.Callback callback, Exception exc) {
-        AndroidUtilities.runOnUIThread(new ok(this, messageObject, messageKey, callback, 2));
+        AndroidUtilities.runOnUIThread(new sk(this, messageObject, messageKey, callback, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -835,7 +835,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$detectStoryLanguage$32(TL_stories.StoryItem storyItem, StoryKey storyKey, String str) {
-        AndroidUtilities.runOnUIThread(new ok(this, storyItem, str, storyKey, 3));
+        AndroidUtilities.runOnUIThread(new sk(this, storyItem, str, storyKey, 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -847,7 +847,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$detectStoryLanguage$34(TL_stories.StoryItem storyItem, StoryKey storyKey, Exception exc) {
-        AndroidUtilities.runOnUIThread(new f0(this, storyItem, storyKey, 5));
+        AndroidUtilities.runOnUIThread(new g0(this, storyItem, storyKey, 5));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -935,7 +935,7 @@ public class TranslateController extends BaseController {
                         tL_textWithEntities = arrayList5.get(i12);
                         i12++;
                     }
-                    pollText3.question = k31.E(pollText.question, tL_textWithEntities);
+                    pollText3.question = v31.E(pollText.question, tL_textWithEntities);
                 }
                 if (pollText.answers.size() != (pollText2 == null ? 0 : pollText2.answers.size())) {
                     ArrayList<TLRPC.PollAnswer> arrayList7 = pollText.answers;
@@ -982,7 +982,7 @@ public class TranslateController extends BaseController {
                         i12 = i16;
                         tL_textWithEntities2 = tL_textWithEntities6;
                     }
-                    pollText3.solution = k31.E(pollText.solution, tL_textWithEntities2);
+                    pollText3.solution = v31.E(pollText.solution, tL_textWithEntities2);
                 }
                 arrayList6.add(pollText3);
                 size = i10;
@@ -1020,7 +1020,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$pushPollToTranslate$26(PendingPollTranslation pendingPollTranslation, long j10, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new al(this, pendingPollTranslation, tLObject, tL_error, j10, 0));
+        AndroidUtilities.runOnUIThread(new el(this, pendingPollTranslation, tLObject, tL_error, j10, 0));
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
@@ -1118,7 +1118,7 @@ public class TranslateController extends BaseController {
             java.lang.String r1 = normalizeLanguage(r1)
             r0.to_lang = r1
             org.telegram.tgnet.ConnectionsManager r1 = r12.getConnectionsManager()
-            org.telegram.messenger.xk r2 = new org.telegram.messenger.xk
+            org.telegram.messenger.bl r2 = new org.telegram.messenger.bl
             r7 = 0
             r3 = r12
             r5 = r13
@@ -1187,7 +1187,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$pushRichMessageToTranslate$29(PendingRichTranslation pendingRichTranslation, long j10, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new al(this, pendingRichTranslation, tLObject, tL_error, j10, 1));
+        AndroidUtilities.runOnUIThread(new el(this, pendingRichTranslation, tLObject, tL_error, j10, 1));
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
@@ -1235,7 +1235,7 @@ public class TranslateController extends BaseController {
             java.lang.String r1 = normalizeLanguage(r1)
             r0.to_lang = r1
             org.telegram.tgnet.ConnectionsManager r1 = r8.getConnectionsManager()
-            org.telegram.messenger.xk r2 = new org.telegram.messenger.xk
+            org.telegram.messenger.bl r2 = new org.telegram.messenger.bl
             r7 = 1
             r3 = r8
             r5 = r9
@@ -1267,19 +1267,19 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$pushToSummarize$18(org.telegram.ui.ActionBar.o2 o2Var) {
-        o2Var.presentFragment(new PremiumPreviewFragment(0, "summarize_limit"));
+    public static void lambda$pushToSummarize$18(org.telegram.ui.ActionBar.p2 p2Var) {
+        p2Var.presentFragment(new PremiumPreviewFragment(0, "summarize_limit"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$pushToSummarize$19(int i10, Utilities.Callback callback, TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_error tL_error) {
-        org.telegram.ui.ActionBar.o2 U;
+        org.telegram.ui.ActionBar.p2 U;
         if (tL_textWithEntities != null) {
             this.loadingSummarizations.remove(Integer.valueOf(i10));
             callback.run(tL_textWithEntities);
         } else if (tL_error != null) {
             if ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) && (U = LaunchActivity.U()) != null) {
-                org.telegram.ui.Components.mc J = org.telegram.ui.Components.tc.a0(U).J(R.raw.star_premium_2, LocaleController.getString(R.string.SummaryLimit), LocaleController.getString(R.string.SummaryLimitUpgrade), new wd(3, U));
+                org.telegram.ui.Components.ic J = org.telegram.ui.Components.qc.a0(U).J(R.raw.star_premium_2, LocaleController.getString(R.string.SummaryLimit), LocaleController.getString(R.string.SummaryLimitUpgrade), new xd(3, U));
                 J.j = 5000;
                 J.k(true);
             }
@@ -1289,26 +1289,26 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pushToTranslate$20(Utilities.Callback4 callback4, boolean z10, int i10, String str, long j10, String str2, Boolean bool) {
+    public /* synthetic */ void lambda$pushToTranslate$20(Utilities.Callback4 callback4, boolean z4, int i10, String str, long j10, String str2, Boolean bool) {
         if (str2 == null) {
             toggleTranslatingDialog(j10, false);
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2));
         } else {
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_textWithEntities.text = str2;
-            callback4.run(Boolean.valueOf(z10), Integer.valueOf(i10), tL_textWithEntities, str);
+            callback4.run(Boolean.valueOf(z4), Integer.valueOf(i10), tL_textWithEntities, str);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pushToTranslate$21(Utilities.Callback4 callback4, boolean z10, int i10, String str, long j10, String str2, Boolean bool) {
+    public /* synthetic */ void lambda$pushToTranslate$21(Utilities.Callback4 callback4, boolean z4, int i10, String str, long j10, String str2, Boolean bool) {
         if (str2 == null) {
             toggleTranslatingDialog(j10, false);
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2));
         } else {
             TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_textWithEntities.text = str2;
-            callback4.run(Boolean.valueOf(z10), Integer.valueOf(i10), tL_textWithEntities, str);
+            callback4.run(Boolean.valueOf(z4), Integer.valueOf(i10), tL_textWithEntities, str);
         }
     }
 
@@ -1318,7 +1318,7 @@ public class TranslateController extends BaseController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$pushToTranslate$22(PendingTranslation pendingTranslation, TLObject tLObject, boolean z10, TLRPC.TL_error tL_error, long j10, Set set) {
+    public /* synthetic */ void lambda$pushToTranslate$22(PendingTranslation pendingTranslation, TLObject tLObject, boolean z4, TLRPC.TL_error tL_error, long j10, Set set) {
         ArrayList<Integer> arrayList;
         ArrayList<Utilities.Callback4<Boolean, Integer, TLRPC.TL_textWithEntities, String>> arrayList2;
         ArrayList<TLRPC.TL_textWithEntities> arrayList3;
@@ -1344,7 +1344,7 @@ public class TranslateController extends BaseController {
             ArrayList<TLRPC.TL_textWithEntities> arrayList4 = ((TLRPC.TL_messages_translateResult) tLObject).result;
             int min = Math.min(arrayList2.size(), arrayList4.size());
             for (int i10 = 0; i10 < min; i10++) {
-                arrayList2.get(i10).run(Boolean.valueOf(z10), arrayList.get(i10), k31.E(arrayList3.get(i10), arrayList4.get(i10)), str);
+                arrayList2.get(i10).run(Boolean.valueOf(z4), arrayList.get(i10), v31.E(arrayList3.get(i10), arrayList4.get(i10)), str);
             }
         } else {
             if (tL_error == null || !"TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error.text)) {
@@ -1353,7 +1353,7 @@ public class TranslateController extends BaseController {
                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert1));
                     }
                     for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                        arrayList2.get(i11).run(Boolean.valueOf(z10), arrayList.get(i11), null, pendingTranslation.language);
+                        arrayList2.get(i11).run(Boolean.valueOf(z4), arrayList.get(i11), null, pendingTranslation.language);
                     }
                 } else {
                     toggleTranslatingDialog(j10, false);
@@ -1371,7 +1371,7 @@ public class TranslateController extends BaseController {
                 return;
             }
             for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                k31.x(arrayList3.get(i13).text, null, str, new wk(this, arrayList2.get(i13), z10, arrayList.get(i13).intValue(), str, j10, 0));
+                v31.x(arrayList3.get(i13).text, null, str, new al(this, arrayList2.get(i13), z4, arrayList.get(i13).intValue(), str, j10, 0));
             }
         }
         synchronized (this) {
@@ -1379,12 +1379,12 @@ public class TranslateController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pushToTranslate$23(PendingTranslation pendingTranslation, boolean z10, long j10, Set set, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new vk(j10, set, pendingTranslation, this, tLObject, tL_error, z10));
+    public /* synthetic */ void lambda$pushToTranslate$23(PendingTranslation pendingTranslation, boolean z4, long j10, Set set, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new zk(j10, set, pendingTranslation, this, tLObject, tL_error, z4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pushToTranslate$24(HashMap hashMap, long j10, PendingTranslation pendingTranslation, boolean z10, Set set) {
+    public /* synthetic */ void lambda$pushToTranslate$24(HashMap hashMap, long j10, PendingTranslation pendingTranslation, boolean z4, Set set) {
         long j11;
         synchronized (this) {
             try {
@@ -1403,12 +1403,12 @@ public class TranslateController extends BaseController {
         if ("alternative".equals(str) || "system".equals(str)) {
             String str2 = pendingTranslation.language;
             for (int i10 = 0; i10 < pendingTranslation.messageIds.size(); i10++) {
-                k31.x(pendingTranslation.messageTexts.get(i10).text, null, str2, new wk(this, pendingTranslation.callbacks.get(i10), z10, pendingTranslation.messageIds.get(i10).intValue(), str2, j10, 1));
+                v31.x(pendingTranslation.messageTexts.get(i10).text, null, str2, new al(this, pendingTranslation.callbacks.get(i10), z4, pendingTranslation.messageIds.get(i10).intValue(), str2, j10, 1));
             }
             return;
         }
         TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
-        if (z10) {
+        if (z4) {
             tL_messages_translateText.flags |= 2;
             tL_messages_translateText.text.addAll(pendingTranslation.messageTexts);
             j11 = j10;
@@ -1419,7 +1419,7 @@ public class TranslateController extends BaseController {
             tL_messages_translateText.id = pendingTranslation.messageIds;
         }
         tL_messages_translateText.to_lang = normalizeLanguage(pendingTranslation.language);
-        int sendRequest = getConnectionsManager().sendRequest(tL_messages_translateText, new qa(this, pendingTranslation, z10, j11, set, 1));
+        int sendRequest = getConnectionsManager().sendRequest(tL_messages_translateText, new ra(this, pendingTranslation, z4, j11, set, 1));
         synchronized (this) {
             pendingTranslation.reqId = sendRequest;
         }
@@ -1454,7 +1454,7 @@ public class TranslateController extends BaseController {
     public /* synthetic */ void lambda$translatePhoto$44(MessageObject messageObject, String str, TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2, MessageKey messageKey, Runnable runnable, long j10) {
         TLRPC.Message message = messageObject.messageOwner;
         message.translatedToLanguage = str;
-        message.translatedText = k31.E(tL_textWithEntities, tL_textWithEntities2);
+        message.translatedText = v31.E(tL_textWithEntities, tL_textWithEntities2);
         getMessagesStorage().updateMessageCustomParams(messageKey.dialogId, messageObject.messageOwner);
         this.translatingPhotos.remove(messageKey);
         if (runnable != null) {
@@ -1477,15 +1477,15 @@ public class TranslateController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$translatePhoto$46(final MessageObject messageObject, final String str, final MessageKey messageKey, final Runnable runnable, final long j10, final TLRPC.TL_textWithEntities tL_textWithEntities, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (!(tLObject instanceof TLRPC.TL_messages_translateResult)) {
-            AndroidUtilities.runOnUIThread(new cl(this, messageObject, str, messageKey, runnable, j10, 1));
+            AndroidUtilities.runOnUIThread(new gl(this, messageObject, str, messageKey, runnable, j10, 1));
             return;
         }
         ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
         if (arrayList.size() <= 0) {
-            AndroidUtilities.runOnUIThread(new cl(this, messageObject, str, messageKey, runnable, j10, 0));
+            AndroidUtilities.runOnUIThread(new gl(this, messageObject, str, messageKey, runnable, j10, 0));
         } else {
             final TLRPC.TL_textWithEntities tL_textWithEntities2 = arrayList.get(0);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.dl
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.hl
                 @Override // java.lang.Runnable
                 public final void run() {
                     TranslateController.this.lambda$translatePhoto$44(messageObject, str, tL_textWithEntities, tL_textWithEntities2, messageKey, runnable, j10);
@@ -1508,7 +1508,7 @@ public class TranslateController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$translateStory$36(TL_stories.StoryItem storyItem, String str, TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2, StoryKey storyKey, Runnable runnable) {
         storyItem.translatedLng = str;
-        storyItem.translatedText = k31.E(tL_textWithEntities, tL_textWithEntities2);
+        storyItem.translatedText = v31.E(tL_textWithEntities, tL_textWithEntities2);
         getMessagesController().getStoriesController().k.h(storyItem.dialogId, storyItem);
         this.translatingStories.remove(storyKey);
         if (runnable != null) {
@@ -1531,7 +1531,7 @@ public class TranslateController extends BaseController {
     public /* synthetic */ void lambda$translateStory$38(final TL_stories.StoryItem storyItem, final String str, final StoryKey storyKey, final Runnable runnable, TLRPC.TL_textWithEntities tL_textWithEntities, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (!(tLObject instanceof TLRPC.TL_messages_translateResult)) {
             final int i10 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.hl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.ll
                 public final /* synthetic */ TranslateController b;
 
                 {
@@ -1554,10 +1554,10 @@ public class TranslateController extends BaseController {
         }
         ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
         if (arrayList.size() > 0) {
-            AndroidUtilities.runOnUIThread(new ll(this, storyItem, str, tL_textWithEntities, arrayList.get(0), storyKey, runnable, 0));
+            AndroidUtilities.runOnUIThread(new pl(this, storyItem, str, tL_textWithEntities, arrayList.get(0), storyKey, runnable, 0));
         } else {
             final int i11 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.hl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.ll
                 public final /* synthetic */ TranslateController b;
 
                 {
@@ -1581,7 +1581,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void loadTranslatingDialogsCached() {
-        boolean z10;
+        boolean z4;
         String string = this.messagesController.getMainSettings().getString("translating_dialog_languages2", null);
         if (string == null) {
             return;
@@ -1595,10 +1595,10 @@ public class TranslateController extends BaseController {
                     String str2 = split2[0];
                     String str3 = split2[1];
                     if (str3.length() <= 0 || str3.charAt(str3.length() - 1) != '!') {
-                        z10 = false;
+                        z4 = false;
                     } else {
-                        str3 = com.google.android.recaptcha.internal.a.m(str3, 1, 0);
-                        z10 = true;
+                        str3 = e2.c.j(str3, 1, 0);
+                        z4 = true;
                     }
                     if (BuildConfig.BETA_URL.equals(str2)) {
                         str2 = null;
@@ -1609,7 +1609,7 @@ public class TranslateController extends BaseController {
                     if (str2 != null) {
                         this.detectedDialogLanguage.put(Long.valueOf(parseLong), str2);
                         if (!isLanguageRestricted(str2)) {
-                            this.translatingDialogs.put(parseLong, Boolean.valueOf(true ^ z10));
+                            this.translatingDialogs.put(parseLong, Boolean.valueOf(true ^ z4));
                             this.translatableDialogs.add(Long.valueOf(parseLong));
                         }
                         if (str3 != null) {
@@ -1625,8 +1625,8 @@ public class TranslateController extends BaseController {
             while (it.hasNext()) {
                 try {
                     this.hideTranslateDialogs.add(Long.valueOf(Long.parseLong(it.next())));
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
         }
@@ -1702,9 +1702,9 @@ public class TranslateController extends BaseController {
                         pendingPollTranslation.language = str;
                         pendingPollTranslation.symbolsCount += length;
                         PendingPollTranslation pendingPollTranslation2 = pendingPollTranslation;
-                        c4 c4Var = new c4(this, dialogId, pendingPollTranslation2, 1);
-                        pendingPollTranslation2.runnable = c4Var;
-                        AndroidUtilities.runOnUIThread(c4Var, pendingPollTranslation2.delay);
+                        d4 d4Var = new d4(this, dialogId, pendingPollTranslation2, 1);
+                        pendingPollTranslation2.runnable = d4Var;
+                        AndroidUtilities.runOnUIThread(d4Var, pendingPollTranslation2.delay);
                         pendingPollTranslation2.delay /= 2;
                     }
                 } catch (Throwable th4) {
@@ -1768,9 +1768,9 @@ public class TranslateController extends BaseController {
                     FileLog.d("pending translation +" + messageObject.getId() + " rich message");
                     pendingRichTranslation2.callbacks.add(callback3);
                     pendingRichTranslation2.language = str;
-                    c4 c4Var = new c4(this, dialogId, pendingRichTranslation2, 2);
-                    pendingRichTranslation2.runnable = c4Var;
-                    AndroidUtilities.runOnUIThread(c4Var, pendingRichTranslation2.delay);
+                    d4 d4Var = new d4(this, dialogId, pendingRichTranslation2, 2);
+                    pendingRichTranslation2.runnable = d4Var;
+                    AndroidUtilities.runOnUIThread(d4Var, pendingRichTranslation2.delay);
                     pendingRichTranslation2.delay /= 2;
                 } catch (Throwable th4) {
                     th = th4;
@@ -1798,7 +1798,7 @@ public class TranslateController extends BaseController {
             tL_messages_summarizeText.flags |= 1;
             tL_messages_summarizeText.to_lang = normalizeLanguage(str);
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_summarizeText, new a(), new nh(this, hash, callback));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_messages_summarizeText, new a(), new qh(this, hash, callback));
     }
 
     private void pushToTranslate(MessageObject messageObject, String str, Utilities.Callback4<Boolean, Integer, TLRPC.TL_textWithEntities, String> callback4) {
@@ -1809,15 +1809,15 @@ public class TranslateController extends BaseController {
             return;
         }
         TLRPC.Message message = messageObject.messageOwner;
-        boolean z10 = false;
+        boolean z4 = false;
         if (message.voiceTranscription != null && message.voiceTranscriptionFinal && message.voiceTranscriptionOpen) {
-            z10 = true;
+            z4 = true;
         }
         long dialogId = messageObject.getDialogId();
-        HashMap<Long, ArrayList<PendingTranslation>> hashMap = z10 ? this.pendingTranscriptionsTranslations : this.pendingTranslations;
-        Set<Integer> set = z10 ? this.loadingTranscriptionTranslations : this.loadingTranslations;
+        HashMap<Long, ArrayList<PendingTranslation>> hashMap = z4 ? this.pendingTranscriptionsTranslations : this.pendingTranslations;
+        Set<Integer> set = z4 ? this.loadingTranscriptionTranslations : this.loadingTranslations;
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        if (z10) {
+        if (z4) {
             String str3 = messageObject.messageOwner.voiceTranscription;
             tL_textWithEntities.text = str3;
             if (TextUtils.isEmpty(str3)) {
@@ -1846,7 +1846,7 @@ public class TranslateController extends BaseController {
                 if (pendingTranslation.messageIds.contains(Integer.valueOf(messageObject.getId()))) {
                     return;
                 }
-                if (z10) {
+                if (z4) {
                     String str4 = messageObject.messageOwner.voiceTranscription;
                     length = str4 == null ? 0 : str4.length();
                 } else {
@@ -1881,9 +1881,9 @@ public class TranslateController extends BaseController {
                 pendingTranslation.language = str;
                 pendingTranslation.symbolsCount += length;
                 PendingTranslation pendingTranslation2 = pendingTranslation;
-                md mdVar = new md(this, hashMap, dialogId, pendingTranslation2, z10, set);
-                pendingTranslation2.runnable = mdVar;
-                AndroidUtilities.runOnUIThread(mdVar, pendingTranslation2.delay);
+                nd ndVar = new nd(this, hashMap, dialogId, pendingTranslation2, z4, set);
+                pendingTranslation2.runnable = ndVar;
+                AndroidUtilities.runOnUIThread(ndVar, pendingTranslation2.delay);
                 pendingTranslation2.delay /= 2;
             } catch (Throwable th2) {
                 throw th2;
@@ -1896,16 +1896,16 @@ public class TranslateController extends BaseController {
     }
 
     private void saveTranslatingDialogsCache() {
-        StringBuilder sb2 = new StringBuilder();
-        boolean z10 = true;
+        StringBuilder sb = new StringBuilder();
+        boolean z4 = true;
         for (int i10 = 0; i10 < this.translatingDialogs.size(); i10++) {
             try {
                 long keyAt = this.translatingDialogs.keyAt(i10);
-                if (!z10) {
-                    sb2.append(";");
+                if (!z4) {
+                    sb.append(";");
                 }
-                if (z10) {
-                    z10 = false;
+                if (z4) {
+                    z4 = false;
                 }
                 String str = this.detectedDialogLanguage.get(Long.valueOf(keyAt));
                 String str2 = BuildConfig.BETA_URL;
@@ -1916,13 +1916,13 @@ public class TranslateController extends BaseController {
                 if (dialogTranslateTo != null) {
                     str2 = dialogTranslateTo;
                 }
-                sb2.append(keyAt);
-                sb2.append("=");
-                sb2.append(str);
-                sb2.append(">");
-                sb2.append(str2);
+                sb.append(keyAt);
+                sb.append("=");
+                sb.append(str);
+                sb.append(">");
+                sb.append(str2);
                 if (!this.translatingDialogs.valueAt(i10).booleanValue()) {
-                    sb2.append("!");
+                    sb.append("!");
                 }
             } catch (Exception unused) {
             }
@@ -1932,16 +1932,16 @@ public class TranslateController extends BaseController {
         while (it.hasNext()) {
             try {
                 hashSet.add("" + it.next());
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
-        MessagesController.getMainSettings(this.currentAccount).edit().putString("translating_dialog_languages2", sb2.toString()).putStringSet("hidden_translation_at", hashSet).apply();
+        MessagesController.getMainSettings(this.currentAccount).edit().putString("translating_dialog_languages2", sb.toString()).putStringSet("hidden_translation_at", hashSet).apply();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x002b, code lost:
     
-        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.ui.Components.k31.B()) != false) goto L21;
+        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.ui.Components.v31.B()) != false) goto L21;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1971,7 +1971,7 @@ public class TranslateController extends BaseController {
         if (storyItem == null || TextUtils.isEmpty(storyItem.caption) || Emoji.fullyConsistsOfEmojis(storyItem.caption)) {
             return false;
         }
-        if (storyItem.detectedLng == null && storyItem.translatedText != null && TextUtils.equals(storyItem.translatedLng, k31.B())) {
+        if (storyItem.detectedLng == null && storyItem.translatedText != null && TextUtils.equals(storyItem.translatedLng, v31.B())) {
             return true;
         }
         String str = storyItem.detectedLng;
@@ -2188,7 +2188,7 @@ public class TranslateController extends BaseController {
 
     public void checkDialogMessageSure(long j10) {
         if (this.translatingDialogs.get(j10, Boolean.valueOf(isChatAutoTranslated(j10))).booleanValue()) {
-            getMessagesStorage().getStorageQueue().postRunnable(new zk(this, j10, 1));
+            getMessagesStorage().getStorageQueue().postRunnable(new dl(this, j10, 1));
         }
     }
 
@@ -2223,8 +2223,8 @@ public class TranslateController extends BaseController {
         }
     }
 
-    public void checkTranslation(MessageObject messageObject, boolean z10) {
-        checkTranslation(messageObject, z10, false);
+    public void checkTranslation(MessageObject messageObject, boolean z4) {
+        checkTranslation(messageObject, z4, false);
     }
 
     public void cleanup() {
@@ -2255,7 +2255,7 @@ public class TranslateController extends BaseController {
                 return;
             }
             this.detectingPhotos.add(messageKey);
-            LanguageDetector.detectLanguage(messageObject.messageOwner.message, new ml(this, messageObject, messageKey, callback), new ml(this, messageObject, messageKey, callback));
+            LanguageDetector.detectLanguage(messageObject.messageOwner.message, new ql(this, messageObject, messageKey, callback), new ql(this, messageObject, messageKey, callback));
         }
     }
 
@@ -2269,7 +2269,7 @@ public class TranslateController extends BaseController {
             return;
         }
         this.detectingStories.add(storyKey);
-        LanguageDetector.detectLanguage(storyItem.caption, new jl(this, storyItem, storyKey), new jl(this, storyItem, storyKey));
+        LanguageDetector.detectLanguage(storyItem.caption, new nl(this, storyItem, storyKey), new nl(this, storyItem, storyKey));
     }
 
     public MessageObject findReplyMessageObject(long j10, int i10) {
@@ -2286,7 +2286,7 @@ public class TranslateController extends BaseController {
 
     public String getDialogTranslateTo(long j10) {
         String str = this.translateDialogLanguage.get(Long.valueOf(j10));
-        if (str == null && ((str = k31.B()) == null || str.equals(getDialogDetectedLanguage(j10)))) {
+        if (str == null && ((str = v31.B()) == null || str.equals(getDialogDetectedLanguage(j10)))) {
             str = currentLanguage();
         }
         return "nb".equals(str) ? "no" : str;
@@ -2307,7 +2307,7 @@ public class TranslateController extends BaseController {
             message.translatedSummaryText = null;
             message.translatedSummaryLanguage = null;
             getMessagesStorage().updateMessageCustomParams(dialogId, messageObject.messageOwner);
-            AndroidUtilities.runOnUIThread(new gl(this, messageObject, dialogId));
+            AndroidUtilities.runOnUIThread(new kl(this, messageObject, dialogId));
         }
     }
 
@@ -2356,7 +2356,7 @@ public class TranslateController extends BaseController {
 
     public boolean isTranslating(MessageObject messageObject) {
         TLRPC.Message message;
-        boolean z10 = true;
+        boolean z4 = true;
         if (messageObject != null && (message = messageObject.messageOwner) != null && message.summarizedOpen) {
             return this.loadingSummarizations.contains(Integer.valueOf(Objects.hash(Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), Integer.valueOf(isTranslatingDialog(messageObject.getDialogId()) ? 1 : 0))));
         }
@@ -2371,9 +2371,9 @@ public class TranslateController extends BaseController {
                 } finally {
                 }
             }
-            z10 = false;
+            z4 = false;
         }
-        return z10;
+        return z4;
     }
 
     public boolean isTranslatingDialog(long j10) {
@@ -2392,16 +2392,16 @@ public class TranslateController extends BaseController {
         this.detectedDialogLanguage.clear();
     }
 
-    public void setChatTranslateEnabled(boolean z10) {
+    public void setChatTranslateEnabled(boolean z4) {
         SharedPreferences.Editor edit = this.messagesController.getMainSettings().edit();
-        this.chatTranslateEnabled = Boolean.valueOf(z10);
-        edit.putBoolean("translate_chat_button", z10).apply();
+        this.chatTranslateEnabled = Boolean.valueOf(z4);
+        edit.putBoolean("translate_chat_button", z4).apply();
     }
 
-    public void setContextTranslateEnabled(boolean z10) {
+    public void setContextTranslateEnabled(boolean z4) {
         SharedPreferences.Editor edit = this.messagesController.getMainSettings().edit();
-        this.contextTranslateEnabled = Boolean.valueOf(z10);
-        edit.putBoolean("translate_button", z10).apply();
+        this.contextTranslateEnabled = Boolean.valueOf(z4);
+        edit.putBoolean("translate_button", z4).apply();
     }
 
     public void setDialogTranslateTo(long j10, String str) {
@@ -2410,7 +2410,7 @@ public class TranslateController extends BaseController {
             return;
         }
         if (isTranslatingDialog(j10)) {
-            AndroidUtilities.runOnUIThread(new gl(this, j10, str), 150L);
+            AndroidUtilities.runOnUIThread(new kl(this, j10, str), 150L);
         } else {
             synchronized (this) {
                 this.translateDialogLanguage.put(Long.valueOf(j10), str);
@@ -2423,11 +2423,11 @@ public class TranslateController extends BaseController {
             longSparseArray.put(j10, bool);
         }
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j10), bool);
-        k31.H(str);
+        v31.H(str);
     }
 
-    public void setHideTranslateDialog(long j10, boolean z10) {
-        setHideTranslateDialog(j10, z10, false);
+    public void setHideTranslateDialog(long j10, boolean z4) {
+        setHideTranslateDialog(j10, z4, false);
     }
 
     public void toggleTranslatingDialog(long j10) {
@@ -2439,7 +2439,7 @@ public class TranslateController extends BaseController {
             return;
         }
         MessageKey messageKey = new MessageKey(messageObject);
-        String B = k31.B();
+        String B = v31.B();
         TLRPC.Message message = messageObject.messageOwner;
         if (message.translatedText != null && TextUtils.equals(message.translatedToLanguage, B)) {
             if (runnable != null) {
@@ -2468,7 +2468,7 @@ public class TranslateController extends BaseController {
         }
         tL_messages_translateText.text.add(tL_textWithEntities);
         tL_messages_translateText.to_lang = normalizeLanguage(B);
-        getConnectionsManager().sendRequest(tL_messages_translateText, new il(this, messageObject, B, messageKey, runnable, System.currentTimeMillis(), tL_textWithEntities));
+        getConnectionsManager().sendRequest(tL_messages_translateText, new ml(this, messageObject, B, messageKey, runnable, System.currentTimeMillis(), tL_textWithEntities));
     }
 
     public void translateStory(TL_stories.StoryItem storyItem, Runnable runnable) {
@@ -2476,7 +2476,7 @@ public class TranslateController extends BaseController {
             return;
         }
         StoryKey storyKey = new StoryKey(storyItem);
-        String B = k31.B();
+        String B = v31.B();
         if (storyItem.translatedText != null && TextUtils.equals(storyItem.translatedLng, B)) {
             if (runnable != null) {
                 runnable.run();
@@ -2497,24 +2497,24 @@ public class TranslateController extends BaseController {
             tL_textWithEntities.entities = storyItem.entities;
             tL_messages_translateText.text.add(tL_textWithEntities);
             tL_messages_translateText.to_lang = normalizeLanguage(B);
-            getConnectionsManager().sendRequest(tL_messages_translateText, new kl(this, storyItem, B, storyKey, runnable, tL_textWithEntities, 0));
+            getConnectionsManager().sendRequest(tL_messages_translateText, new ol(this, storyItem, B, storyKey, runnable, tL_textWithEntities, 0));
         }
     }
 
     public void updateDialogFull(long j10) {
-        boolean z10;
+        boolean z4;
         if (isFeatureAvailable(j10) && isDialogTranslatable(j10)) {
             boolean contains = this.hideTranslateDialogs.contains(Long.valueOf(j10));
             TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-j10);
             if (chatFull != null) {
-                z10 = chatFull.translations_disabled;
+                z4 = chatFull.translations_disabled;
             } else {
                 TLRPC.UserFull userFull = getMessagesController().getUserFull(j10);
-                z10 = userFull != null ? userFull.translations_disabled : false;
+                z4 = userFull != null ? userFull.translations_disabled : false;
             }
             synchronized (this) {
                 try {
-                    if (z10) {
+                    if (z4) {
                         this.hideTranslateDialogs.add(Long.valueOf(j10));
                         this.translatingDialogs.remove(j10);
                     } else {
@@ -2524,7 +2524,7 @@ public class TranslateController extends BaseController {
                     throw th2;
                 }
             }
-            if (contains != z10) {
+            if (contains != z4) {
                 saveTranslatingDialogsCache();
                 NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j10), Boolean.valueOf(isTranslatingDialog(j10)));
             }
@@ -2536,7 +2536,7 @@ public class TranslateController extends BaseController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private void checkTranslation(MessageObject messageObject, boolean z10, final boolean z11) {
+    private void checkTranslation(MessageObject messageObject, boolean z4, final boolean z10) {
         final MessageObject messageObject2;
         PollText pollText;
         PollText pollText2;
@@ -2544,15 +2544,15 @@ public class TranslateController extends BaseController {
         MessageObject messageObject3;
         if (messageObject != null && messageObject.messageOwner != null) {
             final long dialogId = messageObject.getDialogId();
-            if (z10) {
+            if (z4) {
                 TLRPC.Message message = messageObject.messageOwner;
                 if (message.summarizedOpen && message.summaryText == null && !isTranslatingDialog(messageObject.getDialogId())) {
-                    pushToSummarize(messageObject, null, new e4(this, messageObject, dialogId));
+                    pushToSummarize(messageObject, null, new f4(this, messageObject, dialogId));
                 }
             }
             if (isFeatureAvailable(dialogId)) {
-                if (!z11 && (messageObject3 = messageObject.replyMessageObject) != null) {
-                    checkTranslation(messageObject3, z10, true);
+                if (!z10 && (messageObject3 = messageObject.replyMessageObject) != null) {
+                    checkTranslation(messageObject3, z4, true);
                 }
                 if (isTranslatable(messageObject)) {
                     if (!isTranslatingDialog(dialogId)) {
@@ -2561,7 +2561,7 @@ public class TranslateController extends BaseController {
                     }
                     if (!isTranslateDialogHidden(dialogId)) {
                         String dialogTranslateTo = getDialogTranslateTo(dialogId);
-                        if (!z11 && messageObject.type != 36) {
+                        if (!z10 && messageObject.type != 36) {
                             TLRPC.Message message2 = messageObject.messageOwner;
                             if (((((message2.voiceTranscriptionOpen && message2.voiceTranscriptionFinal) ? message2.translatedVoiceTranscription : message2.translatedText) == null && message2.translatedPoll == null) || (((pollText2 = message2.translatedPoll) != null && !PollText.isFullyTranslated(messageObject, pollText2)) || !dialogTranslateTo.equals(messageObject.messageOwner.translatedToLanguage))) && (findReplyMessageObject = findReplyMessageObject(dialogId, messageObject.getId())) != null) {
                                 TLRPC.Message message3 = messageObject.messageOwner;
@@ -2570,18 +2570,18 @@ public class TranslateController extends BaseController {
                                 message3.translatedText = message4.translatedText;
                                 message3.translatedPoll = message4.translatedPoll;
                                 messageObject2 = findReplyMessageObject;
-                                if (z10 && isTranslatingDialog(dialogId)) {
+                                if (z4 && isTranslatingDialog(dialogId)) {
                                     if (messageObject2.type == 36) {
                                         TLRPC.Message message5 = messageObject2.messageOwner;
                                         if (message5.summarizedOpen) {
                                             if (message5.translatedSummaryText == null || !dialogTranslateTo.equals(message5.translatedSummaryLanguage)) {
-                                                pushToSummarize(messageObject2, dialogTranslateTo, new ih.z0(this, messageObject2, dialogTranslateTo, dialogId, 3));
+                                                pushToSummarize(messageObject2, dialogTranslateTo, new kh.y0(this, messageObject2, dialogTranslateTo, dialogId, 3));
                                                 return;
                                             }
                                             return;
                                         }
                                         if (!(((message5.voiceTranscriptionOpen && message5.voiceTranscriptionFinal) ? message5.translatedVoiceTranscription : message5.translatedText) == null && message5.translatedPoll == null) && (((pollText = message5.translatedPoll) == null || PollText.isFullyTranslated(messageObject2, pollText)) && dialogTranslateTo.equals(messageObject2.messageOwner.translatedToLanguage))) {
-                                            if (z11) {
+                                            if (z10) {
                                                 keepReplyMessage(messageObject2);
                                                 return;
                                             }
@@ -2589,16 +2589,16 @@ public class TranslateController extends BaseController {
                                         } else {
                                             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageTranslating, messageObject2);
                                             if (!(MessageObject.getMedia(messageObject2) instanceof TLRPC.TL_messageMediaPoll)) {
-                                                pushToTranslate(messageObject2, dialogTranslateTo, new Utilities.Callback4() { // from class: org.telegram.messenger.fl
+                                                pushToTranslate(messageObject2, dialogTranslateTo, new Utilities.Callback4() { // from class: org.telegram.messenger.jl
                                                     @Override // org.telegram.messenger.Utilities.Callback4
                                                     public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-                                                        TranslateController.this.lambda$checkTranslation$8(messageObject2, z11, dialogId, (Boolean) obj, (Integer) obj2, (TLRPC.TL_textWithEntities) obj3, (String) obj4);
+                                                        TranslateController.this.lambda$checkTranslation$8(messageObject2, z10, dialogId, (Boolean) obj, (Integer) obj2, (TLRPC.TL_textWithEntities) obj3, (String) obj4);
                                                     }
                                                 });
                                                 return;
                                             } else {
                                                 final int i10 = 1;
-                                                pushPollToTranslate(messageObject2, dialogTranslateTo, new Utilities.Callback3(this) { // from class: org.telegram.messenger.el
+                                                pushPollToTranslate(messageObject2, dialogTranslateTo, new Utilities.Callback3(this) { // from class: org.telegram.messenger.il
                                                     public final /* synthetic */ TranslateController b;
 
                                                     {
@@ -2609,10 +2609,10 @@ public class TranslateController extends BaseController {
                                                     public final void run(Object obj, Object obj2, Object obj3) {
                                                         switch (i10) {
                                                             case 0:
-                                                                this.b.lambda$checkTranslation$5(messageObject2, z11, dialogId, (Integer) obj, (TL_iv.RichMessage) obj2, (String) obj3);
+                                                                this.b.lambda$checkTranslation$5(messageObject2, z10, dialogId, (Integer) obj, (TL_iv.RichMessage) obj2, (String) obj3);
                                                                 break;
                                                             default:
-                                                                this.b.lambda$checkTranslation$7(messageObject2, z11, dialogId, (Integer) obj, (TranslateController.PollText) obj2, (String) obj3);
+                                                                this.b.lambda$checkTranslation$7(messageObject2, z10, dialogId, (Integer) obj, (TranslateController.PollText) obj2, (String) obj3);
                                                                 break;
                                                         }
                                                     }
@@ -2625,7 +2625,7 @@ public class TranslateController extends BaseController {
                                     if (message6.translatedRichMessage == null || !dialogTranslateTo.equals(message6.translatedToLanguage)) {
                                         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageTranslating, messageObject2);
                                         final int i11 = 0;
-                                        pushRichMessageToTranslate(messageObject2, dialogTranslateTo, new Utilities.Callback3(this) { // from class: org.telegram.messenger.el
+                                        pushRichMessageToTranslate(messageObject2, dialogTranslateTo, new Utilities.Callback3(this) { // from class: org.telegram.messenger.il
                                             public final /* synthetic */ TranslateController b;
 
                                             {
@@ -2636,10 +2636,10 @@ public class TranslateController extends BaseController {
                                             public final void run(Object obj, Object obj2, Object obj3) {
                                                 switch (i11) {
                                                     case 0:
-                                                        this.b.lambda$checkTranslation$5(messageObject2, z11, dialogId, (Integer) obj, (TL_iv.RichMessage) obj2, (String) obj3);
+                                                        this.b.lambda$checkTranslation$5(messageObject2, z10, dialogId, (Integer) obj, (TL_iv.RichMessage) obj2, (String) obj3);
                                                         break;
                                                     default:
-                                                        this.b.lambda$checkTranslation$7(messageObject2, z11, dialogId, (Integer) obj, (TranslateController.PollText) obj2, (String) obj3);
+                                                        this.b.lambda$checkTranslation$7(messageObject2, z10, dialogId, (Integer) obj, (TranslateController.PollText) obj2, (String) obj3);
                                                         break;
                                                 }
                                             }
@@ -2650,7 +2650,7 @@ public class TranslateController extends BaseController {
                             }
                         }
                         messageObject2 = messageObject;
-                        if (z10) {
+                        if (z4) {
                             if (messageObject2.type == 36) {
                             }
                         }
@@ -2671,24 +2671,24 @@ public class TranslateController extends BaseController {
         return chat != null && chat.autotranslation;
     }
 
-    public void setHideTranslateDialog(long j10, boolean z10, boolean z11) {
+    public void setHideTranslateDialog(long j10, boolean z4, boolean z10) {
         TLRPC.TL_messages_togglePeerTranslations tL_messages_togglePeerTranslations = new TLRPC.TL_messages_togglePeerTranslations();
         tL_messages_togglePeerTranslations.peer = getMessagesController().getInputPeer(j10);
-        tL_messages_togglePeerTranslations.disabled = z10;
+        tL_messages_togglePeerTranslations.disabled = z4;
         getConnectionsManager().sendRequest(tL_messages_togglePeerTranslations, null);
         TLRPC.ChatFull chatFull = getMessagesController().getChatFull(-j10);
         if (chatFull != null) {
-            chatFull.translations_disabled = z10;
+            chatFull.translations_disabled = z4;
             getMessagesStorage().updateChatInfo(chatFull, true);
         }
         TLRPC.UserFull userFull = getMessagesController().getUserFull(j10);
         if (userFull != null) {
-            userFull.translations_disabled = z10;
+            userFull.translations_disabled = z4;
             getMessagesStorage().updateUserInfo(userFull, true);
         }
         synchronized (this) {
             try {
-                if (z10) {
+                if (z4) {
                     this.hideTranslateDialogs.add(Long.valueOf(j10));
                     this.translatingDialogs.remove(j10);
                 } else {
@@ -2699,22 +2699,22 @@ public class TranslateController extends BaseController {
             }
         }
         saveTranslatingDialogsCache();
-        if (z11) {
+        if (z10) {
             return;
         }
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j10), Boolean.valueOf(isTranslatingDialog(j10)));
     }
 
-    public boolean toggleTranslatingDialog(long j10, boolean z10) {
+    public boolean toggleTranslatingDialog(long j10, boolean z4) {
         boolean isTranslatingDialog = isTranslatingDialog(j10);
-        boolean z11 = true;
-        if (z10 && !isTranslatingDialog) {
+        boolean z10 = true;
+        if (z4 && !isTranslatingDialog) {
             LongSparseArray<Boolean> longSparseArray = this.translatingDialogs;
             Boolean bool = Boolean.TRUE;
             longSparseArray.put(j10, bool);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogTranslate, Long.valueOf(j10), bool);
-        } else if (z10 || !isTranslatingDialog) {
-            z11 = false;
+        } else if (z4 || !isTranslatingDialog) {
+            z10 = false;
         } else {
             LongSparseArray<Boolean> longSparseArray2 = this.translatingDialogs;
             Boolean bool2 = Boolean.FALSE;
@@ -2723,7 +2723,7 @@ public class TranslateController extends BaseController {
             cancelTranslations(j10);
         }
         saveTranslatingDialogsCache();
-        return z11;
+        return z10;
     }
 
     public boolean isTranslating(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages) {
@@ -2731,10 +2731,10 @@ public class TranslateController extends BaseController {
             return false;
         }
         TLRPC.Message message = messageObject.messageOwner;
-        boolean z10 = message != null && message.voiceTranscriptionOpen && message.voiceTranscriptionFinal;
+        boolean z4 = message != null && message.voiceTranscriptionOpen && message.voiceTranscriptionFinal;
         synchronized (this) {
             try {
-                if ((z10 ? this.loadingTranscriptionTranslations : this.loadingTranslations).contains(Integer.valueOf(messageObject.getId()))) {
+                if ((z4 ? this.loadingTranscriptionTranslations : this.loadingTranslations).contains(Integer.valueOf(messageObject.getId()))) {
                     return true;
                 }
                 if (groupedMessages != null) {
@@ -2744,7 +2744,7 @@ public class TranslateController extends BaseController {
                     while (i10 < size) {
                         MessageObject messageObject2 = arrayList.get(i10);
                         i10++;
-                        if ((z10 ? this.loadingTranscriptionTranslations : this.loadingTranslations).contains(Integer.valueOf(messageObject2.getId()))) {
+                        if ((z4 ? this.loadingTranscriptionTranslations : this.loadingTranslations).contains(Integer.valueOf(messageObject2.getId()))) {
                             return true;
                         }
                     }

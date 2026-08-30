@@ -1,27 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class s41 extends z51 {
-    public final /* synthetic */ View M;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique N;
-    public final /* synthetic */ t41 O;
+public final /* synthetic */ class s41 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.yk0 {
+    public final /* synthetic */ q61 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s41(t41 t41Var, Context context, Runnable runnable, View view, m51 m51Var, org.telegram.ui.ActionBar.c6 c6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(t41Var.e, context, runnable, view, m51Var, c6Var);
-        this.O = t41Var;
-        this.M = view2;
-        this.N = tL_starGiftUnique;
+    public /* synthetic */ s41(q61 q61Var) {
+        this.a = q61Var;
     }
 
-    @Override // org.telegram.ui.z51, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.O.e.T0 = null;
+    @Override // org.telegram.ui.Components.yk0
+    public void d() {
+        this.a.m();
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        q61 q61Var = this.a;
+        int i11 = q61Var.S;
+        ConnectionsManager.getInstance(i11).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
+        MediaDataController.getInstance(i11).clearRecentEmojiStatuses();
+        q61Var.B(false, true, true);
     }
 }

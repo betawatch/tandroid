@@ -1,38 +1,68 @@
 package c9;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e3.f;
-import g9.a0;
-import g9.n;
-import g9.r;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
+import j$.util.DesugarCollections;
+import j7.j5;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b implements Callable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ r b;
-    public final /* synthetic */ f c;
+public final class b {
+    public final String a;
+    public final Set b;
+    public final Set c;
+    public final int d;
+    public final int e;
+    public final e f;
+    public final Set g;
 
-    public b(boolean z10, r rVar, f fVar) {
-        this.a = z10;
-        this.b = rVar;
-        this.c = fVar;
+    public b(String str, Set set, Set set2, int i10, int i11, e eVar, Set set3) {
+        this.a = str;
+        this.b = DesugarCollections.unmodifiableSet(set);
+        this.c = DesugarCollections.unmodifiableSet(set2);
+        this.d = i10;
+        this.e = i11;
+        this.f = eVar;
+        this.g = DesugarCollections.unmodifiableSet(set3);
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        if (!this.a) {
-            return null;
+    public static a a(t tVar) {
+        t[] tVarArr = new t[0];
+        a aVar = new a();
+        aVar.a = null;
+        HashSet hashSet = new HashSet();
+        aVar.d = hashSet;
+        aVar.e = new HashSet();
+        aVar.b = 0;
+        aVar.c = 0;
+        aVar.f = new HashSet();
+        hashSet.add(tVar);
+        for (t tVar2 : tVarArr) {
+            j5.a(tVar2, "Null interface");
         }
-        r rVar = this.b;
-        ExecutorService executorService = rVar.k;
-        n nVar = new n(2, rVar, this.c);
-        ExecutorService executorService2 = a0.a;
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new androidx.car.app.utils.b(nVar, executorService, taskCompletionSource, 10));
-        taskCompletionSource.getTask();
-        return null;
+        Collections.addAll((HashSet) aVar.d, tVarArr);
+        return aVar;
+    }
+
+    public static a b(Class cls) {
+        return new a(cls, new Class[0]);
+    }
+
+    public static b c(Object obj, Class cls, Class... clsArr) {
+        HashSet hashSet = new HashSet();
+        HashSet hashSet2 = new HashSet();
+        HashSet hashSet3 = new HashSet();
+        hashSet.add(t.a(cls));
+        for (Class cls2 : clsArr) {
+            j5.a(cls2, "Null interface");
+            hashSet.add(t.a(cls2));
+        }
+        return new b(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new a1.c(obj, 3), hashSet3);
+    }
+
+    public final String toString() {
+        return "Component<" + Arrays.toString(this.b.toArray()) + ">{" + this.d + ", type=" + this.e + ", deps=" + Arrays.toString(this.c.toArray()) + "}";
     }
 }

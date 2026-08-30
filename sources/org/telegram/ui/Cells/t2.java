@@ -1,43 +1,83 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v2 b;
+public final class t2 extends FrameLayout {
+    public int a;
+    public TextView b;
+    public TextView c;
+    public RadioButton d;
+    public boolean e;
 
-    public /* synthetic */ t2(v2 v2Var, int i10) {
-        this.a = i10;
-        this.b = v2Var;
+    public final void a(boolean z4, boolean z10) {
+        RadioButton radioButton = this.d;
+        TextView textView = this.c;
+        TextView textView2 = this.b;
+        setEnabled(z4);
+        if (z10) {
+            textView2.animate().alpha(z4 ? 1.0f : 0.5f).start();
+            textView.animate().alpha(z4 ? 1.0f : 0.5f).start();
+            radioButton.animate().alpha(z4 ? 1.0f : 0.5f).start();
+        } else {
+            textView2.setAlpha(z4 ? 1.0f : 0.5f);
+            textView.setAlpha(z4 ? 1.0f : 0.5f);
+            radioButton.setAlpha(z4 ? 1.0f : 0.5f);
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                v2 v2Var = this.b;
-                v2Var.getClass();
-                v2Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2Var.requestLayout();
-                q0.a aVar = v2Var.c;
-                if (aVar != null) {
-                    aVar.accept(Float.valueOf(v2Var.a));
-                    break;
-                }
-                break;
-            default:
-                v2 v2Var2 = this.b;
-                v2Var2.getClass();
-                v2Var2.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2Var2.requestLayout();
-                q0.a aVar2 = v2Var2.c;
-                if (aVar2 != null) {
-                    aVar2.accept(Float.valueOf(v2Var2.a));
-                    break;
-                }
-                break;
+    public final void b() {
+        FrameLayout.LayoutParams d;
+        FrameLayout.LayoutParams d10;
+        TextView textView = this.b;
+        TextView textView2 = this.c;
+        if (textView2.getVisibility() == 0) {
+            boolean z4 = LocaleController.isRTL;
+            d = k7.b6.d(-1, -1.0f, (z4 ? 5 : 3) | 48, z4 ? 23.0f : 61.0f, 0.0f, z4 ? 61.0f : 23.0f, 0.0f);
+        } else {
+            boolean z10 = LocaleController.isRTL;
+            d = k7.b6.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 61.0f : 23.0f, 0.0f, z10 ? 23.0f : 61.0f, 0.0f);
         }
+        textView.setLayoutParams(d);
+        RadioButton radioButton = this.d;
+        if (textView2.getVisibility() == 0) {
+            d10 = k7.b6.d(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+        } else {
+            d10 = k7.b6.d(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+        }
+        radioButton.setLayoutParams(d10);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.e) {
+            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 23.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 23.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.e ? 1 : 0));
+        int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
+        TextView textView = this.c;
+        int dp = measuredWidth - AndroidUtilities.dp((textView.getVisibility() == 0 ? 12 : 0) + 84);
+        this.d.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
+        if (textView.getVisibility() == 0) {
+            textView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+            dp = org.telegram.ui.b.t(12.0f, textView.getMeasuredWidth(), dp);
+        }
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    }
+
+    public void setTextColor(int i10) {
+        this.b.setTextColor(i10);
     }
 }

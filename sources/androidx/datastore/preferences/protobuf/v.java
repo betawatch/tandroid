@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class v implements Cloneable {
     public final x a;
@@ -23,7 +23,7 @@ public abstract class v implements Cloneable {
         if (b10.g()) {
             return b10;
         }
-        throw new a6.b();
+        throw new a7.b();
     }
 
     public final x b() {

@@ -1,63 +1,69 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import android.view.ContextThemeWrapper;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ld implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ Object e;
+public final class ld extends RadialProgressView {
+    public final /* synthetic */ int H;
+    public final /* synthetic */ Object I;
 
-    public /* synthetic */ ld(int i10, nh.d dVar, org.telegram.ui.ActionBar.f3 f3Var, long j10) {
-        this.b = i10;
-        this.d = dVar;
-        this.e = f3Var;
-        this.c = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ld(org.telegram.ui.Components.v40 v40Var, Context context, int i10) {
+        super(context, null);
+        this.H = i10;
+        this.I = v40Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                de deVar = (de) this.d;
-                Context context = (Context) this.e;
-                if (view.isEnabled()) {
-                    nh.d dVar = deVar.P0;
-                    if (!dVar.J) {
-                        dVar.setLoading(true);
-                        TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
-                        int i10 = this.b;
-                        tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new bg.h3(27, deVar, context));
-                        break;
-                    }
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.H) {
+            case 3:
+                super.invalidate();
+                bu0 bu0Var = ((PhotoViewer) this.I).b0;
+                if (bu0Var != null) {
+                    bu0Var.invalidate();
+                    break;
                 }
                 break;
             default:
-                nh.d dVar2 = (nh.d) this.d;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.e;
-                TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-                createconferencecall.random_id = Utilities.random.nextInt();
-                int i11 = this.b;
-                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new jh.u(i11, dVar2, f3Var, this.c));
+                super.invalidate();
                 break;
         }
     }
 
-    public /* synthetic */ ld(de deVar, int i10, long j10, Context context) {
-        this.d = deVar;
-        this.b = i10;
-        this.c = j10;
-        this.e = context;
+    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
+    public final void setAlpha(float f10) {
+        switch (this.H) {
+            case 0:
+                super.setAlpha(f10);
+                ((nd) this.I).f.invalidate();
+                break;
+            case 1:
+                super.setAlpha(f10);
+                ((e70) this.I).e.invalidate();
+                break;
+            case 2:
+                super.setAlpha(f10);
+                ((ze0) this.I).h.invalidate();
+                break;
+            default:
+                super.setAlpha(f10);
+                bu0 bu0Var = ((PhotoViewer) this.I).b0;
+                if (bu0Var != null) {
+                    bu0Var.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ld(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(contextThemeWrapper, f6Var);
+        this.H = 3;
+        this.I = photoViewer;
     }
 }

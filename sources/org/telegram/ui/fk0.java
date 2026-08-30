@@ -1,41 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fk0 extends FrameLayout {
-    public TextView a;
-    public RadioButton b;
-    public org.telegram.ui.Components.hp c;
-    public boolean d;
-    public ek0 e;
+public final /* synthetic */ class fk0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gk0 b;
+    public final /* synthetic */ String c;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
+    public /* synthetic */ fk0(gk0 gk0Var, String str, int i10) {
+        this.a = i10;
+        this.b = gk0Var;
+        this.c = str;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                gk0 gk0Var = this.b;
+                String str = this.c;
+                gk0Var.getClass();
+                AndroidUtilities.runOnUIThread(new fk0(gk0Var, str, 1));
+                break;
+            default:
+                gk0 gk0Var2 = this.b;
+                String str2 = this.c;
+                tf.k1 k1Var = gk0Var2.h;
+                int i10 = gk0Var2.n.s;
+                k1Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+                Utilities.searchQueue.postRunnable(new hf0(gk0Var2, str2, new ArrayList(gk0Var2.n.w), 8));
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

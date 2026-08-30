@@ -1,19 +1,18 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g5 implements s9.d {
-    public static final g5 a = new g5();
-
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(h0.class, l1.h(3, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(2, com.google.android.recaptcha.internal.a.r(h0.class, new e0(1)))))));
-    }
-
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+public abstract class g5 {
+    public static c6.b a(byte[] bArr, Parcelable.Creator creator) {
+        b6.m.h(creator);
+        Parcel obtain = Parcel.obtain();
+        obtain.unmarshall(bArr, 0, bArr.length);
+        obtain.setDataPosition(0);
+        c6.b bVar = (c6.b) creator.createFromParcel(obtain);
+        obtain.recycle();
+        return bVar;
     }
 }

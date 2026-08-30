@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzji implements zzjt {
     public static final zzji zza = new zzji();
@@ -10,7 +10,7 @@ public final class zzji implements zzjt {
 
     @Override // com.google.android.recaptcha.internal.zzjt
     public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
-        boolean z10 = true;
+        boolean z4 = true;
         if (zzztVarArr.length != 1) {
             throw new zzdm(4, 3, null);
         }
@@ -29,19 +29,19 @@ public final class zzji implements zzjt {
                 zzja zzc = zzizVar.zzc();
                 try {
                     zziy.zza(zza2);
-                } catch (zzdm e10) {
-                    if (e10.zzb() == 8 || e10.zzb() == 6) {
-                        z10 = false;
-                    } else if (e10.zzb() != 47) {
-                        throw e10;
+                } catch (zzdm e) {
+                    if (e.zzb() == 8 || e.zzb() == 6) {
+                        z4 = false;
+                    } else if (e.zzb() != 47) {
+                        throw e;
                     }
                 }
-                zzc.zze(i10, Boolean.valueOf(z10));
-            } catch (zzdm e11) {
-                throw e11;
+                zzc.zze(i10, Boolean.valueOf(z4));
+            } catch (zzdm e6) {
+                throw e6;
             }
-        } catch (Exception e12) {
-            throw new zzdm(6, 8, e12);
+        } catch (Exception e10) {
+            throw new zzdm(6, 8, e10);
         }
     }
 }

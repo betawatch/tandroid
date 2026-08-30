@@ -1,39 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ez0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fz0 b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ ez0(fz0 fz0Var, int i10) {
-        this.a = i10;
-        this.b = fz0Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class ez0 extends jq {
+    public final /* synthetic */ boolean[] a1;
+    public final /* synthetic */ TLRPC.User b1;
+    public final /* synthetic */ ProfileActivity c1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ez0(ProfileActivity profileActivity, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, TLRPC.User user) {
+        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
+        this.c1 = profileActivity;
+        this.a1 = zArr;
+        this.b1 = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b.z0;
-                sy0 sy0Var = profileActivity.x5;
-                if (sy0Var != null) {
-                    sy0Var.dismiss();
-                    profileActivity.x5 = null;
-                    break;
-                }
-                break;
-            default:
-                try {
-                    org.telegram.ui.Components.jl0 currentListView = this.b.t0.K.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
+        if (!z4 && z10 && this.a1[0]) {
+            ProfileActivity profileActivity = this.c1;
+            if (org.telegram.ui.Components.qc.a(profileActivity)) {
+                org.telegram.ui.Components.qc.C(profileActivity, this.b1.first_name).j();
+            }
         }
     }
 }

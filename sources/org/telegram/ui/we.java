@@ -1,28 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class we implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ we(tn tnVar, long j10, long j11, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class we implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
+
+    public /* synthetic */ we(xn xnVar, int i10) {
         this.a = i10;
-        this.b = tnVar;
-        this.c = j10;
-        this.d = j11;
+        this.b = xnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                tn.o0(this.b, this.c, this.d);
+                xn.g1(this.b, (Integer) obj, (Boolean) obj2);
+                break;
+            case 1:
+                xn.O0(this.b, (Long) obj, (Boolean) obj2);
+                break;
+            case 2:
+                xn xnVar = this.b;
+                sg.b bVar = xnVar.w8;
+                bVar.a((Bitmap) obj2);
+                tg.c.c(bVar, xnVar.fragmentView);
+                xnVar.x8.d();
                 break;
             default:
-                tn.k1(this.b, this.c, this.d);
+                xn xnVar2 = this.b;
+                xnVar2.y8 = (Bitmap) obj;
+                Paint paint = new Paint(1);
+                xnVar2.A8 = paint;
+                Bitmap bitmap = xnVar2.y8;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                xnVar2.z8 = bitmapShader;
+                paint.setShader(bitmapShader);
+                xnVar2.B8 = new Matrix();
+                sg.b bVar2 = xnVar2.w8;
+                bVar2.a((Bitmap) obj2);
+                tg.c.c(bVar2, xnVar2.fragmentView);
+                xnVar2.x8.d();
                 break;
         }
     }

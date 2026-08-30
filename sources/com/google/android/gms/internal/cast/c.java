@@ -1,21 +1,20 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c {
-    public final long a;
-    public long b;
-    public long c;
-    public final AtomicInteger d;
-    public final int e;
+public final class c extends g {
+    public static final u5.b e = new u5.b("AppVisibilityProxy", null);
+    public static final int f = 1;
+    public final Set c;
+    public int d;
 
-    public c(a5.c cVar) {
-        this.e = cVar.a;
-        long currentTimeMillis = System.currentTimeMillis();
-        this.a = currentTimeMillis;
-        this.b = currentTimeMillis;
-        this.d = new AtomicInteger(1);
+    public c() {
+        super("com.google.android.gms.cast.framework.IAppVisibilityListener", 1);
+        this.c = DesugarCollections.synchronizedSet(new HashSet());
+        this.d = f;
     }
 }

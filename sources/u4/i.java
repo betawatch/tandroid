@@ -1,143 +1,66 @@
 package u4;
 
-import f5.d0;
-import java.util.ArrayDeque;
-import java.util.PriorityQueue;
-import sf.f1;
-import t4.k;
+import java.util.List;
+import java.util.Map;
+import s8.v;
+import s8.x;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class i implements t4.g {
-    public final ArrayDeque a = new ArrayDeque();
-    public final ArrayDeque b;
-    public final PriorityQueue c;
-    public g d;
-    public long e;
-    public long f;
+public final class i extends m {
+    public final int d;
+    public final long e;
+    public final boolean f;
+    public final boolean g;
+    public final long h;
+    public final boolean i;
+    public final int j;
+    public final long k;
+    public final int l;
+    public final long m;
+    public final long n;
+    public final boolean o;
+    public final boolean p;
+    public final o3.g q;
+    public final v r;
+    public final v s;
+    public final x t;
+    public final long u;
+    public final h v;
 
-    public i() {
-        for (int i10 = 0; i10 < 10; i10++) {
-            this.a.add(new g());
-        }
-        this.b = new ArrayDeque();
-        for (int i11 = 0; i11 < 2; i11++) {
-            ArrayDeque arrayDeque = this.b;
-            f1 f1Var = new f1(this, 12);
-            h hVar = new h();
-            hVar.c = f1Var;
-            arrayDeque.add(hVar);
-        }
-        this.c = new PriorityQueue();
-    }
-
-    @Override // t4.g
-    public final void a(long j10) {
-        this.e = j10;
-    }
-
-    public abstract j b();
-
-    public abstract void c(g gVar);
-
-    @Override // m3.e
-    /* renamed from: d, reason: merged with bridge method [inline-methods] */
-    public k dequeueOutputBuffer() {
-        ArrayDeque arrayDeque = this.b;
-        if (arrayDeque.isEmpty()) {
-            return null;
-        }
-        while (true) {
-            PriorityQueue priorityQueue = this.c;
-            if (priorityQueue.isEmpty()) {
-                return null;
-            }
-            g gVar = (g) priorityQueue.peek();
-            int i10 = d0.a;
-            if (gVar.d > this.e) {
-                return null;
-            }
-            g gVar2 = (g) priorityQueue.poll();
-            boolean isEndOfStream = gVar2.isEndOfStream();
-            ArrayDeque arrayDeque2 = this.a;
-            if (isEndOfStream) {
-                k kVar = (k) arrayDeque.pollFirst();
-                kVar.addFlag(4);
-                gVar2.clear();
-                arrayDeque2.add(gVar2);
-                return kVar;
-            }
-            c(gVar2);
-            if (e()) {
-                j b10 = b();
-                k kVar2 = (k) arrayDeque.pollFirst();
-                kVar2.a(gVar2.d, b10, Long.MAX_VALUE);
-                gVar2.clear();
-                arrayDeque2.add(gVar2);
-                return kVar2;
-            }
-            gVar2.clear();
-            arrayDeque2.add(gVar2);
-        }
-    }
-
-    @Override // m3.e
-    public final Object dequeueInputBuffer() {
-        f5.a.i(this.d == null);
-        ArrayDeque arrayDeque = this.a;
-        if (arrayDeque.isEmpty()) {
-            return null;
-        }
-        g gVar = (g) arrayDeque.pollFirst();
-        this.d = gVar;
-        return gVar;
-    }
-
-    public abstract boolean e();
-
-    @Override // m3.e
-    public void flush() {
-        ArrayDeque arrayDeque;
-        this.f = 0L;
-        this.e = 0L;
-        while (true) {
-            PriorityQueue priorityQueue = this.c;
-            boolean isEmpty = priorityQueue.isEmpty();
-            arrayDeque = this.a;
-            if (isEmpty) {
-                break;
-            }
-            g gVar = (g) priorityQueue.poll();
-            int i10 = d0.a;
-            gVar.clear();
-            arrayDeque.add(gVar);
-        }
-        g gVar2 = this.d;
-        if (gVar2 != null) {
-            gVar2.clear();
-            arrayDeque.add(gVar2);
-            this.d = null;
-        }
-    }
-
-    @Override // m3.e
-    public final void queueInputBuffer(Object obj) {
-        t4.j jVar = (t4.j) obj;
-        f5.a.f(jVar == this.d);
-        g gVar = (g) jVar;
-        if (gVar.isDecodeOnly()) {
-            gVar.clear();
-            this.a.add(gVar);
+    public i(int i10, String str, List list, long j10, boolean z4, long j11, boolean z10, int i11, long j12, int i12, long j13, long j14, boolean z11, boolean z12, boolean z13, o3.g gVar, List list2, List list3, h hVar, Map map) {
+        super(str, list, z11);
+        this.d = i10;
+        this.h = j11;
+        this.g = z4;
+        this.i = z10;
+        this.j = i11;
+        this.k = j12;
+        this.l = i12;
+        this.m = j13;
+        this.n = j14;
+        this.o = z12;
+        this.p = z13;
+        this.q = gVar;
+        this.r = v.t(list2);
+        this.s = v.t(list3);
+        this.t = x.a(map);
+        if (!list3.isEmpty()) {
+            d dVar = (d) s8.l.h(list3);
+            this.u = dVar.e + dVar.c;
+        } else if (list2.isEmpty()) {
+            this.u = 0L;
         } else {
-            long j10 = this.f;
-            this.f = 1 + j10;
-            gVar.r = j10;
-            this.c.add(gVar);
+            f fVar = (f) s8.l.h(list2);
+            this.u = fVar.e + fVar.c;
         }
-        this.d = null;
+        this.e = j10 != -9223372036854775807L ? j10 >= 0 ? Math.min(this.u, j10) : Math.max(0L, this.u + j10) : -9223372036854775807L;
+        this.f = j10 >= 0;
+        this.v = hVar;
     }
 
-    @Override // m3.e
-    public void release() {
+    @Override // n4.a
+    public final Object a(List list) {
+        return this;
     }
 }

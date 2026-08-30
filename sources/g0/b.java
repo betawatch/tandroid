@@ -7,18 +7,18 @@ import android.content.pm.ShortcutInfo;
 import android.os.Build;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import e0.p0;
-import f0.h;
-import i7.u6;
+import e0.o0;
+import f0.i;
 import java.util.Arrays;
+import k7.j6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b {
     public final c a;
 
     public b(Context context, ShortcutInfo shortcutInfo) {
-        p0[] p0VarArr;
+        o0[] o0VarArr;
         String string;
         c cVar = new c();
         this.a = cVar;
@@ -38,35 +38,35 @@ public final class b {
         }
         cVar.j = shortcutInfo.getCategories();
         PersistableBundle extras = shortcutInfo.getExtras();
-        h hVar = null;
+        i iVar = null;
         if (extras == null || !extras.containsKey("extraPersonCount")) {
-            p0VarArr = null;
+            o0VarArr = null;
         } else {
             int i10 = extras.getInt("extraPersonCount");
-            p0VarArr = new p0[i10];
+            o0VarArr = new o0[i10];
             int i11 = 0;
             while (i11 < i10) {
-                StringBuilder sb2 = new StringBuilder("extraPerson_");
+                StringBuilder sb = new StringBuilder("extraPerson_");
                 int i12 = i11 + 1;
-                sb2.append(i12);
-                PersistableBundle persistableBundle = extras.getPersistableBundle(sb2.toString());
+                sb.append(i12);
+                PersistableBundle persistableBundle = extras.getPersistableBundle(sb.toString());
                 String string2 = persistableBundle.getString("name");
                 String string3 = persistableBundle.getString("uri");
                 String string4 = persistableBundle.getString("key");
-                boolean z10 = persistableBundle.getBoolean("isBot");
-                boolean z11 = persistableBundle.getBoolean("isImportant");
-                p0 p0Var = new p0();
-                p0Var.a = string2;
-                p0Var.b = null;
-                p0Var.c = string3;
-                p0Var.d = string4;
-                p0Var.e = z10;
-                p0Var.f = z11;
-                p0VarArr[i11] = p0Var;
+                boolean z4 = persistableBundle.getBoolean("isBot");
+                boolean z10 = persistableBundle.getBoolean("isImportant");
+                o0 o0Var = new o0();
+                o0Var.a = string2;
+                o0Var.b = null;
+                o0Var.c = string3;
+                o0Var.d = string4;
+                o0Var.e = z4;
+                o0Var.f = z10;
+                o0VarArr[i11] = o0Var;
                 i11 = i12;
             }
         }
-        cVar.i = p0VarArr;
+        cVar.i = o0VarArr;
         shortcutInfo.getUserHandle();
         shortcutInfo.getLastChangedTimestamp();
         int i13 = Build.VERSION.SDK_INT;
@@ -83,18 +83,18 @@ public final class b {
         if (i13 < 29) {
             PersistableBundle extras2 = shortcutInfo.getExtras();
             if (extras2 != null && (string = extras2.getString("extraLocusId")) != null) {
-                hVar = new h(string);
+                iVar = new i(string);
             }
         } else if (shortcutInfo.getLocusId() != null) {
             LocusId locusId = shortcutInfo.getLocusId();
-            u6.a(locusId, "locusId cannot be null");
+            j6.a(locusId, "locusId cannot be null");
             String id2 = locusId.getId();
             if (TextUtils.isEmpty(id2)) {
                 throw new IllegalArgumentException("id cannot be empty");
             }
-            hVar = new h(id2);
+            iVar = new i(id2);
         }
-        cVar2.k = hVar;
+        cVar2.k = iVar;
         this.a.m = shortcutInfo.getRank();
         this.a.n = shortcutInfo.getExtras();
     }

@@ -1,13 +1,13 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public interface OutputSerializedData {
     int getPosition();
 
     void skip(int i10);
 
-    void writeBool(boolean z10);
+    void writeBool(boolean z4);
 
     void writeByte(byte b10);
 
@@ -25,7 +25,7 @@ public interface OutputSerializedData {
 
     void writeDouble(double d);
 
-    void writeFloat(float f9);
+    void writeFloat(float f10);
 
     void writeInt32(int i10);
 

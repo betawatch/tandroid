@@ -1,196 +1,147 @@
 package gg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import i7.f6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.iq;
-import org.telegram.ui.Components.t9;
+import android.util.SparseIntArray;
+import java.util.Calendar;
+import nh.b8;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.wc0;
+import org.telegram.ui.Components.wj0;
+import org.telegram.ui.Components.yj0;
+import rh.t3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class d extends FrameLayout {
-    public final c6 a;
-    public final e9 b;
-    public final t9 c;
-    public final c d;
-    public final h5 e;
-    public final RadioButton f;
-    public final Paint h;
-    public boolean n;
+public final /* synthetic */ class d implements uc0, wj0, org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public d(Context context, c6 c6Var) {
-        super(context);
-        e9 e9Var = new e9((c6) null);
-        this.b = e9Var;
-        this.h = new Paint(1);
-        this.a = c6Var;
-        View view = new View(context);
-        addView(view, f6.n(-1, -1));
-        view.setBackgroundColor(g6.v0(g6.h5, c6Var));
-        e9Var.r = AndroidUtilities.dp(40.0f);
-        t9 t9Var = new t9(context);
-        this.c = t9Var;
-        t9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(t9Var);
-        c cVar = new c(context, 0);
-        this.d = cVar;
-        NotificationCenter.listenEmojiLoading(cVar);
-        NotificationCenter.listenEmojiLoading(t9Var);
-        cVar.setTextSize(16);
-        int i10 = g6.j5;
-        cVar.setTextColor(g6.v0(i10, c6Var));
-        cVar.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(cVar);
-        h5 h5Var = new h5(context);
-        this.e = h5Var;
-        h5Var.setTextSize(14);
-        h5Var.setTextColor(g6.v0(i10, c6Var));
-        h5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(h5Var);
-        RadioButton radioButton = new RadioButton(context);
-        this.f = radioButton;
-        radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(g6.v0(g6.j7, c6Var), g6.v0(g6.E5, c6Var));
-        addView(radioButton);
-        d();
-        if (b()) {
+    public /* synthetic */ d(int i10, boolean[] zArr, TLRPC.Document document, int i11, boolean[] zArr2, Utilities.Callback callback) {
+        this.a = i10;
+        this.c = zArr;
+        this.d = document;
+        this.b = i11;
+        this.e = zArr2;
+        this.f = callback;
+    }
+
+    @Override // org.telegram.ui.Components.wj0
+    public void a(yj0 yj0Var, int i10) {
+        SparseIntArray sparseIntArray = (SparseIntArray) this.c;
+        m2.h hVar = (m2.h) this.d;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.e;
+        int[] iArr = (int[]) this.f;
+        int i11 = this.b + i10;
+        int i12 = this.a;
+        sparseIntArray.put(i12, i11);
+        if (hVar.getCurrentItem() == i12) {
+            actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().f(iArr[0], i11, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        boolean[] zArr = (boolean[]) this.c;
+        TLRPC.Document document = (TLRPC.Document) this.d;
+        boolean[] zArr2 = (boolean[]) this.e;
+        Utilities.Callback callback = (Utilities.Callback) this.f;
+        int i11 = this.a;
+        if (!UserConfig.getInstance(i11).isPremium()) {
+            new eg.o1((org.telegram.ui.ActionBar.p2) new t3(null), 12, false).show();
             return;
         }
-        radioButton.setVisibility(8);
+        zArr[0] = true;
+        TL_account.updateEmojiStatus updateemojistatus = new TL_account.updateEmojiStatus();
+        TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+        tL_emojiStatus.document_id = document.id;
+        int i12 = this.b;
+        if (i12 > 0) {
+            tL_emojiStatus.flags = 1 | tL_emojiStatus.flags;
+            tL_emojiStatus.until = ConnectionsManager.getInstance(i11).getCurrentTime() + i12;
+        }
+        updateemojistatus.emoji_status = tL_emojiStatus;
+        ConnectionsManager.getInstance(i11).sendRequest(updateemojistatus, new b8(zArr2, callback, i11, updateemojistatus, 8));
     }
 
-    public int a() {
-        return 0;
-    }
-
-    public abstract boolean b();
-
-    public void c(boolean z10, boolean z11) {
-        RadioButton radioButton = this.f;
-        if (radioButton.getVisibility() == 0) {
-            radioButton.a(z10, true);
+    @Override // org.telegram.ui.Components.uc0
+    public void q(wc0 wc0Var, int i10) {
+        p pVar = (p) this.c;
+        n nVar = (n) this.d;
+        o oVar = (o) this.e;
+        wc0 wc0Var2 = (wc0) this.f;
+        try {
+            pVar.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
-    }
-
-    public void d() {
-        float f9;
-        float f10;
-        float f11;
-        float f12;
-        this.c.setLayoutParams(f6.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
-        boolean z10 = LocaleController.isRTL;
-        int i10 = (z10 ? 5 : 3) | 16;
-        if (z10) {
-            f9 = 20.0f;
-        } else {
-            f9 = b() ? 105 : 70;
-        }
-        if (LocaleController.isRTL) {
-            f10 = b() ? 105 : 70;
-        } else {
-            f10 = 20.0f;
-        }
-        this.d.setLayoutParams(f6.d(-1, -2.0f, i10, f9, 0.0f, f10, 0.0f));
-        boolean z11 = LocaleController.isRTL;
-        int i11 = (z11 ? 5 : 3) | 16;
-        if (z11) {
-            f11 = 20.0f;
-        } else {
-            f11 = b() ? 105 : 70;
-        }
-        if (LocaleController.isRTL) {
-            f12 = b() ? 105 : 70;
-        } else {
-            f12 = 20.0f;
-        }
-        this.e.setLayoutParams(f6.d(-1, -2.0f, i11, f11, 0.0f, f12, 0.0f));
-        boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(f6.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.n) {
-            int v02 = g6.v0(g6.d7, this.a);
-            Paint paint = this.h;
-            paint.setColor(v02);
-            int i10 = b() ? 105 : 70;
-            if (this.c.getVisibility() == 8) {
-                i10 -= 40;
-            }
-            int a2 = a() + i10;
-            if (LocaleController.isRTL) {
-                canvas.drawRect(0.0f, getHeight() - 1, getWidth() - AndroidUtilities.dp(a2), getHeight(), paint);
+        if (wc0Var.getTag() != null && wc0Var.getTag().equals("DAY")) {
+            if (wc0Var.getValue() == wc0Var.getMinValue()) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(System.currentTimeMillis());
+                int i11 = calendar.get(11);
+                int i12 = (calendar.get(12) / 5) + 1;
+                if (i12 > 11) {
+                    if (i11 == 23) {
+                        wc0Var.setMinValue(wc0Var.getMinValue() + 1);
+                        nVar.setMinValue(0);
+                    } else {
+                        nVar.setMinValue(i11 + 1);
+                    }
+                    oVar.setMinValue(0);
+                } else {
+                    nVar.setMinValue(i11);
+                    oVar.setMinValue(i12);
+                }
+            } else if (wc0Var.getValue() == wc0Var.getMaxValue()) {
+                nVar.setMaxValue(this.a);
+                oVar.setMaxValue(Math.min(this.b / 5, 11));
             } else {
-                canvas.drawRect(AndroidUtilities.dp(a2), getHeight() - 1, getWidth(), getHeight(), paint);
+                nVar.setMinValue(0);
+                oVar.setMinValue(0);
+                nVar.setMaxValue(23);
+                oVar.setMaxValue(11);
             }
         }
-    }
-
-    public final SpannableStringBuilder e(CharSequence charSequence) {
-        SpannableString spannableString = new SpannableString(">");
-        Drawable drawable = getContext().getResources().getDrawable(R.drawable.attach_arrow_right);
-        iq iqVar = new iq(2, drawable);
-        drawable.setBounds(0, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(12.0f));
-        spannableString.setSpan(iqVar, 0, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append(charSequence).append((CharSequence) " ").append((CharSequence) spannableString);
-        return spannableStringBuilder;
-    }
-
-    public int getFullHeight() {
-        return 56;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(getFullHeight()), TLObject.FLAG_30));
-    }
-
-    public void setDivider(boolean z10) {
-        this.n = z10;
-        invalidate();
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        c cVar = this.d;
-        h5 h5Var = this.e;
-        if (isEmpty) {
-            cVar.setTranslationY(0.0f);
-            h5Var.setVisibility(8);
-        } else {
-            cVar.setTranslationY(AndroidUtilities.dp(-9.0f));
-            h5Var.setTranslationY(AndroidUtilities.dp(12.0f));
-            h5Var.l(charSequence, false);
-            h5Var.setVisibility(0);
-        }
-        if (this.c.getVisibility() == 8) {
-            if (LocaleController.isRTL) {
-                cVar.setTranslationX(AndroidUtilities.dp(40.0f));
-                h5Var.setTranslationX(AndroidUtilities.dp(40.0f));
+        if (wc0Var.getTag() != null && wc0Var.getTag().equals("HOUR") && wc0Var2.getValue() == wc0Var2.getMinValue()) {
+            if (wc0Var.getValue() != wc0Var.getMinValue()) {
+                oVar.setMinValue(0);
+                oVar.setMaxValue(11);
+                return;
+            }
+            Calendar calendar2 = Calendar.getInstance();
+            calendar2.setTimeInMillis(System.currentTimeMillis());
+            int i13 = (calendar2.get(12) / 5) + 1;
+            if (i13 > 11) {
+                oVar.setMinValue(0);
             } else {
-                cVar.setTranslationX(AndroidUtilities.dp(-40.0f));
-                h5Var.setTranslationX(AndroidUtilities.dp(-40.0f));
+                oVar.setMinValue(i13);
             }
         }
+    }
+
+    public /* synthetic */ d(SparseIntArray sparseIntArray, int i10, int i11, m2.h hVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.c = sparseIntArray;
+        this.a = i10;
+        this.b = i11;
+        this.d = hVar;
+        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.f = iArr;
+    }
+
+    public /* synthetic */ d(p pVar, n nVar, o oVar, int i10, int i11, wc0 wc0Var) {
+        this.c = pVar;
+        this.d = nVar;
+        this.e = oVar;
+        this.a = i10;
+        this.b = i11;
+        this.f = wc0Var;
     }
 }

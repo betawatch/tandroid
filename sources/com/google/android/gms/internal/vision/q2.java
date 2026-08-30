@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class q2 {
     public static final q2 f = new q2(0, new int[0], new Object[0], false);
@@ -12,11 +12,11 @@ public final class q2 {
     public int d = -1;
     public boolean e;
 
-    public q2(int i10, int[] iArr, Object[] objArr, boolean z10) {
+    public q2(int i10, int[] iArr, Object[] objArr, boolean z4) {
         this.a = i10;
         this.b = iArr;
         this.c = objArr;
-        this.e = z10;
+        this.e = z4;
     }
 
     public static q2 b() {

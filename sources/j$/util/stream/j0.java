@@ -9,9 +9,9 @@ public final class j0 extends b {
     public final d0 j;
     public final boolean k;
 
-    public j0(d0 d0Var, boolean z10, a aVar, Spliterator spliterator) {
+    public j0(d0 d0Var, boolean z4, a aVar, Spliterator spliterator) {
         super(aVar, spliterator);
-        this.k = z10;
+        this.k = z4;
         this.j = d0Var;
     }
 

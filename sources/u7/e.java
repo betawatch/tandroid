@@ -1,55 +1,34 @@
 package u7;
 
-import android.os.IBinder;
-import android.os.IInterface;
 import android.os.Parcel;
+import android.os.Parcelable;
+import j$.util.DesugarCollections;
+import j7.f5;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class e extends com.google.android.gms.internal.cast.a {
-    public final a U0() {
-        a aVar;
-        Parcel L0 = L0(M0(), 4);
-        IBinder readStrongBinder = L0.readStrongBinder();
-        if (readStrongBinder == null) {
-            aVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
-            aVar = queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", 4);
-        }
-        L0.recycle();
-        return aVar;
+public final class e extends c6.a {
+    public static final Parcelable.Creator<e> CREATOR = new u6.p(10);
+    public final List a;
+    public final boolean b;
+    public final boolean c;
+
+    public e(ArrayList arrayList, boolean z4, boolean z10) {
+        this.a = arrayList;
+        this.b = z4;
+        this.c = z10;
     }
 
-    public final g V0(j6.b bVar) {
-        g gVar;
-        Parcel M0 = M0();
-        e7.b.c(M0, bVar);
-        M0.writeInt(0);
-        Parcel L0 = L0(M0, 3);
-        IBinder readStrongBinder = L0.readStrongBinder();
-        if (readStrongBinder == null) {
-            gVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
-            gVar = queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", 4);
-        }
-        L0.recycle();
-        return gVar;
-    }
-
-    public final e7.e W0() {
-        e7.e cVar;
-        Parcel L0 = L0(M0(), 5);
-        IBinder readStrongBinder = L0.readStrongBinder();
-        int i10 = e7.d.b;
-        if (readStrongBinder == null) {
-            cVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
-            cVar = queryLocalInterface instanceof e7.e ? (e7.e) queryLocalInterface : new e7.c(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", 4);
-        }
-        L0.recycle();
-        return cVar;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.p(parcel, 1, DesugarCollections.unmodifiableList(this.a));
+        f5.s(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        f5.s(parcel, 3, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        f5.r(parcel, q10);
     }
 }

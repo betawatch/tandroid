@@ -1,26 +1,34 @@
 package na;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class c {
-    public static final c d = new c("", "", false);
-    public final String a;
-    public final String b;
-    public final boolean c;
+import android.util.Log;
+import dd.p;
+import k7.p7;
 
-    static {
-        new c("\n", "  ", true);
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class c extends wc.i implements p {
+    public /* synthetic */ Object a;
+
+    @Override // wc.a
+    public final uc.c create(Object obj, uc.c cVar) {
+        c cVar2 = new c(2, cVar);
+        cVar2.a = obj;
+        return cVar2;
     }
 
-    public c(String str, String str2, boolean z10) {
-        if (!str.matches("[\r\n]*")) {
-            throw new IllegalArgumentException("Only combinations of \\n and \\r are allowed in newline.");
-        }
-        if (!str2.matches("[ \t]*")) {
-            throw new IllegalArgumentException("Only combinations of spaces and tabs are allowed in indent.");
-        }
-        this.a = str;
-        this.b = str2;
-        this.c = z10;
+    @Override // dd.p
+    public final Object invoke(Object obj, Object obj2) {
+        c cVar = (c) create((String) obj, (uc.c) obj2);
+        sc.i iVar = sc.i.a;
+        cVar.invokeSuspend(iVar);
+        return iVar;
+    }
+
+    @Override // wc.a
+    public final Object invokeSuspend(Object obj) {
+        vc.a aVar = vc.a.a;
+        p7.b(obj);
+        Log.e("SessionConfigFetcher", "Error failing to fetch the remote configs: " + ((String) this.a));
+        return sc.i.a;
     }
 }

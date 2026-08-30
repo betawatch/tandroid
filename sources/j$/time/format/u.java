@@ -76,13 +76,13 @@ public class u {
                     LinkedHashMap linkedHashMap4 = new LinkedHashMap();
                     LinkedHashMap linkedHashMap5 = new LinkedHashMap();
                     LinkedHashMap linkedHashMap6 = new LinkedHashMap();
-                    boolean z10 = locale == Locale.SIMPLIFIED_CHINESE || locale == Locale.TRADITIONAL_CHINESE;
+                    boolean z4 = locale == Locale.SIMPLIFIED_CHINESE || locale == Locale.TRADITIONAL_CHINESE;
                     long j15 = 1;
                     while (j15 <= length2) {
                         String C = j$.com.android.tools.r8.a.C(j15, "cccc", locale);
                         linkedHashMap4.put(Long.valueOf(j15), C);
                         Long valueOf2 = Long.valueOf(j15);
-                        if (!z10) {
+                        if (!z4) {
                             j11 = j13;
                             substring = C.substring(0, Character.charCount(C.codePointAt(0)));
                         } else {

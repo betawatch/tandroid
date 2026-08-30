@@ -1,43 +1,27 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class va implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ va(MessagesController messagesController, TLObject tLObject, int i10) {
+    public /* synthetic */ va(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tLObject;
+        this.b = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadHintDialogs$195(this.c);
+                MessagesController.lambda$unblockPeer$110(this.b);
                 break;
             case 1:
-                this.b.lambda$getContentSettings$501(this.c);
-                break;
-            case 2:
-                this.b.lambda$reloadReactionsNotifySettings$204(this.c);
-                break;
-            case 3:
-                this.b.lambda$loadGlobalNotificationsSettings$202(this.c);
-                break;
-            case 4:
-                this.b.lambda$loadUnreadDialogs$361(this.c);
-                break;
-            case 5:
-                this.b.lambda$loadSuggestedFilters$24(this.c);
+                this.b.run();
                 break;
             default:
-                this.b.lambda$loadSignUpNotificationsSettings$206(this.c);
+                AndroidUtilities.runOnUIThread(this.b);
                 break;
         }
     }

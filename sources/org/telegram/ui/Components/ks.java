@@ -1,48 +1,42 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_bots;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ks {
-    public final int a;
-    public final hs b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public long f;
-    public String g;
-    public final ArrayList h = new ArrayList();
-    public boolean i = false;
+public final /* synthetic */ class ks implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] b;
 
-    public ks(int i10, hs hsVar) {
+    public /* synthetic */ ks(org.telegram.ui.ActionBar.d2[] d2VarArr, int i10) {
         this.a = i10;
-        this.b = hsVar;
+        this.b = d2VarArr;
     }
 
-    public final void a() {
-        if (this.c || this.e) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.d2 d2Var = this.b[0];
+                if (d2Var != null) {
+                    d2Var.dismiss();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.d2[] d2VarArr = this.b;
+                try {
+                    d2VarArr[0].dismiss();
+                } catch (Throwable unused) {
+                }
+                d2VarArr[0] = null;
+                break;
+            default:
+                org.telegram.ui.ActionBar.d2[] d2VarArr2 = this.b;
+                try {
+                    d2VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                d2VarArr2[0] = null;
+                break;
         }
-        this.c = true;
-        boolean z10 = this.d;
-        int i10 = this.a;
-        if (!z10) {
-            js jsVar = new js(this, 0);
-            MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-            messagesStorage.getStorageQueue().postRunnable(new g(this, messagesStorage, jsVar, 8));
-            return;
-        }
-        TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
-        getpopularappbots.limit = 20;
-        String str = this.g;
-        if (str == null) {
-            str = "";
-        }
-        getpopularappbots.offset = str;
-        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new a2(this, 3));
     }
 }

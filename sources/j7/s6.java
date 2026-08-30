@@ -1,6 +1,15 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class s6 {
+    public abstract void a(com.google.android.gms.internal.play_billing.f4 f4Var, com.google.android.gms.internal.play_billing.f4 f4Var2);
+
+    public abstract void b(com.google.android.gms.internal.play_billing.f4 f4Var, Thread thread);
+
+    public abstract boolean c(com.google.android.gms.internal.play_billing.g4 g4Var, com.google.android.gms.internal.play_billing.v2 v2Var, com.google.android.gms.internal.play_billing.v2 v2Var2);
+
+    public abstract boolean d(com.google.android.gms.internal.play_billing.g4 g4Var, Object obj, Object obj2);
+
+    public abstract boolean e(com.google.android.gms.internal.play_billing.g4 g4Var, com.google.android.gms.internal.play_billing.f4 f4Var, com.google.android.gms.internal.play_billing.f4 f4Var2);
 }

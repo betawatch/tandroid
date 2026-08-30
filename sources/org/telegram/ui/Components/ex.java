@@ -1,27 +1,36 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ex extends f2.w {
-    public final /* synthetic */ fz Q;
+public final class ex extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ kz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ex(fz fzVar) {
-        super(8);
-        this.Q = fzVar;
+    public /* synthetic */ ex(kz kzVar, boolean z4, int i10) {
+        this.a = i10;
+        this.c = kzVar;
+        this.b = z4;
     }
 
-    @Override // f2.j0, f2.w0
-    public final void v0(RecyclerView recyclerView, f2.k1 k1Var, int i10) {
-        try {
-            nh.k1 k1Var2 = new nh.k1(this, recyclerView.getContext(), 2);
-            k1Var2.a = i10;
-            w0(k1Var2);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.x.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
         }
     }
 }

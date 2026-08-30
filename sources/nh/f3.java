@@ -1,65 +1,33 @@
 package nh;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.zk0;
+import android.content.Context;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g3 b;
-    public final /* synthetic */ j3 c;
+public final class f3 extends m8 {
+    public final /* synthetic */ i9 E;
+    public final /* synthetic */ d4 F;
 
-    public /* synthetic */ f3(g3 g3Var, j3 j3Var, int i10) {
-        this.a = i10;
-        this.b = g3Var;
-        this.c = j3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f3(d4 d4Var, Context context, i3 i3Var, org.telegram.ui.ActionBar.f6 f6Var, i9 i9Var) {
+        super(context, i3Var, f6Var);
+        this.F = d4Var;
+        this.E = i9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                w2 w2Var = this.b.c.d;
-                w2Var.getClass();
-                j3 j3Var = this.c;
-                int R = RecyclerView.R(j3Var);
-                if (R != -1) {
-                    zk0 zk0Var = w2Var.R0;
-                    if (zk0Var == null) {
-                        al0 al0Var = w2Var.S0;
-                        if (al0Var != null) {
-                            al0Var.b(0.0f, 0.0f, R, j3Var);
-                            break;
-                        }
-                    } else {
-                        zk0Var.c(R, j3Var);
-                        break;
-                    }
-                }
-                break;
-            default:
-                w2 w2Var2 = this.b.c.d;
-                w2Var2.getClass();
-                j3 j3Var2 = this.c;
-                int R2 = RecyclerView.R(j3Var2);
-                if (R2 != -1) {
-                    bl0 bl0Var = w2Var2.T0;
-                    if (bl0Var == null) {
-                        cl0 cl0Var = w2Var2.U0;
-                        if (cl0Var != null) {
-                            cl0Var.b(0.0f, 0.0f, R2, j3Var2);
-                            break;
-                        }
-                    } else {
-                        bl0Var.c(R2, j3Var2);
-                        break;
-                    }
-                }
-                break;
+    @Override // nh.m8
+    public final void b(boolean z4) {
+        x3 x3Var = this.F.N1;
+        if (x3Var != null) {
+            i9 i9Var = ((z8) x3Var).d;
+            i9Var.f1 = z4;
+            i9Var.P();
         }
+    }
+
+    @Override // nh.m8
+    public final Bitmap getPlayingBitmap() {
+        return this.F.getPlayingBitmap();
     }
 }

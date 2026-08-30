@@ -1,31 +1,33 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class k3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ m3 a;
+public final class k3 extends FrameLayout {
+    public int a;
 
-    public k3(m3 m3Var) {
-        this.a = m3Var;
+    public k3(Context context) {
+        this(context, 8);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        m3 m3Var = this.a;
-        if (m3Var.v) {
-            m3Var.e.setVisibility(4);
-            m3Var.f.setVisibility(4);
-            m3Var.h.setVisibility(0);
-        } else {
-            if (m3Var.s) {
-                m3Var.e.setVisibility(4);
-            } else {
-                m3Var.f.setVisibility(4);
-            }
-            m3Var.h.setVisibility(8);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    }
+
+    public void setHeight(int i10) {
+        if (this.a != i10) {
+            this.a = i10;
+            requestLayout();
         }
+    }
+
+    public k3(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 }

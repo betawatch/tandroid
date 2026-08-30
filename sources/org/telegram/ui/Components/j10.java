@@ -1,29 +1,79 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j10 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FragmentContextView b;
+import java.util.Iterator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.MediaController;
 
-    public /* synthetic */ j10(FragmentContextView fragmentContextView, int i10) {
-        this.a = i10;
-        this.b = fragmentContextView;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class j10 implements org.telegram.ui.ActionBar.s0, xd.i, org.telegram.ui.ActionBar.c2, bv0 {
+    public final /* synthetic */ FragmentContextView a;
+
+    public /* synthetic */ j10(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        FragmentContextView fragmentContextView = this.b;
-        switch (i10) {
-            case 0:
-                fragmentContextView.J.g = 0.0f;
-                fragmentContextView.H.invalidate();
-                break;
-            default:
-                float[] fArr = FragmentContextView.I0;
-                fragmentContextView.n(true);
-                break;
+    @Override // org.telegram.ui.Components.bv0
+    public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
+        float[] fArr = FragmentContextView.J0;
+        this.a.k(sharingLocationInfo);
+    }
+
+    @Override // xd.i
+    public void e(xd.j jVar) {
+        FragmentContextView fragmentContextView = this.a;
+        xd.j jVar2 = fragmentContextView.H0;
+        float f10 = 1.0f - jVar2.a.d.c.a;
+        fragmentContextView.d.setAlpha(f10);
+        fragmentContextView.d.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f10));
+        fragmentContextView.d.setScaleY(AndroidUtilities.lerp(0.7f, 1.0f, f10));
+        Iterator it = jVar2.iterator();
+        while (it.hasNext()) {
+            xd.e eVar = (xd.e) it.next();
+            float c3 = eVar.c();
+            Object obj = eVar.a;
+            float lerp = AndroidUtilities.lerp(0.7f, 1.0f, c3);
+            yg.c cVar = ((u10) obj).b;
+            cVar.setAlpha(eVar.c());
+            cVar.setScaleX(lerp);
+            cVar.setScaleY(lerp);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        FragmentContextView fragmentContextView = this.a;
+        org.telegram.ui.ActionBar.p2 p2Var = fragmentContextView.h;
+        if (!(p2Var instanceof org.telegram.ui.oy)) {
+            LocationController.getInstance(p2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
+            return;
+        }
+        for (int i11 = 0; i11 < 4; i11++) {
+            LocationController.getInstance(i11).removeAllLocationSharings();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public void l(int i10) {
+        float[] fArr = FragmentContextView.J0;
+        if (i10 >= 0) {
+            float[] fArr2 = FragmentContextView.J0;
+            if (i10 >= 6) {
+                return;
+            }
+            MediaController mediaController = MediaController.getInstance();
+            FragmentContextView fragmentContextView = this.a;
+            float playbackSpeed = mediaController.getPlaybackSpeed(fragmentContextView.S);
+            float f10 = fArr2[i10];
+            MediaController.getInstance().setPlaybackSpeed(fragmentContextView.S, f10);
+            if (playbackSpeed != f10) {
+                fragmentContextView.l(playbackSpeed, f10, false);
+            }
+        }
+    }
+
+    @Override // xd.i
+    public /* synthetic */ void a() {
     }
 }

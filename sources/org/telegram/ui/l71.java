@@ -1,39 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l71 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m71 b;
+public final class l71 implements View.OnClickListener {
+    public final /* synthetic */ n71 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ o71 c;
 
-    public /* synthetic */ l71(m71 m71Var, int i10) {
-        this.a = i10;
-        this.b = m71Var;
+    public l71(o71 o71Var, n71 n71Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = o71Var;
+        this.a = n71Var;
+        this.b = tL_authorization;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String sb2;
-        switch (this.a) {
-            case 0:
-                m71 m71Var = this.b;
-                String str = m71Var.b.text;
-                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
-                    StringBuilder sb3 = new StringBuilder();
-                    b.j(R.string.ErrorOccurred, "\n", sb3);
-                    sb3.append(m71Var.b.text);
-                    sb2 = sb3.toString();
-                } else {
-                    sb2 = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
-                }
-                org.telegram.ui.Components.c5.u0(m71Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb2, null);
-                break;
-            default:
-                org.telegram.ui.Components.c5.u0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
-                break;
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        this.a.d.c(!r0.h, true);
+        this.b.call_requests_disabled = !r4.d.h;
+        o71.n(this.c);
     }
 }

@@ -1,38 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class ph extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ni b;
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public final Object c;
+    public final Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ph(ni niVar, Context context, int i10) {
+    public ph(uf.k kVar, Context context) {
         super(context);
-        this.a = i10;
-        this.b = niVar;
+        this.e = kVar;
+        this.b = -1;
+        this.c = new Rect();
+        this.d = new z5(this, 220L, nr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
-            case 2:
+            case 0:
+                org.telegram.ui.g20 g20Var = (org.telegram.ui.g20) this.d;
+                Path path = (Path) this.c;
+                li liVar = (li) this.e;
+                pg.b bVar = liVar.y0;
+                if (bVar != null) {
+                    bVar.setBounds(0, (int) liVar.S1, getMeasuredWidth(), getMeasuredHeight());
+                    liVar.y0.draw(canvas);
+                }
+                float dp = AndroidUtilities.dp(20.0f);
+                int dp2 = AndroidUtilities.dp(7.0f);
+                int dp3 = AndroidUtilities.dp(7.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f10 = dp2;
+                rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), getHeight() - dp3);
+                path.rewind();
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
                 canvas.save();
-                canvas.clipRect(0.0f, this.b.R1, getMeasuredWidth(), getMeasuredHeight());
+                canvas.clipPath(path);
+                canvas.saveLayerAlpha(rectF, 255, 31);
                 super.dispatchDraw(canvas);
+                rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
+                g20Var.b(canvas, rectF, 1, 1.0f);
+                rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
+                g20Var.b(canvas, rectF, 3, 1.0f);
+                canvas.restore();
                 canvas.restore();
                 break;
             default:
@@ -41,79 +66,43 @@ public final class ph extends FrameLayout {
         }
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 2:
-                ni niVar = this.b;
-                ph phVar = niVar.z0;
-                if (niVar.y0.getAlpha() > 0.0f) {
-                    float f9 = niVar.S1;
-                    if (f9 != 0.0f && f9 != phVar.getTop() + niVar.S1) {
-                        ValueAnimator valueAnimator = niVar.T1;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                        }
-                        float top = niVar.S1 - (phVar.getTop() + niVar.R1);
-                        niVar.R1 = top;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                        niVar.T1 = ofFloat;
-                        ofFloat.addUpdateListener(new j6(this, 10));
-                        niVar.T1.setInterpolator(jr.f);
-                        niVar.T1.setDuration(200L);
-                        niVar.T1.start();
-                        niVar.S1 = 0.0f;
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                ni niVar = this.b;
-                fi fiVar = niVar.u0;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = niVar.f0;
-                if (fiVar == chatAttachAlertPhotoLayout) {
-                    accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", chatAttachAlertPhotoLayout.getSelectedItemsCount(), new Object[0]));
-                } else {
-                    jk jkVar = niVar.l0;
-                    if (fiVar == jkVar) {
-                        accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendFiles", jkVar.getSelectedItemsCount(), new Object[0]));
-                    } else {
-                        yi yiVar = niVar.h0;
-                        if (fiVar == yiVar) {
-                            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendAudio", yiVar.getSelectedItemsCount(), new Object[0]));
-                        }
-                    }
-                }
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
     @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.a) {
+            case 1:
+                float width = getWidth() / 2.0f;
+                z5 z5Var = (z5) this.d;
+                uf.k kVar = (uf.k) this.e;
+                float d = z5Var.d(kVar.n.getWidth(), false);
+                Rect rect = (Rect) this.c;
+                float f10 = d / 2.0f;
+                rect.set((int) (width - (kVar.n.getScaleX() * f10)), (int) (((1.0f - kVar.n.getScaleY()) * kVar.n.getHeight()) + kVar.n.getY()), (int) ((kVar.n.getScaleX() * f10) + width), (int) (kVar.n.getY() + kVar.n.getHeight()));
+                kVar.r.setBounds(rect);
+                kVar.r.draw(canvas);
+                return super.drawChild(canvas, view, j10);
+            default:
+                return super.drawChild(canvas, view, j10);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 0:
-                if (this.b.e1.getVisibility() != 0) {
-                    return false;
+                int i14 = this.b;
+                li liVar = (li) this.e;
+                int top = i14 - liVar.w.getTop();
+                super.onLayout(z4, i10, i11, i12, i13);
+                this.b = getHeight();
+                if (liVar.w.getVisibility() == 0 && getHeight() - liVar.w.getTop() != top) {
+                    liVar.w.setTranslationY(liVar.w.getTranslationY() + ((getHeight() - liVar.w.getTop()) - top));
+                    liVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(nr.h).start();
+                    break;
                 }
-                return super.onInterceptTouchEvent(motionEvent);
+                break;
             default:
-                return super.onInterceptTouchEvent(motionEvent);
+                super.onLayout(z4, i10, i11, i12, i13);
+                break;
         }
     }
 
@@ -121,65 +110,26 @@ public final class ph extends FrameLayout {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                ni niVar = this.b;
-                if (niVar.D && niVar.E != 0) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(36.0f) + (AndroidUtilities.dp(80.0f) * Integer.bitCount(niVar.E))), TLObject.FLAG_30), i11);
-                    break;
-                } else {
-                    super.onMeasure(i10, i11);
+                uf.k kVar = (uf.k) this.e;
+                kVar.n.measure(i10, i11);
+                invalidate();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + kVar.n.getMeasuredHeight()), TLObject.FLAG_30));
+                if (this.b < 0) {
+                    this.b = getMeasuredHeight();
                     break;
                 }
+                break;
             default:
                 super.onMeasure(i10, i11);
                 break;
         }
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (this.b.e1.getVisibility() != 0) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f9) {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f9);
-                ni niVar = this.b;
-                niVar.a2(0);
-                viewGroup = ((org.telegram.ui.ActionBar.f3) niVar).containerView;
-                viewGroup.invalidate();
-                break;
-            case 1:
-            default:
-                super.setAlpha(f9);
-                break;
-            case 2:
-                super.setAlpha(f9);
-                invalidate();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f9) {
-        switch (this.a) {
-            case 1:
-                super.setTranslationY(f9);
-                this.b.u0.j();
-                break;
-            default:
-                super.setTranslationY(f9);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ph(li liVar, Context context) {
+        super(context);
+        this.e = liVar;
+        this.c = new Path();
+        this.d = new org.telegram.ui.g20();
     }
 }

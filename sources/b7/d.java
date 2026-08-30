@@ -1,7 +1,29 @@
 package b7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("AppDataSearch.LIGHTWEIGHT_API", new b6.b(1), new com.google.android.gms.common.api.d());
+public final class d extends f {
+    public static final d a = new d();
+
+    @Override // b7.f
+    public final Object a() {
+        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
+    }
+
+    @Override // b7.f
+    public final boolean b() {
+        return false;
+    }
+
+    public final boolean equals(Object obj) {
+        return obj == this;
+    }
+
+    public final int hashCode() {
+        return 2040732332;
+    }
+
+    public final String toString() {
+        return "Optional.absent()";
+    }
 }

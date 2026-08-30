@@ -1,57 +1,78 @@
 package o3;
 
-import f5.d0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import h5.d0;
 import java.util.Arrays;
+import java.util.UUID;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f implements t {
-    public final int a;
-    public final int[] b;
-    public final long[] c;
-    public final long[] d;
-    public final long[] e;
-    public final long f;
+public final class f implements Parcelable {
+    public static final Parcelable.Creator<f> CREATOR = new l4.j(15);
+    public int a;
+    public final UUID b;
+    public final String c;
+    public final String d;
+    public final byte[] e;
 
-    public f(int[] iArr, long[] jArr, long[] jArr2, long[] jArr3) {
-        this.b = iArr;
-        this.c = jArr;
-        this.d = jArr2;
-        this.e = jArr3;
-        int length = iArr.length;
-        this.a = length;
-        if (length > 0) {
-            this.f = jArr2[length - 1] + jArr3[length - 1];
-        } else {
-            this.f = 0L;
+    public f(UUID uuid, String str, String str2, byte[] bArr) {
+        uuid.getClass();
+        this.b = uuid;
+        this.c = str;
+        str2.getClass();
+        this.d = str2;
+        this.e = bArr;
+    }
+
+    public final boolean a(UUID uuid) {
+        UUID uuid2 = j3.h.a;
+        UUID uuid3 = this.b;
+        return uuid2.equals(uuid3) || uuid.equals(uuid3);
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof f)) {
+            return false;
         }
-    }
-
-    @Override // o3.t
-    public final boolean c() {
-        return true;
-    }
-
-    @Override // o3.t
-    public final s g(long j10) {
-        long[] jArr = this.e;
-        int e10 = d0.e(jArr, j10, true);
-        long j11 = jArr[e10];
-        long[] jArr2 = this.c;
-        u uVar = new u(j11, jArr2[e10]);
-        if (j11 >= j10 || e10 == this.a - 1) {
-            return new s(uVar, uVar);
+        if (obj == this) {
+            return true;
         }
-        int i10 = e10 + 1;
-        return new s(uVar, new u(jArr[i10], jArr2[i10]));
+        f fVar = (f) obj;
+        return d0.a(this.c, fVar.c) && d0.a(this.d, fVar.d) && d0.a(this.b, fVar.b) && Arrays.equals(this.e, fVar.e);
     }
 
-    @Override // o3.t
-    public final long h() {
-        return this.f;
+    public final int hashCode() {
+        if (this.a == 0) {
+            int hashCode = this.b.hashCode() * 31;
+            String str = this.c;
+            this.a = Arrays.hashCode(this.e) + a2.e((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
+        }
+        return this.a;
     }
 
-    public final String toString() {
-        return "ChunkIndex(length=" + this.a + ", sizes=" + Arrays.toString(this.b) + ", offsets=" + Arrays.toString(this.c) + ", timeUs=" + Arrays.toString(this.e) + ", durationsUs=" + Arrays.toString(this.d) + ")";
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        UUID uuid = this.b;
+        parcel.writeLong(uuid.getMostSignificantBits());
+        parcel.writeLong(uuid.getLeastSignificantBits());
+        parcel.writeString(this.c);
+        parcel.writeString(this.d);
+        parcel.writeByteArray(this.e);
+    }
+
+    public f(Parcel parcel) {
+        this.b = new UUID(parcel.readLong(), parcel.readLong());
+        this.c = parcel.readString();
+        String readString = parcel.readString();
+        int i10 = d0.a;
+        this.d = readString;
+        this.e = parcel.createByteArray();
     }
 }

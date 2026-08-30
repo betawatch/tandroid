@@ -1,44 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.qc1;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.R;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class tl extends org.telegram.ui.ActionBar.w0 {
-    public final /* synthetic */ int r0;
-    public final /* synthetic */ Object s0;
+public final class tl implements CameraView.CameraViewDelegate {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ tl(fi fiVar, Context context, org.telegram.ui.ActionBar.a0 a0Var, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, a0Var, 0, 0, false, c6Var);
-        this.r0 = i10;
-        this.s0 = fiVar;
+    public tl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.w0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.r0) {
-            case 0:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((ChatAttachAlertPhotoLayout) this.s0).x.getText());
-                break;
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((lm) this.s0).x.getText());
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((qc1) this.s0).h.getText());
-                break;
+    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
+    public final void onCameraInit() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        ImageView imageView = chatAttachAlertPhotoLayout.o0;
+        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.P;
+        String currentFlashMode = chatAttachAlertPhotoLayout.M.getCameraSession().getCurrentFlashMode();
+        String nextFlashMode = chatAttachAlertPhotoLayout.M.getCameraSession().getNextFlashMode();
+        if (currentFlashMode == null || nextFlashMode == null) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tl(qc1 qc1Var, Context context, org.telegram.ui.ActionBar.a0 a0Var) {
-        super(context, a0Var, 0, 0);
-        this.r0 = 2;
-        this.s0 = qc1Var;
+        if (currentFlashMode.equals(nextFlashMode)) {
+            for (int i10 = 0; i10 < 2; i10++) {
+                imageViewArr[i10].setVisibility(4);
+                imageViewArr[i10].setAlpha(0.0f);
+                imageViewArr[i10].setTranslationY(0.0f);
+            }
+        } else {
+            ChatAttachAlertPhotoLayout.o0(imageViewArr[0], chatAttachAlertPhotoLayout.M.getCameraSession().getCurrentFlashMode());
+            int i11 = 0;
+            while (i11 < 2) {
+                imageViewArr[i11].setVisibility(i11 == 0 ? 0 : 4);
+                imageViewArr[i11].setAlpha((i11 == 0 && chatAttachAlertPhotoLayout.V) ? 1.0f : 0.0f);
+                imageViewArr[i11].setTranslationY(0.0f);
+                i11++;
+            }
+        }
+        imageView.setImageResource(chatAttachAlertPhotoLayout.M.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
+        imageView.setVisibility(chatAttachAlertPhotoLayout.M.hasFrontFaceCamera() ? 0 : 4);
+        if (chatAttachAlertPhotoLayout.V) {
+            return;
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        chatAttachAlertPhotoLayout.L = animatorSet;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.M, (Property<am, Float>) View.ALPHA, 0.0f, 1.0f));
+        chatAttachAlertPhotoLayout.L.setDuration(180L);
+        chatAttachAlertPhotoLayout.L.addListener(new a9(this, 8));
+        chatAttachAlertPhotoLayout.L.start();
     }
 }

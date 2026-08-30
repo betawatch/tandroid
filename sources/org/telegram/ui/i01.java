@@ -1,29 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class i01 extends TextView implements org.telegram.ui.ActionBar.x5 {
-    public final /* synthetic */ ProfileActivity a;
+public final class i01 implements m2.f {
+    public int a;
+    public final /* synthetic */ j01 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i01(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.a = profileActivity;
-        e();
+    public i01(j01 j01Var) {
+        this.b = j01Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void e() {
-        setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G6, this.a.v0));
+    @Override // m2.f
+    public final void a(int i10) {
+        j01 j01Var = this.b;
+        ProfileActivity profileActivity = j01Var.n;
+        int k10 = profileActivity.k0.A0.k(i10);
+        j01Var.a(this.a != k10);
+        this.a = k10;
+        if (profileActivity.n0 == null) {
+            return;
+        }
+        if (profileActivity.Q0.t()) {
+            AndroidUtilities.runOnUIThread(new vy0(j01Var, 3), 500L);
+        } else {
+            j01Var.c();
+        }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // m2.f
+    public final void c(int i10) {
+    }
+
+    @Override // m2.f
+    public final void b(float f10, int i10, int i11) {
     }
 }

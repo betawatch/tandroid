@@ -1,78 +1,67 @@
 package j3;
 
 import android.os.Looper;
-import java.util.List;
+import android.os.SystemClock;
+import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface c2 {
-    r2 A();
+public final class c2 {
+    public final b2 a;
+    public final k0 b;
+    public final h5.y c;
+    public int d;
+    public Object e;
+    public final Looper f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
 
-    Looper B();
+    public c2(k0 k0Var, b2 b2Var, o2 o2Var, int i10, h5.y yVar, Looper looper) {
+        this.b = k0Var;
+        this.a = b2Var;
+        this.f = looper;
+        this.c = yVar;
+    }
 
-    boolean C();
+    public final synchronized void a(long j10) {
+        boolean z4;
+        h5.a.i(this.g);
+        h5.a.i(this.f.getThread() != Thread.currentThread());
+        this.c.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime() + j10;
+        while (true) {
+            z4 = this.i;
+            if (z4 || j10 <= 0) {
+                break;
+            }
+            this.c.getClass();
+            wait(j10);
+            this.c.getClass();
+            j10 = elapsedRealtime - SystemClock.elapsedRealtime();
+        }
+        if (!z4) {
+            throw new TimeoutException("Message delivery timed out.");
+        }
+    }
 
-    long D();
+    public final synchronized void b(boolean z4) {
+        this.h = z4 | this.h;
+        this.i = true;
+        notifyAll();
+    }
 
-    long E();
-
-    void a();
-
-    int b();
-
-    boolean c();
-
-    long d();
-
-    void e(int i10);
-
-    y1 f();
-
-    int g();
-
-    long getDuration();
-
-    x1 getPlaybackParameters();
-
-    boolean h();
-
-    void i(boolean z10);
-
-    void j();
-
-    int k();
-
-    void l(a2 a2Var);
-
-    int m();
-
-    void n(int i10, int i11);
-
-    void o(boolean z10);
-
-    long p();
-
-    long q();
-
-    void r(int i10, List list);
-
-    long s();
-
-    void setPlaybackParameters(x1 x1Var);
-
-    void stop();
-
-    t2 t();
-
-    void u(a2 a2Var);
-
-    n v();
-
-    int w();
-
-    int x();
-
-    void y(int i10, int i11, int i12);
-
-    int z();
+    public final void c() {
+        h5.a.i(!this.g);
+        this.g = true;
+        k0 k0Var = this.b;
+        synchronized (k0Var) {
+            if (!k0Var.L && k0Var.s.getThread().isAlive()) {
+                k0Var.n.a(14, this).b();
+                return;
+            }
+            h5.a.K("ExoPlayerImplInternal", "Ignoring messages sent after release.");
+            b(false);
+        }
+    }
 }

@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -32,7 +32,7 @@ public class NotificationsSettingsFacade {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$applyDialogNotificationsSettings$1(long j10, long j11, TLRPC.PeerNotifySettings peerNotifySettings) {
-        boolean z10;
+        boolean z4;
         int i10;
         int i11;
         String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j11, true);
@@ -40,17 +40,17 @@ public class NotificationsSettingsFacade {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int c3 = x3.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
-        boolean z11 = true;
-        int c6 = x3.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
+        int c3 = y3.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
+        boolean z10 = true;
+        int c10 = y3.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
-            edit.putBoolean(u3.c.e(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
+            edit.putBoolean(vh.v2.e(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
         } else {
             edit.remove(PROPERTY_SILENT + sharedPrefKey);
         }
         if ((peerNotifySettings.flags & 64) != 0) {
-            edit.putBoolean(u3.c.e(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
+            edit.putBoolean(vh.v2.e(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
         } else {
             edit.remove(PROPERTY_STORIES_NOTIFY + sharedPrefKey);
         }
@@ -59,23 +59,23 @@ public class NotificationsSettingsFacade {
             dialog.notify_settings = peerNotifySettings;
         }
         if ((peerNotifySettings.flags & 4) == 0) {
-            boolean z12 = true;
+            boolean z11 = true;
             if (c3 != -1) {
                 if (dialog != null) {
                     dialog.notify_settings.mute_until = 0;
                 }
                 edit.remove(PROPERTY_NOTIFY + sharedPrefKey);
             } else {
-                z12 = false;
+                z11 = false;
             }
             if (j11 == 0) {
                 messagesStorage.setDialogFlags(j10, 0L);
             }
-            z11 = z12;
+            z10 = z11;
         } else if (peerNotifySettings.mute_until > connectionsManager.getCurrentTime()) {
             if (peerNotifySettings.mute_until <= connectionsManager.getCurrentTime() + 31536000) {
-                if (c3 == 3 && c6 == peerNotifySettings.mute_until) {
-                    z11 = false;
+                if (c3 == 3 && c10 == peerNotifySettings.mute_until) {
+                    z10 = false;
                 } else {
                     edit.putInt(PROPERTY_NOTIFY + sharedPrefKey, 3);
                     edit.putInt(PROPERTY_NOTIFY_UNTIL + sharedPrefKey, peerNotifySettings.mute_until);
@@ -92,7 +92,7 @@ public class NotificationsSettingsFacade {
                 i11 = 0;
             } else {
                 i11 = 0;
-                z11 = false;
+                z10 = false;
             }
             if (j11 == 0) {
                 messagesStorage.setDialogFlags(j10, (i11 << 32) | 1);
@@ -100,7 +100,7 @@ public class NotificationsSettingsFacade {
             }
         } else {
             if (c3 == 0 || c3 == 1) {
-                z10 = false;
+                z4 = false;
             } else {
                 if (dialog != null) {
                     TLRPC.PeerNotifySettings peerNotifySettings2 = dialog.notify_settings;
@@ -110,17 +110,17 @@ public class NotificationsSettingsFacade {
                     i10 = 0;
                 }
                 edit.putInt(PROPERTY_NOTIFY + sharedPrefKey, i10);
-                z10 = true;
+                z4 = true;
             }
             if (j11 == 0) {
                 messagesStorage.setDialogFlags(j10, 0L);
             }
-            z11 = z10;
+            z10 = z4;
         }
         applySoundSettings(peerNotifySettings.android_sound, edit, j10, j11, 0, false);
         edit.apply();
-        if (z11) {
-            AndroidUtilities.runOnUIThread(new ug(this, 2));
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new xg(this, 2));
         }
     }
 
@@ -128,7 +128,7 @@ public class NotificationsSettingsFacade {
         if (peerNotifySettings == null) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new g5.x(this, j10, j11, peerNotifySettings, 10));
+        Utilities.globalQueue.postRunnable(new i5.x(this, j10, j11, peerNotifySettings, 10));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x00f7  */
@@ -138,7 +138,7 @@ public class NotificationsSettingsFacade {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void applySoundSettings(TLRPC.NotificationSound notificationSound, SharedPreferences.Editor editor, long j10, long j11, int i10, boolean z10) {
+    public void applySoundSettings(TLRPC.NotificationSound notificationSound, SharedPreferences.Editor editor, long j10, long j11, int i10, boolean z4) {
         String str;
         String str2;
         String str3;
@@ -152,9 +152,9 @@ public class NotificationsSettingsFacade {
         int i13 = (j10 > 0L ? 1 : (j10 == 0L ? 0 : -1));
         if (i13 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j11, true);
-            str = u3.c.e("sound_", sharedPrefKey);
-            str3 = u3.c.e("sound_path_", sharedPrefKey);
-            str2 = u3.c.e("sound_document_id_", sharedPrefKey);
+            str = vh.v2.e("sound_", sharedPrefKey);
+            str3 = vh.v2.e("sound_path_", sharedPrefKey);
+            str2 = vh.v2.e("sound_document_id_", sharedPrefKey);
         } else if (i10 == 0) {
             str = "GroupSound";
             str2 = "GroupSoundDocId";
@@ -194,15 +194,15 @@ public class NotificationsSettingsFacade {
                         Cursor cursor = ringtoneManager.getCursor();
                         while (cursor.moveToNext()) {
                             String string = cursor.getString(i12);
-                            StringBuilder sb2 = new StringBuilder();
+                            StringBuilder sb = new StringBuilder();
                             i11 = i13;
                             try {
-                                sb2.append(cursor.getString(2));
-                                sb2.append("/");
-                                sb2.append(cursor.getString(0));
-                                String sb3 = sb2.toString();
+                                sb.append(cursor.getString(2));
+                                sb.append("/");
+                                sb.append(cursor.getString(0));
+                                String sb2 = sb.toString();
                                 if (str8.equalsIgnoreCase(string)) {
-                                    str4 = sb3;
+                                    str4 = sb2;
                                     break;
                                 } else {
                                     i13 = i11;
@@ -253,7 +253,7 @@ public class NotificationsSettingsFacade {
                 TLRPC.TL_notificationSoundRingtone tL_notificationSoundRingtone = (TLRPC.TL_notificationSoundRingtone) notificationSound2;
                 editor.putLong(str7, tL_notificationSoundRingtone.id);
                 MediaDataController.getInstance(this.currentAccount).checkRingtones(true);
-                if (z10 && i11 != 0) {
+                if (z4 && i11 != 0) {
                     editor.putBoolean(PROPERTY_CUSTOM + j10, true);
                 }
                 MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.c(tL_notificationSoundRingtone.id);
@@ -303,7 +303,7 @@ public class NotificationsSettingsFacade {
     public void setSettingsForDialog(SharedPreferences.Editor editor, TLRPC.Dialog dialog, TLRPC.PeerNotifySettings peerNotifySettings) {
         long peerId = MessageObject.getPeerId(dialog.peer);
         if ((dialog.notify_settings.flags & 2) != 0) {
-            editor.putBoolean(a4.w.m(peerId, PROPERTY_SILENT), dialog.notify_settings.silent);
+            editor.putBoolean(android.support.v4.media.a.n(peerId, PROPERTY_SILENT), dialog.notify_settings.silent);
         } else {
             editor.remove(PROPERTY_SILENT + peerId);
         }
@@ -322,7 +322,7 @@ public class NotificationsSettingsFacade {
                 return;
             }
             editor.putInt(PROPERTY_NOTIFY + peerId, 3);
-            editor.putInt(a4.w.m(peerId, PROPERTY_NOTIFY_UNTIL), dialog.notify_settings.mute_until);
+            editor.putInt(android.support.v4.media.a.n(peerId, PROPERTY_NOTIFY_UNTIL), dialog.notify_settings.mute_until);
         }
     }
 
@@ -335,12 +335,12 @@ public class NotificationsSettingsFacade {
         return getPreferences().getLong(str + sharedPrefKey2, j12);
     }
 
-    public boolean getProperty(String str, long j10, long j11, boolean z10) {
+    public boolean getProperty(String str, long j10, long j11, boolean z4) {
         String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j11);
         if (getPreferences().contains(str + sharedPrefKey)) {
-            return getPreferences().getBoolean(str + sharedPrefKey, z10);
+            return getPreferences().getBoolean(str + sharedPrefKey, z4);
         }
         String sharedPrefKey2 = NotificationsController.getSharedPrefKey(j10, 0L);
-        return getPreferences().getBoolean(str + sharedPrefKey2, z10);
+        return getPreferences().getBoolean(str + sharedPrefKey2, z4);
     }
 }

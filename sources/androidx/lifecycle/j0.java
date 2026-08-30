@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import ph.j5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
@@ -125,6 +126,6 @@ public abstract class j0 {
         kotlin.jvm.internal.j.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new v1.c(a2));
         v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
-        return (m0) new androidx.biometric.e(u0Var.f(), new o1.a((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).n(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new androidx.biometric.e(u0Var.f(), new j5((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).o(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

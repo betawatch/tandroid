@@ -1,339 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public class t9 extends View {
-    public Path A;
-    public ColorMatrixColorFilter B;
-    public ImageReceiver a;
-    public ImageReceiver b;
-    public int c;
+public final class t9 extends View {
+    public Bitmap a;
+    public Bitmap b;
+    public Paint c;
     public int d;
-    public p5 e;
-    public ColorFilter f;
-    public e9 h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean w;
-    public ValueAnimator x;
-    public zz0 y;
+    public int e;
+    public s9 f;
 
-    public t9(Context context) {
-        super(context);
-        this.c = -1;
-        this.d = -1;
-        this.w = true;
-        ImageReceiver c3 = c();
-        this.a = c3;
-        c3.setCrossfadeByScale(0.0f);
-        this.a.setAllowLoadingOnAttachedOnly(true);
-        this.a.setDelegate(new u(this, 14));
-    }
-
-    public final void a() {
-        Bitmap bitmap;
-        if (!this.r || this.b.getBitmap() != null || this.a.getBitmap() == null || (bitmap = this.a.getBitmap()) == null || bitmap.isRecycled()) {
-            return;
-        }
-        this.b.setImageBitmap(Utilities.stackBlurBitmapMax(bitmap));
-        invalidate();
-    }
-
-    public final void b() {
-        this.a.clearImage();
-    }
-
-    public ImageReceiver c() {
-        return new ImageReceiver(this);
-    }
-
-    public final void d() {
-        if (this.r) {
-            if (this.b.getBitmap() != null && !this.b.getBitmap().isRecycled()) {
-                this.b.getBitmap().recycle();
-            }
-            this.b.setImageBitmap((Bitmap) null);
-            a();
-        }
-    }
-
-    public final void e(TLObject tLObject, e9 e9Var) {
-        this.a.setForUserOrChat(tLObject, e9Var);
-        d();
-    }
-
-    public final void f(String str, String str2, Drawable drawable) {
-        m(ImageLocation.getForPath(str), str2, null, null, drawable, null, 0, null);
-    }
-
-    public p5 getAnimatedEmojiDrawable() {
+    public int getRating() {
         return this.e;
     }
 
-    public e9 getAvatarDrawable() {
-        if (this.h == null) {
-            this.h = new e9((org.telegram.ui.ActionBar.c6) null);
-        }
-        return this.h;
-    }
-
-    public ImageReceiver getImageReceiver() {
-        return this.a;
-    }
-
-    public int[] getRoundRadius() {
-        return this.a.getRoundRadius();
-    }
-
-    public final void h(ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
-        m(imageLocation, str, null, null, drawable, null, 0, obj);
-    }
-
-    public final void i(ImageLocation imageLocation, String str, String str2, Drawable drawable, Object obj) {
-        m(imageLocation, str, null, null, drawable, str2, 0, obj);
-    }
-
-    public final void j(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, int i10, Object obj) {
-        m(imageLocation, str, imageLocation2, str2, null, null, i10, obj);
-    }
-
-    public final void k(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, long j10, String str3, Object obj, int i10) {
-        this.a.setImage(imageLocation, str, imageLocation2, str2, null, j10, str3, obj, i10);
-        d();
-    }
-
-    public final void l(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, Object obj) {
-        this.a.setImage(imageLocation, str, imageLocation2, str2, null, null, drawable, 0L, null, obj, 1);
-        d();
-    }
-
-    public final void m(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, String str3, int i10, Object obj) {
-        this.a.setImage(imageLocation, str, imageLocation2, str2, drawable, i10, str3, obj, 0);
-        d();
-    }
-
-    public final void n(ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
-        m(imageLocation, str, null, null, drawable, null, 0, obj);
-    }
-
-    public final void o(h61 h61Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
-        if (h61Var != null) {
-            this.a.setImageBitmap(h61Var);
-        } else {
-            this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i10, null, str3, 1);
-        }
-        d();
-    }
-
     @Override // android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.n = true;
-        if (this.w) {
-            this.a.onAttachedToWindow();
-        }
-        if (this.s) {
-            this.b.onAttachedToWindow();
-        }
-        p5 p5Var = this.e;
-        if (p5Var != null) {
-            p5Var.a(this);
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        int i10 = 0;
+        while (i10 < this.d) {
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.j6.m5 : org.telegram.ui.ActionBar.j6.t5, false));
+            canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
+            i10++;
         }
     }
 
     @Override // android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.n = false;
-        if (this.w) {
-            this.a.onDetachedFromWindow();
-        }
-        if (this.s) {
-            this.b.onDetachedFromWindow();
-        }
-        p5 p5Var = this.e;
-        if (p5Var != null) {
-            p5Var.o(this);
-        }
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.d;
+        setMeasuredDimension(org.telegram.messenger.y3.D(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
     }
 
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
         int i10;
-        ColorFilter colorFilter;
-        p5 p5Var = this.e;
-        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
-        if (imageReceiver == null) {
-            return;
-        }
-        if (p5Var != null && (colorFilter = this.f) != null) {
-            p5Var.setColorFilter(colorFilter);
-        }
-        int i11 = this.c;
-        if (i11 == -1 || (i10 = this.d) == -1) {
-            imageReceiver.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
-            if (this.s) {
-                this.b.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+        float dp = AndroidUtilities.dp(-8.0f);
+        for (int i11 = 0; i11 < this.d; i11++) {
+            if (motionEvent.getX() > dp && motionEvent.getX() < AndroidUtilities.dp(48.0f) + dp && this.e != (i10 = i11 + 1)) {
+                this.e = i10;
+                s9 s9Var = this.f;
+                if (s9Var != null) {
+                    View view = ((org.telegram.ui.Components.voip.t1) s9Var).a;
+                    view.setEnabled(i10 > 0);
+                    ((TextView) view).setText(LocaleController.getString(i10 < 4 ? R.string.Next : R.string.Send).toUpperCase());
+                }
+                invalidate();
+                return true;
             }
-        } else if (this.v) {
-            imageReceiver.setImageCoords(0.0f, 0.0f, i11, i10);
-            if (this.s) {
-                this.b.setImageCoords(0.0f, 0.0f, this.c, this.d);
-            }
-        } else {
-            float width = (getWidth() - this.c) / 2;
-            int height = getHeight();
-            imageReceiver.setImageCoords(width, (height - r3) / 2, this.c, this.d);
-            if (this.s) {
-                ImageReceiver imageReceiver2 = this.b;
-                float width2 = (getWidth() - this.c) / 2;
-                int height2 = getHeight();
-                imageReceiver2.setImageCoords(width2, (height2 - r4) / 2, this.c, this.d);
-            }
+            dp += AndroidUtilities.dp(48.0f);
         }
-        imageReceiver.draw(canvas);
-        if (this.s) {
-            this.b.draw(canvas);
-        }
+        return true;
     }
 
-    public final void p(int i10, int i11, boolean z10) {
-        this.a.setOrientation(i10, i11, true);
-    }
-
-    public final void q(int i10, boolean z10) {
-        this.a.setOrientation(0, true);
-    }
-
-    public final void r(int i10, int i11, int i12, int i13) {
-        this.a.setRoundRadius(i10, i11, i12, i13);
-        if (this.s) {
-            this.b.setRoundRadius(i10, i11, i12, i13);
-        }
-        invalidate();
-    }
-
-    public final void s(int i10, int i11) {
-        this.c = i10;
-        this.d = i11;
-        invalidate();
-    }
-
-    public void setAnimatedEmojiDrawable(p5 p5Var) {
-        p5 p5Var2 = this.e;
-        if (p5Var2 == p5Var) {
-            return;
-        }
-        if (this.n && p5Var2 != null) {
-            p5Var2.o(this);
-        }
-        this.e = p5Var;
-        if (this.n && p5Var != null) {
-            p5Var.a(this);
-        }
-        invalidate();
-    }
-
-    public void setAspectFit(boolean z10) {
-        this.a.setAspectFit(z10);
-    }
-
-    public void setBlurAllowed(boolean z10) {
-        if (this.n) {
-            throw new IllegalStateException("You should call setBlurAllowed(...) only when detached!");
-        }
-        this.s = z10;
-        if (z10) {
-            this.b = new ImageReceiver();
-        }
-    }
-
-    public void setBlurredText(CharSequence charSequence) {
-        if (TextUtils.isEmpty(charSequence)) {
-            this.y = null;
-            return;
-        }
-        this.y = new zz0(charSequence, 16.5f, AndroidUtilities.bold());
-        if (this.B == null) {
-            ColorMatrix colorMatrix = new ColorMatrix();
-            colorMatrix.setSaturation(1.2f);
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.2f);
-            this.B = new ColorMatrixColorFilter(colorMatrix);
-        }
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    public void setEmojiColorFilter(ColorFilter colorFilter) {
-        this.f = colorFilter;
-        invalidate();
-    }
-
-    public void setHasBlur(boolean z10) {
-        if (z10 && !this.s) {
-            throw new IllegalStateException("You should call setBlurAllowed(...) before calling setHasBlur(true)!");
-        }
-        this.r = z10;
-        if (!z10) {
-            if (this.b.getBitmap() != null && !this.b.getBitmap().isRecycled()) {
-                this.b.getBitmap().recycle();
-            }
-            this.b.setImageBitmap((Bitmap) null);
-        }
-        a();
-    }
-
-    public void setImageBitmap(Bitmap bitmap) {
-        this.a.setImageBitmap(bitmap);
-        d();
-    }
-
-    public void setImageDrawable(Drawable drawable) {
-        this.a.setImageBitmap(drawable);
-        d();
-    }
-
-    public void setImageResource(int i10) {
-        this.a.setImageBitmap(getResources().getDrawable(i10));
-        invalidate();
-        d();
-    }
-
-    public void setLayerNum(int i10) {
-        this.a.setLayerNum(i10);
-    }
-
-    public void setRoundRadius(int i10) {
-        this.a.setRoundRadius(i10);
-        if (this.s) {
-            this.b.setRoundRadius(i10);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a.getDrawable() || drawable == this.a.getImageDrawable() || super.verifyDrawable(drawable);
+    public void setOnRatingChangeListener(s9 s9Var) {
+        this.f = s9Var;
     }
 }

@@ -2,31 +2,37 @@ package k4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import i4.g;
+import j3.d1;
+import j3.n0;
+import j8.t;
+import k7.z7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b implements Comparable, Parcelable {
-    public static final Parcelable.Creator<b> CREATOR = new g(20);
-    public final int a;
-    public final int b;
-    public final int c;
+public final class b implements e4.b {
+    public static final Parcelable.Creator<b> CREATOR = new t(12);
+    public final long a;
+    public final long b;
+    public final long c;
+    public final long d;
+    public final long e;
 
-    public b() {
-        this.a = -1;
-        this.b = -1;
-        this.c = -1;
+    public b(long j10, long j11, long j12, long j13, long j14) {
+        this.a = j10;
+        this.b = j11;
+        this.c = j12;
+        this.d = j13;
+        this.e = j14;
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        b bVar = (b) obj;
-        int i10 = this.a - bVar.a;
-        if (i10 != 0) {
-            return i10;
-        }
-        int i11 = this.b - bVar.b;
-        return i11 == 0 ? this.c - bVar.c : i11;
+    @Override // e4.b
+    public final /* synthetic */ n0 b() {
+        return null;
+    }
+
+    @Override // e4.b
+    public final /* synthetic */ byte[] d() {
+        return null;
     }
 
     @Override // android.os.Parcelable
@@ -40,7 +46,7 @@ public final class b implements Comparable, Parcelable {
         }
         if (obj != null && b.class == obj.getClass()) {
             b bVar = (b) obj;
-            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c) {
+            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c && this.d == bVar.d && this.e == bVar.e) {
                 return true;
             }
         }
@@ -48,23 +54,31 @@ public final class b implements Comparable, Parcelable {
     }
 
     public final int hashCode() {
-        return (((this.a * 31) + this.b) * 31) + this.c;
+        return z7.a(this.e) + ((z7.a(this.d) + ((z7.a(this.c) + ((z7.a(this.b) + ((z7.a(this.a) + 527) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return this.a + "." + this.b + "." + this.c;
+        return "Motion photo metadata: photoStartPosition=" + this.a + ", photoSize=" + this.b + ", photoPresentationTimestampUs=" + this.c + ", videoStartPosition=" + this.d + ", videoSize=" + this.e;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeInt(this.a);
-        parcel.writeInt(this.b);
-        parcel.writeInt(this.c);
+        parcel.writeLong(this.a);
+        parcel.writeLong(this.b);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.d);
+        parcel.writeLong(this.e);
     }
 
     public b(Parcel parcel) {
-        this.a = parcel.readInt();
-        this.b = parcel.readInt();
-        this.c = parcel.readInt();
+        this.a = parcel.readLong();
+        this.b = parcel.readLong();
+        this.c = parcel.readLong();
+        this.d = parcel.readLong();
+        this.e = parcel.readLong();
+    }
+
+    @Override // e4.b
+    public final /* synthetic */ void c(d1 d1Var) {
     }
 }

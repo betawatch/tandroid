@@ -1,103 +1,226 @@
 package org.telegram.ui.Components;
 
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.util.SparseArray;
+import android.widget.EditText;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.SendMessageChatArguments;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fg extends org.telegram.ui.pt0 {
-    public boolean a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ File c;
-    public final /* synthetic */ gg d;
+public final /* synthetic */ class fg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public fg(gg ggVar, MediaController.PhotoEntry photoEntry, File file) {
-        this.d = ggVar;
-        this.b = photoEntry;
-        this.c = file;
+    public /* synthetic */ fg(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final void G() {
-        if (this.a) {
-            return;
-        }
-        try {
-            this.c.delete();
-        } catch (Throwable unused) {
-        }
-    }
-
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        MessageObject threadMessage;
-        String str;
-        org.telegram.ui.tn tnVar;
-        ChatActivityEnterView chatActivityEnterView = this.d.d;
-        org.telegram.ui.jn jnVar = chatActivityEnterView.Q2;
-        if (jnVar != null && (tnVar = chatActivityEnterView.K2) != null && jnVar.f) {
-            tnVar.Rb();
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isVideo || (str = photoEntry.imagePath) == null) {
-            String str2 = photoEntry.path;
-            if (str2 != null) {
-                sendingMediaInfo.path = str2;
-            }
-        } else {
-            sendingMediaInfo.path = str;
-        }
-        sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-        sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-        sendingMediaInfo.isVideo = photoEntry.isVideo;
-        sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
-        sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-        sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
-        CharSequence charSequence = photoEntry.caption;
-        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-        sendingMediaInfo.entities = photoEntry.entities;
-        sendingMediaInfo.masks = photoEntry.stickers;
-        sendingMediaInfo.ttl = photoEntry.ttl;
-        sendingMediaInfo.videoEditedInfo = videoEditedInfo;
-        sendingMediaInfo.canDeleteAfter = true;
-        arrayList.add(sendingMediaInfo);
-        photoEntry.reset();
-        this.a = true;
-        boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(sendingMediaInfo.caption);
-        AccountInstance accountInstance = chatActivityEnterView.N;
-        MessageSuggestionParams messageSuggestionParams = null;
-        long j10 = chatActivityEnterView.L2;
-        MessageObject messageObject = chatActivityEnterView.O2;
-        threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.jn jnVar2 = chatActivityEnterView.Q2;
-        MessageObject messageObject2 = chatActivityEnterView.U1;
-        org.telegram.ui.tn tnVar2 = chatActivityEnterView.K2;
-        int i13 = tnVar2 == null ? 0 : tnVar2.N3;
-        SendMessageChatArguments C8 = tnVar2 != null ? tnVar2.C8() : null;
-        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.tn tnVar3 = chatActivityEnterView.K2;
-        if (tnVar3 != null) {
-            messageSuggestionParams = tnVar3.c5;
-        }
-        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage, null, jnVar2, false, false, messageObject2, z10, i11, i12, i13, checkUpdateStickersOrder, null, C8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
-        hg hgVar = chatActivityEnterView.U2;
-        if (hgVar != null) {
-            hgVar.D(null, true, i11, i12, 0L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = ((ig) obj).S;
+                if (!MediaController.getInstance().isRecordingPaused()) {
+                    MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", 3).apply();
+                }
+                if (chatActivityEnterView.o4) {
+                    chatActivityEnterView.F3 = true;
+                }
+                MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.L);
+                chatActivityEnterView.V2.b1(0);
+                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
+                if (slideTextView != null) {
+                    slideTextView.setEnabled(false);
+                    break;
+                }
+                break;
+            case 1:
+                qc qcVar = (qc) obj;
+                new eg.o1(qcVar.W(), 42, qcVar.c).show();
+                break;
+            case 2:
+                AndroidUtilities.removeFromParent((ph.f3) obj);
+                break;
+            case 3:
+                AndroidUtilities.showKeyboard((EditText) obj);
+                break;
+            case 4:
+                SparseArray sparseArray = l5.q;
+                ((l5) obj).v();
+                break;
+            case 5:
+                h5 h5Var = (h5) obj;
+                ArrayList arrayList = new ArrayList(h5Var.c);
+                h5Var.c.clear();
+                MessagesStorage.getInstance(h5Var.e).getStorageQueue().postRunnable(new e5(h5Var, arrayList, i11));
+                h5Var.d = null;
+                break;
+            case 6:
+                ((j5) obj).invalidate();
+                break;
+            case 7:
+                ((o1.j) obj).f();
+                break;
+            case 8:
+                k6 k6Var = (k6) obj;
+                CharSequence charSequence = k6Var.f;
+                if (charSequence != null) {
+                    k6Var.c(charSequence, k6Var.h, true);
+                    k6Var.f = null;
+                    k6Var.h = false;
+                    break;
+                }
+                break;
+            case 9:
+                ((b8) obj).n.n.setVisibility(8);
+                break;
+            case 10:
+                ((h8) obj).c.i1();
+                break;
+            case 11:
+                x9 x9Var = (x9) obj;
+                x9Var.o = true;
+                x9Var.d.invalidate();
+                break;
+            case 12:
+                w9 w9Var = (w9) obj;
+                if (!w9Var.a) {
+                    x9 x9Var2 = w9Var.d;
+                    Bitmap[] bitmapArr = x9Var2.g;
+                    Canvas[] canvasArr = x9Var2.h;
+                    x9Var2.g = x9Var2.f;
+                    x9Var2.h = x9Var2.i;
+                    x9Var2.f = bitmapArr;
+                    x9Var2.i = canvasArr;
+                    x9Var2.k = false;
+                    eg.i0 i0Var = x9Var2.d;
+                    if (i0Var != null) {
+                        i0Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 13:
+                ba baVar = ((ha) obj).t;
+                if (baVar != null) {
+                    baVar.d();
+                    break;
+                }
+                break;
+            case 14:
+                ba baVar2 = (ba) obj;
+                baVar2.o = baVar2.n.b;
+                baVar2.d();
+                break;
+            case 15:
+                ic icVar = ((ab) obj).b;
+                nb nbVar = icVar.e;
+                nbVar.transitionRunningEnter = false;
+                nbVar.onEnterTransitionEnd();
+                if (icVar.u) {
+                    icVar.i(true);
+                    break;
+                }
+                break;
+            case 16:
+                zc zcVar = (zc) obj;
+                zcVar.getClass();
+                if (LiteMode.isEnabled(512)) {
+                    zcVar.invalidateSelf();
+                    break;
+                }
+                break;
+            case 17:
+                bd bdVar = (bd) obj;
+                if (bdVar.l1) {
+                    bdVar.l1 = false;
+                    bdVar.invalidate();
+                    break;
+                }
+                break;
+            case 18:
+                ((Dialog) obj).dismiss();
+                break;
+            case 19:
+                ChatActivityEnterView chatActivityEnterView2 = ((hf) obj).f;
+                int i12 = ChatActivityEnterView.j5;
+                chatActivityEnterView2.q1();
+                break;
+            case 20:
+                ((qg) obj).s = null;
+                break;
+            case 21:
+                ((bi) obj).y0.x1.l();
+                break;
+            case 22:
+                hk hkVar = (hk) ((androidx.mediarouter.app.h) obj).b;
+                try {
+                    File file = hkVar.L;
+                    if (file == null) {
+                        hkVar.O();
+                    } else {
+                        hkVar.N(file);
+                    }
+                    hkVar.V();
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 23:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((ul) obj).b;
+                boolean z4 = ChatAttachAlertPhotoLayout.n1;
+                chatAttachAlertPhotoLayout2.p0(-1, true);
+                break;
+            case 24:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((ql) obj).c;
+                if (chatAttachAlertPhotoLayout3.M != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
+                    chatAttachAlertPhotoLayout3.M.setSystemUiVisibility(1028);
+                    break;
+                }
+                break;
+            case 25:
+                om omVar = (om) obj;
+                li liVar = omVar.b;
+                if (omVar.N && (chatAttachAlertPhotoLayout = liVar.g0) != null) {
+                    org.telegram.ui.ActionBar.g1 g1Var = chatAttachAlertPhotoLayout.Z0;
+                    g1Var.setIcon(R.drawable.ic_ab_back);
+                    g1Var.setText(LocaleController.getString(R.string.Back));
+                    g1Var.setRightIcon(0);
+                    break;
+                }
+                break;
+            case 26:
+                qn qnVar = (qn) obj;
+                qnVar.h1 = -1;
+                qnVar.g1 = null;
+                break;
+            case 27:
+                ((ko) obj).r();
+                break;
+            case 28:
+                ((mo) obj).setVisibility(8);
+                break;
+            default:
+                ((np) obj).b.a();
+                break;
         }
     }
 }

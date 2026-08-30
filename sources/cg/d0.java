@@ -1,100 +1,68 @@
 package cg;
 
-import android.content.DialogInterface;
-import jh.l6;
-import lh.i9;
-import lh.m5;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.zl0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class d0 extends LinearLayout {
+    public final c0 a;
+    public final c0 b;
+    public final c0 c;
+    public final EditTextBoldCursor d;
+    public boolean e;
+    public final /* synthetic */ e0 f;
 
-    public /* synthetic */ d0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        org.telegram.ui.web.f0 f0Var;
-        switch (this.a) {
-            case 0:
-                v0 v0Var = (v0) this.b;
-                v0Var.b0 = false;
-                v0Var.t0.W = true;
-                v0Var.A0.invalidate();
-                v0Var.t0.invalidate();
-                break;
-            case 1:
-                f2 f2Var = (f2) this.b;
-                i iVar = f2Var.n0;
-                if (iVar != null) {
-                    iVar.setDialogVisible(false);
-                }
-                f2Var.m0.setPaused(false);
-                break;
-            case 2:
-                ((hh.v) this.b).s = null;
-                break;
-            case 3:
-                ((l6) this.b).run();
-                break;
-            case 4:
-                AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);
-                break;
-            case 5:
-                ((jh.w2) this.b).run();
-                break;
-            case 6:
-                ((m5) this.b).run();
-                break;
-            case 7:
-                i9 i9Var = (i9) this.b;
-                if (dialogInterface == i9Var.q0) {
-                    i9Var.q0 = null;
-                    i9Var.P();
-                    break;
-                }
-                break;
-            case 8:
-                Runnable[] runnableArr = (Runnable[]) this.b;
-                Runnable runnable = runnableArr[0];
-                if (runnable != null) {
-                    runnable.run();
-                    runnableArr[0] = null;
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.web.z0 z0Var = ((org.telegram.ui.web.l0) this.b).e.M;
-                if (z0Var != null && (f0Var = z0Var.c) != null) {
-                    f0Var.y();
-                    break;
-                }
-                break;
-            case 10:
-                org.telegram.ui.web.f0 f0Var2 = ((org.telegram.ui.web.s0) this.b).b.e.M.c;
-                if (f0Var2 != null) {
-                    f0Var2.y();
-                    break;
-                }
-                break;
-            case 11:
-                AndroidUtilities.hideKeyboard((sf.o) this.b);
-                break;
-            case 12:
-                AndroidUtilities.hideKeyboard((sf.h1) this.b);
-                break;
-            case 13:
-                ((th.p) this.b).K = null;
-                break;
-            default:
-                ((th.x1) this.b).K0 = null;
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(e0 e0Var, Context context) {
+        super(context);
+        this.f = e0Var;
+        setOrientation(1);
+        setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
+        c0 c0Var = new c0(e0Var, context);
+        this.a = c0Var;
+        c0Var.a(0);
+        addView(c0Var, b6.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        c0 c0Var2 = new c0(e0Var, context);
+        this.b = c0Var2;
+        c0Var2.a(1);
+        addView(c0Var2, b6.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        c0 c0Var3 = new c0(e0Var, context);
+        this.c = c0Var3;
+        c0Var3.a(2);
+        addView(c0Var3, b6.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(21);
+        addView(linearLayout, b6.c(64.0f, -1));
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1711276033);
+        textView.setTextSize(1, 16.0f);
+        textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersHexColor).toUpperCase());
+        textView.setTypeface(AndroidUtilities.bold());
+        linearLayout.addView(textView, b6.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.d = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setBackground(j6.b0(AndroidUtilities.dp(10.0f), 436207615));
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setTextColor(-1);
+        editTextBoldCursor.setGravity(17);
+        editTextBoldCursor.setSingleLine();
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
+        editTextBoldCursor.setTypeface(AndroidUtilities.bold());
+        editTextBoldCursor.addTextChangedListener(new zl0(this));
+        editTextBoldCursor.setOnFocusChangeListener(new z(this, 1));
+        editTextBoldCursor.setOnEditorActionListener(new a0(1));
+        linearLayout.addView(editTextBoldCursor, b6.n(72, 36));
     }
 }

@@ -1,50 +1,13 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x60 b;
+public final class f80 {
+    public final org.telegram.ui.ActionBar.g1 a;
+    public final int b;
 
-    public /* synthetic */ f80(x60 x60Var, int i10) {
-        this.a = i10;
-        this.b = x60Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        x60 x60Var = this.b;
-        switch (i10) {
-            case 0:
-                Pattern pattern = LaunchActivity.x1;
-                try {
-                    x60Var.run();
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            case 1:
-                Pattern pattern2 = LaunchActivity.x1;
-                try {
-                    x60Var.run();
-                    break;
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                    return;
-                }
-            default:
-                Pattern pattern3 = LaunchActivity.x1;
-                try {
-                    x60Var.run();
-                    break;
-                } catch (Exception e12) {
-                    FileLog.e(e12);
-                }
-        }
+    public f80(org.telegram.ui.ActionBar.g1 g1Var, int i10) {
+        this.a = g1Var;
+        this.b = i10;
     }
 }

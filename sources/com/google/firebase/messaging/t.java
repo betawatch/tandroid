@@ -1,51 +1,48 @@
 package com.google.firebase.messaging;
 
-import android.text.TextUtils;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
-import java.util.concurrent.TimeUnit;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.io.File;
+import java.io.IOException;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class t {
-    public static final long d = TimeUnit.DAYS.toMillis(7);
-    public final String a;
-    public final String b;
-    public final long c;
+    public final SharedPreferences a;
 
-    public t(long j10, String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        this.c = j10;
-    }
-
-    public static String a(long j10, String str, String str2) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("token", str);
-            jSONObject.put("appVersion", str2);
-            jSONObject.put("timestamp", j10);
-            return jSONObject.toString();
-        } catch (JSONException e10) {
-            Log.w("FirebaseMessaging", "Failed to encode token: " + e10);
-            return null;
-        }
-    }
-
-    public static t b(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return null;
-        }
-        if (!str.startsWith("{")) {
-            return new t(0L, str, null);
+    public t(Context context) {
+        boolean isEmpty;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.android.gms.appid", 0);
+        this.a = sharedPreferences;
+        File file = new File(context.getNoBackupFilesDir(), "com.google.android.gms.appid-no-backup");
+        if (file.exists()) {
+            return;
         }
         try {
-            JSONObject jSONObject = new JSONObject(str);
-            return new t(jSONObject.getLong("timestamp"), jSONObject.getString("token"), jSONObject.getString("appVersion"));
-        } catch (JSONException e10) {
-            Log.w("FirebaseMessaging", "Failed to parse token: " + e10);
-            return null;
+            if (file.createNewFile()) {
+                synchronized (this) {
+                    isEmpty = sharedPreferences.getAll().isEmpty();
+                }
+                if (isEmpty) {
+                    return;
+                }
+                Log.i("FirebaseMessaging", "App restored, clearing state");
+                a();
+            }
+        } catch (IOException e) {
+            if (Log.isLoggable("FirebaseMessaging", 3)) {
+                Log.d("FirebaseMessaging", "Error creating file in no backup dir: " + e.getMessage());
+            }
         }
+    }
+
+    public synchronized void a() {
+        this.a.edit().clear().commit();
+    }
+
+    public t(int i10, int i11) {
+        this.a = ApplicationLoader.applicationContext.getSharedPreferences(android.support.v4.media.a.k(i10, i11, "pip_layout_", "_"), 0);
     }
 }

@@ -1,128 +1,96 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class x50 extends org.telegram.ui.Components.il0 {
-    public ChatObject.Call c;
-    public final int d;
-    public ArrayList f;
-    public j30 h;
-    public final r50 n;
-    public final ArrayList e = new ArrayList();
-    public boolean r = false;
+public final class x50 extends Drawable {
+    public final Paint a;
+    public final Paint b;
+    public long c;
+    public float d;
+    public int e;
+    public boolean f;
+    public View g;
 
-    public x50(ChatObject.Call call, int i10, r50 r50Var) {
-        this.c = call;
-        this.d = i10;
-        this.n = r50Var;
+    public x50() {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        this.d = 1.0f;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public final boolean D(f2.n1 n1Var) {
-        return false;
+    public final void a(ImageView imageView) {
+        this.g = imageView;
     }
 
-    public final void E(org.telegram.ui.Components.voip.l lVar, boolean z10) {
-        if (z10 && lVar.getRenderer() == null) {
-            lVar.setRenderer(org.telegram.ui.Components.voip.u.c(this.f, this.h, null, null, lVar, lVar.getParticipant(), this.c, this.n));
-        } else {
-            if (z10 || lVar.getRenderer() == null) {
-                return;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float centerX = getBounds().centerX();
+        float centerY = getBounds().centerY();
+        canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(10.0f), this.a);
+        int i10 = this.f ? -1147527 : -1;
+        Paint paint = this.b;
+        paint.setColor(i10);
+        paint.setAlpha((int) (this.d * 255.0f));
+        canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(5.0f), paint);
+        if (this.f) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long j10 = elapsedRealtime - this.c;
+            if (j10 > 17) {
+                j10 = 17;
             }
-            lVar.getRenderer().setTabletGridView(null);
-            lVar.setRenderer(null);
-        }
-    }
-
-    public final int F() {
-        org.telegram.ui.Components.jl0 jl0Var = this.n.j2;
-        int size = this.e.size();
-        return size <= 1 ? jl0Var.getMeasuredHeight() : size <= 4 ? jl0Var.getMeasuredHeight() / 2 : (int) (jl0Var.getMeasuredHeight() / 2.5f);
-    }
-
-    public final void G(ArrayList arrayList, j30 j30Var) {
-        this.f = arrayList;
-        this.h = j30Var;
-    }
-
-    public final void H(org.telegram.ui.Components.jl0 jl0Var, boolean z10, boolean z11) {
-        this.r = z10;
-        if (z11) {
-            for (int i10 = 0; i10 < jl0Var.getChildCount(); i10++) {
-                View childAt = jl0Var.getChildAt(i10);
-                if (childAt instanceof org.telegram.ui.Components.voip.l) {
-                    org.telegram.ui.Components.voip.l lVar = (org.telegram.ui.Components.voip.l) childAt;
-                    if (lVar.getParticipant() != null) {
-                        E(lVar, z10);
-                    }
+            this.c = elapsedRealtime;
+            int i11 = this.e;
+            if (i11 == 0) {
+                float f10 = (j10 / 2000.0f) + this.d;
+                this.d = f10;
+                if (f10 >= 1.0f) {
+                    this.d = 1.0f;
+                    this.e = 1;
+                }
+            } else if (i11 == 1) {
+                float f11 = this.d - (j10 / 2000.0f);
+                this.d = f11;
+                if (f11 < 0.5f) {
+                    this.d = 0.5f;
+                    this.e = 0;
                 }
             }
+            this.g.invalidate();
         }
     }
 
-    public final void I(org.telegram.ui.Components.jl0 jl0Var, boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        if (!z10) {
-            arrayList.clear();
-            arrayList.addAll(this.c.visibleVideoParticipants);
-            l();
-        } else {
-            ArrayList arrayList2 = new ArrayList();
-            arrayList2.addAll(arrayList);
-            arrayList.clear();
-            arrayList.addAll(this.c.visibleVideoParticipants);
-            f2.q.c(new w50(this, arrayList2), true).b(this);
-            AndroidUtilities.updateVisibleRows(jl0Var);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 
-    @Override // f2.p0
-    public final int h() {
-        return this.e.size();
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
     }
 
-    @Override // f2.p0
-    public final void v(f2.n1 n1Var, int i10) {
-        org.telegram.ui.Components.voip.l lVar = (org.telegram.ui.Components.voip.l) n1Var.a;
-        ChatObject.VideoParticipant participant = lVar.getParticipant();
-        ArrayList arrayList = this.e;
-        ChatObject.VideoParticipant videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i10);
-        TLRPC.GroupCallParticipant groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i10)).participant;
-        int size = arrayList.size();
-        int i11 = 6;
-        if (size > 1 && size != 2 && (size != 3 || i10 == 0 || i10 == 1)) {
-            i11 = 3;
-        }
-        lVar.a = i11;
-        lVar.b = this;
-        if (lVar.getMeasuredHeight() != F()) {
-            lVar.requestLayout();
-        }
-        AccountInstance.getInstance(this.d);
-        MessageObject.getPeerId(this.c.selfPeer);
-        lVar.d = videoParticipant;
-        if (participant != null && !participant.equals(videoParticipant) && lVar.e && lVar.getRenderer() != null) {
-            E(lVar, false);
-            E(lVar, true);
-        } else if (lVar.getRenderer() != null) {
-            lVar.getRenderer().j(true);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // f2.p0
-    public final f2.n1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.vk0(new v50(this, viewGroup.getContext()));
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

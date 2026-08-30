@@ -27,7 +27,7 @@ import javax.crypto.Mac;
 import m.a1;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i10) {
@@ -123,13 +123,13 @@ public abstract class b {
 
     public static boolean j(Context context) {
         try {
-            FingerprintManager f9 = eg.c.f(context.getSystemService("fingerprint"));
-            if (f9 == null) {
+            FingerprintManager a2 = k3.e.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
                 return false;
             }
-            return f9.hasEnrolledFingerprints();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+            return a2.hasEnrolledFingerprints();
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
     }
@@ -144,13 +144,13 @@ public abstract class b {
 
     public static boolean m(Context context) {
         try {
-            FingerprintManager f9 = eg.c.f(context.getSystemService("fingerprint"));
-            if (f9 == null) {
+            FingerprintManager a2 = k3.e.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
                 return false;
             }
-            return f9.isHardwareDetected();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+            return a2.isHardwareDetected();
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
     }
@@ -195,8 +195,8 @@ public abstract class b {
         return drawable.setLayoutDirection(i10);
     }
 
-    public static void x(PopupWindow popupWindow, boolean z10) {
-        popupWindow.setOverlapAnchor(z10);
+    public static void x(PopupWindow popupWindow, boolean z4) {
+        popupWindow.setOverlapAnchor(z4);
     }
 
     public static void y(PopupWindow popupWindow, int i10) {
@@ -228,7 +228,7 @@ public abstract class b {
                     createWithBitmap = Icon.createWithBitmap(IconCompat.b((Bitmap) iconCompat.b, false));
                     break;
                 } else {
-                    createWithBitmap = i6.a.b((Bitmap) iconCompat.b);
+                    createWithBitmap = k6.a.b((Bitmap) iconCompat.b);
                     break;
                 }
             case 6:
@@ -240,15 +240,15 @@ public abstract class b {
                     if (context == null) {
                         throw new IllegalArgumentException("Context is required to resolve the file uri of the icon: " + iconCompat.j());
                     }
-                    InputStream k9 = iconCompat.k(context);
-                    if (k9 == null) {
+                    InputStream k10 = iconCompat.k(context);
+                    if (k10 == null) {
                         throw new IllegalStateException("Cannot load adaptive icon from uri: " + iconCompat.j());
                     }
                     if (i10 < 26) {
-                        createWithBitmap = Icon.createWithBitmap(IconCompat.b(BitmapFactory.decodeStream(k9), false));
+                        createWithBitmap = Icon.createWithBitmap(IconCompat.b(BitmapFactory.decodeStream(k10), false));
                         break;
                     } else {
-                        createWithBitmap = i6.a.b(BitmapFactory.decodeStream(k9));
+                        createWithBitmap = k6.a.b(BitmapFactory.decodeStream(k10));
                         break;
                     }
                 }

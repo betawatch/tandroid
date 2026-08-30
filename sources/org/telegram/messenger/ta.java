@@ -1,32 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ta implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
+    public final /* synthetic */ lf.t c;
 
-    public /* synthetic */ ta(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+    public /* synthetic */ ta(MessagesController messagesController, lf.t tVar, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = tLObject;
-        this.d = f6Var;
-        this.e = e6Var;
+        this.c = tVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$didReceivedNotification$46(this.c, this.d, this.e);
+                this.b.lambda$processUpdateArray$402(this.c);
+                break;
+            case 1:
+                this.b.lambda$processUpdateArray$404(this.c);
                 break;
             default:
-                this.b.lambda$didReceivedNotification$48(this.c, this.d, this.e);
+                this.b.lambda$processUpdateArray$399(this.c);
                 break;
         }
     }

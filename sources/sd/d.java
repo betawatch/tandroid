@@ -1,84 +1,54 @@
 package sd;
 
-import i7.v7;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import jd.e0;
-import jd.m;
+import java.util.concurrent.Executor;
+import kh.a2;
+import ld.a0;
+import ld.x0;
+import qd.v;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d extends h implements a {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
-    private volatile /* synthetic */ Object owner$volatile;
+public final class d extends x0 implements Executor {
+    public static final d c = new d();
+    public static final a0 d;
 
-    public d(boolean z10) {
-        super(z10 ? 1 : 0);
-        this.owner$volatile = z10 ? null : e.a;
-    }
-
-    public final boolean c() {
-        return Math.max(h.f.get(this), 0) == 0;
-    }
-
-    public final Object d(uc.c cVar) {
-        int i10;
-        while (true) {
-            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = h.f;
-            int i11 = atomicIntegerFieldUpdater.get(this);
-            if (i11 > 1) {
-                do {
-                    i10 = atomicIntegerFieldUpdater.get(this);
-                    if (i10 > 1) {
-                    }
-                } while (!atomicIntegerFieldUpdater.compareAndSet(this, i10, 1));
-            } else {
-                qc.i iVar = qc.i.a;
-                if (i11 <= 0) {
-                    m l10 = e0.l(v7.b(cVar));
-                    try {
-                        a(new c(this, l10));
-                        Object r6 = l10.r();
-                        tc.a aVar = tc.a.a;
-                        if (r6 != aVar) {
-                            r6 = iVar;
-                        }
-                        return r6 == aVar ? r6 : iVar;
-                    } catch (Throwable th2) {
-                        l10.A();
-                        throw th2;
-                    }
-                }
-                if (atomicIntegerFieldUpdater.compareAndSet(this, i11, i11 - 1)) {
-                    g.set(this, null);
-                    return iVar;
-                }
-            }
+    static {
+        a0 a0Var = l.c;
+        int i10 = v.a;
+        if (64 >= i10) {
+            i10 = 64;
         }
-    }
-
-    public final void e(Object obj) {
-        while (c()) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
-            Object obj2 = atomicReferenceFieldUpdater.get(this);
-            fc.a aVar = e.a;
-            if (obj2 != aVar) {
-                if (obj2 == obj || obj == null) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, aVar)) {
-                        if (atomicReferenceFieldUpdater.get(this) != obj2) {
-                            break;
-                        }
-                    }
-                    b();
-                    return;
-                }
-                throw new IllegalStateException(("This mutex is locked by " + obj2 + ", but " + obj + " is expected").toString());
-            }
+        int j10 = qd.a.j(i10, 12, "kotlinx.coroutines.io.parallelism");
+        a0Var.getClass();
+        if (j10 < 1) {
+            throw new IllegalArgumentException(a2.j(j10, "Expected positive parallelism level, but got ").toString());
         }
-        throw new IllegalStateException("This mutex is not locked");
+        if (j10 < k.d) {
+            if (j10 < 1) {
+                throw new IllegalArgumentException(a2.j(j10, "Expected positive parallelism level, but got ").toString());
+            }
+            a0Var = new qd.i(a0Var, j10);
+        }
+        d = a0Var;
     }
 
+    @Override // ld.a0
+    public final void c(uc.h hVar, Runnable runnable) {
+        d.c(hVar, runnable);
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        throw new IllegalStateException("Cannot be invoked on Dispatchers.IO");
+    }
+
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        c(uc.i.a, runnable);
+    }
+
+    @Override // ld.a0
     public final String toString() {
-        return "Mutex@" + e0.k(this) + "[isLocked=" + c() + ",owner=" + g.get(this) + ']';
+        return "Dispatchers.IO";
     }
 }

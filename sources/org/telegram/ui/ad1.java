@@ -1,74 +1,97 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.content.Context;
+import android.graphics.BlendMode;
+import android.graphics.Paint;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ad1 implements View.OnClickListener {
-    public final /* synthetic */ oh0 a;
-    public final /* synthetic */ tn b;
-    public final /* synthetic */ org.telegram.ui.Components.jl0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.j70 e;
-    public final /* synthetic */ org.telegram.ui.Components.j70 f;
-    public final /* synthetic */ fd1 h;
+public final class ad1 extends org.telegram.ui.Components.rl0 {
+    public final Context c;
+    public final /* synthetic */ cd1 d;
 
-    public ad1(fd1 fd1Var, oh0 oh0Var, tn tnVar, org.telegram.ui.Components.jl0 jl0Var, LinearLayout linearLayout, org.telegram.ui.Components.j70 j70Var, org.telegram.ui.Components.j70 j70Var2) {
-        this.h = fd1Var;
-        this.a = oh0Var;
-        this.b = tnVar;
-        this.c = jl0Var;
-        this.d = linearLayout;
-        this.e = j70Var;
-        this.f = j70Var2;
+    public ad1(Context context, cd1 cd1Var) {
+        this.d = cd1Var;
+        this.c = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        oh0 oh0Var = this.a;
-        ArrayList arrayList = oh0Var.b;
-        ArrayList arrayList2 = oh0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return false;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        ArrayList arrayList = this.d.R0;
+        if (arrayList != null) {
+            return arrayList.size();
         }
-        int size = arrayList2.size();
-        fd1 fd1Var = this.h;
-        tn tnVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
+        return 0;
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        BlendMode blendMode;
+        org.telegram.ui.Cells.k5 k5Var = (org.telegram.ui.Cells.k5) l1Var.a;
+        cd1 cd1Var = this.d;
+        k5Var.setPattern((TLRPC.TL_wallPaper) cd1Var.R0.get(i10));
+        k5Var.getImageReceiver().setColorFilter(new PorterDuffColorFilter(cd1Var.g1, cd1Var.p1));
+        if (Build.VERSION.SDK_INT >= 29) {
+            int i11 = 0;
+            if (cd1Var.b == 1) {
+                int B0 = org.telegram.ui.ActionBar.j6.B0(org.telegram.ui.ActionBar.j6.Pd);
+                long j10 = cd1Var.s.l;
+                int i12 = (int) j10;
+                if (i12 != 0 || j10 == 0) {
+                    i11 = i12 != 0 ? i12 : B0;
+                }
+            } else if (cd1Var.y1 instanceof mi1) {
+                i11 = cd1Var.Z0;
+            }
+            if (i11 == 0 || cd1Var.i1 < 0.0f) {
+                k5Var.getImageReceiver().setBlendMode(null);
                 return;
             }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            tnVar.presentFragment(new ProfileActivity(bundle, null));
-            fd1Var.c(false);
-            return;
+            ImageReceiver imageReceiver = cd1Var.u0.getImageReceiver();
+            blendMode = BlendMode.SOFT_LIGHT;
+            imageReceiver.setBlendMode(blendMode);
         }
-        if (SharedConfig.messageSeenHintCount > 0 && tnVar.T0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.mc t10 = new org.telegram.ui.Components.tc(org.telegram.ui.Components.hb.a(fd1Var.getContext()), fd1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            tnVar.j1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.jl0 jl0Var = this.c;
-        jl0Var.requestLayout();
-        this.d.requestLayout();
-        jl0Var.getAdapter().l();
-        this.e.K(this.f);
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        int i11 = this.d.E1;
+        zc1 zc1Var = new zc1(this);
+        org.telegram.ui.Cells.k5 k5Var = new org.telegram.ui.Cells.k5(this.c);
+        k5Var.D = new RectF();
+        int i12 = UserConfig.selectedAccount;
+        k5Var.G = i12;
+        k5Var.setRoundRadius(AndroidUtilities.dp(6.0f));
+        k5Var.R = i11;
+        k5Var.Q = zc1Var;
+        RadialProgress2 radialProgress2 = new RadialProgress2(k5Var, null);
+        k5Var.E = radialProgress2;
+        radialProgress2.q(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        k5Var.N = new Paint(3);
+        k5Var.P = DownloadController.getInstance(i12).generateObserverTag();
+        k5Var.setOutlineProvider(new gg.j1(5));
+        k5Var.setClipToOutline(true);
+        return new org.telegram.ui.Components.el0(k5Var);
     }
 }

@@ -1,48 +1,71 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pf0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tf0 b;
+public final class pf0 extends org.telegram.ui.Components.voip.n2 {
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Components.vv0 f;
 
-    public /* synthetic */ pf0(tf0 tf0Var, int i10) {
-        this.a = i10;
-        this.b = tf0Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                tf0 tf0Var = this.b;
-                tf0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tf0Var.d.setAlpha(floatValue);
-                tf0Var.e.setAlpha(floatValue);
-                tf0Var.f.setProgress(floatValue);
-                FrameLayout frameLayout = tf0Var.w;
-                frameLayout.setAlpha(floatValue);
-                float f9 = (floatValue * 0.5f) + 0.5f;
-                frameLayout.setScaleX(f9);
-                frameLayout.setScaleY(f9);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pf0(rf0 rf0Var, Context context, int i10) {
+        super(rf0Var.p0, context);
+        this.e = i10;
+        switch (i10) {
+            case 1:
+                this.f = rf0Var;
+                super(rf0Var.p0, context);
                 break;
             default:
-                tf0 tf0Var2 = this.b;
-                tf0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tf0Var2.f.setProgress(floatValue2);
-                tf0Var2.d.setAlpha(floatValue2);
-                tf0Var2.e.setAlpha(floatValue2);
-                FrameLayout frameLayout2 = tf0Var2.w;
-                frameLayout2.setAlpha(floatValue2);
-                float f10 = (floatValue2 * 0.5f) + 0.5f;
-                frameLayout2.setScaleX(f10);
-                frameLayout2.setScaleY(f10);
+                this.f = rf0Var;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.voip.n2
+    public final boolean a() {
+        switch (this.e) {
+            case 0:
+                return ((rf0) this.f).f0;
+            case 1:
+                return ((rf0) this.f).f0;
+            default:
+                return ((pe0) this.f).J;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.voip.n2
+    public final boolean b() {
+        pf0 pf0Var;
+        switch (this.e) {
+            case 0:
+                if (getVisibility() == 0) {
+                    rf0 rf0Var = (rf0) this.f;
+                    if (rf0Var.S <= 0 || rf0Var.O == null) {
+                    }
+                }
+                break;
+            case 1:
+                rf0 rf0Var2 = (rf0) this.f;
+                if (!isClickable() || getVisibility() != 0 || rf0Var2.a0 || (((pf0Var = rf0Var2.v) != null && pf0Var.getVisibility() != 8) || rf0Var2.f0)) {
+                }
+                break;
+            default:
+                if (getVisibility() == 0) {
+                    pe0 pe0Var = (pe0) this.f;
+                    if (pe0Var.M <= 0 || pe0Var.K == null) {
+                    }
+                }
+                break;
+        }
+        return false;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pf0(pe0 pe0Var, Context context) {
+        super(pe0Var.U, context);
+        this.e = 2;
+        this.f = pe0Var;
     }
 }

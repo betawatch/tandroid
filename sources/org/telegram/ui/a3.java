@@ -1,39 +1,36 @@
 package org.telegram.ui;
 
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.view.Surface;
+import android.view.TextureView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class a3 extends VideoPlayerHolderBase {
-    public final /* synthetic */ b3 a;
+public final class a3 {
+    public long a;
+    public Bitmap b;
 
-    public a3(b3 b3Var) {
-        this.a = b3Var;
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public final boolean needRepeat() {
-        return true;
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public final void onRenderedFirstFrame() {
-        super.onRenderedFirstFrame();
-        if (this.firstFrameRendered) {
-            return;
+    public static a3 a(VideoPlayerHolderBase videoPlayerHolderBase, z2 z2Var) {
+        a3 a3Var = new a3();
+        a3Var.a = videoPlayerHolderBase.getCurrentPosition();
+        if (videoPlayerHolderBase.firstFrameRendered) {
+            TextureView textureView = z2Var.n;
+            TextureView textureView2 = z2Var.n;
+            if (textureView != null && textureView.getSurfaceTexture() != null) {
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Surface surface = new Surface(textureView2.getSurfaceTexture());
+                    Bitmap createBitmap = Bitmap.createBitmap(textureView2.getMeasuredWidth(), textureView2.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                    AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
+                    surface.release();
+                    a3Var.b = createBitmap;
+                    return a3Var;
+                }
+                a3Var.b = textureView2.getBitmap();
+            }
         }
-        this.firstFrameRendered = true;
-        b3 b3Var = this.a;
-        b3Var.n.setAlpha(1.0f);
-        TL_iv.pageBlockVideo pageblockvideo = b3Var.H;
-        if (pageblockvideo != null) {
-            d70 d70Var = b3Var.a;
-            a0.h hVar = d70Var.y;
-            long j10 = pageblockvideo.video_id;
-            c3 a2 = c3.a(d70Var.w, b3Var);
-            b3Var.c(a2);
-            hVar.k(a2, j10);
-        }
+        return a3Var;
     }
 }

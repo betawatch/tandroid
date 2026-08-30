@@ -9,15 +9,14 @@ import android.view.View;
 import android.widget.FrameLayout;
 import g.q;
 import l.k;
-import m.e;
-import m.i;
+import m.h;
 import m.j1;
 import m.k1;
 import m.o3;
 import org.telegram.tgnet.TLObject;
 import r0.m0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -86,39 +85,39 @@ public class ContentFrameLayout extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        i iVar;
+        h hVar;
         super.onDetachedFromWindow();
         j1 j1Var = this.n;
         if (j1Var != null) {
-            q qVar = (q) ((ha.c) j1Var).b;
+            q qVar = (q) ((ja.c) j1Var).b;
             k1 k1Var = qVar.s;
             if (k1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
                 actionBarOverlayLayout.f();
                 ActionMenuView actionMenuView = ((o3) actionBarOverlayLayout.e).a.a;
-                if (actionMenuView != null && (iVar = actionMenuView.F) != null) {
-                    iVar.f();
-                    e eVar = iVar.F;
-                    if (eVar != null && eVar.b()) {
-                        eVar.i.dismiss();
+                if (actionMenuView != null && (hVar = actionMenuView.G) != null) {
+                    hVar.f();
+                    m.d dVar = hVar.G;
+                    if (dVar != null && dVar.b()) {
+                        dVar.i.dismiss();
                     }
                 }
             }
-            if (qVar.A != null) {
-                qVar.f.getDecorView().removeCallbacks(qVar.B);
-                if (qVar.A.isShowing()) {
+            if (qVar.B != null) {
+                qVar.f.getDecorView().removeCallbacks(qVar.C);
+                if (qVar.B.isShowing()) {
                     try {
-                        qVar.A.dismiss();
+                        qVar.B.dismiss();
                     } catch (IllegalArgumentException unused) {
                     }
                 }
-                qVar.A = null;
+                qVar.B = null;
             }
-            m0 m0Var = qVar.C;
+            m0 m0Var = qVar.D;
             if (m0Var != null) {
                 m0Var.b();
             }
-            k kVar = qVar.p(0).h;
+            k kVar = qVar.q(0).h;
             if (kVar != null) {
                 kVar.c(true);
             }
@@ -143,7 +142,7 @@ public class ContentFrameLayout extends FrameLayout {
     */
     public final void onMeasure(int i10, int i11) {
         int i12;
-        boolean z10;
+        boolean z4;
         int i13;
         int measuredWidth;
         TypedValue typedValue;
@@ -157,13 +156,13 @@ public class ContentFrameLayout extends FrameLayout {
         int i19;
         float fraction3;
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        boolean z11 = true;
-        boolean z12 = displayMetrics.widthPixels < displayMetrics.heightPixels;
+        boolean z10 = true;
+        boolean z11 = displayMetrics.widthPixels < displayMetrics.heightPixels;
         int mode = View.MeasureSpec.getMode(i10);
         int mode2 = View.MeasureSpec.getMode(i11);
         Rect rect = this.h;
         if (mode == Integer.MIN_VALUE) {
-            TypedValue typedValue2 = z12 ? this.d : this.c;
+            TypedValue typedValue2 = z11 ? this.d : this.c;
             if (typedValue2 != null && (i18 = typedValue2.type) != 0) {
                 if (i18 == 5) {
                     fraction3 = typedValue2.getDimension(displayMetrics);
@@ -174,9 +173,9 @@ public class ContentFrameLayout extends FrameLayout {
                     i19 = 0;
                     if (i19 > 0) {
                         i12 = View.MeasureSpec.makeMeasureSpec(Math.min(i19 - (rect.left + rect.right), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30);
-                        z10 = true;
+                        z4 = true;
                         if (mode2 == Integer.MIN_VALUE) {
-                            TypedValue typedValue3 = z12 ? this.e : this.f;
+                            TypedValue typedValue3 = z11 ? this.e : this.f;
                             if (typedValue3 != null && (i16 = typedValue3.type) != 0) {
                                 if (i16 == 5) {
                                     fraction2 = typedValue3.getDimension(displayMetrics);
@@ -190,8 +189,8 @@ public class ContentFrameLayout extends FrameLayout {
                                         super.onMeasure(i12, i13);
                                         measuredWidth = getMeasuredWidth();
                                         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                                        if (!z10 && mode == Integer.MIN_VALUE) {
-                                            typedValue = !z12 ? this.b : this.a;
+                                        if (!z4 && mode == Integer.MIN_VALUE) {
+                                            typedValue = !z11 ? this.b : this.a;
                                             if (typedValue != null && (i14 = typedValue.type) != 0) {
                                                 if (i14 != 5) {
                                                     fraction = typedValue.getDimension(displayMetrics);
@@ -205,7 +204,7 @@ public class ContentFrameLayout extends FrameLayout {
                                                     }
                                                     if (measuredWidth < i15) {
                                                         makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30);
-                                                        if (z11) {
+                                                        if (z10) {
                                                             return;
                                                         }
                                                         super.onMeasure(makeMeasureSpec, i13);
@@ -219,8 +218,8 @@ public class ContentFrameLayout extends FrameLayout {
                                                 }
                                             }
                                         }
-                                        z11 = false;
-                                        if (z11) {
+                                        z10 = false;
+                                        if (z10) {
                                         }
                                     }
                                 }
@@ -233,8 +232,8 @@ public class ContentFrameLayout extends FrameLayout {
                         super.onMeasure(i12, i13);
                         measuredWidth = getMeasuredWidth();
                         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                        if (!z10) {
-                            if (!z12) {
+                        if (!z4) {
+                            if (!z11) {
                             }
                             if (typedValue != null) {
                                 if (i14 != 5) {
@@ -246,8 +245,8 @@ public class ContentFrameLayout extends FrameLayout {
                                 }
                             }
                         }
-                        z11 = false;
-                        if (z11) {
+                        z10 = false;
+                        if (z10) {
                         }
                     }
                 }
@@ -257,17 +256,17 @@ public class ContentFrameLayout extends FrameLayout {
             }
         }
         i12 = i10;
-        z10 = false;
+        z4 = false;
         if (mode2 == Integer.MIN_VALUE) {
         }
         i13 = i11;
         super.onMeasure(i12, i13);
         measuredWidth = getMeasuredWidth();
         int makeMeasureSpec22 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-        if (!z10) {
+        if (!z4) {
         }
-        z11 = false;
-        if (z11) {
+        z10 = false;
+        if (z10) {
         }
     }
 

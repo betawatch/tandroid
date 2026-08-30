@@ -1,33 +1,39 @@
 package ph;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GenericProvider;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements org.telegram.ui.ActionBar.b2, l3, GenericProvider {
-    public final /* synthetic */ n3 a;
+public final class h3 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ i3 c;
 
-    public /* synthetic */ h3(n3 n3Var) {
-        this.a = n3Var;
+    public h3(i3 i3Var, boolean z4, View view) {
+        this.c = i3Var;
+        this.a = z4;
+        this.b = view;
     }
 
-    @Override // ph.l3
-    public void f(boolean z10) {
-        n3 n3Var = this.a;
-        if (n3Var.J()) {
-            return;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        boolean z4 = this.a;
+        i3 i3Var = this.c;
+        if (z4) {
+            i3Var.b = view.getRootView();
         }
-        n3Var.F.e(0.0f);
+        View view2 = this.b;
+        view2.getViewTreeObserver().addOnGlobalLayoutListener(i3Var.j);
+        view2.addOnLayoutChangeListener(i3Var.i);
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        this.a.b.dismiss();
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        return Boolean.valueOf(this.a.b.n1.getKeyboardHeight() >= AndroidUtilities.dp(20.0f));
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        View view2 = this.b;
+        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
+        i3 i3Var = this.c;
+        viewTreeObserver.removeOnGlobalLayoutListener(i3Var.j);
+        view2.removeOnLayoutChangeListener(i3Var.i);
     }
 }

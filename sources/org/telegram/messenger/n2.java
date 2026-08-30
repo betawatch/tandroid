@@ -1,26 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FileLoadOperation.RequestInfo b;
+    public final /* synthetic */ FileLoadOperation b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ n2(FileLoadOperation.RequestInfo requestInfo, int i10) {
-        this.a = i10;
-        this.b = requestInfo;
+    public /* synthetic */ n2(FileLoadOperation fileLoadOperation, int i10, int i11) {
+        this.a = i11;
+        this.b = fileLoadOperation;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                FileLoadOperation.lambda$clearOperation$25(this.b);
+                this.b.lambda$onFail$23(this.c);
+                break;
+            case 1:
+                this.b.lambda$processRequestResult$22(this.c);
+                break;
+            case 2:
+                this.b.lambda$start$8(this.c);
                 break;
             default:
-                FileLoadOperation.lambda$cancelRequests$16(this.b);
+                this.b.lambda$startDownloadRequest$30(this.c);
                 break;
         }
     }

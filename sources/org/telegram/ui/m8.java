@@ -1,75 +1,49 @@
 package org.telegram.ui;
 
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m8 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h9 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
-    public final /* synthetic */ HashSet d;
-    public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
-    public final /* synthetic */ boolean f;
+public final /* synthetic */ class m8 implements r0.o, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.yk0 {
+    public final /* synthetic */ l9 a;
 
-    public /* synthetic */ m8(h9 h9Var, org.telegram.ui.ActionBar.c2 c2Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z10, int i10) {
-        this.a = i10;
-        this.b = h9Var;
-        this.c = c2Var;
-        this.d = hashSet;
-        this.e = tL_inputGroupCallInviteMessage;
-        this.f = z10;
+    public /* synthetic */ m8(l9 l9Var) {
+        this.a = l9Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final h9 h9Var = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var = this.c;
-                final HashSet hashSet = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
-                final boolean z10 = this.f;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.p8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                h9.V(h9Var, c2Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
-                                break;
-                            default:
-                                h9.Y(h9Var, c2Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 1;
-                final h9 h9Var2 = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var2 = this.c;
-                final HashSet hashSet2 = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
-                final boolean z11 = this.f;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.p8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                h9.V(h9Var2, c2Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
-                                break;
-                            default:
-                                h9.Y(h9Var2, c2Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // r0.o
+    public r0.m1 N0(View view, r0.m1 m1Var) {
+        return this.a.onInsetsInternal(view, m1Var);
+    }
+
+    @Override // org.telegram.ui.Components.yk0
+    public void d() {
+        this.a.f0();
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        l9.X(this.a, (org.telegram.ui.Components.i51) obj, (View) obj2);
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z4;
+        View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        Object obj6 = ((org.telegram.ui.Components.i51) obj).G;
+        if (obj6 instanceof h9) {
+            this.a.e0(((h9) obj6).c, (g9) view);
+            z4 = true;
+        } else {
+            z4 = false;
         }
+        return Boolean.valueOf(z4);
     }
 }

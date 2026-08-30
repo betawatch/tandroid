@@ -1,57 +1,46 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class rj0 extends org.telegram.ui.ActionBar.e5 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity f;
+public final class rj0 implements u9 {
+    public final /* synthetic */ sj0 a;
 
-    public rj0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.f = notificationsCustomSettingsActivity;
+    public rj0(sj0 sj0Var) {
+        this.a = sj0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void m() {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        notificationsCustomSettingsActivity.d.F(null);
-        notificationsCustomSettingsActivity.f = false;
-        notificationsCustomSettingsActivity.getClass();
-        notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoExceptions", R.string.NoExceptions));
-        notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
-        notificationsCustomSettingsActivity.b.l();
-        notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
-        notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
-        notificationsCustomSettingsActivity.c.setShowAtCenter(false);
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ String G0() {
+        return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void n() {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        notificationsCustomSettingsActivity.f = true;
-        notificationsCustomSettingsActivity.c.setShowAtCenter(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void q(EditText editText) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        if (notificationsCustomSettingsActivity.d == null) {
-            return;
+    @Override // org.telegram.ui.u9
+    public final void K(String str) {
+        int i10;
+        String b10 = af.g.b(str);
+        if (TextUtils.isEmpty(b10)) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.mc(27));
+        } else {
+            i10 = ((org.telegram.ui.ActionBar.g3) this.a).currentAccount;
+            MessagesController.getInstance(i10).getUserNameResolver().resolve(b10, new nh.e(12));
         }
-        String obj = editText.getText().toString();
-        if (obj.length() != 0) {
-            notificationsCustomSettingsActivity.getClass();
-            if (notificationsCustomSettingsActivity.a != null) {
-                notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoResult", R.string.NoResult));
-                notificationsCustomSettingsActivity.c.b();
-                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
-                notificationsCustomSettingsActivity.d.l();
-                notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
-                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
-            }
-        }
-        notificationsCustomSettingsActivity.d.F(obj);
+    }
+
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ boolean f1(String str, m9 m9Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ void S0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.u9
+    public final /* synthetic */ void onDismiss() {
     }
 }

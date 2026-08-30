@@ -1,110 +1,78 @@
 package q8;
 
-import j$.util.Objects;
-import j7.xa;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.util.Log;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b extends j7.d0 {
-    public final /* synthetic */ xa b;
+public final class b implements ServiceConnection {
+    public p8.c a;
+    public final /* synthetic */ c b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(xa xaVar) {
-        super(2);
-        this.b = xaVar;
+    public b(c cVar) {
+        this.b = cVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        this.b.clear();
+    public static boolean a(b bVar) {
+        return bVar.a != null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        Set entrySet = this.b.b.entrySet();
-        entrySet.getClass();
-        try {
-            return entrySet.contains(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean isEmpty() {
-        return this.b.isEmpty();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new j7.c(this.b, (char) 0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        Object obj2;
-        if (!contains(obj)) {
-            return false;
-        }
-        Map.Entry entry = (Map.Entry) obj;
-        Objects.requireNonNull(entry);
-        h0 h0Var = (h0) this.b.e;
-        Object key = entry.getKey();
-        Map map = h0Var.d;
-        map.getClass();
-        try {
-            obj2 = map.remove(key);
-        } catch (ClassCastException | NullPointerException unused) {
-            obj2 = null;
-        }
-        Collection collection = (Collection) obj2;
-        if (collection == null) {
-            return true;
-        }
-        int size = collection.size();
-        collection.clear();
-        h0Var.e -= size;
-        return true;
-    }
-
-    @Override // j7.d0, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean removeAll(Collection collection) {
-        try {
-            collection.getClass();
-            return super.removeAll(collection);
-        } catch (UnsupportedOperationException unused) {
-            Iterator it = collection.iterator();
-            boolean z10 = false;
-            while (it.hasNext()) {
-                z10 |= remove(it.next());
+    public final boolean b(Intent intent, Bundle bundle) {
+        p8.c cVar = this.a;
+        if (cVar != null) {
+            p8.a aVar = (p8.a) cVar;
+            Parcel obtain = Parcel.obtain();
+            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
+            int i10 = u2.a.a;
+            if (intent == null) {
+                obtain.writeInt(0);
+            } else {
+                obtain.writeInt(1);
+                intent.writeToParcel(obtain, 0);
             }
-            return z10;
-        }
-    }
-
-    @Override // j7.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean retainAll(Collection collection) {
-        try {
-            collection.getClass();
-            return super.retainAll(collection);
-        } catch (UnsupportedOperationException unused) {
-            HashSet l10 = l.l(collection.size());
-            for (Object obj : collection) {
-                if (contains(obj) && (obj instanceof Map.Entry)) {
-                    l10.add(((Map.Entry) obj).getKey());
-                }
+            obtain.writeInt(1);
+            bundle.writeToParcel(obtain, 0);
+            Parcel E0 = aVar.E0(obtain, 1);
+            boolean z4 = E0.readInt() != 0;
+            E0.recycle();
+            if (z4) {
+                return true;
             }
-            return this.b.keySet().retainAll(l10);
         }
+        return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.b.b.size();
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        boolean z4;
+        p8.c aVar;
+        z4 = this.b.dbg;
+        if (z4) {
+            Log.d("SAVerificationClientS", "onServiceConnected");
+        }
+        int i10 = p8.b.a;
+        if (iBinder == null) {
+            aVar = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
+            aVar = queryLocalInterface instanceof p8.c ? (p8.c) queryLocalInterface : new p8.a(iBinder);
+        }
+        this.a = aVar;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        boolean z4;
+        this.a = null;
+        z4 = this.b.dbg;
+        if (z4) {
+            Log.d("SAVerificationClientS", "onServiceDisconnected");
+        }
     }
 }

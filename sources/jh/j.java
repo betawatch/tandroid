@@ -1,62 +1,47 @@
 package jh;
 
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.widget.TextView;
+import lh.g5;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class j implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ j(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ j(v vVar, boolean z4, i iVar, String str, boolean z10) {
+        this.d = vVar;
+        this.b = z4;
+        this.e = iVar;
+        this.f = str;
+        this.c = z10;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        th.c1 c1Var;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                q qVar = (q) this.b;
-                if (i10 == 5) {
-                    qVar.k0();
-                    return true;
-                }
-                qVar.getClass();
-                return false;
-            case 1:
-                sf.l0 l0Var = (sf.l0) this.b;
-                sf.h0 h0Var = l0Var.B;
-                boolean z10 = false;
-                if (i10 == 6) {
-                    l0Var.x = false;
-                    AndroidUtilities.cancelRunOnUIThread(h0Var);
-                    z10 = true;
-                    if (TextUtils.isEmpty(l0Var.f.getText())) {
-                        l0Var.y = null;
-                        l0Var.d.b();
-                        l0Var.c.U2.N(true);
-                    } else {
-                        AndroidUtilities.runOnUIThread(h0Var);
-                    }
-                    l0Var.b0();
-                }
-                return z10;
+                AndroidUtilities.runOnUIThread(new k((v) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
+                break;
             default:
-                th.d1 d1Var = (th.d1) this.b;
-                if (i10 != 5 || (c1Var = d1Var.c) == null || d1Var.w) {
-                    return false;
-                }
-                if (d1Var.r) {
-                    d1Var.p();
-                } else {
-                    c1Var.S0(d1Var);
-                }
-                return true;
+                AndroidUtilities.runOnUIThread(new k((g5) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
+                break;
         }
+    }
+
+    public /* synthetic */ j(g5 g5Var, boolean z4, TLRPC.Document document, boolean z10, TL_stars.saveStarGift savestargift) {
+        this.d = g5Var;
+        this.b = z4;
+        this.e = document;
+        this.c = z10;
+        this.f = savestargift;
     }
 }

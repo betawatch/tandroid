@@ -1,44 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class uk0 implements View.OnTouchListener {
-    public float a;
-    public float b;
-    public boolean c;
+public final /* synthetic */ class uk0 {
+    public final /* synthetic */ c2.y a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ViewParent parent = view.getParent();
-        if (parent != null) {
-            if (motionEvent.getAction() == 0) {
-                this.a = motionEvent.getX();
-                this.b = motionEvent.getY();
-                this.c = true;
-                parent.requestDisallowInterceptTouchEvent(true);
-            }
-            if (motionEvent.getAction() == 2) {
-                float x4 = this.a - motionEvent.getX();
-                float y8 = this.b - motionEvent.getY();
-                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-                if (this.c) {
-                    if (Math.sqrt((y8 * y8) + (x4 * x4)) > scaledTouchSlop) {
-                        this.c = false;
-                        parent.requestDisallowInterceptTouchEvent(false);
-                        return false;
-                    }
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.c = false;
-                parent.requestDisallowInterceptTouchEvent(false);
-                return false;
-            }
-        }
-        return false;
+    public /* synthetic */ uk0(c2.y yVar, int i10, int i11, boolean z4) {
+        this.a = yVar;
+        this.b = i10;
+        this.c = i11;
+        this.d = z4;
     }
 }

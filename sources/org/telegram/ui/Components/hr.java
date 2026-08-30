@@ -1,75 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class hr implements Drawable.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ir b;
+public final class hr extends h51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ hr(ir irVar, int i10) {
-        this.a = i10;
-        this.b = irVar;
+    static {
+        h51.setup(new hr());
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 0:
-                ir irVar = this.b;
-                if (irVar.c < 1.0f) {
-                    irVar.invalidateSelf();
-                    break;
-                }
-                break;
-            default:
-                ir irVar2 = this.b;
-                if (irVar2.c > 0.0f) {
-                    irVar2.invalidateSelf();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        org.telegram.ui.Cells.y8 y8Var = (org.telegram.ui.Cells.y8) view;
+        y8Var.c(i51Var.l, i51Var.n, !i51Var.j);
+        ih.s sVar = y8Var.a;
+        if (i51Var.l instanceof SpannableStringBuilder) {
+            sVar.setTextSize(1, 13.0f);
+            sVar.setTranslationY(AndroidUtilities.dp(2.0f));
+            sVar.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         }
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                ir irVar = this.b;
-                if (irVar.c < 1.0f) {
-                    irVar.scheduleSelf(runnable, j10);
-                    break;
-                }
-                break;
-            default:
-                ir irVar2 = this.b;
-                if (irVar2.c > 0.0f) {
-                    irVar2.scheduleSelf(runnable, j10);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ir irVar = this.b;
-                if (irVar.c < 1.0f) {
-                    irVar.unscheduleSelf(runnable);
-                    break;
-                }
-                break;
-            default:
-                ir irVar2 = this.b;
-                if (irVar2.c > 0.0f) {
-                    irVar2.unscheduleSelf(runnable);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        org.telegram.ui.Cells.y8 y8Var = new org.telegram.ui.Cells.y8(context, f6Var, true);
+        y8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var));
+        Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, f6Var), PorterDuff.Mode.MULTIPLY));
+        y8Var.setImage(mutate);
+        y8Var.setImageClickListener(new dg.p(this, context, y8Var, 22));
+        return y8Var;
     }
 }

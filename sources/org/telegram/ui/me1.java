@@ -1,62 +1,52 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class me1 extends View {
-    public final HashMap a;
-    public final /* synthetic */ ne1 b;
+public final class me1 extends f2.z0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kf1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public me1(ne1 ne1Var, Activity activity) {
-        super(activity);
-        this.b = ne1Var;
-        this.a = new HashMap();
+    public /* synthetic */ me1(kf1 kf1Var, int i10) {
+        this.a = i10;
+        this.b = kf1Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        int dp;
-        ne1 ne1Var = this.b;
-        ze1 ze1Var = ne1Var.d;
-        int size = View.MeasureSpec.getSize(i10);
-        int dp2 = AndroidUtilities.dp(64.0f);
-        int i13 = 0;
-        int i14 = 0;
-        for (int i15 = 0; i15 < ne1Var.F().size(); i15++) {
-            if (ne1Var.F().get(i15) != null && ((pe1) ne1Var.F().get(i15)).c != null) {
-                String str = ((pe1) ne1Var.F().get(i15)).c.title;
-                HashMap hashMap = this.a;
-                Boolean bool = (Boolean) hashMap.get(str);
-                if (bool == null) {
-                    int dp3 = AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : (ze1Var.isInPreviewMode() ? 11 : 50) + 4);
-                    if (LocaleController.isRTL) {
-                        i12 = size - dp3;
-                        dp = AndroidUtilities.dp((ze1Var.isInPreviewMode() ? 11 : 50) + 13);
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        boolean z4;
+        kf1 kf1Var;
+        ng.e eVar;
+        switch (this.a) {
+            case 0:
+                kf1 kf1Var2 = this.b;
+                int L0 = kf1Var2.C.L0();
+                if (L0 != -1) {
+                    f2.l1 K = recyclerView.K(L0);
+                    int top = K != null ? K.a.getTop() : 0;
+                    if (L0 == 0) {
+                        int i12 = 0 - top;
+                        z4 = top < 0;
+                        Math.abs(i12);
                     } else {
-                        i12 = size - dp3;
-                        dp = AndroidUtilities.dp(22.0f);
+                        z4 = L0 > 0;
                     }
-                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.g6.B0[0].measureText(str) <= ((float) ((i12 - dp) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.g6.I0.measureText("00:00"))))));
-                    hashMap.put(str, bool);
+                    kf1Var2.G0(z4 || !kf1Var2.H, true);
+                    break;
                 }
-                int dp4 = AndroidUtilities.dp((!bool.booleanValue() ? 20 : 0) + 64);
-                if (((pe1) ne1Var.F().get(i15)).c.id == 1) {
-                    dp2 = dp4;
+                break;
+            case 1:
+                this.b.y0();
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (eVar = (kf1Var = this.b).c1) != null) {
+                    eVar.f(i10, i11);
+                    kf1Var.x0();
+                    break;
                 }
-                if (((pe1) ne1Var.F().get(i15)).c.hidden) {
-                    i13++;
-                }
-                i14 += dp4;
-            }
+                break;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, i13 > 0 ? (((ze1Var.J.getMeasuredHeight() - ze1Var.J.getPaddingTop()) - ze1Var.J.getPaddingBottom()) - i14) + dp2 : 0), TLObject.FLAG_30));
     }
 }

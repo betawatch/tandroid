@@ -1,20 +1,19 @@
 package c2;
 
-import ag.o1;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.util.SparseBooleanArray;
 import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import com.google.android.gms.internal.play_billing.w3;
+import com.google.android.gms.internal.play_billing.x3;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class u implements h9.j, f2.l0, androidx.lifecycle.a0 {
+public final class u implements j9.j, f2.k0, androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
     public boolean b;
     public Object c;
@@ -38,42 +37,38 @@ public final class u implements h9.j, f2.l0, androidx.lifecycle.a0 {
         return new u(arrayList, bundle.getBoolean("supportsDynamicGroupRoute", false));
     }
 
-    @Override // f2.l0
-    public void H0(int i10, int i11) {
+    @Override // f2.k0
+    public void D(int i10, int i11) {
         this.b = true;
-        ((f2.p0) this.c).t(i10, i11);
+        ((f2.o0) this.c).p(i10, i11);
     }
 
-    @Override // androidx.lifecycle.a0
-    public void S(Object obj) {
+    @Override // f2.k0
+    public void M0(int i10, int i11) {
         this.b = true;
-        o1 o1Var = (o1) this.c;
-        o1Var.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) o1Var.b;
-        signInHubActivity.setResult(signInHubActivity.N, signInHubActivity.O);
-        signInHubActivity.finish();
+        ((f2.o0) this.c).t(i10, i11);
     }
 
-    @Override // h9.j
-    public void a(h9.i iVar, int i10) {
-        StringBuilder sb2 = (StringBuilder) this.c;
+    @Override // j9.j
+    public void a(j9.i iVar, int i10) {
+        StringBuilder sb = (StringBuilder) this.c;
         if (this.b) {
             this.b = false;
         } else {
-            sb2.append(", ");
+            sb.append(", ");
         }
-        sb2.append(i10);
+        sb.append(i10);
     }
 
     public void b(int i10) {
-        f5.a.i(!this.b);
+        h5.a.i(!this.b);
         ((SparseBooleanArray) this.c).append(i10, true);
     }
 
-    public f5.g c() {
-        f5.a.i(!this.b);
+    public h5.g c() {
+        h5.a.i(!this.b);
         this.b = true;
-        return new f5.g((SparseBooleanArray) this.c);
+        return new h5.g((SparseBooleanArray) this.c);
     }
 
     public void d() {
@@ -107,9 +102,10 @@ public final class u implements h9.j, f2.l0, androidx.lifecycle.a0 {
         return this.b;
     }
 
-    @Override // f2.l0
-    public void f1(int i10, int i11) {
-        ((f2.p0) this.c).r(i10, i11, null);
+    @Override // f2.k0
+    public void e0(int i10, int i11) {
+        this.b = true;
+        ((f2.o0) this.c).s(i10, i11);
     }
 
     public boolean g(int i10, CharSequence charSequence) {
@@ -152,56 +148,59 @@ public final class u implements h9.j, f2.l0, androidx.lifecycle.a0 {
         return false;
     }
 
-    public void h(w3 w3Var) {
+    public void h(x3 x3Var) {
         if (this.b) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "Skipping logging since initialization failed.");
             return;
         }
         try {
-            ((y2.p) this.c).a(new v2.a(null, w3Var, v2.d.a, null), new sg.j(17));
+            ((y2.p) this.c).a(new v2.a(null, x3Var, v2.d.a, null), new s0.b(28));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
     }
 
-    @Override // f2.l0
-    public void i0(int i10, int i11) {
+    @Override // f2.k0
+    public void k1(int i10, int i11) {
+        ((f2.o0) this.c).r(i10, i11, null);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void m0(Object obj) {
         this.b = true;
-        ((f2.p0) this.c).s(i10, i11);
+        o2.o oVar = (o2.o) this.c;
+        oVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) oVar.b;
+        signInHubActivity.setResult(signInHubActivity.O, signInHubActivity.P);
+        signInHubActivity.finish();
     }
 
     public String toString() {
         int i10;
         switch (this.a) {
             case 0:
-                StringBuilder sb2 = new StringBuilder("MediaRouteProviderDescriptor{ routes=");
+                StringBuilder sb = new StringBuilder("MediaRouteProviderDescriptor{ routes=");
                 List list = (List) this.c;
-                sb2.append(Arrays.toString(list.toArray()));
-                sb2.append(", isValid=");
+                sb.append(Arrays.toString(list.toArray()));
+                sb.append(", isValid=");
                 int size = list.size();
-                boolean z10 = false;
+                boolean z4 = false;
                 while (true) {
                     if (i10 >= size) {
-                        z10 = true;
+                        z4 = true;
                     } else {
                         n nVar = (n) list.get(i10);
                         i10 = (nVar != null && nVar.e()) ? i10 + 1 : 0;
                     }
                 }
-                sb2.append(z10);
-                sb2.append(" }");
-                return sb2.toString();
+                sb.append(z4);
+                sb.append(" }");
+                return sb.toString();
             case 8:
-                return ((o1) this.c).toString();
+                return ((o2.o) this.c).toString();
             default:
                 return super.toString();
         }
-    }
-
-    @Override // f2.l0
-    public void z(int i10, int i11) {
-        this.b = true;
-        ((f2.p0) this.c).p(i10, i11);
     }
 
     public /* synthetic */ u(Object obj, int i10) {
@@ -209,37 +208,37 @@ public final class u implements h9.j, f2.l0, androidx.lifecycle.a0 {
         this.c = obj;
     }
 
-    public u() {
-        this.a = 1;
-        this.c = new SparseBooleanArray();
-    }
-
-    public u(ArrayList arrayList, boolean z10) {
+    public u(ArrayList arrayList, boolean z4) {
         this.a = 0;
         if (arrayList.isEmpty()) {
             this.c = Collections.EMPTY_LIST;
         } else {
             this.c = DesugarCollections.unmodifiableList(new ArrayList(arrayList));
         }
-        this.b = z10;
+        this.b = z4;
+    }
+
+    public u() {
+        this.a = 1;
+        this.c = new SparseBooleanArray();
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public u(p0.e eVar, boolean z10) {
-        this(eVar, 5);
-        this.a = 5;
-        this.b = z10;
+    public u(p0.e eVar, boolean z4) {
+        this(eVar, 4);
+        this.a = 4;
+        this.b = z4;
     }
 
-    public u(m5.d dVar, o1 o1Var) {
+    public u(o5.d dVar, o2.o oVar) {
         this.a = 8;
         this.b = false;
-        this.c = o1Var;
+        this.c = oVar;
     }
 
-    public u(StringBuilder sb2) {
+    public u(StringBuilder sb) {
         this.a = 2;
-        this.c = sb2;
+        this.c = sb;
         this.b = true;
     }
 }

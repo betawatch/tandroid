@@ -1,594 +1,251 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BlendMode;
 import android.graphics.Canvas;
-import android.graphics.DrawFilter;
-import android.graphics.Matrix;
-import android.graphics.NinePatch;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Picture;
 import android.graphics.PorterDuff;
-import android.graphics.Rect;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import android.graphics.Region;
-import android.graphics.RenderNode;
-import android.graphics.fonts.Font;
-import android.graphics.text.MeasuredText;
-import android.os.Build;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class jc0 extends Canvas {
-    public Canvas a;
+public final class jc0 extends Drawable {
+    public final /* synthetic */ int a = 0;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public final Path e;
+    public boolean f;
+    public final Object g;
 
-    @Override // android.graphics.Canvas
-    public final boolean clipOutPath(Path path) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return this.a.clipOutPath(path);
-        }
-        return false;
+    public jc0() {
+        Path path = new Path();
+        this.e = path;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.g = new z5(new cc0(this, 1), 320L, nr.h, 0);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(-1);
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(2.0f)));
+        paint2.setColor(-1);
+        paint3.setStyle(style);
+        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        path.moveTo(-AndroidUtilities.dpf2(3.75f), -AndroidUtilities.dpf2(5.4166f));
+        path.lineTo(AndroidUtilities.dpf2(3.75f), 0.0f);
+        path.lineTo(-AndroidUtilities.dpf2(3.75f), AndroidUtilities.dpf2(5.4166f));
+        path.close();
     }
 
-    @Override // android.graphics.Canvas
-    public final boolean clipOutRect(float f9, float f10, float f11, float f12) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return this.a.clipOutRect(f9, f10, f11, f12);
-        }
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path) {
-        return this.a.clipPath(path);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(float f9, float f10, float f11, float f12) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void concat(Matrix matrix) {
-        this.a.concat(matrix);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void disableZ() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.disableZ();
-        }
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawARGB(int i10, int i11, int i12, int i13) {
-        this.a.drawARGB(i10, i11, i12, i13);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawArc(RectF rectF, float f9, float f10, boolean z10, Paint paint) {
-        this.a.drawArc(rectF, f9, f10, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
-        this.a.drawBitmap(bitmap, matrix, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmapMesh(Bitmap bitmap, int i10, int i11, float[] fArr, int i12, int[] iArr, int i13, Paint paint) {
-        this.a.drawBitmapMesh(bitmap, i10, i11, fArr, i12, iArr, i13, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawCircle(float f9, float f10, float f11, Paint paint) {
-        this.a.drawCircle(f9, f10, f11, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawColor(long j10, BlendMode blendMode) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawColor(j10, blendMode);
-        }
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawDoubleRoundRect(RectF rectF, float[] fArr, RectF rectF2, float[] fArr2, Paint paint) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawDoubleRoundRect(rectF, fArr, rectF2, fArr2, paint);
-        }
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawGlyphs(int[] iArr, int i10, float[] fArr, int i11, int i12, Font font, Paint paint) {
-        this.a.drawGlyphs(iArr, i10, fArr, i11, i12, font, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawLine(float f9, float f10, float f11, float f12, Paint paint) {
-        this.a.drawLine(f9, f10, f11, f12, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawLines(float[] fArr, int i10, int i11, Paint paint) {
-        this.a.drawLines(fArr, i10, i11, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawOval(RectF rectF, Paint paint) {
-        this.a.drawOval(rectF, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPaint(Paint paint) {
-        this.a.drawPaint(paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPatch(NinePatch ninePatch, RectF rectF, Paint paint) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            this.a.drawPatch(ninePatch, rectF, paint);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                float dpf2 = AndroidUtilities.dpf2(1.66f);
+                Paint paint = this.b;
+                paint.setStrokeWidth(dpf2);
+                float dpf22 = AndroidUtilities.dpf2(3.32f);
+                Paint paint2 = this.d;
+                paint2.setStrokeWidth(dpf22);
+                float e = ((z5) this.g).e(this.f);
+                float centerX = getBounds().centerX();
+                float centerY = getBounds().centerY();
+                float dpf23 = AndroidUtilities.dpf2(10.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(centerX - dpf23, centerY - dpf23, centerX + dpf23, dpf23 + centerY);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.33f), AndroidUtilities.dpf2(8.33f), paint);
+                if (e > 0.0f) {
+                    canvas.saveLayerAlpha(rectF, 255, 31);
+                } else {
+                    canvas.save();
+                }
+                canvas.save();
+                canvas.translate(AndroidUtilities.dpf2(1.0f) + centerX, centerY - AndroidUtilities.dpf2(0.5f));
+                canvas.drawPath(this.e, this.c);
+                canvas.restore();
+                if (e > 0.0f) {
+                    if (this.f) {
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), (centerX - AndroidUtilities.dpf2(8.33f)) + (AndroidUtilities.dpf2(16.66f) * e), (centerY - AndroidUtilities.dpf2(8.33f)) + (AndroidUtilities.dpf2(16.66f) * e), paint2);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), (AndroidUtilities.dpf2(16.66f) * e) + (centerX - AndroidUtilities.dpf2(8.33f)), (AndroidUtilities.dpf2(16.66f) * e) + (centerY - AndroidUtilities.dpf2(8.33f)), paint);
+                    } else {
+                        canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e), paint2);
+                        canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e), paint);
+                    }
+                }
+                canvas.restore();
+                break;
+            default:
+                boolean z4 = this.f;
+                if (z4) {
+                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255, 31);
+                } else {
+                    canvas.save();
+                }
+                canvas.translate(getBounds().centerX(), getBounds().centerY());
+                canvas.drawPath(this.e, this.b);
+                if (z4) {
+                    canvas.drawLine(-AndroidUtilities.dp(8.66f), -AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), this.c);
+                    canvas.drawLine(-AndroidUtilities.dp(8.66f), -AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), this.d);
+                }
+                canvas.restore();
+                break;
         }
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawPath(Path path, Paint paint) {
-        this.a.drawPath(path, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPicture(Picture picture, RectF rectF) {
-        this.a.drawPicture(picture, rectF);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPoint(float f9, float f10, Paint paint) {
-        this.a.drawPoint(f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPoints(float[] fArr, int i10, int i11, Paint paint) {
-        this.a.drawPoints(fArr, i10, i11, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPosText(String str, float[] fArr, Paint paint) {
-        this.a.drawPosText(str, fArr, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawRGB(int i10, int i11, int i12) {
-        this.a.drawRGB(i10, i11, i12);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawRect(Rect rect, Paint paint) {
-        this.a.drawRect(rect, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawRenderNode(RenderNode renderNode) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawRenderNode(renderNode);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return AndroidUtilities.dp(32.0f);
         }
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawRoundRect(RectF rectF, float f9, float f10, Paint paint) {
-        this.a.drawRoundRect(rectF, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, float f9, float f10, Paint paint) {
-        this.a.drawText(str, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f9, float f10, Paint paint) {
-        this.a.drawTextOnPath(cArr, i10, i11, path, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f9, float f10, boolean z10, Paint paint) {
-        this.a.drawTextRun(cArr, i10, i11, i12, i13, f9, f10, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawVertices(Canvas.VertexMode vertexMode, int i10, float[] fArr, int i11, float[] fArr2, int i12, int[] iArr, int i13, short[] sArr, int i14, int i15, Paint paint) {
-        this.a.drawVertices(vertexMode, i10, fArr, i11, fArr2, i12, iArr, i13, sArr, i14, i15, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void enableZ() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.enableZ();
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return AndroidUtilities.dp(32.0f);
         }
     }
 
-    @Override // android.graphics.Canvas
-    public final boolean getClipBounds(Rect rect) {
-        return this.a.getClipBounds(rect);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int getDensity() {
-        return this.a.getDensity();
-    }
-
-    @Override // android.graphics.Canvas
-    public final DrawFilter getDrawFilter() {
-        return this.a.getDrawFilter();
-    }
-
-    @Override // android.graphics.Canvas
-    public final int getHeight() {
-        return this.a.getHeight();
-    }
-
-    @Override // android.graphics.Canvas
-    public final void getMatrix(Matrix matrix) {
-        this.a.getMatrix(matrix);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int getMaximumBitmapHeight() {
-        return this.a.getMaximumBitmapHeight();
-    }
-
-    @Override // android.graphics.Canvas
-    public final int getMaximumBitmapWidth() {
-        return this.a.getMaximumBitmapWidth();
-    }
-
-    @Override // android.graphics.Canvas
-    public final int getSaveCount() {
-        return this.a.getSaveCount();
-    }
-
-    @Override // android.graphics.Canvas
-    public final int getWidth() {
-        return this.a.getWidth();
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean isOpaque() {
-        return this.a.isOpaque();
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean quickReject(float f9, float f10, float f11, float f12) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            return this.a.quickReject(f9, f10, f11, f12);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
         }
-        return false;
+        return -2;
     }
 
-    @Override // android.graphics.Canvas
-    public final void restore() {
-        this.a.restore();
-    }
-
-    @Override // android.graphics.Canvas
-    public final void restoreToCount(int i10) {
-        this.a.restoreToCount(i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void rotate(float f9) {
-        this.a.rotate(f9);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int save() {
-        return this.a.save();
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayer(float f9, float f10, float f11, float f12, Paint paint) {
-        return this.a.saveLayer(f9, f10, f11, f12, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayerAlpha(RectF rectF, int i10, int i11) {
-        return this.a.saveLayerAlpha(rectF, i10, i11);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void scale(float f9, float f10) {
-        this.a.scale(f9, f10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void setBitmap(Bitmap bitmap) {
-        this.a.setBitmap(bitmap);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void setDensity(int i10) {
-        this.a.setDensity(i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void setDrawFilter(DrawFilter drawFilter) {
-        this.a.setDrawFilter(drawFilter);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void setMatrix(Matrix matrix) {
-        this.a.setMatrix(matrix);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void skew(float f9, float f10) {
-        this.a.skew(f9, f10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void translate(float f9, float f10) {
-        this.a.translate(f9, f10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path, Region.Op op) {
-        return this.a.clipPath(path, op);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(float f9, float f10, float f11, float f12, Region.Op op) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawArc(float f9, float f10, float f11, float f12, float f13, float f14, boolean z10, Paint paint) {
-        this.a.drawArc(f9, f10, f11, f12, f13, f14, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmap(Bitmap bitmap, Rect rect, Rect rect2, Paint paint) {
-        this.a.drawBitmap(bitmap, rect, rect2, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawLines(float[] fArr, Paint paint) {
-        this.a.drawLines(fArr, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawOval(float f9, float f10, float f11, float f12, Paint paint) {
-        this.a.drawOval(f9, f10, f11, f12, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPicture(Picture picture) {
-        this.a.drawPicture(picture);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPoints(float[] fArr, Paint paint) {
-        this.a.drawPoints(fArr, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPosText(char[] cArr, int i10, int i11, float[] fArr, Paint paint) {
-        this.a.drawPosText(cArr, i10, i11, fArr, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawRect(RectF rectF, Paint paint) {
-        this.a.drawRect(rectF, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawRoundRect(float f9, float f10, float f11, float f12, float f13, float f14, Paint paint) {
-        this.a.drawRoundRect(f9, f10, f11, f12, f13, f14, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, int i10, int i11, float f9, float f10, Paint paint) {
-        this.a.drawText(str, i10, i11, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(String str, Path path, float f9, float f10, Paint paint) {
-        this.a.drawTextOnPath(str, path, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f9, float f10, boolean z10, Paint paint) {
-        this.a.drawTextRun(measuredText, i10, i11, i12, i13, f9, f10, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayer(RectF rectF, Paint paint) {
-        return this.a.saveLayer(rectF, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayerAlpha(float f9, float f10, float f11, float f12, int i10) {
-        return this.a.saveLayerAlpha(f9, f10, f11, f12, i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipOutRect(int i10, int i11, int i12, int i13) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return this.a.clipOutRect(i10, i11, i12, i13);
-        }
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(int i10, int i11, int i12, int i13) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmap(int[] iArr, int i10, int i11, float f9, float f10, int i12, int i13, boolean z10, Paint paint) {
-        this.a.drawBitmap(iArr, i10, i11, f9, f10, i12, i13, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawColor(int i10, BlendMode blendMode) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawColor(i10, blendMode);
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i10);
+                this.c.setAlpha(i10);
+                break;
+            default:
+                this.b.setAlpha(i10);
+                break;
         }
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawDoubleRoundRect(RectF rectF, float f9, float f10, RectF rectF2, float f11, float f12, Paint paint) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawDoubleRoundRect(rectF, f9, f10, rectF2, f11, f12, paint);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                this.c.setColorFilter(colorFilter);
+                this.b.setColorFilter(colorFilter);
+                break;
+            default:
+                this.b.setColorFilter(colorFilter);
+                break;
         }
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawPatch(NinePatch ninePatch, Rect rect, Paint paint) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            this.a.drawPatch(ninePatch, rect, paint);
+    public jc0(ph.r rVar, boolean z4) {
+        ph.r rVar2 = rVar;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new Paint(1);
+        this.d = new Paint(1);
+        Path path = new Path();
+        this.e = path;
+        this.g = new float[8];
+        this.f = z4;
+        paint.setColor(-1);
+        float dpf2 = AndroidUtilities.dpf2(13.333333f);
+        float dpf22 = AndroidUtilities.dpf2(18.666666f);
+        float dpf23 = AndroidUtilities.dpf2(3.0f);
+        float dpf24 = AndroidUtilities.dpf2(10.0f);
+        float dpf25 = AndroidUtilities.dpf2(15.333333f);
+        float dpf26 = AndroidUtilities.dpf2(1.0f);
+        float dpf27 = AndroidUtilities.dpf2(1.33f);
+        path.setFillType(Path.FillType.EVEN_ODD);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((-dpf2) / 2.0f, (-dpf22) / 2.0f, dpf2 / 2.0f, dpf22 / 2.0f);
+        path.addRoundRect(rectF, dpf23, dpf23, Path.Direction.CW);
+        ArrayList arrayList = rVar2.e;
+        int i10 = rVar2.c;
+        int size = arrayList.size();
+        int i11 = 0;
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            int i13 = i12 + 1;
+            ph.q qVar = (ph.q) obj;
+            int[] iArr = rVar2.d;
+            int i14 = qVar.c;
+            int i15 = qVar.b;
+            int i16 = iArr[i14];
+            int i17 = i16 - 1;
+            float max = (dpf24 - (Math.max(i11, i17) * dpf27)) / i16;
+            int i18 = i10 - 1;
+            float max2 = (dpf25 - (Math.max(i11, i18) * dpf27)) / i10;
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            ArrayList arrayList2 = arrayList;
+            float f10 = (-dpf24) / 2.0f;
+            int i19 = i10;
+            float f11 = i15;
+            float f12 = (max * f11) + f10;
+            float f13 = f11 * dpf27;
+            int i20 = size;
+            float f14 = (-dpf25) / 2.0f;
+            float f15 = dpf24;
+            float f16 = i14;
+            float f17 = (max2 * f16) + f14;
+            float f18 = f16 * dpf27;
+            float f19 = dpf25;
+            float f20 = f18 + f17;
+            float f21 = dpf26;
+            rectF2.set(f13 + f12, f20, e2.c.A(max, i15 + 1, f10, f13), e2.c.A(max2, i14 + 1, f14, f18));
+            float[] fArr = (float[]) this.g;
+            float f22 = 0.0f;
+            float f23 = (i15 == 0 && i14 == 0) ? f21 : 0.0f;
+            fArr[1] = f23;
+            fArr[0] = f23;
+            float f24 = (i15 == i17 && i14 == 0) ? f21 : 0.0f;
+            fArr[3] = f24;
+            fArr[2] = f24;
+            float f25 = (i15 == i17 && i14 == i18) ? f21 : 0.0f;
+            fArr[5] = f25;
+            fArr[4] = f25;
+            if (i15 == 0 && i14 == i18) {
+                f22 = f21;
+            }
+            fArr[7] = f22;
+            fArr[6] = f22;
+            this.e.addRoundRect(rectF2, fArr, Path.Direction.CW);
+            rVar2 = rVar;
+            arrayList = arrayList2;
+            i10 = i19;
+            i12 = i13;
+            size = i20;
+            dpf24 = f15;
+            dpf26 = f21;
+            dpf25 = f19;
+            i11 = 0;
         }
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawPicture(Picture picture, Rect rect) {
-        this.a.drawPicture(picture, rect);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawRect(float f9, float f10, float f11, float f12, Paint paint) {
-        this.a.drawRect(f9, f10, f11, f12, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(char[] cArr, int i10, int i11, float f9, float f10, Paint paint) {
-        this.a.drawText(cArr, i10, i11, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f9, float f10, boolean z10, Paint paint) {
-        this.a.drawTextRun(charSequence, i10, i11, i12, i13, f9, f10, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean quickReject(RectF rectF) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            return this.a.quickReject(rectF);
-        }
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayer(float f9, float f10, float f11, float f12, Paint paint, int i10) {
-        return this.a.saveLayer(f9, f10, f11, f12, paint, i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayerAlpha(RectF rectF, int i10) {
-        return this.a.saveLayerAlpha(rectF, i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(Rect rect) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmap(int[] iArr, int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, Paint paint) {
-        this.a.drawBitmap(iArr, i10, i11, i12, i13, i14, i15, z10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(CharSequence charSequence, int i10, int i11, float f9, float f10, Paint paint) {
-        this.a.drawText(charSequence, i10, i11, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayer(RectF rectF, Paint paint, int i10) {
-        return this.a.saveLayer(rectF, paint, i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final int saveLayerAlpha(float f9, float f10, float f11, float f12, int i10, int i11) {
-        return this.a.saveLayerAlpha(f9, f10, f11, f12, i10, i11);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipOutRect(RectF rectF) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return this.a.clipOutRect(rectF);
-        }
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(Rect rect, Region.Op op) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmap(Bitmap bitmap, Rect rect, RectF rectF, Paint paint) {
-        this.a.drawBitmap(bitmap, rect, rectF, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawColor(int i10) {
-        this.a.drawColor(i10);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean quickReject(Path path) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            return this.a.quickReject(path);
-        }
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(RectF rectF) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawBitmap(Bitmap bitmap, float f9, float f10, Paint paint) {
-        this.a.drawBitmap(bitmap, f9, f10, paint);
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawColor(int i10, PorterDuff.Mode mode) {
-        this.a.drawColor(i10, mode);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipOutRect(Rect rect) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return this.a.clipOutRect(rect);
-        }
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipRect(RectF rectF, Region.Op op) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawColor(long j10) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawColor(j10);
-        }
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean quickReject(RectF rectF, Canvas.EdgeType edgeType) {
-        return this.a.quickReject(rectF, edgeType);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean quickReject(Path path, Canvas.EdgeType edgeType) {
-        return this.a.quickReject(path, edgeType);
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean quickReject(float f9, float f10, float f11, float f12, Canvas.EdgeType edgeType) {
-        return this.a.quickReject(f9, f10, f11, f12, edgeType);
+        Paint paint2 = this.c;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        this.c.setStrokeWidth(AndroidUtilities.dp(3.33f));
+        this.c.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        this.d.setStyle(style);
+        this.d.setStrokeWidth(AndroidUtilities.dp(1.33f));
+        this.d.setColor(-1);
+        this.d.setStrokeCap(Paint.Cap.ROUND);
+        this.d.setStrokeJoin(Paint.Join.ROUND);
     }
 }

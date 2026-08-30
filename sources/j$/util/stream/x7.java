@@ -31,24 +31,24 @@ public abstract class x7 {
 
     public final long a(long j10) {
         long j11;
-        boolean z10;
+        boolean z4;
         long min;
         do {
             j11 = this.e.get();
-            z10 = this.b;
+            z4 = this.b;
             if (j11 != 0) {
                 min = Math.min(j11, j10);
                 if (min <= 0) {
                     break;
                 }
             } else {
-                if (z10) {
+                if (z4) {
                     return j10;
                 }
                 return 0L;
             }
         } while (!this.e.compareAndSet(j11, j11 - min));
-        if (z10) {
+        if (z4) {
             return Math.max(j10 - min, 0L);
         }
         long j12 = this.d;

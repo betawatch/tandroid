@@ -1,237 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.ViewConfiguration;
-import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.hb1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lm0 {
-    public static final float A;
-    public static final float v = (float) (Math.log(0.75d) / Math.log(0.9d));
-    public static final float w = 0.4f;
-    public static final float x = 1.0f - 0.4f;
-    public static final float[] y = new float[101];
-    public static final float z;
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public long l;
-    public int m;
-    public float n;
-    public float o;
-    public float p;
-    public final Interpolator r;
-    public float t;
-    public final float u;
-    public boolean q = true;
-    public final boolean s = true;
+public final class lm0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pm0 b;
 
-    static {
-        float f9;
-        float f10;
-        float f11 = 0.0f;
-        for (int i10 = 0; i10 <= 100; i10++) {
-            float f12 = i10 / 100.0f;
-            float f13 = 1.0f;
-            while (true) {
-                float A2 = com.google.android.recaptcha.internal.a.A(f13, f11, 2.0f, f11);
-                float f14 = 1.0f - A2;
-                f9 = 3.0f * A2 * f14;
-                f10 = A2 * A2 * A2;
-                float B = com.google.android.recaptcha.internal.a.B(A2, x, f14 * w, f9) + f10;
-                if (Math.abs(B - f12) < 1.0E-5d) {
-                    break;
-                } else if (B > f12) {
-                    f13 = A2;
-                } else {
-                    f11 = A2;
-                }
-            }
-            y[i10] = f9 + f10;
-        }
-        y[100] = 1.0f;
-        z = 8.0f;
-        A = 1.0f;
-        A = 1.0f / e(1.0f);
+    public /* synthetic */ lm0(pm0 pm0Var, int i10) {
+        this.a = i10;
+        this.b = pm0Var;
     }
 
-    public lm0(Context context, DecelerateInterpolator decelerateInterpolator) {
-        this.r = decelerateInterpolator;
-        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
-    }
-
-    public static float e(float f9) {
-        float f10 = f9 * z;
-        return (f10 < 1.0f ? f10 - (1.0f - ((float) Math.exp(-f10))) : com.google.android.recaptcha.internal.a.z(1.0f, (float) Math.exp(1.0f - f10), 0.63212055f, 0.36787945f)) * A;
-    }
-
-    public final void a() {
-        this.j = this.d;
-        this.k = this.e;
-        this.q = true;
-    }
-
-    public final boolean b() {
-        if (this.q) {
-            return false;
-        }
-        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
-        int i10 = this.m;
-        if (currentAnimationTimeMillis >= i10) {
-            this.j = this.d;
-            this.k = this.e;
-            this.q = true;
-            return true;
-        }
-        int i11 = this.a;
-        if (i11 == 0) {
-            float f9 = currentAnimationTimeMillis * this.n;
-            Interpolator interpolator = this.r;
-            float e10 = interpolator == null ? e(f9) : interpolator.getInterpolation(f9);
-            this.j = Math.round(this.o * e10) + this.b;
-            this.k = Math.round(e10 * this.p) + this.c;
-            return true;
-        }
-        if (i11 == 1) {
-            float f10 = currentAnimationTimeMillis / i10;
-            int i12 = (int) (f10 * 100.0f);
-            float f11 = i12 / 100.0f;
-            int i13 = i12 + 1;
-            float[] fArr = y;
-            float f12 = fArr[i12];
-            float z10 = com.google.android.recaptcha.internal.a.z(fArr[i13], f12, (f10 - f11) / ((i13 / 100.0f) - f11), f12);
-            int round = Math.round((this.d - r1) * z10) + this.b;
-            this.j = round;
-            int min = Math.min(round, this.g);
-            this.j = min;
-            this.j = Math.max(min, this.f);
-            int round2 = Math.round(z10 * (this.e - r1)) + this.c;
-            this.k = round2;
-            int min2 = Math.min(round2, this.i);
-            this.k = min2;
-            int max = Math.max(min2, this.h);
-            this.k = max;
-            if (this.j == this.d && max == this.e) {
-                this.q = true;
-            }
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00b2  */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
+    
+        if (r2.n0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:
+    
+        if (r2.n0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.n0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r5 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004c, code lost:
+    
+        r2.scrollBy(r0 * r5, 0);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.p0);
+     */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        int i18;
-        int i19;
-        if (!this.s || this.q) {
-            i18 = i12;
-        } else {
-            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
-            float f9 = this.d - this.b;
-            float f10 = this.e - this.c;
-            float sqrt = (float) Math.sqrt((f10 * f10) + (f9 * f9));
-            float f11 = (f9 / sqrt) * currentAnimationTimeMillis;
-            float f12 = (f10 / sqrt) * currentAnimationTimeMillis;
-            i18 = i12;
-            float f13 = i18;
-            if (Math.signum(f13) == Math.signum(f11)) {
-                i19 = i13;
-                float f14 = i19;
-                if (Math.signum(f14) == Math.signum(f12)) {
-                    i18 = (int) (f13 + f11);
-                    i19 = (int) (f14 + f12);
+    public final void run() {
+        int tabSize;
+        int max;
+        switch (this.a) {
+            case 0:
+                pm0 pm0Var = this.b;
+                hb1 hb1Var = pm0Var.e;
+                pm0Var.V = false;
+                pm0Var.S = pm0Var.getScrollX() + pm0Var.T;
+                tabSize = pm0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                pm0Var.R = ceil;
+                pm0Var.Q = ceil;
+                if (pm0Var.e(ceil) && ceil >= 0 && ceil < hb1Var.getChildCount()) {
+                    try {
+                        pm0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
+                    pm0Var.a0 = 0.0f;
+                    pm0Var.v = 0.0f;
+                    View childAt = hb1Var.getChildAt(ceil);
+                    pm0Var.s = childAt;
+                    pm0Var.W = childAt.getX() - pm0Var.getScrollX();
+                    pm0Var.s.invalidate();
+                    hb1Var.invalidate();
+                    pm0Var.j();
+                    pm0Var.invalidate();
+                    break;
                 }
-                this.a = 1;
-                this.q = false;
-                float sqrt2 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
-                this.t = sqrt2;
-                double log = Math.log((w * sqrt2) / 800.0f);
-                double d = v;
-                double d10 = d - 1.0d;
-                this.m = (int) (Math.exp(log / d10) * 1000.0d);
-                this.l = AnimationUtils.currentAnimationTimeMillis();
-                this.b = i10;
-                this.c = i11;
-                float f15 = sqrt2 != 0.0f ? 1.0f : i18 / sqrt2;
-                float f16 = sqrt2 != 0.0f ? i19 / sqrt2 : 1.0f;
-                double exp = Math.exp((d / d10) * log);
-                this.f = i14;
-                this.g = i15;
-                this.h = i16;
-                this.i = i17;
-                float f17 = (int) (exp * 800.0f);
-                int round = Math.round(f15 * f17) + i10;
-                this.d = round;
-                int min = Math.min(round, this.g);
-                this.d = min;
-                this.d = Math.max(min, this.f);
-                int round2 = Math.round(f17 * f16) + i11;
-                this.e = round2;
-                int min2 = Math.min(round2, this.i);
-                this.e = min2;
-                this.e = Math.max(min2, this.h);
-            }
+                break;
+            default:
+                long currentTimeMillis = System.currentTimeMillis();
+                pm0 pm0Var2 = this.b;
+                long j10 = currentTimeMillis - pm0Var2.o0;
+                int i10 = -1;
+                if (j10 >= 3000) {
+                    if (j10 >= 5000) {
+                        max = Math.max(1, AndroidUtilities.dp(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, AndroidUtilities.dp(2.0f));
+                        break;
+                    }
+                } else {
+                    max = Math.max(1, AndroidUtilities.dp(1.0f));
+                    break;
+                }
         }
-        i19 = i13;
-        this.a = 1;
-        this.q = false;
-        float sqrt22 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
-        this.t = sqrt22;
-        double log2 = Math.log((w * sqrt22) / 800.0f);
-        double d11 = v;
-        double d102 = d11 - 1.0d;
-        this.m = (int) (Math.exp(log2 / d102) * 1000.0d);
-        this.l = AnimationUtils.currentAnimationTimeMillis();
-        this.b = i10;
-        this.c = i11;
-        if (sqrt22 != 0.0f) {
-        }
-        if (sqrt22 != 0.0f) {
-        }
-        double exp2 = Math.exp((d11 / d102) * log2);
-        this.f = i14;
-        this.g = i15;
-        this.h = i16;
-        this.i = i17;
-        float f172 = (int) (exp2 * 800.0f);
-        int round3 = Math.round(f15 * f172) + i10;
-        this.d = round3;
-        int min3 = Math.min(round3, this.g);
-        this.d = min3;
-        this.d = Math.max(min3, this.f);
-        int round22 = Math.round(f172 * f16) + i11;
-        this.e = round22;
-        int min22 = Math.min(round22, this.i);
-        this.e = min22;
-        this.e = Math.max(min22, this.h);
-    }
-
-    public final void d(int i10, int i11) {
-        this.a = 0;
-        this.q = false;
-        this.m = i11;
-        this.l = AnimationUtils.currentAnimationTimeMillis();
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = i10;
-        this.o = 0;
-        this.p = i10;
-        this.n = 1.0f / this.m;
     }
 }

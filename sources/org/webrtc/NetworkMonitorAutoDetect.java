@@ -25,7 +25,7 @@ import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
@@ -42,7 +42,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
     private WifiManagerDelegate wifiManagerDelegate;
     private String wifiSSID;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class NetworkState {
         private final boolean connected;
         private final int subtype;
@@ -50,8 +50,8 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         private final int underlyingNetworkSubtypeForVpn;
         private final int underlyingNetworkTypeForVpn;
 
-        public NetworkState(boolean z10, int i10, int i11, int i12, int i13) {
-            this.connected = z10;
+        public NetworkState(boolean z4, int i10, int i11, int i12, int i13) {
+            this.connected = z4;
             this.type = i10;
             this.subtype = i11;
             this.underlyingNetworkTypeForVpn = i12;
@@ -79,7 +79,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public class SimpleNetworkCallback extends ConnectivityManager.NetworkCallback {
         private SimpleNetworkCallback() {
         }
@@ -121,7 +121,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class WifiDirectManagerDelegate extends BroadcastReceiver {
         private static final int WIFI_P2P_NETWORK_HANDLE = 0;
         private final Context context;
@@ -166,8 +166,8 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
                 NetworkChangeDetector.NetworkInformation networkInformation = new NetworkChangeDetector.NetworkInformation(wifiP2pGroup.getInterface(), NetworkChangeDetector.ConnectionType.CONNECTION_WIFI, NetworkChangeDetector.ConnectionType.CONNECTION_NONE, 0L, iPAddressArr);
                 this.wifiP2pNetworkInfo = networkInformation;
                 this.observer.onNetworkConnect(networkInformation);
-            } catch (SocketException e10) {
-                Logging.e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e10);
+            } catch (SocketException e) {
+                Logging.e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e);
             }
         }
 
@@ -240,8 +240,8 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         this.observer.onConnectionTypeChanged(connectionType);
     }
 
-    private static NetworkChangeDetector.ConnectionType getConnectionType(boolean z10, int i10, int i11) {
-        if (!z10) {
+    private static NetworkChangeDetector.ConnectionType getConnectionType(boolean z4, int i10, int i11) {
+        if (!z4) {
             return NetworkChangeDetector.ConnectionType.CONNECTION_NONE;
         }
         if (i10 != 0) {
@@ -379,7 +379,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         return this.connectivityManagerDelegate.supportNetworkCallback();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class WifiManagerDelegate {
         private final Context context;
 
@@ -399,7 +399,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class ConnectivityManagerDelegate {
         private final ConnectivityManager connectivityManager;
 

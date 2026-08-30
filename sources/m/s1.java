@@ -12,11 +12,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import lh.m7;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class s1 extends ListView {
     public final Rect a;
@@ -30,16 +29,16 @@ public class s1 extends ListView {
     public final boolean r;
     public boolean s;
     public u0.d v;
-    public m7 w;
+    public androidx.activity.i w;
 
-    public s1(Context context, boolean z10) {
+    public s1(Context context, boolean z4) {
         super(context, null, R.attr.dropDownListViewStyle);
         this.a = new Rect();
         this.b = 0;
         this.c = 0;
         this.d = 0;
         this.e = 0;
-        this.r = z10;
+        this.r = z4;
         setCacheColorHint(0);
     }
 
@@ -96,28 +95,28 @@ public class s1 extends ListView {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean b(int i10, MotionEvent motionEvent) {
+        boolean z4;
         boolean z10;
-        boolean z11;
         View childAt;
         View childAt2;
         int actionMasked = motionEvent.getActionMasked();
-        boolean z12 = true;
+        boolean z11 = true;
         if (actionMasked == 1) {
-            z10 = false;
+            z4 = false;
         } else if (actionMasked == 2) {
-            z10 = true;
+            z4 = true;
         }
         int findPointerIndex = motionEvent.findPointerIndex(i10);
         if (findPointerIndex >= 0) {
-            int x4 = (int) motionEvent.getX(findPointerIndex);
-            int y8 = (int) motionEvent.getY(findPointerIndex);
-            int pointToPosition = pointToPosition(x4, y8);
+            int x10 = (int) motionEvent.getX(findPointerIndex);
+            int y10 = (int) motionEvent.getY(findPointerIndex);
+            int pointToPosition = pointToPosition(x10, y10);
             if (pointToPosition != -1) {
                 View childAt3 = getChildAt(pointToPosition - getFirstVisiblePosition());
-                float f9 = x4;
-                float f10 = y8;
+                float f10 = x10;
+                float f11 = y10;
                 this.s = true;
-                n1.a(this, f9, f10);
+                n1.a(this, f10, f11);
                 if (!isPressed()) {
                     setPressed(true);
                 }
@@ -127,13 +126,13 @@ public class s1 extends ListView {
                     childAt.setPressed(false);
                 }
                 this.f = pointToPosition;
-                n1.a(childAt3, f9 - childAt3.getLeft(), f10 - childAt3.getTop());
+                n1.a(childAt3, f10 - childAt3.getLeft(), f11 - childAt3.getTop());
                 if (!childAt3.isPressed()) {
                     childAt3.setPressed(true);
                 }
                 Drawable selector = getSelector();
-                boolean z13 = (selector == null || pointToPosition == -1) ? false : true;
-                if (z13) {
+                boolean z12 = (selector == null || pointToPosition == -1) ? false : true;
+                if (z12) {
                     selector.setVisible(false, false);
                 }
                 int left = childAt3.getLeft();
@@ -147,29 +146,29 @@ public class s1 extends ListView {
                 rect.right += this.d;
                 rect.bottom += this.e;
                 if (n0.a.a()) {
-                    z11 = p1.a(this);
+                    z10 = p1.a(this);
                 } else {
                     Field field = r1.a;
                     if (field != null) {
                         try {
-                            z11 = field.getBoolean(this);
-                        } catch (IllegalAccessException e10) {
-                            e10.printStackTrace();
+                            z10 = field.getBoolean(this);
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
                         }
                     }
-                    z11 = false;
+                    z10 = false;
                 }
-                if (childAt3.isEnabled() != z11) {
-                    boolean z14 = !z11;
+                if (childAt3.isEnabled() != z10) {
+                    boolean z13 = !z10;
                     if (n0.a.a()) {
-                        p1.b(this, z14);
+                        p1.b(this, z13);
                     } else {
                         Field field2 = r1.a;
                         if (field2 != null) {
                             try {
-                                field2.set(this, Boolean.valueOf(z14));
-                            } catch (IllegalAccessException e11) {
-                                e11.printStackTrace();
+                                field2.set(this, Boolean.valueOf(z13));
+                            } catch (IllegalAccessException e6) {
+                                e6.printStackTrace();
                             }
                         }
                     }
@@ -177,7 +176,7 @@ public class s1 extends ListView {
                         refreshDrawableState();
                     }
                 }
-                if (z13) {
+                if (z12) {
                     float exactCenterX = rect.exactCenterX();
                     float exactCenterY = rect.exactCenterY();
                     selector.setVisible(getVisibility() == 0, false);
@@ -185,7 +184,7 @@ public class s1 extends ListView {
                 }
                 Drawable selector2 = getSelector();
                 if (selector2 != null && pointToPosition != -1) {
-                    selector2.setHotspot(f9, f10);
+                    selector2.setHotspot(f10, f11);
                 }
                 q1 q1Var = this.h;
                 if (q1Var != null) {
@@ -195,10 +194,10 @@ public class s1 extends ListView {
                 if (actionMasked == 1) {
                     performItemClick(childAt3, pointToPosition, getItemIdAtPosition(pointToPosition));
                 }
-                z12 = false;
-                z10 = true;
+                z11 = false;
+                z4 = true;
             }
-            if (z10 || z12) {
+            if (z4 || z11) {
                 this.s = false;
                 setPressed(false);
                 drawableStateChanged();
@@ -207,28 +206,28 @@ public class s1 extends ListView {
                     childAt2.setPressed(false);
                 }
             }
-            if (z10) {
+            if (z4) {
                 u0.d dVar = this.v;
                 if (dVar != null) {
-                    if (dVar.B) {
+                    if (dVar.C) {
                         dVar.d();
                     }
-                    dVar.B = false;
+                    dVar.C = false;
                 }
             } else {
                 if (this.v == null) {
                     this.v = new u0.d(this);
                 }
                 u0.d dVar2 = this.v;
-                boolean z15 = dVar2.B;
-                dVar2.B = true;
+                boolean z14 = dVar2.C;
+                dVar2.C = true;
                 dVar2.onTouch(this, motionEvent);
             }
-            return z10;
+            return z4;
         }
-        z12 = false;
-        z10 = false;
-        if (z10) {
+        z11 = false;
+        z4 = false;
+        if (z4) {
         }
         this.s = false;
         setPressed(false);
@@ -236,9 +235,9 @@ public class s1 extends ListView {
         childAt2 = getChildAt(this.f - getFirstVisiblePosition());
         if (childAt2 != null) {
         }
-        if (z10) {
+        if (z4) {
         }
-        return z10;
+        return z4;
     }
 
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.ViewGroup, android.view.View
@@ -301,11 +300,10 @@ public class s1 extends ListView {
             return super.onHoverEvent(motionEvent);
         }
         int actionMasked = motionEvent.getActionMasked();
-        int i11 = 2;
         if (actionMasked == 10 && this.w == null) {
-            m7 m7Var = new m7(this, i11);
-            this.w = m7Var;
-            post(m7Var);
+            androidx.activity.i iVar = new androidx.activity.i(this, 28);
+            this.w = iVar;
+            post(iVar);
         }
         boolean onHoverEvent = super.onHoverEvent(motionEvent);
         if (actionMasked != 9 && actionMasked != 7) {
@@ -324,10 +322,10 @@ public class s1 extends ListView {
                         o1.a.invoke(this, Integer.valueOf(pointToPosition), childAt, Boolean.FALSE, -1, -1);
                         o1.b.invoke(this, Integer.valueOf(pointToPosition));
                         o1.c.invoke(this, Integer.valueOf(pointToPosition));
-                    } catch (IllegalAccessException e10) {
-                        e10.printStackTrace();
-                    } catch (InvocationTargetException e11) {
-                        e11.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e6) {
+                        e6.printStackTrace();
                     }
                 }
             }
@@ -344,17 +342,17 @@ public class s1 extends ListView {
         if (motionEvent.getAction() == 0) {
             this.f = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-        m7 m7Var = this.w;
-        if (m7Var != null) {
-            s1 s1Var = (s1) m7Var.b;
+        androidx.activity.i iVar = this.w;
+        if (iVar != null) {
+            s1 s1Var = (s1) iVar.b;
             s1Var.w = null;
-            s1Var.removeCallbacks(m7Var);
+            s1Var.removeCallbacks(iVar);
         }
         return super.onTouchEvent(motionEvent);
     }
 
-    public void setListSelectionHidden(boolean z10) {
-        this.n = z10;
+    public void setListSelectionHidden(boolean z4) {
+        this.n = z4;
     }
 
     @Override // android.widget.AbsListView

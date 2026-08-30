@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -45,13 +45,13 @@ public class RadioButton extends View {
         }
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (z10 == this.f) {
+    public final void a(boolean z4, boolean z10) {
+        if (z4 == this.f) {
             return;
         }
-        this.f = z10;
-        if (this.e && z11) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
+        this.f = z4;
+        if (this.e && z10) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z4 ? 1.0f : 0.0f);
             this.d = ofFloat;
             ofFloat.setDuration(200L);
             this.d.start();
@@ -61,7 +61,7 @@ public class RadioButton extends View {
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        setProgress(z10 ? 1.0f : 0.0f);
+        setProgress(z4 ? 1.0f : 0.0f);
     }
 
     public final void b(int i10, int i11) {
@@ -92,28 +92,28 @@ public class RadioButton extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float f9;
-        float f10 = this.c;
-        if (f10 <= 0.5f) {
+        float f10;
+        float f11 = this.c;
+        if (f11 <= 0.5f) {
             s.setColor(this.b);
             w.setColor(this.b);
-            f9 = this.c / 0.5f;
+            f10 = this.c / 0.5f;
         } else {
-            f9 = 2.0f - (f10 / 0.5f);
-            float f11 = 1.0f - f9;
-            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r4) * f11)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f11)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f11)));
+            f10 = 2.0f - (f11 / 0.5f);
+            float f12 = 1.0f - f10;
+            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r4) * f12)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f12)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f12)));
             s.setColor(rgb);
             w.setColor(rgb);
         }
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        float f12 = (this.h / 2) - ((f9 + 1.0f) * AndroidUtilities.density);
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f12, s);
+        float f13 = (this.h / 2) - ((f10 + 1.0f) * AndroidUtilities.density);
+        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13, s);
         if (this.r == null) {
             if (this.c <= 0.5f) {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f12 - AndroidUtilities.dp(1.0f), w);
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f9) * (f12 - AndroidUtilities.dp(1.0f)), v);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13 - AndroidUtilities.dp(1.0f), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * (f13 - AndroidUtilities.dp(1.0f)), v);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.z(f12 - AndroidUtilities.dp(1.0f), this.h / 4, f9, this.h / 4), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, e2.c.w(f13 - AndroidUtilities.dp(1.0f), this.h / 4, f10, this.h / 4), w);
             }
         }
         canvas.restore();
@@ -146,11 +146,11 @@ public class RadioButton extends View {
         invalidate();
     }
 
-    public void setProgress(float f9) {
-        if (this.c == f9) {
+    public void setProgress(float f10) {
+        if (this.c == f10) {
             return;
         }
-        this.c = f9;
+        this.c = f10;
         invalidate();
     }
 

@@ -1,42 +1,43 @@
 package com.google.firebase.messaging;
 
-import android.util.Log;
-import java.util.Arrays;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class w {
-    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
-    public final String a;
-    public final String b;
-    public final String c;
+    public static WeakReference d;
+    public final SharedPreferences a;
+    public c5.j b;
+    public final ScheduledThreadPoolExecutor c;
 
-    public w(String str, String str2) {
-        String str3;
-        if (str2 == null || !str2.startsWith("/topics/")) {
-            str3 = str2;
-        } else {
-            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
-            str3 = str2.substring(8);
-        }
-        if (str3 == null || !d.matcher(str3).matches()) {
-            throw new IllegalArgumentException(a4.w.n("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
-        }
-        this.a = str3;
-        this.b = str;
-        this.c = a4.w.y(str, "!", str2);
+    public w(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+        this.c = scheduledThreadPoolExecutor;
+        this.a = sharedPreferences;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof w)) {
-            return false;
+    public final synchronized v a() {
+        v vVar;
+        String v = this.b.v();
+        Pattern pattern = v.d;
+        vVar = null;
+        if (!TextUtils.isEmpty(v)) {
+            String[] split = v.split("!", -1);
+            if (split.length == 2) {
+                vVar = new v(split[0], split[1]);
+            }
         }
-        w wVar = (w) obj;
-        return this.a.equals(wVar.a) && this.b.equals(wVar.b);
+        return vVar;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.b, this.a});
+    public final synchronized void b() {
+        this.b = c5.j.t(this.a, this.c);
+    }
+
+    public final synchronized void c(v vVar) {
+        this.b.w(vVar.c);
     }
 }

@@ -1,55 +1,44 @@
 package org.telegram.ui.Components;
 
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class dl0 implements Runnable {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ el0 e;
+public final class dl0 implements View.OnTouchListener {
+    public float a;
+    public float b;
+    public boolean c;
 
-    public dl0(el0 el0Var, View view, int i10, float f9, float f10) {
-        this.e = el0Var;
-        this.a = view;
-        this.b = i10;
-        this.c = f9;
-        this.d = f10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        f2.y yVar = this.e.b;
-        jl0 jl0Var = (jl0) yVar.b;
-        if (this == jl0Var.O1) {
-            jl0Var.O1 = null;
-        }
-        View view = this.a;
-        if (view != null) {
-            jl0Var.h1(view, 0.0f, 0.0f, false);
-            if (((jl0) yVar.b).N1) {
-                return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        ViewParent parent = view.getParent();
+        if (parent != null) {
+            if (motionEvent.getAction() == 0) {
+                this.a = motionEvent.getX();
+                this.b = motionEvent.getY();
+                this.c = true;
+                parent.requestDisallowInterceptTouchEvent(true);
             }
-            try {
-                view.playSoundEffect(0);
-            } catch (Exception unused) {
-            }
-            view.sendAccessibilityEvent(1);
-            int i10 = this.b;
-            if (i10 != -1) {
-                jl0 jl0Var2 = (jl0) yVar.b;
-                zk0 zk0Var = jl0Var2.R0;
-                if (zk0Var != null) {
-                    zk0Var.c(i10, view);
-                    return;
+            if (motionEvent.getAction() == 2) {
+                float x10 = this.a - motionEvent.getX();
+                float y10 = this.b - motionEvent.getY();
+                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+                if (this.c) {
+                    if (Math.sqrt((y10 * y10) + (x10 * x10)) > scaledTouchSlop) {
+                        this.c = false;
+                        parent.requestDisallowInterceptTouchEvent(false);
+                        return false;
+                    }
                 }
-                al0 al0Var = jl0Var2.S0;
-                if (al0Var != null) {
-                    al0Var.b(this.c - view.getX(), this.d - view.getY(), i10, view);
-                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.c = false;
+                parent.requestDisallowInterceptTouchEvent(false);
+                return false;
             }
         }
+        return false;
     }
 }

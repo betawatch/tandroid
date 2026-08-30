@@ -1,169 +1,172 @@
 package lh;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.hw;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k6 b;
-    public final /* synthetic */ MessagesStorage c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ TLObject h;
+    public final /* synthetic */ TLObject n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ i6(k6 k6Var, MessagesStorage messagesStorage, int i10) {
-        this.a = i10;
-        this.b = k6Var;
-        this.c = messagesStorage;
+    public /* synthetic */ i6(t7 t7Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z4, boolean z10, long j10, TLRPC.TL_textWithEntities tL_textWithEntities, kh.s5 s5Var) {
+        this.e = t7Var;
+        this.f = zArr;
+        this.h = starGift;
+        this.b = z4;
+        this.d = z10;
+        this.c = j10;
+        this.n = tL_textWithEntities;
+        this.r = s5Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x01a7, code lost:
-    
-        if (r12 == null) goto L70;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0090  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        k6 k6Var;
-        long j10;
-        long j11;
-        TLRPC.Peer peer;
-        switch (this.a) {
+        char c3;
+        int i10;
+        TL_stories.StoryItem storyItem;
+        TLRPC.InputGroupCall inputGroupCall;
+        int i11 = this.a;
+        Object obj = this.r;
+        TLObject tLObject = this.n;
+        TLObject tLObject2 = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        switch (i11) {
             case 0:
-                MessagesStorage messagesStorage = this.c;
-                k6 k6Var2 = this.b;
-                long j12 = k6Var2.d;
-                ArrayList arrayList = new ArrayList();
-                HashSet hashSet = new HashSet();
-                HashSet<Long> hashSet2 = new HashSet<>();
-                HashSet hashSet3 = new HashSet();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
-                ArrayList<TLRPC.Chat> arrayList4 = new ArrayList<>();
-                SQLiteCursor sQLiteCursor = null;
-                try {
-                    messagesStorage.getDatabase();
-                    sQLiteCursor = messagesStorage.createLoadStoriesCursor(j12, k6Var2.f, k6Var2.e);
-                    while (sQLiteCursor.next()) {
-                        NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
-                        if (byteBufferValue != null) {
-                            TL_stories.StoryItem TLdeserialize = TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                            TLdeserialize.dialogId = j12;
-                            TLdeserialize.messageId = TLdeserialize.id;
-                            MessageObject messageObject = new MessageObject(k6Var2.c, TLdeserialize);
-                            ArrayList<TLRPC.PrivacyRule> arrayList5 = TLdeserialize.privacy;
-                            k6Var = k6Var2;
-                            try {
-                                int size = arrayList5.size();
-                                j10 = j12;
-                                int i10 = 0;
-                                while (i10 < size) {
-                                    TLRPC.PrivacyRule privacyRule = arrayList5.get(i10);
-                                    i10++;
-                                    TLRPC.PrivacyRule privacyRule2 = privacyRule;
-                                    ArrayList<TLRPC.PrivacyRule> arrayList6 = arrayList5;
-                                    if (privacyRule2 instanceof TLRPC.TL_privacyValueDisallowUsers) {
-                                        hashSet2.addAll(((TLRPC.TL_privacyValueDisallowUsers) privacyRule2).users);
-                                    } else if (privacyRule2 instanceof TLRPC.TL_privacyValueAllowUsers) {
-                                        hashSet2.addAll(((TLRPC.TL_privacyValueAllowUsers) privacyRule2).users);
-                                    }
-                                    arrayList5 = arrayList6;
-                                }
-                                TL_stories.StoryFwdHeader storyFwdHeader = TLdeserialize.fwd_from;
-                                if (storyFwdHeader == null || (peer = storyFwdHeader.from) == null) {
-                                    j11 = 0;
-                                } else {
-                                    j11 = 0;
-                                    long peerDialogId = DialogObject.getPeerDialogId(peer);
-                                    if (peerDialogId >= 0) {
-                                        hashSet2.add(Long.valueOf(peerDialogId));
-                                    } else {
-                                        hashSet3.add(Long.valueOf(-peerDialogId));
-                                    }
-                                }
-                                for (int i11 = 0; i11 < TLdeserialize.media_areas.size(); i11++) {
-                                    if (TLdeserialize.media_areas.get(i11) instanceof TL_stories.TL_mediaAreaChannelPost) {
-                                        hashSet3.add(Long.valueOf(((TL_stories.TL_mediaAreaChannelPost) TLdeserialize.media_areas.get(i11)).channel_id));
-                                    }
-                                }
-                                TLRPC.Peer peer2 = TLdeserialize.from_id;
-                                if (peer2 != null) {
-                                    long peerDialogId2 = DialogObject.getPeerDialogId(peer2);
-                                    if (peerDialogId2 >= j11) {
-                                        hashSet2.add(Long.valueOf(peerDialogId2));
-                                    } else {
-                                        hashSet3.add(Long.valueOf(-peerDialogId2));
-                                    }
-                                }
-                                messageObject.generateThumbs(false);
-                                arrayList2.add(messageObject);
-                                byteBufferValue.reuse();
-                                if (sQLiteCursor.intValue(1) == 1) {
-                                    hashSet.add(Integer.valueOf(TLdeserialize.id));
-                                }
-                                int intValue = sQLiteCursor.intValue(2);
-                                if (intValue > 0) {
-                                    arrayList.add(Utilities.clamp(intValue, arrayList.size() - 1, 0), Integer.valueOf(TLdeserialize.id));
-                                }
-                            } catch (Throwable th2) {
-                                th = th2;
-                                try {
-                                    messagesStorage.checkSQLException(th);
-                                    break;
-                                } catch (Throwable th3) {
-                                    if (sQLiteCursor != null) {
-                                        sQLiteCursor.dispose();
-                                    }
-                                    throw th3;
-                                }
+                ((boolean[]) obj2)[0] = true;
+                ((t7) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (kh.s5) obj);
+                break;
+            default:
+                ph.da daVar = (ph.da) obj3;
+                TLObject tLObject3 = (TLObject) obj2;
+                TL_stories.TL_startLive tL_startLive = (TL_stories.TL_startLive) tLObject2;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
+                org.telegram.ui.web.o0 o0Var = (org.telegram.ui.web.o0) obj;
+                nh.b bVar = daVar.a;
+                int i12 = daVar.c;
+                if (!(tLObject3 instanceof TLRPC.Updates)) {
+                    if (tL_error != null) {
+                        if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
+                            ph.f8 f8Var = daVar.n0;
+                            if (f8Var != null) {
+                                new qc(f8Var.container, bVar).d0(tL_error, true);
+                                o0Var.run();
+                                break;
                             }
                         } else {
-                            k6Var = k6Var2;
-                            j10 = j12;
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(daVar.b, 0, bVar);
+                            String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
+                            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+                            d2Var.O = string;
+                            d2Var.Q = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
+                            kh.a2.C(R.string.OK, alertDialog$Builder, null);
+                            break;
                         }
-                        k6Var2 = k6Var;
-                        j12 = j10;
                     }
-                    k6Var = k6Var2;
-                    sQLiteCursor.dispose();
-                    if (!hashSet2.isEmpty()) {
-                        messagesStorage.getUsersInternal(hashSet2, arrayList3);
+                } else {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
+                    MessagesController.getInstance(i12).processUpdates(updates, false);
+                    ph.i9 i9Var = daVar.y0;
+                    if (i9Var != null) {
+                        i9Var.destroy(true, null);
                     }
-                    if (!hashSet3.isEmpty()) {
-                        messagesStorage.getChatsInternal(TextUtils.join(",", hashSet3), arrayList4);
+                    ArrayList findUpdates = MessagesController.findUpdates(updates, TL_update.TL_updateStoryID.class);
+                    int size = findUpdates.size();
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 < size) {
+                            Object obj4 = findUpdates.get(i13);
+                            i13++;
+                            TL_update.TL_updateStoryID tL_updateStoryID = (TL_update.TL_updateStoryID) obj4;
+                            c3 = 0;
+                            if (tL_updateStoryID.random_id == tL_startLive.random_id) {
+                                i10 = tL_updateStoryID.id;
+                            }
+                        } else {
+                            c3 = 0;
+                            i10 = -1;
+                        }
                     }
-                } catch (Throwable th4) {
-                    th = th4;
-                    k6Var = k6Var2;
+                    ArrayList findUpdates2 = MessagesController.findUpdates(updates, TL_stories.TL_updateStory.class);
+                    int size2 = findUpdates2.size();
+                    int i14 = 0;
+                    while (i14 < size2) {
+                        Object obj5 = findUpdates2.get(i14);
+                        i14++;
+                        TL_stories.StoryItem storyItem2 = ((TL_stories.TL_updateStory) obj5).story;
+                        if (storyItem2 != null && (storyItem2.id == i10 || i10 == -1)) {
+                            storyItem = storyItem2;
+                            if (storyItem != null) {
+                                TLRPC.MessageMedia messageMedia = storyItem.media;
+                                if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
+                                    inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
+                                    if (inputGroupCall != null) {
+                                        nh.e1 e1Var = nh.e1.T;
+                                        if (e1Var != null) {
+                                            e1Var.e();
+                                            if (nh.e1.T != null) {
+                                                nh.e1.T = null;
+                                                NotificationCenter notificationCenter = NotificationCenter.getInstance(i12);
+                                                int i15 = NotificationCenter.liveStoryUpdated;
+                                                Object[] objArr = new Object[1];
+                                                objArr[c3] = Long.valueOf(nh.e1.T.g());
+                                                notificationCenter.lambda$postNotificationNameOnUIThread$1(i15, objArr);
+                                            }
+                                        }
+                                        AndroidUtilities.runOnUIThread(new hw(daVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
+                                        break;
+                                    }
+                                }
+                            }
+                            inputGroupCall = null;
+                            if (inputGroupCall != null) {
+                            }
+                        }
+                    }
+                    storyItem = null;
+                    if (storyItem != null) {
+                    }
+                    inputGroupCall = null;
+                    if (inputGroupCall != null) {
+                    }
                 }
-                sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new ih.f1(k6Var, arrayList2, arrayList, arrayList3, arrayList4, hashSet, 8));
-                return;
-            default:
-                k6 k6Var3 = this.b;
-                MessagesStorage messagesStorage2 = this.c;
-                try {
-                    SQLiteDatabase database = messagesStorage2.getDatabase();
-                    Locale locale = Locale.US;
-                    database.executeFast("DELETE FROM profile_stories WHERE dialog_id = " + k6Var3.d + " AND type = " + k6Var3.e).stepThis().dispose();
-                } catch (Throwable th5) {
-                    messagesStorage2.checkSQLException(th5);
-                }
-                AndroidUtilities.runOnUIThread(new h6(k6Var3, 3));
-                return;
+                break;
         }
+    }
+
+    public /* synthetic */ i6(ph.da daVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z4, long j10, boolean z10, TLRPC.TL_error tL_error, org.telegram.ui.web.o0 o0Var) {
+        this.e = daVar;
+        this.f = tLObject;
+        this.h = tL_startLive;
+        this.b = z4;
+        this.c = j10;
+        this.d = z10;
+        this.n = tL_error;
+        this.r = o0Var;
     }
 }

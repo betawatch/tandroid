@@ -1,18 +1,41 @@
 package nh;
 
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.o70;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class v1 extends FrameLayout {
-    public org.telegram.ui.Components.t9 a;
-    public int b;
+public final /* synthetic */ class v1 implements View.OnLongClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d4 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(170.0f), (AndroidUtilities.displaySize.y * 0.34999996f) - AndroidUtilities.dp(142.0f)), TLObject.FLAG_30));
+    public /* synthetic */ v1(d4 d4Var, int i10) {
+        this.a = i10;
+        this.b = d4Var;
+    }
+
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        switch (this.a) {
+            case 0:
+                d4 d4Var = this.b;
+                if (!d4Var.D0(true)) {
+                    o70 F = o70.F(d4Var.G0.v, d4Var.y0, view);
+                    F.c(R.drawable.msg_edit, LocaleController.getString(R.string.LiveStoryMessageEditStars), new w1(d4Var, 6), false);
+                    F.l(R.drawable.menu_delete_paid, LocaleController.getString(R.string.LiveStoryMessageRemoveStars), new w1(d4Var, 7), d4Var.I3 > 0);
+                    F.V(5);
+                    F.U = true;
+                    F.Z();
+                    break;
+                }
+                break;
+            default:
+                d4 d4Var2 = this.b;
+                d4Var2.I0.k(d4Var2.D0(false));
+                break;
+        }
+        return true;
     }
 }

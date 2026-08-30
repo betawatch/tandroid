@@ -1,48 +1,27 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class g60 implements org.telegram.ui.db0 {
-    public final /* synthetic */ h60 a;
+public final class g60 extends f2.z0 {
+    public final /* synthetic */ f2.i0 a;
+    public final /* synthetic */ s60 b;
 
-    public g60(h60 h60Var) {
-        this.a = h60Var;
+    public g60(s60 s60Var, f2.i0 i0Var) {
+        this.b = s60Var;
+        this.a = i0Var;
     }
 
-    @Override // org.telegram.ui.db0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        int i10;
-        org.telegram.ui.ab abVar = this.a.a.c.f0;
-        if (abVar != null) {
-            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
-            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
-            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
-            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
-            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
-            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-            org.telegram.ui.ob obVar = abVar.a;
-            tL_channelAdminLogEvent.user_id = obVar.getAccountInstance().getUserConfig().clientUserId;
-            i10 = ((org.telegram.ui.ActionBar.o2) obVar).currentAccount;
-            if (new MessageObject(i10, tL_channelAdminLogEvent, (ArrayList<MessageObject>) obVar.n0, (HashMap<String, ArrayList<MessageObject>>) obVar.m0, obVar.s, obVar.T, true).contentType < 0) {
-                return;
-            }
-            obVar.R0();
-            obVar.E.l();
-            org.telegram.ui.ob.K0(obVar);
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        s60 s60Var = this.b;
+        s60.O(s60Var);
+        if (!s60Var.O || s60Var.N) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.db0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-    }
-
-    @Override // org.telegram.ui.db0
-    public final void c(TLObject tLObject) {
+        if (s60Var.P - this.a.N0() < 10) {
+            s60Var.X();
+        }
     }
 }

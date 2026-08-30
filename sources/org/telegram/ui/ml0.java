@@ -1,0 +1,121 @@
+package org.telegram.ui;
+
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ml0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dn0 b;
+
+    public /* synthetic */ ml0(dn0 dn0Var, int i10) {
+        this.a = i10;
+        this.b = dn0Var;
+    }
+
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                dn0 dn0Var = this.b;
+                if (i10 != 5) {
+                    if (i10 != 6) {
+                        dn0Var.getClass();
+                        break;
+                    } else {
+                        dn0Var.I.callOnClick();
+                        break;
+                    }
+                } else {
+                    dn0Var.V[2].requestFocus();
+                    break;
+                }
+            case 1:
+                dn0 dn0Var2 = this.b;
+                dn0Var2.getClass();
+                if (i10 == 5) {
+                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr = dn0Var2.V;
+                    if (intValue < editTextBoldCursorArr.length) {
+                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
+                            dn0Var2.V[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            dn0Var2.V[intValue].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                dn0 dn0Var3 = this.b;
+                dn0Var3.getClass();
+                if (i10 == 5) {
+                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr2 = dn0Var3.X;
+                    if (intValue2 < editTextBoldCursorArr2.length) {
+                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
+                            dn0Var3.X[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            dn0Var3.X[intValue2].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                dn0 dn0Var4 = this.b;
+                dn0Var4.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    dn0Var4.I.callOnClick();
+                    break;
+                }
+                break;
+            case 4:
+                dn0 dn0Var5 = this.b;
+                dn0Var5.getClass();
+                if (i10 == 5) {
+                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr3 = dn0Var5.V;
+                    if (intValue3 < editTextBoldCursorArr3.length) {
+                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
+                            dn0Var5.V[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            dn0Var5.V[intValue3].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                dn0 dn0Var6 = this.b;
+                dn0Var6.getClass();
+                if (i10 == 5 || i10 == 6) {
+                    dn0Var6.I.callOnClick();
+                    break;
+                }
+                break;
+            default:
+                dn0 dn0Var7 = this.b;
+                dn0Var7.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    dn0Var7.I.callOnClick();
+                    break;
+                }
+                break;
+        }
+        return true;
+    }
+}

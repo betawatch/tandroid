@@ -1,9 +1,8 @@
 package androidx.car.app;
 
-import a4.w;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class SurfaceContainer {
     private final int mDpi;
@@ -35,14 +34,14 @@ public final class SurfaceContainer {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[");
-        sb2.append(this.mSurface);
-        sb2.append(", ");
-        sb2.append(this.mWidth);
-        sb2.append("x");
-        sb2.append(this.mHeight);
-        sb2.append(", dpi: ");
-        return w.l(this.mDpi, "]", sb2);
+        StringBuilder sb = new StringBuilder("[");
+        sb.append(this.mSurface);
+        sb.append(", ");
+        sb.append(this.mWidth);
+        sb.append("x");
+        sb.append(this.mHeight);
+        sb.append(", dpi: ");
+        return android.support.v4.media.a.m(this.mDpi, "]", sb);
     }
 
     private SurfaceContainer() {

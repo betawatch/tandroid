@@ -1,35 +1,69 @@
 package i4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import f5.d0;
+import e4.e;
+import j7.c7;
+import java.nio.ByteBuffer;
+import java.nio.charset.CharacterCodingException;
+import java.nio.charset.CharsetDecoder;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import k7.z6;
+import r8.d;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends b {
-    public static final Parcelable.Creator<a> CREATOR = new g8.b(27);
-    public final long a;
-    public final long b;
-    public final byte[] c;
+public final class a extends c7 {
+    public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
+    public final CharsetDecoder a = d.c.newDecoder();
+    public final CharsetDecoder b = d.b.newDecoder();
 
-    public a(long j10, long j11, byte[] bArr) {
-        this.a = j11;
-        this.b = j10;
-        this.c = bArr;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeLong(this.a);
-        parcel.writeLong(this.b);
-        parcel.writeByteArray(this.c);
-    }
-
-    public a(Parcel parcel) {
-        this.a = parcel.readLong();
-        this.b = parcel.readLong();
-        byte[] createByteArray = parcel.createByteArray();
-        int i10 = d0.a;
-        this.c = createByteArray;
+    @Override // j7.c7
+    public final e4.c b(e eVar, ByteBuffer byteBuffer) {
+        String str;
+        CharsetDecoder charsetDecoder = this.b;
+        CharsetDecoder charsetDecoder2 = this.a;
+        String str2 = null;
+        try {
+            str = charsetDecoder2.decode(byteBuffer).toString();
+        } catch (CharacterCodingException unused) {
+            try {
+                String charBuffer = charsetDecoder.decode(byteBuffer).toString();
+                charsetDecoder.reset();
+                byteBuffer.rewind();
+                str = charBuffer;
+            } catch (CharacterCodingException unused2) {
+                charsetDecoder.reset();
+                byteBuffer.rewind();
+                str = null;
+            } catch (Throwable th2) {
+                charsetDecoder.reset();
+                byteBuffer.rewind();
+                throw th2;
+            }
+        } finally {
+            charsetDecoder2.reset();
+            byteBuffer.rewind();
+        }
+        byte[] bArr = new byte[byteBuffer.limit()];
+        byteBuffer.get(bArr);
+        if (str == null) {
+            return new e4.c(new c(null, null, bArr));
+        }
+        Matcher matcher = c.matcher(str);
+        String str3 = null;
+        for (int i10 = 0; matcher.find(i10); i10 = matcher.end()) {
+            String group = matcher.group(1);
+            String group2 = matcher.group(2);
+            if (group != null) {
+                String b10 = z6.b(group);
+                b10.getClass();
+                if (b10.equals("streamurl")) {
+                    str3 = group2;
+                } else if (b10.equals("streamtitle")) {
+                    str2 = group2;
+                }
+            }
+        }
+        return new e4.c(new c(str2, str3, bArr));
     }
 }

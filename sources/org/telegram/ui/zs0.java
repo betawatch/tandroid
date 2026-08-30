@@ -2,61 +2,54 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class zs0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.cm0 b;
+    public final /* synthetic */ at0 b;
 
-    public /* synthetic */ zs0(org.telegram.ui.Components.cm0 cm0Var, int i10) {
+    public zs0(at0 at0Var, int i10) {
+        this.b = at0Var;
         this.a = i10;
-        this.b = cm0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
-                photoViewer.M1.getNextView().setText((CharSequence) null);
-                xs0 xs0Var = photoViewer.P1;
-                xs0Var.h0 = false;
-                if (xs0Var.i0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) xs0Var.k0.getLayoutParams()).topMargin = xs0Var.i0;
-                    xs0Var.i0 = -1;
-                    xs0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((PhotoViewer) this.b.b).M1.setTranslationY(0.0f);
-                break;
+        if (this.b.b.g8) {
+            PhotoViewer photoViewer = this.b.b;
+            if (photoViewer.o1) {
+                photoViewer.B3();
+            }
+        }
+        if (this.a == 3) {
+            PhotoViewer photoViewer2 = this.b.b;
+            photoViewer2.G2(photoViewer2.M4, false, true, true);
         }
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                xs0 xs0Var = ((PhotoViewer) this.b.b).P1;
-                Method method = xs0Var.b0;
-                if (method != null) {
-                    try {
-                        method.invoke(xs0Var, null);
-                        break;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    public final void onAnimationStart(Animator animator) {
+        PhotoViewer photoViewer = this.b.b;
+        photoViewer.M0.setVisibility(0);
+        if (photoViewer.E3()) {
+            photoViewer.k0.setVisibility(0);
+        } else {
+            photoViewer.P0.setVisibility(0);
+        }
+        photoViewer.C.setVisibility(0);
+        if (photoViewer.f2) {
+            wt0 wt0Var = photoViewer.N1;
+            wt0Var.setVisibility(wt0Var.getTag() != null ? 0 : 4);
+        }
+        if (photoViewer.a2 || photoViewer.b2) {
+            return;
+        }
+        int i10 = photoViewer.Z1;
+        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.d7.size() > 1)) && !photoViewer.c4) {
+            photoViewer.K0.setVisibility(0);
+            photoViewer.L0.setVisibility(0);
+            photoViewer.s3();
         }
     }
 }

@@ -4,25 +4,25 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class c1 extends d1 {
-    public final b1 a0;
-    public String b0;
+    public final b1 b0;
+    public String c0;
 
-    public c1(Context context, c6 c6Var) {
-        super(context, c6Var);
-        this.b0 = null;
+    public c1(Context context, f6 f6Var) {
+        super(context, f6Var);
+        this.c0 = null;
         setFocusable(true);
         setFocusableInTouchMode(true);
         setImportantForAccessibility(1);
         b1 b1Var = new b1(this);
-        this.a0 = b1Var;
+        this.b0 = b1Var;
         setAccessibilityDelegate(b1Var);
     }
 
-    public final void d(float f9, boolean z10) {
-        c((f9 - 0.2f) / 2.8f, z10);
+    public final void d(float f10, boolean z4) {
+        c((f10 - 0.2f) / 2.8f, z4);
     }
 
     public float getSpeed() {
@@ -32,16 +32,16 @@ public final class c1 extends d1 {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.a0.e(this, accessibilityNodeInfo);
+        this.b0.e(this, accessibilityNodeInfo);
     }
 
     @Override // android.view.View
     public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.a0.g(this, i10, bundle);
+        return super.performAccessibilityAction(i10, bundle) || this.b0.g(this, i10, bundle);
     }
 
     public void setLabel(String str) {
-        this.b0 = str;
+        this.c0 = str;
     }
 
     @Override // org.telegram.ui.ActionBar.d1

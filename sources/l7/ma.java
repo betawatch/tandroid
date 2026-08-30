@@ -1,21 +1,27 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class ma {
-    public final Long a;
-    public final Long b;
-    public final Long c;
-    public final Long d;
-    public final Long e;
-    public final Long f;
+import android.content.Context;
 
-    public /* synthetic */ ma(j7.f7 f7Var) {
-        this.a = f7Var.a;
-        this.b = f7Var.b;
-        this.c = f7Var.c;
-        this.d = f7Var.d;
-        this.e = f7Var.e;
-        this.f = f7Var.f;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class ma implements ka {
+    public final c9.p a;
+    public final ha b;
+
+    public ma(Context context, ha haVar) {
+        this.b = haVar;
+        w2.a aVar = w2.a.e;
+        y2.q.b(context);
+        y2.o c3 = y2.q.a().c(aVar);
+        if (w2.a.d.contains(new v2.c("json"))) {
+            new c9.p(new j7.e9(c3, 4));
+        }
+        this.a = new c9.p(new j7.e9(c3, 5));
+    }
+
+    @Override // l7.ka
+    public final void a(b4.e0 e0Var) {
+        this.b.getClass();
+        ((y2.p) this.a.get()).a(e0Var.b != 0 ? new v2.a(null, e0Var.D(), v2.d.a, null) : new v2.a(null, e0Var.D(), v2.d.b, null), new s0.b(28));
     }
 }

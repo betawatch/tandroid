@@ -1,48 +1,66 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg1 implements Utilities.Callback {
+public final /* synthetic */ class gg1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ UserInfoActivity b;
+    public final /* synthetic */ og1 b;
 
-    public /* synthetic */ gg1(UserInfoActivity userInfoActivity, int i10) {
+    public /* synthetic */ gg1(og1 og1Var, int i10) {
         this.a = i10;
-        this.b = userInfoActivity;
+        this.b = og1Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                UserInfoActivity userInfoActivity = this.b;
-                userInfoActivity.F = (TL_account.TL_birthday) obj;
-                org.telegram.ui.Components.o51 o51Var = userInfoActivity.x;
-                if (o51Var != null) {
-                    o51Var.U2.N(true);
-                }
-                userInfoActivity.b0(true);
+                final int i10 = 0;
+                final og1 og1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ig1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                og1.b0(og1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                og1.h0(og1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new jg1(this.b, tL_error, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new jg1(this.b, tL_error, 1));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new jg1(this.b, tL_error, 2));
                 break;
             default:
-                TLRPC.Chat chat = (TLRPC.Chat) obj;
-                UserInfoActivity userInfoActivity2 = this.b;
-                if (userInfoActivity2.G != chat) {
-                    userInfoActivity2.G = chat;
-                    if (chat != null) {
-                        j7.l1.v(R.string.EditProfileChannelSet, org.telegram.ui.Components.tc.a0(userInfoActivity2), R.raw.contact_check, 36);
+                final int i11 = 1;
+                final og1 og1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ig1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                og1.b0(og1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                og1.h0(og1Var2, tL_error, tLObject);
+                                break;
+                        }
                     }
-                    userInfoActivity2.b0(true);
-                    org.telegram.ui.Components.o51 o51Var2 = userInfoActivity2.x;
-                    if (o51Var2 != null) {
-                        o51Var2.U2.N(true);
-                        break;
-                    }
-                }
+                });
                 break;
         }
     }

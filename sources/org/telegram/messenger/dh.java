@@ -1,24 +1,60 @@
 package org.telegram.messenger;
 
-import android.media.SoundPool;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class dh implements SoundPool.OnLoadCompleteListener {
+public final /* synthetic */ class dh implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsController b;
 
-    public /* synthetic */ dh(int i10) {
+    public /* synthetic */ dh(NotificationsController notificationsController, int i10) {
         this.a = i10;
+        this.b = notificationsController;
     }
 
-    @Override // android.media.SoundPool.OnLoadCompleteListener
-    public final void onLoadComplete(SoundPool soundPool, int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                NotificationsController.lambda$playOutChatSound$48(soundPool, i10, i11);
+                this.b.lambda$cleanup$2();
+                break;
+            case 1:
+                this.b.lambda$hideNotifications$36();
+                break;
+            case 2:
+                this.b.lambda$repeatNotificationMaybe$41();
+                break;
+            case 3:
+                this.b.lambda$processIgnoreStories$17();
+                break;
+            case 4:
+                this.b.lambda$updateBadge$34();
+                break;
+            case 5:
+                this.b.lambda$deleteAllNotificationChannels$44();
+                break;
+            case 6:
+                this.b.lambda$playOutChatSound$49();
+                break;
+            case 7:
+                this.b.checkStoryPushes();
+                break;
+            case 8:
+                this.b.lambda$new$0();
+                break;
+            case 9:
+                this.b.lambda$new$1();
+                break;
+            case 10:
+                this.b.lambda$showNotifications$35();
+                break;
+            case 11:
+                this.b.lambda$forceShowPopupForReply$7();
+                break;
+            case 12:
+                this.b.lambda$processIgnoreStoryReactions$18();
                 break;
             default:
-                NotificationsController.lambda$playInChatSound$39(soundPool, i10, i11);
+                this.b.lambda$playInChatSound$40();
                 break;
         }
     }

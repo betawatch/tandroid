@@ -1,109 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class r11 extends LinearLayout implements org.telegram.ui.ActionBar.x5 {
-    public final org.telegram.ui.ActionBar.c6 a;
-    public final t9 b;
-    public final y80 c;
-    public final y80 d;
-    public int e;
-    public int f;
+public final class r11 implements TextWatcher {
+    public final /* synthetic */ s11 a;
 
-    public r11(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.e = 90;
-        this.a = c6Var;
-        setOrientation(1);
-        t9 t9Var = new t9(context);
-        this.b = t9Var;
-        t9Var.getImageReceiver().setAutoRepeatCount(1);
-        t9Var.getImageReceiver().setAutoRepeat(1);
-        t9Var.setOnClickListener(new u70(this, 22));
-        addView(t9Var, i7.f6.t(90, 90, 17, 0, 9, 0, 9));
-        y80 y80Var = new y80(context, null);
-        this.c = y80Var;
-        y80Var.setTextSize(1, 20.0f);
-        y80Var.setGravity(17);
-        y80Var.setTypeface(AndroidUtilities.bold());
-        y80Var.setTextAlignment(4);
-        addView(y80Var, i7.f6.t(-1, -2, 17, 48, 0, 48, 10));
-        y80 y80Var2 = new y80(context, null);
-        this.d = y80Var2;
-        y80Var2.setTextSize(1, 14.0f);
-        y80Var2.setGravity(17);
-        y80Var2.setTextAlignment(4);
-        addView(y80Var2, i7.f6.t(-1, -2, 17, 48, 0, 48, 17));
-        e();
+    public r11(s11 s11Var) {
+        this.a = s11Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void e() {
-        int i10 = org.telegram.ui.ActionBar.g6.G6;
-        org.telegram.ui.ActionBar.c6 c6Var = this.a;
-        int v02 = org.telegram.ui.ActionBar.g6.v0(i10, c6Var);
-        y80 y80Var = this.c;
-        y80Var.setTextColor(v02);
-        int i11 = org.telegram.ui.ActionBar.g6.gc;
-        y80Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        if (y80Var.getVisibility() != 0) {
-            i10 = org.telegram.ui.ActionBar.g6.B6;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z4 = this.a.b.length() > 0;
+        if (z4 != (this.a.a.getAlpha() != 0.0f)) {
+            this.a.a.animate().alpha(z4 ? 1.0f : 0.0f).setDuration(150L).scaleX(z4 ? 1.0f : 0.1f).scaleY(z4 ? 1.0f : 0.1f).start();
         }
-        int v03 = org.telegram.ui.ActionBar.g6.v0(i10, c6Var);
-        y80 y80Var2 = this.d;
-        y80Var2.setTextColor(v03);
-        y80Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        int i12 = this.e;
-        this.b.setLayoutParams(i7.f6.t(i12, i12, 17, 0, y80Var.getVisibility() == 0 ? 0 : 9, 0, 9));
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setEmoji(int i10) {
-        if (this.f != i10) {
-            this.f = i10;
-            xi0 xi0Var = new xi0(i10, AndroidUtilities.dp(90.0f), j7.l1.k(i10, ""), AndroidUtilities.dp(90.0f));
-            t9 t9Var = this.b;
-            t9Var.setImageDrawable(xi0Var);
-            t9Var.getImageReceiver().setAutoRepeat(2);
+        String obj = this.a.b.getText().toString();
+        if (obj.length() != 0) {
+            mz mzVar = this.a.c.e;
+            if (mzVar != null) {
+                mzVar.setText(LocaleController.getString(R.string.NoResult));
+            }
+        } else {
+            f2.o0 adapter = this.a.c.c.getAdapter();
+            ThemeEditorView.EditorAlert editorAlert = this.a.c;
+            if (adapter != editorAlert.n) {
+                int I = ThemeEditorView.EditorAlert.I(editorAlert);
+                this.a.c.e.setText(LocaleController.getString(R.string.NoChats));
+                this.a.c.e.c();
+                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
+                editorAlert2.c.setAdapter(editorAlert2.n);
+                this.a.c.n.l();
+                if (I > 0) {
+                    this.a.c.h.h1(0, -I);
+                }
+            }
         }
-    }
-
-    public void setEmojiSize(int i10) {
-        if (this.e != i10) {
-            this.e = i10;
-            e();
+        o11 o11Var = this.a.c.r;
+        if (o11Var == null || obj.equals(o11Var.n)) {
+            return;
         }
-    }
-
-    public void setEmojiStatic(int i10) {
-        if (this.f != i10) {
-            t9 t9Var = this.b;
-            t9Var.b();
-            this.f = i10;
-            t9Var.setImageResource(i10);
+        o11Var.n = obj;
+        if (o11Var.h != null) {
+            Utilities.searchQueue.cancelRunnable(o11Var.h);
+            o11Var.h = null;
         }
+        if (obj.length() != 0) {
+            int i10 = o11Var.d + 1;
+            o11Var.d = i10;
+            o11Var.h = new ey(o11Var, obj, i10, 20);
+            Utilities.searchQueue.postRunnable(o11Var.h, 300L);
+            return;
+        }
+        o11Var.e.clear();
+        ThemeEditorView.EditorAlert editorAlert3 = o11Var.r;
+        editorAlert3.C = ThemeEditorView.EditorAlert.I(editorAlert3);
+        o11Var.d = -1;
+        o11Var.l();
     }
 
-    public void setText(CharSequence charSequence) {
-        this.c.setVisibility(8);
-        y80 y80Var = this.d;
-        y80Var.setText(charSequence);
-        y80Var.setMaxWidth(nh.t3.a(charSequence, y80Var.getPaint()));
-        y80Var.requestLayout();
-        e();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

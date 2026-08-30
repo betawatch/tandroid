@@ -1,719 +1,754 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Color;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.RippleDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.StateListDrawable;
-import android.text.SpannedString;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.lang.reflect.Field;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.AnimatedArrowDrawable;
-import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.GroupCreateCheckBox;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.a8;
-import org.telegram.ui.Components.aj0;
-import org.telegram.ui.Components.ao0;
-import org.telegram.ui.Components.au;
-import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.h80;
-import org.telegram.ui.Components.hz;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.j30;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.jq;
-import org.telegram.ui.Components.ma0;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.st;
-import org.telegram.ui.Components.t41;
-import org.telegram.ui.Components.t9;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.xi0;
-import org.telegram.ui.Components.yn;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.dc0;
+import org.telegram.ui.Components.o9;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class i6 {
-    public final View a;
-    public final int b;
-    public final Paint[] c;
-    public final Drawable[] d;
-    public final Class[] e;
-    public final int f;
-    public final String g;
-    public h6 h;
-    public int i;
-    public final boolean[] j;
-    public final int k;
-    public final String[] l;
-    public final HashMap m;
-    public final HashMap n;
-    public c6 o;
+public final class i6 implements NotificationCenter.NotificationCenterDelegate {
+    public int B;
+    public TLRPC.TL_theme C;
+    public boolean D;
+    public String E;
+    public String F;
+    public TLRPC.InputFile G;
+    public TLRPC.InputFile H;
+    public int I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public boolean P;
+    public boolean Q;
+    public boolean R;
+    public int S;
+    public int T;
+    public int U;
+    public int V;
+    public int W;
+    public SparseArray X;
+    public ArrayList Y;
+    public LongSparseArray Z;
+    public String a;
+    public final LongSparseArray a0;
+    public String b;
+    public int b0;
+    public String c;
+    public int c0;
+    public String d;
+    public String d0;
+    public String e;
+    public String e0;
+    public boolean f;
+    public c6 f0;
+    public int g0;
+    public boolean h;
+    public boolean n;
+    public int r;
+    public int s;
+    public int v;
+    public int w;
+    public int x;
+    public int y;
 
-    public i6(View view, int i10, Class[] clsArr, Paint[] paintArr, int i11) {
-        this.b = -1;
-        this.j = new boolean[1];
-        this.f = i11;
-        this.c = paintArr;
-        this.d = null;
-        this.a = view;
-        this.k = i10;
-        this.e = clsArr;
-        this.h = null;
-        if (view instanceof au) {
-            this.a = ((au) view).getEditText();
+    public i6() {
+        this.x = 45;
+        this.D = true;
+        this.R = true;
+        this.W = -1;
+        this.a0 = new LongSparseArray();
+        this.b0 = 0;
+        this.c0 = 100;
+        this.g0 = -1;
+    }
+
+    public static boolean a(h6 h6Var, TLRPC.ThemeSettings themeSettings) {
+        boolean z4;
+        boolean z10;
+        long j10;
+        long j11;
+        long j12;
+        String str;
+        int i10;
+        int i11;
+        float f10;
+        TLRPC.WallPaperSettings wallPaperSettings;
+        int intValue = themeSettings.message_colors.size() > 0 ? themeSettings.message_colors.get(0).intValue() | (-16777216) : 0;
+        int intValue2 = themeSettings.message_colors.size() > 1 ? themeSettings.message_colors.get(1).intValue() | (-16777216) : 0;
+        if (intValue == intValue2) {
+            intValue2 = 0;
+        }
+        int intValue3 = themeSettings.message_colors.size() > 2 ? themeSettings.message_colors.get(2).intValue() | (-16777216) : 0;
+        int intValue4 = themeSettings.message_colors.size() > 3 ? (-16777216) | themeSettings.message_colors.get(3).intValue() : 0;
+        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
+        if (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null) {
+            z4 = false;
+            z10 = true;
+            j10 = 0;
+            j11 = 0;
+            j12 = 0;
+            str = null;
+            i10 = 0;
+            i11 = 0;
+        } else {
+            i10 = j6.X0(wallPaperSettings.background_color);
+            j10 = themeSettings.wallpaper.settings.second_background_color == 0 ? 4294967296L : j6.X0(r11);
+            j11 = themeSettings.wallpaper.settings.third_background_color == 0 ? 4294967296L : j6.X0(r11);
+            j12 = themeSettings.wallpaper.settings.fourth_background_color != 0 ? j6.X0(r11) : 4294967296L;
+            i11 = AndroidUtilities.getWallpaperRotation(themeSettings.wallpaper.settings.rotation, false);
+            z4 = false;
+            TLRPC.WallPaper wallPaper2 = themeSettings.wallpaper;
+            z10 = true;
+            if (!(wallPaper2 instanceof TLRPC.TL_wallPaperNoFile) && wallPaper2.pattern) {
+                str = wallPaper2.slug;
+                f10 = wallPaper2.settings.intensity / 100.0f;
+                return (themeSettings.accent_color != h6Var.c && themeSettings.outbox_accent_color == h6Var.d && intValue == h6Var.e && intValue2 == h6Var.f && intValue3 == h6Var.g && intValue4 == h6Var.h && themeSettings.message_colors_animated == h6Var.i && ((long) i10) == h6Var.j && j10 == h6Var.k && j11 == h6Var.l && j12 == h6Var.m && i11 == h6Var.n && TextUtils.equals(str, h6Var.o) && ((double) Math.abs(f10 - h6Var.p)) < 0.001d) ? z10 : z4;
+            }
+            str = null;
+        }
+        f10 = 0.0f;
+        if (themeSettings.accent_color != h6Var.c) {
         }
     }
 
-    public static boolean a(int i10, View view) {
-        if (i10 < 0 || view == null) {
+    public static void b(i6 i6Var, int[] iArr, int[] iArr2, int[] iArr3, int[] iArr4, int[] iArr5, int[] iArr6, int[] iArr7, int[] iArr8, String[] strArr, int[] iArr9, int[] iArr10) {
+        i6Var.T = iArr.length;
+        i6Var.Y = new ArrayList();
+        i6Var.X = new SparseArray();
+        i6Var.Z = new LongSparseArray();
+        for (int i10 = 0; i10 < iArr.length; i10++) {
+            h6 h6Var = new h6();
+            h6Var.a = iArr8[i10];
+            if (j6.g1(h6Var)) {
+                h6Var.z = true;
+            }
+            h6Var.c = iArr[i10];
+            h6Var.b = i6Var;
+            h6Var.e = iArr2[i10];
+            h6Var.f = iArr3[i10];
+            long j10 = iArr4[i10];
+            h6Var.j = j10;
+            boolean z4 = i6Var.P;
+            if (z4 && h6Var.a == j6.n) {
+                h6Var.j = 4294967296L;
+            } else {
+                h6Var.j = j10;
+            }
+            if (z4 && h6Var.a == j6.n) {
+                h6Var.k = 4294967296L;
+            } else {
+                h6Var.k = iArr5[i10];
+            }
+            if (iArr6 != null) {
+                if (z4 && h6Var.a == j6.n) {
+                    h6Var.l = 4294967296L;
+                } else {
+                    h6Var.l = iArr6[i10];
+                }
+            }
+            if (iArr7 != null) {
+                if (z4 && h6Var.a == j6.n) {
+                    h6Var.m = 4294967296L;
+                } else {
+                    h6Var.m = iArr7[i10];
+                }
+            }
+            h6Var.p = iArr10[i10] / 100.0f;
+            h6Var.n = iArr9[i10];
+            h6Var.o = strArr[i10];
+            if ((j6.g1(h6Var) && i6Var.a.equals("Dark Blue")) || i6Var.a.equals("Night")) {
+                h6Var.e = -14316059;
+                h6Var.f = -12422433;
+                h6Var.g = -8304937;
+                h6Var.h = -6340950;
+                if (i6Var.a.equals("Night")) {
+                    h6Var.p = -0.57f;
+                    h6Var.j = -9666650L;
+                    h6Var.k = -13749173L;
+                    h6Var.l = -8883033L;
+                    h6Var.m = -13421992L;
+                }
+            }
+            i6Var.X.put(h6Var.a, h6Var);
+            i6Var.Y.add(h6Var);
+        }
+        i6Var.U = ((h6) i6Var.X.get(0)).c;
+    }
+
+    public static void c(i6 i6Var, SharedPreferences sharedPreferences) {
+        ArrayList arrayList = i6Var.Y;
+        if (arrayList == null || arrayList.isEmpty()) {
+            i6Var.r(sharedPreferences, null, android.support.v4.media.a.r(new StringBuilder(), i6Var.a, "_owp"));
+            return;
+        }
+        int size = i6Var.Y.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            h6 h6Var = (h6) i6Var.Y.get(i10);
+            StringBuilder sb = new StringBuilder();
+            sb.append(i6Var.a);
+            sb.append("_");
+            i6Var.r(sharedPreferences, h6Var, android.support.v4.media.a.m(h6Var.a, "_owp", sb));
+        }
+    }
+
+    public static i6 g(JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        try {
+            i6 i6Var = new i6();
+            i6Var.a = jSONObject.getString("name");
+            i6Var.b = jSONObject.getString("path");
+            if (jSONObject.has("account")) {
+                i6Var.B = jSONObject.getInt("account");
+            }
+            if (jSONObject.has("info")) {
+                try {
+                    SerializedData serializedData = new SerializedData(Utilities.hexToBytes(jSONObject.getString("info")));
+                    i6Var.C = TLRPC.Theme.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                } catch (Throwable th2) {
+                    FileLog.e(th2);
+                }
+            }
+            if (jSONObject.has("loaded")) {
+                i6Var.D = jSONObject.getBoolean("loaded");
+            }
+            return i6Var;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return null;
+        }
+    }
+
+    public static i6 h(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        String[] split = str.split("\\|");
+        if (split.length != 2) {
+            return null;
+        }
+        i6 i6Var = new i6();
+        i6Var.a = split[0];
+        i6Var.b = split[1];
+        return i6Var;
+    }
+
+    public static void i(h6 h6Var, TLRPC.ThemeSettings themeSettings) {
+        TLRPC.WallPaperSettings wallPaperSettings;
+        h6Var.c = themeSettings.accent_color;
+        h6Var.d = themeSettings.outbox_accent_color;
+        h6Var.e = themeSettings.message_colors.size() > 0 ? themeSettings.message_colors.get(0).intValue() | (-16777216) : 0;
+        int intValue = themeSettings.message_colors.size() > 1 ? themeSettings.message_colors.get(1).intValue() | (-16777216) : 0;
+        h6Var.f = intValue;
+        if (h6Var.e == intValue) {
+            h6Var.f = 0;
+        }
+        h6Var.g = themeSettings.message_colors.size() > 2 ? themeSettings.message_colors.get(2).intValue() | (-16777216) : 0;
+        h6Var.h = themeSettings.message_colors.size() > 3 ? themeSettings.message_colors.get(3).intValue() | (-16777216) : 0;
+        h6Var.i = themeSettings.message_colors_animated;
+        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
+        if (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null) {
+            return;
+        }
+        if (wallPaperSettings.background_color == 0) {
+            h6Var.j = 4294967296L;
+        } else {
+            h6Var.j = j6.X0(r0);
+        }
+        TLRPC.WallPaperSettings wallPaperSettings2 = themeSettings.wallpaper.settings;
+        if ((wallPaperSettings2.flags & 16) == 0 || wallPaperSettings2.second_background_color != 0) {
+            h6Var.k = j6.X0(wallPaperSettings2.second_background_color);
+        } else {
+            h6Var.k = 4294967296L;
+        }
+        TLRPC.WallPaperSettings wallPaperSettings3 = themeSettings.wallpaper.settings;
+        if ((wallPaperSettings3.flags & 32) == 0 || wallPaperSettings3.third_background_color != 0) {
+            h6Var.l = j6.X0(wallPaperSettings3.third_background_color);
+        } else {
+            h6Var.l = 4294967296L;
+        }
+        TLRPC.WallPaperSettings wallPaperSettings4 = themeSettings.wallpaper.settings;
+        if ((wallPaperSettings4.flags & 64) == 0 || wallPaperSettings4.fourth_background_color != 0) {
+            h6Var.m = j6.X0(wallPaperSettings4.fourth_background_color);
+        } else {
+            h6Var.m = 4294967296L;
+        }
+        h6Var.n = AndroidUtilities.getWallpaperRotation(themeSettings.wallpaper.settings.rotation, false);
+        TLRPC.WallPaper wallPaper2 = themeSettings.wallpaper;
+        if ((wallPaper2 instanceof TLRPC.TL_wallPaperNoFile) || !wallPaper2.pattern) {
+            return;
+        }
+        h6Var.o = wallPaper2.slug;
+        TLRPC.WallPaperSettings wallPaperSettings5 = wallPaper2.settings;
+        h6Var.p = wallPaperSettings5.intensity / 100.0f;
+        h6Var.q = wallPaperSettings5.motion;
+    }
+
+    public final boolean d(File file, String str) {
+        int patternColor;
+        try {
+            Bitmap scaledBitmap = AndroidUtilities.getScaledBitmap(AndroidUtilities.dp(640.0f), AndroidUtilities.dp(360.0f), file.getAbsolutePath(), null, 0);
+            if (scaledBitmap != null && this.r != 0) {
+                Bitmap createBitmap = Bitmap.createBitmap(scaledBitmap.getWidth(), scaledBitmap.getHeight(), scaledBitmap.getConfig());
+                Canvas canvas = new Canvas(createBitmap);
+                int i10 = this.v;
+                if (i10 != 0) {
+                    patternColor = dc0.g(this.r, this.s, i10, this.w);
+                } else {
+                    int i11 = this.s;
+                    if (i11 != 0) {
+                        patternColor = AndroidUtilities.getAverageColor(this.r, i11);
+                        GradientDrawable gradientDrawable = new GradientDrawable(o9.d(this.x), new int[]{this.r, this.s});
+                        gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+                        gradientDrawable.draw(canvas);
+                    } else {
+                        patternColor = AndroidUtilities.getPatternColor(this.r);
+                        canvas.drawColor(this.r);
+                    }
+                }
+                Paint paint = new Paint(2);
+                paint.setColorFilter(new PorterDuffColorFilter(patternColor, PorterDuff.Mode.SRC_IN));
+                paint.setAlpha((int) ((this.y / 100.0f) * 255.0f));
+                canvas.drawBitmap(scaledBitmap, 0.0f, 0.0f, paint);
+                canvas.setBitmap(null);
+                scaledBitmap = createBitmap;
+            }
+            if (this.h) {
+                scaledBitmap = Utilities.blurWallpaper(scaledBitmap);
+            }
+            FileOutputStream fileOutputStream = new FileOutputStream(str);
+            scaledBitmap.compress(this.v != 0 ? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
+            fileOutputStream.close();
+            return true;
+        } catch (Throwable th2) {
+            FileLog.e(th2);
             return false;
         }
-        Object tag = view.getTag();
-        return (tag instanceof Integer) && ((Integer) tag).intValue() == i10;
     }
 
-    public final int b() {
-        c6 c6Var = this.o;
-        int i10 = this.f;
-        Integer valueOf = c6Var != null ? Integer.valueOf(c6Var.C0(i10)) : null;
-        return valueOf != null ? valueOf.intValue() : g6.w0(null, i10, false);
-    }
-
-    public final void c(int i10, View view) {
-        int i11;
-        boolean z10;
-        Field field;
-        Object obj;
-        t41[] t41VarArr;
-        t41[] t41VarArr2;
-        t41[] t41VarArr3;
-        HashMap hashMap = this.m;
-        int i12 = 0;
-        while (true) {
-            Class[] clsArr = this.e;
-            if (i12 >= clsArr.length) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.fileLoaded;
+        if (i10 == i12 || i10 == NotificationCenter.fileLoadFailed) {
+            String str = (String) objArr[0];
+            TLRPC.TL_theme tL_theme = this.C;
+            if (tL_theme == null || tL_theme.document == null) {
                 return;
             }
-            if (clsArr[i12].isInstance(view)) {
-                view.invalidate();
-                int i13 = this.k;
-                int i14 = 262144 & i13;
-                int i15 = this.f;
-                String[] strArr = this.l;
-                if (i14 == 0 || a(i15, view)) {
-                    view.invalidate();
-                    if (strArr != null || (i13 & 32) == 0) {
-                        i11 = 65536;
-                        if ((i13 & 16) != 0) {
-                            view.setBackgroundColor(i10);
-                        } else if ((i13 & 4) != 0) {
-                            if (view instanceof TextView) {
-                                ((TextView) view).setTextColor(i10);
-                            } else if (view instanceof a8) {
-                                int i16 = 0;
-                                while (i16 < 2) {
-                                    a8 a8Var = (a8) view;
-                                    TextView textView = i16 == 0 ? a8Var.getTextView() : a8Var.getNextTextView();
-                                    if (textView != null) {
-                                        textView.setTextColor(i10);
-                                    }
-                                    i16++;
-                                }
-                            }
-                        } else if ((536870912 & i13) == 0) {
-                            if ((i13 & 4096) != 0) {
-                                view.setBackgroundDrawable(g6.K0(false));
-                            } else if ((268435456 & i13) != 0) {
-                                view.setBackgroundDrawable(g6.K0(true));
-                            }
-                        }
-                    } else {
-                        Drawable background = view.getBackground();
-                        if (background != null) {
-                            if ((i13 & 16) == 0) {
-                                if (background instanceof jq) {
-                                    background = ((jq) background).b;
-                                } else if ((background instanceof StateListDrawable) || (background instanceof RippleDrawable)) {
-                                    g6.B1(background, i10, (i13 & 65536) != 0);
-                                }
-                                i11 = 65536;
-                                background.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                            } else if (background instanceof jq) {
-                                Drawable drawable = ((jq) background).a;
-                                if (drawable instanceof ColorDrawable) {
-                                    ((ColorDrawable) drawable).setColor(i10);
-                                }
-                            }
-                        }
-                        i11 = 65536;
+            if (str.equals(this.d0)) {
+                this.d0 = null;
+                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.b(14, this, (File) objArr[1]));
+                return;
+            }
+            if (str.equals(FileLoader.getAttachFileName(this.C.document))) {
+                t();
+                if (i10 == i12) {
+                    File file = new File(this.b);
+                    TLRPC.TL_theme tL_theme2 = this.C;
+                    i6 k02 = j6.k0(file, tL_theme2.title, tL_theme2);
+                    if (k02 == null || k02.c == null || new File(k02.c).exists()) {
+                        s();
+                        return;
                     }
-                    z10 = true;
-                } else {
-                    z10 = false;
-                    i11 = 65536;
-                }
-                if (strArr != null) {
-                    String str = clsArr[i12] + "_" + strArr[i12];
-                    HashMap hashMap2 = this.n;
-                    if (hashMap2 == null || !hashMap2.containsKey(str)) {
-                        try {
-                            Field field2 = (Field) hashMap.get(str);
-                            if (field2 == null) {
-                                field = clsArr[i12].getDeclaredField(strArr[i12]);
-                                if (field != null) {
-                                    field.setAccessible(true);
-                                    hashMap.put(str, field);
-                                }
-                            } else {
-                                field = field2;
-                            }
-                            if (field != null && (obj = field.get(view)) != null && (z10 || !(obj instanceof View) || a(i15, (View) obj))) {
-                                if (obj instanceof View) {
-                                    ((View) obj).invalidate();
-                                }
-                                String str2 = this.g;
-                                if (str2 != null && (obj instanceof aj0)) {
-                                    ((aj0) obj).h(i10, str2);
-                                }
-                                if ((131072 & i13) != 0 && (obj instanceof View)) {
-                                    obj = ((View) obj).getBackground();
-                                }
-                                if ((i13 & 1) != 0 && (obj instanceof View)) {
-                                    View view2 = (View) obj;
-                                    Drawable background2 = view2.getBackground();
-                                    if (background2 instanceof ma0) {
-                                        ((ma0) background2).a.setColor(i10);
-                                        ((ma0) background2).b = null;
-                                    } else {
-                                        view2.setBackgroundColor(i10);
-                                    }
-                                } else if (obj instanceof st) {
-                                    if ((8388608 & i13) != 0) {
-                                        ((st) obj).setHintColor(i10);
-                                        ((st) obj).setHintTextColor(i10);
-                                    } else if ((16777216 & i13) != 0) {
-                                        ((st) obj).setCursorColor(i10);
-                                    } else {
-                                        ((st) obj).setTextColor(i10);
-                                    }
-                                } else if (obj instanceof h5) {
-                                    if ((i13 & 2) != 0) {
-                                        ((h5) obj).setLinkTextColor(i10);
-                                    } else {
-                                        ((h5) obj).setTextColor(i10);
-                                    }
-                                } else if (obj instanceof TextView) {
-                                    TextView textView2 = (TextView) obj;
-                                    if ((i13 & 8) != 0) {
-                                        Drawable[] compoundDrawables = textView2.getCompoundDrawables();
-                                        if (compoundDrawables != null) {
-                                            for (Drawable drawable2 : compoundDrawables) {
-                                                if (drawable2 != null) {
-                                                    drawable2.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                                }
-                                            }
-                                        }
-                                    } else if ((i13 & 2) != 0) {
-                                        textView2.getPaint().linkColor = i10;
-                                        textView2.invalidate();
-                                    } else if ((i13 & 33554432) != 0) {
-                                        CharSequence text = textView2.getText();
-                                        if ((text instanceof SpannedString) && (t41VarArr3 = (t41[]) ((SpannedString) text).getSpans(0, ((SpannedString) text).length(), t41.class)) != null && t41VarArr3.length > 0) {
-                                            for (t41 t41Var : t41VarArr3) {
-                                                t41Var.b = i10;
-                                            }
-                                        }
-                                    } else {
-                                        textView2.setTextColor(i10);
-                                    }
-                                } else if (obj instanceof ImageView) {
-                                    ImageView imageView = (ImageView) obj;
-                                    Drawable drawable3 = imageView.getDrawable();
-                                    if (!(drawable3 instanceof jq)) {
-                                        imageView.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                    } else if ((i13 & 32) != 0) {
-                                        ((jq) drawable3).a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                    } else {
-                                        ((jq) drawable3).b.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                    }
-                                } else if (obj instanceof t9) {
-                                    Drawable staticThumb = ((t9) obj).getImageReceiver().getStaticThumb();
-                                    if (staticThumb instanceof jq) {
-                                        if ((i13 & 32) != 0) {
-                                            ((jq) staticThumb).a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                        } else {
-                                            ((jq) staticThumb).b.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                        }
-                                    } else if (staticThumb != null) {
-                                        staticThumb.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                    }
-                                } else if (obj instanceof Drawable) {
-                                    if (obj instanceof h80) {
-                                        if ((i13 & 32) != 0) {
-                                            h80.j.setColor(i10);
-                                        } else {
-                                            ((h80) obj).h.setColor(i10);
-                                        }
-                                    } else if (!(obj instanceof jq)) {
-                                        if (!(obj instanceof StateListDrawable) && !(obj instanceof RippleDrawable)) {
-                                            if (obj instanceof GradientDrawable) {
-                                                ((GradientDrawable) obj).setColor(i10);
-                                            } else {
-                                                ((Drawable) obj).setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                            }
-                                        }
-                                        g6.B1((Drawable) obj, i10, (i13 & i11) != 0);
-                                    } else if ((i13 & 32) != 0) {
-                                        ((jq) obj).a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                    } else {
-                                        ((jq) obj).b.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                                    }
-                                } else if (!(obj instanceof CheckBox)) {
-                                    if (obj instanceof GroupCreateCheckBox) {
-                                        int i17 = GroupCreateCheckBox.b;
-                                        g6.u0(0);
-                                        throw null;
-                                    }
-                                    if (obj instanceof Integer) {
-                                        field.set(view, Integer.valueOf(i10));
-                                    } else if (obj instanceof RadioButton) {
-                                        if ((i13 & 8192) != 0) {
-                                            ((RadioButton) obj).setBackgroundColor(i10);
-                                            ((RadioButton) obj).invalidate();
-                                        } else if ((i13 & 16384) != 0) {
-                                            ((RadioButton) obj).setCheckedColor(i10);
-                                            ((RadioButton) obj).invalidate();
-                                        }
-                                    } else if (obj instanceof TextPaint) {
-                                        if ((i13 & 2) != 0) {
-                                            ((TextPaint) obj).linkColor = i10;
-                                        } else {
-                                            ((TextPaint) obj).setColor(i10);
-                                        }
-                                    } else if (obj instanceof i80) {
-                                        if ((i13 & 2048) != 0) {
-                                            ((i80) obj).setProgressColor(i10);
-                                        } else {
-                                            ((i80) obj).setBackColor(i10);
-                                        }
-                                    } else if (obj instanceof RadialProgressView) {
-                                        ((RadialProgressView) obj).setProgressColor(i10);
-                                    } else if (obj instanceof Paint) {
-                                        ((Paint) obj).setColor(i10);
-                                        view.invalidate();
-                                    } else if (obj instanceof ao0) {
-                                        if ((i13 & 2048) != 0) {
-                                            ((ao0) obj).setOuterColor(i10);
-                                        } else {
-                                            ((ao0) obj).setInnerColor(i10);
-                                        }
-                                    } else if (obj instanceof a8) {
-                                        if ((i13 & 33554432) != 0) {
-                                            int i18 = 0;
-                                            while (i18 < 2) {
-                                                TextView textView3 = i18 == 0 ? ((a8) obj).getTextView() : ((a8) obj).getNextTextView();
-                                                if (textView3 != null) {
-                                                    CharSequence text2 = textView3.getText();
-                                                    if ((text2 instanceof SpannedString) && (t41VarArr2 = (t41[]) ((SpannedString) text2).getSpans(0, ((SpannedString) text2).length(), t41.class)) != null && t41VarArr2.length > 0) {
-                                                        for (t41 t41Var2 : t41VarArr2) {
-                                                            t41Var2.b = i10;
-                                                        }
-                                                    }
-                                                }
-                                                i18++;
-                                            }
-                                        } else if ((i13 & 4) != 0 && (i14 == 0 || a(i15, (View) obj))) {
-                                            int i19 = 0;
-                                            while (i19 < 2) {
-                                                TextView textView4 = i19 == 0 ? ((a8) obj).getTextView() : ((a8) obj).getNextTextView();
-                                                if (textView4 != null) {
-                                                    textView4.setTextColor(i10);
-                                                    CharSequence text3 = textView4.getText();
-                                                    if ((text3 instanceof SpannedString) && (t41VarArr = (t41[]) ((SpannedString) text3).getSpans(0, ((SpannedString) text3).length(), t41.class)) != null && t41VarArr.length > 0) {
-                                                        for (t41 t41Var3 : t41VarArr) {
-                                                            t41Var3.b = i10;
-                                                        }
-                                                    }
-                                                }
-                                                i19++;
-                                            }
-                                        }
-                                    }
-                                } else if ((i13 & 8192) != 0) {
-                                    ((CheckBox) obj).setBackgroundColor(i10);
-                                } else if ((i13 & 16384) != 0) {
-                                    ((CheckBox) obj).setCheckColor(i10);
-                                }
-                            }
-                        } catch (Throwable th2) {
-                            FileLog.e(th2);
-                            hashMap2.put(str, Boolean.TRUE);
-                        }
-                    }
-                } else if (view instanceof j30) {
-                    ((j30) view).c();
+                    this.r = k02.r;
+                    this.s = k02.s;
+                    this.v = k02.v;
+                    this.w = k02.w;
+                    this.x = k02.x;
+                    this.h = k02.h;
+                    this.y = k02.y;
+                    this.e0 = k02.c;
+                    TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
+                    TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
+                    tL_inputWallPaperSlug.slug = k02.e;
+                    getwallpaper.wallpaper = tL_inputWallPaperSlug;
+                    ConnectionsManager.getInstance(k02.B).sendRequest(getwallpaper, new dg.d3(21, this, k02));
                 }
             }
-            i12++;
         }
     }
 
-    public final void d(int i10, boolean z10, boolean z11) {
-        sk0 sk0Var;
-        Drawable[] compoundDrawables;
-        int i11 = this.f;
-        if (z11) {
-            g6.u1(i11, i10, z10);
+    public final h6 e(long j10, TLRPC.ThemeSettings themeSettings, TLRPC.TL_theme tL_theme, int i10, boolean z4) {
+        if (z4) {
+            LongSparseArray longSparseArray = this.a0;
+            h6 h6Var = (h6) longSparseArray.get(j10);
+            if (h6Var != null) {
+                return h6Var;
+            }
+            int i11 = this.b0 + 1;
+            this.b0 = i11;
+            h6 h6Var2 = new h6();
+            i(h6Var2, themeSettings);
+            h6Var2.b = this;
+            h6Var2.a = i11;
+            h6Var2.r = tL_theme;
+            h6Var2.t = i10;
+            longSparseArray.put(i11, h6Var2);
+            return h6Var2;
         }
-        int i12 = this.b;
-        if (i12 > 0) {
-            i10 = Color.argb(i12, Color.red(i10), Color.green(i10), Color.blue(i10));
+        h6 h6Var3 = (h6) this.Z.get(j10);
+        if (h6Var3 != null) {
+            return h6Var3;
         }
-        Paint[] paintArr = this.c;
-        int i13 = this.k;
-        if (paintArr != null) {
-            for (int i14 = 0; i14 < paintArr.length; i14++) {
-                if ((i13 & 2) != 0) {
-                    Paint paint = paintArr[i14];
-                    if (paint instanceof TextPaint) {
-                        ((TextPaint) paint).linkColor = i10;
-                    }
-                }
-                paintArr[i14].setColor(i10);
-            }
+        int i12 = this.c0 + 1;
+        this.c0 = i12;
+        h6 h6Var4 = new h6();
+        i(h6Var4, themeSettings);
+        h6Var4.b = this;
+        h6Var4.a = i12;
+        h6Var4.r = tL_theme;
+        h6Var4.t = i10;
+        this.X.put(i12, h6Var4);
+        this.Y.add(0, h6Var4);
+        j6.D1(this);
+        this.Z.put(j10, h6Var4);
+        return h6Var4;
+    }
+
+    public final h6 f(TLRPC.TL_theme tL_theme, int i10, int i11) {
+        if (tL_theme == null) {
+            return null;
         }
-        Drawable[] drawableArr = this.d;
-        if (drawableArr != null) {
-            for (Drawable drawable : drawableArr) {
-                if (drawable != null) {
-                    if (drawable instanceof h2) {
-                        ((h2) drawable).a(i10);
-                    } else if (drawable instanceof vl0) {
-                        ((vl0) drawable).b(i10);
-                    } else if (drawable instanceof xi0) {
-                        String str = this.g;
-                        if (str != null) {
-                            ((xi0) drawable).O(i10, str);
-                        }
-                    } else if (drawable instanceof jq) {
-                        if ((i13 & 32) != 0) {
-                            ((jq) drawable).a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                        } else {
-                            ((jq) drawable).b.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                        }
-                    } else if (drawable instanceof e9) {
-                        ((e9) drawable).h(i10);
-                    } else if (drawable instanceof AnimatedArrowDrawable) {
-                        AnimatedArrowDrawable animatedArrowDrawable = (AnimatedArrowDrawable) drawable;
-                        animatedArrowDrawable.a.setColor(i10);
-                        animatedArrowDrawable.invalidateSelf();
-                    } else {
-                        drawable.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                    }
-                }
-            }
+        return e(tL_theme.id, i11 < tL_theme.settings.size() ? tL_theme.settings.get(i11) : null, tL_theme, i10, false);
+    }
+
+    public final String j(h6 h6Var, boolean z4) {
+        String m9;
+        if (h6Var == null) {
+            h6Var = k(false);
         }
-        Class[] clsArr = this.e;
-        View view = this.a;
-        if (view != null && clsArr == null && this.l == null && ((i13 & 262144) == 0 || a(i11, view))) {
-            if ((i13 & 1) != 0) {
-                Drawable background = view.getBackground();
-                if (background instanceof ma0) {
-                    ma0 ma0Var = (ma0) background;
-                    ma0Var.a.setColor(i10);
-                    ma0Var.b = null;
-                } else {
-                    view.setBackgroundColor(i10);
-                }
-            }
-            if ((i13 & 32) != 0) {
-                if ((i13 & 2048) == 0) {
-                    Drawable background2 = view.getBackground();
-                    if (background2 instanceof jq) {
-                        background2 = (i13 & 65536) != 0 ? ((jq) background2).a : ((jq) background2).b;
-                    }
-                    if (background2 != null) {
-                        if ((background2 instanceof StateListDrawable) || (background2 instanceof RippleDrawable)) {
-                            g6.B1(background2, i10, (i13 & 65536) != 0);
-                        } else if (background2 instanceof ShapeDrawable) {
-                            ((ShapeDrawable) background2).getPaint().setColor(i10);
-                        } else {
-                            background2.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                        }
-                    }
-                } else if (view instanceof EditTextBoldCursor) {
-                    ((EditTextBoldCursor) view).setErrorLineColor(i10);
-                }
-            }
+        if (h6Var == null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(z4 ? android.support.v4.media.a.r(new StringBuilder(), this.a, "_wp_o") : android.support.v4.media.a.r(new StringBuilder(), this.a, "_wp"));
+            sb.append(Utilities.random.nextInt());
+            sb.append(".jpg");
+            return sb.toString();
         }
-        if (view instanceof l) {
-            if ((i13 & 64) != 0) {
-                ((l) view).C(i10, false);
-            }
-            if ((i13 & 128) != 0) {
-                ((l) view).setTitleColor(i10);
-            }
-            if ((i13 & 256) != 0) {
-                ((l) view).B(i10, false);
-            }
-            if ((4194304 & i13) != 0) {
-                ((l) view).B(i10, true);
-            }
-            if ((i13 & 512) != 0) {
-                ((l) view).C(i10, true);
-            }
-            if ((i13 & 1024) != 0) {
-                ((l) view).setSubtitleColor(i10);
-            }
-            if ((1048576 & i13) != 0) {
-                ((l) view).setActionModeColor(i10);
-            }
-            if ((2097152 & i13) != 0) {
-                ((l) view).setActionModeTopColor(i10);
-            }
-            if ((67108864 & i13) != 0) {
-                ((l) view).G(i10, true);
-            }
-            if ((134217728 & i13) != 0) {
-                ((l) view).G(i10, false);
-            }
-            if ((1073741824 & i13) != 0) {
-                ((l) view).E(i10, (i13 & 8) != 0, false);
-            }
-            if ((Integer.MIN_VALUE & i13) != 0) {
-                ((l) view).D(i10, false);
-            }
+        StringBuilder sb2 = new StringBuilder();
+        if (z4) {
+            StringBuilder sb3 = new StringBuilder();
+            sb3.append(this.a);
+            sb3.append("_");
+            m9 = android.support.v4.media.a.m(h6Var.a, "_wp_o", sb3);
+        } else {
+            StringBuilder sb4 = new StringBuilder();
+            sb4.append(this.a);
+            sb4.append("_");
+            m9 = android.support.v4.media.a.m(h6Var.a, "_wp", sb4);
         }
-        if (view instanceof hz) {
-            if ((i13 & 4) != 0) {
-                ((hz) view).setTextColor(i10);
-            } else if ((i13 & 2048) != 0) {
-                ((hz) view).setProgressBarColor(i10);
-            }
+        sb2.append(m9);
+        sb2.append(Utilities.random.nextInt());
+        sb2.append(".jpg");
+        return sb2.toString();
+    }
+
+    public final h6 k(boolean z4) {
+        h6 h6Var;
+        if (this.Y == null || (h6Var = (h6) this.X.get(this.V)) == null) {
+            return null;
         }
-        if (view instanceof RadialProgressView) {
-            ((RadialProgressView) view).setProgressColor(i10);
-        } else if (view instanceof i80) {
-            if ((i13 & 2048) != 0) {
-                ((i80) view).setProgressColor(i10);
+        if (!z4) {
+            return h6Var;
+        }
+        int i10 = this.c0 + 1;
+        this.c0 = i10;
+        h6 h6Var2 = new h6();
+        h6Var2.c = h6Var.c;
+        h6Var2.d = h6Var.d;
+        h6Var2.e = h6Var.e;
+        h6Var2.f = h6Var.f;
+        h6Var2.g = h6Var.g;
+        h6Var2.h = h6Var.h;
+        h6Var2.i = h6Var.i;
+        h6Var2.j = h6Var.j;
+        h6Var2.k = h6Var.k;
+        h6Var2.l = h6Var.l;
+        h6Var2.m = h6Var.m;
+        h6Var2.n = h6Var.n;
+        h6Var2.o = h6Var.o;
+        h6Var2.p = h6Var.p;
+        h6Var2.q = h6Var.q;
+        h6Var2.b = this;
+        c6 c6Var = this.f0;
+        if (c6Var != null) {
+            c6 c6Var2 = new c6();
+            c6Var2.a = "";
+            c6Var2.b = "";
+            c6Var2.c = "";
+            c6Var2.c = c6Var.c;
+            c6Var2.d = c6Var.d;
+            c6Var2.e = c6Var.e;
+            c6Var2.f = c6Var.f;
+            c6Var2.g = c6Var.g;
+            c6Var2.h = c6Var.h;
+            c6Var2.i = c6Var.i;
+            c6Var2.j = c6Var.j;
+            c6Var2.k = c6Var.k;
+            c6Var2.p = this;
+            c6Var2.q = h6Var2;
+            if (TextUtils.isEmpty(c6Var.a)) {
+                c6Var2.a = "";
             } else {
-                ((i80) view).setBackColor(i10);
+                try {
+                    File file = new File(ApplicationLoader.getFilesDirFixed(), c6Var.a);
+                    File filesDirFixed = ApplicationLoader.getFilesDirFixed();
+                    String j10 = c6Var2.p.j(c6Var2.q, false);
+                    c6Var2.a = j10;
+                    AndroidUtilities.copyFile(file, new File(filesDirFixed, j10));
+                } catch (Exception e) {
+                    c6Var2.a = "";
+                    FileLog.e(e);
+                }
             }
-        } else if (view instanceof nq) {
-            ((nq) view).b();
-        } else if ((view instanceof ao0) && (i13 & 2048) != 0) {
-            ((ao0) view).setOuterColor(i10);
+            if (TextUtils.isEmpty(c6Var.b)) {
+                c6Var2.b = "";
+            } else if (c6Var.b.equals(c6Var.a)) {
+                c6Var2.b = c6Var2.a;
+            } else {
+                try {
+                    File file2 = new File(ApplicationLoader.getFilesDirFixed(), c6Var.b);
+                    File filesDirFixed2 = ApplicationLoader.getFilesDirFixed();
+                    String j11 = c6Var2.p.j(c6Var2.q, true);
+                    c6Var2.b = j11;
+                    AndroidUtilities.copyFile(file2, new File(filesDirFixed2, j11));
+                } catch (Exception e6) {
+                    c6Var2.b = "";
+                    FileLog.e(e6);
+                }
+            }
+            h6Var2.y = c6Var2;
         }
-        if ((i13 & 4) != 0 && ((i13 & 262144) == 0 || a(i11, view))) {
-            if (view instanceof TextView) {
-                ((TextView) view).setTextColor(i10);
-            } else if (view instanceof NumberTextView) {
-                ((NumberTextView) view).setTextColor(i10);
-            } else if (view instanceof h5) {
-                ((h5) view).setTextColor(i10);
-            } else if (view instanceof yn) {
-                ((yn) view).setTextColor(i10);
-            }
-        }
-        if ((16777216 & i13) != 0 && (view instanceof EditTextBoldCursor)) {
-            ((EditTextBoldCursor) view).setCursorColor(i10);
-        }
-        if ((8388608 & i13) != 0) {
-            if (view instanceof EditTextBoldCursor) {
-                if ((i13 & 2048) != 0) {
-                    ((EditTextBoldCursor) view).setHeaderHintColor(i10);
-                } else {
-                    ((EditTextBoldCursor) view).setHintColor(i10);
-                }
-            } else if (view instanceof EditText) {
-                ((EditText) view).setHintTextColor(i10);
-            }
-        }
-        if ((i13 & 8) != 0 && ((262144 & i13) == 0 || a(i11, view))) {
-            if (view instanceof ImageView) {
-                if ((131072 & i13) != 0) {
-                    Drawable drawable2 = ((ImageView) view).getDrawable();
-                    if ((drawable2 instanceof StateListDrawable) || (drawable2 instanceof RippleDrawable)) {
-                        g6.B1(drawable2, i10, (65536 & i13) != 0);
-                    }
-                } else {
-                    ((ImageView) view).setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                }
-            } else if (!(view instanceof t9)) {
-                if (view instanceof h5) {
-                    ((h5) view).setSideDrawablesColor(i10);
-                } else if ((view instanceof TextView) && (compoundDrawables = ((TextView) view).getCompoundDrawables()) != null) {
-                    for (Drawable drawable3 : compoundDrawables) {
-                        if (drawable3 != null) {
-                            drawable3.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-                        }
-                    }
-                }
-            }
-        }
-        if ((view instanceof ScrollView) && (i13 & 32768) != 0) {
-            AndroidUtilities.setScrollViewEdgeEffectColor((ScrollView) view, i10);
-        }
-        if ((view instanceof m2.g) && (i13 & 32768) != 0) {
-            AndroidUtilities.setViewPagerEdgeEffectColor((m2.g) view, i10);
-        }
-        boolean z12 = view instanceof jl0;
-        if (z12) {
-            jl0 jl0Var = (jl0) view;
-            if ((i13 & 4096) != 0) {
-                jl0Var.setListSelectorColor(Integer.valueOf(i10));
-            }
-            if ((33554432 & i13) != 0 && (sk0Var = jl0Var.b1) != null) {
-                sk0Var.c();
-            }
-            if ((32768 & i13) != 0) {
-                jl0Var.setGlowColor(i10);
-            }
-            if ((524288 & i13) != 0) {
-                ArrayList<View> headers = jl0Var.getHeaders();
-                if (headers != null) {
-                    for (int i15 = 0; i15 < headers.size(); i15++) {
-                        c(i10, headers.get(i15));
-                    }
-                }
-                ArrayList<View> headersCache = jl0Var.getHeadersCache();
-                if (headersCache != null) {
-                    for (int i16 = 0; i16 < headersCache.size(); i16++) {
-                        c(i10, headersCache.get(i16));
-                    }
-                }
-                View pinnedHeader = jl0Var.getPinnedHeader();
-                if (pinnedHeader != null) {
-                    c(i10, pinnedHeader);
-                }
-            }
-        } else if (view != null && (clsArr == null || clsArr.length == 0)) {
-            if ((i13 & 4096) != 0) {
-                view.setBackgroundDrawable(g6.K0(false));
-            } else if ((268435456 & i13) != 0) {
-                view.setBackgroundDrawable(g6.K0(true));
-            }
-        }
-        if (clsArr != null) {
-            if (z12) {
-                jl0 jl0Var2 = (jl0) view;
-                jl0Var2.getRecycledViewPool().a();
-                int hiddenChildCount = jl0Var2.getHiddenChildCount();
-                for (int i17 = 0; i17 < hiddenChildCount; i17++) {
-                    c(i10, jl0Var2.V(i17));
-                }
-                int cachedChildCount = jl0Var2.getCachedChildCount();
-                for (int i18 = 0; i18 < cachedChildCount; i18++) {
-                    c(i10, jl0Var2.P(i18));
-                }
-                int attachedScrapChildCount = jl0Var2.getAttachedScrapChildCount();
-                for (int i19 = 0; i19 < attachedScrapChildCount; i19++) {
-                    c(i10, jl0Var2.O(i19));
-                }
-            }
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                int childCount = viewGroup.getChildCount();
-                for (int i20 = 0; i20 < childCount; i20++) {
-                    c(i10, viewGroup.getChildAt(i20));
-                }
-            }
-            c(i10, view);
-        }
-        h6 h6Var = this.h;
+        this.W = this.V;
+        h6Var2.a = i10;
+        this.V = i10;
+        this.f0 = h6Var2.y;
+        this.X.put(i10, h6Var2);
+        this.Y.add(0, h6Var2);
+        j6.D1(this);
+        return h6Var2;
+    }
+
+    public final int l(int i10) {
+        h6 h6Var = (h6) this.X.get(i10);
         if (h6Var != null) {
-            h6Var.b();
+            return h6Var.c;
         }
-        if (view != null) {
-            view.invalidate();
+        return 0;
+    }
+
+    public final String m() {
+        if (this.C == null) {
+            return this.a;
+        }
+        return "remote" + this.C.id;
+    }
+
+    public final String n() {
+        if ("Blue".equals(this.a)) {
+            return LocaleController.getString(R.string.ThemeClassic);
+        }
+        if ("Dark Blue".equals(this.a)) {
+            return LocaleController.getString(R.string.ThemeDark);
+        }
+        if ("Arctic Blue".equals(this.a)) {
+            return LocaleController.getString(R.string.ThemeArcticBlue);
+        }
+        if ("Day".equals(this.a)) {
+            return LocaleController.getString(R.string.ThemeDay);
+        }
+        if ("Night".equals(this.a)) {
+            return LocaleController.getString(R.string.ThemeNight);
+        }
+        TLRPC.TL_theme tL_theme = this.C;
+        return tL_theme != null ? tL_theme.title : this.a;
+    }
+
+    public final int o() {
+        if (this.P && this.V == j6.n) {
+            return -3155485;
+        }
+        return this.I;
+    }
+
+    public final int p() {
+        if (this.P && this.V == j6.n) {
+            return -983328;
+        }
+        return this.O;
+    }
+
+    public final boolean q() {
+        int i10 = this.g0;
+        if (i10 != -1) {
+            return i10 == 1;
+        }
+        if ("Dark Blue".equals(this.a) || "Night".equals(this.a)) {
+            this.g0 = 1;
+        } else if ("Blue".equals(this.a) || "Arctic Blue".equals(this.a) || "Day".equals(this.a)) {
+            this.g0 = 0;
+        }
+        if (this.g0 == -1) {
+            j6.G(j6.Q0(new File(this.b), null, new String[1]), this);
+        }
+        return this.g0 == 1;
+    }
+
+    public final void r(SharedPreferences sharedPreferences, h6 h6Var, String str) {
+        try {
+            String string = sharedPreferences.getString(str, null);
+            if (TextUtils.isEmpty(string)) {
+                return;
+            }
+            JSONObject jSONObject = new JSONObject(string);
+            c6 c6Var = new c6();
+            c6Var.a = jSONObject.getString("wall");
+            c6Var.b = jSONObject.getString("owall");
+            c6Var.d = jSONObject.getInt("pColor");
+            c6Var.e = jSONObject.getInt("pGrColor");
+            c6Var.f = jSONObject.optInt("pGrColor2");
+            c6Var.g = jSONObject.optInt("pGrColor3");
+            c6Var.h = jSONObject.getInt("pGrAngle");
+            c6Var.c = jSONObject.getString("wallSlug");
+            c6Var.i = jSONObject.getBoolean("wBlur");
+            c6Var.j = jSONObject.getBoolean("wMotion");
+            c6Var.k = (float) jSONObject.getDouble("pIntensity");
+            c6Var.p = this;
+            c6Var.q = h6Var;
+            if (h6Var != null) {
+                h6Var.y = c6Var;
+            } else {
+                this.f0 = c6Var;
+            }
+            if (jSONObject.has("wallId") && jSONObject.getLong("wallId") == 1000001) {
+                c6Var.c = "d";
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
-    public i6(View view, int i10, Class[] clsArr, Paint paint, Drawable[] drawableArr, h6 h6Var, int i11) {
-        this.b = -1;
-        this.j = new boolean[1];
-        this.f = i11;
-        if (paint != null) {
-            this.c = new Paint[]{paint};
-        }
-        this.d = drawableArr;
-        this.a = view;
-        this.k = i10;
-        this.e = clsArr;
-        this.h = h6Var;
-        if (view instanceof au) {
-            this.a = ((au) view).getEditText();
+    public final void s() {
+        this.D = true;
+        this.Q = false;
+        j6.s1(true, false);
+        if (this == j6.I && j6.M == null) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, this, Boolean.valueOf(this == j6.J), null, -1, j6.ol);
         }
     }
 
-    public i6(View view, Class[] clsArr, xi0[] xi0VarArr, String str, int i10) {
-        this.b = -1;
-        this.j = new boolean[1];
-        this.f = i10;
-        this.g = str;
-        this.d = xi0VarArr;
-        this.a = view;
-        this.k = 0;
-        this.e = clsArr;
-        if (view instanceof au) {
-            this.a = ((au) view).getEditText();
+    public final void t() {
+        NotificationCenter.getInstance(this.B).removeObserver(this, NotificationCenter.fileLoaded);
+        NotificationCenter.getInstance(this.B).removeObserver(this, NotificationCenter.fileLoadFailed);
+    }
+
+    public final void u(int i10) {
+        this.V = i10;
+        h6 k10 = k(false);
+        if (k10 != null) {
+            this.f0 = k10.y;
         }
     }
 
-    public i6(View view, int i10, Class[] clsArr, String[] strArr, Paint[] paintArr, Drawable[] drawableArr, h6 h6Var, int i11) {
-        this(view, i10, clsArr, strArr, paintArr, drawableArr, -1, h6Var, i11);
-    }
-
-    public i6(View view, int i10, Class[] clsArr, String[] strArr, Paint[] paintArr, Drawable[] drawableArr, int i11, h6 h6Var, int i12) {
-        this.j = new boolean[1];
-        this.f = i12;
-        this.c = paintArr;
-        this.d = drawableArr;
-        this.a = view;
-        this.k = i10;
-        this.e = clsArr;
-        this.l = strArr;
-        this.b = i11;
-        this.h = h6Var;
-        this.m = new HashMap();
-        this.n = new HashMap();
-        if (view instanceof au) {
-            this.a = ((au) view).getEditText();
+    public final void v(c6 c6Var) {
+        if (this.f0 == c6Var) {
+            return;
+        }
+        h6 k10 = k(false);
+        c6 c6Var2 = this.f0;
+        if (c6Var2 != null) {
+            c6.a(c6Var2);
+        }
+        if (c6Var != null) {
+            c6Var.q = k10;
+            c6Var.p = this;
+            c6Var.c();
+        }
+        this.f0 = c6Var;
+        if (k10 != null) {
+            k10.y = c6Var;
         }
     }
 
-    public i6(UndoView undoView, Class[] clsArr, String[] strArr, String str, int i10) {
-        this.b = -1;
-        this.j = new boolean[1];
-        this.f = i10;
-        this.g = str;
-        this.a = undoView;
-        this.k = 0;
-        this.e = clsArr;
-        this.l = strArr;
-        this.m = new HashMap();
-        this.n = new HashMap();
+    public i6(i6 i6Var) {
+        this.x = 45;
+        this.D = true;
+        this.R = true;
+        this.W = -1;
+        this.a0 = new LongSparseArray();
+        this.b0 = 0;
+        this.c0 = 100;
+        this.g0 = -1;
+        this.a = i6Var.a;
+        this.b = i6Var.b;
+        this.c = i6Var.c;
+        this.d = i6Var.d;
+        this.e = i6Var.e;
+        this.f = i6Var.f;
+        this.h = i6Var.h;
+        this.n = i6Var.n;
+        this.r = i6Var.r;
+        this.s = i6Var.s;
+        this.v = i6Var.v;
+        this.w = i6Var.w;
+        this.x = i6Var.x;
+        this.y = i6Var.y;
+        this.B = i6Var.B;
+        this.C = i6Var.C;
+        this.D = i6Var.D;
+        this.E = i6Var.E;
+        this.F = i6Var.F;
+        this.G = i6Var.G;
+        this.H = i6Var.H;
+        this.I = i6Var.I;
+        this.J = i6Var.J;
+        this.K = i6Var.K;
+        this.L = i6Var.L;
+        this.M = i6Var.M;
+        this.N = i6Var.N;
+        this.O = i6Var.O;
+        this.P = i6Var.P;
+        this.Q = i6Var.Q;
+        this.R = i6Var.R;
+        this.S = i6Var.S;
+        this.T = i6Var.T;
+        this.U = i6Var.U;
+        this.V = i6Var.V;
+        this.W = i6Var.W;
+        this.X = i6Var.X;
+        this.Y = i6Var.Y;
+        this.Z = i6Var.Z;
+        this.c0 = i6Var.c0;
+        this.d0 = i6Var.d0;
+        this.e0 = i6Var.e0;
+        this.f0 = i6Var.f0;
     }
 }

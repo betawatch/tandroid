@@ -1,17 +1,25 @@
 package j8;
 
-import android.content.ComponentName;
-import android.content.ServiceConnection;
-import android.os.IBinder;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class o implements ServiceConnection {
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
+public final class o implements com.google.android.gms.common.api.b {
+    public final int a;
+
+    public o(c5.c cVar) {
+        this.a = cVar.a;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof o) || !b6.m.l(Integer.valueOf(this.a), Integer.valueOf(((o) obj).a)) || !b6.m.l(1, 1) || !b6.m.l(null, null)) {
+            return false;
+        }
+        Boolean bool = Boolean.TRUE;
+        return b6.m.l(bool, bool);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), 1, null, Boolean.TRUE});
     }
 }

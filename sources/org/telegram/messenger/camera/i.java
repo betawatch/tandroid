@@ -1,10 +1,10 @@
 package org.telegram.messenger.camera;
 
 import java.io.File;
-import org.telegram.ui.Cells.a2;
-import org.telegram.ui.Cells.d2;
+import org.telegram.ui.Cells.b2;
+import org.telegram.ui.Cells.e2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -13,11 +13,11 @@ public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ i(CameraController cameraController, Object obj, boolean z10, boolean z11) {
+    public /* synthetic */ i(CameraController cameraController, Object obj, boolean z4, boolean z10) {
         this.d = cameraController;
         this.e = obj;
-        this.b = z10;
-        this.c = z11;
+        this.b = z4;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
@@ -27,24 +27,24 @@ public final /* synthetic */ class i implements Runnable {
                 ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
                 break;
             default:
-                a2 a2Var = (a2) this.d;
+                b2 b2Var = (b2) this.d;
                 String str = (String) this.e;
-                d2 d2Var = a2Var.b;
-                d2Var.W = false;
-                d2Var.a0 = str;
+                e2 e2Var = b2Var.b;
+                e2Var.a0 = false;
+                e2Var.b0 = str;
                 if (str == null) {
-                    d2Var.a0 = "";
+                    e2Var.b0 = "";
                 }
-                d2Var.b0 = this.b;
-                d2Var.f(this.c, true);
+                e2Var.c0 = this.b;
+                e2Var.f(this.c, true);
                 break;
         }
     }
 
-    public /* synthetic */ i(a2 a2Var, String str, File file, boolean z10, boolean z11) {
-        this.d = a2Var;
+    public /* synthetic */ i(b2 b2Var, String str, File file, boolean z4, boolean z10) {
+        this.d = b2Var;
         this.e = str;
-        this.b = z10;
-        this.c = z11;
+        this.b = z4;
+        this.c = z10;
     }
 }

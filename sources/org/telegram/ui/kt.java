@@ -1,20 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kt implements View.OnAttachStateChangeListener {
-    public jt a;
+public final class kt extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ lt o;
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        NotificationCenter.getGlobalInstance().addObserver(this.a, NotificationCenter.emojiLoaded);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kt(lt ltVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = ltVar;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        NotificationCenter.getGlobalInstance().removeObserver(this.a, NotificationCenter.emojiLoaded);
+    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        pt ptVar = this.o.a;
+        ptVar.k = null;
+        ptVar.K = false;
+        if (ptVar.R) {
+            ptVar.n();
+        }
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.tasks;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class NativeOnCompleteListener implements OnCompleteListener<Object> {
     private final long zza;
@@ -13,7 +13,7 @@ public class NativeOnCompleteListener implements OnCompleteListener<Object> {
         task.addOnCompleteListener(new NativeOnCompleteListener(j10));
     }
 
-    public native void nativeOnComplete(long j10, Object obj, boolean z10, boolean z11, String str);
+    public native void nativeOnComplete(long j10, Object obj, boolean z4, boolean z10, String str);
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task<Object> task) {

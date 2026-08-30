@@ -5,15 +5,15 @@ import android.os.Message;
 import android.util.Log;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class h0 extends c2.v0 {
+public final class h0 extends a7.e {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ h0(Object obj, Looper looper, int i10) {
-        super(looper, 4);
+        super(looper, 5);
         this.a = i10;
         this.b = obj;
     }
@@ -26,7 +26,7 @@ public final class h0 extends c2.v0 {
                 int i10 = message.what;
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        j0.h(j0Var);
+                        j0.g(j0Var);
                         return;
                     }
                     Log.w("GoogleApiClientImpl", "Unknown message id: " + i10);
@@ -35,8 +35,8 @@ public final class h0 extends c2.v0 {
                 ReentrantLock reentrantLock = j0Var.b;
                 reentrantLock.lock();
                 try {
-                    if (j0Var.i()) {
-                        j0Var.k();
+                    if (j0Var.h()) {
+                        j0Var.j();
                     }
                     return;
                 } finally {

@@ -1,49 +1,68 @@
 package m3;
 
-import org.telegram.tgnet.TLObject;
+import android.os.Parcel;
+import android.os.Parcelable;
+import j3.d1;
+import j3.n0;
+import k7.z7;
+import l4.j;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class a {
-    private int flags;
+public final class a implements e4.b {
+    public static final Parcelable.Creator<a> CREATOR = new j(10);
+    public final long a;
 
-    public final void addFlag(int i10) {
-        this.flags = i10 | this.flags;
+    public a(long j10) {
+        this.a = j10;
     }
 
-    public void clear() {
-        this.flags = 0;
+    @Override // e4.b
+    public final /* synthetic */ n0 b() {
+        return null;
     }
 
-    public final void clearFlag(int i10) {
-        this.flags = (~i10) & this.flags;
+    @Override // e4.b
+    public final /* synthetic */ byte[] d() {
+        return null;
     }
 
-    public final boolean getFlag(int i10) {
-        return (this.flags & i10) == i10;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public final boolean hasSupplementalData() {
-        return getFlag(TLObject.FLAG_28);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof a) {
+            return this.a == ((a) obj).a;
+        }
+        return false;
     }
 
-    public final boolean isDecodeOnly() {
-        return getFlag(TLObject.FLAG_31);
+    public final int hashCode() {
+        return z7.a(this.a);
     }
 
-    public final boolean isEndOfStream() {
-        return getFlag(4);
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("Creation time: ");
+        long j10 = this.a;
+        sb.append(j10 == -2082844800000L ? "unset" : Long.valueOf(j10));
+        return sb.toString();
     }
 
-    public final boolean isFirstSample() {
-        return getFlag(TLObject.FLAG_27);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeLong(this.a);
     }
 
-    public final boolean isKeyFrame() {
-        return getFlag(1);
+    public a(Parcel parcel) {
+        this.a = parcel.readLong();
     }
 
-    public final void setFlags(int i10) {
-        this.flags = i10;
+    @Override // e4.b
+    public final /* synthetic */ void c(d1 d1Var) {
     }
 }

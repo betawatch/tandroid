@@ -1,33 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pf0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rf0 b;
+public final class pf0 extends LinearLayout {
+    public final LinearLayout a;
+    public final LinearLayout b;
 
-    public /* synthetic */ pf0(rf0 rf0Var, int i10) {
-        this.a = i10;
-        this.b = rf0Var;
+    public pf0(Context context) {
+        super(context);
+        setOrientation(0);
+        setGravity(17);
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
+        this.b = a2;
+        addView(a2, k7.b6.n(-2, -1));
+        LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
+        this.a = a10;
+        addView(a10, k7.b6.n(-2, -1));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                rf0 rf0Var = this.b;
-                rf0Var.getClass();
-                rf0Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rf0Var.invalidate();
-                break;
-            default:
-                rf0 rf0Var2 = this.b;
-                rf0Var2.getClass();
-                rf0Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rf0Var2.invalidate();
-                break;
-        }
+    public final LinearLayout a(int i10, String str) {
+        Context context = getContext();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(17);
+        linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(i10);
+        linearLayout.addView(imageView, k7.b6.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
+        TextView textView = new TextView(context);
+        textView.setGravity(16);
+        textView.setText(str);
+        textView.setTextSize(2, 14.0f);
+        textView.setSingleLine(true);
+        textView.setTextColor(-1);
+        linearLayout.addView(textView, k7.b6.n(-2, -2));
+        k7.d6.a(linearLayout);
+        return linearLayout;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        LinearLayout linearLayout = this.a;
+        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        int paddingRight = getPaddingRight() + getPaddingLeft();
+        int paddingBottom = getPaddingBottom() + getPaddingTop();
+        int max = Math.max(0, size - paddingRight);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
+        linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
+        LinearLayout linearLayout2 = this.b;
+        linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
+        int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
+        layoutParams2.width = min;
+        layoutParams.width = min;
+        super.onMeasure(i10, i11);
     }
 }

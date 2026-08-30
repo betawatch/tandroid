@@ -1,30 +1,39 @@
 package c8;
 
-import android.util.SparseIntArray;
+import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.q;
+import j7.f5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final Object c = new Object();
-    public static int d;
-    public final SparseIntArray a = new SparseIntArray();
-    public final SparseIntArray b = new SparseIntArray();
+public final class b extends c6.a implements q {
+    public static final Parcelable.Creator<b> CREATOR = new b9.e(2);
+    public final int a;
+    public final int b;
+    public final Intent c;
 
-    public final int a(int i10) {
-        synchronized (c) {
-            try {
-                int i11 = this.a.get(i10, -1);
-                if (i11 != -1) {
-                    return i11;
-                }
-                int i12 = d;
-                d = i12 + 1;
-                this.a.append(i10, i12);
-                this.b.append(i12, i10);
-                return i12;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public b(int i10, int i11, Intent intent) {
+        this.a = i10;
+        this.b = i11;
+        this.c = intent;
+    }
+
+    @Override // com.google.android.gms.common.api.q
+    public final Status i() {
+        return this.b == 0 ? Status.e : Status.r;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        f5.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        f5.k(parcel, 3, this.c, i10);
+        f5.r(parcel, q10);
     }
 }

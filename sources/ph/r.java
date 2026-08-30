@@ -1,103 +1,84 @@
 package ph;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.FrameLayout;
-import i7.f6;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.WeakHashMap;
-import nh.t4;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.w41;
-import org.telegram.ui.al0;
-import org.telegram.ui.g5;
-import org.telegram.ui.th;
+import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class r extends org.telegram.ui.ActionBar.o2 {
-    public u51 a;
-    public final ArrayList b;
-    public final HashMap c;
+public final class r {
+    public static ArrayList f;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int[] d;
+    public final ArrayList e = new ArrayList();
 
-    public r() {
-        super(null);
-        this.b = new ArrayList();
-        this.c = new HashMap();
-    }
-
-    public static void U(r rVar, ArrayList arrayList) {
-        HashMap hashMap = rVar.c;
-        ArrayList arrayList2 = rVar.b;
-        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            o oVar = (o) arrayList2.get(i10);
-            SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) hashMap.get(oVar);
-            if (spannableStringBuilder == null) {
-                spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) "a   ");
-                g5 g5Var = new g5(null, 24.0f, rVar.currentAccount);
-                g5Var.e(oVar.a);
-                spannableStringBuilder.setSpan(g5Var, 0, 1, 33);
-                spannableStringBuilder.append((CharSequence) UserObject.getUserName(oVar.a));
-                hashMap.put(oVar, spannableStringBuilder);
+    public r(String str) {
+        str = str == null ? "." : str;
+        this.a = str;
+        String[] split = str.split("/");
+        int length = split.length;
+        this.c = length;
+        this.d = new int[length];
+        int i10 = 0;
+        for (int i11 = 0; i11 < split.length; i11++) {
+            this.d[i11] = split[i11].length();
+            i10 = Math.max(i10, split[i11].length());
+        }
+        this.b = i10;
+        for (int i12 = 0; i12 < split.length; i12++) {
+            for (int i13 = 0; i13 < split[i12].length(); i13++) {
+                this.e.add(new q(this, i13, i12));
             }
-            w41 i11 = w41.i(i10, spannableStringBuilder);
-            i11.K(!oVar.b);
-            arrayList.add(i11);
         }
-        th.A(R.string.PrivacyBiometryBotsInfo, arrayList);
     }
 
-    public static void V(r rVar, w41 w41Var) {
-        int i10;
-        k51 k51Var;
-        ArrayList arrayList = rVar.b;
-        if (w41Var.a != 4 || (i10 = w41Var.d) < 0 || i10 >= arrayList.size()) {
-            return;
+    public static ArrayList a() {
+        if (f == null) {
+            ArrayList arrayList = new ArrayList();
+            f = arrayList;
+            arrayList.add(new r("./."));
+            f.add(new r(".."));
+            f.add(new r("../."));
+            f.add(new r("./.."));
+            f.add(new r("././."));
+            f.add(new r("..."));
+            f.add(new r("../.."));
+            f.add(new r("./../.."));
+            f.add(new r("../../."));
+            f.add(new r("../../.."));
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                f.add(new r("../../../.."));
+                f.add(new r(".../.../..."));
+                f.add(new r("..../..../...."));
+                f.add(new r(".../.../.../..."));
+            }
         }
-        o oVar = (o) arrayList.get(w41Var.d);
-        oVar.b = !oVar.b;
-        Activity parentActivity = rVar.getParentActivity();
-        int i11 = rVar.currentAccount;
-        long j10 = oVar.a.id;
-        boolean z10 = oVar.b;
-        WeakHashMap weakHashMap = p.k;
-        SharedPreferences sharedPreferences = parentActivity.getSharedPreferences("2botbiometry_" + i11, 0);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putBoolean(j10 + "_disabled", z10);
-        if (!z10 && sharedPreferences.getString(String.valueOf(j10), null) == null) {
-            edit.putString(String.valueOf(j10), "");
-        }
-        edit.apply();
-        u51 u51Var = rVar.a;
-        if (u51Var == null || (k51Var = u51Var.U2) == null) {
-            return;
-        }
-        k51Var.N(true);
+        return f;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final View createView(Context context) {
-        th.y(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.PrivacyBiometryBots));
-        this.actionBar.setActionBarMenuOnItemClick(new al0(this, 27));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(g6.v0(g6.a7, this.resourceProvider));
-        u51 u51Var = new u51(this, new t4(this, 8), new q(this), new q(this));
-        this.a = u51Var;
-        frameLayout.addView(u51Var, f6.e(-1, -1, 119));
-        p.d(getParentActivity(), this.currentAccount, new nh.b0(this, 13));
-        this.fragmentView = frameLayout;
-        return frameLayout;
+    public static int b() {
+        ArrayList a2 = a();
+        int size = a2.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = a2.get(i11);
+            i11++;
+            i10 = Math.max(i10, ((r) obj).e.size());
+        }
+        return i10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof r)) {
+            return false;
+        }
+        return TextUtils.equals(this.a, ((r) obj).a);
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

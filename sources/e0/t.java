@@ -14,10 +14,10 @@ import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class t {
-    public f0.h A;
+    public f0.i A;
     public int B;
     public final boolean C;
     public r D;
@@ -81,14 +81,14 @@ public final class t {
     public final Notification b() {
         Notification build;
         Bundle bundle;
-        i0 i0Var = new i0(this);
-        t tVar = (t) i0Var.d;
+        a4.k kVar = new a4.k(this);
+        t tVar = (t) kVar.d;
         b0 b0Var = tVar.l;
         if (b0Var != null) {
-            b0Var.b(i0Var);
+            b0Var.b(kVar);
         }
-        Notification.Builder builder = (Notification.Builder) i0Var.c;
-        int i10 = i0Var.a;
+        Notification.Builder builder = (Notification.Builder) kVar.c;
+        int i10 = kVar.a;
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 26) {
             build = builder.build();
@@ -96,21 +96,21 @@ public final class t {
             build = builder.build();
             if (i10 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    i0.d(build);
+                    a4.k.d(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    i0.d(build);
+                    a4.k.d(build);
                 }
             }
         } else {
-            builder.setExtras((Bundle) i0Var.e);
+            builder.setExtras((Bundle) kVar.e);
             build = builder.build();
             if (i10 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    i0.d(build);
+                    a4.k.d(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    i0.d(build);
+                    a4.k.d(build);
                 }
             }
         }
@@ -144,19 +144,19 @@ public final class t {
                     d = c0.d((a10 == null || a10.i() != 2) ? 0 : a10.g(), kVar.h, kVar.i);
                 }
                 Bundle bundle2 = kVar.a;
-                boolean z10 = kVar.d;
+                boolean z4 = kVar.d;
                 Bundle bundle3 = bundle2 != null ? new Bundle(kVar.a) : new Bundle();
-                bundle3.putBoolean("android.support.allowGeneratedReplies", z10);
+                bundle3.putBoolean("android.support.allowGeneratedReplies", z4);
                 if (i11 >= 24) {
-                    e0.a(d, z10);
+                    e0.a(d, z4);
                 }
                 if (i11 >= 31) {
                     f0.a(d, false);
                 }
                 c0.a(d, bundle3);
-                r0[] r0VarArr = kVar.c;
-                if (r0VarArr != null) {
-                    for (RemoteInput remoteInput : r0.a(r0VarArr)) {
+                q0[] q0VarArr = kVar.c;
+                if (q0VarArr != null) {
+                    for (RemoteInput remoteInput : q0.a(q0VarArr)) {
                         c0.b(d, remoteInput);
                     }
                 }
@@ -210,9 +210,9 @@ public final class t {
         this.e = d(charSequence);
     }
 
-    public final void h(int i10, boolean z10) {
+    public final void h(int i10, boolean z4) {
         Notification notification = this.E;
-        if (z10) {
+        if (z4) {
             notification.flags = i10 | notification.flags;
         } else {
             notification.flags = (~i10) & notification.flags;

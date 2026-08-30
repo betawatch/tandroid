@@ -50,16 +50,16 @@ public final class j implements ChronoZonedDateTime, Serializable {
         }
         ZoneRules rules = zoneId.getRules();
         LocalDateTime H = LocalDateTime.H(fVar);
-        List f9 = rules.f(H);
-        if (f9.size() == 1) {
-            zoneOffset = (ZoneOffset) f9.get(0);
-        } else if (f9.size() == 0) {
-            j$.time.zone.b e10 = rules.e(H);
-            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e10.d.getTotalSeconds() - e10.c.getTotalSeconds(), 0).getSeconds(), 0L);
-            zoneOffset = e10.d;
+        List f10 = rules.f(H);
+        if (f10.size() == 1) {
+            zoneOffset = (ZoneOffset) f10.get(0);
+        } else if (f10.size() == 0) {
+            j$.time.zone.b e = rules.e(H);
+            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e.d.getTotalSeconds() - e.c.getTotalSeconds(), 0).getSeconds(), 0L);
+            zoneOffset = e.d;
         } else {
-            if (zoneOffset == null || !f9.contains(zoneOffset)) {
-                zoneOffset = (ZoneOffset) f9.get(0);
+            if (zoneOffset == null || !f10.contains(zoneOffset)) {
+                zoneOffset = (ZoneOffset) f10.get(0);
             }
             fVar = fVar;
         }

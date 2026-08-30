@@ -1,42 +1,25 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
+import java.util.Random;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class o1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
-    public final com.google.android.gms.common.api.e a;
-    public final boolean b;
-    public m0 c;
+public final class o1 extends ThreadLocal {
+    public final /* synthetic */ int a;
 
-    public o1(com.google.android.gms.common.api.e eVar, boolean z10) {
-        this.a = eVar;
-        this.b = z10;
-    }
-
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnected(Bundle bundle) {
-        z5.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        this.c.onConnected(bundle);
-    }
-
-    @Override // com.google.android.gms.common.api.l
-    public final void onConnectionFailed(w5.a aVar) {
-        com.google.android.gms.common.api.e eVar = this.a;
-        boolean z10 = this.b;
-        z5.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        m0 m0Var = this.c;
-        m0Var.a.lock();
-        try {
-            m0Var.m.z(aVar, eVar, z10);
-        } finally {
-            m0Var.a.unlock();
+    @Override // java.lang.ThreadLocal
+    public final Object initialValue() {
+        switch (this.a) {
+            case 0:
+                return Boolean.FALSE;
+            case 1:
+                return new Random();
+            case 2:
+                return 0L;
+            default:
+                ye.d dVar = new ye.d();
+                dVar.a = new byte[4096];
+                return dVar;
         }
-    }
-
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnectionSuspended(int i10) {
-        z5.l.i(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
-        this.c.onConnectionSuspended(i10);
     }
 }

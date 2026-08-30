@@ -1,31 +1,17 @@
 package j7;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class p extends f implements Serializable {
-    public final Object b;
-    public final e c;
-
-    public p(Object obj, e eVar) {
-        super(0, false);
-        this.b = obj;
-        this.c = eVar;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.c;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+public abstract class p {
+    public static void a(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

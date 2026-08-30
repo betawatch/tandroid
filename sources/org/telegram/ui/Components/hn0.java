@@ -1,28 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class hn0 extends ls {
-    public final /* synthetic */ org.telegram.ui.ox e0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hn0(org.telegram.ui.ox oxVar, jl0 jl0Var, Context context, int i10, int i11) {
-        super(jl0Var, context, i10, i11, false, null);
-        this.e0 = oxVar;
+public final class hn0 extends f2.l {
+    @Override // f2.l, f2.o1
+    public final boolean r(f2.l1 l1Var, c5.e eVar, int i10, int i11, int i12, int i13) {
+        nn0 nn0Var;
+        mn0 mn0Var;
+        View view = l1Var.a;
+        if ((view instanceof nn0) && (mn0Var = (nn0Var = (nn0) view).a) != null) {
+            mn0Var.i = mn0Var.N;
+            mn0Var.g = mn0Var.O;
+            mn0Var.h = mn0Var.P;
+            nn0Var.b.d(0.0f, true);
+            nn0Var.invalidate();
+        }
+        int translationX = i10 + ((int) view.getTranslationX());
+        int translationY = i11 + ((int) view.getTranslationY());
+        R(l1Var);
+        int i14 = i12 - translationX;
+        int i15 = i13 - translationY;
+        if (i14 == 0 && i15 == 0) {
+            v(l1Var);
+            return false;
+        }
+        if (i14 != 0) {
+            view.setTranslationX(-i14);
+        }
+        if (i15 != 0) {
+            view.setTranslationY(-i15);
+        }
+        this.r.add(new f2.k(l1Var, translationX, translationY, i12, i13));
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.k51
-    public final void N(boolean z10) {
-        ArrayList arrayList;
-        super.N(z10);
-        gn0 gn0Var = this.e0.h0;
-        gn0Var.e(this.V || this.W || (arrayList = this.P) == null || !arrayList.isEmpty(), z10);
-        gn0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        gn0Var.e.setVisibility(8);
+    @Override // f2.o1
+    public final boolean t(f2.l1 l1Var) {
+        return true;
     }
 }

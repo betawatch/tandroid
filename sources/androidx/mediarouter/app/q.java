@@ -1,38 +1,104 @@
 package androidx.mediarouter.app;
 
-import ag.q1;
-import android.widget.SeekBar;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.support.v4.media.session.PlaybackStateCompat;
+import android.util.Log;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class q implements SeekBar.OnSeekBarChangeListener {
-    public final q1 a = new q1(this, 8);
-    public final /* synthetic */ s b;
+public final class q implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v b;
 
-    public q(s sVar) {
-        this.b = sVar;
+    public /* synthetic */ q(v vVar, int i10) {
+        this.a = i10;
+        this.b = vVar;
     }
 
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onProgressChanged(SeekBar seekBar, int i10, boolean z10) {
-        if (z10) {
-            c2.b0 b0Var = (c2.b0) seekBar.getTag();
-            int i11 = s.B0;
-            b0Var.j(i10);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10;
+        PlaybackStateCompat playbackStateCompat;
+        PendingIntent sessionActivity;
+        int i11 = this.a;
+        int i12 = 0;
+        v vVar = this.b;
+        switch (i11) {
+            case 0:
+                Context context = vVar.s;
+                AccessibilityManager accessibilityManager = vVar.A0;
+                int id2 = view.getId();
+                if (id2 != 16908313 && id2 != 16908314) {
+                    if (id2 != R.id.mr_control_playback_ctrl) {
+                        if (id2 == R.id.mr_close) {
+                            vVar.dismiss();
+                            break;
+                        }
+                    } else {
+                        bf.b bVar = vVar.f0;
+                        if (bVar != null && (playbackStateCompat = vVar.h0) != null) {
+                            i10 = playbackStateCompat.a != 3 ? 0 : 1;
+                            if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
+                                bVar.R().a.pause();
+                                i12 = R.string.mr_controller_pause;
+                            } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
+                                bVar.R().a.stop();
+                                i12 = R.string.mr_controller_stop;
+                            } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
+                                bVar.R().a.play();
+                                i12 = R.string.mr_controller_play;
+                            }
+                            if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {
+                                AccessibilityEvent obtain = AccessibilityEvent.obtain(16384);
+                                obtain.setPackageName(context.getPackageName());
+                                obtain.setClassName(q.class.getName());
+                                obtain.getText().add(context.getString(i12));
+                                accessibilityManager.sendAccessibilityEvent(obtain);
+                                break;
+                            }
+                        }
+                    }
+                } else {
+                    if (vVar.r.g()) {
+                        c2.c0 c0Var = vVar.h;
+                        i10 = id2 == 16908313 ? 2 : 1;
+                        c0Var.getClass();
+                        c2.c0.j(i10);
+                    }
+                    vVar.dismiss();
+                    break;
+                }
+                break;
+            case 1:
+                vVar.dismiss();
+                break;
+            case 2:
+                bf.b bVar2 = vVar.f0;
+                if (bVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) bVar2.b).a.getSessionActivity()) != null) {
+                    try {
+                        sessionActivity.send();
+                        vVar.dismiss();
+                        break;
+                    } catch (PendingIntent.CanceledException unused) {
+                        Log.e("MediaRouteCtrlDialog", sessionActivity + " was not sent, it had been canceled.");
+                        return;
+                    }
+                }
+                break;
+            default:
+                boolean z4 = vVar.r0;
+                vVar.r0 = !z4;
+                if (!z4) {
+                    vVar.R.setVisibility(0);
+                }
+                vVar.x0 = vVar.r0 ? vVar.y0 : vVar.z0;
+                vVar.t(true);
+                break;
         }
-    }
-
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onStartTrackingTouch(SeekBar seekBar) {
-        s sVar = this.b;
-        if (sVar.Y != null) {
-            sVar.W.removeCallbacks(this.a);
-        }
-        sVar.Y = (c2.b0) seekBar.getTag();
-    }
-
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onStopTrackingTouch(SeekBar seekBar) {
-        this.b.W.postDelayed(this.a, 500L);
     }
 }

@@ -1,43 +1,30 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.CancellationSignal;
+import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b0 extends com.google.android.gms.internal.cast.j0 {
-    public final transient Object[] e;
-
-    public b0(Object[] objArr) {
-        super(5);
-        this.e = objArr;
+public abstract class b0 {
+    public static void a(CancellationSignal cancellationSignal, dd.a onResultOrException) {
+        kotlin.jvm.internal.j.e(onResultOrException, "onResultOrException");
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (a1.g.a(cancellationSignal)) {
+            return;
+        }
+        onResultOrException.invoke();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:5:0x001b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x001c A[RETURN] */
-    @Override // com.google.android.gms.internal.cast.j0, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object get(Object obj) {
-        Object obj2;
-        if (obj != null) {
-            Object[] objArr = this.e;
-            Object obj3 = objArr[0];
-            obj3.getClass();
-            if (obj3.equals(obj)) {
-                obj2 = objArr[1];
-                obj2.getClass();
-                if (obj2 != null) {
-                    return null;
-                }
-                return obj2;
-            }
+    public static boolean b(int i10, dd.p pVar, dd.l lVar, CancellationSignal cancellationSignal) {
+        if (i10 == -1) {
+            return false;
         }
-        obj2 = null;
-        if (obj2 != null) {
+        kotlin.jvm.internal.q qVar = new kotlin.jvm.internal.q();
+        qVar.a = new w0.h(kh.a2.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        if (i10 == 0) {
+            qVar.a = new w0.g("activity is cancelled by the user.");
         }
-    }
-
-    @Override // java.util.Map
-    public final int size() {
-        return 1;
+        pVar.invoke(cancellationSignal, new b1.c(lVar, qVar, 1));
+        return true;
     }
 }

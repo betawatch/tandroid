@@ -1,32 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gb1 implements f5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qc1 b;
+public final class gb1 extends org.telegram.ui.Cells.k0 {
+    public final /* synthetic */ lb1 e;
 
-    public /* synthetic */ gb1(qc1 qc1Var, int i10) {
-        this.a = i10;
-        this.b = qc1Var;
-    }
-
-    @Override // f5.d
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                qc1 qc1Var = this.b;
-                qc1Var.R1 = (TL_stories.TL_premium_boostsStatus) obj;
-                qc1Var.Q1 = true;
-                qc1Var.h1(true);
-                qc1Var.P1 = false;
-                break;
-            default:
-                qc1.X(this.b, (ChannelBoostsController.CanApplyBoost) obj);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gb1(lb1 lb1Var, Context context) {
+        super(context);
+        this.e = lb1Var;
     }
 }

@@ -27,18 +27,18 @@ public final class DateTimeFormatter {
         pVar.g(aVar3, 2);
         w wVar = w.STRICT;
         j$.time.chrono.r rVar = j$.time.chrono.r.c;
-        DateTimeFormatter k9 = pVar.k(wVar, rVar);
-        ISO_LOCAL_DATE = k9;
+        DateTimeFormatter k10 = pVar.k(wVar, rVar);
+        ISO_LOCAL_DATE = k10;
         p pVar2 = new p();
         k kVar = k.INSENSITIVE;
         pVar2.b(kVar);
-        pVar2.a(k9);
+        pVar2.a(k10);
         j jVar = j.e;
         pVar2.b(jVar);
         pVar2.k(wVar, rVar);
         p pVar3 = new p();
         pVar3.b(kVar);
-        pVar3.a(k9);
+        pVar3.a(k10);
         pVar3.j();
         pVar3.b(jVar);
         pVar3.k(wVar, rVar);
@@ -61,35 +61,35 @@ public final class DateTimeFormatter {
             throw new IllegalArgumentException("Field must have a fixed set of values: " + aVar7);
         }
         pVar4.b(gVar);
-        DateTimeFormatter k10 = pVar4.k(wVar, null);
+        DateTimeFormatter k11 = pVar4.k(wVar, null);
         p pVar5 = new p();
         pVar5.b(kVar);
-        pVar5.a(k10);
+        pVar5.a(k11);
         pVar5.b(jVar);
         pVar5.k(wVar, null);
         p pVar6 = new p();
         pVar6.b(kVar);
-        pVar6.a(k10);
+        pVar6.a(k11);
         pVar6.j();
         pVar6.b(jVar);
         pVar6.k(wVar, null);
         p pVar7 = new p();
         pVar7.b(kVar);
-        pVar7.a(k9);
-        pVar7.c('T');
         pVar7.a(k10);
-        DateTimeFormatter k11 = pVar7.k(wVar, rVar);
+        pVar7.c('T');
+        pVar7.a(k11);
+        DateTimeFormatter k12 = pVar7.k(wVar, rVar);
         p pVar8 = new p();
         pVar8.b(kVar);
-        pVar8.a(k11);
+        pVar8.a(k12);
         k kVar2 = k.LENIENT;
         pVar8.b(kVar2);
         pVar8.b(jVar);
         k kVar3 = k.STRICT;
         pVar8.b(kVar3);
-        DateTimeFormatter k12 = pVar8.k(wVar, rVar);
+        DateTimeFormatter k13 = pVar8.k(wVar, rVar);
         p pVar9 = new p();
-        pVar9.a(k12);
+        pVar9.a(k13);
         pVar9.j();
         pVar9.c('[');
         k kVar4 = k.SENSITIVE;
@@ -99,7 +99,7 @@ public final class DateTimeFormatter {
         pVar9.c(']');
         pVar9.k(wVar, rVar);
         p pVar10 = new p();
-        pVar10.a(k11);
+        pVar10.a(k12);
         pVar10.j();
         pVar10.b(jVar);
         pVar10.j();
@@ -196,15 +196,15 @@ public final class DateTimeFormatter {
     }
 
     public final String a(j$.time.temporal.l lVar) {
-        StringBuilder sb2 = new StringBuilder(32);
+        StringBuilder sb = new StringBuilder(32);
         e eVar = this.a;
         Objects.requireNonNull(lVar, "temporal");
-        Objects.requireNonNull(sb2, "appendable");
+        Objects.requireNonNull(sb, "appendable");
         try {
-            eVar.j(new r(lVar, this), sb2);
-            return sb2.toString();
-        } catch (IOException e10) {
-            throw new j$.time.b(e10.getMessage(), e10);
+            eVar.j(new r(lVar, this), sb);
+            return sb.toString();
+        } catch (IOException e6) {
+            throw new j$.time.b(e6.getMessage(), e6);
         }
     }
 

@@ -1,16 +1,31 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class h6 extends f2.l {
-    public final /* synthetic */ x6 F;
+import org.telegram.messenger.Utilities;
 
-    public h6(x6 x6Var) {
-        this.F = x6Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class h6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b7 b;
+    public final /* synthetic */ p6 c;
+    public final /* synthetic */ q6 d;
+
+    public /* synthetic */ h6(b7 b7Var, p6 p6Var, q6 q6Var, int i10) {
+        this.a = i10;
+        this.b = b7Var;
+        this.c = p6Var;
+        this.d = q6Var;
     }
 
-    @Override // f2.l
-    public final void P(f2.n1 n1Var) {
-        this.F.b.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                Utilities.globalQueue.postRunnable(new h6(this.b, this.c, this.d, 1));
+                break;
+            default:
+                b7.W(this.b, this.c, this.d);
+                break;
+        }
     }
 }

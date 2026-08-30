@@ -1,77 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.ui.da1;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public class p20 {
+    public boolean a;
+    public boolean b;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public Shader i;
+    public boolean m;
+    public final Paint c = new Paint(1);
+    public final RectF h = new RectF();
+    public final Matrix j = new Matrix();
+    public Bitmap k = null;
+    public final int[] l = new int[4];
 
-    public p20(da1 da1Var, mi miVar, org.telegram.ui.Cells.s1 s1Var, org.telegram.ui.dk dkVar, org.telegram.ui.tn tnVar) {
-        this.f = da1Var;
-        this.b = miVar;
-        this.c = s1Var;
-        this.d = dkVar;
-        this.e = tnVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                WindowManager windowManager = (WindowManager) this.f;
-                View view = this.b;
-                if (view.getParent() != null) {
-                    view.setVisibility(8);
-                    View view2 = this.c;
-                    view2.setVisibility(8);
-                    View view3 = this.d;
-                    view3.setVisibility(8);
-                    windowManager.removeView(view);
-                    windowManager.removeView(view2);
-                    windowManager.removeView(view3);
-                    windowManager.removeView((View) this.e);
-                    break;
-                }
-                break;
-            default:
-                da1 da1Var = (da1) this.f;
-                da1Var.D.unlock();
-                mi miVar = (mi) this.b;
-                ((ArrayList) miVar.c).remove(da1Var);
-                miVar.a();
-                ((ViewGroup) miVar.d).invalidate();
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.c;
-                s1Var.setEnterTransitionInProgress(false);
-                s1Var.getTransitionParams().D0.set(s1Var.getBackgroundDrawableLeft(), s1Var.getBackgroundDrawableTop(), s1Var.getBackgroundDrawableRight(), s1Var.getBackgroundDrawableBottom());
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
-                chatActivityEnterView.setTextTransitionIsRunning(false);
-                chatActivityEnterView.getEditField().setAlpha(1.0f);
-                org.telegram.ui.tn tnVar = (org.telegram.ui.tn) this.e;
-                ((ko[]) tnVar.W.b)[0].c.setAlpha(1.0f);
-                ((ko[]) tnVar.W.b)[0].d.setAlpha(1.0f);
-                y5.release((View) null, da1Var.H);
-                break;
+    public final int a() {
+        int i10 = this.d;
+        int i11 = this.e;
+        if (i11 != 0) {
+            i10 = i0.a.d(0.5f, i10, i11);
         }
+        int i12 = this.f;
+        if (i12 != 0) {
+            i10 = i0.a.d(0.5f, i10, i12);
+        }
+        int i13 = this.g;
+        return i13 != 0 ? i0.a.d(0.5f, i10, i13) : i10;
     }
 
-    public p20(t20 t20Var, bg.x2 x2Var, FrameLayout frameLayout, WindowManager windowManager, org.telegram.ui.s7 s7Var) {
-        this.b = t20Var;
-        this.c = x2Var;
-        this.d = frameLayout;
-        this.f = windowManager;
-        this.e = s7Var;
+    public final void b(float f10, float f11, float f12, float f13) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(f10, f11, f12, f13);
+        c(rectF);
+    }
+
+    public final void c(RectF rectF) {
+        RectF rectF2 = this.h;
+        if (rectF2.top == rectF.top && rectF2.bottom == rectF.bottom && rectF2.left == rectF.left && rectF2.right == rectF.right) {
+            return;
+        }
+        rectF2.set(rectF);
+        e();
+    }
+
+    public final void d(int i10, int i11, int i12, int i13) {
+        if (this.i != null && this.d == i10 && this.e == i11 && this.f == i12 && this.g == i13) {
+            return;
+        }
+        this.d = i10;
+        int[] iArr = this.l;
+        iArr[0] = i10;
+        this.e = i11;
+        iArr[1] = i11;
+        this.f = i12;
+        iArr[2] = i12;
+        this.g = i13;
+        iArr[3] = i13;
+        Paint paint = this.c;
+        if (i11 == 0) {
+            this.i = null;
+            paint.setShader(null);
+            paint.setColor(i10);
+        } else if (i12 == 0) {
+            if (this.a && this.b) {
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient;
+                paint.setShader(linearGradient);
+            } else {
+                LinearGradient linearGradient2 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient2;
+                paint.setShader(linearGradient2);
+            }
+        } else if (!this.m) {
+            if (this.k == null) {
+                this.k = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
+            }
+            Utilities.generateGradient(this.k, 0, 0.0f, iArr);
+            Bitmap bitmap = this.k;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.i = bitmapShader;
+            paint.setShader(bitmapShader);
+        } else if (this.a && this.b) {
+            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i10, i11, i12}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient3;
+            paint.setShader(linearGradient3);
+        } else {
+            LinearGradient linearGradient4 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i10, i11, i12}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient4;
+            paint.setShader(linearGradient4);
+        }
+        e();
+    }
+
+    public void e() {
+        if (this.i == null) {
+            return;
+        }
+        RectF rectF = this.h;
+        float width = rectF.width() / 60.0f;
+        float height = rectF.height() / 80.0f;
+        Matrix matrix = this.j;
+        matrix.reset();
+        matrix.postTranslate(rectF.left, rectF.top);
+        matrix.preScale(width, height);
+        this.i.setLocalMatrix(matrix);
     }
 }

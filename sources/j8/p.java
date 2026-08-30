@@ -1,73 +1,17 @@
 package j8;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class p extends Handler {
-    public boolean a;
-    public final o b;
-    public final /* synthetic */ k c;
+public abstract class p {
+    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("Wallet.API", new a8.j(8), new com.google.android.gms.common.api.d());
+    public static final y5.c b;
+    public static final y5.c[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(k kVar, Looper looper) {
-        super(looper);
-        this.c = kVar;
-        this.b = new o();
-    }
-
-    public final synchronized void a(String str) {
-        ComponentName componentName;
-        if (this.a) {
-            if (Log.isLoggable("WearableLS", 2)) {
-                componentName = this.c.zza;
-                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(componentName));
-            }
-            try {
-                this.c.unbindService(this.b);
-            } catch (RuntimeException e10) {
-                Log.e("WearableLS", "Exception when unbinding from local service", e10);
-            }
-            this.a = false;
-        }
-    }
-
-    @Override // android.os.Handler
-    public final void dispatchMessage(Message message) {
-        Intent intent;
-        ComponentName componentName;
-        synchronized (this) {
-            try {
-                if (!this.a) {
-                    if (Log.isLoggable("WearableLS", 2)) {
-                        componentName = this.c.zza;
-                        Log.v("WearableLS", "bindService: ".concat(String.valueOf(componentName)));
-                    }
-                    k kVar = this.c;
-                    intent = kVar.zzd;
-                    kVar.bindService(intent, this.b, 1);
-                    this.a = true;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        try {
-            super.dispatchMessage(message);
-            if (hasMessages(0)) {
-                return;
-            }
-            a("dispatch");
-        } catch (Throwable th3) {
-            if (!hasMessages(0)) {
-                a("dispatch");
-            }
-            throw th3;
-        }
+    static {
+        y5.c cVar = new y5.c("wallet", 1L);
+        y5.c cVar2 = new y5.c("wallet_biometric_auth_keys", 1L);
+        y5.c cVar3 = new y5.c("wallet_payment_dynamic_update", 2L);
+        b = cVar3;
+        c = new y5.c[]{cVar, cVar2, cVar3, new y5.c("wallet_1p_initialize_buyflow", 1L), new y5.c("wallet_warm_up_ui_process", 1L), new y5.c("wallet_get_setup_wizard_intent", 4L), new y5.c("wallet_get_payment_card_recognition_intent", 1L)};
     }
 }

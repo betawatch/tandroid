@@ -5,12 +5,12 @@ import android.media.MediaFormat;
 import java.io.File;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class Mp4Movie {
     private File cacheFile;
     private int height;
-    private ac.d matrix = ac.d.j;
+    private cc.d matrix = cc.d.j;
     private ArrayList<Track> tracks = new ArrayList<>();
     private int width;
 
@@ -21,8 +21,8 @@ public class Mp4Movie {
         this.tracks.get(i10).addSample(j10, bufferInfo);
     }
 
-    public int addTrack(MediaFormat mediaFormat, boolean z10) {
-        this.tracks.add(new Track(this.tracks.size(), mediaFormat, z10));
+    public int addTrack(MediaFormat mediaFormat, boolean z4) {
+        this.tracks.add(new Track(this.tracks.size(), mediaFormat, z4));
         return this.tracks.size() - 1;
     }
 
@@ -41,7 +41,7 @@ public class Mp4Movie {
         return this.tracks.get(i10).getLastFrameTimestamp();
     }
 
-    public ac.d getMatrix() {
+    public cc.d getMatrix() {
         return this.matrix;
     }
 
@@ -59,15 +59,15 @@ public class Mp4Movie {
 
     public void setRotation(int i10) {
         if (i10 == 0) {
-            this.matrix = ac.d.j;
+            this.matrix = cc.d.j;
             return;
         }
         if (i10 == 90) {
-            this.matrix = ac.d.k;
+            this.matrix = cc.d.k;
         } else if (i10 == 180) {
-            this.matrix = ac.d.l;
+            this.matrix = cc.d.l;
         } else if (i10 == 270) {
-            this.matrix = ac.d.m;
+            this.matrix = cc.d.m;
         }
     }
 

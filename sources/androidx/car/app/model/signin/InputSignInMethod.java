@@ -1,13 +1,12 @@
 package androidx.car.app.model.signin;
 
-import a4.w;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.o;
 import j$.util.Objects;
 import u.a;
 import u.c;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class InputSignInMethod implements c {
     public static final int INPUT_TYPE_DEFAULT = 1;
@@ -74,10 +73,10 @@ public final class InputSignInMethod implements c {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[inputType:");
-        sb2.append(this.mInputType);
-        sb2.append(", keyboardType: ");
-        return w.l(this.mKeyboardType, "]", sb2);
+        StringBuilder sb = new StringBuilder("[inputType:");
+        sb.append(this.mInputType);
+        sb.append(", keyboardType: ");
+        return android.support.v4.media.a.m(this.mKeyboardType, "]", sb);
     }
 
     private InputSignInMethod() {

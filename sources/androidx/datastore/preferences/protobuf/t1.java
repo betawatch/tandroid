@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class t1 extends s0 {
     public final /* synthetic */ int c;
@@ -107,20 +107,20 @@ public final class t1 extends s0 {
                 int i21 = i10;
                 int i22 = 0;
                 while (i21 < i20) {
-                    byte f9 = s1.f(i21, bArr);
-                    if (f9 < 0) {
+                    byte f10 = s1.f(i21, bArr);
+                    if (f10 < 0) {
                         int i23 = i22;
                         while (i21 < i20) {
                             int i24 = i21 + 1;
-                            byte f10 = s1.f(i21, bArr);
-                            if (f10 >= 0) {
+                            byte f11 = s1.f(i21, bArr);
+                            if (f11 >= 0) {
                                 int i25 = i23 + 1;
-                                cArr2[i23] = (char) f10;
+                                cArr2[i23] = (char) f11;
                                 while (i24 < i20) {
-                                    byte f11 = s1.f(i24, bArr);
-                                    if (f11 >= 0) {
+                                    byte f12 = s1.f(i24, bArr);
+                                    if (f12 >= 0) {
                                         i24++;
-                                        cArr2[i25] = (char) f11;
+                                        cArr2[i25] = (char) f12;
                                         i25++;
                                     } else {
                                         i23 = i25;
@@ -129,37 +129,37 @@ public final class t1 extends s0 {
                                 }
                                 i23 = i25;
                                 i21 = i24;
-                            } else if (f10 < -32) {
+                            } else if (f11 < -32) {
                                 if (i24 >= i20) {
                                     throw c0.a();
                                 }
                                 i21 += 2;
-                                s0.b(f10, s1.f(i24, bArr), cArr2, i23);
+                                s0.b(f11, s1.f(i24, bArr), cArr2, i23);
                                 i23++;
-                            } else if (f10 < -16) {
+                            } else if (f11 < -16) {
                                 if (i24 >= i20 - 1) {
                                     throw c0.a();
                                 }
                                 int i26 = i21 + 2;
                                 i21 += 3;
-                                s0.c(f10, s1.f(i24, bArr), s1.f(i26, bArr), cArr2, i23);
+                                s0.c(f11, s1.f(i24, bArr), s1.f(i26, bArr), cArr2, i23);
                                 i23++;
                             } else {
                                 if (i24 >= i20 - 2) {
                                     throw c0.a();
                                 }
-                                byte f12 = s1.f(i24, bArr);
+                                byte f13 = s1.f(i24, bArr);
                                 int i27 = i21 + 3;
-                                byte f13 = s1.f(i21 + 2, bArr);
+                                byte f14 = s1.f(i21 + 2, bArr);
                                 i21 += 4;
-                                s0.a(f10, f12, f13, s1.f(i27, bArr), cArr2, i23);
+                                s0.a(f11, f13, f14, s1.f(i27, bArr), cArr2, i23);
                                 i23 += 2;
                             }
                         }
                         return new String(cArr2, 0, i23);
                     }
                     i21++;
-                    cArr2[i22] = (char) f9;
+                    cArr2[i22] = (char) f10;
                     i22++;
                 }
                 int i232 = i22;
@@ -450,14 +450,14 @@ public final class t1 extends s0 {
                         }
                         i20 -= 3;
                         long j17 = j14 + 1;
-                        byte f9 = s1.f(j14, bArr);
-                        if (f9 > -65) {
+                        byte f10 = s1.f(j14, bArr);
+                        if (f10 > -65) {
                             return -1;
                         }
-                        if (b15 == -32 && f9 < b10) {
+                        if (b15 == -32 && f10 < b10) {
                             return -1;
                         }
-                        if (b15 == -19 && f9 >= b10) {
+                        if (b15 == -19 && f10 >= b10) {
                             return -1;
                         }
                         j14 += 2;
@@ -470,8 +470,8 @@ public final class t1 extends s0 {
                         }
                         i20 -= 4;
                         long j18 = j14 + 1;
-                        byte f10 = s1.f(j14, bArr);
-                        if (f10 > -65 || (((f10 + 112) + (b15 << 28)) >> 30) != 0) {
+                        byte f11 = s1.f(j14, bArr);
+                        if (f11 > -65 || (((f11 + 112) + (b15 << 28)) >> 30) != 0) {
                             return -1;
                         }
                         long j19 = j14 + 2;

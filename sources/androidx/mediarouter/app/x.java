@@ -1,20 +1,7 @@
 package androidx.mediarouter.app;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class x {
-    public final Object a;
-    public final int b;
-
-    public x(Object obj) {
-        this.a = obj;
-        if (obj instanceof String) {
-            this.b = 1;
-        } else {
-            if (!(obj instanceof c2.b0)) {
-                throw new IllegalArgumentException();
-            }
-            this.b = 2;
-        }
-    }
+    public static final x a = new x();
 }

@@ -1,27 +1,43 @@
 package nh;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class d7 implements View.OnFocusChangeListener {
-    public final /* synthetic */ g7 a;
+public final /* synthetic */ class d7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g7 b;
+    public final /* synthetic */ TL_stories.PeerStories c;
 
-    public d7(g7 g7Var) {
-        this.a = g7Var;
+    public /* synthetic */ d7(g7 g7Var, TL_stories.PeerStories peerStories, int i10) {
+        this.a = i10;
+        this.b = g7Var;
+        this.c = peerStories;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
-        if (z10) {
-            g7 g7Var = this.a;
-            g7Var.e0 = true;
-            f2.j0 j0Var = (f2.j0) g7Var.d.getLayoutManager();
-            uh.n nVar = new uh.n(g7Var.getContext(), 2);
-            nVar.a = 1;
-            nVar.p = (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(1.0f);
-            j0Var.w0(nVar);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g7 g7Var = this.b;
+                g7Var.getClass();
+                TL_stories.PeerStories peerStories = this.c;
+                g7Var.g(DialogObject.getPeerDialogId(peerStories.peer), peerStories);
+                break;
+            default:
+                g7 g7Var2 = this.b;
+                g7Var2.getClass();
+                int i10 = 0;
+                while (true) {
+                    TL_stories.PeerStories peerStories2 = this.c;
+                    if (i10 >= peerStories2.stories.size()) {
+                        break;
+                    } else {
+                        g7Var2.l(DialogObject.getPeerDialogId(peerStories2.peer), peerStories2.stories.get(i10));
+                        i10++;
+                    }
+                }
         }
     }
 }

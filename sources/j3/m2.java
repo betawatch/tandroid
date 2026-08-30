@@ -1,92 +1,151 @@
 package j3;
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.media.AudioManager;
-import android.os.Handler;
-import org.webrtc.MediaStreamTrack;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class m2 {
-    public final Context a;
-    public final Handler b;
-    public final h0 c;
-    public final AudioManager d;
-    public af.c e;
-    public int f;
-    public int g;
-    public boolean h;
+public final class m2 implements g {
+    public static final String n;
+    public static final String r;
+    public static final String s;
+    public static final String v;
+    public static final String w;
+    public Object a;
+    public Object b;
+    public int c;
+    public long d;
+    public long e;
+    public boolean f;
+    public p4.b h = p4.b.f;
 
-    public m2(Context context, Handler handler, h0 h0Var) {
-        Context applicationContext = context.getApplicationContext();
-        this.a = applicationContext;
-        this.b = handler;
-        this.c = h0Var;
-        AudioManager audioManager = (AudioManager) applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        f5.a.j(audioManager);
-        this.d = audioManager;
-        this.f = 3;
-        this.g = b(audioManager, 3);
-        int i10 = this.f;
-        this.h = f5.d0.a >= 23 ? audioManager.isStreamMute(i10) : b(audioManager, i10) == 0;
-        af.c cVar = new af.c(this, 7);
-        try {
-            f5.d0.M(applicationContext, cVar, new IntentFilter("android.media.VOLUME_CHANGED_ACTION"));
-            this.e = cVar;
-        } catch (RuntimeException e10) {
-            f5.a.L("StreamVolumeManager", "Error registering stream volume receiver", e10);
-        }
+    static {
+        int i10 = h5.d0.a;
+        n = Integer.toString(0, 36);
+        r = Integer.toString(1, 36);
+        s = Integer.toString(2, 36);
+        v = Integer.toString(3, 36);
+        w = Integer.toString(4, 36);
     }
 
-    public static int b(AudioManager audioManager, int i10) {
-        try {
-            return audioManager.getStreamVolume(i10);
-        } catch (RuntimeException e10) {
-            f5.a.L("StreamVolumeManager", "Could not retrieve stream volume for stream type " + i10, e10);
-            return audioManager.getStreamMaxVolume(i10);
+    public final long a(int i10, int i11) {
+        p4.a a2 = this.h.a(i10);
+        if (a2.b != -1) {
+            return a2.f[i11];
         }
+        return -9223372036854775807L;
     }
 
-    public final int a() {
-        if (f5.d0.a >= 28) {
-            return this.d.getStreamMinVolume(this.f);
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0047, code lost:
+    
+        return r1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int b(long j10) {
+        p4.a a2;
+        int i10;
+        p4.b bVar = this.h;
+        long j11 = this.d;
+        int i11 = bVar.a;
+        if (j10 != Long.MIN_VALUE && (j11 == -9223372036854775807L || j10 < j11)) {
+            int i12 = bVar.d;
+            while (i12 < i11 && ((bVar.a(i12).a != Long.MIN_VALUE && bVar.a(i12).a <= j10) || ((i10 = (a2 = bVar.a(i12)).b) != -1 && a2.a(-1) >= i10))) {
+                i12++;
+            }
+        }
+        return -1;
+    }
+
+    public final int c(long j10) {
+        int i10;
+        p4.b bVar = this.h;
+        long j11 = this.d;
+        int i11 = bVar.a - 1;
+        int i12 = i11 - (bVar.b(i11) ? 1 : 0);
+        while (i12 >= 0 && j10 != Long.MIN_VALUE) {
+            p4.a a2 = bVar.a(i12);
+            long j12 = a2.a;
+            if (j12 != Long.MIN_VALUE) {
+                if (j10 >= j12) {
+                    break;
+                }
+                i12--;
+            } else {
+                if (j11 != -9223372036854775807L && ((!a2.n || a2.b != -1) && j10 >= j11)) {
+                    break;
+                }
+                i12--;
+            }
+        }
+        if (i12 >= 0) {
+            p4.a a10 = bVar.a(i12);
+            int i13 = a10.b;
+            if (i13 != -1) {
+                while (i10 < i13) {
+                    int i14 = a10.e[i10];
+                    i10 = (i14 == 0 || i14 == 1) ? 0 : i10 + 1;
+                }
+            }
+            return i12;
+        }
+        return -1;
+    }
+
+    public final long d(int i10) {
+        return this.h.a(i10).a;
+    }
+
+    public final int e(int i10, int i11) {
+        p4.a a2 = this.h.a(i10);
+        if (a2.b != -1) {
+            return a2.e[i11];
         }
         return 0;
     }
 
-    public final void c(int i10) {
-        if (this.f == i10) {
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.f = i10;
-        d();
-        k0 k0Var = this.c.a;
-        m2 m2Var = k0Var.B;
-        m mVar = new m(0, m2Var.a(), m2Var.d.getStreamMaxVolume(m2Var.f));
-        if (mVar.equals(k0Var.f0)) {
-            return;
+        if (obj != null && m2.class.equals(obj.getClass())) {
+            m2 m2Var = (m2) obj;
+            if (h5.d0.a(this.a, m2Var.a) && h5.d0.a(this.b, m2Var.b) && this.c == m2Var.c && this.d == m2Var.d && this.e == m2Var.e && this.f == m2Var.f && h5.d0.a(this.h, m2Var.h)) {
+                return true;
+            }
         }
-        k0Var.f0 = mVar;
-        k0Var.l.e(29, new eg.n(mVar, 15));
+        return false;
     }
 
-    public final void d() {
-        int i10 = this.f;
-        AudioManager audioManager = this.d;
-        final int b10 = b(audioManager, i10);
-        int i11 = this.f;
-        final boolean isStreamMute = f5.d0.a >= 23 ? audioManager.isStreamMute(i11) : b(audioManager, i11) == 0;
-        if (this.g == b10 && this.h == isStreamMute) {
-            return;
-        }
-        this.g = b10;
-        this.h = isStreamMute;
-        this.c.a.l.e(30, new f5.j() { // from class: j3.g0
-            @Override // f5.j
-            public final void invoke(Object obj) {
-                ((a2) obj).onDeviceVolumeChanged(b10, isStreamMute);
-            }
-        });
+    public final int f(int i10) {
+        return this.h.a(i10).a(-1);
+    }
+
+    public final boolean g(int i10) {
+        p4.b bVar = this.h;
+        return i10 == bVar.a - 1 && bVar.b(i10);
+    }
+
+    public final boolean h(int i10) {
+        return this.h.a(i10).n;
+    }
+
+    public final int hashCode() {
+        Object obj = this.a;
+        int hashCode = (217 + (obj == null ? 0 : obj.hashCode())) * 31;
+        Object obj2 = this.b;
+        int hashCode2 = (((hashCode + (obj2 != null ? obj2.hashCode() : 0)) * 31) + this.c) * 31;
+        long j10 = this.d;
+        int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+        long j11 = this.e;
+        return this.h.hashCode() + ((((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31) + (this.f ? 1 : 0)) * 31);
+    }
+
+    public final void i(Object obj, Object obj2, int i10, long j10, long j11, p4.b bVar, boolean z4) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = i10;
+        this.d = j10;
+        this.e = j11;
+        this.h = bVar;
+        this.f = z4;
     }
 }

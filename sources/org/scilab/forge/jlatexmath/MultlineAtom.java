@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class MultlineAtom extends Atom {
     public static final int GATHER = 1;
@@ -11,8 +11,8 @@ public class MultlineAtom extends Atom {
     private boolean isPartial;
     private int type;
 
-    public MultlineAtom(boolean z10, ArrayOfAtoms arrayOfAtoms, int i10) {
-        this.isPartial = z10;
+    public MultlineAtom(boolean z4, ArrayOfAtoms arrayOfAtoms, int i10) {
+        this.isPartial = z4;
         this.column = arrayOfAtoms;
         this.type = i10;
     }

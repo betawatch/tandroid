@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import j7.l1;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d0 extends k implements SubMenu {
     public final m A;
@@ -46,7 +46,7 @@ public final class d0 extends k implements SubMenu {
         if (i10 == 0) {
             return null;
         }
-        return l1.k(i10, "android:menu:actionviewstates:");
+        return a2.j(i10, "android:menu:actionviewstates:");
     }
 
     @Override // l.k
@@ -70,8 +70,8 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // l.k, android.view.Menu
-    public final void setGroupDividerEnabled(boolean z10) {
-        this.z.setGroupDividerEnabled(z10);
+    public final void setGroupDividerEnabled(boolean z4) {
+        this.z.setGroupDividerEnabled(z4);
     }
 
     @Override // android.view.SubMenu
@@ -99,8 +99,8 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // l.k, android.view.Menu
-    public final void setQwertyMode(boolean z10) {
-        this.z.setQwertyMode(z10);
+    public final void setQwertyMode(boolean z4) {
+        this.z.setQwertyMode(z4);
     }
 
     @Override // android.view.SubMenu

@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -25,9 +25,9 @@ final class zzvc {
     /* JADX WARN: Removed duplicated region for block: B:20:0x012f  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
     static {
-        boolean z10;
+        boolean z4;
         zzvb zzvbVar;
-        boolean z11;
+        boolean z10;
         Field zzB;
         zzvb zzvbVar2;
         Unsafe zzg2 = zzg();
@@ -57,8 +57,8 @@ final class zzvc {
                 zzh(th2);
             }
             if (zzB() != null) {
-                z10 = true;
-                zzg = z10;
+                z4 = true;
+                zzg = z4;
                 zzvbVar = zzf;
                 if (zzvbVar != null) {
                     try {
@@ -72,11 +72,11 @@ final class zzvc {
                         cls4.getMethod("putLong", Object.class, cls, cls);
                         cls4.getMethod("getObject", Object.class, cls);
                         cls4.getMethod("putObject", Object.class, cls, Object.class);
-                        z11 = true;
+                        z10 = true;
                     } catch (Throwable th3) {
                         zzh(th3);
                     }
-                    zzh = z11;
+                    zzh = z10;
                     zza = zzz(byte[].class);
                     zzz(boolean[].class);
                     zzA(boolean[].class);
@@ -96,8 +96,8 @@ final class zzvc {
                     }
                     zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
                 }
-                z11 = false;
-                zzh = z11;
+                z10 = false;
+                zzh = z10;
                 zza = zzz(byte[].class);
                 zzz(boolean[].class);
                 zzA(boolean[].class);
@@ -118,13 +118,13 @@ final class zzvc {
                 zzb = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
             }
         }
-        z10 = false;
-        zzg = z10;
+        z4 = false;
+        zzg = z4;
         zzvbVar = zzf;
         if (zzvbVar != null) {
         }
-        z11 = false;
-        zzh = z11;
+        z10 = false;
+        zzh = z10;
         zza = zzz(byte[].class);
         zzz(boolean[].class);
         zzA(boolean[].class);
@@ -211,8 +211,8 @@ final class zzvc {
     public static Object zze(Class cls) {
         try {
             return zzc.allocateInstance(cls);
-        } catch (InstantiationException e10) {
-            throw new IllegalStateException(e10);
+        } catch (InstantiationException e) {
+            throw new IllegalStateException(e);
         }
     }
 
@@ -232,8 +232,8 @@ final class zzvc {
         Logger.getLogger(zzvc.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
     }
 
-    public static void zzm(Object obj, long j10, boolean z10) {
-        zzf.zzc(obj, j10, z10);
+    public static void zzm(Object obj, long j10, boolean z4) {
+        zzf.zzc(obj, j10, z4);
     }
 
     public static void zzn(byte[] bArr, long j10, byte b10) {
@@ -244,8 +244,8 @@ final class zzvc {
         zzf.zze(obj, j10, d);
     }
 
-    public static void zzp(Object obj, long j10, float f9) {
-        zzf.zzf(obj, j10, f9);
+    public static void zzp(Object obj, long j10, float f10) {
+        zzf.zzf(obj, j10, f10);
     }
 
     public static void zzq(Object obj, long j10, int i10) {

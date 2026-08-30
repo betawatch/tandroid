@@ -1,40 +1,57 @@
 package cg;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c extends b {
-    public d d;
-
-    @Override // cg.b
-    public final f2.p0 a() {
-        d dVar = new d(UserConfig.selectedAccount, this.a);
-        this.d = dVar;
-        dVar.r = this;
-        return dVar;
+public final class c extends m {
+    @Override // cg.m
+    public final float a() {
+        return 0.3f;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        d dVar = this.d;
-        Context context = getContext();
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        ArrayList arrayList = dVar.f;
-        f fVar = new f(context, dVar.c);
-        int i12 = 0;
-        for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            fVar.a((e) arrayList.get(i13));
-            fVar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
-            ((e) arrayList.get(i13)).e = i12;
-            i12 += fVar.getMeasuredHeight();
-        }
-        dVar.n = i12;
+    @Override // cg.m
+    public final float b() {
+        return (float) Math.toRadians(0.0d);
+    }
+
+    @Override // cg.m
+    public final int c() {
+        return -10742;
+    }
+
+    @Override // cg.m
+    public final float d() {
+        return 0.5f;
+    }
+
+    @Override // cg.m
+    public final int e() {
+        return R.raw.photo_marker;
+    }
+
+    @Override // cg.m
+    public final float f() {
+        return 0.45f;
+    }
+
+    @Override // cg.m
+    public final float g() {
+        return 0.4f;
+    }
+
+    @Override // cg.m
+    public final float h() {
+        return 1.5f;
+    }
+
+    @Override // cg.m
+    public final float k() {
+        return 0.04f;
+    }
+
+    @Override // cg.m
+    public final int l() {
+        return R.drawable.paint_elliptical_brush;
     }
 }

@@ -1,39 +1,62 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d5 implements x5 {
-    public static final d5 b = new d5(0);
-    public final /* synthetic */ int a;
+public abstract class d5 implements Cloneable {
+    public final e5 a;
+    public e5 b;
 
-    public /* synthetic */ d5(int i10) {
-        this.a = i10;
+    public d5(e5 e5Var) {
+        this.a = e5Var;
+        if (e5Var.g()) {
+            throw new IllegalArgumentException("Default instance must be immutable.");
+        }
+        this.b = (e5) e5Var.h(4, null);
     }
 
-    @Override // com.google.android.gms.internal.cast.x5
-    public final g6 zzb(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!f5.class.isAssignableFrom(cls)) {
-                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
-                }
-                try {
-                    return (g6) f5.k(cls.asSubclass(f5.class)).h(3, null);
-                } catch (Exception e10) {
-                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
-                }
-            default:
-                throw new IllegalStateException("This should never be called.");
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
+    
+        if (r3 != false) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final e5 a() {
+        e5 b10 = b();
+        byte byteValue = ((Byte) b10.h(1, null)).byteValue();
+        if (byteValue != 1) {
+            if (byteValue != 0) {
+                boolean f10 = d6.c.a(b10.getClass()).f(b10);
+                b10.h(2, true == f10 ? b10 : null);
+            }
+            throw new a7.b("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
         }
+        return b10;
     }
 
-    @Override // com.google.android.gms.internal.cast.x5
-    public final boolean zzc(Class cls) {
-        switch (this.a) {
-            case 0:
-                return f5.class.isAssignableFrom(cls);
-            default:
-                return false;
+    public final e5 b() {
+        if (!this.b.g()) {
+            return this.b;
         }
+        e5 e5Var = this.b;
+        e5Var.getClass();
+        d6.c.a(e5Var.getClass()).a(e5Var);
+        e5Var.d();
+        return this.b;
+    }
+
+    public final void c() {
+        if (this.b.g()) {
+            return;
+        }
+        e5 e5Var = (e5) this.a.h(4, null);
+        d6.c.a(e5Var.getClass()).d(e5Var, this.b);
+        this.b = e5Var;
+    }
+
+    public final Object clone() {
+        d5 d5Var = (d5) this.a.h(5, null);
+        d5Var.b = b();
+        return d5Var;
     }
 }

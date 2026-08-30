@@ -1,83 +1,60 @@
 package gh;
 
-import android.animation.ValueAnimator;
-import android.graphics.Path;
-import android.text.Layout;
+import android.content.Context;
 import android.view.View;
-import i7.w;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.mi0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.g20;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.n30;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c extends Path {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ Layout b;
-    public final /* synthetic */ Stack c;
-    public final /* synthetic */ List d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
+public final class c implements il0 {
+    public final /* synthetic */ f6 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ f c;
 
-    public c(View view, Layout layout, Stack stack, List list, int i10, int i11, ArrayList arrayList) {
-        this.a = view;
-        this.b = layout;
-        this.c = stack;
-        this.d = list;
-        this.e = i10;
-        this.f = i11;
-        this.g = arrayList;
+    public c(Context context, f fVar, f6 f6Var) {
+        this.c = fVar;
+        this.a = f6Var;
+        this.b = context;
     }
 
-    @Override // android.graphics.Path
-    public final void addRect(float f9, float f10, float f11, float f12, Path.Direction direction) {
-        Stack stack = this.c;
-        int i10 = 0;
-        k kVar = (stack == null || stack.isEmpty()) ? new k() : (k) stack.remove(0);
-        kVar.y = false;
-        ArrayList arrayList = this.g;
-        if (arrayList != null) {
-            float f13 = (f10 + f12) / 2.0f;
-            while (true) {
-                if (i10 >= arrayList.size()) {
-                    break;
-                }
-                mi0 mi0Var = (mi0) arrayList.get(i10);
-                if (f13 >= mi0Var.b && f13 <= mi0Var.c) {
-                    kVar.y = true;
-                    break;
-                }
-                i10++;
+    @Override // org.telegram.ui.Components.il0
+    public final void f(int i10, View view) {
+        TLRPC.TL_help_country tL_help_country;
+        f fVar = this.c;
+        g20 g20Var = fVar.e0;
+        HashMap hashMap = fVar.g0;
+        if (i10 == 0 || (tL_help_country = (TLRPC.TL_help_country) fVar.a0.G(i10 - 1).G) == null) {
+            return;
+        }
+        boolean z4 = false;
+        if (hashMap.containsKey(tL_help_country.iso2)) {
+            g20Var.c((n30) hashMap.remove(tL_help_country.iso2));
+        } else {
+            int size = hashMap.size();
+            int i11 = fVar.j0;
+            if (size >= i11) {
+                new qc(fVar.k0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
+                return;
             }
+            n30 n30Var = new n30(this.b, tL_help_country);
+            n30Var.setOnClickListener(new a(fVar, 4));
+            g20Var.a(n30Var);
+            hashMap.put(tL_help_country.iso2, n30Var);
+            z4 = true;
         }
-        kVar.n = -1.0f;
-        ValueAnimator valueAnimator = kVar.r;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        if (view instanceof kg.c) {
+            ((kg.c) view).c(z4, true);
         }
-        kVar.p = true;
-        int max = (int) Math.max(f9, this.e);
-        int i11 = (int) f10;
-        int i12 = this.f;
-        kVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
-        kVar.h(this.b.getPaint().getColor());
-        kVar.t = ct.c;
-        int width = kVar.getBounds().width() / AndroidUtilities.dp(6.0f);
-        int i13 = k.B;
-        int b10 = w.b(width * i13, i13, k.A);
-        Stack stack2 = kVar.c;
-        kVar.d = b10;
-        while (kVar.h.size() + stack2.size() < b10) {
-            stack2.push(new e());
-        }
-        View view = this.a;
-        if (view != null) {
-            kVar.i = view;
-        }
-        this.d.add(kVar);
+        fVar.a0.N(true);
+        fVar.b0.c(hashMap.size(), true);
     }
 }

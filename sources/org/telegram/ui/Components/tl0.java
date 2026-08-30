@@ -1,101 +1,209 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import android.os.SystemClock;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.AnimationUtils;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.io.IOException;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class tl0 extends dw0 {
-    public float d;
-    public final Paint f;
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public int e = 1;
+public final class tl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public tl0(boolean z10) {
-        if (z10) {
-            this.f = new Paint(1);
+    public /* synthetic */ tl0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                vl0 vl0Var = (vl0) this.b;
+                RecyclerView recyclerView = vl0Var.a;
+                if (recyclerView == null) {
+                    return;
+                }
+                if (vl0Var.g) {
+                    recyclerView.scrollBy(0, -vl0Var.i);
+                    AndroidUtilities.runOnUIThread(this);
+                    return;
+                } else {
+                    if (vl0Var.h) {
+                        recyclerView.scrollBy(0, vl0Var.i);
+                        AndroidUtilities.runOnUIThread(this);
+                        return;
+                    }
+                    return;
+                }
+            case 1:
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) this.b;
+                if (scrollSlidingTextTabStrip.E) {
+                    float f10 = scrollSlidingTextTabStrip.P + ((SystemClock.elapsedRealtime() <= 17 ? r5 : 17L) / scrollSlidingTextTabStrip.V);
+                    scrollSlidingTextTabStrip.P = f10;
+                    scrollSlidingTextTabStrip.setAnimationIdicatorProgress(scrollSlidingTextTabStrip.K.getInterpolation(f10));
+                    if (scrollSlidingTextTabStrip.P > 1.0f) {
+                        scrollSlidingTextTabStrip.P = 1.0f;
+                    }
+                    if (scrollSlidingTextTabStrip.P < 1.0f) {
+                        AndroidUtilities.runOnUIThread(scrollSlidingTextTabStrip.a0);
+                        return;
+                    }
+                    scrollSlidingTextTabStrip.E = false;
+                    scrollSlidingTextTabStrip.setEnabled(true);
+                    tm0 tm0Var = scrollSlidingTextTabStrip.b;
+                    if (tm0Var != null) {
+                        tm0Var.v0(1.0f);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 2:
+                ShutterButton shutterButton = (ShutterButton) this.b;
+                dv0 dv0Var = shutterButton.e;
+                if (dv0Var == null || ((nl) dv0Var).a()) {
+                    return;
+                }
+                shutterButton.v = false;
+                return;
+            case 3:
+                zw0 zw0Var = (zw0) this.b;
+                View view = zw0Var.s;
+                if (view == null) {
+                    zw0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
+                    return;
+                }
+                if (view.getVisibility() != 0) {
+                    zw0Var.s.setVisibility(0);
+                    zw0Var.s.setAlpha(0.0f);
+                }
+                zw0Var.s.animate().setListener(null).cancel();
+                zw0Var.s.animate().alpha(1.0f).setDuration(150L).start();
+                return;
+            case 4:
+                k81 k81Var = (k81) this.b;
+                if (k81Var.G) {
+                    float f11 = k81Var.c0 + ((SystemClock.elapsedRealtime() <= 17 ? r5 : 17L) / 200.0f);
+                    k81Var.c0 = f11;
+                    k81Var.setAnimationIdicatorProgress(k81Var.U.getInterpolation(f11));
+                    if (k81Var.c0 > 1.0f) {
+                        k81Var.c0 = 1.0f;
+                    }
+                    if (k81Var.c0 < 1.0f) {
+                        AndroidUtilities.runOnUIThread(k81Var.f0);
+                        return;
+                    }
+                    k81Var.G = false;
+                    k81Var.setEnabled(true);
+                    j81 j81Var = k81Var.y;
+                    if (j81Var != null) {
+                        ((o2.o) j81Var).q(1.0f);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 5:
+                org.telegram.ui.v30 v30Var = (org.telegram.ui.v30) this.b;
+                if (!v30Var.b || v30Var.N0.w0 != null) {
+                    AndroidUtilities.runOnUIThread(v30Var.e0, 3000L);
+                    return;
+                } else {
+                    v30Var.d0 = false;
+                    v30Var.setUiVisible(false);
+                    return;
+                }
+            case 6:
+                p2.u uVar = (p2.u) this.b;
+                p2.b bVar = uVar.d;
+                bVar.k(0);
+                p2.h hVar = p2.b0.i;
+                bVar.j(24, hVar);
+                uVar.c(hVar);
+                return;
+            case 7:
+                dg.j jVar = ((ph.h9) this.b).G0;
+                if (jVar instanceof dg.b4) {
+                    ((dg.b4) jVar).getEditText();
+                    return;
+                }
+                return;
+            case 8:
+                ((t5.h) this.b).g(false);
+                return;
+            case 9:
+                u0.d dVar = (u0.d) this.b;
+                m.s1 s1Var = dVar.c;
+                u0.a aVar = dVar.a;
+                if (dVar.B) {
+                    if (dVar.x) {
+                        dVar.x = false;
+                        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+                        aVar.e = currentAnimationTimeMillis;
+                        aVar.g = -1L;
+                        aVar.f = currentAnimationTimeMillis;
+                        aVar.h = 0.5f;
+                    }
+                    if ((aVar.g > 0 && AnimationUtils.currentAnimationTimeMillis() > aVar.g + aVar.i) || !dVar.e()) {
+                        dVar.B = false;
+                        return;
+                    }
+                    if (dVar.y) {
+                        dVar.y = false;
+                        long uptimeMillis = SystemClock.uptimeMillis();
+                        MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+                        s1Var.onTouchEvent(obtain);
+                        obtain.recycle();
+                    }
+                    if (aVar.f == 0) {
+                        throw new RuntimeException("Cannot compute scroll delta before calling start()");
+                    }
+                    long currentAnimationTimeMillis2 = AnimationUtils.currentAnimationTimeMillis();
+                    float a2 = aVar.a(currentAnimationTimeMillis2);
+                    long j10 = currentAnimationTimeMillis2 - aVar.f;
+                    aVar.f = currentAnimationTimeMillis2;
+                    dVar.D.scrollListBy((int) (j10 * ((a2 * 4.0f) + ((-4.0f) * a2 * a2)) * aVar.d));
+                    WeakHashMap weakHashMap = r0.j0.a;
+                    s1Var.postOnAnimation(this);
+                    return;
+                }
+                return;
+            case 10:
+                u5.p pVar = (u5.p) this.b;
+                synchronized (u5.p.i) {
+                    try {
+                        if (pVar.d()) {
+                            pVar.f(15);
+                            return;
+                        }
+                        return;
+                    } finally {
+                    }
+                }
+            case 11:
+                if (((TaskCompletionSource) this.b).trySetException(new IOException("TIMEOUT"))) {
+                    Log.w("Rpc", "No response");
+                    return;
+                }
+                return;
+            default:
+                xf.e eVar = (xf.e) this.b;
+                eVar.f.animate().setDuration(120L).alpha(0.0f);
+                eVar.h.animate().setListener(null).start();
+                if (eVar.h.getVisibility() != 0) {
+                    eVar.h.setVisibility(0);
+                    eVar.h.setAlpha(0.0f);
+                }
+                eVar.h.animate().setDuration(120L).alpha(1.0f).start();
+                return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void b(int i10) {
-        Paint paint = this.f;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.f;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.g6.c2;
-        }
-        paint.setAlpha(((int) (this.d * 200.0f)) + 55);
-        canvas.drawCircle(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.a ? 8.0f : 9.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.c) {
-            long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.b;
-            this.b = currentTimeMillis;
-            if (j10 > 50) {
-                j10 = 50;
-            }
-            float f9 = this.d;
-            int i10 = this.e;
-            float f10 = ((i10 * j10) / 400.0f) + f9;
-            this.d = f10;
-            if (i10 > 0 && f10 >= 1.0f) {
-                this.e = -1;
-                this.d = 1.0f;
-            } else if (i10 < 0 && f10 <= 0.0f) {
-                this.e = 1;
-                this.d = 0.0f;
-            }
-            a();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void e() {
-        this.c = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(10.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
+import dd.p;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import jd.c0;
-import sc.c;
-import uc.i;
+import k7.p7;
+import ld.c0;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzio extends i implements p {
     Object zza;
@@ -26,21 +27,21 @@ final class zzio extends i implements p {
         this.zzf = str;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         return new zzio(this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzio) create((c0) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzio) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x007a, code lost:
     
         if (r7 != r0) goto L20;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -50,19 +51,19 @@ final class zzio extends i implements p {
         Object zzg;
         zzzq zzzqVar;
         zzmf zzmfVar;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zzc;
         try {
-        } catch (Exception e10) {
+        } catch (Exception e) {
             zzip zzipVar = this.zze;
             zziz zzizVar = this.zzd;
             this.zza = null;
             this.zzb = null;
             this.zzc = 2;
-            zzh = zzipVar.zzh(e10, zzizVar, this);
+            zzh = zzipVar.zzh(e, zzizVar, this);
         }
         if (i10 == 0) {
-            c7.b(obj);
+            p7.b(obj);
             zziz zzizVar2 = this.zzd;
             zzizVar2.zza = new zzcs();
             zzzq zzi = zzzq.zzi(zzpp.zzh().zzj(this.zzf));
@@ -83,15 +84,15 @@ final class zzio extends i implements p {
             return aVar;
         }
         if (i10 != 1) {
-            c7.b(obj);
-            return qc.i.a;
+            p7.b(obj);
+            return sc.i.a;
         }
         zzmfVar = (zzmf) this.zzb;
         zzzqVar = (zzzq) this.zza;
-        c7.b(obj);
+        p7.b(obj);
         zzmfVar.zzf();
         new Long(zzmfVar.zza(TimeUnit.MICROSECONDS));
         zzzqVar.zzf();
-        return qc.i.a;
+        return sc.i.a;
     }
 }

@@ -1,6 +1,7 @@
 package com.google.android.gms.tasks;
 
 import android.os.Looper;
+import b6.m;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.Collection;
@@ -13,10 +14,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import p7.a;
-import z5.l;
+import r7.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
@@ -30,7 +30,7 @@ public final class Tasks {
         if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
             throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
         }
-        l.i(task, "Task must not be null");
+        m.i(task, "Task must not be null");
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
@@ -91,9 +91,9 @@ public final class Tasks {
     }
 
     public static <T> Task<T> withTimeout(Task<T> task, long j10, TimeUnit timeUnit) {
-        l.i(task, "Task must not be null");
-        l.a("Timeout must be positive", j10 > 0);
-        l.i(timeUnit, "TimeUnit must not be null");
+        m.i(task, "Task must not be null");
+        m.a("Timeout must be positive", j10 > 0);
+        m.i(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
         final a aVar = new a(Looper.getMainLooper());
@@ -143,8 +143,8 @@ public final class Tasks {
 
     @Deprecated
     public static <TResult> Task<TResult> call(Executor executor, Callable<TResult> callable) {
-        l.i(executor, "Executor must not be null");
-        l.i(callable, "Callback must not be null");
+        m.i(executor, "Executor must not be null");
+        m.i(callable, "Callback must not be null");
         zzw zzwVar = new zzw();
         executor.execute(new zzz(zzwVar, callable));
         return zzwVar;
@@ -199,8 +199,8 @@ public final class Tasks {
             if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
                 throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
             }
-            l.i(task, "Task must not be null");
-            l.i(timeUnit, "TimeUnit must not be null");
+            m.i(task, "Task must not be null");
+            m.i(timeUnit, "TimeUnit must not be null");
             if (task.isComplete()) {
                 return (TResult) zza(task);
             }

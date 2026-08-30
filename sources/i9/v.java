@@ -1,21 +1,47 @@
 package i9;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class v implements s9.d {
-    public static final v a = new v();
-    public static final s9.c b = s9.c.c("rolloutVariant");
-    public static final s9.c c = s9.c.c("parameterKey");
-    public static final s9.c d = s9.c.c("parameterValue");
-    public static final s9.c e = s9.c.c("templateVersion");
+import android.util.Log;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 
-    @Override // s9.a
-    public final void a(Object obj, Object obj2) {
-        s9.e eVar = (s9.e) obj2;
-        w0 w0Var = (w0) ((y1) obj);
-        eVar.e(b, w0Var.a);
-        eVar.e(c, w0Var.b);
-        eVar.e(d, w0Var.c);
-        eVar.c(e, w0Var.d);
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class v extends d {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ ExecutorService b;
+
+    public v(String str, ExecutorService executorService) {
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        this.a = str;
+        this.b = executorService;
+    }
+
+    @Override // i9.d
+    public final void a() {
+        String str = this.a;
+        ExecutorService executorService = this.b;
+        try {
+            String concat = "Executing shutdown hook for ".concat(str);
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", concat, null);
+            }
+            executorService.shutdown();
+            if (executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
+                return;
+            }
+            String concat2 = str.concat(" did not shut down in the allocated time. Requesting immediate shutdown.");
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", concat2, null);
+            }
+            executorService.shutdownNow();
+        } catch (InterruptedException unused) {
+            Locale locale = Locale.US;
+            String o10 = android.support.v4.media.a.o("Interrupted while waiting for ", str, " to shut down. Requesting immediate shutdown.");
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", o10, null);
+            }
+            executorService.shutdownNow();
+        }
     }
 }

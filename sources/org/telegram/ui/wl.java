@@ -1,22 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wl extends org.telegram.ui.Cells.h0 {
-    public final /* synthetic */ em H;
+public final class wl extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ xn d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wl(em emVar, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, c6Var);
-        this.H = emVar;
+    public wl(xn xnVar, boolean z4, boolean z10, boolean z11) {
+        this.d = xnVar;
+        this.a = z4;
+        this.b = z10;
+        this.c = z11;
     }
 
-    @Override // org.telegram.ui.Cells.h0
-    public final int getSideMenuWidth() {
-        tn tnVar = this.H.M;
-        int i10 = tn.Dc;
-        return tnVar.R8();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        xn xnVar = this.d;
+        xnVar.J2 = null;
+        xnVar.G2.setVisibility(this.a ? 0 : 4);
+        xnVar.I2.setVisibility(this.b ? 0 : 4);
+        xnVar.H2.setVisibility(this.c ? 0 : 4);
     }
 }

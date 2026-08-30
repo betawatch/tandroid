@@ -98,25 +98,25 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
-        return t3.a0(aVar, spliterator, z10, intFunction);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z4, IntFunction intFunction) {
+        return t3.a0(aVar, spliterator, z4, intFunction);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
-        return new z7(aVar, supplier, z10);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z4) {
+        return new z7(aVar, supplier, z4);
     }
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
-        boolean q6;
+        boolean q10;
         do {
-            q6 = j5Var.q();
-            if (q6) {
+            q10 = j5Var.q();
+            if (q10) {
                 break;
             }
         } while (spliterator.tryAdvance(j5Var));
-        return q6;
+        return q10;
     }
 
     @Override // j$.util.stream.t3

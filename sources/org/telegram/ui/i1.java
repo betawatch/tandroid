@@ -1,50 +1,58 @@
 package org.telegram.ui;
 
 import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class i1 extends f2.x {
-    public final /* synthetic */ n1 S;
+public final class i1 extends f2.o0 {
+    public final /* synthetic */ l1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i1(n1 n1Var) {
-        super(true);
-        this.S = n1Var;
+    public i1(l1 l1Var) {
+        this.c = l1Var;
     }
 
-    @Override // f2.x
-    public final boolean B1(int i10) {
-        byte b10;
-        n1 n1Var = this.S;
-        ArrayList<TL_iv.PageBlock> arrayList = n1Var.s.items;
-        MessageObject.GroupedMessagePosition groupedMessagePosition = (MessageObject.GroupedMessagePosition) n1Var.v.b.get(arrayList.get((arrayList.size() - i10) - 1));
-        if (groupedMessagePosition.minX != groupedMessagePosition.maxX && (b10 = groupedMessagePosition.minY) == groupedMessagePosition.maxY && b10 != 0) {
-            int size = n1Var.v.a.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) n1Var.v.a.get(i11);
-                if (groupedMessagePosition2 != groupedMessagePosition) {
-                    byte b11 = groupedMessagePosition2.minY;
-                    byte b12 = groupedMessagePosition.minY;
-                    if (b11 <= b12 && groupedMessagePosition2.maxY >= b12) {
-                        return true;
-                    }
-                }
-            }
+    @Override // f2.o0
+    public final int h() {
+        TL_iv.pageBlockCollage pageblockcollage = this.c.s;
+        if (pageblockcollage == null) {
+            return 0;
         }
-        return false;
+        return pageblockcollage.items.size();
     }
 
-    @Override // f2.x
-    public final boolean C1(View view) {
-        return false;
+    @Override // f2.o0
+    public final int j(int i10) {
+        ArrayList<TL_iv.PageBlock> arrayList = this.c.s.items;
+        return arrayList.get((arrayList.size() - i10) - 1) instanceof TL_iv.pageBlockPhoto ? 0 : 1;
     }
 
-    @Override // f2.w, f2.j0, f2.w0
-    public final boolean y0() {
-        return false;
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        l1 l1Var2 = this.c;
+        k1 k1Var = l1Var2.v;
+        ArrayList<TL_iv.PageBlock> arrayList = l1Var2.s.items;
+        TL_iv.PageBlock pageBlock = arrayList.get((arrayList.size() - i10) - 1);
+        int i11 = l1Var.f;
+        View view = l1Var.a;
+        if (i11 == 0) {
+            e2 e2Var = (e2) view;
+            e2Var.O = (MessageObject.GroupedMessagePosition) k1Var.b.get(pageBlock);
+            e2Var.a((TL_iv.pageBlockPhoto) pageBlock, l1Var2.w.B.cached_page, false, true);
+        } else {
+            z2 z2Var = (z2) view;
+            z2Var.Q = (MessageObject.GroupedMessagePosition) k1Var.b.get(pageBlock);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            z2Var.b(pageblockvideo, (a3) l1Var2.x.y.f(pageblockvideo.video_id), false, true);
+        }
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        l1 l1Var = this.c;
+        return new org.telegram.ui.Components.el0(i10 != 0 ? new z2(l1Var.getContext(), l1Var.x, l1Var.w, 2) : new e2(l1Var.getContext(), l1Var.x, l1Var.w, 2));
     }
 }

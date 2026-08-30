@@ -1,40 +1,40 @@
 package org.telegram.ui;
 
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i0 implements Utilities.Callback0Return {
-    public final /* synthetic */ m4 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ ye.c d;
+public final class i0 extends org.telegram.ui.ActionBar.h5 {
+    public final /* synthetic */ int f;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate h;
 
-    public /* synthetic */ i0(m4 m4Var, String str, boolean[] zArr, ye.c cVar) {
-        this.a = m4Var;
-        this.b = str;
-        this.c = zArr;
-        this.d = cVar;
+    public /* synthetic */ i0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.f = i10;
+        this.h = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        String str = this.b;
-        if (!ye.d.f(Uri.parse(str), false, this.c)) {
-            return Boolean.FALSE;
+    @Override // org.telegram.ui.ActionBar.h5, org.telegram.ui.ActionBar.a3
+    public boolean g() {
+        switch (this.f) {
+            case 0:
+                l4 l4Var = (l4) this.h;
+                org.telegram.ui.Cells.m9 m9Var = l4Var.M0;
+                if (m9Var == null || !m9Var.y()) {
+                    return true;
+                }
+                l4Var.M0.f(false);
+                return false;
+            default:
+                return super.g();
         }
-        m4 m4Var = this.a;
-        ye.c cVar = this.d;
-        if (cVar != null) {
-            cVar.c = new org.telegram.ui.ActionBar.c(7, m4Var, cVar);
-        } else {
-            z3 z3Var = m4Var.G;
-            if (z3Var != null) {
-                z3Var.dismiss(true);
-            }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5, org.telegram.ui.ActionBar.a3
+    public void onOpenAnimationEnd() {
+        switch (this.f) {
+            case 1:
+                ((org.telegram.ui.Components.lq0) this.h).V = true;
+                break;
         }
-        ye.d.r(m4Var.H, Uri.parse(str), true, true, false, cVar, null, true, true, false);
-        return Boolean.TRUE;
     }
 }

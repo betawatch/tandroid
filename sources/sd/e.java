@@ -1,11 +1,27 @@
 package sd;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static final fc.a a = new fc.a("NO_OWNER", 2);
+public final class e extends h {
+    public static final e d;
 
-    public static d a() {
-        return new d(false);
+    static {
+        int i10 = k.c;
+        int i11 = k.d;
+        long j10 = k.e;
+        String str = k.a;
+        e eVar = new e();
+        eVar.c = new c(i10, j10, str, i11);
+        d = eVar;
+    }
+
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        throw new UnsupportedOperationException("Dispatchers.Default cannot be closed");
+    }
+
+    @Override // ld.a0
+    public final String toString() {
+        return "Dispatchers.Default";
     }
 }

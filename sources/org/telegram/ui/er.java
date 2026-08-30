@@ -1,54 +1,65 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class er implements org.telegram.ui.Cells.y4, org.telegram.ui.Components.kv0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fr b;
+public final class er implements ir {
+    public final /* synthetic */ pr a;
 
-    public /* synthetic */ er(fr frVar, int i10) {
-        this.a = i10;
-        this.b = frVar;
+    public er(pr prVar) {
+        this.a = prVar;
     }
 
-    @Override // org.telegram.ui.Cells.y4
-    public boolean d(org.telegram.ui.Cells.z4 z4Var, boolean z10) {
-        jr jrVar = this.b.d;
-        return jrVar.h0(jrVar.a.E(((Integer) z4Var.getTag()).intValue()), !z10, z4Var);
+    @Override // org.telegram.ui.ir
+    public final void a(TLRPC.User user) {
+        pr.c0(this.a, user);
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public void h(int i10) {
-        switch (this.a) {
-            case 1:
-                jr jrVar = this.b.d;
-                if (jrVar.s != null) {
-                    int i11 = jrVar.l1;
-                    boolean z10 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
-                    jrVar.l1 = i10;
-                    if (z10) {
-                        dr w02 = jrVar.w0();
-                        jrVar.B0();
-                        jrVar.A0(w02);
-                    }
-                    jrVar.a.m(jrVar.L0);
-                    break;
-                }
-                break;
-            default:
-                this.b.d.o1 = i10 + 1;
-                break;
+    @Override // org.telegram.ui.ir
+    public final void b(long j10) {
+        pr prVar = this.a;
+        ArrayList arrayList = prVar.C;
+        a0.h hVar = prVar.H;
+        TLRPC.User user = prVar.getMessagesController().getUser(Long.valueOf(j10));
+        if (user != null) {
+            AndroidUtilities.runOnUIThread(new hp(6, this, user), 200L);
+        }
+        if (hVar.f(j10) == null) {
+            jr w02 = prVar.w0();
+            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            tL_channelParticipantAdmin.peer = tL_peerUser;
+            tL_peerUser.user_id = user.id;
+            tL_channelParticipantAdmin.date = prVar.getConnectionsManager().getCurrentTime();
+            tL_channelParticipantAdmin.promoted_by = prVar.getAccountInstance().getUserConfig().clientUserId;
+            arrayList.add(tL_channelParticipantAdmin);
+            hVar.k(tL_channelParticipantAdmin, user.id);
+            Collections.sort(arrayList, new nh.e4(15));
+            prVar.A0(w02);
         }
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public /* synthetic */ void m() {
-        int i10 = this.a;
+    @Override // org.telegram.ui.ir
+    public final void c(long j10, TLObject tLObject) {
+        pr prVar = this.a;
+        ArrayList arrayList = prVar.C;
+        a0.h hVar = prVar.H;
+        if (tLObject == null || hVar.f(j10) != null) {
+            return;
+        }
+        jr w02 = prVar.w0();
+        arrayList.add(tLObject);
+        hVar.k(tLObject, j10);
+        Collections.sort(arrayList, new nh.e4(15));
+        prVar.A0(w02);
     }
 
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
+    @Override // org.telegram.ui.ir
+    public final /* synthetic */ void d(long j10) {
     }
 }

@@ -1,37 +1,26 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class oe1 extends FrameLayout {
-    public TextView a;
-    public float b;
-    public boolean c;
+public final class oe1 implements View.OnClickListener {
+    public final /* synthetic */ kf1 a;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.c) {
-            float f9 = this.b + 0.013333334f;
-            this.b = f9;
-            if (f9 > 1.0f) {
-                this.c = false;
-                this.b = 1.0f;
-            }
-        } else {
-            float f10 = this.b - 0.013333334f;
-            this.b = f10;
-            if (f10 < 0.0f) {
-                this.c = true;
-                this.b = 0.0f;
-            }
+    public oe1(kf1 kf1Var) {
+        this.a = kf1Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        kf1 kf1Var = this.a;
+        if (kf1Var.J == 1) {
+            org.telegram.ui.Components.z4.j0(kf1Var, -kf1Var.a, null, kf1Var.g(), null, false, kf1Var.G, new ta(this, 5), kf1Var.getResourceProvider());
+            return;
         }
-        this.a.setTranslationX(org.telegram.ui.Components.jr.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
-        invalidate();
+        kf1Var.getMessagesController().addUserToChat(kf1Var.a, kf1Var.getUserConfig().getCurrentUser(), 0, null, kf1Var, false, new he1(kf1Var, 2), new ie1(kf1Var));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
+        kf1Var.O0(false);
     }
 }

@@ -1,8 +1,8 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class n extends c implements fd.g {
+public abstract class n extends c implements hd.g {
     public final boolean a;
 
     public n(Object obj, Class cls, String str, String str2, int i10) {
@@ -11,20 +11,20 @@ public abstract class n extends c implements fd.g {
     }
 
     @Override // kotlin.jvm.internal.c
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final fd.g getReflected() {
+    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    public final hd.g getReflected() {
         if (this.a) {
             throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
         }
-        fd.b compute = compute();
+        hd.b compute = compute();
         if (compute != this) {
-            return (fd.g) compute;
+            return (hd.g) compute;
         }
-        throw new ad.a("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
+        throw new cd.a("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
     }
 
     @Override // kotlin.jvm.internal.c
-    public final fd.b compute() {
+    public final hd.b compute() {
         return this.a ? this : super.compute();
     }
 
@@ -36,7 +36,7 @@ public abstract class n extends c implements fd.g {
             n nVar = (n) obj;
             return getOwner().equals(nVar.getOwner()) && getName().equals(nVar.getName()) && getSignature().equals(nVar.getSignature()) && j.a(getBoundReceiver(), nVar.getBoundReceiver());
         }
-        if (obj instanceof fd.g) {
+        if (obj instanceof hd.g) {
             return obj.equals(compute());
         }
         return false;
@@ -47,7 +47,7 @@ public abstract class n extends c implements fd.g {
     }
 
     public final String toString() {
-        fd.b compute = compute();
+        hd.b compute = compute();
         if (compute != this) {
             return compute.toString();
         }

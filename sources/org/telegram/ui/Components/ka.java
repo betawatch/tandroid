@@ -1,310 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RecordingCanvas;
 import android.graphics.RectF;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.os.Build;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ka {
-    public final ga a;
-    public final View b;
-    public final ColorMatrix c;
-    public final boolean d;
-    public boolean e;
-    public float f;
-    public Paint g;
-    public Paint h;
-    public final int i;
-    public final Integer j;
-    public final Path k;
-    public int l;
-    public int m;
-    public Bitmap n;
-    public BitmapShader o;
-    public final Matrix p;
-    public final RectF q;
-    public boolean r;
-    public Paint[] s;
-    public ValueAnimator t;
-    public final int[] u;
-    public final int[] v;
+public final class ka extends View {
+    public final Paint a;
+    public float b;
+    public int c;
+    public int d;
+    public final RectF e;
+    public final m2.h f;
+    public final int h;
+    public int n;
+    public int r;
 
-    public ka(ga gaVar, View view) {
-        this(gaVar, view, 6, false);
+    public ka(Context context, m2.h hVar, int i10) {
+        super(context);
+        this.a = new Paint(1);
+        new DecelerateInterpolator();
+        this.e = new RectF();
+        this.n = -1;
+        this.r = -1;
+        this.f = hVar;
+        this.h = i10;
     }
 
-    public final void a(Canvas canvas) {
-        b(canvas, true);
-    }
-
-    public final void b(Canvas canvas, boolean z10) {
-        ga gaVar = this.a;
-        if (!gaVar.c() || Build.VERSION.SDK_INT < 31) {
-            Paint c3 = c(1.0f);
-            if (c3 != null) {
-                canvas.drawPaint(c3);
-                return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        RectF rectF;
+        AndroidUtilities.dp(5.0f);
+        int i10 = this.n;
+        Paint paint = this.a;
+        if (i10 >= 0) {
+            paint.setColor((org.telegram.ui.ActionBar.j6.w0(null, i10, false) & 16777215) | (-1275068416));
+        } else {
+            paint.setColor(org.telegram.ui.ActionBar.j6.A0().q() ? -11184811 : -4473925);
+        }
+        this.d = this.f.getCurrentItem();
+        int i11 = 0;
+        while (true) {
+            int i12 = this.h;
+            rectF = this.e;
+            if (i11 >= i12) {
+                break;
             }
-            return;
-        }
-        boolean isHardwareAccelerated = canvas.isHardwareAccelerated();
-        Integer num = this.j;
-        if (!isHardwareAccelerated) {
-            canvas.drawColor(num != null ? num.intValue() : gaVar.i);
-            return;
-        }
-        RenderNode renderNode = (RenderNode) gaVar.l;
-        if (!renderNode.hasDisplayList()) {
-            RenderNode renderNode2 = (RenderNode) gaVar.k;
-            renderNode.setPosition(0, 0, renderNode2.getWidth(), renderNode2.getHeight());
-            RecordingCanvas beginRecording = renderNode.beginRecording();
-            beginRecording.drawColor(num != null ? num.intValue() : gaVar.i);
-            beginRecording.drawRenderNode(renderNode2);
-            renderNode.endRecording();
-        }
-        if (!renderNode.hasDisplayList()) {
-            canvas.drawColor(num != null ? num.intValue() : gaVar.i);
-            return;
-        }
-        canvas.drawColor(num != null ? num.intValue() : gaVar.i);
-        f(renderNode.getWidth(), renderNode.getHeight(), true);
-        if (renderNode.hasDisplayList()) {
-            Matrix matrix = this.p;
-            matrix.postTranslate(-0.0f, -0.0f);
-            this.h.setAlpha((int) 255.0f);
-            canvas.saveLayer(null, this.h);
-            canvas.concat(matrix);
-            if (z10) {
-                int i10 = this.l;
-                int width = renderNode.getWidth();
-                Path path = this.k;
-                if (i10 != width || this.m != renderNode.getHeight()) {
-                    path.rewind();
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    int width2 = renderNode.getWidth();
-                    this.l = width2;
-                    int height = renderNode.getHeight();
-                    this.m = height;
-                    rectF.set(0.0f, 0.0f, width2, height);
-                    path.addRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
-                }
-                canvas.clipPath(path);
+            if (i11 != this.d) {
+                rectF.set(AndroidUtilities.dp(11.0f) * i11, 0.0f, AndroidUtilities.dp(5.0f) + r5, AndroidUtilities.dp(5.0f));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
             }
-            canvas.drawRenderNode(renderNode);
-            canvas.restore();
+            i11++;
         }
+        int i13 = this.r;
+        if (i13 >= 0) {
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
+        } else {
+            paint.setColor(-14509328);
+        }
+        int dp = AndroidUtilities.dp(11.0f) * this.d;
+        if (this.b == 0.0f) {
+            rectF.set(dp, 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        } else if (this.c >= this.d) {
+            rectF.set(dp, 0.0f, (AndroidUtilities.dp(11.0f) * this.b) + AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        } else {
+            rectF.set(org.telegram.ui.yh.c(1.0f, this.b, AndroidUtilities.dp(11.0f), dp), 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
     }
 
-    public final Paint c(float f9) {
-        Bitmap b10;
-        Bitmap bitmap;
-        ga gaVar = this.a;
-        if (gaVar == null || (b10 = gaVar.b()) == null) {
-            return null;
-        }
-        BitmapShader bitmapShader = this.o;
-        if (bitmapShader == null || this.n != b10) {
-            if (this.d && bitmapShader != null && (bitmap = this.n) != null && !bitmap.isRecycled() && !b10.isRecycled()) {
-                Paint paint = this.h;
-                this.h = this.g;
-                this.g = paint;
-                this.e = true;
-                ValueAnimator valueAnimator = this.t;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    this.t = null;
-                }
-                this.f = 1.0f;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-                this.t = ofFloat;
-                ofFloat.addUpdateListener(new j6(this, 6));
-                this.t.start();
-            }
-            this.n = b10;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader2 = new BitmapShader(b10, tileMode, tileMode);
-            this.o = bitmapShader2;
-            this.h.setShader(bitmapShader2);
-        }
-        f(b10.getWidth(), b10.getHeight(), false);
-        Matrix matrix = this.p;
-        matrix.postTranslate(-0.0f, -0.0f);
-        this.o.setLocalMatrix(matrix);
-        this.h.setAlpha((int) (f9 * 255.0f));
-        return this.h;
-    }
-
-    public final Paint[] d() {
-        Paint c3 = c(1.0f);
-        boolean z10 = this.e;
-        Paint paint = z10 ? this.g : null;
-        if (c3 != null && z10) {
-            c3.setAlpha((int) org.telegram.messenger.x3.y(1.0f, this.f, 255.0f, 1.0f));
-        }
-        if (paint != null) {
-            paint.setAlpha((int) 255.0f);
-        }
-        if (this.s == null) {
-            this.s = new Paint[2];
-        }
-        Paint[] paintArr = this.s;
-        paintArr[0] = paint;
-        paintArr[1] = c3;
-        return paintArr;
-    }
-
-    public final void e(float f9, float f10, float f11, float f12) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f9, f10, f11, f12);
-        RectF rectF2 = this.q;
-        if (rectF2.top == rectF.top && rectF2.bottom == rectF.bottom && rectF2.left == rectF.left && rectF2.right == rectF.right) {
-            return;
-        }
-        rectF2.set(rectF);
-        Bitmap b10 = this.a.b();
-        if (b10 == null) {
-            return;
-        }
-        if (this.o == null || this.n != b10) {
-            this.n = b10;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(b10, tileMode, tileMode);
-            this.o = bitmapShader;
-            this.h.setShader(bitmapShader);
-        }
-        float width = rectF2.width() / this.n.getWidth();
-        float height = rectF2.height() / this.n.getHeight();
-        Matrix matrix = this.p;
-        matrix.reset();
-        matrix.postTranslate(rectF2.left, rectF2.top);
-        matrix.preScale(width, height);
-        this.o.setLocalMatrix(matrix);
-    }
-
-    public final void f(int i10, int i11, boolean z10) {
-        View view;
-        Matrix matrix = this.p;
-        matrix.reset();
-        ga gaVar = this.a;
-        View view2 = gaVar != null ? z10 ? gaVar.j : gaVar.b : null;
-        if (gaVar != null) {
-            ArrayList arrayList = gaVar.c;
-            View view3 = this.b;
-            do {
-                matrix.preScale(1.0f / view3.getScaleX(), 1.0f / view3.getScaleY(), view3.getPivotX(), view3.getPivotY());
-                matrix.preRotate(-view3.getRotation(), view3.getPivotX(), view3.getPivotY());
-                matrix.preTranslate(-view3.getX(), -view3.getY());
-                if (!(view3.getParent() instanceof View) || (view3 = (View) view3.getParent()) == null) {
-                    break;
-                }
-            } while (!arrayList.contains(view3));
-            if (view2 != view3) {
-                int indexOf = arrayList.indexOf(view3) + 1;
-                if (indexOf == 0 && (view = (View) arrayList.get(indexOf)) != null) {
-                    view3.getLocationOnScreen(this.u);
-                    view.getLocationOnScreen(this.v);
-                    matrix.preTranslate(r2[0] - r6[0], r2[1] - r6[1]);
-                }
-                while (indexOf >= 0 && indexOf < arrayList.size()) {
-                    View view4 = (View) arrayList.get(indexOf);
-                    if (view4 != null) {
-                        matrix.preScale(view4.getScaleX(), view4.getScaleY(), view4.getPivotX(), view4.getPivotY());
-                        matrix.preRotate(view4.getRotation(), view4.getPivotX(), view4.getPivotY());
-                        matrix.preTranslate(view4.getX(), view4.getY());
-                        indexOf++;
-                    }
-                }
-            }
-        }
-        if (view2 != null) {
-            matrix.preScale(view2.getWidth() / i10, view2.getHeight() / i11);
-        }
-    }
-
-    public ka(ga gaVar, View view, int i10, boolean z10) {
-        this.g = new Paint(3);
-        this.h = new Paint(3);
-        this.k = new Path();
-        this.p = new Matrix();
-        this.q = new RectF();
-        this.r = false;
-        this.u = new int[2];
-        this.v = new int[2];
-        this.a = gaVar;
-        this.b = view;
-        this.i = i10;
-        this.d = z10;
-        ColorMatrix colorMatrix = new ColorMatrix();
-        this.c = colorMatrix;
-        if (i10 == 0) {
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.45f);
-        } else if (i10 == 5) {
-            Paint paint = this.h;
-            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            paint.setXfermode(new PorterDuffXfermode(mode));
-            this.g.setXfermode(new PorterDuffXfermode(mode));
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.3f);
-        } else if (i10 == 2) {
-            Paint paint2 = this.h;
-            PorterDuff.Mode mode2 = PorterDuff.Mode.SRC_IN;
-            paint2.setXfermode(new PorterDuffXfermode(mode2));
-            this.g.setXfermode(new PorterDuffXfermode(mode2));
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.4f);
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.3f);
-        } else if (i10 == 1) {
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.35f);
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.7f);
-            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 1.5f);
-        } else if (i10 == 3) {
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.5f);
-        } else if (i10 == 4) {
-            this.j = -10329502;
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.6f);
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.3f);
-            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 1.2f);
-        } else if (i10 == 6) {
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.4f);
-            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.35f);
-        } else if (i10 == 7) {
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.5f);
-            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.95f);
-        } else if (i10 == 8) {
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.15f);
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.47f);
-        } else if (i10 == 9) {
-            Paint paint3 = this.h;
-            PorterDuff.Mode mode3 = PorterDuff.Mode.SRC_IN;
-            paint3.setXfermode(new PorterDuffXfermode(mode3));
-            this.g.setXfermode(new PorterDuffXfermode(mode3));
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.4f);
-            AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.45f);
-        } else if (i10 == 10) {
-            colorMatrix.setSaturation(1.6f);
-            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, this.r ? 0.97f : 0.92f);
-            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, this.r ? 0.12f : -0.06f);
-        }
-        this.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        this.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        if (view.isAttachedToWindow() && gaVar != null) {
-            gaVar.d.add(this);
-        }
-        view.addOnAttachStateChangeListener(new ia(0, this, gaVar));
+    public void setCurrentPage(int i10) {
+        this.d = i10;
+        invalidate();
     }
 }

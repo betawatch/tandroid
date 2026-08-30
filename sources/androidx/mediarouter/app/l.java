@@ -1,42 +1,80 @@
 package androidx.mediarouter.app;
 
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.view.animation.Transformation;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class l extends Animation {
+public final class l implements Animation.AnimationListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ l(View view, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = i10;
-        this.c = i11;
-        this.d = view;
+    public /* synthetic */ l(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.animation.Animation
-    public final void applyTransformation(float f9, Transformation transformation) {
-        int i10 = this.a;
-        View view = this.d;
-        int i11 = this.c;
-        int i12 = this.b;
-        switch (i10) {
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        switch (this.a) {
             case 0:
-                s.o(i12 - ((int) ((i12 - i11) * f9)), view);
+                ((v) this.b).j(true);
+                break;
+            case 1:
                 break;
             default:
-                int i13 = i11 + ((int) ((i12 - i11) * f9));
-                int i14 = m0.f0;
-                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-                layoutParams.height = i13;
-                view.setLayoutParams(layoutParams);
+                p0 p0Var = ((n0) this.b).w;
+                p0Var.L = false;
+                p0Var.o();
                 break;
         }
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        int i10 = this.a;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                v vVar = (v) this.b;
+                OverlayListView overlayListView = vVar.R;
+                ArrayList arrayList = overlayListView.a;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    q0 q0Var = (q0) obj;
+                    if (!q0Var.j) {
+                        q0Var.i = overlayListView.getDrawingTime();
+                        q0Var.j = true;
+                    }
+                }
+                vVar.R.postDelayed(vVar.B0, vVar.u0);
+                break;
+            default:
+                ((n0) this.b).w.L = true;
+                break;
+        }
+    }
+
+    private final void a(Animation animation) {
+    }
+
+    private final void b(Animation animation) {
+    }
+
+    private final void c(Animation animation) {
+    }
+
+    private final void d(Animation animation) {
+    }
+
+    private final void e(Animation animation) {
     }
 }

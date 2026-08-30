@@ -1,65 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ym0 extends EditTextBoldCursor {
-    public final f5 b;
-    public int c;
-    public final n6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 e;
+public final class ym0 extends f2.q {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ ArrayList g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int i;
+    public final /* synthetic */ ArrayList j;
+    public final /* synthetic */ dn0 k;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ym0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.e = c6Var;
-        this.b = new f5(this);
-        n6 n6Var = new n6(false, true, true, false);
-        this.d = n6Var;
-        n6Var.k(0.2f, 160L, jr.h);
-        n6Var.t(AndroidUtilities.dp(15.33f));
-        n6Var.setCallback(this);
-        n6Var.b = 5;
+    public ym0(dn0 dn0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
+        this.k = dn0Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = arrayList;
+        this.h = i15;
+        this.i = i16;
+        this.j = arrayList2;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.b.a(org.telegram.ui.ActionBar.g6.v0(this.c < 0 ? org.telegram.ui.ActionBar.g6.p7 : org.telegram.ui.ActionBar.g6.P5, this.e), false);
-        n6 n6Var = this.d;
-        n6Var.r(a2);
-        n6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        n6Var.draw(canvas);
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ut, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        n6 n6Var = this.d;
-        if (n6Var != null) {
-            this.c = 12 - charSequence.length();
-            n6Var.b();
-            String str = "";
-            if (this.c <= 4) {
-                str = "" + this.c;
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        MessageObject messageObject;
+        dn0 dn0Var = this.k;
+        if (i10 >= 0 && i11 >= 0) {
+            if (i10 == this.c && i11 == dn0Var.s) {
+                return true;
             }
-            n6Var.q(str, true, true);
+            if (i10 == this.d && i11 == dn0Var.x) {
+                return true;
+            }
         }
+        MessageObject messageObject2 = null;
+        int i12 = this.e;
+        if (i10 < i12 || i10 >= this.f) {
+            int i13 = this.h;
+            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
+        } else {
+            messageObject = (MessageObject) this.g.get(i10 - i12);
+        }
+        int i14 = dn0Var.v;
+        if (i11 < i14 || i11 >= dn0Var.w) {
+            int i15 = dn0Var.y;
+            if (i11 >= i15 && i11 < dn0Var.B) {
+                messageObject2 = (MessageObject) dn0Var.f.get(i11 - i15);
+            }
+        } else {
+            messageObject2 = (MessageObject) dn0Var.e.get(i11 - i14);
+        }
+        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
+    @Override // f2.q
+    public final int d() {
+        return this.k.r;
+    }
+
+    @Override // f2.q
+    public final int e() {
+        return this.b;
     }
 }

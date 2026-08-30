@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.d2;
-import jd.e0;
+import dd.p;
+import k7.p7;
 import kotlin.jvm.internal.j;
-import sc.c;
-import uc.i;
+import ld.d2;
+import ld.e0;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzfo extends i implements p {
     int zza;
@@ -23,29 +24,29 @@ final class zzfo extends i implements p {
         this.zzc = zzfpVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzfo zzfoVar = new zzfo(this.zzb, this.zzc, cVar);
         zzfoVar.zzd = obj;
         return zzfoVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfo) create((zzgr) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzfo) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         zzcg zzt;
         zzcg zzt2;
         zzcg zzt3;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         try {
             if (this.zza != 0) {
-                c7.b(obj);
+                p7.b(obj);
             } else {
-                c7.b(obj);
+                p7.b(obj);
                 zzgr zzgrVar = (zzgr) this.zzd;
                 long j10 = this.zzb;
                 zzfn zzfnVar = new zzfn(zzgrVar, this.zzc, null);
@@ -56,17 +57,17 @@ final class zzfo extends i implements p {
                 }
             }
             return (zzxn) obj;
-        } catch (zzcg e10) {
-            if (!j.a(e10.zzb(), zzce.zzc)) {
-                throw e10;
+        } catch (zzcg e) {
+            if (!j.a(e.zzb(), zzce.zzc)) {
+                throw e;
             }
-            zzt3 = this.zzc.zzt(e10, e10);
+            zzt3 = this.zzc.zzt(e, e);
             throw zzt3;
-        } catch (d2 e11) {
-            zzt2 = this.zzc.zzt(e11, new zzcg(zzce.zzc, zzcd.zzb, e11.getMessage(), null, 8, null));
+        } catch (d2 e6) {
+            zzt2 = this.zzc.zzt(e6, new zzcg(zzce.zzc, zzcd.zzb, e6.getMessage(), null, 8, null));
             throw zzt2;
-        } catch (Exception e12) {
-            zzt = this.zzc.zzt(e12, new zzcg(zzce.zzc, zzcd.zzaz, e12.getMessage(), null, 8, null));
+        } catch (Exception e10) {
+            zzt = this.zzc.zzt(e10, new zzcg(zzce.zzc, zzcd.zzaz, e10.getMessage(), null, 8, null));
             throw zzt;
         }
     }

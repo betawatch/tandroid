@@ -1,59 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mt0 extends FrameLayout {
-    public final org.telegram.ui.Cells.f6 a;
+public final /* synthetic */ class mt0 implements tf.j1, org.telegram.ui.Cells.a5 {
+    public final /* synthetic */ ot0 a;
 
-    public mt0(int i10, Context context, boolean z10, org.telegram.ui.ActionBar.c6 c6Var, fq0 fq0Var) {
-        super(context);
-        org.telegram.ui.Cells.f6 f6Var = new org.telegram.ui.Cells.f6(context, c6Var);
-        this.a = f6Var;
-        f6Var.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.i6, c6Var), 2, -1));
-        addView(f6Var, i7.f6.c(-2.0f, -1));
-        View view = new View(context);
-        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-        int i11 = org.telegram.ui.ActionBar.g6.d6;
-        view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.g6.l1(0.4f, org.telegram.ui.ActionBar.g6.v0(i11, c6Var)), org.telegram.ui.ActionBar.g6.v0(i11, c6Var)}));
-        addView(view, i7.f6.c(60.0f, -1));
-        nh.d dVar = new nh.d(context, c6Var, true);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(z10 ? R.string.MoreSimilarBotsButton : R.string.MoreSimilarButton));
-        spannableStringBuilder.append((CharSequence) " ");
-        SpannableString spannableString = new SpannableString("l");
-        spannableString.setSpan(new iq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) spannableString);
-        dVar.g(spannableStringBuilder, false, true);
-        addView(dVar, i7.f6.d(-1, 48.0f, 48, 14.0f, 38.0f, 14.0f, 0.0f));
-        dVar.setOnClickListener(new u70(fq0Var, 17));
-        y80 y80Var = new y80(context, c6Var);
-        y80Var.setTextSize(1, 13.0f);
-        y80Var.setTextAlignment(4);
-        y80Var.setGravity(17);
-        y80Var.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        y80Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.n6, c6Var));
-        y80Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
-        SpannableStringBuilder premiumText = AndroidUtilities.premiumText(LocaleController.getString(z10 ? R.string.MoreSimilarBotsText : R.string.MoreSimilarText), new fq0(fq0Var, 4));
-        SpannableString spannableString2 = new SpannableString("" + MessagesController.getInstance(i10).recommendedChannelsLimitPremium);
-        spannableString2.setSpan(new t41(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
-        y80Var.setText(AndroidUtilities.replaceCharSequence("%s", premiumText, spannableString2));
-        addView(y80Var, i7.f6.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));
+    public /* synthetic */ mt0(ot0 ot0Var) {
+        this.a = ot0Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(145.0f), TLObject.FLAG_30));
+    @Override // tf.j1
+    public /* synthetic */ a0.h I() {
+        return null;
+    }
+
+    @Override // tf.j1
+    public /* synthetic */ boolean Q(int i10) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.a5
+    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z4) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
+        ot0 ot0Var = this.a;
+        TLObject E = ot0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
+        }
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return ot0Var.s.A1.h(tL_chatChannelParticipant, true, !z4, b5Var);
+    }
+
+    @Override // tf.j1
+    public void g(int i10) {
+        ot0 ot0Var = this.a;
+        ot0Var.l();
+        if (i10 != 1) {
+            return;
+        }
+        int i11 = ot0Var.r - 1;
+        ot0Var.r = i11;
+        if (i11 != 0) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            yu0 yu0Var = ot0Var.s;
+            qt0[] qt0VarArr = yu0Var.h0;
+            if (i12 >= qt0VarArr.length) {
+                return;
+            }
+            qt0 qt0Var = qt0VarArr[i12];
+            if (qt0Var.C == 7) {
+                if (ot0Var.h == 0) {
+                    qt0Var.w.e(false, true);
+                } else {
+                    yu0Var.z(qt0Var.h, 0, null);
+                }
+            }
+            i12++;
+        }
+    }
+
+    @Override // tf.j1
+    public /* synthetic */ a0.h t() {
+        return null;
+    }
+
+    @Override // tf.j1
+    public /* synthetic */ void T(ArrayList arrayList) {
     }
 }

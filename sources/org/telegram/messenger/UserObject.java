@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class UserObject {
     public static final long ANONYMOUS = 2666000;
@@ -174,7 +174,7 @@ public class UserObject {
         return peerColor.background_emoji_id;
     }
 
-    public static String getPublicUsername(TLRPC.User user, boolean z10) {
+    public static String getPublicUsername(TLRPC.User user, boolean z4) {
         if (user == null) {
             return null;
         }
@@ -184,7 +184,7 @@ public class UserObject {
         if (user.usernames != null) {
             for (int i10 = 0; i10 < user.usernames.size(); i10++) {
                 TLRPC.TL_username tL_username = user.usernames.get(i10);
-                if (tL_username != null && (((tL_username.active && !z10) || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
+                if (tL_username != null && (((tL_username.active && !z4) || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
                     return tL_username.username;
                 }
             }
@@ -215,7 +215,7 @@ public class UserObject {
         if (removeRTL.length() != 0 || TextUtils.isEmpty(user.phone)) {
             return removeRTL;
         }
-        return x3.k(new StringBuilder("+"), user.phone, qe.b.c());
+        return y3.j(new StringBuilder("+"), user.phone, se.b.c());
     }
 
     public static boolean hasFallbackPhoto(TLRPC.UserFull userFull) {
@@ -313,14 +313,14 @@ public class UserObject {
         return null;
     }
 
-    public static String getFirstName(TLRPC.User user, boolean z10) {
+    public static String getFirstName(TLRPC.User user, boolean z4) {
         if (user == null || isDeleted(user)) {
             return "DELETED";
         }
         String str = user.first_name;
         if (TextUtils.isEmpty(str)) {
             str = user.last_name;
-        } else if (!z10 && str.length() <= 2) {
+        } else if (!z4 && str.length() <= 2) {
             return ContactsController.formatName(user.first_name, user.last_name);
         }
         return !TextUtils.isEmpty(str) ? str : LocaleController.getString(R.string.HiddenName);

@@ -1,33 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class yh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SavedMessagesController b;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.Window;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.ui.Components.i71;
 
-    public /* synthetic */ yh(SavedMessagesController savedMessagesController, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class yh implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ yh(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = savedMessagesController;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.update();
+                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
                 break;
             case 1:
-                this.b.saveCache();
-                break;
-            case 2:
-                this.b.lambda$deleteCache$12();
-                break;
-            case 3:
-                this.b.lambda$saveCache$10();
+                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
                 break;
             default:
-                this.b.lambda$loadDialogs$1();
+                ((MediaController) this.b).lambda$cleanupPlayer$10((i71) this.c, valueAnimator);
                 break;
         }
     }

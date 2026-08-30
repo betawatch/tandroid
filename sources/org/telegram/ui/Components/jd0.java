@@ -1,46 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class jd0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class jd0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nh.l8 b;
+    public final /* synthetic */ vd0 b;
 
-    public /* synthetic */ jd0(nh.l8 l8Var, int i10) {
+    public /* synthetic */ jd0(vd0 vd0Var, int i10) {
         this.a = i10;
-        this.b = l8Var;
+        this.b = vd0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                nh.l8 l8Var = this.b;
-                AnimatorSet animatorSet = (AnimatorSet) l8Var.e;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    l8Var.e = null;
-                    break;
-                }
-                break;
-            case 1:
-                nh.l8 l8Var2 = this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) l8Var2.e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    l8Var2.e = null;
-                    break;
-                }
+                vd0 vd0Var = this.b;
+                vd0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vd0Var.M = floatValue;
+                vd0Var.f(floatValue);
+                vd0Var.setAlpha(vd0Var.M);
                 break;
             default:
-                nh.l8 l8Var3 = this.b;
-                AnimatorSet animatorSet3 = (AnimatorSet) l8Var3.e;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    l8Var3.e = null;
-                    break;
-                }
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vd0 vd0Var2 = this.b;
+                dh.d dVar = vd0Var2.e;
+                dVar.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
+                dVar.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
+                dVar.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
+                TextView textView = vd0Var2.w;
+                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
+                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
+                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue2));
+                vd0Var2.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
                 break;
         }
     }

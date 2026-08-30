@@ -1,20 +1,17 @@
 package nf;
 
-import ab.b;
-import f7.v;
-import java.nio.ShortBuffer;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface a {
-    public static final b q;
-    public static final v t;
+public abstract class a {
+    public float a = 1.0f;
 
-    static {
-        int i10 = 15;
-        q = new b(i10);
-        t = new v(i10);
-    }
+    public abstract short a();
 
-    void r0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
+    public abstract int b();
+
+    public abstract boolean c();
+
+    public abstract void d();
+
+    public abstract void e(int i10, int i11);
 }

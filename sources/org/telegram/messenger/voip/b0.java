@@ -1,26 +1,41 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements RequestDelegate {
+public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ b0(int i10) {
-        this.a = i10;
+    public /* synthetic */ b0(VoIPService voIPService, int i10, int i11) {
+        this.a = i11;
+        this.b = voIPService;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                VoIPService.lambda$callFailed$113(tLObject, tL_error);
+                this.b.lambda$onSignalBarCountChanged$121(this.c);
+                break;
+            case 1:
+                this.b.lambda$startConferenceGroupCall$36(this.c);
+                break;
+            case 2:
+                this.b.lambda$onConnectionStateChanged$118(this.c);
+                break;
+            case 3:
+                this.b.lambda$startGroupCall$25(this.c);
+                break;
+            case 4:
+                this.b.lambda$createGroupInstance$72(this.c);
+                break;
+            case 5:
+                this.b.lambda$startScreenCapture$57(this.c);
                 break;
             default:
-                VoIPService.lambda$createGroupInstance$67(tLObject, tL_error);
+                this.b.lambda$updateConnectionState$81(this.c);
                 break;
         }
     }

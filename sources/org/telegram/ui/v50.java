@@ -2,30 +2,29 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class v50 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ x50 h;
+    public final /* synthetic */ w50 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v50(x50 x50Var, Context context) {
-        super(context, true);
-        this.h = x50Var;
+    public v50(w50 w50Var, Context context) {
+        super(context, false);
+        this.h = w50Var;
     }
 
     @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        x50 x50Var = this.h;
-        if (!x50Var.r || getParticipant() == null) {
-            return;
+        c60 c60Var = this.h.J;
+        if (c60Var.N.getVisibility() == 0 && c60Var.M2) {
+            c60.N(c60Var, this, true);
         }
-        x50Var.E(this, true);
     }
 
     @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.h.E(this, false);
+        c60.N(this.h.J, this, false);
     }
 }

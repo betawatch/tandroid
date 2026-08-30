@@ -1,13 +1,20 @@
 package android.support.v4.media.session;
 
-import android.content.Context;
+import android.media.MediaDescription;
 import android.media.session.MediaSession;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a0 extends y {
-    @Override // android.support.v4.media.session.w
-    public final MediaSession e(Context context, String str) {
-        return z.e(context, str);
+public abstract class a0 {
+    public static MediaSession.QueueItem a(MediaDescription mediaDescription, long j10) {
+        return new MediaSession.QueueItem(mediaDescription, j10);
+    }
+
+    public static MediaDescription b(MediaSession.QueueItem queueItem) {
+        return queueItem.getDescription();
+    }
+
+    public static long c(MediaSession.QueueItem queueItem) {
+        return queueItem.getQueueId();
     }
 }

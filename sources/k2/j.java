@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j extends k {
     public final Matrix a;
@@ -51,13 +51,13 @@ public final class j extends k {
     @Override // k2.k
     public final boolean b(int[] iArr) {
         int i10 = 0;
-        boolean z10 = false;
+        boolean z4 = false;
         while (true) {
             ArrayList arrayList = this.b;
             if (i10 >= arrayList.size()) {
-                return z10;
+                return z4;
             }
-            z10 |= ((k) arrayList.get(i10)).b(iArr);
+            z4 |= ((k) arrayList.get(i10)).b(iArr);
             i10++;
         }
     }
@@ -107,51 +107,51 @@ public final class j extends k {
         return this.i;
     }
 
-    public void setPivotX(float f9) {
-        if (f9 != this.d) {
-            this.d = f9;
+    public void setPivotX(float f10) {
+        if (f10 != this.d) {
+            this.d = f10;
             c();
         }
     }
 
-    public void setPivotY(float f9) {
-        if (f9 != this.e) {
-            this.e = f9;
+    public void setPivotY(float f10) {
+        if (f10 != this.e) {
+            this.e = f10;
             c();
         }
     }
 
-    public void setRotation(float f9) {
-        if (f9 != this.c) {
-            this.c = f9;
+    public void setRotation(float f10) {
+        if (f10 != this.c) {
+            this.c = f10;
             c();
         }
     }
 
-    public void setScaleX(float f9) {
-        if (f9 != this.f) {
-            this.f = f9;
+    public void setScaleX(float f10) {
+        if (f10 != this.f) {
+            this.f = f10;
             c();
         }
     }
 
-    public void setScaleY(float f9) {
-        if (f9 != this.g) {
-            this.g = f9;
+    public void setScaleY(float f10) {
+        if (f10 != this.g) {
+            this.g = f10;
             c();
         }
     }
 
-    public void setTranslateX(float f9) {
-        if (f9 != this.h) {
-            this.h = f9;
+    public void setTranslateX(float f10) {
+        if (f10 != this.h) {
+            this.h = f10;
             c();
         }
     }
 
-    public void setTranslateY(float f9) {
-        if (f9 != this.i) {
-            this.i = f9;
+    public void setTranslateY(float f10) {
+        if (f10 != this.i) {
+            this.i = f10;
             c();
         }
     }

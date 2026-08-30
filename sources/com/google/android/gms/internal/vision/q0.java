@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -43,26 +43,26 @@ public class q0 implements Serializable, Iterable {
             return i13;
         }
         if (i10 < 0) {
-            StringBuilder sb2 = new StringBuilder(32);
-            sb2.append("Beginning index: ");
-            sb2.append(i10);
-            sb2.append(" < 0");
-            throw new IndexOutOfBoundsException(sb2.toString());
+            StringBuilder sb = new StringBuilder(32);
+            sb.append("Beginning index: ");
+            sb.append(i10);
+            sb.append(" < 0");
+            throw new IndexOutOfBoundsException(sb.toString());
         }
         if (i11 < i10) {
-            StringBuilder sb3 = new StringBuilder(66);
-            sb3.append("Beginning index larger than ending index: ");
-            sb3.append(i10);
-            sb3.append(", ");
-            sb3.append(i11);
-            throw new IndexOutOfBoundsException(sb3.toString());
+            StringBuilder sb2 = new StringBuilder(66);
+            sb2.append("Beginning index larger than ending index: ");
+            sb2.append(i10);
+            sb2.append(", ");
+            sb2.append(i11);
+            throw new IndexOutOfBoundsException(sb2.toString());
         }
-        StringBuilder sb4 = new StringBuilder(37);
-        sb4.append("End index: ");
-        sb4.append(i11);
-        sb4.append(" >= ");
-        sb4.append(i12);
-        throw new IndexOutOfBoundsException(sb4.toString());
+        StringBuilder sb3 = new StringBuilder(37);
+        sb3.append("End index: ");
+        sb3.append(i11);
+        sb3.append(" >= ");
+        sb3.append(i12);
+        throw new IndexOutOfBoundsException(sb3.toString());
     }
 
     public final boolean equals(Object obj) {
@@ -87,31 +87,31 @@ public class q0 implements Serializable, Iterable {
         int n10 = n();
         if (n10 > q0Var.n()) {
             int n11 = n();
-            StringBuilder sb2 = new StringBuilder(40);
-            sb2.append("Length too large: ");
-            sb2.append(n10);
-            sb2.append(n11);
-            throw new IllegalArgumentException(sb2.toString());
+            StringBuilder sb = new StringBuilder(40);
+            sb.append("Length too large: ");
+            sb.append(n10);
+            sb.append(n11);
+            throw new IllegalArgumentException(sb.toString());
         }
         if (n10 > q0Var.n()) {
             int n12 = q0Var.n();
-            StringBuilder sb3 = new StringBuilder(59);
-            sb3.append("Ran off end of other: 0, ");
-            sb3.append(n10);
-            sb3.append(", ");
-            sb3.append(n12);
-            throw new IllegalArgumentException(sb3.toString());
+            StringBuilder sb2 = new StringBuilder(59);
+            sb2.append("Ran off end of other: 0, ");
+            sb2.append(n10);
+            sb2.append(", ");
+            sb2.append(n12);
+            throw new IllegalArgumentException(sb2.toString());
         }
         byte[] bArr = q0Var.b;
-        int r6 = r() + n10;
-        int r9 = r();
-        int r10 = q0Var.r();
-        while (r9 < r6) {
-            if (this.b[r9] != bArr[r10]) {
+        int r10 = r() + n10;
+        int r11 = r();
+        int r12 = q0Var.r();
+        while (r11 < r10) {
+            if (this.b[r11] != bArr[r12]) {
                 return false;
             }
-            r9++;
-            r10++;
+            r11++;
+            r12++;
         }
         return true;
     }
@@ -122,9 +122,9 @@ public class q0 implements Serializable, Iterable {
             return i10;
         }
         int n10 = n();
-        int r6 = r();
+        int r10 = r();
         int i11 = n10;
-        for (int i12 = r6; i12 < r6 + n10; i12++) {
+        for (int i12 = r10; i12 < r10 + n10; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -163,14 +163,14 @@ public class q0 implements Serializable, Iterable {
         if (n() <= 50) {
             concat = e1.k(this);
         } else {
-            int q6 = q(0, 47, n());
-            concat = String.valueOf(e1.k(q6 == 0 ? c : new p0(this.b, r(), q6))).concat("...");
+            int q10 = q(0, 47, n());
+            concat = String.valueOf(e1.k(q10 == 0 ? c : new p0(this.b, r(), q10))).concat("...");
         }
-        StringBuilder sb2 = new StringBuilder("<ByteString@");
-        sb2.append(hexString);
-        sb2.append(" size=");
-        sb2.append(n10);
-        sb2.append(" contents=\"");
-        return a4.w.q(sb2, concat, "\">");
+        StringBuilder sb = new StringBuilder("<ByteString@");
+        sb.append(hexString);
+        sb.append(" size=");
+        sb.append(n10);
+        sb.append(" contents=\"");
+        return android.support.v4.media.a.r(sb, concat, "\">");
     }
 }

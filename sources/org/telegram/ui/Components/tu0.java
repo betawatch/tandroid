@@ -1,9 +1,76 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocationController;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface tu0 {
-    void d(LocationController.SharingLocationInfo sharingLocationInfo);
+public final class tu0 extends nh.r9 {
+    public final /* synthetic */ vu0 h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tu0(vu0 vu0Var, nh.t6 t6Var, long j10, int i10) {
+        super(i10, j10, t6Var);
+        this.h = vu0Var;
+    }
+
+    @Override // nh.r9
+    public final void a(ArrayList arrayList) {
+        wr0 wr0Var;
+        MessageObject messageObject;
+        vu0 vu0Var = this.h;
+        yu0 yu0Var = vu0Var.C;
+        int i10 = 0;
+        while (true) {
+            qt0[] qt0VarArr = yu0Var.h0;
+            if (i10 >= qt0VarArr.length) {
+                wr0Var = null;
+                break;
+            }
+            wr0 wr0Var2 = qt0VarArr[i10].h;
+            if (wr0Var2 != null && wr0Var2.getAdapter() == vu0Var) {
+                wr0Var = yu0Var.h0[i10].h;
+                break;
+            }
+            i10++;
+        }
+        if (wr0Var != null) {
+            for (int i11 = 0; i11 < wr0Var.getChildCount(); i11++) {
+                View childAt = wr0Var.getChildAt(i11);
+                if ((childAt instanceof org.telegram.ui.Cells.r7) && (messageObject = ((org.telegram.ui.Cells.r7) childAt).getMessageObject()) != null && messageObject.isStory()) {
+                    arrayList.add(Integer.valueOf(messageObject.storyItem.id));
+                }
+            }
+        }
+    }
+
+    @Override // nh.r9
+    public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        TL_stories.StoryItem storyItem;
+        nh.l6 l6Var = this.h.s;
+        ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
+        l6Var.getClass();
+        if (arrayList != null && arrayList2 != null) {
+            boolean z4 = false;
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                Integer num = (Integer) arrayList.get(i10);
+                num.intValue();
+                if (i10 >= arrayList2.size()) {
+                    break;
+                }
+                TL_stories.StoryViews storyViews = arrayList2.get(i10);
+                MessageObject messageObject = (MessageObject) l6Var.j.get(num);
+                if (messageObject != null && (storyItem = messageObject.storyItem) != null) {
+                    storyItem.views = storyViews;
+                    z4 = true;
+                }
+            }
+            if (z4) {
+                l6Var.x();
+            }
+        }
+        return true;
+    }
 }

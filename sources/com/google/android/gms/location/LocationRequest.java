@@ -1,27 +1,27 @@
 package com.google.android.gms.location;
 
-import a6.a;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import android.os.WorkSource;
 import android.util.Log;
+import b6.m;
+import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.internal.cast.o;
-import d7.j;
-import d7.p;
-import g6.f;
+import e2.c;
+import f7.k;
+import f7.q;
+import i6.f;
+import j7.f5;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import s6.i;
-import s7.k;
-import z5.l;
+import u6.p;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<LocationRequest> CREATOR = new i(16);
-    public final j A;
+    public static final Parcelable.Creator<LocationRequest> CREATOR = new p(8);
+    public final k B;
     public int a;
     public long b;
     public long c;
@@ -37,39 +37,39 @@ public final class LocationRequest extends a implements ReflectedParcelable {
     public final boolean x;
     public final WorkSource y;
 
-    public LocationRequest(int i10, long j10, long j11, long j12, long j13, long j14, int i11, float f9, boolean z10, long j15, int i12, int i13, String str, boolean z11, WorkSource workSource, j jVar) {
+    public LocationRequest(int i10, long j10, long j11, long j12, long j13, long j14, int i11, float f10, boolean z4, long j15, int i12, int i13, String str, boolean z10, WorkSource workSource, k kVar) {
         this.a = i10;
         this.b = j10;
         this.c = j11;
         this.d = j12;
         this.e = j13 == Long.MAX_VALUE ? j14 : Math.min(Math.max(1L, j13 - SystemClock.elapsedRealtime()), j14);
         this.f = i11;
-        this.h = f9;
-        this.n = z10;
+        this.h = f10;
+        this.n = z4;
         this.r = j15 != -1 ? j15 : j10;
         this.s = i12;
         this.v = i13;
         this.w = str;
-        this.x = z11;
+        this.x = z10;
         this.y = workSource;
-        this.A = jVar;
+        this.B = kVar;
     }
 
-    public static String c(long j10) {
-        String sb2;
+    public static String f(long j10) {
+        String sb;
         if (j10 == Long.MAX_VALUE) {
             return "∞";
         }
-        StringBuilder sb3 = p.a;
-        synchronized (sb3) {
-            sb3.setLength(0);
-            p.a(sb3, j10);
-            sb2 = sb3.toString();
+        StringBuilder sb2 = q.a;
+        synchronized (sb2) {
+            sb2.setLength(0);
+            q.a(sb2, j10);
+            sb = sb2.toString();
         }
-        return sb2;
+        return sb;
     }
 
-    public final boolean b() {
+    public final boolean e() {
         long j10 = this.d;
         return j10 > 0 && (j10 >> 1) >= this.b;
     }
@@ -83,8 +83,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         if (i10 != locationRequest.a) {
             return false;
         }
-        if ((i10 == 105 || this.b == locationRequest.b) && this.c == locationRequest.c && b() == locationRequest.b()) {
-            return (!b() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.v == locationRequest.v && this.x == locationRequest.x && this.y.equals(locationRequest.y) && l.l(this.w, locationRequest.w) && l.l(this.A, locationRequest.A);
+        if ((i10 == 105 || this.b == locationRequest.b) && this.c == locationRequest.c && e() == locationRequest.e()) {
+            return (!e() || this.d == locationRequest.d) && this.e == locationRequest.e && this.f == locationRequest.f && this.h == locationRequest.h && this.n == locationRequest.n && this.s == locationRequest.s && this.v == locationRequest.v && this.x == locationRequest.x && this.y.equals(locationRequest.y) && m.l(this.w, locationRequest.w) && m.l(this.B, locationRequest.B);
         }
         return false;
     }
@@ -100,53 +100,53 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String toString() {
-        j jVar;
+        k kVar;
         int intValue;
         String str;
         String str2;
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("Request[");
+        StringBuilder l10 = c.l("Request[");
         int i10 = this.a;
         if (i10 == 105) {
-            n10.append(k.a(i10));
+            l10.append(u7.k.a(i10));
         } else {
-            n10.append("@");
-            if (b()) {
-                p.a(n10, this.b);
-                n10.append("/");
-                p.a(n10, this.d);
+            l10.append("@");
+            if (e()) {
+                q.a(l10, this.b);
+                l10.append("/");
+                q.a(l10, this.d);
             } else {
-                p.a(n10, this.b);
+                q.a(l10, this.b);
             }
-            n10.append(" ");
-            n10.append(k.a(this.a));
+            l10.append(" ");
+            l10.append(u7.k.a(this.a));
         }
         if (this.a == 105 || this.c != this.b) {
-            n10.append(", minUpdateInterval=");
-            n10.append(c(this.c));
+            l10.append(", minUpdateInterval=");
+            l10.append(f(this.c));
         }
-        float f9 = this.h;
-        if (f9 > 0.0d) {
-            n10.append(", minUpdateDistance=");
-            n10.append(f9);
+        float f10 = this.h;
+        if (f10 > 0.0d) {
+            l10.append(", minUpdateDistance=");
+            l10.append(f10);
         }
         if (this.a != 105 ? this.r != this.b : this.r != Long.MAX_VALUE) {
-            n10.append(", maxUpdateAge=");
-            n10.append(c(this.r));
+            l10.append(", maxUpdateAge=");
+            l10.append(f(this.r));
         }
         long j10 = this.e;
         if (j10 != Long.MAX_VALUE) {
-            n10.append(", duration=");
-            p.a(n10, j10);
+            l10.append(", duration=");
+            q.a(l10, j10);
         }
         int i11 = this.f;
         if (i11 != Integer.MAX_VALUE) {
-            n10.append(", maxUpdates=");
-            n10.append(i11);
+            l10.append(", maxUpdates=");
+            l10.append(i11);
         }
-        boolean z10 = true;
+        boolean z4 = true;
         int i12 = this.v;
         if (i12 != 0) {
-            n10.append(", ");
+            l10.append(", ");
             if (i12 == 0) {
                 str2 = "THROTTLE_BACKGROUND";
             } else if (i12 == 1) {
@@ -157,11 +157,11 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 }
                 str2 = "THROTTLE_NEVER";
             }
-            n10.append(str2);
+            l10.append(str2);
         }
         int i13 = this.s;
         if (i13 != 0) {
-            n10.append(", ");
+            l10.append(", ");
             if (i13 == 0) {
                 str = "GRANULARITY_PERMISSION_LEVEL";
             } else if (i13 == 1) {
@@ -172,107 +172,107 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 }
                 str = "GRANULARITY_FINE";
             }
-            n10.append(str);
+            l10.append(str);
         }
         if (this.n) {
-            n10.append(", waitForAccurateLocation");
+            l10.append(", waitForAccurateLocation");
         }
         if (this.x) {
-            n10.append(", bypass");
+            l10.append(", bypass");
         }
         String str3 = this.w;
         if (str3 != null) {
-            n10.append(", moduleId=");
-            n10.append(str3);
+            l10.append(", moduleId=");
+            l10.append(str3);
         }
         Method method = f.d;
         WorkSource workSource = this.y;
         if (method != null) {
             try {
                 Object invoke = method.invoke(workSource, null);
-                l.h(invoke);
-                z10 = ((Boolean) invoke).booleanValue();
-            } catch (Exception e10) {
-                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e10);
+                m.h(invoke);
+                z4 = ((Boolean) invoke).booleanValue();
+            } catch (Exception e) {
+                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e);
             }
-            if (!z10) {
-                n10.append(", ");
-                n10.append(workSource);
+            if (!z4) {
+                l10.append(", ");
+                l10.append(workSource);
             }
-            jVar = this.A;
-            if (jVar != null) {
-                n10.append(", impersonation=");
-                n10.append(jVar);
+            kVar = this.B;
+            if (kVar != null) {
+                l10.append(", impersonation=");
+                l10.append(kVar);
             }
-            n10.append(']');
-            return n10.toString();
+            l10.append(']');
+            return l10.toString();
         }
         Method method2 = f.c;
         if (method2 != null) {
             try {
                 Object invoke2 = method2.invoke(workSource, null);
-                l.h(invoke2);
+                m.h(invoke2);
                 intValue = ((Integer) invoke2).intValue();
-            } catch (Exception e11) {
-                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e11);
+            } catch (Exception e6) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e6);
             }
             if (intValue != 0) {
-                z10 = false;
+                z4 = false;
             }
-            if (!z10) {
+            if (!z4) {
             }
-            jVar = this.A;
-            if (jVar != null) {
+            kVar = this.B;
+            if (kVar != null) {
             }
-            n10.append(']');
-            return n10.toString();
+            l10.append(']');
+            return l10.toString();
         }
         intValue = 0;
         if (intValue != 0) {
         }
-        if (!z10) {
+        if (!z4) {
         }
-        jVar = this.A;
-        if (jVar != null) {
+        kVar = this.B;
+        if (kVar != null) {
         }
-        n10.append(']');
-        return n10.toString();
+        l10.append(']');
+        return l10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = o.q(parcel, 20293);
+        int q10 = f5.q(parcel, 20293);
         int i11 = this.a;
-        o.s(parcel, 1, 4);
+        f5.s(parcel, 1, 4);
         parcel.writeInt(i11);
         long j10 = this.b;
-        o.s(parcel, 2, 8);
+        f5.s(parcel, 2, 8);
         parcel.writeLong(j10);
         long j11 = this.c;
-        o.s(parcel, 3, 8);
+        f5.s(parcel, 3, 8);
         parcel.writeLong(j11);
-        o.s(parcel, 6, 4);
+        f5.s(parcel, 6, 4);
         parcel.writeInt(this.f);
-        o.s(parcel, 7, 4);
+        f5.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        o.s(parcel, 8, 8);
+        f5.s(parcel, 8, 8);
         parcel.writeLong(this.d);
-        o.s(parcel, 9, 4);
+        f5.s(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        o.s(parcel, 10, 8);
+        f5.s(parcel, 10, 8);
         parcel.writeLong(this.e);
         long j12 = this.r;
-        o.s(parcel, 11, 8);
+        f5.s(parcel, 11, 8);
         parcel.writeLong(j12);
-        o.s(parcel, 12, 4);
+        f5.s(parcel, 12, 4);
         parcel.writeInt(this.s);
-        o.s(parcel, 13, 4);
+        f5.s(parcel, 13, 4);
         parcel.writeInt(this.v);
-        o.l(parcel, 14, this.w);
-        o.s(parcel, 15, 4);
+        f5.l(parcel, 14, this.w);
+        f5.s(parcel, 15, 4);
         parcel.writeInt(this.x ? 1 : 0);
-        o.k(parcel, 16, this.y, i10);
-        o.k(parcel, 17, this.A, i10);
-        o.r(parcel, q6);
+        f5.k(parcel, 16, this.y, i10);
+        f5.k(parcel, 17, this.B, i10);
+        f5.r(parcel, q10);
     }
 }

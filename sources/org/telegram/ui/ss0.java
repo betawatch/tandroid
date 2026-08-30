@@ -1,96 +1,53 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import android.app.Activity;
+import android.content.Context;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ss0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class ss0 extends OrientationEventListener {
+    public final /* synthetic */ PhotoViewer a;
 
-    public ss0(PhotoViewer photoViewer, int i10) {
-        this.b = photoViewer;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ss0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        PhotoViewer photoViewer = this.b;
-        ot0 ot0Var = photoViewer.T4;
-        photoViewer.m6 = null;
-        photoViewer.L0.setVisibility(8);
-        photoViewer.O0.setVisibility(8);
-        photoViewer.j0.setVisibility(8);
-        photoViewer.a1.setVisibility(8);
-        photoViewer.b1.setVisibility(8);
-        photoViewer.c1.setVisibility(8);
-        photoViewer.k1.setVisibility(8);
-        photoViewer.k1.setAlpha(0.0f);
-        photoViewer.k1.setTranslationY(-AndroidUtilities.dp(10.0f));
-        photoViewer.K0.setRotationX(0.0f);
-        photoViewer.k1.setEnabled(false);
-        photoViewer.G = false;
-        if (photoViewer.e2) {
-            photoViewer.M1.setVisibility(4);
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        xs0 xs0Var;
+        Activity activity;
+        int i11;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.T3 == null || (xs0Var = photoViewer.v2) == null || xs0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.V3) == 0) {
+            return;
         }
-        int i10 = photoViewer.Y1;
-        if (i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.c7.size() > 1)) {
-            photoViewer.J0.setVisibility(8);
-            photoViewer.K0.setVisibility(8);
-            photoViewer.s3();
-        }
-        if (photoViewer.Y1 == 11) {
-            photoViewer.e6 = photoViewer.U5;
-            photoViewer.d6 = photoViewer.T5;
-            photoViewer.f6 = photoViewer.W5;
-            photoViewer.g6 = photoViewer.X5;
-            photoViewer.b6 = 0.0f;
-        }
-        Bitmap bitmap = photoViewer.y4.getBitmap();
-        if (bitmap != null || photoViewer.n1) {
-            photoViewer.y1.b(bitmap, photoViewer.y4.getOrientation(), photoViewer.Y1 != 1, false, photoViewer.z1, photoViewer.n1 ? (org.telegram.ui.Components.l61) photoViewer.x2 : null, ot0Var.c);
-            photoViewer.y1.a();
-            int bitmapWidth = photoViewer.y4.getBitmapWidth();
-            int bitmapHeight = photoViewer.y4.getBitmapHeight();
-            MediaController.CropState cropState = ot0Var.c;
-            if (cropState != null) {
-                int i11 = cropState.transformRotation;
-                if (i11 == 90 || i11 == 270) {
-                    bitmapHeight = bitmapWidth;
-                    bitmapWidth = bitmapHeight;
-                }
-                bitmapWidth = (int) (bitmapWidth * cropState.cropPw);
-                bitmapHeight = (int) (bitmapHeight * cropState.cropPh);
+        if (i11 != 1) {
+            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
+                photoViewer.W3 = true;
+                return;
             }
-            float f9 = bitmapWidth;
-            float f10 = bitmapHeight;
-            float min = Math.min(photoViewer.k1(photoViewer.q4) / f9, photoViewer.i1() / f10);
-            float min2 = Math.min(photoViewer.k1(1) / f9, photoViewer.h1(1, false) / f10);
-            if (photoViewer.Y1 == 1) {
-                float min3 = Math.min(photoViewer.k1(1), photoViewer.h1(1, false));
-                min2 = Math.max(min3 / f9, min3 / f10);
+            if (!photoViewer.W3 || i10 < 240 || i10 > 300) {
+                return;
             }
-            photoViewer.a6 = min2 / min;
-            Rect rect = photoViewer.o2;
-            photoViewer.Y5 = (rect.left / 2) - (rect.right / 2);
-            photoViewer.Z5 = (-AndroidUtilities.dp(56.0f)) + (!photoViewer.s ? AndroidUtilities.statusBarHeight / 2 : 0);
-            photoViewer.j6 = System.currentTimeMillis();
-            photoViewer.N6 = true;
+            activity.setRequestedOrientation(photoViewer.U3);
+            photoViewer.V3 = 0;
+            photoViewer.W3 = false;
+            return;
         }
-        AnimatorSet animatorSet = new AnimatorSet();
-        photoViewer.l6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.Q0, (Property<org.telegram.ui.Components.of0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.r6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.y1, (Property<org.telegram.ui.Components.pe0, Float>) View.ALPHA, 0.0f, 1.0f));
-        photoViewer.l6.setDuration(200L);
-        photoViewer.l6.addListener(new e50(this, 10));
-        photoViewer.l6.start();
+        if (i10 >= 240 && i10 <= 300) {
+            photoViewer.W3 = true;
+            return;
+        }
+        if (!photoViewer.W3 || i10 <= 0) {
+            return;
+        }
+        if (i10 >= 330 || i10 <= 30) {
+            activity.setRequestedOrientation(photoViewer.U3);
+            photoViewer.V3 = 0;
+            photoViewer.W3 = false;
+        }
     }
 }

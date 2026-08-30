@@ -14,7 +14,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a extends Drawable {
     public final Bitmap a;
@@ -57,10 +57,10 @@ public final class a extends Drawable {
             rectF.set(rect);
             BitmapShader bitmapShader = this.e;
             if (bitmapShader != null) {
-                float f9 = rectF.left;
-                float f10 = rectF.top;
+                float f10 = rectF.left;
+                float f11 = rectF.top;
                 Matrix matrix = this.f;
-                matrix.setTranslate(f9, f10);
+                matrix.setTranslate(f10, f11);
                 float width = rectF.width();
                 Bitmap bitmap = this.a;
                 matrix.preScale(width / bitmap.getWidth(), rectF.height() / bitmap.getHeight());
@@ -84,8 +84,8 @@ public final class a extends Drawable {
             return;
         }
         RectF rectF = this.i;
-        float f9 = this.g;
-        canvas.drawRoundRect(rectF, f9, f9, paint);
+        float f10 = this.g;
+        canvas.drawRoundRect(rectF, f10, f10, paint);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -142,14 +142,14 @@ public final class a extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setDither(boolean z10) {
-        this.d.setDither(z10);
+    public final void setDither(boolean z4) {
+        this.d.setDither(z4);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z10) {
-        this.d.setFilterBitmap(z10);
+    public final void setFilterBitmap(boolean z4) {
+        this.d.setFilterBitmap(z4);
         invalidateSelf();
     }
 }

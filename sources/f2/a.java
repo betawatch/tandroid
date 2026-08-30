@@ -1,6 +1,6 @@
 package f2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a {
     public int a;
@@ -40,18 +40,18 @@ public final class a {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append("[");
+        StringBuilder sb = new StringBuilder();
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append("[");
         int i10 = this.a;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 8 ? "??" : "mv" : "up" : "rm" : "add");
-        sb2.append(",s:");
-        sb2.append(this.b);
-        sb2.append("c:");
-        sb2.append(this.d);
-        sb2.append(",p:");
-        sb2.append(this.c);
-        sb2.append("]");
-        return sb2.toString();
+        sb.append(i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 8 ? "??" : "mv" : "up" : "rm" : "add");
+        sb.append(",s:");
+        sb.append(this.b);
+        sb.append("c:");
+        sb.append(this.d);
+        sb.append(",p:");
+        sb.append(this.c);
+        sb.append("]");
+        return sb.toString();
     }
 }

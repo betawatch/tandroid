@@ -1,29 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.mn;
-import org.telegram.ui.on;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class a5 {
-    public final f6 a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
-    public boolean e;
-    public Runnable h;
-    public mn i;
-    public mn j;
-    public on k;
-    public c6 m;
-    public boolean f = true;
-    public boolean g = true;
-    public long l = 200;
+    public static final a5 a;
+    public static final a5 b;
+    public static final /* synthetic */ a5[] c;
 
-    public a5(f6 f6Var, int i10, boolean z10, boolean z11) {
-        this.a = f6Var;
-        this.b = i10;
-        this.c = z10;
-        this.d = z11;
+    static {
+        a5 a5Var = new a5("BACK", 0);
+        a = a5Var;
+        a5 a5Var2 = new a5("MENU", 1);
+        b = a5Var2;
+        c = new a5[]{a5Var, a5Var2};
+    }
+
+    public static a5 valueOf(String str) {
+        return (a5) Enum.valueOf(a5.class, str);
+    }
+
+    public static a5[] values() {
+        return (a5[]) c.clone();
     }
 }

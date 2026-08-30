@@ -1,38 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mk extends lu0 {
-    public mk(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class mk extends org.telegram.ui.Components.ed {
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ xn f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mk(xn xnVar, Context context, boolean z4) {
+        super(context);
+        this.f = xnVar;
+        this.e = z4;
     }
 
-    @Override // org.telegram.ui.lu0
-    public final void c(Canvas canvas, float f9, float f10, float f11, float f12, float f13) {
-        if (f9 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.s1) {
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
-                int max = (int) Math.max(f12, f11);
-                int min = (int) Math.min(f13, s1Var.getMeasuredHeight() + f11);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(f10, max, s1Var.getMeasuredWidth() + f10, min);
-                canvas.saveLayerAlpha(rectF, (int) (f9 * 255.0f), 31);
-                canvas.translate(f10, f11 + s1Var.getPaddingTop());
-                s1Var.Ad = true;
-                s1Var.Y1(canvas);
-                if (s1Var.f4() && s1Var.getCurrentMessagesGroup() == null) {
-                    s1Var.m2(1.0f, canvas, false);
-                }
-                s1Var.Ad = false;
-                canvas.restore();
-            }
+    @Override // org.telegram.ui.Components.ed
+    public final void d() {
+        int dp = this.e ? AndroidUtilities.dp(4.0f) : 0;
+        int i10 = org.telegram.ui.ActionBar.j6.ve;
+        xn xnVar = this.f;
+        setBackground(org.telegram.ui.ActionBar.j6.W(AndroidUtilities.dp(19.0f), 436207615 & xnVar.getThemedColor(i10), dp, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f)));
+        getImageView().setColorFilter(new PorterDuffColorFilter(xnVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
+        getTextView().setTextColor(xnVar.getThemedColor(i10));
+    }
+
+    @Override // org.telegram.ui.Components.ed
+    public final void setEditButton(boolean z4) {
+        super.setEditButton(z4);
+        if (this.e) {
+            getTextView().setMaxWidth(z4 ? AndroidUtilities.dp(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
         }
     }
 }

@@ -2,22 +2,21 @@ package k8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import j7.f5;
+import j8.t;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g extends a6.a {
-    public static final Parcelable.Creator<g> CREATOR = new c(3);
-    public final int a;
-
-    public g(int i10) {
-        this.a = i10;
-    }
+public final class g extends c6.a {
+    public static final Parcelable.Creator<g> CREATOR = new t(23);
+    public String a;
+    public String b;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
-        com.google.android.gms.internal.cast.o.s(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        com.google.android.gms.internal.cast.o.r(parcel, q6);
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.l(parcel, 3, this.b);
+        f5.r(parcel, q10);
     }
 }

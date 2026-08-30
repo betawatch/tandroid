@@ -1,15 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yr0 extends ViewOutlineProvider {
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(16.0f));
+public final class yr0 extends f2.w {
+    public final /* synthetic */ yu0 Q;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yr0(yu0 yu0Var) {
+        super(3);
+        this.Q = yu0Var;
+    }
+
+    @Override // f2.w, f2.i0, f2.v0
+    public final int o0(int i10, bf.f fVar, f2.i1 i1Var) {
+        if (this.Q.l1) {
+            i10 = 0;
+        }
+        return super.o0(i10, fVar, i1Var);
+    }
+
+    @Override // f2.w, f2.i0, f2.v0
+    public final boolean y0() {
+        return false;
     }
 }

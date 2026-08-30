@@ -1,81 +1,118 @@
 package org.telegram.ui;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ga extends f2.b0 {
-    public final /* synthetic */ la d;
+public final class ga extends org.telegram.ui.Components.rl0 {
+    public final /* synthetic */ pa c;
 
-    public ga(la laVar) {
-        this.d = laVar;
+    public ga(pa paVar) {
+        this.c = paVar;
     }
 
-    @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.n1 n1Var) {
-        super.a(recyclerView, n1Var);
-        View view = n1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return l1Var.f == 4;
     }
 
-    @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.n1 n1Var) {
-        return (n1Var.f == 4 && ((ia) n1Var.a).C) ? f2.b0.l(3, 0) : f2.b0.l(0, 0);
-    }
-
-    @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.n1 n1Var, f2.n1 n1Var2) {
-        if (n1Var.f != n1Var2.f) {
-            return false;
-        }
-        View view = n1Var2.a;
-        if ((view instanceof ia) && !((ia) view).C) {
-            return false;
-        }
-        ca caVar = this.d.c;
-        int b10 = n1Var.b();
-        int b11 = n1Var2.b();
-        int i10 = b10 - 4;
-        int i11 = b11 - 4;
-        la laVar = caVar.c;
-        ArrayList arrayList = laVar.v;
-        if (i10 < arrayList.size() && i11 < arrayList.size()) {
-            if (b10 != b11) {
-                laVar.d = true;
+    @Override // f2.o0
+    public final int h() {
+        pa paVar = this.c;
+        org.telegram.ui.Components.sl0 sl0Var = paVar.b;
+        ArrayList arrayList = paVar.v;
+        if (sl0Var != null) {
+            ArrayList arrayList2 = sl0Var.H2;
+            if (arrayList2 != null) {
+                arrayList2.clear();
+            } else {
+                sl0Var.H2 = new ArrayList();
             }
-            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
-            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
-            arrayList.set(i11, tL_username);
-            caVar.p(b10, b11);
-            int size = arrayList.size() + 3;
-            if (b10 == size || b11 == size) {
-                caVar.n(b10, 3);
-                caVar.n(b11, 3);
+            if (arrayList.size() > 0) {
+                paVar.b.H2.add(Long.valueOf(AndroidUtilities.pack(3, arrayList.size() + 3)));
             }
         }
-        return true;
+        return (paVar.v.size() > 0 ? paVar.v.size() + 2 : 0) + 3;
     }
 
-    @Override // f2.b0
-    public final void p(f2.n1 n1Var, int i10) {
-        la laVar = this.d;
+    @Override // f2.o0
+    public final int j(int i10) {
         if (i10 == 0) {
-            la.Y(laVar);
-        } else {
-            laVar.b.I0(false);
-            n1Var.a.setPressed(true);
+            return 0;
         }
-        if (n1Var != null) {
-            n1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        if (i10 == 1) {
+            return 3;
         }
+        if (i10 == 2) {
+            return 1;
+        }
+        if (i10 == 3) {
+            return 0;
+        }
+        return i10 != h() - 1 ? 4 : 2;
     }
 
-    @Override // f2.b0
-    public final void q(f2.n1 n1Var) {
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        pa paVar = this.c;
+        long j10 = paVar.x;
+        int i11 = l1Var.f;
+        View view = l1Var.a;
+        if (i11 == 0) {
+            ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(i10 == 0 ? j10 != 0 ? R.string.BotSetPublicLinkHeader : R.string.SetUsernameHeader : R.string.UsernamesProfileHeader));
+            return;
+        }
+        if (i11 == 2) {
+            ((org.telegram.ui.Cells.a9) view).setText(LocaleController.getString(j10 != 0 ? R.string.BotUsernamesHelp : R.string.UsernamesProfileHelp));
+            return;
+        }
+        if (i11 == 3) {
+            paVar.n = true;
+            ja jaVar = (ja) view;
+            paVar.y = jaVar;
+            jaVar.a.setText(paVar.r);
+            paVar.n = false;
+            return;
+        }
+        if (i11 != 4) {
+            return;
+        }
+        TLRPC.TL_username tL_username = (TLRPC.TL_username) paVar.v.get(i10 - 4);
+        ma maVar = (ma) view;
+        if (tL_username.editable) {
+            paVar.B = maVar;
+        } else if (paVar.B == maVar) {
+            paVar.B = null;
+        }
+        maVar.a(tL_username, i10 < h() - 2, false, paVar.x);
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        pa paVar = this.c;
+        if (i10 == 0) {
+            return new org.telegram.ui.Components.el0(new org.telegram.ui.Cells.m4(paVar.getParentActivity()));
+        }
+        if (i10 == 1) {
+            oa oaVar = new oa(paVar, paVar.getParentActivity());
+            oaVar.setTag(-33024);
+            return new org.telegram.ui.Components.el0(oaVar);
+        }
+        if (i10 == 2) {
+            return new org.telegram.ui.Components.el0(new org.telegram.ui.Cells.a9(paVar.getParentActivity()));
+        }
+        if (i10 == 3) {
+            return new org.telegram.ui.Components.el0(new ja(paVar, paVar.getParentActivity()));
+        }
+        if (i10 != 4) {
+            return null;
+        }
+        return new org.telegram.ui.Components.el0(new fa(this, paVar.getParentActivity(), paVar.getResourceProvider()));
     }
 }

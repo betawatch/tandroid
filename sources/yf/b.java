@@ -1,147 +1,164 @@
 package yf;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
+import android.content.Context;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.hg0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b extends Drawable {
-    public static SvgHelper.SvgDrawable j;
-    public static final int[] k = {7322096, 16766590, 13338331, 9367192, 16749490, 16478047};
-    public static final SparseArray l;
-    public final SvgHelper.SvgDrawable a;
-    public LinearGradient b;
-    public int e;
-    public final Paint f;
-    public final Paint g;
-    public int[] h;
-    public final Matrix c = new Matrix();
-    public final ArrayList d = new ArrayList();
+public final class b {
+    public final ScaleGestureDetector a;
+    public n b;
+    public float c;
+    public float d;
+    public final float f;
+    public VelocityTracker g;
+    public boolean h;
+    public long k;
+    public boolean l;
+    public final float e = AndroidUtilities.dp(1.0f);
     public int i = -1;
+    public int j = 0;
 
-    static {
-        SparseArray sparseArray = new SparseArray();
-        l = sparseArray;
-        sparseArray.put(7322096, new int[]{-16687423, -11814913});
-        sparseArray.put(16766590, new int[]{-1419264, -9380});
-        sparseArray.put(13338331, new int[]{-6014789, -1737985});
-        sparseArray.put(9367192, new int[]{-15617007, -6823116});
-        sparseArray.put(16749490, new int[]{-1826470, -34407});
-        sparseArray.put(16478047, new int[]{-3795707, -36532});
+    public b(Context context) {
+        this.f = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
+        this.a = new ScaleGestureDetector(context, new hg0(this, 2));
     }
 
-    public b(int i10) {
-        if (j == null) {
-            j = SvgHelper.getDrawable(R.raw.topic_bubble, -1);
-        }
-        SvgHelper.SvgDrawable clone = j.clone();
-        this.a = clone;
-        clone.copyCommandFromPosition(0);
-        Paint paint = new Paint(1);
-        this.g = paint;
-        Paint paint2 = new Paint(1);
-        this.f = paint2;
-        paint2.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        paint2.setStyle(Paint.Style.STROKE);
-        clone.setPaint(paint, 1);
-        clone.setPaint(paint2, 2);
-        b(i10);
-    }
-
-    public static int a(int i10, int i11) {
-        return Math.abs(Color.blue(i10) - Color.blue(i11)) + Math.abs(Color.green(i10) - Color.green(i11)) + Math.abs(Color.red(i10) - Color.red(i11));
-    }
-
-    public final void b(int i10) {
-        int i11 = this.i;
-        if (i11 == i10 && i11 == -1) {
-            return;
-        }
-        this.i = i10;
-        int[] iArr = k;
-        int a2 = a(iArr[0], i10);
-        this.e = 0;
-        for (int i12 = 0; i12 < 6; i12++) {
-            int a10 = a(iArr[i12], i10);
-            if (a10 < a2) {
-                this.e = i12;
-                a2 = a10;
+    public final void a(MotionEvent motionEvent) {
+        float x10;
+        float y10;
+        float x11;
+        float y11;
+        float x12;
+        float y12;
+        m mVar;
+        this.a.onTouchEvent(motionEvent);
+        int action = motionEvent.getAction() & 255;
+        if (action == 0) {
+            this.i = motionEvent.getPointerId(0);
+            this.k = SystemClock.elapsedRealtime();
+        } else if (action == 1 || action == 3) {
+            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (mVar = this.b.J) != null) {
+                mVar.c0();
+            }
+            this.i = -1;
+        } else if (action == 6) {
+            int action2 = (65280 & motionEvent.getAction()) >> 8;
+            if (motionEvent.getPointerId(action2) == this.i) {
+                int i10 = action2 == 0 ? 1 : 0;
+                this.i = motionEvent.getPointerId(i10);
+                this.c = motionEvent.getX(i10);
+                this.d = motionEvent.getY(i10);
             }
         }
-        int[] iArr2 = (int[]) l.get(iArr[this.e]);
-        int[] iArr3 = g6.I.q() ? new int[]{i0.a.d(0.2f, iArr2[0], -1), i0.a.d(0.2f, iArr2[1], -1)} : iArr2;
-        this.h = iArr3;
-        Paint paint = new Paint(1);
-        LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, iArr3, (float[]) null, Shader.TileMode.CLAMP);
-        this.b = linearGradient;
-        linearGradient.setLocalMatrix(this.c);
-        paint.setShader(this.b);
-        this.a.setPaint(paint, 0);
-        this.g.setColor(i0.a.d(0.1f, iArr3[1], -1));
-        this.f.setColor(i0.a.d(0.1f, iArr3[0], -16777216));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Matrix matrix = this.c;
-        matrix.reset();
-        matrix.setScale(1.0f, getBounds().height() / 100.0f);
-        this.b.setLocalMatrix(matrix);
-        Rect bounds = getBounds();
-        SvgHelper.SvgDrawable svgDrawable = this.a;
-        svgDrawable.setBounds(bounds);
-        svgDrawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            if (i10 >= arrayList.size()) {
+        int i11 = this.i;
+        if (i11 == -1) {
+            i11 = 0;
+        }
+        this.j = motionEvent.findPointerIndex(i11);
+        int action3 = motionEvent.getAction();
+        if (action3 != 0) {
+            if (action3 == 1) {
+                if (this.h) {
+                    if (this.g != null) {
+                        try {
+                            x12 = motionEvent.getX(this.j);
+                        } catch (Exception unused) {
+                            x12 = motionEvent.getX();
+                        }
+                        this.c = x12;
+                        try {
+                            y12 = motionEvent.getY(this.j);
+                        } catch (Exception unused2) {
+                            y12 = motionEvent.getY();
+                        }
+                        this.d = y12;
+                        this.g.addMovement(motionEvent);
+                        this.g.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
+                        if (Math.max(Math.abs(this.g.getXVelocity()), Math.abs(this.g.getYVelocity())) >= this.f) {
+                            this.b.getClass();
+                        }
+                    }
+                    this.h = false;
+                }
+                VelocityTracker velocityTracker = this.g;
+                if (velocityTracker != null) {
+                    velocityTracker.recycle();
+                    this.g = null;
+                }
+                this.l = false;
                 return;
             }
-            ((View) arrayList.get(i10)).invalidate();
-            i10++;
+            if (action3 != 2) {
+                if (action3 != 3) {
+                    return;
+                }
+                VelocityTracker velocityTracker2 = this.g;
+                if (velocityTracker2 != null) {
+                    velocityTracker2.recycle();
+                    this.g = null;
+                }
+                this.l = false;
+                this.h = false;
+                return;
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        if (!this.l) {
+            VelocityTracker obtain = VelocityTracker.obtain();
+            this.g = obtain;
+            if (obtain != null) {
+                obtain.addMovement(motionEvent);
+            }
+            try {
+                x11 = motionEvent.getX(this.j);
+            } catch (Exception unused3) {
+                x11 = motionEvent.getX();
+            }
+            this.c = x11;
+            try {
+                y11 = motionEvent.getY(this.j);
+            } catch (Exception unused4) {
+                y11 = motionEvent.getY();
+            }
+            this.d = y11;
+            this.h = false;
+            this.l = true;
+            return;
+        }
+        try {
+            x10 = motionEvent.getX(this.j);
+        } catch (Exception unused5) {
+            x10 = motionEvent.getX();
+        }
+        try {
+            y10 = motionEvent.getY(this.j);
+        } catch (Exception unused6) {
+            y10 = motionEvent.getY();
+        }
+        float f10 = x10 - this.c;
+        float f11 = y10 - this.d;
+        if (!this.h) {
+            this.h = ((float) Math.sqrt((double) ((f11 * f11) + (f10 * f10)))) >= this.e;
+        }
+        if (this.h) {
+            n nVar = this.b;
+            if (!nVar.C) {
+                l.f(nVar.I, f10, f11);
+                nVar.r(false);
+            }
+            this.c = x10;
+            this.d = y10;
+            VelocityTracker velocityTracker3 = this.g;
+            if (velocityTracker3 != null) {
+                velocityTracker3.addMovement(motionEvent);
+            }
+        }
     }
 }

@@ -2,32 +2,23 @@ package s7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import j7.f5;
+import r5.c0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class e extends a6.a {
-    public static final Parcelable.Creator<e> CREATOR = new s6.i(18);
-    public final List a;
-    public final boolean b;
-    public final boolean c;
+public final class e extends c6.a {
+    public static final Parcelable.Creator<e> CREATOR = new c0(6);
+    public final byte[] a;
 
-    public e(ArrayList arrayList, boolean z10, boolean z11) {
-        this.a = arrayList;
-        this.b = z10;
-        this.c = z11;
+    public e(byte[] bArr) {
+        this.a = bArr;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
-        com.google.android.gms.internal.cast.o.p(parcel, 1, DesugarCollections.unmodifiableList(this.a));
-        com.google.android.gms.internal.cast.o.s(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        com.google.android.gms.internal.cast.o.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        com.google.android.gms.internal.cast.o.r(parcel, q6);
+        int q10 = f5.q(parcel, 20293);
+        f5.c(parcel, 2, this.a);
+        f5.r(parcel, q10);
     }
 }

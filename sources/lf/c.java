@@ -1,93 +1,100 @@
 package lf;
 
-import java.nio.ShortBuffer;
-import org.telegram.messenger.video.AudioBufferConverter;
-import org.telegram.messenger.video.AudioConversions;
-import org.telegram.messenger.video.AudioDecoder;
+import android.graphics.Bitmap;
+import android.os.Build;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c extends a {
-    public final AudioDecoder b;
-    public final AudioBufferConverter c = new AudioBufferConverter();
-    public long d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public ShortBuffer i;
-    public boolean j;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Cloneable h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public c(String str) {
-        this.b = new AudioDecoder(str);
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ c(g gVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, c0[] c0VarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
+        this.e = gVar;
+        this.f = atomicBoolean;
+        this.h = bitmapArr;
+        this.b = i10;
+        this.n = c0VarArr;
+        this.d = i11;
+        this.r = randomAccessFile;
+        this.c = arrayList;
+        this.s = countDownLatchArr;
     }
 
-    @Override // lf.a
-    public final short a() {
-        if (!this.j) {
-            throw new RuntimeException("Audio input has no remaining value.");
-        }
-        int i10 = this.f;
-        if (i10 < this.e) {
-            this.f = i10 + 1;
-            return (short) 0;
-        }
-        f();
-        ShortBuffer shortBuffer = this.i;
-        short s10 = (shortBuffer == null || shortBuffer.remaining() <= 0) ? (short) 0 : this.i.get();
-        f();
-        ShortBuffer shortBuffer2 = this.i;
-        if (shortBuffer2 != null && shortBuffer2.remaining() >= 1) {
-            return s10;
-        }
-        this.j = false;
-        return s10;
-    }
-
-    @Override // lf.a
-    public final int b() {
-        return this.b.getSampleRate();
-    }
-
-    @Override // lf.a
-    public final boolean c() {
-        return this.j;
-    }
-
-    @Override // lf.a
-    public final void d() {
-        this.i = null;
-        this.j = false;
-        AudioDecoder audioDecoder = this.b;
-        audioDecoder.stop();
-        audioDecoder.release();
-    }
-
-    @Override // lf.a
-    public final void e(int i10, int i11) {
-        this.g = i10;
-        this.h = i11;
-        this.j = true;
-        this.b.start();
-        this.e = AudioConversions.usToShorts(this.d, this.g, this.h);
-        this.f = 0;
-    }
-
-    public final void f() {
-        ShortBuffer shortBuffer = this.i;
-        if (shortBuffer == null || shortBuffer.remaining() <= 0) {
-            AudioDecoder audioDecoder = this.b;
-            AudioDecoder.DecodedBufferData decode = audioDecoder.decode();
-            if (decode.index < 0) {
-                this.i = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g gVar = (g) this.e;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
+                Bitmap[] bitmapArr = (Bitmap[]) this.h;
+                int i10 = this.b;
+                c0[] c0VarArr = (c0[]) this.n;
+                int i11 = this.d;
+                RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
+                ArrayList arrayList = this.c;
+                CountDownLatch[] countDownLatchArr = (CountDownLatch[]) this.s;
+                if (gVar.o.get() || atomicBoolean.get()) {
+                    return;
+                }
+                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.WEBP;
+                if (Build.VERSION.SDK_INT <= 28) {
+                    compressFormat = Bitmap.CompressFormat.PNG;
+                }
+                bitmapArr[i10].compress(compressFormat, gVar.l, c0VarArr[i10]);
+                int i12 = c0VarArr[i10].b;
+                try {
+                    synchronized (gVar.h) {
+                        f fVar = new f(i11);
+                        fVar.c = (int) randomAccessFile.length();
+                        arrayList.add(fVar);
+                        randomAccessFile.write(c0VarArr[i10].a, 0, i12);
+                        fVar.b = i12;
+                        c0VarArr[i10].b();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    try {
+                        randomAccessFile.close();
+                    } catch (Exception unused) {
+                    } catch (Throwable th2) {
+                        atomicBoolean.set(true);
+                        throw th2;
+                    }
+                    atomicBoolean.set(true);
+                }
+                countDownLatchArr[i10].countDown();
                 return;
-            }
-            this.i = this.c.convert(decode.byteBuffer.asShortBuffer(), audioDecoder.getSampleRate(), audioDecoder.getChannelCount(), this.g, this.h);
-            audioDecoder.releaseOutputBuffer(decode.index);
+            default:
+                ((MessagesStorage) this.e).lambda$getWidgetDialogs$169(this.b, this.c, this.d, (a0.h) this.f, (a0.h) this.h, (ArrayList) this.n, (ArrayList) this.r, (CountDownLatch) this.s);
+                return;
         }
     }
 
-    public c(String str, int i10) {
-        this.b = new AudioDecoder(str, i10);
+    public /* synthetic */ c(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = messagesStorage;
+        this.b = i10;
+        this.c = arrayList;
+        this.d = i11;
+        this.f = hVar;
+        this.h = hVar2;
+        this.n = arrayList2;
+        this.r = arrayList3;
+        this.s = countDownLatch;
     }
 }

@@ -1,69 +1,60 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mq implements Comparator {
+public final /* synthetic */ class mq implements MessagesStorage.LongCallback, org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.jl0, org.telegram.ui.Components.kl0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ pr b;
 
-    public /* synthetic */ mq(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public /* synthetic */ mq(pr prVar, int i10) {
+        this.a = i10;
+        this.b = prVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00a7 A[RETURN, SYNTHETIC] */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        TLRPC.UserStatus userStatus;
-        TLRPC.UserStatus userStatus2;
-        switch (this.a) {
-            case 0:
-                jr jrVar = (jr) this.c;
-                jrVar.getClass();
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
-                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
-                long peerId = MessageObject.getPeerId(channelParticipant.peer);
-                long peerId2 = MessageObject.getPeerId(channelParticipant2.peer);
-                int i11 = this.b;
-                int i12 = -100;
-                if (peerId > 0) {
-                    TLRPC.User user = jrVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant.peer)));
-                    i10 = (user == null || (userStatus2 = user.status) == null) ? 0 : user.self ? i11 + 50000 : userStatus2.expires;
-                } else {
-                    i10 = -100;
-                }
-                if (peerId2 > 0) {
-                    TLRPC.User user2 = jrVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant2.peer)));
-                    i12 = (user2 == null || (userStatus = user2.status) == null) ? 0 : user2.self ? i11 + 50000 : userStatus.expires;
-                }
-                if (i10 > 0 && i12 > 0) {
-                    if (i10 <= i12) {
-                        if (i10 >= i12) {
-                            return 0;
-                        }
-                    }
-                }
-                if (i10 < 0 && i12 < 0) {
-                    if (i10 <= i12) {
-                        return i10 < i12 ? -1 : 0;
-                    }
-                }
-                if ((i10 >= 0 || i12 <= 0) && (i10 != 0 || i12 == 0)) {
-                    return ((i12 >= 0 || i10 <= 0) && (i12 != 0 || i10 == 0)) ? 0 : 1;
-                }
-            default:
-                return org.telegram.ui.Components.p30.L((org.telegram.ui.Components.p30) this.c, this.b, (TLObject) obj, (TLObject) obj2);
+    @Override // org.telegram.ui.Components.jl0
+    public void c(float f10, float f11, int i10, View view) {
+        pr.V(this.b, view, i10);
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ boolean e1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public boolean f(int i10, View view) {
+        pr prVar = this.b;
+        if (prVar.getParentActivity() != null) {
+            f2.o0 adapter = prVar.c.getAdapter();
+            lr lrVar = prVar.a;
+            if (adapter == lrVar) {
+                return prVar.h0(lrVar.E(i10), false, view);
+            }
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.u0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j10) {
+        pr.U(this.b, j10);
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ void o0(View view, float f10, float f11) {
     }
 }

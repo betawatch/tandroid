@@ -1,67 +1,55 @@
 package sa;
 
-import i7.r7;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b extends r7 {
-    public final Method a = Class.class.getMethod("isRecord", null);
-    public final Method b = Class.class.getMethod("getRecordComponents", null);
-    public final Method c;
-    public final Method d;
+public final class b extends pa.u {
+    public static final a c = new a();
+    public final Class a;
+    public final o b;
 
-    public b() {
-        Class<?> cls = Class.forName("java.lang.reflect.RecordComponent");
-        this.c = cls.getMethod("getName", null);
-        this.d = cls.getMethod("getType", null);
+    public b(pa.g gVar, pa.u uVar, Class cls) {
+        this.b = new o(gVar, uVar, cls);
+        this.a = cls;
     }
 
-    @Override // i7.r7
-    public final Method a(Class cls, Field field) {
-        try {
-            return cls.getMethod(field.getName(), null);
-        } catch (ReflectiveOperationException e10) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e10);
+    @Override // pa.u
+    public final Object read(xa.a aVar) {
+        if (aVar.x() == 9) {
+            aVar.t();
+            return null;
         }
+        ArrayList arrayList = new ArrayList();
+        aVar.a();
+        while (aVar.k()) {
+            arrayList.add(((pa.u) this.b.c).read(aVar));
+        }
+        aVar.e();
+        int size = arrayList.size();
+        Class cls = this.a;
+        if (!cls.isPrimitive()) {
+            return arrayList.toArray((Object[]) Array.newInstance((Class<?>) cls, size));
+        }
+        Object newInstance = Array.newInstance((Class<?>) cls, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            Array.set(newInstance, i10, arrayList.get(i10));
+        }
+        return newInstance;
     }
 
-    @Override // i7.r7
-    public final Constructor b(Class cls) {
-        try {
-            Object[] objArr = (Object[]) this.b.invoke(cls, null);
-            Class<?>[] clsArr = new Class[objArr.length];
-            for (int i10 = 0; i10 < objArr.length; i10++) {
-                clsArr[i10] = (Class) this.d.invoke(objArr[i10], null);
-            }
-            return cls.getDeclaredConstructor(clsArr);
-        } catch (ReflectiveOperationException e10) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e10);
+    @Override // pa.u
+    public final void write(xa.b bVar, Object obj) {
+        if (obj == null) {
+            bVar.i();
+            return;
         }
-    }
-
-    @Override // i7.r7
-    public final String[] c(Class cls) {
-        try {
-            Object[] objArr = (Object[]) this.b.invoke(cls, null);
-            String[] strArr = new String[objArr.length];
-            for (int i10 = 0; i10 < objArr.length; i10++) {
-                strArr[i10] = (String) this.c.invoke(objArr[i10], null);
-            }
-            return strArr;
-        } catch (ReflectiveOperationException e10) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e10);
+        bVar.b();
+        int length = Array.getLength(obj);
+        for (int i10 = 0; i10 < length; i10++) {
+            this.b.write(bVar, Array.get(obj, i10));
         }
-    }
-
-    @Override // i7.r7
-    public final boolean d(Class cls) {
-        try {
-            return ((Boolean) this.a.invoke(cls, null)).booleanValue();
-        } catch (ReflectiveOperationException e10) {
-            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e10);
-        }
+        bVar.e();
     }
 }

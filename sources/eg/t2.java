@@ -1,28 +1,85 @@
 package eg;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.c6;
+import android.view.TextureView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.rg;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t2 extends nh.d {
-    public final /* synthetic */ w2 d0;
+public final class t2 extends VideoPlayerHolderBase {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t2(w2 w2Var, Context context, c6 c6Var) {
-        super(context, c6Var, true);
-        this.d0 = w2Var;
+    public /* synthetic */ t2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // nh.d
-    public final float a(float f9, float f10) {
-        w2 w2Var = this.d0;
-        boolean z10 = w2Var.p0 == 0.0f;
-        w2Var.p0 = f9;
-        if (z10) {
-            w2Var.q0 = new p2(w2Var, 0);
-            w2Var.g0(false);
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public boolean needRepeat() {
+        switch (this.a) {
+            case 1:
+                return !((ph.x) this.b).p.k0;
+            default:
+                return super.needRepeat();
         }
-        return f9;
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onRenderedFirstFrame() {
+        switch (this.a) {
+            case 0:
+                u2 u2Var = (u2) this.b;
+                TextureView textureView = u2Var.G;
+                if (textureView != null && !u2Var.C) {
+                    textureView.setAlpha(0.0f);
+                    textureView.animate().alpha(1.0f).setListener(new cg.l0(this, 4)).setDuration(200L);
+                    break;
+                }
+                break;
+            default:
+                ph.x xVar = (ph.x) this.b;
+                xVar.f = true;
+                xVar.p.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public void onStateChanged(boolean z4, int i10) {
+        switch (this.a) {
+            case 0:
+                u2 u2Var = (u2) this.b;
+                t2 t2Var = u2Var.E;
+                if (t2Var != null) {
+                    if (i10 != 4) {
+                        if (i10 == 1) {
+                            t2Var.play();
+                            break;
+                        }
+                    } else {
+                        t2Var.seekTo(0L);
+                        u2Var.E.play();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onStateChanged(z4, i10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f10) {
+        switch (this.a) {
+            case 1:
+                AndroidUtilities.runOnUIThread(new rg(this, i10, i11, i12, 1));
+                break;
+            default:
+                super.onVideoSizeChanged(i10, i11, i12, f10);
+                break;
+        }
     }
 }

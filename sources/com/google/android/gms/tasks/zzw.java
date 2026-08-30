@@ -1,11 +1,11 @@
 package com.google.android.gms.tasks;
 
 import android.app.Activity;
+import b6.m;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
-import z5.l;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -16,7 +16,7 @@ final class zzw<TResult> extends Task<TResult> {
     private Exception zzf;
 
     private final void zzf() {
-        l.j("Task is not yet complete", this.zzc);
+        m.j("Task is not yet complete", this.zzc);
     }
 
     private final void zzg() {
@@ -124,26 +124,26 @@ final class zzw<TResult> extends Task<TResult> {
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isComplete() {
-        boolean z10;
+        boolean z4;
         synchronized (this.zza) {
-            z10 = this.zzc;
+            z4 = this.zzc;
         }
-        return z10;
+        return z4;
     }
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isSuccessful() {
-        boolean z10;
+        boolean z4;
         synchronized (this.zza) {
             try {
-                z10 = false;
+                z4 = false;
                 if (this.zzc && !this.zzd && this.zzf == null) {
-                    z10 = true;
+                    z4 = true;
                 }
             } finally {
             }
         }
-        return z10;
+        return z4;
     }
 
     @Override // com.google.android.gms.tasks.Task
@@ -156,7 +156,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final void zza(Exception exc) {
-        l.i(exc, "Exception must not be null");
+        m.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             zzh();
             this.zzc = true;
@@ -191,7 +191,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final boolean zzd(Exception exc) {
-        l.i(exc, "Exception must not be null");
+        m.i(exc, "Exception must not be null");
         synchronized (this.zza) {
             try {
                 if (this.zzc) {

@@ -1,39 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ra implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ob b;
+    public final /* synthetic */ sb a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ View e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
 
-    public /* synthetic */ ra(ob obVar, int i10) {
-        this.a = i10;
-        this.b = obVar;
+    public /* synthetic */ ra(sb sbVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, View view, float f10, float f11) {
+        this.a = sbVar;
+        this.b = arrayList;
+        this.c = arrayList2;
+        this.d = arrayList3;
+        this.e = view;
+        this.f = f10;
+        this.h = f11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                ob obVar = this.b;
-                obVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                obVar.H0 = -1;
-                obVar.e1();
-                obVar.I0 = null;
-                break;
-            case 1:
-                ob obVar2 = this.b;
-                obVar2.X0(false);
-                obVar2.E.l();
-                break;
-            case 2:
-                this.b.W0();
-                break;
-            default:
-                this.b.U0(2);
-                break;
-        }
+        sb.V(this.a, this.b, this.c, this.d, this.e, this.f, this.h);
     }
 }

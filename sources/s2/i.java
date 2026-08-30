@@ -3,19 +3,19 @@ package s2;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.telegram.ui.th;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ m5.i d;
-    public static final /* synthetic */ m5.i e;
+    public static final /* synthetic */ a3.c d;
+    public static final /* synthetic */ a3.c e;
     public String a;
     public long b;
     public LinkedList c;
 
     static {
-        be.a aVar = new be.a(i.class, "FileTypeBox.java");
+        de.a aVar = new de.a(i.class, "FileTypeBox.java");
         d = aVar.e(aVar.d("getMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "", "", "java.lang.String"));
         aVar.e(aVar.d("setMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "java.lang.String", "majorBrand", "void"));
         aVar.e(aVar.d("setMinorVersion", "com.coremedia.iso.boxes.FileTypeBox", "long", "minorVersion", "void"));
@@ -51,17 +51,17 @@ public final class i extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("FileTypeBox[majorBrand=");
-        th.u(be.a.b(d, this, this));
-        sb2.append(this.a);
-        sb2.append(";minorVersion=");
-        th.u(be.a.b(e, this, this));
-        sb2.append(this.b);
+        StringBuilder sb = new StringBuilder("FileTypeBox[majorBrand=");
+        yh.v(de.a.b(d, this, this));
+        sb.append(this.a);
+        sb.append(";minorVersion=");
+        yh.v(de.a.b(e, this, this));
+        sb.append(this.b);
         for (String str : this.c) {
-            sb2.append(";compatibleBrand=");
-            sb2.append(str);
+            sb.append(";compatibleBrand=");
+            sb.append(str);
         }
-        sb2.append("]");
-        return sb2.toString();
+        sb.append("]");
+        return sb.toString();
     }
 }

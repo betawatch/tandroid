@@ -1,35 +1,37 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wl0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yl0 b;
+public final class wl0 extends ac {
+    public final xl0 c;
 
-    public /* synthetic */ wl0(yl0 yl0Var, int i10) {
-        this.a = i10;
-        this.b = yl0Var;
+    public wl0(Activity activity, String str) {
+        super(activity, null);
+        this.b.setText(str);
+        this.b.setTranslationY(-1.0f);
+        ImageView imageView = this.a;
+        xl0 xl0Var = new xl0();
+        this.c = xl0Var;
+        imageView.setImageDrawable(xl0Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                yl0 yl0Var = this.b;
-                yl0Var.getClass();
-                AndroidUtilities.runOnUIThread(new wl0(yl0Var, 2));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new wl0(this.b, 3));
-                break;
-            case 2:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            default:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-        }
+    @Override // org.telegram.ui.Components.nb
+    public final void onEnterTransitionEnd() {
+        super.onEnterTransitionEnd();
+        xl0 xl0Var = this.c;
+        xl0Var.getClass();
+        xl0Var.g = System.currentTimeMillis();
+        xl0Var.invalidateSelf();
+    }
+
+    @Override // org.telegram.ui.Components.nb
+    public final void onExitTransitionEnd() {
+        super.onExitTransitionEnd();
+        xl0 xl0Var = this.c;
+        xl0Var.g = -1L;
+        xl0Var.invalidateSelf();
     }
 }

@@ -1,6 +1,32 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class x0 {
+public final class x0 {
+    public final t7 a;
+    public final Boolean b;
+    public final n8 c;
+
+    public /* synthetic */ x0(w0 w0Var) {
+        this.a = (t7) w0Var.b;
+        this.b = (Boolean) w0Var.c;
+        this.c = (n8) w0Var.d;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof x0)) {
+            return false;
+        }
+        x0 x0Var = (x0) obj;
+        return b6.m.l(this.a, x0Var.a) && b6.m.l(this.b, x0Var.b) && b6.m.l(null, null) && b6.m.l(this.c, x0Var.c);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
+    }
 }

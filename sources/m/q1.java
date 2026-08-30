@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class q1 extends Drawable implements Drawable.Callback {
     public Drawable a;
@@ -18,16 +18,16 @@ public final class q1 extends Drawable implements Drawable.Callback {
         this.a.draw(canvas);
     }
 
-    public final void b(float f9, float f10) {
-        this.a.setHotspot(f9, f10);
+    public final void b(float f10, float f11) {
+        this.a.setHotspot(f10, f11);
     }
 
     public final void c(int i10, int i11, int i12, int i13) {
         this.a.setHotspotBounds(i10, i11, i12, i13);
     }
 
-    public final boolean d(boolean z10, boolean z11) {
-        return super.setVisible(z10, z11) || this.a.setVisible(z10, z11);
+    public final boolean d(boolean z4, boolean z10) {
+        return super.setVisible(z4, z10) || this.a.setVisible(z4, z10);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -128,8 +128,8 @@ public final class q1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z10) {
-        this.a.setAutoMirrored(z10);
+    public final void setAutoMirrored(boolean z4) {
+        this.a.setAutoMirrored(z4);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -143,19 +143,19 @@ public final class q1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setDither(boolean z10) {
-        this.a.setDither(z10);
+    public final void setDither(boolean z4) {
+        this.a.setDither(z4);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z10) {
-        this.a.setFilterBitmap(z10);
+    public final void setFilterBitmap(boolean z4) {
+        this.a.setFilterBitmap(z4);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f9, float f10) {
+    public final void setHotspot(float f10, float f11) {
         if (this.b) {
-            b(f9, f10);
+            b(f10, f11);
         }
     }
 
@@ -190,9 +190,9 @@ public final class q1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z10, boolean z11) {
+    public final boolean setVisible(boolean z4, boolean z10) {
         if (this.b) {
-            return d(z10, z11);
+            return d(z4, z10);
         }
         return false;
     }

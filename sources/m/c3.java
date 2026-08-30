@@ -29,19 +29,19 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c3 extends h1.b implements View.OnClickListener {
-    public static final /* synthetic */ int J = 0;
-    public final int A;
-    public int B;
-    public ColorStateList C;
-    public int D;
+    public static final /* synthetic */ int K = 0;
+    public final int B;
+    public int C;
+    public ColorStateList D;
     public int E;
     public int F;
     public int G;
     public int H;
     public int I;
+    public int J;
     public final int n;
     public final int r;
     public final LayoutInflater s;
@@ -61,16 +61,16 @@ public final class c3 extends h1.b implements View.OnClickListener {
         this.r = suggestionRowLayout;
         this.n = suggestionRowLayout;
         this.s = (LayoutInflater) context.getSystemService("layout_inflater");
-        this.B = 1;
-        this.D = -1;
+        this.C = 1;
         this.E = -1;
         this.F = -1;
         this.G = -1;
         this.H = -1;
         this.I = -1;
+        this.J = -1;
         this.v = searchView;
         this.w = searchableInfo;
-        this.A = searchView.getSuggestionCommitIconResId();
+        this.B = searchView.getSuggestionCommitIconResId();
         this.x = context;
         this.y = weakHashMap;
     }
@@ -81,8 +81,8 @@ public final class c3 extends h1.b implements View.OnClickListener {
         }
         try {
             return cursor.getString(i10);
-        } catch (Exception e10) {
-            Log.e("SuggestionsAdapter", "unexpected error retrieving valid column from cursor, did the remote process die?", e10);
+        } catch (Exception e) {
+            Log.e("SuggestionsAdapter", "unexpected error retrieving valid column from cursor, did the remote process die?", e);
             return null;
         }
     }
@@ -97,18 +97,18 @@ public final class c3 extends h1.b implements View.OnClickListener {
     public final void a(View view, Cursor cursor) {
         int i10;
         int i11;
-        Drawable e10;
+        Drawable e;
         ActivityInfo activityInfo;
         int iconResource;
         String str;
         b3 b3Var = (b3) view.getTag();
-        int i12 = this.I;
+        int i12 = this.J;
         int i13 = i12 != -1 ? cursor.getInt(i12) : 0;
         TextView textView = b3Var.a;
         TextView textView2 = b3Var.b;
         ImageView imageView = b3Var.e;
         if (textView != null) {
-            String g10 = g(cursor, this.D);
+            String g10 = g(cursor, this.E);
             textView.setText(g10);
             if (TextUtils.isEmpty(g10)) {
                 textView.setVisibility(8);
@@ -118,18 +118,18 @@ public final class c3 extends h1.b implements View.OnClickListener {
         }
         Context context = this.x;
         if (textView2 != null) {
-            String g11 = g(cursor, this.F);
+            String g11 = g(cursor, this.G);
             if (g11 != null) {
-                if (this.C == null) {
+                if (this.D == null) {
                     TypedValue typedValue = new TypedValue();
                     context.getTheme().resolveAttribute(R.attr.textColorSearchUrl, typedValue, true);
-                    this.C = context.getResources().getColorStateList(typedValue.resourceId);
+                    this.D = context.getResources().getColorStateList(typedValue.resourceId);
                 }
                 SpannableString spannableString = new SpannableString(g11);
-                spannableString.setSpan(new TextAppearanceSpan(null, 0, 0, this.C, null), 0, g11.length(), 33);
+                spannableString.setSpan(new TextAppearanceSpan(null, 0, 0, this.D, null), 0, g11.length(), 33);
                 str = spannableString;
             } else {
-                str = g(cursor, this.E);
+                str = g(cursor, this.F);
             }
             if (TextUtils.isEmpty(str)) {
                 if (textView != null) {
@@ -149,65 +149,65 @@ public final class c3 extends h1.b implements View.OnClickListener {
         }
         ImageView imageView2 = b3Var.c;
         if (imageView2 != null) {
-            int i14 = this.G;
+            int i14 = this.H;
             if (i14 == -1) {
-                e10 = null;
+                e = null;
             } else {
-                e10 = e(cursor.getString(i14));
-                if (e10 == null) {
+                e = e(cursor.getString(i14));
+                if (e == null) {
                     ComponentName searchActivity = this.w.getSearchActivity();
                     String flattenToShortString = searchActivity.flattenToShortString();
                     WeakHashMap weakHashMap = this.y;
                     if (weakHashMap.containsKey(flattenToShortString)) {
                         Drawable.ConstantState constantState = (Drawable.ConstantState) weakHashMap.get(flattenToShortString);
-                        e10 = constantState == null ? null : constantState.newDrawable(context.getResources());
+                        e = constantState == null ? null : constantState.newDrawable(context.getResources());
                     } else {
                         PackageManager packageManager = context.getPackageManager();
                         try {
                             activityInfo = packageManager.getActivityInfo(searchActivity, 128);
                             iconResource = activityInfo.getIconResource();
-                        } catch (PackageManager.NameNotFoundException e11) {
-                            Log.w("SuggestionsAdapter", e11.toString());
+                        } catch (PackageManager.NameNotFoundException e6) {
+                            Log.w("SuggestionsAdapter", e6.toString());
                         }
                         if (iconResource != 0) {
                             Drawable drawable = packageManager.getDrawable(searchActivity.getPackageName(), iconResource, activityInfo.applicationInfo);
                             if (drawable == null) {
-                                StringBuilder o10 = j7.l1.o(iconResource, "Invalid icon resource ", " for ");
-                                o10.append(searchActivity.flattenToShortString());
-                                Log.w("SuggestionsAdapter", o10.toString());
+                                StringBuilder m9 = kh.a2.m(iconResource, "Invalid icon resource ", " for ");
+                                m9.append(searchActivity.flattenToShortString());
+                                Log.w("SuggestionsAdapter", m9.toString());
                             } else {
-                                e10 = drawable;
-                                weakHashMap.put(flattenToShortString, e10 != null ? null : e10.getConstantState());
+                                e = drawable;
+                                weakHashMap.put(flattenToShortString, e != null ? null : e.getConstantState());
                             }
                         }
-                        e10 = null;
-                        weakHashMap.put(flattenToShortString, e10 != null ? null : e10.getConstantState());
+                        e = null;
+                        weakHashMap.put(flattenToShortString, e != null ? null : e.getConstantState());
                     }
-                    if (e10 == null) {
-                        e10 = context.getPackageManager().getDefaultActivityIcon();
+                    if (e == null) {
+                        e = context.getPackageManager().getDefaultActivityIcon();
                     }
                 }
             }
-            imageView2.setImageDrawable(e10);
-            if (e10 == null) {
+            imageView2.setImageDrawable(e);
+            if (e == null) {
                 imageView2.setVisibility(4);
             } else {
                 imageView2.setVisibility(0);
-                e10.setVisible(false, false);
-                e10.setVisible(true, false);
+                e.setVisible(false, false);
+                e.setVisible(true, false);
             }
         }
         ImageView imageView3 = b3Var.d;
         if (imageView3 != null) {
-            int i15 = this.H;
-            Drawable e12 = i15 == -1 ? null : e(cursor.getString(i15));
-            imageView3.setImageDrawable(e12);
-            if (e12 != null) {
+            int i15 = this.I;
+            Drawable e10 = i15 == -1 ? null : e(cursor.getString(i15));
+            imageView3.setImageDrawable(e10);
+            if (e10 != null) {
                 imageView3.setVisibility(0);
-                e12.setVisible(false, false);
+                e10.setVisible(false, false);
                 i10 = 1;
-                e12.setVisible(true, false);
-                i11 = this.B;
+                e10.setVisible(true, false);
+                i11 = this.C;
                 if (i11 == 2 && (i11 != i10 || (i13 & 1) == 0)) {
                     imageView.setVisibility(8);
                     return;
@@ -219,7 +219,7 @@ public final class c3 extends h1.b implements View.OnClickListener {
             imageView3.setVisibility(8);
         }
         i10 = 1;
-        i11 = this.B;
+        i11 = this.C;
         if (i11 == 2) {
         }
         imageView.setVisibility(0);
@@ -232,15 +232,15 @@ public final class c3 extends h1.b implements View.OnClickListener {
         try {
             super.b(cursor);
             if (cursor != null) {
-                this.D = cursor.getColumnIndex("suggest_text_1");
-                this.E = cursor.getColumnIndex("suggest_text_2");
-                this.F = cursor.getColumnIndex("suggest_text_2_url");
-                this.G = cursor.getColumnIndex("suggest_icon_1");
-                this.H = cursor.getColumnIndex("suggest_icon_2");
-                this.I = cursor.getColumnIndex("suggest_flags");
+                this.E = cursor.getColumnIndex("suggest_text_1");
+                this.F = cursor.getColumnIndex("suggest_text_2");
+                this.G = cursor.getColumnIndex("suggest_text_2_url");
+                this.H = cursor.getColumnIndex("suggest_icon_1");
+                this.I = cursor.getColumnIndex("suggest_icon_2");
+                this.J = cursor.getColumnIndex("suggest_flags");
             }
-        } catch (Exception e10) {
-            Log.e("SuggestionsAdapter", "error changing cursor and caching columns", e10);
+        } catch (Exception e) {
+            Log.e("SuggestionsAdapter", "error changing cursor and caching columns", e);
         }
     }
 
@@ -332,8 +332,8 @@ public final class c3 extends h1.b implements View.OnClickListener {
                 }
                 Uri parse = Uri.parse(str);
                 try {
-                } catch (FileNotFoundException e10) {
-                    Log.w("SuggestionsAdapter", "Icon not found: " + parse + ", " + e10.getMessage());
+                } catch (FileNotFoundException e) {
+                    Log.w("SuggestionsAdapter", "Icon not found: " + parse + ", " + e.getMessage());
                 }
                 if ("android.resource".equals(parse.getScheme())) {
                     try {
@@ -356,8 +356,8 @@ public final class c3 extends h1.b implements View.OnClickListener {
                     } finally {
                         try {
                             openInputStream.close();
-                        } catch (IOException e11) {
-                            Log.e("SuggestionsAdapter", "Error closing icon stream for " + parse, e11);
+                        } catch (IOException e6) {
+                            Log.e("SuggestionsAdapter", "Error closing icon stream for " + parse, e6);
                         }
                     }
                 }
@@ -393,11 +393,11 @@ public final class c3 extends h1.b implements View.OnClickListener {
     public final View getDropDownView(int i10, View view, ViewGroup viewGroup) {
         try {
             return super.getDropDownView(i10, view, viewGroup);
-        } catch (RuntimeException e10) {
-            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e10);
+        } catch (RuntimeException e) {
+            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e);
             View inflate = this.s.inflate(this.r, viewGroup, false);
             if (inflate != null) {
-                ((b3) inflate.getTag()).a.setText(e10.toString());
+                ((b3) inflate.getTag()).a.setText(e.toString());
             }
             return inflate;
         }
@@ -407,12 +407,12 @@ public final class c3 extends h1.b implements View.OnClickListener {
     public final View getView(int i10, View view, ViewGroup viewGroup) {
         try {
             return super.getView(i10, view, viewGroup);
-        } catch (RuntimeException e10) {
-            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e10);
+        } catch (RuntimeException e) {
+            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e);
             View inflate = this.s.inflate(this.n, viewGroup, false);
             inflate.setTag(new b3(inflate));
-            ((ImageView) inflate.findViewById(R.id.edit_query)).setImageResource(this.A);
-            ((b3) inflate.getTag()).a.setText(e10.toString());
+            ((ImageView) inflate.findViewById(R.id.edit_query)).setImageResource(this.B);
+            ((b3) inflate.getTag()).a.setText(e.toString());
             return inflate;
         }
     }

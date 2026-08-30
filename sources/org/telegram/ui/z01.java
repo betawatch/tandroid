@@ -1,28 +1,18 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z01 implements org.telegram.ui.Components.bl0, org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ ProxyListActivity a;
+public final /* synthetic */ class z01 implements org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ e11 a;
+    public final /* synthetic */ String b;
 
-    public /* synthetic */ z01(ProxyListActivity proxyListActivity) {
-        this.a = proxyListActivity;
+    public /* synthetic */ z01(e11 e11Var, String str) {
+        this.a = e11Var;
+        this.b = str;
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public boolean c(int i10, View view) {
-        ProxyListActivity proxyListActivity = this.a;
-        if (i10 < proxyListActivity.r || i10 >= proxyListActivity.s) {
-            return false;
-        }
-        proxyListActivity.a.G(i10);
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        ProxyListActivity.V(this.a);
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        e11.W(this.a, this.b);
     }
 }

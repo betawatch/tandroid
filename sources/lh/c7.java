@@ -1,43 +1,54 @@
 package lh;
 
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f7 b;
-    public final /* synthetic */ TL_stories.PeerStories c;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ c7(f7 f7Var, TL_stories.PeerStories peerStories, int i10) {
+    public /* synthetic */ c7(TLObject tLObject, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = f7Var;
-        this.c = peerStories;
+        this.b = tLObject;
+        this.c = callback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        boolean z4;
         switch (this.a) {
             case 0:
-                f7 f7Var = this.b;
-                f7Var.getClass();
-                TL_stories.PeerStories peerStories = this.c;
-                f7Var.g(DialogObject.getPeerDialogId(peerStories.peer), peerStories);
-                break;
-            default:
-                f7 f7Var2 = this.b;
-                f7Var2.getClass();
-                int i10 = 0;
-                while (true) {
-                    TL_stories.PeerStories peerStories2 = this.c;
-                    if (i10 >= peerStories2.stories.size()) {
-                        break;
-                    } else {
-                        f7Var2.l(DialogObject.getPeerDialogId(peerStories2.peer), peerStories2.stories.get(i10));
-                        i10++;
-                    }
+                TLObject tLObject = this.b;
+                boolean z10 = tLObject instanceof TL_account.paidMessagesRevenue;
+                Utilities.Callback callback = this.c;
+                if (!z10) {
+                    callback.run(0L);
+                    break;
+                } else {
+                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject).stars_amount));
+                    break;
                 }
+            default:
+                TLObject tLObject2 = this.b;
+                if (tLObject2 instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
+                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
+                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
+                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
+                    }
+                    z4 = true;
+                } else {
+                    z4 = false;
+                }
+                this.c.run(Boolean.valueOf(z4));
+                break;
         }
     }
 }

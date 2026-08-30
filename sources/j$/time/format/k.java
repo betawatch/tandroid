@@ -11,7 +11,7 @@ public final class k implements f {
     public static final /* synthetic */ k[] a;
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
+    public final boolean j(r rVar, StringBuilder sb) {
         return true;
     }
 

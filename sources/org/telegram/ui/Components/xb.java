@@ -1,75 +1,126 @@
 package org.telegram.ui.Components;
 
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.support.SparseLongArray;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class xb extends ub implements NotificationCenter.NotificationCenterDelegate {
-    public final vb d;
-    public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.o2 f;
-    public final int h;
-    public mc n;
+public final class xb extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ nb a;
+    public final /* synthetic */ za b;
 
-    public xb(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
-        super(o2Var.getContext(), o2Var.getResourceProvider());
-        this.f = o2Var;
-        this.h = i10;
-        this.b.setLayoutParams(i7.f6.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(i7.f6.h(56.0f, 48.0f, 8388659));
-        vb vbVar = new vb(this, o2Var, getContext(), o2Var.getCurrentAccount(), o2Var.getResourceProvider());
-        this.d = vbVar;
-        vbVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
-        this.d.setDelegate(new wb(this));
-        this.d.setTop(true);
-        this.d.setClipChildren(false);
-        this.d.setClipToPadding(false);
-        this.d.setVisibility(0);
-        this.d.setBubbleOffset(-AndroidUtilities.dp(80.0f));
-        this.d.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
-        addView(this.d, i7.f6.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
-        this.d.p(null, null, true);
+    public xb(za zaVar, nb nbVar) {
+        this.b = zaVar;
+        this.a = nbVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.savedMessagesForwarded) {
-            this.e = (SparseLongArray) objArr[0];
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        za zaVar = this.b;
+        if (zaVar.s) {
+            return false;
         }
+        nb nbVar = this.a;
+        zaVar.v = nb.access$1400(nbVar, true);
+        zaVar.w = nb.access$1400(nbVar, false);
+        return true;
     }
 
-    public final void f() {
-        if (this.d.getReactionsWindow() != null) {
-            this.d.e();
-            if (this.d.getReactionsWindow().a != null) {
-                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
-            }
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        boolean z4 = false;
+        if (Math.abs(f10) <= 2000.0f) {
+            return false;
         }
+        za zaVar = this.b;
+        if ((f10 < 0.0f && zaVar.v) || (f10 > 0.0f && zaVar.w)) {
+            z4 = true;
+        }
+        float signum = Math.signum(f10);
+        nb nbVar = this.a;
+        o1.j jVar = new o1.j(nbVar, o1.h.m, signum * nbVar.getWidth() * 2.0f);
+        if (!z4) {
+            final int i10 = 0;
+            jVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.vb
+                public final /* synthetic */ xb b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.f
+                public final void a(o1.h hVar, boolean z10, float f12, float f13) {
+                    switch (i10) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            jVar.b(new f7(nbVar, 2));
+        }
+        jVar.u.a(1.0f);
+        jVar.u.b(100.0f);
+        jVar.a = f10;
+        jVar.f();
+        if (z4) {
+            o1.j jVar2 = new o1.j(nbVar, o1.h.t, 0.0f);
+            final int i11 = 1;
+            jVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.vb
+                public final /* synthetic */ xb b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.f
+                public final void a(o1.h hVar, boolean z10, float f12, float f13) {
+                    switch (i11) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            jVar2.b(new wb());
+            jVar.u.a(1.0f);
+            jVar.u.b(10.0f);
+            jVar.a = f10;
+            jVar2.f();
+        }
+        zaVar.s = true;
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public int getMeasuredBackgroundHeight() {
-        return AndroidUtilities.dp(30.0f) + this.b.getMeasuredHeight();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.savedMessagesForwarded);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.savedMessagesForwarded);
-    }
-
-    public void setBulletin(mc mcVar) {
-        this.n = mcVar;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        za zaVar = this.b;
+        float f12 = zaVar.h + f10;
+        zaVar.h = f12;
+        float f13 = zaVar.n + f11;
+        zaVar.n = f13;
+        if (Utilities.dist(0.0f, 0.0f, f12, f13) > AndroidUtilities.touchSlop) {
+            zaVar.r = true;
+        }
+        if (!zaVar.d) {
+            return false;
+        }
+        float f14 = zaVar.f - f10;
+        zaVar.f = f14;
+        nb nbVar = this.a;
+        nbVar.setTranslationX(f14);
+        float f15 = zaVar.f;
+        if (f15 == 0.0f || ((f15 < 0.0f && zaVar.v) || (f15 > 0.0f && zaVar.w))) {
+            nbVar.setAlpha(1.0f - (Math.abs(f15) / nbVar.getWidth()));
+        }
+        return true;
     }
 }

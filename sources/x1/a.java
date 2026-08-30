@@ -4,14 +4,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import com.google.android.gms.common.api.m;
-import f7.p;
+import h2.f;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import m5.d;
-import od.i;
+import o5.d;
+import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -19,7 +19,7 @@ public final class a implements Runnable {
     public volatile int b = 1;
     public final AtomicBoolean c = new AtomicBoolean();
     public final AtomicBoolean d = new AtomicBoolean();
-    public final b a = new b(this, new p(this, 10));
+    public final b a = new b(this, new f(this, 10));
 
     public a(d dVar) {
         this.e = dVar;
@@ -30,14 +30,14 @@ public final class a implements Runnable {
         Iterator it = dVar.j.iterator();
         int i10 = 0;
         while (it.hasNext()) {
-            if (((m) it.next()).e(dVar)) {
+            if (((m) it.next()).d(dVar)) {
                 i10++;
             }
         }
         try {
             dVar.i.tryAcquire(i10, 5L, TimeUnit.SECONDS);
-        } catch (InterruptedException e10) {
-            Log.i("GACSignInLoader", "Unexpected InterruptedException", e10);
+        } catch (InterruptedException e) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
             Thread.currentThread().interrupt();
         }
     }
@@ -54,7 +54,7 @@ public final class a implements Runnable {
                 throw th2;
             }
         }
-        handler.post(new i(13, this, obj));
+        handler.post(new yy(11, this, obj));
     }
 
     @Override // java.lang.Runnable

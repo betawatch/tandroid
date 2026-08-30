@@ -1,95 +1,69 @@
 package o4;
 
-import f5.d0;
-import j3.t0;
-import j3.u0;
-import l4.c1;
+import android.util.Pair;
+import j3.o2;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class m implements c1 {
-    public final t0 a;
-    public long[] c;
-    public boolean d;
-    public p4.g e;
-    public boolean f;
-    public int h;
-    public final ze.b b = new ze.b(19, false);
-    public long n = -9223372036854775807L;
+public final class m extends v0 {
+    public final int l;
+    public final HashMap m;
+    public final HashMap n;
 
-    public m(p4.g gVar, t0 t0Var, boolean z10) {
-        this.a = t0Var;
-        this.e = gVar;
-        this.c = gVar.b;
-        b(gVar, z10);
+    public m(a aVar) {
+        super(new q(aVar, false));
+        this.l = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.m = new HashMap();
+        this.n = new HashMap();
     }
 
-    public final void b(p4.g gVar, boolean z10) {
-        int i10 = this.h;
-        long j10 = -9223372036854775807L;
-        long j11 = i10 == 0 ? -9223372036854775807L : this.c[i10 - 1];
-        this.d = z10;
-        this.e = gVar;
-        long[] jArr = gVar.b;
-        this.c = jArr;
-        long j12 = this.n;
-        if (j12 == -9223372036854775807L) {
-            if (j11 != -9223372036854775807L) {
-                this.h = d0.b(jArr, j11, false);
-            }
-        } else {
-            int b10 = d0.b(jArr, j12, true);
-            this.h = b10;
-            if (this.d && b10 == this.c.length) {
-                j10 = j12;
-            }
-            this.n = j10;
+    @Override // o4.a
+    public final t b(v vVar, g5.q qVar, long j10) {
+        int i10 = this.l;
+        a aVar = this.k;
+        if (i10 == Integer.MAX_VALUE) {
+            return aVar.b(vVar, qVar, j10);
+        }
+        Object obj = vVar.a;
+        int i11 = j3.a.d;
+        v b10 = vVar.b(((Pair) obj).second);
+        this.m.put(b10, vVar);
+        t b11 = aVar.b(b10, qVar, j10);
+        this.n.put(b11, b10);
+        return b11;
+    }
+
+    @Override // o4.v0, o4.a
+    public final o2 g() {
+        q qVar = (q) this.k;
+        int i10 = this.l;
+        return i10 != Integer.MAX_VALUE ? new l(qVar.o, i10) : new k(qVar.o, 0);
+    }
+
+    @Override // o4.v0, o4.a
+    public final boolean i() {
+        return false;
+    }
+
+    @Override // o4.a
+    public final void n(t tVar) {
+        this.k.n(tVar);
+        v vVar = (v) this.n.remove(tVar);
+        if (vVar != null) {
+            this.m.remove(vVar);
         }
     }
 
-    @Override // l4.c1
-    public final int d(u0 u0Var, m3.i iVar, int i10) {
-        int i11 = this.h;
-        boolean z10 = i11 == this.c.length;
-        if (z10 && !this.d) {
-            iVar.setFlags(4);
-            return -4;
-        }
-        if ((i10 & 2) != 0 || !this.f) {
-            u0Var.b = this.a;
-            this.f = true;
-            return -5;
-        }
-        if (z10) {
-            return -3;
-        }
-        if ((i10 & 1) == 0) {
-            this.h = i11 + 1;
-        }
-        if ((i10 & 4) == 0) {
-            byte[] E = this.b.E(this.e.a[i11]);
-            iVar.b(E.length);
-            iVar.b.put(E);
-        }
-        iVar.d = this.c[i11];
-        iVar.setFlags(1);
-        return -4;
+    @Override // o4.v0
+    public final v s(v vVar) {
+        return this.l != Integer.MAX_VALUE ? (v) this.m.get(vVar) : vVar;
     }
 
-    @Override // l4.c1
-    public final boolean e() {
-        return true;
-    }
-
-    @Override // l4.c1
-    public final int i(long j10) {
-        int max = Math.max(this.h, d0.b(this.c, j10, true));
-        int i10 = max - this.h;
-        this.h = max;
-        return i10;
-    }
-
-    @Override // l4.c1
-    public final void a() {
+    @Override // o4.v0
+    public final void u(o2 o2Var) {
+        int i10 = this.l;
+        m(i10 != Integer.MAX_VALUE ? new l(o2Var, i10) : new k(o2Var, 0));
     }
 }

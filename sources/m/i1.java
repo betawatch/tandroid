@@ -8,30 +8,30 @@ import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.widget.ToggleButton;
-import i7.v6;
+import k7.k6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i1 extends ToggleButton implements u0.k {
-    public final n a;
+    public final m a;
     public final x0 b;
-    public u c;
+    public t c;
 
     public i1(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.buttonStyleToggle);
         d3.a(this, getContext());
-        n nVar = new n(this);
-        this.a = nVar;
-        nVar.d(attributeSet, R.attr.buttonStyleToggle);
+        m mVar = new m(this);
+        this.a = mVar;
+        mVar.d(attributeSet, R.attr.buttonStyleToggle);
         x0 x0Var = new x0(this);
         this.b = x0Var;
         x0Var.f(attributeSet, R.attr.buttonStyleToggle);
         getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyleToggle);
     }
 
-    private u getEmojiTextViewHelper() {
+    private t getEmojiTextViewHelper() {
         if (this.c == null) {
-            this.c = new u(this);
+            this.c = new t(this);
         }
         return this.c;
     }
@@ -39,9 +39,9 @@ public final class i1 extends ToggleButton implements u0.k {
     @Override // android.widget.ToggleButton, android.widget.CompoundButton, android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.a();
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.a();
         }
         x0 x0Var = this.b;
         if (x0Var != null) {
@@ -50,17 +50,17 @@ public final class i1 extends ToggleButton implements u0.k {
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        n nVar = this.a;
-        if (nVar != null) {
-            return nVar.b();
+        m mVar = this.a;
+        if (mVar != null) {
+            return mVar.b();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        n nVar = this.a;
-        if (nVar != null) {
-            return nVar.c();
+        m mVar = this.a;
+        if (mVar != null) {
+            return mVar.c();
         }
         return null;
     }
@@ -74,26 +74,26 @@ public final class i1 extends ToggleButton implements u0.k {
     }
 
     @Override // android.widget.TextView
-    public void setAllCaps(boolean z10) {
-        super.setAllCaps(z10);
-        getEmojiTextViewHelper().b(z10);
+    public void setAllCaps(boolean z4) {
+        super.setAllCaps(z4);
+        getEmojiTextViewHelper().b(z4);
     }
 
     @Override // android.widget.ToggleButton, android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.e();
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.e();
         }
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.f(i10);
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.f(i10);
         }
     }
 
@@ -115,26 +115,26 @@ public final class i1 extends ToggleButton implements u0.k {
         }
     }
 
-    public void setEmojiCompatEnabled(boolean z10) {
-        getEmojiTextViewHelper().c(z10);
+    public void setEmojiCompatEnabled(boolean z4) {
+        getEmojiTextViewHelper().c(z4);
     }
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((v6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((k6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.h(colorStateList);
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.h(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.i(mode);
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.i(mode);
         }
     }
 

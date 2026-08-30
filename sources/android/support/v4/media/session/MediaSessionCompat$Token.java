@@ -3,18 +3,18 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$Token implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new c0(2);
+    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new b0(2);
     public final Object b;
     public d c;
     public final Object a = new Object();
     public l2.d d = null;
 
-    public MediaSessionCompat$Token(Object obj, v vVar) {
+    public MediaSessionCompat$Token(Object obj, u uVar) {
         this.b = obj;
-        this.c = vVar;
+        this.c = uVar;
     }
 
     public final d a() {
@@ -25,21 +25,15 @@ public final class MediaSessionCompat$Token implements Parcelable {
         return dVar;
     }
 
-    public final void b(d dVar) {
-        synchronized (this.a) {
-            this.c = dVar;
-        }
-    }
-
-    public final void c(l2.d dVar) {
-        synchronized (this.a) {
-            this.d = dVar;
-        }
-    }
-
     @Override // android.os.Parcelable
     public final int describeContents() {
         return 0;
+    }
+
+    public final void e(d dVar) {
+        synchronized (this.a) {
+            this.c = dVar;
+        }
     }
 
     public final boolean equals(Object obj) {
@@ -58,6 +52,12 @@ public final class MediaSessionCompat$Token implements Parcelable {
             return false;
         }
         return obj3.equals(obj2);
+    }
+
+    public final void f(l2.d dVar) {
+        synchronized (this.a) {
+            this.d = dVar;
+        }
     }
 
     public final int hashCode() {

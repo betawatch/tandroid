@@ -1,28 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.function.ToIntFunction;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ve implements ToIntFunction {
+public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ xn b;
+    public final /* synthetic */ org.telegram.ui.Components.im0 c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ ve(Object obj, int i10) {
+    public /* synthetic */ ve(xn xnVar, org.telegram.ui.Components.im0 im0Var, String str, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = xnVar;
+        this.c = im0Var;
+        this.d = str;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.qc a02;
+        int i10;
         switch (this.a) {
             case 0:
-                return ((Integer) ((HashMap) this.b).get((View) obj)).intValue();
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.qc.a0(this.b);
+                i10 = R.string.RelativeDateCopied;
+                break;
+            case 1:
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard("@" + this.d);
+                a02 = org.telegram.ui.Components.qc.a0(this.b);
+                i10 = R.string.UsernameCopied;
+                break;
             default:
-                return ((Integer) ((ArrayList) this.b).get(((Integer) obj).intValue())).intValue();
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.qc.a0(this.b);
+                i10 = R.string.CardNumberCopied;
+                break;
         }
+        b.m(i10, a02);
     }
 }

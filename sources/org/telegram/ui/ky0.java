@@ -1,188 +1,161 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.graphics.Bitmap;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FlagSecureReason;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ky0 implements Runnable {
+public final /* synthetic */ class ky0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ ky0(Object obj, int i10) {
+    public /* synthetic */ ky0(boolean z4, NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.c = notificationCenterDelegate;
+        this.b = z4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = 1;
-        int i12 = 0;
-        Object obj = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        org.telegram.ui.Components.jv0 jv0Var;
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        switch (this.a) {
             case 0:
-                ProfileActivity profileActivity = (ProfileActivity) ((bg.d1) obj).c;
-                if (profileActivity.j5 != 1.0f) {
-                    my0 my0Var = profileActivity.j0;
-                    while (my0Var.z0.k(i12) != my0Var.getRealCount() - 1) {
-                        i12++;
+                ProfileActivity profileActivity = (ProfileActivity) this.c;
+                Integer num = (Integer) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (!profileActivity.M3()) {
+                    if (org.telegram.ui.Components.qc.a(profileActivity)) {
+                        int intValue = num.intValue();
+                        boolean z4 = this.b;
+                        if (intValue == 1) {
+                            org.telegram.ui.Components.qc.l(null, profileActivity, z4).j();
+                        } else if (num.intValue() == 2) {
+                            org.telegram.ui.Components.qc.l(DialogObject.getShortName(profileActivity.b1), profileActivity, z4).j();
+                        } else if (tL_error != null) {
+                            org.telegram.ui.Components.qc.b0(tL_error);
+                        }
                     }
-                    my0Var.x(i12, true);
-                    break;
+                    FlagSecureReason flagSecureReason = profileActivity.U1;
+                    if (flagSecureReason != null) {
+                        flagSecureReason.invalidate();
+                        break;
+                    }
                 }
                 break;
             case 1:
-                ProfileActivity profileActivity2 = ((dz0) obj).b;
-                profileActivity2.getMessagesController().toggleChatNoForwards(profileActivity2.a1, 0, true, new nh.w9(true, profileActivity2, i11));
-                break;
-            case 2:
-                hz0 hz0Var = (hz0) obj;
-                hz0Var.M0(hz0Var.getTabProgress());
-                break;
-            case 3:
-                ((yz0) obj).c();
-                break;
-            case 4:
-                ((n01) obj).a();
-                break;
-            case 5:
-                k01 k01Var = (k01) obj;
-                k01Var.f.add(k01Var.c);
-                k01Var.a();
-                break;
-            case 6:
-                Runnable[] runnableArr = (Runnable[]) obj;
-                runnableArr[0].run();
-                runnableArr[0] = null;
-                break;
-            case 7:
-                ((lh.g6) obj).e();
-                break;
-            case 8:
-                l11 l11Var = (l11) obj;
-                AndroidUtilities.hideKeyboard(l11Var.d.findFocus());
-                while (i12 < l11Var.y.length) {
-                    int i13 = l11Var.w;
-                    if ((i13 != 0 || i12 == 4) && (i13 != 1 || i12 == 2 || i12 == 3)) {
-                        l11Var.a[i12].setText((CharSequence) null);
+                ph.da daVar = (ph.da) this.c;
+                Bitmap bitmap = (Bitmap) obj2;
+                int i10 = daVar.c;
+                if (obj != null && daVar.m2 == null && !daVar.T && daVar.J()) {
+                    int i11 = 0;
+                    if (!this.b) {
+                        daVar.i0(false, true);
+                        daVar.N0.a(daVar.L1);
+                        ph.t5 t5Var = daVar.L0;
+                        boolean z10 = daVar.L1 == 1;
+                        t5Var.k0 = -1.0f;
+                        t5Var.l0 = z10;
+                        t5Var.invalidate();
+                        daVar.f(false);
+                        boolean z11 = obj instanceof MediaController.PhotoEntry;
+                        if (!z11) {
+                            if (obj instanceof ph.u6) {
+                                ph.u6 u6Var = (ph.u6) obj;
+                                if (u6Var.L == null && !u6Var.v()) {
+                                    daVar.b1.c(R.raw.error, "Failed to load draft");
+                                    MessagesController.getInstance(i10).getStoriesController().w.c(u6Var);
+                                    break;
+                                } else {
+                                    u6Var.J0 = daVar.s0;
+                                    u6Var.K0 = daVar.t0;
+                                    daVar.L1 = u6Var.K ? 1 : 0;
+                                    u6Var.M0 = bitmap;
+                                    daVar.I1 = false;
+                                    daVar.x0.n(u6Var);
+                                    daVar.H1 = u6Var;
+                                    if (z11) {
+                                        ph.g8.a(i10, u6Var);
+                                    }
+                                    daVar.K(1, true);
+                                }
+                            }
+                        } else {
+                            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                            if (photoEntry.isVideo && !photoEntry.isLivePhoto()) {
+                                i11 = 1;
+                            }
+                            daVar.L1 = i11;
+                            ph.u6 l10 = ph.u6.l(photoEntry);
+                            l10.M0 = bitmap;
+                            l10.J0 = daVar.s0;
+                            l10.K0 = daVar.t0;
+                            l10.A();
+                            daVar.I1 = true;
+                            if (daVar.x0.j()) {
+                                daVar.D1 = null;
+                                l10.P = 1.0f;
+                                if (daVar.x0.l(l10)) {
+                                    daVar.H1 = ph.u6.a(daVar.x0.getLayout(), daVar.x0.getContent());
+                                }
+                                daVar.m0(true);
+                            } else {
+                                l10.B();
+                                daVar.H1 = l10;
+                                if (z11) {
+                                    ph.g8.a(i10, l10);
+                                }
+                                daVar.K(1, true);
+                            }
+                        }
+                    } else if (daVar.H1 != null) {
+                        daVar.u();
+                        daVar.H1.j = true;
+                        if (obj instanceof MediaController.PhotoEntry) {
+                            ph.h9 h9Var = daVar.s1;
+                            h9Var.d0(h9Var.k0(((MediaController.PhotoEntry) obj).path, false));
+                        } else if (obj instanceof TLObject) {
+                            ph.h9 h9Var2 = daVar.s1;
+                            TLObject tLObject = (TLObject) obj;
+                            h9Var2.i2 = true;
+                            ph.w4 w4Var = h9Var2.O0;
+                            float f10 = (!(tLObject instanceof TLRPC.Photo) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, MediaDataController.MAX_STYLE_RUNS_COUNT)) == null) ? 1.0f : closestPhotoSizeWithSize.w / closestPhotoSizeWithSize.h;
+                            if (f10 > 1.0f) {
+                                float floor = (float) Math.floor(Math.max(h9Var2.O1, w4Var.getMeasuredWidth()) * 0.5d);
+                                jv0Var = new org.telegram.ui.Components.jv0(floor, floor / f10);
+                            } else {
+                                float floor2 = (float) Math.floor(Math.max(h9Var2.P1, w4Var.getMeasuredHeight()) * 0.5d);
+                                jv0Var = new org.telegram.ui.Components.jv0(f10 * floor2, floor2);
+                            }
+                            dg.v2 v2Var = new dg.v2(h9Var2.getContext(), h9Var2.e0(), jv0Var, tLObject);
+                            v2Var.setDelegate(h9Var2);
+                            w4Var.addView(v2Var);
+                            h9Var2.g0();
+                            h9Var2.d0(v2Var);
+                        }
+                        daVar.f(false);
                     }
-                    i12++;
-                }
-                break;
-            case 9:
-                org.telegram.ui.Components.tc tcVar = (org.telegram.ui.Components.tc) obj;
-                if (LaunchActivity.U() != null) {
-                    if (tcVar == null) {
-                        tcVar = org.telegram.ui.Components.tc.a0(LaunchActivity.U());
-                    }
-                    if (tcVar != null) {
-                        org.telegram.ui.Components.mc M = tcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
-                        M.j = 5000;
-                        M.j();
+                    ph.e9 e9Var = daVar.J0;
+                    if (e9Var != null) {
+                        daVar.i2 = e9Var.e.e0();
+                        daVar.j2 = daVar.J0.getSelectedAlbum();
                         break;
                     }
                 }
-                break;
-            case 10:
-                ((h31) obj).invalidate();
-                break;
-            case 11:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
-                saveToGallerySettingsActivity.v.clear();
-                saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveToGallerySettingsActivity.v);
-                saveToGallerySettingsActivity.Z();
-                break;
-            case 12:
-                o31 o31Var = (o31) obj;
-                o31Var.dismiss();
-                ye.d.s(o31Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
-                break;
-            case 13:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.ok0) obj).c;
-                Runnable runnable = secretMediaViewer.k0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.k0 = null;
-                    break;
-                }
-                break;
-            case 14:
-                f41 f41Var = ((e41) obj).a;
-                f41Var.M = true;
-                f41Var.J.invalidate();
-                break;
-            case 15:
-                ((NotificationCenter) obj).runDelayedNotifications();
-                break;
-            case 16:
-                AndroidUtilities.updateViewShow(((s51) obj).c, true);
-                break;
-            case 17:
-                org.telegram.ui.Components.k51 k51Var = ((n61) obj).e0;
-                if (k51Var != null) {
-                    k51Var.N(true);
-                    break;
-                }
-                break;
-            case 18:
-                ((g61) obj).a();
-                break;
-            case 19:
-                sf.g.a(((SessionsActivity) obj).currentAccount).b();
-                break;
-            case 20:
-                ((zd1) obj).J.r.l();
-                break;
-            case 21:
-                ((ie1) obj).b.C0();
-                break;
-            case 22:
-                ((VoIPFeedbackActivity) obj).finish();
-                break;
-            case 23:
-                ((dh1) obj).a.H();
-                break;
-            case 24:
-                ((eh1) obj).a.H();
-                break;
-            case 25:
-                oh1 oh1Var = ((ch1) obj).b;
-                oh1Var.H0.unlock();
-                org.telegram.ui.Components.voip.o2.k().getClass();
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().swapSinks();
-                }
-                oh1Var.U.setCornerRadius(-1.0f);
-                oh1Var.Y.d.release();
-                oh1Var.Z.d.release();
-                oh1Var.X.release();
-                oh1Var.l();
-                oh1Var.q0.d();
-                org.telegram.ui.Components.voip.o2.P = false;
-                oh1Var.A0 = false;
-                oh1.j1 = null;
-                break;
-            case 26:
-                mh1 mh1Var = (mh1) obj;
-                mh1Var.getClass();
-                if (VoIPService.getSharedState() != null) {
-                    VoIPService.getSharedState().acceptIncomingCall();
-                    if (mh1Var.a.j0 && VoIPService.getSharedInstance() != null) {
-                        VoIPService.getSharedInstance().requestVideoCall(false);
-                        break;
-                    }
-                }
-                break;
-            case 27:
-                ((VoIPPermissionActivity) obj).finish();
                 break;
             default:
-                int[][] iArr = WallpapersListActivity.g0;
-                ((WallpapersListActivity) obj).B0(false);
+                sh.i0.m((sh.i0) this.c, this.b, (TLRPC.TL_error) obj2);
                 break;
         }
     }

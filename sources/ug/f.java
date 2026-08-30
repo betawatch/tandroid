@@ -2,119 +2,291 @@ package ug;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.RoundedCorner;
 import android.view.View;
+import android.view.WindowInsets;
+import android.widget.FrameLayout;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.x5;
+import org.telegram.messenger.y3;
+import org.telegram.ui.gw0;
+import ph.q9;
+import r0.m1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f extends View implements x5 {
-    public lg.b a;
-    public lg.b b;
-    public int c;
-    public int d;
-    public qg.c e;
-    public int f;
+public final class f extends FrameLayout {
+    public float B;
+    public int C;
+    public final Rect D;
+    public final RectF E;
+    public ng.b F;
+    public float G;
+    public float H;
+    public boolean I;
+    public ch.g a;
+    public final gw0 b;
+    public final FrameLayout c;
+    public final q9 d;
+    public boolean e;
+    public pg.b f;
+    public pg.b h;
+    public final Path n;
+    public int r;
+    public float s;
+    public float v;
+    public boolean w;
+    public float x;
+    public float y;
 
     public f(Context context) {
         super(context);
+        this.e = true;
+        this.n = new Path();
+        this.D = new Rect();
+        this.E = new RectF();
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        addView(frameLayout, b6.e(-1, -2, 80));
+        q9 q9Var = new q9(this, context, 3);
+        this.d = q9Var;
+        addView(q9Var, b6.e(-1, -2, 80));
+        this.b = new gw0(this, context, 11);
     }
 
-    public final void a() {
-        this.a.setBounds(0, 0, getMeasuredWidth(), this.c);
-        this.b.setBounds(0, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight());
+    public final void a(boolean z4) {
+        e();
+        int round = Math.round(this.s) + AndroidUtilities.dp(9.0f) + this.C;
+        if (this.r != round || z4) {
+            this.r = round;
+            int dp = AndroidUtilities.dp(29.0f);
+            float measuredHeight = getMeasuredHeight() - this.v;
+            float measuredWidth = getMeasuredWidth();
+            float measuredHeight2 = getMeasuredHeight();
+            RectF rectF = this.E;
+            rectF.set(0.0f, measuredHeight, measuredWidth, measuredHeight2);
+            Path path = this.n;
+            path.rewind();
+            float f10 = dp;
+            path.addRoundRect(rectF, new float[]{f10, f10, f10, f10, 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CW);
+            path.close();
+            invalidate();
+        }
     }
 
-    public final void b(lg.a aVar, og.d dVar) {
-        ng.d c3 = aVar.c(this, null, false);
-        c3.n(dVar);
-        lg.b bVar = new lg.b(c3);
-        this.a = bVar;
-        bVar.b(-AndroidUtilities.dp(30.0f), true);
-        ng.d c6 = aVar.c(this, null, false);
-        c6.n(dVar);
-        lg.b bVar2 = new lg.b(c6);
-        this.b = bVar2;
-        bVar2.b(AndroidUtilities.dp(30.0f), true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void e() {
+    public final void b() {
         int i10;
-        qg.c cVar = this.e;
-        if (cVar == null || (i10 = this.f) == -1) {
+        int measuredHeight;
+        ng.b bVar = this.F;
+        if (bVar == null || (i10 = bVar.getBounds().top) == (measuredHeight = getMeasuredHeight() - Math.round(this.G))) {
             return;
         }
-        cVar.a(g6.w0(null, i10, false));
+        this.F.setBounds(0, measuredHeight, getMeasuredWidth(), getMeasuredHeight());
+        this.b.invalidate(0, Math.max(0, Math.min(i10, measuredHeight)), getMeasuredWidth(), getMeasuredHeight());
+        invalidate(0, Math.max(0, Math.min(i10, measuredHeight)), getMeasuredWidth(), getMeasuredHeight());
+    }
+
+    public final void c() {
+        m1 m1Var = ((ch.i) this.a).r;
+        int i10 = m1Var != null ? m1Var.a.f(2).d : 0;
+        float b10 = ((ch.i) this.a).b();
+        q9 q9Var = this.d;
+        int childCount = q9Var.getChildCount();
+        for (int i11 = 0; i11 < childCount; i11++) {
+            KeyEvent.Callback childAt = q9Var.getChildAt(i11);
+            if (childAt instanceof ch.a) {
+                ch.a aVar = (ch.a) childAt;
+                aVar.b(i10);
+                aVar.c(b10);
+            }
+        }
+    }
+
+    public final void d() {
+        int i10;
+        WindowInsets rootWindowInsets;
+        this.s = ((ch.i) this.a).c();
+        this.v = ((ch.i) this.a).b();
+        int i11 = 0;
+        this.w = ((ch.i) this.a).s != 1;
+        q9 q9Var = this.d;
+        boolean z4 = q9Var.getVisibility() == 0;
+        boolean z10 = this.w;
+        if (z4 != z10) {
+            q9Var.setVisibility(z10 ? 0 : 8);
+        }
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) q9Var.getLayoutParams();
+        int i12 = layoutParams.height;
+        int i13 = ((ch.i) this.a).w;
+        if (i12 != i13) {
+            layoutParams.height = i13;
+            requestLayout();
+        }
+        a(false);
+        c();
+        if (this.h != null) {
+            if (Build.VERSION.SDK_INT < 31 || (rootWindowInsets = getRootWindowInsets()) == null) {
+                i10 = 0;
+            } else {
+                RoundedCorner roundedCorner = rootWindowInsets.getRoundedCorner(3);
+                RoundedCorner roundedCorner2 = rootWindowInsets.getRoundedCorner(2);
+                i10 = roundedCorner == null ? 0 : roundedCorner.getRadius();
+                if (roundedCorner2 != null) {
+                    i11 = roundedCorner2.getRadius();
+                }
+            }
+            this.h.r(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i11, i10);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), y3.b(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
+        int measuredHeight = getMeasuredHeight() - this.r;
+        int round = Math.round(this.x);
+        int measuredWidth = getMeasuredWidth() - Math.round(this.y);
+        int i10 = this.C;
+        Rect rect = this.D;
+        rect.set(round, 0, measuredWidth, i10);
+        rect.inset(0, -AndroidUtilities.dp(7.0f));
+        rect.offset(0, measuredHeight + ((int) this.H));
+        this.f.setBounds(rect);
+        if (this.e) {
+            this.f.draw(canvas);
+        }
+        if (this.w) {
+            this.h.draw(canvas);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        boolean z4 = view == this.d;
+        if (z4) {
+            canvas.save();
+            canvas.clipPath(this.h.h.k);
+        }
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        if (z4) {
+            canvas.restore();
+        }
+        return drawChild;
+    }
+
+    public final void e() {
+        this.c.setTranslationY((-this.s) - AndroidUtilities.dp(9.0f));
+        this.d.setTranslationY(r0.getMeasuredHeight() - this.v);
+    }
+
+    public View getFadeView() {
+        return this.b;
+    }
+
+    public FrameLayout getInAppKeyboardBubbleContainer() {
+        return this.d;
+    }
+
+    public float getInputBubbleBottom() {
+        return (getMeasuredHeight() - this.s) - AndroidUtilities.dp(9.0f);
+    }
+
+    public float getInputBubbleHeight() {
+        return this.B;
+    }
+
+    public float getInputBubbleTop() {
+        return getInputBubbleBottom() - getInputBubbleHeight();
+    }
+
+    public FrameLayout getInputIslandBubbleContainer() {
+        return this.c;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        e();
+        c();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        a(true);
+        b();
+        e();
+        c();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        pg.b bVar;
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            int x10 = (int) motionEvent.getX();
+            int y10 = (int) motionEvent.getY();
+            pg.b bVar2 = this.f;
+            this.I = (bVar2 != null && bVar2.j == 255 && bVar2.getBounds().contains(x10, y10)) || ((bVar = this.h) != null && bVar.getBounds().contains(x10, y10));
+        }
+        if (action == 1 || action == 3) {
+            this.I = false;
+        }
+        return this.I;
+    }
+
+    public void setBackgroundWithFadeDrawable(ng.b bVar) {
+        this.F = bVar;
+    }
+
+    public void setBlurredBottomHeight(float f10) {
+        if (this.G != f10) {
+            this.G = f10;
+            b();
+        }
+    }
+
+    public void setInputBubbleAlpha(int i10) {
+        pg.b bVar = this.f;
+        if (bVar != null) {
+            bVar.setAlpha(i10);
+        }
+    }
+
+    public void setInputBubbleHeight(float f10) {
+        this.B = f10;
+        this.C = Math.round(f10);
+        a(false);
+    }
+
+    public void setInputBubbleTranslationY(float f10) {
+        this.H = f10;
         invalidate();
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    public void setInputIslandBubbleDrawable(pg.b bVar) {
+        this.f = bVar;
+        bVar.o(AndroidUtilities.dp(7.0f));
+        this.f.p(AndroidUtilities.dp(22.0f));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.draw(canvas);
-        this.b.draw(canvas);
+    public void setUnderKeyboardBackgroundDrawable(pg.b bVar) {
+        this.h = bVar;
+        bVar.k = true;
+        bVar.q(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), 0.0f, 0.0f);
+        this.h.t(AndroidUtilities.dp(32.0f));
+        pg.b bVar2 = this.h;
+        bVar2.h.g = 0.4f;
+        bVar2.j();
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        a();
-    }
-
-    public void setFadeHeightBottom(int i10) {
-        this.b.b(i10, true);
-    }
-
-    public void setFadeHeightTop(int i10) {
-        this.a.b(-i10, true);
-    }
-
-    public void setFadeTopAlpha(int i10) {
-        lg.b bVar = this.a;
-        if (bVar.q != i10) {
-            bVar.q = i10;
-            invalidate();
-        }
-    }
-
-    public void setFadeZoneBottom(int i10) {
-        if (this.d != i10) {
-            this.d = i10;
-            a();
-            invalidate();
-        }
-    }
-
-    public void setFadeZoneTop(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            a();
-            invalidate();
-        }
-    }
-
-    public void setIgnoreFastWay(boolean z10) {
-        this.a.p = z10;
-        this.b.p = z10;
-    }
-
-    public void setup(lg.a aVar) {
-        b(aVar, null);
-    }
-
-    public void setupColorKey(int i10) {
-        this.f = i10;
-        if (this.e == null) {
-            qg.c cVar = new qg.c();
-            this.e = cVar;
-            cVar.a(g6.w0(null, i10, false));
-            setup(new lg.a(this.e));
-        }
+    public void setWindowInsetsProvider(ch.g gVar) {
+        this.a = gVar;
     }
 }

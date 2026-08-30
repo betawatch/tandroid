@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -58,8 +58,8 @@ public abstract class b0 {
                         return b10;
                     }
                 }
-            } catch (IllegalAccessException e10) {
-                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e10.getMessage(), e10);
+            } catch (IllegalAccessException e) {
+                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e.getMessage(), e);
             }
         }
         return null;
@@ -73,8 +73,8 @@ public abstract class b0 {
         view.setBackgroundTintMode(mode);
     }
 
-    public static void i(View view, float f9) {
-        view.setElevation(f9);
+    public static void i(View view, float f10) {
+        view.setElevation(f10);
     }
 
     public static void j(View view, o oVar) {

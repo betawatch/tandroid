@@ -1,15 +1,13 @@
 package nh;
 
-import org.telegram.ui.Components.k51;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class u7 extends k51 {
-    @Override // org.telegram.ui.Components.k51
-    public final int I(int i10) {
-        if (i10 == org.telegram.ui.ActionBar.g6.i5) {
-            return -15921907;
-        }
-        return org.telegram.ui.ActionBar.g6.v0(i10, this.v);
+public final class u7 extends CharacterStyle {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setAlpha((int) (textPaint.getAlpha() * 0.66f));
     }
 }

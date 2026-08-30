@@ -1,87 +1,58 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class q01 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ t01 b;
+public final class q01 {
+    public final String a;
+    public final Runnable b;
+    public final String c;
+    public final String[] d;
+    public final int e;
+    public final int f;
+    public int g;
+    public String h;
 
-    public q01(t01 t01Var, String str) {
-        this.b = t01Var;
-        this.a = str;
+    public q01(String str, int i10, int i11, Runnable runnable) {
+        this(i10, str, null, null, null, i11, runnable);
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        t01 t01Var = this.b;
-        long j10 = t01Var.f;
-        long j11 = t01Var.e;
-        String str = this.a;
-        if (i10 == -1) {
-            if (!t01Var.h && t01Var.n) {
-                i17 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
-            }
-        } else if (i10 == 1) {
-            i11 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
-            SharedPreferences.Editor edit = notificationsSettings.edit();
-            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
-            i12 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j11);
-            if (t01Var.n) {
-                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
-                if (j10 == 0) {
-                    i16 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-                    MessagesStorage.getInstance(i16).setDialogFlags(j11, 0L);
-                    if (dialog != null) {
-                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-                    }
-                }
-            } else {
-                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
-                if (j10 == 0) {
-                    i13 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j11);
-                    i14 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-                    MessagesStorage.getInstance(i14).setDialogFlags(j11, 1L);
-                    if (dialog != null) {
-                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
-                        dialog.notify_settings = tL_peerNotifySettings;
-                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    }
-                }
-            }
-            edit.apply();
-            i15 = ((org.telegram.ui.ActionBar.o2) t01Var).currentAccount;
-            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j11, j10);
-            if (t01Var.r != null) {
-                bk0 bk0Var = new bk0();
-                bk0Var.d = j11;
-                bk0Var.b = true;
-                int c3 = org.telegram.messenger.x3.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
-                bk0Var.c = c3;
-                if (c3 != 0) {
-                    bk0Var.a = org.telegram.messenger.x3.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
-                }
-                t01Var.r.m(bk0Var);
-            }
+    public final void a(String str) {
+        this.h = str;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof q01) && this.f == ((q01) obj).f;
+    }
+
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.g);
+        serializedData.writeInt32(1);
+        serializedData.writeInt32(this.f);
+        return Utilities.bytesToHex(serializedData.toByteArray());
+    }
+
+    public q01(int i10, String str, String str2, int i11, Runnable runnable) {
+        this(i10, str, null, str2, null, i11, runnable);
+    }
+
+    public q01(int i10, String str, String str2, String str3, int i11, Runnable runnable) {
+        this(i10, str, str2, str3, null, i11, runnable);
+    }
+
+    public q01(int i10, String str, String str2, String str3, String str4, int i11, Runnable runnable) {
+        this.f = i10;
+        this.a = str;
+        this.c = str2;
+        this.b = runnable;
+        this.e = i11;
+        if (str3 != null && str4 != null) {
+            this.d = new String[]{str3, str4};
+        } else if (str3 != null) {
+            this.d = new String[]{str3};
         }
-        t01Var.finishFragment();
     }
 }

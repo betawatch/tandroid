@@ -2,48 +2,58 @@ package dg;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+    public final /* synthetic */ j b;
 
-    public /* synthetic */ g(i iVar, int i10) {
+    public /* synthetic */ g(j jVar, int i10) {
         this.a = i10;
-        this.b = iVar;
+        this.b = jVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                i iVar = this.b;
-                iVar.b.d = 0.0f;
-                iVar.P = null;
-                iVar.h(iVar.E);
+                j jVar = this.b;
+                if (animator == jVar.U) {
+                    jVar.U = null;
+                    break;
+                }
                 break;
             case 1:
-                super.onAnimationEnd(animator);
-                i iVar2 = this.b;
-                iVar2.b.d = 0.0f;
-                iVar2.P = null;
-                iVar2.h(iVar2.E);
+                j jVar2 = this.b;
+                if (animator == jVar2.V) {
+                    jVar2.V = null;
+                    break;
+                }
                 break;
             case 2:
-                super.onAnimationEnd(animator);
-                i iVar3 = this.b;
-                iVar3.b.d = 0.0f;
-                iVar3.P = null;
-                iVar3.h(iVar3.E);
+                j jVar3 = this.b;
+                if (animator == jVar3.M) {
+                    jVar3.M = null;
+                    jVar3.L = 0.0f;
+                    break;
+                }
+                break;
+            case 3:
+                j jVar4 = this.b;
+                if (animator == jVar4.N) {
+                    jVar4.N = null;
+                    break;
+                }
                 break;
             default:
-                super.onAnimationEnd(animator);
-                i iVar4 = this.b;
-                iVar4.b.d = 0.0f;
-                iVar4.P = null;
-                iVar4.h(iVar4.E);
+                j jVar5 = this.b;
+                if (!jVar5.i0) {
+                    AndroidUtilities.removeFromParent(jVar5.E);
+                    jVar5.E = null;
+                    break;
+                }
                 break;
         }
     }

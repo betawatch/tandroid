@@ -1,28 +1,34 @@
 package nh;
 
-import org.telegram.messenger.MediaController;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.k01;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class b3 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ n3 a;
+public final class b3 extends ReplacementSpan {
+    public final RectF a = new RectF();
+    public final Paint b = new Paint(1);
+    public final k01 c = new k01(LocaleController.getString(R.string.LiveStoryBadge), 9.0f, AndroidUtilities.bold());
 
-    public b3(n3 n3Var) {
-        this.a = n3Var;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
+        RectF rectF = this.a;
+        rectF.set(f10, dp - AndroidUtilities.dp(7.0f), this.c.l() + f10 + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f) + dp);
+        Paint paint2 = this.b;
+        paint2.setColor(-572850);
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint2);
+        this.c.c(AndroidUtilities.dp(6.0f) + f10, dp, 1.0f, -1, canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        n3 n3Var = this.a;
-        if (i10 != -1) {
-            if (i10 >= 10) {
-                n3Var.e((MediaController.AlbumEntry) n3Var.c0.get(i10 - 10), false);
-            }
-        } else {
-            Runnable runnable = n3Var.R;
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) (this.c.l() + AndroidUtilities.dp(12.0f));
     }
 }

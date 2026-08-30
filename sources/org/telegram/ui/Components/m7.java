@@ -1,47 +1,94 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class m7 implements zn0 {
-    public final /* synthetic */ g8 a;
+public final class m7 extends jj0 {
+    public float r;
+    public float s;
+    public boolean v;
+    public final m2.b w;
+    public final /* synthetic */ float x;
+    public final /* synthetic */ c8 y;
 
-    public m7(g8 g8Var) {
-        this.a = g8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m7(c8 c8Var, Context context, float f10) {
+        super(context);
+        this.y = c8Var;
+        this.x = f10;
+        this.w = new m2.b(this, 12);
     }
 
-    @Override // org.telegram.ui.Components.zn0
-    public final void W(float f9, boolean z10) {
-        if (z10) {
-            MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f9);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.addAction(16);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
+    
+        if (r5 != 3) goto L20;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        c8 c8Var = this.y;
+        m7 m7Var = c8Var.I;
+        if (c8Var.Q.v || c8Var.E0 == -1) {
+            return false;
         }
-        MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
-        if (playingMessageObject == null || !playingMessageObject.isMusic()) {
-            return;
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        m2.b bVar = this.w;
+        if (action == 0) {
+            this.v = false;
+            this.r = rawX;
+            this.s = rawY;
+            AndroidUtilities.runOnUIThread(bVar, 300L);
+            if (getBackground() != null) {
+                getBackground().setHotspot(this.r, this.s);
+            }
+            setPressed(true);
+            return true;
         }
-        this.a.G0(playingMessageObject, false);
-    }
-
-    @Override // org.telegram.ui.Components.zn0
-    public final CharSequence getContentDescription() {
-        StringBuilder sb2 = new StringBuilder();
-        g8 g8Var = this.a;
-        sb2.append(LocaleController.formatPluralString("Minutes", g8Var.z0 / 60, new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", g8Var.z0 % 60, new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2.toString(), LocaleController.formatPluralString("Minutes", g8Var.A0 / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", g8Var.A0 % 60, new Object[0]));
-    }
-
-    @Override // org.telegram.ui.Components.zn0
-    public final /* synthetic */ int k0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.zn0
-    public final void v() {
+        if (action != 1) {
+            if (action == 2) {
+                float f10 = rawX - this.r;
+                float f11 = rawY - this.s;
+                float f12 = (f11 * f11) + (f10 * f10);
+                float f13 = this.x;
+                if (f12 > f13 * f13 && !this.v) {
+                    AndroidUtilities.cancelRunOnUIThread(bVar);
+                    setPressed(false);
+                }
+            }
+            return true;
+        }
+        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
+            MediaController.getInstance().playNextMessage();
+            m7Var.setProgress(0.0f);
+            m7Var.d();
+        }
+        AndroidUtilities.cancelRunOnUIThread(bVar);
+        if (c8Var.G0 > 0) {
+            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
+            if (MediaController.getInstance().isMessagePaused()) {
+                c8Var.I0 = 0L;
+                c8Var.K0.run();
+            }
+        }
+        c8Var.E0 = 0;
+        setPressed(false);
+        c8Var.G0 = 0;
+        c8Var.F0 = -1.0f;
+        return true;
     }
 }

@@ -1,31 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class n30 implements m2.e {
-    public final /* synthetic */ r50 a;
+public final class n30 extends org.telegram.ui.Components.w7 {
+    public final /* synthetic */ c60 B;
+    public final /* synthetic */ Activity y;
 
-    public n30(r50 r50Var) {
-        this.a = r50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n30(c60 c60Var, LaunchActivity launchActivity, Activity activity) {
+        super(launchActivity);
+        this.B = c60Var;
+        this.y = activity;
     }
 
-    @Override // m2.e
-    public final void a(int i10) {
-        r50 r50Var = this.a;
-        r50Var.b.z0.k(i10);
-        k30 k30Var = r50Var.z2;
-        k30Var.F = k30Var.H;
-        k30Var.G = k30Var.I;
-        k30Var.J = 0.0f;
-        k30Var.K = 1;
-        k30Var.invalidate();
-    }
-
-    @Override // m2.e
-    public final void c(int i10) {
-    }
-
-    @Override // m2.e
-    public final void b(float f9, int i10, int i11) {
+    @Override // org.telegram.ui.Components.w7
+    public final TextView a() {
+        TextView textView = new TextView(this.y);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hg, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new org.telegram.ui.Components.rx0(24, this, textView));
+        return textView;
     }
 }

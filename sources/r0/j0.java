@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static WeakHashMap a = null;
@@ -137,8 +137,8 @@ public abstract class j0 {
         }
     }
 
-    public static String[] e(m.t tVar) {
-        return Build.VERSION.SDK_INT >= 31 ? h0.a(tVar) : (String[]) tVar.getTag(R.id.tag_on_receive_content_mime_types);
+    public static String[] e(m.s sVar) {
+        return Build.VERSION.SDK_INT >= 31 ? h0.a(sVar) : (String[]) sVar.getTag(R.id.tag_on_receive_content_mime_types);
     }
 
     public static m1 f(View view) {
@@ -159,12 +159,12 @@ public abstract class j0 {
                     tag = null;
                 }
             }
-            boolean z10 = ((CharSequence) tag) != null && view.isShown() && view.getWindowVisibility() == 0;
-            if (view.getAccessibilityLiveRegion() != 0 || z10) {
+            boolean z4 = ((CharSequence) tag) != null && view.isShown() && view.getWindowVisibility() == 0;
+            if (view.getAccessibilityLiveRegion() != 0 || z4) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain();
-                obtain.setEventType(z10 ? 32 : 2048);
+                obtain.setEventType(z4 ? 32 : 2048);
                 obtain.setContentChangeTypes(i10);
-                if (z10) {
+                if (z4) {
                     List<CharSequence> text = obtain.getText();
                     if (i11 >= 28) {
                         charSequence = e0.a(view);
@@ -187,8 +187,8 @@ public abstract class j0 {
                     try {
                         view.getParent().notifySubtreeAccessibilityStateChanged(view, view, i10);
                         return;
-                    } catch (AbstractMethodError e10) {
-                        Log.e("ViewCompat", view.getParent().getClass().getSimpleName().concat(" does not fully implement ViewParent"), e10);
+                    } catch (AbstractMethodError e6) {
+                        Log.e("ViewCompat", view.getParent().getClass().getSimpleName().concat(" does not fully implement ViewParent"), e6);
                         return;
                     }
                 }

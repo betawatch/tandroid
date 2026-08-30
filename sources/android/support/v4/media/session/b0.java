@@ -1,20 +1,51 @@
 package android.support.v4.media.session;
 
-import android.media.MediaDescription;
-import android.media.session.MediaSession;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class b0 {
-    public static MediaSession.QueueItem a(MediaDescription mediaDescription, long j10) {
-        return new MediaSession.QueueItem(mediaDescription, j10);
+public final class b0 implements Parcelable.Creator {
+    public final /* synthetic */ int a;
+
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        switch (this.a) {
+            case 0:
+                MediaSessionCompat$ResultReceiverWrapper mediaSessionCompat$ResultReceiverWrapper = new MediaSessionCompat$ResultReceiverWrapper();
+                mediaSessionCompat$ResultReceiverWrapper.a = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel);
+                return mediaSessionCompat$ResultReceiverWrapper;
+            case 1:
+                return new MediaSessionCompat$QueueItem(parcel);
+            case 2:
+                return new MediaSessionCompat$Token(parcel.readParcelable(null), null);
+            case 3:
+                ParcelableVolumeInfo parcelableVolumeInfo = new ParcelableVolumeInfo();
+                parcelableVolumeInfo.a = parcel.readInt();
+                parcelableVolumeInfo.c = parcel.readInt();
+                parcelableVolumeInfo.d = parcel.readInt();
+                parcelableVolumeInfo.e = parcel.readInt();
+                parcelableVolumeInfo.b = parcel.readInt();
+                return parcelableVolumeInfo;
+            default:
+                return new PlaybackStateCompat(parcel);
+        }
     }
 
-    public static MediaDescription b(MediaSession.QueueItem queueItem) {
-        return queueItem.getDescription();
-    }
-
-    public static long c(MediaSession.QueueItem queueItem) {
-        return queueItem.getQueueId();
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i10) {
+        switch (this.a) {
+            case 0:
+                return new MediaSessionCompat$ResultReceiverWrapper[i10];
+            case 1:
+                return new MediaSessionCompat$QueueItem[i10];
+            case 2:
+                return new MediaSessionCompat$Token[i10];
+            case 3:
+                return new ParcelableVolumeInfo[i10];
+            default:
+                return new PlaybackStateCompat[i10];
+        }
     }
 }

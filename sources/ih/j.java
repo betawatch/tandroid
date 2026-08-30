@@ -1,102 +1,175 @@
 package ih;
 
+import android.R;
 import android.app.Activity;
-import android.content.DialogInterface;
-import java.util.Iterator;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class j implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class j {
+    public static HashMap n;
+    public final double a;
+    public final double b;
+    public final int c;
+    public final dh.d d;
+    public final g e;
+    public i f;
+    public final int g;
+    public final int h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
+    public final HashMap k = new HashMap();
+    public int l = 0;
+    public final f m = new f(this, 0);
 
-    public /* synthetic */ j(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = obj3;
+    public j(int i10, dh.d dVar, int i11, int i12) {
+        double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
+        this.a = d;
+        this.b = d * 4.0d;
+        this.c = i10;
+        this.g = i11;
+        this.h = i12;
+        this.d = dVar;
+        g gVar = new g(this, dVar.getContext());
+        this.e = gVar;
+        gVar.setSurfaceTextureListener(new h(this, 0));
+        gVar.setOpaque(false);
+        dVar.addView(gVar);
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                bh.b bVar = (bh.b) this.c;
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.d;
-                Activity activity = (Activity) this.b;
-                AndroidUtilities.hideKeyboard(bVar);
-                if (o2Var != null) {
-                    AndroidUtilities.requestAdjustResize(activity, o2Var.getClassGuid());
-                    break;
-                }
-                break;
-            case 1:
-                x3 x3Var = (x3) this.c;
-                v2 v2Var = (v2) this.d;
-                Activity activity2 = (Activity) this.b;
-                AndroidUtilities.hideKeyboard(v2Var);
-                AndroidUtilities.requestAdjustResize(activity2, x3Var.a.getClassGuid());
-                break;
-            case 2:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) this.d;
-                Activity activity3 = (Activity) this.b;
-                AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                if (o2Var2 != null) {
-                    AndroidUtilities.requestAdjustResize(activity3, o2Var2.getClassGuid());
-                    break;
-                }
-                break;
-            case 3:
-                Utilities.Callback callback = (Utilities.Callback) this.c;
-                org.telegram.ui.Components.p3 p3Var = (org.telegram.ui.Components.p3) this.d;
-                org.telegram.ui.Components.r3 r3Var = (org.telegram.ui.Components.r3) this.b;
-                callback.run(Integer.valueOf(r3Var.getValue() + (p3Var.getValue() * 60)));
-                break;
-            case 4:
-                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.c;
-                boolean[] zArr = (boolean[]) this.d;
-                String str = (String) this.b;
-                z0Var.getClass();
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    z0Var.v("requested_chat_failed", org.telegram.ui.web.z0.x(str, "req_id"));
-                    break;
-                }
-                break;
-            case 5:
-                ph.q0 q0Var = (ph.q0) this.c;
-                boolean[] zArr2 = (boolean[]) this.d;
-                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.b;
-                q0Var.getClass();
-                if (!zArr2[0]) {
-                    q0Var.d = true;
-                    q0Var.e = false;
-                    q0Var.l();
-                    Iterator it = q0Var.f.iterator();
-                    while (it.hasNext()) {
-                        ((Runnable) it.next()).run();
-                    }
-                    zArr2[0] = true;
-                    sVar.run(Boolean.TRUE, Boolean.FALSE);
-                    break;
-                }
-                break;
-            default:
-                boolean[] zArr3 = (boolean[]) this.c;
-                boolean[] zArr4 = (boolean[]) this.d;
-                Utilities.Callback callback2 = (Utilities.Callback) this.b;
-                if (!zArr3[0] && !zArr4[0]) {
-                    zArr4[0] = true;
-                    callback2.run("USER_DECLINED");
-                    break;
-                }
-                break;
+    public static j d(int i10, View view, ViewGroup viewGroup) {
+        int min;
+        if (view == null) {
+            return null;
         }
+        if (n == null) {
+            n = new HashMap();
+        }
+        j jVar = (j) n.get(Integer.valueOf(i10));
+        if (jVar == null) {
+            int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+            if (devicePerformanceClass == 1) {
+                Point point = AndroidUtilities.displaySize;
+                min = Math.min(RichMessageLayout.PART_MAX_HEIGHT_DP, (int) (((point.x + point.y) / 2.0f) * 0.8f));
+            } else if (devicePerformanceClass != 2) {
+                Point point2 = AndroidUtilities.displaySize;
+                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
+            } else {
+                Point point3 = AndroidUtilities.displaySize;
+                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
+            }
+            if (viewGroup == null) {
+                return null;
+            }
+            HashMap hashMap = n;
+            Integer valueOf = Integer.valueOf(i10);
+            dh.d dVar = new dh.d(viewGroup.getContext(), 3);
+            viewGroup.addView(dVar);
+            j jVar2 = new j(i10, dVar, min, min);
+            hashMap.put(valueOf, jVar2);
+            jVar = jVar2;
+        }
+        jVar.a(view);
+        return jVar;
+    }
+
+    public static j e(View view) {
+        Activity findActivity = AndroidUtilities.findActivity(view.getContext());
+        ViewGroup viewGroup = null;
+        if (findActivity != null) {
+            View rootView = findActivity.findViewById(R.id.content).getRootView();
+            if (rootView instanceof ViewGroup) {
+                viewGroup = (ViewGroup) rootView;
+            }
+        }
+        return d(0, view, viewGroup);
+    }
+
+    public static void f(boolean z4) {
+        i iVar;
+        HashMap hashMap = n;
+        if (hashMap == null) {
+            return;
+        }
+        for (j jVar : hashMap.values()) {
+            if (jVar.c == 0 && (iVar = jVar.f) != null) {
+                iVar.b = z4;
+            }
+        }
+    }
+
+    public final void a(View view) {
+        if (this.i) {
+            return;
+        }
+        ArrayList arrayList = this.j;
+        if (arrayList.contains(view)) {
+            return;
+        }
+        arrayList.add(view);
+        int i10 = this.l;
+        this.l = i10 + 1;
+        this.k.put(view, Integer.valueOf(i10));
+    }
+
+    public final void b(View view) {
+        this.j.remove(view);
+        this.k.remove(view);
+        if (this.i) {
+            return;
+        }
+        f fVar = this.m;
+        AndroidUtilities.cancelRunOnUIThread(fVar);
+        AndroidUtilities.runOnUIThread(fVar, 30L);
+    }
+
+    public final void c(Canvas canvas, View view, int i10, int i11, float f10, boolean z4) {
+        if (canvas == null || view == null) {
+            return;
+        }
+        canvas.save();
+        Integer num = (Integer) this.k.get(view);
+        if (num == null) {
+            num = 0;
+        }
+        int i12 = this.g;
+        int i13 = this.h;
+        if (i10 > i12 || i11 > i13) {
+            float max = Math.max(i10 / i12, i11 / i13);
+            canvas.scale(max, max);
+        }
+        if (num.intValue() % 4 == 1) {
+            canvas.rotate(180.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 2) {
+            canvas.scale(-1.0f, 1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 3) {
+            canvas.scale(1.0f, -1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        g gVar = this.e;
+        if (z4) {
+            Bitmap bitmap = gVar.getBitmap();
+            if (bitmap != null) {
+                Paint paint = new Paint(7);
+                paint.setColor(-1);
+                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+                bitmap.recycle();
+            }
+        } else {
+            gVar.setAlpha(f10);
+            gVar.draw(canvas);
+        }
+        canvas.restore();
     }
 }

@@ -1,40 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f91 {
-    public boolean a;
-    public String b;
-    public long c;
-    public uf.b d;
-    public uf.b e;
-    public String f;
-    public String g;
-    public boolean h;
-    public final int i;
-    public final String j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
+public final class f91 extends f2.z0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ga1 b;
 
-    public f91(String str, int i10) {
-        this.j = str;
-        this.i = i10;
+    public /* synthetic */ f91(ga1 ga1Var, int i10) {
+        this.a = i10;
+        this.b = ga1Var;
     }
 
-    public final void a(int i10, int i11, int i12, Utilities.Callback0Return callback0Return) {
-        if (this.k) {
-            return;
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ng.e eVar;
+        ga1 ga1Var;
+        ng.e eVar2;
+        ga1 ga1Var2;
+        ng.e eVar3;
+        switch (this.a) {
+            case 0:
+                ga1 ga1Var3 = this.b;
+                if (ga1Var3.o0.size() != ga1Var3.p0.size() && !ga1Var3.t0 && ga1Var3.R.N0() > ga1Var3.U.Z - 20) {
+                    ga1Var3.h0();
+                }
+                if (Build.VERSION.SDK_INT >= 31 && (eVar = ga1Var3.z0) != null) {
+                    eVar.f(i10, i11);
+                    ga1.W(ga1Var3);
+                    break;
+                }
+                break;
+            case 1:
+                if (Build.VERSION.SDK_INT >= 31 && (eVar2 = (ga1Var = this.b).z0) != null) {
+                    eVar2.f(i10, i11);
+                    ga1.W(ga1Var);
+                    break;
+                }
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (eVar3 = (ga1Var2 = this.b).z0) != null) {
+                    eVar3.f(i10, i11);
+                    ga1.W(ga1Var2);
+                    break;
+                }
+                break;
         }
-        this.k = true;
-        TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-        tL_loadAsyncGraph.token = this.f;
-        ConnectionsManager.getInstance(i10).bindRequestToGuid(ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new u80(27, this, callback0Return), null, null, 0, i12, 1, true), i11);
     }
 }

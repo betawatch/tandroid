@@ -8,19 +8,19 @@ import java.util.ListIterator;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class HorizontalBox extends Box {
     protected List<Integer> breakPositions;
     private float curPos;
 
-    public HorizontalBox(Box box, float f9, int i10) {
+    public HorizontalBox(Box box, float f10, int i10) {
         this.curPos = 0.0f;
-        if (f9 == Float.POSITIVE_INFINITY) {
+        if (f10 == Float.POSITIVE_INFINITY) {
             add(box);
             return;
         }
-        float width = f9 - box.getWidth();
+        float width = f10 - box.getWidth();
         if (width <= 0.0f) {
             add(box);
             return;
@@ -69,13 +69,13 @@ public class HorizontalBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f9, float f10) {
-        startDraw(graphics2D, f9, f10);
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        startDraw(graphics2D, f10, f11);
         Iterator<Box> it = this.children.iterator();
         while (it.hasNext()) {
             Box next = it.next();
-            next.draw(graphics2D, f9, next.shift + f10);
-            f9 += next.getWidth();
+            next.draw(graphics2D, f10, next.shift + f11);
+            f10 += next.getWidth();
         }
         endDraw(graphics2D);
     }

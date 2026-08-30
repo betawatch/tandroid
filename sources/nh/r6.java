@@ -1,55 +1,50 @@
 package nh;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import java.io.File;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r6 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class r6 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ s6 b;
 
-    public /* synthetic */ r6(Object obj, float f9, float f10, float f11, float f12, int i10) {
+    public /* synthetic */ r6(s6 s6Var, int i10) {
         this.a = i10;
-        this.f = obj;
-        this.b = f9;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
+        this.b = s6Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                p pVar = (p) this.f;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s6 s6Var = pVar.a;
-                float f9 = this.b;
-                float f10 = this.c;
-                s6Var.setScaleX(AndroidUtilities.lerp(f9, f10, floatValue));
-                s6Var.setScaleY(AndroidUtilities.lerp(f9, f10, floatValue));
-                s6Var.setTranslationX(this.d * floatValue);
-                s6Var.setTranslationY(this.e * floatValue);
-                float f11 = 1.0f - floatValue;
-                s6Var.setAlpha(f11);
-                pVar.s = f11;
-                pVar.invalidate();
+                s6 s6Var = this.b;
+                ph.u6 u6Var = s6Var.c;
+                u6Var.c0 = (TLRPC.Document) obj;
+                TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
+                tL_inputFileStoryDocument.doc = MessagesController.toInputDocument(u6Var.c0);
+                s6Var.c(tL_inputFileStoryDocument);
                 break;
             default:
-                tf.j jVar = (tf.j) this.f;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f12 = this.c;
-                float f13 = this.b;
-                jVar.k = com.google.android.recaptcha.internal.a.z(f12, f13, floatValue2, f13);
-                float f14 = this.e;
-                float f15 = this.d;
-                jVar.l = com.google.android.recaptcha.internal.a.z(f14, f15, floatValue2, f15);
-                jVar.a.a(f12, f14, false);
+                VideoEditedInfo videoEditedInfo = (VideoEditedInfo) obj;
+                s6 s6Var2 = this.b;
+                s6Var2.C = videoEditedInfo;
+                s6Var2.B.videoEditedInfo = videoEditedInfo;
+                s6Var2.y = videoEditedInfo.estimatedDuration / 1000;
+                if (!videoEditedInfo.needConvert()) {
+                    if (new File(s6Var2.B.videoEditedInfo.originalPath).renameTo(new File(s6Var2.e))) {
+                        FileLoader.getInstance(s6Var2.J.a).uploadFile(s6Var2.e, false, false, 33554432);
+                        break;
+                    }
+                } else {
+                    MediaController.getInstance().scheduleVideoConvert(s6Var2.B, false, false, false);
+                    break;
+                }
                 break;
         }
     }

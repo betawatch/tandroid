@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.billingclient.api.Purchase;
-import h7.h6;
+import j7.p6;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -40,44 +40,44 @@ public abstract class u {
         bundle.putLong("billingClientSessionId", j10);
     }
 
-    public static Bundle c(int i10, p2.g gVar) {
+    public static Bundle c(int i10, p2.h hVar) {
         Bundle bundle = new Bundle();
-        bundle.putInt("RESPONSE_CODE", gVar.a);
-        bundle.putString("DEBUG_MESSAGE", gVar.c);
-        bundle.putInt("LOG_REASON", a4.w.c(i10));
+        bundle.putInt("RESPONSE_CODE", hVar.a);
+        bundle.putString("DEBUG_MESSAGE", hVar.c);
+        bundle.putInt("LOG_REASON", android.support.v4.media.a.c(i10));
         return bundle;
     }
 
-    public static Bundle d(String str, String str2, ArrayList arrayList, s1 s1Var, long j10) {
+    public static Bundle d(String str, String str2, ArrayList arrayList, t1 t1Var, long j10) {
         Bundle bundle = new Bundle();
         b(bundle, str, str2, j10);
         bundle.putBoolean("enablePendingPurchases", true);
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        h6.a(2, objArr);
+        p6.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.t(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        h6.a(1, objArr2);
+        p6.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.t(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
         ArrayList<String> arrayList3 = new ArrayList<>();
         ArrayList<String> arrayList4 = new ArrayList<>();
         int size = arrayList.size();
+        boolean z4 = false;
         boolean z10 = false;
-        boolean z11 = false;
         for (int i10 = 0; i10 < size; i10++) {
-            p2.o oVar = (p2.o) arrayList.get(i10);
+            p2.q qVar = (p2.q) arrayList.get(i10);
             arrayList2.add(null);
-            z10 |= !TextUtils.isEmpty(null);
+            z4 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
-            z11 |= !TextUtils.isEmpty(null);
-            if (oVar.b.equals("first_party")) {
+            z10 |= !TextUtils.isEmpty(null);
+            if (qVar.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }
-        if (z10) {
+        if (z4) {
             bundle.putStringArrayList("SKU_OFFER_ID_TOKEN_LIST", arrayList2);
         }
         if (!arrayList3.isEmpty()) {
@@ -86,24 +86,24 @@ public abstract class u {
         if (!TextUtils.isEmpty(null)) {
             bundle.putString("accountName", null);
         }
-        if (z11) {
+        if (z10) {
             bundle.putStringArrayList("SKU_DYNAMIC_PRODUCT_TOKEN_LIST", arrayList4);
         }
         return bundle;
     }
 
-    public static p2.g e(String str, Intent intent) {
+    public static p2.h e(String str, Intent intent) {
         if (intent != null) {
-            l3.a a2 = p2.g.a();
+            p2.g a2 = p2.h.a();
             a2.a = a(str, intent.getExtras());
             a2.c = f(str, intent.getExtras());
-            return a2.a();
+            return a2.e();
         }
         h("BillingHelper", "Got null intent!");
-        l3.a a10 = p2.g.a();
+        p2.g a10 = p2.h.a();
         a10.a = 6;
         a10.c = "An internal error occurred.";
-        return a10.a();
+        return a10.e();
     }
 
     public static String f(String str, Bundle bundle) {
@@ -165,8 +165,8 @@ public abstract class u {
         }
         try {
             return new Purchase(str, str2);
-        } catch (JSONException e10) {
-            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e10.toString()));
+        } catch (JSONException e) {
+            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e.toString()));
             return null;
         }
     }

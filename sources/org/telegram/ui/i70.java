@@ -1,25 +1,46 @@
 package org.telegram.ui;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class i70 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 a;
-    public final /* synthetic */ k70 b;
+public final class i70 implements TextWatcher {
+    public final /* synthetic */ j70 a;
 
-    public i70(k70 k70Var, org.telegram.ui.ActionBar.c2 c2Var) {
-        this.b = k70Var;
-        this.a = c2Var;
+    public i70(j70 j70Var) {
+        this.a = j70Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.reloadInterface) {
-            this.a.dismiss();
-            NotificationCenter.getGlobalInstance().removeObserver(this, i10);
-            AndroidUtilities.runOnUIThread(new q00(this, 12), 100L);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String trim = editable.toString().trim();
+        j70 j70Var = this.a;
+        m70 m70Var = j70Var.h;
+        if (j70Var.c != 0) {
+            m70Var.getConnectionsManager().cancelRequest(j70Var.c, true);
+            j70Var.c = 0;
         }
+        g00 g00Var = j70Var.d;
+        if (g00Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(g00Var);
+        }
+        j70Var.e = null;
+        if (trim.isEmpty()) {
+            m70.a0(m70Var, null);
+            return;
+        }
+        g00 g00Var2 = new g00(8, this, trim);
+        j70Var.d = g00Var2;
+        AndroidUtilities.runOnUIThread(g00Var2, 300L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -1,20 +1,20 @@
 package com.google.firebase.crashlytics;
 
-import a9.b;
-import a9.f;
-import a9.m;
 import android.util.Log;
+import androidx.emoji2.text.w;
+import c9.b;
+import c9.l;
 import com.google.firebase.components.ComponentRegistrar;
-import h7.v7;
+import j7.l8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import ka.a;
-import ka.c;
-import ka.d;
-import u8.g;
+import ma.a;
+import ma.c;
+import ma.d;
+import w8.g;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int a = 0;
@@ -27,21 +27,21 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
             Log.d("SessionsDependencies", "Dependency " + dVar + " already added.");
             return;
         }
-        map.put(dVar, new a(new sd.d(true)));
+        map.put(dVar, new a(new ud.d(true)));
         Log.d("SessionsDependencies", "Dependency to " + dVar + " added.");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        a9.a b10 = b.b(c9.c.class);
-        b10.c = "fire-cls";
-        b10.a(m.b(g.class));
-        b10.a(m.b(aa.d.class));
-        b10.a(new m(0, 2, d9.b.class));
-        b10.a(new m(0, 2, v8.a.class));
-        b10.a(new m(0, 2, ia.a.class));
-        b10.g = new f(this, 19);
+        c9.a b10 = b.b(e9.c.class);
+        b10.a = "fire-cls";
+        b10.a(l.b(g.class));
+        b10.a(l.b(ca.d.class));
+        b10.a(new l(0, 2, f9.a.class));
+        b10.a(new l(0, 2, x8.a.class));
+        b10.a(new l(0, 2, ka.a.class));
+        b10.g = new w(this, 27);
         b10.c(2);
-        return Arrays.asList(b10.b(), v7.a("fire-cls", "18.6.0"));
+        return Arrays.asList(b10.b(), l8.a("fire-cls", "18.6.0"));
     }
 }

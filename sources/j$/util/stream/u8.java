@@ -57,18 +57,18 @@ public final class u8 extends v8 implements Consumer {
     */
     public final boolean tryAdvance(Consumer consumer) {
         boolean tryAdvance;
-        boolean z10;
+        boolean z4;
         switch (this.g) {
             case 0:
-                boolean z11 = this.c;
+                boolean z10 = this.c;
                 Spliterator spliterator = this.a;
-                if (z11) {
-                    boolean z12 = false;
+                if (z10) {
+                    boolean z11 = false;
                     this.c = false;
                     while (true) {
                         tryAdvance = spliterator.tryAdvance(this);
                         if (tryAdvance && a() && this.e.test(this.f)) {
-                            z12 = true;
+                            z11 = true;
                         }
                     }
                     return tryAdvance;
@@ -76,16 +76,16 @@ public final class u8 extends v8 implements Consumer {
                 return spliterator.tryAdvance(consumer);
             default:
                 if (this.c && a() && this.a.tryAdvance(this)) {
-                    z10 = this.e.test(this.f);
-                    if (z10) {
+                    z4 = this.e.test(this.f);
+                    if (z4) {
                         consumer.accept(this.f);
                         return true;
                     }
                 } else {
-                    z10 = true;
+                    z4 = true;
                 }
                 this.c = false;
-                if (!z10) {
+                if (!z4) {
                     this.b.set(true);
                 }
                 return false;

@@ -5,10 +5,10 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class x4 implements Iterable, Serializable {
-    public static final x4 c = new x4(l5.b);
+    public static final x4 c = new x4(k5.b);
     public int a = 0;
     public final byte[] b;
 
@@ -23,7 +23,7 @@ public class x4 implements Iterable, Serializable {
 
     public static void p(int i10) {
         if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(j7.l1.k(i10, "End index: 47 >= "));
+            throw new IndexOutOfBoundsException(kh.a2.j(i10, "End index: 47 >= "));
         }
     }
 
@@ -47,7 +47,7 @@ public class x4 implements Iterable, Serializable {
                     throw new IllegalArgumentException("Length too large: " + o10 + o());
                 }
                 if (o10 > x4Var.o()) {
-                    throw new IllegalArgumentException(a4.w.k(o10, x4Var.o(), "Ran off end of other: 0, ", ", "));
+                    throw new IllegalArgumentException(android.support.v4.media.a.k(o10, x4Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = x4Var.b;
                 int i12 = 0;
@@ -70,7 +70,7 @@ public class x4 implements Iterable, Serializable {
             return i10;
         }
         int o10 = o();
-        Charset charset = l5.a;
+        Charset charset = k5.a;
         int i11 = o10;
         for (int i12 = 0; i12 < o10; i12++) {
             i11 = (i11 * 31) + this.b[i12];
@@ -105,16 +105,16 @@ public class x4 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int o10 = o();
         if (o() <= 50) {
-            concat = h7.b6.a(this);
+            concat = j7.f6.a(this);
         } else {
             p(o());
-            concat = h7.b6.a(new w4(this.b)).concat("...");
+            concat = j7.f6.a(new w4(this.b)).concat("...");
         }
-        StringBuilder sb2 = new StringBuilder("<ByteString@");
-        sb2.append(hexString);
-        sb2.append(" size=");
-        sb2.append(o10);
-        sb2.append(" contents=\"");
-        return a4.w.q(sb2, concat, "\">");
+        StringBuilder sb = new StringBuilder("<ByteString@");
+        sb.append(hexString);
+        sb.append(" size=");
+        sb.append(o10);
+        sb.append(" contents=\"");
+        return android.support.v4.media.a.r(sb, concat, "\">");
     }
 }

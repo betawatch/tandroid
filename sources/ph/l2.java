@@ -1,29 +1,33 @@
 package ph;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class l2 extends u {
-    public final /* synthetic */ p2 s;
+public final class l2 extends sl0 {
+    public final /* synthetic */ a3 U2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(p2 p2Var, Context context, c6 c6Var) {
-        super(context, c6Var);
-        this.s = p2Var;
+    public l2(a3 a3Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.U2 = a3Var;
     }
 
-    @Override // ph.u, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (!this.s.Z && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
-            Point point = AndroidUtilities.displaySize;
-            i10 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.U2.H) {
+            return false;
         }
-        super.onMeasure(i10, i11);
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.U2.H) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

@@ -1,35 +1,63 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import org.telegram.ui.Components.y80;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class v8 extends y80 {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ w8 I;
+public final class v8 extends FrameLayout {
+    public static Paint d;
+    public final TextView a;
+    public int b;
+    public float c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v8(w8 w8Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, c6Var);
-        this.H = i10;
-        this.I = w8Var;
+    public v8(Context context) {
+        super(context);
+        this.c = 1.0f;
+        if (d == null) {
+            d = new Paint(1);
+        }
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.b.q(textView, -14606047, 1, 16.0f, 1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        textView.setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
+        boolean z4 = LocaleController.isRTL;
+        addView(textView, k7.b6.d(-1, -1.0f, (z4 ? 5 : 3) | 48, z4 ? 21 : 57, 0.0f, z4 ? 57 : 21, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.y80
-    public final int c() {
-        switch (this.H) {
-            case 0:
-                return this.I.a(super.c());
-            default:
-                return this.I.a(super.c());
+    @Override // android.view.View
+    public float getAlpha() {
+        return this.c;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.b;
+        if (i10 != 0) {
+            d.setColor(i10);
+            d.setAlpha((int) (this.c * 255.0f));
+            canvas.drawCircle(!LocaleController.isRTL ? AndroidUtilities.dp(28.0f) : getMeasuredWidth() - AndroidUtilities.dp(28.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(10.0f), d);
         }
     }
 
-    @Override // org.telegram.ui.Components.y80
-    public final int d(int i10) {
-        switch (this.H) {
-        }
-        return this.I.a(i10);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        this.c = f10;
+        invalidate();
     }
 }

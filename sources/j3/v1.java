@@ -1,23 +1,49 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.Locale;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class v1 extends Exception implements g {
-    public final int a;
-    public final long b;
+public final class v1 implements g {
+    public static final v1 d = new v1(1.0f, 1.0f);
+    public final float a;
+    public final float b;
+    public final int c;
 
     static {
-        int i10 = f5.d0.a;
+        int i10 = h5.d0.a;
         Integer.toString(0, 36);
         Integer.toString(1, 36);
-        Integer.toString(2, 36);
-        Integer.toString(3, 36);
-        Integer.toString(4, 36);
     }
 
-    public v1(String str, Throwable th2, int i10, long j10) {
-        super(str, th2);
-        this.a = i10;
-        this.b = j10;
+    public v1(float f10, float f11) {
+        h5.a.f(f10 > 0.0f);
+        h5.a.f(f11 > 0.0f);
+        this.a = f10;
+        this.b = f11;
+        this.c = Math.round(f10 * 1000.0f);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && v1.class == obj.getClass()) {
+            v1 v1Var = (v1) obj;
+            if (this.a == v1Var.a && this.b == v1Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Float.floatToRawIntBits(this.b) + ((Float.floatToRawIntBits(this.a) + 527) * 31);
+    }
+
+    public final String toString() {
+        Object[] objArr = {Float.valueOf(this.a), Float.valueOf(this.b)};
+        int i10 = h5.d0.a;
+        return String.format(Locale.US, "PlaybackParameters(speed=%.2f, pitch=%.2f)", objArr);
     }
 }

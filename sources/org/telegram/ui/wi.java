@@ -1,37 +1,71 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wi extends FrameLayout {
-    public final /* synthetic */ tn a;
+public final class wi extends af.f {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ xn g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wi(tn tnVar, Activity activity) {
-        super(activity);
-        this.a = tnVar;
+    public /* synthetic */ wi(xn xnVar, int i10, org.telegram.ui.Cells.t1 t1Var, int i11) {
+        this.d = i11;
+        this.g = xnVar;
+        this.e = i10;
+        this.f = t1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.A7(true);
+    @Override // af.f
+    public final void c(boolean z4) {
+        switch (this.d) {
+            case 0:
+                if (!z4) {
+                    AndroidUtilities.runOnUIThread(new af.b(this, this.e, 19), 240L);
+                    break;
+                }
+                break;
+            case 1:
+                if (!z4) {
+                    AndroidUtilities.runOnUIThread(new af.b(this, this.e, 21), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z4) {
+                    AndroidUtilities.runOnUIThread(new af.b(this, this.e, 22), 240L);
+                    break;
+                }
+                break;
         }
-        return super.dispatchKeyEvent(keyEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
-        if (min == 0) {
-            min = AndroidUtilities.dp(300.0f);
+    @Override // af.f
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                xn xnVar = this.g;
+                xnVar.tb = i10;
+                xnVar.ub = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i11 = this.e;
+                xn xnVar2 = this.g;
+                xnVar2.tb = i11;
+                xnVar2.ub = 5;
+                xnVar2.wb = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i12 = this.e;
+                xn xnVar3 = this.g;
+                xnVar3.tb = i12;
+                xnVar3.ub = 7;
+                this.f.invalidate();
+                break;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
     }
 }

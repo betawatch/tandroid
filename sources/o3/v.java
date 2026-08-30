@@ -1,36 +1,38 @@
 package o3;
 
-import java.util.Arrays;
+import androidx.biometric.f0;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class v {
-    public final int a;
-    public final byte[] b;
-    public final int c;
-    public final int d;
+public interface v {
+    void B(f0 f0Var);
 
-    public v(int i10, int i11, int i12, byte[] bArr) {
-        this.a = i10;
-        this.b = bArr;
-        this.c = i11;
-        this.d = i12;
-    }
+    n3.b D0(byte[] bArr);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && v.class == obj.getClass()) {
-            v vVar = (v) obj;
-            if (this.a == vVar.a && this.c == vVar.c && this.d == vVar.d && Arrays.equals(this.b, vVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    byte[] F1(byte[] bArr, byte[] bArr2);
 
-    public final int hashCode() {
-        return ((((Arrays.hashCode(this.b) + (this.a * 31)) * 31) + this.c) * 31) + this.d;
-    }
+    u K();
+
+    byte[] M0();
+
+    void Q1(byte[] bArr);
+
+    t U1(byte[] bArr, List list, int i10, HashMap hashMap);
+
+    void V(byte[] bArr, k3.k kVar);
+
+    int b2();
+
+    void h1(byte[] bArr, byte[] bArr2);
+
+    void m1(byte[] bArr);
+
+    void release();
+
+    Map v(byte[] bArr);
+
+    boolean w2(String str, byte[] bArr);
 }

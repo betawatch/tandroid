@@ -1,89 +1,117 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class op0 extends cq0 {
-    public final /* synthetic */ dq0 n;
+public final class op0 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lq0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public op0(dq0 dq0Var, Context context) {
+    public /* synthetic */ op0(lq0 lq0Var, Context context, int i10) {
         super(context);
-        this.n = dq0Var;
-        final int i10 = 1;
-        this.f = new Paint(1);
-        this.h = new RectF();
-        View view = new View(context);
-        int dp = AndroidUtilities.dp(18.0f);
-        int i11 = org.telegram.ui.ActionBar.g6.O5;
-        int i12 = dq0.W0;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.b0(dp, dq0Var.getThemedColor(i11)));
-        addView(view, i7.f6.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        cg.h0 h0Var = new cg.h0(this, context, 20);
-        this.c = h0Var;
-        addView(h0Var, i7.f6.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.b = h5Var;
-        int i13 = org.telegram.ui.ActionBar.g6.ng;
-        h5Var.setTextColor(dq0Var.getThemedColor(i13));
-        h5Var.setTextSize(13);
-        h5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
-        final int i14 = 0;
-        h5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
-        h5Var.setGravity(17);
-        addView(h5Var, i7.f6.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
-        h5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bq0
-            public final /* synthetic */ op0 b;
+        this.a = i10;
+        this.b = lq0Var;
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                lq0 lq0Var = this.b;
+                lq0Var.U0.setBounds(0, (int) lq0Var.r0, getMeasuredWidth(), getMeasuredHeight());
+                lq0Var.U0.draw(canvas);
+                canvas.save();
+                canvas.clipRect(0.0f, lq0Var.r0, getMeasuredWidth(), getMeasuredHeight());
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
 
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i14) {
-                    case 0:
-                        this.b.a(0);
-                        break;
-                    default:
-                        this.b.a(1);
-                        break;
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                lq0 lq0Var = this.b;
+                op0 op0Var = lq0Var.c;
+                float f10 = lq0Var.s0;
+                if (f10 != 0.0f && f10 != op0Var.getTop() + lq0Var.s0) {
+                    ValueAnimator valueAnimator = lq0Var.t0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    float top = lq0Var.s0 - (op0Var.getTop() + lq0Var.r0);
+                    lq0Var.r0 = top;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
+                    lq0Var.t0 = ofFloat;
+                    ofFloat.addUpdateListener(new i70(this, 17));
+                    lq0Var.t0.setInterpolator(nr.f);
+                    lq0Var.t0.setDuration(200L);
+                    lq0Var.t0.start();
+                    lq0Var.s0 = 0.0f;
                 }
-            }
-        });
-        org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
-        this.a = h5Var2;
-        h5Var2.setTextColor(dq0Var.getThemedColor(i13));
-        h5Var2.setTextSize(13);
-        h5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
-        h5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
-        h5Var2.setGravity(17);
-        addView(h5Var2, i7.f6.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
-        h5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bq0
-            public final /* synthetic */ op0 b;
+                lq0Var.P[1].setTranslationY((-(op0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + lq0Var.r0 + lq0Var.q0 + ((1.0f - getAlpha()) * (op0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 1:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.R.m(), new Object[0]));
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
 
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i10) {
-                    case 0:
-                        this.b.a(0);
-                        break;
-                    default:
-                        this.b.a(1);
-                        break;
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f10);
+                invalidate();
+                break;
+            default:
+                super.setAlpha(f10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    this.b.P[1].setTranslationY(0.0f);
+                    break;
                 }
-            }
-        });
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
     }
 }

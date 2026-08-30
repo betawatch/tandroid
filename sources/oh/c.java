@@ -1,67 +1,145 @@
 package oh;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import bg.b0;
-import cg.r2;
-import cg.s2;
+import android.graphics.RectF;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import java.util.HashMap;
+import nh.n5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.ji;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.wg;
+import ph.ca;
+import ph.da;
+import ph.h8;
+import ph.p9;
+import ph.u6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class c extends s2 {
-    public Paint[] n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
+public final class c implements ji {
+    public final /* synthetic */ li a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ v c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(Context context, int i10, int i11) {
-        super(context);
-        this.r = i10;
-        this.s = i11;
-        b();
+    public c(v vVar, li liVar, String str) {
+        this.c = vVar;
+        this.a = liVar;
+        this.b = str;
     }
 
-    @Override // cg.s2
-    public final void a() {
-        r2 r2Var = new r2(this.r);
-        this.a = r2Var;
-        r2Var.N = 106;
-        int i10 = 0;
-        r2Var.M = false;
-        r2Var.G = false;
-        r2Var.K = true;
-        r2Var.H = true;
-        r2Var.J = false;
-        r2Var.m = true;
-        r2Var.h = true;
-        if (this.s == 1) {
-            r2Var.k = AndroidUtilities.dp(24.0f);
+    @Override // org.telegram.ui.Components.ji
+    public final void H(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
+        ca caVar;
+        v vVar = this.c;
+        long j12 = vVar.d;
+        li liVar = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = liVar.g0;
+        if (chatAttachAlertPhotoLayout.getSelectedPhotos().isEmpty()) {
+            return;
         }
-        this.n = new Paint[20];
-        while (true) {
-            Paint[] paintArr = this.n;
-            if (i10 >= paintArr.length) {
-                r2 r2Var2 = this.a;
-                r2Var2.l = new b0(this, 4);
-                r2Var2.r = 17;
-                r2Var2.s = 18;
-                r2Var2.t = 19;
-                r2Var2.P = g6.G6;
-                r2Var2.c();
-                return;
+        HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
+        chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
+        if (selectedPhotos.size() != 1) {
+            return;
+        }
+        Object next = selectedPhotos.values().iterator().next();
+        if (next instanceof MediaController.PhotoEntry) {
+            u6 l10 = u6.l((MediaController.PhotoEntry) next);
+            l10.J0 = j12;
+            String str = this.b;
+            l10.K0 = str;
+            l10.A();
+            da E = da.E(vVar.a.getParentActivity(), vVar.b);
+            RectF rectF = E.E;
+            WindowManager.LayoutParams layoutParams = E.h;
+            int i13 = E.c;
+            WindowManager windowManager = E.f;
+            if (!E.d) {
+                if (MessagesController.getInstance(i13).isFrozen()) {
+                    org.telegram.ui.c.b(i13);
+                } else {
+                    E.s0 = j12;
+                    E.t0 = str;
+                    E.r0 = false;
+                    E.e = false;
+                    E.y2 = false;
+                    if (windowManager != null && (caVar = E.n) != null && caVar.getParent() == null) {
+                        AndroidUtilities.setPreferredMaxRefreshRate(windowManager, E.n, layoutParams);
+                        windowManager.addView(E.n, layoutParams);
+                        E.g0();
+                    }
+                    E.H1 = l10;
+                    l10.J0 = j12;
+                    l10.K0 = str;
+                    E.L1 = l10.K ? 1 : 0;
+                    E.p0.g = false;
+                    E.G = 0;
+                    rectF.set(0.0f, AndroidUtilities.dp(100.0f), AndroidUtilities.displaySize.x, AndroidUtilities.dp(100.0f) + AndroidUtilities.displaySize.y);
+                    E.D = AndroidUtilities.dp(8.0f);
+                    E.r.c();
+                    p9 p9Var = E.e0;
+                    int i14 = E.G;
+                    p9Var.setBackgroundColor((i14 == 1 || i14 == 0) ? 0 : -14737633);
+                    E.r.setTranslationX(0.0f);
+                    E.r.setTranslationY(0.0f);
+                    E.r.b(0.0f);
+                    E.r.setScaleX(1.0f);
+                    E.r.setScaleY(1.0f);
+                    E.H = 0.0f;
+                    AndroidUtilities.lockOrientation(E.b, 1);
+                    u6 u6Var = E.H1;
+                    if (u6Var != null) {
+                        E.Z0.setText(u6Var.C0);
+                    }
+                    E.K(1, false);
+                    E.l0(-1, false, false);
+                    E.Y0.b(false, false);
+                    E.Y0.b(true, true);
+                    E.g(1.0f, true, new h8(E, 6));
+                    E.e();
+                }
             }
-            paintArr[i10] = new Paint(1);
-            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.d(i10 / (this.n.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
-            i10++;
+            AndroidUtilities.runOnUIThread(new n5(liVar, 16), 400L);
         }
     }
 
-    @Override // cg.s2
-    public final int getStarsRectWidth() {
-        return getMeasuredWidth();
+    @Override // org.telegram.ui.Components.ji
+    public final boolean V() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ boolean k() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final void x(wg wgVar) {
+        wgVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void C() {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void r() {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void D(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void G(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void X(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
     }
 }

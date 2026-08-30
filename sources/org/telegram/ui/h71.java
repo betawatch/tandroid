@@ -1,39 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h71 implements org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class h71 implements View.OnLongClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ o71 b;
 
-    public /* synthetic */ h71(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
+    public h71(o71 o71Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = o71Var;
+        this.a = tL_authorization;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            default:
-                SessionsActivity.W(this.b);
-                break;
-        }
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        o71.m(this.b, this.a.country);
+        return true;
     }
 }

@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import bd.l;
-import i7.c7;
-import jd.e0;
+import dd.l;
+import k7.p7;
 import kotlin.jvm.internal.p;
+import ld.e0;
 import org.telegram.tgnet.TLObject;
-import sc.c;
+import uc.c;
+import vc.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzcx {
     public static final zzcx zza = new zzcx();
@@ -21,7 +22,7 @@ public final class zzcx {
 
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00c5, code lost:
     
-        if (jd.e0.g(r5, r1) != r3) goto L18;
+        if (ld.e0.g(r5, r1) != r3) goto L18;
      */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00d0  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0084 A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -55,10 +56,10 @@ public final class zzcx {
             if ((i16 & TLObject.FLAG_31) != 0) {
                 zzcuVar.zzh = i16 - TLObject.FLAG_31;
                 Object obj = zzcuVar.zzf;
-                tc.a aVar = tc.a.a;
+                a aVar = a.a;
                 i11 = zzcuVar.zzh;
                 if (i11 != 0) {
-                    c7.b(obj);
+                    p7.b(obj);
                     p pVar3 = new p();
                     pVar3.a = j10;
                     d10 = d;
@@ -77,7 +78,7 @@ public final class zzcx {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        c7.b(obj);
+                        p7.b(obj);
                         return obj;
                     }
                     i15 = zzcuVar.zze;
@@ -86,7 +87,7 @@ public final class zzcx {
                     j13 = zzcuVar.zza;
                     pVar2 = zzcuVar.zzi;
                     lVar3 = (l) zzcuVar.zzc;
-                    c7.b(obj);
+                    p7.b(obj);
                     zzcu zzcuVar3 = zzcuVar;
                     int i17 = i15;
                     int i18 = i14;
@@ -149,7 +150,7 @@ public final class zzcx {
                 pVar2 = zzcuVar.zzi;
                 lVar3 = (l) zzcuVar.zzc;
                 try {
-                    c7.b(obj);
+                    p7.b(obj);
                     return obj;
                 } catch (Exception unused2) {
                     j14 = (long) (pVar2.a * d11);
@@ -168,7 +169,7 @@ public final class zzcx {
         }
         zzcuVar = new zzcu(this, cVar);
         Object obj2 = zzcuVar.zzf;
-        tc.a aVar2 = tc.a.a;
+        a aVar2 = a.a;
         i11 = zzcuVar.zzh;
         if (i11 != 0) {
         }
@@ -176,7 +177,7 @@ public final class zzcx {
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x00ae, code lost:
     
-        if (jd.e0.g(r7, r1) != r3) goto L13;
+        if (ld.e0.g(r7, r1) != r3) goto L13;
      */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0081 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:17:0x00b1 A[RETURN] */
@@ -200,17 +201,17 @@ public final class zzcx {
         l lVar5;
         long j14;
         double d11;
-        Exception e10;
+        Exception e;
         if (cVar instanceof zzcv) {
             zzcvVar = (zzcv) cVar;
             int i11 = zzcvVar.zzh;
             if ((i11 & TLObject.FLAG_31) != 0) {
                 zzcvVar.zzh = i11 - TLObject.FLAG_31;
                 Object obj = zzcvVar.zzf;
-                tc.a aVar = tc.a.a;
+                a aVar = a.a;
                 i10 = zzcvVar.zzh;
                 if (i10 != 0) {
-                    c7.b(obj);
+                    p7.b(obj);
                     j12 = j10;
                     j13 = j11;
                     d10 = d;
@@ -236,7 +237,7 @@ public final class zzcx {
                         j14 = zzcvVar.zzc;
                         lVar3 = (l) zzcvVar.zzb;
                         lVar5 = (l) zzcvVar.zza;
-                        c7.b(obj);
+                        p7.b(obj);
                         l lVar6 = lVar5;
                         zzcvVar2 = zzcvVar;
                         lVar4 = lVar6;
@@ -244,15 +245,15 @@ public final class zzcx {
                         d10 = d11;
                         j13 = j15;
                         try {
-                        } catch (Exception e11) {
-                            e10 = e11;
+                        } catch (Exception e6) {
+                            e = e6;
                             zzcv zzcvVar3 = zzcvVar2;
                             lVar5 = lVar4;
                             zzcvVar = zzcvVar3;
                             double d12 = d10;
                             j14 = j13;
                             d11 = d12;
-                            if (((Boolean) lVar5.invoke(e10)).booleanValue()) {
+                            if (((Boolean) lVar5.invoke(e)).booleanValue()) {
                             }
                         }
                         zzcvVar2.zza = lVar4;
@@ -270,12 +271,12 @@ public final class zzcx {
                     lVar3 = (l) zzcvVar.zzb;
                     lVar5 = (l) zzcvVar.zza;
                     try {
-                        c7.b(obj);
+                        p7.b(obj);
                         return obj;
-                    } catch (Exception e12) {
-                        e10 = e12;
-                        if (((Boolean) lVar5.invoke(e10)).booleanValue()) {
-                            throw e10;
+                    } catch (Exception e10) {
+                        e = e10;
+                        if (((Boolean) lVar5.invoke(e)).booleanValue()) {
+                            throw e;
                         }
                         j12 = (long) (j12 * d11);
                         if (j12 > j14) {
@@ -293,7 +294,7 @@ public final class zzcx {
         }
         zzcvVar = new zzcv(this, cVar);
         Object obj2 = zzcvVar.zzf;
-        tc.a aVar2 = tc.a.a;
+        a aVar2 = a.a;
         i10 = zzcvVar.zzh;
         if (i10 != 0) {
         }

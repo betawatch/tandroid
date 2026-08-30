@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import a4.w;
+import android.support.v4.media.a;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzqs extends zzqv {
     private final byte[] zzc;
@@ -15,7 +15,7 @@ final class zzqs extends zzqv {
         int length = bArr.length;
         if (((length - i11) | i11) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(w.k(length, i11, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a.k(length, i11, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.zzc = bArr;
         this.zze = 0;
@@ -35,13 +35,13 @@ final class zzqs extends zzqv {
             try {
                 this.zzc[i10] = b10;
                 this.zze = i11;
-            } catch (IndexOutOfBoundsException e10) {
-                e = e10;
+            } catch (IndexOutOfBoundsException e) {
+                e = e;
                 i10 = i11;
                 throw new zzqt(i10, this.zzd, 1, e);
             }
-        } catch (IndexOutOfBoundsException e11) {
-            e = e11;
+        } catch (IndexOutOfBoundsException e6) {
+            e = e6;
         }
     }
 
@@ -49,15 +49,15 @@ final class zzqs extends zzqv {
         try {
             System.arraycopy(bArr, 0, this.zzc, this.zze, i11);
             this.zze += i11;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(this.zze, this.zzd, i11, e10);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(this.zze, this.zzd, i11, e);
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzqv
-    public final void zzd(int i10, boolean z10) {
+    public final void zzd(int i10, boolean z4) {
         zzt(i10 << 3);
-        zzb(z10 ? (byte) 1 : (byte) 0);
+        zzb(z4 ? (byte) 1 : (byte) 0);
     }
 
     @Override // com.google.android.recaptcha.internal.zzqv
@@ -83,8 +83,8 @@ final class zzqs extends zzqv {
             bArr[i11 + 2] = (byte) (i10 >> 16);
             bArr[i11 + 3] = (byte) (i10 >> 24);
             this.zze = i11 + 4;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(i11, this.zzd, 4, e10);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(i11, this.zzd, 4, e);
         }
     }
 
@@ -108,8 +108,8 @@ final class zzqs extends zzqv {
             bArr[i10 + 6] = (byte) (j10 >> 48);
             bArr[i10 + 7] = (byte) (j10 >> 56);
             this.zze = i10 + 8;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(i10, this.zzd, 8, e10);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(i10, this.zzd, 8, e);
         }
     }
 
@@ -182,11 +182,11 @@ final class zzqs extends zzqv {
             this.zze = i10;
             zzt((zzb - i10) - zzA2);
             this.zze = zzb;
-        } catch (zzve e10) {
+        } catch (zzve e) {
             this.zze = i10;
-            zzD(str, e10);
-        } catch (IndexOutOfBoundsException e11) {
-            throw new zzqt(e11);
+            zzD(str, e);
+        } catch (IndexOutOfBoundsException e6) {
+            throw new zzqt(e6);
         }
     }
 
@@ -213,13 +213,13 @@ final class zzqs extends zzqv {
                     this.zzc[i12] = (byte) (i10 | 128);
                     i10 >>>= 7;
                     i12 = i11;
-                } catch (IndexOutOfBoundsException e10) {
-                    indexOutOfBoundsException = e10;
+                } catch (IndexOutOfBoundsException e) {
+                    indexOutOfBoundsException = e;
                     i12 = i11;
                     throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
                 }
-            } catch (IndexOutOfBoundsException e11) {
-                indexOutOfBoundsException = e11;
+            } catch (IndexOutOfBoundsException e6) {
+                indexOutOfBoundsException = e6;
                 throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
             }
         }
@@ -236,12 +236,12 @@ final class zzqs extends zzqv {
 
     @Override // com.google.android.recaptcha.internal.zzqv
     public final void zzv(long j10) {
-        boolean z10;
+        boolean z4;
         int i10;
         IndexOutOfBoundsException indexOutOfBoundsException;
         int i11 = this.zze;
-        z10 = zzqv.zzd;
-        if (!z10 || this.zzd - i11 < 10) {
+        z4 = zzqv.zzd;
+        if (!z4 || this.zzd - i11 < 10) {
             int i12 = i11;
             while ((j10 & (-128)) != 0) {
                 try {
@@ -250,20 +250,20 @@ final class zzqs extends zzqv {
                         this.zzc[i12] = (byte) (((int) j10) | 128);
                         j10 >>>= 7;
                         i12 = i13;
-                    } catch (IndexOutOfBoundsException e10) {
-                        indexOutOfBoundsException = e10;
+                    } catch (IndexOutOfBoundsException e) {
+                        indexOutOfBoundsException = e;
                         i12 = i13;
                         throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
                     }
-                } catch (IndexOutOfBoundsException e11) {
-                    indexOutOfBoundsException = e11;
+                } catch (IndexOutOfBoundsException e6) {
+                    indexOutOfBoundsException = e6;
                 }
             }
             i10 = i12 + 1;
             try {
                 this.zzc[i12] = (byte) j10;
-            } catch (IndexOutOfBoundsException e12) {
-                indexOutOfBoundsException = e12;
+            } catch (IndexOutOfBoundsException e10) {
+                indexOutOfBoundsException = e10;
                 i12 = i10;
                 throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
             }

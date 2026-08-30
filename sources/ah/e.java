@@ -1,103 +1,106 @@
 package ah;
 
-import android.graphics.PointF;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.PathInterpolator;
-import i7.n8;
-import java.util.Iterator;
-import java.util.List;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import r0.j0;
-import r0.m1;
-import r0.q0;
-import r0.r0;
-import r0.u0;
-import r0.w0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import k7.b6;
+import lf.r;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.d8;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e extends ab.e {
-    public static final RectF e;
-    public static final Rect f;
-    public final ViewGroup b;
-    public int c;
-    public final zd.b d = new zd.b(true);
+public final class e extends FrameLayout implements xd.b, a6 {
+    public ShapeDrawable a;
+    public final f6 b;
+    public final d8 c;
+    public final TextView d;
+    public final xd.a e;
 
-    static {
-        new PointF();
-        e = new RectF();
-        f = new Rect();
+    public e(Context context, f6 f6Var) {
+        super(context);
+        this.e = new xd.a(0, this, nr.h, 380L, false);
+        this.b = f6Var;
+        d8 d8Var = new d8(context, f6Var, false);
+        this.c = d8Var;
+        addView(d8Var, b6.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 10.0f);
+        textView.setGravity(17);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setSingleLine();
+        addView(textView, b6.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
+        e();
     }
 
-    public e(ViewGroup viewGroup) {
-        this.b = viewGroup;
-        WeakHashMap weakHashMap = j0.a;
-        if (Build.VERSION.SDK_INT >= 30) {
-            u0.g(viewGroup, this);
-            return;
+    @Override // xd.b
+    public final void L(int i10, float f10, float f11, xd.c cVar) {
+        ShapeDrawable shapeDrawable = this.a;
+        if (shapeDrawable != null) {
+            shapeDrawable.setAlpha((int) (f10 * 255.0f));
         }
-        PathInterpolator pathInterpolator = r0.e;
-        View.OnApplyWindowInsetsListener q0Var = new q0(viewGroup, this);
-        viewGroup.setTag(R.id.tag_window_insets_animation_callback, q0Var);
-        if (viewGroup.getTag(R.id.tag_compat_insets_dispatch) == null && viewGroup.getTag(R.id.tag_on_apply_window_listener) == null) {
-            viewGroup.setOnApplyWindowInsetsListener(q0Var);
+        invalidate();
+    }
+
+    public final void a(boolean z4, boolean z10) {
+        if (z4 && this.a == null) {
+            this.a = j6.b0(AndroidUtilities.dp(10.0f), i0.a.k(j6.v0(j6.Wk, this.b), 25));
+        }
+        xd.a aVar = this.e;
+        if (aVar.f != z4 || z10) {
+            aVar.a(z4, z10);
         }
     }
 
-    public static m1 Q(m1 m1Var, View view, View view2) {
-        if (view == null || view2 == null || m1Var == null) {
-            return null;
-        }
-        RectF rectF = e;
-        if (!sg.i.c(view, view2, rectF)) {
-            return null;
-        }
-        Rect rect = f;
-        rectF.round(rect);
-        int i10 = rect.left;
-        int i11 = rect.top;
-        int width = view2.getWidth() - rect.right;
-        int height = view2.getHeight() - rect.bottom;
-        if (i10 == 0 && i11 == 0 && width == 0 && height == 0) {
-            return m1Var;
-        }
-        return m1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
-    }
-
-    @Override // ab.e
-    public final void L() {
-        int i10 = this.c - 1;
-        this.c = i10;
-        if (i10 == 0) {
-            Iterator it = this.d.iterator();
-            while (it.hasNext()) {
-                ((d) it.next()).I();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ShapeDrawable shapeDrawable = this.a;
+        if (shapeDrawable != null) {
+            xd.a aVar = this.e;
+            if (aVar.e > 0.0f) {
+                shapeDrawable.setBounds(0, 0, getWidth(), getHeight());
+                r.b(canvas, this.a, AndroidUtilities.lerp(0.9f, 1.0f, aVar.e));
             }
         }
+        super.dispatchDraw(canvas);
     }
 
-    @Override // ab.e
-    public final m1 M(m1 m1Var, List list) {
-        Iterator it = list.iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            i10 |= ((w0) it.next()).a.c();
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        ShapeDrawable shapeDrawable = this.a;
+        f6 f6Var = this.b;
+        if (shapeDrawable != null) {
+            ShapeDrawable b02 = j6.b0(AndroidUtilities.dp(10.0f), i0.a.k(j6.v0(j6.Wk, f6Var), 25));
+            this.a = b02;
+            b02.setAlpha((int) (this.e.e * 255.0f));
         }
-        if (n8.a(i10, 8)) {
-            Iterator it2 = this.d.iterator();
-            while (it2.hasNext()) {
-                d dVar = (d) it2.next();
-                m1 Q = Q(m1Var, dVar.M(), this.b);
-                if (Q != null) {
-                    dVar.k(Q);
-                }
-            }
-        }
-        return m1Var;
+        this.d.setTextColor(i0.a.k(j6.v0(j6.Wk, f6Var), TLRPC.LAYER));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final boolean isSelected() {
+        return this.e.f;
+    }
+
+    public void setPack(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.d.setText(tL_messages_stickerSet.set.short_name);
+        this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
+    }
+
+    @Override // xd.b
+    public final /* synthetic */ void z(float f10, int i10) {
     }
 }

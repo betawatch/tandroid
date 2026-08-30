@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class NotificationDismissReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -32,9 +32,9 @@ public class NotificationDismissReceiver extends BroadcastReceiver {
             }
             FileLog.d("set dismissDate of " + longExtra + " to " + intExtra2);
             SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(intExtra).edit();
-            StringBuilder sb2 = new StringBuilder("dismissDate");
-            sb2.append(longExtra);
-            edit.putInt(sb2.toString(), intExtra2).commit();
+            StringBuilder sb = new StringBuilder("dismissDate");
+            sb.append(longExtra);
+            edit.putInt(sb.toString(), intExtra2).commit();
         }
     }
 }

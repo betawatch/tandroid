@@ -1,39 +1,36 @@
 package org.telegram.messenger.video;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.ui.Components.fz;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ VideoPlayerHolderBase b;
 
-    public /* synthetic */ k(Object obj, boolean z10, boolean z11, int i10) {
+    public /* synthetic */ k(VideoPlayerHolderBase videoPlayerHolderBase, int i10) {
         this.a = i10;
-        this.d = obj;
-        this.b = z10;
-        this.c = z11;
+        this.b = videoPlayerHolderBase;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((VideoPlayerHolderBase) this.d).lambda$setAudioEnabled$8(this.b, this.c);
+                this.b.lambda$new$13();
                 break;
             case 1:
-                ((NativeInstance) this.d).lambda$onNetworkStateUpdated$0(this.b, this.c);
+                this.b.lambda$start$1();
                 break;
             case 2:
-                VoipAudioManager.lambda$isBluetoothAndSpeakerOnAsync$1((Utilities.Callback2) this.d, this.b, this.c);
+                this.b.lambda$new$14();
+                break;
+            case 3:
+                this.b.lambda$play$6();
+                break;
+            case 4:
+                this.b.lambda$pause$4();
                 break;
             default:
-                ((fz) this.d).R(false, this.b, this.c);
+                this.b.lambda$loopBack$9();
                 break;
         }
     }

@@ -1,29 +1,30 @@
 package j7;
 
-import java.util.Map;
+import android.os.Build;
+import android.util.Log;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i0 implements s9.d {
-    public static final /* synthetic */ i0 b = new i0(0);
-    public static final /* synthetic */ i0 c = new i0(1);
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ i0(int i10) {
-        this.a = i10;
+public abstract class i0 {
+    public static void a(Object obj, String str, String str2) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 3)) {
+            Log.d(c3, String.format(str2, obj));
+        }
     }
 
-    @Override // s9.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) obj;
-                s9.e eVar = (s9.e) obj2;
-                eVar.e(j0.g, entry.getKey());
-                eVar.e(j0.h, entry.getValue());
-                return;
-            default:
-                throw new s9.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
+    public static void b(String str, String str2, Exception exc) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 6)) {
+            Log.e(c3, str2, exc);
         }
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

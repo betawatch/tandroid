@@ -1,28 +1,47 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g8 b;
-    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ c8 b;
+    public final /* synthetic */ o70 c;
 
-    public /* synthetic */ b7(g8 g8Var, MessageObject messageObject, int i10) {
+    public /* synthetic */ b7(c8 c8Var, o70 o70Var, int i10) {
         this.a = i10;
-        this.b = g8Var;
-        this.c = messageObject;
+        this.b = c8Var;
+        this.c = o70Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                g8.m(this.b, this.c);
+                c8 c8Var = this.b;
+                c8Var.getClass();
+                this.c.u();
+                c8Var.t0(1);
+                break;
+            case 1:
+                c8 c8Var2 = this.b;
+                c8Var2.getClass();
+                this.c.u();
+                c8Var2.t0(2);
+                break;
+            case 2:
+                c8 c8Var3 = this.b;
+                c8Var3.getClass();
+                this.c.u();
+                c8Var3.t0(4);
+                break;
+            case 3:
+                c8 c8Var4 = this.b;
+                c8Var4.getClass();
+                this.c.u();
+                c8Var4.t0(7);
                 break;
             default:
-                g8.p(this.b, this.c);
+                c8.q(this.b, this.c);
                 break;
         }
     }

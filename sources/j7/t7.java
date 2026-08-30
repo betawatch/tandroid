@@ -1,112 +1,42 @@
 package j7;
 
-import org.telegram.messenger.voip.VoIPService;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public enum t7 implements f0 {
-    b(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(5),
-    c(100),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(101),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(102),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(103),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(104),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(105),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(106),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(107),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(108),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(109),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(110),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(111),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(112),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(113),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(114),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(115),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(116),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(201),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(202),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(204),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(205),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(206),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(207),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(301),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(302),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(303),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(304),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(305),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(400),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(401),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(402),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(403),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(404),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(405),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(406),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(407),
-    d(9999);
-
-    public final int a;
-
-    t7(int i10) {
-        this.a = i10;
+public abstract class t7 {
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = u7.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
+            } else {
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(kh.a2.j(i11, "negative size: "));
+                }
+                a2 = u7.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+            }
+            throw new IndexOutOfBoundsException(a2);
+        }
     }
 
-    @Override // j7.f0
-    public final int zza() {
-        return this.a;
+    public static void b(int i10, int i11) {
+        if (i10 < 0 || i10 > i11) {
+            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
+        }
+    }
+
+    public static void c(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : u7.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        }
+    }
+
+    public static String d(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return u7.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        }
+        if (i11 >= 0) {
+            return u7.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(kh.a2.j(i11, "negative size: "));
     }
 }

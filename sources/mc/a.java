@@ -1,80 +1,56 @@
 package mc;
 
+import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements Map.Entry, Cloneable {
-    public String a;
-    public String b;
-    public b c;
+public final class a extends c {
+    public final a e;
+    public ArrayList f;
 
-    public final Object clone() {
-        try {
-            return (a) super.clone();
-        } catch (CloneNotSupportedException e10) {
-            throw new RuntimeException(e10);
-        }
+    public a(String str, int i10, Map map, a aVar) {
+        super(i10, str, map);
+        this.e = aVar;
     }
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // mc.c
+    public final Map a() {
+        return this.c;
+    }
+
+    public final void b(int i10) {
+        if (this.d > -1) {
+            return;
         }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            String str = aVar.a;
-            String str2 = this.a;
-            if (str2 == null ? str != null : !str2.equals(str)) {
-                return false;
-            }
-            String str3 = this.b;
-            String str4 = aVar.b;
-            if (str3 != null) {
-                return str3.equals(str4);
-            }
-            if (str4 == null) {
-                return true;
+        this.d = i10;
+        ArrayList arrayList = this.f;
+        if (arrayList != null) {
+            int size = arrayList.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = arrayList.get(i11);
+                i11++;
+                ((a) obj).b(i10);
             }
         }
-        return false;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.a;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = (str != null ? str.hashCode() : 0) * 31;
-        String str2 = this.b;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        String str;
-        String str2 = (String) obj;
-        b bVar = this.c;
-        String str3 = this.a;
-        int i10 = bVar.i(str3);
-        String str4 = "";
-        if (i10 != -1 && (str = bVar.c[i10]) != null) {
-            str4 = str;
-        }
-        int i11 = bVar.i(str3);
-        if (i11 != -1) {
-            bVar.c[i11] = str2;
-        }
-        this.b = str2;
-        return str4;
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("BlockImpl{name='");
+        sb.append(this.a);
+        sb.append("', start=");
+        sb.append(this.b);
+        sb.append(", end=");
+        sb.append(this.d);
+        sb.append(", attributes=");
+        sb.append(this.c);
+        sb.append(", parent=");
+        a aVar = this.e;
+        sb.append(aVar != null ? aVar.a : null);
+        sb.append(", children=");
+        sb.append(this.f);
+        sb.append('}');
+        return sb.toString();
     }
 }

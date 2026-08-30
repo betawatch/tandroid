@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import qc.f;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import sc.f;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzll extends i implements p {
     int zza;
@@ -21,50 +22,50 @@ final class zzll extends i implements p {
         this.zzc = zzlyVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzll zzllVar = new zzll(this.zzb, this.zzc, cVar);
         zzllVar.zzd = obj;
         return zzllVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzll) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzll) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         Object a2;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
         if (i10 != 0) {
             if (i10 == 1) {
-                c7.b(obj);
-                a2 = c7.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+                p7.b(obj);
+                a2 = p7.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
                 return new f(a2);
             }
             if (i10 != 2) {
-                c7.b(obj);
-                a2 = qc.i.a;
+                p7.b(obj);
+                a2 = sc.i.a;
                 return new f(a2);
             }
             zzhkVar = (zzhk) this.zzd;
-            c7.b(obj);
+            p7.b(obj);
             this.zzd = null;
             this.zza = 3;
             if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
                 return aVar;
             }
-            a2 = qc.i.a;
+            a2 = sc.i.a;
             return new f(a2);
         }
-        c7.b(obj);
+        p7.b(obj);
         zzhkVar = (zzhk) this.zzd;
         zzxn zzxnVar = this.zzb;
         if (!zzxnVar.zzV() || !zzxnVar.zzT() || !zzxnVar.zzS()) {
@@ -74,7 +75,7 @@ final class zzll extends i implements p {
             if (zzn.zzc(zzmcVar, this) == aVar) {
                 return aVar;
             }
-            a2 = c7.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+            a2 = p7.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
             return new f(a2);
         }
         zzly zzlyVar = this.zzc;
@@ -89,7 +90,7 @@ final class zzll extends i implements p {
         this.zza = 3;
         if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
         }
-        a2 = qc.i.a;
+        a2 = sc.i.a;
         return new f(a2);
     }
 }

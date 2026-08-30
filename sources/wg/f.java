@@ -1,62 +1,120 @@
 package wg;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import f2.l;
-import f2.n1;
-import java.util.List;
-import kg.m0;
-import kg.q0;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.p30;
-import org.telegram.ui.r50;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f extends l {
-    public final /* synthetic */ h F;
+public final class f extends View implements a6 {
+    public ng.b a;
+    public ng.b b;
+    public int c;
+    public int d;
+    public sg.c e;
+    public int f;
 
-    public f(h hVar) {
-        this.F = hVar;
+    public f(Context context) {
+        super(context);
     }
 
-    @Override // f2.l
-    public final float A(View view) {
-        return 0.6f;
+    public final void a() {
+        this.a.setBounds(0, 0, getMeasuredWidth(), this.c);
+        this.b.setBounds(0, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight());
     }
 
-    @Override // f2.q1
-    public final void w(n1 n1Var) {
-        q0 q0Var;
-        g gVar;
+    public final void b(ng.a aVar, qg.d dVar) {
+        pg.b c3 = aVar.c(this, null, false);
+        c3.n(dVar);
+        ng.b bVar = new ng.b(c3);
+        this.a = bVar;
+        bVar.b(-AndroidUtilities.dp(30.0f), true);
+        pg.b c10 = aVar.c(this, null, false);
+        c10.n(dVar);
+        ng.b bVar2 = new ng.b(c10);
+        this.b = bVar2;
+        bVar2.b(AndroidUtilities.dp(30.0f), true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
         int i10;
-        h hVar = this.F;
-        e eVar = hVar.Q0;
-        int b10 = n1Var.b();
-        List list = eVar.c;
-        GroupCallMessage groupCallMessage = null;
-        if (list != null && b10 >= 0 && b10 < list.size()) {
-            groupCallMessage = (GroupCallMessage) eVar.c.get(b10);
-        }
-        if (groupCallMessage == null || (q0Var = groupCallMessage.visibleReaction) == null) {
+        sg.c cVar = this.e;
+        if (cVar == null || (i10 = this.f) == -1) {
             return;
         }
-        View view = n1Var.a;
-        if (!(view instanceof c) || (gVar = hVar.V0) == null) {
-            return;
+        cVar.a(j6.w0(null, i10, false));
+        invalidate();
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.draw(canvas);
+        this.b.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        a();
+    }
+
+    public void setFadeHeightBottom(int i10) {
+        this.b.b(i10, true);
+    }
+
+    public void setFadeHeightTop(int i10) {
+        this.a.b(-i10, true);
+    }
+
+    public void setFadeTopAlpha(int i10) {
+        ng.b bVar = this.a;
+        if (bVar.q != i10) {
+            bVar.q = i10;
+            invalidate();
         }
-        r50 r50Var = ((p30) gVar).a;
-        Context context = r50Var.getContext();
-        fk0 fk0Var = r50Var.G;
-        i10 = ((f3) r50Var).currentAccount;
-        m0 m0Var = new m0(context, null, fk0Var, (c) view, null, 0.0f, 0.0f, q0Var, i10, 1, false);
-        m0.B = m0Var;
-        m0Var.i.setTag(R.id.parent_tag, 1);
-        r50Var.container.addView(m0Var.i);
-        m0Var.s = true;
-        m0Var.y = System.currentTimeMillis();
+    }
+
+    public void setFadeZoneBottom(int i10) {
+        if (this.d != i10) {
+            this.d = i10;
+            a();
+            invalidate();
+        }
+    }
+
+    public void setFadeZoneTop(int i10) {
+        if (this.c != i10) {
+            this.c = i10;
+            a();
+            invalidate();
+        }
+    }
+
+    public void setIgnoreFastWay(boolean z4) {
+        this.a.p = z4;
+        this.b.p = z4;
+    }
+
+    public void setup(ng.a aVar) {
+        b(aVar, null);
+    }
+
+    public void setupColorKey(int i10) {
+        this.f = i10;
+        if (this.e == null) {
+            sg.c cVar = new sg.c();
+            this.e = cVar;
+            cVar.a(j6.w0(null, i10, false));
+            setup(new ng.a(this.e));
+        }
     }
 }

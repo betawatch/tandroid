@@ -1,27 +1,28 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tv implements Utilities.Callback {
+public final /* synthetic */ class tv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+    public final /* synthetic */ oy b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ tv(Activity activity, int i10) {
+    public /* synthetic */ tv(oy oyVar, float f10, int i10) {
         this.a = i10;
-        this.b = activity;
+        this.b = oyVar;
+        this.c = f10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                fy.A0(this.b, (Boolean) obj);
+                oy.V(this.b, this.c, valueAnimator);
                 break;
             default:
-                fy.r0(this.b, (Boolean) obj);
+                oy.E0(this.b, this.c, valueAnimator);
                 break;
         }
     }

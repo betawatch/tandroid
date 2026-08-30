@@ -7,8 +7,9 @@ import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import java.io.FileNotFoundException;
 import org.telegram.messenger.ApplicationLoader;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class CallNotificationSoundProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -34,7 +35,7 @@ public class CallNotificationSoundProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public ParcelFileDescriptor openFile(Uri uri, String str) {
         if (!"r".equals(str)) {
-            throw new SecurityException(u3.c.e("Unexpected file mode ", str));
+            throw new SecurityException(v2.e("Unexpected file mode ", str));
         }
         if (ApplicationLoader.applicationContext == null) {
             throw new FileNotFoundException("Unexpected application state");
@@ -49,8 +50,8 @@ public class CallNotificationSoundProvider extends ContentProvider {
             autoCloseOutputStream.write(new byte[]{82, 73, 70, 70, 41, 0, 0, 0, 87, 65, 86, 69, 102, 109, 116, 32, 16, 0, 0, 0, 1, 0, 1, 0, 68, -84, 0, 0, 16, -79, 2, 0, 2, 0, 16, 0, 100, 97, 116, 97, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0});
             autoCloseOutputStream.close();
             return createPipe[0];
-        } catch (Exception e10) {
-            throw new FileNotFoundException(e10.getMessage());
+        } catch (Exception e) {
+            throw new FileNotFoundException(e.getMessage());
         }
     }
 

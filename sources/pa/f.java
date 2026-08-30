@@ -1,59 +1,36 @@
 package pa;
 
-import i7.r7;
-import java.lang.reflect.Modifier;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import na.u;
-import na.v;
+import sa.y;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f implements v, Cloneable {
-    public static final f c = new f();
-    public List a;
-    public final List b;
+public class f extends y {
+    public u a = null;
 
-    public f() {
-        List list = Collections.EMPTY_LIST;
-        this.a = list;
-        this.b = list;
+    @Override // sa.y
+    public final u a() {
+        u uVar = this.a;
+        if (uVar != null) {
+            return uVar;
+        }
+        throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
     }
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final f clone() {
-        try {
-            return (f) super.clone();
-        } catch (CloneNotSupportedException e10) {
-            throw new AssertionError(e10);
+    @Override // pa.u
+    public final Object read(xa.a aVar) {
+        u uVar = this.a;
+        if (uVar != null) {
+            return uVar.read(aVar);
         }
+        throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
     }
 
-    public final boolean b(Class cls, boolean z10) {
-        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
-            r7 r7Var = sa.c.a;
-            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
-                return true;
-            }
+    @Override // pa.u
+    public final void write(xa.b bVar, Object obj) {
+        u uVar = this.a;
+        if (uVar == null) {
+            throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
         }
-        Iterator it = (z10 ? this.a : this.b).iterator();
-        while (it.hasNext()) {
-            if (((na.a) it.next()).shouldSkipClass(cls)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // na.v
-    public final u create(na.g gVar, ua.a aVar) {
-        Class cls = aVar.a;
-        boolean b10 = b(cls, true);
-        boolean b11 = b(cls, false);
-        if (b10 || b11) {
-            return new e(this, b11, b10, gVar, aVar);
-        }
-        return null;
+        uVar.write(bVar, obj);
     }
 }

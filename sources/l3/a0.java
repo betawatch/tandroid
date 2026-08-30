@@ -1,25 +1,100 @@
 package l3;
 
-import android.media.AudioDeviceInfo;
-import android.media.AudioTrack;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class a0 {
-    public static void a(t tVar, Object obj) {
-        e0 e0Var;
-        AudioDeviceInfo a2 = k3.d.a(obj);
-        k0 k0Var = (k0) tVar;
-        if (a2 == null) {
-            e0Var = null;
+public abstract class a0 implements n {
+    public l b;
+    public l c;
+    public l d;
+    public l e;
+    public ByteBuffer f;
+    public ByteBuffer g;
+    public boolean h;
+
+    public a0() {
+        ByteBuffer byteBuffer = n.a;
+        this.f = byteBuffer;
+        this.g = byteBuffer;
+        l lVar = l.e;
+        this.d = lVar;
+        this.e = lVar;
+        this.b = lVar;
+        this.c = lVar;
+    }
+
+    @Override // l3.n
+    public ByteBuffer a() {
+        ByteBuffer byteBuffer = this.g;
+        this.g = n.a;
+        return byteBuffer;
+    }
+
+    @Override // l3.n
+    public final void c() {
+        this.h = true;
+        h();
+    }
+
+    @Override // l3.n
+    public boolean d() {
+        return this.h && this.g == n.a;
+    }
+
+    @Override // l3.n
+    public final l e(l lVar) {
+        this.d = lVar;
+        this.e = f(lVar);
+        return isActive() ? this.e : l.e;
+    }
+
+    public abstract l f(l lVar);
+
+    @Override // l3.n
+    public final void flush() {
+        this.g = n.a;
+        this.h = false;
+        this.b = this.d;
+        this.c = this.e;
+        g();
+    }
+
+    @Override // l3.n
+    public boolean isActive() {
+        return this.e != l.e;
+    }
+
+    public final ByteBuffer j(int i10) {
+        if (this.f.capacity() < i10) {
+            this.f = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
         } else {
-            k0Var.getClass();
-            e0Var = new e0(a2);
+            this.f.clear();
         }
-        k0Var.Y = e0Var;
-        AudioTrack audioTrack = k0Var.u;
-        if (audioTrack != null) {
-            c0.a(audioTrack, e0Var);
-        }
+        ByteBuffer byteBuffer = this.f;
+        this.g = byteBuffer;
+        return byteBuffer;
+    }
+
+    @Override // l3.n
+    public final void reset() {
+        flush();
+        this.f = n.a;
+        l lVar = l.e;
+        this.d = lVar;
+        this.e = lVar;
+        this.b = lVar;
+        this.c = lVar;
+        i();
+    }
+
+    public void g() {
+    }
+
+    public void h() {
+    }
+
+    public void i() {
     }
 }

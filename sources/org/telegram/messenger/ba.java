@@ -1,40 +1,78 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ba implements Runnable {
+public final /* synthetic */ class ba implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
 
-    public /* synthetic */ ba(MessagesController messagesController, long j10, int i10, boolean z10, int i11, int i12, int i13) {
-        this.a = i13;
+    public /* synthetic */ ba(MessagesController messagesController, long j10, int i10) {
+        this.a = i10;
         this.b = messagesController;
         this.c = j10;
-        this.d = i10;
-        this.e = z10;
-        this.f = i11;
-        this.h = i12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                int i10 = this.f;
-                int i11 = this.h;
-                int i12 = this.d;
-                this.b.lambda$markDialogAsRead$243(this.c, i12, this.e, i10, i11);
+                this.b.lambda$markMessageAsRead2$235(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$markMessageAsRead2$236(this.c, tLObject, tL_error);
+                break;
+            case 2:
+                this.b.lambda$pinDialog$364(this.c, tLObject, tL_error);
+                break;
+            case 3:
+                this.b.lambda$saveWallpaperToServer$121(this.c, tLObject, tL_error);
+                break;
+            case 4:
+                this.b.lambda$updateTimerProc$160(this.c, tLObject, tL_error);
+                break;
+            case 5:
+                this.b.lambda$deleteUserPhoto$115(this.c, tLObject, tL_error);
+                break;
+            case 6:
+                this.b.lambda$reorderPinnedDialogs$363(this.c, tLObject, tL_error);
+                break;
+            case 7:
+                this.b.lambda$loadPeerSettings$80(this.c, tLObject, tL_error);
+                break;
+            case 8:
+                this.b.lambda$setChannelSlowMode$94(this.c, tLObject, tL_error);
+                break;
+            case 9:
+                this.b.lambda$loadChannelAdmins$65(this.c, tLObject, tL_error);
+                break;
+            case 10:
+                this.b.lambda$deleteDialog$141(this.c, tLObject, tL_error);
+                break;
+            case 11:
+                this.b.lambda$addDialogToFolder$198(this.c, tLObject, tL_error);
+                break;
+            case 12:
+                this.b.lambda$setDefaultSendAs$275(this.c, tLObject, tL_error);
+                break;
+            case 13:
+                this.b.lambda$deleteMessages$122(this.c, tLObject, tL_error);
+                break;
+            case 14:
+                this.b.lambda$deleteMessages$123(this.c, tLObject, tL_error);
+                break;
+            case 15:
+                this.b.lambda$deleteMessages$125(this.c, tLObject, tL_error);
+                break;
+            case 16:
+                this.b.lambda$setBoostsToUnblockRestrictions$96(this.c, tLObject, tL_error);
                 break;
             default:
-                int i13 = this.f;
-                int i14 = this.h;
-                int i15 = this.d;
-                this.b.lambda$markDialogAsRead$244(this.c, i15, this.e, i13, i14);
+                this.b.lambda$markDialogAsUnread$360(this.c, tLObject, tL_error);
                 break;
         }
     }

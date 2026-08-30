@@ -1,51 +1,147 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.os.Bundle;
+import android.util.SparseArray;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qm implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fn b;
-    public final /* synthetic */ MessageObject c;
+public final class qm extends org.telegram.ui.Cells.n9 {
+    public xn B0;
 
-    public /* synthetic */ qm(fn fnVar, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = fnVar;
-        this.c = messageObject;
+    @Override // org.telegram.ui.Cells.z9
+    public final void J(int i10, int i11, MessageObject messageObject) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        MessageObject.GroupedMessages y82;
+        xn xnVar = this.B0;
+        if (xnVar != null) {
+            int min = Math.min(i11, xnVar.getMessagesController().quoteLengthMax + i10);
+            if (messageObject.getGroupId() != 0 && (y82 = this.B0.y8(messageObject.getGroupId())) != null && !y82.isDocuments) {
+                messageObject = y82.captionMessage;
+            }
+            if (messageObject == null) {
+                return;
+            }
+            nn b10 = nn.b(i10, min, messageObject);
+            if (b10.i == null) {
+                return;
+            }
+            jk jkVar = this.B0.V;
+            if (jkVar != null && jkVar.getVisibility() == 0) {
+                kVar = ((org.telegram.ui.ActionBar.p2) this.B0).actionBar;
+                if (kVar != null) {
+                    kVar2 = ((org.telegram.ui.ActionBar.p2) this.B0).actionBar;
+                    if (kVar2.s()) {
+                        this.B0.z7(false);
+                    }
+                }
+                this.B0.Cb(messageObject, b10);
+                jk jkVar2 = this.B0.V;
+                if (jkVar2 != null) {
+                    jkVar2.H0();
+                    return;
+                }
+                return;
+            }
+            xn xnVar2 = this.B0;
+            xnVar2.i5 = b10;
+            xnVar2.k5 = messageObject;
+            xnVar2.c5 = new MessagePreviewParams(xnVar2.h != null, xnVar2.y9(), ChatObject.isMonoForum(this.B0.e));
+            xn xnVar3 = this.B0;
+            xnVar3.c5.updateReply(xnVar3.k5, xnVar3.y8(messageObject.getGroupId()), this.B0.a(), this.B0.i5);
+            Bundle e = org.telegram.messenger.y3.e(3, "onlySelect", "dialogsType", true);
+            e.putBoolean("quote", true);
+            e.putInt("messagesCount", 1);
+            e.putBoolean("canSelectTopics", true);
+            oy oyVar = new oy(e);
+            xn xnVar4 = this.B0;
+            oyVar.z2 = xnVar4;
+            xnVar4.presentFragment(oyVar);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                fn fnVar = this.b;
-                tn tnVar = fnVar.a;
-                tnVar.Q7();
-                UndoView undoView = tnVar.u3;
-                if (undoView != null) {
-                    int i10 = (tnVar.U.getVisibility() != 0 || tnVar.N.getVisibility() == 0) ? 17 : 16;
-                    MessageObject messageObject = this.c;
-                    undoView.k(0L, i10, messageObject.getDiceEmoji(), null, null, new qm(fnVar, messageObject, 2));
-                    break;
-                }
-                break;
-            case 1:
-                tn tnVar2 = this.b.a;
-                tnVar2.sb = this.c.getId();
-                tnVar2.tb = 0;
-                break;
-            default:
-                tn tnVar3 = this.b.a;
-                if (tnVar3.f7()) {
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(this.c.getDiceEmoji(), tnVar3.P5, tnVar3.j5, tnVar3.T3, null, false, null, null, null, true, 0, 0, null, false);
-                    of2.sendMessageChatArguments = tnVar3.C8();
-                    tnVar3.getSendMessagesHelper().sendMessage(of2);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.z9
+    public final boolean b() {
+        xn xnVar;
+        xn xnVar2 = this.B0;
+        if ((xnVar2 != null && xnVar2.a() == UserObject.VERIFY) || (xnVar = this.B0) == null) {
+            return true;
         }
+        if (xnVar.a() < 0 && this.B0.getMessagesController().isPeerNoForwards(this.B0.a())) {
+            return false;
+        }
+        org.telegram.ui.Cells.u9 u9Var = this.W;
+        return u9Var == null || ((org.telegram.ui.Cells.t1) u9Var).getMessageObject() == null || ((org.telegram.ui.Cells.t1) this.W).getMessageObject().messageOwner == null || !((org.telegram.ui.Cells.t1) this.W).getMessageObject().messageOwner.noforwards;
+    }
+
+    public final void d0(xn xnVar) {
+        int i10 = 0;
+        while (true) {
+            SparseArray sparseArray = this.u0;
+            if (i10 >= sparseArray.size()) {
+                sparseArray.clear();
+                f(false);
+                this.C = null;
+                this.B0 = xnVar;
+                return;
+            }
+            ((Animator) sparseArray.get(sparseArray.keyAt(i10))).cancel();
+            i10++;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.z9
+    public final boolean e() {
+        org.telegram.ui.Cells.u9 u9Var;
+        xn xnVar;
+        org.telegram.ui.Cells.u9 u9Var2;
+        TLRPC.Chat chat;
+        xn xnVar2 = this.B0;
+        if (xnVar2 == null || xnVar2.a() != UserObject.VERIFY) {
+            xn xnVar3 = this.B0;
+            boolean z4 = (xnVar3 != null && xnVar3.y9()) || !((u9Var = this.W) == null || ((org.telegram.ui.Cells.t1) u9Var).getMessageObject() == null || ((org.telegram.ui.Cells.t1) this.W).getMessageObject().messageOwner == null || !((org.telegram.ui.Cells.t1) this.W).getMessageObject().messageOwner.noforwards);
+            if (!this.x0 && (xnVar = this.B0) != null && xnVar.h == null && (((u9Var2 = this.W) == null || (((org.telegram.ui.Cells.t1) u9Var2).getMessageObject() != null && ((org.telegram.ui.Cells.t1) this.W).getMessageObject().type != 23 && !((org.telegram.ui.Cells.t1) this.W).getMessageObject().isVoiceTranscriptionOpen() && !((org.telegram.ui.Cells.t1) this.W).getMessageObject().isInvoice() && ((org.telegram.ui.Cells.t1) this.W).getMessageObject().richLayout == null && !this.B0.Z8.v0)) && !this.B0.getMessagesController().getTranslateController().isTranslatingDialog(this.B0.Q5) && !UserObject.isService(this.B0.Q5) && (!z4 || (chat = this.B0.e) == null || ChatObject.canWriteToChat(chat)))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.z9
+    public final int p() {
+        xn xnVar = this.B0;
+        if (xnVar == null) {
+            return 0;
+        }
+        return xnVar.xa;
+    }
+
+    @Override // org.telegram.ui.Cells.z9
+    public final int q() {
+        xn xnVar = this.B0;
+        if (xnVar == null) {
+            return 0;
+        }
+        return (int) xnVar.p9;
+    }
+
+    @Override // org.telegram.ui.Cells.z9
+    public final org.telegram.ui.ActionBar.f6 r() {
+        xn xnVar = this.B0;
+        if (xnVar != null) {
+            return xnVar.ba;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.z9
+    public final int u(int i10) {
+        return org.telegram.ui.ActionBar.j6.v0(i10, this.B0.ba);
     }
 }

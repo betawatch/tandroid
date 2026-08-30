@@ -1,36 +1,78 @@
 package j7;
 
-import java.util.Iterator;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
+import android.widget.ProgressBar;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class z extends t {
-    public final transient b0 c;
-    public final transient a0 d;
-
-    public z(b0 b0Var, a0 a0Var) {
-        this.c = b0Var;
-        this.d = a0Var;
+public abstract class z {
+    public static ContextThemeWrapper a(Context context, boolean z4) {
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, g(context, !z4 ? R.attr.dialogTheme : R.attr.alertDialogTheme));
+        return g(contextThemeWrapper, R.attr.mediaRouteTheme) != 0 ? new ContextThemeWrapper(contextThemeWrapper, e(contextThemeWrapper)) : contextThemeWrapper;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.c.get(obj) != null;
+    public static int b(Context context, int i10) {
+        return i0.a.e(-1, f(context, i10, R.attr.colorPrimary)) >= 3.0d ? -1 : -570425344;
     }
 
-    @Override // j7.o
-    public final int i(Object[] objArr) {
-        return this.d.i(objArr);
+    public static float c(Context context) {
+        TypedValue typedValue = new TypedValue();
+        if (context.getTheme().resolveAttribute(android.R.attr.disabledAlpha, typedValue, true)) {
+            return typedValue.getFloat();
+        }
+        return 0.5f;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.d.listIterator(0);
+    public static Drawable d(Context context, int i10) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{i10});
+        Drawable d = h8.d(r7.b(context, obtainStyledAttributes.getResourceId(0, 0)));
+        if (h(context)) {
+            d.setTint(f0.f.c(context, R.color.mr_dynamic_dialog_icon_light));
+        }
+        obtainStyledAttributes.recycle();
+        return d;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        this.c.getClass();
-        return 1;
+    public static int e(Context context) {
+        return h(context) ? b(context, 0) == -570425344 ? R.style.Theme_MediaRouter_Light : R.style.Theme_MediaRouter_Light_DarkControlPanel : b(context, 0) == -570425344 ? R.style.Theme_MediaRouter_LightControlPanel : R.style.Theme_MediaRouter;
+    }
+
+    public static int f(Context context, int i10, int i11) {
+        if (i10 != 0) {
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i10, new int[]{i11});
+            int color = obtainStyledAttributes.getColor(0, 0);
+            obtainStyledAttributes.recycle();
+            if (color != 0) {
+                return color;
+            }
+        }
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(i11, typedValue, true);
+        return typedValue.resourceId != 0 ? context.getResources().getColor(typedValue.resourceId) : typedValue.data;
+    }
+
+    public static int g(Context context, int i10) {
+        TypedValue typedValue = new TypedValue();
+        if (context.getTheme().resolveAttribute(i10, typedValue, true)) {
+            return typedValue.resourceId;
+        }
+        return 0;
+    }
+
+    public static boolean h(Context context) {
+        TypedValue typedValue = new TypedValue();
+        return context.getTheme().resolveAttribute(R.attr.isLightTheme, typedValue, true) && typedValue.data != 0;
+    }
+
+    public static void i(Context context, ProgressBar progressBar) {
+        if (progressBar.isIndeterminate()) {
+            progressBar.getIndeterminateDrawable().setColorFilter(f0.f.c(context, h(context) ? R.color.mr_cast_progressbar_progress_and_thumb_light : R.color.mr_cast_progressbar_progress_and_thumb_dark), PorterDuff.Mode.SRC_IN);
+        }
     }
 }

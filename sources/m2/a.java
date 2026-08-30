@@ -4,13 +4,13 @@ import android.database.DataSetObservable;
 import android.database.DataSetObserver;
 import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class a {
     public final DataSetObservable a = new DataSetObservable();
     public DataSetObserver b;
 
-    public abstract void a(g gVar, Object obj);
+    public abstract void a(h hVar, Object obj);
 
     public abstract int b();
 
@@ -22,7 +22,7 @@ public abstract class a {
         return null;
     }
 
-    public abstract Object e(g gVar, int i10);
+    public abstract Object e(h hVar, int i10);
 
     public abstract boolean f(View view, Object obj);
 

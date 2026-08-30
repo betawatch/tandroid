@@ -33,11 +33,11 @@ public class p {
                 this.b = null;
                 return null;
             }
-            l k9 = ConcurrentHashMap.k(lVarArr, i10);
-            if (k9 == null || k9.a >= 0) {
-                lVar = k9;
-            } else if (k9 instanceof g) {
-                this.a = ((g) k9).e;
+            l k10 = ConcurrentHashMap.k(lVarArr, i10);
+            if (k10 == null || k10.a >= 0) {
+                lVar = k10;
+            } else if (k10 instanceof g) {
+                this.a = ((g) k10).e;
                 o oVar2 = this.d;
                 if (oVar2 == null) {
                     oVar2 = new o();
@@ -51,7 +51,7 @@ public class p {
                 this.c = oVar2;
                 lVar = null;
             } else {
-                lVar = k9 instanceof q ? ((q) k9).f : null;
+                lVar = k10 instanceof q ? ((q) k10).f : null;
             }
             if (this.c != null) {
                 while (true) {

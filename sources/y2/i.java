@@ -1,10 +1,9 @@
 package y2;
 
-import a4.w;
 import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -17,21 +16,21 @@ public final class i {
         this.c = dVar;
     }
 
-    public static v5.c a() {
-        v5.c cVar = new v5.c(4);
-        cVar.d = v2.d.a;
-        return cVar;
+    public static s5.m a() {
+        s5.m mVar = new s5.m();
+        mVar.d = v2.d.a;
+        return mVar;
     }
 
     public final i b(v2.d dVar) {
-        v5.c a2 = a();
-        a2.h(this.a);
+        s5.m a2 = a();
+        a2.n(this.a);
         if (dVar == null) {
             throw new NullPointerException("Null priority");
         }
         a2.d = dVar;
-        a2.b = this.b;
-        return a2.d();
+        a2.c = this.b;
+        return a2.f();
     }
 
     public final boolean equals(Object obj) {
@@ -54,11 +53,11 @@ public final class i {
     public final String toString() {
         byte[] bArr = this.b;
         String encodeToString = bArr == null ? "" : Base64.encodeToString(bArr, 2);
-        StringBuilder sb2 = new StringBuilder("TransportContext(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        sb2.append(this.c);
-        sb2.append(", ");
-        return w.q(sb2, encodeToString, ")");
+        StringBuilder sb = new StringBuilder("TransportContext(");
+        sb.append(this.a);
+        sb.append(", ");
+        sb.append(this.c);
+        sb.append(", ");
+        return android.support.v4.media.a.r(sb, encodeToString, ")");
     }
 }

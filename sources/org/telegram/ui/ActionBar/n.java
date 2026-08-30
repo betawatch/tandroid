@@ -1,94 +1,111 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.TextUtils;
+import android.content.DialogInterface;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.FrameLayout;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class n extends FrameLayout implements vd.j {
-    public final c6 a;
-    public final ab.m b;
-    public final vd.k c;
+public final /* synthetic */ class n implements r0.o, n1, c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public n(Context context, c6 c6Var, ab.m mVar) {
-        super(context);
-        this.c = new vd.k(this, jr.h, 350L);
-        this.a = c6Var;
-        this.b = mVar;
+    public /* synthetic */ n(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public void b(vd.k kVar) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            vd.f fVar = (vd.f) it.next();
-            float c3 = fVar.c();
-            Object obj = fVar.a;
-            float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c3);
-            m mVar = (m) obj;
-            mVar.setAlpha(c3);
-            mVar.setScaleX(lerp);
-            mVar.setScaleY(lerp);
-            mVar.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(!fVar.h ? 9.0f : -9.0f), 0, c3));
+    @Override // r0.o
+    public r0.m1 N0(View view, r0.m1 m1Var) {
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                break;
+            case 1:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) obj;
+                Drawable drawable = ActionBarLayout.m1;
+                i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+                i0.b defaultWindowInsets2 = AndroidUtilities.getDefaultWindowInsets(m1Var, true);
+                actionBarLayout.k1 = defaultWindowInsets;
+                actionBarLayout.l1 = defaultWindowInsets2;
+                actionBarLayout.j1 = m1Var;
+                int childCount = actionBarLayout.getChildCount();
+                while (i11 < childCount) {
+                    actionBarLayout.o(actionBarLayout.getChildAt(i11), m1Var);
+                    i11++;
+                }
+                break;
+            case 2:
+            case 3:
+            case 5:
+            default:
+                y3 y3Var = (y3) obj;
+                y3Var.e = m1Var;
+                i0.b defaultWindowInsets3 = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+                i0.b defaultWindowInsets4 = AndroidUtilities.getDefaultWindowInsets(m1Var, true);
+                if (!y3Var.f.equals(defaultWindowInsets3) || !y3Var.h.equals(defaultWindowInsets4)) {
+                    AndroidUtilities.statusBarHeight = defaultWindowInsets3.b;
+                    AndroidUtilities.navigationBarHeight = defaultWindowInsets3.d;
+                    y3Var.f = defaultWindowInsets3;
+                    y3Var.h = defaultWindowInsets4;
+                    y3Var.requestLayout();
+                }
+                int childCount2 = y3Var.getChildCount();
+                while (i11 < childCount2) {
+                    View childAt = y3Var.getChildAt(i11);
+                    if ((childAt instanceof ActionBarLayout) || childAt.getTag() == null) {
+                        r0.j0.b(childAt, m1Var);
+                    }
+                    i11++;
+                }
+                y3Var.invalidate();
+                break;
+            case 4:
+                r0.j1 j1Var = m1Var.a;
+                FrameLayout frameLayout = (FrameLayout) obj;
+                Rect rect = new Rect();
+                if (Build.VERSION.SDK_INT >= 30) {
+                    i0.b f10 = j1Var.f(527);
+                    rect.set(f10.a, f10.b, f10.c, f10.d);
+                } else {
+                    rect.set(j1Var.i().a, j1Var.i().b, j1Var.i().c, j1Var.i().d);
+                }
+                frameLayout.setPadding(rect.left, rect.top, rect.right, rect.bottom + AndroidUtilities.navigationBarHeight);
+                frameLayout.requestLayout();
+                break;
+            case 6:
+                w3 w3Var = (w3) obj;
+                w3Var.s = m1Var.a.f(2).d;
+                w3Var.invalidate();
+                break;
         }
+        return r0.m1.b;
     }
 
-    public final void c(CharSequence charSequence) {
-        boolean z10;
-        CharSequence charSequence2;
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        vd.k kVar = this.c;
-        if (isEmpty) {
-            kVar.a.r(null, true);
-            return;
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(d2 d2Var, int i10) {
+        d2 d2Var2 = (d2) this.b;
+        DialogInterface.OnCancelListener onCancelListener = d2Var2.G;
+        if (onCancelListener != null) {
+            onCancelListener.onCancel(d2Var2);
         }
-        int indexOf = TextUtils.indexOf(charSequence, "...");
-        ab.m mVar = this.b;
-        if (indexOf >= 0) {
-            SpannableString valueOf = SpannableString.valueOf(charSequence);
-            mVar.u(valueOf, indexOf);
-            z10 = true;
-            charSequence2 = valueOf;
-        } else {
-            z10 = false;
-            charSequence2 = charSequence;
-        }
-        m mVar2 = new m(this, getContext());
-        int i10 = g6.gl;
-        c6 c6Var = this.a;
-        mVar2.setTextColor(g6.v0(i10, c6Var));
-        mVar2.setLinkTextColor(g6.v0(i10, c6Var));
-        mVar2.setTextSize(1, 14.0f);
-        mVar2.setAlpha(0.0f);
-        mVar2.setText(charSequence2);
-        if (z10) {
-            mVar.c(mVar2);
-        }
-        addView(mVar2, i7.f6.c(-2.0f, -2));
-        kVar.i(mVar2, true);
+        d2Var2.dismiss();
     }
 
-    public final void d() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            vd.f fVar = (vd.f) it.next();
-            m mVar = (m) fVar.a;
-            int i10 = g6.gl;
-            c6 c6Var = this.a;
-            mVar.setTextColor(g6.v0(i10, c6Var));
-            ((m) fVar.a).setLinkTextColor(g6.v0(i10, c6Var));
+    @Override // org.telegram.ui.ActionBar.n1
+    public void n(KeyEvent keyEvent) {
+        p1 p1Var;
+        w0 w0Var = (w0) this.b;
+        w0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (p1Var = w0Var.d) != null && p1Var.isShowing()) {
+            w0Var.d.d(true);
         }
-    }
-
-    public float getTotalVisibility() {
-        return this.c.a.d.c.a;
-    }
-
-    @Override // vd.j
-    public final /* synthetic */ void a() {
     }
 }

@@ -1,120 +1,90 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AccountInstance;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a2 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class a2 implements View.OnClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ ViewGroup d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ KeyEvent.Callback f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ a2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ a2(FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.g3 g3Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, org.telegram.ui.ih ihVar) {
+        this.c = frameLayout;
+        this.e = f6Var;
+        this.f = g3Var;
+        this.d = frameLayout2;
+        this.b = iArr;
+        this.n = strArr;
+        this.h = iArr2;
+        this.r = ihVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        int i11 = 1;
-        int i12 = 17;
-        int i13 = 5;
-        int i14 = 0;
-        Object obj = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                AccountInstance accountInstance = (AccountInstance) obj;
-                if (tLObject instanceof TLRPC.Updates) {
-                    accountInstance.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
+                FrameLayout frameLayout = (FrameLayout) this.c;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.e;
+                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.f;
+                FrameLayout frameLayout2 = (FrameLayout) this.d;
+                String[] strArr = (String[]) this.n;
+                int[] iArr = (int[]) this.h;
+                Runnable runnable = (Runnable) this.r;
+                if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
+                    new qc(frameLayout, f6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new cg.n0(25))).j();
                     break;
-                }
-                break;
-            case 1:
-                aa aaVar = (aa) obj;
-                aaVar.getClass();
-                AndroidUtilities.runOnUIThread(new z2(i11, aaVar, tLObject));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new z2(28, (fr) obj, tLObject));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new z2(29, (ks) obj, tLObject));
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new gt(i13, (ww) obj, tLObject));
-                break;
-            case 5:
-                jy jyVar = (jy) obj;
-                if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new gt(10, jyVar, tLObject));
-                    break;
-                }
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new gt(18, (n60) obj, tLObject));
-                break;
-            case 7:
-                AndroidUtilities.runOnUIThread(new g((x60) obj, tL_error, tLObject, 14));
-                break;
-            case 8:
-                AndroidUtilities.runOnUIThread(new g((vb0) obj, tL_error, tLObject, i12));
-                break;
-            case 9:
-                AndroidUtilities.runOnUIThread(new gt(27, (ug0) obj, tLObject));
-                break;
-            case 10:
-                fj0 fj0Var = (fj0) obj;
-                if (tLObject instanceof TLRPC.TL_messages_messageReactionsList) {
-                    TLRPC.TL_messages_messageReactionsList tL_messages_messageReactionsList = (TLRPC.TL_messages_messageReactionsList) tLObject;
-                    int i15 = tL_messages_messageReactionsList.count;
-                    tL_messages_messageReactionsList.users.size();
-                    fj0Var.post(new rm(fj0Var, i15, tL_messages_messageReactionsList, 8));
-                    break;
-                }
-                break;
-            case 11:
-                AndroidUtilities.runOnUIThread(new gj0((pj0) obj, tLObject, i14));
-                break;
-            case 12:
-                at0 at0Var = (at0) obj;
-                at0Var.getClass();
-                AndroidUtilities.runOnUIThread(new g(at0Var, tL_error, tLObject, 26));
-                break;
-            case 13:
-                AndroidUtilities.runOnUIThread(new yw0((nx0) obj, tL_error, tLObject, 2));
-                break;
-            case 14:
-                AndroidUtilities.runOnUIThread(new jh.b7(tLObject, (Utilities.Callback) obj, i11));
-                break;
-            case 15:
-                m21 m21Var = (m21) obj;
-                if (tLObject != null) {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    MessagesController.getInstance(m21Var.b).processUpdates(updates, false);
-                    if (!updates.chats.isEmpty()) {
-                        AndroidUtilities.runOnUIThread(new ii0(i12, m21Var, updates), 1000L);
-                        break;
+                } else {
+                    o70 F = o70.F(g3Var.container, f6Var, frameLayout2);
+                    int i10 = 0;
+                    while (true) {
+                        int[] iArr2 = this.b;
+                        if (i10 >= iArr2.length) {
+                            F.i = 1;
+                            F.Z();
+                            break;
+                        } else {
+                            F.c(0, strArr[i10], new z2(iArr, runnable, iArr2[i10]), false);
+                            i10++;
+                        }
                     }
                 }
-                break;
-            case 16:
-                AndroidUtilities.runOnUIThread(new ii0(19, (k31) obj, tLObject));
-                break;
-            case 17:
-                r41 r41Var = (r41) obj;
-                r41Var.getClass();
-                AndroidUtilities.runOnUIThread(new yw0(r41Var, tL_error, tLObject, i13));
-                break;
             default:
-                int i16 = UndoView.a0;
-                AndroidUtilities.runOnUIThread(new ii0(23, (UndoView) obj, tLObject));
+                boolean[] zArr = (boolean[]) this.c;
+                wc0 wc0Var = (wc0) this.d;
+                wc0 wc0Var2 = (wc0) this.e;
+                wc0 wc0Var3 = (wc0) this.f;
+                wc0 wc0Var4 = (wc0) this.h;
+                lh.g0 g0Var = (lh.g0) this.n;
+                org.telegram.ui.ActionBar.b3 b3Var = (org.telegram.ui.ActionBar.b3) this.r;
+                zArr[0] = false;
+                vt.j((vt) g0Var.c, g0Var.a, g0Var.b, (int) (z4.c(null, wc0Var, wc0Var2, wc0Var3, wc0Var4) / 1000), this.b[0]);
+                b3Var.a.dismissRunnable.run();
                 break;
         }
+    }
+
+    public /* synthetic */ a2(boolean[] zArr, wc0 wc0Var, wc0 wc0Var2, wc0 wc0Var3, wc0 wc0Var4, lh.g0 g0Var, int[] iArr, org.telegram.ui.ActionBar.b3 b3Var) {
+        this.c = zArr;
+        this.d = wc0Var;
+        this.e = wc0Var2;
+        this.f = wc0Var3;
+        this.h = wc0Var4;
+        this.n = g0Var;
+        this.b = iArr;
+        this.r = b3Var;
     }
 }

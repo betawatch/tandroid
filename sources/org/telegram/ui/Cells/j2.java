@@ -1,47 +1,70 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.oy;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p2 b;
+public final class j2 extends nh.i7 {
+    public final /* synthetic */ r2 S;
 
-    public /* synthetic */ j2(p2 p2Var, int i10) {
-        this.a = i10;
-        this.b = p2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(r2 r2Var) {
+        super(null, false);
+        this.S = r2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                p2 p2Var = this.b;
-                p2Var.N3 = 1.0f;
-                p2Var.Q3 = null;
-                p2Var.R3 = null;
-                p2Var.S3 = null;
-                p2Var.invalidate();
-                break;
-            case 1:
-                p2 p2Var2 = this.b;
-                p2Var2.O3 = 1.0f;
-                p2Var2.invalidate();
-                break;
-            default:
-                p2 p2Var3 = this.b;
-                int i10 = (p2Var3.O2 ? 1 : 0) + (p2Var3.M2 ? 2 : 0) + (p2Var3.N2 ? 4 : 0);
-                int i11 = p2Var3.n4;
-                if (i11 != i10) {
-                    p2Var3.A(i11, i10);
-                } else {
-                    p2Var3.r4 = false;
-                    p2Var3.p4 = i11;
-                }
-                p2Var3.invalidate();
-                break;
+    @Override // nh.i7
+    public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
+        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.L0) ? false : true;
+    }
+
+    @Override // nh.i7
+    public final boolean d(long j10) {
+        r2 r2Var = this.S;
+        int i10 = r2Var.C0;
+        oy oyVar = r2Var.w4;
+        if (oyVar == null || r2Var.L0) {
+            return false;
+        }
+        if (j10 > 0) {
+            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
+            if (user == null || user.linked_community_id == 0) {
+                return false;
+            }
+            oyVar.showDialog(new sh.i0(oyVar, user.linked_community_id));
+            return true;
+        }
+        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
+        if (chat == null || chat.linked_community_id == 0) {
+            return false;
+        }
+        oyVar.showDialog(new sh.i0(oyVar, chat.linked_community_id));
+        return true;
+    }
+
+    @Override // nh.i7
+    public final void e() {
+        r2 r2Var = this.S;
+        n2 n2Var = r2Var.a0;
+        if (n2Var == null) {
+            return;
+        }
+        n2Var.f(r2Var);
+    }
+
+    @Override // nh.i7
+    public final void f(long j10) {
+        r2 r2Var = this.S;
+        n2 n2Var = r2Var.a0;
+        if (n2Var == null) {
+            return;
+        }
+        if (r2Var.G0 != 0) {
+            n2Var.c();
+        } else {
+            n2Var.e(r2Var);
         }
     }
 }

@@ -1,233 +1,64 @@
 package eg;
 
-import android.text.TextUtils;
-import android.util.Pair;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import org.json.JSONObject;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import k7.b6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class q0 {
-    public static HashMap a;
+public final class q0 extends FrameLayout {
+    public final ImageView a;
+    public final k5 b;
+    public final dg.s1 c;
+    public final k5 d;
+    public p0 e;
+    public o0 f;
 
-    public static void a(long j10, List list, Utilities.Callback callback, Utilities.Callback callback2) {
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        TL_stories.TL_premium_applyBoost tL_premium_applyBoost = new TL_stories.TL_premium_applyBoost();
-        tL_premium_applyBoost.peer = messagesController.getInputPeer(-j10);
-        tL_premium_applyBoost.flags |= 1;
-        tL_premium_applyBoost.slots.addAll(list);
-        connectionsManager.sendRequest(tL_premium_applyBoost, new z(callback2, messagesController, callback, 0), 66);
+    public q0(v0 v0Var, Context context, f6 f6Var) {
+        super(context);
+        int i10;
+        int i11;
+        i10 = ((g3) v0Var).backgroundPaddingLeft;
+        i11 = ((g3) v0Var).backgroundPaddingLeft;
+        setPadding(i10, 0, i11, 0);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.Lj, f6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, b6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        k5 k5Var = new k5(context);
+        this.b = k5Var;
+        k5Var.setWidthWrapContent(true);
+        k5Var.setTextColor(j6.v0(j6.j5, f6Var));
+        k5Var.setTextSize(14);
+        boolean z4 = LocaleController.isRTL;
+        addView(k5Var, b6.d(-2, -2.0f, (z4 ? 5 : 3) | 16, z4 ? 30.0f : 60.0f, 0.0f, z4 ? 60.0f : 30.0f, 0.0f));
+        k5 k5Var2 = new k5(context);
+        this.d = k5Var2;
+        k5Var2.setTextColor(-1);
+        k5Var2.setWidthWrapContent(true);
+        k5Var2.setTypeface(AndroidUtilities.bold());
+        k5Var2.setTextSize(14);
+        dg.s1 s1Var = new dg.s1(this, context, f6Var);
+        this.c = s1Var;
+        s1Var.setWillNotDraw(false);
+        s1Var.addView(k5Var2, b6.e(-2, -2, 17));
+        addView(s1Var, b6.c(-1.0f, -1));
     }
 
-    public static ArrayList b(int i10, List list) {
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) it.next();
-            String str = tL_premiumGiftCodeOption.store_product;
-            if (tL_premiumGiftCodeOption.users == i10) {
-                arrayList.add(tL_premiumGiftCodeOption);
-            }
-        }
-        if (arrayList.isEmpty()) {
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) it2.next();
-                if (tL_premiumGiftCodeOption2.users == 1) {
-                    arrayList.add(tL_premiumGiftCodeOption2);
-                }
-            }
-        }
-        return arrayList;
-    }
-
-    public static List c(ArrayList arrayList) {
-        if (!h()) {
-            return arrayList;
-        }
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) obj;
-            if (tL_premiumGiftCodeOption.store_product != null) {
-                arrayList2.add(tL_premiumGiftCodeOption);
-            }
-        }
-        return arrayList2;
-    }
-
-    public static void d(MessageObject messageObject, Utilities.Callback callback, Utilities.Callback callback2) {
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        TLRPC.TL_payments_getGiveawayInfo tL_payments_getGiveawayInfo = new TLRPC.TL_payments_getGiveawayInfo();
-        tL_payments_getGiveawayInfo.msg_id = messageObject.getId();
-        tL_payments_getGiveawayInfo.peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
-        connectionsManager.sendRequest(tL_payments_getGiveawayInfo, new g0(callback2, callback, 1));
-    }
-
-    public static ArrayList e(long j10) {
-        ArrayList arrayList = new ArrayList();
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        ArrayList<TLRPC.Dialog> allDialogs = messagesController.getAllDialogs();
-        for (int i10 = 0; i10 < allDialogs.size(); i10++) {
-            TLRPC.Dialog dialog = allDialogs.get(i10);
-            if (DialogObject.isChatDialog(dialog.id) && ChatObject.isBoostSupported(messagesController.getChat(Long.valueOf(-dialog.id)))) {
-                long j11 = dialog.id;
-                if ((-j11) != j10) {
-                    arrayList.add(messagesController.getInputPeer(j11));
-                }
-            }
-        }
-        return arrayList;
-    }
-
-    public static long f() {
-        return MessagesController.getInstance(UserConfig.selectedAccount).giveawayAddPeersMax;
-    }
-
-    public static int g() {
-        return (int) MessagesController.getInstance(UserConfig.selectedAccount).giveawayBoostsPerPremium;
-    }
-
-    public static boolean h() {
-        if (BuildVars.useInvoiceBilling()) {
-            return false;
-        }
-        return BillingController.getInstance().isReady();
-    }
-
-    public static boolean i() {
-        return MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift > 0;
-    }
-
-    public static int j(int i10, TLRPC.Chat chat, Utilities.Callback callback) {
-        Pair pair;
-        if (chat == null) {
-            HashMap hashMap = a;
-            List list = null;
-            if (hashMap != null && (pair = (Pair) hashMap.get(Integer.valueOf(i10))) != null && System.currentTimeMillis() - ((Long) pair.first).longValue() < 1800000) {
-                list = (List) pair.second;
-            }
-            if (list != null) {
-                callback.run(list);
-                return -1;
-            }
-        }
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-        TLRPC.TL_payments_getPremiumGiftCodeOptions tL_payments_getPremiumGiftCodeOptions = new TLRPC.TL_payments_getPremiumGiftCodeOptions();
-        if (chat != null) {
-            tL_payments_getPremiumGiftCodeOptions.flags = 1;
-            tL_payments_getPremiumGiftCodeOptions.boost_peer = messagesController.getInputPeer(-chat.id);
-        }
-        return connectionsManager.sendRequest(tL_payments_getPremiumGiftCodeOptions, new m0(chat, i10, callback, 0));
-    }
-
-    public static void k(ArrayList arrayList, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.Chat chat, TLRPC.TL_textWithEntities tL_textWithEntities, org.telegram.ui.ActionBar.o2 o2Var, Utilities.Callback callback, Utilities.Callback callback2) {
-        int i10 = UserConfig.selectedAccount;
-        HashMap hashMap = a;
-        if (hashMap != null) {
-            hashMap.remove(Integer.valueOf(i10));
-        }
-        if (h()) {
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-            TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = new TLRPC.TL_inputStorePaymentPremiumGiftCode();
-            tL_inputStorePaymentPremiumGiftCode.users = new ArrayList<>();
-            int size = arrayList.size();
-            int i11 = 0;
-            while (i11 < size) {
-                Object obj = arrayList.get(i11);
-                i11++;
-                TLObject tLObject = (TLObject) obj;
-                if (tLObject instanceof TLRPC.User) {
-                    tL_inputStorePaymentPremiumGiftCode.users.add(messagesController.getInputUser((TLRPC.User) tLObject));
-                }
-            }
-            if (chat != null) {
-                tL_inputStorePaymentPremiumGiftCode.flags = 1;
-                tL_inputStorePaymentPremiumGiftCode.boost_peer = messagesController.getInputPeer(-chat.id);
-            }
-            if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-                tL_inputStorePaymentPremiumGiftCode.flags |= 2;
-                tL_inputStorePaymentPremiumGiftCode.message = tL_textWithEntities;
-            }
-            d9.c cVar = new d9.c();
-            cVar.c = "inapp";
-            cVar.b = tL_premiumGiftCodeOption.store_product;
-            BillingController.getInstance().queryProductDetails(Arrays.asList(cVar.a()), new e0(tL_inputStorePaymentPremiumGiftCode, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, o2Var, 0));
-            return;
-        }
-        MessagesController messagesController2 = MessagesController.getInstance(UserConfig.selectedAccount);
-        ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = new TLRPC.TL_inputInvoicePremiumGiftCode();
-        TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode2 = new TLRPC.TL_inputStorePaymentPremiumGiftCode();
-        tL_inputStorePaymentPremiumGiftCode2.users = new ArrayList<>();
-        int size2 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            Object obj2 = arrayList.get(i12);
-            i12++;
-            TLObject tLObject2 = (TLObject) obj2;
-            if (tLObject2 instanceof TLRPC.User) {
-                tL_inputStorePaymentPremiumGiftCode2.users.add(messagesController2.getInputUser((TLRPC.User) tLObject2));
-            }
-        }
-        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-            tL_inputStorePaymentPremiumGiftCode2.flags |= 2;
-            tL_inputStorePaymentPremiumGiftCode2.message = tL_textWithEntities;
-        }
-        if (chat != null) {
-            tL_inputStorePaymentPremiumGiftCode2.flags |= 1;
-            tL_inputStorePaymentPremiumGiftCode2.boost_peer = messagesController2.getInputPeer(-chat.id);
-        }
-        tL_inputStorePaymentPremiumGiftCode2.currency = tL_premiumGiftCodeOption.currency;
-        tL_inputStorePaymentPremiumGiftCode2.amount = tL_premiumGiftCodeOption.amount;
-        tL_inputInvoicePremiumGiftCode.purpose = tL_inputStorePaymentPremiumGiftCode2;
-        tL_inputInvoicePremiumGiftCode.option = tL_premiumGiftCodeOption;
-        JSONObject p10 = ph.p2.p(o2Var.getResourceProvider(), false);
-        if (p10 != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = p10.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
-        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new f0(callback2, messagesController2, tL_inputInvoicePremiumGiftCode, o2Var, callback, 1));
-    }
-
-    public static int l(long j10) {
-        if (j10 < System.currentTimeMillis() + 120000) {
-            j10 = System.currentTimeMillis() + 120000;
-        }
-        return (int) (j10 / 1000);
-    }
-
-    public static void m(int i10, ArrayList arrayList) {
-        if (a == null) {
-            a = new HashMap();
-        }
-        a.put(Integer.valueOf(i10), new Pair(Long.valueOf(System.currentTimeMillis()), arrayList));
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.f != null ? 49.0f : 36.0f), TLObject.FLAG_30));
     }
 }

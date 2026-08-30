@@ -1,49 +1,82 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import java.util.regex.Pattern;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gf implements View.OnLongClickListener {
+public final /* synthetic */ class gf implements org.telegram.ui.ActionBar.c2, MessagesController.ErrorDelegate, io0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ gf(tn tnVar, int i10) {
+    public /* synthetic */ gf(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = tnVar;
+        this.b = runnable;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
+    @Override // org.telegram.ui.io0
+    public void a(int i10) {
+        int i11 = this.a;
+        Runnable runnable = this.b;
+        switch (i11) {
+            case 9:
+                Pattern pattern = LaunchActivity.y1;
+                if (i10 == 1) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                if (i10 == 1) {
+                    runnable.run();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
-                tn tnVar = this.b;
-                MessageObject messageObject3 = tnVar.Z4;
-                if (messageObject3 == null) {
-                    return false;
-                }
-                if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
-                    new org.telegram.ui.Components.tc(org.telegram.ui.Components.hb.a(tnVar.getParentActivity()), tnVar.aa).k(false).j();
-                }
-                return true;
+                this.b.run();
+                break;
             case 1:
-                return tn.R0(this.b);
+                this.b.run();
+                break;
             default:
-                tn tnVar2 = this.b;
-                int i10 = tnVar2.kb;
-                if (i10 == 1 && (messageObject2 = tnVar2.l5) != null) {
-                    tnVar2.j(messageObject2.getId(), 0, true, 0, true, 0);
-                    return true;
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-                if (tnVar2.b5 == null || i10 != 2 || (messageObject = tnVar2.j5) == null) {
-                    return false;
-                }
-                tnVar2.j(messageObject.getId(), 0, true, 0, true, 0);
-                return true;
+                break;
         }
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 3:
+                this.b.run();
+                break;
+            case 4:
+                this.b.run();
+                break;
+            case 5:
+                this.b.run();
+                break;
+            case 6:
+                this.b.run();
+                break;
+            case 7:
+                this.b.run();
+                break;
+            default:
+                this.b.run();
+                break;
+        }
+        return true;
     }
 }

@@ -1,41 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class v30 implements bt0 {
-    @Override // org.telegram.ui.Components.bt0
-    public final boolean T() {
-        return false;
+public final class v30 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x30 b;
+
+    public /* synthetic */ v30(x30 x30Var, int i10) {
+        this.a = i10;
+        this.b = x30Var;
     }
 
-    @Override // org.telegram.ui.Components.bt0
-    public final jl0 f() {
-        return null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                x30 x30Var = this.b;
+                if (x30Var.V == animator) {
+                    x30Var.V = null;
+                    x30Var.b();
+                    break;
+                }
+                break;
+            default:
+                x30 x30Var2 = this.b;
+                if (x30Var2.U == animator) {
+                    x30Var2.U = null;
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.bt0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.bt0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.bt0
-    public final boolean q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bt0
-    public final void E() {
-    }
-
-    @Override // org.telegram.ui.Components.bt0
-    public final void R() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                w30 w30Var = this.b.T;
+                if (w30Var != null) {
+                    ((org.telegram.ui.zr0) w30Var).a.b0.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

@@ -1,20 +1,88 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ub1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ qc1 a;
+public final /* synthetic */ class ub1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cd1 b;
 
-    public ub1(qc1 qc1Var) {
-        this.a = qc1Var;
+    public /* synthetic */ ub1(cd1 cd1Var, int i10) {
+        this.a = i10;
+        this.b = cd1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        qc1 qc1Var = this.a;
-        qc1Var.F0[qc1Var.S0 != null ? (char) 0 : (char) 2].setVisibility(4);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final cd1 cd1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.sb1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                cd1.V(cd1Var, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        cd1 cd1Var2 = cd1Var;
+                                        cd1Var2.T0 = tL_wallPaper;
+                                        cd1Var2.b1(false);
+                                        cd1Var2.j1();
+                                        cd1Var2.R0.add(0, cd1Var2.T0);
+                                        ad1 ad1Var = cd1Var2.N0;
+                                        if (ad1Var != null) {
+                                            ad1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final cd1 cd1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.sb1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                cd1.V(cd1Var2, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        cd1 cd1Var22 = cd1Var2;
+                                        cd1Var22.T0 = tL_wallPaper;
+                                        cd1Var22.b1(false);
+                                        cd1Var22.j1();
+                                        cd1Var22.R0.add(0, cd1Var22.T0);
+                                        ad1 ad1Var = cd1Var22.N0;
+                                        if (ad1Var != null) {
+                                            ad1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

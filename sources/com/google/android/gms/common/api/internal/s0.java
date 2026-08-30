@@ -2,12 +2,12 @@ package com.google.android.gms.common.api.internal;
 
 import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class s0 implements z5.b {
+public final class s0 implements b6.b {
     public final com.google.android.gms.common.api.c a;
     public final b b;
-    public z5.h c = null;
+    public b6.i c = null;
     public Set d = null;
     public boolean e = false;
     public final /* synthetic */ h f;
@@ -18,12 +18,12 @@ public final class s0 implements z5.b {
         this.b = bVar;
     }
 
-    @Override // z5.b
-    public final void a(w5.a aVar) {
+    @Override // b6.b
+    public final void a(y5.a aVar) {
         this.f.x.post(new r0(this, aVar, 0));
     }
 
-    public final void b(w5.a aVar) {
+    public final void b(y5.a aVar) {
         p0 p0Var = (p0) this.f.s.get(this.b);
         if (p0Var != null) {
             p0Var.n(aVar);

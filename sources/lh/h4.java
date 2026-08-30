@@ -1,88 +1,107 @@
 package lh;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.k20;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class h4 {
-    public final ImageReceiver a;
-    public int b;
-    public StaticLayout c;
-    public final TextPaint d;
-    public k5 e;
-    public final /* synthetic */ i4 f;
+public final class h4 extends View {
+    public final t4 a;
+    public final ImageReceiver b;
+    public final Path c;
+    public final Paint d;
 
-    public h4(i4 i4Var) {
-        this.f = i4Var;
-        ImageReceiver imageReceiver = new ImageReceiver(i4Var);
-        this.a = imageReceiver;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        imageReceiver.setAllowLoadingOnAttachedOnly(true);
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+    public h4(Context context, TL_stars.StarGift starGift, TLObject tLObject) {
+        super(context);
+        Path path = new Path();
+        this.c = path;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        t4 t4Var = new t4(this, starGift, 60, 0.27f);
+        this.a = t4Var;
+        t4Var.t = 3;
+        org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
+        z8Var.p(tLObject);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
+        imageReceiver.setForUserOrChat(tLObject, z8Var);
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E6, false));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        path.rewind();
+        path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
+        path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
     }
 
-    public final void a(int i10) {
-        i4 i4Var = this.f;
-        ArrayList arrayList = i4Var.A;
-        if (i10 < 0 || i10 >= arrayList.size()) {
-            return;
-        }
-        this.e = (k5) arrayList.get(i10);
-        boolean z10 = i4Var.v;
-        ImageReceiver imageReceiver = this.a;
-        if (z10) {
-            imageReceiver.onAttachedToWindow();
-        }
-        k5 k5Var = this.e;
-        TL_stories.StoryItem storyItem = k5Var.a;
-        if (storyItem != null) {
-            l7.x(imageReceiver, storyItem);
-        } else {
-            r6 r6Var = k5Var.b;
-            k20[] k20VarArr = l7.a;
-            if (r6Var.c.K) {
-                imageReceiver.setImage(ImageLocation.getForPath(r6Var.f), "320_180", null, null, null, 0L, null, null, 0);
-            } else {
-                imageReceiver.setImage(ImageLocation.getForPath(r6Var.e), "320_180", null, null, null, 0L, null, null, 0);
-            }
-        }
-        b();
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.b.onAttachedToWindow();
     }
 
-    public final void b() {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        TL_stories.StoryItem storyItem = this.e.a;
-        i4 i4Var = this.f;
-        if (storyItem != null) {
-            i4.a(i4Var, spannableStringBuilder, storyItem.views, false);
-        }
-        if (spannableStringBuilder.length() == 0) {
-            this.c = null;
-            return;
-        }
-        int i10 = (int) (i4Var.F + 1.0f);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        TextPaint textPaint = this.d;
-        StaticLayout c3 = bw0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
-        this.c = c3;
-        if (c3.getLineCount() > 1) {
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
-            i4.a(i4Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = bw0.c(spannableStringBuilder2, textPaint, (int) (i4Var.F + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
-        }
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.b.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int width = (getWidth() / 2) - (AndroidUtilities.dp(156.0f) / 2);
+        int height = (getHeight() / 2) - AndroidUtilities.dp(30.0f);
+        int dp = AndroidUtilities.dp(60.0f) + width;
+        int dp2 = AndroidUtilities.dp(60.0f) + height;
+        t4 t4Var = this.a;
+        t4Var.setBounds(width, height, dp, dp2);
+        t4Var.draw(canvas);
+        canvas.save();
+        canvas.translate((getWidth() / 2.0f) - (AndroidUtilities.dp(6.166f) / 2.0f), getHeight() / 2.0f);
+        canvas.drawPath(this.c, this.d);
+        canvas.restore();
+        float dp3 = AndroidUtilities.dp(60.0f);
+        float dp4 = AndroidUtilities.dp(60.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.setImageCoords(AndroidUtilities.dp(96.0f) + width, height, dp3, dp4);
+        imageReceiver.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
+    }
+
+    public h4(Context context, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(context);
+        Path path = new Path();
+        this.c = path;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        t4 t4Var = new t4(this, tL_starGiftUnique, 60, 0.27f);
+        this.a = t4Var;
+        t4Var.t = 3;
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
+        imageReceiver.setImageBitmap(org.telegram.ui.Cells.t6.a(60, "fragment"));
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E6, false));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.33f));
+        path.rewind();
+        path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
+        path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
     }
 }

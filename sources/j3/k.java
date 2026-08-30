@@ -1,43 +1,43 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class k implements f5.n {
-    public final c2.e0 a;
-    public final q0 b;
+public final class k implements h5.n {
+    public final c2.d0 a;
+    public final k0 b;
     public e c;
-    public f5.n d;
+    public h5.n d;
     public boolean e = true;
     public boolean f;
 
-    public k(q0 q0Var, f5.y yVar) {
-        this.b = q0Var;
-        this.a = new c2.e0(yVar);
+    public k(k0 k0Var, h5.y yVar) {
+        this.b = k0Var;
+        this.a = new c2.d0(yVar);
     }
 
-    @Override // f5.n
-    public final x1 getPlaybackParameters() {
-        f5.n nVar = this.d;
-        return nVar != null ? nVar.getPlaybackParameters() : (x1) this.a.e;
-    }
-
-    @Override // f5.n
-    public final long getPositionUs() {
-        if (this.e) {
-            return this.a.getPositionUs();
-        }
-        f5.n nVar = this.d;
-        nVar.getClass();
-        return nVar.getPositionUs();
-    }
-
-    @Override // f5.n
-    public final void setPlaybackParameters(x1 x1Var) {
-        f5.n nVar = this.d;
+    @Override // h5.n
+    public final void c(v1 v1Var) {
+        h5.n nVar = this.d;
         if (nVar != null) {
-            nVar.setPlaybackParameters(x1Var);
-            x1Var = this.d.getPlaybackParameters();
+            nVar.c(v1Var);
+            v1Var = this.d.d();
         }
-        this.a.setPlaybackParameters(x1Var);
+        this.a.c(v1Var);
+    }
+
+    @Override // h5.n
+    public final v1 d() {
+        h5.n nVar = this.d;
+        return nVar != null ? nVar.d() : (v1) this.a.e;
+    }
+
+    @Override // h5.n
+    public final long e() {
+        if (this.e) {
+            return this.a.e();
+        }
+        h5.n nVar = this.d;
+        nVar.getClass();
+        return nVar.e();
     }
 }

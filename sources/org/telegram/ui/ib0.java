@@ -1,26 +1,27 @@
 package org.telegram.ui;
 
-import java.util.concurrent.Executor;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ib0 implements Executor {
-    public final /* synthetic */ int a;
+public final class ib0 extends dg.u3 {
+    public final /* synthetic */ nb0 c;
 
-    public /* synthetic */ ib0(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ib0(nb0 nb0Var, Context context) {
+        super(context);
+        this.c = nb0Var;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(runnable);
-                break;
-            default:
-                runnable.run();
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.c.getClass();
+    }
+
+    @Override // dg.u3, android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
     }
 }

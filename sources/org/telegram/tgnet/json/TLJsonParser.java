@@ -6,14 +6,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ry0;
+import pc.b;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public class TLJsonParser {
     private final JSONObject jsonObject;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Deserializable {
         void deserializeFromJson(TLJsonParser tLJsonParser);
     }
@@ -25,26 +25,26 @@ public class TLJsonParser {
     private static <T extends Deserializable> T parse(TLJsonParser tLJsonParser, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
         try {
             return callbackReturn.run(tLJsonParser);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
 
-    private boolean parseBoolean(Object obj, boolean z10) {
+    private boolean parseBoolean(Object obj, boolean z4) {
         try {
-            return obj instanceof Boolean ? ((Boolean) obj).booleanValue() : obj instanceof String ? Boolean.parseBoolean((String) obj) : z10;
-        } catch (Exception e10) {
-            FileLog.e(e10);
-            return z10;
+            return obj instanceof Boolean ? ((Boolean) obj).booleanValue() : obj instanceof String ? Boolean.parseBoolean((String) obj) : z4;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return z4;
         }
     }
 
     private int parseInt32(Object obj, int i10) {
         try {
             return obj instanceof Number ? ((Number) obj).intValue() : obj instanceof String ? Integer.parseInt((String) obj, 10) : i10;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return i10;
         }
     }
@@ -52,8 +52,8 @@ public class TLJsonParser {
     private long parseInt64(Object obj, long j10) {
         try {
             return obj instanceof Number ? ((Number) obj).intValue() : obj instanceof String ? Long.parseLong((String) obj, 10) : j10;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return j10;
         }
     }
@@ -62,8 +62,8 @@ public class TLJsonParser {
         return obj instanceof String ? (String) obj : str;
     }
 
-    public boolean readBoolean(String str, boolean z10) {
-        return parseBoolean(this.jsonObject.opt(str), z10);
+    public boolean readBoolean(String str, boolean z4) {
+        return parseBoolean(this.jsonObject.opt(str), z4);
     }
 
     public int readInt32(String str, int i10) {
@@ -87,7 +87,7 @@ public class TLJsonParser {
     }
 
     public <T extends Deserializable> ArrayList<T> readVector(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
-        ry0 ry0Var = (ArrayList<T>) new ArrayList();
+        b bVar = (ArrayList<T>) new ArrayList();
         JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
         if (optJSONArray != null) {
             int length = optJSONArray.length();
@@ -95,14 +95,14 @@ public class TLJsonParser {
                 try {
                     Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i10)), callbackReturn);
                     if (parse != null) {
-                        ry0Var.add(parse);
+                        bVar.add(parse);
                     }
-                } catch (JSONException e10) {
-                    FileLog.e(e10);
+                } catch (JSONException e) {
+                    FileLog.e(e);
                 }
             }
         }
-        return ry0Var;
+        return bVar;
     }
 
     public String readString(String str, String str2) {

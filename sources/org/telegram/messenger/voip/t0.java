@@ -1,35 +1,30 @@
 package org.telegram.messenger.voip;
 
+import android.media.AudioManager;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ AudioManager b;
 
-    public /* synthetic */ t0(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
+    public /* synthetic */ t0(AudioManager audioManager, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = z10;
+        this.b = audioManager;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((VoIPService.5) this.c).lambda$onFrame$0((String) this.d, (VideoSink) this.e, this.b);
+                VoIPService.1.lambda$run$1(this.b);
+                break;
+            case 1:
+                VoIPService.lambda$onDestroy$98(this.b);
                 break;
             default:
-                ((VoIPService) this.c).lambda$acknowledgeCall$12((TLObject) this.d, (TLRPC.TL_error) this.e, this.b);
+                VoIPService.lambda$updateBluetoothHeadsetState$112(this.b);
                 break;
         }
     }

@@ -18,17 +18,17 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
-import h7.l8;
+import j7.h8;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d extends g implements Animatable {
     public final Context c;
-    public final hg.a d = new hg.a(this, 4);
+    public final i.f d = new i.f(this, 3);
     public final b b = new b();
 
     public d(Context context) {
@@ -157,8 +157,8 @@ public final class d extends g implements Animatable {
             if (eventType == 2) {
                 String name = xmlPullParser.getName();
                 if ("animated-vector".equals(name)) {
-                    TypedArray f9 = h0.b.f(resources, theme, attributeSet, a.e);
-                    int resourceId = f9.getResourceId(0, 0);
+                    TypedArray f10 = h0.b.f(resources, theme, attributeSet, a.e);
+                    int resourceId = f10.getResourceId(0, 0);
                     if (resourceId != 0) {
                         PorterDuff.Mode mode = p.s;
                         if (Build.VERSION.SDK_INT >= 24) {
@@ -181,8 +181,8 @@ public final class d extends g implements Animatable {
                                 }
                                 pVar = new p();
                                 pVar.inflate(resources, xml, asAttributeSet, theme);
-                            } catch (IOException e10) {
-                                Log.e("VectorDrawableCompat", "parser error", e10);
+                            } catch (IOException e) {
+                                Log.e("VectorDrawableCompat", "parser error", e);
                                 pVar = null;
                                 pVar.f = false;
                                 pVar.setCallback(this.d);
@@ -190,10 +190,10 @@ public final class d extends g implements Animatable {
                                 if (pVar2 != null) {
                                 }
                                 bVar.a = pVar;
-                                f9.recycle();
+                                f10.recycle();
                                 eventType = xmlPullParser.next();
-                            } catch (XmlPullParserException e11) {
-                                Log.e("VectorDrawableCompat", "parser error", e11);
+                            } catch (XmlPullParserException e6) {
+                                Log.e("VectorDrawableCompat", "parser error", e6);
                                 pVar = null;
                                 pVar.f = false;
                                 pVar.setCallback(this.d);
@@ -201,7 +201,7 @@ public final class d extends g implements Animatable {
                                 if (pVar2 != null) {
                                 }
                                 bVar.a = pVar;
-                                f9.recycle();
+                                f10.recycle();
                                 eventType = xmlPullParser.next();
                             }
                         }
@@ -213,7 +213,7 @@ public final class d extends g implements Animatable {
                         }
                         bVar.a = pVar;
                     }
-                    f9.recycle();
+                    f10.recycle();
                 } else {
                     XmlResourceParser xmlResourceParser = null;
                     if ("target".equals(name)) {
@@ -237,21 +237,21 @@ public final class d extends g implements Animatable {
                                     } catch (Throwable th2) {
                                         th = th2;
                                     }
-                                } catch (IOException e12) {
-                                    e = e12;
-                                } catch (XmlPullParserException e13) {
-                                    e = e13;
+                                } catch (IOException e10) {
+                                    e = e10;
+                                } catch (XmlPullParserException e11) {
+                                    e = e11;
                                 }
                                 try {
                                     a2 = a.a(context, resources2, theme2, animation, Xml.asAttributeSet(animation), null, 0);
                                     animation.close();
-                                } catch (IOException e14) {
-                                    e = e14;
+                                } catch (IOException e12) {
+                                    e = e12;
                                     Resources.NotFoundException notFoundException = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException.initCause(e);
                                     throw notFoundException;
-                                } catch (XmlPullParserException e15) {
-                                    e = e15;
+                                } catch (XmlPullParserException e13) {
+                                    e = e13;
                                     Resources.NotFoundException notFoundException2 = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException2.initCause(e);
                                     throw notFoundException2;
@@ -342,12 +342,12 @@ public final class d extends g implements Animatable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z10) {
+    public final void setAutoMirrored(boolean z4) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setAutoMirrored(z10);
+            drawable.setAutoMirrored(z4);
         } else {
-            this.b.a.setAutoMirrored(z10);
+            this.b.a.setAutoMirrored(z4);
         }
     }
 
@@ -365,7 +365,7 @@ public final class d extends g implements Animatable {
     public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            l8.c(i10, drawable);
+            h8.c(i10, drawable);
         } else {
             this.b.a.setTint(i10);
         }
@@ -392,13 +392,13 @@ public final class d extends g implements Animatable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z10, boolean z11) {
+    public final boolean setVisible(boolean z4, boolean z10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            return drawable.setVisible(z10, z11);
+            return drawable.setVisible(z4, z10);
         }
-        this.b.a.setVisible(z10, z11);
-        return super.setVisible(z10, z11);
+        this.b.a.setVisible(z4, z10);
+        return super.setVisible(z4, z10);
     }
 
     @Override // android.graphics.drawable.Animatable

@@ -1,123 +1,384 @@
 package org.telegram.ui.ActionBar;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.qe;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.gj0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class z {
-    public a0 a;
-    public int b;
-    public int c;
-    public CharSequence d;
-    public int e;
-    public Drawable f;
-    public int g;
-    public c6 h;
-    public float i;
-    public Boolean j;
-    public Boolean k;
-    public int l;
-    public w0 m;
-    public ArrayList n;
-    public Integer o;
+public class z extends LinearLayout {
+    public boolean a;
+    public final k b;
+    public boolean c;
+    public boolean d;
+    public ArrayList e;
+    public Runnable f;
 
-    public final void a() {
-        a0 a0Var = this.a;
-        if (this.m != null) {
-            return;
+    public z(Context context, k kVar) {
+        super(context);
+        this.a = true;
+        setOrientation(0);
+        this.b = kVar;
+    }
+
+    public final w0 a(int i10, int i11) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(i10, i11, null, z4 ? kVar.n0 : kVar.m0, null, AndroidUtilities.dp(48.0f), null, null);
+    }
+
+    public final w0 b(int i10, int i11, CharSequence charSequence, int i12, Drawable drawable, int i13, CharSequence charSequence2, f6 f6Var) {
+        if (this.e == null) {
+            this.e = new ArrayList();
         }
-        int childCount = a0Var.getChildCount();
-        ArrayList arrayList = a0Var.e;
-        int i10 = 0;
-        if (arrayList != null) {
-            int indexOf = arrayList.indexOf(Integer.valueOf(this.b));
-            int i11 = 0;
-            while (true) {
-                if (i11 >= a0Var.getChildCount()) {
-                    break;
+        this.e.add(Integer.valueOf(i10));
+        return f(-1, i10, i11, charSequence, i12, drawable, i13, charSequence2, f6Var);
+    }
+
+    public final w0 c(int i10, int i11, f6 f6Var) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(i10, i11, null, z4 ? kVar.n0 : kVar.m0, null, AndroidUtilities.dp(48.0f), null, f6Var);
+    }
+
+    public final w0 d(int i10, Drawable drawable) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(i10, 0, null, z4 ? kVar.n0 : kVar.m0, drawable, AndroidUtilities.dp(48.0f), null, null);
+    }
+
+    public final w0 e(int i10, String str) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(i10, 0, str, z4 ? kVar.n0 : kVar.m0, null, 0, str, null);
+    }
+
+    public final w0 f(int i10, int i11, int i12, CharSequence charSequence, int i13, Drawable drawable, int i14, CharSequence charSequence2, f6 f6Var) {
+        Context context = getContext();
+        boolean z4 = this.c;
+        k kVar = this.b;
+        w0 w0Var = new w0(context, this, i13, z4 ? kVar.p0 : kVar.o0, charSequence != null, f6Var);
+        w0Var.setTag(Integer.valueOf(i11));
+        if (charSequence != null) {
+            w0Var.B.setText(charSequence);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(i14 != 0 ? i14 : -2, -1);
+            int dp = AndroidUtilities.dp(14.0f);
+            layoutParams.rightMargin = dp;
+            layoutParams.leftMargin = dp;
+            addView(w0Var, i10, layoutParams);
+        } else {
+            if (drawable != null) {
+                if (drawable instanceof gj0) {
+                    w0Var.x.setAnimation((gj0) drawable);
+                } else {
+                    w0Var.x.setImageDrawable(drawable);
                 }
-                Object tag = a0Var.getChildAt(i11).getTag();
-                if (tag instanceof Integer) {
-                    if (a0Var.e.indexOf((Integer) tag) > indexOf) {
-                        childCount = i11;
-                        break;
+            } else if (i12 != 0) {
+                w0Var.x.setImageResource(i12);
+            }
+            addView(w0Var, i10, new LinearLayout.LayoutParams(i14, -1));
+        }
+        w0Var.setOnClickListener(new x(this, 0));
+        if (charSequence2 != null) {
+            w0Var.setContentDescription(charSequence2);
+        }
+        return w0Var;
+    }
+
+    public final w0 g(int i10, int i11, int i12) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(i10, i11, null, z4 ? kVar.n0 : kVar.m0, null, i12, null, null);
+    }
+
+    public int getItemsWidth() {
+        int childCount = getChildCount();
+        float f10 = Float.POSITIVE_INFINITY;
+        float f11 = Float.NEGATIVE_INFINITY;
+        boolean z4 = false;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if ((childAt instanceof w0) && childAt.getVisibility() == 0) {
+                float x10 = childAt.getX();
+                f10 = Math.min(f10, x10);
+                f11 = Math.max(f11, childAt.getWidth() + x10);
+                z4 = true;
+            }
+        }
+        if (z4) {
+            return (int) (f11 - f10);
+        }
+        return 0;
+    }
+
+    public int getVisibleItemsMeasuredWidth() {
+        int childCount = getChildCount();
+        int i10 = 0;
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = getChildAt(i11);
+            if ((childAt instanceof w0) && childAt.getVisibility() != 8) {
+                i10 = childAt.getMeasuredWidth() + i10;
+            }
+        }
+        return i10;
+    }
+
+    public int getVisibleItemsMeasuredWidthWithAlpha() {
+        int childCount = getChildCount();
+        float f10 = 0.0f;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if ((childAt instanceof w0) && childAt.getVisibility() == 0) {
+                f10 = (childAt.getAlpha() * childAt.getMeasuredWidth()) + f10;
+            }
+        }
+        return (int) f10;
+    }
+
+    public final w0 h(int i10, int i11, String str, int i12) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(i10, i11, null, z4 ? kVar.n0 : kVar.m0, null, i12, str, null);
+    }
+
+    public final w0 i(int i10, String str, Drawable drawable) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return b(1, 0, null, z4 ? kVar.n0 : kVar.m0, drawable, i10, str, null);
+    }
+
+    public final void j(boolean z4) {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                w0 w0Var = (w0) childAt;
+                if (w0Var.D && w0Var.s()) {
+                    h5 h5Var = w0Var.E;
+                    if (h5Var == null || h5Var.b()) {
+                        this.b.v(false);
+                        w0Var.L(z4);
+                        return;
+                    }
+                    return;
+                }
+            }
+        }
+    }
+
+    public final w0 k(int i10) {
+        View findViewWithTag = findViewWithTag(Integer.valueOf(i10));
+        if (findViewWithTag instanceof w0) {
+            return (w0) findViewWithTag;
+        }
+        return null;
+    }
+
+    public final int l() {
+        int childCount = getChildCount();
+        int i10 = 0;
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt instanceof w0) {
+                i10 = childAt.getMeasuredWidth() + i10;
+            }
+        }
+        return i10;
+    }
+
+    public final y m(int i10, int i11, int i12, Drawable drawable, int i13, f6 f6Var) {
+        if (this.e == null) {
+            this.e = new ArrayList();
+        }
+        this.e.add(Integer.valueOf(i10));
+        y yVar = new y();
+        yVar.i = 1.0f;
+        yVar.l = 8;
+        yVar.a = this;
+        yVar.b = i10;
+        yVar.c = i11;
+        yVar.e = i12;
+        yVar.f = drawable;
+        yVar.g = i13;
+        yVar.h = f6Var;
+        return yVar;
+    }
+
+    public final y n(Drawable drawable, f6 f6Var) {
+        boolean z4 = this.c;
+        k kVar = this.b;
+        return m(14, 0, z4 ? kVar.n0 : kVar.m0, drawable, AndroidUtilities.dp(48.0f), f6Var);
+    }
+
+    public final void o(int i10) {
+        j jVar = this.b.r0;
+        if (jVar != null) {
+            jVar.b(i10);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            runnable.run();
+        }
+        k kVar = this.b;
+        if (kVar != null) {
+            kVar.g();
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (this.d) {
+            int childCount = getChildCount();
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = getChildAt(i12);
+                if (childAt instanceof w0) {
+                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                    if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+                        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
+                        marginLayoutParams.leftMargin = -AndroidUtilities.dp(5.0f);
+                        marginLayoutParams.rightMargin = -AndroidUtilities.dp(5.0f);
                     }
                 }
-                i11++;
             }
         }
-        w0 f9 = a0Var.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
-        this.m = f9;
-        f9.setVisibility(this.l);
-        CharSequence charSequence = this.d;
-        if (charSequence != null) {
-            this.m.setContentDescription(charSequence);
-        }
-        Boolean bool = this.k;
-        if (bool != null) {
-            this.m.N = bool.booleanValue();
-        }
-        Boolean bool2 = this.j;
-        if (bool2 != null) {
-            this.m.O = bool2.booleanValue();
-        }
-        this.m.setAlpha(this.i);
-        ArrayList arrayList2 = this.n;
-        if (arrayList2 != null) {
-            int size = arrayList2.size();
-            while (i10 < size) {
-                Object obj = arrayList2.get(i10);
-                i10++;
-                ((Utilities.Callback) obj).run(this.m);
+        super.onMeasure(i10, i11);
+    }
+
+    public final boolean p() {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                w0 w0Var = (w0) childAt;
+                if (w0Var.getSearchContainer() != null && w0Var.getSearchContainer().getVisibility() == 0) {
+                    return true;
+                }
             }
-            this.n = null;
+        }
+        return false;
+    }
+
+    public final void q(int i10, int i11) {
+        w0 k10 = k(i10);
+        if (k10 != null) {
+            k10.setVisibility(i11);
         }
     }
 
-    public final void b(qe qeVar) {
-        w0 w0Var = this.m;
-        if (w0Var != null) {
-            qeVar.run(w0Var);
-            return;
-        }
-        if (this.n == null) {
-            this.n = new ArrayList();
-        }
-        this.n.add(qeVar);
-    }
-
-    public final void c() {
-        this.k = Boolean.FALSE;
-        w0 w0Var = this.m;
-        if (w0Var != null) {
-            w0Var.N = false;
-        }
-    }
-
-    public final void d() {
-        this.j = Boolean.TRUE;
-        w0 w0Var = this.m;
-        if (w0Var != null) {
-            w0Var.O = true;
-        }
-    }
-
-    public final void e() {
-        this.o = null;
-    }
-
-    public final void f(int i10) {
-        if (this.l != i10) {
-            this.l = i10;
-            if (i10 == 0) {
-                a();
+    public final void r(float f10) {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                ((w0) childAt).setTransitionOffset(f10);
             }
-            w0 w0Var = this.m;
-            if (w0Var != null) {
-                w0Var.setVisibility(i10);
+        }
+    }
+
+    public final void s() {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                boolean z4 = this.c;
+                k kVar = this.b;
+                childAt.setBackgroundDrawable(j6.f0(z4 ? kVar.n0 : kVar.m0, 1, -1));
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public void setEnabled(boolean z4) {
+        super.setEnabled(z4);
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            getChildAt(i10).setEnabled(z4);
+        }
+    }
+
+    public void setFilter(tf.e0 e0Var) {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                w0 w0Var = (w0) childAt;
+                if (w0Var.D) {
+                    w0Var.d0.add(e0Var);
+                    if (w0Var.C.getTag() != null) {
+                        w0Var.e0 = r0.size() - 1;
+                    }
+                    w0Var.y();
+                    return;
+                }
+            }
+        }
+    }
+
+    public void setGlassMode(boolean z4) {
+        this.d = z4;
+    }
+
+    public void setOnLayoutListener(Runnable runnable) {
+        this.f = runnable;
+    }
+
+    public void setPopupItemsSelectorColor(int i10) {
+        int childCount = getChildCount();
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt instanceof w0) {
+                ((w0) childAt).setPopupItemsSelectorColor(i10);
+            }
+        }
+    }
+
+    public void setSearchCursorColor(int i10) {
+        int childCount = getChildCount();
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = getChildAt(i11);
+            if (childAt instanceof w0) {
+                w0 w0Var = (w0) childAt;
+                if (w0Var.D) {
+                    w0Var.getSearchField().setCursorColor(i10);
+                    return;
+                }
+            }
+        }
+    }
+
+    public void setSearchFieldText(String str) {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                w0 w0Var = (w0) childAt;
+                if (w0Var.D) {
+                    w0Var.H(str, false);
+                    w0Var.getSearchField().setSelection(str.length());
+                }
+            }
+        }
+    }
+
+    public final void t() {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof w0) {
+                w0 w0Var = (w0) childAt;
+                boolean z4 = this.c;
+                k kVar = this.b;
+                w0Var.setIconColor(z4 ? kVar.p0 : kVar.o0);
             }
         }
     }

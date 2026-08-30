@@ -102,18 +102,18 @@ public final class s implements Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.a);
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.a);
         if (this.a != this.b) {
-            sb2.append('/');
-            sb2.append(this.b);
+            sb.append('/');
+            sb.append(this.b);
         }
-        sb2.append(" - ");
-        sb2.append(this.c);
+        sb.append(" - ");
+        sb.append(this.c);
         if (this.c != this.d) {
-            sb2.append('/');
-            sb2.append(this.d);
+            sb.append('/');
+            sb.append(this.d);
         }
-        return sb2.toString();
+        return sb.toString();
     }
 }

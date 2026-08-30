@@ -1,91 +1,38 @@
 package cg;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import java.lang.reflect.Field;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j1 extends m2.g {
-    public long s0;
-    public boolean t0;
-    public final i1 u0;
-    public final /* synthetic */ p1 v0;
+public final /* synthetic */ class j1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(p1 p1Var, Context context) {
-        super(context);
-        this.v0 = p1Var;
-        try {
-            Field declaredField = m2.g.class.getDeclaredField("r");
-            declaredField.setAccessible(true);
-            i1 i1Var = new i1(this, getContext());
-            this.u0 = i1Var;
-            declaredField.set(this, i1Var);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
+    public /* synthetic */ j1(p1 p1Var, int i10) {
+        this.a = i10;
+        this.b = p1Var;
     }
 
-    public final boolean A(MotionEvent motionEvent) {
-        i1 i1Var;
-        if (motionEvent.getAction() == 0) {
-            this.s0 = System.currentTimeMillis();
-            return true;
-        }
-        if (motionEvent.getAction() == 1) {
-            if (System.currentTimeMillis() - this.s0 <= ViewConfiguration.getTapTimeout() && (i1Var = this.u0) != null && i1Var.isFinished()) {
-                this.t0 = true;
-                float x4 = motionEvent.getX();
-                float width = getWidth() * 0.45f;
-                p1 p1Var = this.v0;
-                if (x4 <= width) {
-                    int i10 = p1Var.C - 1;
-                    if (i10 >= 0) {
-                        x(i10, true);
-                    }
-                } else if (p1Var.C + 1 < p1Var.d.size()) {
-                    x(p1Var.C + 1, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                o1 o1Var = this.b.a;
+                if (o1Var != null) {
+                    o1Var.b();
+                    break;
                 }
-                this.t0 = false;
-                return false;
-            }
-        } else if (motionEvent.getAction() == 3) {
-            this.s0 = -1L;
+                break;
+            case 1:
+                p1 p1Var = this.b;
+                p1Var.c.a(p1Var.r);
+                n1 n1Var = p1Var.d;
+                n1Var.getClass();
+                n1Var.postRunnable(new m1(n1Var, 2));
+                p1Var.d = null;
+                break;
+            default:
+                p1 p1Var2 = this.b;
+                p1Var2.c.q(p1Var2.x);
+                break;
         }
-        return false;
-    }
-
-    @Override // m2.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        try {
-            A(motionEvent);
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (Exception unused) {
-            return false;
-        }
-    }
-
-    @Override // m2.g, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int dp = AndroidUtilities.dp(100.0f);
-        if (getChildCount() > 0) {
-            getChildAt(0).measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
-            dp = getChildAt(0).getMeasuredHeight();
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(dp + this.v0.H, TLObject.FLAG_30));
-    }
-
-    @Override // m2.g, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.v0.w) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent) || A(motionEvent);
     }
 }

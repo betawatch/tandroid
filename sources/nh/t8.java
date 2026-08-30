@@ -1,55 +1,31 @@
 package nh;
 
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class t8 extends f2.l {
-    public final /* synthetic */ y8 F;
+public final /* synthetic */ class t8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w8 b;
 
-    public t8(y8 y8Var) {
-        this.F = y8Var;
+    public /* synthetic */ t8(w8 w8Var, int i10) {
+        this.a = i10;
+        this.b = w8Var;
     }
 
-    @Override // f2.l
-    public final void M() {
-        ViewGroup viewGroup;
-        y8 y8Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) y8Var.S).containerView;
-        viewGroup.invalidate();
-        y8Var.e.invalidate();
-    }
-
-    @Override // f2.l
-    public final void O() {
-        ViewGroup viewGroup;
-        y8 y8Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) y8Var.S).containerView;
-        viewGroup.invalidate();
-        y8Var.e.invalidate();
-    }
-
-    @Override // f2.l
-    public final void P(f2.n1 n1Var) {
-        ViewGroup viewGroup;
-        y8 y8Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) y8Var.S).containerView;
-        viewGroup.invalidate();
-        y8Var.e.invalidate();
-        y8Var.f.invalidate();
-    }
-
-    @Override // f2.l
-    public final void Q() {
-        ViewGroup viewGroup;
-        y8 y8Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) y8Var.S).containerView;
-        viewGroup.invalidate();
-        y8Var.e.invalidate();
-    }
-
-    @Override // f2.q1
-    public final boolean t(f2.n1 n1Var) {
-        return true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                i9 i9Var = this.b.F0;
+                i9Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i9.k(i9Var);
+                break;
+            default:
+                i9 i9Var2 = this.b.F0;
+                i9Var2.T = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i9.k(i9Var2);
+                break;
+        }
     }
 }

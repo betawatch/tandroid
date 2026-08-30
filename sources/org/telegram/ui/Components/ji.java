@@ -1,26 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ji extends x10 {
-    public final ni F;
+public interface ji {
+    void C();
 
-    public ji(Context context, org.telegram.ui.ActionBar.c6 c6Var, ni niVar) {
-        super(context, c6Var);
-        this.F = niVar;
-    }
+    void D(Object obj);
 
-    @Override // org.telegram.ui.Components.x10
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
+    void G(TLRPC.User user);
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.F.t1(this.r, true);
-        return super.onInterceptTouchEvent(motionEvent);
-    }
+    void H(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11);
+
+    boolean V();
+
+    void X(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11);
+
+    boolean k();
+
+    void r();
+
+    void x(wg wgVar);
 }

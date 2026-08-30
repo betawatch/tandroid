@@ -2,35 +2,99 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ax0 extends dq0 {
-    public final /* synthetic */ nx0 X0;
+public final class ax0 extends p9 implements NotificationCenter.NotificationCenterDelegate {
+    public final int D;
+    public int E;
+    public String F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax0(nx0 nx0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, null, str, false, str2, false, c6Var);
-        this.X0 = nx0Var;
+    public ax0(Context context, int i10) {
+        super(context);
+        this.F = AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME;
+        this.D = i10;
     }
 
-    @Override // org.telegram.ui.Components.dq0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new rm(this, hVar, i10, 20), 100L);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.diceStickersDidLoad) {
+            if (this.F.equals((String) objArr[0])) {
+                t();
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.dq0, org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.ActionBar.o2 o2Var = this.X0.H;
-        if (o2Var instanceof org.telegram.ui.tn) {
-            AndroidUtilities.requestAdjustResize(o2Var.getParentActivity(), o2Var.getClassGuid());
-            if (((org.telegram.ui.tn) o2Var).U.getVisibility() == 0) {
-                o2Var.getFragmentView().requestLayout();
+    @Override // org.telegram.ui.Components.p9, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        t();
+        NotificationCenter.getInstance(this.D).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    @Override // org.telegram.ui.Components.p9, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.D).removeObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    public void setStickerNum(int i10) {
+        if (this.E != i10) {
+            this.E = i10;
+            t();
+        }
+    }
+
+    public void setStickerPackName(String str) {
+        this.F = str;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t() {
+        TLRPC.Document document;
+        SvgHelper.SvgDrawable svgThumb;
+        int i10 = this.D;
+        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(this.F);
+        if (stickerSetByName == null) {
+            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(this.F);
+        }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+        if (tL_messages_stickerSet != null) {
+            int size = tL_messages_stickerSet.documents.size();
+            int i11 = this.E;
+            if (size > i11) {
+                document = tL_messages_stickerSet.documents.get(i11);
+                svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f) : null;
+                if (svgThumb != null) {
+                    svgThumb.overrideWidthAndHeight(512, 512);
+                }
+                if (document == null) {
+                    i(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
+                    return;
+                } else {
+                    this.a.clearImage();
+                    MediaDataController.getInstance(i10).loadStickersByEmojiOrName(this.F, false, tL_messages_stickerSet == null);
+                    return;
+                }
             }
+        }
+        document = null;
+        svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f) : null;
+        if (svgThumb != null) {
+        }
+        if (document == null) {
         }
     }
 }

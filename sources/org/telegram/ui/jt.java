@@ -1,32 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jt implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class jt extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ lt o;
 
-    public /* synthetic */ jt(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jt(lt ltVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = ltVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Cells.y9 y9Var = (org.telegram.ui.Cells.y9) this.b;
-                if (i10 == NotificationCenter.emojiLoaded) {
-                    y9Var.getTextView().invalidate();
-                    break;
-                }
-                break;
-            default:
-                ((hj0) this.b).invalidate();
-                break;
+    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        pt ptVar = this.o.a;
+        ptVar.k = null;
+        ptVar.K = false;
+        if (ptVar.R) {
+            ptVar.n();
         }
     }
 }

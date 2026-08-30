@@ -1,47 +1,85 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ni b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.fk0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ kg.q0 n;
+public final class mi {
+    public boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ xn d;
 
-    public /* synthetic */ mi(ni niVar, int i10, boolean z10, org.telegram.ui.Components.fk0 fk0Var, float f9, float f10, kg.q0 q0Var, int i11) {
-        this.a = i11;
-        this.b = niVar;
-        this.c = i10;
-        this.d = z10;
-        this.e = fk0Var;
-        this.f = f9;
-        this.h = f10;
-        this.n = q0Var;
+    public mi(xn xnVar, boolean z4, SparseArray sparseArray) {
+        this.d = xnVar;
+        this.b = z4;
+        this.c = sparseArray;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new mi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
-                break;
-            default:
-                tn tnVar = this.b.s;
-                org.telegram.ui.Cells.a0 q82 = tnVar.q8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.o2) tnVar).currentAccount;
-                    kg.m0.d(tnVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
-                    kg.m0.f();
-                    break;
+    public final boolean a(int i10) {
+        xn xnVar = this.d;
+        int i11 = i10 - xnVar.x0.G;
+        if (i11 < 0 || i11 >= xnVar.r6.size()) {
+            return false;
+        }
+        MessageObject messageObject = (MessageObject) xnVar.r6.get(i11);
+        if (messageObject.contentType != 0) {
+            return false;
+        }
+        SparseArray sparseArray = this.c;
+        boolean z4 = this.b;
+        if (z4 || sparseArray.get(messageObject.getId(), null) != null) {
+            return z4 && sparseArray.get(messageObject.getId(), null) != null;
+        }
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, boolean z4, float f10, float f11) {
+        f2.l1 K;
+        xn xnVar = this.d;
+        ArrayList arrayList = xnVar.r6;
+        SparseArray[] sparseArrayArr = xnVar.T5;
+        int i11 = i10 - xnVar.x0.G;
+        if (this.b) {
+            z4 = !z4;
+        }
+        if (i11 < 0 || i11 >= arrayList.size()) {
+            return;
+        }
+        MessageObject messageObject = (MessageObject) arrayList.get(i11);
+        if (!z4 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
+            if ((z4 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
+                if (z4) {
+                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                        this.a = true;
+                        K = xnVar.u0.K(i10);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.t1) {
+                                xn.b2(xnVar, view, false, f10, f11);
+                                return;
+                            }
+                        }
+                        xnVar.x6(messageObject, false, true);
+                        xnVar.dc();
+                        xnVar.Wc(false);
+                    }
                 }
-                break;
+                this.a = false;
+                K = xnVar.u0.K(i10);
+                if (K != null) {
+                }
+                xnVar.x6(messageObject, false, true);
+                xnVar.dc();
+                xnVar.Wc(false);
+            }
         }
     }
 }

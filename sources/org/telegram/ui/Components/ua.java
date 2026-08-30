@@ -1,41 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ua extends org.telegram.ui.ActionBar.l {
-    public final /* synthetic */ hv0 p1;
-    public final /* synthetic */ xa q1;
+public final /* synthetic */ class ua implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ic b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ua(xa xaVar, Context context, hv0 hv0Var) {
-        super(context, null);
-        this.q1 = xaVar;
-        this.p1 = hv0Var;
+    public /* synthetic */ ua(ic icVar, int i10) {
+        this.a = i10;
+        this.b = icVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.l, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        xa xaVar = this.q1;
-        if (xaVar.H && xaVar.I) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                break;
+            case 1:
+                ic icVar = this.b;
+                FrameLayout frameLayout = icVar.h;
+                nb nbVar = icVar.e;
+                fb fbVar = icVar.p;
+                if (fbVar != null && !nbVar.top) {
+                    fbVar.c(0.0f);
+                    icVar.p.d(icVar);
+                }
+                nbVar.transitionRunningExit = false;
+                nbVar.onExitTransitionEnd();
+                nbVar.onHide();
+                frameLayout.removeView(icVar.f);
+                frameLayout.removeOnLayoutChangeListener(icVar.c);
+                nbVar.onDetach();
+                Runnable runnable = icVar.v;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                ic icVar2 = this.b;
+                FrameLayout frameLayout2 = icVar2.h;
+                frameLayout2.removeView(icVar2.f);
+                frameLayout2.removeOnLayoutChangeListener(icVar2.c);
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f9) {
-        if (getAlpha() != f9) {
-            super.setAlpha(f9);
-            this.p1.invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTag(Object obj) {
-        super.setTag(obj);
-        this.q1.L();
     }
 }

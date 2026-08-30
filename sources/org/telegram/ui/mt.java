@@ -1,62 +1,70 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mt implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class mt extends org.telegram.ui.Components.rl0 {
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ pt d;
 
-    public /* synthetic */ mt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public mt(pt ptVar, ArrayList arrayList) {
+        this.d = ptVar;
+        this.c = arrayList;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((Comparator) this.b).compare(((lt) obj).a, ((lt) obj2).a);
-            case 1:
-                LongSparseIntArray longSparseIntArray = (LongSparseIntArray) this.b;
-                int i10 = longSparseIntArray.get(((Long) obj).longValue());
-                int i11 = longSparseIntArray.get(((Long) obj2).longValue());
-                if (i10 > i11) {
-                    return 1;
-                }
-                return i10 < i11 ? -1 : 0;
-            case 2:
-                LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) this.b;
-                LocaleController.LocaleInfo localeInfo2 = (LocaleController.LocaleInfo) obj;
-                LocaleController.LocaleInfo localeInfo3 = (LocaleController.LocaleInfo) obj2;
-                if (localeInfo2 != localeInfo) {
-                    if (localeInfo3 != localeInfo) {
-                        int i12 = localeInfo2.serverIndex;
-                        int i13 = localeInfo3.serverIndex;
-                        if (i12 == i13) {
-                            return localeInfo2.name.compareTo(localeInfo3.name);
-                        }
-                        if (i12 <= i13) {
-                            if (i12 >= i13) {
-                                return 0;
-                            }
-                        }
-                    }
-                    return 1;
-                }
-                return -1;
-            default:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                int indexOf = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf2 = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf < 0 || indexOf2 < 0) {
-                    return 0;
-                }
-                return indexOf - indexOf2;
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return true;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        return this.c.size();
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        ot otVar = (ot) l1Var.a;
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) this.c.get(i10);
+        org.telegram.ui.ActionBar.k5 k5Var = otVar.b;
+        org.telegram.ui.Components.p9 p9Var = otVar.a;
+        otVar.d = stickerSetCovered;
+        if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+            k5Var.l(LocaleController.getString(R.string.NewStickerPack), false);
+            p9Var.setImageResource(R.drawable.msg_addbot);
+            return;
         }
+        k5Var.l(stickerSetCovered.set.title, false);
+        TLRPC.Document document = stickerSetCovered.cover;
+        if (document == null) {
+            p9Var.l(null, null, null, null, null, 0);
+            return;
+        }
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.cover, org.telegram.ui.ActionBar.j6.a7, 1.0f, 1.0f, otVar.c);
+        if (svgThumb == null) {
+            p9Var.i(ImageLocation.getForDocument(closestPhotoSizeWithSize, stickerSetCovered.cover), null, "webp", null, stickerSetCovered);
+        } else if (closestPhotoSizeWithSize != null) {
+            p9Var.i(ImageLocation.getForDocument(closestPhotoSizeWithSize, stickerSetCovered.cover), null, "webp", svgThumb, stickerSetCovered);
+        } else {
+            p9Var.i(ImageLocation.getForDocument(stickerSetCovered.cover), null, "webp", svgThumb, stickerSetCovered);
+        }
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        ot otVar = new ot(viewGroup.getContext(), this.d.c0);
+        otVar.setLayoutParams(new f2.w0(-2, AndroidUtilities.dp(48.0f)));
+        return new org.telegram.ui.Components.el0(otVar);
     }
 }

@@ -1,30 +1,27 @@
 package org.telegram.messenger;
 
-import android.os.Handler;
-import android.os.Message;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y1 implements Handler.Callback {
+public final /* synthetic */ class y1 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Thread b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ y1(Thread thread, int i10) {
+    public /* synthetic */ y1(Object obj, int i10) {
         this.a = i10;
-        this.b = thread;
+        this.b = obj;
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        boolean lambda$run$0;
-        boolean lambda$run$1;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
         switch (this.a) {
             case 0:
-                lambda$run$0 = ((DispatchQueue) this.b).lambda$run$0(message);
-                return lambda$run$0;
+                ((ContactsLoadingObserver) this.b).lambda$new$0(i10, i11, objArr);
+                break;
             default:
-                lambda$run$1 = ((DispatchQueueMainThreadSync) this.b).lambda$run$1(message);
-                return lambda$run$1;
+                ((TelegramMediaSession) this.b).lambda$new$0(i10, i11, objArr);
+                break;
         }
     }
 }

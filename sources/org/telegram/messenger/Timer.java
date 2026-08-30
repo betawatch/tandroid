@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class Timer {
     final String name;
@@ -10,7 +10,7 @@ public class Timer {
     public ArrayList<Task> tasks = new ArrayList<>();
     final long startTime = System.currentTimeMillis();
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public class Log extends Task {
         public Log(String str) {
             super(str);
@@ -22,7 +22,7 @@ public class Timer {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public class Task {
         int pad;
         final String task;
@@ -46,11 +46,11 @@ public class Timer {
         }
 
         public String toString() {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(this.task);
-            sb2.append(": ");
-            sb2.append(this.endTime < 0 ? "not done" : a4.w.p(new StringBuilder(), this.endTime - this.startTime, "ms"));
-            return sb2.toString();
+            StringBuilder sb = new StringBuilder();
+            sb.append(this.task);
+            sb.append(": ");
+            sb.append(this.endTime < 0 ? "not done" : android.support.v4.media.a.q(new StringBuilder(), this.endTime - this.startTime, "ms"));
+            return sb.toString();
         }
     }
 
@@ -92,25 +92,25 @@ public class Timer {
 
     private void finish() {
         long currentTimeMillis = System.currentTimeMillis() - this.startTime;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.name);
-        sb2.append(" total=");
-        sb2.append(currentTimeMillis);
-        sb2.append("ms\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.name);
+        sb.append(" total=");
+        sb.append(currentTimeMillis);
+        sb.append("ms\n");
         for (int i10 = 0; i10 < this.tasks.size(); i10++) {
             if (this.tasks.get(i10) != null) {
-                sb2.append("#");
-                sb2.append(i10);
+                sb.append("#");
+                sb.append(i10);
                 int i11 = this.tasks.get(i10).pad;
                 for (int i12 = 0; i12 < i11; i12++) {
-                    sb2.append(" ");
+                    sb.append(" ");
                 }
-                sb2.append(" ");
-                sb2.append(this.tasks.get(i10));
-                sb2.append("\n");
+                sb.append(" ");
+                sb.append(this.tasks.get(i10));
+                sb.append("\n");
             }
         }
-        FileLog.d(sb2.toString());
+        FileLog.d(sb.toString());
     }
 
     private void log(String str) {

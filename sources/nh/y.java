@@ -1,67 +1,59 @@
 package nh;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jr;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class y extends FrameLayout {
-    public final v a;
-    public t b;
-    public Utilities.Callback c;
-    public float d;
-    public boolean e;
-    public ValueAnimator f;
+public final /* synthetic */ class y implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v0 b;
 
-    public y(Activity activity, p2 p2Var) {
-        super(activity);
-        v vVar = new v(this, activity);
-        this.a = vVar;
-        vVar.setAdapter(new w(this, activity, p2Var));
-        vVar.setLayoutManager(new f2.j0(0, false));
-        vVar.setClipToPadding(false);
-        vVar.setVisibility(8);
-        vVar.setWillNotDraw(false);
-        vVar.setOnItemClickListener(new bg.o(this, 13));
-        addView(vVar, i7.f6.c(56.0f, -1));
+    public /* synthetic */ y(v0 v0Var, int i10) {
+        this.a = i10;
+        this.b = v0Var;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                break;
+            default:
+                v0 v0Var = this.b;
+                ArrayList arrayList = v0Var.s;
+                y yVar = v0Var.B;
+                if (yVar != null) {
+                    AndroidUtilities.cancelRunOnUIThread(yVar);
+                    v0Var.B = null;
+                }
+                int currentTime = ConnectionsManager.getInstance(v0Var.K).getCurrentTime();
+                for (int size = arrayList.size() - 1; size >= 0; size--) {
+                    u0 u0Var = (u0) arrayList.get(size);
+                    ArrayList arrayList2 = u0Var.f;
+                    int size2 = arrayList2.size();
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 < size2) {
+                            Object obj = arrayList2.get(i10);
+                            i10++;
+                            t0 t0Var = (t0) obj;
+                            long j10 = t0Var.g;
+                            if (j10 <= 0 || currentTime - t0Var.d > t.b(u0Var.a, (int) j10, 0)) {
+                            }
+                        } else {
+                            arrayList.remove(size);
+                        }
+                    }
+                }
+                Collections.sort(arrayList, new e5.f(v0Var, 26));
+                v0Var.n.N(true);
+                v0Var.u(true);
+                v0Var.m();
+                break;
         }
-        if (this.e == z10) {
-            return;
-        }
-        this.e = z10;
-        v vVar = this.a;
-        if (!z11) {
-            this.d = z10 ? 1.0f : 0.0f;
-            vVar.invalidate();
-            vVar.setVisibility(z10 ? 0 : 8);
-            return;
-        }
-        vVar.setVisibility(0);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new lh.d5(this, 5));
-        this.f.addListener(new bg.z2(12, this, z10));
-        this.f.setInterpolator(jr.h);
-        this.f.setDuration(340L);
-        this.f.start();
-    }
-
-    public void setOnLayoutClick(Utilities.Callback<t> callback) {
-        this.c = callback;
-    }
-
-    public void setSelected(t tVar) {
-        this.b = tVar;
-        AndroidUtilities.updateVisibleRows(this.a);
     }
 }

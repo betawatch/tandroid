@@ -9,41 +9,41 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public interface IMapsProvider {
     public static final int MAP_TYPE_HYBRID = 2;
     public static final int MAP_TYPE_NORMAL = 0;
     public static final int MAP_TYPE_SATELLITE = 1;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static final class CameraPosition {
         public final LatLng target;
         public final float zoom;
 
-        public CameraPosition(LatLng latLng, float f9) {
+        public CameraPosition(LatLng latLng, float f10) {
             this.target = latLng;
-            this.zoom = f9;
+            this.zoom = f10;
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ICallableMethod<R, A> {
         R call(A a2);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ICameraUpdate {
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ICancelableCallback {
         void onCancel();
 
         void onFinish();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ICircle {
         double getRadius();
 
@@ -58,7 +58,7 @@ public interface IMapsProvider {
         void setStrokeColor(int i10);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ICircleOptions {
         ICircleOptions center(LatLng latLng);
 
@@ -73,19 +73,19 @@ public interface IMapsProvider {
         ICircleOptions strokeWidth(int i10);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ILatLngBounds {
         LatLng getCenter();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ILatLngBoundsBuilder {
         ILatLngBounds build();
 
         ILatLngBoundsBuilder include(LatLng latLng);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IMap {
         ICircle addCircle(ICircleOptions iCircleOptions);
 
@@ -113,7 +113,7 @@ public interface IMapsProvider {
 
         void setMapType(int i10);
 
-        void setMyLocationEnabled(boolean z10);
+        void setMyLocationEnabled(boolean z4);
 
         void setOnCameraIdleListener(Runnable runnable);
 
@@ -130,11 +130,11 @@ public interface IMapsProvider {
         void setPadding(int i10, int i11, int i12, int i13);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IMapStyleOptions {
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IMapView {
         GLSurfaceView getGlSurfaceView();
 
@@ -159,7 +159,7 @@ public interface IMapsProvider {
         void setOnLayoutListener(Runnable runnable);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IMarker {
         LatLng getPosition();
 
@@ -178,11 +178,11 @@ public interface IMapsProvider {
         void setTag(Object obj);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IMarkerOptions {
-        IMarkerOptions anchor(float f9, float f10);
+        IMarkerOptions anchor(float f10, float f11);
 
-        IMarkerOptions flat(boolean z10);
+        IMarkerOptions flat(boolean z4);
 
         IMarkerOptions icon(int i10);
 
@@ -195,26 +195,26 @@ public interface IMapsProvider {
         IMarkerOptions title(String str);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IProjection {
         Point toScreenLocation(LatLng latLng);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ITouchInterceptor {
         boolean onInterceptTouchEvent(MotionEvent motionEvent, ICallableMethod<Boolean, MotionEvent> iCallableMethod);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IUISettings {
-        void setCompassEnabled(boolean z10);
+        void setCompassEnabled(boolean z4);
 
-        void setMyLocationButtonEnabled(boolean z10);
+        void setMyLocationButtonEnabled(boolean z4);
 
-        void setZoomControlsEnabled(boolean z10);
+        void setZoomControlsEnabled(boolean z4);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static final class LatLng {
         public final double latitude;
         public final double longitude;
@@ -225,7 +225,7 @@ public interface IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface OnCameraMoveStartedListener {
         public static final int REASON_API_ANIMATION = 2;
         public static final int REASON_DEVELOPER_ANIMATION = 3;
@@ -234,15 +234,15 @@ public interface IMapsProvider {
         void onCameraMoveStarted(int i10);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface OnMarkerClickListener {
         boolean onClick(IMarker iMarker);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class PatternItem {
 
-        /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+        /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
         public static final class Dash extends PatternItem {
             public final int length;
 
@@ -251,7 +251,7 @@ public interface IMapsProvider {
             }
         }
 
-        /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+        /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
         public static final class Gap extends PatternItem {
             public final int length;
 
@@ -273,7 +273,7 @@ public interface IMapsProvider {
 
     ICameraUpdate newCameraUpdateLatLngBounds(ILatLngBounds iLatLngBounds, int i10);
 
-    ICameraUpdate newCameraUpdateLatLngZoom(LatLng latLng, float f9);
+    ICameraUpdate newCameraUpdateLatLngZoom(LatLng latLng, float f10);
 
     ICircleOptions onCreateCircleOptions();
 

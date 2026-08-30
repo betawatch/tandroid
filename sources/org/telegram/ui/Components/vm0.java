@@ -1,297 +1,237 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.ViewConfiguration;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class vm0 extends Drawable {
-    public final Paint b;
-    public boolean f;
+public final class vm0 {
+    public static final float A;
+    public static final float v = (float) (Math.log(0.75d) / Math.log(0.9d));
+    public static final float w = 0.4f;
+    public static final float x = 1.0f - 0.4f;
+    public static final float[] y = new float[101];
+    public static final float z;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
     public int j;
-    public boolean m;
-    public jh.n6 o;
+    public int k;
+    public long l;
+    public int m;
+    public float n;
+    public float o;
     public float p;
-    public float q;
-    public float r;
-    public int a = 255;
-    public final Path c = new Path();
-    public final RectF d = new RectF();
-    public long e = -1;
-    public float g = 0.0f;
-    public float h = 0.0f;
-    public final float[] i = new float[2];
-    public int k = 0;
-    public boolean l = false;
-    public final d6 n = new d6(1.0f, new xb0(this, 21), 0, 350, jr.h);
+    public final Interpolator r;
+    public float t;
+    public final float u;
+    public boolean q = true;
+    public final boolean s = true;
 
-    public vm0() {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.333f));
-    }
-
-    public final void a(int i10) {
-        Paint paint = this.b;
-        paint.setColor(i10);
-        this.a = paint.getAlpha();
-        paint.setAlpha(255);
-    }
-
-    public final void b(int i10) {
-        c(i10, true, false);
-    }
-
-    public final void c(int i10, boolean z10, boolean z11) {
-        if (this.k == i10) {
-            if (i10 != 2) {
-                AndroidUtilities.cancelRunOnUIThread(this.o);
-                this.o = null;
-                return;
-            }
-            return;
-        }
-        if (!z11 && i10 == 2) {
-            if (this.o == null) {
-                jh.n6 n6Var = new jh.n6(this, i10, z10);
-                this.o = n6Var;
-                AndroidUtilities.runOnUIThread(n6Var, 65L);
-                return;
-            }
-            return;
-        }
-        jh.n6 n6Var2 = this.o;
-        if (n6Var2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(n6Var2);
-        }
-        d6 d6Var = this.n;
-        boolean z12 = false;
-        if (d6Var.c < 1.0f && z10) {
-            c(this.k, false, false);
-        }
-        if (i10 == 2) {
-            this.g = 180.0f;
-            this.e = -1L;
-        } else if (this.k == 2) {
-            if (i10 == 0) {
-                this.h = -45.0f;
-            } else {
-                this.h = 0.0f;
-            }
-        }
-        if (z10) {
-            int i11 = this.k;
-            this.j = i11;
-            this.k = i10;
-            if (i11 == 2 && i10 != 2) {
-                z12 = true;
-            }
-            this.l = z12;
-            d6Var.d(0.0f, true);
-        } else {
-            this.k = i10;
-            this.j = i10;
-            this.l = false;
-            d6Var.d(1.0f, true);
-        }
-        invalidateSelf();
-    }
-
-    public final float d(float f9) {
-        return org.telegram.ui.th.b(0.5f, f9, this.p, this.q);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        char c3;
-        float f9;
-        char c6;
+    static {
         float f10;
         float f11;
-        float f12;
-        float f13;
-        boolean z10;
-        Rect bounds = getBounds();
-        this.p = Math.min(bounds.width(), bounds.height());
-        this.q = bounds.centerX();
-        this.r = bounds.centerY();
-        int i10 = this.a;
-        if (i10 < 255) {
-            float f14 = bounds.left;
-            float f15 = bounds.top;
-            float f16 = bounds.right;
-            float f17 = bounds.bottom;
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(f14, f15, f16, f17, i10, 31);
-        } else {
-            canvas2 = canvas;
-        }
-        float d = this.n.d(this.l ? 0.0f : 1.0f, false);
-        int i11 = this.k;
-        int i12 = this.j;
-        float f18 = i11 == 0 ? i12 == 0 ? 1.0f : d : i12 == 0 ? 1.0f - d : 0.0f;
-        int i13 = this.j;
-        float f19 = i11 == 1 ? i13 == 1 ? 1.0f : d : i13 == 1 ? 1.0f - d : 0.0f;
-        float f20 = i11 == 2 ? this.j == 2 ? 1.0f : d : this.j == 2 ? 1.0f - d : 0.0f;
-        Paint paint = this.b;
-        if (f18 > 0.0f) {
-            c3 = 1;
-            float lerp = AndroidUtilities.lerp(d(0.25f), d(0.444f), f18);
-            float lerp2 = AndroidUtilities.lerp(e(0.5f), e(0.444f), f18);
-            float lerp3 = AndroidUtilities.lerp(0.0f, this.p * 0.208f, f18);
-            if (lerp3 >= this.p * 0.075f) {
-                canvas2.drawCircle(lerp, lerp2, lerp3, paint);
-            }
-        } else {
-            c3 = 1;
-        }
-        if (f18 > 0.0f || f19 > 0.0f) {
-            canvas2.save();
-            f9 = 45.0f;
-            canvas2.rotate(f18 * 45.0f, this.q, this.r);
-            float d10 = ((this.j == 2 ? d(0.75f) : d(0.2409f)) * f20) + (d(0.7638f) * f19) + (d(0.914f) * f18);
-            float e10 = e(0.5f);
-            c6 = 0;
-            float d11 = ((this.j == 2 ? d(0.75f) : d(0.2409f)) * f20) + (d(0.2409f) * f19) + (d(0.658f) * f18);
-            float e11 = e(0.5f);
-            if (i7.z5.a(d10, e10, d11, e11) <= this.p * 0.075f) {
-                f10 = f20;
-                f11 = 0.5f;
-                f12 = 0.25f;
-                f13 = 0.0f;
-            } else {
-                f10 = f20;
-                f11 = 0.5f;
-                f12 = 0.25f;
-                f13 = 0.0f;
-                canvas2.drawLine(d10, e10, d11, e11, paint);
-            }
-            canvas2.restore();
-        } else {
-            f10 = f20;
-            f11 = 0.5f;
-            f12 = 0.25f;
-            f13 = 0.0f;
-            f9 = 45.0f;
-            c6 = 0;
-        }
-        if (f19 > f13) {
-            float lerp4 = this.j == 2 ? AndroidUtilities.lerp(d(0.75f), d(0.2409f), f19) : d(0.2409f);
-            canvas2.save();
-            canvas2.rotate(f18 * f9, this.q, this.r);
-            float d12 = (d(0.2452f) * f19) + lerp4;
-            float lerp5 = AndroidUtilities.lerp(e(f11), e(f12), f19);
-            float e12 = e(f11);
-            float d13 = (d(0.2452f) * f19) + lerp4;
-            float lerp6 = AndroidUtilities.lerp(e(f11), e(0.75f), f19);
-            if (Math.max(i7.z5.a(d12, lerp5, lerp4, e12), i7.z5.a(d13, lerp6, lerp4, e12)) > this.p * 0.075f) {
-                Path path = this.c;
-                path.rewind();
-                path.moveTo(d12, lerp5);
-                path.lineTo(lerp4, e12);
-                path.lineTo(d13, lerp6);
-                canvas2.drawPath(path, paint);
-            }
-            canvas2.restore();
-        }
-        if (f10 > f13) {
-            if (this.e < 0 && f10 > 0.8f) {
-                this.e = System.currentTimeMillis();
-                this.m = this.l;
-            }
-            if (this.e > 0) {
-                float[] fArr = this.i;
-                np.a(fArr, (System.currentTimeMillis() - this.e) % 5400.0f);
-                float f21 = fArr[c6];
-                float f22 = fArr[c3];
-                if (this.k != 2 && !this.l) {
-                    float max = Math.max(0.0f, (((float) Math.floor((f21 - 180.0f) / 360.0f)) * 360.0f) + 180.0f);
-                    f22 = Math.min(f22, this.h + max);
-                    f21 = AndroidUtilities.lerp(f22, Math.min(f21, max + this.h), f10);
-                }
-                float f23 = this.h;
-                float f24 = this.g;
-                float f25 = f24 + f21;
-                float f26 = f24 + f22;
-                float f27 = f25 % 360.0f;
-                if (f27 < 0.0f) {
-                    f27 += 360.0f;
-                }
-                float f28 = f26 % 360.0f;
-                if (f28 < 0.0f) {
-                    f28 += 360.0f;
-                }
-                boolean z11 = f27 <= f28 ? !(f23 < f27 || f23 > f28) : !(f23 < f27 && f23 > f28);
-                boolean z12 = this.l;
-                if (z12 && !this.m) {
-                    this.m = z12;
-                    this.f = z11;
-                }
-                if (!this.f || z11) {
-                    z10 = false;
+        float f12 = 0.0f;
+        for (int i10 = 0; i10 <= 100; i10++) {
+            float f13 = i10 / 100.0f;
+            float f14 = 1.0f;
+            while (true) {
+                float x10 = e2.c.x(f14, f12, 2.0f, f12);
+                float f15 = 1.0f - x10;
+                f10 = 3.0f * x10 * f15;
+                f11 = x10 * x10 * x10;
+                float y10 = e2.c.y(x10, x, f15 * w, f10) + f11;
+                if (Math.abs(y10 - f13) < 1.0E-5d) {
+                    break;
+                } else if (y10 > f13) {
+                    f14 = x10;
                 } else {
-                    z10 = false;
-                    this.f = false;
+                    f12 = x10;
                 }
-                if (z12 && z11 && !this.f) {
-                    this.l = z10;
-                }
-                float d14 = d(f12);
-                float e13 = e(f12);
-                float d15 = d(0.75f);
-                float e14 = e(0.75f);
-                float f29 = f21;
-                RectF rectF = this.d;
-                rectF.set(d14, e13, d15, e14);
-                canvas2.drawArc(rectF, this.g + f29, f22 - f29, false, paint);
-                invalidateSelf();
+            }
+            y[i10] = f10 + f11;
+        }
+        y[100] = 1.0f;
+        z = 8.0f;
+        A = 1.0f;
+        A = 1.0f / e(1.0f);
+    }
+
+    public vm0(Context context, DecelerateInterpolator decelerateInterpolator) {
+        this.r = decelerateInterpolator;
+        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
+    }
+
+    public static float e(float f10) {
+        float f11 = f10 * z;
+        return (f11 < 1.0f ? f11 - (1.0f - ((float) Math.exp(-f11))) : e2.c.w(1.0f, (float) Math.exp(1.0f - f11), 0.63212055f, 0.36787945f)) * A;
+    }
+
+    public final void a() {
+        this.j = this.d;
+        this.k = this.e;
+        this.q = true;
+    }
+
+    public final boolean b() {
+        if (this.q) {
+            return false;
+        }
+        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
+        int i10 = this.m;
+        if (currentAnimationTimeMillis >= i10) {
+            this.j = this.d;
+            this.k = this.e;
+            this.q = true;
+            return true;
+        }
+        int i11 = this.a;
+        if (i11 == 0) {
+            float f10 = currentAnimationTimeMillis * this.n;
+            Interpolator interpolator = this.r;
+            float e = interpolator == null ? e(f10) : interpolator.getInterpolation(f10);
+            this.j = Math.round(this.o * e) + this.b;
+            this.k = Math.round(e * this.p) + this.c;
+            return true;
+        }
+        if (i11 == 1) {
+            float f11 = currentAnimationTimeMillis / i10;
+            int i12 = (int) (f11 * 100.0f);
+            float f12 = i12 / 100.0f;
+            int i13 = i12 + 1;
+            float[] fArr = y;
+            float f13 = fArr[i12];
+            float w10 = e2.c.w(fArr[i13], f13, (f11 - f12) / ((i13 / 100.0f) - f12), f13);
+            int round = Math.round((this.d - r1) * w10) + this.b;
+            this.j = round;
+            int min = Math.min(round, this.g);
+            this.j = min;
+            this.j = Math.max(min, this.f);
+            int round2 = Math.round(w10 * (this.e - r1)) + this.c;
+            this.k = round2;
+            int min2 = Math.min(round2, this.i);
+            this.k = min2;
+            int max = Math.max(min2, this.h);
+            this.k = max;
+            if (this.j == this.d && max == this.e) {
+                this.q = true;
             }
         }
-        if (this.a < 255) {
-            canvas.restore();
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00af  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00b2  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        int i18;
+        int i19;
+        if (!this.s || this.q) {
+            i18 = i12;
+        } else {
+            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
+            float f10 = this.d - this.b;
+            float f11 = this.e - this.c;
+            float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
+            float f12 = (f10 / sqrt) * currentAnimationTimeMillis;
+            float f13 = (f11 / sqrt) * currentAnimationTimeMillis;
+            i18 = i12;
+            float f14 = i18;
+            if (Math.signum(f14) == Math.signum(f12)) {
+                i19 = i13;
+                float f15 = i19;
+                if (Math.signum(f15) == Math.signum(f13)) {
+                    i18 = (int) (f14 + f12);
+                    i19 = (int) (f15 + f13);
+                }
+                this.a = 1;
+                this.q = false;
+                float sqrt2 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
+                this.t = sqrt2;
+                double log = Math.log((w * sqrt2) / 800.0f);
+                double d = v;
+                double d10 = d - 1.0d;
+                this.m = (int) (Math.exp(log / d10) * 1000.0d);
+                this.l = AnimationUtils.currentAnimationTimeMillis();
+                this.b = i10;
+                this.c = i11;
+                float f16 = sqrt2 != 0.0f ? 1.0f : i18 / sqrt2;
+                float f17 = sqrt2 != 0.0f ? i19 / sqrt2 : 1.0f;
+                double exp = Math.exp((d / d10) * log);
+                this.f = i14;
+                this.g = i15;
+                this.h = i16;
+                this.i = i17;
+                float f18 = (int) (exp * 800.0f);
+                int round = Math.round(f16 * f18) + i10;
+                this.d = round;
+                int min = Math.min(round, this.g);
+                this.d = min;
+                this.d = Math.max(min, this.f);
+                int round2 = Math.round(f18 * f17) + i11;
+                this.e = round2;
+                int min2 = Math.min(round2, this.i);
+                this.e = min2;
+                this.e = Math.max(min2, this.h);
+            }
         }
-        if (d < 1.0f) {
-            invalidateSelf();
+        i19 = i13;
+        this.a = 1;
+        this.q = false;
+        float sqrt22 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
+        this.t = sqrt22;
+        double log2 = Math.log((w * sqrt22) / 800.0f);
+        double d11 = v;
+        double d102 = d11 - 1.0d;
+        this.m = (int) (Math.exp(log2 / d102) * 1000.0d);
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = i10;
+        this.c = i11;
+        if (sqrt22 != 0.0f) {
         }
+        if (sqrt22 != 0.0f) {
+        }
+        double exp2 = Math.exp((d11 / d102) * log2);
+        this.f = i14;
+        this.g = i15;
+        this.h = i16;
+        this.i = i17;
+        float f182 = (int) (exp2 * 800.0f);
+        int round3 = Math.round(f16 * f182) + i10;
+        this.d = round3;
+        int min3 = Math.min(round3, this.g);
+        this.d = min3;
+        this.d = Math.max(min3, this.f);
+        int round22 = Math.round(f182 * f17) + i11;
+        this.e = round22;
+        int min22 = Math.min(round22, this.i);
+        this.e = min22;
+        this.e = Math.max(min22, this.h);
     }
 
-    public final float e(float f9) {
-        return org.telegram.ui.th.b(0.5f, f9, this.p, this.r);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
+    public final void d(int i10, int i11) {
+        this.a = 0;
+        this.q = false;
+        this.m = i11;
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
+        this.e = i10;
+        this.o = 0;
+        this.p = i10;
+        this.n = 1.0f / this.m;
     }
 }

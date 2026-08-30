@@ -1,136 +1,93 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class o20 extends il0 {
-    public ChatObject.Call c;
-    public final int d;
-    public ArrayList h;
-    public org.telegram.ui.j30 n;
-    public final org.telegram.ui.r50 r;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public boolean s = false;
-
-    public o20(ChatObject.Call call, int i10, org.telegram.ui.r50 r50Var) {
-        this.c = call;
-        this.d = i10;
-        this.r = r50Var;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final boolean D(f2.n1 n1Var) {
-        return false;
-    }
-
-    public final void E(ArrayList arrayList, org.telegram.ui.j30 j30Var) {
-        this.h = arrayList;
-        this.n = j30Var;
-    }
-
-    public final void F(org.telegram.ui.f30 f30Var, boolean z10) {
-        this.s = z10;
-        for (int i10 = 0; i10 < f30Var.getChildCount(); i10++) {
-            View childAt = f30Var.getChildAt(i10);
-            if (childAt instanceof n20) {
-                n20 n20Var = (n20) childAt;
-                if (n20Var.getVideoParticipant() != null) {
-                    n20Var.b(z10);
-                }
+public abstract class o20 extends org.telegram.ui.ActionBar.g3 {
+    public o20(Context context, org.telegram.ui.ActionBar.p2 p2Var) {
+        super(context, true);
+        setApplyBottomPadding(false);
+        setApplyTopPadding(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        setCustomView(linearLayout);
+        jj0 jj0Var = new jj0(context);
+        jj0Var.setAutoRepeat(true);
+        jj0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
+        jj0Var.d();
+        linearLayout.addView(jj0Var, k7.b6.t(160, 160, 49, 17, 30, 17, 0));
+        TextView textView = new TextView(context);
+        org.telegram.ui.b.g(24.0f, 1, textView);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
+        textView.setText(LocaleController.getString(R.string.GigagroupConvertTitle));
+        linearLayout.addView(textView, k7.b6.t(-2, -2, 49, 17, 18, 17, 0));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        linearLayout.addView(linearLayout2, k7.b6.t(-2, -2, 1, 0, 12, 0, 0));
+        for (int i10 = 0; i10 < 3; i10++) {
+            LinearLayout f10 = org.telegram.messenger.y3.f(context, 0);
+            linearLayout2.addView(f10, k7.b6.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
+            ImageView imageView = new ImageView(context);
+            int i11 = org.telegram.ui.ActionBar.j6.r5;
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+            imageView.setImageResource(R.drawable.list_circle);
+            TextView textView2 = new TextView(context);
+            textView2.setTextSize(1, 15.0f);
+            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+            textView2.setMaxWidth(AndroidUtilities.dp(260.0f));
+            if (i10 == 0) {
+                textView2.setText(LocaleController.getString(R.string.GigagroupConvertInfo1));
+            } else if (i10 == 1) {
+                textView2.setText(LocaleController.getString(R.string.GigagroupConvertInfo2));
+            } else if (i10 == 2) {
+                textView2.setText(LocaleController.getString(R.string.GigagroupConvertInfo3));
             }
-        }
-    }
-
-    public final void G(jl0 jl0Var, boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        ArrayList arrayList2 = this.f;
-        if (!z10) {
-            arrayList2.clear();
-            ChatObject.Call call = this.c;
-            if (!call.call.rtmp_stream) {
-                arrayList2.addAll(call.visibleParticipants);
-            }
-            arrayList.clear();
-            ChatObject.Call call2 = this.c;
-            if (!call2.call.rtmp_stream) {
-                arrayList.addAll(call2.visibleVideoParticipants);
-            }
-            l();
-            return;
-        }
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        ArrayList arrayList4 = new ArrayList(arrayList);
-        arrayList2.clear();
-        ChatObject.Call call3 = this.c;
-        if (!call3.call.rtmp_stream) {
-            arrayList2.addAll(call3.visibleParticipants);
-        }
-        arrayList.clear();
-        ChatObject.Call call4 = this.c;
-        if (!call4.call.rtmp_stream) {
-            arrayList.addAll(call4.visibleVideoParticipants);
-        }
-        f2.q.c(new l20(this, arrayList4, arrayList3), true).b(this);
-        AndroidUtilities.updateVisibleRows(jl0Var);
-    }
-
-    @Override // f2.p0
-    public final int h() {
-        return this.f.size() + this.e.size();
-    }
-
-    @Override // f2.p0
-    public final void v(f2.n1 n1Var, int i10) {
-        TLRPC.GroupCallParticipant groupCallParticipant;
-        ChatObject.VideoParticipant videoParticipant;
-        n20 n20Var = (n20) n1Var.a;
-        ChatObject.VideoParticipant videoParticipant2 = n20Var.f;
-        ArrayList arrayList = this.e;
-        if (i10 < arrayList.size()) {
-            videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i10);
-            groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i10)).participant;
-        } else {
-            int size = i10 - arrayList.size();
-            ArrayList arrayList2 = this.f;
-            if (size >= arrayList2.size()) {
-                return;
-            }
-            groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList2.get(i10 - arrayList.size());
-            videoParticipant = null;
-        }
-        n20Var.e(videoParticipant, groupCallParticipant);
-        if (videoParticipant2 != null && !videoParticipant2.equals(videoParticipant) && n20Var.G && n20Var.getRenderer() != null) {
-            n20Var.b(false);
-            if (videoParticipant != null) {
-                n20Var.b(true);
-                return;
-            }
-            return;
-        }
-        if (n20Var.G) {
-            if (n20Var.getRenderer() == null && videoParticipant != null && this.s) {
-                n20Var.b(true);
+            if (LocaleController.isRTL) {
+                f10.addView(textView2, k7.b6.n(-2, -2));
+                f10.addView(imageView, k7.b6.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
             } else {
-                if (n20Var.getRenderer() == null || videoParticipant != null) {
-                    return;
-                }
-                n20Var.b(false);
+                f10.addView(imageView, k7.b6.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
+                f10.addView(textView2, k7.b6.n(-2, -2));
             }
         }
+        n20 n20Var = new n20(context);
+        View view = new View(context);
+        view.setBackground(org.telegram.ui.ActionBar.z5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.j6.Oh));
+        n20Var.addView(view, k7.b6.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+        TextView textView3 = new TextView(context);
+        n20Var.a = textView3;
+        textView3.setLines(1);
+        textView3.setSingleLine(true);
+        textView3.setGravity(1);
+        textView3.setEllipsize(TextUtils.TruncateAt.END);
+        textView3.setGravity(17);
+        org.telegram.messenger.y3.t(textView3, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false), 1, 14.0f);
+        n20Var.addView(textView3, k7.b6.e(-2, -2, 17));
+        n20Var.setBackground(null);
+        n20Var.setText(LocaleController.getString(R.string.GigagroupConvertProcessButton));
+        view.setOnClickListener(new dg.p(this, context, p2Var, 25));
+        linearLayout.addView(n20Var, k7.b6.t(-1, 50, 51, 0, 29, 0, 0));
+        TextView textView4 = new TextView(context);
+        textView4.setTextSize(1, 14.0f);
+        textView4.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n5, false));
+        org.telegram.messenger.y3.r(R.string.GigagroupConvertCancelButton, textView4, 17);
+        linearLayout.addView(textView4, k7.b6.t(-2, 48, 49, 17, 0, 17, 16));
+        textView4.setOnClickListener(new g0(this, 20));
     }
 
-    @Override // f2.p0
-    public final f2.n1 x(ViewGroup viewGroup, int i10) {
-        return new vk0(new n20(this, viewGroup.getContext()));
-    }
+    public abstract void m();
+
+    public abstract void n();
 }

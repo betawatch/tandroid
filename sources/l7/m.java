@@ -1,50 +1,291 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.AbstractMap;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import n7.mg;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class m extends i {
-    public static final m e = new m(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class m extends AbstractCollection {
+    public final /* synthetic */ int a;
+    public final Object b;
 
-    public m(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public /* synthetic */ m(int i10, Serializable serializable) {
+        this.a = i10;
+        this.b = serializable;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        i7.r.a(i10, this.d);
-        Object obj = this.c[i10];
-        obj.getClass();
-        return obj;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        switch (this.a) {
+            case 0:
+                ((n) this.b).clear();
+                break;
+            case 1:
+                ((xa) this.b).clear();
+                break;
+            case 2:
+                ((n7.d) this.b).clear();
+                break;
+            case 3:
+                ((xa) this.b).clear();
+                break;
+            case 4:
+                ((s8.e0) this.b).b();
+                break;
+            default:
+                ((xa) this.b).clear();
+                break;
+        }
     }
 
-    @Override // l7.i, l7.e
-    public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public boolean contains(Object obj) {
+        switch (this.a) {
+            case 1:
+                return ((xa) this.b).containsValue(obj);
+            case 2:
+            default:
+                return super.contains(obj);
+            case 3:
+                return ((xa) this.b).containsValue(obj);
+            case 4:
+                Iterator it = ((m) ((s8.e0) this.b).a().values()).iterator();
+                while (it.hasNext()) {
+                    if (((Collection) it.next()).contains(obj)) {
+                        return true;
+                    }
+                }
+                return false;
+            case 5:
+                return ((xa) this.b).containsValue(obj);
+        }
     }
 
-    @Override // l7.e
-    public final int n() {
-        return this.d;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public boolean isEmpty() {
+        switch (this.a) {
+            case 1:
+                return ((xa) this.b).isEmpty();
+            case 2:
+            case 4:
+            default:
+                return super.isEmpty();
+            case 3:
+                return ((xa) this.b).isEmpty();
+            case 5:
+                return ((xa) this.b).isEmpty();
+        }
     }
 
-    @Override // l7.e
-    public final int o() {
-        return 0;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        switch (this.a) {
+            case 0:
+                n nVar = (n) this.b;
+                Map a2 = nVar.a();
+                return a2 != null ? a2.values().iterator() : new i(nVar, 2);
+            case 1:
+                return new com.google.android.gms.internal.clearcut.g1(((xa) this.b).entrySet().iterator(), 1);
+            case 2:
+                n7.d dVar = (n7.d) this.b;
+                Map a10 = dVar.a();
+                return a10 != null ? a10.values().iterator() : new n7.a(dVar, 2);
+            case 3:
+                return new com.google.android.gms.internal.clearcut.g1(((xa) this.b).entrySet().iterator(), 2);
+            case 4:
+                return new s8.a((s8.e0) this.b);
+            default:
+                return new com.google.android.gms.internal.clearcut.g1(((xa) this.b).entrySet().iterator(), 3);
+        }
     }
 
-    @Override // l7.e
-    public final Object[] p() {
-        return this.c;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public boolean remove(Object obj) {
+        switch (this.a) {
+            case 1:
+                xa xaVar = (xa) this.b;
+                try {
+                    return super.remove(obj);
+                } catch (UnsupportedOperationException unused) {
+                    for (Map.Entry entry : xaVar.entrySet()) {
+                        if (k7.i.a(obj, entry.getValue())) {
+                            xaVar.remove(entry.getKey());
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            case 2:
+            case 4:
+            default:
+                return super.remove(obj);
+            case 3:
+                xa xaVar2 = (xa) this.b;
+                try {
+                    return super.remove(obj);
+                } catch (UnsupportedOperationException unused2) {
+                    for (Map.Entry entry2 : xaVar2.entrySet()) {
+                        if (k7.d0.a(obj, entry2.getValue())) {
+                            xaVar2.remove(entry2.getKey());
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            case 5:
+                xa xaVar3 = (xa) this.b;
+                try {
+                    return super.remove(obj);
+                } catch (UnsupportedOperationException unused3) {
+                    for (Map.Entry entry3 : xaVar3.entrySet()) {
+                        if (k7.a7.a(obj, entry3.getValue())) {
+                            xaVar3.remove(entry3.getKey());
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+        }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public boolean removeAll(Collection collection) {
+        switch (this.a) {
+            case 1:
+                xa xaVar = (xa) this.b;
+                try {
+                    if (collection != null) {
+                        return super.removeAll(collection);
+                    }
+                    throw null;
+                } catch (UnsupportedOperationException unused) {
+                    HashSet hashSet = new HashSet();
+                    for (Map.Entry entry : xaVar.entrySet()) {
+                        if (collection.contains(entry.getValue())) {
+                            hashSet.add(entry.getKey());
+                        }
+                    }
+                    return ((h) xaVar.e).b().removeAll(hashSet);
+                }
+            case 2:
+            case 4:
+            default:
+                return super.removeAll(collection);
+            case 3:
+                xa xaVar2 = (xa) this.b;
+                try {
+                    if (collection != null) {
+                        return super.removeAll(collection);
+                    }
+                    throw null;
+                } catch (UnsupportedOperationException unused2) {
+                    HashSet hashSet2 = new HashSet();
+                    for (Map.Entry entry2 : xaVar2.entrySet()) {
+                        if (collection.contains(entry2.getValue())) {
+                            hashSet2.add(entry2.getKey());
+                        }
+                    }
+                    return ((mg) xaVar2.e).b().removeAll(hashSet2);
+                }
+            case 5:
+                xa xaVar3 = (xa) this.b;
+                try {
+                    collection.getClass();
+                    return super.removeAll(collection);
+                } catch (UnsupportedOperationException unused3) {
+                    HashSet hashSet3 = new HashSet();
+                    for (Map.Entry entry3 : xaVar3.entrySet()) {
+                        if (collection.contains(entry3.getValue())) {
+                            hashSet3.add(entry3.getKey());
+                        }
+                    }
+                    return xaVar3.keySet().removeAll(hashSet3);
+                }
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public boolean retainAll(Collection collection) {
+        switch (this.a) {
+            case 1:
+                xa xaVar = (xa) this.b;
+                try {
+                    if (collection != null) {
+                        return super.retainAll(collection);
+                    }
+                    throw null;
+                } catch (UnsupportedOperationException unused) {
+                    HashSet hashSet = new HashSet();
+                    for (Map.Entry entry : xaVar.entrySet()) {
+                        if (collection.contains(entry.getValue())) {
+                            hashSet.add(entry.getKey());
+                        }
+                    }
+                    return ((h) xaVar.e).b().retainAll(hashSet);
+                }
+            case 2:
+            case 4:
+            default:
+                return super.retainAll(collection);
+            case 3:
+                xa xaVar2 = (xa) this.b;
+                try {
+                    if (collection != null) {
+                        return super.retainAll(collection);
+                    }
+                    throw null;
+                } catch (UnsupportedOperationException unused2) {
+                    HashSet hashSet2 = new HashSet();
+                    for (Map.Entry entry2 : xaVar2.entrySet()) {
+                        if (collection.contains(entry2.getValue())) {
+                            hashSet2.add(entry2.getKey());
+                        }
+                    }
+                    return ((mg) xaVar2.e).b().retainAll(hashSet2);
+                }
+            case 5:
+                xa xaVar3 = (xa) this.b;
+                try {
+                    collection.getClass();
+                    return super.retainAll(collection);
+                } catch (UnsupportedOperationException unused3) {
+                    HashSet hashSet3 = new HashSet();
+                    for (Map.Entry entry3 : xaVar3.entrySet()) {
+                        if (collection.contains(entry3.getValue())) {
+                            hashSet3.add(entry3.getKey());
+                        }
+                    }
+                    return xaVar3.keySet().retainAll(hashSet3);
+                }
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final int size() {
-        return this.d;
+        switch (this.a) {
+            case 0:
+                return ((n) this.b).size();
+            case 1:
+                return ((xa) this.b).b.size();
+            case 2:
+                return ((n7.d) this.b).size();
+            case 3:
+                return ((xa) this.b).b.size();
+            case 4:
+                return ((s8.e0) this.b).e;
+            default:
+                return ((xa) this.b).b.size();
+        }
+    }
+
+    public /* synthetic */ m(AbstractMap abstractMap, int i10) {
+        this.a = i10;
+        this.b = abstractMap;
     }
 }

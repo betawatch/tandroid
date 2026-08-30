@@ -1,80 +1,26 @@
 package q4;
 
-import android.net.Uri;
-import com.google.android.exoplayer2.upstream.y0;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.Map;
-import javax.crypto.Cipher;
-import javax.crypto.CipherInputStream;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
+import g5.p;
+import j3.n0;
+import n7.qa;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements com.google.android.exoplayer2.upstream.m {
-    public final com.google.android.exoplayer2.upstream.m a;
-    public final byte[] b;
-    public final byte[] c;
-    public CipherInputStream d;
+public abstract class a extends k {
+    public final long v;
+    public final long w;
+    public qa x;
+    public int[] y;
 
-    public a(com.google.android.exoplayer2.upstream.m mVar, byte[] bArr, byte[] bArr2) {
-        this.a = mVar;
-        this.b = bArr;
-        this.c = bArr2;
+    public a(g5.m mVar, p pVar, n0 n0Var, int i10, Object obj, long j10, long j11, long j12, long j13, long j14) {
+        super(mVar, pVar, n0Var, i10, obj, j10, j11, j14);
+        this.v = j12;
+        this.w = j13;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
-    public final void addTransferListener(y0 y0Var) {
-        y0Var.getClass();
-        this.a.addTransferListener(y0Var);
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.m
-    public final void close() {
-        if (this.d != null) {
-            this.d = null;
-            this.a.close();
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.m
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.m
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.m
-    public final long open(com.google.android.exoplayer2.upstream.q qVar) {
-        try {
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            try {
-                cipher.init(2, new SecretKeySpec(this.b, "AES"), new IvParameterSpec(this.c));
-                com.google.android.exoplayer2.upstream.o oVar = new com.google.android.exoplayer2.upstream.o(this.a, qVar);
-                this.d = new CipherInputStream(oVar, cipher);
-                oVar.a();
-                return -1L;
-            } catch (InvalidAlgorithmParameterException | InvalidKeyException e10) {
-                throw new RuntimeException(e10);
-            }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e11) {
-            throw new RuntimeException(e11);
-        }
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i10, int i11) {
-        this.d.getClass();
-        int read = this.d.read(bArr, i10, i11);
-        if (read < 0) {
-            return -1;
-        }
-        return read;
+    public final int d(int i10) {
+        int[] iArr = this.y;
+        h5.a.j(iArr);
+        return iArr[i10];
     }
 }

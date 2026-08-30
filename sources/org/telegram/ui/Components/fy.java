@@ -1,64 +1,40 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface fy {
-    boolean A();
+public final class fy implements View.OnClickListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b3 b;
+    public final /* synthetic */ gy c;
 
-    long a();
+    public fy(gy gyVar, boolean[] zArr, org.telegram.ui.ActionBar.b3 b3Var) {
+        this.c = gyVar;
+        this.a = zArr;
+        this.b = b3Var;
+    }
 
-    boolean b();
-
-    boolean c();
-
-    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    void e(Object obj, Object obj2);
-
-    int f();
-
-    boolean g();
-
-    void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void i(int i10);
-
-    boolean j();
-
-    boolean k();
-
-    void l(String str);
-
-    void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10);
-
-    void n();
-
-    void o(s41 s41Var);
-
-    float p();
-
-    void q();
-
-    void r(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void s(int i10);
-
-    void t(ArrayList arrayList);
-
-    void u();
-
-    void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11);
-
-    void w();
-
-    void x(long j10, TLRPC.Document document, String str, boolean z10);
-
-    void y(long j10);
-
-    boolean z();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        jy jyVar = this.c.a;
+        boolean[] zArr = this.a;
+        int i10 = 0;
+        if (zArr[0]) {
+            return;
+        }
+        zArr[0] = true;
+        org.telegram.ui.ActionBar.d2[] d2VarArr = {new org.telegram.ui.ActionBar.d2(jyVar.C.getContext(), 3, null)};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        kz kzVar = jyVar.C;
+        String str = jyVar.w;
+        if (str == null) {
+            str = kzVar.T0[0];
+        }
+        tL_messages_getEmojiURL.lang_code = str;
+        AndroidUtilities.runOnUIThread(new ey(this, d2VarArr, ConnectionsManager.getInstance(kzVar.Z0).sendRequest(tL_messages_getEmojiURL, new gg.y(this, d2VarArr, this.b, 13)), i10), 1000L);
+    }
 }

@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public IBinder a;
@@ -48,12 +48,17 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void Y(CharSequence charSequence) {
+    public final void a0(CharSequence charSequence) {
         throw null;
     }
 
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
+
     @Override // android.support.v4.media.session.b
-    public final void a0() {
+    public final void c0() {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
@@ -65,13 +70,8 @@ public final class a implements b {
         }
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
-
     @Override // android.support.v4.media.session.b
-    public final void c0(MediaMetadataCompat mediaMetadataCompat) {
+    public final void e0(MediaMetadataCompat mediaMetadataCompat) {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
@@ -92,7 +92,7 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void n0(int i10) {
+    public final void o0(int i10) {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
@@ -120,12 +120,12 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void v(Bundle bundle) {
+    public final void u(Bundle bundle) {
         throw null;
     }
 
     @Override // android.support.v4.media.session.b
-    public final void y(List list) {
+    public final void x(List list) {
         throw null;
     }
 }

@@ -1,10 +1,9 @@
 package androidx.lifecycle;
 
-import ag.q1;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -17,12 +16,12 @@ public class z {
     public int g;
     public boolean h;
     public boolean i;
-    public final q1 j;
+    public final androidx.activity.i j;
 
     public z() {
         Object obj = k;
         this.f = obj;
-        this.j = new q1(this, 6);
+        this.j = new androidx.activity.i(this, 5);
         this.e = obj;
         this.g = -1;
     }
@@ -30,7 +29,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(a4.w.n("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(android.support.v4.media.a.o("Cannot invoke ", str, " on a background thread"));
         }
     }
 
@@ -46,7 +45,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.S(this.e);
+            yVar.a.m0(this.e);
         }
     }
 
@@ -112,25 +111,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(ha.c cVar) {
+    public final void e(o5.i iVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, cVar);
+        x xVar = new x(this, iVar);
         o.f fVar = this.b;
-        o.c i10 = fVar.i(cVar);
+        o.c i10 = fVar.i(iVar);
         if (i10 != null) {
             obj = i10.b;
         } else {
-            o.c cVar2 = new o.c(cVar, xVar);
+            o.c cVar = new o.c(iVar, xVar);
             fVar.d++;
-            o.c cVar3 = fVar.b;
-            if (cVar3 == null) {
-                fVar.a = cVar2;
-                fVar.b = cVar2;
+            o.c cVar2 = fVar.b;
+            if (cVar2 == null) {
+                fVar.a = cVar;
+                fVar.b = cVar;
             } else {
-                cVar3.c = cVar2;
-                cVar2.d = cVar3;
-                fVar.b = cVar2;
+                cVar2.c = cVar;
+                cVar.d = cVar2;
+                fVar.b = cVar;
             }
             obj = null;
         }
@@ -145,12 +144,12 @@ public class z {
     }
 
     public final void h(Object obj) {
-        boolean z10;
+        boolean z4;
         synchronized (this.a) {
-            z10 = this.f == k;
+            z4 = this.f == k;
             this.f = obj;
         }
-        if (z10) {
+        if (z4) {
             n.a.a().b(this.j);
         }
     }

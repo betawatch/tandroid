@@ -1,15 +1,26 @@
 package u6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public abstract class d {
-    public static final w5.c a;
-    public static final w5.c[] b;
+import android.os.Parcel;
+import android.os.Parcelable;
+import j7.f5;
+import r5.c0;
 
-    static {
-        w5.c cVar = new w5.c("auth_api_credentials_begin_sign_in", 9L);
-        w5.c cVar2 = new w5.c("auth_api_credentials_sign_out", 2L);
-        a = cVar2;
-        b = new w5.c[]{cVar, cVar2, new w5.c("auth_api_credentials_authorize", 1L), new w5.c("auth_api_credentials_revoke_access", 1L), new w5.c("auth_api_credentials_save_password", 4L), new w5.c("auth_api_credentials_get_sign_in_intent", 6L), new w5.c("auth_api_credentials_save_account_linking_token", 3L), new w5.c("auth_api_credentials_get_phone_number_hint_intent", 3L)};
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class d extends c6.a {
+    public static final Parcelable.Creator<d> CREATOR = new c0(18);
+    public final boolean a;
+
+    public d(boolean z4) {
+        this.a = z4;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int q10 = f5.q(dest, 20293);
+        f5.s(dest, 1, 4);
+        dest.writeInt(this.a ? 1 : 0);
+        f5.r(dest, q10);
     }
 }

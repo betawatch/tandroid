@@ -1,18 +1,30 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.DialogInterface;
+import org.telegram.messenger.AccountInstance;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class q70 extends f2.a1 {
-    public final /* synthetic */ t70 a;
+public final /* synthetic */ class q70 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AccountInstance b;
+    public final /* synthetic */ int c;
 
-    public q70(t70 t70Var) {
-        this.a = t70Var;
+    public /* synthetic */ q70(AccountInstance accountInstance, int i10, int i11) {
+        this.a = i11;
+        this.b = accountInstance;
+        this.c = i10;
     }
 
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        t70.o(this.a);
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            default:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+        }
     }
 }

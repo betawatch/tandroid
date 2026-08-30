@@ -1,26 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kn0 extends c40 {
-    public final /* synthetic */ org.telegram.ui.ox Y;
+public final class kn0 extends f2.q {
+    public final /* synthetic */ on0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kn0(org.telegram.ui.ox oxVar, jl0 jl0Var, Context context, int i10) {
-        super(jl0Var, context, i10);
-        this.Y = oxVar;
+    public kn0(on0 on0Var) {
+        this.b = on0Var;
     }
 
-    @Override // org.telegram.ui.Components.k51
-    public final void N(boolean z10) {
-        super.N(z10);
-        gn0 gn0Var = this.Y.o0;
-        gn0Var.e(false, z10);
-        gn0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        gn0Var.e.setVisibility(8);
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        on0 on0Var = this.b;
+        return ((ln0) on0Var.n.get(i10)).equals(on0Var.r.get(i11));
+    }
+
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        on0 on0Var = this.b;
+        return ((ln0) on0Var.n.get(i10)).a.h == ((ln0) on0Var.r.get(i11)).a.h;
+    }
+
+    @Override // f2.q
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // f2.q
+    public final int e() {
+        return this.b.n.size();
     }
 }

@@ -1,69 +1,52 @@
 package f4;
 
-import b4.e;
-import h7.h5;
-import i7.n6;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.CharsetDecoder;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import p8.d;
+import android.os.Parcel;
+import android.os.Parcelable;
+import b9.e;
+import j3.d1;
+import j3.n0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends h5 {
-    public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
-    public final CharsetDecoder a = d.c.newDecoder();
-    public final CharsetDecoder b = d.b.newDecoder();
+public final class a implements e4.b {
+    public static final Parcelable.Creator<a> CREATOR = new e(16);
+    public final int a;
+    public final String b;
 
-    @Override // h7.h5
-    public final b4.c b(e eVar, ByteBuffer byteBuffer) {
-        String str;
-        CharsetDecoder charsetDecoder = this.b;
-        CharsetDecoder charsetDecoder2 = this.a;
-        String str2 = null;
-        try {
-            str = charsetDecoder2.decode(byteBuffer).toString();
-        } catch (CharacterCodingException unused) {
-            try {
-                String charBuffer = charsetDecoder.decode(byteBuffer).toString();
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = charBuffer;
-            } catch (CharacterCodingException unused2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = null;
-            } catch (Throwable th2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                throw th2;
-            }
-        } finally {
-            charsetDecoder2.reset();
-            byteBuffer.rewind();
-        }
-        byte[] bArr = new byte[byteBuffer.limit()];
-        byteBuffer.get(bArr);
-        if (str == null) {
-            return new b4.c(new c(null, null, bArr));
-        }
-        Matcher matcher = c.matcher(str);
-        String str3 = null;
-        for (int i10 = 0; matcher.find(i10); i10 = matcher.end()) {
-            String group = matcher.group(1);
-            String group2 = matcher.group(2);
-            if (group != null) {
-                String b10 = n6.b(group);
-                b10.getClass();
-                if (b10.equals("streamurl")) {
-                    str3 = group2;
-                } else if (b10.equals("streamtitle")) {
-                    str2 = group2;
-                }
-            }
-        }
-        return new b4.c(new c(str2, str3, bArr));
+    public a(int i10, String str) {
+        this.a = i10;
+        this.b = str;
+    }
+
+    @Override // e4.b
+    public final /* synthetic */ n0 b() {
+        return null;
+    }
+
+    @Override // e4.b
+    public final /* synthetic */ byte[] d() {
+        return null;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("Ait(controlCode=");
+        sb.append(this.a);
+        sb.append(",url=");
+        return android.support.v4.media.a.r(sb, this.b, ")");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.b);
+        parcel.writeInt(this.a);
+    }
+
+    @Override // e4.b
+    public final /* synthetic */ void c(d1 d1Var) {
     }
 }

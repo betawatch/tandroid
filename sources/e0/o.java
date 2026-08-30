@@ -3,28 +3,28 @@ package e0;
 import android.app.Notification;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class o extends b0 {
     public final /* synthetic */ int e;
     public Object f;
 
-    public /* synthetic */ o(boolean z10) {
+    public /* synthetic */ o(boolean z4) {
         this.e = 0;
     }
 
     @Override // e0.b0
-    public final void b(i0 i0Var) {
+    public final void b(a4.k kVar) {
         switch (this.e) {
             case 0:
-                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) i0Var.c).setBigContentTitle(this.b).bigText((CharSequence) this.f);
+                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) kVar.c).setBigContentTitle(this.b).bigText((CharSequence) this.f);
                 if (this.d) {
                     bigText.setSummaryText(this.c);
                     break;
                 }
                 break;
             default:
-                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) i0Var.c).setBigContentTitle(this.b);
+                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) kVar.c).setBigContentTitle(this.b);
                 if (this.d) {
                     bigContentTitle.setSummaryText(this.c);
                 }

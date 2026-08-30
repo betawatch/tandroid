@@ -1,31 +1,36 @@
 package org.telegram.ui;
 
 import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jz implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class jz implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
 
-    public /* synthetic */ jz(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
+    public /* synthetic */ jz(int i10, int i11, int[] iArr) {
+        this.a = i11;
+        this.b = i10;
+        this.c = iArr;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        int[] iArr = this.c;
+        int i11 = this.b;
+        switch (i10) {
             case 0:
-                AndroidUtilities.hideKeyboard(this.b);
-                break;
-            case 1:
-                AndroidUtilities.hideKeyboard(this.b);
+                ArrayList arrayList = ExternalActionActivity.x;
+                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
                 break;
             default:
-                AndroidUtilities.hideKeyboard(this.b);
+                Pattern pattern = LaunchActivity.y1;
+                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
                 break;
         }
     }

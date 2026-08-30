@@ -2,40 +2,40 @@ package r5;
 
 import android.os.Parcel;
 import android.os.RemoteException;
-import android.util.Log;
-import java.util.ArrayList;
-import q5.o;
+import com.google.android.gms.internal.cast.o4;
+import com.google.android.gms.internal.cast.v6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final s5.b a = new s5.b("MediaSessionUtils", null);
+public final class i {
+    public final /* synthetic */ c a;
 
-    public static ArrayList a(o oVar) {
-        try {
-            Parcel O0 = oVar.O0(oVar.M0(), 3);
-            ArrayList createTypedArrayList = O0.createTypedArrayList(q5.d.CREATOR);
-            O0.recycle();
-            return createTypedArrayList;
-        } catch (RemoteException e10) {
-            Object[] objArr = {"getNotificationActions", o.class.getSimpleName()};
-            s5.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e10);
-            return null;
-        }
+    public i(c cVar) {
+        this.a = cVar;
     }
 
-    public static int[] b(o oVar) {
+    public final void a() {
+        c cVar = this.a;
+        q qVar = cVar.e;
+        if (qVar == null) {
+            return;
+        }
         try {
-            Parcel O0 = oVar.O0(oVar.M0(), 4);
-            int[] createIntArray = O0.createIntArray();
-            O0.recycle();
-            return createIntArray;
-        } catch (RemoteException e10) {
-            Object[] objArr = {"getCompactViewActionIndices", o.class.getSimpleName()};
-            s5.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e10);
-            return null;
+            s5.h hVar = cVar.j;
+            if (hVar != null) {
+                hVar.u();
+            }
+            o oVar = (o) qVar;
+            Parcel M0 = oVar.M0();
+            int i10 = com.google.android.gms.internal.cast.t.a;
+            M0.writeInt(0);
+            oVar.Q0(M0, 1);
+        } catch (RemoteException e) {
+            c.m.a(e, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
+        }
+        o4 o4Var = cVar.l;
+        if (o4Var != null) {
+            c5.j.D(o4Var.a, new v6(new b4.e0(3, 3)));
         }
     }
 }

@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class f extends x {
     private static final f DEFAULT_INSTANCE;
@@ -65,17 +65,17 @@ public final class f extends x {
             if (xVar.g()) {
                 return (f) xVar;
             }
-            throw new c0(new a6.b().getMessage());
-        } catch (IOException e10) {
-            if (e10.getCause() instanceof c0) {
-                throw ((c0) e10.getCause());
+            throw new c0(new a7.b().getMessage());
+        } catch (IOException e) {
+            if (e.getCause() instanceof c0) {
+                throw ((c0) e.getCause());
             }
-            throw new c0(e10.getMessage());
-        } catch (RuntimeException e11) {
-            if (e11.getCause() instanceof c0) {
-                throw ((c0) e11.getCause());
+            throw new c0(e.getMessage());
+        } catch (RuntimeException e6) {
+            if (e6.getCause() instanceof c0) {
+                throw ((c0) e6.getCause());
             }
-            throw e11;
+            throw e6;
         }
     }
 

@@ -1,117 +1,291 @@
 package com.google.android.gms.internal.cast;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
+import android.os.Looper;
 import android.os.Parcel;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g extends a {
-    public final p5.q U0(p5.b bVar, j6.a aVar, p5.j jVar) {
-        p5.q oVar;
-        Parcel M0 = M0();
-        u.c(M0, bVar);
-        u.d(M0, aVar);
-        u.d(M0, jVar);
-        Parcel O0 = O0(M0, 3);
-        IBinder readStrongBinder = O0.readStrongBinder();
-        int i10 = p5.p.b;
-        if (readStrongBinder == null) {
-            oVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ICastSession");
-            oVar = queryLocalInterface instanceof p5.q ? (p5.q) queryLocalInterface : new p5.o(readStrongBinder, "com.google.android.gms.cast.framework.ICastSession", 0);
-        }
-        O0.recycle();
-        return oVar;
+public abstract class g extends a7.c {
+    public final /* synthetic */ int b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g(String str, int i10) {
+        super(str, 1);
+        this.b = i10;
     }
 
-    public final p5.u V0(j6.b bVar, j6.a aVar, j6.a aVar2) {
-        p5.u sVar;
-        Parcel M0 = M0();
-        u.d(M0, bVar);
-        u.d(M0, aVar);
-        u.d(M0, aVar2);
-        Parcel O0 = O0(M0, 5);
-        IBinder readStrongBinder = O0.readStrongBinder();
-        int i10 = p5.t.b;
-        if (readStrongBinder == null) {
-            sVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.IReconnectionService");
-            sVar = queryLocalInterface instanceof p5.u ? (p5.u) queryLocalInterface : new p5.s(readStrongBinder, "com.google.android.gms.cast.framework.IReconnectionService", 0);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v0, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r4v3 */
+    /* JADX WARN: Type inference failed for: r4v7 */
+    /* JADX WARN: Type inference failed for: r4v8 */
+    @Override // a7.c
+    public final boolean H0(int i10, Parcel parcel, Parcel parcel2) {
+        int i11 = 0;
+        r4 = 0;
+        int i12 = 0;
+        i11 = 0;
+        i11 = 0;
+        int i13 = 2;
+        switch (this.b) {
+            case 0:
+                h hVar = null;
+                Bundle bundle = null;
+                switch (i10) {
+                    case 1:
+                        Bundle bundle2 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        IBinder readStrongBinder = parcel.readStrongBinder();
+                        if (readStrongBinder != null) {
+                            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.internal.IMediaRouterCallback");
+                            hVar = queryLocalInterface instanceof h ? (h) queryLocalInterface : new h(readStrongBinder, "com.google.android.gms.cast.framework.internal.IMediaRouterCallback", 1);
+                        }
+                        t.b(parcel);
+                        p pVar = (p) this;
+                        c2.v b10 = c2.v.b(bundle2);
+                        if (b10 != null) {
+                            HashMap hashMap = pVar.e;
+                            if (!hashMap.containsKey(b10)) {
+                                hashMap.put(b10, new HashSet());
+                            }
+                            ((Set) hashMap.get(b10)).add(new i(hVar));
+                        }
+                        parcel2.writeNoException();
+                        return true;
+                    case 2:
+                        Bundle bundle3 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        int readInt = parcel.readInt();
+                        t.b(parcel);
+                        p pVar2 = (p) this;
+                        c2.v b11 = c2.v.b(bundle3);
+                        if (b11 != null) {
+                            if (Looper.myLooper() == Looper.getMainLooper()) {
+                                pVar2.K0(b11, readInt);
+                            } else {
+                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.activity.g(pVar2, b11, readInt, i13));
+                            }
+                        }
+                        parcel2.writeNoException();
+                        return true;
+                    case 3:
+                        Bundle bundle4 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        t.b(parcel);
+                        p pVar3 = (p) this;
+                        c2.v b12 = c2.v.b(bundle4);
+                        if (b12 != null) {
+                            if (Looper.myLooper() == Looper.getMainLooper()) {
+                                pVar3.L0(b12);
+                            } else {
+                                new a7.e(Looper.getMainLooper(), 2).post(new androidx.biometric.k(pVar3, b12, i11, 5));
+                            }
+                        }
+                        parcel2.writeNoException();
+                        return true;
+                    case 4:
+                        Bundle bundle5 = (Bundle) t.a(parcel, Bundle.CREATOR);
+                        int readInt2 = parcel.readInt();
+                        t.b(parcel);
+                        p pVar4 = (p) this;
+                        c2.v b13 = c2.v.b(bundle5);
+                        if (b13 != null) {
+                            pVar4.c.getClass();
+                            c2.c0.b();
+                            c2.e c3 = c2.c0.c();
+                            ArrayList arrayList = c3.j;
+                            if (!b13.d()) {
+                                if ((readInt2 & 2) != 0 || !c3.p) {
+                                    c2.f0 f0Var = c3.u;
+                                    boolean z4 = f0Var != null && f0Var.c && c3.f();
+                                    int size = arrayList.size();
+                                    for (int i14 = 0; i14 < size; i14++) {
+                                        c2.a0 a0Var = (c2.a0) arrayList.get(i14);
+                                        if (((readInt2 & 1) != 0 && a0Var.d()) || ((z4 && !a0Var.d() && a0Var.c() != c3.r) || !a0Var.h(b13))) {
+                                        }
+                                    }
+                                }
+                                i11 = 1;
+                            }
+                        }
+                        parcel2.writeNoException();
+                        parcel2.writeInt(i11);
+                        return true;
+                    case 5:
+                        String readString = parcel.readString();
+                        t.b(parcel);
+                        u5.b bVar = p.j;
+                        bVar.b("select route with routeId = %s", readString);
+                        ((p) this).c.getClass();
+                        c2.c0.b();
+                        ArrayList arrayList2 = c2.c0.c().j;
+                        int size2 = arrayList2.size();
+                        int i15 = 0;
+                        while (true) {
+                            if (i15 < size2) {
+                                Object obj = arrayList2.get(i15);
+                                i15++;
+                                c2.a0 a0Var2 = (c2.a0) obj;
+                                if (a0Var2.c.equals(readString)) {
+                                    bVar.b("media route is found and selected", new Object[0]);
+                                    c2.c0.b();
+                                    c2.c0.c().i(a0Var2, 3);
+                                }
+                            }
+                        }
+                        parcel2.writeNoException();
+                        return true;
+                    case 6:
+                        ((p) this).c.getClass();
+                        c2.c0.b();
+                        c2.a0 a0Var3 = c2.c0.c().v;
+                        if (a0Var3 == null) {
+                            throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
+                        }
+                        c2.c0.b();
+                        c2.c0.c().i(a0Var3, 3);
+                        parcel2.writeNoException();
+                        return true;
+                    case 7:
+                        ((p) this).c.getClass();
+                        c2.c0.b();
+                        c2.a0 a0Var4 = c2.c0.c().v;
+                        if (a0Var4 == null) {
+                            throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
+                        }
+                        boolean equals = c2.c0.f().c.equals(a0Var4.c);
+                        parcel2.writeNoException();
+                        int i16 = t.a;
+                        parcel2.writeInt(equals ? 1 : 0);
+                        return true;
+                    case 8:
+                        String readString2 = parcel.readString();
+                        t.b(parcel);
+                        ((p) this).c.getClass();
+                        c2.c0.b();
+                        ArrayList arrayList3 = c2.c0.c().j;
+                        int size3 = arrayList3.size();
+                        int i17 = 0;
+                        while (true) {
+                            if (i17 < size3) {
+                                Object obj2 = arrayList3.get(i17);
+                                i17++;
+                                c2.a0 a0Var5 = (c2.a0) obj2;
+                                if (a0Var5.c.equals(readString2)) {
+                                    bundle = a0Var5.s;
+                                }
+                            }
+                        }
+                        parcel2.writeNoException();
+                        if (bundle == null) {
+                            parcel2.writeInt(0);
+                            return true;
+                        }
+                        parcel2.writeInt(1);
+                        bundle.writeToParcel(parcel2, 1);
+                        return true;
+                    case 9:
+                        ((p) this).c.getClass();
+                        String str = c2.c0.f().c;
+                        parcel2.writeNoException();
+                        parcel2.writeString(str);
+                        return true;
+                    case 10:
+                        parcel2.writeNoException();
+                        parcel2.writeInt(12451000);
+                        return true;
+                    case 11:
+                        p pVar5 = (p) this;
+                        HashMap hashMap2 = pVar5.e;
+                        Iterator it = hashMap2.values().iterator();
+                        while (it.hasNext()) {
+                            Iterator it2 = ((Set) it.next()).iterator();
+                            while (it2.hasNext()) {
+                                pVar5.c.h((c2.w) it2.next());
+                            }
+                        }
+                        hashMap2.clear();
+                        parcel2.writeNoException();
+                        return true;
+                    case 12:
+                        ((p) this).c.getClass();
+                        c2.c0.b();
+                        c2.a0 a0Var6 = c2.c0.c().w;
+                        if (a0Var6 != null && c2.c0.f().c.equals(a0Var6.c)) {
+                            i12 = 1;
+                        }
+                        parcel2.writeNoException();
+                        int i18 = t.a;
+                        parcel2.writeInt(i12);
+                        return true;
+                    case 13:
+                        int readInt3 = parcel.readInt();
+                        t.b(parcel);
+                        ((p) this).c.getClass();
+                        c2.c0.j(readInt3);
+                        parcel2.writeNoException();
+                        return true;
+                    default:
+                        return false;
+                }
+            default:
+                if (i10 == 1) {
+                    l6.b bVar2 = new l6.b((c) this);
+                    parcel2.writeNoException();
+                    t.d(parcel2, bVar2);
+                    return true;
+                }
+                if (i10 == 2) {
+                    c cVar = (c) this;
+                    u5.b bVar3 = c.e;
+                    Log.i(bVar3.a, bVar3.d("onAppEnteredForeground", new Object[0]));
+                    cVar.d = 1;
+                    Iterator it3 = cVar.c.iterator();
+                    while (it3.hasNext()) {
+                        ((l) it3.next()).a.m();
+                    }
+                    parcel2.writeNoException();
+                    return true;
+                }
+                if (i10 != 3) {
+                    if (i10 != 4) {
+                        return false;
+                    }
+                    parcel2.writeNoException();
+                    parcel2.writeInt(12451000);
+                    return true;
+                }
+                c cVar2 = (c) this;
+                u5.b bVar4 = c.e;
+                Log.i(bVar4.a, bVar4.d("onAppEnteredBackground", new Object[0]));
+                cVar2.d = 2;
+                Iterator it4 = cVar2.c.iterator();
+                while (it4.hasNext()) {
+                    m mVar = ((l) it4.next()).a;
+                    m.f.b("Stopping RouteDiscovery.", new Object[0]);
+                    mVar.c.clear();
+                    if (Looper.myLooper() == Looper.getMainLooper()) {
+                        bf.b bVar5 = mVar.e;
+                        if (((c2.c0) bVar5.c) == null) {
+                            bVar5.c = c2.c0.d((Context) bVar5.b);
+                        }
+                        c2.c0 c0Var = (c2.c0) bVar5.c;
+                        if (c0Var != null) {
+                            c0Var.h(mVar);
+                        }
+                    } else {
+                        new a7.e(Looper.getMainLooper(), 2).post(new j(mVar, i11 == true ? 1 : 0));
+                    }
+                }
+                parcel2.writeNoException();
+                return true;
         }
-        O0.recycle();
-        return sVar;
-    }
-
-    public final p5.x W0(String str, String str2, p5.j jVar) {
-        p5.x vVar;
-        Parcel M0 = M0();
-        M0.writeString(str);
-        M0.writeString(str2);
-        u.d(M0, jVar);
-        Parcel O0 = O0(M0, 2);
-        IBinder readStrongBinder = O0.readStrongBinder();
-        int i10 = p5.w.b;
-        if (readStrongBinder == null) {
-            vVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ISession");
-            vVar = queryLocalInterface instanceof p5.x ? (p5.x) queryLocalInterface : new p5.v(readStrongBinder, "com.google.android.gms.cast.framework.ISession", 0);
-        }
-        O0.recycle();
-        return vVar;
-    }
-
-    public final r5.e X0(j6.b bVar, p5.j jVar, int i10, int i11) {
-        r5.e cVar;
-        Parcel M0 = M0();
-        u.d(M0, bVar);
-        u.d(M0, jVar);
-        M0.writeInt(i10);
-        M0.writeInt(i11);
-        M0.writeInt(0);
-        M0.writeLong(2097152L);
-        M0.writeInt(5);
-        M0.writeInt(333);
-        M0.writeInt(10000);
-        Parcel O0 = O0(M0, 6);
-        IBinder readStrongBinder = O0.readStrongBinder();
-        int i12 = r5.d.b;
-        if (readStrongBinder == null) {
-            cVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask");
-            cVar = queryLocalInterface instanceof r5.e ? (r5.e) queryLocalInterface : new r5.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 0);
-        }
-        O0.recycle();
-        return cVar;
-    }
-
-    public final r5.e Y0(j6.b bVar, j6.b bVar2, p5.j jVar, int i10, int i11) {
-        r5.e cVar;
-        Parcel M0 = M0();
-        u.d(M0, bVar);
-        u.d(M0, bVar2);
-        u.d(M0, jVar);
-        M0.writeInt(i10);
-        M0.writeInt(i11);
-        M0.writeInt(0);
-        M0.writeLong(2097152L);
-        M0.writeInt(5);
-        M0.writeInt(333);
-        M0.writeInt(10000);
-        Parcel O0 = O0(M0, 7);
-        IBinder readStrongBinder = O0.readStrongBinder();
-        int i12 = r5.d.b;
-        if (readStrongBinder == null) {
-            cVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask");
-            cVar = queryLocalInterface instanceof r5.e ? (r5.e) queryLocalInterface : new r5.c(readStrongBinder, "com.google.android.gms.cast.framework.media.internal.IFetchBitmapTask", 0);
-        }
-        O0.recycle();
-        return cVar;
     }
 }

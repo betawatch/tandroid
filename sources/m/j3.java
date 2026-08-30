@@ -8,7 +8,7 @@ import android.view.ViewParent;
 import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j3 implements l.x {
     public l.k a;
@@ -20,7 +20,7 @@ public final class j3 implements l.x {
     }
 
     @Override // l.x
-    public final boolean c(l.m mVar) {
+    public final boolean b(l.m mVar) {
         Toolbar toolbar = this.c;
         toolbar.c();
         ViewParent parent = toolbar.n.getParent();
@@ -48,7 +48,7 @@ public final class j3 implements l.x {
             View childAt = toolbar.getChildAt(childCount);
             if (((k3) childAt.getLayoutParams()).b != 2 && childAt != toolbar.a) {
                 toolbar.removeViewAt(childCount);
-                toolbar.Q.add(childAt);
+                toolbar.R.add(childAt);
             }
         }
         toolbar.requestLayout();
@@ -108,7 +108,7 @@ public final class j3 implements l.x {
         toolbar.removeView(toolbar.r);
         toolbar.removeView(toolbar.n);
         toolbar.r = null;
-        ArrayList arrayList = toolbar.Q;
+        ArrayList arrayList = toolbar.R;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             toolbar.addView((View) arrayList.get(size));
         }
@@ -122,6 +122,6 @@ public final class j3 implements l.x {
     }
 
     @Override // l.x
-    public final void b(l.k kVar, boolean z10) {
+    public final void c(l.k kVar, boolean z4) {
     }
 }

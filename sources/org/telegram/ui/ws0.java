@@ -1,28 +1,23 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
+import android.media.MediaFormat;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ws0 extends bg.g1 {
-    public final /* synthetic */ PhotoViewer k2;
+public final class ws0 implements i5.n {
+    public final /* synthetic */ PhotoViewer a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ws0(PhotoViewer photoViewer, Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, gq0 gq0Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, activity, i10, bitmap, bitmap2, i11, arrayList, cropState, gq0Var, c6Var);
-        this.k2 = photoViewer;
+    public ws0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // bg.g1
-    public final int getPKeyboardHeight() {
-        nh.w3 w3Var = this.k2.G1;
-        if (w3Var != null) {
-            return w3Var.l;
+    @Override // i5.n
+    public final void a(long j10, long j11, j3.n0 n0Var, MediaFormat mediaFormat) {
+        org.telegram.ui.Components.i71 i71Var;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.G4 && (i71Var = photoViewer.C2) != null) {
+            AndroidUtilities.runOnUIThread(new zq0(4, this, i71Var));
         }
-        return 0;
     }
 }

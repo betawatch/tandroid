@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.app.IntentService;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class NotificationRepeat extends IntentService {
     public NotificationRepeat() {
@@ -22,7 +22,7 @@ public class NotificationRepeat extends IntentService {
         }
         int intExtra = intent.getIntExtra("currentAccount", UserConfig.selectedAccount);
         if (UserConfig.isValidAccount(intExtra)) {
-            AndroidUtilities.runOnUIThread(new d6(intExtra, 2));
+            AndroidUtilities.runOnUIThread(new e6(intExtra, 2));
         }
     }
 }

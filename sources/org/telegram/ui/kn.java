@@ -1,52 +1,61 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ln b;
+public final class kn extends k7.c6 {
+    public MessageObject a;
+    public int b = 0;
+    public boolean c = true;
+    public int d = 0;
+    public int e;
+    public boolean f;
+    public int g;
+    public final /* synthetic */ xn h;
 
-    public /* synthetic */ kn(ln lnVar, int i10) {
-        this.a = i10;
-        this.b = lnVar;
+    public kn(xn xnVar) {
+        this.h = xnVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ln lnVar = this.b;
-                lnVar.f = floatValue;
-                View view = lnVar.h.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ln lnVar2 = this.b;
-                lnVar2.f = floatValue2;
-                View view2 = lnVar2.h.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ln lnVar3 = this.b;
-                lnVar3.f = floatValue3;
-                View view3 = lnVar3.h.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
+    @Override // k7.c6
+    public final void a() {
+        MessageObject messageObject = this.a;
+        xn xnVar = this.h;
+        if (messageObject != null) {
+            xnVar.x0.T();
+            int indexOf = xnVar.r6.indexOf(this.a) + xnVar.x0.G;
+            if (indexOf >= 0) {
+                xnVar.w0.i1(indexOf, (int) ((this.e + this.g) - xnVar.p9), this.f);
+            }
+        } else {
+            xnVar.x0.T();
+            xnVar.w0.i1(this.b, this.d, this.c);
+        }
+        this.a = null;
+        xnVar.j3 = true;
+        xnVar.Wc(false);
+        AndroidUtilities.runOnUIThread(new zi(this, 8));
+    }
+
+    @Override // k7.c6
+    public final void c() {
+        xn xnVar = this.h;
+        xnVar.F9 = xnVar.getNotificationCenter().setAnimationInProgress(xnVar.F9, xn.Kc);
+        sk skVar = xnVar.ta;
+        if (skVar.n) {
+            skVar.d();
+        }
+    }
+
+    @Override // k7.c6
+    public final void d(View view) {
+        if (view instanceof org.telegram.ui.Cells.t1) {
+            org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
+            t1Var.setDelegate(null);
+            t1Var.setResourcesProvider(null);
         }
     }
 }

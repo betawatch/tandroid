@@ -1,34 +1,16 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wx {
-    public final TLRPC.StickerSetCovered a;
-    public final TLRPC.TL_messages_stickerSet b;
-    public final TLRPC.StickerSet c;
-    public final ArrayList d;
-    public final TLRPC.Document e;
-
-    public wx(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
-        TLRPC.Document document = null;
-        this.a = null;
-        this.b = tL_messages_stickerSet;
-        this.c = tL_messages_stickerSet.set;
-        this.d = arrayList;
-        if (arrayList != null && !arrayList.isEmpty()) {
-            document = (TLRPC.Document) arrayList.get(0);
-        }
-        this.e = document;
-    }
-
-    public wx(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
-        this.a = stickerSetCovered;
-        this.b = null;
-        this.c = stickerSetCovered.set;
-        this.d = arrayList;
-        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
+public final class wx extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
     }
 }

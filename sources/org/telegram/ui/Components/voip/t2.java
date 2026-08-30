@@ -1,27 +1,141 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import org.webrtc.TextureViewRenderer;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import nh.n5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class t2 extends TextureViewRenderer {
-    public final /* synthetic */ u2 a;
+public final class t2 extends View {
+    public StaticLayout a;
+    public final RectF b;
+    public final Paint c;
+    public final Paint d;
+    public String e;
+    public final TextPaint f;
+    public int h;
+    public boolean n;
+    public final Drawable r;
+    public final n5 s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t2(u2 u2Var, Context context) {
-        super(context);
-        this.a = u2Var;
+    public t2(Activity activity) {
+        super(activity);
+        this.b = new RectF();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        TextPaint textPaint = new TextPaint(1);
+        this.f = textPaint;
+        this.h = 4;
+        this.n = false;
+        this.s = new n5(this, 26);
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint.setColor(-1);
+        paint.setColor(i0.a.k(-1, TLRPC.LAYER));
+        paint2.setColor(i0.a.k(-1, 102));
+        Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
+        this.r = drawable;
+        drawable.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
     }
 
-    @Override // org.webrtc.TextureViewRenderer, org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        super.onFirstFrameRendered();
-        this.a.b();
+    public final void a() {
+        n5 n5Var = this.s;
+        removeCallbacks(n5Var);
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null) {
+            return;
+        }
+        String formatLongDuration = AndroidUtilities.formatLongDuration((int) (sharedInstance.getCallDuration() / 1000));
+        String str = this.e;
+        if (str == null || !str.equals(formatLongDuration)) {
+            this.e = formatLongDuration;
+            if (this.a == null) {
+                requestLayout();
+            }
+            String str2 = this.e;
+            TextPaint textPaint = this.f;
+            this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        }
+        postDelayed(n5Var, 300L);
+        invalidate();
     }
 
-    @Override // android.view.TextureView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        StaticLayout staticLayout = this.a;
+        int i10 = 0;
+        int dp = staticLayout == null ? 0 : AndroidUtilities.dp(21.0f) + staticLayout.getWidth();
+        canvas.save();
+        canvas.translate((getMeasuredWidth() - dp) / 2.0f, 0.0f);
+        canvas.save();
+        if (this.n) {
+            canvas.translate(-AndroidUtilities.dp(7.0f), -AndroidUtilities.dp(3.0f));
+            this.r.draw(canvas);
+        } else {
+            canvas.translate(0.0f, (getMeasuredHeight() - AndroidUtilities.dp(11.0f)) / 2.0f);
+            while (i10 < 4) {
+                int i11 = i10 + 1;
+                Paint paint = i11 > this.h ? this.d : this.c;
+                float f10 = i10;
+                float dpf2 = AndroidUtilities.dpf2(4.16f) * f10;
+                float dpf22 = AndroidUtilities.dpf2(2.75f) * (3 - i10);
+                float dpf23 = AndroidUtilities.dpf2(2.75f) + (AndroidUtilities.dpf2(4.16f) * f10);
+                float dp2 = AndroidUtilities.dp(11.0f);
+                RectF rectF = this.b;
+                rectF.set(dpf2, dpf22, dpf23, dp2);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(0.7f), AndroidUtilities.dpf2(0.7f), paint);
+                i10 = i11;
+            }
+        }
+        canvas.restore();
+        if (staticLayout != null) {
+            canvas.translate(AndroidUtilities.dp(21.0f), 0.0f);
+            staticLayout.draw(canvas);
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        StaticLayout staticLayout = this.a;
+        if (staticLayout != null) {
+            setMeasuredDimension(View.MeasureSpec.getSize(i10), staticLayout.getHeight());
+        } else {
+            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(15.0f));
+        }
+    }
+
+    public void setSignalBarCount(int i10) {
+        this.h = i10;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        if (getVisibility() != i10) {
+            if (i10 == 0) {
+                this.e = "00:00";
+                String str = this.e;
+                TextPaint textPaint = this.f;
+                this.a = new StaticLayout(str, textPaint, (int) textPaint.measureText(str), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                a();
+            } else {
+                this.e = null;
+                this.a = null;
+            }
+        }
+        super.setVisibility(i10);
     }
 }

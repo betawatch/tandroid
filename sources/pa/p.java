@@ -1,22 +1,14 @@
 package pa;
 
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class p extends r {
-    public final /* synthetic */ Method b;
-
-    public p(Method method) {
-        this.b = method;
+public enum p extends t {
+    public p() {
+        super("DOUBLE", 0);
     }
 
-    @Override // pa.r
-    public final Object a(Class cls) {
-        String T1 = oc.i.T1(cls);
-        if (T1 == null) {
-            return this.b.invoke(null, cls, Object.class);
-        }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(T1));
+    @Override // pa.t
+    public final Number a(xa.a aVar) {
+        return Double.valueOf(aVar.o());
     }
 }

@@ -1,7 +1,31 @@
 package nd;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static final fc.a a = new fc.a("NULL", 2);
+public final class e extends f {
+    public final Throwable a;
+
+    public e(Throwable th2) {
+        this.a = th2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof e) {
+            return kotlin.jvm.internal.j.a(this.a, ((e) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        Throwable th2 = this.a;
+        if (th2 != null) {
+            return th2.hashCode();
+        }
+        return 0;
+    }
+
+    @Override // nd.f
+    public final String toString() {
+        return "Closed(" + this.a + ')';
+    }
 }

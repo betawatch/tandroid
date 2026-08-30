@@ -1,20 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.graphics.RectF;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yr extends f2.l {
-    public final /* synthetic */ as F;
+public final /* synthetic */ class yr implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
 
-    public yr(as asVar) {
-        this.F = asVar;
+    public /* synthetic */ yr(int i10) {
+        this.a = i10;
     }
 
-    @Override // f2.l
-    public final void P(f2.n1 n1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                int i10 = es.D0;
+                break;
+            case 1:
+                Boolean bool = (Boolean) obj;
+                HashSet<Long> hashSet = (HashSet) obj2;
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    sharedInstance.convertToConferenceCall(bool.booleanValue(), hashSet);
+                    break;
+                }
+                break;
+            default:
+                RectF rectF = ug.d.E;
+                break;
+        }
     }
 }

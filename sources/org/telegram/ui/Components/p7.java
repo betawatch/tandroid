@@ -1,101 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p7 extends aj0 {
-    public final o7 A;
-    public long B;
-    public final /* synthetic */ float C;
-    public final /* synthetic */ g8 D;
-    public float r;
-    public float s;
-    public int v;
-    public long w;
-    public long x;
-    public final o7 y;
+public final class p7 extends f2.b0 {
+    public final /* synthetic */ c8 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(g8 g8Var, Context context, float f9) {
-        super(context);
-        this.D = g8Var;
-        this.C = f9;
-        this.v = 0;
-        this.y = new o7(this, 0);
-        this.A = new o7(this, 1);
+    public p7(c8 c8Var) {
+        this.d = c8Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.addAction(16);
+    @Override // f2.b0
+    public final void a(RecyclerView recyclerView, f2.l1 l1Var) {
+        super.a(recyclerView, l1Var);
+        View view = l1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x002a, code lost:
-    
-        if (r6 != 3) goto L20;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        g8 g8Var = this.D;
-        p7 p7Var = g8Var.G;
-        if (g8Var.P.v || g8Var.D0 == 1) {
-            return false;
+    @Override // f2.b0
+    public final int e(RecyclerView recyclerView, f2.l1 l1Var) {
+        if (l1Var.f != 0) {
+            return 0;
         }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        o7 o7Var = this.y;
-        if (action == 0) {
-            this.r = rawX;
-            this.s = rawY;
-            this.B = System.currentTimeMillis();
-            g8Var.D0 = 0;
-            AndroidUtilities.runOnUIThread(o7Var, 300L);
-            if (getBackground() != null) {
-                getBackground().setHotspot(this.r, this.s);
+        return f2.b0.l(3, 0);
+    }
+
+    @Override // f2.b0
+    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
+        int b10 = l1Var.b();
+        int b11 = l1Var2.b();
+        c8 c8Var = this.d;
+        if (!c8Var.s0) {
+            c8Var.t0.move(b10, b11);
+        } else {
+            if (b10 <= 0 || b11 <= 0) {
+                return false;
             }
-            setPressed(true);
-            return true;
+            c8Var.t0.move(b10 - 1, b11 - 1);
         }
-        if (action != 1) {
-            if (action == 2) {
-                float f9 = rawX - this.r;
-                float f10 = rawY - this.s;
-                float f11 = (f10 * f10) + (f9 * f9);
-                float f12 = this.C;
-                if (f11 > f12 * f12 && g8Var.D0 == 0) {
-                    AndroidUtilities.cancelRunOnUIThread(o7Var);
-                    setPressed(false);
-                }
-            }
-            return true;
-        }
-        AndroidUtilities.cancelRunOnUIThread(o7Var);
-        o7 o7Var2 = this.A;
-        AndroidUtilities.cancelRunOnUIThread(o7Var2);
-        if (g8Var.D0 == 0 && motionEvent.getAction() == 1 && System.currentTimeMillis() - this.B < 300) {
-            MediaController.getInstance().playPreviousMessage();
-            p7Var.setProgress(0.0f);
-            p7Var.d();
-        }
-        if (this.v > 0) {
-            this.x = 0L;
-            o7Var2.run();
-            MediaController.getInstance().resumeByRewind();
-        }
-        g8Var.E0 = -1.0f;
-        setPressed(false);
-        g8Var.D0 = 0;
-        this.v = 0;
+        c8Var.u0.clear();
+        c8Var.u0.addAll(c8Var.t0.list);
+        c8Var.s.p(b10, b11);
         return true;
+    }
+
+    @Override // f2.b0
+    public final void p(f2.l1 l1Var, int i10) {
+        o7 o7Var = this.d.n;
+        if (l1Var != null) {
+            o7Var.d1(false);
+        }
+        if (i10 != 0) {
+            o7Var.I0(false);
+            if (l1Var != null) {
+                l1Var.a.setPressed(true);
+            }
+        }
+        if (l1Var != null) {
+            l1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        }
+    }
+
+    @Override // f2.b0
+    public final void q(f2.l1 l1Var) {
     }
 }

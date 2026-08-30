@@ -16,7 +16,7 @@ import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -30,16 +30,16 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
 
     public ContactsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        org.telegram.ui.ActionBar.g6.R(context);
+        org.telegram.ui.ActionBar.j6.R(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
         int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
         if (i10 >= 0) {
             this.accountInstance = AccountInstance.getInstance(i10);
         }
-        StringBuilder sb2 = new StringBuilder("deleted");
-        sb2.append(this.appWidgetId);
-        this.deleted = sharedPreferences.getBoolean(sb2.toString(), false) || this.accountInstance == null;
+        StringBuilder sb = new StringBuilder("deleted");
+        sb.append(this.appWidgetId);
+        this.deleted = sharedPreferences.getBoolean(sb.toString(), false) || this.accountInstance == null;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -68,7 +68,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         TLRPC.FileLocation fileLocation;
         Bitmap decodeFile;
         int i11;
-        org.telegram.ui.Components.e9 e9Var;
+        org.telegram.ui.Components.z8 z8Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         if (this.deleted) {
             RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.widget_deleted);
@@ -137,19 +137,19 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 Canvas canvas = new Canvas(createBitmap);
                 if (decodeFile == null) {
                     if (user != null) {
-                        e9Var = new org.telegram.ui.Components.e9(0, user);
+                        z8Var = new org.telegram.ui.Components.z8(0, user);
                         if (UserObject.isReplyUser(user)) {
-                            e9Var.g(12);
+                            z8Var.g(12);
                         } else if (UserObject.isUserSelf(user)) {
-                            e9Var.g(1);
+                            z8Var.g(1);
                         }
                     } else {
-                        org.telegram.ui.Components.e9 e9Var2 = new org.telegram.ui.Components.e9((org.telegram.ui.ActionBar.c6) null);
-                        e9Var2.k(this.accountInstance.getCurrentAccount(), chat);
-                        e9Var = e9Var2;
+                        org.telegram.ui.Components.z8 z8Var2 = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
+                        z8Var2.k(this.accountInstance.getCurrentAccount(), chat);
+                        z8Var = z8Var2;
                     }
-                    e9Var.setBounds(0, 0, dp, dp);
-                    e9Var.draw(canvas);
+                    z8Var.setBounds(0, 0, dp, dp);
+                    z8Var.draw(canvas);
                 } else {
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);

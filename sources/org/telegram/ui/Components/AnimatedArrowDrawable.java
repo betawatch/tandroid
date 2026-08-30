@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public class AnimatedArrowDrawable extends Drawable {
     public final Paint a;
@@ -21,7 +21,7 @@ public class AnimatedArrowDrawable extends Drawable {
     public final float h;
     public final float i;
 
-    public AnimatedArrowDrawable(int i10, boolean z10) {
+    public AnimatedArrowDrawable(int i10, boolean z4) {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
@@ -29,15 +29,15 @@ public class AnimatedArrowDrawable extends Drawable {
         paint.setColor(i10);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.f = z10;
+        this.f = z4;
         b();
     }
 
-    public final void a(float f9) {
-        if (this.d == f9) {
+    public final void a(float f10) {
+        if (this.d == f10) {
             return;
         }
-        this.d = f9;
+        this.d = f10;
         this.e = SystemClock.elapsedRealtime();
         invalidateSelf();
     }
@@ -45,30 +45,30 @@ public class AnimatedArrowDrawable extends Drawable {
     public final void b() {
         Path path = this.b;
         path.reset();
-        float f9 = (this.c * 2.0f) - 1.0f;
-        float f10 = this.g;
-        if (f10 > 0.0f) {
-            float f11 = this.h;
-            if (f11 > 0.0f) {
+        float f10 = (this.c * 2.0f) - 1.0f;
+        float f11 = this.g;
+        if (f11 > 0.0f) {
+            float f12 = this.h;
+            if (f12 > 0.0f) {
                 float dpf2 = AndroidUtilities.dpf2(this.i) / 2.0f;
-                float dpf22 = AndroidUtilities.dpf2(f10) - dpf2;
-                float dpf23 = AndroidUtilities.dpf2(f11) - dpf2;
-                float f12 = dpf23 - dpf2;
-                path.moveTo(dpf2, dpf23 - (this.c * f12));
-                path.lineTo((dpf2 + dpf22) / 2.0f, (this.c * f12) + dpf2);
-                path.lineTo(dpf22, dpf23 - (f12 * this.c));
+                float dpf22 = AndroidUtilities.dpf2(f11) - dpf2;
+                float dpf23 = AndroidUtilities.dpf2(f12) - dpf2;
+                float f13 = dpf23 - dpf2;
+                path.moveTo(dpf2, dpf23 - (this.c * f13));
+                path.lineTo((dpf2 + dpf22) / 2.0f, (this.c * f13) + dpf2);
+                path.lineTo(dpf22, dpf23 - (f13 * this.c));
                 return;
             }
         }
         if (this.f) {
-            path.moveTo(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f9));
-            path.lineTo(AndroidUtilities.dp(8.0f), (AndroidUtilities.dp(2.0f) * f9) + AndroidUtilities.dp(6.0f));
-            path.lineTo(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f9));
+            path.moveTo(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f10));
+            path.lineTo(AndroidUtilities.dp(8.0f), (AndroidUtilities.dp(2.0f) * f10) + AndroidUtilities.dp(6.0f));
+            path.lineTo(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(6.0f) - (AndroidUtilities.dp(2.0f) * f10));
             return;
         }
-        path.moveTo(AndroidUtilities.dp(4.5f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f9)));
-        path.lineTo(AndroidUtilities.dp(13.0f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(4.0f) * f9) + AndroidUtilities.dp(12.0f));
-        path.lineTo(AndroidUtilities.dp(21.5f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f9)));
+        path.moveTo(AndroidUtilities.dp(4.5f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f10)));
+        path.lineTo(AndroidUtilities.dp(13.0f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(4.0f) * f10) + AndroidUtilities.dp(12.0f));
+        path.lineTo(AndroidUtilities.dp(21.5f), (AndroidUtilities.dp(2.0f) * this.c) + (AndroidUtilities.dp(12.0f) - (AndroidUtilities.dp(4.0f) * f10)));
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -78,19 +78,19 @@ public class AnimatedArrowDrawable extends Drawable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             long j10 = elapsedRealtime - this.e;
             this.e = elapsedRealtime;
-            float f9 = this.c;
-            float f10 = this.d;
-            if (f9 < f10) {
-                float f11 = (j10 / 180.0f) + f9;
-                this.c = f11;
-                if (f11 > f10) {
-                    this.c = f10;
+            float f10 = this.c;
+            float f11 = this.d;
+            if (f10 < f11) {
+                float f12 = (j10 / 180.0f) + f10;
+                this.c = f12;
+                if (f12 > f11) {
+                    this.c = f11;
                 }
             } else {
-                float f12 = f9 - (j10 / 180.0f);
-                this.c = f12;
-                if (f12 < f10) {
-                    this.c = f10;
+                float f13 = f10 - (j10 / 180.0f);
+                this.c = f13;
+                if (f13 < f11) {
+                    this.c = f11;
                 }
             }
             b();
@@ -104,14 +104,14 @@ public class AnimatedArrowDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
-        float f9 = this.h;
-        return f9 > 0.0f ? AndroidUtilities.dp(f9) : AndroidUtilities.dp(26.0f);
+        float f10 = this.h;
+        return f10 > 0.0f ? AndroidUtilities.dp(f10) : AndroidUtilities.dp(26.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
-        float f9 = this.g;
-        return f9 > 0.0f ? AndroidUtilities.dp(f9) : AndroidUtilities.dp(26.0f);
+        float f10 = this.g;
+        return f10 > 0.0f ? AndroidUtilities.dp(f10) : AndroidUtilities.dp(26.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -119,9 +119,9 @@ public class AnimatedArrowDrawable extends Drawable {
         return -2;
     }
 
-    public void setAnimationProgress(float f9) {
-        this.c = f9;
-        this.d = f9;
+    public void setAnimationProgress(float f10) {
+        this.c = f10;
+        this.d = f10;
         b();
         invalidateSelf();
     }

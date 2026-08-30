@@ -1,84 +1,110 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.a30;
+import org.telegram.ui.Components.e30;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.g30;
+import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.z61;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ba extends s1 {
-    public final GestureDetector Be;
-    public final org.telegram.ui.Components.f5 Ce;
-    public final org.telegram.ui.Components.f5 De;
-    public final /* synthetic */ int Ee;
-    public final /* synthetic */ ca Fe;
+public final class ba implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ba(ca caVar, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, Context context2, int i11) {
-        super(context, i10, false, null, c6Var);
-        this.Fe = caVar;
-        this.Ee = i11;
-        this.Be = new GestureDetector(context2, new aa(this));
-        jr jrVar = jr.g;
-        this.Ce = new org.telegram.ui.Components.f5(this, 180L, jrVar, 0);
-        this.De = new org.telegram.ui.Components.f5(this, 180L, jrVar, 0);
+    public /* synthetic */ ba(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int v02;
-        int v03;
-        MessageObject messageObject = getMessageObject();
-        org.telegram.ui.Components.f5 f5Var = this.De;
-        org.telegram.ui.Components.f5 f5Var2 = this.Ce;
-        org.telegram.ui.Components.e9 e9Var = this.j9;
-        if (messageObject == null || getMessageObject().overrideLinkColor < 0) {
-            f5Var2.a(e9Var.b(), false);
-            f5Var.a(e9Var.c(), false);
-        } else {
-            int i10 = getMessageObject().overrideLinkColor;
-            if (i10 >= 14) {
-                MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-                MessagesController.PeerColors peerColors = messagesController != null ? messagesController.peerColors : null;
-                MessagesController.PeerColor color = peerColors != null ? peerColors.getColor(i10) : null;
-                if (color != null) {
-                    int color1 = color.getColor1();
-                    v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.p8[org.telegram.ui.Components.e9.f(color1)], this.Ed);
-                    v03 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.q8[org.telegram.ui.Components.e9.f(color1)], this.Ed);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        int i10 = this.a;
+        int i11 = 3;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                da daVar = ((ca) obj).a;
+                daVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                daVar.getTransitionParams().j();
+                daVar.getTransitionParams().f();
+                daVar.getTransitionParams().g = true;
+                daVar.getTransitionParams().K1 = 0.0f;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                ofFloat.addUpdateListener(new r(this, 8));
+                ofFloat.addListener(new org.telegram.ui.s5(this, 12));
+                ofFloat.start();
+                break;
+            case 1:
+                ((iu) obj).a.c.getViewTreeObserver().removeOnPreDrawListener(this);
+                break;
+            case 2:
+                a30 a30Var = (a30) obj;
+                e30 e30Var = a30Var.f;
+                org.telegram.ui.w7 w7Var = a30Var.e;
+                w7Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                w7Var.getLocationOnScreen(a30Var.D);
+                float f10 = a30Var.r.x + a30Var.N;
+                g30 g30Var = a30Var.R;
+                float measuredWidth = ((g30Var.getMeasuredWidth() / 2.0f) + f10) - r8[0];
+                float measuredWidth2 = ((g30Var.getMeasuredWidth() / 2.0f) + (a30Var.r.y + a30Var.O)) - r8[1];
+                boolean z4 = measuredWidth2 - ((float) AndroidUtilities.dp(61.0f)) > 0.0f && ((float) AndroidUtilities.dp(61.0f)) + measuredWidth2 < ((float) w7Var.getMeasuredHeight());
+                if (AndroidUtilities.dp(61.0f) + measuredWidth + e30Var.getMeasuredWidth() < w7Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f) && z4) {
+                    e30Var.setTranslationX(AndroidUtilities.dp(61.0f) + measuredWidth);
+                    float measuredHeight = measuredWidth2 / w7Var.getMeasuredHeight();
+                    float dp = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredHeight();
+                    e30Var.setTranslationY((int) (measuredWidth2 - (e30Var.getMeasuredHeight() * Math.max(dp, Math.min(measuredHeight, 1.0f - dp)))));
+                    e30Var.c(measuredWidth, measuredWidth2, 0);
+                    break;
+                } else if ((measuredWidth - AndroidUtilities.dp(61.0f)) - e30Var.getMeasuredWidth() > AndroidUtilities.dp(16.0f) && z4) {
+                    float dp2 = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredHeight();
+                    float max = Math.max(dp2, Math.min(measuredWidth2 / w7Var.getMeasuredHeight(), 1.0f - dp2));
+                    e30Var.setTranslationX((int) ((measuredWidth - AndroidUtilities.dp(61.0f)) - e30Var.getMeasuredWidth()));
+                    e30Var.setTranslationY((int) (measuredWidth2 - (e30Var.getMeasuredHeight() * max)));
+                    e30Var.c(measuredWidth, measuredWidth2, 1);
+                    break;
+                } else if (measuredWidth2 <= w7Var.getMeasuredHeight() * 0.3f) {
+                    float measuredWidth3 = measuredWidth / w7Var.getMeasuredWidth();
+                    float dp3 = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredWidth();
+                    e30Var.setTranslationX((int) (measuredWidth - (e30Var.getMeasuredWidth() * Math.max(dp3, Math.min(measuredWidth3, 1.0f - dp3)))));
+                    e30Var.setTranslationY((int) (AndroidUtilities.dp(61.0f) + measuredWidth2));
+                    e30Var.c(measuredWidth, measuredWidth2, 2);
+                    break;
                 } else {
-                    long j10 = i10;
-                    v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.p8[org.telegram.ui.Components.e9.e(j10)], this.Ed);
-                    v03 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.q8[org.telegram.ui.Components.e9.e(j10)], this.Ed);
+                    float measuredWidth4 = measuredWidth / w7Var.getMeasuredWidth();
+                    float dp4 = AndroidUtilities.dp(40.0f) / e30Var.getMeasuredWidth();
+                    e30Var.setTranslationX((int) (measuredWidth - (e30Var.getMeasuredWidth() * Math.max(dp4, Math.min(measuredWidth4, 1.0f - dp4)))));
+                    e30Var.setTranslationY((int) ((measuredWidth2 - e30Var.getMeasuredHeight()) - AndroidUtilities.dp(61.0f)));
+                    e30Var.c(measuredWidth, measuredWidth2, 3);
+                    break;
                 }
-            } else {
-                long j11 = i10;
-                v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.p8[org.telegram.ui.Components.e9.e(j11)], this.Ed);
-                v03 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.q8[org.telegram.ui.Components.e9.e(j11)], this.Ed);
-            }
-            e9Var.i(f5Var2.a(v02, false), f5Var.a(v03, false));
+                break;
+            case 3:
+                ((eg.i0) obj).invalidate();
+                break;
+            default:
+                e91 e91Var = (e91) ((ih.h) obj).b;
+                e91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = e91Var.e;
+                if (imageView != null) {
+                    imageView.setVisibility(4);
+                    e91Var.e.setImageDrawable(null);
+                    Bitmap bitmap = e91Var.h;
+                    if (bitmap != null) {
+                        bitmap.recycle();
+                        e91Var.h = null;
+                    }
+                }
+                AndroidUtilities.runOnUIThread(new z61(this, i11));
+                e91Var.r = 0;
+                break;
         }
-        if (getAvatarImage() != null && getAvatarImage().getImageHeight() != 0.0f) {
-            getAvatarImage().setImageCoords(getAvatarImage().getImageX(), (getMeasuredHeight() - getAvatarImage().getImageHeight()) - AndroidUtilities.dp(4.0f), getAvatarImage().getImageWidth(), getAvatarImage().getImageHeight());
-            getAvatarImage().setRoundRadius((int) (getAvatarImage().getImageHeight() / 2.0f));
-            getAvatarImage().draw(canvas);
-        } else if (this.Ee == 2) {
-            invalidate();
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.s1, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Fe.a()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        this.Be.onTouchEvent(motionEvent);
         return true;
     }
 }

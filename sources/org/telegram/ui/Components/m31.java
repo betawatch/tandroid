@@ -1,41 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m31 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v31 b;
+public final class m31 extends v31 {
+    public final /* synthetic */ Runnable Q;
 
-    public /* synthetic */ m31(v31 v31Var, int i10) {
-        this.a = i10;
-        this.b = v31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m31(Context context, String str, String str2, CharSequence charSequence, TLRPC.InputPeer inputPeer, int i10, boolean z4, Runnable runnable) {
+        super(context, str, str2, charSequence, inputPeer, i10, z4, null);
+        this.Q = runnable;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            case 3:
-                v31 v31Var = this.b;
-                CharSequence charSequence = v31Var.Y;
-                if (charSequence != null) {
-                    v31Var.Z.run(charSequence);
-                }
-                v31Var.dismiss();
-                break;
-            default:
-                v31.P(this.b, view);
-                break;
+    @Override // org.telegram.ui.Components.v31, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        Runnable runnable = this.Q;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

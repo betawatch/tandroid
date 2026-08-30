@@ -1,35 +1,53 @@
 package af;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.net.Uri;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.l4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends FrameLayout {
-    public final Activity a;
-    public int b;
-    public int c;
-    public boolean d;
+public final /* synthetic */ class a implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public a(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = launchActivity;
+    public /* synthetic */ a(f fVar, d2[] d2VarArr, int i10, Uri uri, Context context, boolean z4) {
+        this.d = fVar;
+        this.e = d2VarArr;
+        this.b = i10;
+        this.f = uri;
+        this.g = context;
+        this.c = z4;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        boolean isInPictureInPictureMode = AndroidUtilities.isInPictureInPictureMode(this.a);
-        if (!isInPictureInPictureMode) {
-            this.b = size;
-            this.c = size2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new d((f) this.d, (d2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new d((l4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));
+                break;
         }
-        this.d = isInPictureInPictureMode && size < this.b && size2 < this.c;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+    }
+
+    public /* synthetic */ a(l4 l4Var, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z4, String str) {
+        this.d = l4Var;
+        this.b = i10;
+        this.e = webPage;
+        this.f = messageObject;
+        this.c = z4;
+        this.g = str;
     }
 }

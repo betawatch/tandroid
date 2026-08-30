@@ -1,59 +1,36 @@
 package la;
 
-import bd.p;
-import i7.c7;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class j extends uc.i implements p {
-    public /* synthetic */ Object a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ n1.d c;
-    public final /* synthetic */ k d;
+public final class j {
+    public final i a;
+    public final i b;
+    public final double c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(Object obj, n1.d dVar, k kVar, sc.c cVar) {
-        super(2, cVar);
-        this.b = obj;
-        this.c = dVar;
-        this.d = kVar;
+    public j(i iVar, i iVar2, double d) {
+        this.a = iVar;
+        this.b = iVar2;
+        this.c = d;
     }
 
-    @Override // uc.a
-    public final sc.c create(Object obj, sc.c cVar) {
-        j jVar = new j(this.b, this.c, this.d, cVar);
-        jVar.a = obj;
-        return jVar;
-    }
-
-    @Override // bd.p
-    public final Object invoke(Object obj, Object obj2) {
-        j jVar = (j) create((n1.b) obj, (sc.c) obj2);
-        qc.i iVar = qc.i.a;
-        jVar.invokeSuspend(iVar);
-        return iVar;
-    }
-
-    @Override // uc.a
-    public final Object invokeSuspend(Object obj) {
-        tc.a aVar = tc.a.a;
-        c7.b(obj);
-        n1.b bVar = (n1.b) this.a;
-        n1.d key = this.c;
-        Object obj2 = this.b;
-        if (obj2 != null) {
-            bVar.getClass();
-            kotlin.jvm.internal.j.e(key, "key");
-            bVar.b(key, obj2);
-        } else {
-            bVar.getClass();
-            kotlin.jvm.internal.j.e(key, "key");
-            if (bVar.b.get()) {
-                throw new IllegalStateException("Do mutate preferences once returned to DataStore.");
-            }
-            bVar.a.remove(key);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        k.a(this.d, bVar);
-        return qc.i.a;
+        if (!(obj instanceof j)) {
+            return false;
+        }
+        j jVar = (j) obj;
+        return this.a == jVar.a && this.b == jVar.b && Double.valueOf(this.c).equals(Double.valueOf(jVar.c));
+    }
+
+    public final int hashCode() {
+        int hashCode = (this.b.hashCode() + (this.a.hashCode() * 31)) * 31;
+        long doubleToLongBits = Double.doubleToLongBits(this.c);
+        return hashCode + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+    }
+
+    public final String toString() {
+        return "DataCollectionStatus(performance=" + this.a + ", crashlytics=" + this.b + ", sessionSamplingRate=" + this.c + ')';
     }
 }

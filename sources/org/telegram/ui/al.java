@@ -1,31 +1,66 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class al extends UndoView {
-    public final /* synthetic */ tn b0;
+public final class al extends org.telegram.ui.Components.pk0 {
+    public final int[] i1;
+    public ValueAnimator j1;
+    public boolean k1;
+    public final /* synthetic */ xn l1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public al(tn tnVar, Activity activity, tn tnVar2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity, tnVar2, true, c6Var);
-        this.b0 = tnVar;
+    public al(xn xnVar, xn xnVar2, Activity activity, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(3, i10, activity, xnVar2, f6Var);
+        this.l1 = xnVar;
+        this.i1 = new int[2];
+        this.k1 = true;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void b(CharacterStyle characterStyle) {
-        this.b0.U7(characterStyle, false, null, null);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        org.telegram.ui.ActionBar.k kVar;
+        super.onLayout(z4, i10, i11, i12, i13);
+        kVar = ((org.telegram.ui.ActionBar.p2) this.l1).actionBar;
+        org.telegram.ui.ActionBar.w0 k10 = kVar.j(null).k(28);
+        if (k10 != null) {
+            int[] iArr = this.i1;
+            getLocationInWindow(iArr);
+            float x10 = getX();
+            float width = getWidth() + x10;
+            k10.getLocationInWindow(iArr);
+            float width2 = (k10.getWidth() / 2.0f) + iArr[0];
+            int dp = AndroidUtilities.dp(20.0f);
+            boolean z10 = LocaleController.isRTL;
+            float f10 = width2 + (dp * (z10 ? -1 : 1));
+            if (z10) {
+                s(f10 - x10, !this.k1);
+            } else {
+                s(f10 - width, !this.k1);
+            }
+            this.k1 = false;
+        }
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        int i11;
-        yj yjVar = this.b0.T1;
-        setAdditionalTranslationY((yjVar == null || !(((i11 = yjVar.P) == 1 || i11 == 3) && yjVar.O)) ? 0.0f : AndroidUtilities.dp(yjVar.getStyleHeight()));
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    public final void s(float f10, boolean z4) {
+        ValueAnimator valueAnimator = this.j1;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.j1 = null;
+        }
+        if (!z4) {
+            setBubbleOffset(f10);
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.R0, f10);
+        this.j1 = ofFloat;
+        ofFloat.addUpdateListener(new e3(this, 6));
+        this.j1.setInterpolator(org.telegram.ui.Components.nr.h);
+        this.j1.setDuration(420L);
+        this.j1.start();
     }
 }

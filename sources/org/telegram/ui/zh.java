@@ -1,74 +1,97 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zh implements m2.e {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ HorizontalScrollView d;
-    public final /* synthetic */ SparseIntArray e;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final /* synthetic */ int[] g;
+public final class zh extends AnimatorListenerAdapter {
+    public final /* synthetic */ wn a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k5 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ gg.q e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ xn h;
 
-    public zh(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.a = atomicBoolean;
-        this.b = linearLayout;
-        this.c = i10;
-        this.d = horizontalScrollView;
-        this.e = sparseIntArray;
-        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.g = iArr;
+    public zh(xn xnVar, wn wnVar, boolean z4, org.telegram.ui.ActionBar.k5 k5Var, boolean z10, gg.q qVar, boolean z11) {
+        this.h = xnVar;
+        this.a = wnVar;
+        this.b = z4;
+        this.c = k5Var;
+        this.d = z10;
+        this.e = qVar;
+        this.f = z11;
     }
 
-    @Override // m2.e
-    public final void a(int i10) {
-        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
-    }
-
-    @Override // m2.e
-    public final void b(float f9, int i10, int i11) {
-        HorizontalScrollView horizontalScrollView;
-        if (this.a.get()) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        xn xnVar = this.h;
+        if (xnVar.C2.getTag() != null) {
+            xnVar.C2.setVisibility(4);
+            int G8 = xnVar.G8();
+            xnVar.C2.a(Math.min(G8 - 1, Math.max(1, G8 - xnVar.J4[0])), false);
+        } else {
+            xnVar.C2.setAlpha(1.0f);
         }
-        int i12 = 0;
-        float f10 = -1.0f;
-        float f11 = -1.0f;
-        while (true) {
-            LinearLayout linearLayout = this.b;
-            int childCount = linearLayout.getChildCount();
-            horizontalScrollView = this.d;
-            if (i12 >= childCount) {
-                break;
-            }
-            org.telegram.ui.Components.qj0 qj0Var = (org.telegram.ui.Components.qj0) linearLayout.getChildAt(i12);
-            qj0Var.setOutlineProgress(i12 == i10 ? 1.0f - f9 : i12 == (i10 + 1) % this.c ? f9 : 0.0f);
-            if (i12 == i10) {
-                f10 = qj0Var.getX() - ((horizontalScrollView.getWidth() - qj0Var.getWidth()) / 2.0f);
-            }
-            if (i12 == i10 + 1) {
-                f11 = qj0Var.getX() - ((horizontalScrollView.getWidth() - qj0Var.getWidth()) / 2.0f);
-            }
-            i12++;
+        xnVar.C2.setTranslationY(0.0f);
+        xnVar.A2[0].setTranslationX(0.0f);
+        xnVar.A2[1].setTranslationX(0.0f);
+        xnVar.C2.setTranslationX(xnVar.D2 + 0.0f);
+        wn wnVar = this.a;
+        wnVar.setTranslationY(0.0f);
+        boolean z4 = this.b;
+        if (!z4) {
+            wnVar.setTranslationY(0.0f);
         }
-        if (f10 != -1.0f && f11 != -1.0f) {
-            horizontalScrollView.setScrollX((int) com.google.android.recaptcha.internal.a.z(f11, f10, f9, f10));
+        org.telegram.ui.ActionBar.k5 k5Var = this.c;
+        if (!z4) {
+            k5Var.setTranslationY(0.0f);
         }
-        SparseIntArray sparseIntArray = this.e;
-        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f9) + ((1.0f - f9) * sparseIntArray.get(i10, 0))), false);
-    }
-
-    @Override // m2.e
-    public final void c(int i10) {
-        if (i10 == 0) {
-            this.a.set(false);
+        boolean z10 = this.d;
+        gg.q qVar = this.e;
+        if (!z10) {
+            qVar.setTranslationY(0.0f);
         }
+        xnVar.z2[0].setTranslationX(0.0f);
+        xnVar.z2[1].setTranslationX(0.0f);
+        xnVar.y2[1].setAlpha(1.0f);
+        xnVar.y2[1].setScaleX(1.0f);
+        xnVar.y2[1].setScaleY(1.0f);
+        xnVar.y2[0].setAlpha(1.0f);
+        xnVar.y2[0].setScaleX(1.0f);
+        xnVar.y2[0].setScaleY(1.0f);
+        org.telegram.ui.ActionBar.k5[] k5VarArr = xnVar.A2;
+        org.telegram.ui.ActionBar.k5 k5Var2 = k5VarArr[0];
+        k5VarArr[1] = k5Var2;
+        k5VarArr[0] = k5Var;
+        k5Var2.setVisibility(4);
+        gg.q[] qVarArr = xnVar.B2;
+        gg.q qVar2 = qVarArr[0];
+        qVarArr[1] = qVar2;
+        qVarArr[0] = qVar;
+        qVar2.setVisibility(4);
+        wn[] wnVarArr = xnVar.z2;
+        wn wnVar2 = wnVarArr[0];
+        if (wnVar != wnVar2) {
+            wnVarArr[1] = wnVar2;
+            wnVarArr[0] = wnVar;
+            wnVar2.setVisibility(4);
+        }
+        if (this.f) {
+            xnVar.y2[1].setImageBitmap(null);
+            xnVar.y2[1].setVisibility(4);
+        }
+        org.telegram.ui.Components.p9[] p9VarArr = xnVar.y2;
+        org.telegram.ui.Components.p9 p9Var = p9VarArr[1];
+        org.telegram.ui.Components.p9 p9Var2 = p9VarArr[0];
+        p9VarArr[1] = p9Var2;
+        p9VarArr[0] = p9Var;
+        p9Var2.setAlpha(1.0f);
+        xnVar.y2[1].setScaleX(1.0f);
+        xnVar.y2[1].setScaleY(1.0f);
+        xnVar.y2[1].setVisibility(4);
+        xnVar.E2[0] = null;
+        xnVar.x2 = false;
     }
 }

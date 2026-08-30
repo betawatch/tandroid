@@ -1,16 +1,26 @@
 package o3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class d {
-    public static final d d = new d(-3, -9223372036854775807L, -1);
-    public final int a;
-    public final long b;
-    public final long c;
+import android.os.Handler;
+import h5.d0;
+import nh.n5;
 
-    public d(int i10, long j10, long j11) {
-        this.a = i10;
-        this.b = j10;
-        this.c = j11;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class d implements n {
+    public final l a;
+    public i b;
+    public boolean c;
+    public final /* synthetic */ e d;
+
+    public d(e eVar, l lVar) {
+        this.d = eVar;
+        this.a = lVar;
+    }
+
+    @Override // o3.n
+    public final void release() {
+        Handler handler = this.d.G;
+        handler.getClass();
+        d0.K(handler, new n5(this, 14));
     }
 }

@@ -1,93 +1,92 @@
 package dg;
 
-import ag.m0;
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 import android.view.View;
-import f2.y;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import k7.n6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+public abstract class d extends FrameLayout {
+    public boolean a;
+    public final c b;
+    public boolean c;
+    public float d;
+    public float e;
+    public boolean f;
 
-    public /* synthetic */ d(Object obj, float f9, float f10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f9;
-        this.c = f10;
+    public d(Context context, c cVar) {
+        super(context);
+        this.b = cVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        int i10 = this.a;
-        float f9 = this.c;
-        float f10 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                e eVar = (e) obj;
-                i iVar = (i) eVar.b;
-                ValueAnimator valueAnimator = iVar.O;
-                b bVar = iVar.T;
-                b bVar2 = iVar.S;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    iVar.O.cancel();
-                    iVar.O = null;
-                }
-                AnimatorSet animatorSet = iVar.P;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    iVar.P.cancel();
-                    iVar.P = null;
-                }
-                if (Math.abs(iVar.b.d) <= 10.0f) {
-                    AndroidUtilities.cancelRunOnUIThread(iVar.Q);
-                    iVar.P = new AnimatorSet();
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(iVar.b.d, f10);
-                    ofFloat.addUpdateListener(bVar2);
-                    long j10 = 220;
-                    ofFloat.setDuration(j10);
-                    jr jrVar = jr.h;
-                    ofFloat.setInterpolator(jrVar);
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
-                    ofFloat2.addUpdateListener(bVar2);
-                    ofFloat2.setStartDelay(j10);
-                    ofFloat2.setDuration(600L);
-                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(iVar.b.g, f9);
-                    ofFloat3.addUpdateListener(bVar);
-                    ofFloat3.setDuration(j10);
-                    ofFloat3.setInterpolator(jrVar);
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f9, 0.0f);
-                    ofFloat4.addUpdateListener(bVar);
-                    ofFloat4.setStartDelay(j10);
-                    ofFloat4.setDuration(600L);
-                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    iVar.P.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    iVar.P.addListener(new m0(eVar, 5));
-                    iVar.P.start();
-                    break;
-                } else {
-                    iVar.i();
-                    break;
-                }
-            default:
-                jl0 jl0Var = (jl0) ((y) obj).b;
-                if (jl0Var.a1 != null && (view = jl0Var.J1) != null) {
-                    jl0Var.h1(view, f10, f9, true);
-                    jl0Var.a1 = null;
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (this.a && (view instanceof a3)) {
+            return true;
         }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        if (!(view instanceof b4)) {
+            super.measureChildWithMargins(view, i10, i11, i12, i13);
+            return;
+        }
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        view.measure(ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i11, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(0, 0));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        c cVar = this.b;
+        j b10 = cVar.b();
+        if (b10 == null) {
+            return false;
+        }
+        if (motionEvent.getPointerCount() != 1) {
+            b10.n = false;
+            b10.r = true;
+            this.c = false;
+            this.f = true;
+            invalidate();
+            return true;
+        }
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            this.c = false;
+            b10.n = false;
+            b10.r = false;
+            this.d = motionEvent.getX();
+            this.e = motionEvent.getY();
+            this.f = false;
+            return true;
+        }
+        if (!this.f && actionMasked == 2) {
+            float x10 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            if (this.c || n6.a(x10, y10, this.d, this.e) > AndroidUtilities.touchSlop) {
+                this.c = true;
+                b10.n = true;
+                b10.e(x10 - this.d, y10 - this.e);
+                this.d = x10;
+                this.e = y10;
+                return true;
+            }
+        } else if (actionMasked == 1 || actionMasked == 3) {
+            b10.n = false;
+            b10.r = true;
+            if (!this.c) {
+                cVar.a();
+            }
+            invalidate();
+            return false;
+        }
+        return true;
     }
 }

@@ -15,11 +15,11 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
-import c2.w0;
+import c2.u0;
 import java.lang.ref.WeakReference;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
@@ -45,18 +45,18 @@ public final class e {
     public final int w;
     public final int x;
     public final boolean y;
-    public final w0 z;
+    public final u0 z;
     public boolean g = false;
     public int t = -1;
-    public final androidx.mediarouter.app.v A = new androidx.mediarouter.app.v(this, 5);
+    public final androidx.mediarouter.app.y A = new androidx.mediarouter.app.y(this, 5);
 
     public e(Context context, f fVar, Window window) {
         this.a = context;
         this.b = fVar;
         this.c = window;
-        w0 w0Var = new w0(1);
-        w0Var.b = new WeakReference(fVar);
-        this.z = w0Var;
+        u0 u0Var = new u0(1);
+        u0Var.b = new WeakReference(fVar);
+        this.z = u0Var;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, f.a.e, R.attr.alertDialogStyle, 0);
         this.u = obtainStyledAttributes.getResourceId(0, 0);
         obtainStyledAttributes.getResourceId(2, 0);

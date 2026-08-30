@@ -1,23 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class o5 extends org.telegram.ui.Cells.w4 {
-    public final /* synthetic */ int f;
+public final /* synthetic */ class o5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o5(Context context, int i10) {
-        super(context);
-        this.f = i10;
+    public /* synthetic */ o5(y5 y5Var, int i10) {
+        this.a = i10;
+        this.b = y5Var;
     }
 
-    @Override // org.telegram.ui.Cells.w4
-    public final int getFullHeight() {
-        switch (this.f) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                y5 y5Var = this.b;
+                y5Var.b0 = false;
+                y5Var.G0(true);
+                break;
+            case 1:
+                CountDownLatch countDownLatch = new CountDownLatch(2);
+                y5 y5Var2 = this.b;
+                y5Var2.C0(countDownLatch, null);
+                y5Var2.D0(countDownLatch, null);
+                try {
+                    countDownLatch.await();
+                } catch (InterruptedException unused) {
+                }
+                NotificationCenter.getInstance(y5Var2.N).doOnIdle(new o5(y5Var2, 4));
+                break;
+            case 2:
+                y5 y5Var3 = this.b;
+                y5Var3.b0 = false;
+                y5Var3.G0(true);
+                break;
+            case 3:
+                y5 y5Var4 = this.b;
+                y5Var4.b0 = false;
+                y5Var4.G0(true);
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new o5(this.b, 0));
+                break;
         }
-        return AndroidUtilities.dp(50.0f);
     }
 }

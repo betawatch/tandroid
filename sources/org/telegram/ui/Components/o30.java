@@ -1,292 +1,239 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import java.util.Comparator;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class o30 extends il0 {
-    public final Context c;
-    public final rf.k1 d;
-    public m30 e;
-    public int f;
-    public boolean h;
-    public int n;
-    public int r;
-    public int s;
-    public int v;
-    public final /* synthetic */ p30 w;
+public final /* synthetic */ class o30 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ int c;
 
-    public o30(p30 p30Var, Context context) {
-        this.w = p30Var;
-        this.c = context;
-        rf.k1 k1Var = new rf.k1(true);
-        this.d = k1Var;
-        k1Var.a = new n30(this);
+    public /* synthetic */ o30(MessagesController messagesController, int i10, int i11) {
+        this.a = i11;
+        this.b = messagesController;
+        this.c = i10;
     }
 
-    @Override // f2.p0
-    public final void A(f2.n1 n1Var) {
-        View view = n1Var.a;
-        if (view instanceof org.telegram.ui.Cells.z4) {
-            ((org.telegram.ui.Cells.z4) view).a();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public final boolean D(f2.n1 n1Var) {
-        View view = n1Var.a;
-        return !((view instanceof org.telegram.ui.Cells.z4) && this.w.b0.contains(Long.valueOf(((org.telegram.ui.Cells.z4) view).getUserId()))) && n1Var.f == 0;
-    }
-
-    @Override // f2.p0
-    public final int h() {
-        return this.f;
-    }
-
-    @Override // f2.p0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 2;
-        }
-        if (i10 == this.r) {
-            return 3;
-        }
-        return (i10 == this.v || i10 == this.s) ? 1 : 0;
-    }
-
-    @Override // f2.p0
-    public final void l() {
-        this.f = 1;
-        rf.k1 k1Var = this.d;
-        int size = k1Var.g.size();
-        if (size != 0) {
-            int i10 = this.f;
-            this.s = i10;
-            this.f = size + 1 + i10;
-        } else {
-            this.s = -1;
-        }
-        int size2 = k1Var.e.size();
-        if (size2 != 0) {
-            int i11 = this.f;
-            this.v = i11;
-            this.f = size2 + 1 + i11;
-        } else {
-            this.v = -1;
-        }
-        int i12 = this.f;
-        this.f = i12 + 1;
-        this.r = i12;
-        super.l();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00c3 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0072  */
-    @Override // f2.p0
+    /* JADX WARN: Removed duplicated region for block: B:102:0x012f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0139 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x0143 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0048 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0052 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x005c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0066 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00ad A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00b7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x00c1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00cb A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0125 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0038  */
+    @Override // java.util.Comparator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(f2.n1 n1Var, int i10) {
-        TLObject tLObject;
-        boolean z10;
+    public final int compare(Object obj, Object obj2) {
+        int i10;
         int i11;
-        TLRPC.User user;
         int i12;
-        int size;
-        String str;
-        boolean z11;
-        int size2;
-        int i13 = n1Var.f;
-        View view = n1Var.a;
-        if (i13 != 0) {
-            if (i13 != 1) {
-                return;
-            }
-            org.telegram.ui.Cells.s3 s3Var = (org.telegram.ui.Cells.s3) view;
-            if (i10 == this.s) {
-                s3Var.setText(LocaleController.getString(R.string.ChannelMembers));
-                return;
-            } else {
-                if (i10 == this.v) {
-                    s3Var.setText(LocaleController.getString(R.string.GlobalSearch));
-                    return;
-                }
-                return;
-            }
-        }
-        int i14 = this.s;
-        rf.k1 k1Var = this.d;
-        SpannableStringBuilder spannableStringBuilder = null;
-        if (i14 >= 0 && i10 > i14) {
-            if (i10 < k1Var.g.size() + i14 + 1) {
-                tLObject = (TLObject) k1Var.g.get((i10 - this.s) - 1);
-                z10 = tLObject instanceof TLRPC.User;
-                p30 p30Var = this.w;
-                if (z10) {
-                    user = (TLRPC.User) tLObject;
-                } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    i12 = ((org.telegram.ui.ActionBar.f3) p30Var).currentAccount;
-                    user = MessagesController.getInstance(i12).getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer)));
-                } else {
-                    if (!(tLObject instanceof TLRPC.ChatParticipant)) {
-                        return;
+        int i13;
+        int i14;
+        int i15;
+        switch (this.a) {
+            case 0:
+                TLObject tLObject = (TLObject) obj;
+                TLObject tLObject2 = (TLObject) obj2;
+                boolean z4 = tLObject2 instanceof TLRPC.TL_contact;
+                MessagesController messagesController = this.b;
+                TLRPC.User user = z4 ? messagesController.getUser(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
+                TLRPC.User user2 = tLObject instanceof TLRPC.TL_contact ? messagesController.getUser(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
+                int i16 = this.c;
+                if (user != null) {
+                    if (user.self) {
+                        i10 = i16 + 50000;
+                    } else {
+                        TLRPC.UserStatus userStatus = user.status;
+                        if (userStatus != null) {
+                            i10 = userStatus.expires;
+                        }
                     }
-                    i11 = ((org.telegram.ui.ActionBar.f3) p30Var).currentAccount;
-                    user = MessagesController.getInstance(i11).getUser(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
-                }
-                String publicUsername = UserObject.getPublicUsername(user);
-                size = k1Var.g.size();
-                if (size != 0) {
-                    int i15 = size + 1;
-                    if (i15 > i10) {
-                        str = k1Var.n;
-                        z11 = true;
-                        if (!z11 || publicUsername == null || (size2 = k1Var.e.size()) == 0 || size2 + 1 <= i10) {
-                            publicUsername = null;
+                    if (user2 != null) {
+                        if (user2.self) {
+                            i11 = i16 + 50000;
                         } else {
-                            String str2 = k1Var.c;
-                            if (str2.startsWith("@")) {
-                                str2 = str2.substring(1);
+                            TLRPC.UserStatus userStatus2 = user2.status;
+                            if (userStatus2 != null) {
+                                i11 = userStatus2.expires;
                             }
-                            try {
-                                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                                spannableStringBuilder2.append((CharSequence) "@");
-                                spannableStringBuilder2.append((CharSequence) publicUsername);
-                                int indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(publicUsername, str2);
-                                if (indexOfIgnoreCase != -1) {
-                                    int length = str2.length();
-                                    if (indexOfIgnoreCase == 0) {
-                                        length++;
-                                    } else {
-                                        indexOfIgnoreCase++;
+                        }
+                        if (i10 > 0 || i11 <= 0) {
+                            if (i10 < 0 || i11 >= 0) {
+                                if ((i10 < 0 || i11 <= 0) && (i10 != 0 || i11 == 0)) {
+                                    if (i11 >= 0 || i10 != 0) {
                                     }
-                                    spannableStringBuilder2.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.pg, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                                 }
-                                publicUsername = spannableStringBuilder2;
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
+                            } else if (i10 <= i11) {
+                                if (i10 < i11) {
+                                }
+                            }
+                        } else if (i10 <= i11) {
+                            if (i10 < i11) {
                             }
                         }
-                        if (str != null) {
-                            String userName = UserObject.getUserName(user);
-                            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(userName);
-                            int indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(userName, str);
-                            if (indexOfIgnoreCase2 != -1) {
-                                spannableStringBuilder3.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.pg, false)), indexOfIgnoreCase2, str.length() + indexOfIgnoreCase2, 33);
-                            }
-                            spannableStringBuilder = spannableStringBuilder3;
-                        }
-                        org.telegram.ui.Cells.z4 z4Var = (org.telegram.ui.Cells.z4) view;
-                        z4Var.setTag(Integer.valueOf(i10));
-                        z4Var.setCustomImageVisible(p30Var.b0.contains(Long.valueOf(user.id)));
-                        z4Var.b(user, spannableStringBuilder, publicUsername, false);
                     }
-                    i10 -= i15;
+                    i11 = 0;
+                    if (i10 > 0) {
+                    }
+                    if (i10 < 0) {
+                    }
+                    if (i10 < 0) {
+                    }
+                    if (i11 >= 0) {
+                    }
                 }
-                str = null;
-                z11 = false;
-                if (z11) {
+                i10 = 0;
+                if (user2 != null) {
                 }
-                publicUsername = null;
-                if (str != null) {
+                i11 = 0;
+                if (i10 > 0) {
                 }
-                org.telegram.ui.Cells.z4 z4Var2 = (org.telegram.ui.Cells.z4) view;
-                z4Var2.setTag(Integer.valueOf(i10));
-                z4Var2.setCustomImageVisible(p30Var.b0.contains(Long.valueOf(user.id)));
-                z4Var2.b(user, spannableStringBuilder, publicUsername, false);
-            }
-        }
-        int i16 = this.v;
-        if (i16 >= 0 && i10 > i16) {
-            if (i10 < k1Var.e.size() + i16 + 1) {
-                tLObject = (TLObject) k1Var.e.get((i10 - this.v) - 1);
-                z10 = tLObject instanceof TLRPC.User;
-                p30 p30Var2 = this.w;
-                if (z10) {
+                if (i10 < 0) {
                 }
-                String publicUsername2 = UserObject.getPublicUsername(user);
-                size = k1Var.g.size();
-                if (size != 0) {
+                if (i10 < 0) {
                 }
-                str = null;
-                z11 = false;
-                if (z11) {
+                if (i11 >= 0) {
                 }
-                publicUsername2 = null;
-                if (str != null) {
+                break;
+            case 1:
+                Long valueOf = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
+                MessagesController messagesController2 = this.b;
+                TLRPC.User user3 = messagesController2.getUser(valueOf);
+                TLRPC.User user4 = messagesController2.getUser(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                int i17 = this.c;
+                if (user3 != null) {
+                    if (user3.self) {
+                        i12 = i17 + 50000;
+                    } else {
+                        TLRPC.UserStatus userStatus3 = user3.status;
+                        if (userStatus3 != null) {
+                            i12 = userStatus3.expires;
+                        }
+                    }
+                    if (user4 != null) {
+                        if (user4.self) {
+                            i13 = i17 + 50000;
+                        } else {
+                            TLRPC.UserStatus userStatus4 = user4.status;
+                            if (userStatus4 != null) {
+                                i13 = userStatus4.expires;
+                            }
+                        }
+                        if (i12 > 0 || i13 <= 0) {
+                            if (i12 < 0 || i13 >= 0) {
+                                if ((i12 < 0 || i13 <= 0) && (i12 != 0 || i13 == 0)) {
+                                    if ((i13 < 0 || i12 <= 0) && (i13 != 0 || i12 == 0)) {
+                                    }
+                                }
+                            } else if (i12 <= i13) {
+                                if (i12 < i13) {
+                                }
+                            }
+                        } else if (i12 <= i13) {
+                            if (i12 < i13) {
+                            }
+                        }
+                    }
+                    i13 = 0;
+                    if (i12 > 0) {
+                    }
+                    if (i12 < 0) {
+                    }
+                    if (i12 < 0) {
+                    }
+                    if (i13 < 0) {
+                    }
                 }
-                org.telegram.ui.Cells.z4 z4Var22 = (org.telegram.ui.Cells.z4) view;
-                z4Var22.setTag(Integer.valueOf(i10));
-                z4Var22.setCustomImageVisible(p30Var2.b0.contains(Long.valueOf(user.id)));
-                z4Var22.b(user, spannableStringBuilder, publicUsername2, false);
-            }
+                i12 = 0;
+                if (user4 != null) {
+                }
+                i13 = 0;
+                if (i12 > 0) {
+                }
+                if (i12 < 0) {
+                }
+                if (i12 < 0) {
+                }
+                if (i13 < 0) {
+                }
+                break;
+            default:
+                Long valueOf2 = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
+                MessagesController messagesController3 = this.b;
+                TLRPC.User user5 = messagesController3.getUser(valueOf2);
+                TLRPC.User user6 = messagesController3.getUser(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                int i18 = this.c;
+                if (user5 != null) {
+                    if (user5.self) {
+                        i14 = i18 + 50000;
+                    } else {
+                        TLRPC.UserStatus userStatus5 = user5.status;
+                        if (userStatus5 != null) {
+                            i14 = userStatus5.expires;
+                        }
+                    }
+                    if (user6 != null) {
+                        if (user6.self) {
+                            i15 = i18 + 50000;
+                        } else {
+                            TLRPC.UserStatus userStatus6 = user6.status;
+                            if (userStatus6 != null) {
+                                i15 = userStatus6.expires;
+                            }
+                        }
+                        if (i14 > 0 || i15 <= 0) {
+                            if (i14 < 0 || i15 >= 0) {
+                                if ((i14 < 0 || i15 <= 0) && (i14 != 0 || i15 == 0)) {
+                                    if (i15 >= 0 || i14 != 0) {
+                                    }
+                                }
+                            } else if (i14 <= i15) {
+                                if (i14 < i15) {
+                                }
+                            }
+                        } else if (i14 <= i15) {
+                            if (i14 < i15) {
+                            }
+                        }
+                    }
+                    i15 = 0;
+                    if (i14 > 0) {
+                    }
+                    if (i14 < 0) {
+                    }
+                    if (i14 < 0) {
+                    }
+                    if (i15 >= 0) {
+                    }
+                }
+                i14 = 0;
+                if (user6 != null) {
+                }
+                i15 = 0;
+                if (i14 > 0) {
+                }
+                if (i14 < 0) {
+                }
+                if (i14 < 0) {
+                }
+                if (i15 >= 0) {
+                }
+                break;
         }
-        tLObject = null;
-        z10 = tLObject instanceof TLRPC.User;
-        p30 p30Var22 = this.w;
-        if (z10) {
-        }
-        String publicUsername22 = UserObject.getPublicUsername(user);
-        size = k1Var.g.size();
-        if (size != 0) {
-        }
-        str = null;
-        z11 = false;
-        if (z11) {
-        }
-        publicUsername22 = null;
-        if (str != null) {
-        }
-        org.telegram.ui.Cells.z4 z4Var222 = (org.telegram.ui.Cells.z4) view;
-        z4Var222.setTag(Integer.valueOf(i10));
-        z4Var222.setCustomImageVisible(p30Var22.b0.contains(Long.valueOf(user.id)));
-        z4Var222.b(user, spannableStringBuilder, publicUsername22, false);
-    }
-
-    @Override // f2.p0
-    public final f2.n1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        if (i10 != 0) {
-            Context context = this.c;
-            if (i10 == 1) {
-                org.telegram.ui.Cells.s3 s3Var = new org.telegram.ui.Cells.s3(context, null);
-                s3Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.jg, false));
-                s3Var.setTextColor(org.telegram.ui.ActionBar.g6.Qg);
-                view = s3Var;
-            } else if (i10 != 2) {
-                view = new View(context);
-            } else {
-                view = new View(context);
-                view.setLayoutParams(new f2.x0(-1, AndroidUtilities.dp(56.0f)));
-            }
-        } else {
-            org.telegram.ui.Cells.z4 z4Var = new org.telegram.ui.Cells.z4(2, 2, this.c, null, false);
-            z4Var.setCustomRightImage(R.drawable.msg_invited);
-            z4Var.setNameColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.ng, false));
-            int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.lg, false);
-            int w03 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.pg, false);
-            z4Var.D = w02;
-            z4Var.E = w03;
-            z4Var.setDividerColor(org.telegram.ui.ActionBar.g6.tg);
-            view = z4Var;
-        }
-        return new vk0(view);
+        return 0;
     }
 }

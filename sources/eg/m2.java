@@ -1,50 +1,37 @@
 package eg;
 
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.st;
+import android.graphics.RectF;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m2 implements al0, rt {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ KeyEvent.Callback c;
-    public final /* synthetic */ Object d;
+public final class m2 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public long e;
+    public float f;
+    public final /* synthetic */ n2 g;
 
-    public /* synthetic */ m2(w2 w2Var, int i10, c6 c6Var, int i11) {
-        this.c = w2Var;
-        this.a = i10;
-        this.d = c6Var;
-        this.b = i11;
+    public m2(n2 n2Var) {
+        this.g = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public void b(float f9, float f10, int i10, View view) {
-        w2.Q((w2) this.c, this.a, (c6) this.d, this.b, view);
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean b1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rt
-    public void run(String str) {
-        st.k((st) this.c, this.a, this.b, (Runnable) this.d, str);
-    }
-
-    public /* synthetic */ m2(st stVar, int i10, int i11, Runnable runnable) {
-        this.c = stVar;
-        this.a = i10;
-        this.b = i11;
-        this.d = runnable;
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void o0(View view, float f9, float f10) {
+    public final void a(long j10, boolean z4) {
+        n2 n2Var = this.g;
+        RectF rectF = n2Var.a;
+        this.e = j10 + n2Var.h + Utilities.fastRandom.nextInt(MediaDataController.MAX_STYLE_RUNS_COUNT);
+        RectF rectF2 = z4 ? n2Var.b : rectF;
+        float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF2.width()) + rectF2.left;
+        float abs2 = Math.abs(Utilities.fastRandom.nextInt() % rectF2.height()) + rectF2.top;
+        this.a = abs;
+        this.b = abs2;
+        double atan2 = Math.atan2(abs - rectF.centerX(), this.b - rectF.centerY());
+        this.c = (float) Math.sin(atan2);
+        this.d = (float) Math.cos(atan2);
+        Utilities.fastRandom.nextInt(50);
+        this.f = 0.0f;
     }
 }

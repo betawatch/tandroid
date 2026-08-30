@@ -1,66 +1,118 @@
 package org.telegram.ui;
 
 import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ys0 extends Fade {
+public final class ys0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ PhotoViewer d;
+    public final /* synthetic */ PhotoViewer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ys0(PhotoViewer photoViewer, boolean z10, boolean z11, int i10) {
-        super(1);
+    public /* synthetic */ ys0(PhotoViewer photoViewer, boolean z4, int i10) {
         this.a = i10;
+        this.c = photoViewer;
+        this.b = z4;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                PhotoViewer photoViewer = this.c;
+                if (animator.equals(photoViewer.w)) {
+                    photoViewer.w = null;
+                    break;
+                }
+                break;
+            case 2:
+                PhotoViewer photoViewer2 = this.c;
+                if (animator.equals(photoViewer2.I)) {
+                    photoViewer2.I = null;
+                    break;
+                }
+                break;
+            case 3:
+                this.c.Q7 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        boolean z4 = this.b;
+        PhotoViewer photoViewer = this.c;
         switch (i10) {
-            case 1:
-                this.d = photoViewer;
-                this.b = z10;
-                this.c = z11;
-                super(2);
-                break;
-            default:
-                this.d = photoViewer;
-                this.b = z10;
-                this.c = z11;
-                break;
-        }
-    }
-
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
             case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.M1) {
-                    onAppear.addListener(new e50(this, 13));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new g3(this, 20));
+                if (!z4) {
+                    photoViewer.f3.setVisibility(8);
+                    break;
                 }
-                return onAppear;
-            default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-        }
-    }
-
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
+                break;
             case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.M1) {
-                    onDisappear.addListener(new e50(this, 14));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new g3(this, 21));
+                if (animator.equals(photoViewer.w)) {
+                    if (!z4) {
+                        photoViewer.U0.setVisibility(4);
+                    }
+                    photoViewer.w = null;
+                    break;
                 }
-                return onDisappear;
+                break;
+            case 2:
+                if (animator.equals(photoViewer.I)) {
+                    if (!z4) {
+                        photoViewer.C.setVisibility(4);
+                        if (photoViewer.f0.getTag() != null) {
+                            photoViewer.f0.setVisibility(4);
+                        }
+                        if (photoViewer.N1.getTag() != null) {
+                            photoViewer.N1.setVisibility(4);
+                        }
+                    }
+                    photoViewer.I = null;
+                    break;
+                }
+                break;
             default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (animator.equals(photoViewer.Q7)) {
+                    photoViewer.Q7 = new AnimatorSet();
+                    if (z4) {
+                        photoViewer.K7.setVisibility(0);
+                        photoViewer.L7.setVisibility(0);
+                        AnimatorSet animatorSet = photoViewer.Q7;
+                        lu0 lu0Var = photoViewer.K7;
+                        Property property = View.TRANSLATION_Y;
+                        animatorSet.playTogether(ObjectAnimator.ofFloat(lu0Var, (Property<lu0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.L7, (Property<org.telegram.ui.Components.xf0, Float>) property, 0.0f));
+                    } else {
+                        if (photoViewer.P4) {
+                            photoViewer.g0.setVisibility(8);
+                            photoViewer.g0.setAlpha(0.0f);
+                            photoViewer.g0.setBackgroundColor(photoViewer.Z1 == 11 ? -16777216 : 2130706432);
+                        }
+                        photoViewer.K7.setVisibility(4);
+                        photoViewer.L7.setVisibility(4);
+                        AnimatorSet animatorSet2 = photoViewer.Q7;
+                        dg.s1 s1Var = photoViewer.M0;
+                        Property property2 = View.TRANSLATION_Y;
+                        animatorSet2.playTogether(ObjectAnimator.ofFloat(s1Var, (Property<dg.s1, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.M0, (Property<dg.s1, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.P0, (Property<org.telegram.ui.Components.qp0, Float>) property2, 0.0f));
+                    }
+                    photoViewer.Q7.addListener(new ls0(this, 7));
+                    photoViewer.Q7.setDuration(200L);
+                    photoViewer.Q7.setInterpolator(AndroidUtilities.decelerateInterpolator);
+                    photoViewer.Q7.start();
+                    break;
+                }
+                break;
         }
     }
 }

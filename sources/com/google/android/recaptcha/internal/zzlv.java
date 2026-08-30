@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import bd.p;
-import i7.c7;
-import jd.c0;
-import jd.s;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import ld.c0;
+import ld.s;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzlv extends i implements p {
     Object zza;
@@ -26,23 +27,23 @@ final class zzlv extends i implements p {
         this.zzg = zzgrVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         return new zzlv(this.zzf, this.zzg, cVar);
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlv) create((c0) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzlv) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x00e6, code lost:
     
-        return qc.i.a;
+        return sc.i.a;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x00d0, code lost:
     
-        if (((jd.t) r10).h(r9) != r0) goto L30;
+        if (((ld.t) r10).h(r9) != r0) goto L30;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x00b3, code lost:
     
@@ -66,7 +67,7 @@ final class zzlv extends i implements p {
     
         if (r10.zzc(r1, r9) != r0) goto L33;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -81,10 +82,10 @@ final class zzlv extends i implements p {
         zzmf zzmfVar2;
         zzgr zzgrVar;
         zzxn zzxnVar4;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zze;
         if (i10 == 0) {
-            c7.b(obj);
+            p7.b(obj);
             zzlyVar = this.zzf;
             zzxnVar = zzlyVar.zze;
             if (zzxnVar == null) {
@@ -113,9 +114,9 @@ final class zzlv extends i implements p {
             zzxnVar3 = (zzxn) this.zzc;
             zzlyVar = (zzly) this.zzb;
             zzlyVar2 = (zzly) this.zza;
-            c7.b(obj);
+            p7.b(obj);
         } else if (i10 != 2) {
-            c7.b(obj);
+            p7.b(obj);
             if (i10 != 3) {
             }
             zzly zzlyVar3 = this.zzf;
@@ -124,7 +125,7 @@ final class zzlv extends i implements p {
             this.zze = 4;
         } else {
             zzgrVar = (zzgr) this.zza;
-            c7.b(obj);
+            p7.b(obj);
             this.zza = null;
             this.zze = 3;
         }

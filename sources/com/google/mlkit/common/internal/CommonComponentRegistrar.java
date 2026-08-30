@@ -1,58 +1,56 @@
 package com.google.mlkit.common.internal;
 
-import a9.a;
-import a9.b;
-import a9.m;
-import ab.d;
-import ab.h;
-import ab.i;
-import ab.l;
+import c9.a;
+import c9.b;
+import c9.l;
+import cb.d;
+import cb.h;
+import cb.i;
 import com.google.firebase.components.ComponentRegistrar;
-import f7.g;
-import f7.v;
-import h7.g7;
+import h7.g;
+import h7.u;
+import j7.s7;
 import java.util.List;
-import za.c;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        a b10 = b.b(bb.a.class);
-        b10.a(m.b(h.class));
-        b10.g = new ya.a(24);
+        a b10 = b.b(db.a.class);
+        b10.a(l.b(h.class));
+        b10.g = new cb.b(26);
         b b11 = b10.b();
         a b12 = b.b(i.class);
-        b12.g = new ab.b(25);
+        b12.g = new db.a(26);
         b b13 = b12.b();
-        a b14 = b.b(c.class);
-        b14.a(new m(2, 0, za.b.class));
-        b14.g = new bb.a(25);
+        a b14 = b.b(bb.b.class);
+        b14.a(new l(2, 0, bb.a.class));
+        b14.g = new u(26);
         b b15 = b14.b();
         a b16 = b.b(d.class);
-        b16.a(new m(1, 1, i.class));
-        b16.g = new v(25);
+        b16.a(new l(1, 1, i.class));
+        b16.g = new z9.d(26);
         b b17 = b16.b();
-        a b18 = b.b(ab.a.class);
-        b18.g = new x9.d(25);
+        a b18 = b.b(cb.a.class);
+        b18.g = new ab.a(27);
         b b19 = b18.b();
-        a b20 = b.b(ab.b.class);
-        b20.a(m.b(ab.a.class));
-        b20.g = new ya.a(25);
+        a b20 = b.b(cb.b.class);
+        b20.a(l.b(cb.a.class));
+        b20.g = new cb.b(27);
         b b21 = b20.b();
-        a b22 = b.b(ya.a.class);
-        b22.a(m.b(h.class));
-        b22.g = new ab.b(26);
+        a b22 = b.b(ab.a.class);
+        b22.a(l.b(h.class));
+        b22.g = new db.a(27);
         b b23 = b22.b();
-        a b24 = b.b(za.b.class);
-        b24.b = 1;
-        b24.a(new m(1, 1, ya.a.class));
-        b24.g = new bb.a(26);
+        a b24 = b.b(bb.a.class);
+        b24.c = 1;
+        b24.a(new l(1, 1, ab.a.class));
+        b24.g = new u(27);
         b b25 = b24.b();
-        f7.b bVar = f7.d.b;
-        Object[] objArr = {l.b, b11, b13, b15, b17, b19, b21, b23, b25};
-        g7.a(9, objArr);
+        h7.b bVar = h7.d.b;
+        Object[] objArr = {cb.l.b, b11, b13, b15, b17, b19, b21, b23, b25};
+        s7.a(9, objArr);
         return new g(9, objArr);
     }
 }

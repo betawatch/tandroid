@@ -1,30 +1,22 @@
 package org.telegram.ui;
 
-import android.view.View;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qf0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ tf0 b;
+public final class qf0 extends TimerTask {
+    public final /* synthetic */ rf0 a;
 
-    public /* synthetic */ qf0(tf0 tf0Var) {
-        this.b = tf0Var;
+    public qf0(rf0 rf0Var) {
+        this.a = rf0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.a();
-                break;
-            default:
-                this.b.a();
-                break;
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        if (this.a.O == null) {
+            return;
         }
-    }
-
-    public /* synthetic */ qf0(tf0 tf0Var, dg0 dg0Var) {
-        this.b = tf0Var;
+        AndroidUtilities.runOnUIThread(new c10(this, 24));
     }
 }

@@ -1,55 +1,291 @@
 package androidx.emoji2.text;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Typeface;
-import android.text.style.ReplacementSpan;
-import i7.u6;
-import java.nio.ByteBuffer;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import k7.j6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class u extends ReplacementSpan {
-    public final n b;
-    public final Paint.FontMetricsInt a = new Paint.FontMetricsInt();
-    public float c = 1.0f;
+public final class u extends SpannableStringBuilder {
+    public final Class a;
+    public final ArrayList b;
 
-    public u(n nVar) {
-        u6.a(nVar, "metadata cannot be null");
-        this.b = nVar;
+    public u(CharSequence charSequence, Class cls) {
+        super(charSequence);
+        this.b = new ArrayList();
+        j6.a(cls, "watcherClass cannot be null");
+        this.a = cls;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
-        l.a().getClass();
-        n nVar = this.b;
-        com.google.firebase.messaging.s sVar = nVar.b;
-        Typeface typeface = (Typeface) sVar.e;
-        Typeface typeface2 = paint.getTypeface();
-        paint.setTypeface(typeface);
-        canvas.drawText((char[]) sVar.c, nVar.a * 2, 2, f9, i13, paint);
-        paint.setTypeface(typeface2);
+    public final void a() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            ((t) arrayList.get(i10)).b.incrementAndGet();
+            i10++;
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        Paint.FontMetricsInt fontMetricsInt2 = this.a;
-        paint.getFontMetricsInt(fontMetricsInt2);
-        float abs = Math.abs(fontMetricsInt2.descent - fontMetricsInt2.ascent) * 1.0f;
-        n nVar = this.b;
-        this.c = abs / (nVar.b().a(14) != 0 ? ((ByteBuffer) r8.d).getShort(r1 + r8.a) : (short) 0);
-        p1.a b10 = nVar.b();
-        int a2 = b10.a(14);
-        if (a2 != 0) {
-            ((ByteBuffer) b10.d).getShort(a2 + b10.a);
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final Editable append(CharSequence charSequence) {
+        super.append(charSequence);
+        return this;
+    }
+
+    public final void b() {
+        e();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            ((t) arrayList.get(i10)).onTextChanged(this, 0, length(), length());
+            i10++;
         }
-        short s10 = (short) ((nVar.b().a(12) != 0 ? ((ByteBuffer) r5.d).getShort(r7 + r5.a) : (short) 0) * this.c);
-        if (fontMetricsInt != null) {
-            fontMetricsInt.ascent = fontMetricsInt2.ascent;
-            fontMetricsInt.descent = fontMetricsInt2.descent;
-            fontMetricsInt.top = fontMetricsInt2.top;
-            fontMetricsInt.bottom = fontMetricsInt2.bottom;
+    }
+
+    public final t c(Object obj) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return null;
+            }
+            t tVar = (t) arrayList.get(i10);
+            if (tVar.a == obj) {
+                return tVar;
+            }
+            i10++;
         }
-        return s10;
+    }
+
+    public final boolean d(Object obj) {
+        if (obj != null) {
+            return this.a == obj.getClass();
+        }
+        return false;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final Editable delete(int i10, int i11) {
+        super.delete(i10, i11);
+        return this;
+    }
+
+    public final void e() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            ((t) arrayList.get(i10)).b.decrementAndGet();
+            i10++;
+        }
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spanned
+    public final int getSpanEnd(Object obj) {
+        t c3;
+        if (d(obj) && (c3 = c(obj)) != null) {
+            obj = c3;
+        }
+        return super.getSpanEnd(obj);
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spanned
+    public final int getSpanFlags(Object obj) {
+        t c3;
+        if (d(obj) && (c3 = c(obj)) != null) {
+            obj = c3;
+        }
+        return super.getSpanFlags(obj);
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spanned
+    public final int getSpanStart(Object obj) {
+        t c3;
+        if (d(obj) && (c3 = c(obj)) != null) {
+            obj = c3;
+        }
+        return super.getSpanStart(obj);
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spanned
+    public final Object[] getSpans(int i10, int i11, Class cls) {
+        if (this.a != cls) {
+            return super.getSpans(i10, i11, cls);
+        }
+        t[] tVarArr = (t[]) super.getSpans(i10, i11, t.class);
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) cls, tVarArr.length);
+        for (int i12 = 0; i12 < tVarArr.length; i12++) {
+            objArr[i12] = tVarArr[i12].a;
+        }
+        return objArr;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final Editable insert(int i10, CharSequence charSequence) {
+        super.insert(i10, charSequence);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spanned
+    public final int nextSpanTransition(int i10, int i11, Class cls) {
+        if (cls == null || this.a == cls) {
+            cls = t.class;
+        }
+        return super.nextSpanTransition(i10, i11, cls);
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spannable
+    public final void removeSpan(Object obj) {
+        t tVar;
+        if (d(obj)) {
+            tVar = c(obj);
+            if (tVar != null) {
+                obj = tVar;
+            }
+        } else {
+            tVar = null;
+        }
+        super.removeSpan(obj);
+        if (tVar != null) {
+            this.b.remove(tVar);
+        }
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final /* bridge */ /* synthetic */ Editable replace(int i10, int i11, CharSequence charSequence) {
+        replace(i10, i11, charSequence);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Spannable
+    public final void setSpan(Object obj, int i10, int i11, int i12) {
+        if (d(obj)) {
+            t tVar = new t(obj);
+            this.b.add(tVar);
+            obj = tVar;
+        }
+        super.setSpan(obj, i10, i11, i12);
+    }
+
+    @Override // android.text.SpannableStringBuilder, java.lang.CharSequence
+    public final CharSequence subSequence(int i10, int i11) {
+        return new u(this.a, this, i10, i11);
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final SpannableStringBuilder append(CharSequence charSequence) {
+        super.append(charSequence);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final SpannableStringBuilder delete(int i10, int i11) {
+        super.delete(i10, i11);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final SpannableStringBuilder insert(int i10, CharSequence charSequence) {
+        super.insert(i10, charSequence);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final /* bridge */ /* synthetic */ Editable replace(int i10, int i11, CharSequence charSequence, int i12, int i13) {
+        replace(i10, i11, charSequence, i12, i13);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final Appendable append(CharSequence charSequence) {
+        super.append(charSequence);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final Editable insert(int i10, CharSequence charSequence, int i11, int i12) {
+        super.insert(i10, charSequence, i11, i12);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final SpannableStringBuilder replace(int i10, int i11, CharSequence charSequence) {
+        a();
+        super.replace(i10, i11, charSequence);
+        e();
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final Editable append(char c3) {
+        super.append(c3);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final SpannableStringBuilder insert(int i10, CharSequence charSequence, int i11, int i12) {
+        super.insert(i10, charSequence, i11, i12);
+        return this;
+    }
+
+    public u(Class cls, u uVar, int i10, int i11) {
+        super(uVar, i10, i11);
+        this.b = new ArrayList();
+        j6.a(cls, "watcherClass cannot be null");
+        this.a = cls;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final SpannableStringBuilder append(char c3) {
+        super.append(c3);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final Appendable append(char c3) {
+        super.append(c3);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable
+    public final SpannableStringBuilder replace(int i10, int i11, CharSequence charSequence, int i12, int i13) {
+        a();
+        super.replace(i10, i11, charSequence, i12, i13);
+        e();
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final Editable append(CharSequence charSequence, int i10, int i11) {
+        super.append(charSequence, i10, i11);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final SpannableStringBuilder append(CharSequence charSequence, int i10, int i11) {
+        super.append(charSequence, i10, i11);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
+    public final Appendable append(CharSequence charSequence, int i10, int i11) {
+        super.append(charSequence, i10, i11);
+        return this;
+    }
+
+    @Override // android.text.SpannableStringBuilder
+    public final SpannableStringBuilder append(CharSequence charSequence, Object obj, int i10) {
+        super.append(charSequence, obj, i10);
+        return this;
     }
 }

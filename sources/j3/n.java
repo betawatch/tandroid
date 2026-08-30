@@ -2,20 +2,21 @@ package j3;
 
 import android.os.SystemClock;
 import android.text.TextUtils;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class n extends v1 {
+public final class n extends t1 {
     public final int c;
     public final String d;
     public final int e;
-    public final t0 f;
+    public final n0 f;
     public final int h;
-    public final l4.a0 n;
+    public final o4.u n;
     public final boolean r;
 
     static {
-        int i10 = f5.d0.a;
+        int i10 = h5.d0.a;
         Integer.toString(1001, 36);
         Integer.toString(1002, 36);
         Integer.toString(1003, 36);
@@ -28,40 +29,40 @@ public final class n extends v1 {
         this(i10, exc, i11, null, -1, null, 4, false);
     }
 
-    public final n a(l4.a0 a0Var) {
+    public final n a(o4.u uVar) {
         String message = getMessage();
-        int i10 = f5.d0.a;
-        return new n(message, getCause(), this.a, this.c, this.d, this.e, this.f, this.h, a0Var, this.b, this.r);
+        int i10 = h5.d0.a;
+        return new n(message, getCause(), this.a, this.c, this.d, this.e, this.f, this.h, uVar, this.b, this.r);
     }
 
-    public n(String str, Throwable th2, int i10, int i11, String str2, int i12, t0 t0Var, int i13, l4.a0 a0Var, long j10, boolean z10) {
+    public n(String str, Throwable th2, int i10, int i11, String str2, int i12, n0 n0Var, int i13, o4.u uVar, long j10, boolean z4) {
         super(str, th2, i10, j10);
-        f5.a.f(!z10 || i11 == 1);
-        f5.a.f(th2 != null || i11 == 3);
+        h5.a.f(!z4 || i11 == 1);
+        h5.a.f(th2 != null || i11 == 3);
         this.c = i11;
         this.d = str2;
         this.e = i12;
-        this.f = t0Var;
+        this.f = n0Var;
         this.h = i13;
-        this.n = a0Var;
-        this.r = z10;
+        this.n = uVar;
+        this.r = z4;
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public n(int i10, Throwable th2, int i11, String str, int i12, t0 t0Var, int i13, boolean z10) {
-        this(TextUtils.isEmpty(null) ? r0 : u3.c.k(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, null, SystemClock.elapsedRealtime(), z10);
+    public n(int i10, Throwable th2, int i11, String str, int i12, n0 n0Var, int i13, boolean z4) {
+        this(TextUtils.isEmpty(null) ? r0 : v2.k(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, null, SystemClock.elapsedRealtime(), z4);
         String str2;
         int i14;
-        t0 t0Var2;
+        n0 n0Var2;
         String str3;
         String str4;
         if (i10 == 0) {
             str2 = str;
             i14 = i12;
-            t0Var2 = t0Var;
+            n0Var2 = n0Var;
             str3 = "Source error";
         } else if (i10 != 1) {
             if (i10 != 3) {
@@ -71,19 +72,19 @@ public final class n extends v1 {
             }
             str2 = str;
             i14 = i12;
-            t0Var2 = t0Var;
+            n0Var2 = n0Var;
         } else {
-            StringBuilder sb2 = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             str2 = str;
-            sb2.append(str2);
-            sb2.append(" error, index=");
+            sb.append(str2);
+            sb.append(" error, index=");
             i14 = i12;
-            sb2.append(i14);
-            sb2.append(", format=");
-            t0Var2 = t0Var;
-            sb2.append(t0Var2);
-            sb2.append(", format_supported=");
-            int i15 = f5.d0.a;
+            sb.append(i14);
+            sb.append(", format=");
+            n0Var2 = n0Var;
+            sb.append(n0Var2);
+            sb.append(", format_supported=");
+            int i15 = h5.d0.a;
             if (i13 == 0) {
                 str4 = "NO";
             } else if (i13 == 1) {
@@ -97,8 +98,8 @@ public final class n extends v1 {
             } else {
                 throw new IllegalStateException();
             }
-            sb2.append(str4);
-            str3 = sb2.toString();
+            sb.append(str4);
+            str3 = sb.toString();
         }
     }
 }

@@ -1,81 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hl0 implements org.telegram.ui.ActionBar.b2, qt, jm0 {
+public final /* synthetic */ class hl0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vm0 b;
+    public final /* synthetic */ PasskeysActivity b;
 
-    public /* synthetic */ hl0(vm0 vm0Var, int i10) {
+    public /* synthetic */ hl0(PasskeysActivity passkeysActivity, int i10) {
         this.a = i10;
-        this.b = vm0Var;
+        this.b = passkeysActivity;
     }
 
-    @Override // org.telegram.ui.jm0
-    public void M(String str, String str2) {
-        this.b.x1();
-    }
-
-    @Override // org.telegram.ui.qt
-    public void Z0(lt ltVar) {
-        switch (this.a) {
-            case 2:
-                vm0 vm0Var = this.b;
-                vm0Var.U[5].setText(ltVar.a);
-                vm0Var.s = ltVar.d;
-                break;
-            default:
-                vm0 vm0Var2 = this.b;
-                vm0Var2.U[0].setText(ltVar.a);
-                if (vm0Var2.Q0.indexOf(ltVar.a) != -1) {
-                    vm0Var2.V0 = true;
-                    String str = (String) vm0Var2.R0.get(ltVar.a);
-                    vm0Var2.U[1].setText(str);
-                    String str2 = (String) vm0Var2.T0.get(str);
-                    vm0Var2.U[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    vm0Var2.V0 = false;
-                }
-                AndroidUtilities.runOnUIThread(new el0(vm0Var2, 3), 300L);
-                vm0Var2.U[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = vm0Var2.U[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        PasskeysActivity passkeysActivity = this.b;
+        switch (i10) {
             case 0:
-                vm0 vm0Var = this.b;
-                vm0Var.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    vm0Var.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = passkeysActivity.b;
+                passkeysActivity.addPasskeyRow = -1;
+                String string = LocaleController.getString(R.string.PasskeyTopInfo);
+                int i11 = R.raw.passkey;
+                org.telegram.ui.Components.i51 i51Var = new org.telegram.ui.Components.i51(2);
+                i51Var.l = string;
+                i51Var.k = i11;
+                arrayList.add(i51Var);
+                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
+                    e60 e60Var = new e60(passkeysActivity, 15);
+                    int i13 = kl0.a;
+                    org.telegram.ui.Components.i51 J = org.telegram.ui.Components.i51.J(kl0.class);
+                    J.G = passkey;
+                    J.D = e60Var;
+                    arrayList.add(J);
                 }
-            case 1:
-                this.b.finishFragment();
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
+                    passkeysActivity.addPasskeyRow = arrayList.size();
+                    org.telegram.ui.Components.i51 c3 = org.telegram.ui.Components.i51.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
+                    c3.q = true;
+                    arrayList.add(c3);
+                }
+                arrayList.add(org.telegram.ui.Components.i51.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new el0(passkeysActivity, 1)), true)));
                 break;
-            case 2:
-            case 3:
             default:
-                vm0.a0(this.b);
-                break;
-            case 4:
-                ye.d.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
                 break;
         }
     }

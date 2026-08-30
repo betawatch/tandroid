@@ -1,6 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.content.Context;
+import android.graphics.Canvas;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface zt {
+public final class zt extends kz {
+    public int M2;
+    public boolean N2;
+    public boolean O2;
+    public final /* synthetic */ du P2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zt(du duVar, org.telegram.ui.ActionBar.p2 p2Var, boolean z4, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.f6 f6Var, boolean z12) {
+        super(p2Var, z4, false, false, context, z10, null, null, z11, f6Var, false, z12);
+        this.P2 = duVar;
+    }
+
+    @Override // org.telegram.ui.Components.kz, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        du duVar = this.P2;
+        int i10 = duVar.I;
+        if (i10 == 2 || i10 == 3) {
+            duVar.g(canvas, this);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.kz, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        int i14;
+        super.onLayout(z4, i10, i11, i12, i13);
+        du duVar = this.P2;
+        if (duVar.b()) {
+            int i15 = i13 - i11;
+            if (!this.N2 && duVar.x) {
+                this.O2 = true;
+            }
+            if (this.O2 && (i14 = this.M2) > 0 && i15 > 0 && i15 != i14) {
+                setTranslationY(i15 - i14);
+                org.telegram.ui.b.p(animate().translationY(0.0f), org.telegram.ui.ActionBar.r1.w, 250L);
+                this.O2 = false;
+            }
+            this.N2 = duVar.x;
+            this.M2 = i15;
+        }
+    }
 }

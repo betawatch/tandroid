@@ -7,11 +7,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.media.session.d0;
+import android.support.v4.media.session.c0;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
@@ -60,13 +60,13 @@ public final class MediaMetadataCompat implements Parcelable {
         e = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER"};
         f = new String[]{"android.media.metadata.DISPLAY_ICON", "android.media.metadata.ART", "android.media.metadata.ALBUM_ART"};
         h = new String[]{"android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART_URI"};
-        CREATOR = new w.a(7);
+        CREATOR = new w.a(10);
     }
 
     public MediaMetadataCompat(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        d0.a(bundle2);
+        c0.a(bundle2);
     }
 
     public final MediaDescriptionCompat a() {
@@ -113,8 +113,8 @@ public final class MediaMetadataCompat implements Parcelable {
             }
             try {
                 bitmap = (Bitmap) bundle.getParcelable(strArr2[i13]);
-            } catch (Exception e10) {
-                Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e10);
+            } catch (Exception e6) {
+                Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e6);
                 bitmap = null;
             }
             if (bitmap != null) {
@@ -171,6 +171,6 @@ public final class MediaMetadataCompat implements Parcelable {
     }
 
     public MediaMetadataCompat(Parcel parcel) {
-        this.a = parcel.readBundle(d0.class.getClassLoader());
+        this.a = parcel.readBundle(c0.class.getClassLoader());
     }
 }

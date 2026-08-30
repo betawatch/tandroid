@@ -1,58 +1,41 @@
 package lh;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jk;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q2 implements Utilities.Callback {
+public final /* synthetic */ class q2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ kh.a0 b;
+    public final /* synthetic */ sc[] c;
+    public final /* synthetic */ TL_stars.UniqueStarGiftValueInfo d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ q2(int i10, int i11, Object obj, Object obj2, boolean z10) {
-        this.a = i11;
-        this.d = obj;
-        this.e = obj2;
-        this.b = z10;
-        this.c = i10;
+    public /* synthetic */ q2(kh.a0 a0Var, sc[] scVarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, int i10) {
+        this.a = i10;
+        this.b = a0Var;
+        this.c = scVarArr;
+        this.d = uniqueStarGiftValueInfo;
+        this.e = str;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        AccountInstance accountInstance;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.e;
+        TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = this.d;
+        sc[] scVarArr = this.c;
+        kh.a0 a0Var = this.b;
+        switch (i10) {
             case 0:
-                r2 r2Var = (r2) this.d;
-                TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) this.e;
-                Long l10 = (Long) obj;
-                d4 d4Var = r2Var.a;
-                TLRPC.User user = d4Var.Z2.getAdapter().s0;
-                long j10 = user != null ? user.id : 0L;
-                HashMap hashMap = new HashMap();
-                hashMap.put("id", botInlineResult.id);
-                hashMap.put("query_id", "" + botInlineResult.query_id);
-                hashMap.put("bot", "" + j10);
-                TLRPC.User user2 = d4Var.Z2.getAdapter().s0;
-                hashMap.put("bot_name", user2 != null ? user2.username : "");
-                org.telegram.ui.ActionBar.o2 o2Var = d4Var.F0.f;
-                long j11 = j10;
-                accountInstance = d4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingBotContextResult(o2Var, accountInstance, botInlineResult, hashMap, d4Var.x1, null, null, d4Var.K1.a, null, this.b, this.c, 0, null, 0L, l10.longValue());
-                d4Var.X1.setFieldText("");
-                d4Var.k0(l10.longValue() <= 0);
-                MediaDataController.getInstance(d4Var.y2).increaseInlineRating(j11);
+                a0Var.run(scVarArr[0], LocaleController.formatString(R.string.GiftValueMinPriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
                 break;
             default:
-                ((jk) this.d).M.m(((Long) obj).longValue(), (ArrayList) this.e, this.b, this.c);
+                a0Var.run(scVarArr[0], LocaleController.formatString(R.string.GiftValueAveragePriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
                 break;
         }
     }

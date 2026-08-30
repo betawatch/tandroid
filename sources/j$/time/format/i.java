@@ -37,7 +37,7 @@ public class i implements f {
     }
 
     @Override // j$.time.format.f
-    public boolean j(r rVar, StringBuilder sb2) {
+    public boolean j(r rVar, StringBuilder sb) {
         j$.time.temporal.o oVar = this.a;
         Long a2 = rVar.a(oVar);
         if (a2 == null) {
@@ -58,23 +58,23 @@ public class i implements f {
             int i12 = c.a[xVar.ordinal()];
             if (i12 != 1) {
                 if (i12 == 2) {
-                    sb2.append('+');
+                    sb.append('+');
                 }
             } else if (i11 < 19 && longValue >= f[i11]) {
-                sb2.append('+');
+                sb.append('+');
             }
         } else {
             int i13 = c.a[xVar.ordinal()];
             if (i13 == 1 || i13 == 2 || i13 == 3) {
-                sb2.append('-');
+                sb.append('-');
             } else if (i13 == 4) {
                 throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " cannot be negative according to the SignStyle");
             }
         }
         for (int i14 = 0; i14 < i11 - l10.length(); i14++) {
-            sb2.append('0');
+            sb.append('0');
         }
-        sb2.append(l10);
+        sb.append(l10);
         return true;
     }
 

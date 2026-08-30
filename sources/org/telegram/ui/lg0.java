@@ -1,60 +1,90 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
+import android.content.SharedPreferences;
+import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lg0 extends ReplacementSpan {
-    public final String a;
-    public final boolean b;
-    public final TextPaint c;
-    public final Paint d;
-    public final float e;
-    public final /* synthetic */ ng0 f;
+public final class lg0 {
+    public final /* synthetic */ mg0 a;
 
-    public lg0(ng0 ng0Var, int i10, boolean z10) {
-        this.f = ng0Var;
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        this.d = new Paint(1);
-        String valueOf = String.valueOf(i10);
-        this.a = valueOf;
-        this.b = z10;
-        textPaint.setTextSize(AndroidUtilities.dpf2(11.0f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        this.e = Math.max(AndroidUtilities.dp(7.333f), textPaint.measureText(valueOf)) + AndroidUtilities.dp(10.0f);
+    public lg0(mg0 mg0Var) {
+        this.a = mg0Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
-        float dp = f9 + AndroidUtilities.dp(5.0f);
-        float dp2 = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
-        float dp3 = AndroidUtilities.dp(17.333f) / 2.0f;
-        int i15 = this.b ? org.telegram.ui.ActionBar.g6.Oh : org.telegram.ui.ActionBar.g6.U9;
-        ng0 ng0Var = this.f;
-        int themedColor = ng0Var.getThemedColor(i15);
-        Paint paint2 = this.d;
-        paint2.setColor(themedColor);
-        int themedColor2 = ng0Var.getThemedColor(org.telegram.ui.ActionBar.g6.s8);
-        TextPaint textPaint = this.c;
-        textPaint.setColor(themedColor2);
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f10 = this.e;
-        rectF.set(dp, dp2 - dp3, dp + f10, dp2 + dp3);
-        canvas.drawRoundRect(rectF, dp3, dp3, paint2);
-        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-        float f11 = dp2 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f);
-        String str = this.a;
-        canvas.drawText(str, ((f10 - textPaint.measureText(str)) / 2.0f) + dp, f11, textPaint);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) Math.ceil(AndroidUtilities.dp(5.0f) + this.e);
+    public final void a(bg0 bg0Var) {
+        int i10;
+        mg0 mg0Var = this.a;
+        mg0Var.I = true;
+        ng0 ng0Var = mg0Var.S;
+        ng0Var.G = 0;
+        ng0Var.n1(0, false);
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 >= 23 && AndroidUtilities.isSimAvailable()) {
+            boolean z4 = ng0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_STATE") == 0;
+            boolean z10 = ng0Var.getParentActivity().checkSelfPermission("android.permission.CALL_PHONE") == 0;
+            boolean z11 = i11 < 28 || ng0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
+            boolean z12 = i11 < 26 || ng0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
+            qj0 qj0Var = mg0Var.a;
+            if (qj0Var != null && "888".equals(qj0Var.getText())) {
+                z4 = true;
+                z10 = true;
+                z11 = true;
+                z12 = true;
+            }
+            if (ng0Var.v) {
+                ng0Var.r.clear();
+                if (!z4) {
+                    ng0Var.r.add("android.permission.READ_PHONE_STATE");
+                }
+                if (!z10) {
+                    ng0Var.r.add("android.permission.CALL_PHONE");
+                }
+                if (!z11) {
+                    ng0Var.r.add("android.permission.READ_CALL_LOG");
+                }
+                if (!z12 && i11 >= 26) {
+                    ng0Var.r.add("android.permission.READ_PHONE_NUMBERS");
+                }
+                if (!ng0Var.r.isEmpty()) {
+                    SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                    if (!globalMainSettings.getBoolean("firstlogin", true) && !ng0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE") && !ng0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_CALL_LOG")) {
+                        try {
+                            ng0Var.getParentActivity().requestPermissions((String[]) ng0Var.r.toArray(new String[0]), 6);
+                            return;
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            return;
+                        }
+                    }
+                    globalMainSettings.edit().putBoolean("firstlogin", false).commit();
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ng0Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString("Continue", R.string.Continue), null);
+                    if (!z4 && (!z10 || !z11)) {
+                        alertDialog$Builder.a.Q = LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog);
+                        i10 = R.raw.calls_log;
+                    } else if (z10 && z11) {
+                        alertDialog$Builder.a.Q = LocaleController.getString("AllowReadCall", R.string.AllowReadCall);
+                        i10 = R.raw.incoming_calls;
+                    } else {
+                        alertDialog$Builder.a.Q = LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog);
+                        i10 = R.raw.calls_log;
+                    }
+                    alertDialog$Builder.m(i10, 46, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+                    ng0Var.h = ng0Var.showDialog(alertDialog$Builder.a);
+                    mg0Var.I = true;
+                    return;
+                }
+            }
+        }
+        kg0 kg0Var = new kg0(0, bg0Var, this);
+        bg0Var.h.f(true, true);
+        AndroidUtilities.runOnUIThread(kg0Var, 400L);
     }
 }

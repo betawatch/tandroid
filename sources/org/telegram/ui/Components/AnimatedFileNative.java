@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AnimatedFileDrawableStream;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public class AnimatedFileNative {
     public final int[] a;
@@ -17,10 +17,10 @@ public class AnimatedFileNative {
         this.a = iArr;
     }
 
-    public static AnimatedFileNative a(String str, int[] iArr, int i10, long j10, AnimatedFileDrawableStream animatedFileDrawableStream, boolean z10) {
+    public static AnimatedFileNative a(String str, int[] iArr, int i10, long j10, AnimatedFileDrawableStream animatedFileDrawableStream, boolean z4) {
         Trace.beginSection("AnimatedFileNative#createDecoder");
         try {
-            long nCreateDecoder = nCreateDecoder(str, iArr, i10, j10, animatedFileDrawableStream, z10);
+            long nCreateDecoder = nCreateDecoder(str, iArr, i10, j10, animatedFileDrawableStream, z4);
             Trace.endSection();
             if (nCreateDecoder == 0) {
                 return null;
@@ -41,19 +41,19 @@ public class AnimatedFileNative {
         }
     }
 
-    private static native long nCreateDecoder(String str, int[] iArr, int i10, long j10, Object obj, boolean z10);
+    private static native long nCreateDecoder(String str, int[] iArr, int i10, long j10, Object obj, boolean z4);
 
     private static native void nDestroyDecoder(long j10);
 
     private static native int nGetFrameAtTime(long j10, long j11, Bitmap bitmap, int[] iArr);
 
-    private static native int nGetVideoFrame(long j10, Bitmap bitmap, int[] iArr, boolean z10, float f9, float f10, boolean z11);
+    private static native int nGetVideoFrame(long j10, Bitmap bitmap, int[] iArr, boolean z4, float f10, float f11, boolean z10);
 
     private static native void nGetVideoInfo(String str, int[] iArr, long j10);
 
     private static native void nPrepareToSeek(long j10);
 
-    private static native void nSeekToMs(long j10, long j11, int[] iArr, boolean z10);
+    private static native void nSeekToMs(long j10, long j11, int[] iArr, boolean z4);
 
     private static native void nStopDecoder(long j10);
 
@@ -69,13 +69,13 @@ public class AnimatedFileNative {
         }
     }
 
-    public final int c(Bitmap bitmap, boolean z10, float f9, float f10, boolean z11) {
+    public final int c(Bitmap bitmap, boolean z4, float f10, float f11, boolean z10) {
         this.c.get();
         long j10 = this.b;
         int[] iArr = this.a;
         Trace.beginSection("AnimatedFileNative#getVideoFrame");
         try {
-            return nGetVideoFrame(j10, bitmap, iArr, z10, f9, f10, z11);
+            return nGetVideoFrame(j10, bitmap, iArr, z4, f10, f11, z10);
         } finally {
             Trace.endSection();
         }
@@ -117,13 +117,13 @@ public class AnimatedFileNative {
         }
     }
 
-    public final void g(long j10, boolean z10) {
+    public final void g(long j10, boolean z4) {
         this.c.get();
         long j11 = this.b;
         int[] iArr = this.a;
         Trace.beginSection("AnimatedFileNative#seekToMs");
         try {
-            nSeekToMs(j11, j10, iArr, z10);
+            nSeekToMs(j11, j10, iArr, z4);
         } finally {
             Trace.endSection();
         }

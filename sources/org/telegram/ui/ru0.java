@@ -1,39 +1,14 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.view.TextureView;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ru0 extends org.telegram.ui.Cells.a6 {
-    public final /* synthetic */ tu0 B;
+public interface ru0 {
+    void H(MessageObject messageObject);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ru0(tu0 tu0Var, Context context, int i10) {
-        super(context, i10, null, null);
-        this.B = tu0Var;
-    }
+    TextureView f0();
 
-    @Override // org.telegram.ui.Cells.a6
-    public final void g(bh.b bVar, ActionMode actionMode) {
-        if (bVar.isFocused() && bVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            tn.k8(menu, this.B.d.f.h, false, true, true, true);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.a6
-    public final void i(boolean z10) {
-        vu0.d0(this.B.d, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.a6
-    public final void j(org.telegram.ui.Cells.a6 a6Var) {
-        vu0.e0(this.B.d, a6Var);
-    }
+    void w0(MessageObject messageObject);
 }

@@ -12,14 +12,14 @@ public final class e implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(List list, boolean z10) {
-        this((f[]) r2.toArray(new f[r2.size()]), z10);
+    public e(List list, boolean z4) {
+        this((f[]) r2.toArray(new f[r2.size()]), z4);
         ArrayList arrayList = (ArrayList) list;
     }
 
-    public e(f[] fVarArr, boolean z10) {
+    public e(f[] fVarArr, boolean z4) {
         this.a = fVarArr;
-        this.b = z10;
+        this.b = z4;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0026, code lost:
@@ -38,36 +38,36 @@ public final class e implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean j(r rVar, StringBuilder sb2) {
-        int length = sb2.length();
-        boolean z10 = this.b;
-        if (z10) {
+    public final boolean j(r rVar, StringBuilder sb) {
+        int length = sb.length();
+        boolean z4 = this.b;
+        if (z4) {
             rVar.c++;
         }
         try {
             for (f fVar : this.a) {
-                if (!fVar.j(rVar, sb2)) {
-                    sb2.setLength(length);
+                if (!fVar.j(rVar, sb)) {
+                    sb.setLength(length);
                 }
             }
         } finally {
-            if (z10) {
+            if (z4) {
                 rVar.c--;
             }
         }
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         f[] fVarArr = this.a;
         if (fVarArr != null) {
-            boolean z10 = this.b;
-            sb2.append(z10 ? "[" : "(");
+            boolean z4 = this.b;
+            sb.append(z4 ? "[" : "(");
             for (f fVar : fVarArr) {
-                sb2.append(fVar);
+                sb.append(fVar);
             }
-            sb2.append(z10 ? "]" : ")");
+            sb.append(z4 ? "]" : ")");
         }
-        return sb2.toString();
+        return sb.toString();
     }
 }

@@ -1,120 +1,58 @@
 package y3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.util.Pair;
+import h5.d0;
+import r3.r;
+import r3.t;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c implements o3.k {
-    public final b a = new b(null, 1);
-    public final f5.w b = new f5.w(16384);
-    public boolean c;
+public final class c implements f {
+    public final long[] a;
+    public final long[] b;
+    public final long c;
 
-    @Override // o3.k
-    public final int d(o3.l lVar, o3.n nVar) {
-        f5.w wVar = this.b;
-        int read = ((o3.h) lVar).read(wVar.a, 0, 16384);
-        if (read == -1) {
-            return -1;
-        }
-        wVar.C(0);
-        wVar.B(read);
-        boolean z10 = this.c;
-        b bVar = this.a;
-        if (!z10) {
-            bVar.f(4, 0L);
-            this.c = true;
-        }
-        bVar.c(wVar);
-        return 0;
+    public c(long j10, long[] jArr, long[] jArr2) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j10 == -9223372036854775807L ? d0.G(jArr2[jArr2.length - 1]) : j10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        r5.f = 0;
-        r1 = r1 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
-    
-        if ((r1 - r3) < 8192) goto L13;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0088, code lost:
-    
-        return false;
-     */
-    @Override // o3.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean e(o3.l lVar) {
-        o3.h hVar;
-        int i10;
-        f5.w wVar = new f5.w(10);
-        int i11 = 0;
-        while (true) {
-            hVar = (o3.h) lVar;
-            hVar.f(wVar.a, 0, 10, false);
-            wVar.C(0);
-            if (wVar.t() != 4801587) {
-                break;
-            }
-            wVar.D(3);
-            int q6 = wVar.q();
-            i11 += q6 + 10;
-            hVar.b(q6, false);
+    public static Pair d(long j10, long[] jArr, long[] jArr2) {
+        int e = d0.e(jArr, j10, true);
+        long j11 = jArr[e];
+        long j12 = jArr2[e];
+        int i10 = e + 1;
+        if (i10 == jArr.length) {
+            return Pair.create(Long.valueOf(j11), Long.valueOf(j12));
         }
-        hVar.f = 0;
-        hVar.b(i11, false);
-        int i12 = i11;
-        loop1: while (true) {
-            int i13 = 0;
-            while (true) {
-                int i14 = 7;
-                hVar.f(wVar.a, 0, 7, false);
-                wVar.C(0);
-                int w10 = wVar.w();
-                if (w10 != 44096 && w10 != 44097) {
-                    break;
-                }
-                i13++;
-                if (i13 >= 4) {
-                    return true;
-                }
-                byte[] bArr = wVar.a;
-                if (bArr.length < 7) {
-                    i10 = -1;
-                } else {
-                    int i15 = ((bArr[2] & 255) << 8) | (bArr[3] & 255);
-                    if (i15 == 65535) {
-                        i15 = ((bArr[4] & 255) << 16) | ((bArr[5] & 255) << 8) | (bArr[6] & 255);
-                    } else {
-                        i14 = 4;
-                    }
-                    if (w10 == 44097) {
-                        i14 += 2;
-                    }
-                    i10 = i15 + i14;
-                }
-                if (i10 == -1) {
-                    break loop1;
-                }
-                hVar.b(i10 - 7, false);
-            }
-            hVar.b(i12, false);
-        }
+        return Pair.create(Long.valueOf(j10), Long.valueOf(((long) ((jArr[i10] == j11 ? 0.0d : (j10 - j11) / (r6 - j11)) * (jArr2[i10] - j12))) + j12));
     }
 
-    @Override // o3.k
-    public final void f(long j10, long j11) {
-        this.c = false;
-        this.a.a();
+    @Override // y3.f
+    public final long a(long j10) {
+        return d0.G(((Long) d(j10, this.a, this.b).second).longValue());
     }
 
-    @Override // o3.k
-    public final void i(o3.m mVar) {
-        this.a.e(mVar, new d0(0, 1));
-        mVar.e1();
-        mVar.D1(new o3.o(-9223372036854775807L));
+    @Override // y3.f
+    public final long b() {
+        return -1L;
     }
 
-    @Override // o3.k
-    public final void release() {
+    @Override // r3.s
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // r3.s
+    public final r f(long j10) {
+        Pair d = d(d0.S(d0.i(j10, 0L, this.c)), this.b, this.a);
+        t tVar = new t(d0.G(((Long) d.first).longValue()), ((Long) d.second).longValue());
+        return new r(tVar, tVar);
+    }
+
+    @Override // r3.s
+    public final long g() {
+        return this.c;
     }
 }

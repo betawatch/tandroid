@@ -1,46 +1,28 @@
 package nh;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class g0 extends wf.n {
-    public final /* synthetic */ int L;
-    public final /* synthetic */ FrameLayout M;
+public final class g0 extends f2.l {
+    public final /* synthetic */ g2 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g0(FrameLayout frameLayout, Context context, int i10) {
-        super(context);
-        this.L = i10;
-        this.M = frameLayout;
+    public g0(g2 g2Var) {
+        this.F = g2Var;
     }
 
-    @Override // wf.n
-    public final int getCurrentHeight() {
-        int currentHeight;
-        int currentHeight2;
-        switch (this.L) {
-            case 0:
-                currentHeight = ((j0) this.M).getCurrentHeight();
-                return currentHeight;
-            default:
-                currentHeight2 = ((m0) this.M).getCurrentHeight();
-                return currentHeight2;
-        }
+    @Override // f2.l
+    public final float A(View view) {
+        return 0.5f;
     }
 
-    @Override // wf.n
-    public final int getCurrentWidth() {
-        int currentWidth;
-        int currentWidth2;
-        switch (this.L) {
-            case 0:
-                currentWidth = ((j0) this.M).getCurrentWidth();
-                return currentWidth;
-            default:
-                currentWidth2 = ((m0) this.M).getCurrentWidth();
-                return currentWidth2;
-        }
+    @Override // f2.l
+    public final void M() {
+        this.F.c.invalidate();
+    }
+
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        this.F.c.invalidate();
     }
 }

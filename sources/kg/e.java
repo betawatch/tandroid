@@ -1,48 +1,45 @@
 package kg;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e extends ImageView {
-    public long a;
-    public final /* synthetic */ f b;
+public final class e extends FrameLayout {
+    public final f6 a;
+    public final TextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(f fVar, Context context) {
+    public e(Context context, f6 f6Var) {
         super(context);
-        this.b = fVar;
-        this.a = 0L;
+        this.a = f6Var;
+        setBackgroundColor(j6.v0(j6.e7, f6Var));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        yh.p(14.0f, 1, textView);
+        textView.setTextColor(j6.v0(j6.f7, f6Var));
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        addView(textView, b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Utilities.Callback callback;
-        int action = motionEvent.getAction();
-        f fVar = this.b;
-        if (action == 0) {
-            if (System.currentTimeMillis() < this.a + 350) {
-                return false;
-            }
-            this.a = System.currentTimeMillis();
-            fVar.b = true;
-            fVar.c = false;
-            AndroidUtilities.runOnUIThread(new bg.f(fVar, 350, 8), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            fVar.b = false;
-            if (!fVar.c && (callback = fVar.d) != null) {
-                callback.run(Boolean.FALSE);
-                try {
-                    fVar.a.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        super.onTouchEvent(motionEvent);
-        return true;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+    }
+
+    public void setLetter(CharSequence charSequence) {
+        this.b.setText(charSequence);
+    }
+
+    public void setTextColor(int i10) {
+        this.b.setTextColor(j6.v0(i10, this.a));
     }
 }

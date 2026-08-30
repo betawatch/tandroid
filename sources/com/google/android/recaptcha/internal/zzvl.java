@@ -7,7 +7,7 @@ import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzvl {
     public static final /* synthetic */ int zza = 0;
@@ -65,14 +65,14 @@ public final class zzvl {
         zza(zzutVar);
         long zzg = zzutVar.zzg();
         int zzf = zzutVar.zzf();
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(((SimpleDateFormat) zzb.get()).format(new Date(zzg * 1000)));
+        StringBuilder sb = new StringBuilder();
+        sb.append(((SimpleDateFormat) zzb.get()).format(new Date(zzg * 1000)));
         if (zzf != 0) {
-            sb2.append(".");
-            sb2.append(zzf % MediaController.VIDEO_BITRATE_480 == 0 ? String.format(Locale.ENGLISH, "%1$03d", Integer.valueOf(zzf / MediaController.VIDEO_BITRATE_480)) : zzf % MediaDataController.MAX_STYLE_RUNS_COUNT == 0 ? String.format(Locale.ENGLISH, "%1$06d", Integer.valueOf(zzf / MediaDataController.MAX_STYLE_RUNS_COUNT)) : String.format(Locale.ENGLISH, "%1$09d", Integer.valueOf(zzf)));
+            sb.append(".");
+            sb.append(zzf % MediaController.VIDEO_BITRATE_480 == 0 ? String.format(Locale.ENGLISH, "%1$03d", Integer.valueOf(zzf / MediaController.VIDEO_BITRATE_480)) : zzf % MediaDataController.MAX_STYLE_RUNS_COUNT == 0 ? String.format(Locale.ENGLISH, "%1$06d", Integer.valueOf(zzf / MediaDataController.MAX_STYLE_RUNS_COUNT)) : String.format(Locale.ENGLISH, "%1$09d", Integer.valueOf(zzf)));
         }
-        sb2.append("Z");
-        return sb2.toString();
+        sb.append("Z");
+        return sb.toString();
     }
 
     private static Method zzd(String str) {

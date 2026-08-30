@@ -1,77 +1,117 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.os.AsyncTask;
 import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e71 extends AsyncTask {
-    public int a = 0;
-    public final Paint b = new Paint(3);
-    public final /* synthetic */ h71 c;
+public final class e71 {
+    public final boolean a;
+    public final int b;
+    public final int c;
+    public final ArrayList d;
 
-    public e71(h71 h71Var) {
-        this.c = h71Var;
+    public e71(g71 g71Var) {
+        ArrayList arrayList = new ArrayList();
+        this.d = arrayList;
+        this.a = g71Var.b;
+        this.b = g71Var.i;
+        this.c = g71Var.j;
+        arrayList.add(g71Var);
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        h71 h71Var = this.c;
-        this.a = ((Integer[]) objArr)[0].intValue();
-        Bitmap bitmap = null;
-        if (!isCancelled()) {
-            try {
-                Bitmap frameAtTime = h71Var.y.getFrameAtTime(h71Var.D * this.a * 1000, 2);
-                try {
-                    if (!isCancelled()) {
-                        if (frameAtTime == null) {
-                            return frameAtTime;
-                        }
-                        Bitmap createBitmap = Bitmap.createBitmap(h71Var.E, h71Var.F, frameAtTime.getConfig());
-                        Canvas canvas = new Canvas(createBitmap);
-                        float max = Math.max(h71Var.E / frameAtTime.getWidth(), h71Var.F / frameAtTime.getHeight());
-                        int width = (int) (frameAtTime.getWidth() * max);
-                        int height = (int) (frameAtTime.getHeight() * max);
-                        Rect rect = new Rect(0, 0, frameAtTime.getWidth(), frameAtTime.getHeight());
-                        int i10 = h71Var.E;
-                        int i11 = h71Var.F;
-                        canvas.drawBitmap(frameAtTime, rect, new Rect((i10 - width) / 2, (i11 - height) / 2, (i10 + width) / 2, (i11 + height) / 2), this.b);
-                        frameAtTime.recycle();
-                        return createBitmap;
-                    }
-                } catch (Exception e10) {
-                    e = e10;
-                    bitmap = frameAtTime;
-                    FileLog.e(e);
-                    return bitmap;
-                }
-            } catch (Exception e11) {
-                e = e11;
+    public final g71 a() {
+        ArrayList arrayList = this.d;
+        g71 g71Var = null;
+        if (arrayList.isEmpty()) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            g71 g71Var2 = (g71) obj;
+            if (g71Var2.b()) {
+                return g71Var2;
             }
         }
-        return null;
+        long j10 = Long.MAX_VALUE;
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            g71 g71Var3 = (g71) arrayList.get(i11);
+            if (g71Var3.k < j10 && i71.Y(g71Var3.m)) {
+                j10 = g71Var3.k;
+                g71Var = g71Var3;
+            }
+        }
+        return g71Var != null ? g71Var : (g71) arrayList.get(0);
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        if (isCancelled()) {
-            return;
+    public final int b() {
+        int min = Math.min(this.b, this.c);
+        if (Math.abs(min - 2160) < 55) {
+            return 2160;
         }
-        h71 h71Var = this.c;
-        ArrayList arrayList = h71Var.B;
-        f71 f71Var = new f71();
-        f71Var.a = bitmap;
-        arrayList.add(f71Var);
-        h71Var.invalidate();
-        int i10 = this.a;
-        if (i10 < h71Var.G) {
-            h71Var.d(i10 + 1);
+        if (Math.abs(min - 1440) < 55) {
+            return 1440;
         }
+        if (Math.abs(min - 1080) < 55) {
+            return 1080;
+        }
+        if (Math.abs(min - 720) < 55) {
+            return 720;
+        }
+        if (Math.abs(min - 480) < 55) {
+            return 480;
+        }
+        if (Math.abs(min - 360) < 55) {
+            return 360;
+        }
+        if (Math.abs(min - 240) < 55) {
+            return 240;
+        }
+        if (Math.abs(min - 144) < 55) {
+            return 144;
+        }
+        return min;
+    }
+
+    public final String toString() {
+        String str;
+        boolean z4 = SharedConfig.debugVideoQualities;
+        boolean z10 = this.a;
+        String str2 = "";
+        if (!z4) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(b());
+            sb.append("p");
+            if (z10) {
+                str2 = " (" + LocaleController.getString(R.string.QualitySource) + ")";
+            }
+            sb.append(str2);
+            return sb.toString();
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.b);
+        sb2.append("x");
+        sb2.append(this.c);
+        if (z10) {
+            str = " (" + LocaleController.getString(R.string.QualitySource) + ")";
+        } else {
+            str = "";
+        }
+        sb2.append(str);
+        sb2.append("\n");
+        ArrayList arrayList = this.d;
+        sb2.append(AndroidUtilities.formatFileSize((long) ((g71) arrayList.get(0)).l).replace(" ", ""));
+        sb2.append("/s");
+        if (((g71) arrayList.get(0)).m != null) {
+            str2 = ", " + ((g71) arrayList.get(0)).m;
+        }
+        sb2.append(str2);
+        return sb2.toString();
     }
 }

@@ -1,39 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class y5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 b;
-    public final /* synthetic */ boolean[] c;
+import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
 
-    public /* synthetic */ y5(org.telegram.ui.ActionBar.c2 c2Var, boolean[] zArr, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y5 implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ y5(Object obj, int i10) {
         this.a = i10;
-        this.b = c2Var;
-        this.c = zArr;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                MediaController.lambda$saveFile$45(this.c, this.b);
+                MediaController.lambda$saveFile$44((boolean[]) this.b, dialogInterface);
                 break;
             case 1:
-                MediaController.lambda$saveFile$49(this.b, this.c);
+                MediaController.lambda$saveFile$51((boolean[]) this.b, dialogInterface);
                 break;
             case 2:
-                MediaController.lambda$saveFile$52(this.c, this.b);
+                MessagesController.lambda$openByUserName$457((boolean[]) this.b, dialogInterface);
                 break;
             default:
-                MediaController.lambda$saveFile$54(this.b, this.c);
+                ((MediaController.MediaLoader) this.b).lambda$new$0(dialogInterface);
                 break;
         }
-    }
-
-    public /* synthetic */ y5(boolean[] zArr, org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        this.a = i10;
-        this.c = zArr;
-        this.b = c2Var;
     }
 }

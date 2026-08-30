@@ -1,65 +1,14 @@
 package ub;
 
-import java.io.FilterInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import ob.j;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends FilterInputStream {
-    public int a;
-    public int b;
+public final class a extends j {
+    public final float c;
 
-    public a(InputStream inputStream) {
-        super(inputStream);
-        this.a = -1;
-        this.b = -1;
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final boolean markSupported() {
-        return false;
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        int read = super.read();
-        if (read == 3 && this.a == 0 && this.b == 0) {
-            this.a = -1;
-            this.b = -1;
-            read = super.read();
-        }
-        this.a = this.b;
-        this.b = read;
-        return read;
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        bArr.getClass();
-        if (i10 < 0 || i11 < 0 || i11 > bArr.length - i10) {
-            throw new IndexOutOfBoundsException();
-        }
-        if (i11 == 0) {
-            return 0;
-        }
-        int read = read();
-        if (read == -1) {
-            return -1;
-        }
-        bArr[i10] = (byte) read;
-        int i12 = 1;
-        while (i12 < i11) {
-            try {
-                int read2 = read();
-                if (read2 == -1) {
-                    break;
-                }
-                bArr[i10 + i12] = (byte) read2;
-                i12++;
-            } catch (IOException unused) {
-            }
-        }
-        return i12;
+    public a(float f10, float f11, float f12) {
+        super(f10, f11);
+        this.c = f12;
     }
 }

@@ -1,31 +1,54 @@
 package v4;
 
-import android.util.SparseArray;
+import java.nio.ByteBuffer;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class e {
-    public final int a;
-    public final boolean b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final SparseArray j;
+public abstract class e extends n3.l implements g {
+    public e(String str) {
+        super(new j[2], new k[2]);
+        int i10 = this.g;
+        n3.i[] iVarArr = this.e;
+        h5.a.i(i10 == iVarArr.length);
+        for (n3.i iVar : iVarArr) {
+            iVar.k(1024);
+        }
+    }
 
-    public e(int i10, boolean z10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, SparseArray sparseArray) {
-        this.a = i10;
-        this.b = z10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = i15;
-        this.h = i16;
-        this.i = i17;
-        this.j = sparseArray;
+    @Override // n3.l
+    public final n3.i e() {
+        return new j();
+    }
+
+    @Override // n3.l
+    public final n3.j f() {
+        return new d(this, 1);
+    }
+
+    @Override // n3.l
+    public final n3.g g(Throwable th2) {
+        return new h("Unexpected decode error", th2);
+    }
+
+    @Override // n3.l
+    public final n3.g h(n3.i iVar, n3.j jVar, boolean z4) {
+        j jVar2 = (j) iVar;
+        k kVar = (k) jVar;
+        try {
+            ByteBuffer byteBuffer = jVar2.d;
+            byteBuffer.getClass();
+            kVar.k(jVar2.f, k(byteBuffer.limit(), z4, byteBuffer.array()), jVar2.s);
+            kVar.b &= ConnectionsManager.DEFAULT_DATACENTER_ID;
+            return null;
+        } catch (h e) {
+            return e;
+        }
+    }
+
+    public abstract f k(int i10, boolean z4, byte[] bArr);
+
+    @Override // v4.g
+    public final void a(long j10) {
     }
 }

@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class FastDatePrinter implements DatePrinter, Serializable {
     public static final int FULL = 0;
@@ -30,7 +30,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     private transient Rule[] mRules;
     private final TimeZone mTimeZone;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class CharacterLiteral implements Rule {
         private final char mValue;
 
@@ -49,12 +49,12 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface NumberRule extends Rule {
         void appendTo(StringBuffer stringBuffer, int i10);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class PaddedNumberField implements NumberRule {
         private final int mField;
         private final int mSize;
@@ -105,14 +105,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Rule {
         void appendTo(StringBuffer stringBuffer, Calendar calendar);
 
         int estimateLength();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class StringLiteral implements Rule {
         private final String mValue;
 
@@ -131,7 +131,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TextField implements Rule {
         private final int mField;
         private final String[] mValues;
@@ -163,15 +163,15 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TimeZoneDisplayKey {
         private final Locale mLocale;
         private final int mStyle;
         private final TimeZone mTimeZone;
 
-        public TimeZoneDisplayKey(TimeZone timeZone, boolean z10, int i10, Locale locale) {
+        public TimeZoneDisplayKey(TimeZone timeZone, boolean z4, int i10, Locale locale) {
             this.mTimeZone = timeZone;
-            if (z10) {
+            if (z4) {
                 this.mStyle = Integer.MIN_VALUE | i10;
             } else {
                 this.mStyle = i10;
@@ -197,7 +197,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TimeZoneNameRule implements Rule {
         private final String mDaylight;
         private final Locale mLocale;
@@ -227,14 +227,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TimeZoneNumberRule implements Rule {
         static final TimeZoneNumberRule INSTANCE_COLON = new TimeZoneNumberRule(true);
         static final TimeZoneNumberRule INSTANCE_NO_COLON = new TimeZoneNumberRule(false);
         final boolean mColon;
 
-        public TimeZoneNumberRule(boolean z10) {
-            this.mColon = z10;
+        public TimeZoneNumberRule(boolean z4) {
+            this.mColon = z4;
         }
 
         @Override // org.telegram.messenger.time.FastDatePrinter.Rule
@@ -263,7 +263,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TwoDigitMonthField implements NumberRule {
         static final TwoDigitMonthField INSTANCE = new TwoDigitMonthField();
 
@@ -284,7 +284,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TwoDigitNumberField implements NumberRule {
         private final int mField;
 
@@ -313,7 +313,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TwoDigitYearField implements NumberRule {
         static final TwoDigitYearField INSTANCE = new TwoDigitYearField();
 
@@ -334,7 +334,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class UnpaddedMonthField implements NumberRule {
         static final UnpaddedMonthField INSTANCE = new UnpaddedMonthField();
 
@@ -359,7 +359,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class UnpaddedNumberField implements NumberRule {
         private final int mField;
 
@@ -401,14 +401,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         return applyRules(calendar, new StringBuffer(this.mMaxLengthEstimate)).toString();
     }
 
-    public static String getTimeZoneDisplay(TimeZone timeZone, boolean z10, int i10, Locale locale) {
-        TimeZoneDisplayKey timeZoneDisplayKey = new TimeZoneDisplayKey(timeZone, z10, i10, locale);
+    public static String getTimeZoneDisplay(TimeZone timeZone, boolean z4, int i10, Locale locale) {
+        TimeZoneDisplayKey timeZoneDisplayKey = new TimeZoneDisplayKey(timeZone, z4, i10, locale);
         ConcurrentMap<TimeZoneDisplayKey, String> concurrentMap = cTimeZoneDisplayCache;
         String str = concurrentMap.get(timeZoneDisplayKey);
         if (str != null) {
             return str;
         }
-        String displayName = timeZone.getDisplayName(z10, i10, locale);
+        String displayName = timeZone.getDisplayName(z4, i10, locale);
         String putIfAbsent = concurrentMap.putIfAbsent(timeZoneDisplayKey, displayName);
         return putIfAbsent != null ? putIfAbsent : displayName;
     }
@@ -650,37 +650,37 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     }
 
     public String parseToken(String str, int[] iArr) {
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         int i10 = iArr[0];
         int length = str.length();
         char charAt = str.charAt(i10);
         if ((charAt >= 'A' && charAt <= 'Z') || (charAt >= 'a' && charAt <= 'z')) {
-            sb2.append(charAt);
+            sb.append(charAt);
             while (true) {
                 int i11 = i10 + 1;
                 if (i11 >= length || str.charAt(i11) != charAt) {
                     break;
                 }
-                sb2.append(charAt);
+                sb.append(charAt);
                 i10 = i11;
             }
         } else {
-            sb2.append('\'');
-            boolean z10 = false;
+            sb.append('\'');
+            boolean z4 = false;
             while (i10 < length) {
                 char charAt2 = str.charAt(i10);
                 if (charAt2 != '\'') {
-                    if (!z10 && ((charAt2 >= 'A' && charAt2 <= 'Z') || (charAt2 >= 'a' && charAt2 <= 'z'))) {
+                    if (!z4 && ((charAt2 >= 'A' && charAt2 <= 'Z') || (charAt2 >= 'a' && charAt2 <= 'z'))) {
                         i10--;
                         break;
                     }
-                    sb2.append(charAt2);
+                    sb.append(charAt2);
                 } else {
                     int i12 = i10 + 1;
                     if (i12 >= length || str.charAt(i12) != '\'') {
-                        z10 = !z10;
+                        z4 = !z4;
                     } else {
-                        sb2.append(charAt2);
+                        sb.append(charAt2);
                         i10 = i12;
                     }
                 }
@@ -688,7 +688,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
             }
         }
         iArr[0] = i10;
-        return sb2.toString();
+        return sb.toString();
     }
 
     public NumberRule selectNumberRule(int i10, int i11) {
@@ -699,7 +699,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         return "FastDatePrinter[" + this.mPattern + "," + this.mLocale + "," + this.mTimeZone.getID() + "]";
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TwelveHourField implements NumberRule {
         private final NumberRule mRule;
 
@@ -727,7 +727,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TwentyFourHourField implements NumberRule {
         private final NumberRule mRule;
 

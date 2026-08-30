@@ -9,14 +9,14 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 abstract class FormatCache<F extends Format> {
     static final int NONE = -1;
     private static final ConcurrentMap<MultipartKey, String> cDateTimeInstanceCache = new ConcurrentHashMap(7);
     private final ConcurrentMap<MultipartKey, F> cInstanceCache = new ConcurrentHashMap(7);
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class MultipartKey {
         private int hashCode;
         private final Object[] keys;
@@ -91,9 +91,9 @@ abstract class FormatCache<F extends Format> {
             locale = Locale.getDefault();
         }
         MultipartKey multipartKey = new MultipartKey(str, timeZone, locale);
-        F f9 = this.cInstanceCache.get(multipartKey);
-        if (f9 != null) {
-            return f9;
+        F f10 = this.cInstanceCache.get(multipartKey);
+        if (f10 != null) {
+            return f10;
         }
         F createInstance = createInstance(str, timeZone, locale);
         F putIfAbsent = this.cInstanceCache.putIfAbsent(multipartKey, createInstance);

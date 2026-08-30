@@ -1,44 +1,32 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.ChatObject;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class h40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ r50 c;
+public final class h40 implements org.telegram.ui.ActionBar.a3 {
+    public final /* synthetic */ c60 a;
 
-    public h40(r50 r50Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
-        this.c = r50Var;
-        this.a = videoParticipant;
-        this.b = z10;
+    public h40(c60 c60Var) {
+        this.a = c60Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        r50 r50Var = this.c;
-        x40 x40Var = r50Var.M;
-        x40Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        r50Var.m2 = null;
-        j30 j30Var = r50Var.W1;
-        ChatObject.VideoParticipant videoParticipant = this.a;
-        j30Var.j(videoParticipant);
-        if (r50Var.o0) {
-            r50Var.o0 = false;
-            r50Var.O0(true);
-            if (this.b && videoParticipant != null) {
-                x40Var.u0(0);
-            }
-            r50Var.o0 = true;
-        } else {
-            r50Var.O0(true);
+    @Override // org.telegram.ui.ActionBar.a3
+    public final boolean g() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a3
+    public final void onOpenAnimationEnd() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
         }
-        viewGroup = ((org.telegram.ui.ActionBar.f3) r50Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+        c60 c60Var = this.a;
+        if (c60Var.C1 == 6) {
+            c60.B0(c60Var);
+        }
     }
 }

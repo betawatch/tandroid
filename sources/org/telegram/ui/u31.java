@@ -1,66 +1,127 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class u31 extends Fade {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ SecretMediaViewer d;
+public final /* synthetic */ class u31 implements org.telegram.ui.Components.jl0, org.telegram.ui.Components.ll0, iy {
+    public final /* synthetic */ SaveToGallerySettingsActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u31(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i10) {
-        super(1);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                super(2);
-                break;
-            default:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                break;
-        }
+    public /* synthetic */ u31(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
+        this.a = saveToGallerySettingsActivity;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.V) {
-                    onAppear.addListener(new e50(this, 25));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new w01(this, 4));
-                }
-                return onAppear;
-            default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-        }
+    @Override // org.telegram.ui.iy
+    public /* synthetic */ boolean C() {
+        return false;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.V) {
-                    onDisappear.addListener(new e50(this, 26));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new w01(this, 5));
-                }
-                return onDisappear;
-            default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+    @Override // org.telegram.ui.iy
+    public /* synthetic */ boolean K(oy oyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public void c(float f10, float f11, int i10, View view) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (i10 == saveToGallerySettingsActivity.e) {
+            saveToGallerySettingsActivity.X().savePhoto = !r11.savePhoto;
+            saveToGallerySettingsActivity.Y();
+            saveToGallerySettingsActivity.Z();
+            return;
         }
+        if (i10 == saveToGallerySettingsActivity.f) {
+            saveToGallerySettingsActivity.X().saveVideo = !r11.saveVideo;
+            saveToGallerySettingsActivity.Y();
+            saveToGallerySettingsActivity.Z();
+            return;
+        }
+        if (((x31) arrayList.get(i10)).a != 1) {
+            if (((x31) arrayList.get(i10)).a == 2) {
+                Bundle bundle = new Bundle();
+                bundle.putLong("dialog_id", ((x31) arrayList.get(i10)).c.dialogId);
+                bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+                saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
+                return;
+            }
+            if (((x31) arrayList.get(i10)).a == 4) {
+                org.telegram.ui.ActionBar.d2 d2Var = org.telegram.ui.Components.z4.O(saveToGallerySettingsActivity.getParentActivity(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new vy0(saveToGallerySettingsActivity, 11), null).a;
+                d2Var.show();
+                d2Var.h();
+                return;
+            }
+            return;
+        }
+        Bundle bundle2 = new Bundle();
+        bundle2.putBoolean("onlySelect", true);
+        bundle2.putBoolean("checkCanWrite", false);
+        int i11 = saveToGallerySettingsActivity.a;
+        if (i11 == 2) {
+            bundle2.putInt("dialogsType", 6);
+        } else if (i11 == 4) {
+            bundle2.putInt("dialogsType", 5);
+        } else {
+            bundle2.putInt("dialogsType", 4);
+        }
+        bundle2.putBoolean("allowGlobalSearch", false);
+        oy oyVar = new oy(bundle2);
+        oyVar.z2 = new u31(saveToGallerySettingsActivity);
+        saveToGallerySettingsActivity.presentFragment(oyVar);
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ boolean e1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.iy
+    public boolean w(oy oyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, kf1 kf1Var) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
+        saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle), true);
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public /* synthetic */ void h() {
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public /* synthetic */ void p(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public boolean c(float f10, float f11, int i10, View view) {
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
+        ArrayList arrayList = saveToGallerySettingsActivity.s;
+        if (((x31) arrayList.get(i10)).a != 2) {
+            return false;
+        }
+        SaveToGallerySettingsHelper.DialogException dialogException = ((x31) arrayList.get(i10)).c;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(saveToGallerySettingsActivity.getParentActivity(), null);
+        org.telegram.ui.ActionBar.g1 c3 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.EditException), false, null);
+        org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteException), false, null);
+        int i11 = org.telegram.ui.ActionBar.j6.p7;
+        c10.c(org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        org.telegram.ui.ActionBar.p1 Q = org.telegram.ui.Components.z4.Q(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f10, f11);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(Q);
+        c3.setOnClickListener(new dg.m2(saveToGallerySettingsActivity, Q, i10, 18));
+        c10.setOnClickListener(new b0(saveToGallerySettingsActivity, Q, dialogException, 15));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ void o0(View view, float f10, float f11) {
     }
 }

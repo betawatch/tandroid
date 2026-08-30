@@ -1,43 +1,40 @@
 package ff;
 
-import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.os.SystemClock;
+import k7.n;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.NotificationBadge;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b b;
+public final class a {
+    public final SharedPreferences a;
+    public long b;
+    public long c;
+    public int d;
 
-    public /* synthetic */ a(b bVar, String str, Bundle bundle, int i10) {
-        this.a = i10;
-        this.b = bVar;
+    public a(String str) {
+        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pip_duration_".concat(str), 0);
+        this.a = sharedPreferences;
+        this.b = sharedPreferences.getLong("estimated", 400L);
+        this.d = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b.getClass();
-                break;
-            case 1:
-                this.b.b.getClass();
-                break;
-            case 2:
-                this.b.b.getClass();
-                break;
-            default:
-                this.b.b.getClass();
-                break;
+    public final void a() {
+        if (this.c == 0) {
+            return;
         }
+        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * n.b(this.d, 0, 9)) / 10);
+        this.c = 0L;
+        this.d++;
+        this.a.edit().putLong("estimated", this.b).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.d).apply();
     }
 
-    public a(b bVar, int i10, Bundle bundle) {
-        this.a = 0;
-        this.b = bVar;
-    }
-
-    public a(b bVar, Bundle bundle) {
-        this.a = 2;
-        this.b = bVar;
+    public final float b() {
+        if (this.b > 0) {
+            return n.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
+        }
+        return 0.5f;
     }
 }

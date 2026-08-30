@@ -1,16 +1,36 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ z0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    private final void a(int i10) {
-    }
+    public static final z0 a = new z0();
+    public static final z0 b = new z0();
+    public static final z0 c = new z0();
+    public static final z0 d = new z0();
+    public static final z0 e = new z0();
+    public static final z0 f = new z0();
+    public static final z0 g = new z0();
+    public static final z0 h = new z0();
+    public static final z0 i = new z0();
+    public static final z0 j = new z0();
+    public static final z0 k = new z0();
+    public static final z0 l = new z0();
+    public static final z0 m = new z0();
+    public static final z0 n = new z0();
+    public static final z0 o = new z0();
+    public static final z0 p = new z0();
+    public static final z0 q = new z0();
+    public static final z0 r = new z0();
+    public static final z0 s = new z0();
+    public static final z0 t = new z0();
+    public static final z0 u = new z0();
+    public static final z0 v = new z0();
+    public static final z0 w = new z0();
+    public static final z0 x = new z0();
+    public static final z0 y = new z0();
+    public static final z0 z = new z0();
+    public static final z0 A = new z0();
+    public static final z0 B = new z0();
+    public static final z0 C = new z0();
+    public static final z0 D = new z0();
 }

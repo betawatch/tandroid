@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.emoji2.text.l;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c extends androidx.emoji2.text.i {
     public final WeakReference a;
@@ -38,15 +38,15 @@ public final class c extends androidx.emoji2.text.i {
                         a2.getClass();
                         length = text.length();
                     }
-                    CharSequence e10 = a2.e(0, length, text);
-                    if (text == e10) {
+                    CharSequence e = a2.e(0, length, text);
+                    if (text == e) {
                         return;
                     }
-                    int selectionStart = Selection.getSelectionStart(e10);
-                    int selectionEnd = Selection.getSelectionEnd(e10);
-                    textView.setText(e10);
-                    if (e10 instanceof Spannable) {
-                        Spannable spannable = (Spannable) e10;
+                    int selectionStart = Selection.getSelectionStart(e);
+                    int selectionEnd = Selection.getSelectionEnd(e);
+                    textView.setText(e);
+                    if (e instanceof Spannable) {
+                        Spannable spannable = (Spannable) e;
                         if (selectionStart >= 0 && selectionEnd >= 0) {
                             Selection.setSelection(spannable, selectionStart, selectionEnd);
                             return;

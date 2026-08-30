@@ -1,31 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class no0 implements nb {
-    public final /* synthetic */ mc a;
-    public final /* synthetic */ ye b;
+public final class no0 extends j6 {
+    public final /* synthetic */ int W = 0;
+    public final /* synthetic */ Object X;
 
-    public no0(ye yeVar, mc mcVar) {
-        this.b = yeVar;
-        this.a = mcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public no0(Runnable runnable) {
+        super(false, true, true, true);
+        this.X = runnable;
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public final void c() {
-        this.b.G.remove(this.a);
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.W) {
+            case 0:
+                ((Runnable) this.X).run();
+                break;
+            default:
+                ((org.telegram.ui.h21) this.X).invalidate();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public final void d() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void a(mc mcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void b() {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public no0(org.telegram.ui.h21 h21Var) {
+        super(false, true, false, false);
+        this.X = h21Var;
     }
 }

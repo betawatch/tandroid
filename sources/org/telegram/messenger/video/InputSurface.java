@@ -8,7 +8,7 @@ import android.opengl.EGLExt;
 import android.opengl.EGLSurface;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class InputSurface {
     private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -25,11 +25,11 @@ public class InputSurface {
     }
 
     private void checkEglError(String str) {
-        boolean z10 = false;
+        boolean z4 = false;
         while (EGL14.eglGetError() != 12288) {
-            z10 = true;
+            z4 = true;
         }
-        if (z10) {
+        if (z4) {
             throw new RuntimeException("EGL error encountered (see log)");
         }
     }

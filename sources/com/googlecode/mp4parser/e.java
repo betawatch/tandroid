@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class e implements s2.f, Iterator, Closeable {
     public static final d c = new d("eof ");
@@ -14,7 +14,7 @@ public abstract class e implements s2.f, Iterator, Closeable {
     public ArrayList b;
 
     static {
-        ac.c.a(e.class);
+        cc.c.a(e.class);
     }
 
     public final void a(s2.b bVar) {
@@ -90,16 +90,16 @@ public abstract class e implements s2.f, Iterator, Closeable {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(getClass().getSimpleName());
-        sb2.append("[");
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append("[");
         for (int i10 = 0; i10 < this.b.size(); i10++) {
             if (i10 > 0) {
-                sb2.append(";");
+                sb.append(";");
             }
-            sb2.append(((s2.b) this.b.get(i10)).toString());
+            sb.append(((s2.b) this.b.get(i10)).toString());
         }
-        sb2.append("]");
-        return sb2.toString();
+        sb.append("]");
+        return sb.toString();
     }
 }

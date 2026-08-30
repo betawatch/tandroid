@@ -1,86 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.tgnet.TLRPC;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zk extends org.telegram.ui.Components.rb0 {
-    public final /* synthetic */ tn D;
+public final class zk implements LayoutTransition.TransitionListener {
+    public yk a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
+    public final /* synthetic */ xn d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zk(tn tnVar, Context context, tn tnVar2, lg.a aVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.nb0 nb0Var, int i11, boolean z10) {
-        super(context, tnVar2, aVar, messagePreviewParams, user, chat, i10, nb0Var, i11, z10);
-        this.D = tnVar;
+    public zk(xn xnVar, org.telegram.ui.ActionBar.z zVar) {
+        this.d = xnVar;
+        this.c = zVar;
     }
 
-    @Override // org.telegram.ui.Components.rb0
-    public final void b() {
-        MessageObject messageObject;
-        jn jnVar;
-        tn tnVar = this.D;
-        jn jnVar2 = tnVar.h5;
-        if (jnVar2 == null || (messageObject = jnVar2.a) == null || !((jnVar = tnVar.b5.quote) == null || jnVar.a == null || messageObject.getId() == tnVar.b5.quote.a.getId())) {
-            tnVar.h5 = tnVar.b5.quote;
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
+            return;
         }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
     }
 
-    @Override // org.telegram.ui.Components.rb0
-    public final void c(boolean z10) {
-        int i10;
-        boolean z11;
-        MessagePreviewParams.Messages messages;
-        a(false);
-        tn tnVar = this.D;
-        MessagePreviewParams messagePreviewParams = tnVar.b5;
-        if (messagePreviewParams != null) {
-            if (!z10) {
-                tnVar.i5 = true;
-            }
-            MessagePreviewParams.Messages messages2 = messagePreviewParams.forwardMessages;
-            if (messages2 != null) {
-                int size = messages2.messages.size();
-                i10 = 0;
-                z11 = false;
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject messageObject = tnVar.b5.forwardMessages.messages.get(i11);
-                    if (messageObject.isTodo()) {
-                        i10 = 3;
-                    } else if (messageObject.isPoll()) {
-                        if (i10 != 2) {
-                            i10 = messageObject.isPublicPoll() ? 2 : 1;
-                        }
-                    } else if (messageObject.isInvoice()) {
-                        z11 = true;
-                    }
-                    tnVar.S5[0].put(messageObject.getId(), messageObject);
+    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.yk] */
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.yk
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public final boolean onPreDraw() {
+                    org.telegram.ui.ActionBar.k kVar;
+                    kVar = ((org.telegram.ui.ActionBar.p2) zk.this.d).actionBar;
+                    kVar.invalidate();
+                    return true;
                 }
-            } else {
-                i10 = 0;
-                z11 = false;
-            }
-            Bundle e10 = org.telegram.messenger.x3.e(3, "onlySelect", "dialogsType", true);
-            e10.putBoolean("quote", !z10);
-            boolean z12 = (z10 || (messages = tnVar.b5.replyMessage) == null || messages.messages.isEmpty() || tnVar.b5.quote != null) ? false : true;
-            e10.putBoolean("reply_to", z12);
-            if (z12) {
-                long peerDialogId = DialogObject.getPeerDialogId(tnVar.b5.replyMessage.messages.get(0).getFromPeer());
-                if (peerDialogId != 0 && peerDialogId != tnVar.a() && peerDialogId != tnVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
-                    e10.putLong("reply_to_author", peerDialogId);
-                }
-            }
-            e10.putInt("hasPoll", i10);
-            e10.putBoolean("hasInvoice", z11);
-            MessagePreviewParams.Messages messages3 = tnVar.b5.forwardMessages;
-            e10.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
-            e10.putBoolean("canSelectTopics", true);
-            fy fyVar = new fy(e10);
-            fyVar.y2 = tnVar;
-            tnVar.presentFragment(fyVar);
+            };
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
         }
+        this.b++;
     }
 }

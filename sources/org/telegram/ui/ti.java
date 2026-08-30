@@ -1,38 +1,100 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ti implements ValueAnimator.AnimatorUpdateListener {
+public final class ti extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
+    public final /* synthetic */ xn b;
 
-    public /* synthetic */ ti(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
+    public /* synthetic */ ti(xn xnVar, int i10) {
         this.a = i10;
-        this.b = o2Var;
+        this.b = xnVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        qj qjVar;
         switch (this.a) {
             case 0:
-                tn tnVar = (tn) this.b;
-                tnVar.ha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tnVar.T0.invalidate();
-                break;
-            case 1:
-                fy fyVar = (fy) this.b;
-                fyVar.D0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = fyVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
+                xn xnVar = this.b;
+                dl dlVar = xnVar.Y2;
+                if (dlVar != null) {
+                    dlVar.setIsMessageTransition(false);
+                    xnVar.Y2.h(true);
+                    xnVar.Y2.setVisibility(4);
                     break;
                 }
                 break;
+            case 1:
+                float dp = AndroidUtilities.dp(30.0f);
+                xn xnVar2 = this.b;
+                xnVar2.x9 = dp;
+                xnVar2.o9();
+                break;
+            case 2:
+                xn xnVar3 = this.b;
+                if (xnVar3.fragmentView != null && (qjVar = xnVar3.u0) != null) {
+                    qjVar.invalidate();
+                    xnVar3.fragmentView.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                this.b.M.setVisibility(4);
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new zi(this, 3), 2000L);
+                break;
+            case 5:
+                xn xnVar4 = this.b;
+                if (animator.equals(xnVar4.d3)) {
+                    xnVar4.d3 = null;
+                    break;
+                }
+                break;
+            case 6:
+                xn xnVar5 = this.b;
+                if (animator.equals(xnVar5.d3)) {
+                    xnVar5.d3 = null;
+                    break;
+                }
+                break;
+            case 7:
+                xn xnVar6 = this.b;
+                if (animator.equals(xnVar6.e3)) {
+                    xnVar6.f3 = 1.0f;
+                    xnVar6.lc();
+                    xnVar6.e3 = null;
+                    break;
+                }
+                break;
+            case 8:
+                xn xnVar7 = this.b;
+                if (animator.equals(xnVar7.e3)) {
+                    xnVar7.f3 = 0.0f;
+                    xnVar7.lc();
+                    xnVar7.e3 = null;
+                    break;
+                }
+                break;
+            case 9:
+                this.b.Q4 = null;
+                break;
+            case 10:
+                xn xnVar8 = this.b;
+                xnVar8.Aa = 1.0f;
+                xnVar8.V.setVisibility(4);
+                xnVar8.L0.setVisibility(4);
+                xnVar8.o9();
+                break;
             default:
-                ((qc1) this.b).t0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                xn xnVar9 = this.b;
+                xnVar9.Aa = 0.0f;
+                xnVar9.o9();
                 break;
         }
     }

@@ -1,197 +1,121 @@
 package androidx.mediarouter.app;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.support.v4.media.MediaDescriptionCompat;
 import android.util.Log;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
-import java.io.BufferedInputStream;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import f2.l1;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
+import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d0 extends AsyncTask {
-    public final Bitmap a;
-    public final Uri b;
-    public int c;
-    public final /* synthetic */ m0 d;
+public final class d0 extends f2.o0 {
+    public final ArrayList c = new ArrayList();
+    public final LayoutInflater d;
+    public final Drawable e;
+    public final Drawable f;
+    public final Drawable h;
+    public final Drawable n;
+    public final /* synthetic */ e0 r;
 
-    public d0(m0 m0Var) {
-        this.d = m0Var;
-        MediaDescriptionCompat mediaDescriptionCompat = m0Var.X;
-        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
-        if (bitmap != null && bitmap.isRecycled()) {
-            Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
-            bitmap = null;
-        }
-        this.a = bitmap;
-        MediaDescriptionCompat mediaDescriptionCompat2 = m0Var.X;
-        this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
+    public d0(e0 e0Var) {
+        this.r = e0Var;
+        Context context = e0Var.n;
+        this.d = LayoutInflater.from(context);
+        this.e = j7.z.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = j7.z.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = j7.z.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = j7.z.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        D();
     }
 
-    public final BufferedInputStream a(Uri uri) {
-        InputStream openInputStream;
-        String lowerCase = uri.getScheme().toLowerCase();
-        if ("android.resource".equals(lowerCase) || "content".equals(lowerCase) || "file".equals(lowerCase)) {
-            openInputStream = this.d.y.getContentResolver().openInputStream(uri);
-        } else {
-            URLConnection openConnection = new URL(uri.toString()).openConnection();
-            openConnection.setConnectTimeout(30000);
-            openConnection.setReadTimeout(30000);
-            openInputStream = openConnection.getInputStream();
+    public final void D() {
+        ArrayList arrayList = this.c;
+        arrayList.clear();
+        e0 e0Var = this.r;
+        arrayList.add(new a0(e0Var.n.getString(R.string.mr_chooser_title)));
+        ArrayList arrayList2 = e0Var.s;
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            arrayList.add(new a0((c2.a0) obj));
         }
-        if (openInputStream == null) {
-            return null;
-        }
-        return new BufferedInputStream(openInputStream);
+        l();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0028, code lost:
+    @Override // f2.o0
+    public final int h() {
+        return this.c.size();
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return ((a0) this.c.get(i10)).b;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0054, code lost:
     
-        if (r5 != null) goto L11;
+        if (r2 != null) goto L25;
      */
-    /* JADX WARN: Not initialized variable reg: 5, insn: 0x002f: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:48), block:B:60:0x002f */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00fc  */
-    @Override // android.os.AsyncTask
+    @Override // f2.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object doInBackground(Object[] objArr) {
-        InputStream inputStream;
-        BufferedInputStream bufferedInputStream;
-        InputStream inputStream2 = null;
-        Bitmap bitmap = this.a;
-        if (bitmap == null) {
-            Uri uri = this.b;
-            try {
-                if (uri != null) {
-                    try {
-                        bufferedInputStream = a(uri);
-                        try {
-                            try {
-                                if (bufferedInputStream == null) {
-                                    Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
-                                } else {
-                                    BitmapFactory.Options options = new BitmapFactory.Options();
-                                    options.inJustDecodeBounds = true;
-                                    BitmapFactory.decodeStream(bufferedInputStream, null, options);
-                                    if (options.outWidth != 0 && options.outHeight != 0) {
-                                        try {
-                                            bufferedInputStream.reset();
-                                        } catch (IOException unused) {
-                                            bufferedInputStream.close();
-                                            bufferedInputStream = a(uri);
-                                            if (bufferedInputStream == null) {
-                                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
-                                                if (bufferedInputStream == null) {
-                                                    return null;
-                                                }
-                                            }
-                                        }
-                                        options.inJustDecodeBounds = false;
-                                        options.inSampleSize = Math.max(1, Integer.highestOneBit(options.outHeight / this.d.y.getResources().getDimensionPixelSize(R.dimen.mr_cast_meta_art_size)));
-                                        if (isCancelled()) {
-                                            bufferedInputStream.close();
-                                            return null;
-                                        }
-                                        bitmap = BitmapFactory.decodeStream(bufferedInputStream, null, options);
-                                        try {
-                                            bufferedInputStream.close();
-                                        } catch (IOException unused2) {
-                                        }
-                                    }
-                                }
-                                bufferedInputStream.close();
-                                return null;
-                            } catch (IOException e10) {
-                                e = e10;
-                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
-                                if (bufferedInputStream != null) {
-                                    try {
-                                        bufferedInputStream.close();
-                                    } catch (IOException unused3) {
-                                    }
-                                }
-                                bitmap = null;
-                                if (bitmap == null) {
-                                }
-                                if (bitmap != null) {
-                                    androidx.emoji2.text.o oVar = new androidx.emoji2.text.o(bitmap);
-                                    oVar.a = 1;
-                                    List list = (List) oVar.b().a;
-                                    this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((d2.e) DesugarCollections.unmodifiableList(list).get(0)).d;
-                                }
-                                return bitmap;
-                            }
-                        } catch (IOException unused4) {
-                            return null;
-                        }
-                    } catch (IOException e11) {
-                        e = e11;
-                        bufferedInputStream = null;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        if (inputStream2 != null) {
-                            try {
-                                inputStream2.close();
-                            } catch (IOException unused5) {
-                            }
-                        }
-                        throw th;
-                    }
-                }
-                bitmap = null;
-            } catch (Throwable th3) {
-                th = th3;
-                inputStream2 = inputStream;
-            }
-        }
-        if (bitmap == null && bitmap.isRecycled()) {
-            Log.w("MediaRouteCtrlDialog", "Can't use recycled bitmap: " + bitmap);
-            return null;
-        }
-        if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
-            androidx.emoji2.text.o oVar2 = new androidx.emoji2.text.o(bitmap);
-            oVar2.a = 1;
-            List list2 = (List) oVar2.b().a;
-            this.c = DesugarCollections.unmodifiableList(list2).isEmpty() ? 0 : ((d2.e) DesugarCollections.unmodifiableList(list2).get(0)).d;
-        }
-        return bitmap;
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        m0 m0Var = this.d;
-        m0Var.Y = null;
-        Bitmap bitmap2 = m0Var.Z;
-        Bitmap bitmap3 = this.a;
-        boolean equals = Objects.equals(bitmap2, bitmap3);
-        Uri uri = this.b;
-        if (equals && Objects.equals(m0Var.a0, uri)) {
+    public final void v(l1 l1Var, int i10) {
+        Drawable createFromStream;
+        int j10 = j(i10);
+        a0 a0Var = (a0) this.c.get(i10);
+        if (j10 == 1) {
+            ((z) l1Var).v.setText(a0Var.a.toString());
             return;
         }
-        m0Var.Z = bitmap3;
-        m0Var.c0 = bitmap;
-        m0Var.a0 = uri;
-        m0Var.d0 = this.c;
-        m0Var.b0 = true;
-        m0Var.k();
+        if (j10 != 2) {
+            Log.w("RecyclerAdapter", "Cannot bind item to ViewHolder because of wrong view type");
+            return;
+        }
+        c0 c0Var = (c0) l1Var;
+        c2.a0 a0Var2 = (c2.a0) a0Var.a;
+        View view = c0Var.v;
+        view.setVisibility(0);
+        c0Var.x.setVisibility(4);
+        view.setOnClickListener(new b0(c0Var, a0Var2));
+        c0Var.y.setText(a0Var2.d);
+        ImageView imageView = c0Var.w;
+        d0 d0Var = c0Var.z;
+        Uri uri = a0Var2.f;
+        if (uri != null) {
+            try {
+                createFromStream = Drawable.createFromStream(d0Var.r.n.getContentResolver().openInputStream(uri), null);
+            } catch (IOException e) {
+                Log.w("RecyclerAdapter", "Failed to load " + uri, e);
+            }
+        }
+        int i11 = a0Var2.n;
+        createFromStream = i11 != 1 ? i11 != 2 ? a0Var2.e() ? d0Var.n : d0Var.e : d0Var.h : d0Var.f;
+        imageView.setImageDrawable(createFromStream);
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPreExecute() {
-        m0 m0Var = this.d;
-        m0Var.b0 = false;
-        m0Var.c0 = null;
-        m0Var.d0 = 0;
+    @Override // f2.o0
+    public final l1 x(ViewGroup viewGroup, int i10) {
+        LayoutInflater layoutInflater = this.d;
+        if (i10 != 1) {
+            if (i10 == 2) {
+                return new c0(this, layoutInflater.inflate(R.layout.mr_picker_route_item, viewGroup, false));
+            }
+            throw new IllegalStateException();
+        }
+        View inflate = layoutInflater.inflate(R.layout.mr_picker_header_item, viewGroup, false);
+        z zVar = new z(inflate);
+        zVar.v = (TextView) inflate.findViewById(R.id.mr_picker_header_name);
+        return zVar;
     }
 }

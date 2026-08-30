@@ -3,11 +3,11 @@ package androidx.fragment.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class o0 implements Parcelable {
-    public static final Parcelable.Creator<o0> CREATOR = new w.a(15);
-    public final boolean A;
+    public static final Parcelable.Creator<o0> CREATOR = new w.a(18);
+    public final boolean B;
     public final String a;
     public final String b;
     public final boolean c;
@@ -27,18 +27,18 @@ public final class o0 implements Parcelable {
         this.a = sVar.getClass().getName();
         this.b = sVar.e;
         this.c = sVar.y;
-        this.d = sVar.B;
-        this.e = sVar.J;
-        this.f = sVar.K;
-        this.h = sVar.L;
-        this.n = sVar.O;
+        this.d = sVar.C;
+        this.e = sVar.K;
+        this.f = sVar.L;
+        this.h = sVar.M;
+        this.n = sVar.P;
         this.r = sVar.w;
-        this.s = sVar.N;
-        this.v = sVar.M;
-        this.w = sVar.Y.ordinal();
+        this.s = sVar.O;
+        this.v = sVar.N;
+        this.w = sVar.Z.ordinal();
         this.x = sVar.n;
         this.y = sVar.r;
-        this.A = sVar.T;
+        this.B = sVar.U;
     }
 
     @Override // android.os.Parcelable
@@ -47,51 +47,51 @@ public final class o0 implements Parcelable {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(128);
-        sb2.append("FragmentState{");
-        sb2.append(this.a);
-        sb2.append(" (");
-        sb2.append(this.b);
-        sb2.append(")}:");
+        StringBuilder sb = new StringBuilder(128);
+        sb.append("FragmentState{");
+        sb.append(this.a);
+        sb.append(" (");
+        sb.append(this.b);
+        sb.append(")}:");
         if (this.c) {
-            sb2.append(" fromLayout");
+            sb.append(" fromLayout");
         }
         if (this.d) {
-            sb2.append(" dynamicContainer");
+            sb.append(" dynamicContainer");
         }
         int i10 = this.f;
         if (i10 != 0) {
-            sb2.append(" id=0x");
-            sb2.append(Integer.toHexString(i10));
+            sb.append(" id=0x");
+            sb.append(Integer.toHexString(i10));
         }
         String str = this.h;
         if (str != null && !str.isEmpty()) {
-            sb2.append(" tag=");
-            sb2.append(str);
+            sb.append(" tag=");
+            sb.append(str);
         }
         if (this.n) {
-            sb2.append(" retainInstance");
+            sb.append(" retainInstance");
         }
         if (this.r) {
-            sb2.append(" removing");
+            sb.append(" removing");
         }
         if (this.s) {
-            sb2.append(" detached");
+            sb.append(" detached");
         }
         if (this.v) {
-            sb2.append(" hidden");
+            sb.append(" hidden");
         }
         String str2 = this.x;
         if (str2 != null) {
-            sb2.append(" targetWho=");
-            sb2.append(str2);
-            sb2.append(" targetRequestCode=");
-            sb2.append(this.y);
+            sb.append(" targetWho=");
+            sb.append(str2);
+            sb.append(" targetRequestCode=");
+            sb.append(this.y);
         }
-        if (this.A) {
-            sb2.append(" userVisibleHint");
+        if (this.B) {
+            sb.append(" userVisibleHint");
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     @Override // android.os.Parcelable
@@ -110,7 +110,7 @@ public final class o0 implements Parcelable {
         parcel.writeInt(this.w);
         parcel.writeString(this.x);
         parcel.writeInt(this.y);
-        parcel.writeInt(this.A ? 1 : 0);
+        parcel.writeInt(this.B ? 1 : 0);
     }
 
     public o0(Parcel parcel) {
@@ -128,6 +128,6 @@ public final class o0 implements Parcelable {
         this.w = parcel.readInt();
         this.x = parcel.readString();
         this.y = parcel.readInt();
-        this.A = parcel.readInt() != 0;
+        this.B = parcel.readInt() != 0;
     }
 }

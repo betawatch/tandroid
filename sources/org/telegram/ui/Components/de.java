@@ -1,96 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class de extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class de extends qg {
+    public final /* synthetic */ ChatActivityEnterView x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ de(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    public de(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity);
+        this.x = chatActivityEnterView;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                ph.e3 e3Var = chatActivityEnterView.g0;
-                return (e3Var == null || e3Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.g0.dispatchTouchEvent(motionEvent);
-            case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (!chatActivityEnterView2.F || chatActivityEnterView2.O4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.x;
+        Paint paint = chatActivityEnterView.M1;
+        super.onDraw(canvas);
+        if (getTag() == null || chatActivityEnterView.l1 == null || chatActivityEnterView.T0 || MediaDataController.getInstance(chatActivityEnterView.N).getUnreadStickerSets().isEmpty() || paint == null) {
+            return;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (view == chatActivityEnterView.F0 && chatActivityEnterView.d0) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j10);
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i10, i11, i12, i13);
-                setPivotX(i10 - AndroidUtilities.dp(22.0f));
-                setPivotY(i11 - AndroidUtilities.dp(22.0f));
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (!chatActivityEnterView.F || chatActivityEnterView.O4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i10);
-                this.b.P1(true);
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+        canvas.drawCircle(AndroidUtilities.dp(9.0f) + (getWidth() / 2), (getHeight() / 2) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), paint);
     }
 }

@@ -1,88 +1,74 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.util.SparseIntArray;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ei implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class ei implements m2.f {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ HorizontalScrollView d;
+    public final /* synthetic */ SparseIntArray e;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final /* synthetic */ int[] g;
 
-    public ei(r50 r50Var, Rect rect) {
-        this.a = 1;
-        this.d = r50Var;
-        this.c = rect;
-        this.b = new int[2];
+    public ei(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.a = atomicBoolean;
+        this.b = linearLayout;
+        this.c = i10;
+        this.d = horizontalScrollView;
+        this.e = sparseIntArray;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.g = iArr;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        r40 r40Var;
-        switch (this.a) {
-            case 0:
-                tn tnVar = (tn) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        tnVar.A7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.o1 o1Var = tnVar.M8;
-                    if (o1Var != null && o1Var.isShowing()) {
-                        View contentView = tnVar.M8.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i10;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i10, i11, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            tnVar.A7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                r50 r50Var = (r50) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (r40Var = r50Var.b3) != null && r40Var.isShowing()) {
-                        r50Var.b3.dismiss();
-                        break;
-                    }
-                } else {
-                    r40 r40Var2 = r50Var.b3;
-                    if (r40Var2 != null && r40Var2.isShowing()) {
-                        View contentView2 = r50Var.b3.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i12 = iArr2[0];
-                        int i13 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            r50Var.b3.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // m2.f
+    public final void a(int i10) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
+    }
+
+    @Override // m2.f
+    public final void b(float f10, int i10, int i11) {
+        HorizontalScrollView horizontalScrollView;
+        if (this.a.get()) {
+            return;
         }
-        return false;
+        int i12 = 0;
+        float f11 = -1.0f;
+        float f12 = -1.0f;
+        while (true) {
+            LinearLayout linearLayout = this.b;
+            int childCount = linearLayout.getChildCount();
+            horizontalScrollView = this.d;
+            if (i12 >= childCount) {
+                break;
+            }
+            org.telegram.ui.Components.zj0 zj0Var = (org.telegram.ui.Components.zj0) linearLayout.getChildAt(i12);
+            zj0Var.setOutlineProgress(i12 == i10 ? 1.0f - f10 : i12 == (i10 + 1) % this.c ? f10 : 0.0f);
+            if (i12 == i10) {
+                f11 = zj0Var.getX() - ((horizontalScrollView.getWidth() - zj0Var.getWidth()) / 2.0f);
+            }
+            if (i12 == i10 + 1) {
+                f12 = zj0Var.getX() - ((horizontalScrollView.getWidth() - zj0Var.getWidth()) / 2.0f);
+            }
+            i12++;
+        }
+        if (f11 != -1.0f && f12 != -1.0f) {
+            horizontalScrollView.setScrollX((int) e2.c.w(f12, f11, f10, f11));
+        }
+        SparseIntArray sparseIntArray = this.e;
+        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f10) + ((1.0f - f10) * sparseIntArray.get(i10, 0))), false);
     }
 
-    public ei(tn tnVar, Rect rect) {
-        this.a = 0;
-        this.d = tnVar;
-        this.c = rect;
-        this.b = new int[2];
+    @Override // m2.f
+    public final void c(int i10) {
+        if (i10 == 0) {
+            this.a.set(false);
+        }
     }
 }

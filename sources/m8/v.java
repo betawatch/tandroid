@@ -1,7 +1,27 @@
 package m8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import j7.f5;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class v extends p implements w {
-    public static final /* synthetic */ int i = 0;
+public final class v extends c6.a {
+    public static final Parcelable.Creator<v> CREATOR = new c(17);
+    public final int a;
+    public final String b;
+
+    public v(int i10, String str) {
+        this.a = i10;
+        this.b = str;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        f5.l(parcel, 3, this.b);
+        f5.r(parcel, q10);
+    }
 }

@@ -3,7 +3,7 @@ package o2;
 import android.os.Build;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class c implements d {
     public static final HashSet c = new HashSet();
@@ -28,9 +28,9 @@ public abstract class c implements d {
         if (!"eng".equals(str2) && !"userdebug".equals(str2)) {
             return false;
         }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(str);
-        sb2.append(":dev");
-        return hashSet.contains(sb2.toString());
+        StringBuilder sb = new StringBuilder();
+        sb.append(str);
+        sb.append(":dev");
+        return hashSet.contains(sb.toString());
     }
 }

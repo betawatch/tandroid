@@ -1,15 +1,19 @@
 package u4;
 
-import sf.f1;
-import t4.k;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class h extends k {
-    public f1 c;
+public final class h {
+    public final long a;
+    public final boolean b;
+    public final long c;
+    public final long d;
+    public final boolean e;
 
-    @Override // m3.k
-    public final void release() {
-        this.c.a(this);
+    public h(long j10, boolean z4, long j11, long j12, boolean z10) {
+        this.a = j10;
+        this.b = z4;
+        this.c = j11;
+        this.d = j12;
+        this.e = z10;
     }
 }

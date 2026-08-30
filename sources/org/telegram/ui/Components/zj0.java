@@ -1,149 +1,152 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zj0 extends f2.a1 {
-    public boolean a;
-    public boolean b;
-    public ValueAnimator c;
-    public ValueAnimator d;
-    public final /* synthetic */ fk0 e;
+public final class zj0 extends FrameLayout {
+    public final Paint a;
+    public final RectF b;
+    public final float c;
+    public final p9 d;
+    public final ImageView e;
+    public final TextView f;
+    public final View h;
+    public float n;
+    public final Drawable r;
+    public int s;
+    public mg.q0 v;
 
-    public zj0(fk0 fk0Var) {
-        this.e = fk0Var;
+    public zj0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = new Paint(1);
+        new Path();
+        this.b = new RectF();
+        this.c = AndroidUtilities.dp(32.0f);
+        View view = new View(context);
+        this.h = view;
+        addView(view, k7.b6.c(-1.0f, -1));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        Drawable mutate = context.getDrawable(R.drawable.msg_reactions_filled).mutate();
+        this.r = mutate;
+        imageView.setImageDrawable(mutate);
+        addView(imageView, k7.b6.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        p9 p9Var = new p9(context);
+        this.d = p9Var;
+        addView(p9Var, k7.b6.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.f = textView;
+        textView.setImportantForAccessibility(2);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n8, false));
+        textView.setTypeface(AndroidUtilities.bold());
+        addView(textView, k7.b6.i(-1.0f, -2.0f, 8388627, 40.0f, 0.0f, 8.0f, 0.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        setWillNotDraw(false);
+        setOutlineProgress(this.n);
     }
 
-    public static ValueAnimator c(float f9, float f10, q0.a aVar, Runnable runnable) {
-        ValueAnimator duration = ValueAnimator.ofFloat(f9, f10).setDuration((long) (Math.abs(f10 - f9) * 150.0f));
-        duration.addUpdateListener(new d70(aVar, 8));
-        duration.addListener(new org.telegram.ui.u0(1, runnable));
-        duration.start();
-        return duration;
+    public final void a(int i10, TLRPC.ReactionCount reactionCount) {
+        int i11 = reactionCount.count;
+        this.s = i11;
+        this.f.setText(LocaleController.formatShortNumber(i11, null));
+        mg.q0 d = mg.q0.d(reactionCount.reaction);
+        this.v = d;
+        String str = d.f;
+        ImageView imageView = this.e;
+        p9 p9Var = this.d;
+        if (str == null) {
+            p9Var.setAnimatedEmojiDrawable(new l5(0, i10, this.v.g));
+            p9Var.setVisibility(0);
+            imageView.setVisibility(8);
+            return;
+        }
+        for (TLRPC.TL_availableReaction tL_availableReaction : MediaDataController.getInstance(i10).getReactionsList()) {
+            if (tL_availableReaction.reaction.equals(this.v.f)) {
+                p9Var.i(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", "webp", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.j6.a7, 1.0f), tL_availableReaction);
+                p9Var.setVisibility(0);
+                imageView.setVisibility(8);
+                return;
+            }
+        }
     }
 
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        fk0 fk0Var = this.e;
-        org.telegram.ui.vq vqVar = fk0Var.S;
-        boolean z10 = vqVar.L0() != 0;
-        if (z10 != this.a) {
-            ValueAnimator valueAnimator = this.c;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            final int i12 = 0;
-            final int i13 = 0;
-            this.c = c(fk0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.xj0
-                public final /* synthetic */ zj0 b;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.b;
+        rectF.set(0.0f, 0.0f, width, height);
+        float f10 = this.c;
+        canvas.drawRoundRect(rectF, f10, f10, this.a);
+        super.dispatchDraw(canvas);
+    }
 
-                {
-                    this.b = this;
-                }
-
-                @Override // q0.a
-                public final void accept(Object obj) {
-                    Float f9 = (Float) obj;
-                    switch (i12) {
-                        case 0:
-                            fk0 fk0Var2 = this.b.e;
-                            Paint paint = fk0Var2.h;
-                            float floatValue = f9.floatValue();
-                            fk0Var2.r = floatValue;
-                            paint.setAlpha((int) (floatValue * 255.0f));
-                            fk0Var2.invalidate();
-                            break;
-                        default:
-                            fk0 fk0Var3 = this.b.e;
-                            Paint paint2 = fk0Var3.n;
-                            float floatValue2 = f9.floatValue();
-                            fk0Var3.s = floatValue2;
-                            paint2.setAlpha((int) (floatValue2 * 255.0f));
-                            fk0Var3.invalidate();
-                            break;
-                    }
-                }
-            }, new Runnable(this) { // from class: org.telegram.ui.Components.yj0
-                public final /* synthetic */ zj0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i13) {
-                        case 0:
-                            this.b.c = null;
-                            break;
-                        default:
-                            this.b.d = null;
-                            break;
-                    }
-                }
-            });
-            this.a = z10;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+        accessibilityNodeInfo.setClickable(true);
+        if (this.n > 0.5d) {
+            accessibilityNodeInfo.setSelected(true);
         }
-        boolean z11 = vqVar.N0() != fk0Var.T.h() - 1;
-        if (z11 != this.b) {
-            ValueAnimator valueAnimator2 = this.d;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-            }
-            final int i14 = 1;
-            final int i15 = 1;
-            this.d = c(fk0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.xj0
-                public final /* synthetic */ zj0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // q0.a
-                public final void accept(Object obj) {
-                    Float f9 = (Float) obj;
-                    switch (i14) {
-                        case 0:
-                            fk0 fk0Var2 = this.b.e;
-                            Paint paint = fk0Var2.h;
-                            float floatValue = f9.floatValue();
-                            fk0Var2.r = floatValue;
-                            paint.setAlpha((int) (floatValue * 255.0f));
-                            fk0Var2.invalidate();
-                            break;
-                        default:
-                            fk0 fk0Var3 = this.b.e;
-                            Paint paint2 = fk0Var3.n;
-                            float floatValue2 = f9.floatValue();
-                            fk0Var3.s = floatValue2;
-                            paint2.setAlpha((int) (floatValue2 * 255.0f));
-                            fk0Var3.invalidate();
-                            break;
-                    }
-                }
-            }, new Runnable(this) { // from class: org.telegram.ui.Components.yj0
-                public final /* synthetic */ zj0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i15) {
-                        case 0:
-                            this.b.c = null;
-                            break;
-                        default:
-                            this.b.d = null;
-                            break;
-                    }
-                }
-            });
-            this.b = z11;
+        mg.q0 q0Var = this.v;
+        if (q0Var != null) {
+            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrNumberOfPeopleReactions", this.s, q0Var));
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.formatPluralString("ReactionsCount", this.s, new Object[0]));
         }
+    }
+
+    public void setCounter(int i10) {
+        this.s = i10;
+        this.f.setText(LocaleController.formatShortNumber(i10, null));
+        this.e.setVisibility(0);
+        this.d.setVisibility(8);
+    }
+
+    public void setOutlineProgress(float f10) {
+        this.n = f10;
+        int i10 = org.telegram.ui.ActionBar.j6.Cj;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 16);
+        int i11 = org.telegram.ui.ActionBar.j6.Fj;
+        int d = i0.a.d(f10, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ej, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        this.a.setColor(i0.a.d(f10, k10, w02));
+        this.f.setTextColor(d);
+        this.r.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.MULTIPLY));
+        float f11 = this.c;
+        View view = this.h;
+        if (f10 == 1.0f) {
+            int i12 = (int) f11;
+            int k11 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i11, false), 76);
+            view.setBackground(org.telegram.ui.ActionBar.j6.i0(i12, i12, i12, i12, 0, k11, k11));
+        } else if (f10 == 0.0f) {
+            int i13 = (int) f11;
+            int k12 = i0.a.k(w02, 76);
+            view.setBackground(org.telegram.ui.ActionBar.j6.i0(i13, i13, i13, i13, 0, k12, k12));
+        }
+        invalidate();
     }
 }

@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -32,8 +32,8 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacks(runnable);
-        } catch (Exception e10) {
-            FileLog.e((Throwable) e10, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -43,8 +43,8 @@ public class DispatchQueue extends Thread {
             for (Runnable runnable : runnableArr) {
                 this.handler.removeCallbacks(runnable);
             }
-        } catch (Exception e10) {
-            FileLog.e((Throwable) e10, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -52,8 +52,8 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacksAndMessages(null);
-        } catch (Exception e10) {
-            FileLog.e((Throwable) e10, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -77,8 +77,8 @@ public class DispatchQueue extends Thread {
     public boolean postToFrontRunnable(Runnable runnable) {
         try {
             this.syncLatch.await();
-        } catch (Exception e10) {
-            FileLog.e((Throwable) e10, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
         return this.handler.postAtFrontOfQueue(runnable);
     }
@@ -90,7 +90,7 @@ public class DispatchQueue extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new y1(this, 0));
+        this.handler = new Handler(Looper.myLooper(), new z1(this, 0));
         this.syncLatch.countDown();
         int i10 = this.threadPriority;
         if (i10 != THREAD_PRIORITY_DEFAULT) {
@@ -111,7 +111,7 @@ public class DispatchQueue extends Thread {
         }
     }
 
-    public DispatchQueue(String str, boolean z10) {
+    public DispatchQueue(String str, boolean z4) {
         this.handler = null;
         this.syncLatch = new CountDownLatch(1);
         int i10 = indexPointer;
@@ -119,7 +119,7 @@ public class DispatchQueue extends Thread {
         this.index = i10;
         this.threadPriority = THREAD_PRIORITY_DEFAULT;
         setName(str);
-        if (z10) {
+        if (z4) {
             start();
         }
     }
@@ -127,8 +127,8 @@ public class DispatchQueue extends Thread {
     public boolean postRunnable(Runnable runnable, long j10) {
         try {
             this.syncLatch.await();
-        } catch (Exception e10) {
-            FileLog.e((Throwable) e10, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
         if (j10 <= 0) {
             return this.handler.post(runnable);
@@ -136,7 +136,7 @@ public class DispatchQueue extends Thread {
         return this.handler.postDelayed(runnable, j10);
     }
 
-    public DispatchQueue(String str, boolean z10, int i10) {
+    public DispatchQueue(String str, boolean z4, int i10) {
         this.handler = null;
         this.syncLatch = new CountDownLatch(1);
         int i11 = indexPointer;
@@ -144,7 +144,7 @@ public class DispatchQueue extends Thread {
         this.index = i11;
         this.threadPriority = i10;
         setName(str);
-        if (z10) {
+        if (z4) {
             start();
         }
     }

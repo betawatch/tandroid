@@ -1,73 +1,51 @@
 package jh;
 
 import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.t00;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes4.dex */
-public final class m extends EditTextBoldCursor {
-    public final /* synthetic */ int b;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class m extends t00 {
+    public final /* synthetic */ int R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m(Context context, int i10) {
-        super(context);
-        this.b = i10;
+    public /* synthetic */ m(Context context, int i10, f6 f6Var) {
+        super(context, f6Var);
+        this.R = i10;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ut, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.b) {
-            case 0:
-                super.onDetachedFromWindow();
-                AndroidUtilities.hideKeyboard(this);
-                break;
+    @Override // org.telegram.ui.Components.t00
+    public int getColumnsCount() {
+        switch (this.R) {
             case 1:
-                super.onDetachedFromWindow();
-                AndroidUtilities.hideKeyboard(this);
-                break;
+                return 3;
             default:
-                super.onDetachedFromWindow();
-                break;
+                return super.getColumnsCount();
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.t00
+    public int getViewType() {
+        switch (this.R) {
+            case 1:
+                return 2;
+            default:
+                return super.getViewType();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.t00, android.view.View
     public void onMeasure(int i10, int i11) {
-        switch (this.b) {
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30));
+        switch (this.R) {
+            case 0:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
                 break;
             default:
                 super.onMeasure(i10, i11);
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.b) {
-            case 3:
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 4:
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 5:
-                if (isEnabled()) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
     }
 }

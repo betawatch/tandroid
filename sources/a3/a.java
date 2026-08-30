@@ -1,13 +1,13 @@
 package a3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements pc.a {
+public final class a implements rc.a {
     public static final Object c = new Object();
     public volatile b a;
     public volatile Object b;
 
-    public static pc.a a(b bVar) {
+    public static rc.a a(b bVar) {
         if (bVar instanceof a) {
             return bVar;
         }
@@ -17,7 +17,7 @@ public final class a implements pc.a {
         return aVar;
     }
 
-    @Override // pc.a
+    @Override // rc.a
     public final Object get() {
         Object obj;
         Object obj2 = this.b;

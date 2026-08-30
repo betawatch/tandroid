@@ -1,29 +1,43 @@
 package lh;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.content.DialogInterface;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class g7 extends ImageReceiver {
-    public final /* synthetic */ Runnable[] a;
-    public final /* synthetic */ i7 b;
+public final /* synthetic */ class g7 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public g7(Runnable[] runnableArr, i7 i7Var) {
-        this.a = runnableArr;
-        this.b = i7Var;
+    public /* synthetic */ g7(Utilities.Callback callback, boolean[] zArr) {
+        this.c = callback;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
-        boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-        Runnable runnable = this.a[0];
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.b.c.run();
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                Utilities.Callback callback = this.c;
+                if (callback != null && !this.b[0]) {
+                    callback.run(Boolean.FALSE);
+                    break;
+                }
+                break;
+            default:
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    this.c.run(Boolean.FALSE);
+                    zArr[0] = true;
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.runOnUIThread(new m5(this, 5));
-        return imageBitmapByKey;
+    }
+
+    public /* synthetic */ g7(boolean[] zArr, Utilities.Callback callback) {
+        this.b = zArr;
+        this.c = callback;
     }
 }

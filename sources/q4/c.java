@@ -1,17 +1,66 @@
 package q4;
 
-import i7.p7;
-import java.util.ArrayList;
+import h5.d0;
+import h5.w;
+import j3.n0;
+import org.telegram.ui.yh;
+import r3.u;
+import r3.v;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c implements j {
-    public static final int[] b = {8, 13, 11, 2, 0, 1, 7};
+public final class c implements v {
+    public final int a;
+    public final n0 b;
+    public final r3.j c = new r3.j();
+    public n0 d;
+    public v e;
+    public long f;
 
-    public static void a(int i10, ArrayList arrayList) {
-        if (p7.c(i10, 0, 7, b) == -1 || arrayList.contains(Integer.valueOf(i10))) {
-            return;
+    public c(int i10, int i11, n0 n0Var) {
+        this.a = i11;
+        this.b = n0Var;
+    }
+
+    @Override // r3.v
+    public final void a(int i10, w wVar) {
+        v vVar = this.e;
+        int i11 = d0.a;
+        vVar.d(i10, wVar);
+    }
+
+    @Override // r3.v
+    public final void b(n0 n0Var) {
+        n0 n0Var2 = this.b;
+        if (n0Var2 != null) {
+            n0Var = n0Var.c(n0Var2);
         }
-        arrayList.add(Integer.valueOf(i10));
+        this.d = n0Var;
+        v vVar = this.e;
+        int i10 = d0.a;
+        vVar.b(n0Var);
+    }
+
+    @Override // r3.v
+    public final void c(long j10, int i10, int i11, int i12, u uVar) {
+        long j11 = this.f;
+        if (j11 != -9223372036854775807L && j10 >= j11) {
+            this.e = this.c;
+        }
+        v vVar = this.e;
+        int i13 = d0.a;
+        vVar.c(j10, i10, i11, i12, uVar);
+    }
+
+    @Override // r3.v
+    public final /* synthetic */ void d(int i10, w wVar) {
+        yh.a(this, wVar, i10);
+    }
+
+    @Override // r3.v
+    public final int e(g5.j jVar, int i10, boolean z4) {
+        v vVar = this.e;
+        int i11 = d0.a;
+        return vVar.e(jVar, i10, z4);
     }
 }

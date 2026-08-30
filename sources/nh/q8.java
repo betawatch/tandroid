@@ -1,74 +1,74 @@
 package nh;
 
-import android.util.Pair;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q8 implements Utilities.Callback {
+public final /* synthetic */ class q8 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ i9 b;
 
-    public /* synthetic */ q8(Object obj, long j10, int i10) {
+    public /* synthetic */ q8(i9 i9Var, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = j10;
+        this.b = i9Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        long j10;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                y8 y8Var = (y8) this.c;
-                TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
-                org.telegram.ui.ActionBar.c2 c2Var = y8Var.C;
-                if (c2Var != null) {
-                    c2Var.c(350L);
-                    y8Var.C = null;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i9 i9Var = this.b;
+                i9Var.R = floatValue;
+                i9Var.o();
+                w8 w8Var = i9Var.s;
+                if (w8Var != null) {
+                    w8Var.invalidate();
                 }
-                if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
-                    TLRPC.TL_chatParticipants tL_chatParticipants = new TLRPC.TL_chatParticipants();
-                    while (i10 < tL_channels_channelParticipants.participants.size()) {
-                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
-                        TLRPC.Peer peer = channelParticipant.peer;
-                        if (peer != null) {
-                            j10 = DialogObject.getPeerDialogId(peer);
-                            i10 = j10 < 0 ? i10 + 1 : 0;
-                        } else {
-                            j10 = channelParticipant.user_id;
-                        }
-                        tL_chatParticipant.user_id = j10;
-                        tL_chatParticipants.participants.add(tL_chatParticipant);
-                    }
-                    y8Var.d(this.b, tL_chatParticipants);
+                e1 e1Var = i9Var.x0;
+                if (e1Var != null) {
+                    e1Var.v((1.0f - i9Var.S) * i9Var.R);
                     break;
                 }
                 break;
             case 1:
-                ResultCallback resultCallback = (ResultCallback) this.c;
-                of.a aVar = (of.a) obj;
-                if (resultCallback != null) {
-                    resultCallback.onComplete(new Pair(Long.valueOf(this.b), aVar));
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i9 i9Var2 = this.b;
+                i9Var2.R = floatValue2;
+                x8 x8Var = i9Var2.v;
+                if (x8Var != null && floatValue2 > 0.6f && u.c && x8Var.a) {
+                    x8Var.a(false);
+                }
+                e1 e1Var2 = i9Var2.x0;
+                if (e1Var2 != null) {
+                    e1Var2.v((1.0f - i9Var2.S) * i9Var2.R);
+                }
+                i9Var2.o();
+                w8 w8Var2 = i9Var2.s;
+                if (w8Var2 != null) {
+                    w8Var2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i9 i9Var3 = this.b;
+                i9Var3.W = floatValue3;
+                i9Var3.a0 = Utilities.clamp(i9Var3.W / AndroidUtilities.dp(200.0f), 1.0f, 0.0f);
+                y8 y8Var = i9Var3.k0;
+                d4 currentPeerView = y8Var == null ? null : y8Var.getCurrentPeerView();
+                if (currentPeerView != null) {
+                    currentPeerView.invalidate();
                     break;
                 }
                 break;
             default:
-                ow0 ow0Var = (ow0) this.c;
-                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
-                if (tL_messages_emojiGroups != null) {
-                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new g5.v(ow0Var, tL_messages_emojiGroups, this.b, 25));
-                    break;
-                }
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i9 i9Var4 = this.b;
+                i9Var4.b0 = floatValue4;
+                i9Var4.v.invalidate();
                 break;
         }
     }

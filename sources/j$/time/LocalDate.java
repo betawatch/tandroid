@@ -222,8 +222,8 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
     }
 
     public final int P() {
-        short s10 = this.b;
-        return s10 != 2 ? (s10 == 4 || s10 == 6 || s10 == 9 || s10 == 11) ? 30 : 31 : O() ? 29 : 28;
+        short s6 = this.b;
+        return s6 != 2 ? (s6 == 4 || s6 == 6 || s6 == 9 || s6 == 11) ? 30 : 31 : O() ? 29 : 28;
     }
 
     @Override // j$.time.temporal.Temporal
@@ -303,15 +303,15 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
         j$.time.temporal.a.YEAR.w(j10);
         j$.time.temporal.a.DAY_OF_YEAR.w(i10);
         j$.time.chrono.r.c.getClass();
-        boolean k9 = j$.time.chrono.r.k(j10);
-        if (i10 == 366 && !k9) {
+        boolean k10 = j$.time.chrono.r.k(j10);
+        if (i10 == 366 && !k10) {
             throw new b("Invalid date 'DayOfYear 366' as '" + i11 + "' is not a leap year");
         }
         j J = j.J(((i10 - 1) / 31) + 1);
-        if (i10 > (J.H(k9) + J.G(k9)) - 1) {
+        if (i10 > (J.H(k10) + J.G(k10)) - 1) {
             J = j.a[((((int) 1) + 12) + J.ordinal()) % 12];
         }
-        return new LocalDate(i11, J.getValue(), (i10 - J.G(k9)) + 1);
+        return new LocalDate(i11, J.getValue(), (i10 - J.G(k10)) + 1);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -375,9 +375,9 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
                 if (j11 <= P) {
                     return new LocalDate(this.a, this.b, (int) j11);
                 }
-                short s10 = this.b;
-                if (s10 < 12) {
-                    return new LocalDate(this.a, s10 + 1, (int) (j11 - P));
+                short s6 = this.b;
+                if (s6 < 12) {
+                    return new LocalDate(this.a, s6 + 1, (int) (j11 - P));
                 }
                 j$.time.temporal.a.YEAR.w(this.a + 1);
                 return new LocalDate(this.a + 1, 1, (int) (j11 - P));
@@ -449,11 +449,11 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
     }
 
     public ZonedDateTime atStartOfDay(ZoneId zoneId) {
-        j$.time.zone.b e10;
+        j$.time.zone.b e6;
         Objects.requireNonNull(zoneId, "zone");
         LocalDateTime J = LocalDateTime.J(this, h.g);
-        if (!(zoneId instanceof ZoneOffset) && (e10 = zoneId.getRules().e(J)) != null && e10.j()) {
-            J = e10.b.M(e10.d.getTotalSeconds() - e10.c.getTotalSeconds());
+        if (!(zoneId instanceof ZoneOffset) && (e6 = zoneId.getRules().e(J)) != null && e6.j()) {
+            J = e6.b.M(e6.d.getTotalSeconds() - e6.c.getTotalSeconds());
         }
         return ZonedDateTime.H(J, zoneId, null);
     }
@@ -508,27 +508,27 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
     @Override // j$.time.chrono.b
     public final String toString() {
         int i10 = this.a;
-        short s10 = this.b;
-        short s11 = this.c;
+        short s6 = this.b;
+        short s9 = this.c;
         int abs = Math.abs(i10);
-        StringBuilder sb2 = new StringBuilder(10);
+        StringBuilder sb = new StringBuilder(10);
         if (abs >= 1000) {
             if (i10 > 9999) {
-                sb2.append('+');
+                sb.append('+');
             }
-            sb2.append(i10);
+            sb.append(i10);
         } else if (i10 < 0) {
-            sb2.append(i10 - 10000);
-            sb2.deleteCharAt(1);
+            sb.append(i10 - 10000);
+            sb.deleteCharAt(1);
         } else {
-            sb2.append(i10 + 10000);
-            sb2.deleteCharAt(0);
+            sb.append(i10 + 10000);
+            sb.deleteCharAt(0);
         }
-        sb2.append(s10 < 10 ? "-0" : "-");
-        sb2.append((int) s10);
-        sb2.append(s11 < 10 ? "-0" : "-");
-        sb2.append((int) s11);
-        return sb2.toString();
+        sb.append(s6 < 10 ? "-0" : "-");
+        sb.append((int) s6);
+        sb.append(s9 < 10 ? "-0" : "-");
+        sb.append((int) s9);
+        return sb.toString();
     }
 
     private Object writeReplace() {

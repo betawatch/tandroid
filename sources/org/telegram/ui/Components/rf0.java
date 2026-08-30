@@ -1,291 +1,131 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.vi1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class rf0 extends View {
-    public ValueAnimator A;
-    public final Paint B;
-    public final Paint C;
-    public final Paint D;
-    public final Paint E;
-    public int F;
-    public int G;
-    public final org.telegram.ui.ActionBar.c6 H;
-    public boolean I;
-    public int a;
-    public int b;
-    public int c;
-    public float d;
-    public int e;
-    public int f;
-    public boolean h;
-    public boolean n;
-    public float r;
-    public float s;
-    public int v;
-    public int w;
-    public final RectF x;
-    public float y;
+public final class rf0 extends WebViewClient {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public rf0(Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity);
-        this.a = -1;
-        this.b = 0;
-        this.x = new RectF();
-        Paint paint = new Paint(1);
-        this.D = paint;
-        Paint paint2 = new Paint(1);
-        this.E = paint2;
-        this.F = -1;
-        this.H = c6Var;
-        Paint.Style style = Paint.Style.FILL;
-        paint.setStyle(style);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(cap);
-        Paint paint3 = new Paint();
-        this.B = paint3;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        paint3.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(6.0f), new int[]{-1, 0}, new float[]{0.0f, 1.0f}, tileMode));
-        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
-        paint3.setXfermode(new PorterDuffXfermode(mode));
-        Paint paint4 = new Paint();
-        this.C = paint4;
-        paint4.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(6.0f), new int[]{0, -1}, new float[]{0.0f, 1.0f}, tileMode));
-        paint4.setXfermode(new PorterDuffXfermode(mode));
-        d();
+    public /* synthetic */ rf0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a() {
-        boolean z10 = (this.n ? Math.max(this.e, this.f) : this.b) > 3;
-        int i10 = z10 ? 2 : 0;
-        if (getLayerType() != i10) {
-            setLayerType(i10, null);
-            invalidate();
+    public boolean a(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return false;
         }
-        this.I = z10;
-    }
-
-    public final void b(int i10) {
-        if (this.n) {
-            this.F = i10;
-            return;
+        Uri parse = Uri.parse(str);
+        if (!"tg".equals(parse.getScheme())) {
+            return false;
         }
-        if (!this.h) {
-            this.d = this.a;
-        } else {
-            if (this.c == i10) {
-                return;
-            }
-            ValueAnimator valueAnimator = this.A;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            float f9 = this.d;
-            float f10 = this.y;
-            this.d = (this.c * f10) + ((1.0f - f10) * f9);
-        }
-        if (i10 != this.a) {
-            this.c = i10;
-            this.h = true;
-            this.y = 0.0f;
-            invalidate();
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.A = ofFloat;
-            ofFloat.addUpdateListener(new pf0(this, 1));
-            this.A.addListener(new qf0(this, 0));
-            this.A.setInterpolator(jr.f);
-            this.A.setDuration(220L);
-            this.A.start();
+        ((vi1) this.b).getClass();
+        ((vi1) this.b).finishFragment(false);
+        try {
+            Intent intent = new Intent("android.intent.action.VIEW", parse);
+            intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
+            intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
+            ApplicationLoader.applicationContext.startActivity(intent);
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return true;
         }
     }
 
-    public final void c(int i10, int i11, boolean z10) {
-        int i12 = this.a;
-        if (i12 < 0 || i11 == 0 || this.b == 0) {
-            z10 = false;
-        }
-        if (!z10) {
-            ValueAnimator valueAnimator = this.A;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.a = i10;
-            this.b = i11;
-            invalidate();
-        } else if (this.b == i11 && (Math.abs(i12 - i10) <= 2 || this.h || this.n)) {
-            b(i10);
-        } else {
-            ValueAnimator valueAnimator2 = this.A;
-            if (valueAnimator2 != null) {
-                this.F = 0;
-                valueAnimator2.cancel();
-            }
-            int dp = AndroidUtilities.dp(8.0f);
-            int i13 = dp * 2;
-            this.v = (getMeasuredHeight() - i13) / Math.min(this.b, 3);
-            this.w = (getMeasuredHeight() - i13) / Math.min(i11, 3);
-            float f9 = (this.a - 1) * this.v;
-            this.r = f9;
-            if (f9 < 0.0f) {
-                this.r = 0.0f;
-            } else {
-                float f10 = com.google.android.recaptcha.internal.a.f(this.b, 1, r4, dp) - f9;
-                int measuredHeight = getMeasuredHeight() - dp;
-                int i14 = this.v;
-                if (f10 < measuredHeight - i14) {
-                    this.r = com.google.android.recaptcha.internal.a.f(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
+    @Override // android.webkit.WebViewClient
+    public void onLoadResource(WebView webView, String str) {
+        switch (this.a) {
+            case 1:
+                if (!a(str)) {
+                    super.onLoadResource(webView, str);
+                    break;
                 }
-            }
-            float f11 = (i10 - 1) * this.w;
-            this.s = f11;
-            if (f11 < 0.0f) {
-                this.s = 0.0f;
-            } else {
-                int i15 = i11 - 1;
-                float f12 = ((r4 * i15) + dp) - f11;
-                int measuredHeight2 = getMeasuredHeight() - dp;
-                int i16 = this.w;
-                if (f12 < measuredHeight2 - i16) {
-                    this.s = ((i15 * i16) + dp) - ((getMeasuredHeight() - dp) - this.w);
-                }
-            }
-            this.d = this.a;
-            this.c = i10;
-            this.a = i10;
-            this.e = this.b;
-            this.f = i11;
-            this.b = i11;
-            this.n = true;
-            this.h = true;
-            this.y = 0.0f;
-            invalidate();
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.A = ofFloat;
-            ofFloat.addUpdateListener(new pf0(this, 0));
-            this.A.addListener(new qf0(this, 1));
-            this.A.setInterpolator(jr.f);
-            this.A.setDuration(220L);
-            this.A.start();
-        }
-        a();
-    }
-
-    public final void d() {
-        int v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.ee, this.H);
-        this.G = v02;
-        this.D.setColor(i0.a.k(v02, (int) ((Color.alpha(v02) / 255.0f) * 112.0f)));
-        this.E.setColor(this.G);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredHeight;
-        float f9;
-        RectF rectF;
-        super.onDraw(canvas);
-        if (this.a < 0 || this.b == 0) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(8.0f);
-        if (this.n) {
-            float f10 = this.v;
-            float f11 = this.y;
-            measuredHeight = (this.w * f11) + ((1.0f - f11) * f10);
-        } else if (this.b == 0) {
-            return;
-        } else {
-            measuredHeight = (getMeasuredHeight() - (dp * 2)) / Math.min(this.b, 3);
-        }
-        if (measuredHeight == 0.0f) {
-            return;
-        }
-        float dpf2 = AndroidUtilities.dpf2(0.7f);
-        if (this.n) {
-            float f12 = this.r;
-            float f13 = this.y;
-            f9 = (this.s * f13) + ((1.0f - f13) * f12);
-        } else {
-            if (this.h) {
-                float f14 = (this.d - 1.0f) * measuredHeight;
-                float f15 = this.y;
-                f9 = ((this.c - 1) * measuredHeight * f15) + ((1.0f - f15) * f14);
-            } else {
-                f9 = (this.a - 1) * measuredHeight;
-            }
-            if (f9 < 0.0f) {
-                f9 = 0.0f;
-            } else {
-                float f16 = dp;
-                if ((((this.b - 1) * measuredHeight) + f16) - f9 < (getMeasuredHeight() - dp) - measuredHeight) {
-                    f9 = (((this.b - 1) * measuredHeight) + f16) - ((getMeasuredHeight() - dp) - measuredHeight);
-                }
-            }
-        }
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float f17 = dp;
-        int max = Math.max(0, (int) (((f17 + f9) / measuredHeight) - 1.0f));
-        int min = Math.min(max + 6, this.n ? Math.max(this.e, this.f) : this.b);
-        while (true) {
-            rectF = this.x;
-            if (max >= min) {
                 break;
-            }
-            float f18 = ((max * measuredHeight) + f17) - f9;
-            float f19 = f18 + measuredHeight;
-            if (f19 >= 0.0f && f18 <= getMeasuredHeight()) {
-                rectF.set(0.0f, f18 + dpf2, getMeasuredWidth(), f19 - dpf2);
-                boolean z10 = this.n;
-                Paint paint = this.D;
-                if (z10 && max >= this.f) {
-                    paint.setColor(i0.a.k(this.G, (int) ((1.0f - this.y) * (Color.alpha(r4) / 255.0f) * 76.0f)));
-                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
-                    paint.setColor(i0.a.k(this.G, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
-                } else if (!z10 || max < this.e) {
-                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
-                } else {
-                    paint.setColor(i0.a.k(this.G, (int) ((Color.alpha(r4) / 255.0f) * 76.0f * this.y)));
-                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
-                    paint.setColor(i0.a.k(this.G, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
+            default:
+                super.onLoadResource(webView, str);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final void onPageFinished(WebView webView, String str) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                super.onPageFinished(webView, str);
+                org.telegram.ui.nt0 nt0Var = (org.telegram.ui.nt0) obj;
+                View view = nt0Var.r;
+                if (!nt0Var.x) {
+                    nt0Var.n.setVisibility(4);
+                    nt0Var.h.setVisibility(4);
+                    view.setEnabled(true);
+                    view.setAlpha(1.0f);
+                    break;
                 }
-            }
-            max++;
+                break;
+            default:
+                super.onPageFinished(webView, str);
+                vi1 vi1Var = (vi1) obj;
+                rq rqVar = vi1Var.c;
+                if (rqVar != null && rqVar.getVisibility() == 0) {
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    vi1Var.b.getContentView().setVisibility(0);
+                    vi1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(vi1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(vi1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(vi1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(vi1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(vi1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(vi1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new org.telegram.ui.ls0(this, 26));
+                    animatorSet.setDuration(150L);
+                    animatorSet.start();
+                    break;
+                }
+                break;
         }
-        boolean z11 = this.h;
-        Paint paint2 = this.E;
-        if (z11) {
-            float f20 = this.d;
-            float f21 = this.y;
-            float f22 = ((((this.c * f21) + ((1.0f - f21) * f20)) * measuredHeight) + f17) - f9;
-            rectF.set(0.0f, f22 + dpf2, getMeasuredWidth(), (f22 + measuredHeight) - dpf2);
-            canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint2);
-        } else {
-            float f23 = ((this.a * measuredHeight) + f17) - f9;
-            rectF.set(0.0f, f23 + dpf2, getMeasuredWidth(), (f23 + measuredHeight) - dpf2);
-            canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint2);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 0:
+                String uri = webResourceRequest.getUrl().toString();
+                if (!((org.telegram.ui.nt0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                    return null;
+                }
+                Utilities.externalNetworkQueue.postRunnable(new hp(this, uri, webResourceRequest, 12));
+                return null;
+            default:
+                return super.shouldInterceptRequest(webView, webResourceRequest);
         }
-        if (this.I) {
-            float measuredWidth2 = getMeasuredWidth();
-            float dp2 = AndroidUtilities.dp(6.0f);
-            Paint paint3 = this.B;
-            canvas.drawRect(0.0f, 0.0f, measuredWidth2, dp2, paint3);
-            canvas.drawRect(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f), getMeasuredWidth(), getMeasuredHeight(), paint3);
-            canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f));
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(6.0f), this.C);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        switch (this.a) {
+            case 0:
+                if (!((org.telegram.ui.nt0) this.b).x) {
+                    return super.shouldOverrideUrlLoading(webView, str);
+                }
+                af.g.s(webView.getContext(), str);
+                return true;
+            default:
+                return a(str) || super.shouldOverrideUrlLoading(webView, str);
         }
     }
 }

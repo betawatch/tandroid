@@ -1,58 +1,40 @@
 package g5;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d {
-    public long a;
-    public long b;
-    public long c;
-    public long d;
-    public long e;
-    public long f;
-    public final boolean[] g = new boolean[15];
-    public int h;
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
 
-    public final boolean a() {
-        return this.d > 15 && this.h == 0;
-    }
-
-    public final void b(long j10) {
-        long j11 = this.d;
-        if (j11 == 0) {
-            this.a = j10;
-        } else if (j11 == 1) {
-            long j12 = j10 - this.a;
-            this.b = j12;
-            this.f = j12;
-            this.e = 1L;
-        } else {
-            long j13 = j10 - this.c;
-            int i10 = (int) (j11 % 15);
-            long abs = Math.abs(j13 - this.b);
-            boolean[] zArr = this.g;
-            if (abs <= 1000000) {
-                this.e++;
-                this.f += j13;
-                if (zArr[i10]) {
-                    zArr[i10] = false;
-                    this.h--;
-                }
-            } else if (!zArr[i10]) {
-                zArr[i10] = true;
-                this.h++;
-            }
-        }
-        this.d++;
+    public /* synthetic */ d(Object obj, int i10, long j10, long j11, int i11) {
+        this.a = i11;
+        this.e = obj;
+        this.b = i10;
         this.c = j10;
+        this.d = j11;
     }
 
-    public final void c() {
-        this.d = 0L;
-        this.e = 0L;
-        this.f = 0L;
-        this.h = 0;
-        Arrays.fill(this.g, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.e;
+        switch (i10) {
+            case 0:
+                k3.f fVar = ((e) obj).b;
+                a9.a aVar = fVar.d;
+                k3.a n10 = fVar.n(((s8.v) aVar.b).isEmpty() ? null : (o4.v) s8.l.h((s8.v) aVar.b));
+                fVar.q(n10, 1006, new k3.d(n10, this.b, this.c, this.d));
+                break;
+            default:
+                l3.q qVar = (l3.q) ((f7.b) obj).c;
+                int i11 = h5.d0.a;
+                k3.f fVar2 = ((j3.c0) qVar).a.q;
+                k3.a p10 = fVar2.p();
+                fVar2.q(p10, 1011, new j3.q0(p10, this.b, this.c, this.d));
+                break;
+        }
     }
 }

@@ -1,8 +1,8 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class h extends c implements g, fd.e {
+public abstract class h extends c implements g, hd.e {
     private final int arity;
     private final int flags;
 
@@ -13,7 +13,7 @@ public abstract class h extends c implements g, fd.e {
     }
 
     @Override // kotlin.jvm.internal.c
-    public fd.b computeReflected() {
+    public hd.b computeReflected() {
         r.a.getClass();
         return this;
     }
@@ -26,7 +26,7 @@ public abstract class h extends c implements g, fd.e {
             h hVar = (h) obj;
             return getName().equals(hVar.getName()) && getSignature().equals(hVar.getSignature()) && this.flags == hVar.flags && this.arity == hVar.arity && j.a(getBoundReceiver(), hVar.getBoundReceiver()) && j.a(getOwner(), hVar.getOwner());
         }
-        if (obj instanceof fd.e) {
+        if (obj instanceof hd.e) {
             return obj.equals(compute());
         }
         return false;
@@ -41,33 +41,33 @@ public abstract class h extends c implements g, fd.e {
         return getSignature().hashCode() + ((getName().hashCode() + (getOwner() == null ? 0 : getOwner().hashCode() * 31)) * 31);
     }
 
-    @Override // fd.e
+    @Override // hd.e
     public boolean isExternal() {
         return getReflected().isExternal();
     }
 
-    @Override // fd.e
+    @Override // hd.e
     public boolean isInfix() {
         return getReflected().isInfix();
     }
 
-    @Override // fd.e
+    @Override // hd.e
     public boolean isInline() {
         return getReflected().isInline();
     }
 
-    @Override // fd.e
+    @Override // hd.e
     public boolean isOperator() {
         return getReflected().isOperator();
     }
 
-    @Override // fd.e
+    @Override // hd.e
     public boolean isSuspend() {
         return getReflected().isSuspend();
     }
 
     public String toString() {
-        fd.b compute = compute();
+        hd.b compute = compute();
         if (compute != this) {
             return compute.toString();
         }
@@ -78,11 +78,11 @@ public abstract class h extends c implements g, fd.e {
     }
 
     @Override // kotlin.jvm.internal.c
-    public fd.e getReflected() {
-        fd.b compute = compute();
+    public hd.e getReflected() {
+        hd.b compute = compute();
         if (compute != this) {
-            return (fd.e) compute;
+            return (hd.e) compute;
         }
-        throw new ad.a("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
+        throw new cd.a("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
     }
 }

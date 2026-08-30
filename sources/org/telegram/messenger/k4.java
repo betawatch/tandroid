@@ -1,31 +1,15 @@
 package org.telegram.messenger;
 
-import android.view.MotionEvent;
 import org.telegram.messenger.GoogleMapsProvider;
-import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k4 implements IMapsProvider.ICallableMethod {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ GoogleMapsProvider.GoogleMapView.1 b;
+public final /* synthetic */ class k4 implements v7.f {
+    public final /* synthetic */ GoogleMapsProvider.GoogleMapView a;
+    public final /* synthetic */ q0.a b;
 
-    public /* synthetic */ k4(GoogleMapsProvider.GoogleMapView.1 r12, int i10) {
-        this.a = i10;
-        this.b = r12;
-    }
-
-    @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
-    public final Object call(Object obj) {
-        Boolean lambda$dispatchTouchEvent$0;
-        Boolean lambda$onInterceptTouchEvent$1;
-        switch (this.a) {
-            case 0:
-                lambda$dispatchTouchEvent$0 = this.b.lambda$dispatchTouchEvent$0((MotionEvent) obj);
-                return lambda$dispatchTouchEvent$0;
-            default:
-                lambda$onInterceptTouchEvent$1 = this.b.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
-                return lambda$onInterceptTouchEvent$1;
-        }
+    public /* synthetic */ k4(GoogleMapsProvider.GoogleMapView googleMapView, q0.a aVar) {
+        this.a = googleMapView;
+        this.b = aVar;
     }
 }

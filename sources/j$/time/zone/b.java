@@ -65,14 +65,14 @@ public final class b implements Comparable, Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("Transition[");
-        sb2.append(j() ? "Gap" : "Overlap");
-        sb2.append(" at ");
-        sb2.append(this.b);
-        sb2.append(this.c);
-        sb2.append(" to ");
-        sb2.append(this.d);
-        sb2.append(']');
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder("Transition[");
+        sb.append(j() ? "Gap" : "Overlap");
+        sb.append(" at ");
+        sb.append(this.b);
+        sb.append(this.c);
+        sb.append(" to ");
+        sb.append(this.d);
+        sb.append(']');
+        return sb.toString();
     }
 }

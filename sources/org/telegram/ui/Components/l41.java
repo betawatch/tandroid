@@ -1,48 +1,39 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class l41 extends f2.a1 {
-    public final /* synthetic */ s41 a;
+public final class l41 extends ScrollView {
+    public Drawable a;
+    public z5 b;
+    public boolean c;
 
-    public l41(s41 s41Var) {
-        this.a = s41Var;
-    }
-
-    @Override // f2.a1
-    public final void a(RecyclerView recyclerView, int i10) {
-        f2.a1 a1Var = this.a.y;
-        if (a1Var != null) {
-            a1Var.a(recyclerView, i10);
-        }
-    }
-
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        s41 s41Var = this.a;
-        r41 r41Var = s41Var.s;
-        i41 i41Var = s41Var.n;
-        f2.a1 a1Var = s41Var.y;
-        if (a1Var != null) {
-            a1Var.b(i41Var, i10, i11);
-        }
-        if (i11 <= 0 || i41Var.getAdapter() != r41Var || !s41Var.F || r41Var.r || r41Var.s) {
-            return;
-        }
-        if (s41Var.r.N0() >= ((r41Var.w + 1) - ((r41Var.v + 1) * 10)) - 1) {
-            s41 s41Var2 = r41Var.x;
-            if (!s41Var2.F || r41Var.r || r41Var.s) {
-                return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
+        if (d > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
             }
-            r41Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = r41Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(s41Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new a2(r41Var, 17));
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (d * 255.0f));
+            this.a.draw(canvas);
+        }
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        super.onNestedScroll(view, i10, i11, i12, i13);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
         }
     }
 }

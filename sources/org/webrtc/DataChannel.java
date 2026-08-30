@@ -2,24 +2,24 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class DataChannel {
     private long nativeDataChannel;
     private long nativeObserver;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class Buffer {
         public final boolean binary;
         public final ByteBuffer data;
 
-        public Buffer(ByteBuffer byteBuffer, boolean z10) {
+        public Buffer(ByteBuffer byteBuffer, boolean z4) {
             this.data = byteBuffer;
-            this.binary = z10;
+            this.binary = z4;
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class Init {
         public boolean negotiated;
         public boolean ordered = true;
@@ -53,7 +53,7 @@ public class DataChannel {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Observer {
         void onBufferedAmountChange(long j10);
 
@@ -62,7 +62,7 @@ public class DataChannel {
         void onStateChange();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public enum State {
         CONNECTING,
         OPEN,
@@ -94,7 +94,7 @@ public class DataChannel {
 
     private native long nativeRegisterObserver(Observer observer);
 
-    private native boolean nativeSend(byte[] bArr, boolean z10);
+    private native boolean nativeSend(byte[] bArr, boolean z4);
 
     private native State nativeState();
 

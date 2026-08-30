@@ -1,529 +1,1278 @@
 package tf;
 
-import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.text.TextPaint;
-import cg.c1;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.th;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import k7.b6;
+import nh.c7;
+import nh.t6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_chatlists;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.a9;
+import org.telegram.ui.Cells.b3;
+import org.telegram.ui.Cells.d7;
+import org.telegram.ui.Cells.h6;
+import org.telegram.ui.Cells.m2;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Cells.n2;
+import org.telegram.ui.Cells.o8;
+import org.telegram.ui.Cells.q6;
+import org.telegram.ui.Cells.r2;
+import org.telegram.ui.Cells.s2;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Cells.v2;
+import org.telegram.ui.Cells.va;
+import org.telegram.ui.Cells.w2;
+import org.telegram.ui.Cells.x2;
+import org.telegram.ui.Cells.z2;
+import org.telegram.ui.Cells.z6;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.gt;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.jj0;
+import org.telegram.ui.Components.nq;
+import org.telegram.ui.Components.o30;
+import org.telegram.ui.Components.pi0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.z8;
+import org.telegram.ui.a51;
+import org.telegram.ui.c21;
+import org.telegram.ui.jy;
+import org.telegram.ui.ky;
+import org.telegram.ui.ny;
+import org.telegram.ui.oy;
+import org.telegram.ui.wx0;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class k extends g {
-    @Override // tf.g
-    public final void K() {
-        if (g.x1) {
-            ArrayList arrayList = this.d;
-            int i10 = 0;
-            if (((vf.f) arrayList.get(0)).n) {
-                super.K();
-                return;
+public class k extends rl0 implements n2 {
+    public static final boolean Z = BuildVars.DEBUG_PRIVATE_VERSION;
+    public boolean B;
+    public final int C;
+    public boolean D;
+    public boolean E;
+    public long F;
+    public boolean G;
+    public sl0 H;
+    public pi0 I;
+    public Drawable L;
+    public final h M;
+    public boolean N;
+    public final oy O;
+    public boolean P;
+    public final TLRPC.RequestPeerType Q;
+    public boolean R;
+    public final long S;
+    public boolean W;
+    public boolean X;
+    public final Context c;
+    public ArrayList d;
+    public boolean e;
+    public int f;
+    public int h;
+    public boolean n;
+    public final int r;
+    public long s;
+    public int v;
+    public final boolean w;
+    public final ArrayList x;
+    public boolean y;
+    public ArrayList J = new ArrayList();
+    public ArrayList K = new ArrayList();
+    public int T = 10;
+    public final LongSparseIntArray U = new LongSparseIntArray();
+    public final HashMap V = new HashMap();
+    public int Y = -1;
+
+    public k(oy oyVar, Context context, int i10, int i11, boolean z4, ArrayList arrayList, int i12, TLRPC.RequestPeerType requestPeerType) {
+        this.c = context;
+        this.O = oyVar;
+        this.h = i10;
+        this.r = i11;
+        this.w = z4;
+        this.y = i11 == 0 && i10 == 0 && !z4;
+        this.x = arrayList;
+        this.C = i12;
+        this.S = oyVar.U2;
+        if (i11 == 0) {
+            h hVar = new h();
+            hVar.a = new HashSet();
+            hVar.b = new HashSet();
+            hVar.c = new HashSet();
+            hVar.d = new ArrayList();
+            hVar.e = new c21(hVar, 16);
+            this.M = hVar;
+        }
+        this.Q = requestPeerType;
+    }
+
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        int i10 = l1Var.f;
+        return (i10 == 1 || i10 == 5 || i10 == 3 || i10 == 8 || i10 == 7 || i10 == 10 || i10 == 11 || i10 == 13 || i10 == 15 || i10 == 16 || i10 == 18 || i10 == 19 || i10 == 20) ? false : true;
+    }
+
+    public final int E() {
+        int i10 = this.h;
+        int i11 = this.r;
+        if (i10 == 7 || i10 == 8) {
+            return MessagesController.getInstance(this.C).isDialogsEndReached(i11) ? 2 : 3;
+        }
+        if (i11 == 1) {
+            return 2;
+        }
+        return this.d != null ? 1 : 0;
+    }
+
+    public final int F(long j10) {
+        for (int i10 = 0; i10 < this.J.size(); i10++) {
+            if (((i) this.J.get(i10)).c != null && ((i) this.J.get(i10)).c.id == j10) {
+                return i10;
             }
-            int size = arrayList.size();
-            long j10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                vf.f fVar = (vf.f) obj;
-                if (fVar.n) {
-                    long j11 = fVar.a.e;
-                    if (j11 > j10) {
-                        j10 = j11;
+        }
+        return -1;
+    }
+
+    public final int G(int i10) {
+        if (this.B) {
+            i10--;
+        }
+        if (this.y) {
+            i10 = yh.f(2, i10, MessagesController.getInstance(this.C).hintDialogs);
+        }
+        if (this.n && this.h == 3) {
+            i10--;
+        }
+        int i11 = this.h;
+        return (i11 == 11 || i11 == 13) ? i10 - 2 : i11 == 12 ? i10 - 1 : i10;
+    }
+
+    public final MessagesController.DialogFilter H() {
+        int i10 = this.h;
+        if (i10 == 7 || i10 == 8) {
+            return MessagesController.getInstance(this.C).selectedDialogFilter[this.h - 7];
+        }
+        return null;
+    }
+
+    public final Object I(int i10) {
+        if (i10 >= 0 && i10 < this.J.size()) {
+            i iVar = (i) this.J.get(i10);
+            String str = iVar.l;
+            TLRPC.TL_contact tL_contact = iVar.e;
+            if (str != null) {
+                return str;
+            }
+            TLRPC.Chat chat = iVar.m;
+            if (chat != null) {
+                return chat;
+            }
+            TLRPC.User user = iVar.n;
+            if (user != null) {
+                return user;
+            }
+            TLRPC.Dialog dialog = iVar.c;
+            if (dialog != null) {
+                return dialog;
+            }
+            if (tL_contact != null) {
+                return MessagesController.getInstance(this.C).getUser(Long.valueOf(tL_contact.user_id));
+            }
+            TLRPC.RecentMeUrl recentMeUrl = iVar.d;
+            if (recentMeUrl != null) {
+                return recentMeUrl;
+            }
+        }
+        return null;
+    }
+
+    public final void M(boolean z4) {
+        this.n = z4;
+    }
+
+    public final void N(pi0 pi0Var) {
+        this.I = pi0Var;
+    }
+
+    public final void O(sl0 sl0Var, boolean z4) {
+        this.G = z4;
+        for (int i10 = 0; i10 < sl0Var.getChildCount(); i10++) {
+            if (sl0Var.getChildAt(i10) instanceof r2) {
+                ((r2) sl0Var.getChildAt(i10)).f = z4;
+            }
+        }
+        for (int i11 = 0; i11 < sl0Var.getCachedChildCount(); i11++) {
+            if (sl0Var.P(i11) instanceof r2) {
+                ((r2) sl0Var.P(i11)).f = z4;
+            }
+        }
+        for (int i12 = 0; i12 < sl0Var.getHiddenChildCount(); i12++) {
+            if (sl0Var.V(i12) instanceof r2) {
+                ((r2) sl0Var.V(i12)).f = z4;
+            }
+        }
+        for (int i13 = 0; i13 < sl0Var.getAttachedScrapChildCount(); i13++) {
+            if (sl0Var.O(i13) instanceof r2) {
+                ((r2) sl0Var.O(i13)).f = z4;
+            }
+        }
+    }
+
+    public final void P(boolean z4) {
+        this.N = z4;
+    }
+
+    public final void Q(long j10) {
+        this.s = j10;
+    }
+
+    public final void R(ky kyVar) {
+        this.H = kyVar;
+    }
+
+    public boolean S() {
+        return false;
+    }
+
+    public final void T(boolean z4) {
+        int i10 = this.C;
+        if (this.d != null) {
+            if (!z4 || SystemClock.elapsedRealtime() - this.F >= 2000) {
+                this.F = SystemClock.elapsedRealtime();
+                try {
+                    int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
+                    Collections.sort(this.d, new o30(MessagesController.getInstance(i10), currentTime, 2));
+                    if (z4) {
+                        l();
                     }
-                }
-            }
-            if (arrayList.size() > 1) {
-                j10 = (long) (j10 * ((uf.c) this.d0).l[1]);
-            }
-            if (j10 > 0) {
-                float f9 = j10;
-                if (f9 != this.h0) {
-                    this.h0 = f9;
-                    Animator animator = this.W;
-                    if (animator != null) {
-                        animator.cancel();
-                    }
-                    ValueAnimator e10 = g.e(this.f0, this.h0, new c1(this, 12));
-                    this.W = e10;
-                    e10.start();
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
         }
     }
 
-    @Override // tf.g
-    public final vf.d f(int i10, long j10, long j11) {
-        float f9;
-        float[] fArr = ((uf.c) this.d0).l;
-        if (fArr.length < 2) {
-            f9 = 1.0f;
-        } else {
-            f9 = fArr[fArr[0] == 1.0f ? (char) 1 : (char) 0];
-        }
-        return new vf.d(j10, j11, this.L0, f9, i10, this.J, this.K);
+    public final void U() {
+        this.y = this.r == 0 && this.h == 0 && !this.w && !MessagesController.getInstance(this.C).hintDialogs.isEmpty();
     }
 
-    @Override // tf.g
-    public final vf.f h(uf.a aVar) {
-        return new vf.f(aVar, false, this.S0);
-    }
-
-    @Override // tf.g
-    public final void k(Canvas canvas) {
-        float f9;
-        boolean z10;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        int i10;
-        boolean z11;
-        if (this.d0 == null) {
-            return;
-        }
-        float f14 = this.B0;
-        j jVar = this.c0;
-        float f15 = jVar.l;
-        float f16 = jVar.k;
-        float f17 = f14 / (f15 - f16);
-        float f18 = g.g1;
-        float f19 = (f16 * f17) - f18;
-        canvas.save();
-        int i11 = this.u0;
-        int i12 = 2;
-        if (i11 == 2) {
-            vf.j jVar2 = this.v0;
-            float f20 = jVar2.f;
-            f9 = f20 > 0.5f ? 0.0f : 1.0f - (f20 * 2.0f);
-            canvas.scale((f20 * 2.0f) + 1.0f, 1.0f, jVar2.d, jVar2.e);
-        } else if (i11 == 1) {
-            float f21 = this.v0.f;
-            f9 = f21 < 0.3f ? 0.0f : f21;
-            canvas.save();
-            vf.j jVar3 = this.v0;
-            float f22 = jVar3.f;
-            canvas.scale(f22, f22, jVar3.d, jVar3.e);
-        } else {
-            f9 = i11 == 3 ? this.v0.f : 1.0f;
-        }
-        int i13 = 0;
-        int i14 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            if (i14 >= arrayList.size()) {
-                canvas.restore();
-                return;
-            }
-            vf.f fVar = (vf.f) arrayList.get(i14);
-            boolean z12 = fVar.n;
-            float[] fArr = fVar.k;
-            Path path = fVar.f;
-            Paint paint = fVar.c;
-            if (z12 || fVar.o != 0.0f) {
-                long[] jArr = fVar.a.a;
-                path.reset();
-                float[] fArr2 = ((uf.c) this.d0).b;
-                int i15 = ((int) (f18 / (fArr2.length < i12 ? 1.0f : fArr2[1] * f17))) + 1;
-                int max = Math.max(i13, this.B - i15);
-                int min = Math.min(((uf.c) this.d0).b.length - 1, this.C + i15);
-                boolean z13 = true;
-                int i16 = 0;
-                while (true) {
-                    z10 = g.w1;
-                    if (max > min) {
-                        break;
-                    }
-                    float f23 = f17;
-                    float f24 = f19;
-                    long j10 = jArr[max];
-                    if (j10 < 0) {
-                        f13 = f18;
-                        i10 = min;
-                        z11 = z13;
-                    } else {
-                        f13 = f18;
-                        uf.c cVar = (uf.c) this.d0;
-                        i10 = min;
-                        float f25 = (cVar.b[max] * f23) - f24;
-                        float f26 = j10 * cVar.l[i14];
-                        float f27 = this.w;
-                        float f28 = (f26 - f27) / (this.v - f27);
-                        float strokeWidth = paint.getStrokeWidth() / 2.0f;
-                        z11 = z13;
-                        float b10 = th.b((getMeasuredHeight() - this.s) - g.j1, strokeWidth, f28, (getMeasuredHeight() - this.s) - strokeWidth);
-                        if (z10) {
-                            if (i16 == 0) {
-                                int i17 = i16 + 1;
-                                fArr[i16] = f25;
-                                i16 += 2;
-                                fArr[i17] = b10;
-                            } else {
-                                fArr[i16] = f25;
-                                fArr[i16 + 1] = b10;
-                                int i18 = i16 + 3;
-                                fArr[i16 + 2] = f25;
-                                i16 += 4;
-                                fArr[i18] = b10;
-                            }
-                        } else if (z11) {
-                            path.moveTo(f25, b10);
-                            z13 = false;
-                            max++;
-                            f17 = f23;
-                            f19 = f24;
-                            f18 = f13;
-                            min = i10;
-                        } else {
-                            path.lineTo(f25, b10);
-                        }
-                    }
-                    z13 = z11;
-                    max++;
-                    f17 = f23;
-                    f19 = f24;
-                    f18 = f13;
-                    min = i10;
-                }
-                f10 = f17;
-                f11 = f19;
-                f12 = f18;
-                if (this.C - this.B > 100) {
-                    paint.setStrokeCap(Paint.Cap.SQUARE);
-                } else {
-                    paint.setStrokeCap(Paint.Cap.ROUND);
-                }
-                paint.setAlpha((int) (fVar.o * 255.0f * f9));
-                if (z10) {
-                    canvas.drawLines(fArr, 0, i16, paint);
-                } else {
-                    canvas.drawPath(path, paint);
-                }
-            } else {
-                f10 = f17;
-                f11 = f19;
-                f12 = f18;
-            }
-            i14++;
-            f17 = f10;
-            f19 = f11;
-            f18 = f12;
-            i13 = 0;
-            i12 = 2;
-        }
-    }
-
-    @Override // tf.g
-    public final void n(Canvas canvas) {
-        boolean z10;
-        int i10;
-        ArrayList arrayList;
-        int i11;
-        int i12;
-        int i13;
-        ArrayList arrayList2;
-        int i14;
-        float f9;
-        int measuredHeight = getMeasuredHeight();
-        int i15 = g.m1;
-        int i16 = measuredHeight - i15;
-        int measuredHeight2 = (getMeasuredHeight() - this.x0) - i15;
-        ArrayList arrayList3 = this.d;
-        int size = arrayList3.size();
-        if (this.d0 != null) {
-            int i17 = 0;
-            while (i17 < size) {
-                vf.f fVar = (vf.f) arrayList3.get(i17);
-                boolean z11 = fVar.n;
-                Paint paint = fVar.b;
-                float[] fArr = fVar.l;
-                Path path = fVar.e;
-                if (z11 || fVar.o != 0.0f) {
-                    path.reset();
-                    int length = ((uf.c) this.d0).b.length;
-                    long[] jArr = fVar.a.a;
-                    fVar.f.reset();
-                    int i18 = 0;
-                    int i19 = 0;
-                    while (true) {
-                        z10 = g.w1;
-                        if (i19 >= length) {
-                            break;
-                        }
-                        int i20 = i17;
-                        long j10 = jArr[i19];
-                        if (j10 < 0) {
-                            i13 = i16;
-                            arrayList2 = arrayList3;
-                            i14 = measuredHeight2;
-                        } else {
-                            i13 = i16;
-                            uf.b bVar = this.d0;
-                            float f10 = this.y0 * ((uf.c) bVar).b[i19];
-                            if (g.x1) {
-                                arrayList2 = arrayList3;
-                                f9 = this.f0;
-                                i14 = measuredHeight2;
-                            } else {
-                                arrayList2 = arrayList3;
-                                i14 = measuredHeight2;
-                                f9 = ((uf.c) bVar).e;
-                            }
-                            float f11 = (1.0f - ((j10 * ((uf.c) bVar).l[i20]) / f9)) * (i13 - i14);
-                            if (z10) {
-                                if (i18 == 0) {
-                                    int i21 = i18 + 1;
-                                    fArr[i18] = f10;
-                                    i18 += 2;
-                                    fArr[i21] = f11;
-                                } else {
-                                    fArr[i18] = f10;
-                                    fArr[i18 + 1] = f11;
-                                    int i22 = i18 + 3;
-                                    fArr[i18 + 2] = f10;
-                                    i18 += 4;
-                                    fArr[i22] = f11;
-                                }
-                            } else if (i19 == 0) {
-                                path.moveTo(f10, f11);
-                            } else {
-                                path.lineTo(f10, f11);
-                            }
-                        }
-                        i19++;
-                        i17 = i20;
-                        i16 = i13;
-                        arrayList3 = arrayList2;
-                        measuredHeight2 = i14;
-                    }
-                    i10 = i16;
-                    arrayList = arrayList3;
-                    i11 = measuredHeight2;
-                    i12 = i17;
-                    fVar.j = i18;
-                    if (fVar.n || fVar.o != 0.0f) {
-                        paint.setAlpha((int) (fVar.o * 255.0f));
-                        if (z10) {
-                            canvas.drawLines(fArr, 0, fVar.j, paint);
-                        } else {
-                            canvas.drawPath(path, paint);
-                        }
-                        i17 = i12 + 1;
-                        i16 = i10;
-                        arrayList3 = arrayList;
-                        measuredHeight2 = i11;
-                    }
-                } else {
-                    i10 = i16;
-                    arrayList = arrayList3;
-                    i11 = measuredHeight2;
-                    i12 = i17;
-                }
-                i17 = i12 + 1;
-                i16 = i10;
-                arrayList3 = arrayList;
-                measuredHeight2 = i11;
-            }
-        }
-    }
-
-    @Override // tf.g
-    public final void o(Canvas canvas) {
-        int i10 = this.o0;
-        if (i10 < 0 || !this.q0) {
-            return;
-        }
-        int i11 = (int) (this.r * this.r0);
-        float f9 = this.B0;
-        j jVar = this.c0;
-        float f10 = jVar.l;
-        float f11 = jVar.k;
-        float f12 = f9 / (f10 - f11);
-        float f13 = (((uf.c) this.d0).b[i10] * f12) - ((f11 * f12) - g.g1);
-        Paint paint = this.I;
-        paint.setAlpha(i11);
-        canvas.drawLine(f13, 0.0f, f13, this.D0.bottom, paint);
-        ArrayList arrayList = this.d;
-        this.i0 = arrayList.size();
-        int i12 = 0;
-        while (true) {
-            this.j0 = i12;
-            int i13 = this.j0;
-            if (i13 >= this.i0) {
-                return;
-            }
-            vf.f fVar = (vf.f) arrayList.get(i13);
-            boolean z10 = fVar.n;
-            Paint paint2 = fVar.d;
-            if (z10 || fVar.o != 0.0f) {
-                float f14 = fVar.a.a[this.o0] * ((uf.c) this.d0).l[this.j0];
-                float f15 = this.w;
-                float measuredHeight = (getMeasuredHeight() - this.s) - (((f14 - f15) / (this.v - f15)) * ((getMeasuredHeight() - this.s) - g.j1));
-                paint2.setAlpha((int) (fVar.o * 255.0f * this.r0));
-                int i14 = (int) (fVar.o * 255.0f * this.r0);
-                Paint paint3 = this.O;
-                paint3.setAlpha(i14);
-                canvas.drawPoint(f13, measuredHeight, paint2);
-                canvas.drawPoint(f13, measuredHeight, paint3);
-            }
-            i12 = this.j0 + 1;
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x007f  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x004c  */
-    @Override // tf.g
+    /* JADX WARN: Removed duplicated region for block: B:116:0x03b0  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0450  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x047d A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x0485  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0269  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void p(Canvas canvas, vf.d dVar) {
-        float f9;
+    public final void V() {
+        ArrayList R3;
+        long j10;
+        TLRPC.Dialog dialog;
+        boolean z4;
         int i10;
-        float f10;
-        float f11;
+        TL_chatlists.TL_chatlists_chatlistUpdates chatlistFolderUpdates;
+        TLRPC.RequestPeerType requestPeerType;
         int i11;
         int i12;
-        TextPaint textPaint;
+        boolean z10;
+        TLRPC.Dialog dialog2;
         int i13;
-        int i14;
-        vf.d dVar2 = dVar;
-        long[] jArr = dVar2.a;
-        CharSequence[] charSequenceArr = dVar2.c;
-        int length = jArr.length;
-        int i15 = 0;
-        int i16 = ((uf.c) this.d0).l[0] == 1.0f ? 1 : 0;
-        int i17 = (i16 + 1) % 2;
-        if (length > 2) {
-            float f12 = (jArr[1] - jArr[0]) / (this.v - this.w);
-            if (f12 < 0.1d) {
-                f9 = f12 / 0.1f;
-                i10 = this.u0;
-                if (i10 != 2) {
-                    f11 = 1.0f - this.v0.f;
-                } else if (i10 == 1) {
-                    f11 = this.v0.f;
+        TLRPC.Dialog dialog3;
+        ArrayList<MessagesController.CommunityPeerDialog> arrayList;
+        String string;
+        int i14 = this.C;
+        long j11 = this.S;
+        if (j11 != 0) {
+            this.J.clear();
+            U();
+            MessagesController.CommunityPeersDialog buildCommunityPeers = MessagesController.getInstance(i14).buildCommunityPeers(j11);
+            this.f = buildCommunityPeers.getDialogsCount();
+            this.R = false;
+            int i15 = this.h == 3 ? 2 : 4;
+            for (int i16 = 0; i16 < i15; i16++) {
+                if (i16 == 0) {
+                    arrayList = buildCommunityPeers.chatsYouAreIn;
+                    string = LocaleController.getString(R.string.CommunitySectionChatsYouAreIn);
+                } else if (i16 == 1) {
+                    arrayList = buildCommunityPeers.chatsYouCanView;
+                    string = LocaleController.getString(R.string.CommunitySectionChatsYouCanView);
+                } else if (i16 == 2) {
+                    arrayList = buildCommunityPeers.chatsYouCanJoin;
+                    string = LocaleController.getString(R.string.CommunitySectionChatsYouCanRequestToJoin);
                 } else {
-                    if (i10 != 3) {
-                        f10 = 1.0f;
-                        this.H.setAlpha((int) (dVar2.f * 0.1f * f10));
-                        int measuredHeight = getMeasuredHeight() - this.s;
-                        int i18 = g.j1;
-                        int i19 = measuredHeight - i18;
-                        TextPaint textPaint2 = this.J;
-                        int textSize = (int) (i18 - textPaint2.getTextSize());
-                        while (i15 < length) {
-                            float measuredHeight2 = getMeasuredHeight() - this.s;
-                            int i20 = i17;
-                            float f13 = dVar2.a[i15];
-                            float f14 = this.w;
-                            int i21 = (int) (measuredHeight2 - (((f13 - f14) / (this.v - f14)) * i19));
-                            CharSequence[] charSequenceArr2 = dVar2.b;
-                            ArrayList arrayList = this.d;
-                            if (charSequenceArr2 == null || arrayList.size() <= 0) {
-                                i11 = i19;
-                                i12 = textSize;
-                                textPaint = textPaint2;
-                                i13 = i20;
+                    arrayList = buildCommunityPeers.chatsOther;
+                    string = LocaleController.getString(R.string.CommunitySectionHiddenChats);
+                }
+                if (!arrayList.isEmpty()) {
+                    this.J.add(new i(this, string));
+                    for (int i17 = 0; i17 < arrayList.size(); i17++) {
+                        MessagesController.CommunityPeerDialog communityPeerDialog = arrayList.get(i17);
+                        TLRPC.Dialog dialog4 = communityPeerDialog.dialog;
+                        if (dialog4 != null) {
+                            this.J.add(new i(this, 0, dialog4));
+                        } else {
+                            TLRPC.Chat chat = communityPeerDialog.chat;
+                            if (chat != null) {
+                                this.J.add(new i(this, chat));
                             } else {
-                                if (charSequenceArr == null || arrayList.size() < 2) {
-                                    i14 = i20;
-                                    textPaint2.setColor(g6.v0(g6.Yi, this.S0));
-                                    textPaint2.setAlpha((int) com.google.android.recaptcha.internal.a.C(dVar2.f, this.f, f10, f9));
-                                } else {
-                                    i14 = i20;
-                                    textPaint2.setColor(((vf.f) arrayList.get(i14)).m);
-                                    textPaint2.setAlpha((int) com.google.android.recaptcha.internal.a.C(dVar2.f, ((vf.f) arrayList.get(i14)).o, f10, f9));
+                                TLRPC.User user = communityPeerDialog.user;
+                                if (user != null) {
+                                    this.J.add(new i(this, user));
                                 }
-                                i13 = i14;
-                                i12 = textSize;
-                                i11 = i19;
-                                dVar2.a(canvas, 0, i15, g.g1, i21 - textSize, textPaint2);
-                                textPaint = textPaint2;
                             }
-                            if (charSequenceArr != null && arrayList.size() > 1) {
-                                int i22 = ((vf.f) arrayList.get(i16)).m;
-                                TextPaint textPaint3 = this.K;
-                                textPaint3.setColor(i22);
-                                textPaint3.setAlpha((int) com.google.android.recaptcha.internal.a.C(dVar2.f, ((vf.f) arrayList.get(i16)).o, f10, f9));
-                                dVar2.a(canvas, 1, i15, getMeasuredWidth() - g.g1, i21 - i12, textPaint3);
-                            }
-                            i15++;
-                            dVar2 = dVar;
-                            i19 = i11;
-                            i17 = i13;
-                            textSize = i12;
-                            textPaint2 = textPaint;
                         }
                     }
-                    f11 = this.v0.f;
-                }
-                f10 = f11;
-                this.H.setAlpha((int) (dVar2.f * 0.1f * f10));
-                int measuredHeight3 = getMeasuredHeight() - this.s;
-                int i182 = g.j1;
-                int i192 = measuredHeight3 - i182;
-                TextPaint textPaint22 = this.J;
-                int textSize2 = (int) (i182 - textPaint22.getTextSize());
-                while (i15 < length) {
                 }
             }
+            return;
         }
-        f9 = 1.0f;
-        i10 = this.u0;
-        if (i10 != 2) {
-        }
-        f10 = f11;
-        this.H.setAlpha((int) (dVar2.f * 0.1f * f10));
-        int measuredHeight32 = getMeasuredHeight() - this.s;
-        int i1822 = g.j1;
-        int i1922 = measuredHeight32 - i1822;
-        TextPaint textPaint222 = this.J;
-        int textSize22 = (int) (i1822 - textPaint222.getTextSize());
-        while (i15 < length) {
-        }
-    }
-
-    @Override // tf.g
-    public final long r(int i10, int i11) {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0L;
-        }
-        int size = arrayList.size();
-        long j10 = 0;
-        for (int i12 = 0; i12 < size; i12++) {
-            long rMaxQ = ((vf.f) arrayList.get(i12)).n ? (long) (((uf.a) ((uf.c) this.d0).d.get(i12)).b.rMaxQ(i10, i11) * ((uf.c) this.d0).l[i12]) : 0L;
-            if (rMaxQ > j10) {
-                j10 = rMaxQ;
+        this.J.clear();
+        U();
+        MessagesController messagesController = MessagesController.getInstance(i14);
+        int i18 = this.r;
+        oy oyVar = this.O;
+        if (j11 != 0) {
+            R3 = messagesController.getDialogsByCommunity(j11);
+        } else {
+            R3 = oyVar.R3(i14, this.h, i18, this.D);
+            if (R3 == null) {
+                R3 = new ArrayList();
             }
         }
-        return j10;
-    }
-
-    @Override // tf.g
-    public final long s(int i10, int i11) {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0L;
+        int size = R3.size();
+        this.f = size;
+        this.R = false;
+        if (size == 0 && oyVar.e4()) {
+            yh.y(this, 19, this.J);
+            return;
         }
-        int size = arrayList.size();
-        long j10 = Long.MAX_VALUE;
-        for (int i12 = 0; i12 < size; i12++) {
-            long rMinQ = ((vf.f) arrayList.get(i12)).n ? (int) (((uf.a) ((uf.c) this.d0).d.get(i12)).b.rMinQ(i10, i11) * ((uf.c) this.d0).l[i12]) : 2147483647L;
-            if (rMinQ < j10) {
-                j10 = rMinQ;
+        if (this.y || this.h != 0 || i18 != 0 || !messagesController.isDialogsEndReached(i18) || this.e) {
+            j10 = 0;
+        } else if (messagesController.getAllFoldersDialogsCount() > 10 || !ContactsController.getInstance(i14).doneLoadingContacts || ContactsController.getInstance(i14).contacts.isEmpty()) {
+            j10 = 0;
+            this.d = null;
+        } else {
+            j10 = 0;
+            this.d = new ArrayList(ContactsController.getInstance(i14).contacts);
+            long j12 = UserConfig.getInstance(i14).clientUserId;
+            int size2 = this.d.size();
+            int i19 = 0;
+            while (i19 < size2) {
+                long j13 = ((TLRPC.TL_contact) this.d.get(i19)).user_id;
+                if (j13 == j12 || messagesController.dialogs_dict.f(j13) != null) {
+                    this.d.remove(i19);
+                    i19--;
+                    size2--;
+                }
+                i19++;
+            }
+            if (this.d.isEmpty()) {
+                this.d = null;
+            } else {
+                T(false);
             }
         }
-        return j10;
+        MessagesController.DialogFilter H = H();
+        if ((H == null || H.isDefault()) && oyVar != null && oyVar.K0 && oyVar.M0 != j10) {
+            yh.y(this, 20, this.J);
+            int i20 = 0;
+            while (true) {
+                if (i20 >= R3.size()) {
+                    dialog = null;
+                    break;
+                } else {
+                    if (R3.get(i20).id == oyVar.M0) {
+                        dialog = R3.get(i20);
+                        break;
+                    }
+                    i20++;
+                }
+            }
+            if (dialog == null) {
+                dialog = new TLRPC.TL_dialog();
+                dialog.id = oyVar.M0;
+            }
+            this.J.add(new i(this, 0, dialog));
+            yh.y(this, 20, this.J);
+        } else if ((H == null || H.isDefault()) && oyVar != null && this.h == 3 && oyVar.N0 != j10) {
+            yh.y(this, 20, this.J);
+            int i21 = 0;
+            while (true) {
+                if (i21 >= R3.size()) {
+                    dialog3 = null;
+                    break;
+                } else {
+                    if (R3.get(i21).id == oyVar.N0) {
+                        dialog3 = R3.get(i21);
+                        break;
+                    }
+                    i21++;
+                }
+            }
+            if (dialog3 == null) {
+                dialog3 = new TLRPC.TL_dialog();
+                dialog3.id = oyVar.N0;
+            }
+            z4 = false;
+            this.J.add(new i(this, 0, dialog3));
+            yh.y(this, 20, this.J);
+            this.B = z4;
+            i10 = this.h;
+            if ((i10 != 7 || i10 == 8) && H != null && H.isChatlist()) {
+                messagesController.checkChatlistFolderUpdate(H.id, false);
+                chatlistFolderUpdates = messagesController.getChatlistFolderUpdates(H.id);
+                if (chatlistFolderUpdates != null && chatlistFolderUpdates.missing_peers.size() > 0) {
+                    this.B = true;
+                    this.J.add(new i(this, chatlistFolderUpdates));
+                }
+            }
+            requestPeerType = this.Q;
+            if (requestPeerType != null) {
+                yh.y(this, 15, this.J);
+            }
+            if (!this.G || this.P) {
+                for (i11 = 0; i11 < R3.size(); i11++) {
+                    if (this.h == 2 && (R3.get(i11) instanceof jy)) {
+                        this.J.add(new i(this, 14, R3.get(i11)));
+                    } else {
+                        this.J.add(new i(this, 0, R3.get(i11)));
+                    }
+                }
+                yh.y(this, 10, this.J);
+            }
+            if (this.f == 0 && this.e) {
+                this.R = true;
+                if (requestPeerType != null) {
+                    yh.y(this, 16, this.J);
+                } else {
+                    this.J.add(new i(this, E(), 0));
+                }
+                yh.y(this, 8, this.J);
+                yh.y(this, 7, this.J);
+                yh.y(this, 13, this.J);
+            } else {
+                ArrayList arrayList2 = this.d;
+                if (arrayList2 != null && !arrayList2.isEmpty() && (i12 = this.h) != 7 && i12 != 8) {
+                    if (this.f == 0) {
+                        this.R = true;
+                        if (requestPeerType != null) {
+                            yh.y(this, 16, this.J);
+                        } else {
+                            this.J.add(new i(this, E(), 0));
+                        }
+                        yh.y(this, 8, this.J);
+                        yh.y(this, 7, this.J);
+                    } else {
+                        for (int i22 = 0; i22 < R3.size(); i22++) {
+                            this.J.add(new i(this, 0, R3.get(i22)));
+                        }
+                        yh.y(this, 8, this.J);
+                        yh.y(this, 7, this.J);
+                    }
+                    for (int i23 = 0; i23 < this.d.size(); i23++) {
+                        this.J.add(new i(this, (TLRPC.TL_contact) this.d.get(i23)));
+                    }
+                    yh.y(this, 10, this.J);
+                    z10 = true;
+                    if ((!(requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) || (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) && this.f > 0) {
+                        yh.y(this, 12, this.J);
+                    }
+                    if (this.n && this.h == 3) {
+                        yh.y(this, 21, this.J);
+                    }
+                    if (!z10) {
+                        for (int i24 = 0; i24 < R3.size(); i24++) {
+                            if (this.h == 2 && (R3.get(i24) instanceof jy)) {
+                                this.J.add(new i(this, 14, R3.get(i24)));
+                            } else {
+                                this.J.add(new i(this, 0, R3.get(i24)));
+                            }
+                        }
+                        if (j11 != 0 || this.N || (i13 = this.h) == 7 || i13 == 8 || MessagesController.getInstance(i14).isDialogsEndReached(i18)) {
+                            int i25 = this.f;
+                            if (i25 == 0) {
+                                this.R = true;
+                                if (requestPeerType != null) {
+                                    yh.y(this, 16, this.J);
+                                } else {
+                                    this.J.add(new i(this, E(), 0));
+                                }
+                            } else {
+                                if (i18 == 0 && i25 > 10 && this.h == 0) {
+                                    yh.y(this, 11, this.J);
+                                }
+                                yh.y(this, 10, this.J);
+                            }
+                        } else {
+                            if (this.f != 0) {
+                                yh.y(this, 1, this.J);
+                            }
+                            yh.y(this, 10, this.J);
+                        }
+                    }
+                    if (messagesController.hiddenUndoChats.isEmpty()) {
+                        int i26 = 0;
+                        while (i26 < this.J.size()) {
+                            i iVar = (i) this.J.get(i26);
+                            if (iVar.a == 0 && (dialog2 = iVar.c) != null && messagesController.isHiddenByUndo(dialog2.id)) {
+                                this.J.remove(i26);
+                                i26--;
+                            }
+                            i26++;
+                        }
+                        return;
+                    }
+                    return;
+                }
+                if (this.y) {
+                    int size3 = MessagesController.getInstance(i14).hintDialogs.size();
+                    yh.y(this, 2, this.J);
+                    for (int i27 = 0; i27 < size3; i27++) {
+                        this.J.add(new i(this, MessagesController.getInstance(i14).hintDialogs.get(i27)));
+                    }
+                    yh.y(this, 3, this.J);
+                } else {
+                    int i28 = this.h;
+                    if (i28 == 11 || i28 == 13) {
+                        yh.y(this, 7, this.J);
+                        yh.y(this, 12, this.J);
+                    } else if (i28 == 12) {
+                        yh.y(this, 7, this.J);
+                    }
+                }
+            }
+            z10 = false;
+            if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast)) {
+            }
+            yh.y(this, 12, this.J);
+            if (this.n) {
+                yh.y(this, 21, this.J);
+            }
+            if (!z10) {
+            }
+            if (messagesController.hiddenUndoChats.isEmpty()) {
+            }
+        }
+        z4 = false;
+        this.B = z4;
+        i10 = this.h;
+        if (i10 != 7) {
+        }
+        messagesController.checkChatlistFolderUpdate(H.id, false);
+        chatlistFolderUpdates = messagesController.getChatlistFolderUpdates(H.id);
+        if (chatlistFolderUpdates != null) {
+            this.B = true;
+            this.J.add(new i(this, chatlistFolderUpdates));
+        }
+        requestPeerType = this.Q;
+        if (requestPeerType != null) {
+        }
+        if (this.G) {
+        }
+        while (i11 < R3.size()) {
+        }
+        yh.y(this, 10, this.J);
     }
 
-    @Override // tf.g
-    public final void t() {
-        this.L0 = true;
-        super.t();
+    public final void W(Runnable runnable) {
+        if (this.W) {
+            this.X = true;
+            return;
+        }
+        this.W = true;
+        ArrayList arrayList = new ArrayList();
+        this.K = arrayList;
+        arrayList.addAll(this.J);
+        V();
+        ArrayList arrayList2 = new ArrayList(this.J);
+        ArrayList arrayList3 = this.K;
+        this.J = arrayList3;
+        bg.a aVar = new bg.a(this, arrayList2, 4);
+        if (arrayList3.size() >= 50 && Z) {
+            Utilities.searchQueue.postRunnable(new wx0(this, aVar, runnable, arrayList2, 21));
+            return;
+        }
+        f2.m c3 = f2.q.c(aVar, true);
+        this.W = false;
+        if (runnable != null) {
+            runnable.run();
+        }
+        this.J = arrayList2;
+        c3.b(this);
+    }
+
+    @Override // org.telegram.ui.Cells.n2
+    public final boolean b() {
+        return this.x.isEmpty();
+    }
+
+    @Override // org.telegram.ui.Cells.n2
+    public final void c() {
+        t6 storiesController = MessagesController.getInstance(this.C).getStoriesController();
+        ArrayList arrayList = storiesController.h;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        boolean z4 = storiesController.D(0, DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get(0)).peer)) != 0;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            long peerDialogId = DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get(i10)).peer);
+            if (!z4 || storiesController.D(0, peerDialogId) != 0) {
+                arrayList2.add(Long.valueOf(peerDialogId));
+            }
+        }
+        this.O.getOrCreateStoryViewer().F(this.c, null, arrayList2, 0, null, null, new c7(this.H, true), false);
+    }
+
+    @Override // org.telegram.ui.Cells.n2
+    public final void e(r2 r2Var) {
+        int i10 = this.C;
+        MessagesController.getInstance(i10);
+        if (MessagesController.getInstance(i10).getStoriesController().I(r2Var.getDialogId())) {
+            oy oyVar = this.O;
+            oyVar.getOrCreateStoryViewer().getClass();
+            oyVar.getOrCreateStoryViewer().D(oyVar.getParentActivity(), r2Var.getDialogId(), c7.a((sl0) r2Var.getParent()));
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.n2
+    public final void f(r2 r2Var) {
+        this.O.H4(r2Var);
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        int size = this.J.size();
+        this.v = size;
+        return size;
+    }
+
+    @Override // f2.o0
+    public final long i(int i10) {
+        return ((i) this.J.get(i10)).k;
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return ((i) this.J.get(i10)).a;
+    }
+
+    @Override // f2.o0
+    public void l() {
+        if (this.W) {
+            this.J = new ArrayList();
+        }
+        this.W = false;
+        V();
+        super.l();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0630  */
+    /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0600  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0626  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x0602  */
+    @Override // f2.o0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(f2.l1 l1Var, int i10) {
+        TLRPC.Chat chat;
+        TLRPC.Chat chat2;
+        String str;
+        String str2;
+        String userName;
+        String formatPluralStringComma;
+        TLRPC.Chat chat3;
+        int i11;
+        String string;
+        int i12 = l1Var.f;
+        View view = l1Var.a;
+        int i13 = this.C;
+        oy oyVar = this.O;
+        if (i12 == 0) {
+            TLRPC.Dialog dialog = (TLRPC.Dialog) I(i10);
+            Object I = I(i10 + 1);
+            TLRPC.Dialog dialog2 = I instanceof TLRPC.Dialog ? (TLRPC.Dialog) I : null;
+            int i14 = this.h;
+            ArrayList arrayList = this.x;
+            if (i14 == 2 || i14 == 15) {
+                h6 h6Var = (h6) view;
+                long dialogId = h6Var.getDialogId();
+                if (dialog.id != 0) {
+                    chat = MessagesController.getInstance(i13).getChat(Long.valueOf(-dialog.id));
+                    if (chat != null && chat.migrated_to != null && (chat3 = MessagesController.getInstance(i13).getChat(Long.valueOf(chat.migrated_to.channel_id))) != null) {
+                        chat = chat3;
+                    }
+                } else {
+                    chat = null;
+                }
+                if (chat != null) {
+                    userName = chat.title;
+                    if (!ChatObject.isChannel(chat) || chat.megagroup) {
+                        int i15 = chat.participants_count;
+                        formatPluralStringComma = i15 != 0 ? LocaleController.formatPluralStringComma("Members", i15) : chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase();
+                    } else {
+                        int i16 = chat.participants_count;
+                        formatPluralStringComma = i16 != 0 ? LocaleController.formatPluralStringComma("Subscribers", i16) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase();
+                    }
+                    str2 = formatPluralStringComma;
+                    chat2 = chat;
+                } else {
+                    TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(dialog.id));
+                    if (user == 0) {
+                        chat2 = null;
+                        str = null;
+                        str2 = "";
+                        h6Var.J = dialog2 == null;
+                        h6Var.t(chat2, null, str, str2, false, false);
+                        h6Var.s(arrayList.contains(Long.valueOf(h6Var.getDialogId())), dialogId == h6Var.getDialogId());
+                        if (i10 >= this.f + 1) {
+                            view.setAlpha(1.0f);
+                            return;
+                        }
+                        return;
+                    }
+                    userName = UserObject.getUserName(user);
+                    if (UserObject.isReplyUser(user)) {
+                        chat2 = user;
+                        str2 = "";
+                    } else {
+                        chat2 = user;
+                        str2 = user.bot ? LocaleController.getString(R.string.Bot) : LocaleController.formatUserStatus(i13, user);
+                    }
+                }
+                str = userName;
+                h6Var.J = dialog2 == null;
+                h6Var.t(chat2, null, str, str2, false, false);
+                h6Var.s(arrayList.contains(Long.valueOf(h6Var.getDialogId())), dialogId == h6Var.getDialogId());
+                if (i10 >= this.f + 1) {
+                }
+            } else {
+                r2 r2Var = (r2) view;
+                r2Var.N0 = this.S != 0 && ChatObject.isHiddenInCommunity(i13, dialog.id);
+                r2Var.p2 = false;
+                r2Var.q2 = false;
+                if (this.h == 0 && AndroidUtilities.isTablet()) {
+                    r2Var.setDialogSelected(dialog.id == this.s);
+                }
+                r2Var.V(arrayList.contains(Long.valueOf(dialog.id)), false);
+                if (i10 == 1 && oyVar != null && oyVar.K0 && oyVar.M0 != 0 && dialog.top_message == 0) {
+                    MessagesController.DialogFilter H = H();
+                    if (H == null || H.isDefault()) {
+                        r2Var.setCustomMessage(DialogObject.getStatus(oyVar.M0));
+                    } else {
+                        r2Var.setCustomMessage(null);
+                    }
+                } else if (i10 == 1 && oyVar != null && this.h == 3 && oyVar.N0 != 0 && dialog.top_message == 0) {
+                    MessagesController.DialogFilter H2 = H();
+                    if (H2 == null || H2.isDefault()) {
+                        r2Var.setCustomMessage(DialogObject.getStatus(oyVar.N0));
+                    } else {
+                        r2Var.setCustomMessage(null);
+                    }
+                } else {
+                    r2Var.setCustomMessage(null);
+                }
+                r2Var.X(dialog, this.h, this.r);
+                if (r2Var.getMeasuredHeight() > 0 && r2Var.getMeasuredHeight() != r2Var.y()) {
+                    r2Var.requestLayout();
+                }
+                boolean z4 = r2Var.f;
+                boolean z10 = this.G;
+                if (z4 != z10) {
+                    r2Var.f = z10;
+                    r2Var.requestLayout();
+                }
+                h hVar = this.M;
+                if (hVar != null && i10 < 10) {
+                    long j10 = dialog.id;
+                    ArrayList arrayList2 = hVar.d;
+                    if (!hVar.a.contains(Long.valueOf(j10)) && !hVar.b.contains(Long.valueOf(j10)) && !hVar.c.contains(Long.valueOf(j10)) && !arrayList2.contains(Long.valueOf(j10))) {
+                        arrayList2.add(Long.valueOf(j10));
+                    }
+                }
+            }
+        } else if (i12 == 4) {
+            ((s2) view).setRecentMeUrl((TLRPC.RecentMeUrl) I(i10));
+        } else if (i12 == 5) {
+            x2 x2Var = (x2) view;
+            int i17 = this.Y;
+            int E = E();
+            this.Y = E;
+            u01 u01Var = x2Var.n;
+            TextView textView = x2Var.h;
+            jj0 jj0Var = x2Var.f;
+            if (x2Var.r != E) {
+                x2Var.r = E;
+                if (E == 0 || E == 1) {
+                    i11 = R.raw.utyan_newborn;
+                    string = LocaleController.getString(R.string.NoChatsHelp);
+                    textView.setText(LocaleController.getString(R.string.NoChats));
+                } else if (E != 2) {
+                    jj0Var.setAutoRepeat(true);
+                    i11 = R.raw.filter_new;
+                    string = LocaleController.getString(R.string.FilterAddingChatsInfo);
+                    textView.setText(LocaleController.getString(R.string.FilterAddingChats));
+                } else {
+                    jj0Var.setAutoRepeat(false);
+                    i11 = R.raw.filter_no_chats;
+                    if (this.w) {
+                        textView.setText(LocaleController.getString(R.string.FilterNoChatsToForward));
+                        string = LocaleController.getString(R.string.FilterNoChatsToForwardInfo);
+                    } else {
+                        textView.setText(LocaleController.getString(R.string.FilterNoChatsToDisplay));
+                        string = LocaleController.getString(R.string.FilterNoChatsToDisplayInfo);
+                    }
+                }
+                if (i11 != 0) {
+                    jj0Var.setVisibility(0);
+                    if (x2Var.r == 1) {
+                        if (x2Var.d) {
+                            x2Var.a = 1.0f;
+                            String string2 = LocaleController.getString(R.string.NoChatsContactsHelp);
+                            if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
+                                string2 = string2.replace('\n', ' ');
+                            }
+                            u01Var.a(string2, true, false);
+                            x2Var.requestLayout();
+                        } else {
+                            x2Var.a(true);
+                        }
+                    }
+                    if (x2Var.s != i11) {
+                        jj0Var.f(i11, 100, 100, null);
+                        jj0Var.d();
+                        x2Var.s = i11;
+                    }
+                } else {
+                    jj0Var.setVisibility(8);
+                }
+                if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
+                    string = string.replace('\n', ' ');
+                }
+                u01Var.a(string, false, false);
+            }
+            int i18 = this.h;
+            if (i18 != 7 && i18 != 8) {
+                x2Var.setOnUtyanAnimationEndListener(new e(this, r13 ? 1 : 0));
+                x2Var.setOnUtyanAnimationUpdateListener(new cg.o(this, 6));
+                if (!x2Var.d && this.f == 0) {
+                    oyVar.z4(0.0f);
+                    for (ny nyVar : oyVar.b0) {
+                        ((f2.i0) nyVar.a.getLayoutManager()).u = true;
+                    }
+                }
+                if (this.d == null || i17 != 0) {
+                    if (this.e) {
+                        if (this.f == 0) {
+                            x2Var.a(false);
+                        }
+                    } else if (x2Var.d && this.Y == 0) {
+                        ValueAnimator valueAnimator = x2Var.e;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                        }
+                        x2Var.d = false;
+                        ValueAnimator duration = ValueAnimator.ofFloat(x2Var.a, 0.0f).setDuration(250L);
+                        x2Var.e = duration;
+                        duration.setInterpolator(gt.d);
+                        x2Var.e.addUpdateListener(new v2(x2Var, 1));
+                        x2Var.e.addListener(new w2(x2Var, 0));
+                        x2Var.e.start();
+                    }
+                } else if (!x2Var.d) {
+                    x2Var.a(true);
+                }
+            }
+        } else if (i12 == 6) {
+            ((va) view).d((TLRPC.User) I(i10), null, null, false);
+        } else if (i12 == 7) {
+            m4 m4Var = (m4) view;
+            int i19 = this.h;
+            if (i19 != 11 && i19 != 12 && i19 != 13) {
+                m4Var.setText(LocaleController.getString((this.f == 0 && this.e) ? R.string.ConnectingYourContacts : R.string.YourContacts));
+            } else if (i10 == 0) {
+                m4Var.setText(LocaleController.getString(R.string.ImportHeader));
+            } else {
+                m4Var.setText(LocaleController.getString(R.string.ImportHeaderContacts));
+            }
+        } else if (i12 != 11) {
+            TLRPC.RequestPeerType requestPeerType = this.Q;
+            if (i12 != 12) {
+                switch (i12) {
+                    case 14:
+                        m4 m4Var2 = (m4) view;
+                        m4Var2.setTextSize(14.0f);
+                        m4Var2.setTextColor(j6.w0(null, j6.y6, false));
+                        m4Var2.setBackgroundColor(j6.w0(null, j6.e7, false));
+                        int i20 = ((jy) I(i10)).a;
+                        if (i20 != 0) {
+                            if (i20 != 1) {
+                                if (i20 == 2) {
+                                    m4Var2.setText(LocaleController.getString(R.string.FilterGroups));
+                                    break;
+                                }
+                            } else {
+                                m4Var2.setText(LocaleController.getString(R.string.MyGroups));
+                                break;
+                            }
+                        } else {
+                            m4Var2.setText(LocaleController.getString(R.string.MyChannels));
+                            break;
+                        }
+                        break;
+                    case 15:
+                        ((q6) view).set(requestPeerType);
+                        break;
+                    case 16:
+                        ((b3) view).set(requestPeerType);
+                        break;
+                    case 17:
+                        z2 z2Var = (z2) view;
+                        TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates = ((i) this.J.get(i10)).i;
+                        if (tL_chatlists_chatlistUpdates != null) {
+                            int size = tL_chatlists_chatlistUpdates.missing_peers.size();
+                            z2Var.b(AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("FolderUpdatesTitle", size, new Object[0]), j6.I6, 0, null), LocaleController.formatPluralString("FolderUpdatesSubtitle", size, new Object[0]));
+                            break;
+                        }
+                        break;
+                    default:
+                        switch (i12) {
+                            case 20:
+                                u3 u3Var = (u3) view;
+                                if (oyVar == null || !oyVar.K0) {
+                                    if (this.h == 3) {
+                                        if (i10 == 0) {
+                                            u3Var.setText(LocaleController.getString(R.string.ForwardDialogYourChannel));
+                                            break;
+                                        } else {
+                                            u3Var.setText(LocaleController.getString(R.string.ReplyDialogYourChats));
+                                            break;
+                                        }
+                                    }
+                                } else if (i10 == 0) {
+                                    u3Var.setText(LocaleController.getString(R.string.ReplyDialogMessageAuthor));
+                                    break;
+                                } else {
+                                    u3Var.setText(LocaleController.getString(R.string.ReplyDialogYourChats));
+                                    break;
+                                }
+                                break;
+                            case 21:
+                                r2 r2Var2 = (r2) view;
+                                m2 m2Var = new m2();
+                                m2Var.a = LocaleController.getString(R.string.StoriesForwardTitle);
+                                m2Var.b = LocaleController.getString(R.string.StoriesForwardText);
+                                r2Var2.p2 = false;
+                                r2Var2.q2 = false;
+                                r2Var2.setDialog(m2Var);
+                                if (r2Var2.getMeasuredHeight() > 0 && r2Var2.getMeasuredHeight() != r2Var2.y()) {
+                                    r2Var2.requestLayout();
+                                    break;
+                                }
+                                break;
+                            case 22:
+                                ((m4) view).setText((String) I(i10));
+                                break;
+                            case 23:
+                                Object I2 = I(i10);
+                                r2 r2Var3 = (r2) view;
+                                if (I2 instanceof TLRPC.Chat) {
+                                    TLRPC.Chat chat4 = (TLRPC.Chat) I2;
+                                    r2Var3.N0 = ChatObject.isHiddenInCommunity(i13, chat4);
+                                    r2Var3.setCustomMessageWithoutRebuild(LocaleController.formatPluralString("Members", chat4.participants_count, new Object[0]));
+                                    r2Var3.W(-chat4.id, null, 0, false, false);
+                                    break;
+                                } else {
+                                    TLRPC.User user2 = (TLRPC.User) I2;
+                                    r2Var3.N0 = ChatObject.isHiddenInCommunity(i13, user2);
+                                    r2Var3.setCustomMessageWithoutRebuild(LocaleController.getString(R.string.Bot));
+                                    r2Var3.W(user2.id, null, 0, false, false);
+                                    break;
+                                }
+                        }
+                }
+            } else {
+                if (!(view instanceof o8)) {
+                    return;
+                }
+                o8 o8Var = (o8) view;
+                int i21 = j6.q6;
+                o8Var.e(i21, i21);
+                if (requestPeerType == null) {
+                    o8Var.m(R.drawable.msg_groups_create, LocaleController.getString(R.string.CreateGroupForImport), this.f != 0);
+                } else if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
+                    o8Var.m(R.drawable.msg_channel_create, LocaleController.getString(R.string.CreateChannelForThis), true);
+                } else {
+                    o8Var.m(R.drawable.msg_groups_create, LocaleController.getString(R.string.CreateGroupForThis), true);
+                }
+                o8Var.x = true;
+                o8Var.setOffsetFromImage(75);
+            }
+        } else {
+            a9 a9Var = (a9) view;
+            a9Var.setText(LocaleController.getString(R.string.TapOnThePencilButton));
+            if (this.L == null) {
+                Drawable drawable = this.c.getResources().getDrawable(R.drawable.arrow_newchat);
+                this.L = drawable;
+                drawable.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.B6, false), PorterDuff.Mode.MULTIPLY));
+            }
+            e90 textView2 = a9Var.getTextView();
+            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (oyVar == null || !oyVar.L3) ? this.L : null, (Drawable) null);
+            textView2.getLayoutParams().width = -2;
+        }
+        if (i10 >= this.f + 1) {
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v10, types: [android.view.View, org.telegram.ui.Cells.m4] */
+    /* JADX WARN: Type inference failed for: r2v11, types: [android.view.View, org.telegram.ui.Cells.z6] */
+    /* JADX WARN: Type inference failed for: r2v12, types: [tf.j] */
+    /* JADX WARN: Type inference failed for: r2v13, types: [android.view.View, tf.g] */
+    /* JADX WARN: Type inference failed for: r2v15 */
+    /* JADX WARN: Type inference failed for: r2v16, types: [android.view.View, android.widget.LinearLayout, org.telegram.ui.Cells.q6] */
+    /* JADX WARN: Type inference failed for: r2v17, types: [tf.f] */
+    /* JADX WARN: Type inference failed for: r2v18, types: [org.telegram.ui.Cells.z2] */
+    /* JADX WARN: Type inference failed for: r2v19, types: [org.telegram.ui.Components.hn] */
+    /* JADX WARN: Type inference failed for: r2v2, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r2v20, types: [android.view.ViewGroup, tf.j] */
+    /* JADX WARN: Type inference failed for: r2v21, types: [org.telegram.ui.Cells.u3] */
+    /* JADX WARN: Type inference failed for: r2v22, types: [org.telegram.ui.Cells.m4] */
+    /* JADX WARN: Type inference failed for: r2v23 */
+    /* JADX WARN: Type inference failed for: r2v24, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r2v25, types: [android.view.View, org.telegram.ui.Cells.o8] */
+    /* JADX WARN: Type inference failed for: r2v26 */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r2v4, types: [org.telegram.ui.Components.t00] */
+    /* JADX WARN: Type inference failed for: r2v5, types: [android.view.ViewGroup, org.telegram.ui.Cells.m4] */
+    /* JADX WARN: Type inference failed for: r2v6, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.a51] */
+    /* JADX WARN: Type inference failed for: r2v7, types: [android.view.View, org.telegram.ui.Cells.a0, org.telegram.ui.Cells.s2] */
+    /* JADX WARN: Type inference failed for: r2v8, types: [org.telegram.ui.Cells.x2] */
+    /* JADX WARN: Type inference failed for: r2v9, types: [org.telegram.ui.Cells.va] */
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        ?? r22;
+        long j10 = this.S;
+        Context context = this.c;
+        switch (i10) {
+            case 0:
+            case 21:
+                int i11 = this.h;
+                if (i11 == 2 || i11 == 15) {
+                    r22 = new h6(context, null);
+                } else {
+                    r2 r2Var = new r2(this.O, this.c, false, this.C, null);
+                    if (S()) {
+                        org.telegram.ui.web.y0 y0Var = new org.telegram.ui.web.y0(this, 15);
+                        r2Var.G1 = true;
+                        r2Var.H1 = y0Var;
+                    }
+                    r2Var.setArchivedPullAnimation(this.I);
+                    r2Var.setPreloader(this.M);
+                    r2Var.setDialogCellDelegate(this);
+                    r2Var.setIsTransitionSupport(this.P);
+                    if (i10 == 21) {
+                        d7 d7Var = new d7(r2Var.getContext(), r2Var, false, R.drawable.forward_to_stories, r2Var.C4);
+                        r2Var = r2Var;
+                        r2Var.D = d7Var;
+                        r2Var.C = true;
+                    }
+                    if (j10 != 0) {
+                        r2Var.L0 = true;
+                    }
+                    r22 = r2Var;
+                }
+                if (this.h == 15) {
+                    r22.setBackgroundColor(j6.w0(null, j6.d6, false));
+                    break;
+                }
+                break;
+            case 1:
+            case 13:
+                r22 = new t00(context, null);
+                r22.setIsSingleCell(true);
+                int i12 = i10 == 13 ? 18 : 7;
+                r22.setViewType(i12);
+                if (i12 == 18) {
+                    r22.setIgnoreHeightCheck(true);
+                }
+                if (i10 == 13) {
+                    r22.setItemsCount((int) ((AndroidUtilities.displaySize.y * 0.5f) / AndroidUtilities.dp(64.0f)));
+                    break;
+                }
+                break;
+            case 2:
+                r22 = new m4(context);
+                r22.setText(LocaleController.getString(R.string.RecentlyViewed));
+                TextView textView = new TextView(context);
+                textView.setTextSize(1, 15.0f);
+                textView.setTypeface(AndroidUtilities.bold());
+                textView.setTextColor(j6.w0(null, j6.L6, false));
+                textView.setText(LocaleController.getString(R.string.RecentlyViewedHide));
+                textView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
+                r22.addView(textView, b6.d(-1, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 17.0f, 15.0f, 17.0f, 0.0f));
+                textView.setOnClickListener(new oh.n(this, 19));
+                break;
+            case 3:
+                r22 = new a51(context, 9);
+                r22.setBackgroundColor(j6.w0(null, j6.a7, false));
+                View view = new View(context);
+                view.setBackgroundDrawable(j6.V0(context, R.drawable.greydivider, j6.b7));
+                r22.addView(view, b6.c(-1.0f, -1));
+                break;
+            case 4:
+                r22 = new s2(context);
+                ImageReceiver imageReceiver = new ImageReceiver(r22);
+                r22.h = imageReceiver;
+                r22.n = new z8((f6) null);
+                r22.w = AndroidUtilities.dp(40.0f);
+                r22.C = AndroidUtilities.dp(10.0f);
+                r22.E = UserConfig.selectedAccount;
+                j6.R(context);
+                imageReceiver.setRoundRadius(AndroidUtilities.dp(26.0f));
+                break;
+            case 5:
+                r22 = new x2(context);
+                break;
+            case 6:
+                r22 = new va(context, 8, 0, false);
+                break;
+            case 7:
+                r22 = new m4(context);
+                oy oyVar = this.O;
+                if (oyVar == null || !oyVar.K0) {
+                    r22.setPadding(0, 0, 0, AndroidUtilities.dp(12.0f));
+                    break;
+                }
+                break;
+            case 8:
+                r22 = new z6(context, (org.telegram.ui.b) null);
+                nq nqVar = new nq(new ColorDrawable(j6.w0(null, j6.a7, false)), j6.V0(context, R.drawable.greydivider, j6.b7));
+                nqVar.w = true;
+                r22.setBackgroundDrawable(nqVar);
+                break;
+            case 9:
+            case 12:
+            default:
+                r22 = new o8(context);
+                if (this.h == 15) {
+                    r22.setBackgroundColor(j6.w0(null, j6.d6, false));
+                    break;
+                }
+                break;
+            case 10:
+                r22 = new j(this, context);
+                break;
+            case 11:
+                r22 = new g(this, context);
+                nq nqVar2 = new nq(new ColorDrawable(j6.w0(null, j6.a7, false)), j6.V0(context, R.drawable.greydivider, j6.b7));
+                nqVar2.w = true;
+                r22.setBackgroundDrawable(nqVar2);
+                break;
+            case 14:
+                m4 m4Var = new m4(this.c, j6.f7, 16, 0, false, null);
+                m4Var.setHeight(32);
+                m4Var.setClickable(false);
+                r22 = m4Var;
+                break;
+            case 15:
+                r22 = new q6(context);
+                r22.b = new ArrayList();
+                r22.setOrientation(1);
+                r22.setBackgroundColor(j6.w0(null, j6.a7, false));
+                break;
+            case 16:
+                r22 = new f(this, context);
+                break;
+            case 17:
+                r22 = new z2(context);
+                break;
+            case 18:
+                r22 = new hn(context, 29);
+                break;
+            case 19:
+                r22 = new j(this, context);
+                r22.addView(new org.telegram.ui.Components.q6(this.c, this.C, null, new e(this, 1), null), b6.d(-1, -1.0f, 17, 0.0f, -40.0f, 0.0f, 0.0f));
+                break;
+            case 20:
+                r22 = new u3(context, null);
+                break;
+            case 22:
+                r22 = new m4(context);
+                break;
+            case 23:
+                r2 r2Var2 = new r2(this.O, this.c, false, this.C, null);
+                if (j10 != 0) {
+                    r2Var2.L0 = true;
+                    r2Var2.M0 = true;
+                }
+                r22 = r2Var2;
+                break;
+        }
+        r22.setLayoutParams(new f2.w0(-1, (i10 == 5 || i10 == 19) ? -1 : -2));
+        return new el0(r22);
+    }
+
+    @Override // f2.o0
+    public final void y(f2.l1 l1Var) {
+        View view = l1Var.a;
+        if (view instanceof r2) {
+            r2 r2Var = (r2) view;
+            r2Var.T(this.E, false);
+            r2Var.V(this.x.contains(Long.valueOf(r2Var.getDialogId())), false);
+        }
+    }
+
+    public void J() {
+    }
+
+    public void K() {
+    }
+
+    public void L(TLRPC.User user) {
+    }
+
+    public void a(r2 r2Var) {
+    }
+
+    public void d(r2 r2Var) {
     }
 }

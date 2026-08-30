@@ -1,179 +1,144 @@
 package org.telegram.ui.Cells;
 
-import android.text.Editable;
-import android.text.Spannable;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.CharacterStyle;
-import android.text.style.ParagraphStyle;
-import android.text.style.SuggestionSpan;
-import android.util.Pair;
-import java.util.HashMap;
-import java.util.Map;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.fe0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.vt;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f3 implements TextWatcher {
-    public final /* synthetic */ int a = 1;
-    public boolean b;
-    public int c;
-    public Object d;
+public abstract class f3 extends FrameLayout {
+    public boolean a;
+    public final d3 b;
+    public final int c;
+    public boolean d;
+    public int e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public final org.telegram.ui.Components.c5 r;
+    public int s;
+    public final org.telegram.ui.Components.j6 v;
+    public boolean w;
 
-    public /* synthetic */ f3() {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                int i10 = this.c;
-                g3 g3Var = (g3) this.d;
-                e3 e3Var = g3Var.b;
-                if (!g3Var.a) {
-                    if (i10 > 0 && editable != null && editable.length() > i10) {
-                        g3Var.a = true;
-                        e3Var.setText(editable.subSequence(0, i10));
-                        e3Var.setSelection(e3Var.length());
-                        g3Var.a = false;
-                    }
-                    g3Var.b(editable);
-                }
-                if (!this.b) {
-                    while (true) {
-                        int indexOf = editable.toString().indexOf("\n");
-                        if (indexOf < 0) {
-                            break;
-                        } else {
-                            editable.delete(indexOf, indexOf + 1);
-                        }
-                    }
-                }
-                break;
-            case 1:
-                break;
-            default:
-                fe0 fe0Var = (fe0) this.d;
-                ig.f fVar = fe0Var.c;
-                if (!this.b) {
-                    fe0Var.q(true);
-                    AndroidUtilities.cancelRunOnUIThread(fe0Var.R);
-                    fe0Var.o(false);
-                    if (TextUtils.isEmpty(editable)) {
-                        fe0Var.y = false;
-                    }
-                    if (!fe0Var.p(editable.toString())) {
-                        fe0Var.s(true);
-                        this.b = true;
-                        boolean z10 = fVar.getSelectionEnd() >= fVar.getText().length();
-                        if (!fe0Var.y) {
-                            String str = fe0Var.G;
-                            fVar.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
-                            if (z10) {
-                                fVar.setSelection(fVar.getText().length());
-                            }
-                        }
-                        this.b = false;
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                g3 g3Var = (g3) this.d;
-                if (!g3Var.a) {
-                    g3Var.h = false;
-                    break;
-                }
-                break;
-            case 1:
-                if (!this.b) {
-                    HashMap hashMap = new HashMap();
-                    boolean z10 = charSequence instanceof Spannable;
-                    if (z10) {
-                        Spannable spannable = (Spannable) charSequence;
-                        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spannable.getSpans(0, spannable.length(), CharacterStyle.class);
-                        ParagraphStyle[] paragraphStyleArr = (ParagraphStyle[]) spannable.getSpans(0, spannable.length(), ParagraphStyle.class);
-                        if (characterStyleArr != null && characterStyleArr.length > 0) {
-                            for (CharacterStyle characterStyle : characterStyleArr) {
-                                if (characterStyle != null && !(characterStyle instanceof SuggestionSpan)) {
-                                    hashMap.put(characterStyle, new Pair(Integer.valueOf(spannable.getSpanStart(characterStyle)), Integer.valueOf(spannable.getSpanEnd(characterStyle))));
-                                }
-                            }
-                        }
-                        if (paragraphStyleArr != null && paragraphStyleArr.length > 0) {
-                            for (ParagraphStyle paragraphStyle : paragraphStyleArr) {
-                                if (paragraphStyle != null && !(paragraphStyle instanceof SuggestionSpan)) {
-                                    hashMap.put(paragraphStyle, new Pair(Integer.valueOf(spannable.getSpanStart(paragraphStyle)), Integer.valueOf(spannable.getSpanEnd(paragraphStyle))));
-                                }
-                            }
-                        }
-                    }
-                    this.d = hashMap;
-                    this.c = z10 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-                    break;
-                }
-                break;
-            default:
-                if (!this.b && charSequence != null && ((fe0) this.d).G != null) {
-                    this.c = fe0.t(charSequence.toString()).length();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 1:
-                if (!this.b) {
-                    boolean z10 = charSequence instanceof Spannable;
-                    int length = z10 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-                    HashMap hashMap = (HashMap) this.d;
-                    if (hashMap != null) {
-                        if ((length > 0 || this.c > 0) && i10 == 0 && i11 == i12) {
-                            this.b = true;
-                            if (z10) {
-                                Spannable spannable = (Spannable) charSequence;
-                                for (Map.Entry entry : hashMap.entrySet()) {
-                                    if (spannable.getSpanStart(entry.getKey()) == -1) {
-                                        spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
-                                    }
-                                }
-                            }
-                            this.b = false;
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    public f3(g3 g3Var, int i10, boolean z10) {
-        this.d = g3Var;
+    public f3(Context context, qv0 qv0Var, String str, boolean z4, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.e = -1;
+        this.n = true;
+        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
+        this.v = j6Var;
+        j6Var.k(0.2f, 160L, nr.h);
+        j6Var.t(AndroidUtilities.dp(15.33f));
+        j6Var.b = 5;
         this.c = i10;
-        this.b = z10;
+        d3 d3Var = new d3(this, context, qv0Var, f6Var, z4);
+        this.b = d3Var;
+        vt editText = d3Var.getEditText();
+        editText.setDelegate(new n7.qa(10, this, editText));
+        d3Var.setWillNotDraw(false);
+        this.r = new org.telegram.ui.Components.c5(d3Var);
+        j6Var.setCallback(d3Var);
+        editText.setTextSize(1, 17.0f);
+        editText.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H6, f6Var));
+        int i11 = org.telegram.ui.ActionBar.j6.G6;
+        editText.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        editText.setBackground(null);
+        if (z4) {
+            editText.setMaxLines(5);
+            editText.setSingleLine(false);
+        } else {
+            editText.setMaxLines(1);
+            editText.setSingleLine(true);
+        }
+        editText.setPadding(editText.getPaddingLeft(), editText.getPaddingTop(), AndroidUtilities.dp(0.0f), editText.getPaddingBottom());
+        editText.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        editText.setInputType((z4 ? 131072 : 0) | 573441);
+        editText.setRawInputType(573441);
+        editText.setHint(str);
+        editText.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        editText.setCursorSize(AndroidUtilities.dp(19.0f));
+        editText.setCursorWidth(1.5f);
+        editText.addTextChangedListener(new e3(this, i10, editText, z4));
+        editText.setOnFocusChangeListener(new m.s2(this, 1));
+        addView(d3Var, k7.b6.e(-1, -1, 48));
+        c();
     }
 
-    public f3(fe0 fe0Var) {
-        this.d = fe0Var;
+    public int a() {
+        return org.telegram.ui.Components.l5.g();
     }
 
-    private final void a(Editable editable) {
+    public final void c() {
+        int i10;
+        d3 d3Var = this.b;
+        if (d3Var == null || d3Var.getEditText() == null) {
+            return;
+        }
+        this.s = this.c - getText().length();
+        String str = "";
+        if ((!TextUtils.isEmpty(getText()) || this.d) && ((!this.f || this.h) && ((i10 = this.e) == -1 || this.s <= i10))) {
+            str = "" + this.s;
+        }
+        this.v.q(str, true, true);
     }
 
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    public CharSequence getText() {
+        return this.b.getText();
     }
 
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.w) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    public void setDivider(boolean z4) {
+        this.w = z4;
+        setWillNotDraw(!z4);
+    }
+
+    public void setEmojiViewCacheType(int i10) {
+        this.b.setEmojiViewCacheType(i10);
+    }
+
+    public void setShowLimitOnFocus(boolean z4) {
+        this.f = z4;
+    }
+
+    public void setShowLimitWhenEmpty(boolean z4) {
+        this.d = z4;
+        if (z4) {
+            c();
+        }
+    }
+
+    public void setShowLimitWhenNear(int i10) {
+        this.e = i10;
+        c();
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.a = true;
+        d3 d3Var = this.b;
+        d3Var.setText(charSequence);
+        d3Var.setSelection(d3Var.getText().length());
+        this.a = false;
+    }
+
+    public void b() {
     }
 }

@@ -9,34 +9,33 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.fi1;
+import org.telegram.ui.ActionBar.p2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class n extends org.telegram.ui.ActionBar.k {
+public final class n extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ p a;
 
     public n(p pVar) {
         this.a = pVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
+    @Override // org.telegram.ui.ActionBar.j
     public final void b(int i10) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
         p pVar = this.a;
         HashSet hashSet = pVar.w;
         if (i10 == -1) {
-            lVar = ((o2) pVar).actionBar;
-            if (!lVar.s()) {
+            kVar = ((p2) pVar).actionBar;
+            if (!kVar.s()) {
                 pVar.finishFragment();
                 return;
             }
-            lVar2 = ((o2) pVar).actionBar;
-            lVar2.r();
+            kVar2 = ((p2) pVar).actionBar;
+            kVar2.r();
             hashSet.clear();
-            AndroidUtilities.forEachViews((RecyclerView) pVar.a, (f5.d) new l4.x0(14));
+            AndroidUtilities.forEachViews((RecyclerView) pVar.a, (h5.d) new nh.e(15));
             return;
         }
         if (i10 != R.id.menu_delete) {
@@ -72,9 +71,9 @@ public final class n extends org.telegram.ui.ActionBar.k {
                     break;
                 }
             }
-            j jVar = pVar.e;
-            if (jVar != null && messageObject == null) {
-                ArrayList arrayList3 = jVar.a;
+            i iVar = pVar.e;
+            if (iVar != null && messageObject == null) {
+                ArrayList arrayList3 = iVar.a;
                 int size2 = arrayList3.size();
                 while (true) {
                     if (i11 >= size2) {
@@ -92,13 +91,13 @@ public final class n extends org.telegram.ui.ActionBar.k {
             if (messageObject != null) {
                 arrayList.add(messageObject);
                 hashSet3.add(Integer.valueOf(messageObject.getId()));
-                hashSet2.add(l.a(messageObject));
+                hashSet2.add(k.a(messageObject));
             }
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pVar.getParentActivity(), 0, pVar.getResourceProvider());
-        alertDialog$Builder.a.N = LocaleController.formatPluralString("DeleteOptionsTitle", hashSet3.size(), new Object[0]);
-        alertDialog$Builder.a.P = LocaleController.getString(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new fi1(1, pVar, hashSet3));
+        alertDialog$Builder.a.O = LocaleController.formatPluralString("DeleteOptionsTitle", hashSet3.size(), new Object[0]);
+        alertDialog$Builder.a.Q = LocaleController.getString(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m(0, pVar, hashSet3));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.o();

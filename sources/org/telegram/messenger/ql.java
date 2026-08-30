@@ -1,47 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.UnconfirmedAuthController;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ql implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
-    public final /* synthetic */ TLObject c;
+public final /* synthetic */ class ql implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ TranslateController a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ TranslateController.MessageKey c;
     public final /* synthetic */ Utilities.Callback d;
-    public final /* synthetic */ TLRPC.TL_error e;
 
-    public /* synthetic */ ql(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 1;
-        this.b = unconfirmedAuth;
-        this.c = tLObject;
+    public /* synthetic */ ql(TranslateController translateController, MessageObject messageObject, TranslateController.MessageKey messageKey, Utilities.Callback callback) {
+        this.a = translateController;
+        this.b = messageObject;
+        this.c = messageKey;
         this.d = callback;
-        this.e = tL_error;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$confirm$1(this.d, this.c, this.e);
-                break;
-            case 1:
-                this.b.lambda$deny$3(this.c, this.d, this.e);
-                break;
-            default:
-                this.b.lambda$deny$5(this.d, this.c, this.e);
-                break;
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        this.a.lambda$detectPhotoLanguage$42(this.b, this.c, this.d, exc);
     }
 
-    public /* synthetic */ ql(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = unconfirmedAuth;
-        this.d = callback;
-        this.c = tLObject;
-        this.e = tL_error;
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        TranslateController.MessageKey messageKey = this.c;
+        Utilities.Callback callback = this.d;
+        this.a.lambda$detectPhotoLanguage$40(this.b, messageKey, callback, str);
     }
 }

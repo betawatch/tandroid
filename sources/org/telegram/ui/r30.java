@@ -2,72 +2,47 @@ package org.telegram.ui;
 
 import android.graphics.Canvas;
 import android.view.View;
-import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class r30 extends org.telegram.ui.Components.au {
-    public final /* synthetic */ r50 R;
+public final class r30 extends org.telegram.ui.Components.sl0 {
+    public final /* synthetic */ c60 U2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r30(r50 r50Var, LaunchActivity launchActivity, v40 v40Var, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(launchActivity, v40Var, o2Var, 5, true, c6Var);
-        this.R = r50Var;
+    public r30(c60 c60Var, LaunchActivity launchActivity) {
+        super(launchActivity, null);
+        this.U2 = c60Var;
     }
 
-    @Override // android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view != getEditText()) {
+        org.telegram.ui.Components.s20 s20Var = (org.telegram.ui.Components.s20) view;
+        c60 c60Var = this.U2;
+        j50 j50Var = c60Var.N;
+        v30 v30Var = c60Var.X1;
+        if (v30Var.r == null && !c60Var.K2.k()) {
+            s20Var.setAlpha(1.0f);
+            s20Var.setTranslationX(0.0f);
+            s20Var.setTranslationY(0.0f);
+        }
+        r30 r30Var = c60Var.j2;
+        s20Var.getClass();
+        r30Var.getClass();
+        if (RecyclerView.R(s20Var) == -1 && s20Var.getRenderer() != null) {
+            return true;
+        }
+        if (s20Var.getTranslationY() == 0.0f || s20Var.getRenderer() == null || s20Var.getRenderer().c == null) {
             return super.drawChild(canvas, view, j10);
         }
+        float top = j50Var.getTop() - getTop();
+        float measuredHeight = j50Var.getMeasuredHeight() + top;
+        float f10 = v30Var.c;
         canvas.save();
-        r50 r50Var = this.R;
-        r50Var.D.getEditText().setTranslationY(view.getMeasuredHeight() - r50Var.x3.e);
+        float f11 = 1.0f - f10;
+        canvas.clipRect(0.0f, top * f11, getMeasuredWidth(), (getMeasuredHeight() * f10) + (measuredHeight * f11));
         boolean drawChild = super.drawChild(canvas, view, j10);
         canvas.restore();
         return drawChild;
-    }
-
-    @Override // org.telegram.ui.Components.au
-    public final void f() {
-        ViewGroup viewGroup;
-        super.f();
-        org.telegram.ui.Components.fz emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.s0 = false;
-            emojiView.t2 = false;
-            emojiView.setShouldDrawBackground(false);
-            viewGroup = ((org.telegram.ui.ActionBar.f3) this.R).containerView;
-            emojiView.setBottomInset(viewGroup.getPaddingBottom());
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        vd.c cVar = this.R.x3;
-        if (cVar.e == 0.0f) {
-            cVar.c(getMeasuredHeight());
-        } else {
-            cVar.a(getMeasuredHeight());
-        }
-    }
-
-    @Override // org.telegram.ui.Components.au
-    public final void p() {
-        ah.i iVar = this.R.y1;
-        int max = this.e ? Math.max(0, getEmojiPadding()) : this.J ? Math.max(0, getKeyboardHeight()) : 0;
-        if (max > 0) {
-            iVar.f(max);
-        } else {
-            iVar.h(false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.au
-    public final void y() {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.R).containerView;
-        viewGroup.requestApplyInsets();
     }
 }

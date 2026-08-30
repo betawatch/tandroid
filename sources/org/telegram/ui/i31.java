@@ -1,127 +1,114 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.util.LongSparseArray;
 import android.view.View;
 import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
+import java.util.HashSet;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i31 implements org.telegram.ui.Components.al0, org.telegram.ui.Components.cl0, yx {
-    public final /* synthetic */ SaveToGallerySettingsActivity a;
+public final /* synthetic */ class i31 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i31(SaveToGallerySettingsActivity saveToGallerySettingsActivity) {
-        this.a = saveToGallerySettingsActivity;
+    public /* synthetic */ i31(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.yx
-    public /* synthetic */ boolean C() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.yx
-    public /* synthetic */ boolean J(fy fyVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public void b(float f9, float f10, int i10, View view) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
-        ArrayList arrayList = saveToGallerySettingsActivity.s;
-        if (i10 == saveToGallerySettingsActivity.e) {
-            saveToGallerySettingsActivity.X().savePhoto = !r11.savePhoto;
-            saveToGallerySettingsActivity.Y();
-            saveToGallerySettingsActivity.Z();
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                g31 g31Var = (g31) ((dg.s1) this.b).e;
+                if (g31Var != null) {
+                    g31Var.run();
+                    break;
+                }
+                break;
+            case 1:
+                ((p31) this.b).dismiss();
+                break;
+            case 2:
+                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
+                if (saveToGallerySettingsActivity.d) {
+                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
+                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
+                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
+                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
+                }
+                saveToGallerySettingsActivity.finishFragment();
+                break;
+            case 3:
+                ((z31) this.b).dismiss();
+                break;
+            case 4:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+                MessageObject messageObject = secretMediaViewer.e0;
+                if (messageObject != null) {
+                    TLRPC.Message message = messageObject.messageOwner;
+                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
+                        ph.f3 f3Var = secretMediaViewer.r;
+                        if (f3Var.S) {
+                            f3Var.e(true);
+                            break;
+                        } else {
+                            secretMediaViewer.l();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                b71 b71Var = (b71) this.b;
+                if (b71Var.X instanceof TLRPC.User) {
+                    ph.d dVar = b71Var.e0;
+                    if (!dVar.K) {
+                        dVar.setLoading(true);
+                        b71Var.T((TLRPC.User) b71Var.X, null, null);
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                b81.a((b81) this.b);
+                break;
+            case 7:
+                ((rd1) this.b).c(true);
+                break;
+            case 8:
+                ((rd1) ((gg.u) this.b).c).c(true);
+                break;
+            case 9:
+                yd1 yd1Var = (yd1) this.b;
+                ArrayList arrayList = yd1Var.f;
+                HashSet hashSet = yd1Var.w;
+                if (!hashSet.isEmpty()) {
+                    TLRPC.User user = yd1Var.getMessagesController().getUser(Long.valueOf(yd1Var.getUserConfig().getClientUserId()));
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
+                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
+                        }
+                    }
+                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
+                        yd1Var.getMessagesController().putChat(chat, false);
+                        yd1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
+                    }
+                    yd1Var.finishFragment();
+                    break;
+                }
+                break;
+            default:
+                si1 si1Var = (si1) this.b;
+                si1Var.a.c(!r0.b(), true);
+                si1Var.c.setEnabled(si1Var.a.b());
+                si1Var.c.animate().alpha(si1Var.a.b() ? 1.0f : 0.5f).start();
+                break;
         }
-        if (i10 == saveToGallerySettingsActivity.f) {
-            saveToGallerySettingsActivity.X().saveVideo = !r11.saveVideo;
-            saveToGallerySettingsActivity.Y();
-            saveToGallerySettingsActivity.Z();
-            return;
-        }
-        if (((l31) arrayList.get(i10)).a != 1) {
-            if (((l31) arrayList.get(i10)).a == 2) {
-                Bundle bundle = new Bundle();
-                bundle.putLong("dialog_id", ((l31) arrayList.get(i10)).c.dialogId);
-                bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
-                saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
-                return;
-            }
-            if (((l31) arrayList.get(i10)).a == 4) {
-                org.telegram.ui.ActionBar.c2 c2Var = org.telegram.ui.Components.c5.O(saveToGallerySettingsActivity.getParentActivity(), LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle), LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert), LocaleController.getString(R.string.Delete), new ky0(saveToGallerySettingsActivity, 11), null).a;
-                c2Var.show();
-                c2Var.h();
-                return;
-            }
-            return;
-        }
-        Bundle bundle2 = new Bundle();
-        bundle2.putBoolean("onlySelect", true);
-        bundle2.putBoolean("checkCanWrite", false);
-        int i11 = saveToGallerySettingsActivity.a;
-        if (i11 == 2) {
-            bundle2.putInt("dialogsType", 6);
-        } else if (i11 == 4) {
-            bundle2.putInt("dialogsType", 5);
-        } else {
-            bundle2.putInt("dialogsType", 4);
-        }
-        bundle2.putBoolean("allowGlobalSearch", false);
-        fy fyVar = new fy(bundle2);
-        fyVar.y2 = new i31(saveToGallerySettingsActivity);
-        saveToGallerySettingsActivity.presentFragment(fyVar);
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean b1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.yx
-    public boolean v(fy fyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ze1 ze1Var) {
-        Bundle bundle = new Bundle();
-        bundle.putLong("dialog_id", ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId);
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
-        bundle.putInt(TeXSymbolParser.TYPE_ATTR, saveToGallerySettingsActivity.a);
-        saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle), true);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void h() {
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void r(float f9) {
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public boolean b(float f9, float f10, int i10, View view) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.a;
-        ArrayList arrayList = saveToGallerySettingsActivity.s;
-        if (((l31) arrayList.get(i10)).a != 2) {
-            return false;
-        }
-        SaveToGallerySettingsHelper.DialogException dialogException = ((l31) arrayList.get(i10)).c;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(saveToGallerySettingsActivity.getParentActivity(), null);
-        org.telegram.ui.ActionBar.g1 c3 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, LocaleController.getString(R.string.EditException), false, null);
-        org.telegram.ui.ActionBar.g1 c6 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteException), false, null);
-        int i11 = org.telegram.ui.ActionBar.g6.p7;
-        c6.c(org.telegram.ui.ActionBar.g6.w0(null, i11, false), org.telegram.ui.ActionBar.g6.w0(null, i11, false));
-        org.telegram.ui.ActionBar.o1 Q = org.telegram.ui.Components.c5.Q(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f9, f10);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(Q);
-        c3.setOnClickListener(new bg.p2(saveToGallerySettingsActivity, Q, i10, 18));
-        c6.setOnClickListener(new c0(saveToGallerySettingsActivity, Q, dialogException, 15));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void o0(View view, float f9, float f10) {
     }
 }

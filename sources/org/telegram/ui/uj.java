@@ -1,77 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class uj extends org.telegram.ui.Cells.v0 {
-    public final /* synthetic */ tn g2;
+public final class uj extends f2.v {
+    public final /* synthetic */ xn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uj(Context context, org.telegram.ui.ActionBar.c6 c6Var, tn tnVar) {
-        super(context, c6Var, false);
-        this.g2 = tnVar;
+    public uj(xn xnVar) {
+        this.c = xnVar;
     }
 
-    @Override // org.telegram.ui.Cells.v0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        tn tnVar = this.g2;
-        if (tnVar.x8 != null) {
-            return;
-        }
-        float y8 = ((tnVar.t0.getY() + tnVar.o9) - getY()) - AndroidUtilities.dp(4.0f);
-        if (y8 <= 0.0f) {
-            super.onDraw(canvas);
-        } else if (y8 < getMeasuredHeight()) {
-            canvas.save();
-            canvas.clipRect(0.0f, y8, getMeasuredWidth(), getMeasuredHeight());
-            super.onDraw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.l lVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        tn tnVar = this.g2;
-        lVar = ((org.telegram.ui.ActionBar.o2) tnVar).actionBar;
-        if (lVar.s() || tnVar.A9()) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Cells.v0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.l lVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        tn tnVar = this.g2;
-        lVar = ((org.telegram.ui.ActionBar.o2) tnVar).actionBar;
-        if (lVar.s() || tnVar.A9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f9) {
-        super.setAlpha(f9);
-        setVisibility(f9 > 0.0f ? 0 : 4);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f9) {
-        if (getTranslationY() != f9) {
-            invalidate();
-        }
-        super.setTranslationY(f9);
+    @Override // f2.v
+    public final int i(int i10) {
+        int i11;
+        MessageObject messageObject;
+        MessageObject.GroupedMessages X8;
+        xn xnVar = this.c;
+        jm jmVar = xnVar.x0;
+        int i12 = jmVar.G;
+        return (i10 < i12 || i10 >= jmVar.H || (i11 = i10 - i12) < 0 || i11 >= jmVar.L().size() || (X8 = xnVar.X8((messageObject = (MessageObject) xnVar.x0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
     }
 }

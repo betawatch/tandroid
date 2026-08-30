@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class FontInfo {
     public static final int NUMBER_OF_CHAR_CODES = 256;
@@ -35,14 +35,14 @@ public class FontInfo {
     private final Map<CharCouple, Float> kern = new HashMap();
     private char skewChar = 65535;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public class CharCouple {
         private final char left;
         private final char right;
 
-        public CharCouple(char c3, char c6) {
+        public CharCouple(char c3, char c10) {
             this.left = c3;
-            this.right = c6;
+            this.right = c10;
         }
 
         public boolean equals(Object obj) {
@@ -55,15 +55,15 @@ public class FontInfo {
         }
     }
 
-    public FontInfo(int i10, Object obj, String str, String str2, int i11, float f9, float f10, float f11, String str3, String str4, String str5, String str6, String str7) {
+    public FontInfo(int i10, Object obj, String str, String str2, int i11, float f10, float f11, float f12, String str3, String str4, String str5, String str6, String str7) {
         this.unicode = null;
         this.fontId = i10;
         this.base = obj;
         this.path = str;
         this.fontName = str2;
-        this.xHeight = f9;
-        this.space = f10;
-        this.quad = f11;
+        this.xHeight = f10;
+        this.space = f11;
+        this.quad = f12;
         this.boldVersion = str3;
         this.romanVersion = str4;
         this.ssVersion = str5;
@@ -80,12 +80,12 @@ public class FontInfo {
         fonts.put(Integer.valueOf(i10), this);
     }
 
-    public void addKern(char c3, char c6, float f9) {
-        this.kern.put(new CharCouple(c3, c6), new Float(f9));
+    public void addKern(char c3, char c10, float f10) {
+        this.kern.put(new CharCouple(c3, c10), new Float(f10));
     }
 
-    public void addLigature(char c3, char c6, char c10) {
-        this.lig.put(new CharCouple(c3, c6), new Character(c10));
+    public void addLigature(char c3, char c10, char c11) {
+        this.lig.put(new CharCouple(c3, c10), new Character(c11));
     }
 
     public int getBoldId() {
@@ -116,16 +116,16 @@ public class FontInfo {
         return this.itId;
     }
 
-    public float getKern(char c3, char c6, float f9) {
-        Float f10 = this.kern.get(new CharCouple(c3, c6));
-        if (f10 == null) {
+    public float getKern(char c3, char c10, float f10) {
+        Float f11 = this.kern.get(new CharCouple(c3, c10));
+        if (f11 == null) {
             return 0.0f;
         }
-        return f10.floatValue() * f9;
+        return f11.floatValue() * f10;
     }
 
-    public CharFont getLigature(char c3, char c6) {
-        Character ch2 = this.lig.get(new CharCouple(c3, c6));
+    public CharFont getLigature(char c3, char c10) {
+        Character ch2 = this.lig.get(new CharCouple(c3, c10));
         if (ch2 == null) {
             return null;
         }
@@ -142,8 +142,8 @@ public class FontInfo {
         return hashMap == null ? this.nextLarger[c3] : this.nextLarger[hashMap.get(Character.valueOf(c3)).charValue()];
     }
 
-    public float getQuad(float f9) {
-        return this.quad * f9;
+    public float getQuad(float f10) {
+        return this.quad * f10;
     }
 
     public int getRomanId() {
@@ -154,8 +154,8 @@ public class FontInfo {
         return this.skewChar;
     }
 
-    public float getSpace(float f9) {
-        return this.space * f9;
+    public float getSpace(float f10) {
+        return this.space * f10;
     }
 
     public int getSsId() {
@@ -166,8 +166,8 @@ public class FontInfo {
         return this.ttId;
     }
 
-    public float getXHeight(float f9) {
-        return this.xHeight * f9;
+    public float getXHeight(float f10) {
+        return this.xHeight * f10;
     }
 
     public boolean hasSpace() {
@@ -218,18 +218,18 @@ public class FontInfo {
         }
     }
 
-    public void setNextLarger(char c3, char c6, int i10) {
+    public void setNextLarger(char c3, char c10, int i10) {
         HashMap<Character, Character> hashMap = this.unicode;
         if (hashMap == null) {
-            this.nextLarger[c3] = new CharFont(c6, i10);
+            this.nextLarger[c3] = new CharFont(c10, i10);
         } else {
             if (hashMap.containsKey(Character.valueOf(c3))) {
-                this.nextLarger[this.unicode.get(Character.valueOf(c3)).charValue()] = new CharFont(c6, i10);
+                this.nextLarger[this.unicode.get(Character.valueOf(c3)).charValue()] = new CharFont(c10, i10);
                 return;
             }
             char size = (char) this.unicode.size();
             this.unicode.put(Character.valueOf(c3), Character.valueOf(size));
-            this.nextLarger[size] = new CharFont(c6, i10);
+            this.nextLarger[size] = new CharFont(c10, i10);
         }
     }
 

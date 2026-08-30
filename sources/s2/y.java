@@ -1,36 +1,37 @@
 package s2;
 
+import j7.l5;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.th;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ m5.i A;
-    public static final /* synthetic */ m5.i B;
-    public static final /* synthetic */ m5.i C;
-    public static final /* synthetic */ m5.i D;
-    public static final /* synthetic */ m5.i E;
-    public static final /* synthetic */ m5.i F;
-    public static final /* synthetic */ m5.i G;
-    public static final /* synthetic */ m5.i H;
-    public static final /* synthetic */ m5.i I;
-    public static final /* synthetic */ m5.i J;
-    public static final /* synthetic */ m5.i K;
-    public static final /* synthetic */ m5.i L;
-    public static final /* synthetic */ m5.i M;
-    public static final /* synthetic */ m5.i N;
-    public static final /* synthetic */ m5.i O;
-    public static final /* synthetic */ m5.i P;
-    public static final /* synthetic */ m5.i Q;
-    public static final /* synthetic */ m5.i R;
-    public static final /* synthetic */ m5.i S;
-    public static final /* synthetic */ m5.i T;
-    public static final /* synthetic */ m5.i U;
-    public static final /* synthetic */ m5.i V;
-    public static final /* synthetic */ m5.i W;
-    public static final /* synthetic */ m5.i X;
+    public static final /* synthetic */ a3.c B;
+    public static final /* synthetic */ a3.c C;
+    public static final /* synthetic */ a3.c D;
+    public static final /* synthetic */ a3.c E;
+    public static final /* synthetic */ a3.c F;
+    public static final /* synthetic */ a3.c G;
+    public static final /* synthetic */ a3.c H;
+    public static final /* synthetic */ a3.c I;
+    public static final /* synthetic */ a3.c J;
+    public static final /* synthetic */ a3.c K;
+    public static final /* synthetic */ a3.c L;
+    public static final /* synthetic */ a3.c M;
+    public static final /* synthetic */ a3.c N;
+    public static final /* synthetic */ a3.c O;
+    public static final /* synthetic */ a3.c P;
+    public static final /* synthetic */ a3.c Q;
+    public static final /* synthetic */ a3.c R;
+    public static final /* synthetic */ a3.c S;
+    public static final /* synthetic */ a3.c T;
+    public static final /* synthetic */ a3.c U;
+    public static final /* synthetic */ a3.c V;
+    public static final /* synthetic */ a3.c W;
+    public static final /* synthetic */ a3.c X;
+    public static final /* synthetic */ a3.c Y;
     public Date e;
     public Date f;
     public long h;
@@ -38,50 +39,50 @@ public final class y extends com.googlecode.mp4parser.c {
     public int r;
     public int s;
     public float v;
-    public ac.d w;
+    public cc.d w;
     public double x;
     public double y;
 
     static {
-        be.a aVar = new be.a(y.class, "TrackHeaderBox.java");
-        A = aVar.e(aVar.d("getCreationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "java.util.Date"));
-        B = aVar.e(aVar.d("getModificationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "java.util.Date"));
-        J = aVar.e(aVar.d("getContent", "com.coremedia.iso.boxes.TrackHeaderBox", "java.nio.ByteBuffer", "byteBuffer", "void"));
-        K = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "java.lang.String"));
-        L = aVar.e(aVar.d("setCreationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "java.util.Date", "creationTime", "void"));
-        M = aVar.e(aVar.d("setModificationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "java.util.Date", "modificationTime", "void"));
-        N = aVar.e(aVar.d("setTrackId", "com.coremedia.iso.boxes.TrackHeaderBox", "long", "trackId", "void"));
-        O = aVar.e(aVar.d("setDuration", "com.coremedia.iso.boxes.TrackHeaderBox", "long", "duration", "void"));
-        P = aVar.e(aVar.d("setLayer", "com.coremedia.iso.boxes.TrackHeaderBox", "int", "layer", "void"));
-        Q = aVar.e(aVar.d("setAlternateGroup", "com.coremedia.iso.boxes.TrackHeaderBox", "int", "alternateGroup", "void"));
-        R = aVar.e(aVar.d("setVolume", "com.coremedia.iso.boxes.TrackHeaderBox", "float", "volume", "void"));
-        S = aVar.e(aVar.d("setMatrix", "com.coremedia.iso.boxes.TrackHeaderBox", "com.googlecode.mp4parser.util.Matrix", "matrix", "void"));
-        C = aVar.e(aVar.d("getTrackId", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "long"));
-        T = aVar.e(aVar.d("setWidth", "com.coremedia.iso.boxes.TrackHeaderBox", "double", "width", "void"));
-        U = aVar.e(aVar.d("setHeight", "com.coremedia.iso.boxes.TrackHeaderBox", "double", "height", "void"));
+        de.a aVar = new de.a(y.class, "TrackHeaderBox.java");
+        B = aVar.e(aVar.d("getCreationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "java.util.Date"));
+        C = aVar.e(aVar.d("getModificationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "java.util.Date"));
+        K = aVar.e(aVar.d("getContent", "com.coremedia.iso.boxes.TrackHeaderBox", "java.nio.ByteBuffer", "byteBuffer", "void"));
+        L = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "java.lang.String"));
+        M = aVar.e(aVar.d("setCreationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "java.util.Date", "creationTime", "void"));
+        N = aVar.e(aVar.d("setModificationTime", "com.coremedia.iso.boxes.TrackHeaderBox", "java.util.Date", "modificationTime", "void"));
+        O = aVar.e(aVar.d("setTrackId", "com.coremedia.iso.boxes.TrackHeaderBox", "long", "trackId", "void"));
+        P = aVar.e(aVar.d("setDuration", "com.coremedia.iso.boxes.TrackHeaderBox", "long", "duration", "void"));
+        Q = aVar.e(aVar.d("setLayer", "com.coremedia.iso.boxes.TrackHeaderBox", "int", "layer", "void"));
+        R = aVar.e(aVar.d("setAlternateGroup", "com.coremedia.iso.boxes.TrackHeaderBox", "int", "alternateGroup", "void"));
+        S = aVar.e(aVar.d("setVolume", "com.coremedia.iso.boxes.TrackHeaderBox", "float", "volume", "void"));
+        T = aVar.e(aVar.d("setMatrix", "com.coremedia.iso.boxes.TrackHeaderBox", "com.googlecode.mp4parser.util.Matrix", "matrix", "void"));
+        D = aVar.e(aVar.d("getTrackId", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "long"));
+        U = aVar.e(aVar.d("setWidth", "com.coremedia.iso.boxes.TrackHeaderBox", "double", "width", "void"));
+        V = aVar.e(aVar.d("setHeight", "com.coremedia.iso.boxes.TrackHeaderBox", "double", "height", "void"));
         aVar.e(aVar.d("isEnabled", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "boolean"));
         aVar.e(aVar.d("isInMovie", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "boolean"));
         aVar.e(aVar.d("isInPreview", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "boolean"));
         aVar.e(aVar.d("isInPoster", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "boolean"));
-        V = aVar.e(aVar.d("setEnabled", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "enabled", "void"));
-        W = aVar.e(aVar.d("setInMovie", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "inMovie", "void"));
-        X = aVar.e(aVar.d("setInPreview", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "inPreview", "void"));
+        W = aVar.e(aVar.d("setEnabled", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "enabled", "void"));
+        X = aVar.e(aVar.d("setInMovie", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "inMovie", "void"));
+        Y = aVar.e(aVar.d("setInPreview", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "inPreview", "void"));
         aVar.e(aVar.d("setInPoster", "com.coremedia.iso.boxes.TrackHeaderBox", "boolean", "inPoster", "void"));
-        D = aVar.e(aVar.d("getDuration", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "long"));
-        E = aVar.e(aVar.d("getLayer", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "int"));
-        F = aVar.e(aVar.d("getAlternateGroup", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "int"));
-        G = aVar.e(aVar.d("getVolume", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "float"));
+        E = aVar.e(aVar.d("getDuration", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "long"));
+        F = aVar.e(aVar.d("getLayer", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "int"));
+        G = aVar.e(aVar.d("getAlternateGroup", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "int"));
+        H = aVar.e(aVar.d("getVolume", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "float"));
         aVar.e(aVar.d("getMatrix", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "com.googlecode.mp4parser.util.Matrix"));
-        H = aVar.e(aVar.d("getWidth", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "double"));
-        I = aVar.e(aVar.d("getHeight", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "double"));
+        I = aVar.e(aVar.d("getWidth", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "double"));
+        J = aVar.e(aVar.d("getHeight", "com.coremedia.iso.boxes.TrackHeaderBox", "", "", "double"));
     }
 
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = h7.p.b(r2.b.j(byteBuffer));
-            this.f = h7.p.b(r2.b.j(byteBuffer));
+            this.e = l5.b(r2.b.j(byteBuffer));
+            this.f = l5.b(r2.b.j(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             r2.b.i(byteBuffer);
             long j10 = byteBuffer.getLong();
@@ -90,8 +91,8 @@ public final class y extends com.googlecode.mp4parser.c {
                 throw new RuntimeException("The tracks duration is bigger than Long.MAX_VALUE");
             }
         } else {
-            this.e = h7.p.b(r2.b.i(byteBuffer));
-            this.f = h7.p.b(r2.b.i(byteBuffer));
+            this.e = l5.b(r2.b.i(byteBuffer));
+            this.f = l5.b(r2.b.i(byteBuffer));
             this.h = r2.b.i(byteBuffer);
             r2.b.i(byteBuffer);
             this.n = r2.b.i(byteBuffer);
@@ -102,26 +103,26 @@ public final class y extends com.googlecode.mp4parser.c {
         this.s = r2.b.h(byteBuffer);
         this.v = r2.b.g(byteBuffer);
         r2.b.h(byteBuffer);
-        this.w = ac.d.a(byteBuffer);
+        this.w = cc.d.a(byteBuffer);
         this.x = r2.b.f(byteBuffer);
         this.y = r2.b.f(byteBuffer);
     }
 
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        com.google.firebase.messaging.s c3 = be.a.c(J, this, this, byteBuffer);
+        com.google.firebase.messaging.r c3 = de.a.c(K, this, this, byteBuffer);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c3);
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(h7.p.a(this.e));
-            byteBuffer.putLong(h7.p.a(this.f));
+            byteBuffer.putLong(l5.a(this.e));
+            byteBuffer.putLong(l5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) h7.p.a(this.e));
-            byteBuffer.putInt((int) h7.p.a(this.f));
+            byteBuffer.putInt((int) l5.a(this.e));
+            byteBuffer.putInt((int) l5.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putInt((int) this.n);
@@ -144,39 +145,39 @@ public final class y extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = be.a.b(K, this, this);
+        com.google.firebase.messaging.r b10 = de.a.b(L, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
-        StringBuilder sb2 = new StringBuilder("TrackHeaderBox[creationTime=");
-        th.u(be.a.b(A, this, this));
-        sb2.append(this.e);
-        sb2.append(";modificationTime=");
-        th.u(be.a.b(B, this, this));
-        sb2.append(this.f);
-        sb2.append(";trackId=");
-        th.u(be.a.b(C, this, this));
-        sb2.append(this.h);
-        sb2.append(";duration=");
-        th.u(be.a.b(D, this, this));
-        sb2.append(this.n);
-        sb2.append(";layer=");
-        th.u(be.a.b(E, this, this));
-        sb2.append(this.r);
-        sb2.append(";alternateGroup=");
-        th.u(be.a.b(F, this, this));
-        sb2.append(this.s);
-        sb2.append(";volume=");
-        th.u(be.a.b(G, this, this));
-        sb2.append(this.v);
-        sb2.append(";matrix=");
-        sb2.append(this.w);
-        sb2.append(";width=");
-        th.u(be.a.b(H, this, this));
-        sb2.append(this.x);
-        sb2.append(";height=");
-        th.u(be.a.b(I, this, this));
-        sb2.append(this.y);
-        sb2.append("]");
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder("TrackHeaderBox[creationTime=");
+        yh.v(de.a.b(B, this, this));
+        sb.append(this.e);
+        sb.append(";modificationTime=");
+        yh.v(de.a.b(C, this, this));
+        sb.append(this.f);
+        sb.append(";trackId=");
+        yh.v(de.a.b(D, this, this));
+        sb.append(this.h);
+        sb.append(";duration=");
+        yh.v(de.a.b(E, this, this));
+        sb.append(this.n);
+        sb.append(";layer=");
+        yh.v(de.a.b(F, this, this));
+        sb.append(this.r);
+        sb.append(";alternateGroup=");
+        yh.v(de.a.b(G, this, this));
+        sb.append(this.s);
+        sb.append(";volume=");
+        yh.v(de.a.b(H, this, this));
+        sb.append(this.v);
+        sb.append(";matrix=");
+        sb.append(this.w);
+        sb.append(";width=");
+        yh.v(de.a.b(I, this, this));
+        sb.append(this.x);
+        sb.append(";height=");
+        yh.v(de.a.b(J, this, this));
+        sb.append(this.y);
+        sb.append("]");
+        return sb.toString();
     }
 }

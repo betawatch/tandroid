@@ -113,13 +113,13 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(10);
-        sb2.append("--");
-        sb2.append(this.a < 10 ? "0" : "");
-        sb2.append(this.a);
-        sb2.append(this.b < 10 ? "-0" : "-");
-        sb2.append(this.b);
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder(10);
+        sb.append("--");
+        sb.append(this.a < 10 ? "0" : "");
+        sb.append(this.a);
+        sb.append(this.b < 10 ? "-0" : "-");
+        sb.append(this.b);
+        return sb.toString();
     }
 
     private Object writeReplace() {

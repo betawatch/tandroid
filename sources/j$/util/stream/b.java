@@ -33,26 +33,26 @@ public abstract class b extends d {
             this.c = j10;
         }
         AtomicReference atomicReference = this.h;
-        boolean z10 = false;
+        boolean z4 = false;
         b bVar = this;
         while (true) {
             obj = atomicReference.get();
             if (obj != null) {
                 break;
             }
-            boolean z11 = bVar.i;
-            if (!z11) {
+            boolean z10 = bVar.i;
+            if (!z10) {
                 CountedCompleter<?> completer = bVar.getCompleter();
                 while (true) {
                     b bVar2 = (b) ((d) completer);
-                    if (z11 || bVar2 == null) {
+                    if (z10 || bVar2 == null) {
                         break;
                     }
-                    z11 = bVar2.i;
+                    z10 = bVar2.i;
                     completer = bVar2.getCompleter();
                 }
             }
-            if (z11) {
+            if (z10) {
                 obj = bVar.h();
                 break;
             }
@@ -64,14 +64,14 @@ public abstract class b extends d {
             b bVar4 = (b) bVar.c(spliterator);
             bVar.e = bVar4;
             bVar.setPendingCount(1);
-            if (z10) {
+            if (z4) {
                 spliterator = trySplit;
                 bVar = bVar3;
                 bVar3 = bVar4;
             } else {
                 bVar = bVar4;
             }
-            z10 = !z10;
+            z4 = !z4;
             bVar3.fork();
             estimateSize = spliterator.estimateSize();
         }

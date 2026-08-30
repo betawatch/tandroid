@@ -4,16 +4,16 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class z implements Animator.AnimatorListener {
-    public final /* synthetic */ n1 A;
-    public final /* synthetic */ e0 B;
+    public final /* synthetic */ l1 B;
+    public final /* synthetic */ e0 C;
     public final float a;
     public final float b;
     public final float c;
     public final float d;
-    public final n1 e;
+    public final l1 e;
     public final int f;
     public final ValueAnimator h;
     public boolean n;
@@ -24,20 +24,20 @@ public final class z implements Animator.AnimatorListener {
     public float x;
     public final /* synthetic */ int y;
 
-    public z(e0 e0Var, n1 n1Var, int i10, float f9, float f10, float f11, float f12, int i11, n1 n1Var2) {
-        this.B = e0Var;
+    public z(e0 e0Var, l1 l1Var, int i10, float f10, float f11, float f12, float f13, int i11, l1 l1Var2) {
+        this.C = e0Var;
         this.y = i11;
-        this.A = n1Var2;
+        this.B = l1Var2;
         this.f = i10;
-        this.e = n1Var;
-        this.a = f9;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
+        this.e = l1Var;
+        this.a = f10;
+        this.b = f11;
+        this.c = f12;
+        this.d = f13;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new cg.c1(this, 2));
-        ofFloat.setTarget(n1Var.a);
+        ofFloat.addUpdateListener(new eg.b1(this, 2));
+        ofFloat.setTarget(l1Var.a);
         ofFloat.addListener(this);
         this.x = 0.0f;
     }
@@ -61,19 +61,19 @@ public final class z implements Animator.AnimatorListener {
             return;
         }
         int i10 = this.y;
-        n1 n1Var = this.A;
-        e0 e0Var = this.B;
+        l1 l1Var = this.B;
+        e0 e0Var = this.C;
         if (i10 <= 0) {
-            e0Var.x.a(e0Var.D, n1Var);
+            e0Var.x.a(e0Var.E, l1Var);
         } else {
-            e0Var.a.add(n1Var.a);
+            e0Var.a.add(l1Var.a);
             this.n = true;
             if (i10 > 0) {
-                e0Var.D.post(new ab.o(e0Var, this, i10));
+                e0Var.E.post(new androidx.biometric.k(e0Var, this, i10));
             }
         }
-        View view = e0Var.I;
-        View view2 = n1Var.a;
+        View view = e0Var.J;
+        View view2 = l1Var.a;
         if (view == view2) {
             e0Var.o(view2);
         }

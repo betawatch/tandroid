@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class NetworkMonitor {
     private static final String TAG = "NetworkMonitor";
@@ -19,7 +19,7 @@ public class NetworkMonitor {
     private final ArrayList<NetworkObserver> networkObservers;
     private int numObservers;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class InstanceHolder {
         static final NetworkMonitor instance = new NetworkMonitor();
 
@@ -27,7 +27,7 @@ public class NetworkMonitor {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface NetworkObserver {
         void onConnectionTypeChanged(NetworkChangeDetector.ConnectionType connectionType);
     }
@@ -41,8 +41,8 @@ public class NetworkMonitor {
         return Build.VERSION.SDK_INT;
     }
 
-    private static void assertIsTrue(boolean z10) {
-        if (!z10) {
+    private static void assertIsTrue(boolean z4) {
+        if (!z4) {
             throw new AssertionError("Expected to be true");
         }
     }
@@ -109,15 +109,15 @@ public class NetworkMonitor {
     private native void nativeNotifyOfNetworkPreference(long j10, NetworkChangeDetector.ConnectionType connectionType, int i10);
 
     private boolean networkBindingSupported() {
-        boolean z10;
+        boolean z4;
         synchronized (this.networkChangeDetectorLock) {
             try {
                 NetworkChangeDetector networkChangeDetector = this.networkChangeDetector;
-                z10 = networkChangeDetector != null && networkChangeDetector.supportNetworkCallback();
+                z4 = networkChangeDetector != null && networkChangeDetector.supportNetworkCallback();
             } finally {
             }
         }
-        return z10;
+        return z4;
     }
 
     private void notifyObserversOfConnectionTypeChange(NetworkChangeDetector.ConnectionType connectionType) {

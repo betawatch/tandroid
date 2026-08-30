@@ -1,37 +1,14 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class jv0 extends t50 {
-    public final /* synthetic */ lv0 d;
+public final class jv0 {
+    public float a;
+    public float b;
+    public boolean c;
 
-    public jv0(lv0 lv0Var) {
-        this.d = lv0Var;
-    }
-
-    @Override // org.telegram.ui.Components.xn0
-    public final CharSequence d() {
-        lv0 lv0Var = this.d;
-        int i10 = lv0Var.E;
-        String[] strArr = lv0Var.B;
-        if (i10 < strArr.length) {
-            return strArr[i10];
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.t50
-    public final int i() {
-        return this.d.B.length - 1;
-    }
-
-    @Override // org.telegram.ui.Components.t50
-    public final int j() {
-        return this.d.E;
-    }
-
-    @Override // org.telegram.ui.Components.t50
-    public final void k(int i10) {
-        this.d.setOption(i10);
+    public jv0(float f10, float f11) {
+        this.a = f10;
+        this.b = f11;
     }
 }

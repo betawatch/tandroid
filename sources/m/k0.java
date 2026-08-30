@@ -9,7 +9,7 @@ import android.widget.ListAdapter;
 import android.widget.SpinnerAdapter;
 import android.widget.ThemedSpinnerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class k0 implements ListAdapter, SpinnerAdapter {
     public final SpinnerAdapter a;
@@ -23,7 +23,7 @@ public final class k0 implements ListAdapter, SpinnerAdapter {
         if (theme == null || Build.VERSION.SDK_INT < 23 || !(spinnerAdapter instanceof ThemedSpinnerAdapter)) {
             return;
         }
-        i0.a((ThemedSpinnerAdapter) spinnerAdapter, theme);
+        h0.a((ThemedSpinnerAdapter) spinnerAdapter, theme);
     }
 
     @Override // android.widget.ListAdapter

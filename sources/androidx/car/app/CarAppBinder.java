@@ -7,9 +7,9 @@ import android.os.Looper;
 import android.util.Log;
 import androidx.car.app.ICarApp;
 import androidx.lifecycle.o;
-import j7.l1;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class CarAppBinder extends ICarApp.Stub {
     private m mCurrentSession;
@@ -179,7 +179,7 @@ final class CarAppBinder extends ICarApp.Stub {
     public void setHandshakeInfo(HandshakeInfo handshakeInfo) {
         int hostCarAppApiLevel = handshakeInfo.getHostCarAppApiLevel();
         if (hostCarAppApiLevel < 1 || hostCarAppApiLevel > z.a.a()) {
-            throw new IllegalArgumentException(l1.k(hostCarAppApiLevel, "Invalid Car App API level received: "));
+            throw new IllegalArgumentException(a2.j(hostCarAppApiLevel, "Invalid Car App API level received: "));
         }
         this.mHandshakeInfo = handshakeInfo;
     }

@@ -1,57 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class z41 extends MetricAffectingSpan {
-    public final CharSequence a;
-    public final int b;
-    public final int c;
-    public final byte d;
-    public final h01 e;
+public final class z41 implements vx0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ e51 b;
 
-    public z41(CharSequence charSequence, int i10, int i11, byte b10, h01 h01Var) {
-        this.a = charSequence;
-        this.b = i10;
-        this.c = i11;
-        this.d = b10;
-        this.e = h01Var;
+    public z41(e51 e51Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = e51Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
-        byte b10 = this.d;
-        if (b10 == 2) {
-            textPaint.setColor(-1);
-        } else if (b10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.fc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.ec, false));
+    @Override // org.telegram.ui.Components.vx0
+    public final void a() {
+        e51 e51Var = this.b;
+        f2.o0 adapter = e51Var.n.getAdapter();
+        d51 d51Var = e51Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == d51Var) {
+            while (i10 < d51Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) d51Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    d51Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
+            }
+            return;
         }
-        h01 h01Var = this.e;
-        if (h01Var != null) {
-            h01Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-            textPaint.setUnderlineText(false);
-        }
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        h01 h01Var = this.e;
-        if (h01Var != null) {
-            h01Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
+        tf.m1 m1Var = e51Var.v;
+        ArrayList arrayList = m1Var.B;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                m1Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
         }
     }
 }

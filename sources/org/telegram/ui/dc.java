@@ -1,42 +1,63 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class dc extends d61 {
-    public final /* synthetic */ yb Z1;
-    public final /* synthetic */ u51[] a2;
-    public final /* synthetic */ vc b2;
+public final /* synthetic */ class dc implements Utilities.Callback3 {
+    public final /* synthetic */ bd a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dc(vc vcVar, vc vcVar2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, int i12, yb ybVar, u51[] u51VarArr) {
-        super(vcVar2, activity, true, num, i10, true, c6Var, i11, i12);
-        this.b2 = vcVar;
-        this.Z1 = ybVar;
-        this.a2 = u51VarArr;
+    public /* synthetic */ dc(bd bdVar, int i10, View view) {
+        this.a = bdVar;
+        this.b = i10;
+        this.c = view;
     }
 
-    @Override // org.telegram.ui.d61
-    public final long getDialogId() {
-        return this.b2.a;
-    }
-
-    @Override // org.telegram.ui.d61
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.d61
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.Z1.run(Long.valueOf(l10 == null ? 0L : l10.longValue()), num, tL_starGiftUnique);
-        u51 u51Var = this.a2[0];
-        if (u51Var != null) {
-            this.b2.M = null;
-            u51Var.dismiss();
+    @Override // org.telegram.messenger.Utilities.Callback3
+    public final void run(Object obj, Object obj2, Object obj3) {
+        Long l10 = (Long) obj;
+        Integer num = (Integer) obj2;
+        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
+        bd bdVar = this.a;
+        int i10 = bdVar.R;
+        int i11 = this.b;
+        if (i11 == i10) {
+            bdVar.n = l10.longValue();
+            bdVar.a1(true);
+        } else if (i11 == bdVar.Z) {
+            bdVar.w = l10.longValue();
+            bdVar.b1();
+        } else if (i11 == bdVar.c0) {
+            if (l10.longValue() == 0) {
+                bdVar.y = null;
+            } else if (tL_starGiftUnique != null) {
+                TLRPC.TL_emojiStatusCollectible emojiStatusCollectibleFromGift = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
+                if (num != null) {
+                    emojiStatusCollectibleFromGift.flags |= 1;
+                    emojiStatusCollectibleFromGift.until = num.intValue();
+                }
+                bdVar.y = emojiStatusCollectibleFromGift;
+                bdVar.s = -1;
+                bdVar.w = 0L;
+            } else {
+                TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+                tL_emojiStatus.document_id = l10.longValue();
+                if (num != null) {
+                    tL_emojiStatus.flags |= 1;
+                    tL_emojiStatus.until = num.intValue();
+                }
+                bdVar.y = tL_emojiStatus;
+            }
+            bdVar.b1();
         }
+        bdVar.X0(true);
+        ((oc) this.c).c(l10.longValue(), tL_starGiftUnique != null, true);
+        bdVar.Z0(true);
     }
 }

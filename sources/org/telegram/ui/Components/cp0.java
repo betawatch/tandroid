@@ -1,57 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
+import android.graphics.Canvas;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class cp0 extends f2.a1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dq0 b;
+public final class cp0 {
+    public final hu a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    public /* synthetic */ cp0(dq0 dq0Var, int i10) {
-        this.a = i10;
-        this.b = dq0Var;
+    public cp0(View view) {
+        hu huVar = new hu(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = huVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
     }
 
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        lg.e eVar;
-        rb rbVar;
-        switch (this.a) {
-            case 0:
-                if (i11 != 0) {
-                    dq0 dq0Var = this.b;
-                    dq0.s0(dq0Var);
-                    dq0Var.m0 = dq0Var.l0;
-                    break;
-                }
-                break;
-            case 1:
-                dq0 dq0Var2 = this.b;
-                if (i11 != 0) {
-                    dq0.s0(dq0Var2);
-                    dq0Var2.m0 = dq0Var2.l0;
-                }
-                mc mcVar = mc.w;
-                if (mcVar != null && (rbVar = mcVar.e) != null && (rbVar.getParent() instanceof View) && ((View) mc.w.e.getParent()).getParent() == dq0Var2.w) {
-                    mc.e();
-                }
-                if (Build.VERSION.SDK_INT >= 31 && (eVar = dq0Var2.K0) != null) {
-                    eVar.f(i10, i11);
-                    dq0.A0(dq0Var2);
-                    break;
-                }
-                break;
-            default:
-                if (i11 != 0) {
-                    dq0 dq0Var3 = this.b;
-                    dq0.s0(dq0Var3);
-                    dq0Var3.m0 = dq0Var3.l0;
-                    break;
-                }
-                break;
+    public final void a(Canvas canvas, float f10) {
+        hu huVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f10);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f10, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f10);
+        canvas.translate(-0.0f, -0.0f);
+        if (f10 <= 0.0f || (huVar = this.a) == null) {
+            return;
         }
+        huVar.run();
     }
 }

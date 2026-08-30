@@ -1,47 +1,120 @@
 package eh;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import b4.e0;
+import lf.r;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v41;
-import org.telegram.ui.Components.w41;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.rp;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e extends v41 {
-    public static final /* synthetic */ int a = 0;
+public final class e extends dh.h implements Drawable.Callback, xd.b {
+    public final String b;
+    public final Drawable d;
+    public final rp f;
+    public dh.g h;
+    public TLRPC.WebPage n;
+    public final xd.a r;
+    public final xd.a s;
+    public final e0 c = new e0((char) 0, 18);
+    public final Paint e = new Paint(1);
 
-    static {
-        v41.setup(new e());
+    public e(String str) {
+        rp rpVar = new rp(-1);
+        this.f = rpVar;
+        nr nrVar = nr.h;
+        this.r = new xd.a(0, this, nrVar, 320L, false);
+        this.s = new xd.a(0, this, nrVar, 320L, false);
+        this.b = str;
+        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
+        this.d = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.media_link_24).mutate();
+        rpVar.setCallback(this);
+        rpVar.b(j6.w0(null, j6.o7, false));
+        rpVar.a = AndroidUtilities.dp(15.0f);
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final void bindView(View view, w41 w41Var, boolean z10, k51 k51Var, u51 u51Var) {
-        ig.c cVar = (ig.c) view;
-        cVar.s = (TLRPC.TL_help_country) w41Var.G;
-        cVar.f();
-        cVar.setDivider(z10);
-        cVar.c(w41Var.e, false);
+    @Override // xd.b
+    public final void L(int i10, float f10, float f11, xd.c cVar) {
+        dh.g gVar = this.h;
+        if (gVar != null) {
+            gVar.invalidate();
+        }
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final boolean contentsEquals(w41 w41Var, w41 w41Var2) {
-        return w41Var.H(w41Var2);
+    @Override // dh.h
+    public final void a(View view) {
+        super.a(view);
+        this.h = (dh.g) view;
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final View createView(Context context, jl0 jl0Var, int i10, int i11, c6 c6Var) {
-        ig.c cVar = new ig.c(context, c6Var);
-        cVar.setBackground(null);
-        return cVar;
+    @Override // dh.h
+    public final void b() {
+        super.b();
+        this.h = null;
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final boolean equals(w41 w41Var, w41 w41Var2) {
-        return w41Var.I(w41Var2);
+    @Override // dh.h
+    public final void c(Canvas canvas, int i10, int i11) {
+        float f10 = i10;
+        float f11 = i11;
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(0.0f, 0.0f, f10, f11);
+        imageReceiver.draw(canvas);
+        rp rpVar = this.f;
+        rpVar.setBounds(0, 0, i10, i11);
+        int w02 = j6.w0(null, j6.a7, false);
+        xd.a aVar = this.s;
+        int d = i0.a.d(aVar.e, w02, TLObject.FLAG_30);
+        Paint paint = this.e;
+        paint.setColor(d);
+        canvas.drawRoundRect(0.0f, 0.0f, f10, f11, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), paint);
+        int d10 = i0.a.d(aVar.e, j6.w0(null, j6.o7, false), -1);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        e0 e0Var = this.c;
+        e0Var.getClass();
+        if (((PorterDuffColorFilter) e0Var.c) == null || e0Var.b != d10 || ((PorterDuff.Mode) e0Var.d) != mode) {
+            e0Var.c = new PorterDuffColorFilter(d10, mode);
+            e0Var.b = d10;
+            e0Var.d = mode;
+        }
+        PorterDuffColorFilter porterDuffColorFilter = (PorterDuffColorFilter) e0Var.c;
+        Drawable drawable = this.d;
+        drawable.setColorFilter(porterDuffColorFilter);
+        r.e(this.d, f10 / 2.0f, f11 / 2.0f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
+        xd.a aVar2 = this.r;
+        r.b(canvas, drawable, 1.0f - aVar2.e);
+        r.b(canvas, rpVar, aVar2.e);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        dh.g gVar = this.h;
+        if (gVar != null) {
+            gVar.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    }
+
+    @Override // xd.b
+    public final /* synthetic */ void z(float f10, int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
     }
 }

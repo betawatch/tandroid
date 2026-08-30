@@ -3,41 +3,41 @@ package androidx.credentials.playservices;
 import a1.b;
 import a1.e;
 import a1.g;
-import a9.s;
-import ag.o1;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.ResultReceiver;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import bd.l;
 import com.google.android.gms.common.api.f;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.identitycredentials.GetCredentialRequest;
 import com.google.android.gms.tasks.Task;
-import h7.o8;
+import dd.l;
+import j7.x8;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.q;
-import nh.d6;
+import o2.o;
 import org.json.JSONException;
-import org.telegram.ui.Components.n;
-import qc.i;
+import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Components.qk0;
+import sc.i;
 import v0.j;
+import v0.n;
 import v0.p;
 import v0.r;
 import w0.a;
 import w0.c;
 import w0.h;
-import w5.d;
+import y5.d;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final g Companion = new g();
@@ -74,12 +74,12 @@ public final class CredentialProviderPlayServicesImpl implements j {
         return i.a;
     }
 
-    private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e10) {
-        kotlin.jvm.internal.j.e(e10, "e");
-        Log.w(TAG, "Clearing restore credential failed", e10);
+    private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e) {
+        kotlin.jvm.internal.j.e(e, "e");
+        Log.w(TAG, "Clearing restore credential failed", e);
         q qVar = new q();
         qVar.a = new a("Clear restore credential failed for unknown reason.");
-        if ((e10 instanceof f) && ((f) e10).getStatusCode() == 40201) {
+        if ((e instanceof f) && ((f) e).getStatusCode() == 40201) {
             qVar.a = new a("The restore credential internal service had a failure.");
         }
         Companion.getClass();
@@ -100,7 +100,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
         iVar.onError(qVar.a);
     }
 
-    private static final i onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, s6.b bVar) {
+    private static final i onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, u6.b bVar) {
         Companion.getClass();
         if (!g.a(cancellationSignal)) {
             onClearCredential$lambda$17$lambda$16(executor, iVar);
@@ -162,7 +162,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.i iVar) {
-        u6.b a2 = o8.a(this.context);
+        w6.b a2 = x8.a(this.context);
         int i10 = 0;
         a2.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
         Set set = m.a;
@@ -170,16 +170,16 @@ public final class CredentialProviderPlayServicesImpl implements j {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((m) it.next()).f();
+            ((m) it.next()).e();
         }
         com.google.android.gms.common.api.internal.h.a();
-        v b10 = w.b();
-        b10.d = new w5.c[]{u6.d.a};
-        b10.c = new n(a2, 21);
-        b10.b = false;
-        b10.a = 1554;
-        a2.e(1, b10.b()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
-            @Override // bd.l
+        v e = w.e();
+        e.d = new y5.c[]{w6.d.a};
+        e.c = new f1(a2, 29);
+        e.b = false;
+        e.a = 1554;
+        a2.e(1, e.e()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
+            @Override // dd.l
             public final Object invoke(Object obj) {
                 i runFallbackClearCredFlow$lambda$22;
                 runFallbackClearCredFlow$lambda$22 = CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$22(cancellationSignal, executor, iVar, (Void) obj);
@@ -205,13 +205,13 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e10) {
-        kotlin.jvm.internal.j.e(e10, "e");
+    public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e) {
+        kotlin.jvm.internal.j.e(e, "e");
         Companion.getClass();
         if (g.a(cancellationSignal)) {
             return;
         }
-        runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(e10, executor, iVar);
+        runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(e, executor, iVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -267,15 +267,15 @@ public final class CredentialProviderPlayServicesImpl implements j {
             if (g.a(cancellationSignal)) {
                 return;
             }
-            s6.f fVar = new s6.f("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", eVar.a, eVar.b, null, eVar.d, null);
-            t6.g gVar2 = new t6.g(context, t6.g.k, aVar, com.google.android.gms.common.api.i.c);
-            v b10 = w.b();
-            b10.d = new w5.c[]{c7.c.b};
-            b10.c = new n(fVar, 17);
-            b10.a = 32704;
-            Task e10 = gVar2.e(1, b10.b());
-            kotlin.jvm.internal.j.d(e10, "doWrite(...)");
-            e10.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, dVar, executor, callback, 0), 22)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
+            u6.f fVar = new u6.f("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", eVar.a, eVar.b, null, eVar.d, null);
+            v6.g gVar2 = new v6.g(context, v6.g.k, aVar, com.google.android.gms.common.api.i.c);
+            v e = w.e();
+            e.d = new y5.c[]{e7.b.b};
+            e.c = new o(fVar, 28);
+            e.a = 32704;
+            Task e6 = gVar2.e(1, e.e());
+            kotlin.jvm.internal.j.d(e6, "doWrite(...)");
+            e6.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, dVar, executor, callback, 0), 21)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
             return;
         }
         v0.e eVar2 = (v0.e) request;
@@ -284,16 +284,17 @@ public final class CredentialProviderPlayServicesImpl implements j {
         eVar3.f = callback;
         eVar3.g = executor;
         try {
-            o6.v d = eVar3.d(eVar2);
+            q6.v d = eVar3.d(eVar2);
             gVar.getClass();
             if (g.a(cancellationSignal)) {
                 return;
             }
-            n6.a aVar2 = new n6.a(context, n6.a.k, aVar, new com.google.android.gms.common.api.internal.a());
-            v b11 = w.b();
-            b11.c = new o1(aVar2, d, 25);
-            b11.a = 5407;
-            aVar2.e(0, b11.b()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar3), 20)).addOnFailureListener(new s(6, eVar3, cancellationSignal));
+            p6.a aVar2 = new p6.a(context, p6.a.k, aVar, new com.google.android.gms.common.api.internal.a());
+            v e10 = w.e();
+            int i11 = 4;
+            e10.c = new qk0(aVar2, d, i11);
+            e10.a = 5407;
+            aVar2.e(0, e10.e()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar3), 10)).addOnFailureListener(new c1.b(i11, eVar3, cancellationSignal));
         } catch (JSONException e11) {
             Companion.getClass();
             if (g.a(cancellationSignal)) {
@@ -328,7 +329,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
         kotlin.jvm.internal.j.e(callback, "callback");
     }
 
-    public void onPrepareCredential(v0.n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onPrepareCredential(n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         kotlin.jvm.internal.j.e(request, "request");
         kotlin.jvm.internal.j.e(executor, "executor");
         kotlin.jvm.internal.j.e(callback, "callback");
@@ -346,15 +347,15 @@ public final class CredentialProviderPlayServicesImpl implements j {
 
     public final boolean isAvailableOnDevice(int i10) {
         int isGooglePlayServicesAvailable = isGooglePlayServicesAvailable(this.context, i10);
-        boolean z10 = isGooglePlayServicesAvailable == 0;
-        if (!z10) {
-            Log.w(TAG, "Connection with Google Play Services was not successful. Connection result is: " + new w5.a(isGooglePlayServicesAvailable));
+        boolean z4 = isGooglePlayServicesAvailable == 0;
+        if (!z4) {
+            Log.w(TAG, "Connection with Google Play Services was not successful. Connection result is: " + new y5.a(isGooglePlayServicesAvailable));
         }
-        return z10;
+        return z4;
     }
 
     @Override // v0.j
-    public void onGetCredential(Context context, v0.n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         kotlin.jvm.internal.j.e(context, "context");
         kotlin.jvm.internal.j.e(request, "request");
         List<p> list = request.a;
@@ -373,7 +374,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             Companion.getClass();
             for (p pVar3 : list) {
             }
-            new c1.e(context).g(request, cancellationSignal, executor, callback);
+            new c1.f(context).g(request, cancellationSignal, executor, callback);
             return;
         }
         f1.b bVar = new f1.b(context);
@@ -384,26 +385,26 @@ public final class CredentialProviderPlayServicesImpl implements j {
         if (g.a(cancellationSignal)) {
             return;
         }
-        Bundle i10 = a4.w.i("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
+        Bundle i10 = android.support.v4.media.a.i("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
         i10.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", request.b);
         i10.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
         List<p> list2 = list;
-        ArrayList arrayList = new ArrayList(rc.i.d(list2));
+        ArrayList arrayList = new ArrayList(tc.i.d(list2));
         for (p pVar4 : list2) {
             pVar4.getClass();
-            arrayList.add(new s6.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
+            arrayList.add(new u6.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
         }
         GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, i10, null, new ResultReceiver(null));
         Context context2 = bVar.e;
         kotlin.jvm.internal.j.e(context2, "context");
-        t6.g gVar = new t6.g(context2, t6.g.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c);
-        v b10 = w.b();
-        b10.d = new w5.c[]{c7.c.a};
-        b10.c = new d6(getCredentialRequest, 24);
-        b10.a = 32701;
-        Task e10 = gVar.e(0, b10.b());
-        kotlin.jvm.internal.j.d(e10, "doRead(...)");
-        e10.addOnSuccessListener(new eg.n(new e1.b(cancellationSignal, bVar, executor, callback, 1), 2)).addOnFailureListener(new f1.a(request, bVar, callback, executor, cancellationSignal));
+        v6.g gVar = new v6.g(context2, v6.g.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c);
+        v e = w.e();
+        e.d = new y5.c[]{e7.b.a};
+        e.c = new qk0(getCredentialRequest, 16);
+        e.a = 32701;
+        Task e6 = gVar.e(0, e.e());
+        kotlin.jvm.internal.j.d(e6, "doRead(...)");
+        e6.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, bVar, executor, callback, 1), 26)).addOnFailureListener(new f1.a(request, bVar, callback, executor, cancellationSignal));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

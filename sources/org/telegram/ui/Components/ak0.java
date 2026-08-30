@@ -1,35 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class ak0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dk0 b;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-    public /* synthetic */ ak0(dk0 dk0Var, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ak0 implements h5.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pk0 b;
+
+    public /* synthetic */ ak0(pk0 pk0Var, int i10) {
         this.a = i10;
-        this.b = dk0Var;
+        this.b = pk0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // h5.d
+    public final void accept(Object obj) {
+        View view = (View) obj;
         switch (this.a) {
             case 0:
-                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().h0 && !this.b.a.getImageReceiver().getLottieAnimation().w()) {
-                    this.b.a.getImageReceiver().getLottieAnimation().start();
+                pk0 pk0Var = this.b;
+                ArrayList arrayList = pk0Var.d;
+                pk0Var.b.getClass();
+                int R = RecyclerView.R(view);
+                if (R >= 0 && R < arrayList.size() && (view instanceof nk0)) {
+                    ((nk0) view).f(((gk0) arrayList.get(R)).c, true);
+                    break;
                 }
-                this.b.A = false;
                 break;
             default:
-                dk0 dk0Var = this.b;
-                fk0 fk0Var = dk0Var.L;
-                try {
-                    dk0Var.performHapticFeedback(0);
-                } catch (Exception unused) {
+                if (view instanceof nk0) {
+                    nk0 nk0Var = (nk0) view;
+                    mk0 mk0Var = nk0Var.b;
+                    nk0Var.K = false;
+                    mk0Var.setAlpha(1.0f);
+                    if (!this.b.K0) {
+                        nk0Var.d();
+                        break;
+                    } else {
+                        mk0Var.setScaleX(nk0Var.F * (nk0Var.w ? 0.76f : 1.0f));
+                        mk0Var.setScaleY(nk0Var.F * (nk0Var.w ? 0.76f : 1.0f));
+                        break;
+                    }
                 }
-                fk0Var.i0 = fk0Var.P.indexOf(dk0Var.e);
-                fk0Var.h0 = dk0Var.e;
-                fk0Var.invalidate();
                 break;
         }
     }

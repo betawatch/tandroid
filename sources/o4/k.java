@@ -1,24 +1,65 @@
 package o4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import j3.m2;
+import j3.n2;
+import j3.o2;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class k extends n4.b {
-    public final j d;
+public final class k extends h {
+    public final /* synthetic */ int c;
 
-    public k(j jVar, long j10, long j11) {
-        super(j10, j11);
-        this.d = jVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k(o2 o2Var, int i10) {
+        super(o2Var);
+        this.c = i10;
     }
 
-    @Override // n4.l
-    public final long b() {
-        a();
-        return this.d.d(this.c);
+    @Override // o4.h, j3.o2
+    public int e(int i10, int i11, boolean z4) {
+        switch (this.c) {
+            case 0:
+                o2 o2Var = this.b;
+                int e = o2Var.e(i10, i11, z4);
+                return e == -1 ? o2Var.a(z4) : e;
+            default:
+                return super.e(i10, i11, z4);
+        }
     }
 
-    @Override // n4.l
-    public final long l() {
-        a();
-        return this.d.c(this.c);
+    @Override // o4.h, j3.o2
+    public m2 f(int i10, m2 m2Var, boolean z4) {
+        switch (this.c) {
+            case 1:
+                super.f(i10, m2Var, z4);
+                m2Var.f = true;
+                return m2Var;
+            default:
+                return super.f(i10, m2Var, z4);
+        }
+    }
+
+    @Override // o4.h, j3.o2
+    public int k(int i10, int i11, boolean z4) {
+        switch (this.c) {
+            case 0:
+                o2 o2Var = this.b;
+                int k10 = o2Var.k(i10, i11, z4);
+                return k10 == -1 ? o2Var.c(z4) : k10;
+            default:
+                return super.k(i10, i11, z4);
+        }
+    }
+
+    @Override // o4.h, j3.o2
+    public n2 m(int i10, n2 n2Var, long j10) {
+        switch (this.c) {
+            case 1:
+                super.m(i10, n2Var, j10);
+                n2Var.w = true;
+                return n2Var;
+            default:
+                return super.m(i10, n2Var, j10);
+        }
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 class ColorPicker$RadioButton extends View {
     public final Paint a;
@@ -31,12 +31,12 @@ class ColorPicker$RadioButton extends View {
         invalidate();
     }
 
-    public final void b(boolean z10) {
+    public final void b(boolean z4) {
         ObjectAnimator objectAnimator = this.b;
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        if (!z10) {
+        if (!z4) {
             setCheckedState(this.d ? 1.0f : 0.0f);
             return;
         }
@@ -88,8 +88,8 @@ class ColorPicker$RadioButton extends View {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
-    public void setCheckedState(float f9) {
-        this.c = f9;
+    public void setCheckedState(float f10) {
+        this.c = f10;
         invalidate();
     }
 }

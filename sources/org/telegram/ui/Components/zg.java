@@ -1,55 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zg implements Runnable {
+public final /* synthetic */ class zg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ni b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ zg(ni niVar, int i10) {
+    public /* synthetic */ zg(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = niVar;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean G1;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                ni niVar = this.b;
-                au auVar = niVar.Y ? niVar.L0 : niVar.A0;
-                niVar.M1(auVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(auVar.getText().toString().trim()));
-                break;
-            case 1:
-                ni niVar2 = this.b;
-                ff ffVar = niVar2.d0;
-                long k9 = ffVar != null ? ffVar.k() : 0L;
-                yh yhVar = niVar2.E0;
-                niVar2.J0 = k9;
-                yhVar.setEffect(k9);
-                fi fiVar = niVar2.u0;
-                if (fiVar == niVar2.f0 || fiVar == niVar2.m0) {
-                    G1 = niVar2.G1(0, false, 0, niVar2.s1(), k9);
-                } else {
-                    if (!fiVar.H(0, false, 0, niVar2.s1(), k9)) {
-                        niVar2.dismiss();
-                    }
-                    G1 = false;
-                }
-                ff ffVar2 = niVar2.d0;
-                if (ffVar2 != null) {
-                    ffVar2.h(!G1);
-                    niVar2.d0 = null;
-                    break;
-                }
-                break;
-            case 2:
-                this.b.F1();
+                li.p((li) this.b);
                 break;
             default:
-                ni.w(this.b);
+                ((View) this.b).setTag(null);
                 break;
         }
     }

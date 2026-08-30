@@ -1,88 +1,41 @@
 package lh;
 
-import android.content.Context;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.jk;
-import org.telegram.ui.Components.p00;
-import org.telegram.ui.Components.qw0;
-import org.telegram.ui.ze1;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class x4 extends qw0 {
-    public final /* synthetic */ int G = 0;
-    public final /* synthetic */ Object H;
+public final /* synthetic */ class x4 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(jk jkVar, Context context, p00 p00Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, p00Var, 1, c6Var);
-        this.H = jkVar;
+    public /* synthetic */ x4(c5 c5Var, int i10) {
+        this.a = i10;
+        this.b = c5Var;
     }
 
-    @Override // org.telegram.ui.Components.qw0
-    public void e(boolean z10, boolean z11) {
-        switch (this.G) {
-            case 2:
-                ze1 ze1Var = (ze1) this.H;
-                super.e(z10, z11);
-                if (!z11) {
-                    ze1Var.n.a.animate().cancel();
-                    ze1Var.n.a.setAlpha(z10 ? 0.0f : 1.0f);
-                    break;
-                } else {
-                    ze1Var.n.a.animate().alpha(z10 ? 0.0f : 1.0f).start();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        View.OnClickListener onClickListener;
+        switch (this.a) {
+            case 0:
+                CharSequence text = this.b.v.getText();
+                if (text instanceof Spanned) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
+                    if (clickableSpanArr.length > 0) {
+                        clickableSpanArr[0].onClick(view);
+                        break;
+                    }
+                }
+                break;
+            default:
+                c5 c5Var = this.b;
+                if (c5Var.K.getVisibility() == 0 && (onClickListener = c5Var.Q) != null) {
+                    onClickListener.onClick(view);
                     break;
                 }
-            default:
-                super.e(z10, z11);
                 break;
         }
-    }
-
-    @Override // android.view.View
-    public float getTranslationY() {
-        switch (this.G) {
-            case 1:
-                return super.getTranslationY() - ((jk) this.H).I;
-            default:
-                return super.getTranslationY();
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.G) {
-            case 0:
-                c5 c5Var = ((y4) this.H).d;
-                super.onMeasure(i10, org.telegram.ui.b.d(c5Var.e, c5Var.n - c5Var.r.getPaddingTop(), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f9) {
-        switch (this.G) {
-            case 1:
-                super.setTranslationY(f9 + ((jk) this.H).I);
-                break;
-            default:
-                super.setTranslationY(f9);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(int i10, Context context, b bVar, y4 y4Var) {
-        super(context, null, i10, bVar);
-        this.H = y4Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(ze1 ze1Var, Context context, p00 p00Var) {
-        super(context, p00Var, 0, null);
-        this.H = ze1Var;
     }
 }

@@ -78,11 +78,11 @@ public final class p8 extends d {
         }
         j10 = -1;
         w1 A02 = this.a.A0(j10, this.i);
-        o8 h10 = ((n8) this.h).h(A02, (this.j || b10) ? false : true);
-        this.a.F0(this.b, h10);
+        o8 h9 = ((n8) this.h).h(A02, (this.j || b10) ? false : true);
+        this.a.F0(this.b, h9);
         e2 build2 = A02.build();
         this.k = build2.count();
-        this.l = h10.s();
+        this.l = h9.s();
         return build2;
     }
 }

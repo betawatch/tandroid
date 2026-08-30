@@ -2,14 +2,13 @@ package r0;
 
 import android.content.Context;
 import android.view.VelocityTracker;
-import nh.d6;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i {
     public final Context a;
-    public final d6 b;
+    public final o2.o b;
     public VelocityTracker c;
     public float d;
     public int e = -1;
@@ -17,8 +16,8 @@ public final class i {
     public int g = -1;
     public final int[] h = {ConnectionsManager.DEFAULT_DATACENTER_ID, 0};
 
-    public i(Context context, d6 d6Var) {
+    public i(Context context, o2.o oVar) {
         this.a = context;
-        this.b = d6Var;
+        this.b = oVar;
     }
 }

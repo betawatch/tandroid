@@ -1,80 +1,137 @@
 package eg;
 
+import android.content.Context;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.m21;
-import org.telegram.ui.Components.mc;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.tn;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.ab0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ tn c;
+public final class z0 extends FrameLayout implements x0 {
+    public final f6 a;
+    public final ArrayList b;
+    public final y0 c;
+    public final y0 d;
+    public final y0 e;
+    public final boolean f;
 
-    public /* synthetic */ z0(long j10, tn tnVar) {
-        this.a = 1;
-        this.b = j10;
-        this.c = tnVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                tc.a0(this.c).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.b)), R.raw.stars_topup).k(true);
+    public z0(Context context, f6 f6Var) {
+        super(context);
+        this.b = new ArrayList();
+        this.a = f6Var;
+        for (ab0 ab0Var : ab0.values()) {
+            if (ab0Var.e) {
+                this.b.add(ab0Var);
+            }
+            if (this.b.size() == 3) {
                 break;
-            case 1:
-                this.c.presentFragment(new ProfileActivity(j7.l1.g(this.b, "user_id"), null));
-                break;
-            case 2:
-                r0.getMediaDataController().loadBotInfo(this.b, r1, true, this.c.classGuid);
-                break;
-            case 3:
-                this.c.getMessagesController().loadFullChat(this.b, 0, true);
-                break;
-            case 4:
-                tn tnVar = this.c;
-                LongSparseIntArray longSparseIntArray = tnVar.I5;
-                long j10 = this.b;
-                longSparseIntArray.put(j10, 0);
-                m21 m21Var = tnVar.N1;
-                if (m21Var != null) {
-                    m21Var.setAllTopicsHidden(false);
-                }
-                if (j10 == tnVar.Z3) {
-                    tnVar.w0.O(false);
-                    break;
-                }
-                break;
-            case 5:
-                tn tnVar2 = this.c;
-                tnVar2.getClass();
-                tnVar2.presentFragment(tn.R9(this.b));
-                break;
-            case 6:
-                tn tnVar3 = this.c;
-                tnVar3.getClass();
-                tnVar3.presentFragment(ProfileActivity.m4(this.b));
-                break;
-            default:
-                tn tnVar4 = this.c;
-                mc v = tc.v(tnVar4.getParentActivity(), tnVar4, null, 1, this.b, 1, tnVar4.getThemedColor(g6.Fi), tnVar4.getThemedColor(g6.Hi), 5000, true, null);
-                v.k = true;
-                v.k(true);
-                break;
+            }
+        }
+        if (this.b.size() < 3) {
+            FileLog.e(new IllegalArgumentException("There should be at least 3 premium icons!"));
+            this.f = true;
+        } else {
+            this.c = a(context, 0);
+            this.d = a(context, 1);
+            this.e = a(context, 2);
+            setClipChildren(false);
         }
     }
 
-    public /* synthetic */ z0(tn tnVar, long j10, int i10) {
-        this.a = i10;
-        this.c = tnVar;
-        this.b = j10;
+    public final y0 a(Context context, int i10) {
+        ab0 ab0Var = (ab0) this.b.get(i10);
+        y0 y0Var = new y0(context);
+        p2 p2Var = new p2(20);
+        y0Var.e = p2Var;
+        Paint paint = new Paint(1);
+        y0Var.f = paint;
+        p2Var.r = 12;
+        p2Var.s = 8;
+        p2Var.t = 6;
+        if (i10 == 1) {
+            p2Var.N = 1001;
+        }
+        if (i10 == 0) {
+            p2Var.N = 1002;
+        }
+        p2Var.O = this.a;
+        p2Var.P = j6.Zj;
+        p2Var.c();
+        paint.setColor(-1);
+        y0Var.setLayoutParams(b6.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        y0Var.setForeground(ab0Var.c);
+        y0Var.setBackgroundResource(ab0Var.b);
+        y0Var.setPadding(AndroidUtilities.dp(8.0f));
+        y0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
+        addView(y0Var);
+        return y0Var;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        if (this.f) {
+            return;
+        }
+        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        int dp = AndroidUtilities.dp(76.0f);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c.getLayoutParams();
+        layoutParams.height = dp;
+        layoutParams.width = dp;
+        float f10 = dp;
+        layoutParams.bottomMargin = (int) ((min * 0.1f) + f10);
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.d.getLayoutParams();
+        layoutParams2.height = dp;
+        layoutParams2.width = dp;
+        int i12 = (int) (f10 * 0.95f);
+        layoutParams2.rightMargin = i12;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
+        layoutParams3.height = dp;
+        layoutParams3.width = dp;
+        layoutParams3.leftMargin = i12;
+    }
+
+    @Override // eg.x0
+    public void setOffset(float f10) {
+        if (this.f) {
+            return;
+        }
+        float abs = Math.abs(f10 / getMeasuredWidth());
+        float interpolation = nr.i.getInterpolation(abs);
+        int right = getRight();
+        y0 y0Var = this.e;
+        y0Var.setTranslationX(((y0Var.getWidth() * 1.5f) + (right - y0Var.getRight()) + AndroidUtilities.dp(32.0f)) * interpolation);
+        y0Var.setTranslationY(AndroidUtilities.dp(16.0f) * interpolation);
+        float clamp = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.5f, interpolation), 1.0f, 0.0f);
+        y0Var.setScaleX(clamp);
+        y0Var.setScaleY(clamp);
+        int top = getTop();
+        y0 y0Var2 = this.c;
+        y0Var2.setTranslationY((((top - y0Var2.getTop()) - (y0Var2.getHeight() * 1.8f)) - AndroidUtilities.dp(32.0f)) * abs);
+        y0Var2.setTranslationX(AndroidUtilities.dp(16.0f) * abs);
+        float clamp2 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.8f, abs), 1.0f, 0.0f);
+        y0Var2.setScaleX(clamp2);
+        y0Var2.setScaleY(clamp2);
+        float interpolation2 = nr.g.getInterpolation(abs);
+        int left = getLeft();
+        y0 y0Var3 = this.d;
+        y0Var3.setTranslationX((((left - y0Var3.getLeft()) - (y0Var3.getWidth() * 2.5f)) + AndroidUtilities.dp(32.0f)) * interpolation2);
+        y0Var3.setTranslationY(((y0Var3.getHeight() * 2.5f) + (getBottom() - y0Var3.getBottom()) + AndroidUtilities.dp(32.0f)) * interpolation2);
+        float clamp3 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 2.5f, abs), 1.0f, 0.0f);
+        y0Var3.setScaleX(clamp3);
+        y0Var3.setScaleY(clamp3);
+        float f11 = abs < 0.4f ? abs / 0.4f : 1.0f;
+        y0Var.h = f11;
+        y0Var2.h = f11;
+        y0Var3.h = f11;
     }
 }

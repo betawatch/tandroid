@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import rc.f;
+import tc.f;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzkb implements zzjt {
     public static final zzkb zza = new zzkb();
@@ -30,8 +30,8 @@ public final class zzkb implements zzjt {
         Object[] zzg = zzizVar.zzc().zzg(f.h(zzztVarArr).subList(2, length));
         try {
             zzizVar.zzc().zze(i10, method.invoke(zza3, Arrays.copyOf(zzg, zzg.length)));
-        } catch (Exception e10) {
-            throw new zzdm(6, 15, e10);
+        } catch (Exception e) {
+            throw new zzdm(6, 15, e);
         }
     }
 }

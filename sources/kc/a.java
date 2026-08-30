@@ -1,56 +1,69 @@
 package kc;
 
-import java.util.ArrayList;
-import java.util.Map;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.util.List;
+import java.util.logging.Level;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends c {
-    public final a e;
-    public ArrayList f;
+public final class a implements Runnable {
+    public final InputStream a;
+    public final Socket b;
+    public final /* synthetic */ l c;
 
-    public a(String str, int i10, Map map, a aVar) {
-        super(i10, str, map);
-        this.e = aVar;
+    public a(l lVar, InputStream inputStream, Socket socket) {
+        this.c = lVar;
+        this.a = inputStream;
+        this.b = socket;
     }
 
-    @Override // kc.c
-    public final Map a() {
-        return this.c;
-    }
-
-    public final void b(int i10) {
-        if (this.d > -1) {
-            return;
-        }
-        this.d = i10;
-        ArrayList arrayList = this.f;
-        if (arrayList != null) {
-            int size = arrayList.size();
-            int i11 = 0;
-            while (i11 < size) {
-                Object obj = arrayList.get(i11);
-                i11++;
-                ((a) obj).b(i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        OutputStream outputStream;
+        InputStream inputStream = this.a;
+        l lVar = this.c;
+        Socket socket = this.b;
+        OutputStream outputStream2 = null;
+        try {
+            try {
+                outputStream = socket.getOutputStream();
+            } catch (Exception e) {
+                e = e;
             }
+        } catch (Throwable th2) {
+            th = th2;
         }
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("BlockImpl{name='");
-        sb2.append(this.a);
-        sb2.append("', start=");
-        sb2.append(this.b);
-        sb2.append(", end=");
-        sb2.append(this.d);
-        sb2.append(", attributes=");
-        sb2.append(this.c);
-        sb2.append(", parent=");
-        a aVar = this.e;
-        sb2.append(aVar != null ? aVar.a : null);
-        sb2.append(", children=");
-        sb2.append(this.f);
-        sb2.append('}');
-        return sb2.toString();
+        try {
+            e eVar = new e(lVar, new d(0), this.a, outputStream, socket.getInetAddress());
+            while (!socket.isClosed()) {
+                eVar.c();
+            }
+            l.d(outputStream);
+        } catch (Exception e6) {
+            e = e6;
+            outputStream2 = outputStream;
+            if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
+                l.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
+            }
+            l.d(outputStream2);
+            l.d(inputStream);
+            l.d(socket);
+            ((List) lVar.c.c).remove(this);
+        } catch (Throwable th3) {
+            th = th3;
+            outputStream2 = outputStream;
+            l.d(outputStream2);
+            l.d(inputStream);
+            l.d(socket);
+            ((List) lVar.c.c).remove(this);
+            throw th;
+        }
+        l.d(inputStream);
+        l.d(socket);
+        ((List) lVar.c.c).remove(this);
     }
 }

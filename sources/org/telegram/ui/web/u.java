@@ -4,71 +4,71 @@ import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+    public final /* synthetic */ a1 b;
 
-    public /* synthetic */ u(z0 z0Var, int i10) {
+    public /* synthetic */ u(a1 a1Var, int i10) {
         this.a = i10;
-        this.b = z0Var;
+        this.b = a1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                f0 f0Var = this.b.c;
-                if (f0Var != null) {
-                    f0Var.b();
+                e0 e0Var = this.b.c;
+                if (e0Var != null) {
+                    e0Var.b();
                 }
                 LaunchActivity.L();
                 break;
             case 1:
-                z0 z0Var = this.b;
-                ph.q0 q0Var = z0Var.g0;
-                q0Var.getClass();
+                a1 a1Var = this.b;
+                rh.r0 r0Var = a1Var.h0;
+                r0Var.getClass();
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("available", q0Var.d());
-                    if (q0Var.d()) {
-                        jSONObject.put("access_requested", q0Var.d);
-                        if (q0Var.d) {
-                            jSONObject.put("access_granted", q0Var.e && q0Var.a());
+                    jSONObject.put("available", r0Var.d());
+                    if (r0Var.d()) {
+                        jSONObject.put("access_requested", r0Var.d);
+                        if (r0Var.d) {
+                            jSONObject.put("access_granted", r0Var.e && r0Var.a());
                         }
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-                z0Var.v("location_checked", jSONObject);
+                a1Var.v("location_checked", jSONObject);
                 break;
             case 2:
-                z0 z0Var2 = this.b;
-                if (z0Var2.O) {
-                    z0Var2.O = false;
-                    f0 f0Var2 = z0Var2.c;
-                    if (f0Var2 != null) {
-                        f0Var2.t(false);
+                a1 a1Var2 = this.b;
+                if (a1Var2.P) {
+                    a1Var2.P = false;
+                    e0 e0Var2 = a1Var2.c;
+                    if (e0Var2 != null) {
+                        e0Var2.t(false);
                     }
                 }
-                z0Var2.c();
-                z0Var2.J = false;
-                z0Var2.L = 0L;
-                z0Var2.P = false;
-                w0 w0Var = z0Var2.a;
+                a1Var2.c();
+                a1Var2.K = false;
+                a1Var2.M = 0L;
+                a1Var2.Q = false;
+                w0 w0Var = a1Var2.a;
                 if (w0Var != null) {
                     w0Var.onResume();
-                    z0Var2.a.reload();
+                    a1Var2.a.reload();
                     break;
                 }
                 break;
             default:
-                z0 z0Var3 = this.b;
-                ph.p pVar = z0Var3.f0;
-                pVar.f = true;
-                pVar.k();
-                z0Var3.t();
+                a1 a1Var3 = this.b;
+                rh.q qVar = a1Var3.g0;
+                qVar.f = true;
+                qVar.k();
+                a1Var3.t();
                 break;
         }
     }

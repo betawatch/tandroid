@@ -1,47 +1,31 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wl extends TextView {
-    public float a;
-    public boolean b;
-    public final /* synthetic */ Paint c;
+public final class wl extends f2.j0 {
+    public final /* synthetic */ oh.k r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wl(Context context, Paint paint) {
+    public wl(oh.k kVar, Context context) {
         super(context);
-        this.c = paint;
-        this.a = 0.0f;
+        this.r = kVar;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = (int) ((this.a * 130.0f) + 125.0f);
-        Paint paint = this.c;
-        paint.setAlpha(i10);
-        if (this.b) {
-            float f9 = this.a + 0.026666667f;
-            this.a = f9;
-            if (f9 >= 1.0f) {
-                this.a = 1.0f;
-                this.b = false;
-            }
-        } else {
-            float f10 = this.a - 0.026666667f;
-            this.a = f10;
-            if (f10 <= 0.0f) {
-                this.a = 0.0f;
-                this.b = true;
-            }
-        }
-        super.onDraw(canvas);
-        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
-        invalidate();
+    @Override // f2.j0
+    public final int k(int i10, View view) {
+        int topScrollOffset;
+        int k10 = super.k(i10, view);
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
+        int paddingTop = chatAttachAlertPhotoLayout.B.getPaddingTop();
+        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
+        return k10 - (paddingTop - topScrollOffset);
+    }
+
+    @Override // f2.j0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

@@ -389,30 +389,30 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(18);
+        StringBuilder sb = new StringBuilder(18);
         byte b10 = this.a;
         byte b11 = this.b;
         byte b12 = this.c;
         int i10 = this.d;
-        sb2.append(b10 < 10 ? "0" : "");
-        sb2.append((int) b10);
-        sb2.append(b11 < 10 ? ":0" : ":");
-        sb2.append((int) b11);
+        sb.append(b10 < 10 ? "0" : "");
+        sb.append((int) b10);
+        sb.append(b11 < 10 ? ":0" : ":");
+        sb.append((int) b11);
         if (b12 > 0 || i10 > 0) {
-            sb2.append(b12 < 10 ? ":0" : ":");
-            sb2.append((int) b12);
+            sb.append(b12 < 10 ? ":0" : ":");
+            sb.append((int) b12);
             if (i10 > 0) {
-                sb2.append('.');
+                sb.append('.');
                 if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
-                    sb2.append(Integer.toString((i10 / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT).substring(1));
+                    sb.append(Integer.toString((i10 / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT).substring(1));
                 } else if (i10 % MediaDataController.MAX_STYLE_RUNS_COUNT == 0) {
-                    sb2.append(Integer.toString((i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + MediaController.VIDEO_BITRATE_480).substring(1));
+                    sb.append(Integer.toString((i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + MediaController.VIDEO_BITRATE_480).substring(1));
                 } else {
-                    sb2.append(Integer.toString(i10 + 1000000000).substring(1));
+                    sb.append(Integer.toString(i10 + 1000000000).substring(1));
                 }
             }
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     private Object writeReplace() {
@@ -456,9 +456,9 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
         if (readByte >= 0) {
             byte readByte2 = dataInput.readByte();
             if (readByte2 < 0) {
-                ?? r6 = ~readByte2;
+                ?? r62 = ~readByte2;
                 readInt = 0;
-                b10 = r6;
+                b10 = r62;
                 i10 = 0;
             } else {
                 byte readByte3 = dataInput.readByte();

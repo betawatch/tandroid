@@ -1,47 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class me0 extends q6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ pe0 c;
+public final class me0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ se0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public me0(pe0 pe0Var, int i10) {
-        super("thumbAnimationProgress", 0);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = pe0Var;
-                super("thumbImageVisibleProgress", 0);
-                break;
-            default:
-                this.c = pe0Var;
-                break;
-        }
+    public me0(se0 se0Var) {
+        this.a = se0Var;
     }
 
-    @Override // org.telegram.ui.Components.q6
-    public final void b(Object obj, float f9) {
-        switch (this.b) {
-            case 0:
-                this.c.r = f9;
-                ((pe0) obj).invalidate();
-                break;
-            default:
-                this.c.n = f9;
-                ((pe0) obj).invalidate();
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.r);
-            default:
-                return Float.valueOf(this.c.n);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        if (i10 == -1) {
+            this.a.dismiss();
         }
     }
 }

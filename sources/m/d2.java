@@ -3,11 +3,11 @@ package m;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.az;
-import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.fz;
+import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.wy;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d2 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -23,13 +23,13 @@ public final class d2 implements View.OnTouchListener {
         switch (this.a) {
             case 0:
                 e2 e2Var = (e2) this.b;
-                b2 b2Var = e2Var.C;
-                Handler handler = e2Var.G;
-                y yVar = e2Var.K;
+                b2 b2Var = e2Var.D;
+                Handler handler = e2Var.H;
+                x xVar = e2Var.L;
                 int action = motionEvent.getAction();
-                int x4 = (int) motionEvent.getX();
-                int y8 = (int) motionEvent.getY();
-                if (action == 0 && yVar != null && yVar.isShowing() && x4 >= 0 && x4 < yVar.getWidth() && y8 >= 0 && y8 < yVar.getHeight()) {
+                int x10 = (int) motionEvent.getX();
+                int y10 = (int) motionEvent.getY();
+                if (action == 0 && xVar != null && xVar.isShowing() && x10 >= 0 && x10 < xVar.getWidth() && y10 >= 0 && y10 < xVar.getHeight()) {
                     handler.postDelayed(b2Var, 250L);
                     break;
                 } else if (action == 1) {
@@ -38,38 +38,38 @@ public final class d2 implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                ey eyVar = (ey) this.b;
+                jy jyVar = (jy) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        eyVar.B.f = false;
+                        jyVar.C.f = false;
                         break;
                     }
                 } else {
-                    eyVar.B.f = true;
+                    jyVar.C.f = true;
                     break;
                 }
                 break;
             case 2:
-                ry ryVar = (ry) this.b;
+                wy wyVar = (wy) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        ryVar.C.f = false;
+                        wyVar.D.f = false;
                         break;
                     }
                 } else {
-                    ryVar.C.f = true;
+                    wyVar.D.f = true;
                     break;
                 }
                 break;
             default:
-                az azVar = (az) this.b;
+                fz fzVar = (fz) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        azVar.M.f = false;
+                        fzVar.N.f = false;
                         break;
                     }
                 } else {
-                    azVar.M.f = true;
+                    fzVar.N.f = true;
                     break;
                 }
                 break;

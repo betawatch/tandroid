@@ -1,29 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j9 implements o1.h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r9 b;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ j9(r9 r9Var, int i10) {
-        this.a = i10;
-        this.b = r9Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class j9 extends org.telegram.ui.Components.h51 {
+    public static final /* synthetic */ int a = 0;
+
+    static {
+        org.telegram.ui.Components.h51.setup(new j9());
     }
 
-    @Override // o1.h
-    public final void a(o1.i iVar, float f9, float f10) {
-        switch (this.a) {
-            case 0:
-                r9 r9Var = this.b;
-                r9Var.y = f9 / 500.0f;
-                r9Var.fragmentView.invalidate();
-                break;
-            default:
-                r9 r9Var2 = this.b;
-                r9Var2.W = r9Var2.I ? f9 / 500.0f : 1.0f - (f9 / 500.0f);
-                r9Var2.fragmentView.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.g61 g61Var) {
+        k9 k9Var = (k9) view;
+        TLRPC.Chat chat = (TLRPC.Chat) i51Var.G;
+        View.OnClickListener onClickListener = i51Var.D;
+        k9Var.c = chat;
+        org.telegram.ui.Components.ei0 ei0Var = k9Var.b;
+        ei0Var.setTag(Long.valueOf(chat.id));
+        k9Var.a.t(chat, null, null, (!ChatObject.isChannel(chat) || chat.megagroup) ? chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase() : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase(), false, false);
+        ei0Var.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, org.telegram.ui.Components.sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new k9(context);
     }
 }

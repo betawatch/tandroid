@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.e0;
+import dd.p;
+import k7.p7;
 import kotlin.jvm.internal.j;
-import sc.c;
-import sd.d;
-import uc.i;
+import ld.e0;
+import uc.c;
+import ud.a;
+import ud.d;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzbn extends i implements p {
     Object zza;
@@ -23,16 +24,16 @@ final class zzbn extends i implements p {
         this.zzd = zzboVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzbn zzbnVar = new zzbn(this.zzd, cVar);
         zzbnVar.zze = obj;
         return zzbnVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbn) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzbn) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0049, code lost:
@@ -40,23 +41,23 @@ final class zzbn extends i implements p {
         if (r6 != r0) goto L28;
      */
     /* JADX WARN: Removed duplicated region for block: B:11:0x00a4 A[RETURN] */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzbo zzboVar;
-        sd.a aVar;
+        a aVar;
         Object obj2;
         zzbp zzbpVar;
         zzhk zzhkVar2;
-        tc.a aVar2 = tc.a.a;
+        vc.a aVar2 = vc.a.a;
         int i10 = this.zzc;
-        qc.i iVar = qc.i.a;
+        sc.i iVar = sc.i.a;
         try {
             if (i10 == 0) {
-                c7.b(obj);
+                p7.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzboVar = this.zzd;
                 aVar = zzboVar.zzf;
@@ -70,19 +71,19 @@ final class zzbn extends i implements p {
             } else {
                 if (i10 != 1) {
                     if (i10 != 2) {
-                        c7.b(obj);
+                        p7.b(obj);
                         return iVar;
                     }
                     zzhkVar2 = (zzhk) this.zze;
-                    c7.b(obj);
+                    p7.b(obj);
                     this.zze = null;
                     this.zzc = 3;
                     return ((zzhg) obj).zza(zzhkVar2, this) != aVar2 ? aVar2 : iVar;
                 }
                 zzboVar = (zzbo) this.zzb;
-                Object obj3 = (sd.a) this.zza;
+                Object obj3 = (a) this.zza;
                 zzhk zzhkVar3 = (zzhk) this.zze;
-                c7.b(obj);
+                p7.b(obj);
                 zzhkVar = zzhkVar3;
                 obj2 = obj3;
             }

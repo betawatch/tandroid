@@ -1,54 +1,35 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class dc1 extends pt0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ ec1 b;
+public final class dc1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ cd1 c;
 
-    public dc1(ec1 ec1Var, MediaController.PhotoEntry photoEntry) {
-        this.b = ec1Var;
-        this.a = photoEntry;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dc1(cd1 cd1Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = cd1Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        qc1 qc1Var = this.b.a;
-        MediaController.PhotoEntry photoEntry = this.a;
-        if (photoEntry.imagePath != null) {
-            File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-            Point realScreenSize = AndroidUtilities.getRealScreenSize();
-            Bitmap loadBitmap = ImageLoader.loadBitmap(photoEntry.imagePath, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-            try {
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e10) {
-                e10.printStackTrace();
-            }
-            File file2 = new File(photoEntry.imagePath);
-            qc1Var.x1 = new ai1(file2, file2, "");
-            qc1Var.y1 = loadBitmap;
-            qc1Var.X1 = 0;
-            qc1Var.t0.requestLayout();
-            qc1Var.b1(false);
-            qc1Var.s1 = null;
-            qc1Var.i1();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        cd1 cd1Var = this.c;
+        if (i10 == 0) {
+            cd1Var.r.setBounds(cd1Var.S.getLeft() - rect.left, 0, cd1Var.S.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            cd1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
         }
-    }
-
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final boolean z() {
-        return false;
+        cd1Var.r.draw(canvas);
     }
 }

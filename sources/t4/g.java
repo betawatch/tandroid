@@ -1,7 +1,39 @@
 package t4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.SystemClock;
+import java.util.List;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface g extends m3.e {
-    void a(long j10);
+public final class g extends f5.c {
+    public int g;
+
+    @Override // f5.c
+    public final int h() {
+        return this.g;
+    }
+
+    @Override // f5.c
+    public final Object j() {
+        return null;
+    }
+
+    @Override // f5.c
+    public final int k() {
+        return 0;
+    }
+
+    @Override // f5.c
+    public final void v(long j10, long j11, long j12, List list, q4.l[] lVarArr) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (o(this.g, elapsedRealtime)) {
+            for (int i10 = this.b - 1; i10 >= 0; i10--) {
+                if (!o(i10, elapsedRealtime)) {
+                    this.g = i10;
+                    return;
+                }
+            }
+            throw new IllegalStateException();
+        }
+    }
 }

@@ -19,79 +19,79 @@ import java.util.LinkedList;
 import java.util.Set;
 import m.s3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
     public final b c;
-    public final g1 d;
+    public final h1 d;
     public final int i;
-    public final d1 j;
+    public final e1 j;
     public boolean k;
     public final /* synthetic */ h o;
     public final LinkedList a = new LinkedList();
     public final HashSet e = new HashSet();
     public final HashMap f = new HashMap();
     public final ArrayList l = new ArrayList();
-    public w5.a m = null;
+    public y5.a m = null;
     public int n = 0;
 
     public p0(h hVar, com.google.android.gms.common.api.j jVar) {
         this.o = hVar;
         Looper looper = hVar.x.getLooper();
-        v5.c a2 = jVar.a();
+        androidx.biometric.e a2 = jVar.a();
         a0.g gVar = (a0.g) a2.b;
         String str = (String) a2.c;
         String str2 = (String) a2.d;
-        z7.a aVar = z7.a.a;
+        b8.a aVar = b8.a.a;
         s3 s3Var = new s3(gVar, null, str, str2, aVar);
-        b6.b bVar = jVar.c.a;
-        z5.l.h(bVar);
-        com.google.android.gms.common.api.c a10 = bVar.a(jVar.a, looper, s3Var, jVar.d, this, this);
+        a8.j jVar2 = jVar.c.a;
+        b6.m.h(jVar2);
+        com.google.android.gms.common.api.c a10 = jVar2.a(jVar.a, looper, s3Var, jVar.d, this, this);
         String str3 = jVar.b;
-        if (str3 != null && (a10 instanceof z5.g)) {
-            ((z5.g) a10).J = str3;
+        if (str3 != null && (a10 instanceof b6.g)) {
+            ((b6.g) a10).K = str3;
         }
         if (str3 != null && (a10 instanceof q)) {
-            a4.w.u(a10);
+            android.support.v4.media.a.v(a10);
             throw null;
         }
         this.b = a10;
         this.c = jVar.e;
-        this.d = new g1(3);
+        this.d = new h1(3);
         this.i = jVar.g;
         if (!a10.p()) {
             this.j = null;
             return;
         }
         Context context = hVar.e;
-        c2.v0 v0Var = hVar.x;
-        v5.c a11 = jVar.a();
-        this.j = new d1(context, v0Var, new s3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
+        a7.e eVar = hVar.x;
+        androidx.biometric.e a11 = jVar.a();
+        this.j = new e1(context, eVar, new s3((a0.g) a11.b, null, (String) a11.c, (String) a11.d, aVar));
     }
 
-    public final w5.c a(w5.c[] cVarArr) {
+    public final y5.c a(y5.c[] cVarArr) {
         if (cVarArr == null || cVarArr.length == 0) {
             return null;
         }
-        w5.c[] l10 = this.b.l();
+        y5.c[] l10 = this.b.l();
         if (l10 == null) {
-            l10 = new w5.c[0];
+            l10 = new y5.c[0];
         }
         a0.f fVar = new a0.f(l10.length);
-        for (w5.c cVar : l10) {
-            fVar.put(cVar.a, Long.valueOf(cVar.b()));
+        for (y5.c cVar : l10) {
+            fVar.put(cVar.a, Long.valueOf(cVar.e()));
         }
-        for (w5.c cVar2 : cVarArr) {
+        for (y5.c cVar2 : cVarArr) {
             Long l11 = (Long) fVar.get(cVar2.a);
-            if (l11 == null || l11.longValue() < cVar2.b()) {
+            if (l11 == null || l11.longValue() < cVar2.e()) {
                 return cVar2;
             }
         }
         return null;
     }
 
-    public final void b(w5.a aVar) {
+    public final void b(y5.a aVar) {
         HashSet hashSet = this.e;
         Iterator it = hashSet.iterator();
         if (!it.hasNext()) {
@@ -100,7 +100,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             if (it.next() != null) {
                 throw new ClassCastException();
             }
-            if (z5.l.l(aVar, w5.a.e)) {
+            if (b6.m.l(aVar, y5.a.e)) {
                 this.b.g();
             }
             throw null;
@@ -108,23 +108,23 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
     }
 
     public final void c(Status status) {
-        z5.l.d(this.o.x);
+        b6.m.d(this.o.x);
         d(status, null, false);
     }
 
-    public final void d(Status status, Exception exc, boolean z10) {
-        z5.l.d(this.o.x);
+    public final void d(Status status, Exception exc, boolean z4) {
+        b6.m.d(this.o.x);
         if ((status == null) == (exc == null)) {
             throw new IllegalArgumentException("Status XOR exception should be null");
         }
         Iterator it = this.a.iterator();
         while (it.hasNext()) {
-            k1 k1Var = (k1) it.next();
-            if (!z10 || k1Var.a == 2) {
+            l1 l1Var = (l1) it.next();
+            if (!z4 || l1Var.a == 2) {
                 if (status != null) {
-                    k1Var.a(status);
+                    l1Var.a(status);
                 } else {
-                    k1Var.b(exc);
+                    l1Var.b(exc);
                 }
                 it.remove();
             }
@@ -136,12 +136,12 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         ArrayList arrayList = new ArrayList(linkedList);
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            k1 k1Var = (k1) arrayList.get(i10);
+            l1 l1Var = (l1) arrayList.get(i10);
             if (!this.b.h()) {
                 return;
             }
-            if (i(k1Var)) {
-                linkedList.remove(k1Var);
+            if (i(l1Var)) {
+                linkedList.remove(l1Var);
             }
         }
     }
@@ -149,25 +149,25 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
     public final void f() {
         com.google.android.gms.common.api.c cVar = this.b;
         h hVar = this.o;
-        z5.l.d(hVar.x);
+        b6.m.d(hVar.x);
         this.m = null;
-        b(w5.a.e);
-        c2.v0 v0Var = hVar.x;
+        b(y5.a.e);
+        a7.e eVar = hVar.x;
         if (this.k) {
             b bVar = this.c;
-            v0Var.removeMessages(11, bVar);
-            v0Var.removeMessages(9, bVar);
+            eVar.removeMessages(11, bVar);
+            eVar.removeMessages(9, bVar);
             this.k = false;
         }
         Iterator it = this.f.values().iterator();
         while (it.hasNext()) {
             b1 b1Var = (b1) it.next();
-            if (a((w5.c[]) b1Var.a.d) != null) {
+            if (a((y5.c[]) b1Var.a.d) != null) {
                 it.remove();
             } else {
                 try {
-                    com.google.android.exoplayer2.upstream.t tVar = b1Var.a;
-                    ((s) ((r) tVar.e).c).accept(cVar, new TaskCompletionSource());
+                    d1 d1Var = b1Var.a;
+                    ((s) ((r) d1Var.e).c).accept(cVar, new TaskCompletionSource());
                 } catch (DeadObjectException unused) {
                     onConnectionSuspended(3);
                     cVar.c("DeadObjectException thrown while calling register listener method.");
@@ -182,27 +182,27 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
 
     public final void g(int i10) {
         h hVar = this.o;
-        c2.v0 v0Var = hVar.x;
-        z5.l.d(hVar.x);
+        a7.e eVar = hVar.x;
+        b6.m.d(hVar.x);
         this.m = null;
         this.k = true;
-        String n10 = this.b.n();
-        g1 g1Var = this.d;
-        g1Var.getClass();
-        StringBuilder sb2 = new StringBuilder("The connection to Google Play services was lost");
+        String m9 = this.b.m();
+        h1 h1Var = this.d;
+        h1Var.getClass();
+        StringBuilder sb = new StringBuilder("The connection to Google Play services was lost");
         if (i10 == 1) {
-            sb2.append(" due to service disconnection.");
+            sb.append(" due to service disconnection.");
         } else if (i10 == 3) {
-            sb2.append(" due to dead object exception.");
+            sb.append(" due to dead object exception.");
         }
-        if (n10 != null) {
-            sb2.append(" Last reason for disconnect: ");
-            sb2.append(n10);
+        if (m9 != null) {
+            sb.append(" Last reason for disconnect: ");
+            sb.append(m9);
         }
-        g1Var.b(new Status(20, sb2.toString(), null, null), true);
+        h1Var.b(new Status(20, sb.toString(), null, null), true);
         b bVar = this.c;
-        v0Var.sendMessageDelayed(Message.obtain(v0Var, 9, bVar), 5000L);
-        v0Var.sendMessageDelayed(Message.obtain(v0Var, 11, bVar), 120000L);
+        eVar.sendMessageDelayed(Message.obtain(eVar, 9, bVar), 5000L);
+        eVar.sendMessageDelayed(Message.obtain(eVar, 11, bVar), 120000L);
         ((SparseIntArray) hVar.h.b).clear();
         Iterator it = this.f.values().iterator();
         while (it.hasNext()) {
@@ -212,19 +212,19 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
 
     public final void h() {
         h hVar = this.o;
-        c2.v0 v0Var = hVar.x;
+        a7.e eVar = hVar.x;
         b bVar = this.c;
-        v0Var.removeMessages(12, bVar);
-        v0Var.sendMessageDelayed(v0Var.obtainMessage(12, bVar), hVar.a);
+        eVar.removeMessages(12, bVar);
+        eVar.sendMessageDelayed(eVar.obtainMessage(12, bVar), hVar.a);
     }
 
-    public final boolean i(k1 k1Var) {
-        if (!(k1Var instanceof w0)) {
-            g1 g1Var = this.d;
+    public final boolean i(l1 l1Var) {
+        if (!(l1Var instanceof w0)) {
+            h1 h1Var = this.d;
             com.google.android.gms.common.api.c cVar = this.b;
-            k1Var.d(g1Var, cVar.p());
+            l1Var.d(h1Var, cVar.p());
             try {
-                k1Var.c(this);
+                l1Var.c(this);
                 return true;
             } catch (DeadObjectException unused) {
                 onConnectionSuspended(1);
@@ -232,14 +232,14 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
                 return true;
             }
         }
-        w0 w0Var = (w0) k1Var;
-        w5.c a2 = a(w0Var.g(this));
+        w0 w0Var = (w0) l1Var;
+        y5.c a2 = a(w0Var.g(this));
         if (a2 == null) {
-            g1 g1Var2 = this.d;
+            h1 h1Var2 = this.d;
             com.google.android.gms.common.api.c cVar2 = this.b;
-            k1Var.d(g1Var2, cVar2.p());
+            l1Var.d(h1Var2, cVar2.p());
             try {
-                k1Var.c(this);
+                l1Var.c(this);
                 return true;
             } catch (DeadObjectException unused2) {
                 onConnectionSuspended(1);
@@ -247,7 +247,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
                 return true;
             }
         }
-        Log.w("GoogleApiManager", this.b.getClass().getName() + " could not execute call because it requires feature (" + a2.a + ", " + a2.b() + ").");
+        Log.w("GoogleApiManager", this.b.getClass().getName() + " could not execute call because it requires feature (" + a2.a + ", " + a2.e() + ").");
         if (!this.o.y || !w0Var.f(this)) {
             w0Var.b(new com.google.android.gms.common.api.r(a2));
             return true;
@@ -257,16 +257,16 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         if (indexOf >= 0) {
             q0 q0Var2 = (q0) this.l.get(indexOf);
             this.o.x.removeMessages(15, q0Var2);
-            c2.v0 v0Var = this.o.x;
-            v0Var.sendMessageDelayed(Message.obtain(v0Var, 15, q0Var2), 5000L);
+            a7.e eVar = this.o.x;
+            eVar.sendMessageDelayed(Message.obtain(eVar, 15, q0Var2), 5000L);
             return false;
         }
         this.l.add(q0Var);
-        c2.v0 v0Var2 = this.o.x;
-        v0Var2.sendMessageDelayed(Message.obtain(v0Var2, 15, q0Var), 5000L);
-        c2.v0 v0Var3 = this.o.x;
-        v0Var3.sendMessageDelayed(Message.obtain(v0Var3, 16, q0Var), 120000L);
-        w5.a aVar = new w5.a(2, null);
+        a7.e eVar2 = this.o.x;
+        eVar2.sendMessageDelayed(Message.obtain(eVar2, 15, q0Var), 5000L);
+        a7.e eVar3 = this.o.x;
+        eVar3.sendMessageDelayed(Message.obtain(eVar3, 16, q0Var), 120000L);
+        y5.a aVar = new y5.a(2, null);
         if (j(aVar)) {
             return false;
         }
@@ -274,98 +274,98 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         return false;
     }
 
-    public final boolean j(w5.a aVar) {
-        synchronized (h.C) {
+    public final boolean j(y5.a aVar) {
+        synchronized (h.D) {
         }
         return false;
     }
 
     public final void k() {
         h hVar = this.o;
-        z5.l.d(hVar.x);
+        b6.m.d(hVar.x);
         com.google.android.gms.common.api.c cVar = this.b;
         if (cVar.h() || cVar.e()) {
             return;
         }
         try {
-            int p10 = hVar.h.p(hVar.e, cVar);
-            if (p10 != 0) {
-                w5.a aVar = new w5.a(p10, null);
+            int f02 = hVar.h.f0(hVar.e, cVar);
+            if (f02 != 0) {
+                y5.a aVar = new y5.a(f02, null);
                 Log.w("GoogleApiManager", "The service for " + cVar.getClass().getName() + " is not available: " + aVar.toString());
                 m(aVar, null);
                 return;
             }
             s0 s0Var = new s0(hVar, cVar, this.c);
             if (cVar.p()) {
-                d1 d1Var = this.j;
-                z5.l.h(d1Var);
-                Handler handler = d1Var.c;
-                s3 s3Var = d1Var.f;
-                a8.a aVar2 = d1Var.i;
+                e1 e1Var = this.j;
+                b6.m.h(e1Var);
+                Handler handler = e1Var.c;
+                s3 s3Var = e1Var.f;
+                c8.a aVar2 = e1Var.i;
                 if (aVar2 != null) {
                     aVar2.disconnect();
                 }
-                s3Var.h = Integer.valueOf(System.identityHashCode(d1Var));
-                d1Var.i = (a8.a) d1Var.d.a(d1Var.b, handler.getLooper(), s3Var, (z7.a) s3Var.f, d1Var, d1Var);
-                d1Var.j = s0Var;
-                Set set = d1Var.e;
+                s3Var.h = Integer.valueOf(System.identityHashCode(e1Var));
+                e1Var.i = (c8.a) e1Var.d.a(e1Var.b, handler.getLooper(), s3Var, (b8.a) s3Var.f, e1Var, e1Var);
+                e1Var.j = s0Var;
+                Set set = e1Var.e;
                 if (set == null || set.isEmpty()) {
-                    handler.post(new ag.q1(d1Var, 17));
+                    handler.post(new androidx.activity.i(e1Var, 13));
                 } else {
-                    d1Var.i.G();
+                    e1Var.i.G();
                 }
             }
             try {
-                cVar.d(s0Var);
-            } catch (SecurityException e10) {
-                m(new w5.a(10), e10);
+                cVar.n(s0Var);
+            } catch (SecurityException e) {
+                m(new y5.a(10), e);
             }
-        } catch (IllegalStateException e11) {
-            m(new w5.a(10), e11);
+        } catch (IllegalStateException e6) {
+            m(new y5.a(10), e6);
         }
     }
 
-    public final void l(k1 k1Var) {
-        z5.l.d(this.o.x);
+    public final void l(l1 l1Var) {
+        b6.m.d(this.o.x);
         boolean h = this.b.h();
         LinkedList linkedList = this.a;
         if (h) {
-            if (i(k1Var)) {
+            if (i(l1Var)) {
                 h();
                 return;
             } else {
-                linkedList.add(k1Var);
+                linkedList.add(l1Var);
                 return;
             }
         }
-        linkedList.add(k1Var);
-        w5.a aVar = this.m;
-        if (aVar == null || !aVar.b()) {
+        linkedList.add(l1Var);
+        y5.a aVar = this.m;
+        if (aVar == null || !aVar.e()) {
             k();
         } else {
             m(this.m, null);
         }
     }
 
-    public final void m(w5.a aVar, RuntimeException runtimeException) {
-        a8.a aVar2;
-        z5.l.d(this.o.x);
-        d1 d1Var = this.j;
-        if (d1Var != null && (aVar2 = d1Var.i) != null) {
+    public final void m(y5.a aVar, RuntimeException runtimeException) {
+        c8.a aVar2;
+        b6.m.d(this.o.x);
+        e1 e1Var = this.j;
+        if (e1Var != null && (aVar2 = e1Var.i) != null) {
             aVar2.disconnect();
         }
-        z5.l.d(this.o.x);
+        b6.m.d(this.o.x);
         this.m = null;
         ((SparseIntArray) this.o.h.b).clear();
         b(aVar);
-        if ((this.b instanceof b6.d) && aVar.b != 24) {
+        if ((this.b instanceof d6.c) && aVar.b != 24) {
             h hVar = this.o;
             hVar.b = true;
-            c2.v0 v0Var = hVar.x;
-            v0Var.sendMessageDelayed(v0Var.obtainMessage(19), 300000L);
+            a7.e eVar = hVar.x;
+            eVar.sendMessageDelayed(eVar.obtainMessage(19), 300000L);
         }
         if (aVar.b == 4) {
-            c(h.B);
+            c(h.C);
             return;
         }
         if (this.a.isEmpty()) {
@@ -373,7 +373,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         if (runtimeException != null) {
-            z5.l.d(this.o.x);
+            b6.m.d(this.o.x);
             d(null, runtimeException, false);
             return;
         }
@@ -394,56 +394,56 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
         }
         h hVar2 = this.o;
         b bVar = this.c;
-        c2.v0 v0Var2 = hVar2.x;
-        v0Var2.sendMessageDelayed(Message.obtain(v0Var2, 9, bVar), 5000L);
+        a7.e eVar2 = hVar2.x;
+        eVar2.sendMessageDelayed(Message.obtain(eVar2, 9, bVar), 5000L);
     }
 
-    public final void n(w5.a aVar) {
-        z5.l.d(this.o.x);
+    public final void n(y5.a aVar) {
+        b6.m.d(this.o.x);
         com.google.android.gms.common.api.c cVar = this.b;
         cVar.c("onSignInFailed for " + cVar.getClass().getName() + " with " + String.valueOf(aVar));
         m(aVar, null);
     }
 
     public final void o() {
-        z5.l.d(this.o.x);
-        Status status = h.A;
+        b6.m.d(this.o.x);
+        Status status = h.B;
         c(status);
         this.d.b(status, false);
         for (n nVar : (n[]) this.f.keySet().toArray(new n[0])) {
-            l(new i1(nVar, new TaskCompletionSource()));
+            l(new j1(nVar, new TaskCompletionSource()));
         }
-        b(new w5.a(4));
+        b(new y5.a(4));
         com.google.android.gms.common.api.c cVar = this.b;
         if (cVar.h()) {
-            cVar.i(new ag.o1(this, 7));
+            cVar.d(new o5.i(this, 9));
         }
     }
 
     @Override // com.google.android.gms.common.api.k
     public final void onConnected(Bundle bundle) {
         Looper myLooper = Looper.myLooper();
-        c2.v0 v0Var = this.o.x;
-        if (myLooper == v0Var.getLooper()) {
+        a7.e eVar = this.o.x;
+        if (myLooper == eVar.getLooper()) {
             f();
         } else {
-            v0Var.post(new ag.q1(this, 15));
+            eVar.post(new androidx.activity.i(this, 11));
         }
     }
 
     @Override // com.google.android.gms.common.api.l
-    public final void onConnectionFailed(w5.a aVar) {
+    public final void onConnectionFailed(y5.a aVar) {
         m(aVar, null);
     }
 
     @Override // com.google.android.gms.common.api.k
     public final void onConnectionSuspended(int i10) {
         Looper myLooper = Looper.myLooper();
-        c2.v0 v0Var = this.o.x;
-        if (myLooper == v0Var.getLooper()) {
+        a7.e eVar = this.o.x;
+        if (myLooper == eVar.getLooper()) {
             g(i10);
         } else {
-            v0Var.post(new androidx.emoji2.text.j(this, i10, 1));
+            eVar.post(new androidx.emoji2.text.j(this, i10, 1));
         }
     }
 }

@@ -1,131 +1,157 @@
 package nh;
 
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jr;
-import org.telegram.ui.Components.st;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bd;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
+public final /* synthetic */ class e implements h5.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
 
-    public /* synthetic */ e(m mVar, int i10) {
+    public /* synthetic */ e(int i10) {
         this.a = i10;
-        this.b = mVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        m mVar = this.b;
-        switch (i10) {
+    @Override // h5.d
+    public final void accept(Object obj) {
+        MessageObject messageObject;
+        MessageObject messageObject2;
+        switch (this.a) {
             case 0:
-                mVar.t();
+                View view = (View) obj;
+                view.setAlpha(1.0f);
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
                 break;
-            default:
-                boolean z10 = mVar.i0;
-                FrameLayout frameLayout = mVar.F;
-                j jVar = mVar.r;
-                g gVar = mVar.f;
-                if (mVar.l0 != z10) {
-                    mVar.l0 = z10;
-                    ValueAnimator valueAnimator = mVar.m0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                        mVar.m0 = null;
-                    }
-                    Utilities.Callback callback = mVar.g0;
-                    if (callback != null) {
-                        callback.run(Boolean.valueOf(z10));
-                    }
-                    mVar.d(z10);
-                    if (z10) {
-                        i iVar = mVar.I;
-                        if (iVar != null) {
-                            iVar.setVisibility(0);
-                        }
-                        jVar.setVisibility(0);
-                    } else {
-                        gVar.getEditText().scrollBy(0, -gVar.getEditText().getScrollY());
-                    }
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.k0, z10 ? 1.0f : 0.0f);
-                    mVar.m0 = ofFloat;
-                    ofFloat.addUpdateListener(new lh.d5(mVar, 4));
-                    if (!z10) {
-                        gVar.getEditText().setAllowDrawCursor(false);
-                    }
-                    mVar.m0.addListener(new bg.z2(11, mVar, z10));
-                    if (z10) {
-                        mVar.m0.setInterpolator(org.telegram.ui.ActionBar.q1.w);
-                        mVar.m0.setDuration(250L);
-                    } else {
-                        mVar.m0.setInterpolator(new u1.a());
-                        mVar.m0.setDuration(420L);
-                    }
-                    mVar.m0.start();
-                    st editText = gVar.getEditText();
-                    if (editText != null && editText.getLayout() != null) {
-                        ObjectAnimator objectAnimator = mVar.c0;
-                        if (objectAnimator != null) {
-                            objectAnimator.cancel();
-                        }
-                        int scrollY = editText.getScrollY();
-                        gVar.setSelection(z10 ? gVar.a.length() : 0);
-                        gVar.getEditText().setForceCursorEnd(false);
-                        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
-                        mVar.c0 = ofInt;
-                        ofInt.setDuration(360L);
-                        mVar.c0.setInterpolator(jr.h);
-                        mVar.c0.start();
-                    }
-                    gVar.setSuggestionsEnabled(z10);
-                    if (!z10) {
-                        gVar.getEditText().setSpoilersRevealed(false, true);
-                    }
-                    if (z10 && SharedConfig.getDevicePerformanceClass() >= 1 && !LiteMode.isPowerSaverApplied()) {
-                        if (mVar.n0 == null) {
-                            mVar.n0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
-                        }
-                        mVar.u0 = true;
-                        mVar.i(mVar.n0);
-                        mVar.u0 = false;
-                        Bitmap bitmap = mVar.n0;
-                        if (bitmap != null && !bitmap.isRecycled()) {
-                            Bitmap bitmap2 = mVar.n0;
-                            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                            mVar.o0 = new BitmapShader(bitmap2, tileMode, tileMode);
-                            Matrix matrix = mVar.p0;
-                            if (matrix == null) {
-                                mVar.p0 = new Matrix();
-                            } else {
-                                matrix.reset();
-                            }
-                            mVar.o0.setLocalMatrix(mVar.p0);
-                            if (mVar.q0 == null) {
-                                Paint paint = new Paint(3);
-                                mVar.q0 = paint;
-                                paint.setColor(-1);
-                            }
-                            mVar.q0.setShader(mVar.o0);
-                            break;
-                        } else {
-                            mVar.n0 = null;
-                            break;
-                        }
-                    }
+            case 1:
+                ((View) obj).setTranslationY(0.0f);
+                break;
+            case 2:
+                ((p) ((View) obj)).invalidate();
+                break;
+            case 3:
+                ((o3.l) obj).a();
+                break;
+            case 4:
+                ((o4.i0) obj).b.release();
+                break;
+            case 5:
+                bd.Y0((View) obj);
+                break;
+            case 6:
+                View view2 = (View) obj;
+                if ((view2 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view2).getMessageObject()) != null) {
+                    messageObject.forceUpdate = true;
+                    break;
                 }
                 break;
+            case 7:
+                View view3 = (View) obj;
+                if ((view3 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view3).getMessageObject()) != null) {
+                    messageObject2.forceUpdate = true;
+                    messageObject2.reactionsChanged = true;
+                    break;
+                }
+                break;
+            case 8:
+                View view4 = (View) obj;
+                if (!(view4 instanceof org.telegram.ui.ActionBar.z2)) {
+                    view4.invalidate();
+                    break;
+                } else {
+                    ((org.telegram.ui.ActionBar.z2) view4).getTextView().invalidate();
+                    break;
+                }
+            case 9:
+                View view5 = (View) obj;
+                if (!(view5 instanceof org.telegram.ui.Cells.h5)) {
+                    if (!(view5 instanceof uf.l1)) {
+                        view5.invalidate();
+                        break;
+                    } else {
+                        ((uf.l1) view5).c.invalidate();
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view5;
+                    h5Var.b.invalidate();
+                    h5Var.c.invalidate();
+                    break;
+                }
+            case 10:
+                View view6 = (View) obj;
+                if (view6 instanceof org.telegram.ui.Cells.d8) {
+                    ((org.telegram.ui.Cells.d8) view6).a(true);
+                    break;
+                }
+                break;
+            case 11:
+                View view7 = (View) obj;
+                if (view7 instanceof org.telegram.ui.Cells.d8) {
+                    ((org.telegram.ui.Cells.d8) view7).c(true);
+                    break;
+                }
+                break;
+            case 12:
+                Long l10 = (Long) obj;
+                if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
+                    org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+                    if (U != null) {
+                        U.presentFragment(ProfileActivity.m4(l10.longValue()));
+                        break;
+                    }
+                } else {
+                    AndroidUtilities.runOnUIThread(new mc(28));
+                    break;
+                }
+                break;
+            case 13:
+                break;
+            case 14:
+                View view8 = (View) obj;
+                view8.setScaleX(1.0f);
+                view8.setScaleY(1.0f);
+                break;
+            case 15:
+                View view9 = (View) obj;
+                if (view9 instanceof org.telegram.ui.web.h) {
+                    ((org.telegram.ui.web.h) view9).setChecked(false);
+                    break;
+                }
+                break;
+            case 16:
+                View view10 = (View) obj;
+                if (view10 instanceof org.telegram.ui.web.h) {
+                    ((org.telegram.ui.web.h) view10).setChecked(false);
+                    break;
+                }
+                break;
+            case 17:
+                View view11 = (View) obj;
+                if (view11 instanceof uf.l1) {
+                    ((uf.l1) view11).c.invalidate();
+                    break;
+                }
+                break;
+            case 18:
+                View view12 = (View) obj;
+                if (view12 instanceof uf.l1) {
+                    ((uf.l1) view12).d.a(false, true);
+                    break;
+                }
+                break;
+            default:
+                ((View) obj).invalidate();
+                break;
         }
+    }
+
+    public /* synthetic */ e(bd bdVar) {
+        this.a = 5;
     }
 }

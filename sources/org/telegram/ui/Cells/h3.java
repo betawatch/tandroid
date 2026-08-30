@@ -1,61 +1,179 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.text.Editable;
+import android.text.Spannable;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.TextWatcher;
+import android.text.style.CharacterStyle;
+import android.text.style.ParagraphStyle;
+import android.text.style.SuggestionSpan;
+import android.util.Pair;
+import java.util.HashMap;
+import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.pe0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class h3 extends FrameLayout {
-    public final EditTextBoldCursor a;
+public final class h3 implements TextWatcher {
+    public final /* synthetic */ int a = 1;
     public boolean b;
+    public int c;
+    public Object d;
 
-    public h3(Context context) {
-        super(context);
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.a = editTextBoldCursor;
-        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.H6, false));
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
-        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 16384);
-        addView(editTextBoldCursor, i7.f6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    public /* synthetic */ h3() {
     }
 
-    public String getText() {
-        return this.a.getText().toString();
-    }
-
-    public EditTextBoldCursor getTextView() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.c;
+                i3 i3Var = (i3) this.d;
+                g3 g3Var = i3Var.b;
+                if (!i3Var.a) {
+                    if (i10 > 0 && editable != null && editable.length() > i10) {
+                        i3Var.a = true;
+                        g3Var.setText(editable.subSequence(0, i10));
+                        g3Var.setSelection(g3Var.length());
+                        i3Var.a = false;
+                    }
+                    i3Var.b(editable);
+                }
+                if (!this.b) {
+                    while (true) {
+                        int indexOf = editable.toString().indexOf("\n");
+                        if (indexOf < 0) {
+                            break;
+                        } else {
+                            editable.delete(indexOf, indexOf + 1);
+                        }
+                    }
+                }
+                break;
+            case 1:
+                break;
+            default:
+                pe0 pe0Var = (pe0) this.d;
+                kg.f fVar = pe0Var.c;
+                if (!this.b) {
+                    pe0Var.q(true);
+                    AndroidUtilities.cancelRunOnUIThread(pe0Var.S);
+                    pe0Var.o(false);
+                    if (TextUtils.isEmpty(editable)) {
+                        pe0Var.y = false;
+                    }
+                    if (!pe0Var.p(editable.toString())) {
+                        pe0Var.s(true);
+                        this.b = true;
+                        boolean z4 = fVar.getSelectionEnd() >= fVar.getText().length();
+                        if (!pe0Var.y) {
+                            String str = pe0Var.H;
+                            fVar.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
+                            if (z4) {
+                                fVar.setSelection(fVar.getText().length());
+                            }
+                        }
+                        this.b = false;
+                        break;
+                    }
+                }
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.b ? 1 : 0));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                i3 i3Var = (i3) this.d;
+                if (!i3Var.a) {
+                    i3Var.h = false;
+                    break;
+                }
+                break;
+            case 1:
+                if (!this.b) {
+                    HashMap hashMap = new HashMap();
+                    boolean z4 = charSequence instanceof Spannable;
+                    if (z4) {
+                        Spannable spannable = (Spannable) charSequence;
+                        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spannable.getSpans(0, spannable.length(), CharacterStyle.class);
+                        ParagraphStyle[] paragraphStyleArr = (ParagraphStyle[]) spannable.getSpans(0, spannable.length(), ParagraphStyle.class);
+                        if (characterStyleArr != null && characterStyleArr.length > 0) {
+                            for (CharacterStyle characterStyle : characterStyleArr) {
+                                if (characterStyle != null && !(characterStyle instanceof SuggestionSpan)) {
+                                    hashMap.put(characterStyle, new Pair(Integer.valueOf(spannable.getSpanStart(characterStyle)), Integer.valueOf(spannable.getSpanEnd(characterStyle))));
+                                }
+                            }
+                        }
+                        if (paragraphStyleArr != null && paragraphStyleArr.length > 0) {
+                            for (ParagraphStyle paragraphStyle : paragraphStyleArr) {
+                                if (paragraphStyle != null && !(paragraphStyle instanceof SuggestionSpan)) {
+                                    hashMap.put(paragraphStyle, new Pair(Integer.valueOf(spannable.getSpanStart(paragraphStyle)), Integer.valueOf(spannable.getSpanEnd(paragraphStyle))));
+                                }
+                            }
+                        }
+                    }
+                    this.d = hashMap;
+                    this.c = z4 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
+                    break;
+                }
+                break;
+            default:
+                if (!this.b && charSequence != null && ((pe0) this.d).H != null) {
+                    this.c = pe0.t(charSequence.toString()).length();
+                    break;
+                }
+                break;
+        }
     }
 
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 1:
+                if (!this.b) {
+                    boolean z4 = charSequence instanceof Spannable;
+                    int length = z4 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
+                    HashMap hashMap = (HashMap) this.d;
+                    if (hashMap != null) {
+                        if ((length > 0 || this.c > 0) && i10 == 0 && i11 == i12) {
+                            this.b = true;
+                            if (z4) {
+                                Spannable spannable = (Spannable) charSequence;
+                                for (Map.Entry entry : hashMap.entrySet()) {
+                                    if (spannable.getSpanStart(entry.getKey()) == -1) {
+                                        spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
+                                    }
+                                }
+                            }
+                            this.b = false;
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    public h3(i3 i3Var, int i10, boolean z4) {
+        this.d = i3Var;
+        this.c = i10;
+        this.b = z4;
+    }
+
+    public h3(pe0 pe0Var) {
+        this.d = pe0Var;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

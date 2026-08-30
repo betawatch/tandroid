@@ -1,15 +1,15 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class o1 implements s9.d {
+public final class o1 implements u9.d {
     public static final o1 a = new o1();
 
     static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(h0.class, l1.h(4, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(3, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(2, com.google.android.recaptcha.internal.a.r(h0.class, new e0(1)))))))));
+        e2.c.r(e2.c.n(i.class, new e(1)));
     }
 
-    @Override // s9.a
+    @Override // u9.a
     public final /* synthetic */ void a(Object obj, Object obj2) {
         if (obj != null) {
             throw new ClassCastException();

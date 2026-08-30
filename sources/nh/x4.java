@@ -1,37 +1,27 @@
 package nh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class x4 extends bg.h2 {
-    public final Path c3;
-    public final /* synthetic */ ja d3;
+public final class x4 extends org.telegram.ui.Cells.n6 {
+    public final /* synthetic */ z4 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(ja jaVar, Context context) {
-        super(context);
-        this.d3 = jaVar;
-        this.c3 = new Path();
+    public x4(int i10, Context context, b bVar, z4 z4Var) {
+        super(1, i10, context, bVar, false, true);
+        this.H = z4Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        ViewGroup barView;
-        barView = this.d3.getBarView();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.lerp(barView.getLeft() - getLeft(), 0, r0.z1), AndroidUtilities.lerp(barView.getTop() - getTop(), 0, r0.z1), AndroidUtilities.lerp(barView.getRight() - getLeft(), getWidth(), r0.z1), AndroidUtilities.lerp(barView.getBottom() - getTop(), getHeight(), r0.z1));
-        Path path = this.c3;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        super.draw(canvas);
-        canvas.restore();
+    @Override // org.telegram.ui.Cells.n6
+    public final void b(long j10) {
+        org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
+        }
+        i9 createOverlayStoryViewer = R.createOverlayStoryViewer();
+        createOverlayStoryViewer.getClass();
+        createOverlayStoryViewer.D(getContext(), j10, c7.a(this.H.d.r));
     }
 }

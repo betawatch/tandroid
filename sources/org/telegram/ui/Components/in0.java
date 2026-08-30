@@ -1,98 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class in0 extends f2.a1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.fy b;
-    public final /* synthetic */ org.telegram.ui.ox c;
+public final class in0 extends EditTextBoldCursor {
+    public final c5 b;
+    public int c;
+    public final j6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
 
-    public /* synthetic */ in0(org.telegram.ui.ox oxVar, org.telegram.ui.fy fyVar, int i10) {
-        this.a = i10;
-        this.c = oxVar;
-        this.b = fyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public in0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.e = f6Var;
+        this.b = new c5(this);
+        j6 j6Var = new j6(false, true, true, false);
+        this.d = j6Var;
+        j6Var.k(0.2f, 160L, nr.h);
+        j6Var.t(AndroidUtilities.dp(15.33f));
+        j6Var.setCallback(this);
+        j6Var.b = 5;
     }
 
-    @Override // f2.a1
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(org.telegram.ui.ActionBar.j6.v0(this.c < 0 ? org.telegram.ui.ActionBar.j6.p7 : org.telegram.ui.ActionBar.j6.P5, this.e), false);
+        j6 j6Var = this.d;
+        j6Var.r(a2);
+        j6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        j6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.xt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        j6 j6Var = this.d;
+        if (j6Var != null) {
+            this.c = 12 - charSequence.length();
+            j6Var.b();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
+            }
+            j6Var.q(str, true, true);
         }
     }
 
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.qx qxVar;
-        int i12;
-        jl0 jl0Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ox oxVar = this.c;
-                oxVar.k0.V();
-                oxVar.S(i10, i11);
-                break;
-            case 1:
-                org.telegram.ui.ox oxVar2 = this.c;
-                oxVar2.r0.W();
-                oxVar2.S(i10, i11);
-                break;
-            case 2:
-                org.telegram.ui.ox oxVar3 = this.c;
-                mn0 mn0Var = oxVar3.U;
-                f2.j0 j0Var = oxVar3.V;
-                int L0 = j0Var.L0();
-                int N0 = j0Var.N0();
-                int abs = Math.abs(j0Var.N0() - L0) + 1;
-                int h = recyclerView.getAdapter().h();
-                if (abs > 0 && (((mn0Var.Q.a() != 0 && !mn0Var.T) || !mn0Var.S) && (N0 == h - 1 || ((qxVar = mn0Var.Q) != null && qxVar.a() != 0 && (i12 = mn0Var.U) >= 0 && L0 <= i12 && N0 >= i12)))) {
-                    mn0Var.Q();
-                }
-                oxVar3.S(i10, i11);
-                break;
-            default:
-                org.telegram.ui.ox oxVar4 = this.c;
-                on0 on0Var = oxVar4.f0;
-                if (on0Var.U && !on0Var.S && !TextUtils.isEmpty(on0Var.X) && (jl0Var = on0Var.d) != null) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < jl0Var.getChildCount()) {
-                            if (!(jl0Var.getChildAt(i13) instanceof p00)) {
-                                i13++;
-                            } else if (on0Var.U && !on0Var.S && !TextUtils.isEmpty(on0Var.X)) {
-                                on0Var.V(true);
-                            }
-                        }
-                    }
-                }
-                oxVar4.S(i10, i11);
-                break;
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

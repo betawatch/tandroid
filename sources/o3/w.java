@@ -1,17 +1,32 @@
 package o3;
 
-import j3.t0;
+import h5.d0;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface w {
-    int a(com.google.android.exoplayer2.upstream.j jVar, int i10, boolean z10);
+public final class w implements n3.b {
+    public static final boolean d;
+    public final UUID a;
+    public final byte[] b;
+    public final boolean c;
 
-    void b(t0 t0Var);
+    static {
+        boolean z4;
+        if ("Amazon".equals(d0.c)) {
+            String str = d0.d;
+            if ("AFTM".equals(str) || "AFTB".equals(str)) {
+                z4 = true;
+                d = z4;
+            }
+        }
+        z4 = false;
+        d = z4;
+    }
 
-    void c(long j10, int i10, int i11, int i12, v vVar);
-
-    void d(int i10, f5.w wVar);
-
-    void e(int i10, f5.w wVar);
+    public w(UUID uuid, byte[] bArr, boolean z4) {
+        this.a = uuid;
+        this.b = bArr;
+        this.c = z4;
+    }
 }

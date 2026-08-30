@@ -1,114 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class eb extends FrameLayout {
-    public final rb a;
-    public final Rect b;
-    public final GestureDetector c;
-    public boolean d;
-    public boolean e;
-    public float f;
-    public float h;
-    public float n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean w;
-    public final /* synthetic */ FrameLayout x;
-    public final /* synthetic */ mc y;
+public abstract class eb extends nb {
+    private db button;
+    private int childrenMeasuredWidth;
+    org.telegram.ui.ActionBar.f6 resourcesProvider;
+    public bc timerView;
+    private boolean wrapWidth;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eb(mc mcVar, rb rbVar, FrameLayout frameLayout) {
-        super(rbVar.getContext());
-        this.y = mcVar;
-        this.x = frameLayout;
-        this.b = new Rect();
-        this.a = rbVar;
-        GestureDetector gestureDetector = new GestureDetector(rbVar.getContext(), new bc(this, rbVar));
-        this.c = gestureDetector;
-        gestureDetector.setIsLongpressEnabled(false);
-        addView(rbVar);
+    public eb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.resourcesProvider = f6Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z10 = this.e;
-        rb rbVar = this.a;
-        if (!z10) {
-            float x4 = motionEvent.getX();
-            float y8 = motionEvent.getY();
-            Rect rect = this.b;
-            rbVar.getHitRect(rect);
-            if (!rect.contains((int) x4, (int) y8)) {
-                return false;
-            }
+    public db getButton() {
+        return this.button;
+    }
+
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        db dbVar = this.button;
+        if (dbVar != null && view != dbVar) {
+            i11 = org.telegram.ui.b.C(12.0f, dbVar.getMeasuredWidth(), i11);
         }
-        this.c.onTouchEvent(motionEvent);
-        int actionMasked = motionEvent.getActionMasked();
-        FrameLayout frameLayout = this.x;
-        mc mcVar = this.y;
-        if (actionMasked == 0) {
-            if (!this.e && !this.s) {
-                rbVar.animate().cancel();
-                this.n = 0.0f;
-                this.h = 0.0f;
-                this.r = false;
-                this.f = rbVar.getTranslationX();
-                System.currentTimeMillis();
-                mc mcVar2 = rbVar.bulletin;
-                this.d = mcVar2 == null || mcVar2.m;
-                this.e = true;
-                mcVar.i(false);
-                if (frameLayout.getParent() != null) {
-                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                if (rbVar.onClickListener != null) {
-                    rbVar.setPressed(true);
-                    return true;
-                }
-            }
-        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
-            if (!this.s) {
-                if (Math.abs(this.f) > rbVar.getWidth() / 3.0f) {
-                    float signum = Math.signum(this.f) * rbVar.getWidth();
-                    float f9 = this.f;
-                    rbVar.animate().translationX(signum).alpha(((f9 > 0.0f ? 1 : (f9 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f9 > 0.0f ? 1 : (f9 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.e0(this, signum, 1)).start();
-                    this.e = false;
-                    mcVar.i(true);
-                    if (frameLayout.getParent() != null) {
-                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
-                    }
-                    if (rbVar.onClickListener != null) {
-                        rbVar.setPressed(false);
-                    }
-                } else {
-                    rbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
-                }
-            }
-            if (actionMasked == 1 && rbVar.isPressed() && (onClickListener = rbVar.onClickListener) != null && !this.r) {
-                onClickListener.onClick(rbVar);
-            }
-            this.e = false;
-            mcVar.i(true);
-            if (frameLayout.getParent() != null) {
-            }
-            if (rbVar.onClickListener != null) {
-            }
+        super.measureChildWithMargins(view, i10, i11, i12, i13);
+        if (view != this.button) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
         }
-        return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.childrenMeasuredWidth = 0;
+        if (this.wrapWidth) {
+            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        }
+        super.onMeasure(i10, i11);
+        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
+            return;
+        }
+        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
+    }
+
+    public void setButton(db dbVar) {
+        db dbVar2 = this.button;
+        if (dbVar2 != null) {
+            removeCallback(dbVar2);
+            removeView(this.button);
+        }
+        this.button = dbVar;
+        if (dbVar != null) {
+            addCallback(dbVar);
+            addView(dbVar, 0, k7.b6.h(-2.0f, -2.0f, 8388629));
+        }
+    }
+
+    public void setTimer() {
+        bc bcVar = new bc(getContext(), this.resourcesProvider);
+        this.timerView = bcVar;
+        bcVar.b = 5000L;
+        addView(bcVar, k7.b6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public void setWrapWidth() {
+        this.wrapWidth = true;
     }
 }

@@ -9,12 +9,12 @@ import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class FileInfoInternal extends CacheByChatsController.KeepMediaFile {
         final long lastUsageDate;
 
@@ -76,7 +76,7 @@ public class AutoDeleteMediaTask {
         }
         ArrayList arrayList2 = new ArrayList();
         int i17 = 0;
-        boolean z10 = false;
+        boolean z4 = false;
         while (true) {
             i11 = 4;
             i12 = 1;
@@ -87,35 +87,35 @@ public class AutoDeleteMediaTask {
                 CacheByChatsController cacheByChatsController = UserConfig.getInstance(i17).getMessagesController().getCacheByChatsController();
                 arrayList2.add(cacheByChatsController);
                 if (cacheByChatsController.getKeepMediaExceptionsByDialogs().size() > 0) {
-                    z10 = true;
+                    z4 = true;
                 }
             }
             i17++;
         }
         int[] iArr = new int[4];
         long j15 = Long.MAX_VALUE;
-        boolean z11 = true;
+        boolean z10 = true;
         for (int i18 = 0; i18 < 4; i18++) {
-            int i19 = SharedConfig.getPreferences().getInt(j7.l1.k(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
+            int i19 = SharedConfig.getPreferences().getInt(kh.a2.j(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
             iArr[i18] = i19;
             if (i19 != CacheByChatsController.KEEP_MEDIA_FOREVER) {
-                z11 = false;
+                z10 = false;
             }
             long daysInSeconds = CacheByChatsController.getDaysInSeconds(i19);
             if (daysInSeconds < j15) {
                 j15 = daysInSeconds;
             }
         }
-        if (z10) {
-            z11 = false;
+        if (z4) {
+            z10 = false;
         }
         SparseArray<File> createMediaPaths = ImageLoader.getInstance().createMediaPaths();
         int i20 = 0;
         int i21 = 0;
         long j16 = 0;
         while (i21 < createMediaPaths.size()) {
-            if (!z11 || (createMediaPaths.keyAt(i21) != i12 && createMediaPaths.keyAt(i21) != 3)) {
-                boolean z12 = createMediaPaths.keyAt(i21) == i11;
+            if (!z10 || (createMediaPaths.keyAt(i21) != i12 && createMediaPaths.keyAt(i21) != 3)) {
+                boolean z11 = createMediaPaths.keyAt(i21) == i11;
                 try {
                     File[] listFiles = createMediaPaths.valueAt(i21).listFiles();
                     ArrayList<? extends CacheByChatsController.KeepMediaFile> arrayList3 = new ArrayList<>();
@@ -149,7 +149,7 @@ public class AutoDeleteMediaTask {
                                         int i26 = keepMediaFile.dialogType;
                                         if (i26 >= 0) {
                                             j12 = CacheByChatsController.getDaysInSeconds(iArr[i26]);
-                                        } else if (!z12) {
+                                        } else if (!z11) {
                                             j12 = j15;
                                         }
                                     }
@@ -180,8 +180,8 @@ public class AutoDeleteMediaTask {
                                             FileLog.d("delete file " + keepMediaFile.file.getPath() + " last_usage_time=" + lastUsageFileTime + " time_local=" + j14 + " story=" + keepMediaFile.isStory);
                                         }
                                         keepMediaFile.file.delete();
-                                    } catch (Exception e10) {
-                                        FileLog.e(e10);
+                                    } catch (Exception e) {
+                                        FileLog.e(e);
                                     }
                                 }
                             }
@@ -228,7 +228,7 @@ public class AutoDeleteMediaTask {
                 for (int i30 = 0; i30 < arrayList2.size(); i30++) {
                     ((CacheByChatsController) arrayList2.get(i30)).lookupFiles(arrayList4);
                 }
-                Collections.sort(arrayList4, new q(1));
+                Collections.sort(arrayList4, new s(1));
                 j10 = 0;
                 int i31 = 0;
                 i13 = 0;
@@ -292,7 +292,7 @@ public class AutoDeleteMediaTask {
             return;
         }
         SharedConfig.lastKeepMediaCheckTime = currentTimeMillis;
-        Utilities.cacheClearQueue.postRunnable(new r6(currentTimeMillis, FileLoader.checkDirectory(4), 4));
+        Utilities.cacheClearQueue.postRunnable(new s6(currentTimeMillis, FileLoader.checkDirectory(4), 4));
     }
 
     public static void unlockFile(File file) {

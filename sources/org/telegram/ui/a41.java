@@ -1,67 +1,52 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f41 b;
+public final class a41 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+    public final Path a;
+    public pg.b b;
 
-    public /* synthetic */ a41(f41 f41Var, int i10) {
-        this.a = i10;
-        this.b = f41Var;
+    public a41(Activity activity) {
+        super(activity);
+        this.a = new Path();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                f41 f41Var = this.b;
-                a41 a41Var = f41Var.V;
-                if (f41Var.w != null) {
-                    f41Var.W = r2.o() / f41Var.w.q();
-                    d41 d41Var = f41Var.J;
-                    if (d41Var != null) {
-                        d41Var.Td = (f41Var.w.q() - f41Var.w.o()) / 1000;
-                        f41Var.J.q4();
-                        org.telegram.ui.Components.co0 seekBarWaveform = f41Var.J.getSeekBarWaveform();
-                        if (seekBarWaveform != null) {
-                            float f9 = f41Var.W;
-                            seekBarWaveform.J = true;
-                            seekBarWaveform.K = f9;
-                            org.telegram.ui.Cells.s1 s1Var = seekBarWaveform.n;
-                            if (s1Var != null) {
-                                s1Var.invalidate();
-                            }
-                        }
-                    }
-                    if (f41Var.w.z()) {
-                        AndroidUtilities.cancelRunOnUIThread(a41Var);
-                        AndroidUtilities.runOnUIThread(a41Var, 16L);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 2:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            default:
-                f41 f41Var2 = this.b;
-                if (f41Var2.d == null) {
-                    AndroidUtilities.runOnUIThread(new a41(f41Var2, 2));
-                    org.telegram.ui.Cells.s1 s1Var2 = f41Var2.K;
-                    if (s1Var2 != null) {
-                        s1Var2.setVisibility(0);
-                        f41Var2.K.invalidate();
-                    }
-                }
-                MediaController.getInstance().tryResumePausedAudio();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.a);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        pg.b bVar = this.b;
+        if (bVar != null) {
+            bVar.u();
         }
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+    }
+
+    public void setBlurredBackground(pg.b bVar) {
+        this.b = bVar;
+        setBackground(bVar);
     }
 }

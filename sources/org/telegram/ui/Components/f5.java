@@ -1,94 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
-import android.os.SystemClock;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f5 {
-    public final View a;
-    public final Runnable b;
-    public int c;
-    public int d;
-    public boolean e;
-    public final long f;
-    public final TimeInterpolator g;
-    public boolean h;
-    public long i;
-    public int j;
+public final /* synthetic */ class f5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h5 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ HashSet d;
 
-    public f5(View view) {
-        this.f = 200L;
-        this.g = jr.f;
-        this.a = view;
-        this.e = true;
+    public /* synthetic */ f5(h5 h5Var, ArrayList arrayList, HashSet hashSet, int i10) {
+        this.a = i10;
+        this.b = h5Var;
+        this.c = arrayList;
+        this.d = hashSet;
     }
 
-    public final int a(int i10, boolean z10) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j10 = this.f;
-        if (z10 || j10 <= 0 || this.e) {
-            this.d = i10;
-            this.c = i10;
-            this.h = false;
-            this.e = false;
-        } else if (this.d != i10) {
-            this.h = true;
-            this.d = i10;
-            this.j = this.c;
-            this.i = elapsedRealtime;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new f5(this.b, this.c, this.d, 1));
+                break;
+            default:
+                h5 h5Var = this.b;
+                h5Var.d(this.c);
+                HashSet hashSet = this.d;
+                if (!hashSet.isEmpty()) {
+                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
+                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
+                    ConnectionsManager.getInstance(h5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.lo(3, h5Var, arrayList));
+                    break;
+                }
+                break;
         }
-        if (this.h) {
-            float a2 = i7.w.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
-            if (elapsedRealtime - this.i >= 0) {
-                TimeInterpolator timeInterpolator = this.g;
-                if (timeInterpolator == null) {
-                    this.c = i0.a.d(a2, this.j, this.d);
-                } else {
-                    this.c = i0.a.d(timeInterpolator.getInterpolation(a2), this.j, this.d);
-                }
-            }
-            if (a2 >= 1.0f) {
-                this.h = false;
-            } else {
-                View view = this.a;
-                if (view != null) {
-                    view.invalidate();
-                }
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
-        }
-        return this.c;
-    }
-
-    public f5(View view, long j10, TimeInterpolator timeInterpolator) {
-        this.f = 200L;
-        jr jrVar = jr.f;
-        this.a = view;
-        this.f = j10;
-        this.g = timeInterpolator;
-        this.e = true;
-    }
-
-    public f5(View view, long j10, TimeInterpolator timeInterpolator, int i10) {
-        this.f = 200L;
-        jr jrVar = jr.f;
-        this.a = view;
-        this.f = j10;
-        this.g = timeInterpolator;
-        this.e = true;
-    }
-
-    public f5(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
-        this.f = 200L;
-        jr jrVar = jr.f;
-        this.b = runnable;
-        this.f = j10;
-        this.g = timeInterpolator;
-        this.e = true;
     }
 }

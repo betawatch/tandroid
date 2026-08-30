@@ -12,9 +12,9 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import h7.l8;
+import j7.h8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a implements l0.a {
     public CharSequence a;
@@ -48,7 +48,7 @@ public final class a implements l0.a {
         Drawable drawable = this.h;
         if (drawable != null) {
             if (this.n || this.o) {
-                Drawable d = l8.d(drawable);
+                Drawable d = h8.d(drawable);
                 this.h = d;
                 Drawable mutate = d.mutate();
                 this.h = mutate;
@@ -215,14 +215,14 @@ public final class a implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setCheckable(boolean z10) {
-        this.p = (z10 ? 1 : 0) | (this.p & (-2));
+    public final MenuItem setCheckable(boolean z4) {
+        this.p = (z4 ? 1 : 0) | (this.p & (-2));
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setChecked(boolean z10) {
-        this.p = (z10 ? 2 : 0) | (this.p & (-3));
+    public final MenuItem setChecked(boolean z4) {
+        this.p = (z4 ? 2 : 0) | (this.p & (-3));
         return this;
     }
 
@@ -233,8 +233,8 @@ public final class a implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setEnabled(boolean z10) {
-        this.p = (z10 ? 16 : 0) | (this.p & (-17));
+    public final MenuItem setEnabled(boolean z4) {
+        this.p = (z4 ? 16 : 0) | (this.p & (-17));
         return this;
     }
 
@@ -279,9 +279,9 @@ public final class a implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c3, char c6) {
+    public final MenuItem setShortcut(char c3, char c10) {
         this.d = c3;
-        this.f = Character.toLowerCase(c6);
+        this.f = Character.toLowerCase(c10);
         return this;
     }
 
@@ -304,8 +304,8 @@ public final class a implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setVisible(boolean z10) {
-        this.p = (this.p & 8) | (z10 ? 0 : 8);
+    public final MenuItem setVisible(boolean z4) {
+        this.p = (this.p & 8) | (z4 ? 0 : 8);
         return this;
     }
 
@@ -354,10 +354,10 @@ public final class a implements l0.a {
     }
 
     @Override // l0.a, android.view.MenuItem
-    public final MenuItem setShortcut(char c3, char c6, int i10, int i11) {
+    public final MenuItem setShortcut(char c3, char c10, int i10, int i11) {
         this.d = c3;
         this.e = KeyEvent.normalizeMetaState(i10);
-        this.f = Character.toLowerCase(c6);
+        this.f = Character.toLowerCase(c10);
         this.g = KeyEvent.normalizeMetaState(i11);
         return this;
     }

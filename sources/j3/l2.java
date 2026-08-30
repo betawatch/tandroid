@@ -1,49 +1,35 @@
 package j3;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class l2 extends g2 {
-    public static final String e;
-    public static final String f;
-    public static final d0 h;
-    public final int c;
-    public final float d;
-
-    static {
-        int i10 = f5.d0.a;
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
-        h = new d0(10);
+public final class l2 extends o2 {
+    @Override // j3.o2
+    public final int b(Object obj) {
+        return -1;
     }
 
-    public l2(int i10) {
-        f5.a.e("maxStars must be a positive integer", i10 > 0);
-        this.c = i10;
-        this.d = -1.0f;
+    @Override // j3.o2
+    public final m2 f(int i10, m2 m2Var, boolean z4) {
+        throw new IndexOutOfBoundsException();
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof l2)) {
-            return false;
-        }
-        l2 l2Var = (l2) obj;
-        return this.c == l2Var.c && this.d == l2Var.d;
+    @Override // j3.o2
+    public final int h() {
+        return 0;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.c), Float.valueOf(this.d)});
+    @Override // j3.o2
+    public final Object l(int i10) {
+        throw new IndexOutOfBoundsException();
     }
 
-    public l2(int i10, float f9) {
-        boolean z10 = false;
-        f5.a.e("maxStars must be a positive integer", i10 > 0);
-        if (f9 >= 0.0f && f9 <= i10) {
-            z10 = true;
-        }
-        f5.a.e("starRating is out of range [0, maxStars]", z10);
-        this.c = i10;
-        this.d = f9;
+    @Override // j3.o2
+    public final n2 m(int i10, n2 n2Var, long j10) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j3.o2
+    public final int o() {
+        return 0;
     }
 }

@@ -61,7 +61,7 @@ public final class c6 extends x0 implements n8 {
     }
 
     @Override // j$.util.stream.n8
-    public o8 h(w1 w1Var, boolean z10) {
-        return new h8(this, w1Var, z10);
+    public o8 h(w1 w1Var, boolean z4) {
+        return new h8(this, w1Var, z4);
     }
 }

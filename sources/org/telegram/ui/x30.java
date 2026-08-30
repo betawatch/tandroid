@@ -1,16 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class x30 extends org.telegram.ui.Components.qc0 {
-    public x30(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+public final class x30 extends org.telegram.ui.Components.vh0 {
+    public final /* synthetic */ c60 p1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x30(c60 c60Var, LaunchActivity launchActivity, z40 z40Var, j50 j50Var, w30 w30Var) {
+        super(launchActivity, z40Var, j50Var, w30Var);
+        this.p1 = c60Var;
     }
 
-    @Override // org.telegram.ui.Components.qc0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
+    @Override // android.view.View
+    public final void invalidate() {
+        ViewGroup viewGroup;
+        super.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.g3) this.p1).containerView;
+        viewGroup.invalidate();
     }
 }

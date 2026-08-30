@@ -1,236 +1,180 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SecureDocument;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class xl0 implements RequestDelegate {
-    public final /* synthetic */ jm0 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ TL_account.saveSecureValue c;
-    public final /* synthetic */ TLRPC.TL_secureRequiredType d;
-    public final /* synthetic */ TLRPC.TL_secureRequiredType e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ SecureDocument g;
-    public final /* synthetic */ SecureDocument h;
-    public final /* synthetic */ SecureDocument i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ String k;
-    public final /* synthetic */ String l;
-    public final /* synthetic */ Runnable m;
-    public final /* synthetic */ yl0 n;
-    public final /* synthetic */ TLRPC.TL_inputSecureValue o;
-    public final /* synthetic */ yl0 p;
+public final class xl0 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public Object b;
+    public float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public xl0(yl0 yl0Var, jm0 jm0Var, String str, TL_account.saveSecureValue savesecurevalue, TLRPC.TL_secureRequiredType tL_secureRequiredType, TLRPC.TL_secureRequiredType tL_secureRequiredType2, ArrayList arrayList, SecureDocument secureDocument, SecureDocument secureDocument2, SecureDocument secureDocument3, ArrayList arrayList2, String str2, String str3, Runnable runnable, yl0 yl0Var2, TLRPC.TL_inputSecureValue tL_inputSecureValue) {
-        this.p = yl0Var;
-        this.a = jm0Var;
-        this.b = str;
-        this.c = savesecurevalue;
-        this.d = tL_secureRequiredType;
-        this.e = tL_secureRequiredType2;
-        this.f = arrayList;
-        this.g = secureDocument;
-        this.h = secureDocument2;
-        this.i = secureDocument3;
-        this.j = arrayList2;
-        this.k = str2;
-        this.l = str3;
-        this.m = runnable;
-        this.n = yl0Var2;
-        this.o = tL_inputSecureValue;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xl0(Context context, EditTextBoldCursor editTextBoldCursor, int i10) {
+        super(context);
+        this.a = i10;
+        this.d = editTextBoldCursor;
     }
 
-    public final void a(final TLRPC.TL_error tL_error, final TLRPC.TL_secureValue tL_secureValue, final TLRPC.TL_secureValue tL_secureValue2) {
-        yl0 yl0Var = this.p;
-        final boolean z10 = yl0Var.b;
-        final int i10 = yl0Var.c;
-        final jm0 jm0Var = this.a;
-        final String str = this.b;
-        final TL_account.saveSecureValue savesecurevalue = this.c;
-        final TLRPC.TL_secureRequiredType tL_secureRequiredType = this.d;
-        final TLRPC.TL_secureRequiredType tL_secureRequiredType2 = this.e;
-        final ArrayList arrayList = this.f;
-        final SecureDocument secureDocument = this.g;
-        final SecureDocument secureDocument2 = this.h;
-        final SecureDocument secureDocument3 = this.i;
-        final ArrayList arrayList2 = this.j;
-        final String str2 = this.k;
-        final String str3 = this.l;
-        final Runnable runnable = this.m;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wl0
-            @Override // java.lang.Runnable
-            public final void run() {
-                vm0 vm0Var;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType3;
-                int i11;
-                yl0 yl0Var2 = xl0.this.p;
-                vm0 vm0Var2 = yl0Var2.d;
-                TLRPC.TL_error tL_error2 = tL_error;
-                String str4 = str;
-                if (tL_error2 != null) {
-                    jm0 jm0Var2 = jm0Var;
-                    if (jm0Var2 != null) {
-                        jm0Var2.M(tL_error2.text, str4);
-                    }
-                    i11 = ((org.telegram.ui.ActionBar.o2) vm0Var2).currentAccount;
-                    org.telegram.ui.Components.c5.f0(i11, tL_error2, vm0Var2, savesecurevalue, str4);
-                    return;
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                if (((StaticLayout) this.b) != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
+                    ((StaticLayout) this.b).draw(canvas);
+                    canvas.restore();
+                    break;
                 }
-                boolean z11 = z10;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType4 = tL_secureRequiredType;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType5 = tL_secureRequiredType2;
-                if (!z11) {
-                    vm0Var2.H1(tL_secureRequiredType5);
-                    vm0Var2.H1(tL_secureRequiredType4);
-                } else if (tL_secureRequiredType4 != null) {
-                    vm0Var2.H1(tL_secureRequiredType4);
-                } else {
-                    vm0Var2.H1(tL_secureRequiredType5);
+                break;
+            case 1:
+                if (((StaticLayout) this.b) != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
+                    ((StaticLayout) this.b).draw(canvas);
+                    canvas.restore();
+                    break;
                 }
-                TLRPC.TL_secureValue tL_secureValue3 = tL_secureValue;
-                if (tL_secureValue3 != null) {
-                    vm0Var2.y.values.add(tL_secureValue3);
+                break;
+            case 2:
+                if (((StaticLayout) this.b) != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
+                    ((StaticLayout) this.b).draw(canvas);
+                    canvas.restore();
+                    break;
                 }
-                TLRPC.TL_secureValue tL_secureValue4 = tL_secureValue2;
-                if (tL_secureValue4 != null) {
-                    vm0Var2.y.values.add(tL_secureValue4);
-                }
-                ArrayList arrayList3 = arrayList;
-                if (arrayList3 != null && !arrayList3.isEmpty()) {
-                    int size = arrayList3.size();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                int size = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
+                StaticLayout errorLayout = ((EditTextBoldCursor) this.d).getErrorLayout(size);
+                this.b = errorLayout;
+                if (errorLayout != null) {
+                    int lineCount = errorLayout.getLineCount();
                     int i12 = 0;
-                    while (i12 < size) {
-                        SecureDocument secureDocument4 = (SecureDocument) arrayList3.get(i12);
-                        if (secureDocument4.inputFile != null) {
-                            int size2 = tL_secureValue3.files.size();
-                            int i13 = 0;
-                            while (i13 < size2) {
-                                TLRPC.SecureFile secureFile = tL_secureValue3.files.get(i13);
-                                if (secureFile instanceof TLRPC.TL_secureFile) {
-                                    TLRPC.TL_secureFile tL_secureFile = (TLRPC.TL_secureFile) secureFile;
-                                    vm0Var = vm0Var2;
-                                    tL_secureRequiredType3 = tL_secureRequiredType5;
-                                    if (Utilities.arraysEquals(secureDocument4.fileSecret, 0, tL_secureFile.secret, 0)) {
-                                        yl0.a(yl0Var2, secureDocument4, tL_secureFile);
-                                        break;
-                                    }
+                    if (lineCount > 1) {
+                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
+                    }
+                    if (LocaleController.isRTL) {
+                        float f10 = 0.0f;
+                        while (true) {
+                            if (i12 < lineCount) {
+                                if (((StaticLayout) this.b).getLineLeft(i12) != 0.0f) {
+                                    this.c = 0.0f;
                                 } else {
-                                    vm0Var = vm0Var2;
-                                    tL_secureRequiredType3 = tL_secureRequiredType5;
-                                }
-                                i13++;
-                                vm0Var2 = vm0Var;
-                                tL_secureRequiredType5 = tL_secureRequiredType3;
-                            }
-                        }
-                        vm0Var = vm0Var2;
-                        tL_secureRequiredType3 = tL_secureRequiredType5;
-                        i12++;
-                        vm0Var2 = vm0Var;
-                        tL_secureRequiredType5 = tL_secureRequiredType3;
-                    }
-                }
-                vm0 vm0Var3 = vm0Var2;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType6 = tL_secureRequiredType5;
-                SecureDocument secureDocument5 = secureDocument;
-                if (secureDocument5 != null && secureDocument5.inputFile != null) {
-                    TLRPC.SecureFile secureFile2 = tL_secureValue3.selfie;
-                    if (secureFile2 instanceof TLRPC.TL_secureFile) {
-                        TLRPC.TL_secureFile tL_secureFile2 = (TLRPC.TL_secureFile) secureFile2;
-                        if (Utilities.arraysEquals(secureDocument5.fileSecret, 0, tL_secureFile2.secret, 0)) {
-                            yl0.a(yl0Var2, secureDocument5, tL_secureFile2);
-                        }
-                    }
-                }
-                SecureDocument secureDocument6 = secureDocument2;
-                if (secureDocument6 != null && secureDocument6.inputFile != null) {
-                    TLRPC.SecureFile secureFile3 = tL_secureValue3.front_side;
-                    if (secureFile3 instanceof TLRPC.TL_secureFile) {
-                        TLRPC.TL_secureFile tL_secureFile3 = (TLRPC.TL_secureFile) secureFile3;
-                        if (Utilities.arraysEquals(secureDocument6.fileSecret, 0, tL_secureFile3.secret, 0)) {
-                            yl0.a(yl0Var2, secureDocument6, tL_secureFile3);
-                        }
-                    }
-                }
-                SecureDocument secureDocument7 = secureDocument3;
-                if (secureDocument7 != null && secureDocument7.inputFile != null) {
-                    TLRPC.SecureFile secureFile4 = tL_secureValue3.reverse_side;
-                    if (secureFile4 instanceof TLRPC.TL_secureFile) {
-                        TLRPC.TL_secureFile tL_secureFile4 = (TLRPC.TL_secureFile) secureFile4;
-                        if (Utilities.arraysEquals(secureDocument7.fileSecret, 0, tL_secureFile4.secret, 0)) {
-                            yl0.a(yl0Var2, secureDocument7, tL_secureFile4);
-                        }
-                    }
-                }
-                ArrayList arrayList4 = arrayList2;
-                if (arrayList4 != null && !arrayList4.isEmpty()) {
-                    int size3 = arrayList4.size();
-                    for (int i14 = 0; i14 < size3; i14++) {
-                        SecureDocument secureDocument8 = (SecureDocument) arrayList4.get(i14);
-                        if (secureDocument8.inputFile != null) {
-                            int size4 = tL_secureValue3.translation.size();
-                            for (int i15 = 0; i15 < size4; i15++) {
-                                TLRPC.SecureFile secureFile5 = tL_secureValue3.translation.get(i15);
-                                if (secureFile5 instanceof TLRPC.TL_secureFile) {
-                                    TLRPC.TL_secureFile tL_secureFile5 = (TLRPC.TL_secureFile) secureFile5;
-                                    if (Utilities.arraysEquals(secureDocument8.fileSecret, 0, tL_secureFile5.secret, 0)) {
-                                        yl0.a(yl0Var2, secureDocument8, tL_secureFile5);
-                                        break;
+                                    f10 = Math.max(f10, ((StaticLayout) this.b).getLineWidth(i12));
+                                    if (i12 == lineCount - 1) {
+                                        this.c = size - f10;
                                     }
+                                    i12++;
                                 }
                             }
                         }
                     }
                 }
-                vm0Var3.L1(tL_secureRequiredType6, str4, str2, tL_secureRequiredType4, str3, z11, i10);
-                runnable.run();
-            }
-        });
+                super.onMeasure(i10, i11);
+                break;
+            case 1:
+                int size2 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
+                StaticLayout errorLayout2 = ((EditTextBoldCursor) this.d).getErrorLayout(size2);
+                this.b = errorLayout2;
+                if (errorLayout2 != null) {
+                    int lineCount2 = errorLayout2.getLineCount();
+                    int i13 = 0;
+                    if (lineCount2 > 1) {
+                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
+                    }
+                    if (LocaleController.isRTL) {
+                        float f11 = 0.0f;
+                        while (true) {
+                            if (i13 < lineCount2) {
+                                if (((StaticLayout) this.b).getLineLeft(i13) != 0.0f) {
+                                    this.c = 0.0f;
+                                } else {
+                                    f11 = Math.max(f11, ((StaticLayout) this.b).getLineWidth(i13));
+                                    if (i13 == lineCount2 - 1) {
+                                        this.c = size2 - f11;
+                                    }
+                                    i13++;
+                                }
+                            }
+                        }
+                    }
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                int size3 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
+                StaticLayout errorLayout3 = ((EditTextBoldCursor) this.d).getErrorLayout(size3);
+                this.b = errorLayout3;
+                if (errorLayout3 != null) {
+                    int lineCount3 = errorLayout3.getLineCount();
+                    int i14 = 0;
+                    if (lineCount3 > 1) {
+                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
+                    }
+                    if (LocaleController.isRTL) {
+                        float f12 = 0.0f;
+                        while (true) {
+                            if (i14 < lineCount3) {
+                                if (((StaticLayout) this.b).getLineLeft(i14) != 0.0f) {
+                                    this.c = 0.0f;
+                                } else {
+                                    f12 = Math.max(f12, ((StaticLayout) this.b).getLineWidth(i14));
+                                    if (i14 == lineCount3 - 1) {
+                                        this.c = size3 - f12;
+                                    }
+                                    i14++;
+                                }
+                            }
+                        }
+                    }
+                }
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                org.telegram.ui.Components.jj0 jj0Var = ((org.telegram.ui.Components.qi0) this.d).h;
+                float measuredHeight = (r0.f / 768.0f) * ((org.telegram.ui.Components.ge) this.b).getMeasuredHeight();
+                if (this.c != measuredHeight) {
+                    this.c = measuredHeight;
+                    ViewGroup.LayoutParams layoutParams = jj0Var.getLayoutParams();
+                    int i15 = (int) measuredHeight;
+                    jj0Var.getLayoutParams().width = i15;
+                    layoutParams.height = i15;
+                    super.onMeasure(i10, i11);
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        xl0 xl0Var;
-        TLRPC.TL_inputSecureValue tL_inputSecureValue;
-        int i10;
-        int i11;
-        vm0 vm0Var = this.p.d;
-        if (tL_error != null) {
-            boolean equals = tL_error.text.equals("EMAIL_VERIFICATION_NEEDED");
-            String str = this.b;
-            if (equals) {
-                TL_account.sendVerifyEmailCode sendverifyemailcode = new TL_account.sendVerifyEmailCode();
-                sendverifyemailcode.purpose = new TLRPC.TL_emailVerifyPurposePassport();
-                sendverifyemailcode.email = str;
-                i11 = ((org.telegram.ui.ActionBar.o2) vm0Var).currentAccount;
-                ConnectionsManager.getInstance(i11).sendRequest(sendverifyemailcode, new eg.f0(this, this.b, this.e, this.n, this.a, 13));
-                return;
-            }
-            xl0Var = this;
-            if (tL_error.text.equals("PHONE_VERIFICATION_NEEDED")) {
-                AndroidUtilities.runOnUIThread(new xe0(xl0Var.a, tL_error, str, 11));
-                return;
-            }
-        } else {
-            xl0Var = this;
-        }
-        if (tL_error != null || (tL_inputSecureValue = xl0Var.o) == null) {
-            a(tL_error, (TLRPC.TL_secureValue) tLObject, null);
-            return;
-        }
-        TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
-        savesecurevalue.value = tL_inputSecureValue;
-        savesecurevalue.secure_secret_id = vm0Var.X0;
-        i10 = ((org.telegram.ui.ActionBar.o2) vm0Var).currentAccount;
-        ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue, new u80(10, this, (TLRPC.TL_secureValue) tLObject));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xl0(org.telegram.ui.Components.qi0 qi0Var, Context context, org.telegram.ui.Components.ge geVar) {
+        super(context);
+        this.a = 3;
+        this.d = qi0Var;
+        this.b = geVar;
     }
 }

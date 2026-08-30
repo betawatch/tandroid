@@ -1,60 +1,41 @@
 package ch;
 
-import android.graphics.Canvas;
-import android.text.TextUtils;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.RadialProgress2;
+import r0.j0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class h extends bh.h {
-    public final MessageObject b;
-    public final RadialProgress2 c;
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public h(MessageObject messageObject) {
-        this.b = messageObject;
-        RadialProgress2 radialProgress2 = new RadialProgress2(null, null);
-        this.c = radialProgress2;
-        TLRPC.Document document = messageObject.getDocument();
-        if (MessageObject.isDocumentHasThumb(document)) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(22.0f), true, null, false);
-            radialProgress2.j(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(44.0f), true, closestPhotoSizeWithSize, true), closestPhotoSizeWithSize, document, messageObject);
-        } else {
-            String artworkUrl = MessageObject.getArtworkUrl(document, true);
-            if (TextUtils.isEmpty(artworkUrl)) {
-                radialProgress2.i(null, null, null);
-            } else {
-                radialProgress2.h(artworkUrl);
-            }
+    public /* synthetic */ h(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        i iVar = this.b;
+        switch (i10) {
+            case 0:
+                if (iVar.v != 0) {
+                    iVar.h(false);
+                    break;
+                }
+                break;
+            default:
+                int i11 = iVar.D - 1;
+                iVar.D = i11;
+                if (i11 == 0) {
+                    View view = iVar.B;
+                    RectF rectF = e.e;
+                    iVar.j(e.L(j0.f(view), view, view.getRootView()), false);
+                    break;
+                }
+                break;
         }
-        radialProgress2.g(g6.ie, g6.je, g6.uc, g6.vc);
-    }
-
-    @Override // bh.h
-    public final void a(View view) {
-        super.a(view);
-        RadialProgress2 radialProgress2 = this.c;
-        radialProgress2.m(view);
-        radialProgress2.e();
-        radialProgress2.setIcon(0, false, false);
-    }
-
-    @Override // bh.h
-    public final void b() {
-        super.b();
-        this.c.f();
-    }
-
-    @Override // bh.h
-    public final void c(Canvas canvas, int i10, int i11) {
-        RadialProgress2 radialProgress2 = this.c;
-        radialProgress2.setCircleRadius(i10 / 2);
-        radialProgress2.q(0, 0, i10, i11);
-        radialProgress2.draw(canvas);
     }
 }

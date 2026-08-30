@@ -55,9 +55,9 @@ public class ThreadLocalRandom extends Random {
         if (addAndGet == 0) {
             addAndGet = 1;
         }
-        long f9 = f(g.getAndAdd(-4942790177534073029L));
+        long f10 = f(g.getAndAdd(-4942790177534073029L));
         ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f.get();
-        threadLocalRandom.a = f9;
+        threadLocalRandom.a = f10;
         threadLocalRandom.b = addAndGet;
     }
 
@@ -88,47 +88,47 @@ public class ThreadLocalRandom extends Random {
     }
 
     public final long c(long j10, long j11) {
-        long f9 = f(g());
+        long f10 = f(g());
         if (j10 >= j11) {
-            return f9;
+            return f10;
         }
         long j12 = j11 - j10;
         long j13 = j12 - 1;
         if ((j12 & j13) == 0) {
-            return (f9 & j13) + j10;
+            return (f10 & j13) + j10;
         }
         if (j12 > 0) {
             while (true) {
-                long j14 = f9 >>> 1;
+                long j14 = f10 >>> 1;
                 long j15 = j14 + j13;
                 long j16 = j14 % j12;
                 if (j15 - j16 >= 0) {
                     return j16 + j10;
                 }
-                f9 = f(g());
+                f10 = f(g());
             }
         } else {
             while (true) {
-                if (f9 >= j10 && f9 < j11) {
-                    return f9;
+                if (f10 >= j10 && f10 < j11) {
+                    return f10;
                 }
-                f9 = f(g());
+                f10 = f(g());
             }
         }
     }
 
     public final int b(int i10, int i11) {
-        int e10 = e(g());
+        int e6 = e(g());
         if (i10 >= i11) {
-            return e10;
+            return e6;
         }
         int i12 = i11 - i10;
         int i13 = i12 - 1;
         if ((i12 & i13) == 0) {
-            return (e10 & i13) + i10;
+            return (e6 & i13) + i10;
         }
         if (i12 > 0) {
-            int i14 = e10 >>> 1;
+            int i14 = e6 >>> 1;
             while (true) {
                 int i15 = i14 + i13;
                 int i16 = i14 % i12;
@@ -139,10 +139,10 @@ public class ThreadLocalRandom extends Random {
             }
         } else {
             while (true) {
-                if (e10 >= i10 && e10 < i11) {
-                    return e10;
+                if (e6 >= i10 && e6 < i11) {
+                    return e6;
                 }
-                e10 = e(g());
+                e6 = e(g());
             }
         }
     }
@@ -166,19 +166,19 @@ public class ThreadLocalRandom extends Random {
         if (i10 <= 0) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        int e10 = e(g());
+        int e6 = e(g());
         int i11 = i10 - 1;
         if ((i10 & i11) == 0) {
-            return e10 & i11;
+            return e6 & i11;
         }
         while (true) {
-            int i12 = e10 >>> 1;
+            int i12 = e6 >>> 1;
             int i13 = i12 + i11;
             int i14 = i12 % i10;
             if (i13 - i14 >= 0) {
                 return i14;
             }
-            e10 = e(g());
+            e6 = e(g());
         }
     }
 
@@ -198,19 +198,19 @@ public class ThreadLocalRandom extends Random {
         if (j10 <= 0) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        long f9 = f(g());
+        long f10 = f(g());
         long j11 = j10 - 1;
         if ((j10 & j11) == 0) {
-            return f9 & j11;
+            return f10 & j11;
         }
         while (true) {
-            long j12 = f9 >>> 1;
+            long j12 = f10 >>> 1;
             long j13 = j12 + j11;
             long j14 = j12 % j10;
             if (j13 - j14 >= 0) {
                 return j14;
             }
-            f9 = f(g());
+            f10 = f(g());
         }
     }
 
@@ -230,8 +230,8 @@ public class ThreadLocalRandom extends Random {
         if (d10 <= 0.0d) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        double f9 = (f(g()) >>> 11) * 1.1102230246251565E-16d * d10;
-        return f9 < d10 ? f9 : Double.longBitsToDouble(Double.doubleToLongBits(d10) - 1);
+        double f10 = (f(g()) >>> 11) * 1.1102230246251565E-16d * d10;
+        return f10 < d10 ? f10 : Double.longBitsToDouble(Double.doubleToLongBits(d10) - 1);
     }
 
     public final double nextDouble(double d10, double d11) {

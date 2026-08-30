@@ -1,76 +1,158 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.Menu;
-import android.view.View;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.TextView;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.Spanned;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.ui.Components.qe0;
+import org.telegram.messenger.Emoji;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, qe0 {
-    public final /* synthetic */ Object a;
-    public final /* synthetic */ Object b;
+public final class g9 implements Runnable {
+    public final /* synthetic */ z9 a;
 
-    public /* synthetic */ g9(Object obj, Object obj2) {
-        this.a = obj;
-        this.b = obj2;
+    public g9(z9 z9Var) {
+        this.a = z9Var;
     }
 
-    @Override // org.telegram.ui.Components.qe0
-    public void l(int i10, int i11) {
-        t5 t5Var = (t5) this.a;
-        qe0 qe0Var = (qe0) this.b;
-        lh.m7 m7Var = t5Var.e;
-        TextView textView = t5Var.b;
-        qe0Var.l(i10, i11);
-        if (i11 > 0) {
-            textView.setText("+" + i11);
-        } else {
-            textView.setText("" + i11);
-        }
-        if (textView.getTag() != null) {
-            AndroidUtilities.cancelRunOnUIThread(m7Var);
-            AndroidUtilities.runOnUIThread(m7Var, 1000L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        z9 z9Var = this.a;
+        g gVar = z9Var.r0;
+        Rect rect = z9Var.B;
+        p9 p9Var = z9Var.a0;
+        u9 u9Var = z9Var.X;
+        if (u9Var == null || z9Var.C == null) {
             return;
         }
-        AnimatorSet animatorSet = t5Var.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
+        u9 u9Var2 = z9Var.W;
+        CharSequence t6 = z9Var.t(u9Var, true);
+        sl0 sl0Var = z9Var.E;
+        if (sl0Var != null) {
+            sl0Var.I0(false);
         }
-        textView.setTag(1);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        t5Var.d = animatorSet2;
-        Property property = View.ALPHA;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(t5Var.a, (Property<TextView, Float>) property, 0.0f));
-        t5Var.d.setDuration(250L);
-        t5Var.d.setInterpolator(new DecelerateInterpolator());
-        t5Var.d.addListener(new nh.q5(t5Var, 18));
-        t5Var.d.start();
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        h9 h9Var = (h9) this.a;
-        Menu menu = (Menu) this.b;
-        h9Var.a = str;
-        h9Var.a(menu);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        h9 h9Var = (h9) this.a;
-        Menu menu = (Menu) this.b;
-        h9Var.getClass();
-        FileLog.e("mlkit: failed to detect language in selection");
-        FileLog.e(exc);
-        h9Var.a = null;
-        h9Var.a(menu);
+        int i10 = z9Var.s;
+        int i11 = z9Var.t;
+        if (!rect.isEmpty()) {
+            int i12 = rect.right;
+            if (i10 > i12) {
+                i10 = i12 - 1;
+            }
+            int i13 = rect.left;
+            if (i10 < i13) {
+                i10 = i13 + 1;
+            }
+            int i14 = rect.top;
+            if (i11 < i14) {
+                i11 = i14 + 1;
+            }
+            int i15 = rect.bottom;
+            if (i11 > i15) {
+                i11 = i15 - 1;
+            }
+        }
+        int i16 = i10;
+        int l10 = z9Var.l(i16, i11, z9Var.c, z9Var.d, u9Var, true);
+        if (l10 >= t6.length()) {
+            z9Var.j(l10, p9Var, true);
+            Layout layout = p9Var.b;
+            if (layout == null) {
+                z9Var.v = -1;
+                z9Var.u = -1;
+                return;
+            } else {
+                int lineCount = layout.getLineCount() - 1;
+                float f10 = i16 - z9Var.c;
+                if (f10 < p9Var.b.getLineRight(lineCount) + AndroidUtilities.dp(4.0f) && f10 > p9Var.b.getLineLeft(lineCount)) {
+                    l10 = t6.length() - 1;
+                }
+            }
+        }
+        if (l10 >= 0 && l10 < t6.length() && t6.charAt(l10) != '\n') {
+            int i17 = z9Var.c;
+            int i18 = z9Var.d;
+            z9Var.f(false);
+            z9Var.C.setVisibility(0);
+            z9Var.M(u9Var, u9Var2);
+            z9Var.u = l10;
+            z9Var.v = l10;
+            if (t6 instanceof Spanned) {
+                Spanned spanned = (Spanned) t6;
+                Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spanned.getSpans(0, t6.length(), Emoji.EmojiSpan.class);
+                int length = emojiSpanArr.length;
+                int i19 = 0;
+                while (true) {
+                    if (i19 >= length) {
+                        org.telegram.ui.Components.u5[] u5VarArr = (org.telegram.ui.Components.u5[]) spanned.getSpans(0, t6.length(), org.telegram.ui.Components.u5.class);
+                        int length2 = u5VarArr.length;
+                        int i20 = 0;
+                        while (true) {
+                            if (i20 >= length2) {
+                                break;
+                            }
+                            org.telegram.ui.Components.u5 u5Var = u5VarArr[i20];
+                            int spanStart = spanned.getSpanStart(u5Var);
+                            int spanEnd = spanned.getSpanEnd(u5Var);
+                            if (l10 >= spanStart && l10 <= spanEnd) {
+                                z9Var.u = spanStart;
+                                z9Var.v = spanEnd;
+                                break;
+                            }
+                            i20++;
+                        }
+                    } else {
+                        Emoji.EmojiSpan emojiSpan = emojiSpanArr[i19];
+                        int spanStart2 = spanned.getSpanStart(emojiSpan);
+                        int spanEnd2 = spanned.getSpanEnd(emojiSpan);
+                        if (l10 >= spanStart2 && l10 <= spanEnd2) {
+                            z9Var.u = spanStart2;
+                            z9Var.v = spanEnd2;
+                            break;
+                        }
+                        i19++;
+                    }
+                }
+            }
+            if (z9Var.u == z9Var.v) {
+                while (true) {
+                    int i21 = z9Var.u;
+                    if (i21 <= 0 || !z9.z(t6.charAt(i21 - 1))) {
+                        break;
+                    } else {
+                        z9Var.u--;
+                    }
+                }
+                while (z9Var.v < t6.length() && z9.z(t6.charAt(z9Var.v))) {
+                    z9Var.v++;
+                }
+            }
+            z9Var.a = i17;
+            z9Var.b = i18;
+            z9Var.W = u9Var;
+            try {
+                z9Var.C.performHapticFeedback(0, 1);
+            } catch (Exception unused) {
+            }
+            AndroidUtilities.cancelRunOnUIThread(gVar);
+            AndroidUtilities.runOnUIThread(gVar);
+            z9Var.V();
+            z9Var.x();
+            if (u9Var2 != null) {
+                u9Var2.invalidate();
+            }
+            k7.x5 x5Var = z9Var.D;
+            if (x5Var != null) {
+                x5Var.a(true);
+            }
+            z9Var.i = true;
+            z9Var.R = true;
+            z9Var.k = true;
+            z9Var.g = 0.0f;
+            z9Var.f = 0.0f;
+            z9Var.G();
+        }
+        z9Var.z = false;
+        z9Var.e = false;
     }
 }

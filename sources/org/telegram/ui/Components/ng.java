@@ -2,112 +2,216 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class ng extends View {
-    public float a;
-    public long b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public final xi0 f;
-    public boolean h;
-    public final /* synthetic */ ChatActivityEnterView n;
+    public float B;
+    public final /* synthetic */ ChatActivityEnterView C;
+    public boolean a;
+    public boolean b;
+    public String c;
+    public long d;
+    public long e;
+    public long f;
+    public final SpannableStringBuilder h;
+    public final SpannableStringBuilder n;
+    public SpannableStringBuilder r;
+    public StaticLayout s;
+    public StaticLayout v;
+    public float w;
+    public TextPaint x;
+    public final float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ng(ChatActivityEnterView chatActivityEnterView, Context context) {
         super(context);
-        this.n = chatActivityEnterView;
-        int i10 = R.raw.chat_audio_record_delete_2;
-        xi0 xi0Var = new xi0(i10, j7.l1.k(i10, ""), AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.f = xi0Var;
-        xi0Var.l0 = true;
-        a();
+        this.C = chatActivityEnterView;
+        this.h = new SpannableStringBuilder();
+        this.n = new SpannableStringBuilder();
+        this.r = new SpannableStringBuilder();
+        this.y = AndroidUtilities.dp(15.0f);
     }
 
-    public final void a() {
-        int i10 = org.telegram.ui.ActionBar.g6.jf;
-        int i11 = ChatActivityEnterView.i5;
-        ChatActivityEnterView chatActivityEnterView = this.n;
-        int i02 = chatActivityEnterView.i0(i10);
-        int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.g6.Sd);
-        chatActivityEnterView.r3.setColor(i02);
-        xi0 xi0Var = this.f;
-        xi0Var.W = true;
-        xi0Var.O(i02, "Cup Red");
-        xi0Var.O(i02, "Box");
-        xi0Var.O(i03, "Line 1");
-        xi0Var.O(i03, "Line 2");
-        xi0Var.O(i03, "Line 3");
-        xi0Var.m();
+    public final void a(long j10) {
+        this.a = true;
+        long currentTimeMillis = System.currentTimeMillis() - j10;
+        this.d = currentTimeMillis;
+        this.f = currentTimeMillis;
+        invalidate();
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.d = true;
-        boolean z10 = this.e;
-        xi0 xi0Var = this.f;
-        if (z10) {
-            xi0Var.start();
+    public final void b() {
+        if (this.a) {
+            this.a = false;
+            if (this.d > 0) {
+                this.e = System.currentTimeMillis();
+            }
+            invalidate();
         }
-        xi0Var.r0 = this;
+        this.f = 0L;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.d = false;
-        xi0 xi0Var = this.f;
-        xi0Var.stop();
-        xi0Var.r0 = null;
+    public float getLeftProperty() {
+        return this.B;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        Paint paint = this.n.r3;
-        boolean z10 = this.e;
-        xi0 xi0Var = this.f;
-        if (z10) {
-            xi0Var.setAlpha((int) (this.a * 255.0f));
+        String str;
+        int threadMessageId;
+        TextPaint textPaint = this.x;
+        ChatActivityEnterView chatActivityEnterView = this.C;
+        if (textPaint == null) {
+            TextPaint textPaint2 = new TextPaint(1);
+            this.x = textPaint2;
+            textPaint2.setTextSize(AndroidUtilities.dp(15.0f));
+            this.x.setTypeface(AndroidUtilities.bold());
+            TextPaint textPaint3 = this.x;
+            int i10 = org.telegram.ui.ActionBar.j6.nf;
+            int i11 = ChatActivityEnterView.j5;
+            textPaint3.setColor(chatActivityEnterView.i0(i10));
         }
-        paint.setAlpha((int) (this.a * 255.0f));
-        long currentTimeMillis = System.currentTimeMillis() - this.b;
-        if (this.h) {
-            this.a = 1.0f;
-        } else if (this.c || this.e) {
-            float f9 = (currentTimeMillis / 600.0f) + this.a;
-            this.a = f9;
-            if (f9 >= 1.0f) {
-                this.a = 1.0f;
-                this.c = false;
+        long currentTimeMillis = System.currentTimeMillis();
+        long j10 = this.a ? currentTimeMillis - this.d : this.e - this.d;
+        long j11 = j10 / 1000;
+        int i12 = ((int) (j10 % 1000)) / 10;
+        if (chatActivityEnterView.Z0 && j10 >= 59500 && !this.b) {
+            chatActivityEnterView.z2 = -1.0f;
+            chatActivityEnterView.V2.o2(3, 0, chatActivityEnterView.L ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.O4, 0L, true);
+            oe oeVar = chatActivityEnterView.G0;
+            chatActivityEnterView.O4 = 0L;
+            oeVar.setEffect(0L);
+            this.b = true;
+        }
+        if (this.a && currentTimeMillis > this.f + 5000) {
+            this.f = currentTimeMillis;
+            MessagesController messagesController = MessagesController.getInstance(chatActivityEnterView.N);
+            long j12 = chatActivityEnterView.M2;
+            threadMessageId = chatActivityEnterView.getThreadMessageId();
+            messagesController.sendTyping(j12, threadMessageId, chatActivityEnterView.Z0 ? 7 : 1, 0);
+        }
+        String formatTimerDurationFast = AndroidUtilities.formatTimerDurationFast((int) j11, i12);
+        if (formatTimerDurationFast.length() < 3 || (str = this.c) == null || str.length() < 3 || formatTimerDurationFast.length() != this.c.length() || formatTimerDurationFast.charAt(formatTimerDurationFast.length() - 3) == this.c.charAt(formatTimerDurationFast.length() - 3)) {
+            if (this.r == null) {
+                this.r = new SpannableStringBuilder(formatTimerDurationFast);
+            }
+            if (this.r.length() == 0 || this.r.length() != formatTimerDurationFast.length()) {
+                this.r.clear();
+                this.r.append((CharSequence) formatTimerDurationFast);
+            } else {
+                this.r.replace(r11.length() - 1, this.r.length(), (CharSequence) formatTimerDurationFast, (formatTimerDurationFast.length() - 1) - (formatTimerDurationFast.length() - this.r.length()), formatTimerDurationFast.length());
             }
         } else {
-            float f10 = this.a - (currentTimeMillis / 600.0f);
-            this.a = f10;
-            if (f10 <= 0.0f) {
-                this.a = 0.0f;
-                this.c = true;
+            int length = formatTimerDurationFast.length();
+            SpannableStringBuilder spannableStringBuilder = this.h;
+            spannableStringBuilder.clear();
+            SpannableStringBuilder spannableStringBuilder2 = this.n;
+            spannableStringBuilder2.clear();
+            this.r.clear();
+            spannableStringBuilder.append((CharSequence) formatTimerDurationFast);
+            spannableStringBuilder2.append((CharSequence) this.c);
+            this.r.append((CharSequence) formatTimerDurationFast);
+            int i13 = -1;
+            int i14 = -1;
+            int i15 = 0;
+            int i16 = 0;
+            for (int i17 = 0; i17 < length - 1; i17++) {
+                if (this.c.charAt(i17) != formatTimerDurationFast.charAt(i17)) {
+                    if (i16 == 0) {
+                        i14 = i17;
+                    }
+                    i16++;
+                    if (i15 != 0) {
+                        lz lzVar = new lz(false);
+                        if (i17 == length - 2) {
+                            i15++;
+                        }
+                        int i18 = i15 + i13;
+                        spannableStringBuilder.setSpan(lzVar, i13, i18, 33);
+                        spannableStringBuilder2.setSpan(lzVar, i13, i18, 33);
+                        i15 = 0;
+                    }
+                } else {
+                    if (i15 == 0) {
+                        i13 = i17;
+                    }
+                    i15++;
+                    if (i16 != 0) {
+                        this.r.setSpan(new lz(false), i14, i16 + i14, 33);
+                        i16 = 0;
+                    }
+                }
+            }
+            if (i15 != 0) {
+                lz lzVar2 = new lz(false);
+                int i19 = i15 + i13 + 1;
+                spannableStringBuilder.setSpan(lzVar2, i13, i19, 33);
+                spannableStringBuilder2.setSpan(lzVar2, i13, i19, 33);
+            }
+            if (i16 != 0) {
+                this.r.setSpan(new lz(false), i14, i16 + i14, 33);
+            }
+            TextPaint textPaint4 = this.x;
+            int measuredWidth = getMeasuredWidth();
+            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+            this.s = new StaticLayout(spannableStringBuilder, textPaint4, measuredWidth, alignment, 1.0f, 0.0f, false);
+            this.v = new StaticLayout(spannableStringBuilder2, this.x, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
+            this.w = 1.0f;
+        }
+        float f10 = this.w;
+        if (f10 != 0.0f) {
+            float f11 = f10 - 0.15f;
+            this.w = f11;
+            if (f11 < 0.0f) {
+                this.w = 0.0f;
             }
         }
-        this.b = System.currentTimeMillis();
-        if (this.e) {
-            xi0Var.draw(canvas);
+        float measuredHeight = getMeasuredHeight() / 2;
+        if (this.w == 0.0f) {
+            this.r.clearSpans();
+            StaticLayout staticLayout = new StaticLayout(this.r, this.x, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            canvas.save();
+            canvas.translate(0.0f, measuredHeight - (staticLayout.getHeight() / 2.0f));
+            staticLayout.draw(canvas);
+            canvas.restore();
+            this.B = staticLayout.getLineWidth(0) + 0.0f;
+        } else {
+            StaticLayout staticLayout2 = this.s;
+            float f12 = this.y;
+            if (staticLayout2 != null) {
+                canvas.save();
+                this.x.setAlpha((int) ((1.0f - this.w) * 255.0f));
+                canvas.translate(0.0f, (measuredHeight - (this.s.getHeight() / 2.0f)) - (this.w * f12));
+                this.s.draw(canvas);
+                canvas.restore();
+            }
+            if (this.v != null) {
+                canvas.save();
+                this.x.setAlpha((int) (this.w * 255.0f));
+                canvas.translate(0.0f, e2.c.w(1.0f, this.w, f12, measuredHeight - (this.v.getHeight() / 2.0f)));
+                this.v.draw(canvas);
+                canvas.restore();
+            }
+            canvas.save();
+            this.x.setAlpha(255);
+            StaticLayout staticLayout3 = new StaticLayout(this.r, this.x, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            canvas.translate(0.0f, measuredHeight - (staticLayout3.getHeight() / 2.0f));
+            staticLayout3.draw(canvas);
+            canvas.restore();
+            this.B = staticLayout3.getLineWidth(0) + 0.0f;
         }
-        if (!this.e || !xi0Var.s()) {
-            canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
+        this.c = formatTimerDurationFast;
+        if (this.a || this.w != 0.0f) {
+            invalidate();
         }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 }

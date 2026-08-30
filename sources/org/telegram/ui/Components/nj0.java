@@ -1,7 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface nj0 {
-    void a(pj0 pj0Var, int i10);
+public final class nj0 {
+    public final TLObject a;
+    public final long b;
+    public int c;
+
+    public nj0(int i10, TLObject tLObject) {
+        this.a = tLObject;
+        this.c = i10;
+        if (tLObject instanceof TLRPC.User) {
+            this.b = ((TLRPC.User) tLObject).id;
+        } else if (tLObject instanceof TLRPC.Chat) {
+            this.b = -((TLRPC.Chat) tLObject).id;
+        }
+    }
 }

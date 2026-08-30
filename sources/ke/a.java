@@ -1,47 +1,34 @@
 package ke;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import x9.d;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Pattern a = Pattern.compile("[\\\\&]");
-    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
-    public static final Pattern c;
-    public static final d d;
+public final class a extends pe.a {
+    public final ne.b a = new ne.b();
 
-    static {
-        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
-        c = Pattern.compile("[ \t\r\n]+");
-        d = new d(11);
+    public static boolean i(e eVar, int i10) {
+        CharSequence charSequence = eVar.a;
+        return eVar.g < 4 && i10 < charSequence.length() && charSequence.charAt(i10) == '>';
     }
 
-    public static String a(String str) {
-        if (!a.matcher(str).find()) {
-            return str;
+    @Override // pe.a
+    public final ne.a e() {
+        return this.a;
+    }
+
+    @Override // pe.a
+    public final j4.h h(e eVar) {
+        char charAt;
+        int i10 = eVar.e;
+        if (!i(eVar, i10)) {
+            return null;
         }
-        Matcher matcher = b.matcher(str);
-        if (!matcher.find()) {
-            return str;
+        int i11 = eVar.c + eVar.g;
+        int i12 = i11 + 1;
+        CharSequence charSequence = eVar.a;
+        int i13 = i10 + 1;
+        if (i13 < charSequence.length() && ((charAt = charSequence.charAt(i13)) == '\t' || charAt == ' ')) {
+            i12 = i11 + 2;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + 16);
-        int i10 = 0;
-        do {
-            sb2.append((CharSequence) str, i10, matcher.start());
-            String group = matcher.group();
-            d.getClass();
-            if (group.charAt(0) == '\\') {
-                sb2.append((CharSequence) group, 1, group.length());
-            } else {
-                sb2.append(b.a(group));
-            }
-            i10 = matcher.end();
-        } while (matcher.find());
-        if (i10 != str.length()) {
-            sb2.append((CharSequence) str, i10, str.length());
-        }
-        return sb2.toString();
+        return new j4.h(-1, i12, false);
     }
 }

@@ -1,33 +1,23 @@
 package f7;
 
-import h7.i7;
-import j$.util.Objects;
-import java.util.AbstractMap;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import j7.r5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class h extends d {
-    public final /* synthetic */ i c;
+public final class h extends y {
+    public final /* synthetic */ TaskCompletionSource b;
 
-    public h(i iVar) {
-        this.c = iVar;
+    public h(TaskCompletionSource taskCompletionSource) {
+        this.b = taskCompletionSource;
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        i iVar = this.c;
-        i7.a(i10, iVar.e);
-        Object[] objArr = iVar.d;
-        int i11 = i10 + i10;
-        Object obj = objArr[i11];
-        Objects.requireNonNull(obj);
-        Object obj2 = objArr[i11 + 1];
-        Objects.requireNonNull(obj2);
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    @Override // f7.z
+    public final void V(w wVar) {
+        r5.a(wVar.a, Boolean.TRUE, this.b);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c.e;
+    @Override // f7.z
+    public final void zze() {
     }
 }

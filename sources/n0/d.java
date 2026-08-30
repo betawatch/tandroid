@@ -1,11 +1,11 @@
 package n0;
 
-import j7.l1;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Locale;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d implements e {
     public static final Locale[] c = new Locale[0];
@@ -36,29 +36,29 @@ public final class d implements e {
         }
         ArrayList arrayList = new ArrayList();
         HashSet hashSet = new HashSet();
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i10 = 0; i10 < localeArr.length; i10++) {
             Locale locale = localeArr[i10];
             if (locale == null) {
-                throw new NullPointerException(l1.l(i10, "list[", "] is null"));
+                throw new NullPointerException(a2.k(i10, "list[", "] is null"));
             }
             if (!hashSet.contains(locale)) {
                 Locale locale2 = (Locale) locale.clone();
                 arrayList.add(locale2);
-                sb2.append(locale2.getLanguage());
+                sb.append(locale2.getLanguage());
                 String country = locale2.getCountry();
                 if (country != null && !country.isEmpty()) {
-                    sb2.append('-');
-                    sb2.append(locale2.getCountry());
+                    sb.append('-');
+                    sb.append(locale2.getCountry());
                 }
                 if (i10 < localeArr.length - 1) {
-                    sb2.append(',');
+                    sb.append(',');
                 }
                 hashSet.add(locale2);
             }
         }
         this.a = (Locale[]) arrayList.toArray(new Locale[0]);
-        this.b = sb2.toString();
+        this.b = sb.toString();
     }
 
     @Override // n0.e
@@ -117,17 +117,17 @@ public final class d implements e {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("[");
+        StringBuilder sb = new StringBuilder("[");
         int i10 = 0;
         while (true) {
             Locale[] localeArr = this.a;
             if (i10 >= localeArr.length) {
-                sb2.append("]");
-                return sb2.toString();
+                sb.append("]");
+                return sb.toString();
             }
-            sb2.append(localeArr[i10]);
+            sb.append(localeArr[i10]);
             if (i10 < localeArr.length - 1) {
-                sb2.append(',');
+                sb.append(',');
             }
             i10++;
         }

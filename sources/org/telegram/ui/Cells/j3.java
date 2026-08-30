@@ -1,76 +1,61 @@
 package org.telegram.ui.Cells;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.t41;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j3 {
-    public boolean a;
-    public StaticLayout b;
-    public StaticLayout c;
-    public int d;
-    public int e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
+public final class j3 extends FrameLayout {
+    public final EditTextBoldCursor a;
+    public boolean b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void a(s1 s1Var) {
-        TLRPC.Message message;
-        String str;
-        SpannableStringBuilder e10 = lh.l7.e(R.string.ExpiredStory, false, new Object[0]);
-        MessageObject messageObject = s1Var.getMessageObject();
-        if (messageObject != null && (message = messageObject.messageOwner) != null) {
-            TLRPC.MessageMedia messageMedia = message.media;
-            if (messageMedia instanceof TLRPC.TL_messageMediaStory) {
-                TLRPC.User user = MessagesController.getInstance(s1Var.E7).getUser(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
-                String str2 = user == null ? "DELETED" : user.first_name;
-                int minTabletSide = (int) ((AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() : s1Var.getParentWidth()) * 0.4f);
-                String string = LocaleController.getString(R.string.From);
-                TextPaint textPaint = org.telegram.ui.ActionBar.g6.X2;
-                int ceil = (int) Math.ceil(textPaint.measureText(string + " "));
-                if (str2 == null) {
-                    str2 = "";
-                }
-                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.g6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
-                String string2 = LocaleController.getString(R.string.FromFormatted);
-                int indexOf = string2.indexOf("%1$s");
-                String format = String.format(string2, str3);
-                if (indexOf >= 0) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new t41(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
-                    str = spannableStringBuilder;
-                } else {
-                    str = format;
-                }
-                TextPaint textPaint2 = org.telegram.ui.ActionBar.g6.Z2;
-                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e10, 0, e10.length()) + 1.0f));
-                Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.b = new StaticLayout(e10, textPaint2, dp, alignment, 1.0f, 0.0f, false);
-                this.c = new StaticLayout(str, textPaint2, AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)), alignment, 1.0f, 0.0f, false);
-                this.e = 0;
-                this.h = AndroidUtilities.dp(4.0f);
-                this.i = AndroidUtilities.dp(12.0f);
-                this.e = (int) com.google.android.recaptcha.internal.a.d(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
-                this.d = s1Var.getExtraTextX() + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
-                return;
-            }
+    public j3(Context context) {
+        super(context);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.a = editTextBoldCursor;
+        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
+        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 16384);
+        addView(editTextBoldCursor, k7.b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public String getText() {
+        return this.a.getText().toString();
+    }
+
+    public EditTextBoldCursor getTextView() {
+        return this.a;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
         }
-        this.h = AndroidUtilities.dp(4.0f);
-        this.i = AndroidUtilities.dp(12.0f);
-        this.e = 0;
-        this.d = 0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.b ? 1 : 0));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    }
+
+    public void setTextColor(int i10) {
+        this.a.setTextColor(i10);
     }
 }

@@ -1,91 +1,86 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ts0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class ts0 extends org.telegram.ui.Components.i71 {
+    public final /* synthetic */ PhotoViewer j0;
 
-    public ts0(PhotoViewer photoViewer, int i10) {
-        this.b = photoViewer;
-        this.a = i10;
+    public ts0(PhotoViewer photoViewer) {
+        this.j0 = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        float min;
-        int i10;
-        PhotoViewer photoViewer = this.b;
-        photoViewer.m6 = null;
-        photoViewer.L0.setVisibility(8);
-        photoViewer.O0.setVisibility(8);
-        photoViewer.j0.setVisibility(8);
-        photoViewer.B.setVisibility(8);
-        photoViewer.a1.setVisibility(8);
-        photoViewer.b1.setVisibility(8);
-        photoViewer.c1.setVisibility(8);
-        org.telegram.ui.Components.pe0 pe0Var = photoViewer.y1;
-        if (pe0Var != null) {
-            pe0Var.setVisibility(4);
+    @Override // org.telegram.ui.Components.i71
+    public final void B() {
+        super.B();
+        PhotoViewer photoViewer = this.j0;
+        if (photoViewer.r4 == 0) {
+            PhotoViewer.Y(photoViewer, false);
         }
-        photoViewer.k1.setVisibility(8);
-        photoViewer.k1.setAlpha(0.0f);
-        photoViewer.k1.setTranslationY(-AndroidUtilities.dp(10.0f));
-        photoViewer.K0.setRotationX(0.0f);
-        photoViewer.k1.setEnabled(false);
-        photoViewer.G = false;
-        if (photoViewer.e2) {
-            photoViewer.M1.setVisibility(4);
+        if (photoViewer.K8) {
+            return;
         }
-        int i11 = photoViewer.Y1;
-        if (i11 == 0 || i11 == 4 || ((i11 == 2 || i11 == 5) && photoViewer.c7.size() > 1)) {
-            photoViewer.J0.setVisibility(8);
-            photoViewer.K0.setVisibility(8);
-            photoViewer.s3();
+        d1.f.D(n());
+        d1.f.x(false);
+    }
+
+    @Override // org.telegram.ui.Components.i71
+    public final void C() {
+        super.C();
+        PhotoViewer photoViewer = this.j0;
+        PhotoViewer.Y(photoViewer, true);
+        if (photoViewer.K8) {
+            return;
         }
-        Bitmap bitmap = photoViewer.y4.getBitmap();
-        if (photoViewer.Y1 == 11) {
-            photoViewer.e6 = photoViewer.U5;
-            photoViewer.d6 = photoViewer.T5;
-            photoViewer.f6 = photoViewer.W5;
-            photoViewer.g6 = photoViewer.X5;
-            photoViewer.b6 = 0.0f;
+        d1.f.D(n());
+        d1.f.x(true);
+    }
+
+    @Override // org.telegram.ui.Components.i71
+    public final void K(long j10) {
+        L(j10, false);
+        PhotoViewer photoViewer = this.j0;
+        if (photoViewer.o1) {
+            PhotoViewer.Z(photoViewer, j10);
         }
-        if (bitmap != null) {
-            float bitmapWidth = photoViewer.y4.getBitmapWidth();
-            float bitmapHeight = photoViewer.y4.getBitmapHeight();
-            float min2 = Math.min(photoViewer.k1(2) / bitmapWidth, photoViewer.h1(2, false) / bitmapHeight);
-            if (photoViewer.Y1 == 1) {
-                photoViewer.Z5 = -AndroidUtilities.dp(36.0f);
-                min = photoViewer.l1(false);
-            } else {
-                photoViewer.Z5 = (-AndroidUtilities.dp(93.0f)) + (!photoViewer.s ? AndroidUtilities.statusBarHeight / 2 : 0);
-                MediaController.CropState cropState = photoViewer.T4.c;
-                min = (cropState == null || !((i10 = cropState.transformRotation) == 90 || i10 == 270)) ? Math.min(photoViewer.k1(photoViewer.q4) / bitmapWidth, photoViewer.i1() / bitmapHeight) : Math.min(photoViewer.k1(photoViewer.q4) / bitmapHeight, photoViewer.i1() / bitmapWidth);
-            }
-            photoViewer.a6 = min2 / min;
-            Rect rect = photoViewer.o2;
-            photoViewer.Y5 = (rect.left / 2) - (rect.right / 2);
-            photoViewer.j6 = System.currentTimeMillis();
-            photoViewer.N6 = true;
+        if (photoViewer.K8) {
+            return;
         }
-        AnimatorSet animatorSet = new AnimatorSet();
-        photoViewer.l6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.r6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.E1.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(186.0f), 0.0f));
-        photoViewer.l6.setDuration(200L);
-        photoViewer.l6.addListener(new e50(this, 11));
-        photoViewer.l6.start();
+        d1.f.D(j10);
+    }
+
+    @Override // org.telegram.ui.Components.i71
+    public final void Q(float f10) {
+        super.Q(f10);
+        if (this.j0.K8) {
+            return;
+        }
+        d1.f.z(f10);
+    }
+
+    @Override // org.telegram.ui.Components.i71, j3.y1
+    public final void onRenderedFirstFrame() {
+        j3.v1 d;
+        super.onRenderedFirstFrame();
+        PhotoViewer photoViewer = this.j0;
+        boolean z4 = true;
+        photoViewer.O = true;
+        if (photoViewer.A2) {
+            photoViewer.b0.invalidate();
+        }
+        photoViewer.z3();
+        if (!d1.f.u() && !photoViewer.r) {
+            z4 = false;
+        }
+        O(z4);
+        if (photoViewer.K8) {
+            return;
+        }
+        d1.f.D(n());
+        j3.f0 f0Var = this.d;
+        float f10 = 1.0f;
+        if (f0Var != null && (d = f0Var.d()) != null) {
+            f10 = d.a;
+        }
+        d1.f.z(f10);
     }
 }

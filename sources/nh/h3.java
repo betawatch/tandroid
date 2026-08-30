@@ -1,44 +1,50 @@
 package nh;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.hp;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.Components.ok0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class h3 extends hp {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ ViewGroup e;
+public final class h3 implements ok0 {
+    public final /* synthetic */ d4 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, 21, c6Var);
-        this.d = i10;
-        this.e = viewGroup;
+    public h3(d4 d4Var) {
+        this.a = d4Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        switch (this.d) {
-            case 0:
-                super.invalidate();
-                ((j3) this.e).invalidate();
-                break;
-            case 1:
-                super.invalidate();
-                ((org.telegram.ui.Cells.p2) this.e).invalidate();
-                break;
-            default:
-                super.invalidate();
-                ((org.telegram.ui.web.i) this.e).invalidate();
-                break;
+    @Override // org.telegram.ui.Components.ok0
+    public final /* synthetic */ boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public final void i(View view, mg.q0 q0Var, boolean z4, boolean z10) {
+        lh.p6 p6Var = new lh.p6(this, q0Var, view, 2);
+        if (z4) {
+            p6Var.run();
+        } else {
+            this.a.n0(p6Var);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h3(j3 j3Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, 24, c6Var);
-        this.d = 0;
-        this.e = j3Var;
+    @Override // org.telegram.ui.Components.ok0
+    public final boolean j() {
+        ((z8) this.a.N1).b(false);
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public final /* synthetic */ boolean s() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public final /* synthetic */ void o() {
+    }
+
+    @Override // org.telegram.ui.Components.ok0
+    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

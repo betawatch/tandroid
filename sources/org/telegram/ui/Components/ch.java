@@ -1,12 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
 import android.view.KeyEvent;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ch implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class ch implements Utilities.Callback4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
 
@@ -15,14 +15,34 @@ public final /* synthetic */ class ch implements DialogInterface.OnCancelListene
         this.b = callback;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.Utilities.Callback4
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                ni.p((ni) this.b);
+                li liVar = (li) this.b;
+                CharSequence charSequence = (CharSequence) obj;
+                qh qhVar = liVar.B0;
+                qhVar.setText(charSequence);
+                qhVar.w(charSequence.length(), charSequence.length());
+                liVar.z1();
+                break;
+            case 1:
+                li liVar2 = (li) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                th thVar = liVar2.M0;
+                thVar.setText(charSequence2);
+                thVar.w(charSequence2.length(), charSequence2.length());
+                liVar2.z1();
                 break;
             default:
-                ((View) this.b).setTag(null);
+                bd bdVar = (bd) this.b;
+                ph.f fVar = bdVar.f;
+                fVar.setText((CharSequence) obj);
+                fVar.d();
+                fVar.k(true);
+                ph.e eVar = bdVar.W;
+                AndroidUtilities.cancelRunOnUIThread(eVar);
+                eVar.run();
                 break;
         }
     }

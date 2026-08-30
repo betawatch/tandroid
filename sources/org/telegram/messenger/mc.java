@@ -1,52 +1,25 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class mc implements RequestDelegate {
+public final /* synthetic */ class mc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ mc(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 0;
-        this.b = messagesController;
-        this.d = j10;
-        this.c = i10;
-        this.e = j11;
+    public /* synthetic */ mc(int i10, boolean[] zArr) {
+        this.a = i10;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                long j10 = this.e;
-                this.b.lambda$getChannelDifference$349(this.d, i10, j10, tLObject, tL_error);
-                break;
-            case 1:
-                long j11 = this.d;
-                long j12 = this.e;
-                this.b.lambda$sendTyping$172(this.c, j11, j12, tLObject, tL_error);
+                MessagesController.lambda$openByUserName$456(this.b);
                 break;
             default:
-                long j13 = this.d;
-                long j14 = this.e;
-                this.b.lambda$sendTyping$174(this.c, j13, j14, tLObject, tL_error);
+                MessagesController.lambda$openApp$497(this.b);
                 break;
         }
-    }
-
-    public /* synthetic */ mc(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

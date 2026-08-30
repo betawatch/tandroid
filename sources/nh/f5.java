@@ -1,17 +1,58 @@
 package nh;
 
 import android.content.Context;
-import android.graphics.PointF;
+import android.graphics.drawable.GradientDrawable;
+import android.view.GestureDetector;
+import android.view.animation.OvershootInterpolator;
+import android.widget.Scroller;
 import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class f5 extends bg.d2 {
-    public final /* synthetic */ t5 I0;
+public final class f5 extends i4 {
+    public final /* synthetic */ i9 K;
+    public final /* synthetic */ m5 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f5(t5 t5Var, Context context, PointF pointF, ArrayList arrayList, org.telegram.ui.Components.ga gaVar, boolean z10, e6 e6Var) {
-        super(context, pointF, arrayList, gaVar, z10, e6Var);
-        this.I0 = t5Var;
+    public f5(Context context, m5 m5Var, i9 i9Var) {
+        super(context);
+        this.L = m5Var;
+        this.K = i9Var;
+        this.w = -1;
+        this.B = new ArrayList();
+        this.C = new ArrayList();
+        this.D = new ArrayList();
+        this.F = new GestureDetector(new fg.e(1, this));
+        this.d = new Scroller(context, new OvershootInterpolator());
+        this.E = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.k(-16777216, 160)});
+    }
+
+    @Override // nh.i4
+    public final void b(int i10) {
+        e9 e9Var;
+        m5 m5Var = this.L;
+        g5 g5Var = m5Var.B;
+        if (m5Var.w) {
+            return;
+        }
+        if (g5Var.getCurrentItem() != i10) {
+            try {
+                g5Var.x(i10, false);
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+                g5Var.getAdapter().g();
+                g5Var.x(i10, false);
+            }
+        }
+        i9 i9Var = this.K;
+        if (i9Var.L0 == null || (e9Var = i9Var.q0) == null) {
+            return;
+        }
+        if (i10 < 10) {
+            e9Var.b(false);
+        } else if (i10 >= this.B.size() - 10) {
+            i9Var.q0.b(true);
+        }
     }
 }

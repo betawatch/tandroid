@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.j0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class v {
     public final Context a;
@@ -27,11 +27,11 @@ public class v {
     public int f = 8388611;
     public final t k = new t(this);
 
-    public v(Context context, k kVar, View view, boolean z10, int i10, int i11) {
+    public v(Context context, k kVar, View view, boolean z4, int i10, int i11) {
         this.a = context;
         this.b = kVar;
         this.e = view;
-        this.c = z10;
+        this.c = z4;
         this.d = i10;
     }
 
@@ -50,7 +50,7 @@ public class v {
             c0Var.l(this.b);
             c0Var.r(this.k);
             c0Var.n(this.e);
-            c0Var.g(this.h);
+            c0Var.h(this.h);
             c0Var.o(this.g);
             c0Var.p(this.f);
             this.i = c0Var;
@@ -71,10 +71,10 @@ public class v {
         }
     }
 
-    public final void d(int i10, int i11, boolean z10, boolean z11) {
+    public final void d(int i10, int i11, boolean z4, boolean z10) {
         s a2 = a();
-        a2.s(z11);
-        if (z10) {
+        a2.s(z10);
+        if (z4) {
             int i12 = this.f;
             View view = this.e;
             WeakHashMap weakHashMap = j0.a;
@@ -86,6 +86,6 @@ public class v {
             int i13 = (int) ((this.a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
             a2.a = new Rect(i10 - i13, i11 - i13, i10 + i13, i11 + i13);
         }
-        a2.h();
+        a2.g();
     }
 }

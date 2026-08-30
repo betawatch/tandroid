@@ -1,75 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lf0 {
-    public final /* synthetic */ org.telegram.ui.et0 a;
+public final class lf0 extends View {
+    public long B;
+    public float C;
+    public float D;
+    public float E;
+    public cc0 F;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public z5 s;
+    public boolean v;
+    public nf0 w;
+    public ph.h8 x;
+    public boolean y;
 
-    public lf0(org.telegram.ui.et0 et0Var) {
-        this.a = et0Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
+            return;
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new i8(this, Integer.parseInt(str), 6));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        AndroidUtilities.runOnUIThread(new jf0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f9) {
-        this.a.F = f9;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i10) {
-        this.a.E = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i10) {
-        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.et0 et0Var = this.a;
-        et0Var.D = i11;
-        String str = et0Var.s;
-        if (str != null) {
-            mf0.a(et0Var, str);
-            et0Var.s = null;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
         }
     }
 
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.et0 et0Var = this.a;
-        boolean z10 = et0Var.C;
-        boolean z11 = false;
-        int i10 = 1;
-        et0Var.C = parseInt == 1 || parseInt == 3;
-        et0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i10 = 2;
-                }
-            }
-            i10 = 3;
-        } else {
-            i10 = 4;
-        }
-        if (i10 == 3 && et0Var.h.getVisibility() != 4) {
-            AndroidUtilities.runOnUIThread(new jf0(this, 1), 300L);
-        }
-        AndroidUtilities.runOnUIThread(new jh.n6(this, z11, i10, 1));
+    public void setAllowTouch(boolean z4) {
+        this.v = z4;
+    }
+
+    public void setFilterView(nf0 nf0Var) {
+        this.w = nf0Var;
     }
 }

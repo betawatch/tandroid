@@ -1,151 +1,64 @@
 package jb;
 
-import ab.k;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.os.SystemClock;
-import android.util.Log;
-import com.google.android.gms.internal.cast.o;
-import h7.q7;
-import j7.c0;
-import j7.l1;
-import j7.pa;
-import j7.qa;
-import j7.ra;
-import j7.sa;
-import j7.ta;
-import j7.ua;
-import java.util.ArrayList;
-import z5.l;
+import b6.m;
+import java.util.Arrays;
+import l7.w0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public final Context a;
-    public final ib.b b;
-    public boolean c;
-    public boolean d;
-    public pa e;
+public final class a {
+    public final String a;
+    public final float b;
+    public final int c;
+    public final String d;
 
-    public a(Context context, ib.b bVar) {
-        this.a = context;
-        this.b = bVar;
+    public a(float f10, int i10, String str, String str2) {
+        int i11 = m7.b.a;
+        this.a = str == null ? "" : str;
+        this.b = f10;
+        this.c = i10;
+        this.d = str2;
     }
 
-    @Override // jb.b
-    public final ArrayList a(fb.a aVar) {
-        j6.b bVar;
-        if (this.e == null) {
-            zzb();
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        pa paVar = this.e;
-        l.h(paVar);
-        if (!this.c) {
-            try {
-                paVar.Q0(paVar.M0(), 1);
-                this.c = true;
-            } catch (RemoteException e10) {
-                throw new wa.a("Failed to init thin image labeler.", e10);
-            }
+        if (!(obj instanceof a)) {
+            return false;
         }
-        int i10 = aVar.e;
-        int i11 = aVar.b;
-        int i12 = aVar.c;
-        int a2 = q7.a(aVar.d);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        int i13 = aVar.e;
-        if (i13 != -1) {
-            if (i13 != 17) {
-                if (i13 == 35) {
-                    bVar = new j6.b(null);
-                } else if (i13 != 842094169) {
-                    throw new wa.a(l1.k(aVar.e, "Unsupported image format: "), 3);
-                }
-            }
-            l.h(null);
-            throw null;
-        }
-        Bitmap bitmap = aVar.a;
-        l.h(bitmap);
-        bVar = new j6.b(bitmap);
-        try {
-            Parcel M0 = paVar.M0();
-            int i14 = c0.a;
-            M0.writeStrongBinder(bVar);
-            M0.writeInt(1);
-            int q6 = o.q(M0, 20293);
-            o.s(M0, 1, 4);
-            M0.writeInt(i10);
-            o.s(M0, 2, 4);
-            M0.writeInt(i11);
-            o.s(M0, 3, 4);
-            M0.writeInt(i12);
-            o.s(M0, 4, 4);
-            M0.writeInt(a2);
-            o.s(M0, 5, 8);
-            M0.writeLong(elapsedRealtime);
-            o.r(M0, q6);
-            Parcel O0 = paVar.O0(M0, 3);
-            ArrayList createTypedArrayList = O0.createTypedArrayList(ta.CREATOR);
-            O0.recycle();
-            ArrayList arrayList = new ArrayList();
-            int size = createTypedArrayList.size();
-            int i15 = 0;
-            while (i15 < size) {
-                Object obj = createTypedArrayList.get(i15);
-                i15++;
-                ta taVar = (ta) obj;
-                arrayList.add(new hb.a(taVar.b, taVar.d, taVar.a, taVar.c));
-            }
-            return arrayList;
-        } catch (RemoteException e11) {
-            throw new wa.a("Failed to run thin image labeler.", e11);
-        }
+        a aVar = (a) obj;
+        return m.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && m.l(this.d, aVar.d);
     }
 
-    @Override // jb.b
-    public final void zzb() {
-        sa qaVar;
-        Context context = this.a;
-        if (this.e != null) {
-            return;
-        }
-        try {
-            IBinder b10 = k6.e.c(context, k6.e.b, "com.google.android.gms.vision.ica").b("com.google.android.gms.vision.label.mlkit.ImageLabelerCreator");
-            int i10 = ra.b;
-            if (b10 == null) {
-                qaVar = null;
-            } else {
-                IInterface queryLocalInterface = b10.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabelerCreator");
-                qaVar = queryLocalInterface instanceof sa ? (sa) queryLocalInterface : new qa(b10, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", 5);
-            }
-            this.e = ((qa) qaVar).U0(new j6.b(context), new ua(this.b.a, -1));
-        } catch (RemoteException e10) {
-            throw new wa.a("Failed to create thin image labeler.", e10);
-        } catch (k6.b unused) {
-            if (!this.d) {
-                k.b(context);
-                this.d = true;
-            }
-            throw new wa.a("Waiting for the label optional module to be downloaded. Please wait.", 14);
-        }
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
     }
 
-    @Override // jb.b
-    public final void zzc() {
-        pa paVar = this.e;
-        if (paVar != null) {
-            try {
-                paVar.Q0(paVar.M0(), 2);
-            } catch (RemoteException unused) {
-                Log.e("DecoupledImageLabeler", "Failed to release thin image labeler.");
-            }
-            this.e = null;
-            this.c = false;
-        }
+    public final String toString() {
+        w0 w0Var = new w0(a.class.getSimpleName());
+        w0 w0Var2 = new w0(4, false);
+        ((w0) w0Var.d).d = w0Var2;
+        w0Var.d = w0Var2;
+        w0Var2.c = this.a;
+        w0Var2.b = "text";
+        String valueOf = String.valueOf(this.b);
+        boolean z4 = false;
+        m7.a aVar = new m7.a(4, z4);
+        ((w0) w0Var.d).d = aVar;
+        w0Var.d = aVar;
+        aVar.c = valueOf;
+        aVar.b = "confidence";
+        String valueOf2 = String.valueOf(this.c);
+        m7.a aVar2 = new m7.a(4, z4);
+        ((w0) w0Var.d).d = aVar2;
+        aVar2.c = valueOf2;
+        aVar2.b = "index";
+        w0 w0Var3 = new w0(4, z4);
+        aVar2.d = w0Var3;
+        w0Var.d = w0Var3;
+        w0Var3.c = this.d;
+        w0Var3.b = "mid";
+        return w0Var.toString();
     }
 }

@@ -1,115 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ye extends po0 {
-    public final /* synthetic */ ChatActivityEnterView H;
+public final class ye implements Runnable {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ KeyEvent.Callback c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ye(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.tn tnVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final androidx.car.app.utils.a aVar, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.H = chatActivityEnterView;
-        this.b = true;
-        this.c = ImageReceiver.DEFAULT_CROSSFADE_DURATION;
-        this.f = -1L;
-        this.j = new AnimationNotificationsLocker();
-        e();
-        this.z = new ArrayList();
-        this.G = new ArrayList();
-        this.r = peer;
-        this.s = tL_channels_sendAsPeers;
-        bg.x2 x2Var = new bg.x2(this, context, 26);
-        this.t = x2Var;
-        x2Var.setLayoutParams(i7.f6.c(-2.0f, -2));
-        setContentView(x2Var);
-        setWidth(-2);
-        setHeight(-2);
-        setBackgroundDrawable(null);
-        Drawable mutate = context.getDrawable(R.drawable.popup_fixed_alert4).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G8, c6Var), PorterDuff.Mode.MULTIPLY));
-        x2Var.setBackground(mutate);
-        Rect rect = new Rect();
-        mutate.getPadding(rect);
-        x2Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        int width = (int) ((tnVar == null ? AndroidUtilities.displaySize.x : tnVar.T0.getWidth()) * 0.75f);
-        jo0 jo0Var = new jo0(context, width, AndroidUtilities.dp(450.0f));
-        this.o = jo0Var;
-        jo0Var.setOrientation(1);
-        TextView textView = new TextView(context);
-        this.p = textView;
-        org.telegram.ui.b.m(org.telegram.ui.ActionBar.g6.m5, c6Var, textView, 1, 16.0f);
-        textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
-        textView.setTypeface(AndroidUtilities.bold(), 1);
-        int dp = AndroidUtilities.dp(18.0f);
-        textView.setPadding(dp, AndroidUtilities.dp(12.0f), dp, AndroidUtilities.dp(12.0f));
-        jo0Var.addView(textView);
-        FrameLayout frameLayout = new FrameLayout(context);
-        final ArrayList<TLRPC.TL_sendAsPeer> arrayList = tL_channels_sendAsPeers.peers;
-        jl0 jl0Var = new jl0(context, null);
-        this.v = jl0Var;
-        f2.j0 j0Var = new f2.j0();
-        this.w = j0Var;
-        jl0Var.setLayoutManager(j0Var);
-        jl0Var.setAdapter(new ko0(c6Var, arrayList, messagesController, width, peer));
-        jl0Var.j(new lo0(this));
-        jl0Var.setOnItemClickListener(new zk0() { // from class: org.telegram.ui.Components.io0
-            @Override // org.telegram.ui.Components.zk0
-            public final void c(int i10, View view) {
-                po0.k(ye.this, arrayList, context, tnVar, z10, aVar, view, i10);
-            }
-        });
-        jl0Var.setOverScrollMode(2);
-        frameLayout.addView(jl0Var);
-        View view = new View(context);
-        this.u = view;
-        Drawable drawable = context.getDrawable(R.drawable.header_shadow);
-        drawable.setAlpha(153);
-        view.setBackground(drawable);
-        view.setAlpha(0.0f);
-        frameLayout.addView(view, i7.f6.c(4.0f, -1));
-        jo0Var.addView(frameLayout, i7.f6.c(-2.0f, -1));
-        x2Var.addView(jo0Var);
+    public /* synthetic */ ye(KeyEvent.Callback callback, int i10, int i11) {
+        this.a = i11;
+        this.c = callback;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.po0, org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        ArrayList arrayList = this.z;
-        ChatActivityEnterView chatActivityEnterView = this.H;
-        if (chatActivityEnterView.m0 != this) {
-            super.dismiss();
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int currentPage;
+        int i10 = this.a;
+        KeyEvent.Callback callback = this.c;
+        int i11 = 1;
+        switch (i10) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) callback;
+                uf ufVar = chatActivityEnterView.R0;
+                if (ufVar != null && (currentPage = ufVar.getCurrentPage()) != this.b) {
+                    this.b = currentPage;
+                    boolean z4 = chatActivityEnterView.t3;
+                    boolean z10 = currentPage == 1 || currentPage == 2;
+                    chatActivityEnterView.t3 = z10;
+                    boolean z11 = chatActivityEnterView.u3;
+                    chatActivityEnterView.u3 = currentPage == 0;
+                    if (chatActivityEnterView.v3) {
+                        if (chatActivityEnterView.N1 != 0) {
+                            chatActivityEnterView.m1(currentPage != 0 ? 1 : 2, true);
+                            chatActivityEnterView.K();
+                        } else if (!z10) {
+                            chatActivityEnterView.n1(false, true, false, true);
+                        }
+                    }
+                    if (z4 != chatActivityEnterView.t3 || z11 != chatActivityEnterView.u3) {
+                        chatActivityEnterView.J(true);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                int i12 = this.b;
+                kp kpVar = (kp) callback;
+                f2.v0 layoutManager = kpVar.w.getLayoutManager();
+                if (layoutManager != null) {
+                    int min = i12 > kpVar.N ? Math.min(i12 + 1, kpVar.h.d.size() - 1) : Math.max(i12 - 1, 0);
+                    dp dpVar = kpVar.E;
+                    dpVar.a = min;
+                    layoutManager.w0(dpVar);
+                }
+                kpVar.N = i12;
+                break;
+            default:
+                int i13 = this.b;
+                rd0 rd0Var = (rd0) callback;
+                if (((ye) rd0Var.f) == this) {
+                    ArrayList arrayList = new ArrayList();
+                    TextView textView = (TextView) ((ArrayList) rd0Var.b).get(i13);
+                    Property property = View.SCALE_X;
+                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
+                    Property property2 = View.SCALE_Y;
+                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
+                    Property property3 = View.ALPHA;
+                    arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
+                    TextView textView2 = (TextView) ((ArrayList) rd0Var.c).get(i13);
+                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 1.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 1.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 1.0f));
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    rd0Var.e = animatorSet;
+                    animatorSet.setDuration(150L);
+                    ((AnimatorSet) rd0Var.e).playTogether(arrayList);
+                    ((AnimatorSet) rd0Var.e).addListener(new nd0(this, i11));
+                    ((AnimatorSet) rd0Var.e).start();
+                    break;
+                }
+                break;
         }
-        chatActivityEnterView.m0 = null;
-        int i10 = 0;
-        if (!this.q) {
-            l(new o1.k[0]);
-            chatActivityEnterView.l0.a(true, true, 0.0f);
-            return;
-        }
-        int size = arrayList.size();
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((o1.k) obj).c();
-        }
-        arrayList.clear();
-        super.dismiss();
+    }
+
+    public ye(ChatActivityEnterView chatActivityEnterView) {
+        this.a = 0;
+        this.c = chatActivityEnterView;
+        this.b = -1;
     }
 }

@@ -1,25 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class nk implements NotificationCenter.PostponeNotificationCallback {
-    public final /* synthetic */ tn a;
+public final class nk extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
 
-    public nk(tn tnVar) {
-        this.a = tnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ nk(xn xnVar, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = xnVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
-    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
-        if (i10 == NotificationCenter.didReceiveNewMessages) {
-            long longValue = ((Long) objArr[0]).longValue();
-            tn tnVar = this.a;
-            if (tnVar.D6 && longValue == tnVar.P5) {
-                return true;
-            }
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                xn xnVar = this.b;
+                if (view == xnVar.R2) {
+                    ImageView imageView = xnVar.P2;
+                    int i14 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
+                    ImageView imageView2 = xnVar.Q2;
+                    if (imageView2 != null && imageView2.getVisibility() != 8) {
+                        i14 += 48;
+                    }
+                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = AndroidUtilities.dp(i14);
+                }
+                super.measureChildWithMargins(view, i10, i11, i12, i13);
+                break;
+            default:
+                super.measureChildWithMargins(view, i10, i11, i12, i13);
+                break;
         }
-        return false;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        switch (this.a) {
+            case 2:
+                super.setTranslationY(f10);
+                this.b.U0.invalidate();
+                break;
+            default:
+                super.setTranslationY(f10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i10);
+                this.b.yc.h(2, i10 == 0, getMeasuredWidth() > 0);
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
     }
 }

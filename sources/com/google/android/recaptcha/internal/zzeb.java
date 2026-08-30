@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
+import dd.p;
+import k7.p7;
 import kotlin.jvm.internal.j;
-import sc.c;
-import uc.i;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzeb extends i implements p {
     int zza;
@@ -29,16 +30,16 @@ final class zzeb extends i implements p {
         this.zzg = zzhhVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzebVar.zzh = obj;
         return zzebVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzeb) create((zzgr) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzeb) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00ae, code lost:
@@ -57,17 +58,17 @@ final class zzeb extends i implements p {
     
         if (r15 != r0) goto L28;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         zzeq zzeqVar;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
         if (i10 == 0) {
-            c7.b(obj);
+            p7.b(obj);
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
@@ -96,21 +97,21 @@ final class zzeb extends i implements p {
         }
         if (i10 == 1) {
             zzgrVar = (zzgr) this.zzh;
-            c7.b(obj);
+            p7.b(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } else {
             if (i10 == 2) {
-                c7.b(obj);
+                p7.b(obj);
                 return (zzeq) obj;
             }
             if (i10 != 3) {
-                c7.b(obj);
+                p7.b(obj);
                 return (zzeq) obj;
             }
             zzgrVar = (zzgr) this.zzh;
-            c7.b(obj);
+            p7.b(obj);
             this.zzh = null;
             this.zza = 4;
             obj = ((zzhg) obj).zza(zzgrVar.zza(), this);

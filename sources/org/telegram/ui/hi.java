@@ -1,85 +1,71 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class hi {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ tn d;
+public final class hi implements View.OnClickListener {
+    public final /* synthetic */ wh0 a;
+    public final /* synthetic */ org.telegram.ui.Components.sl0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ xn f;
 
-    public hi(tn tnVar, boolean z10, SparseArray sparseArray) {
-        this.d = tnVar;
-        this.b = z10;
-        this.c = sparseArray;
+    public hi(xn xnVar, wh0 wh0Var, org.telegram.ui.Components.sl0 sl0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = xnVar;
+        this.a = wh0Var;
+        this.b = sl0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
     }
 
-    public final boolean a(int i10) {
-        tn tnVar = this.d;
-        int i11 = i10 - tnVar.w0.F;
-        if (i11 < 0 || i11 >= tnVar.q6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) tnVar.q6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f9, float f10) {
-        f2.n1 K;
-        tn tnVar = this.d;
-        ArrayList arrayList = tnVar.q6;
-        SparseArray[] sparseArrayArr = tnVar.S5;
-        int i11 = i10 - tnVar.w0.F;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        wh0 wh0Var = this.a;
+        ArrayList arrayList = wh0Var.b;
+        ArrayList arrayList2 = wh0Var.c;
+        xn xnVar = this.f;
+        if (xnVar.N8 == null || arrayList2.isEmpty()) {
             return;
         }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = tnVar.t0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.s1) {
-                                tn.b2(tnVar, view, false, f9, f10);
-                                return;
-                            }
-                        }
-                        tnVar.x6(messageObject, false, true);
-                        tnVar.dc();
-                        tnVar.Wc(false);
-                    }
-                }
-                this.a = false;
-                K = tnVar.t0.K(i10);
-                if (K != null) {
-                }
-                tnVar.x6(messageObject, false, true);
-                tnVar.dc();
-                tnVar.Wc(false);
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
             }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            xnVar.presentFragment(new ProfileActivity(bundle, null));
+            xnVar.A7(true);
+            return;
         }
+        if (SharedConfig.messageSeenHintCount > 0 && xnVar.U0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.ic t6 = new org.telegram.ui.Components.qc(org.telegram.ui.Components.cb.a(xnVar.getParentActivity()), xnVar.ba).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            xnVar.k1 = t6;
+            t6.j = 4000;
+            t6.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.sl0 sl0Var = this.b;
+        sl0Var.requestLayout();
+        this.c.requestLayout();
+        sl0Var.getAdapter().l();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

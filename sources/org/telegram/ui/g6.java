@@ -1,60 +1,158 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class g6 extends org.telegram.ui.Components.ic0 {
-    public final /* synthetic */ x6 z0;
+public final /* synthetic */ class g6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b7 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ mh.b f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g6(x6 x6Var, Context context) {
-        super(context);
-        this.z0 = x6Var;
+    public /* synthetic */ g6(b7 b7Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, mh.b bVar, int i10) {
+        this.a = i10;
+        this.b = b7Var;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
+        this.f = bVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x003a  */
-    @Override // org.telegram.ui.Components.hv0, android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.b5 b5Var;
-        org.telegram.ui.ActionBar.b5 b5Var2;
-        super.dispatchDraw(canvas);
-        boolean Z = Z();
-        x6 x6Var = this.z0;
-        if (Z) {
-            float f9 = x6Var.f0;
-            if (f9 != 0.0f) {
-                x6Var.f0 = f9 - 0.16f;
-                invalidate();
-                x6Var.f0 = Utilities.clamp(x6Var.f0, 1.0f, 0.0f);
-                b5Var = ((org.telegram.ui.ActionBar.o2) x6Var).parentLayout;
-                if (b5Var == null) {
-                    b5Var2 = ((org.telegram.ui.ActionBar.o2) x6Var).parentLayout;
-                    ActionBarLayout actionBarLayout = (ActionBarLayout) b5Var2;
-                    actionBarLayout.p(canvas, (int) (x6Var.d0 * 255.0f * x6Var.f0), org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z4;
+        switch (this.a) {
+            case 0:
+                b7 b7Var = this.b;
+                ArrayList<Long> arrayList = this.c;
+                ArrayList arrayList2 = this.d;
+                ArrayList arrayList3 = this.e;
+                mh.b bVar = this.f;
+                ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
+                ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
+                if (!arrayList.isEmpty()) {
+                    try {
+                        b7Var.getMessagesStorage().getUsersInternal(arrayList, arrayList4);
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                    }
                 }
-                return;
-            }
-        }
-        if (!Z) {
-            float f10 = x6Var.f0;
-            if (f10 != 1.0f) {
-                x6Var.f0 = f10 + 0.16f;
-                invalidate();
-            }
-        }
-        x6Var.f0 = Utilities.clamp(x6Var.f0, 1.0f, 0.0f);
-        b5Var = ((org.telegram.ui.ActionBar.o2) x6Var).parentLayout;
-        if (b5Var == null) {
+                if (!arrayList2.isEmpty()) {
+                    try {
+                        b7Var.getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList2), arrayList5);
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
+                    }
+                }
+                int i10 = 0;
+                while (i10 < arrayList3.size()) {
+                    if (((u6) arrayList3.get(i10)).c <= 0) {
+                        arrayList3.remove(i10);
+                        i10--;
+                    }
+                    i10++;
+                }
+                Collections.sort(arrayList3, new nh.e4(8));
+                AndroidUtilities.runOnUIThread(new g6(b7Var, arrayList4, arrayList5, arrayList3, bVar, 1));
+                break;
+            default:
+                b7 b7Var2 = this.b;
+                ArrayList<TLRPC.User> arrayList6 = this.c;
+                ArrayList<TLRPC.Chat> arrayList7 = this.d;
+                ArrayList arrayList8 = this.e;
+                mh.b bVar2 = this.f;
+                b7Var2.getMessagesController().putUsers(arrayList6, true);
+                b7Var2.getMessagesController().putChats(arrayList7, true);
+                boolean z10 = false;
+                u6 u6Var = null;
+                int i11 = 0;
+                while (i11 < arrayList8.size()) {
+                    u6 u6Var2 = (u6) arrayList8.get(i11);
+                    if (b7Var2.getMessagesController().getUserOrChat(u6Var2.a) == null) {
+                        u6Var2.a = Long.MAX_VALUE;
+                        if (u6Var != null) {
+                            SparseArray sparseArray = u6Var.d;
+                            int i12 = 0;
+                            while (true) {
+                                SparseArray sparseArray2 = u6Var2.d;
+                                if (i12 < sparseArray2.size()) {
+                                    int keyAt = sparseArray2.keyAt(i12);
+                                    v6 v6Var = (v6) sparseArray2.valueAt(i12);
+                                    v6 v6Var2 = (v6) sparseArray.get(keyAt, z10);
+                                    if (v6Var2 == null) {
+                                        v6Var2 = new v6();
+                                        sparseArray.put(keyAt, v6Var2);
+                                    }
+                                    v6Var.getClass();
+                                    u6 u6Var3 = u6Var;
+                                    v6Var2.a += v6Var.a;
+                                    u6Var3.c += v6Var.a;
+                                    v6Var2.b.addAll(v6Var.b);
+                                    i12++;
+                                    u6Var = u6Var3;
+                                    z10 = false;
+                                } else {
+                                    u6Var.b += u6Var2.b;
+                                    arrayList8.remove(i11);
+                                    i11--;
+                                    z4 = true;
+                                }
+                            }
+                        } else {
+                            u6Var = u6Var2;
+                            z4 = false;
+                        }
+                        if (z4) {
+                            Collections.sort(arrayList8, new nh.e4(8));
+                        }
+                    }
+                    i11++;
+                    z10 = false;
+                }
+                bVar2.b = arrayList8;
+                LongSparseArray longSparseArray = bVar2.c;
+                longSparseArray.clear();
+                int size = arrayList8.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList8.get(i13);
+                    i13++;
+                    u6 u6Var4 = (u6) obj;
+                    longSparseArray.put(u6Var4.a, u6Var4);
+                }
+                if (!b7.h0) {
+                    b7Var2.V = bVar2;
+                    y6 y6Var = b7Var2.K;
+                    if (y6Var != null) {
+                        y6Var.setCacheModel(bVar2);
+                    }
+                    b7Var2.w0(true);
+                    b7Var2.v0();
+                    if (b7Var2.O != null && !b7Var2.I && System.currentTimeMillis() - b7Var2.R > 120) {
+                        n6 n6Var = b7Var2.O;
+                        long j10 = b7Var2.E;
+                        boolean z11 = j10 > 0;
+                        long j11 = b7Var2.F;
+                        float f10 = 0.0f;
+                        float f11 = j11 <= 0 ? 0.0f : j10 / j11;
+                        if (b7Var2.G > 0 && j11 > 0) {
+                            f10 = (j11 - r11) / j11;
+                        }
+                        n6Var.b(f11, f10, z11);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

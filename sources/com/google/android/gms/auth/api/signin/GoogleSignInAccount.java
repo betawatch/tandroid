@@ -1,22 +1,22 @@
 package com.google.android.gms.auth.api.signin;
 
-import a6.a;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import b6.m;
+import c6.a;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.internal.cast.o;
+import j7.f5;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import l5.d;
+import n5.d;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import z5.l;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -50,7 +50,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         this.w = str8;
     }
 
-    public static GoogleSignInAccount b(String str) {
+    public static GoogleSignInAccount e(String str) {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -71,7 +71,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         String optString6 = jSONObject.has("givenName") ? jSONObject.optString("givenName") : null;
         String optString7 = jSONObject.has("familyName") ? jSONObject.optString("familyName") : null;
         String string = jSONObject.getString("obfuscatedIdentifier");
-        l.f(string);
+        m.f(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(3, optString2, optString3, optString4, optString5, parse, null, parseLong, string, new ArrayList(hashSet), optString6, optString7);
         googleSignInAccount.h = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
@@ -107,21 +107,21 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = o.q(parcel, 20293);
-        o.s(parcel, 1, 4);
+        int q10 = f5.q(parcel, 20293);
+        f5.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        o.l(parcel, 2, this.b);
-        o.l(parcel, 3, this.c);
-        o.l(parcel, 4, this.d);
-        o.l(parcel, 5, this.e);
-        o.k(parcel, 6, this.f, i10);
-        o.l(parcel, 7, this.h);
-        o.s(parcel, 8, 8);
+        f5.l(parcel, 2, this.b);
+        f5.l(parcel, 3, this.c);
+        f5.l(parcel, 4, this.d);
+        f5.l(parcel, 5, this.e);
+        f5.k(parcel, 6, this.f, i10);
+        f5.l(parcel, 7, this.h);
+        f5.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        o.l(parcel, 9, this.r);
-        o.p(parcel, 10, this.s);
-        o.l(parcel, 11, this.v);
-        o.l(parcel, 12, this.w);
-        o.r(parcel, q6);
+        f5.l(parcel, 9, this.r);
+        f5.p(parcel, 10, this.s);
+        f5.l(parcel, 11, this.v);
+        f5.l(parcel, 12, this.w);
+        f5.r(parcel, q10);
     }
 }

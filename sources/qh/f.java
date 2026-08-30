@@ -1,79 +1,201 @@
 package qh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import i7.f6;
+import cg.u;
+import dg.n;
+import f2.l;
+import fg.i;
+import k7.b6;
+import lh.t7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.x5;
-import org.telegram.ui.Components.t9;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.pa;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.jk;
+import org.telegram.ui.xn;
+import ph.d4;
+import ph.f3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class f extends FrameLayout implements x5 {
-    public final t9 a;
-    public final c6 b;
-    public final TextView c;
-    public final TextView d;
+public final class f extends sa implements NotificationCenter.NotificationCenterDelegate {
+    public final mf.a U;
+    public final u V;
+    public final FrameLayout W;
+    public Runnable X;
+    public w51 Y;
 
-    public f(Context context, c6 c6Var) {
-        super(context);
-        this.b = c6Var;
-        t9 t9Var = new t9(context);
-        this.a = t9Var;
-        t9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(t9Var, f6.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 20.0f);
-        textView.setGravity(17);
-        addView(textView, f6.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, f6.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
-        e();
+    public f(Context context, f6 f6Var, mf.a aVar, boolean z4, Runnable runnable) {
+        super(context, null, false, false, false, 1, f6Var);
+        this.v = 0.2f;
+        this.X = runnable;
+        fixNavigationBar();
+        sl0 sl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        final int i11 = 0;
+        sl0Var.setPadding(i10, 0, i10, 0);
+        this.d.setOnItemClickListener(new n(this, 18));
+        l lVar = new l();
+        lVar.m = false;
+        lVar.C = false;
+        lVar.o(nr.h);
+        lVar.n(350L);
+        this.d.setItemAnimator(lVar);
+        setBackgroundColor(j6.v0(j6.h5, f6Var));
+        this.U = aVar;
+        u uVar = new u(context, 4, f6Var);
+        this.V = uVar;
+        final int i12 = 1;
+        ((TextView) uVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, mf.a.i(aVar.b - t7.y(this.currentAccount, true).s().b, mf.b.b).d()));
+        TextView textView = (TextView) uVar.d;
+        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
+        textView.setMaxWidth(f3.a(textView.getText(), textView.getPaint()));
+        this.e.setTitle(y());
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.W = frameLayout;
+        ph.d dVar = new ph.d(getContext(), getResourcesProvider(), true);
+        frameLayout.addView(dVar, b6.t(-1, 48, 17, 20, 10, 20, 20));
+        if (z4 || g.B0()) {
+            dVar.g(LocaleController.getString(R.string.TopUpViaFragment), false, true);
+            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: qh.e
+                public final /* synthetic */ f b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    switch (i11) {
+                        case 0:
+                            af.g.u(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                            break;
+                        default:
+                            this.b.dismiss();
+                            break;
+                    }
+                }
+            });
+        } else {
+            dVar.g(LocaleController.getString(R.string.Close), false, true);
+            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: qh.e
+                public final /* synthetic */ f b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    switch (i12) {
+                        case 0:
+                            af.g.u(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
+                            break;
+                        default:
+                            this.b.dismiss();
+                            break;
+                    }
+                }
+            });
+        }
+        w51 w51Var = this.Y;
+        if (w51Var != null) {
+            w51Var.N(false);
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = g6.S0;
-        t9 t9Var = this.a;
-        jf.r.a(canvas, drawable, (t9Var.getWidth() / 2.0f) + t9Var.getLeft(), (t9Var.getHeight() / 2.0f) + t9Var.getTop(), t9Var.getHeight());
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        Runnable runnable;
+        if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
+            w51 w51Var = this.Y;
+            if (w51Var != null) {
+                w51Var.N(true);
+            }
+            mf.a s6 = t7.y(this.currentAccount, true).s();
+            TextView textView = (TextView) this.V.c;
+            int i12 = R.string.TonNeededTitle;
+            mf.a aVar = this.U;
+            textView.setText(LocaleController.formatString(i12, mf.a.i(aVar.b - s6.b, mf.b.b).d()));
+            pa paVar = this.e;
+            if (paVar != null) {
+                paVar.setTitle(y());
+            }
+            if (s6.b < aVar.b || (runnable = this.X) == null) {
+                return;
+            }
+            runnable.run();
+            this.X = null;
+            dismiss();
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void e() {
-        int i10 = g6.G6;
-        c6 c6Var = this.b;
-        this.c.setTextColor(g6.v0(i10, c6Var));
-        this.d.setTextColor(g6.v0(g6.z6, c6Var));
+    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        u uVar = this.V;
+        if (uVar != null) {
+            ((i) uVar.b).setPaused(true);
+        }
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.ui.ActionBar.g3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starOptionsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(218.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog
+    public final void show() {
+        jk jkVar;
+        if (t7.y(this.currentAccount, true).s().b >= this.U.b) {
+            Runnable runnable = this.X;
+            if (runnable != null) {
+                runnable.run();
+                this.X = null;
+                return;
+            }
+            return;
+        }
+        p2 R = LaunchActivity.R();
+        if (R instanceof xn) {
+            xn xnVar = (xn) R;
+            if (xnVar.x9() && (jkVar = xnVar.V) != null) {
+                jkVar.P();
+            }
+        }
+        super.show();
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starOptionsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
     }
 
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
+    @Override // org.telegram.ui.Components.sa
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new d4(this, 6), this.resourcesProvider);
+        this.Y = w51Var;
+        return w51Var;
     }
 
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
+        u uVar = this.V;
+        if (uVar == null) {
+            return null;
+        }
+        return ((TextView) uVar.c).getText();
     }
 }

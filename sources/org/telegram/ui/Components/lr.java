@@ -1,46 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lr extends ImageView {
-    public final /* synthetic */ int a = 1;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final class lr implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mr b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lr(or orVar, Context context, o4.g gVar) {
-        super(context);
-        this.c = orVar;
-        this.b = gVar;
+    public /* synthetic */ lr(mr mrVar, int i10) {
+        this.a = i10;
+        this.b = mrVar;
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                or orVar = (or) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (orVar.n || orVar.f)) {
-                    orVar.n = false;
-                    orVar.f = false;
-                    removeCallbacks(orVar.r);
-                    removeCallbacks(orVar.h);
+                mr mrVar = this.b;
+                if (mrVar.c < 1.0f) {
+                    mrVar.invalidateSelf();
+                    break;
                 }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((o4.g) this.b).b).onTouchEvent(motionEvent);
+                break;
             default:
-                return super.onTouchEvent(motionEvent);
+                mr mrVar2 = this.b;
+                if (mrVar2.c > 0.0f) {
+                    mrVar2.invalidateSelf();
+                    break;
+                }
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lr(fk0 fk0Var, Context context) {
-        super(context);
-        this.c = fk0Var;
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        switch (this.a) {
+            case 0:
+                mr mrVar = this.b;
+                if (mrVar.c < 1.0f) {
+                    mrVar.scheduleSelf(runnable, j10);
+                    break;
+                }
+                break;
+            default:
+                mr mrVar2 = this.b;
+                if (mrVar2.c > 0.0f) {
+                    mrVar2.scheduleSelf(runnable, j10);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                mr mrVar = this.b;
+                if (mrVar.c < 1.0f) {
+                    mrVar.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+            default:
+                mr mrVar2 = this.b;
+                if (mrVar2.c > 0.0f) {
+                    mrVar2.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+        }
     }
 }

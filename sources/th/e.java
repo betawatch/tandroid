@@ -1,48 +1,17 @@
 package th;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.wk;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements wk, vi {
-    public final /* synthetic */ p a;
-    public final /* synthetic */ ni b;
+public final class e {
+    public final long a;
+    public final TLRPC.User b;
+    public final boolean c;
 
-    public /* synthetic */ e(p pVar, ni niVar) {
-        this.a = pVar;
-        this.b = niVar;
-    }
-
-    @Override // org.telegram.ui.Components.wk
-    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
-        p pVar = this.a;
-        pVar.getClass();
-        ni niVar = this.b;
-        if (messageMedia == null || messageMedia.geo == null) {
-            niVar.dismiss(true);
-            return;
-        }
-        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
-        pageblockmap.geo = messageMedia.geo;
-        pageblockmap.zoom = 15;
-        pageblockmap.w = 600;
-        pageblockmap.h = 400;
-        pVar.r.R1(pageblockmap);
-        pVar.V(true);
-        niVar.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public void j(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
-        if (!arrayList.isEmpty()) {
-            this.a.r.b2((MessageObject) arrayList.get(0));
-        }
-        this.b.dismiss(true);
+    public e(long j10, TLRPC.User user, boolean z4) {
+        this.a = j10;
+        this.b = user;
+        this.c = z4;
     }
 }

@@ -1,74 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lp0 extends AnimatorListenerAdapter {
+public final class lp0 extends f2.z0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ dq0 c;
+    public final /* synthetic */ lq0 b;
 
-    public /* synthetic */ lp0(dq0 dq0Var, boolean z10, int i10) {
+    public /* synthetic */ lp0(lq0 lq0Var, int i10) {
         this.a = i10;
-        this.c = dq0Var;
-        this.b = z10;
+        this.b = lq0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ng.e eVar;
+        nb nbVar;
         switch (this.a) {
             case 0:
-                AnimatorSet[] animatorSetArr = this.c.P;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[0] = null;
+                if (i11 != 0) {
+                    lq0 lq0Var = this.b;
+                    lq0.s0(lq0Var);
+                    lq0Var.n0 = lq0Var.m0;
+                    break;
+                }
+                break;
+            case 1:
+                lq0 lq0Var2 = this.b;
+                if (i11 != 0) {
+                    lq0.s0(lq0Var2);
+                    lq0Var2.n0 = lq0Var2.m0;
+                }
+                ic icVar = ic.w;
+                if (icVar != null && (nbVar = icVar.e) != null && (nbVar.getParent() instanceof View) && ((View) ic.w.e.getParent()).getParent() == lq0Var2.w) {
+                    ic.e();
+                }
+                if (Build.VERSION.SDK_INT >= 31 && (eVar = lq0Var2.L0) != null) {
+                    eVar.f(i10, i11);
+                    lq0.A0(lq0Var2);
                     break;
                 }
                 break;
             default:
-                dq0 dq0Var = this.c;
-                if (animator.equals(dq0Var.y)) {
-                    dq0Var.y = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                dq0 dq0Var = this.c;
-                AnimatorSet[] animatorSetArr = dq0Var.P;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        dq0Var.O[0].setVisibility(4);
-                    }
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            default:
-                dq0 dq0Var2 = this.c;
-                FrameLayout frameLayout = dq0Var2.h;
-                if (animator.equals(dq0Var2.y)) {
-                    if (!this.b) {
-                        dq0Var2.c.setVisibility(4);
-                        FrameLayout frameLayout2 = dq0Var2.Y;
-                        if (frameLayout2 != null && frameLayout == null) {
-                            frameLayout2.setVisibility(4);
-                        }
-                        dq0Var2.f.setVisibility(4);
-                    } else if (frameLayout != null) {
-                        frameLayout.setVisibility(4);
-                    }
-                    dq0Var2.y = null;
+                if (i11 != 0) {
+                    lq0 lq0Var3 = this.b;
+                    lq0.s0(lq0Var3);
+                    lq0Var3.n0 = lq0Var3.m0;
                     break;
                 }
                 break;

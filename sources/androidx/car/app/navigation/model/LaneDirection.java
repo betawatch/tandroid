@@ -2,7 +2,7 @@ package androidx.car.app.navigation.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class LaneDirection {
     public static final int SHAPE_NORMAL_LEFT = 5;
@@ -18,13 +18,13 @@ public final class LaneDirection {
     private final boolean mIsRecommended;
     private final int mShape;
 
-    private LaneDirection(int i10, boolean z10) {
+    private LaneDirection(int i10, boolean z4) {
         this.mShape = i10;
-        this.mIsRecommended = z10;
+        this.mIsRecommended = z4;
     }
 
-    public static LaneDirection create(int i10, boolean z10) {
-        return new LaneDirection(i10, z10);
+    public static LaneDirection create(int i10, boolean z4) {
+        return new LaneDirection(i10, z4);
     }
 
     public boolean equals(Object obj) {

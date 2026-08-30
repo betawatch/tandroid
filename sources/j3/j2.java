@@ -1,79 +1,49 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class j2 {
-    public static final j2 c;
-    public static final j2 d;
-    public static final j2 e;
-    public final long a;
-    public final long b;
+public final class j2 extends f2 {
+    public static final String e;
+    public static final String f;
+    public static final q0 h;
+    public final int c;
+    public final float d;
 
     static {
-        j2 j2Var = new j2(0L, 0L);
-        c = j2Var;
-        d = new j2(Long.MAX_VALUE, Long.MAX_VALUE);
-        new j2(Long.MAX_VALUE, 0L);
-        new j2(0L, Long.MAX_VALUE);
-        e = j2Var;
+        int i10 = h5.d0.a;
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
+        h = new q0(11);
     }
 
-    public j2(long j10, long j11) {
-        f5.a.f(j10 >= 0);
-        f5.a.f(j11 >= 0);
-        this.a = j10;
-        this.b = j11;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x005c A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final long a(long j10, long j11, long j12) {
-        long j13 = this.b;
-        long j14 = this.a;
-        if (j14 == 0 && j13 == 0) {
-            return j10;
-        }
-        int i10 = f5.d0.a;
-        long j15 = j10 - j14;
-        if (((j14 ^ j10) & (j10 ^ j15)) < 0) {
-            j15 = Long.MIN_VALUE;
-        }
-        long j16 = j10 + j13;
-        if (((j13 ^ j16) & (j10 ^ j16)) < 0) {
-            j16 = Long.MAX_VALUE;
-        }
-        boolean z10 = false;
-        boolean z11 = j15 <= j11 && j11 <= j16;
-        if (j15 <= j12 && j12 <= j16) {
-            z10 = true;
-        }
-        if (!z11 || !z10) {
-            if (!z11) {
-                return z10 ? j12 : j15;
-            }
-            return j11;
-        }
-        if (Math.abs(j11 - j10) <= Math.abs(j12 - j10)) {
-            return j11;
-        }
+    public j2(int i10) {
+        h5.a.e("maxStars must be a positive integer", i10 > 0);
+        this.c = i10;
+        this.d = -1.0f;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (!(obj instanceof j2)) {
+            return false;
         }
-        if (obj != null && j2.class == obj.getClass()) {
-            j2 j2Var = (j2) obj;
-            if (this.a == j2Var.a && this.b == j2Var.b) {
-                return true;
-            }
-        }
-        return false;
+        j2 j2Var = (j2) obj;
+        return this.c == j2Var.c && this.d == j2Var.d;
     }
 
     public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.c), Float.valueOf(this.d)});
+    }
+
+    public j2(int i10, float f10) {
+        boolean z4 = false;
+        h5.a.e("maxStars must be a positive integer", i10 > 0);
+        if (f10 >= 0.0f && f10 <= i10) {
+            z4 = true;
+        }
+        h5.a.e("starRating is out of range [0, maxStars]", z4);
+        this.c = i10;
+        this.d = f10;
     }
 }

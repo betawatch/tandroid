@@ -1,56 +1,81 @@
 package eg;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.sg;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.fr;
-import org.telegram.ui.fy;
+import org.telegram.ui.Components.k6;
+import org.telegram.ui.Components.rp;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class a1 extends k6 {
+    public final /* synthetic */ int s;
+    public final /* synthetic */ c1 v;
 
-    public /* synthetic */ a1(c1 c1Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j10, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = 0;
-        this.c = c1Var;
-        this.d = prepaidGiveaway;
-        this.b = j10;
-        this.e = o2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a1(c1 c1Var, Context context, int i10) {
+        super(context, true, true, true);
+        this.s = i10;
+        this.v = c1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.k6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.s) {
             case 0:
-                c1.P((c1) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.o2) this.e);
-                break;
-            case 1:
-                fr.S((fr) this.c, (Context) this.d, (nh.d) this.e, this.b);
+                c1 c1Var = this.v;
+                if (c1Var.J > 0.0f) {
+                    if (c1Var.I == null) {
+                        c1Var.I = new rp(c1Var.d.getTextColor());
+                    }
+                    int dp = (int) ((1.0f - c1Var.J) * AndroidUtilities.dp(24.0f));
+                    c1Var.I.setBounds(0, dp, getWidth(), getHeight() + dp);
+                    c1Var.I.setAlpha((int) (c1Var.J * 255.0f));
+                    c1Var.I.draw(canvas);
+                    invalidate();
+                }
+                float f10 = c1Var.J;
+                if (f10 < 1.0f) {
+                    if (f10 == 0.0f) {
+                        super.onDraw(canvas);
+                        break;
+                    } else {
+                        canvas.save();
+                        canvas.translate(0.0f, (int) (c1Var.J * AndroidUtilities.dp(-24.0f)));
+                        canvas.scale(1.0f, 1.0f - (c1Var.J * 0.4f));
+                        super.onDraw(canvas);
+                        canvas.restore();
+                        break;
+                    }
+                }
                 break;
             default:
-                fy fyVar = (fy) this.c;
-                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                fyVar.finishPreviewFragment();
-                AndroidUtilities.runOnUIThread(new sg(fyVar, dialogFilter, dialog, this.b, 7), 100L);
+                c1 c1Var2 = this.v;
+                if (c1Var2.J > 0.0f) {
+                    if (c1Var2.I == null) {
+                        c1Var2.I = new rp(c1Var2.d.getTextColor());
+                    }
+                    int dp2 = (int) ((1.0f - c1Var2.J) * AndroidUtilities.dp(24.0f));
+                    c1Var2.I.setBounds(0, dp2, getWidth(), getHeight() + dp2);
+                    c1Var2.I.setAlpha((int) (c1Var2.J * 255.0f));
+                    c1Var2.I.draw(canvas);
+                    invalidate();
+                }
+                float f11 = c1Var2.J;
+                if (f11 < 1.0f) {
+                    if (f11 == 0.0f) {
+                        super.onDraw(canvas);
+                        break;
+                    } else {
+                        canvas.save();
+                        canvas.translate(0.0f, (int) (c1Var2.J * AndroidUtilities.dp(-24.0f)));
+                        canvas.scale(1.0f, 1.0f - (c1Var2.J * 0.4f));
+                        super.onDraw(canvas);
+                        canvas.restore();
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ a1(Object obj, Object obj2, Object obj3, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j10;
     }
 }

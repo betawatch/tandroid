@@ -1,115 +1,44 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.RandomAccess;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class q2 extends f1 implements RandomAccess {
-    public static final Object[] d;
-    public static final q2 e;
-    public Object[] b;
-    public int c;
+public final class q2 {
+    public static final q2 c = new q2();
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
+    public final i2 a = new i2();
 
-    static {
-        Object[] objArr = new Object[0];
-        d = objArr;
-        e = new q2(objArr, 0, false);
-    }
-
-    public q2(Object[] objArr, int i10, boolean z10) {
-        super(z10);
-        this.b = objArr;
-        this.c = i10;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        i();
-        if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a4.w.k(i10, this.c, "Index:", ", Size:"));
+    public final t2 a(Class cls) {
+        t2 r10;
+        Charset charset = a2.a;
+        if (cls == null) {
+            throw new NullPointerException("messageType");
         }
-        int i12 = i10 + 1;
-        Object[] objArr = this.b;
-        int length = objArr.length;
-        if (i11 < length) {
-            System.arraycopy(objArr, i10, objArr, i12, i11 - i10);
+        ConcurrentHashMap concurrentHashMap = this.b;
+        t2 t2Var = (t2) concurrentHashMap.get(cls);
+        if (t2Var != null) {
+            return t2Var;
+        }
+        i2 i2Var = this.a;
+        i2Var.getClass();
+        t1 t1Var = u2.a;
+        v1.class.isAssignableFrom(cls);
+        s2 zzb = ((i2) i2Var.a).zzb(cls);
+        if ((zzb.d & 2) == 2) {
+            t1 t1Var2 = u2.a;
+            t1 t1Var3 = p1.a;
+            r10 = new o2(t1Var2, zzb.a);
         } else {
-            Object[] objArr2 = new Object[Math.max(((length * 3) / 2) + 1, 10)];
-            System.arraycopy(this.b, 0, objArr2, 0, i10);
-            System.arraycopy(this.b, i10, objArr2, i12, this.c - i10);
-            this.b = objArr2;
+            int i10 = p2.a;
+            int i11 = f2.a;
+            t1 t1Var4 = u2.a;
+            t1 t1Var5 = zzb.a() + (-1) != 1 ? p1.a : null;
+            int i12 = k2.a;
+            r10 = n2.r(zzb, t1Var4, t1Var5);
         }
-        this.b[i10] = obj;
-        this.c++;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        n(i10);
-        return this.b[i10];
-    }
-
-    public final void n(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a4.w.k(i10, this.c, "Index:", ", Size:"));
-        }
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.f1, java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        i();
-        n(i10);
-        Object[] objArr = this.b;
-        Object obj = objArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(objArr, i10 + 1, objArr, i10, (r2 - i10) - 1);
-        }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return obj;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        i();
-        n(i10);
-        Object[] objArr = this.b;
-        Object obj2 = objArr[i10];
-        objArr[i10] = obj;
-        ((AbstractList) this).modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.y1
-    public final /* bridge */ /* synthetic */ y1 zzd(int i10) {
-        if (i10 >= this.c) {
-            return new q2(i10 == 0 ? d : Arrays.copyOf(this.b, i10), this.c, true);
-        }
-        throw new IllegalArgumentException();
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        i();
-        int i10 = this.c;
-        int length = this.b.length;
-        if (i10 == length) {
-            this.b = Arrays.copyOf(this.b, Math.max(((length * 3) / 2) + 1, 10));
-        }
-        Object[] objArr = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        objArr[i11] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
+        t2 t2Var2 = (t2) concurrentHashMap.putIfAbsent(cls, r10);
+        return t2Var2 != null ? t2Var2 : r10;
     }
 }

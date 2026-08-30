@@ -1,33 +1,21 @@
 package j3;
 
-import org.telegram.ui.ActionBar.c6;
+import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z implements f5.j, og.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class z implements h5.j {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ List b;
 
-    public /* synthetic */ z(int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    @Override // og.c
-    public int f(c6 c6Var, boolean z10) {
-        return z10 ? this.b : this.c;
-    }
-
-    @Override // f5.j
-    public void invoke(Object obj) {
+    @Override // h5.j
+    public final void invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((a2) obj).onSurfaceSizeChanged(this.b, this.c);
+                ((y1) obj).onCues(this.b);
                 break;
             default:
-                ((a2) obj).onSurfaceSizeChanged(this.b, this.c);
+                ((k3.b) obj).getClass();
                 break;
         }
     }

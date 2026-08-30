@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class m0 extends androidx.lifecycle.p0 {
-    public static final x9.d j = new x9.d(3);
+    public static final z9.d j = new z9.d(2);
     public final boolean g;
     public final HashMap d = new HashMap();
     public final HashMap e = new HashMap();
@@ -16,8 +16,8 @@ public final class m0 extends androidx.lifecycle.p0 {
     public boolean h = false;
     public boolean i = false;
 
-    public m0(boolean z10) {
-        this.g = z10;
+    public m0(boolean z4) {
+        this.g = z4;
     }
 
     @Override // androidx.lifecycle.p0
@@ -28,25 +28,25 @@ public final class m0 extends androidx.lifecycle.p0 {
         this.h = true;
     }
 
-    public final void c(s sVar, boolean z10) {
+    public final void c(s sVar, boolean z4) {
         if (j0.K(3)) {
             Log.d("FragmentManager", "Clearing non-config state for " + sVar);
         }
-        e(sVar.e, z10);
+        e(sVar.e, z4);
     }
 
-    public final void d(String str, boolean z10) {
+    public final void d(String str, boolean z4) {
         if (j0.K(3)) {
             Log.d("FragmentManager", "Clearing non-config state for saved state of Fragment " + str);
         }
-        e(str, z10);
+        e(str, z4);
     }
 
-    public final void e(String str, boolean z10) {
+    public final void e(String str, boolean z4) {
         HashMap hashMap = this.e;
         m0 m0Var = (m0) hashMap.get(str);
         if (m0Var != null) {
-            if (z10) {
+            if (z4) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.addAll(m0Var.e.keySet());
                 int size = arrayList.size();
@@ -99,33 +99,33 @@ public final class m0 extends androidx.lifecycle.p0 {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("FragmentManagerViewModel{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append("} Fragments (");
+        StringBuilder sb = new StringBuilder("FragmentManagerViewModel{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append("} Fragments (");
         Iterator it = this.d.values().iterator();
         while (it.hasNext()) {
-            sb2.append(it.next());
+            sb.append(it.next());
             if (it.hasNext()) {
-                sb2.append(", ");
+                sb.append(", ");
             }
         }
-        sb2.append(") Child Non Config (");
+        sb.append(") Child Non Config (");
         Iterator it2 = this.e.keySet().iterator();
         while (it2.hasNext()) {
-            sb2.append((String) it2.next());
+            sb.append((String) it2.next());
             if (it2.hasNext()) {
-                sb2.append(", ");
+                sb.append(", ");
             }
         }
-        sb2.append(") ViewModelStores (");
+        sb.append(") ViewModelStores (");
         Iterator it3 = this.f.keySet().iterator();
         while (it3.hasNext()) {
-            sb2.append((String) it3.next());
+            sb.append((String) it3.next());
             if (it3.hasNext()) {
-                sb2.append(", ");
+                sb.append(", ");
             }
         }
-        sb2.append(')');
-        return sb2.toString();
+        sb.append(')');
+        return sb.toString();
     }
 }

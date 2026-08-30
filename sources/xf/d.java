@@ -1,106 +1,249 @@
 package xf;
 
-import android.app.Activity;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
-import i7.f6;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.x3;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.i4;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.ao0;
-import org.telegram.ui.Components.hv0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.i5;
-import org.telegram.ui.j5;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+import kh.a2;
+import lh.ja;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
+public final class d {
+    public final long[] a;
+    public final CharSequence[] b;
+    public final CharSequence[] c;
+    public final StaticLayout[] d;
+    public final StaticLayout[] e;
+    public int f;
+    public int g;
+    public DecimalFormat h;
 
-    public /* synthetic */ d(j jVar, int i10) {
-        this.a = i10;
-        this.b = jVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                o2 R = LaunchActivity.R();
-                j5 j5Var = new j5(R.getParentActivity(), false);
-                if (R.getFragmentView() instanceof hv0) {
-                    j5Var.b = (hv0) R.getFragmentView();
-                }
-                Activity parentActivity = R.getParentActivity();
-                LinearLayout f9 = x3.f(parentActivity, 1);
-                TextView textView = new TextView(parentActivity);
-                textView.setText("Saturation " + (j5.c * 5.0f));
-                int i10 = g6.n5;
-                org.telegram.ui.b.r(textView, g6.w0(null, i10, false), 1, 16.0f, 1);
-                textView.setMaxLines(1);
-                textView.setSingleLine(true);
-                textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                f9.addView(textView, f6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                ao0 ao0Var = new ao0(parentActivity);
-                ao0Var.setDelegate(new i5(j5Var, textView, 0));
-                ao0Var.setReportChanges(true);
-                f9.addView(ao0Var, f6.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                TextView textView2 = new TextView(parentActivity);
-                textView2.setText("Alpha " + j5.e);
-                org.telegram.ui.b.r(textView2, g6.w0(null, i10, false), 1, 16.0f, 1);
-                textView2.setMaxLines(1);
-                textView2.setSingleLine(true);
-                textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                f9.addView(textView2, f6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                ao0 ao0Var2 = new ao0(parentActivity);
-                ao0Var2.setDelegate(new i5(j5Var, textView2, 1));
-                ao0Var2.setReportChanges(true);
-                f9.addView(ao0Var2, f6.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                TextView textView3 = new TextView(parentActivity);
-                textView3.setText("Blur Radius");
-                org.telegram.ui.b.r(textView3, g6.w0(null, i10, false), 1, 16.0f, 1);
-                textView3.setMaxLines(1);
-                textView3.setSingleLine(true);
-                textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                f9.addView(textView3, f6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                ao0 ao0Var3 = new ao0(parentActivity);
-                ao0Var3.setDelegate(new org.telegram.ui.h(j5Var, 5));
-                ao0Var3.setReportChanges(true);
-                f9.addView(ao0Var3, f6.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                f9.addOnLayoutChangeListener(new i4(ao0Var, ao0Var3, ao0Var2));
-                ScrollView scrollView = new ScrollView(parentActivity);
-                scrollView.addView(f9);
-                j5Var.setCustomView(scrollView);
-                j5Var.show();
-                this.b.c(false);
-                break;
-            case 1:
-                j jVar = this.b;
-                jVar.getClass();
-                SharedConfig.toggleDebugWebView();
-                Toast.makeText(jVar.getContext(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
-                break;
-            case 2:
-                ProfileActivity.H4((Activity) this.b.getContext(), false);
-                break;
-            default:
-                j jVar2 = this.b;
-                jVar2.n = true;
-                try {
-                    jVar2.performHapticFeedback(0);
-                    break;
-                } catch (Exception unused) {
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x005a  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0136  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0146  */
+    /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, xf.d] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public d(long j10, long j11, boolean z4, float f10, int i10, TextPaint textPaint, TextPaint textPaint2) {
+        long j12;
+        float f11;
+        int i11;
+        long max;
+        int i12;
+        long j13;
+        long j14;
+        long max2;
+        int i13;
+        int i14;
+        int i15;
+        ?? obj = new Object();
+        obj.g = 255;
+        if (z4) {
+            long j15 = j10 - j11;
+            if (j15 == 0) {
+                j12 = j11 - 1;
+                i11 = 3;
+            } else {
+                if (j15 >= 6) {
+                    long j16 = j15 / 2;
+                    if (j16 < 6) {
+                        j12 = j11;
+                        i11 = (int) ((j15 % 2) + j16 + 1);
+                        f11 = 2.0f;
+                    } else {
+                        float f12 = j15 / 5.0f;
+                        if (f12 <= 0.0f) {
+                            max = Math.max(2L, j15 + 1);
+                        } else {
+                            j12 = j11;
+                            f11 = f12;
+                            i11 = 6;
+                        }
+                    }
+                    obj.a = new long[i11];
+                    obj.b = new CharSequence[i11];
+                    obj.d = new StaticLayout[i11];
+                    if (f10 > 0.0f) {
+                        obj.c = new CharSequence[i11];
+                        obj.e = new StaticLayout[i11];
+                    }
+                    boolean z10 = f11 / f10 >= 1.0f;
+                    i12 = 0;
+                    d dVar = obj;
+                    while (i12 < i11) {
+                        long j17 = ((long) (i12 * f11)) + j12;
+                        dVar.a[i12] = j17;
+                        dVar.b[i12] = dVar.b(0, textPaint, j17, i10);
+                        if (f10 > 0.0f) {
+                            float f13 = dVar.a[i12] / f10;
+                            if (z10) {
+                                long j18 = (long) f13;
+                                if (f13 - j18 < 0.01f || i10 == 1 || i10 == 2) {
+                                    dVar.c[i12] = dVar.b(1, textPaint2, j18, i10);
+                                } else {
+                                    dVar.c[i12] = "";
+                                }
+                            } else {
+                                dVar.c[i12] = dVar.b(1, textPaint2, (long) f13, i10);
+                            }
+                        }
+                        i12++;
+                        dVar = this;
+                    }
                     return;
                 }
+                max = Math.max(2L, j15 + 1);
+                j12 = j11;
+                i11 = (int) max;
+            }
+            f11 = 1.0f;
+            obj.a = new long[i11];
+            obj.b = new CharSequence[i11];
+            obj.d = new StaticLayout[i11];
+            if (f10 > 0.0f) {
+            }
+            if (f11 / f10 >= 1.0f) {
+            }
+            i12 = 0;
+            d dVar2 = obj;
+            while (i12 < i11) {
+            }
+            return;
         }
+        if (j10 > 100) {
+            j13 = 0;
+            if ((j10 / 5) % 10.0f != 0.0f) {
+                j14 = 10 * ((j10 / 10) + 1);
+                max2 = Math.max(1L, (long) Math.ceil(j14 / 5.0d));
+                if (j14 < 6) {
+                    long j19 = j14 / 2;
+                    if (j19 < 6) {
+                        i13 = (int) (j19 + 1);
+                        i15 = j14 % 2 != j13 ? i13 + 1 : i15;
+                    } else {
+                        i13 = 6;
+                    }
+                    obj.a = new long[i13];
+                    obj.b = new CharSequence[i13];
+                    obj.d = new StaticLayout[i13];
+                    if (f10 > 0.0f) {
+                        obj.c = new CharSequence[i13];
+                        obj.e = new StaticLayout[i13];
+                    }
+                    boolean z11 = ((float) max2) / f10 < 1.0f;
+                    i14 = 1;
+                    while (i14 < i13) {
+                        long j20 = i14 * max2;
+                        obj.a[i14] = j20;
+                        long j21 = max2;
+                        obj.b[i14] = obj.b(0, textPaint, j20, i10);
+                        if (f10 > 0.0f) {
+                            float f14 = obj.a[i14] / f10;
+                            if (z11) {
+                                long j22 = (long) f14;
+                                if (f14 - j22 < 0.01f || i10 == 1 || i10 == 2) {
+                                    obj.c[i14] = obj.b(1, textPaint2, j22, i10);
+                                } else {
+                                    obj.c[i14] = "";
+                                }
+                            } else {
+                                obj.c[i14] = obj.b(1, textPaint2, (long) f14, i10);
+                            }
+                        }
+                        i14++;
+                        max2 = j21;
+                    }
+                }
+                i15 = (int) Math.max(2L, j14 + 1);
+                i13 = i15;
+                obj.a = new long[i13];
+                obj.b = new CharSequence[i13];
+                obj.d = new StaticLayout[i13];
+                if (f10 > 0.0f) {
+                }
+                if (((float) max2) / f10 < 1.0f) {
+                }
+                i14 = 1;
+                while (i14 < i13) {
+                }
+            }
+        } else {
+            j13 = 0;
+        }
+        j14 = j10;
+        max2 = Math.max(1L, (long) Math.ceil(j14 / 5.0d));
+        if (j14 < 6) {
+        }
+        i13 = i15;
+        obj.a = new long[i13];
+        obj.b = new CharSequence[i13];
+        obj.d = new StaticLayout[i13];
+        if (f10 > 0.0f) {
+        }
+        if (((float) max2) / f10 < 1.0f) {
+        }
+        i14 = 1;
+        while (i14 < i13) {
+        }
+    }
+
+    public final void a(Canvas canvas, int i10, int i11, float f10, float f11, TextPaint textPaint) {
+        StaticLayout[] staticLayoutArr = this.e;
+        StaticLayout[] staticLayoutArr2 = this.d;
+        StaticLayout staticLayout = (i10 == 0 ? staticLayoutArr2 : staticLayoutArr)[i11];
+        if (staticLayout == null) {
+            CharSequence charSequence = (i10 == 0 ? this.b : this.c)[i11];
+            if (i10 == 0) {
+                staticLayoutArr = staticLayoutArr2;
+            }
+            StaticLayout staticLayout2 = new StaticLayout(charSequence, textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            staticLayoutArr[i11] = staticLayout2;
+            staticLayout = staticLayout2;
+        }
+        canvas.save();
+        canvas.translate(f10, textPaint.ascent() + f11);
+        staticLayout.draw(canvas);
+        canvas.restore();
+    }
+
+    public final CharSequence b(int i10, TextPaint textPaint, long j10, int i11) {
+        if (i11 != 1) {
+            if (i11 != 2) {
+                return AndroidUtilities.formatWholeNumber((int) j10, 0);
+            }
+            if (i10 != 1) {
+                return ja.X0(false, a2.l(j10, ' ', new StringBuilder("XTR ")), 0.65f, null);
+            }
+            return "≈" + BillingController.getInstance().formatCurrency(j10, "USD");
+        }
+        if (i10 == 1) {
+            return "≈" + BillingController.getInstance().formatCurrency(j10, "USD");
+        }
+        if (this.h == null) {
+            DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
+            decimalFormatSymbols.setDecimalSeparator('.');
+            DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
+            this.h = decimalFormat;
+            decimalFormat.setMinimumFractionDigits(2);
+            this.h.setMaximumFractionDigits(6);
+            this.h.setGroupingUsed(false);
+        }
+        this.h.setMaximumFractionDigits(j10 <= 1000000000 ? 6 : 2);
+        return ke.f0("TON " + this.h.format(j10 / 1.0E9d), textPaint, 0.8f, -AndroidUtilities.dp(0.66f), false);
     }
 }

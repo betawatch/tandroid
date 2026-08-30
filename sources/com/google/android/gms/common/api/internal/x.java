@@ -20,7 +20,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.s3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class x implements x0 {
     public final Context a;
@@ -33,19 +33,19 @@ public final class x implements x0 {
     public Bundle k;
     public final Lock o;
     public final Set i = Collections.newSetFromMap(new WeakHashMap());
-    public w5.a l = null;
-    public w5.a m = null;
+    public y5.a l = null;
+    public y5.a m = null;
     public boolean n = false;
     public int p = 0;
 
-    public x(Context context, j0 j0Var, ReentrantLock reentrantLock, Looper looper, w5.e eVar, a0.f fVar, a0.f fVar2, s3 s3Var, b6.b bVar, com.google.android.gms.common.api.c cVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar3, a0.f fVar4) {
+    public x(Context context, j0 j0Var, ReentrantLock reentrantLock, Looper looper, y5.e eVar, a0.f fVar, a0.f fVar2, s3 s3Var, a8.j jVar, com.google.android.gms.common.api.c cVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar3, a0.f fVar4) {
         this.a = context;
         this.b = j0Var;
         this.o = reentrantLock;
         this.c = looper;
         this.j = cVar;
-        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new za.c(this, 9));
-        this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, s3Var, fVar3, bVar, arrayList, new ha.c(this, 11));
+        this.d = new m0(context, j0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new androidx.biometric.f0(this, 6));
+        this.e = new m0(context, j0Var, reentrantLock, looper, eVar, fVar, s3Var, fVar3, jVar, arrayList, new a3.c(this, 7));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
         while (it.hasNext()) {
@@ -59,26 +59,26 @@ public final class x implements x0 {
     }
 
     public static /* bridge */ /* synthetic */ void k(x xVar, int i10) {
-        xVar.b.t(i10);
+        xVar.b.n(i10);
         xVar.m = null;
         xVar.l = null;
     }
 
     public static void l(x xVar) {
-        w5.a aVar;
-        w5.a aVar2;
-        w5.a aVar3 = xVar.l;
+        y5.a aVar;
+        y5.a aVar2;
+        y5.a aVar3 = xVar.l;
         m0 m0Var = xVar.e;
         m0 m0Var2 = xVar.d;
-        if (aVar3 == null || !aVar3.c()) {
-            if (xVar.l != null && (aVar2 = xVar.m) != null && aVar2.c()) {
-                m0Var.f();
-                w5.a aVar4 = xVar.l;
-                z5.l.h(aVar4);
+        if (aVar3 == null || !aVar3.f()) {
+            if (xVar.l != null && (aVar2 = xVar.m) != null && aVar2.f()) {
+                m0Var.e();
+                y5.a aVar4 = xVar.l;
+                b6.m.h(aVar4);
                 xVar.h(aVar4);
                 return;
             }
-            w5.a aVar5 = xVar.l;
+            y5.a aVar5 = xVar.l;
             if (aVar5 == null || (aVar = xVar.m) == null) {
                 return;
             }
@@ -88,16 +88,16 @@ public final class x implements x0 {
             xVar.h(aVar5);
             return;
         }
-        w5.a aVar6 = xVar.m;
-        if ((aVar6 == null || !aVar6.c()) && !xVar.j()) {
-            w5.a aVar7 = xVar.m;
+        y5.a aVar6 = xVar.m;
+        if ((aVar6 == null || !aVar6.f()) && !xVar.j()) {
+            y5.a aVar7 = xVar.m;
             if (aVar7 != null) {
                 if (xVar.p == 1) {
                     xVar.i();
                     return;
                 } else {
                     xVar.h(aVar7);
-                    m0Var2.f();
+                    m0Var2.e();
                     return;
                 }
             }
@@ -110,8 +110,8 @@ public final class x implements x0 {
                 xVar.p = 0;
             } else {
                 j0 j0Var = xVar.b;
-                z5.l.h(j0Var);
-                j0Var.y(xVar.k);
+                b6.m.h(j0Var);
+                j0Var.o(xVar.k);
             }
         }
         xVar.i();
@@ -139,13 +139,13 @@ public final class x implements x0 {
     public final boolean b() {
         this.o.lock();
         try {
-            boolean z10 = false;
+            boolean z4 = false;
             if (this.d.m instanceof a0) {
                 if (!(this.e.m instanceof a0) && !j()) {
                 }
-                z10 = true;
+                z4 = true;
             }
-            return z10;
+            return z4;
         } finally {
             this.o.unlock();
         }
@@ -154,22 +154,22 @@ public final class x implements x0 {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         m0 m0Var = (m0) this.f.get(eVar.o);
-        z5.l.i(m0Var, "GoogleApiClient is not configured to use the API required for this call.");
+        b6.m.i(m0Var, "GoogleApiClient is not configured to use the API required for this call.");
         if (!m0Var.equals(this.e)) {
             m0 m0Var2 = this.d;
             m0Var2.getClass();
             eVar.l();
-            return m0Var2.m.T(eVar);
+            return m0Var2.m.H(eVar);
         }
         if (j()) {
             com.google.android.gms.common.api.c cVar = this.j;
-            eVar.o(new Status(4, null, cVar == null ? null : PendingIntent.getActivity(this.a, System.identityHashCode(this.b), cVar.o(), w6.d.a | TLObject.FLAG_27), null));
+            eVar.o(new Status(4, null, cVar == null ? null : PendingIntent.getActivity(this.a, System.identityHashCode(this.b), cVar.o(), y6.d.a | TLObject.FLAG_27), null));
             return eVar;
         }
         m0 m0Var3 = this.e;
         m0Var3.getClass();
         eVar.l();
-        return m0Var3.m.T(eVar);
+        return m0Var3.m.H(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -179,12 +179,12 @@ public final class x implements x0 {
         try {
             lock.lock();
             try {
-                boolean z10 = this.p == 2;
+                boolean z4 = this.p == 2;
                 lock.unlock();
-                this.e.f();
-                this.m = new w5.a(4);
-                if (z10) {
-                    new c2.v0(this.c, 4).post(new ag.q1(this, 19));
+                this.e.e();
+                this.m = new y5.a(4);
+                if (z4) {
+                    new a7.e(this.c, 5).post(new androidx.activity.i(this, 15));
                 } else {
                     i();
                 }
@@ -197,21 +197,39 @@ public final class x implements x0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
-    public final boolean e(m5.d dVar) {
+    public final void e() {
+        this.m = null;
+        this.l = null;
+        this.p = 0;
+        this.d.e();
+        this.e.e();
+        i();
+    }
+
+    @Override // com.google.android.gms.common.api.internal.x0
+    public final void f(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        printWriter.append((CharSequence) str).append("authClient").println(":");
+        this.e.f(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
+        printWriter.append((CharSequence) str).append("anonClient").println(":");
+        this.d.f(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.x0
+    public final boolean g(o5.d dVar) {
         Lock lock;
         this.o.lock();
         try {
             lock = this.o;
             lock.lock();
             try {
-                boolean z10 = true;
-                boolean z11 = this.p == 2;
+                boolean z4 = true;
+                boolean z10 = this.p == 2;
                 lock.unlock();
-                if (!z11) {
+                if (!z10) {
                     if (b()) {
                     }
-                    z10 = false;
-                    return z10;
+                    z4 = false;
+                    return z4;
                 }
                 if (!(this.e.m instanceof a0)) {
                     this.i.add(dVar);
@@ -220,10 +238,10 @@ public final class x implements x0 {
                     }
                     this.m = null;
                     this.e.a();
-                    return z10;
+                    return z4;
                 }
-                z10 = false;
-                return z10;
+                z4 = false;
+                return z4;
             } finally {
                 lock.unlock();
             }
@@ -232,32 +250,14 @@ public final class x implements x0 {
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final void f() {
-        this.m = null;
-        this.l = null;
-        this.p = 0;
-        this.d.f();
-        this.e.f();
-        i();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final void g(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        printWriter.append((CharSequence) str).append("authClient").println(":");
-        this.e.g(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
-        printWriter.append((CharSequence) str).append("anonClient").println(":");
-        this.d.g(String.valueOf(str).concat("  "), fileDescriptor, printWriter, strArr);
-    }
-
-    public final void h(w5.a aVar) {
+    public final void h(y5.a aVar) {
         int i10 = this.p;
         if (i10 != 1) {
             if (i10 != 2) {
                 Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
                 this.p = 0;
             }
-            this.b.c(aVar);
+            this.b.v(aVar);
         }
         i();
         this.p = 0;
@@ -267,13 +267,13 @@ public final class x implements x0 {
         Set set = this.i;
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((m5.d) it.next()).i.release();
+            ((o5.d) it.next()).i.release();
         }
         set.clear();
     }
 
     public final boolean j() {
-        w5.a aVar = this.m;
+        y5.a aVar = this.m;
         return aVar != null && aVar.b == 4;
     }
 }

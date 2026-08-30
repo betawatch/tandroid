@@ -1,102 +1,90 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class im0 implements TextWatcher {
-    public final /* synthetic */ vm0 a;
+public final class im0 implements org.telegram.ui.Components.ji {
+    public final /* synthetic */ dn0 a;
 
-    public im0(vm0 vm0Var) {
-        this.a = vm0Var;
+    public im0(dn0 dn0Var) {
+        this.a = dn0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        boolean z10;
-        int indexOf;
-        vm0 vm0Var = this.a;
-        ArrayList arrayList = vm0Var.Q0;
-        HashMap hashMap = vm0Var.S0;
-        if (vm0Var.V0) {
+    @Override // org.telegram.ui.Components.ji
+    public final void C() {
+        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final void H(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
+        org.telegram.ui.Components.li liVar;
+        dn0 dn0Var = this.a;
+        if (dn0Var.getParentActivity() == null || (liVar = dn0Var.O0) == null) {
             return;
         }
-        vm0Var.V0 = true;
-        String d = qe.b.d(vm0Var.U[1].getText().toString(), false);
-        vm0Var.U[1].setText(d);
-        org.telegram.ui.Components.d40 d40Var = (org.telegram.ui.Components.d40) vm0Var.U[2];
-        if (d.length() == 0) {
-            d40Var.setHintText((String) null);
-            d40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-            vm0Var.U[0].setText(LocaleController.getString(R.string.ChooseCountry));
-        } else {
-            int i10 = 4;
-            if (d.length() > 4) {
-                while (true) {
-                    if (i10 < 1) {
-                        str = null;
-                        z10 = false;
-                        break;
-                    }
-                    String substring = d.substring(0, i10);
-                    if (((String) hashMap.get(substring)) != null) {
-                        String str2 = d.substring(i10) + vm0Var.U[2].getText().toString();
-                        vm0Var.U[1].setText(substring);
-                        str = str2;
-                        d = substring;
-                        z10 = true;
-                        break;
-                    }
-                    i10--;
-                }
-                if (!z10) {
-                    str = d.substring(1) + vm0Var.U[2].getText().toString();
-                    EditTextBoldCursor editTextBoldCursor = vm0Var.U[1];
-                    d = d.substring(0, 1);
-                    editTextBoldCursor.setText(d);
-                }
-            } else {
-                str = null;
-                z10 = false;
-            }
-            String str3 = (String) hashMap.get(d);
-            if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
-                d40Var.setHintText((String) null);
-                d40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-                vm0Var.U[0].setText(LocaleController.getString(R.string.WrongCountry));
-            } else {
-                vm0Var.U[0].setText((CharSequence) arrayList.get(indexOf));
-                String str4 = (String) vm0Var.T0.get(d);
-                if (str4 != null) {
-                    d40Var.setHintText(str4.replace('X', (char) 8211));
-                    d40Var.setHint((CharSequence) null);
-                }
-            }
-            if (!z10) {
-                EditTextBoldCursor editTextBoldCursor2 = vm0Var.U[1];
-                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-            }
-            if (str != null) {
-                d40Var.requestFocus();
-                d40Var.setText(str);
-                d40Var.setSelection(d40Var.length());
-            }
+        if (i10 != 8 && i10 != 7) {
+            liVar.dismissWithButtonClick(i10);
+            dn0Var.F1(i10);
+            return;
         }
-        vm0Var.V0 = false;
+        if (i10 != 8) {
+            liVar.dismiss(true);
+        }
+        HashMap<Object, Object> selectedPhotos = dn0Var.O0.g0.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = dn0Var.O0.g0.getSelectedPhotosOrder();
+        if (selectedPhotos.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
+            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            String str = photoEntry.imagePath;
+            if (str != null) {
+                sendingMediaInfo.path = str;
+            } else {
+                sendingMediaInfo.path = photoEntry.path;
+            }
+            arrayList.add(sendingMediaInfo);
+            photoEntry.reset();
+        }
+        dn0Var.G1(arrayList);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ boolean V() {
+        return false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ boolean k() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final void x(org.telegram.ui.Components.wg wgVar) {
+        wgVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void D(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void G(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void r() {
+    }
+
+    @Override // org.telegram.ui.Components.ji
+    public final /* synthetic */ void X(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
     }
 }

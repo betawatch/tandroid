@@ -1,49 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fh implements Utilities.Callback4 {
+public final /* synthetic */ class fh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ li b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ fh(KeyEvent.Callback callback, int i10) {
+    public /* synthetic */ fh(li liVar, boolean z4, int i10) {
         this.a = i10;
-        this.b = callback;
+        this.b = liVar;
+        this.c = z4;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback4
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ni niVar = (ni) this.b;
-                CharSequence charSequence = (CharSequence) obj;
-                th thVar = niVar.A0;
-                thVar.setText(charSequence);
-                thVar.w(charSequence.length(), charSequence.length());
-                niVar.z1();
-                break;
+                boolean z4 = this.c;
+                li liVar = this.b;
+                if (!z4) {
+                    liVar.Z0.setVisibility(8);
+                    break;
+                } else {
+                    liVar.getClass();
+                    break;
+                }
             case 1:
-                ni niVar2 = (ni) this.b;
-                CharSequence charSequence2 = (CharSequence) obj;
-                wh whVar = niVar2.L0;
-                whVar.setText(charSequence2);
-                whVar.w(charSequence2.length(), charSequence2.length());
-                niVar2.z1();
-                break;
+                boolean z10 = this.c;
+                li liVar2 = this.b;
+                if (!z10) {
+                    liVar2.w.setVisibility(8);
+                    break;
+                } else {
+                    liVar2.getClass();
+                    break;
+                }
+            case 2:
+                boolean z11 = this.c;
+                li liVar3 = this.b;
+                if (!z11) {
+                    liVar3.y.setVisibility(8);
+                    break;
+                } else {
+                    liVar3.getClass();
+                    break;
+                }
             default:
-                ed edVar = (ed) this.b;
-                nh.g gVar = edVar.f;
-                gVar.setText((CharSequence) obj);
-                gVar.d();
-                gVar.k(true);
-                nh.e eVar = edVar.V;
-                AndroidUtilities.cancelRunOnUIThread(eVar);
-                eVar.run();
-                break;
+                boolean z12 = this.c;
+                li liVar4 = this.b;
+                if (!z12) {
+                    liVar4.getClass();
+                    break;
+                } else {
+                    liVar4.u1.setVisibility(4);
+                    break;
+                }
         }
     }
 }

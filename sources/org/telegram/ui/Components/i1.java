@@ -1,41 +1,48 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class i1 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ i1(LaunchActivity launchActivity, int i10) {
+    public /* synthetic */ i1(Activity activity, int i10) {
         this.a = i10;
-        this.b = launchActivity;
+        this.b = activity;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
-                this.b.p0(new LanguageSelectActivity());
+                z4.a(this.b);
                 break;
             case 1:
-                this.b.p0(new org.telegram.ui.x6());
-                break;
-            default:
-                LaunchActivity launchActivity = this.b;
+                Activity activity = this.b;
                 try {
                     Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    launchActivity.startActivity(intent);
+                    activity.startActivity(intent);
                     break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            default:
+                Activity activity2 = this.b;
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    activity2.startActivity(intent2);
+                    break;
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
         }
     }

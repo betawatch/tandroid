@@ -1,20 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kk extends org.telegram.ui.Components.w51 {
-    public final /* synthetic */ tn J;
+public final class kk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kk(tn tnVar, Context context) {
-        super(context);
-        this.J = tnVar;
+    public /* synthetic */ kk(xn xnVar, int i10) {
+        this.a = i10;
+        this.b = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.w51
-    public final org.telegram.ui.ActionBar.c6 getResourceProvider() {
-        return this.J.aa;
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.sg sgVar;
+        FrameLayout frameLayout;
+        switch (this.a) {
+            case 0:
+                xn xnVar = this.b;
+                AnimatorSet animatorSet = xnVar.S9;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    xnVar.S9.start();
+                    break;
+                }
+                break;
+            default:
+                xn xnVar2 = this.b;
+                if (xnVar2.L2 == this && (sgVar = xnVar2.J0) != null && (frameLayout = xnVar2.K2) != null) {
+                    sgVar.i(frameLayout, false, true);
+                    break;
+                }
+                break;
+        }
     }
 }

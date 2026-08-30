@@ -2,14 +2,28 @@ package t4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface f {
-    int e(long j10);
+public final class f extends q4.b {
+    public final List d;
+    public final long e;
 
-    long m(int i10);
+    public f(long j10, List list) {
+        super(0L, list.size() - 1);
+        this.e = j10;
+        this.d = list;
+    }
 
-    List q(long j10);
+    @Override // q4.l
+    public final long B() {
+        a();
+        u4.g gVar = (u4.g) this.d.get((int) this.c);
+        return this.e + gVar.e + gVar.c;
+    }
 
-    int v();
+    @Override // q4.l
+    public final long p() {
+        a();
+        return this.e + ((u4.g) this.d.get((int) this.c)).e;
+    }
 }

@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class SharedPrefsHelper {
     private static String WEB_VIEW_SHOWN_DIALOG_FORMAT = "confirm_shown_%d_%d";
@@ -34,7 +34,7 @@ public class SharedPrefsHelper {
         return webViewBotsPrefs.getBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i10), Long.valueOf(j10)), false);
     }
 
-    public static void setWebViewConfirmShown(int i10, long j10, boolean z10) {
-        webViewBotsPrefs.edit().putBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i10), Long.valueOf(j10)), z10).apply();
+    public static void setWebViewConfirmShown(int i10, long j10, boolean z4) {
+        webViewBotsPrefs.edit().putBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i10), Long.valueOf(j10)), z4).apply();
     }
 }

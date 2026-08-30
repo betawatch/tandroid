@@ -6,9 +6,9 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.p0;
+import com.google.android.gms.internal.cast.o0;
+import com.google.android.gms.internal.cast.r1;
 import com.google.android.gms.internal.cast.s1;
-import com.google.android.gms.internal.cast.t1;
 import com.google.android.gms.internal.vision.f0;
 import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cv0;
-import org.telegram.ui.Components.dv0;
-import org.telegram.ui.Components.hv0;
+import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.mv0;
+import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final class g implements Runnable {
             case 0:
                 h hVar = (h) this.c;
                 int i11 = this.b;
-                Object obj = ((e.a) this.d).a;
+                Object obj = ((b7.c) this.d).a;
                 String str = (String) hVar.a.get(Integer.valueOf(i11));
                 if (str == null) {
                     return;
@@ -66,7 +66,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.l(obj);
+                        bVar.f(obj);
                         return;
                     }
                     return;
@@ -75,31 +75,31 @@ public final class g implements Runnable {
                 ((h) this.c).a(this.b, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", (IntentSender.SendIntentException) this.d));
                 return;
             case 2:
-                com.google.android.gms.internal.cast.q qVar = (com.google.android.gms.internal.cast.q) this.d;
-                c2.w wVar = (c2.w) this.c;
+                com.google.android.gms.internal.cast.p pVar2 = (com.google.android.gms.internal.cast.p) this.d;
+                c2.v vVar = (c2.v) this.c;
                 int i12 = this.b;
-                synchronized (qVar.e) {
-                    qVar.K0(wVar, i12);
+                synchronized (pVar2.e) {
+                    pVar2.K0(vVar, i12);
                 }
                 return;
             case 3:
-                p0 p0Var = (p0) this.d;
-                t1 t1Var = (t1) this.c;
+                o0 o0Var = (o0) this.d;
+                s1 s1Var = (s1) this.c;
                 int i13 = this.b;
-                s1 n10 = t1.n(t1Var);
-                String str2 = p0Var.d;
+                r1 n10 = s1.n(s1Var);
+                String str2 = o0Var.d;
                 n10.c();
-                t1.v((t1) n10.b, str2);
+                s1.v((s1) n10.b, str2);
                 n10.c();
-                t1.w((t1) n10.b, str2);
-                Long l10 = p0Var.e;
+                s1.w((s1) n10.b, str2);
+                Long l10 = o0Var.e;
                 if (l10 != null) {
                     int longValue = (int) l10.longValue();
                     n10.c();
-                    t1.x((t1) n10.b, longValue);
+                    s1.x((s1) n10.b, longValue);
                 }
-                t1 t1Var2 = (t1) n10.a();
-                int i14 = p0Var.h;
+                s1 s1Var2 = (s1) n10.a();
+                int i14 = o0Var.h;
                 int i15 = i14 - 1;
                 v2.a aVar2 = null;
                 if (i14 == 0) {
@@ -107,22 +107,22 @@ public final class g implements Runnable {
                 }
                 if (i15 != 0) {
                     if (i15 == 1) {
-                        aVar = new v2.a(Integer.valueOf(i13 - 1), t1Var2, v2.d.a, null);
+                        aVar = new v2.a(Integer.valueOf(i13 - 1), s1Var2, v2.d.a, null);
                     }
-                    p0.i.b("analytics event: %s", aVar2);
-                    z5.l.h(aVar2);
-                    pVar = p0Var.g;
+                    o0.i.b("analytics event: %s", aVar2);
+                    b6.m.h(aVar2);
+                    pVar = o0Var.g;
                     if (pVar == null) {
-                        pVar.a(aVar2, new sg.j(17));
+                        pVar.a(aVar2, new s0.b(28));
                         return;
                     }
                     return;
                 }
-                aVar = new v2.a(Integer.valueOf(i13 - 1), t1Var2, v2.d.b, null);
+                aVar = new v2.a(Integer.valueOf(i13 - 1), s1Var2, v2.d.b, null);
                 aVar2 = aVar;
-                p0.i.b("analytics event: %s", aVar2);
-                z5.l.h(aVar2);
-                pVar = p0Var.g;
+                o0.i.b("analytics event: %s", aVar2);
+                b6.m.h(aVar2);
+                pVar = o0Var.g;
                 if (pVar == null) {
                 }
             case 4:
@@ -161,18 +161,18 @@ public final class g implements Runnable {
                 return;
             default:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((dv0) this.d).c, this.b);
-                ((dv0) this.d).getClass();
-                hv0 hv0Var = (hv0) this.c;
-                hv0Var.f0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + hv0Var.f0);
-                int i16 = hv0Var.e0 + 1;
-                hv0Var.e0 = i16;
+                Utilities.stackBlurBitmap(((mv0) this.d).c, this.b);
+                ((mv0) this.d).getClass();
+                qv0 qv0Var = (qv0) this.c;
+                qv0Var.g0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + qv0Var.g0);
+                int i16 = qv0Var.f0 + 1;
+                qv0Var.f0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (hv0Var.f0 / hv0Var.e0));
-                    hv0Var.e0 = 0;
-                    hv0Var.f0 = 0;
+                    FileLog.d("chat blur generating average time" + (qv0Var.g0 / qv0Var.f0));
+                    qv0Var.f0 = 0;
+                    qv0Var.g0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new cv0(this, i10));
+                AndroidUtilities.runOnUIThread(new lv0(this, i10));
                 return;
         }
     }
@@ -184,8 +184,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(hv0 hv0Var) {
+    public g(qv0 qv0Var) {
         this.a = 8;
-        this.c = hv0Var;
+        this.c = qv0Var;
     }
 }

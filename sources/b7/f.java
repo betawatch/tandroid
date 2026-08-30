@@ -1,35 +1,11 @@
 package b7;
 
-import a4.w;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.internal.cast.o;
-import org.telegram.ui.th;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f extends a6.a {
-    public static final Parcelable.Creator<f> CREATOR = new w.a(17);
-    public final String a;
-    public final String b;
-    public final String c;
+public abstract class f implements Serializable {
+    public abstract Object a();
 
-    public f(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-    }
-
-    public final String toString() {
-        return w.q(th.k("DocumentId[packageName=", this.a, ", corpusName=", this.b, ", uri="), this.c, "]");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = o.q(parcel, 20293);
-        o.l(parcel, 1, this.a);
-        o.l(parcel, 2, this.b);
-        o.l(parcel, 3, this.c);
-        o.r(parcel, q6);
-    }
+    public abstract boolean b();
 }

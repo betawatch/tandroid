@@ -1,12 +1,12 @@
 package com.google.firebase.crashlytics.ktx;
 
-import a9.b;
+import c9.b;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
-import p9.a;
-import rc.o;
+import r9.a;
+import tc.o;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class FirebaseCrashlyticsKtxRegistrar implements ComponentRegistrar {
     public static final a Companion = new a();

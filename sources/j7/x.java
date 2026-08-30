@@ -1,31 +1,61 @@
 package j7;
 
-import java.util.AbstractMap;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class x extends s {
-    public final /* synthetic */ y c;
+public abstract class x {
+    public static Boolean a;
+    public static Boolean b;
+    public static Boolean c;
+    public static Boolean d;
+    public static Boolean e;
+    public static Boolean f;
+    public static Boolean g;
 
-    public x(y yVar) {
-        this.c = yVar;
+    public static boolean a(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (f == null) {
+            f = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
+        }
+        return f.booleanValue();
     }
 
-    @Override // java.util.List
-    public final /* synthetic */ Object get(int i10) {
-        y yVar = this.c;
-        h7.u8.a(i10, yVar.e);
-        int i11 = i10 + i10;
-        Object[] objArr = yVar.d;
-        Object obj = objArr[i11];
-        obj.getClass();
-        Object obj2 = objArr[i11 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    public static boolean b(Resources resources) {
+        boolean z4 = false;
+        if (resources == null) {
+            return false;
+        }
+        if (d == null) {
+            Configuration configuration = resources.getConfiguration();
+            if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
+                z4 = true;
+            }
+            d = Boolean.valueOf(z4);
+        }
+        return d.booleanValue();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c.e;
+    public static boolean c(Context context) {
+        Resources resources = context.getResources();
+        if (resources == null) {
+            return false;
+        }
+        if (b == null) {
+            b = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || b(resources));
+        }
+        return b.booleanValue();
+    }
+
+    public static boolean d(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        if (g == null) {
+            g = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
+        }
+        return g.booleanValue();
     }
 }

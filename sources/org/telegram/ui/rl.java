@@ -1,73 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
+import android.graphics.Bitmap;
 import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class rl extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.Components.t9 c;
-    public final /* synthetic */ sn d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h5 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ eg.r h;
-    public final /* synthetic */ tn n;
+public final class rl extends yt0 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ xn c;
 
-    public rl(tn tnVar, boolean z10, boolean z11, org.telegram.ui.Components.t9 t9Var, sn snVar, org.telegram.ui.ActionBar.h5 h5Var, boolean z12, eg.r rVar) {
-        this.n = tnVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = t9Var;
-        this.d = snVar;
-        this.e = h5Var;
-        this.f = z12;
-        this.h = rVar;
+    public rl(xn xnVar, Bitmap bitmap, ArrayList arrayList) {
+        this.c = xnVar;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        tn tnVar = this.n;
-        tnVar.D2[1] = null;
-        tnVar.x2[1].setTranslationY(0.0f);
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.n.D2;
-        if (animator.equals(animatorSetArr[1])) {
-            org.telegram.ui.Components.t9 t9Var = this.c;
-            boolean z10 = this.b;
-            boolean z11 = this.a;
-            if (!z11 && !z10 && t9Var == null) {
-                animatorSetArr[1] = null;
-                return;
-            }
-            animatorSetArr[1] = new AnimatorSet();
-            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.jr.h);
-            animatorSetArr[1].setDuration(360L);
-            ArrayList arrayList = new ArrayList();
-            if (z11) {
-                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<sn, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (z10) {
-                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.h5, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (this.f) {
-                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<eg.r, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            if (t9Var != null) {
-                arrayList.add(ObjectAnimator.ofFloat(t9Var, (Property<org.telegram.ui.Components.t9, Float>) View.TRANSLATION_Y, 0.0f));
-            }
-            animatorSetArr[1].addListener(new nh.q5(this, 28));
-            animatorSetArr[1].playTogether(arrayList);
-            animatorSetArr[1].start();
-        }
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
+        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z4, i11, 0, z10, 0L);
     }
 }

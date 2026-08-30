@@ -1,244 +1,135 @@
 package tf;
 
-import android.animation.ValueAnimator;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import nh.r6;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.y3;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.aa;
+import org.telegram.ui.ky;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j {
-    public g a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public long f;
-    public ValueAnimator g;
-    public Rect h;
-    public Rect i;
-    public Rect j;
-    public float k;
-    public float l;
-    public float m;
-    public h[] n;
+public final class j extends FrameLayout {
+    public boolean a;
+    public final /* synthetic */ k b;
 
-    public final boolean a(int i10, int i11, int i12) {
-        h hVar;
-        Rect rect = this.i;
-        Rect rect2 = this.h;
-        h[] hVarArr = this.n;
-        if (i12 != 0) {
-            if (i12 == 1 && (hVar = hVarArr[0]) != null && hVar.a != 4) {
-                if (rect2.contains(i10, i11) && hVarArr[0].a != 1) {
-                    h hVar2 = new h(this, 1);
-                    hVarArr[1] = hVar2;
-                    hVar2.c = this.k;
-                    hVar2.b = i10;
-                    hVar2.a();
-                    ValueAnimator valueAnimator = this.g;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                        return true;
-                    }
-                } else if (rect.contains(i10, i11) && hVarArr[0].a != 2) {
-                    h hVar3 = new h(this, 2);
-                    hVarArr[1] = hVar3;
-                    hVar3.d = this.l;
-                    hVar3.b = i10;
-                    hVar3.a();
-                    ValueAnimator valueAnimator2 = this.g;
-                    if (valueAnimator2 != null) {
-                        valueAnimator2.cancel();
-                    }
-                }
-                return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(k kVar, Context context) {
+        super(context);
+        this.b = kVar;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0135, code lost:
+    
+        if (r8 != false) goto L75;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0137, code lost:
+    
+        r14 = r14 - r9;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0160, code lost:
+    
+        if (r8 != false) goto L75;
+     */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int i13;
+        k kVar = this.b;
+        int size = kVar.J.size();
+        int i14 = kVar.r;
+        boolean z4 = i14 == 0 && kVar.h == 0 && MessagesController.getInstance(kVar.C).dialogs_dict.f(DialogObject.makeFolderDialogId(1)) != null;
+        View view = (View) getParent();
+        int i15 = view instanceof aa ? ((aa) view).U2 : 0;
+        boolean z10 = kVar.G;
+        int paddingTop = view.getPaddingTop();
+        int paddingBottom = view.getPaddingBottom();
+        int i16 = paddingTop - i15;
+        if (i14 == 1 && size == 1 && ((i) kVar.J.get(0)).a == 19) {
+            i12 = View.MeasureSpec.getSize(i11);
+            if (i12 == 0) {
+                i12 = view.getMeasuredHeight();
             }
-            return false;
-        }
-        if (rect2.contains(i10, i11)) {
-            h hVar4 = hVarArr[0];
-            if (hVar4 != null) {
-                hVarArr[1] = hVar4;
+            if (i12 == 0) {
+                i12 = (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
             }
-            h hVar5 = new h(this, 1);
-            hVarArr[0] = hVar5;
-            hVar5.c = this.k;
-            hVar5.b = i10;
-            hVar5.a();
-            ValueAnimator valueAnimator3 = this.g;
-            if (valueAnimator3 != null) {
-                valueAnimator3.cancel();
-                return true;
-            }
-        } else if (rect.contains(i10, i11)) {
-            h hVar6 = hVarArr[0];
-            if (hVar6 != null) {
-                hVarArr[1] = hVar6;
-            }
-            h hVar7 = new h(this, 2);
-            hVarArr[0] = hVar7;
-            hVar7.d = this.l;
-            hVar7.b = i10;
-            hVar7.a();
-            ValueAnimator valueAnimator4 = this.g;
-            if (valueAnimator4 != null) {
-                valueAnimator4.cancel();
-                return true;
+            if (kVar.O.H) {
+                i12 += AndroidUtilities.dp(81.0f);
             }
         } else {
-            if (!this.j.contains(i10, i11)) {
-                if (i11 < rect2.bottom && i11 > rect2.top) {
-                    this.c = true;
-                    this.d = i10;
-                    this.e = i11;
-                    this.f = System.currentTimeMillis();
-                    ValueAnimator valueAnimator5 = this.g;
-                    if (valueAnimator5 != null) {
-                        if (valueAnimator5.isRunning()) {
-                            this.a.a(this.k, this.l, true);
+            if (size != 0 && (i16 != 0 || z4)) {
+                int size2 = View.MeasureSpec.getSize(i11);
+                if (size2 == 0) {
+                    size2 = view.getMeasuredHeight();
+                }
+                if (size2 == 0) {
+                    size2 = (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
+                }
+                int i17 = size2 - i15;
+                int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
+                int i18 = 0;
+                for (int i19 = 0; i19 < size; i19++) {
+                    if (((i) kVar.J.get(i19)).a == 0) {
+                        if (((i) kVar.J.get(i19)).f && !z10) {
+                            i18 += AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 86.0f : 91.0f);
                         }
-                        this.g.cancel();
-                        return true;
+                        i18 += dp;
+                    } else {
+                        if (((i) kVar.J.get(i19)).a != 1) {
+                        }
+                        i18 += dp;
                     }
                 }
-                return false;
-            }
-            h hVar8 = new h(this, 4);
-            hVarArr[0] = hVar8;
-            hVar8.d = this.l;
-            hVar8.c = this.k;
-            hVar8.b = i10;
-            hVar8.a();
-            ValueAnimator valueAnimator6 = this.g;
-            if (valueAnimator6 != null) {
-                valueAnimator6.cancel();
-                return true;
-            }
-        }
-        return true;
-    }
-
-    public final boolean b(int i10, int i11) {
-        h hVar;
-        boolean z10;
-        if (this.c || (hVar = this.n[i11]) == null) {
-            return false;
-        }
-        int i12 = hVar.a;
-        float f9 = hVar.c;
-        float f10 = hVar.d;
-        int i13 = hVar.b;
-        if (i12 == 1) {
-            float f11 = f9 - ((i13 - i10) / this.b);
-            this.k = f11;
-            if (f11 < 0.0f) {
-                this.k = 0.0f;
-            }
-            float f12 = this.l;
-            float f13 = f12 - this.k;
-            float f14 = this.m;
-            if (f13 < f14) {
-                this.k = f12 - f14;
-            }
-            z10 = true;
-        } else {
-            z10 = false;
-        }
-        if (i12 == 2) {
-            float f15 = f10 - ((i13 - i10) / this.b);
-            this.l = f15;
-            if (f15 > 1.0f) {
-                this.l = 1.0f;
-            }
-            float f16 = this.l;
-            float f17 = this.k;
-            float f18 = f16 - f17;
-            float f19 = this.m;
-            if (f18 < f19) {
-                this.l = f17 + f19;
-            }
-            z10 = true;
-        }
-        if (i12 == 4) {
-            float f20 = (i13 - i10) / this.b;
-            float f21 = f9 - f20;
-            this.k = f21;
-            this.l = f10 - f20;
-            if (f21 < 0.0f) {
-                this.k = 0.0f;
-                this.l = f10 - f9;
-            }
-            if (this.l > 1.0f) {
-                this.l = 1.0f;
-                this.k = 1.0f - (f10 - f9);
-            }
-            z10 = true;
-        }
-        if (z10) {
-            this.a.A(true, false, false);
-        }
-        return true;
-    }
-
-    public final boolean c(int i10, MotionEvent motionEvent) {
-        ValueAnimator valueAnimator;
-        ValueAnimator valueAnimator2;
-        float f9;
-        float f10;
-        h[] hVarArr = this.n;
-        if (i10 != 0) {
-            h hVar = hVarArr[1];
-            if (hVar != null && (valueAnimator = hVar.e) != null) {
-                valueAnimator.cancel();
-            }
-            hVarArr[1] = null;
-            return false;
-        }
-        if (!this.c) {
-            h hVar2 = hVarArr[0];
-            if (hVar2 != null && (valueAnimator2 = hVar2.e) != null) {
-                valueAnimator2.cancel();
-            }
-            hVarArr[0] = null;
-            h hVar3 = hVarArr[1];
-            if (hVar3 != null) {
-                hVarArr[0] = hVar3;
-                hVarArr[1] = null;
-            }
-            return false;
-        }
-        this.c = false;
-        float x4 = this.d - motionEvent.getX();
-        float y8 = this.e - motionEvent.getY();
-        if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.f < 300) {
-            if (Math.sqrt((y8 * y8) + (x4 * x4)) < AndroidUtilities.dp(10.0f)) {
-                float f11 = (this.d - g.g1) / this.b;
-                float f12 = this.l;
-                float f13 = this.k;
-                float f14 = f12 - f13;
-                float f15 = f14 / 2.0f;
-                float f16 = f11 - f15;
-                float f17 = f11 + f15;
-                if (f16 < 0.0f) {
-                    f9 = f14;
-                    f10 = 0.0f;
-                } else if (f17 > 1.0f) {
-                    f10 = 1.0f - f14;
-                    f9 = 1.0f;
-                } else {
-                    f9 = f17;
-                    f10 = f16;
+                int i20 = (size - 1) + i18;
+                ArrayList arrayList = kVar.d;
+                if (arrayList != null) {
+                    i20 = y3.C(52.0f, (kVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
                 }
-                this.g = ValueAnimator.ofFloat(0.0f, 1.0f);
-                this.a.a(f10, f9, true);
-                this.g.addUpdateListener(new r6(this, f13, f10, f12, f9, 1));
-                this.g.setInterpolator(g.y1);
-                this.g.start();
-                return true;
+                int i21 = z4 ? dp + 1 : 0;
+                if (i20 < i17) {
+                    i12 = ((i17 - i20) + i21) - paddingBottom;
+                    if (i16 != 0) {
+                        i12 -= AndroidUtilities.statusBarHeight;
+                        if (!z10 && !kVar.P) {
+                            i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                            if (getParent() instanceof ky) {
+                                i13 = ((ky) getParent()).q3;
+                                i12 -= i13;
+                            }
+                        }
+                    }
+                } else {
+                    int i22 = i20 - i17;
+                    if (i22 < i21) {
+                        i12 = (i21 - i22) - paddingBottom;
+                        if (i16 != 0) {
+                            i12 -= AndroidUtilities.statusBarHeight;
+                            if (!z10 && !kVar.P) {
+                                i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                                if (getParent() instanceof ky) {
+                                    i13 = ((ky) getParent()).q3;
+                                    i12 -= i13;
+                                }
+                            }
+                        }
+                    }
+                }
             }
+            i12 = 0;
         }
-        return true;
+        int i23 = i12 >= 0 ? i12 : 0;
+        if (kVar.P) {
+            i23 += AndroidUtilities.dp(1000.0f);
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(i23, TLObject.FLAG_30));
     }
 }

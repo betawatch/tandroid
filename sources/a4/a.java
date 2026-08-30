@@ -1,44 +1,37 @@
 package a4;
 
-import android.media.MediaCodec;
-import android.os.Handler;
-import android.os.Message;
-import f5.d0;
+import h5.d0;
+import java.math.BigInteger;
+import r3.r;
+import r3.s;
+import r3.t;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements MediaCodec.OnFrameRenderedListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g5.i b;
+public final class a implements s {
+    public final /* synthetic */ b a;
 
-    public /* synthetic */ a(n nVar, g5.i iVar, int i10) {
-        this.a = i10;
-        this.b = iVar;
+    public a(b bVar) {
+        this.a = bVar;
     }
 
-    @Override // android.media.MediaCodec.OnFrameRenderedListener
-    public final void onFrameRendered(MediaCodec mediaCodec, long j10, long j11) {
-        switch (this.a) {
-            case 0:
-                g5.i iVar = this.b;
-                Handler handler = iVar.a;
-                if (d0.a >= 30) {
-                    iVar.a(j10);
-                    break;
-                } else {
-                    handler.sendMessageAtFrontOfQueue(Message.obtain(handler, 0, (int) (j10 >> 32), (int) j10));
-                    break;
-                }
-            default:
-                g5.i iVar2 = this.b;
-                Handler handler2 = iVar2.a;
-                if (d0.a >= 30) {
-                    iVar2.a(j10);
-                    break;
-                } else {
-                    handler2.sendMessageAtFrontOfQueue(Message.obtain(handler2, 0, (int) (j10 >> 32), (int) j10));
-                    break;
-                }
-        }
+    @Override // r3.s
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // r3.s
+    public final r f(long j10) {
+        b bVar = this.a;
+        long j11 = bVar.b;
+        BigInteger valueOf = BigInteger.valueOf((bVar.d.i * j10) / 1000000);
+        long j12 = bVar.c;
+        t tVar = new t(j10, d0.i((valueOf.multiply(BigInteger.valueOf(j12 - j11)).divide(BigInteger.valueOf(bVar.f)).longValue() + j11) - 30000, bVar.b, j12 - 1));
+        return new r(tVar, tVar);
+    }
+
+    @Override // r3.s
+    public final long g() {
+        return (this.a.f * 1000000) / r0.d.i;
     }
 }

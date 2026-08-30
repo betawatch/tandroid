@@ -5,14 +5,14 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Trace;
-import h7.f8;
-import h7.m8;
+import j7.i8;
+import j7.z7;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final a0.j a = new a0.j(16);
@@ -21,7 +21,7 @@ public abstract class h {
     public static final a0.k d;
 
     static {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 10000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new l());
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 10000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new k());
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         b = threadPoolExecutor;
         c = new Object();
@@ -29,16 +29,16 @@ public abstract class h {
     }
 
     public static String a(int i10, List list) {
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i11 = 0; i11 < list.size(); i11++) {
-            sb2.append(((d) list.get(i11)).e);
-            sb2.append("-");
-            sb2.append(i10);
+            sb.append(((d) list.get(i11)).e);
+            sb.append("-");
+            sb.append(i10);
             if (i11 < list.size() - 1) {
-                sb2.append(";");
+                sb.append(";");
             }
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x004e A[Catch: all -> 0x00b5, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
@@ -53,7 +53,7 @@ public abstract class h {
         int i11;
         Typeface b10;
         a0.j jVar = a;
-        m8.a("getFontSync");
+        i8.a("getFontSync");
         try {
             typeface = (Typeface) jVar.a(str);
         } catch (PackageManager.NameNotFoundException unused) {
@@ -65,7 +65,7 @@ public abstract class h {
         if (typeface != null) {
             return new g(typeface);
         }
-        i a2 = c.a(context, list);
+        b4.f a2 = c.a(context, list);
         List list2 = a2.b;
         int i12 = a2.a;
         if (i12 != 0) {
@@ -75,10 +75,10 @@ public abstract class h {
                     return new g(i11);
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
-                    j[] jVarArr = (j[]) list2.get(0);
-                    f8 f8Var = i0.e.a;
-                    m8.a("TypefaceCompat.createFromFontInfo");
-                    b10 = i0.e.a.b(context, jVarArr, i10);
+                    i[] iVarArr = (i[]) list2.get(0);
+                    z7 z7Var = i0.e.a;
+                    i8.a("TypefaceCompat.createFromFontInfo");
+                    b10 = i0.e.a.b(context, iVarArr, i10);
                     Trace.endSection();
                     if (b10 != null) {
                         return new g(-3);
@@ -86,8 +86,8 @@ public abstract class h {
                     jVar.b(str, b10);
                     return new g(b10);
                 }
-                f8 f8Var2 = i0.e.a;
-                m8.a("TypefaceCompat.createFromFontInfoWithFallback");
+                z7 z7Var2 = i0.e.a;
+                i8.a("TypefaceCompat.createFromFontInfoWithFallback");
                 b10 = i0.e.a.c(context, list2, i10);
                 Trace.endSection();
                 if (b10 != null) {
@@ -97,16 +97,16 @@ public abstract class h {
             if (i11 == 0) {
             }
         } else {
-            j[] jVarArr2 = (j[]) list2.get(0);
-            if (jVarArr2 != null && jVarArr2.length != 0) {
-                int length = jVarArr2.length;
+            i[] iVarArr2 = (i[]) list2.get(0);
+            if (iVarArr2 != null && iVarArr2.length != 0) {
+                int length = iVarArr2.length;
                 int i13 = 0;
                 while (true) {
                     if (i13 >= length) {
                         i11 = 0;
                         break;
                     }
-                    int i14 = jVarArr2[i13].e;
+                    int i14 = iVarArr2[i13].e;
                     if (i14 == 0) {
                         i13++;
                     } else if (i14 >= 0) {

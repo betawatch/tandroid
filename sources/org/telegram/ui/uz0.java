@@ -1,123 +1,168 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cg1;
-import org.telegram.ui.uz0;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class uz0 extends org.telegram.ui.Cells.w6 {
-    public final /* synthetic */ vz0 h;
+public final class uz0 extends f2.q {
+    public int b;
+    public final SparseIntArray c = new SparseIntArray();
+    public final SparseIntArray d = new SparseIntArray();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public int g;
+    public int h;
+    public final /* synthetic */ ProfileActivity i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uz0(vz0 vz0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.h = vz0Var;
-        this.f = UserConfig.selectedAccount;
-        final int i10 = 1;
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        th.n(15.0f, 1, textView);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.L6, c6Var));
-        addView(textView, i7.f6.t(-1, -2, (LocaleController.isRTL ? 5 : 3) | 48, 21, 15, 21, 0));
-        org.telegram.ui.Components.y80 y80Var = new org.telegram.ui.Components.y80(context, c6Var);
-        this.b = y80Var;
-        y80Var.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        y80Var.setTextSize(1, 14.0f);
-        y80Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.J6, c6Var));
-        y80Var.setHighlightColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.K6, c6Var));
-        y80Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        y80Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(y80Var, i7.f6.t(-2, -2, LocaleController.isRTL ? 5 : 3, 21, 14, 21, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        final int i11 = 0;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, i7.f6.k(21.0f, 16.0f, 21.0f, 15.0f, -1, 44));
-        int i12 = 0;
-        while (i12 < 2) {
-            TextView textView2 = new TextView(context);
-            textView2.setBackground(org.telegram.ui.ActionBar.w5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.g6.Oh));
-            i7.h6.b(textView2, 0.02f, 1.5f);
-            textView2.setLines(1);
-            textView2.setSingleLine(true);
-            textView2.setGravity(1);
-            textView2.setEllipsize(TextUtils.TruncateAt.END);
-            textView2.setGravity(17);
-            b.w(org.telegram.ui.ActionBar.g6.Sh, c6Var, textView2, 1, 14.0f);
-            linearLayout.addView(textView2, i7.f6.m(0.5f, 0, 44, i12 == 0 ? 0 : 4, i12 == 0 ? 4 : 0, 0));
-            if (i12 == 0) {
-                this.c = textView2;
-                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.v6
-                    public final /* synthetic */ uz0 b;
+    public uz0(ProfileActivity profileActivity) {
+        this.i = profileActivity;
+    }
 
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i11) {
-                            case 0:
-                                uz0 uz0Var = this.b;
-                                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i8(uz0Var, uz0Var.e, 25));
-                                break;
-                            default:
-                                uz0 uz0Var2 = this.b;
-                                int i13 = uz0Var2.e;
-                                ProfileActivity profileActivity = uz0Var2.h.e;
-                                if (i13 != 0) {
-                                    profileActivity.presentFragment(new cg1(8, null));
-                                    break;
-                                } else {
-                                    profileActivity.presentFragment(new org.telegram.ui.i(3));
-                                    break;
-                                }
-                        }
-                    }
-                });
-            } else {
-                this.d = textView2;
-                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.v6
-                    public final /* synthetic */ uz0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i10) {
-                            case 0:
-                                uz0 uz0Var = this.b;
-                                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i8(uz0Var, uz0Var.e, 25));
-                                break;
-                            default:
-                                uz0 uz0Var2 = this.b;
-                                int i13 = uz0Var2.e;
-                                ProfileActivity profileActivity = uz0Var2.h.e;
-                                if (i13 != 0) {
-                                    profileActivity.presentFragment(new cg1(8, null));
-                                    break;
-                                } else {
-                                    profileActivity.presentFragment(new org.telegram.ui.i(3));
-                                    break;
-                                }
-                        }
-                    }
-                });
-            }
-            i12++;
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
+    }
+
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        ProfileActivity profileActivity = this.i;
+        if (i11 < profileActivity.r4 || i11 >= profileActivity.s4 || i10 < this.g || i10 >= this.h) {
+            int i12 = this.c.get(i10, -1);
+            return i12 == this.d.get(i11, -1) && i12 >= 0;
+        }
+        ArrayList arrayList = this.f;
+        boolean isEmpty = arrayList.isEmpty();
+        ArrayList arrayList2 = this.e;
+        return (!isEmpty ? (TLRPC.ChatParticipant) arrayList2.get(((Integer) arrayList.get(i10 - this.g)).intValue()) : (TLRPC.ChatParticipant) arrayList2.get(i10 - this.g)).user_id == (!profileActivity.z2.isEmpty() ? (TLRPC.ChatParticipant) profileActivity.N4.get(((Integer) profileActivity.O4.get(i11 - profileActivity.r4)).intValue()) : (TLRPC.ChatParticipant) profileActivity.N4.get(i11 - profileActivity.r4)).user_id;
+    }
+
+    @Override // f2.q
+    public final int d() {
+        return this.i.K2;
+    }
+
+    @Override // f2.q
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        int i10;
+        int i11;
+        int i12;
+        sparseIntArray.clear();
+        ProfileActivity profileActivity = this.i;
+        g(1, profileActivity.L2, sparseIntArray);
+        g(2, profileActivity.M2, sparseIntArray);
+        g(3, profileActivity.P2, sparseIntArray);
+        g(4, profileActivity.Q2, sparseIntArray);
+        g(5, profileActivity.S2, sparseIntArray);
+        g(6, profileActivity.T2, sparseIntArray);
+        g(7, profileActivity.X2, sparseIntArray);
+        g(8, profileActivity.U2, sparseIntArray);
+        g(9, profileActivity.Z2, sparseIntArray);
+        g(10, profileActivity.Y2, sparseIntArray);
+        g(11, profileActivity.V2, sparseIntArray);
+        g(12, profileActivity.W2, sparseIntArray);
+        g(13, profileActivity.a3, sparseIntArray);
+        g(14, profileActivity.b3, sparseIntArray);
+        g(15, profileActivity.c3, sparseIntArray);
+        g(16, profileActivity.d3, sparseIntArray);
+        g(17, profileActivity.Z3, sparseIntArray);
+        g(18, profileActivity.a4, sparseIntArray);
+        g(19, profileActivity.c4, sparseIntArray);
+        g(20, profileActivity.e4, sparseIntArray);
+        g(21, profileActivity.d4, sparseIntArray);
+        g(22, profileActivity.e3, sparseIntArray);
+        g(23, profileActivity.f3, sparseIntArray);
+        g(24, profileActivity.i3, sparseIntArray);
+        g(25, profileActivity.g3, sparseIntArray);
+        g(26, profileActivity.h3, sparseIntArray);
+        g(27, profileActivity.j3, sparseIntArray);
+        g(28, profileActivity.k3, sparseIntArray);
+        g(29, profileActivity.l3, sparseIntArray);
+        g(30, profileActivity.m3, sparseIntArray);
+        g(31, profileActivity.n3, sparseIntArray);
+        g(32, profileActivity.o3, sparseIntArray);
+        g(33, profileActivity.p3, sparseIntArray);
+        g(34, profileActivity.q3, sparseIntArray);
+        g(35, profileActivity.r3, sparseIntArray);
+        g(36, profileActivity.s3, sparseIntArray);
+        g(37, profileActivity.t3, sparseIntArray);
+        g(38, profileActivity.u3, sparseIntArray);
+        g(39, profileActivity.v3, sparseIntArray);
+        g(40, profileActivity.w3, sparseIntArray);
+        g(41, profileActivity.x3, sparseIntArray);
+        g(42, profileActivity.y3, sparseIntArray);
+        g(43, profileActivity.z3, sparseIntArray);
+        g(44, profileActivity.A3, sparseIntArray);
+        g(45, profileActivity.B3, sparseIntArray);
+        g(46, profileActivity.C3, sparseIntArray);
+        g(47, profileActivity.D3, sparseIntArray);
+        g(48, profileActivity.E3, sparseIntArray);
+        g(49, profileActivity.F3, sparseIntArray);
+        g(50, profileActivity.G3, sparseIntArray);
+        g(51, profileActivity.H3, sparseIntArray);
+        g(52, profileActivity.I3, sparseIntArray);
+        g(53, profileActivity.J3, sparseIntArray);
+        g(54, profileActivity.V3, sparseIntArray);
+        g(55, profileActivity.K3, sparseIntArray);
+        g(56, profileActivity.O3, sparseIntArray);
+        g(57, profileActivity.P3, sparseIntArray);
+        g(58, profileActivity.Q3, sparseIntArray);
+        g(59, profileActivity.g4, sparseIntArray);
+        g(60, profileActivity.R3, sparseIntArray);
+        g(61, profileActivity.S3, sparseIntArray);
+        g(62, profileActivity.T3, sparseIntArray);
+        g(63, profileActivity.U3, sparseIntArray);
+        g(64, profileActivity.W3, sparseIntArray);
+        g(65, profileActivity.n4, sparseIntArray);
+        g(66, profileActivity.o4, sparseIntArray);
+        g(67, profileActivity.p4, sparseIntArray);
+        g(68, profileActivity.q4, sparseIntArray);
+        g(69, profileActivity.t4, sparseIntArray);
+        g(70, profileActivity.u4, sparseIntArray);
+        g(71, profileActivity.v4, sparseIntArray);
+        g(72, profileActivity.w4, sparseIntArray);
+        g(73, profileActivity.x4, sparseIntArray);
+        g(74, profileActivity.D4, sparseIntArray);
+        g(75, profileActivity.E4, sparseIntArray);
+        g(76, profileActivity.B4, sparseIntArray);
+        g(77, profileActivity.G4, sparseIntArray);
+        g(78, profileActivity.H4, sparseIntArray);
+        g(79, profileActivity.X3, sparseIntArray);
+        g(80, profileActivity.Y3, sparseIntArray);
+        g(81, profileActivity.I4, sparseIntArray);
+        g(82, profileActivity.J4, sparseIntArray);
+        g(83, profileActivity.N3, sparseIntArray);
+        g(84, profileActivity.L3, sparseIntArray);
+        g(85, profileActivity.M3, sparseIntArray);
+        g(86, profileActivity.R2, sparseIntArray);
+        g(87, profileActivity.N2, sparseIntArray);
+        g(88, profileActivity.y4, sparseIntArray);
+        g(89, profileActivity.z4, sparseIntArray);
+        g(90, profileActivity.A4, sparseIntArray);
+        g(91, profileActivity.C4, sparseIntArray);
+        g(92, profileActivity.f4, sparseIntArray);
+        g(93, profileActivity.k4, sparseIntArray);
+        i10 = profileActivity.botPermissionLocation;
+        g(94, i10, sparseIntArray);
+        i11 = profileActivity.botPermissionEmojiStatus;
+        g(95, i11, sparseIntArray);
+        i12 = profileActivity.botPermissionBiometry;
+        g(96, i12, sparseIntArray);
+        g(97, profileActivity.m4, sparseIntArray);
+        g(98, profileActivity.O2, sparseIntArray);
+        g(99, profileActivity.h4, sparseIntArray);
+        g(100, profileActivity.i4, sparseIntArray);
+        g(101, profileActivity.j4, sparseIntArray);
     }
 }

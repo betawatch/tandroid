@@ -1,11 +1,10 @@
 package com.google.android.gms.common.api;
 
-import ag.o1;
 import android.content.Intent;
 import java.io.PrintWriter;
 import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public interface c {
     boolean a();
@@ -14,7 +13,7 @@ public interface c {
 
     void c(String str);
 
-    void d(z5.b bVar);
+    void d(o5.i iVar);
 
     void disconnect();
 
@@ -26,17 +25,17 @@ public interface c {
 
     boolean h();
 
-    void i(o1 o1Var);
+    void i(b6.i iVar, Set set);
 
     boolean j();
 
     int k();
 
-    w5.c[] l();
+    y5.c[] l();
 
-    void m(z5.h hVar, Set set);
+    String m();
 
-    String n();
+    void n(b6.b bVar);
 
     Intent o();
 

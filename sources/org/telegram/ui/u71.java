@@ -1,24 +1,38 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class u71 extends org.telegram.ui.Components.dq0 {
-    public final /* synthetic */ b81 X0;
+public final /* synthetic */ class u71 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u71(b81 b81Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.X0 = b81Var;
+    public /* synthetic */ u71(SessionsActivity sessionsActivity, int i10) {
+        this.a = i10;
+        this.b = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.Components.dq0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new t31(this, hVar, i10), 250L);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
+                SessionsActivity sessionsActivity = this.b;
+                sessionsActivity.getClass();
+                if (connectedbots != null) {
+                    sessionsActivity.h = connectedbots.connected_bots;
+                    if (sessionsActivity.a != null) {
+                        sessionsActivity.m0();
+                        sessionsActivity.a.l();
+                        break;
+                    }
+                }
+                break;
+            default:
+                SessionsActivity.V(this.b, (Boolean) obj);
+                break;
         }
     }
 }

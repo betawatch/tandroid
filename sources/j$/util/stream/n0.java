@@ -39,8 +39,8 @@ public final class n0 extends p0 implements i5 {
         return null;
     }
 
-    public n0(LongConsumer longConsumer, boolean z10) {
-        super(z10);
+    public n0(LongConsumer longConsumer, boolean z4) {
+        super(z4);
         this.b = longConsumer;
     }
 

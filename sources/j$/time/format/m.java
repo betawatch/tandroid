@@ -14,7 +14,7 @@ public final class m implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
+    public final boolean j(r rVar, StringBuilder sb) {
         String b10;
         Long a2 = rVar.a(this.a);
         if (a2 == null) {
@@ -27,13 +27,13 @@ public final class m implements f {
             b10 = this.c.a(kVar, this.a, a2.longValue(), this.b, rVar.b.b);
         }
         if (b10 != null) {
-            sb2.append(b10);
+            sb.append(b10);
             return true;
         }
         if (this.d == null) {
             this.d = new i(this.a, 1, 19, x.NORMAL);
         }
-        return this.d.j(rVar, sb2);
+        return this.d.j(rVar, sb);
     }
 
     public final String toString() {

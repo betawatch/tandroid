@@ -1,12 +1,39 @@
 package androidx.mediarouter.app;
 
-import android.content.Context;
-import android.media.MediaRouter2;
+import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class o0 {
-    public static MediaRouter2 a(Context context) {
-        return MediaRouter2.getInstance(context);
+public final class o0 implements SeekBar.OnSeekBarChangeListener {
+    public final /* synthetic */ p0 a;
+
+    public o0(p0 p0Var) {
+        this.a = p0Var;
+    }
+
+    @Override // android.widget.SeekBar.OnSeekBarChangeListener
+    public final void onProgressChanged(SeekBar seekBar, int i10, boolean z4) {
+        if (z4) {
+            c2.a0 a0Var = (c2.a0) seekBar.getTag();
+            h0 h0Var = (h0) this.a.I.get(a0Var.c);
+            if (h0Var != null) {
+                h0Var.u(i10 == 0);
+            }
+            a0Var.j(i10);
+        }
+    }
+
+    @Override // android.widget.SeekBar.OnSeekBarChangeListener
+    public final void onStartTrackingTouch(SeekBar seekBar) {
+        p0 p0Var = this.a;
+        if (p0Var.J != null) {
+            p0Var.E.removeMessages(2);
+        }
+        p0Var.J = (c2.a0) seekBar.getTag();
+    }
+
+    @Override // android.widget.SeekBar.OnSeekBarChangeListener
+    public final void onStopTrackingTouch(SeekBar seekBar) {
+        this.a.E.sendEmptyMessageDelayed(2, 500L);
     }
 }

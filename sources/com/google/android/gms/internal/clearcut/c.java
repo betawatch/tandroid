@@ -27,7 +27,7 @@ public final class c extends ContentObserver {
     }
 
     @Override // android.database.ContentObserver
-    public final void onChange(boolean z10) {
+    public final void onChange(boolean z4) {
         Cursor cursor;
         switch (this.a) {
             case 0:

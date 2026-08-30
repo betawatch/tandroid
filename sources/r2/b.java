@@ -3,7 +3,7 @@ package r2;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -18,8 +18,8 @@ public abstract class b {
         }
         try {
             return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e10) {
-            throw new Error(e10);
+        } catch (UnsupportedEncodingException e) {
+            throw new Error(e);
         }
     }
 
@@ -47,8 +47,8 @@ public abstract class b {
         byteBuffer.get(bArr);
         try {
             return new String(bArr, "ISO-8859-1");
-        } catch (UnsupportedEncodingException e10) {
-            throw new RuntimeException(e10);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -116,9 +116,9 @@ public abstract class b {
     }
 
     public static void o(ByteBuffer byteBuffer, double d) {
-        short s10 = (short) (d * 256.0d);
-        byteBuffer.put((byte) ((65280 & s10) >> 8));
-        byteBuffer.put((byte) (s10 & 255));
+        short s6 = (short) (d * 256.0d);
+        byteBuffer.put((byte) ((65280 & s6) >> 8));
+        byteBuffer.put((byte) (s6 & 255));
     }
 
     public static void p(int i10, ByteBuffer byteBuffer) {

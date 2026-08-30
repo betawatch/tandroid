@@ -1,58 +1,66 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l5 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ TLObject d;
+public class k5 extends Drawable {
+    public final Drawable a;
+    public final int b;
+    public final int c;
+    public int d = 255;
 
-    public /* synthetic */ k5(l5 l5Var, ArrayList arrayList, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = l5Var;
-        this.c = arrayList;
-        this.d = tLObject;
+    public k5(int i10, int i11, Drawable drawable) {
+        this.a = drawable;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new k5(this.b, this.c, this.d, 1));
-                break;
-            default:
-                l5 l5Var = this.b;
-                int i10 = l5Var.e;
-                HashSet hashSet = new HashSet(this.c);
-                TLObject tLObject = this.d;
-                if (tLObject instanceof Vector) {
-                    ArrayList arrayList = ((Vector) tLObject).objects;
-                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new i5(l5Var, arrayList, 1));
-                    l5Var.d(arrayList);
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) instanceof TLRPC.Document) {
-                            hashSet.remove(Long.valueOf(((TLRPC.Document) arrayList.get(i11)).id));
-                        }
-                    }
-                    if (!hashSet.isEmpty()) {
-                        ArrayList<Long> arrayList2 = new ArrayList<>(hashSet);
-                        TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                        tL_messages_getCustomEmojiDocuments.document_id = arrayList2;
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.zg(6, l5Var, arrayList2));
-                        break;
-                    }
-                }
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            drawable.setAlpha(this.d);
+            drawable.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.c;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            return drawable.getOpacity();
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setAlpha(i10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setColorFilter(colorFilter);
         }
     }
 }

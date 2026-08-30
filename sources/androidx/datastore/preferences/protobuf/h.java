@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -61,7 +61,7 @@ public final class h {
     }
 
     public final boolean E(int i10) {
-        int z10;
+        int z4;
         int i11 = i10 & 7;
         int i12 = 0;
         if (i11 == 0) {
@@ -109,11 +109,11 @@ public final class h {
             return true;
         }
         do {
-            z10 = z();
-            if (z10 == 0) {
+            z4 = z();
+            if (z4 == 0) {
                 break;
             }
-        } while (E(z10));
+        } while (E(z4));
         a(((i10 >>> 3) << 3) | 4);
         return true;
     }
@@ -184,7 +184,7 @@ public final class h {
         int i12 = i11 + i10;
         int i13 = this.e;
         if (i12 <= i13) {
-            throw new IllegalStateException(j7.l1.l(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(kh.a2.k(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.i;
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 && i14 + i11 + i10 <= this.j) {
@@ -558,13 +558,13 @@ public final class h {
     }
 
     public final int x() {
-        int s10 = s();
-        return (-(s10 & 1)) ^ (s10 >>> 1);
+        int s6 = s();
+        return (-(s6 & 1)) ^ (s6 >>> 1);
     }
 
     public final long y() {
-        long t10 = t();
-        return (-(t10 & 1)) ^ (t10 >>> 1);
+        long t6 = t();
+        return (-(t6 & 1)) ^ (t6 >>> 1);
     }
 
     public final int z() {
@@ -572,10 +572,10 @@ public final class h {
             this.h = 0;
             return 0;
         }
-        int s10 = s();
-        this.h = s10;
-        if ((s10 >>> 3) != 0) {
-            return s10;
+        int s6 = s();
+        this.h = s6;
+        if ((s6 >>> 3) != 0) {
+            return s6;
         }
         throw new c0("Protocol message contained an invalid tag (zero).");
     }

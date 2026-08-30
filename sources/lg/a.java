@@ -1,72 +1,80 @@
 package lg;
 
-import android.os.Build;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.Iterator;
-import kg.w;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class a {
-    public final qg.a a;
-    public zd.b b;
-    public zd.b c;
-    public sg.i d;
-    public ViewGroup e;
-    public boolean f;
+public final class a extends Drawable {
+    public final TextPaint a;
+    public final TextPaint b;
+    public final RectF c;
+    public final Drawable d;
+    public float e;
+    public String f;
 
-    public a(qg.a aVar) {
-        this.a = aVar;
+    public a(Context context) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        this.c = new RectF();
+        textPaint.setColor(-1);
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
+        textPaint2.setColor(-6915073);
+        this.d = context.getDrawable(R.drawable.mini_boost_badge);
     }
 
-    public final ng.d a(View view) {
-        return c(view, null, false);
-    }
-
-    public final ng.d b(View view, og.a aVar) {
-        return c(view, aVar, false);
-    }
-
-    public final ng.d c(View view, og.a aVar, boolean z10) {
-        ViewGroup viewGroup;
-        ng.d v = this.a.v();
-        if (this.f && Build.VERSION.SDK_INT >= 33 && (v instanceof ng.e)) {
-            ng.e eVar = (ng.e) v;
-            eVar.N = new f(eVar.I);
-        }
-        v.n(aVar);
-        zd.b bVar = this.c;
-        if (bVar != null && view != null) {
-            bVar.add(view);
-        }
-        sg.i iVar = this.d;
-        if (iVar != null && (viewGroup = this.e) != null && view != null) {
-            iVar.d(view, viewGroup, new w(1, v, view), z10);
-        }
-        zd.b bVar2 = this.b;
-        if (bVar2 != null) {
-            bVar2.add(v);
-        }
-        return v;
-    }
-
-    public final void d() {
-        zd.b bVar = this.c;
-        if (bVar != null) {
-            Iterator it = bVar.iterator();
-            while (it.hasNext()) {
-                ((View) it.next()).invalidate();
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        float f10 = bounds.left;
+        float f11 = bounds.top;
+        float f12 = bounds.right;
+        float f13 = bounds.bottom;
+        RectF rectF = this.c;
+        rectF.set(f10, f11, f12, f13);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b);
+        int dp = AndroidUtilities.dp(2.0f) + bounds.left;
+        int dp2 = AndroidUtilities.dp(1.0f) + bounds.top;
+        int dp3 = AndroidUtilities.dp(2.0f) + bounds.left;
+        Drawable drawable = this.d;
+        drawable.setBounds(dp, dp2, drawable.getIntrinsicWidth() + dp3, drawable.getIntrinsicHeight() + AndroidUtilities.dp(1.0f) + getBounds().top);
+        drawable.draw(canvas);
+        String str = this.f;
+        if (str != null) {
+            canvas.drawText(str, AndroidUtilities.dp(16.5f) + bounds.left, AndroidUtilities.dp(13.0f) + bounds.top, this.a);
         }
     }
 
-    public final void e(zd.b bVar) {
-        this.c = bVar;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
     }
 
-    public final void f(sg.i iVar, ViewGroup viewGroup) {
-        this.d = iVar;
-        this.e = viewGroup;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (AndroidUtilities.dp(23.0f) + this.e);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -1;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,1696 +1,195 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.view.MotionEvent;
-import android.view.TextureView;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
-import java.nio.ByteBuffer;
-import java.util.concurrent.CountDownLatch;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ef0 extends FrameLayout implements tz, nh.cb {
-    public final int A;
-    public final Rect A0;
-    public final int B;
-    public final Matrix B0;
-    public float C;
-    public final Paint C0;
-    public float D;
-    public final int D0;
-    public float E;
-    public final org.telegram.ui.ActionBar.c6 E0;
-    public float F;
-    public int F0;
-    public float G;
-    public int G0;
-    public float H;
-    public float I;
-    public int J;
-    public int K;
-    public float L;
-    public float M;
-    public float N;
-    public float O;
-    public int P;
-    public float Q;
-    public boolean R;
-    public final af0 S;
-    public float T;
-    public PointF U;
-    public float V;
-    public float W;
-    public boolean a;
-    public MediaController.SavedFilterState a0;
-    public final int b;
-    public final FrameLayout b0;
-    public final int c;
-    public final TextView c0;
-    public final int d;
-    public final TextView d0;
-    public final int e;
-    public final TextureView e0;
-    public final int f;
-    public final boolean f0;
-    public final boolean g0;
-    public final int h;
-    public qz h0;
-    public final qh i0;
-    public final FrameLayout j0;
-    public final te0 k0;
-    public final ve0 l0;
-    public final TextView m0;
-    public final int n;
-    public final TextView n0;
-    public final TextView o0;
-    public final FrameLayout p0;
-    public final RadioButton[] q0;
-    public final int r;
-    public final bd0 r0;
-    public final int s;
-    public final boolean s0;
-    public final boolean t0;
-    public int u0;
-    public final int v;
-    public final ImageView v0;
-    public final int w;
-    public final ImageView w0;
-    public final int x;
-    public final ImageView x0;
-    public final int y;
-    public final Bitmap y0;
-    public final Bitmap z0;
+public final class ef0 extends View {
+    public int a;
+    public boolean b;
+    public boolean c;
+    public float d;
+    public sk0 e;
+    public Paint f;
+    public Paint h;
+    public Paint n;
+    public TextPaint r;
+    public Path s;
+    public df0 v;
+    public jf0 w;
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0555  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0559  */
+    public final void a(int i10, MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        float y10 = motionEvent.getY();
+        if (i10 == 1) {
+            if (this.a != 0) {
+                return;
+            }
+            sk0 sk0Var = this.e;
+            this.a = (int) Math.floor(e2.c.x(x10, sk0Var.a, sk0Var.c / 5.0f, 1.0f));
+            return;
+        }
+        if (i10 != 2) {
+            if ((i10 == 3 || i10 == 4 || i10 == 5) && this.a != 0) {
+                this.a = 0;
+                return;
+            }
+            return;
+        }
+        float min = Math.min(2.0f, (this.d - y10) / 8.0f);
+        jf0 jf0Var = this.w;
+        int i11 = jf0Var.f;
+        kf0 kf0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : jf0Var.d : jf0Var.c : jf0Var.b : jf0Var.a;
+        int i12 = this.a;
+        if (i12 == 1) {
+            kf0Var.a = Math.max(0.0f, Math.min(100.0f, kf0Var.a + min));
+        } else if (i12 == 2) {
+            kf0Var.b = Math.max(0.0f, Math.min(100.0f, kf0Var.b + min));
+        } else if (i12 == 3) {
+            kf0Var.c = Math.max(0.0f, Math.min(100.0f, kf0Var.c + min));
+        } else if (i12 == 4) {
+            kf0Var.d = Math.max(0.0f, Math.min(100.0f, kf0Var.d + min));
+        } else if (i12 == 5) {
+            kf0Var.e = Math.max(0.0f, Math.min(100.0f, kf0Var.e + min));
+        }
+        invalidate();
+        df0 df0Var = this.v;
+        if (df0Var != null) {
+            nf0 nf0Var = ((ff0) df0Var).a;
+            nf0Var.g();
+            vz vzVar = nf0Var.i0;
+            if (vzVar != null) {
+                vzVar.e(false, false, false);
+            }
+        }
+        this.d = y10;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        kf0 kf0Var;
+        TextPaint textPaint = this.r;
+        Path path = this.s;
+        Paint paint = this.n;
+        jf0 jf0Var = this.w;
+        sk0 sk0Var = this.e;
+        float f10 = sk0Var.c / 5.0f;
+        for (int i10 = 0; i10 < 4; i10++) {
+            float f11 = sk0Var.a;
+            float f12 = i10 * f10;
+            float f13 = f11 + f10 + f12;
+            float f14 = sk0Var.b;
+            canvas.drawLine(f13, f14, f12 + f11 + f10, f14 + sk0Var.d, this.f);
+        }
+        float f15 = sk0Var.a;
+        float f16 = sk0Var.b;
+        canvas.drawLine(f15, f16 + sk0Var.d, f15 + sk0Var.c, f16, this.h);
+        int i11 = jf0Var.f;
+        int i12 = 3;
+        int i13 = 2;
+        if (i11 == 0) {
+            paint.setColor(-1);
+            kf0Var = jf0Var.a;
+        } else if (i11 == 1) {
+            paint.setColor(-1229492);
+            kf0Var = jf0Var.b;
+        } else if (i11 == 2) {
+            paint.setColor(-15667555);
+            kf0Var = jf0Var.c;
+        } else if (i11 != 3) {
+            kf0Var = null;
+        } else {
+            paint.setColor(-13404165);
+            kf0Var = jf0Var.d;
+        }
+        int i14 = 0;
+        while (i14 < 5) {
+            String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(kf0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(kf0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(kf0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(kf0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(kf0Var.a / 100.0f));
+            canvas.drawText(format, (i14 * f10) + e2.c.x(f10, textPaint.measureText(format), 2.0f, sk0Var.a), (sk0Var.b + sk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
+            i14++;
+            i12 = 3;
+            i13 = 2;
+        }
+        float[] a2 = kf0Var.a();
+        invalidate();
+        path.reset();
+        for (int i15 = 0; i15 < a2.length / 2; i15++) {
+            if (i15 == 0) {
+                int i16 = i15 * 2;
+                path.moveTo((a2[i16] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i16 + 1]) * sk0Var.d) + sk0Var.b);
+            } else {
+                int i17 = i15 * 2;
+                path.lineTo((a2[i17] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i17 + 1]) * sk0Var.d) + sk0Var.b);
+            }
+        }
+        canvas.drawPath(path, paint);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
+    
+        if (r0 != 6) goto L44;
+     */
+    @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ef0(Context context, l61 l61Var, Bitmap bitmap, Bitmap bitmap2, int i10, MediaController.SavedFilterState savedFilterState, bd0 bd0Var, int i11, boolean z10, boolean z11, ga gaVar, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.q0 = new RadioButton[4];
-        this.A0 = new Rect();
-        this.B0 = new Matrix();
-        this.C0 = new Paint(2);
-        this.g0 = z11;
-        this.E0 = c6Var;
-        boolean z12 = context instanceof BubbleActivity;
-        this.t0 = z12;
-        this.r0 = bd0Var;
-        this.s0 = z10;
-        this.B = 0;
-        if (i11 == 1) {
-            this.B = 1;
-            this.n = 0;
-        } else if (i11 == 0) {
-            this.n = -1;
-        }
-        int i12 = this.B;
-        this.b = i12;
-        this.c = i12 + 1;
-        this.d = i12 + 2;
-        this.e = i12 + 3;
-        this.f = i12 + 4;
-        this.h = i12 + 5;
-        this.r = i12 + 6;
-        this.s = i12 + 7;
-        int i13 = i12 + 9;
-        this.B = i13;
-        this.v = i12 + 8;
-        if (i11 == 2) {
-            this.B = i12 + 10;
-            this.n = i13;
-        }
-        if (l61Var == null) {
-            int i14 = this.B;
-            this.B = i14 + 1;
-            this.w = i14;
-        } else {
-            this.w = -1;
-        }
-        int i15 = this.B;
-        this.x = i15;
-        this.y = i15 + 1;
-        this.B = i15 + 3;
-        this.A = i15 + 2;
-        if (savedFilterState != null) {
-            this.C = savedFilterState.enhanceValue;
-            this.I = savedFilterState.softenSkinValue;
-            this.D = savedFilterState.exposureValue;
-            this.E = savedFilterState.contrastValue;
-            this.F = savedFilterState.warmthValue;
-            this.G = savedFilterState.saturationValue;
-            this.H = savedFilterState.fadeValue;
-            this.J = savedFilterState.tintShadowsColor;
-            this.K = savedFilterState.tintHighlightsColor;
-            this.L = savedFilterState.highlightsValue;
-            this.M = savedFilterState.shadowsValue;
-            this.N = savedFilterState.vignetteValue;
-            this.O = savedFilterState.grainValue;
-            this.P = savedFilterState.blurType;
-            this.Q = savedFilterState.sharpenValue;
-            this.S = savedFilterState.curvesToolValue;
-            this.T = savedFilterState.blurExcludeSize;
-            this.U = savedFilterState.blurExcludePoint;
-            this.V = savedFilterState.blurExcludeBlurSize;
-            this.R = savedFilterState.isEmpty();
-            this.W = savedFilterState.blurAngle;
-            this.a0 = savedFilterState;
-        } else {
-            this.S = new af0();
-            this.T = 0.35f;
-            this.U = new PointF(0.5f, 0.5f);
-            this.V = 0.15f;
-            this.W = 1.5707964f;
-            this.R = true;
-        }
-        this.y0 = bitmap;
-        this.z0 = bitmap2;
-        this.D0 = i10;
-        if (l61Var != null) {
-            this.e0 = l61Var;
-            l61Var.setDelegate(new we0(this));
-        } else {
-            this.f0 = true;
-            ye0 ye0Var = new ye0(this, context);
-            this.e0 = ye0Var;
-            if (z11) {
-                addView(ye0Var, i7.f6.e(-1, -1, 51));
-            }
-            ye0Var.setVisibility(4);
-            ye0Var.setSurfaceTextureListener(new ze0(this, z11, gaVar));
-        }
-        te0 te0Var = new te0(context);
-        te0Var.a = new PointF();
-        te0Var.d = new bv0();
-        te0Var.e = new PointF(0.5f, 0.5f);
-        te0Var.f = 0.15f;
-        te0Var.h = 0.35f;
-        te0Var.r = new RectF();
-        te0Var.x = 1.0f;
-        te0Var.B = true;
-        Paint paint = new Paint(1);
-        te0Var.E = paint;
-        Paint paint2 = new Paint(1);
-        te0Var.F = paint2;
-        te0Var.setWillNotDraw(false);
-        paint.setColor(-1);
-        paint2.setColor(-1);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        te0Var.G = z12;
-        this.k0 = te0Var;
-        te0Var.setVisibility(4);
-        if (z11) {
-            addView(te0Var, i7.f6.e(-1, -1, 51));
-        }
-        te0Var.setDelegate(new we0(this));
-        af0 af0Var = this.S;
-        ve0 ve0Var = new ve0(context);
-        ve0Var.a = 0;
-        ve0Var.c = true;
-        ve0Var.e = new hk0();
-        Paint paint3 = new Paint(1);
-        ve0Var.f = paint3;
-        Paint paint4 = new Paint(1);
-        ve0Var.h = paint4;
-        Paint paint5 = new Paint(1);
-        ve0Var.n = paint5;
-        TextPaint textPaint = new TextPaint(1);
-        ve0Var.r = textPaint;
-        ve0Var.s = new Path();
-        ve0Var.setWillNotDraw(false);
-        ve0Var.w = af0Var;
-        paint3.setColor(-1711276033);
-        paint3.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        paint3.setStyle(style);
-        paint4.setColor(-1711276033);
-        paint4.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint4.setStyle(style);
-        paint5.setColor(-1);
-        paint5.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint5.setStyle(style);
-        textPaint.setColor(-4210753);
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-        this.l0 = ve0Var;
-        ve0Var.setDelegate(new we0(this));
-        ve0Var.setVisibility(4);
-        if (z11) {
-            addView(ve0Var, i7.f6.e(-1, -1, 51));
-        }
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b0 = frameLayout;
-        addView(frameLayout, i7.f6.e(-1, (!z11 ? 40 : 0) + 186, 83));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        frameLayout2.setBackgroundColor(-16777216);
-        frameLayout.addView(frameLayout2, i7.f6.e(-1, 48, 83));
-        TextView textView = new TextView(context);
-        this.d0 = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(-1);
-        textView.setGravity(17);
-        textView.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.f0(-12763843, 0, -1));
-        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        TextView h = org.telegram.ui.th.h(frameLayout2, textView, i7.f6.e(-2, -1, 51), context);
-        this.c0 = h;
-        h.setTextSize(1, 14.0f);
-        int i16 = org.telegram.ui.ActionBar.g6.zf;
-        h.setTextColor(org.telegram.ui.ActionBar.g6.v0(i16, c6Var));
-        h.setGravity(17);
-        h.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.f0(-12763843, 0, -1));
-        h.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        h.setText(LocaleController.getString(R.string.Done).toUpperCase());
-        h.setTypeface(AndroidUtilities.bold());
-        frameLayout2.addView(h, i7.f6.e(-2, -1, 53));
-        LinearLayout linearLayout = new LinearLayout(context);
-        frameLayout2.addView(linearLayout, i7.f6.e(-2, -1, 1));
-        ImageView imageView = new ImageView(context);
-        this.v0 = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.msg_photo_settings);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(i16, c6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.f0(1090519039, 1, -1));
-        linearLayout.addView(imageView, i7.f6.n(56, 48));
-        final int i17 = 0;
-        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-            public final /* synthetic */ ef0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i17) {
-                    case 0:
-                        ef0 ef0Var = this.b;
-                        ef0Var.u0 = 0;
-                        ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var.w0.setColorFilter((ColorFilter) null);
-                        ef0Var.x0.setColorFilter((ColorFilter) null);
-                        ef0Var.f();
-                        break;
-                    case 1:
-                        ef0 ef0Var2 = this.b;
-                        ef0Var2.u0 = 1;
-                        ef0Var2.v0.setColorFilter((ColorFilter) null);
-                        ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var2.x0.setColorFilter((ColorFilter) null);
-                        ef0Var2.f();
-                        break;
-                    case 2:
-                        ef0 ef0Var3 = this.b;
-                        ef0Var3.u0 = 2;
-                        ef0Var3.v0.setColorFilter((ColorFilter) null);
-                        ef0Var3.w0.setColorFilter((ColorFilter) null);
-                        ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var3.f();
-                        break;
-                    case 3:
-                        ef0 ef0Var4 = this.b;
-                        ef0Var4.getClass();
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        ef0Var4.S.f = intValue;
-                        int i18 = 0;
-                        while (i18 < 4) {
-                            ef0Var4.q0[i18].a(i18 == intValue, true);
-                            i18++;
-                        }
-                        ef0Var4.l0.invalidate();
-                        break;
-                    case 4:
-                        ef0 ef0Var5 = this.b;
-                        ef0Var5.P = 0;
-                        ef0Var5.h();
-                        ef0Var5.k0.setVisibility(4);
-                        qz qzVar = ef0Var5.h0;
-                        if (qzVar != null) {
-                            qzVar.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    case 5:
-                        ef0 ef0Var6 = this.b;
-                        ef0Var6.P = 1;
-                        ef0Var6.h();
-                        te0 te0Var2 = ef0Var6.k0;
-                        te0Var2.setVisibility(0);
-                        te0Var2.setType(1);
-                        qz qzVar2 = ef0Var6.h0;
-                        if (qzVar2 != null) {
-                            qzVar2.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        ef0 ef0Var7 = this.b;
-                        ef0Var7.P = 2;
-                        ef0Var7.h();
-                        te0 te0Var3 = ef0Var7.k0;
-                        te0Var3.setVisibility(0);
-                        te0Var3.setType(0);
-                        qz qzVar3 = ef0Var7.h0;
-                        if (qzVar3 != null) {
-                            qzVar3.e(false, false, false);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        ImageView imageView2 = new ImageView(context);
-        this.w0 = imageView2;
-        imageView2.setScaleType(scaleType);
-        imageView2.setImageResource(R.drawable.msg_photo_blur);
-        imageView2.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.f0(1090519039, 1, -1));
-        linearLayout.addView(imageView2, i7.f6.n(56, 48));
-        final int i18 = 1;
-        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-            public final /* synthetic */ ef0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i18) {
-                    case 0:
-                        ef0 ef0Var = this.b;
-                        ef0Var.u0 = 0;
-                        ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var.w0.setColorFilter((ColorFilter) null);
-                        ef0Var.x0.setColorFilter((ColorFilter) null);
-                        ef0Var.f();
-                        break;
-                    case 1:
-                        ef0 ef0Var2 = this.b;
-                        ef0Var2.u0 = 1;
-                        ef0Var2.v0.setColorFilter((ColorFilter) null);
-                        ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var2.x0.setColorFilter((ColorFilter) null);
-                        ef0Var2.f();
-                        break;
-                    case 2:
-                        ef0 ef0Var3 = this.b;
-                        ef0Var3.u0 = 2;
-                        ef0Var3.v0.setColorFilter((ColorFilter) null);
-                        ef0Var3.w0.setColorFilter((ColorFilter) null);
-                        ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var3.f();
-                        break;
-                    case 3:
-                        ef0 ef0Var4 = this.b;
-                        ef0Var4.getClass();
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        ef0Var4.S.f = intValue;
-                        int i182 = 0;
-                        while (i182 < 4) {
-                            ef0Var4.q0[i182].a(i182 == intValue, true);
-                            i182++;
-                        }
-                        ef0Var4.l0.invalidate();
-                        break;
-                    case 4:
-                        ef0 ef0Var5 = this.b;
-                        ef0Var5.P = 0;
-                        ef0Var5.h();
-                        ef0Var5.k0.setVisibility(4);
-                        qz qzVar = ef0Var5.h0;
-                        if (qzVar != null) {
-                            qzVar.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    case 5:
-                        ef0 ef0Var6 = this.b;
-                        ef0Var6.P = 1;
-                        ef0Var6.h();
-                        te0 te0Var2 = ef0Var6.k0;
-                        te0Var2.setVisibility(0);
-                        te0Var2.setType(1);
-                        qz qzVar2 = ef0Var6.h0;
-                        if (qzVar2 != null) {
-                            qzVar2.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        ef0 ef0Var7 = this.b;
-                        ef0Var7.P = 2;
-                        ef0Var7.h();
-                        te0 te0Var3 = ef0Var7.k0;
-                        te0Var3.setVisibility(0);
-                        te0Var3.setType(0);
-                        qz qzVar3 = ef0Var7.h0;
-                        if (qzVar3 != null) {
-                            qzVar3.e(false, false, false);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        if (l61Var != null) {
-            imageView2.setVisibility(8);
-        }
-        ImageView imageView3 = new ImageView(context);
-        this.x0 = imageView3;
-        imageView3.setScaleType(scaleType);
-        imageView3.setImageResource(R.drawable.msg_photo_curve);
-        imageView3.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.f0(1090519039, 1, -1));
-        linearLayout.addView(imageView3, i7.f6.n(56, 48));
-        final int i19 = 2;
-        imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-            public final /* synthetic */ ef0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i19) {
-                    case 0:
-                        ef0 ef0Var = this.b;
-                        ef0Var.u0 = 0;
-                        ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var.w0.setColorFilter((ColorFilter) null);
-                        ef0Var.x0.setColorFilter((ColorFilter) null);
-                        ef0Var.f();
-                        break;
-                    case 1:
-                        ef0 ef0Var2 = this.b;
-                        ef0Var2.u0 = 1;
-                        ef0Var2.v0.setColorFilter((ColorFilter) null);
-                        ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var2.x0.setColorFilter((ColorFilter) null);
-                        ef0Var2.f();
-                        break;
-                    case 2:
-                        ef0 ef0Var3 = this.b;
-                        ef0Var3.u0 = 2;
-                        ef0Var3.v0.setColorFilter((ColorFilter) null);
-                        ef0Var3.w0.setColorFilter((ColorFilter) null);
-                        ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var3.f();
-                        break;
-                    case 3:
-                        ef0 ef0Var4 = this.b;
-                        ef0Var4.getClass();
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        ef0Var4.S.f = intValue;
-                        int i182 = 0;
-                        while (i182 < 4) {
-                            ef0Var4.q0[i182].a(i182 == intValue, true);
-                            i182++;
-                        }
-                        ef0Var4.l0.invalidate();
-                        break;
-                    case 4:
-                        ef0 ef0Var5 = this.b;
-                        ef0Var5.P = 0;
-                        ef0Var5.h();
-                        ef0Var5.k0.setVisibility(4);
-                        qz qzVar = ef0Var5.h0;
-                        if (qzVar != null) {
-                            qzVar.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    case 5:
-                        ef0 ef0Var6 = this.b;
-                        ef0Var6.P = 1;
-                        ef0Var6.h();
-                        te0 te0Var2 = ef0Var6.k0;
-                        te0Var2.setVisibility(0);
-                        te0Var2.setType(1);
-                        qz qzVar2 = ef0Var6.h0;
-                        if (qzVar2 != null) {
-                            qzVar2.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        ef0 ef0Var7 = this.b;
-                        ef0Var7.P = 2;
-                        ef0Var7.h();
-                        te0 te0Var3 = ef0Var7.k0;
-                        te0Var3.setVisibility(0);
-                        te0Var3.setType(0);
-                        qz qzVar3 = ef0Var7.h0;
-                        if (qzVar3 != null) {
-                            qzVar3.e(false, false, false);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        qh qhVar = new qh(context, 1);
-        this.i0 = qhVar;
-        f2.j0 j0Var = new f2.j0();
-        j0Var.j1(1);
-        qhVar.setLayoutManager(j0Var);
-        qhVar.setClipToPadding(false);
-        qhVar.setOverScrollMode(2);
-        qhVar.setAdapter(new df0(this, context));
-        frameLayout.addView(qhVar, i7.f6.e(-1, (!z11 ? 60 : 0) + 120, 51));
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.p0 = frameLayout3;
-        frameLayout3.setVisibility(4);
-        frameLayout.addView(frameLayout3, i7.f6.d(-1, 78.0f, 1, 0.0f, (!z11 ? 40 : 0) + 40, 0.0f, 0.0f));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setOrientation(0);
-        frameLayout3.addView(linearLayout2, i7.f6.e(-2, -2, 1));
-        int i20 = 0;
-        while (i20 < 4) {
-            FrameLayout frameLayout4 = new FrameLayout(context);
-            frameLayout4.setTag(Integer.valueOf(i20));
-            this.q0[i20] = new RadioButton(context);
-            this.q0[i20].setSize(AndroidUtilities.dp(20.0f));
-            frameLayout4.addView(this.q0[i20], i7.f6.e(30, 30, 49));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 12.0f);
-            textView2.setGravity(16);
-            if (i20 == 0) {
-                String string = LocaleController.getString(R.string.CurvesAll);
-                textView2.setText(string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase());
-                textView2.setTextColor(-1);
-                this.q0[i20].b(-1, -1);
-            } else if (i20 == 1) {
-                String string2 = LocaleController.getString(R.string.CurvesRed);
-                textView2.setText(string2.substring(0, 1).toUpperCase() + string2.substring(1).toLowerCase());
-                textView2.setTextColor(-1684147);
-                this.q0[i20].b(-1684147, -1684147);
-            } else if (i20 == 2) {
-                String string3 = LocaleController.getString(R.string.CurvesGreen);
-                textView2.setText(string3.substring(0, 1).toUpperCase() + string3.substring(1).toLowerCase());
-                textView2.setTextColor(-10831009);
-                this.q0[i20].b(-10831009, -10831009);
-                frameLayout4.addView(textView2, i7.f6.d(-2, -2.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
-                linearLayout2.addView(frameLayout4, i7.f6.k(i20 == 0 ? 0.0f : 30.0f, 0.0f, 0.0f, 0.0f, -2, -2));
-                final int i21 = 3;
-                frameLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-                    public final /* synthetic */ ef0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i21) {
-                            case 0:
-                                ef0 ef0Var = this.b;
-                                ef0Var.u0 = 0;
-                                ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                                ef0Var.w0.setColorFilter((ColorFilter) null);
-                                ef0Var.x0.setColorFilter((ColorFilter) null);
-                                ef0Var.f();
-                                break;
-                            case 1:
-                                ef0 ef0Var2 = this.b;
-                                ef0Var2.u0 = 1;
-                                ef0Var2.v0.setColorFilter((ColorFilter) null);
-                                ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                                ef0Var2.x0.setColorFilter((ColorFilter) null);
-                                ef0Var2.f();
-                                break;
-                            case 2:
-                                ef0 ef0Var3 = this.b;
-                                ef0Var3.u0 = 2;
-                                ef0Var3.v0.setColorFilter((ColorFilter) null);
-                                ef0Var3.w0.setColorFilter((ColorFilter) null);
-                                ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                                ef0Var3.f();
-                                break;
-                            case 3:
-                                ef0 ef0Var4 = this.b;
-                                ef0Var4.getClass();
-                                int intValue = ((Integer) view.getTag()).intValue();
-                                ef0Var4.S.f = intValue;
-                                int i182 = 0;
-                                while (i182 < 4) {
-                                    ef0Var4.q0[i182].a(i182 == intValue, true);
-                                    i182++;
-                                }
-                                ef0Var4.l0.invalidate();
-                                break;
-                            case 4:
-                                ef0 ef0Var5 = this.b;
-                                ef0Var5.P = 0;
-                                ef0Var5.h();
-                                ef0Var5.k0.setVisibility(4);
-                                qz qzVar = ef0Var5.h0;
-                                if (qzVar != null) {
-                                    qzVar.e(false, false, false);
-                                    break;
-                                }
-                                break;
-                            case 5:
-                                ef0 ef0Var6 = this.b;
-                                ef0Var6.P = 1;
-                                ef0Var6.h();
-                                te0 te0Var2 = ef0Var6.k0;
-                                te0Var2.setVisibility(0);
-                                te0Var2.setType(1);
-                                qz qzVar2 = ef0Var6.h0;
-                                if (qzVar2 != null) {
-                                    qzVar2.e(false, false, false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                ef0 ef0Var7 = this.b;
-                                ef0Var7.P = 2;
-                                ef0Var7.h();
-                                te0 te0Var3 = ef0Var7.k0;
-                                te0Var3.setVisibility(0);
-                                te0Var3.setType(0);
-                                qz qzVar3 = ef0Var7.h0;
-                                if (qzVar3 != null) {
-                                    qzVar3.e(false, false, false);
-                                    break;
-                                }
-                                break;
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked != 1) {
+                if (actionMasked != 2) {
+                    if (actionMasked != 3) {
+                        if (actionMasked != 5) {
                         }
                     }
-                });
-                i20++;
-            } else {
-                if (i20 == 3) {
-                    String string4 = LocaleController.getString(R.string.CurvesBlue);
-                    textView2.setText(string4.substring(0, 1).toUpperCase() + string4.substring(1).toLowerCase());
-                    textView2.setTextColor(-12734994);
-                    this.q0[i20].b(-12734994, -12734994);
+                } else if (this.b) {
+                    a(2, motionEvent);
+                    return true;
                 }
-                frameLayout4.addView(textView2, i7.f6.d(-2, -2.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
-                linearLayout2.addView(frameLayout4, i7.f6.k(i20 == 0 ? 0.0f : 30.0f, 0.0f, 0.0f, 0.0f, -2, -2));
-                final int i212 = 3;
-                frameLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-                    public final /* synthetic */ ef0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        switch (i212) {
-                            case 0:
-                                ef0 ef0Var = this.b;
-                                ef0Var.u0 = 0;
-                                ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                                ef0Var.w0.setColorFilter((ColorFilter) null);
-                                ef0Var.x0.setColorFilter((ColorFilter) null);
-                                ef0Var.f();
-                                break;
-                            case 1:
-                                ef0 ef0Var2 = this.b;
-                                ef0Var2.u0 = 1;
-                                ef0Var2.v0.setColorFilter((ColorFilter) null);
-                                ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                                ef0Var2.x0.setColorFilter((ColorFilter) null);
-                                ef0Var2.f();
-                                break;
-                            case 2:
-                                ef0 ef0Var3 = this.b;
-                                ef0Var3.u0 = 2;
-                                ef0Var3.v0.setColorFilter((ColorFilter) null);
-                                ef0Var3.w0.setColorFilter((ColorFilter) null);
-                                ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                                ef0Var3.f();
-                                break;
-                            case 3:
-                                ef0 ef0Var4 = this.b;
-                                ef0Var4.getClass();
-                                int intValue = ((Integer) view.getTag()).intValue();
-                                ef0Var4.S.f = intValue;
-                                int i182 = 0;
-                                while (i182 < 4) {
-                                    ef0Var4.q0[i182].a(i182 == intValue, true);
-                                    i182++;
-                                }
-                                ef0Var4.l0.invalidate();
-                                break;
-                            case 4:
-                                ef0 ef0Var5 = this.b;
-                                ef0Var5.P = 0;
-                                ef0Var5.h();
-                                ef0Var5.k0.setVisibility(4);
-                                qz qzVar = ef0Var5.h0;
-                                if (qzVar != null) {
-                                    qzVar.e(false, false, false);
-                                    break;
-                                }
-                                break;
-                            case 5:
-                                ef0 ef0Var6 = this.b;
-                                ef0Var6.P = 1;
-                                ef0Var6.h();
-                                te0 te0Var2 = ef0Var6.k0;
-                                te0Var2.setVisibility(0);
-                                te0Var2.setType(1);
-                                qz qzVar2 = ef0Var6.h0;
-                                if (qzVar2 != null) {
-                                    qzVar2.e(false, false, false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                ef0 ef0Var7 = this.b;
-                                ef0Var7.P = 2;
-                                ef0Var7.h();
-                                te0 te0Var3 = ef0Var7.k0;
-                                te0Var3.setVisibility(0);
-                                te0Var3.setType(0);
-                                qz qzVar3 = ef0Var7.h0;
-                                if (qzVar3 != null) {
-                                    qzVar3.e(false, false, false);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                i20++;
+                return true;
             }
-            frameLayout4.addView(textView2, i7.f6.d(-2, -2.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
-            linearLayout2.addView(frameLayout4, i7.f6.k(i20 == 0 ? 0.0f : 30.0f, 0.0f, 0.0f, 0.0f, -2, -2));
-            final int i2122 = 3;
-            frameLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-                public final /* synthetic */ ef0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i2122) {
-                        case 0:
-                            ef0 ef0Var = this.b;
-                            ef0Var.u0 = 0;
-                            ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                            ef0Var.w0.setColorFilter((ColorFilter) null);
-                            ef0Var.x0.setColorFilter((ColorFilter) null);
-                            ef0Var.f();
-                            break;
-                        case 1:
-                            ef0 ef0Var2 = this.b;
-                            ef0Var2.u0 = 1;
-                            ef0Var2.v0.setColorFilter((ColorFilter) null);
-                            ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                            ef0Var2.x0.setColorFilter((ColorFilter) null);
-                            ef0Var2.f();
-                            break;
-                        case 2:
-                            ef0 ef0Var3 = this.b;
-                            ef0Var3.u0 = 2;
-                            ef0Var3.v0.setColorFilter((ColorFilter) null);
-                            ef0Var3.w0.setColorFilter((ColorFilter) null);
-                            ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                            ef0Var3.f();
-                            break;
-                        case 3:
-                            ef0 ef0Var4 = this.b;
-                            ef0Var4.getClass();
-                            int intValue = ((Integer) view.getTag()).intValue();
-                            ef0Var4.S.f = intValue;
-                            int i182 = 0;
-                            while (i182 < 4) {
-                                ef0Var4.q0[i182].a(i182 == intValue, true);
-                                i182++;
-                            }
-                            ef0Var4.l0.invalidate();
-                            break;
-                        case 4:
-                            ef0 ef0Var5 = this.b;
-                            ef0Var5.P = 0;
-                            ef0Var5.h();
-                            ef0Var5.k0.setVisibility(4);
-                            qz qzVar = ef0Var5.h0;
-                            if (qzVar != null) {
-                                qzVar.e(false, false, false);
-                                break;
-                            }
-                            break;
-                        case 5:
-                            ef0 ef0Var6 = this.b;
-                            ef0Var6.P = 1;
-                            ef0Var6.h();
-                            te0 te0Var2 = ef0Var6.k0;
-                            te0Var2.setVisibility(0);
-                            te0Var2.setType(1);
-                            qz qzVar2 = ef0Var6.h0;
-                            if (qzVar2 != null) {
-                                qzVar2.e(false, false, false);
-                                break;
-                            }
-                            break;
-                        default:
-                            ef0 ef0Var7 = this.b;
-                            ef0Var7.P = 2;
-                            ef0Var7.h();
-                            te0 te0Var3 = ef0Var7.k0;
-                            te0Var3.setVisibility(0);
-                            te0Var3.setType(0);
-                            qz qzVar3 = ef0Var7.h0;
-                            if (qzVar3 != null) {
-                                qzVar3.e(false, false, false);
-                                break;
-                            }
-                            break;
+            if (this.b) {
+                a(3, motionEvent);
+                this.b = false;
+            }
+            this.c = true;
+            return true;
+        }
+        if (motionEvent.getPointerCount() == 1) {
+            if (this.c && !this.b) {
+                float x10 = motionEvent.getX();
+                float y10 = motionEvent.getY();
+                this.d = y10;
+                sk0 sk0Var = this.e;
+                float f10 = sk0Var.a;
+                if (x10 >= f10 && x10 <= f10 + sk0Var.c) {
+                    float f11 = sk0Var.b;
+                    if (y10 >= f11 && y10 <= f11 + sk0Var.d) {
+                        this.b = true;
                     }
                 }
-            });
-            i20++;
-        }
-        FrameLayout frameLayout5 = new FrameLayout(context);
-        this.j0 = frameLayout5;
-        frameLayout5.setVisibility(4);
-        this.b0.addView(frameLayout5, i7.f6.d(280, 60.0f, 1, 0.0f, (z11 ? 0 : 40) + 40, 0.0f, 0.0f));
-        TextView textView3 = new TextView(context);
-        this.m0 = textView3;
-        textView3.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));
-        textView3.setTextSize(1, 13.0f);
-        textView3.setGravity(1);
-        textView3.setText(LocaleController.getString(R.string.BlurOff));
-        frameLayout5.addView(textView3, i7.f6.c(60.0f, 80));
-        final int i22 = 4;
-        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-            public final /* synthetic */ ef0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i22) {
-                    case 0:
-                        ef0 ef0Var = this.b;
-                        ef0Var.u0 = 0;
-                        ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var.w0.setColorFilter((ColorFilter) null);
-                        ef0Var.x0.setColorFilter((ColorFilter) null);
-                        ef0Var.f();
-                        break;
-                    case 1:
-                        ef0 ef0Var2 = this.b;
-                        ef0Var2.u0 = 1;
-                        ef0Var2.v0.setColorFilter((ColorFilter) null);
-                        ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var2.x0.setColorFilter((ColorFilter) null);
-                        ef0Var2.f();
-                        break;
-                    case 2:
-                        ef0 ef0Var3 = this.b;
-                        ef0Var3.u0 = 2;
-                        ef0Var3.v0.setColorFilter((ColorFilter) null);
-                        ef0Var3.w0.setColorFilter((ColorFilter) null);
-                        ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var3.f();
-                        break;
-                    case 3:
-                        ef0 ef0Var4 = this.b;
-                        ef0Var4.getClass();
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        ef0Var4.S.f = intValue;
-                        int i182 = 0;
-                        while (i182 < 4) {
-                            ef0Var4.q0[i182].a(i182 == intValue, true);
-                            i182++;
-                        }
-                        ef0Var4.l0.invalidate();
-                        break;
-                    case 4:
-                        ef0 ef0Var5 = this.b;
-                        ef0Var5.P = 0;
-                        ef0Var5.h();
-                        ef0Var5.k0.setVisibility(4);
-                        qz qzVar = ef0Var5.h0;
-                        if (qzVar != null) {
-                            qzVar.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    case 5:
-                        ef0 ef0Var6 = this.b;
-                        ef0Var6.P = 1;
-                        ef0Var6.h();
-                        te0 te0Var2 = ef0Var6.k0;
-                        te0Var2.setVisibility(0);
-                        te0Var2.setType(1);
-                        qz qzVar2 = ef0Var6.h0;
-                        if (qzVar2 != null) {
-                            qzVar2.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        ef0 ef0Var7 = this.b;
-                        ef0Var7.P = 2;
-                        ef0Var7.h();
-                        te0 te0Var3 = ef0Var7.k0;
-                        te0Var3.setVisibility(0);
-                        te0Var3.setType(0);
-                        qz qzVar3 = ef0Var7.h0;
-                        if (qzVar3 != null) {
-                            qzVar3.e(false, false, false);
-                            break;
-                        }
-                        break;
+                this.c = false;
+                if (this.b) {
+                    a(1, motionEvent);
+                    return true;
                 }
             }
-        });
-        TextView textView4 = new TextView(context);
-        this.n0 = textView4;
-        textView4.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));
-        textView4.setTextSize(1, 13.0f);
-        textView4.setGravity(1);
-        textView4.setText(LocaleController.getString(R.string.BlurRadial));
-        frameLayout5.addView(textView4, i7.f6.d(80, 80.0f, 51, 100.0f, 0.0f, 0.0f, 0.0f));
-        final int i23 = 5;
-        textView4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-            public final /* synthetic */ ef0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i23) {
-                    case 0:
-                        ef0 ef0Var = this.b;
-                        ef0Var.u0 = 0;
-                        ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var.w0.setColorFilter((ColorFilter) null);
-                        ef0Var.x0.setColorFilter((ColorFilter) null);
-                        ef0Var.f();
-                        break;
-                    case 1:
-                        ef0 ef0Var2 = this.b;
-                        ef0Var2.u0 = 1;
-                        ef0Var2.v0.setColorFilter((ColorFilter) null);
-                        ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var2.x0.setColorFilter((ColorFilter) null);
-                        ef0Var2.f();
-                        break;
-                    case 2:
-                        ef0 ef0Var3 = this.b;
-                        ef0Var3.u0 = 2;
-                        ef0Var3.v0.setColorFilter((ColorFilter) null);
-                        ef0Var3.w0.setColorFilter((ColorFilter) null);
-                        ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var3.f();
-                        break;
-                    case 3:
-                        ef0 ef0Var4 = this.b;
-                        ef0Var4.getClass();
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        ef0Var4.S.f = intValue;
-                        int i182 = 0;
-                        while (i182 < 4) {
-                            ef0Var4.q0[i182].a(i182 == intValue, true);
-                            i182++;
-                        }
-                        ef0Var4.l0.invalidate();
-                        break;
-                    case 4:
-                        ef0 ef0Var5 = this.b;
-                        ef0Var5.P = 0;
-                        ef0Var5.h();
-                        ef0Var5.k0.setVisibility(4);
-                        qz qzVar = ef0Var5.h0;
-                        if (qzVar != null) {
-                            qzVar.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    case 5:
-                        ef0 ef0Var6 = this.b;
-                        ef0Var6.P = 1;
-                        ef0Var6.h();
-                        te0 te0Var2 = ef0Var6.k0;
-                        te0Var2.setVisibility(0);
-                        te0Var2.setType(1);
-                        qz qzVar2 = ef0Var6.h0;
-                        if (qzVar2 != null) {
-                            qzVar2.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        ef0 ef0Var7 = this.b;
-                        ef0Var7.P = 2;
-                        ef0Var7.h();
-                        te0 te0Var3 = ef0Var7.k0;
-                        te0Var3.setVisibility(0);
-                        te0Var3.setType(0);
-                        qz qzVar3 = ef0Var7.h0;
-                        if (qzVar3 != null) {
-                            qzVar3.e(false, false, false);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        TextView textView5 = new TextView(context);
-        this.o0 = textView5;
-        textView5.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));
-        textView5.setTextSize(1, 13.0f);
-        textView5.setGravity(1);
-        textView5.setText(LocaleController.getString(R.string.BlurLinear));
-        frameLayout5.addView(textView5, i7.f6.d(80, 80.0f, 51, 200.0f, 0.0f, 0.0f, 0.0f));
-        final int i24 = 6;
-        textView5.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xe0
-            public final /* synthetic */ ef0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i24) {
-                    case 0:
-                        ef0 ef0Var = this.b;
-                        ef0Var.u0 = 0;
-                        ef0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var.w0.setColorFilter((ColorFilter) null);
-                        ef0Var.x0.setColorFilter((ColorFilter) null);
-                        ef0Var.f();
-                        break;
-                    case 1:
-                        ef0 ef0Var2 = this.b;
-                        ef0Var2.u0 = 1;
-                        ef0Var2.v0.setColorFilter((ColorFilter) null);
-                        ef0Var2.w0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var2.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var2.x0.setColorFilter((ColorFilter) null);
-                        ef0Var2.f();
-                        break;
-                    case 2:
-                        ef0 ef0Var3 = this.b;
-                        ef0Var3.u0 = 2;
-                        ef0Var3.v0.setColorFilter((ColorFilter) null);
-                        ef0Var3.w0.setColorFilter((ColorFilter) null);
-                        ef0Var3.x0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.zf, ef0Var3.E0), PorterDuff.Mode.MULTIPLY));
-                        ef0Var3.f();
-                        break;
-                    case 3:
-                        ef0 ef0Var4 = this.b;
-                        ef0Var4.getClass();
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        ef0Var4.S.f = intValue;
-                        int i182 = 0;
-                        while (i182 < 4) {
-                            ef0Var4.q0[i182].a(i182 == intValue, true);
-                            i182++;
-                        }
-                        ef0Var4.l0.invalidate();
-                        break;
-                    case 4:
-                        ef0 ef0Var5 = this.b;
-                        ef0Var5.P = 0;
-                        ef0Var5.h();
-                        ef0Var5.k0.setVisibility(4);
-                        qz qzVar = ef0Var5.h0;
-                        if (qzVar != null) {
-                            qzVar.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    case 5:
-                        ef0 ef0Var6 = this.b;
-                        ef0Var6.P = 1;
-                        ef0Var6.h();
-                        te0 te0Var2 = ef0Var6.k0;
-                        te0Var2.setVisibility(0);
-                        te0Var2.setType(1);
-                        qz qzVar2 = ef0Var6.h0;
-                        if (qzVar2 != null) {
-                            qzVar2.e(false, false, false);
-                            break;
-                        }
-                        break;
-                    default:
-                        ef0 ef0Var7 = this.b;
-                        ef0Var7.P = 2;
-                        ef0Var7.h();
-                        te0 te0Var3 = ef0Var7.k0;
-                        te0Var3.setVisibility(0);
-                        te0Var3.setType(0);
-                        qz qzVar3 = ef0Var7.h0;
-                        if (qzVar3 != null) {
-                            qzVar3.e(false, false, false);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        h();
-        if (this.t0 || !z11) {
-            return;
-        }
-        if (this.f0) {
-            ((FrameLayout.LayoutParams) this.e0.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
-        }
-        ((FrameLayout.LayoutParams) this.l0.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
-    }
-
-    private void setShowOriginal(boolean z10) {
-        if (this.a == z10) {
-            return;
-        }
-        this.a = z10;
-        qz qzVar = this.h0;
-        if (qzVar != null) {
-            qzVar.e(false, false, false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public final ByteBuffer a() {
-        af0 af0Var = this.S;
-        af0Var.a();
-        return af0Var.e;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public final boolean b() {
-        return this.a || this.R;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public final boolean c() {
-        return !this.S.b();
-    }
-
-    public final boolean d() {
-        MediaController.SavedFilterState savedFilterState = this.a0;
-        af0 af0Var = this.S;
-        return savedFilterState != null ? (this.C == savedFilterState.enhanceValue && this.E == savedFilterState.contrastValue && this.L == savedFilterState.highlightsValue && this.D == savedFilterState.exposureValue && this.F == savedFilterState.warmthValue && this.G == savedFilterState.saturationValue && this.N == savedFilterState.vignetteValue && this.M == savedFilterState.shadowsValue && this.O == savedFilterState.grainValue && this.Q == savedFilterState.sharpenValue && this.H == savedFilterState.fadeValue && this.I == savedFilterState.softenSkinValue && this.K == savedFilterState.tintHighlightsColor && this.J == savedFilterState.tintShadowsColor && af0Var.b()) ? false : true : (this.C == 0.0f && this.E == 0.0f && this.L == 0.0f && this.D == 0.0f && this.F == 0.0f && this.G == 0.0f && this.N == 0.0f && this.M == 0.0f && this.O == 0.0f && this.Q == 0.0f && this.H == 0.0f && this.I == 0.0f && this.K == 0 && this.J == 0 && af0Var.b()) ? false : true;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        TextureView textureView;
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        bd0 bd0Var = this.r0;
-        if (bd0Var != null && view == (textureView = this.e0)) {
-            canvas.save();
-            canvas.translate(textureView.getLeft(), textureView.getTop());
-            Bitmap bitmap = this.z0;
-            if (bitmap != null && textureView.getVisibility() == 0) {
-                int measuredWidth = textureView.getMeasuredWidth();
-                int measuredHeight = textureView.getMeasuredHeight();
-                Rect rect = this.A0;
-                rect.set(0, 0, measuredWidth, measuredHeight);
-                Paint paint = this.C0;
-                int i10 = this.D0;
-                if (i10 != 0) {
-                    Matrix matrix = this.B0;
-                    matrix.reset();
-                    matrix.postRotate(i10, bitmap.getWidth() / 2.0f, bitmap.getHeight() / 2.0f);
-                    float height = (bitmap.getHeight() - bitmap.getWidth()) / 2.0f;
-                    matrix.postTranslate(height, -height);
-                    matrix.postScale(rect.width() / bitmap.getHeight(), rect.height() / bitmap.getWidth());
-                    canvas.drawBitmap(bitmap, matrix, paint);
-                } else {
-                    canvas.drawBitmap(bitmap, (Rect) null, rect, paint);
-                }
-            }
-            float measuredWidth2 = textureView.getMeasuredWidth() / bd0Var.getMeasuredWidth();
-            canvas.scale(measuredWidth2, measuredWidth2);
-            bd0Var.draw(canvas);
-            canvas.restore();
-        }
-        return drawChild;
-    }
-
-    public final void e() {
-        boolean z10 = this.f0;
-        TextureView textureView = this.e0;
-        if (z10) {
-            qz qzVar = this.h0;
-            if (qzVar != null) {
-                qzVar.postRunnable(new nz(qzVar, 0));
-                this.h0 = null;
-            }
-            textureView.setVisibility(8);
-            return;
-        }
-        if (textureView instanceof l61) {
-            l61 l61Var = (l61) textureView;
-            MediaController.SavedFilterState savedFilterState = this.a0;
-            if (savedFilterState == null) {
-                l61Var.setDelegate(null);
-                return;
-            }
-            qz qzVar2 = this.h0;
-            if (qzVar2 != null) {
-                qzVar2.f(new rz(savedFilterState));
-            }
-        }
-    }
-
-    public final void f() {
-        int i10 = this.u0;
-        qh qhVar = this.i0;
-        ve0 ve0Var = this.l0;
-        FrameLayout frameLayout = this.p0;
-        FrameLayout frameLayout2 = this.j0;
-        te0 te0Var = this.k0;
-        if (i10 == 0) {
-            te0Var.setVisibility(4);
-            frameLayout2.setVisibility(4);
-            frameLayout.setVisibility(4);
-            ve0Var.setVisibility(4);
-            qhVar.setVisibility(0);
-            return;
-        }
-        if (i10 == 1) {
-            qhVar.setVisibility(4);
-            frameLayout.setVisibility(4);
-            ve0Var.setVisibility(4);
-            frameLayout2.setVisibility(0);
-            if (this.P != 0) {
-                te0Var.setVisibility(0);
-            }
-            h();
-            return;
-        }
-        if (i10 == 2) {
-            qhVar.setVisibility(4);
-            frameLayout2.setVisibility(4);
-            te0Var.setVisibility(4);
-            frameLayout.setVisibility(0);
-            ve0Var.setVisibility(0);
-            this.S.f = 0;
-            int i11 = 0;
-            while (i11 < 4) {
-                this.q0[i11].a(i11 == 0, false);
-                i11++;
-            }
-        }
-    }
-
-    public final void g() {
-        this.R = Math.abs(this.C) < 0.1f && Math.abs(this.I) < 0.1f && Math.abs(this.D) < 0.1f && Math.abs(this.E) < 0.1f && Math.abs(this.F) < 0.1f && Math.abs(this.G) < 0.1f && Math.abs(this.H) < 0.1f && this.J == 0 && this.K == 0 && Math.abs(this.L) < 0.1f && Math.abs(this.M) < 0.1f && Math.abs(this.N) < 0.1f && Math.abs(this.O) < 0.1f && this.P == 0 && Math.abs(this.Q) < 0.1f && this.S.b();
-    }
-
-    public Bitmap getBitmap() {
-        qz qzVar = this.h0;
-        if (qzVar == null || !qzVar.f || !qzVar.isAlive()) {
-            return null;
-        }
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        Bitmap[] bitmapArr = new Bitmap[1];
-        try {
-            if (qzVar.postRunnable(new g(qzVar, bitmapArr, countDownLatch, 9))) {
-                countDownLatch.await();
-            }
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
-        return bitmapArr[0];
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getBlurAngle() {
-        return this.W;
-    }
-
-    public te0 getBlurControl() {
-        return this.k0;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getBlurExcludeBlurSize() {
-        return this.V;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public PointF getBlurExcludePoint() {
-        return this.U;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getBlurExcludeSize() {
-        return this.T;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public int getBlurType() {
-        return this.P;
-    }
-
-    public TextView getCancelTextView() {
-        return this.d0;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getContrastValue() {
-        return u3.c.c(this.E, 100.0f, 0.3f, 1.0f);
-    }
-
-    public ve0 getCurveControl() {
-        return this.l0;
-    }
-
-    public TextView getDoneTextView() {
-        return this.c0;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getEnhanceValue() {
-        return this.C / 100.0f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getExposureValue() {
-        return this.D / 100.0f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getFadeValue() {
-        return this.H / 100.0f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getGrainValue() {
-        return (this.O / 100.0f) * 0.04f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getHighlightsValue() {
-        return com.google.android.recaptcha.internal.a.y(this.L, 0.75f, 100.0f, 100.0f);
-    }
-
-    public TextureView getMyTextureView() {
-        if (!this.f0 || this.g0) {
-            return null;
-        }
-        return this.e0;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getSaturationValue() {
-        float f9 = this.G / 100.0f;
-        if (f9 > 0.0f) {
-            f9 *= 1.05f;
-        }
-        return f9 + 1.0f;
-    }
-
-    public MediaController.SavedFilterState getSavedFilterState() {
-        MediaController.SavedFilterState savedFilterState = new MediaController.SavedFilterState();
-        savedFilterState.enhanceValue = this.C;
-        savedFilterState.exposureValue = this.D;
-        savedFilterState.contrastValue = this.E;
-        savedFilterState.warmthValue = this.F;
-        savedFilterState.saturationValue = this.G;
-        savedFilterState.fadeValue = this.H;
-        savedFilterState.softenSkinValue = this.I;
-        savedFilterState.tintShadowsColor = this.J;
-        savedFilterState.tintHighlightsColor = this.K;
-        savedFilterState.highlightsValue = this.L;
-        savedFilterState.shadowsValue = this.M;
-        savedFilterState.vignetteValue = this.N;
-        savedFilterState.grainValue = this.O;
-        savedFilterState.blurType = this.P;
-        savedFilterState.sharpenValue = this.Q;
-        savedFilterState.curvesToolValue = this.S;
-        savedFilterState.blurExcludeSize = this.T;
-        savedFilterState.blurExcludePoint = this.U;
-        savedFilterState.blurExcludeBlurSize = this.V;
-        savedFilterState.blurAngle = this.W;
-        this.a0 = savedFilterState;
-        return savedFilterState;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getShadowsValue() {
-        return com.google.android.recaptcha.internal.a.y(this.M, 0.55f, 100.0f, 100.0f);
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getSharpenValue() {
-        return u3.c.c(this.Q, 100.0f, 0.6f, 0.11f);
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getSoftenSkinValue() {
-        return this.I / 100.0f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public int getTintHighlightsColor() {
-        return this.K;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getTintHighlightsIntensityValue() {
-        return this.K == 0 ? 0.0f : 0.5f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public int getTintShadowsColor() {
-        return this.J;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getTintShadowsIntensityValue() {
-        return this.J == 0 ? 0.0f : 0.5f;
-    }
-
-    public FrameLayout getToolsView() {
-        return this.b0;
-    }
-
-    public Bitmap getUiBlurBitmap() {
-        ma maVar;
-        qz qzVar = this.h0;
-        if (qzVar == null || (maVar = qzVar.E) == null) {
-            return null;
-        }
-        synchronized (maVar.n) {
-            try {
-                if (maVar.q) {
-                    return maVar.p;
-                }
-                return null;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getVignetteValue() {
-        return this.N / 100.0f;
-    }
-
-    @Override // org.telegram.ui.Components.tz
-    public float getWarmthValue() {
-        return this.F / 100.0f;
-    }
-
-    public final void h() {
-        int i10 = this.P;
-        TextView textView = this.o0;
-        TextView textView2 = this.n0;
-        org.telegram.ui.ActionBar.c6 c6Var = this.E0;
-        TextView textView3 = this.m0;
-        if (i10 == 0) {
-            Drawable mutate = textView3.getContext().getResources().getDrawable(R.drawable.msg_blur_off).mutate();
-            int i11 = org.telegram.ui.ActionBar.g6.zf;
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(i11, c6Var), PorterDuff.Mode.MULTIPLY));
-            textView3.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-            textView3.setTextColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-            textView2.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_radial, 0, 0);
-            textView2.setTextColor(-1);
-            textView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_linear, 0, 0);
-            textView.setTextColor(-1);
-        } else if (i10 == 1) {
-            textView3.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_off, 0, 0);
-            textView3.setTextColor(-1);
-            Drawable mutate2 = textView3.getContext().getResources().getDrawable(R.drawable.msg_blur_radial).mutate();
-            int i12 = org.telegram.ui.ActionBar.g6.zf;
-            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(i12, c6Var), PorterDuff.Mode.MULTIPLY));
-            textView2.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate2, (Drawable) null, (Drawable) null);
-            textView2.setTextColor(org.telegram.ui.ActionBar.g6.v0(i12, c6Var));
-            textView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_linear, 0, 0);
-            textView.setTextColor(-1);
-        } else if (i10 == 2) {
-            textView3.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_off, 0, 0);
-            textView3.setTextColor(-1);
-            textView2.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.msg_blur_radial, 0, 0);
-            textView2.setTextColor(-1);
-            Drawable mutate3 = textView3.getContext().getResources().getDrawable(R.drawable.msg_blur_linear).mutate();
-            int i13 = org.telegram.ui.ActionBar.g6.zf;
-            mutate3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(i13, c6Var), PorterDuff.Mode.MULTIPLY));
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate3, (Drawable) null, (Drawable) null);
-            textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(i13, c6Var));
-        }
-        g();
-    }
-
-    @Override // nh.cb
-    public final boolean l(MotionEvent motionEvent) {
-        if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
-            TextureView textureView = this.e0;
-            if (textureView instanceof l61) {
-                float x4 = motionEvent.getX();
-                float y8 = motionEvent.getY();
-                hk0 hk0Var = ((l61) textureView).c;
-                float f9 = hk0Var.a;
-                if (x4 >= f9 && x4 <= f9 + hk0Var.c) {
-                    float f10 = hk0Var.b;
-                    if (y8 >= f10 && y8 <= f10 + hk0Var.d) {
-                        setShowOriginal(true);
-                    }
-                }
-            } else if (motionEvent.getX() >= textureView.getX() && motionEvent.getY() >= textureView.getY() && motionEvent.getX() <= textureView.getX() + textureView.getWidth() && motionEvent.getY() <= textureView.getY() + textureView.getHeight()) {
-                setShowOriginal(true);
-            }
-        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 6) {
-            setShowOriginal(false);
+        } else if (this.b) {
+            a(3, motionEvent);
+            this.c = true;
+            this.b = false;
         }
         return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        float width;
-        int height;
-        float ceil;
-        float f9;
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        if (this.g0) {
-            int dp = size - AndroidUtilities.dp(28.0f);
-            int dp2 = AndroidUtilities.dp(214.0f);
-            boolean z10 = this.t0;
-            int i12 = size2 - (dp2 + (!z10 ? AndroidUtilities.statusBarHeight : 0));
-            TextureView textureView = this.e0;
-            Bitmap bitmap = this.y0;
-            if (bitmap != null) {
-                int i13 = this.D0 % 360;
-                if (i13 == 90 || i13 == 270) {
-                    width = bitmap.getHeight();
-                    height = bitmap.getWidth();
-                } else {
-                    width = bitmap.getWidth();
-                    height = bitmap.getHeight();
-                }
-            } else {
-                width = textureView.getWidth();
-                height = textureView.getHeight();
-            }
-            float f10 = dp;
-            float f11 = i12;
-            if (f10 / width > f11 / height) {
-                f9 = (int) Math.ceil(width * r11);
-                ceil = f11;
-            } else {
-                ceil = (int) Math.ceil(r6 * r9);
-                f9 = f10;
-            }
-            int ceil2 = (int) Math.ceil(((f10 - f9) / 2.0f) + AndroidUtilities.dp(14.0f));
-            int ceil3 = (int) Math.ceil(((f11 - ceil) / 2.0f) + AndroidUtilities.dp(14.0f) + (!z10 ? AndroidUtilities.statusBarHeight : 0));
-            int i14 = (int) f9;
-            int i15 = (int) ceil;
-            if (this.f0) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textureView.getLayoutParams();
-                layoutParams.leftMargin = ceil2;
-                layoutParams.topMargin = ceil3;
-                layoutParams.width = i14;
-                layoutParams.height = i15;
-            }
-            float f12 = ceil2;
-            float f13 = ceil3 - (!z10 ? AndroidUtilities.statusBarHeight : 0);
-            float f14 = i14;
-            float f15 = i15;
-            ve0 ve0Var = this.l0;
-            hk0 hk0Var = ve0Var.e;
-            hk0Var.a = f12;
-            hk0Var.b = f13;
-            hk0Var.c = f14;
-            hk0Var.d = f15;
-            te0 te0Var = this.k0;
-            bv0 bv0Var = te0Var.d;
-            bv0Var.a = f14;
-            bv0Var.b = f15;
-            ((FrameLayout.LayoutParams) te0Var.getLayoutParams()).height = AndroidUtilities.dp(38.0f) + i12;
-            ((FrameLayout.LayoutParams) ve0Var.getLayoutParams()).height = AndroidUtilities.dp(28.0f) + i12;
-            if (AndroidUtilities.isTablet()) {
-                int dp3 = AndroidUtilities.dp(86.0f) * 10;
-                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.i0.getLayoutParams();
-                if (dp3 < dp) {
-                    layoutParams2.width = dp3;
-                    layoutParams2.leftMargin = (dp - dp3) / 2;
-                } else {
-                    layoutParams2.width = -1;
-                    layoutParams2.leftMargin = 0;
-                }
-            }
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    public void setEnhanceValue(float f9) {
-        this.C = f9 * 100.0f;
-        g();
-        int i10 = 0;
-        while (true) {
-            qh qhVar = this.i0;
-            if (i10 >= qhVar.getChildCount()) {
-                break;
-            }
-            View childAt = qhVar.getChildAt(i10);
-            if ((childAt instanceof org.telegram.ui.Cells.t5) && RecyclerView.R(childAt) == this.b) {
-                ((org.telegram.ui.Cells.t5) childAt).a(LocaleController.getString(R.string.Enhance), 0, this.C);
-                break;
-            }
-            i10++;
-        }
-        qz qzVar = this.h0;
-        if (qzVar != null) {
-            qzVar.e(true, false, false);
-        }
+    public void setDelegate(df0 df0Var) {
+        this.v = df0Var;
     }
 }

@@ -1,1450 +1,1738 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Region;
-import android.graphics.Shader;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.ArrayList;
-import java.util.Stack;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.gz;
-import org.telegram.ui.h01;
+import android.animation.Animator;
+import android.util.SparseArray;
+import android.widget.EditText;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public class h5 extends View implements Drawable.Callback {
-    public String A;
-    public boolean A0;
-    public int B;
-    public float B0;
-    public float C;
-    public float C0;
-    public float D;
-    public org.telegram.ui.Components.u5 D0;
-    public int E;
-    public int E0;
-    public int F;
-    public PorterDuffColorFilter F0;
-    public int G;
-    public boolean G0;
-    public boolean H;
-    public Layout.Alignment H0;
-    public float I;
-    public boolean J;
-    public Drawable K;
-    public boolean L;
-    public boolean M;
-    public float N;
-    public long O;
-    public int P;
-    public Paint Q;
-    public Paint R;
-    public Paint S;
-    public int T;
-    public int U;
-    public int V;
-    public int W;
-    public float a;
-    public int a0;
-    public float b;
-    public int b0;
-    public StaticLayout c;
-    public int c0;
-    public StaticLayout d;
-    public int d0;
-    public StaticLayout e;
-    public int e0;
-    public StaticLayout f;
-    public boolean f0;
-    public boolean g0;
-    public final TextPaint h;
-    public boolean h0;
-    public boolean i0;
-    public boolean j0;
-    public boolean k0;
-    public Boolean l0;
-    public int m0;
-    public int n;
-    public int n0;
-    public int o0;
-    public int p0;
-    public int q0;
-    public int r;
-    public float r0;
-    public CharSequence s;
-    public int s0;
-    public int t0;
-    public final ArrayList u0;
-    public Drawable v;
-    public final Stack v0;
-    public Drawable w;
-    public final Path w0;
-    public Drawable x;
-    public boolean x0;
-    public Drawable y;
-    public boolean y0;
-    public View.OnClickListener z0;
+public abstract class h5 implements a3 {
+    public static final double[] a = {0.819022437996703d, 0.3619062600528904d, -0.1288737815209879d, 0.0329836539323885d, 0.9292868615863434d, 0.0361446663506424d, 0.0481771893596242d, 0.2642395317527308d, 0.6335478284694309d};
+    public static final double[] b = {0.210454268309314d, 0.7936177747023054d, -0.0040720430116193d, 1.9779985324311684d, -2.42859224204858d, 0.450593709617411d, 0.0259040424655478d, 0.7827717124575296d, -0.8086757549230774d};
+    public static final double[] c = {0.41239079926595934d, 0.357584339383878d, 0.1804807884018343d, 0.21263900587151027d, 0.715168678767756d, 0.07219231536073371d, 0.01933081871559182d, 0.11919477979462598d, 0.9505321522496607d};
+    public static SparseArray d;
+    public static HashMap e;
 
-    public h5(Context context) {
-        super(context);
-        this.n = 51;
-        this.r = 1;
-        this.D = 1.0f;
-        this.E = AndroidUtilities.dp(4.0f);
-        this.m0 = 16;
-        this.t0 = 3;
-        this.u0 = new ArrayList();
-        this.v0 = new Stack();
-        this.w0 = new Path();
-        this.E0 = 0;
-        this.H0 = Layout.Alignment.ALIGN_NORMAL;
-        this.h = new TextPaint(1);
-        setImportantForAccessibility(1);
+    public static SparseArray d() {
+        SparseArray sparseArray = new SparseArray();
+        sparseArray.put(j6.g5, "wallpaperFileOffset");
+        sparseArray.put(j6.h5, "dialogBackground");
+        sparseArray.put(j6.i5, "dialogBackgroundGray");
+        sparseArray.put(j6.j5, "dialogTextBlack");
+        sparseArray.put(j6.k5, "dialogTextLink");
+        sparseArray.put(j6.l5, "dialogLinkSelection");
+        sparseArray.put(j6.m5, "dialogTextBlue");
+        sparseArray.put(j6.n5, "dialogTextBlue2");
+        sparseArray.put(j6.o5, "dialogTextBlue4");
+        sparseArray.put(j6.p5, "dialogTextGray");
+        sparseArray.put(j6.q5, "dialogTextGray2");
+        sparseArray.put(j6.r5, "dialogTextGray3");
+        sparseArray.put(j6.s5, "dialogTextGray4");
+        sparseArray.put(j6.t5, "dialogTextHint");
+        sparseArray.put(j6.u5, "dialogInputField");
+        sparseArray.put(j6.v5, "dialogInputFieldActivated");
+        sparseArray.put(j6.w5, "dialogCheckboxSquareBackground");
+        sparseArray.put(j6.x5, "dialogCheckboxSquareCheck");
+        sparseArray.put(j6.y5, "dialogCheckboxSquareUnchecked");
+        sparseArray.put(j6.z5, "dialogCheckboxSquareDisabled");
+        sparseArray.put(j6.A5, "dialogScrollGlow");
+        sparseArray.put(j6.B5, "dialogRoundCheckBox");
+        sparseArray.put(j6.C5, "dialogRoundCheckBoxCheck");
+        sparseArray.put(j6.D5, "dialogRadioBackground");
+        sparseArray.put(j6.E5, "dialogRadioBackgroundChecked");
+        sparseArray.put(j6.F5, "dialogLineProgress");
+        sparseArray.put(j6.G5, "dialogLineProgressBackground");
+        sparseArray.put(j6.H5, "dialogButton");
+        sparseArray.put(j6.I5, "dialogButtonSelector");
+        sparseArray.put(j6.J5, "dialogIcon");
+        sparseArray.put(j6.K5, "dialogGrayLine");
+        sparseArray.put(j6.L5, "dialogTopBackground");
+        sparseArray.put(j6.M5, "dialog_inlineProgressBackground");
+        sparseArray.put(j6.N5, "dialog_inlineProgress");
+        sparseArray.put(j6.O5, "dialogSearchBackground");
+        sparseArray.put(j6.P5, "dialogSearchHint");
+        sparseArray.put(j6.Ki, "bot_loadingIcon");
+        sparseArray.put(j6.Li, "gift_ribbon");
+        sparseArray.put(j6.Mi, "gift_ribbon_soldout");
+        sparseArray.put(j6.Q5, "dialogSearchIcon");
+        sparseArray.put(j6.R5, "dialogSearchText");
+        sparseArray.put(j6.S5, "dialogFloatingButton");
+        sparseArray.put(j6.T5, "dialogFloatingButtonPressed");
+        sparseArray.put(j6.U5, "dialogFloatingIcon");
+        sparseArray.put(j6.V5, "dialogShadowLine");
+        sparseArray.put(j6.W5, "dialogEmptyImage");
+        sparseArray.put(j6.X5, "dialogEmptyText");
+        sparseArray.put(j6.Y5, "dialogSwipeRemove");
+        sparseArray.put(j6.Z5, "dialogReactionMentionBackground");
+        sparseArray.put(j6.d6, "windowBackgroundWhite");
+        sparseArray.put(j6.e6, "windowBackgroundUnchecked");
+        sparseArray.put(j6.f6, "windowBackgroundChecked");
+        sparseArray.put(j6.g6, "windowBackgroundCheckText");
+        sparseArray.put(j6.h6, "progressCircle");
+        sparseArray.put(j6.i6, "listSelectorSDK21");
+        sparseArray.put(j6.k6, "windowBackgroundWhiteInputField");
+        sparseArray.put(j6.l6, "windowBackgroundWhiteInputFieldActivated");
+        sparseArray.put(j6.o7, "pollCreateIcons");
+        sparseArray.put(j6.m6, "windowBackgroundWhiteGrayIcon");
+        sparseArray.put(j6.n6, "windowBackgroundWhiteBlueText");
+        sparseArray.put(j6.o6, "windowBackgroundWhiteBlueText2");
+        sparseArray.put(j6.p6, "windowBackgroundWhiteBlueText3");
+        sparseArray.put(j6.q6, "windowBackgroundWhiteBlueText4");
+        sparseArray.put(j6.r6, "windowBackgroundWhiteBlueText5");
+        sparseArray.put(j6.s6, "windowBackgroundWhiteBlueText6");
+        sparseArray.put(j6.t6, "windowBackgroundWhiteBlueText7");
+        sparseArray.put(j6.u6, "windowBackgroundWhiteBlueButton");
+        sparseArray.put(j6.v6, "windowBackgroundWhiteBlueIcon");
+        sparseArray.put(j6.w6, "windowBackgroundWhiteGreenText");
+        sparseArray.put(j6.x6, "windowBackgroundWhiteGreenText2");
+        sparseArray.put(j6.y6, "windowBackgroundWhiteGrayText");
+        sparseArray.put(j6.z6, "windowBackgroundWhiteGrayText2");
+        sparseArray.put(j6.A6, "windowBackgroundWhiteGrayText3");
+        sparseArray.put(j6.B6, "windowBackgroundWhiteGrayText4");
+        sparseArray.put(j6.C6, "windowBackgroundWhiteGrayText5");
+        sparseArray.put(j6.D6, "windowBackgroundWhiteGrayText6");
+        sparseArray.put(j6.E6, "windowBackgroundWhiteGrayText7");
+        sparseArray.put(j6.F6, "windowBackgroundWhiteGrayText8");
+        sparseArray.put(j6.G6, "windowBackgroundWhiteBlackText");
+        sparseArray.put(j6.H6, "windowBackgroundWhiteHintText");
+        sparseArray.put(j6.I6, "windowBackgroundWhiteValueText");
+        sparseArray.put(j6.J6, "windowBackgroundWhiteLinkText");
+        sparseArray.put(j6.K6, "windowBackgroundWhiteLinkSelection");
+        sparseArray.put(j6.L6, "windowBackgroundWhiteBlueHeader");
+        sparseArray.put(j6.M6, "switchTrack");
+        sparseArray.put(j6.N6, "switchTrackChecked");
+        sparseArray.put(j6.O6, "switchTrackBlue");
+        sparseArray.put(j6.P6, "switchTrackBlueChecked");
+        sparseArray.put(j6.Q6, "switchTrackBlueThumb");
+        sparseArray.put(j6.R6, "switchTrackBlueThumbChecked");
+        sparseArray.put(j6.S6, "switchTrackBlueSelector");
+        sparseArray.put(j6.T6, "switchTrackBlueSelectorChecked");
+        sparseArray.put(j6.U6, "switch2Track");
+        sparseArray.put(j6.V6, "switch2TrackChecked");
+        sparseArray.put(j6.W6, "checkboxSquareBackground");
+        sparseArray.put(j6.X6, "checkboxSquareCheck");
+        sparseArray.put(j6.Y6, "checkboxSquareUnchecked");
+        sparseArray.put(j6.Z6, "checkboxSquareDisabled");
+        sparseArray.put(j6.a7, "windowBackgroundGray");
+        sparseArray.put(j6.b7, "windowBackgroundGrayShadow");
+        sparseArray.put(j6.c7, "emptyListPlaceholder");
+        sparseArray.put(j6.d7, "divider");
+        sparseArray.put(j6.e7, "graySection");
+        sparseArray.put(j6.f7, "key_graySectionText");
+        sparseArray.put(j6.g7, "radioBackground");
+        sparseArray.put(j6.h7, "radioBackgroundChecked");
+        sparseArray.put(j6.i7, "checkbox");
+        sparseArray.put(j6.j7, "checkboxDisabled");
+        sparseArray.put(j6.k7, "checkboxCheck");
+        sparseArray.put(j6.l7, "fastScrollActive");
+        sparseArray.put(j6.m7, "fastScrollInactive");
+        sparseArray.put(j6.n7, "fastScrollText");
+        sparseArray.put(j6.p7, "text_RedRegular");
+        sparseArray.put(j6.q7, "text_RedBold");
+        sparseArray.put(j6.r7, "fill_RedNormal");
+        sparseArray.put(j6.s7, "fill_RedDark");
+        sparseArray.put(j6.t7, "inappPlayerPerformer");
+        sparseArray.put(j6.u7, "inappPlayerTitle");
+        sparseArray.put(j6.v7, "inappPlayerBackground");
+        sparseArray.put(j6.w7, "inappPlayerPlayPause");
+        sparseArray.put(j6.x7, "inappPlayerClose");
+        sparseArray.put(j6.y7, "returnToCallBackground");
+        sparseArray.put(j6.z7, "returnToCallMutedBackground");
+        sparseArray.put(j6.A7, "returnToCallText");
+        sparseArray.put(j6.B7, "contextProgressInner1");
+        sparseArray.put(j6.C7, "contextProgressOuter1");
+        sparseArray.put(j6.D7, "contextProgressInner2");
+        sparseArray.put(j6.E7, "contextProgressOuter2");
+        sparseArray.put(j6.F7, "contextProgressInner3");
+        sparseArray.put(j6.G7, "contextProgressOuter3");
+        sparseArray.put(j6.H7, "contextProgressInner4");
+        sparseArray.put(j6.I7, "contextProgressOuter4");
+        sparseArray.put(j6.J7, "avatar_text");
+        sparseArray.put(j6.K7, "avatar_backgroundSaved");
+        sparseArray.put(j6.L7, "avatar_background2Saved");
+        sparseArray.put(j6.M7, "avatar_backgroundArchived");
+        sparseArray.put(j6.N7, "avatar_backgroundArchivedHidden");
+        sparseArray.put(j6.O7, "avatar_backgroundRed");
+        sparseArray.put(j6.P7, "avatar_backgroundOrange");
+        sparseArray.put(j6.Q7, "avatar_backgroundViolet");
+        sparseArray.put(j6.R7, "avatar_backgroundGreen");
+        sparseArray.put(j6.S7, "avatar_backgroundCyan");
+        sparseArray.put(j6.T7, "avatar_backgroundBlue");
+        sparseArray.put(j6.U7, "avatar_backgroundPink");
+        sparseArray.put(j6.V7, "avatar_background2Red");
+        sparseArray.put(j6.W7, "avatar_background2Orange");
+        sparseArray.put(j6.X7, "avatar_background2Violet");
+        sparseArray.put(j6.Y7, "avatar_background2Green");
+        sparseArray.put(j6.Z7, "avatar_background2Cyan");
+        sparseArray.put(j6.a8, "avatar_background2Blue");
+        sparseArray.put(j6.b8, "avatar_background2Pink");
+        sparseArray.put(j6.d8, "avatar_backgroundInProfileBlue");
+        sparseArray.put(j6.e8, "avatar_backgroundActionBarBlue");
+        sparseArray.put(j6.f8, "avatar_actionBarSelectorBlue");
+        sparseArray.put(j6.g8, "avatar_actionBarIconBlue");
+        sparseArray.put(j6.h8, "avatar_subtitleInProfileBlue");
+        sparseArray.put(j6.i8, "avatar_nameInMessageRed");
+        sparseArray.put(j6.j8, "avatar_nameInMessageOrange");
+        sparseArray.put(j6.k8, "avatar_nameInMessageViolet");
+        sparseArray.put(j6.l8, "avatar_nameInMessageGreen");
+        sparseArray.put(j6.m8, "avatar_nameInMessageCyan");
+        sparseArray.put(j6.n8, "avatar_nameInMessageBlue");
+        sparseArray.put(j6.o8, "avatar_nameInMessagePink");
+        sparseArray.put(j6.s8, "actionBarDefault");
+        sparseArray.put(j6.t8, "actionBarDefaultSelector");
+        sparseArray.put(j6.u8, "actionBarWhiteSelector");
+        sparseArray.put(j6.v8, "actionBarDefaultIcon");
+        sparseArray.put(j6.w8, "actionBarActionModeDefault");
+        sparseArray.put(j6.x8, "actionBarActionModeDefaultTop");
+        sparseArray.put(j6.y8, "actionBarActionModeDefaultIcon");
+        sparseArray.put(j6.z8, "actionBarActionModeDefaultSelector");
+        sparseArray.put(j6.ua, "actionBarActionModeReaction");
+        sparseArray.put(j6.va, "actionBarActionModeReactionText");
+        sparseArray.put(j6.wa, "actionBarActionModeReactionDot");
+        sparseArray.put(j6.A8, "actionBarDefaultTitle");
+        sparseArray.put(j6.B8, "actionBarDefaultSubtitle");
+        sparseArray.put(j6.C8, "actionBarDefaultSearch");
+        sparseArray.put(j6.D8, "actionBarDefaultSearchPlaceholder");
+        sparseArray.put(j6.E8, "actionBarDefaultSubmenuItem");
+        sparseArray.put(j6.F8, "actionBarDefaultSubmenuItemIcon");
+        sparseArray.put(j6.G8, "actionBarDefaultSubmenuBackground");
+        sparseArray.put(j6.H8, "actionBarDefaultSubmenuSeparator");
+        sparseArray.put(j6.I8, "actionBarTabActiveText");
+        sparseArray.put(j6.J8, "actionBarTabUnactiveText");
+        sparseArray.put(j6.K8, "actionBarTabLine");
+        sparseArray.put(j6.L8, "actionBarTabSelector");
+        sparseArray.put(j6.ph, "table_background");
+        sparseArray.put(j6.qh, "table_border");
+        sparseArray.put(j6.rk, "chat_inTableBackground");
+        sparseArray.put(j6.sk, "chat_outTableBackground");
+        sparseArray.put(j6.tk, "chat_inTableBorder");
+        sparseArray.put(j6.uk, "chat_outTableBorder");
+        sparseArray.put(j6.vk, "chat_inDivider");
+        sparseArray.put(j6.wk, "chat_outDivider");
+        sparseArray.put(j6.xk, "chat_inArticleCodeBackground");
+        sparseArray.put(j6.yk, "chat_outArticleCodeBackground");
+        sparseArray.put(j6.zk, "chat_inArticleCodeScrollbarBackground");
+        sparseArray.put(j6.Ak, "chat_inArticleCodeScrollbar");
+        sparseArray.put(j6.Bk, "chat_outArticleCodeScrollbarBackground");
+        sparseArray.put(j6.Ck, "chat_outArticleCodeScrollbar");
+        sparseArray.put(j6.Dk, "chat_inArticleDetailsArrow");
+        sparseArray.put(j6.Ek, "chat_outArticleDetailsArrow");
+        sparseArray.put(j6.Fk, "chat_inArticleDetailsLine");
+        sparseArray.put(j6.Gk, "chat_outArticleDetailsLine");
+        sparseArray.put(j6.M8, "actionBarDefaultArchived");
+        sparseArray.put(j6.N8, "actionBarDefaultArchivedSelector");
+        sparseArray.put(j6.O8, "actionBarDefaultArchivedIcon");
+        sparseArray.put(j6.P8, "actionBarDefaultArchivedTitle");
+        sparseArray.put(j6.Q8, "actionBarDefaultArchivedSearch");
+        sparseArray.put(j6.R8, "actionBarDefaultSearchArchivedPlaceholder");
+        sparseArray.put(j6.S8, "actionBarBrowser");
+        sparseArray.put(j6.T8, "chats_onlineCircle");
+        sparseArray.put(j6.U8, "chats_unreadCounter");
+        sparseArray.put(j6.V8, "chats_unreadCounterMuted");
+        sparseArray.put(j6.W8, "chats_unreadCounterText");
+        sparseArray.put(j6.X8, "chats_name");
+        sparseArray.put(j6.Y8, "chats_nameArchived");
+        sparseArray.put(j6.Z8, "chats_secretName");
+        sparseArray.put(j6.a9, "chats_secretIcon");
+        sparseArray.put(j6.b9, "chats_pinnedIcon");
+        sparseArray.put(j6.c9, "chats_archiveBackground");
+        sparseArray.put(j6.d9, "chats_archivePinBackground");
+        sparseArray.put(j6.e9, "chats_archiveIcon");
+        sparseArray.put(j6.f9, "chats_archiveText");
+        sparseArray.put(j6.g9, "chats_message");
+        sparseArray.put(j6.h9, "chats_messageArchived");
+        sparseArray.put(j6.i9, "chats_message_threeLines");
+        sparseArray.put(j6.j9, "chats_draft");
+        sparseArray.put(j6.k9, "chats_nameMessage");
+        sparseArray.put(j6.l9, "chats_nameMessageArchived");
+        sparseArray.put(j6.m9, "chats_nameMessage_threeLines");
+        sparseArray.put(j6.n9, "chats_nameMessageArchived_threeLines");
+        sparseArray.put(j6.o9, "chats_attachMessage");
+        sparseArray.put(j6.p9, "chats_actionMessage");
+        sparseArray.put(j6.q9, "chats_date");
+        sparseArray.put(j6.r9, "chats_date_bold");
+        sparseArray.put(j6.s9, "chats_pinnedOverlay");
+        sparseArray.put(j6.t9, "chats_tabletSelectedOverlay");
+        sparseArray.put(j6.u9, "chats_sentCheck");
+        sparseArray.put(j6.v9, "chats_sentReadCheck");
+        sparseArray.put(j6.w9, "chats_sentClock");
+        sparseArray.put(j6.x9, "chats_sentError");
+        sparseArray.put(j6.y9, "chats_sentErrorIcon");
+        sparseArray.put(j6.z9, "chats_verifiedBackground");
+        sparseArray.put(j6.A9, "chats_verifiedCheck");
+        sparseArray.put(j6.B9, "chats_muteIcon");
+        sparseArray.put(j6.C9, "chats_mentionIcon");
+        sparseArray.put(j6.D9, "chats_menuTopShadow");
+        sparseArray.put(j6.E9, "chats_menuTopShadowCats");
+        sparseArray.put(j6.F9, "chats_menuBackground");
+        sparseArray.put(j6.G9, "chats_menuItemText");
+        sparseArray.put(j6.H9, "chats_menuItemCheck");
+        sparseArray.put(j6.I9, "chats_menuItemIcon");
+        sparseArray.put(j6.J9, "chats_menuName");
+        sparseArray.put(j6.K9, "chats_menuPhone");
+        sparseArray.put(j6.L9, "chats_menuPhoneCats");
+        sparseArray.put(j6.M9, "chats_menuTopBackgroundCats");
+        sparseArray.put(j6.N9, "chats_menuTopBackground");
+        sparseArray.put(j6.O9, "chats_actionIcon");
+        sparseArray.put(j6.P9, "chats_actionBackground");
+        sparseArray.put(j6.Q9, "chats_actionPressedBackground");
+        sparseArray.put(j6.R9, "chats_archivePullDownBackground");
+        sparseArray.put(j6.S9, "chats_archivePullDownBackgroundActive");
+        sparseArray.put(j6.T9, "chats_tabUnreadActiveBackground");
+        sparseArray.put(j6.U9, "chats_tabUnreadUnactiveBackground");
+        sparseArray.put(j6.V9, "chat_attachCheckBoxCheck");
+        sparseArray.put(j6.W9, "chat_attachCheckBoxBackground");
+        sparseArray.put(j6.X9, "chat_attachPhotoBackground");
+        sparseArray.put(j6.Y9, "chat_attachActiveTab");
+        sparseArray.put(j6.Z9, "chat_attachUnactiveTab");
+        sparseArray.put(j6.aa, "chat_attachPermissionImage");
+        sparseArray.put(j6.ba, "chat_attachPermissionMark");
+        sparseArray.put(j6.ca, "chat_attachPermissionText");
+        sparseArray.put(j6.da, "chat_attachEmptyImage");
+        sparseArray.put(j6.ea, "chat_inPollCorrectAnswer");
+        sparseArray.put(j6.fa, "chat_outPollCorrectAnswer");
+        sparseArray.put(j6.ga, "chat_inPollWrongAnswer");
+        sparseArray.put(j6.ha, "chat_outPollWrongAnswer");
+        sparseArray.put(j6.ia, "chat_attachIcon");
+        sparseArray.put(j6.ja, "chat_attachGalleryBackground");
+        sparseArray.put(j6.ka, "chat_attachAudioBackground");
+        sparseArray.put(j6.la, "chat_attachContactBackground");
+        sparseArray.put(j6.ma, "chat_attachContactText");
+        sparseArray.put(j6.na, "chat_attachLocationBackground");
+        sparseArray.put(j6.oa, "chat_attachPollBackground");
+        sparseArray.put(j6.pa, "chat_status");
+        sparseArray.put(j6.qa, "chat_inDownCall");
+        sparseArray.put(j6.Ia, "chat_outUpCall");
+        sparseArray.put(j6.ra, "chat_inBubble");
+        sparseArray.put(j6.dc, "chat_inBubbleSelected");
+        sparseArray.put(j6.sa, "chat_inBubbleSelectedOverlay");
+        sparseArray.put(j6.ta, "chat_inBubbleShadow");
+        sparseArray.put(j6.Aa, "chat_outBubble");
+        sparseArray.put(j6.Da, "chat_outBubbleGradient");
+        sparseArray.put(j6.Ea, "chat_outBubbleGradient2");
+        sparseArray.put(j6.Fa, "chat_outBubbleGradient3");
+        sparseArray.put(j6.ac, "chat_outBubbleGradientAnimated");
+        sparseArray.put(j6.bc, "chat_outBubbleGradientSelectedOverlay");
+        sparseArray.put(j6.Ba, "chat_outBubbleSelected");
+        sparseArray.put(j6.Yb, "chat_outBubbleSelectedOverlay");
+        sparseArray.put(j6.Ca, "chat_outBubbleShadow");
+        sparseArray.put(j6.ec, "chat_messageTextIn");
+        sparseArray.put(j6.fc, "chat_messageTextOut");
+        sparseArray.put(j6.gc, "chat_messageLinkIn");
+        sparseArray.put(j6.hc, "chat_messageLinkOut");
+        sparseArray.put(j6.ic, "chat_serviceText");
+        sparseArray.put(j6.jc, "chat_serviceLink");
+        sparseArray.put(j6.kc, "chat_serviceIcon");
+        sparseArray.put(j6.lc, "chat_serviceBackground");
+        sparseArray.put(j6.mc, "chat_serviceBackgroundSelected");
+        sparseArray.put(j6.nc, "chat_serviceBackgroundSelector");
+        sparseArray.put(j6.Sc, "chat_inQuote");
+        sparseArray.put(j6.Tc, "chat_outQuote");
+        sparseArray.put(j6.oc, "chat_muteIcon");
+        sparseArray.put(j6.pc, "chat_lockIcon");
+        sparseArray.put(j6.Ja, "chat_outSentCheck");
+        sparseArray.put(j6.Ka, "chat_outSentCheckSelected");
+        sparseArray.put(j6.La, "chat_outSentCheckRead");
+        sparseArray.put(j6.Ma, "chat_outSentCheckReadSelected");
+        sparseArray.put(j6.Na, "chat_outSentClock");
+        sparseArray.put(j6.Oa, "chat_outSentClockSelected");
+        sparseArray.put(j6.qc, "chat_inSentClock");
+        sparseArray.put(j6.rc, "chat_inSentClockSelected");
+        sparseArray.put(j6.sc, "chat_mediaSentCheck");
+        sparseArray.put(j6.tc, "chat_mediaSentClock");
+        sparseArray.put(j6.uc, "chat_inMediaIcon");
+        sparseArray.put(j6.Pa, "chat_outMediaIcon");
+        sparseArray.put(j6.vc, "chat_inMediaIconSelected");
+        sparseArray.put(j6.Qa, "chat_outMediaIconSelected");
+        sparseArray.put(j6.wc, "chat_mediaTimeBackground");
+        sparseArray.put(j6.Ra, "chat_outViews");
+        sparseArray.put(j6.Sa, "chat_outViewsSelected");
+        sparseArray.put(j6.xc, "chat_inViews");
+        sparseArray.put(j6.yc, "chat_inViewsSelected");
+        sparseArray.put(j6.zc, "chat_mediaViews");
+        sparseArray.put(j6.Ta, "chat_outMenu");
+        sparseArray.put(j6.Ua, "chat_outMenuSelected");
+        sparseArray.put(j6.Ac, "chat_inMenu");
+        sparseArray.put(j6.Bc, "chat_inMenuSelected");
+        sparseArray.put(j6.Cc, "chat_mediaMenu");
+        sparseArray.put(j6.Va, "chat_outInstant");
+        sparseArray.put(j6.Wa, "chat_outInstantSelected");
+        sparseArray.put(j6.Dc, "chat_inInstant");
+        sparseArray.put(j6.Ec, "chat_inInstantSelected");
+        sparseArray.put(j6.Fc, "chat_sentError");
+        sparseArray.put(j6.Gc, "chat_sentErrorIcon");
+        sparseArray.put(j6.Hc, "chat_selectedBackground");
+        sparseArray.put(j6.Ic, "chat_previewDurationText");
+        sparseArray.put(j6.Jc, "chat_previewGameText");
+        sparseArray.put(j6.Kc, "chat_inPreviewInstantText");
+        sparseArray.put(j6.Xa, "chat_outPreviewInstantText");
+        sparseArray.put(j6.Lc, "chat_secretTimeText");
+        sparseArray.put(j6.Mc, "chat_stickerNameText");
+        sparseArray.put(j6.Nc, "chat_botButtonText");
+        sparseArray.put(j6.Oc, "chat_inForwardedNameText");
+        sparseArray.put(j6.Ya, "chat_outForwardedNameText");
+        sparseArray.put(j6.Pc, "chat_inPsaNameText");
+        sparseArray.put(j6.Zb, "chat_outPsaNameText");
+        sparseArray.put(j6.Qc, "chat_inViaBotNameText");
+        sparseArray.put(j6.Za, "chat_outViaBotNameText");
+        sparseArray.put(j6.Rc, "chat_stickerViaBotNameText");
+        sparseArray.put(j6.Uc, "chat_inReplyLine");
+        sparseArray.put(j6.ab, "chat_outReplyLine");
+        sparseArray.put(j6.bb, "chat_outReplyLine2");
+        sparseArray.put(j6.Vc, "chat_stickerReplyLine");
+        sparseArray.put(j6.Wc, "chat_inReplyNameText");
+        sparseArray.put(j6.cb, "chat_outReplyNameText");
+        sparseArray.put(j6.Xc, "chat_stickerReplyNameText");
+        sparseArray.put(j6.Yc, "chat_inReplyMessageText");
+        sparseArray.put(j6.db, "chat_outReplyMessageText");
+        sparseArray.put(j6.Zc, "chat_inReplyMediaMessageText");
+        sparseArray.put(j6.eb, "chat_outReplyMediaMessageText");
+        sparseArray.put(j6.ad, "chat_inReplyMediaMessageSelectedText");
+        sparseArray.put(j6.fb, "chat_outReplyMediaMessageSelectedText");
+        sparseArray.put(j6.bd, "chat_stickerReplyMessageText");
+        sparseArray.put(j6.cd, "chat_inPreviewLine");
+        sparseArray.put(j6.gb, "chat_outPreviewLine");
+        sparseArray.put(j6.dd, "chat_inSiteNameText");
+        sparseArray.put(j6.hb, "chat_outSiteNameText");
+        sparseArray.put(j6.ed, "chat_inContactNameText");
+        sparseArray.put(j6.ib, "chat_outContactNameText");
+        sparseArray.put(j6.fd, "chat_inContactPhoneText");
+        sparseArray.put(j6.gd, "chat_inContactPhoneSelectedText");
+        sparseArray.put(j6.jb, "chat_outContactPhoneText");
+        sparseArray.put(j6.kb, "chat_outContactPhoneSelectedText");
+        sparseArray.put(j6.hd, "chat_mediaProgress");
+        sparseArray.put(j6.id, "chat_inAudioProgress");
+        sparseArray.put(j6.qb, "chat_outAudioProgress");
+        sparseArray.put(j6.jd, "chat_inAudioSelectedProgress");
+        sparseArray.put(j6.rb, "chat_outAudioSelectedProgress");
+        sparseArray.put(j6.kd, "chat_mediaTimeText");
+        sparseArray.put(j6.ld, "chat_adminText");
+        sparseArray.put(j6.md, "chat_adminSelectedText");
+        sparseArray.put(j6.ob, "chat_outAdminText");
+        sparseArray.put(j6.pb, "chat_outAdminSelectedText");
+        sparseArray.put(j6.nd, "chat_inTimeText");
+        sparseArray.put(j6.sb, "chat_outTimeText");
+        sparseArray.put(j6.od, "chat_inTimeSelectedText");
+        sparseArray.put(j6.nb, "chat_outTimeSelectedText");
+        sparseArray.put(j6.pd, "chat_inAudioPerfomerText");
+        sparseArray.put(j6.qd, "chat_inAudioPerfomerSelectedText");
+        sparseArray.put(j6.lb, "chat_outAudioPerfomerText");
+        sparseArray.put(j6.mb, "chat_outAudioPerfomerSelectedText");
+        sparseArray.put(j6.rd, "chat_inAudioTitleText");
+        sparseArray.put(j6.tb, "chat_outAudioTitleText");
+        sparseArray.put(j6.sd, "chat_inAudioDurationText");
+        sparseArray.put(j6.ub, "chat_outAudioDurationText");
+        sparseArray.put(j6.td, "chat_inAudioDurationSelectedText");
+        sparseArray.put(j6.vb, "chat_outAudioDurationSelectedText");
+        sparseArray.put(j6.ud, "chat_inAudioSeekbar");
+        sparseArray.put(j6.vd, "chat_inAudioCacheSeekbar");
+        sparseArray.put(j6.wb, "chat_outAudioSeekbar");
+        sparseArray.put(j6.xb, "chat_outAudioCacheSeekbar");
+        sparseArray.put(j6.wd, "chat_inAudioSeekbarSelected");
+        sparseArray.put(j6.yb, "chat_outAudioSeekbarSelected");
+        sparseArray.put(j6.xd, "chat_inAudioSeekbarFill");
+        sparseArray.put(j6.zb, "chat_outAudioSeekbarFill");
+        sparseArray.put(j6.yd, "chat_inVoiceSeekbar");
+        sparseArray.put(j6.Ab, "chat_outVoiceSeekbar");
+        sparseArray.put(j6.zd, "chat_inVoiceSeekbarSelected");
+        sparseArray.put(j6.Bb, "chat_outVoiceSeekbarSelected");
+        sparseArray.put(j6.Ad, "chat_inVoiceSeekbarFill");
+        sparseArray.put(j6.Cb, "chat_outVoiceSeekbarFill");
+        sparseArray.put(j6.Bd, "chat_inFileProgress");
+        sparseArray.put(j6.Db, "chat_outFileProgress");
+        sparseArray.put(j6.Cd, "chat_inFileProgressSelected");
+        sparseArray.put(j6.Eb, "chat_outFileProgressSelected");
+        sparseArray.put(j6.Dd, "chat_inFileNameText");
+        sparseArray.put(j6.Fb, "chat_outFileNameText");
+        sparseArray.put(j6.Ed, "chat_inFileInfoText");
+        sparseArray.put(j6.Gb, "chat_outFileInfoText");
+        sparseArray.put(j6.Fd, "chat_inFileInfoSelectedText");
+        sparseArray.put(j6.Hb, "chat_outFileInfoSelectedText");
+        sparseArray.put(j6.Gd, "chat_inFileBackground");
+        sparseArray.put(j6.Ib, "chat_outFileBackground");
+        sparseArray.put(j6.Hd, "chat_inFileBackgroundSelected");
+        sparseArray.put(j6.Jb, "chat_outFileBackgroundSelected");
+        sparseArray.put(j6.Id, "chat_inVenueInfoText");
+        sparseArray.put(j6.Kb, "chat_outVenueInfoText");
+        sparseArray.put(j6.Jd, "chat_inVenueInfoSelectedText");
+        sparseArray.put(j6.Lb, "chat_outVenueInfoSelectedText");
+        sparseArray.put(j6.Kd, "chat_mediaInfoText");
+        sparseArray.put(j6.Ld, "chat_linkSelectBackground");
+        sparseArray.put(j6.Mb, "chat_outLinkSelectBackground");
+        sparseArray.put(j6.Md, "chat_textSelectBackground");
+        sparseArray.put(j6.Nd, "chat_wallpaper");
+        sparseArray.put(j6.Od, "chat_wallpaper_gradient_to");
+        sparseArray.put(j6.Pd, "key_chat_wallpaper_gradient_to2");
+        sparseArray.put(j6.Qd, "key_chat_wallpaper_gradient_to3");
+        sparseArray.put(j6.Rd, "chat_wallpaper_gradient_rotation");
+        sparseArray.put(j6.Sd, "chat_messagePanelBackground");
+        sparseArray.put(j6.Td, "chat_messagePanelShadow");
+        sparseArray.put(j6.Ud, "chat_messagePanelText");
+        sparseArray.put(j6.Vd, "chat_messagePanelHint");
+        sparseArray.put(j6.Wd, "chat_messagePanelCursor");
+        sparseArray.put(j6.Xd, "chat_messagePanelIcons");
+        sparseArray.put(j6.Yd, "chat_messagePanelSend");
+        sparseArray.put(j6.Zd, "key_chat_messagePanelVoiceLock");
+        sparseArray.put(j6.ae, "key_chat_messagePanelVoiceLockBackground");
+        sparseArray.put(j6.be, "key_chat_messagePanelVoiceLockShadow");
+        sparseArray.put(j6.ce, "chat_topPanelBackground");
+        sparseArray.put(j6.de, "chat_topPanelClose");
+        sparseArray.put(j6.ee, "chat_topPanelLine");
+        sparseArray.put(j6.fe, "chat_topPanelTitle");
+        sparseArray.put(j6.ge, "chat_topPanelMessage");
+        sparseArray.put(j6.he, "chat_addContact");
+        sparseArray.put(j6.ie, "chat_inLoader");
+        sparseArray.put(j6.je, "chat_inLoaderSelected");
+        sparseArray.put(j6.Nb, "chat_outLoader");
+        sparseArray.put(j6.Ob, "chat_outLoaderSelected");
+        sparseArray.put(j6.ke, "chat_inLoaderPhoto");
+        sparseArray.put(j6.le, "chat_mediaLoaderPhoto");
+        sparseArray.put(j6.me, "chat_mediaLoaderPhotoSelected");
+        sparseArray.put(j6.ne, "chat_mediaLoaderPhotoIcon");
+        sparseArray.put(j6.oe, "chat_mediaLoaderPhotoIconSelected");
+        sparseArray.put(j6.pe, "chat_inLocationBackground");
+        sparseArray.put(j6.qe, "chat_inLocationIcon");
+        sparseArray.put(j6.Pb, "chat_outLocationIcon");
+        sparseArray.put(j6.re, "chat_inContactBackground");
+        sparseArray.put(j6.se, "chat_inContactIcon");
+        sparseArray.put(j6.Qb, "chat_outContactBackground");
+        sparseArray.put(j6.Rb, "chat_outContactIcon");
+        sparseArray.put(j6.te, "chat_replyPanelIcons");
+        sparseArray.put(j6.ue, "chat_replyPanelClose");
+        sparseArray.put(j6.ve, "chat_replyPanelName");
+        sparseArray.put(j6.we, "chat_replyPanelLine");
+        sparseArray.put(j6.xe, "chat_searchPanelIcons");
+        sparseArray.put(j6.ye, "chat_searchPanelText");
+        sparseArray.put(j6.ze, "chat_secretChatStatusText");
+        sparseArray.put(j6.Ae, "chat_fieldOverlayText");
+        sparseArray.put(j6.Be, "chat_stickersHintPanel");
+        sparseArray.put(j6.Ce, "chat_botSwitchToInlineText");
+        sparseArray.put(j6.De, "chat_unreadMessagesStartArrowIcon");
+        sparseArray.put(j6.Ee, "chat_unreadMessagesStartText");
+        sparseArray.put(j6.Fe, "chat_unreadMessagesStartBackground");
+        sparseArray.put(j6.Ge, "chat_inlineResultIcon");
+        sparseArray.put(j6.He, "chat_emojiPanelBackground");
+        sparseArray.put(j6.Ie, "chat_emojiSearchBackground");
+        sparseArray.put(j6.Je, "chat_emojiSearchIcon");
+        sparseArray.put(j6.Ke, "chat_emojiPanelShadowLine");
+        sparseArray.put(j6.Le, "chat_emojiPanelEmptyText");
+        sparseArray.put(j6.Me, "chat_emojiPanelIcon");
+        sparseArray.put(j6.Ne, "chat_emojiBottomPanelIcon");
+        sparseArray.put(j6.Oe, "chat_emojiPanelIconSelected");
+        sparseArray.put(j6.Pe, "chat_emojiPanelStickerPackSelector");
+        sparseArray.put(j6.Qe, "chat_emojiPanelStickerPackSelectorLine");
+        sparseArray.put(j6.Re, "chat_emojiPanelBackspace");
+        sparseArray.put(j6.Se, "chat_emojiPanelTrendingTitle");
+        sparseArray.put(j6.Te, "chat_emojiPanelStickerSetName");
+        sparseArray.put(j6.Ue, "chat_emojiPanelStickerSetNameHighlight");
+        sparseArray.put(j6.Ve, "chat_emojiPanelStickerSetNameIcon");
+        sparseArray.put(j6.We, "chat_emojiPanelTrendingDescription");
+        sparseArray.put(j6.Xe, "chat_botKeyboardButtonText");
+        sparseArray.put(j6.Ye, "chat_botKeyboardButtonBackground");
+        sparseArray.put(j6.Ze, "chat_botKeyboardButtonBackgroundPressed");
+        sparseArray.put(j6.af, "chat_emojiPanelNewTrending");
+        sparseArray.put(j6.bf, "chat_messagePanelVoicePressed");
+        sparseArray.put(j6.cf, "chat_messagePanelVoiceBackground");
+        sparseArray.put(j6.df, "chat_messagePanelVoiceDelete");
+        sparseArray.put(j6.ef, "chat_messagePanelVoiceDuration");
+        sparseArray.put(j6.ff, "chat_recordedVoicePlayPause");
+        sparseArray.put(j6.gf, "chat_recordedVoiceProgress");
+        sparseArray.put(j6.hf, "chat_recordedVoiceProgressInner");
+        sparseArray.put(j6.jf, "chat_recordedVoiceDot");
+        sparseArray.put(j6.kf, "chat_recordedVoiceBackground");
+        sparseArray.put(j6.lf, "chat_recordedVoiceDarkerBackground");
+        sparseArray.put(j6.mf, "chat_recordVoiceCancel");
+        sparseArray.put(j6.nf, "chat_recordTime");
+        sparseArray.put(j6.of, "chat_messagePanelCancelInlineBot");
+        sparseArray.put(j6.pf, "chat_gifSaveHintText");
+        sparseArray.put(j6.qf, "chat_gifSaveHintBackground");
+        sparseArray.put(j6.rf, "chat_goDownButton");
+        sparseArray.put(j6.sf, "chat_goDownButtonCounter");
+        sparseArray.put(j6.tf, "chat_goDownButtonCounterBackground");
+        sparseArray.put(j6.Vb, "chat_outTextSelectionHighlight");
+        sparseArray.put(j6.uf, "chat_inTextSelectionHighlight");
+        sparseArray.put(j6.vf, "chat_TextSelectionCursor");
+        sparseArray.put(j6.Wb, "chat_outTextSelectionCursor");
+        sparseArray.put(j6.wf, "chat_inBubbleLocationPlaceholder");
+        sparseArray.put(j6.Xb, "chat_outBubbleLocationPlaceholder");
+        sparseArray.put(j6.xf, "chat_BlurAlpha");
+        sparseArray.put(j6.yf, "chat_BlurAlphaSlow");
+        sparseArray.put(j6.zf, "chat_editMediaButton");
+        sparseArray.put(j6.Af, "chat_msgIvButtonDefaultIn");
+        sparseArray.put(j6.Bf, "chat_msgIvButtonDefaultInPressed");
+        sparseArray.put(j6.Cf, "chat_msgIvButtonDefaultInText");
+        sparseArray.put(j6.Df, "chat_msgIvButtonPrimaryIn");
+        sparseArray.put(j6.Ef, "chat_msgIvButtonPrimaryInPressed");
+        sparseArray.put(j6.Ff, "chat_msgIvButtonPrimaryInText");
+        sparseArray.put(j6.Gf, "chat_msgIvButtonDangerIn");
+        sparseArray.put(j6.Hf, "chat_msgIvButtonDangerInPressed");
+        sparseArray.put(j6.If, "chat_msgIvButtonDangerInText");
+        sparseArray.put(j6.Jf, "chat_msgIvButtonSuccessIn");
+        sparseArray.put(j6.Kf, "chat_msgIvButtonSuccessInPressed");
+        sparseArray.put(j6.Lf, "chat_msgIvButtonSuccessInText");
+        sparseArray.put(j6.Mf, "chat_msgIvButtonDefaultInlineIn");
+        sparseArray.put(j6.Nf, "chat_msgIvButtonDefaultInlineInPressed");
+        sparseArray.put(j6.Of, "chat_msgIvButtonDefaultInlineInText");
+        sparseArray.put(j6.Pf, "chat_msgIvButtonDefaultOut");
+        sparseArray.put(j6.Qf, "chat_msgIvButtonDefaultOutPressed");
+        sparseArray.put(j6.Rf, "chat_msgIvButtonDefaultOutText");
+        sparseArray.put(j6.Sf, "chat_msgIvButtonPrimaryOut");
+        sparseArray.put(j6.Tf, "chat_msgIvButtonPrimaryOutPressed");
+        sparseArray.put(j6.Uf, "chat_msgIvButtonPrimaryOutText");
+        sparseArray.put(j6.Vf, "chat_msgIvButtonDangerOut");
+        sparseArray.put(j6.Wf, "chat_msgIvButtonDangerOutPressed");
+        sparseArray.put(j6.Xf, "chat_msgIvButtonDangerOutText");
+        sparseArray.put(j6.Yf, "chat_msgIvButtonSuccessOut");
+        sparseArray.put(j6.Zf, "chat_msgIvButtonSuccessOutPressed");
+        sparseArray.put(j6.ag, "chat_msgIvButtonSuccessOutText");
+        sparseArray.put(j6.bg, "chat_msgIvButtonDefaultInlineOut");
+        sparseArray.put(j6.cg, "chat_msgIvButtonDefaultInlineOutPressed");
+        sparseArray.put(j6.dg, "chat_msgIvButtonDefaultInlineOutText");
+        sparseArray.put(j6.eg, "voipgroup_listSelector");
+        sparseArray.put(j6.fg, "voipgroup_inviteMembersBackground");
+        sparseArray.put(j6.gg, "voipgroup_actionBar");
+        sparseArray.put(j6.hg, "voipgroup_actionBarItems");
+        sparseArray.put(j6.ig, "voipgroup_actionBarItemsSelector");
+        sparseArray.put(j6.jg, "voipgroup_actionBarUnscrolled");
+        sparseArray.put(j6.kg, "voipgroup_listViewBackgroundUnscrolled");
+        sparseArray.put(j6.lg, "voipgroup_lastSeenTextUnscrolled");
+        sparseArray.put(j6.mg, "voipgroup_mutedIconUnscrolled");
+        sparseArray.put(j6.ng, "voipgroup_nameText");
+        sparseArray.put(j6.og, "voipgroup_lastSeenText");
+        sparseArray.put(j6.pg, "voipgroup_listeningText");
+        sparseArray.put(j6.qg, "voipgroup_speakingText");
+        sparseArray.put(j6.rg, "voipgroup_mutedIcon");
+        sparseArray.put(j6.sg, "voipgroup_mutedByAdminIcon");
+        sparseArray.put(j6.tg, "voipgroup_listViewBackground");
+        sparseArray.put(j6.ug, "voipgroup_dialogBackground");
+        sparseArray.put(j6.vg, "voipgroup_leaveCallMenu");
+        sparseArray.put(j6.wg, "voipgroup_checkMenu");
+        sparseArray.put(j6.xg, "voipgroup_soundButton");
+        sparseArray.put(j6.yg, "voipgroup_soundButtonActive");
+        sparseArray.put(j6.zg, "voipgroup_soundButtonActiveScrolled");
+        sparseArray.put(j6.Ag, "voipgroup_soundButton2");
+        sparseArray.put(j6.Bg, "voipgroup_soundButtonActive2");
+        sparseArray.put(j6.Cg, "voipgroup_soundButtonActive2Scrolled");
+        sparseArray.put(j6.Dg, "voipgroup_leaveButton");
+        sparseArray.put(j6.Eg, "voipgroup_leaveButtonScrolled");
+        sparseArray.put(j6.Fg, "voipgroup_muteButton");
+        sparseArray.put(j6.Gg, "voipgroup_muteButton2");
+        sparseArray.put(j6.Hg, "voipgroup_muteButton3");
+        sparseArray.put(j6.Ig, "voipgroup_unmuteButton");
+        sparseArray.put(j6.Jg, "voipgroup_unmuteButton2");
+        sparseArray.put(j6.Kg, "voipgroup_disabledButton");
+        sparseArray.put(j6.Lg, "voipgroup_rtmpButton");
+        sparseArray.put(j6.Mg, "voipgroup_disabledButtonActive");
+        sparseArray.put(j6.Ng, "voipgroup_disabledButtonActiveScrolled");
+        sparseArray.put(j6.Og, "voipgroup_connectingProgress");
+        sparseArray.put(j6.Pg, "voipgroup_scrollUp");
+        sparseArray.put(j6.Qg, "voipgroup_searchPlaceholder");
+        sparseArray.put(j6.Rg, "voipgroup_searchBackground");
+        sparseArray.put(j6.Sg, "voipgroup_searchText");
+        sparseArray.put(j6.Tg, "voipgroup_overlayGreen1");
+        sparseArray.put(j6.Ug, "voipgroup_overlayGreen2");
+        sparseArray.put(j6.Vg, "voipgroup_overlayBlue1");
+        sparseArray.put(j6.Wg, "voipgroup_overlayBlue2");
+        sparseArray.put(j6.Xg, "voipgroup_topPanelGreen1");
+        sparseArray.put(j6.Yg, "voipgroup_topPanelGreen2");
+        sparseArray.put(j6.Zg, "voipgroup_topPanelBlue1");
+        sparseArray.put(j6.ah, "voipgroup_topPanelBlue2");
+        sparseArray.put(j6.bh, "voipgroup_topPanelGray");
+        sparseArray.put(j6.ch, "voipgroup_overlayAlertGradientMuted");
+        sparseArray.put(j6.dh, "voipgroup_overlayAlertGradientMuted2");
+        sparseArray.put(j6.eh, "voipgroup_overlayAlertGradientUnmuted");
+        sparseArray.put(j6.fh, "voipgroup_overlayAlertGradientUnmuted2");
+        sparseArray.put(j6.gh, "voipgroup_overlayAlertMutedByAdmin");
+        sparseArray.put(j6.hh, "voipgroup_overlayAlertMutedByAdmin2");
+        sparseArray.put(j6.ih, "voipgroup_mutedByAdminGradient");
+        sparseArray.put(j6.jh, "voipgroup_mutedByAdminGradient2");
+        sparseArray.put(j6.kh, "voipgroup_mutedByAdminGradient3");
+        sparseArray.put(j6.lh, "voipgroup_mutedByAdminMuteButton");
+        sparseArray.put(j6.mh, "voipgroup_mutedByAdminMuteButtonDisabled");
+        sparseArray.put(j6.nh, "voipgroup_windowBackgroundWhiteInputField");
+        sparseArray.put(j6.oh, "voipgroup_windowBackgroundWhiteInputFieldActivated");
+        sparseArray.put(j6.rh, "passport_authorizeBackground");
+        sparseArray.put(j6.sh, "passport_authorizeBackgroundSelected");
+        sparseArray.put(j6.th, "passport_authorizeText");
+        sparseArray.put(j6.uh, "profile_creatorIcon");
+        sparseArray.put(j6.Ch, "chat_tagAdmin");
+        sparseArray.put(j6.Dh, "chat_tagCreator");
+        sparseArray.put(j6.vh, "profile_title");
+        sparseArray.put(j6.wh, "profile_actionIcon");
+        sparseArray.put(j6.xh, "profile_actionBackground");
+        sparseArray.put(j6.yh, "profile_actionPressedBackground");
+        sparseArray.put(j6.zh, "profile_verifiedBackground");
+        sparseArray.put(j6.Ah, "profile_verifiedCheck");
+        sparseArray.put(j6.Bh, "profile_status");
+        sparseArray.put(j6.Eh, "profile_tabText");
+        sparseArray.put(j6.Fh, "profile_tabSelectedText");
+        sparseArray.put(j6.Gh, "profile_tabSelectedLine");
+        sparseArray.put(j6.Hh, "profile_tabSelector");
+        sparseArray.put(j6.Ih, "sharedMedia_startStopLoadIcon");
+        sparseArray.put(j6.Jh, "sharedMedia_linkPlaceholder");
+        sparseArray.put(j6.Kh, "sharedMedia_linkPlaceholderText");
+        sparseArray.put(j6.Lh, "sharedMedia_photoPlaceholder");
+        sparseArray.put(j6.Mh, "featuredStickers_addedIcon");
+        sparseArray.put(j6.Nh, "featuredStickers_buttonProgress");
+        sparseArray.put(j6.Oh, "featuredStickers_addButton");
+        sparseArray.put(j6.Ph, "featuredStickers_addButton2");
+        sparseArray.put(j6.Qh, "featuredStickers_addButtonPressed");
+        sparseArray.put(j6.Rh, "featuredStickers_removeButtonText");
+        sparseArray.put(j6.Sh, "featuredStickers_buttonText");
+        sparseArray.put(j6.Th, "featuredStickers_unread");
+        sparseArray.put(j6.xa, "buttonNeutral");
+        sparseArray.put(j6.ya, "buttonNeutralText");
+        sparseArray.put(j6.Uh, "stickers_menu");
+        sparseArray.put(j6.Vh, "stickers_menuSelector");
+        sparseArray.put(j6.Wh, "changephoneinfo_image2");
+        sparseArray.put(j6.Xh, "groupcreate_hintText");
+        sparseArray.put(j6.Yh, "groupcreate_cursor");
+        sparseArray.put(j6.Zh, "groupcreate_sectionShadow");
+        sparseArray.put(j6.ai, "groupcreate_sectionText");
+        sparseArray.put(j6.bi, "groupcreate_spanText");
+        sparseArray.put(j6.ci, "groupcreate_spanBackground");
+        sparseArray.put(j6.di, "groupcreate_spanDelete");
+        sparseArray.put(j6.ei, "contacts_inviteBackground");
+        sparseArray.put(j6.fi, "contacts_inviteText");
+        sparseArray.put(j6.gi, "login_progressInner");
+        sparseArray.put(j6.hi, "login_progressOuter");
+        sparseArray.put(j6.ii, "picker_enabledButton");
+        sparseArray.put(j6.ji, "picker_disabledButton");
+        sparseArray.put(j6.ki, "picker_badge");
+        sparseArray.put(j6.li, "picker_badgeText");
+        sparseArray.put(j6.mi, "location_sendLocationBackground");
+        sparseArray.put(j6.ni, "location_sendLocationIcon");
+        sparseArray.put(j6.oi, "location_sendLocationText");
+        sparseArray.put(j6.pi, "location_sendLiveLocationBackground");
+        sparseArray.put(j6.qi, "location_sendLiveLocationIcon");
+        sparseArray.put(j6.ri, "location_sendLiveLocationText");
+        sparseArray.put(j6.si, "location_liveLocationProgress");
+        sparseArray.put(j6.ti, "location_placeLocationBackground");
+        sparseArray.put(j6.ui, "location_actionIcon");
+        sparseArray.put(j6.vi, "location_actionActiveIcon");
+        sparseArray.put(j6.wi, "location_actionBackground");
+        sparseArray.put(j6.xi, "location_actionPressedBackground");
+        sparseArray.put(j6.yi, "dialog_liveLocationProgress");
+        sparseArray.put(j6.zi, "files_folderIcon");
+        sparseArray.put(j6.Ai, "files_folderIconBackground");
+        sparseArray.put(j6.Bi, "files_iconText");
+        sparseArray.put(j6.Ci, "sessions_devicesImage");
+        sparseArray.put(j6.Di, "calls_callReceivedGreenIcon");
+        sparseArray.put(j6.Ei, "calls_callReceivedRedIcon");
+        sparseArray.put(j6.Fi, "undo_background");
+        sparseArray.put(j6.Gi, "undo_cancelColor");
+        sparseArray.put(j6.Hi, "undo_infoColor");
+        sparseArray.put(j6.Ii, "key_sheet_scrollUp");
+        sparseArray.put(j6.Ji, "key_sheet_other");
+        sparseArray.put(j6.Ni, "player_actionBarSelector");
+        sparseArray.put(j6.Oi, "player_actionBarTitle");
+        sparseArray.put(j6.Pi, "player_actionBarSubtitle");
+        sparseArray.put(j6.Qi, "player_actionBarItems");
+        sparseArray.put(j6.Ri, "player_background");
+        sparseArray.put(j6.Si, "player_time");
+        sparseArray.put(j6.Ti, "player_progressBackground");
+        sparseArray.put(j6.Ui, "key_player_progressCachedBackground");
+        sparseArray.put(j6.Vi, "player_progress");
+        sparseArray.put(j6.Wi, "player_button");
+        sparseArray.put(j6.Xi, "player_buttonActive");
+        sparseArray.put(j6.Yi, "statisticChartSignature");
+        sparseArray.put(j6.Zi, "statisticChartSignatureAlpha");
+        sparseArray.put(j6.aj, "statisticChartHintLine");
+        sparseArray.put(j6.bj, "statisticChartActiveLine");
+        sparseArray.put(j6.cj, "statisticChartInactivePickerChart");
+        sparseArray.put(j6.dj, "statisticChartActivePickerChart");
+        sparseArray.put(j6.ej, "statisticChartRipple");
+        sparseArray.put(j6.fj, "statisticChartBackZoomColor");
+        sparseArray.put(j6.gj, "statisticChartChevronColor");
+        sparseArray.put(j6.hj, "statisticChartLine_blue");
+        sparseArray.put(j6.ij, "statisticChartLine_green");
+        sparseArray.put(j6.jj, "statisticChartLine_red");
+        sparseArray.put(j6.kj, "statisticChartLine_golden");
+        sparseArray.put(j6.lj, "statisticChartLine_lightblue");
+        sparseArray.put(j6.mj, "statisticChartLine_lightgreen");
+        sparseArray.put(j6.nj, "statisticChartLine_orange");
+        sparseArray.put(j6.oj, "statisticChartLine_indigo");
+        sparseArray.put(j6.pj, "statisticChartLine_purple");
+        sparseArray.put(j6.qj, "statisticChartLine_cyan");
+        sparseArray.put(j6.rj, "statisticChartLineEmpty");
+        sparseArray.put(j6.sj, "color_lightblue");
+        sparseArray.put(j6.tj, "color_blue");
+        sparseArray.put(j6.uj, "color_green");
+        sparseArray.put(j6.vj, "color_lightgreen");
+        sparseArray.put(j6.wj, "color_red");
+        sparseArray.put(j6.xj, "color_orange");
+        sparseArray.put(j6.yj, "color_yellow");
+        sparseArray.put(j6.zj, "color_purple");
+        sparseArray.put(j6.Aj, "color_cyan");
+        sparseArray.put(j6.Sb, "chat_outReactionButtonBackground");
+        sparseArray.put(j6.Cj, "chat_inReactionButtonBackground");
+        sparseArray.put(j6.Dj, "chat_outReactionButtonText");
+        sparseArray.put(j6.Ej, "chat_inReactionButtonText");
+        sparseArray.put(j6.Fj, "chat_inReactionButtonTextSelected");
+        sparseArray.put(j6.Gj, "chat_outReactionButtonTextSelected");
+        sparseArray.put(j6.Hj, "chat_reactionServiceButtonBackgroundSelected");
+        sparseArray.put(j6.Ij, "chat_reactionServiceButtonTextSelected");
+        sparseArray.put(j6.Kj, "premiumGradient0");
+        sparseArray.put(j6.Lj, "premiumGradient1");
+        sparseArray.put(j6.Mj, "premiumGradient2");
+        sparseArray.put(j6.Nj, "premiumGradient3");
+        sparseArray.put(j6.Oj, "premiumGradient4");
+        sparseArray.put(j6.Pj, "premiumGradientBackground1");
+        sparseArray.put(j6.Qj, "premiumGradientBackground2");
+        sparseArray.put(j6.Rj, "premiumGradientBackground3");
+        sparseArray.put(j6.Sj, "premiumGradientBackground4");
+        sparseArray.put(j6.Tj, "premiumGradientBackgroundOverlay");
+        sparseArray.put(j6.Uj, "premiumStartSmallStarsColor");
+        sparseArray.put(j6.Vj, "premiumStarGradient1");
+        sparseArray.put(j6.Wj, "premiumStarGradient2");
+        sparseArray.put(j6.Xj, "premiumCoinGradient1");
+        sparseArray.put(j6.Yj, "premiumCoinGradient2");
+        sparseArray.put(j6.Zj, "premiumStartSmallStarsColor2");
+        sparseArray.put(j6.ak, "premiumGradientBottomSheet1");
+        sparseArray.put(j6.bk, "premiumGradientBottomSheet2");
+        sparseArray.put(j6.ck, "premiumGradientBottomSheet3");
+        sparseArray.put(j6.dk, "topics_unreadCounter");
+        sparseArray.put(j6.ek, "topics_unreadCounterMuted");
+        sparseArray.put(j6.hk, "stories_circle1");
+        sparseArray.put(j6.ik, "stories_circle2");
+        sparseArray.put(j6.jk, "stories_circle_dialog1");
+        sparseArray.put(j6.kk, "stories_circle_dialog2");
+        sparseArray.put(j6.lk, "stories_circle_closeFriends1");
+        sparseArray.put(j6.mk, "stories_circle_closeFriends2");
+        sparseArray.put(j6.nk, "stories_circle_live1");
+        sparseArray.put(j6.ok, "stories_circle_live2");
+        sparseArray.put(j6.pk, "chat_inCodeBackground");
+        sparseArray.put(j6.qk, "chat_outCodeBackground");
+        sparseArray.put(j6.Ik, "code_keyword");
+        sparseArray.put(j6.Jk, "code_operator");
+        sparseArray.put(j6.Kk, "code_constant");
+        sparseArray.put(j6.Lk, "code_string");
+        sparseArray.put(j6.Mk, "code_number");
+        sparseArray.put(j6.Nk, "code_comment");
+        sparseArray.put(j6.Ok, "code_function");
+        sparseArray.put(j6.Pk, "iv_background");
+        sparseArray.put(j6.Qk, "iv_backgroundGray");
+        sparseArray.put(j6.Sk, "iv_navigationBackground");
+        sparseArray.put(j6.Rk, "iv_ab_progress");
+        sparseArray.put(j6.Jj, "reactionStarSelector");
+        sparseArray.put(j6.a6, "dialogCardShadow");
+        sparseArray.put(j6.b6, "dialogGiftsBackground");
+        sparseArray.put(j6.c6, "dialogGiftsTabText");
+        sparseArray.put(j6.Vk, "share_icon");
+        sparseArray.put(j6.Tk, "share_linkText");
+        sparseArray.put(j6.Uk, "share_linkBackground");
+        sparseArray.put(j6.Wk, "glass_defaultIcon");
+        sparseArray.put(j6.Xk, "glass_defaultText");
+        sparseArray.put(j6.al, "glass_tabSelected");
+        sparseArray.put(j6.Yk, "glass_targetMainTabs");
+        sparseArray.put(j6.Zk, "glass_targetMainTopPanel");
+        sparseArray.put(j6.bl, "glass_tabSelectedText");
+        sparseArray.put(j6.cl, "glass_tabUnselected");
+        sparseArray.put(j6.el, "botKeyboard_button_danger");
+        sparseArray.put(j6.dl, "botKeyboard_button_primary");
+        sparseArray.put(j6.fl, "botKeyboard_button_success");
+        sparseArray.put(j6.hl, "telegram_color");
+        sparseArray.put(j6.il, "telegram_color_text");
+        sparseArray.put(j6.gl, "telegram_color_dialogsLogo");
+        return sparseArray;
     }
 
-    private Layout.Alignment getAlignment() {
-        return this.H0;
+    public static int[] e() {
+        int[] iArr = new int[j6.f5];
+        iArr[j6.g5] = 0;
+        iArr[j6.h5] = -1;
+        iArr[j6.i5] = -986896;
+        iArr[j6.j5] = -15065823;
+        iArr[j6.k5] = -14255946;
+        iArr[j6.l5] = 862104035;
+        iArr[j6.m5] = -13660983;
+        iArr[j6.n5] = -12937771;
+        iArr[j6.o5] = -15095832;
+        iArr[j6.p5] = -13333567;
+        iArr[j6.q5] = -9079435;
+        iArr[j6.r5] = -6710887;
+        iArr[j6.s5] = -5000269;
+        iArr[j6.t5] = -6842473;
+        iArr[j6.J5] = -15065823;
+        iArr[j6.K5] = -2960686;
+        iArr[j6.L5] = -14054705;
+        iArr[j6.u5] = -2368549;
+        iArr[j6.v5] = -14509328;
+        iArr[j6.w5] = -14509328;
+        iArr[j6.x5] = -1;
+        iArr[j6.y5] = -9211021;
+        iArr[j6.z5] = -5197648;
+        iArr[j6.D5] = -5000269;
+        iArr[j6.E5] = -14509328;
+        iArr[j6.F5] = -11371101;
+        iArr[j6.G5] = -2368549;
+        iArr[j6.H5] = -14054705;
+        iArr[j6.I5] = 251658240;
+        iArr[j6.A5] = -657673;
+        iArr[j6.B5] = -14509328;
+        iArr[j6.C5] = -1;
+        iArr[j6.M5] = -151981323;
+        iArr[j6.N5] = -9735304;
+        iArr[j6.O5] = -854795;
+        iArr[j6.P5] = -6774617;
+        iArr[j6.Q5] = -6182737;
+        iArr[j6.R5] = -14540254;
+        iArr[j6.S5] = -14509328;
+        iArr[j6.T5] = 251658240;
+        iArr[j6.U5] = -1;
+        iArr[j6.V5] = 301989888;
+        iArr[j6.W5] = -6314840;
+        iArr[j6.X5] = -7565164;
+        iArr[j6.Y5] = -1743531;
+        iArr[j6.Z5] = -1352098;
+        iArr[j6.a6] = 385875968;
+        iArr[j6.b6] = -657673;
+        iArr[j6.c6] = -11118244;
+        iArr[j6.Ki] = -855310;
+        iArr[j6.Li] = -12147470;
+        iArr[j6.Mi] = -3389625;
+        iArr[j6.Vk] = -9538955;
+        iArr[j6.Tk] = -14540254;
+        iArr[j6.Uk] = 251658240;
+        iArr[j6.d6] = -1;
+        iArr[j6.e6] = -6905171;
+        iArr[j6.f6] = -14509328;
+        iArr[j6.g6] = -1;
+        iArr[j6.h6] = -14904349;
+        iArr[j6.m6] = -15065823;
+        iArr[j6.n6] = -12545331;
+        iArr[j6.o6] = -12937771;
+        iArr[j6.p6] = -14255946;
+        iArr[j6.q6] = -14904349;
+        iArr[j6.r6] = -11759926;
+        iArr[j6.s6] = -12940081;
+        iArr[j6.t6] = -13141330;
+        iArr[j6.u6] = -14776109;
+        iArr[j6.v6] = -13132315;
+        iArr[j6.w6] = -14248148;
+        iArr[j6.x6] = -13129704;
+        iArr[j6.p7] = -3397335;
+        iArr[j6.q7] = -3389625;
+        iArr[j6.r7] = -1352098;
+        iArr[j6.y6] = -8354940;
+        iArr[j6.z6] = -8223094;
+        iArr[j6.A6] = -6710887;
+        iArr[j6.B6] = -8355712;
+        iArr[j6.C6] = -6052957;
+        iArr[j6.D6] = -9079435;
+        iArr[j6.E6] = -3750202;
+        iArr[j6.F6] = -9605774;
+        iArr[j6.G6] = -15065823;
+        iArr[j6.H6] = -5723992;
+        iArr[j6.I6] = -14054705;
+        iArr[j6.J6] = -14054705;
+        iArr[j6.K6] = 862104035;
+        iArr[j6.L6] = -14054705;
+        iArr[j6.k6] = -2368549;
+        iArr[j6.l6] = -14509328;
+        iArr[j6.M6] = -5853773;
+        iArr[j6.N6] = -14509328;
+        iArr[j6.O6] = -8879478;
+        iArr[j6.P6] = -15697468;
+        iArr[j6.Q6] = -1;
+        iArr[j6.R6] = -1;
+        iArr[j6.S6] = 390089299;
+        iArr[j6.T6] = 553797505;
+        iArr[j6.U6] = -688514;
+        iArr[j6.V6] = -14509328;
+        iArr[j6.W6] = -14509328;
+        iArr[j6.X6] = -1;
+        iArr[j6.Y6] = -9211021;
+        iArr[j6.Z6] = -5197648;
+        iArr[j6.i6] = 251658240;
+        iArr[j6.j6] = 486539280;
+        iArr[j6.g7] = -5000269;
+        iArr[j6.h7] = -14509328;
+        iArr[j6.a7] = -921101;
+        iArr[j6.b7] = -16777216;
+        iArr[j6.c7] = -9209733;
+        iArr[j6.d7] = -2500135;
+        iArr[j6.e7] = -657931;
+        iArr[j6.f7] = -8222838;
+        iArr[j6.B7] = -4202506;
+        iArr[j6.C7] = -13920542;
+        iArr[j6.D7] = -4202506;
+        iArr[j6.E7] = -1;
+        iArr[j6.F7] = -5000269;
+        iArr[j6.G7] = -1;
+        iArr[j6.H7] = -3486256;
+        iArr[j6.I7] = -13683656;
+        iArr[j6.l7] = -14509328;
+        iArr[j6.m7] = -3551791;
+        iArr[j6.n7] = -1;
+        iArr[j6.o7] = -7301735;
+        iArr[j6.J7] = -1;
+        iArr[j6.K7] = -9847303;
+        iArr[j6.L7] = -12541983;
+        iArr[j6.M7] = -4668724;
+        iArr[j6.N7] = -14509328;
+        iArr[j6.O7] = -31650;
+        iArr[j6.V7] = -2862522;
+        iArr[j6.P7] = -83109;
+        iArr[j6.W7] = -622282;
+        iArr[j6.Q7] = -4811527;
+        iArr[j6.X7] = -9674273;
+        iArr[j6.R7] = -6631068;
+        iArr[j6.Y7] = -12142013;
+        iArr[j6.S7] = -10761245;
+        iArr[j6.Z7] = -13264172;
+        iArr[j6.T7] = -10702854;
+        iArr[j6.a8] = -12547377;
+        iArr[j6.U7] = -30036;
+        iArr[j6.b8] = -2534028;
+        iArr[j6.c8] = -6181963;
+        iArr[j6.d8] = -1;
+        iArr[j6.e8] = -657931;
+        iArr[j6.h8] = -15065823;
+        iArr[j6.f8] = 303701281;
+        iArr[j6.g8] = -15065823;
+        iArr[j6.i8] = -3387319;
+        iArr[j6.j8] = -2722014;
+        iArr[j6.k8] = -6988581;
+        iArr[j6.l8] = -12539616;
+        iArr[j6.m8] = -13590854;
+        iArr[j6.n8] = -13202735;
+        iArr[j6.o8] = -3714933;
+        iArr[j6.s8] = -1;
+        iArr[j6.v8] = -15065823;
+        iArr[j6.w8] = -1;
+        iArr[j6.x8] = 268435456;
+        iArr[j6.y8] = -15065823;
+        iArr[j6.A8] = -15065823;
+        iArr[j6.B8] = -8814210;
+        iArr[j6.t8] = 303701281;
+        iArr[j6.u8] = 303701281;
+        iArr[j6.C8] = -15065823;
+        iArr[j6.D8] = -8814210;
+        iArr[j6.E8] = -15065823;
+        iArr[j6.F8] = -15065823;
+        iArr[j6.G8] = -1;
+        iArr[j6.H8] = -657931;
+        iArr[j6.z8] = -1907998;
+        iArr[j6.ua] = -986896;
+        iArr[j6.va] = -8223094;
+        iArr[j6.wa] = -4144960;
+        iArr[j6.I8] = -14054705;
+        iArr[j6.J8] = -8946561;
+        iArr[j6.K8] = -14054705;
+        iArr[j6.T9] = -10048031;
+        iArr[j6.U9] = -3814964;
+        iArr[j6.L8] = 303701281;
+        iArr[j6.S8] = -1;
+        iArr[j6.ph] = -526345;
+        iArr[j6.qh] = -2039584;
+        iArr[j6.M8] = -1;
+        iArr[j6.N8] = 303701281;
+        iArr[j6.O8] = -15065823;
+        iArr[j6.P8] = -15065823;
+        iArr[j6.Q8] = -15065823;
+        iArr[j6.R8] = -8156010;
+        iArr[j6.T8] = -11810020;
+        iArr[j6.U8] = -14509328;
+        iArr[j6.V8] = -4275257;
+        iArr[j6.W8] = -1;
+        iArr[j6.c9] = -14509328;
+        iArr[j6.d9] = -6313293;
+        iArr[j6.e9] = -1;
+        iArr[j6.f9] = -1;
+        iArr[j6.X8] = -15065823;
+        iArr[j6.Y8] = -15065823;
+        iArr[j6.Z8] = -16734706;
+        iArr[j6.a9] = -15093466;
+        iArr[j6.b9] = -7236972;
+        iArr[j6.g9] = -9078662;
+        iArr[j6.h9] = -7237231;
+        iArr[j6.i9] = -7434095;
+        iArr[j6.j9] = -2274503;
+        iArr[j6.k9] = -14054705;
+        iArr[j6.l9] = -7631473;
+        iArr[j6.m9] = -12434359;
+        iArr[j6.n9] = -10592674;
+        iArr[j6.o9] = -14054705;
+        iArr[j6.p9] = -14054705;
+        iArr[j6.q9] = -8092024;
+        iArr[j6.r9] = -7236715;
+        iArr[j6.s9] = 134217728;
+        iArr[j6.t9] = 251658240;
+        iArr[j6.u9] = -12146122;
+        iArr[j6.v9] = -12146122;
+        iArr[j6.w9] = -9061026;
+        iArr[j6.x9] = -2796974;
+        iArr[j6.y9] = -1;
+        iArr[j6.z9] = -13391642;
+        iArr[j6.A9] = -1;
+        iArr[j6.B9] = -4341308;
+        iArr[j6.C9] = -1;
+        iArr[j6.F9] = -1;
+        iArr[j6.G9] = -12303292;
+        iArr[j6.H9] = -10907718;
+        iArr[j6.I9] = -7827048;
+        iArr[j6.J9] = -1;
+        iArr[j6.K9] = -1;
+        iArr[j6.L9] = -4004353;
+        iArr[j6.O9] = -1;
+        iArr[j6.P9] = -10114592;
+        iArr[j6.Q9] = -11100714;
+        iArr[j6.M9] = -10907718;
+        iArr[j6.R9] = -3749428;
+        iArr[j6.S9] = -14509328;
+        iArr[j6.V9] = -1;
+        iArr[j6.W9] = -14509328;
+        iArr[j6.X9] = 201326592;
+        iArr[j6.Y9] = -13391883;
+        iArr[j6.Z9] = -7169634;
+        iArr[j6.aa] = -13421773;
+        iArr[j6.ba] = -1945520;
+        iArr[j6.ca] = -9472134;
+        iArr[j6.da] = -3355444;
+        iArr[j6.ia] = -1;
+        iArr[j6.ja] = -12214795;
+        iArr[j6.ka] = -1351584;
+        iArr[j6.la] = -868277;
+        iArr[j6.ma] = -2121728;
+        iArr[j6.na] = -10436011;
+        iArr[j6.oa] = -868277;
+        iArr[j6.ea] = -10436011;
+        iArr[j6.fa] = -10436011;
+        iArr[j6.ga] = -1351584;
+        iArr[j6.ha] = -1351584;
+        iArr[j6.pa] = -14054705;
+        iArr[j6.qa] = -16725933;
+        iArr[j6.Ia] = -16725933;
+        iArr[j6.pc] = -14540254;
+        iArr[j6.oc] = -8814210;
+        iArr[j6.ra] = -1;
+        iArr[j6.dc] = -1247235;
+        iArr[j6.ta] = -14862509;
+        iArr[j6.Aa] = -1048610;
+        iArr[j6.bc] = 335544320;
+        iArr[j6.Ba] = -2492475;
+        iArr[j6.Ca] = -14781172;
+        iArr[j6.uc] = -1;
+        iArr[j6.vc] = -1050370;
+        iArr[j6.Pa] = -1048610;
+        iArr[j6.Qa] = -1967921;
+        iArr[j6.ec] = -16777216;
+        iArr[j6.fc] = -16777216;
+        iArr[j6.gc] = -14255946;
+        iArr[j6.hc] = -14255946;
+        iArr[j6.ic] = -1;
+        iArr[j6.jc] = -1;
+        iArr[j6.kc] = -1;
+        iArr[j6.wc] = 1711276032;
+        iArr[j6.Ja] = -10637232;
+        iArr[j6.Ka] = -10637232;
+        iArr[j6.La] = -10637232;
+        iArr[j6.Ma] = -10637232;
+        iArr[j6.Na] = -9061026;
+        iArr[j6.Oa] = -9061026;
+        iArr[j6.qc] = -6182221;
+        iArr[j6.rc] = -7094838;
+        iArr[j6.sc] = -1;
+        iArr[j6.tc] = -1;
+        iArr[j6.xc] = -6182221;
+        iArr[j6.yc] = -7094838;
+        iArr[j6.Ra] = -9522601;
+        iArr[j6.Sa] = -9522601;
+        iArr[j6.zc] = -1;
+        iArr[j6.Ac] = -4801083;
+        iArr[j6.Bc] = -6766130;
+        iArr[j6.Ta] = -7221634;
+        iArr[j6.Ua] = -7221634;
+        iArr[j6.Cc] = -1;
+        iArr[j6.Va] = -11162801;
+        iArr[j6.Wa] = -12019389;
+        iArr[j6.Dc] = -14054705;
+        iArr[j6.Ec] = -13600331;
+        iArr[j6.Fc] = -2411211;
+        iArr[j6.Gc] = -1;
+        iArr[j6.Hc] = 671781104;
+        iArr[j6.Ic] = -1;
+        iArr[j6.Jc] = -1;
+        iArr[j6.Kc] = -14054705;
+        iArr[j6.Xa] = -11162801;
+        iArr[j6.Lc] = -1776928;
+        iArr[j6.Mc] = -1;
+        iArr[j6.Nc] = -1;
+        iArr[j6.Oc] = -13072697;
+        iArr[j6.Ya] = -11162801;
+        iArr[j6.Pc] = -10838983;
+        iArr[j6.Zb] = -10838983;
+        iArr[j6.Qc] = -14054705;
+        iArr[j6.Za] = -11162801;
+        iArr[j6.Rc] = -1;
+        iArr[j6.Uc] = -10903592;
+        iArr[j6.ab] = -9520791;
+        iArr[j6.bb] = -12539616;
+        iArr[j6.Vc] = -1;
+        iArr[j6.Wc] = -14054705;
+        iArr[j6.cb] = -11162801;
+        iArr[j6.Xc] = -1;
+        iArr[j6.Yc] = -16777216;
+        iArr[j6.db] = -16777216;
+        iArr[j6.Zc] = -6182221;
+        iArr[j6.eb] = -10112933;
+        iArr[j6.ad] = -7752511;
+        iArr[j6.fb] = -10112933;
+        iArr[j6.bd] = -1;
+        iArr[j6.cd] = -9390872;
+        iArr[j6.gb] = -7812741;
+        iArr[j6.dd] = -14054705;
+        iArr[j6.hb] = -11162801;
+        iArr[j6.ed] = -11625772;
+        iArr[j6.ib] = -11162801;
+        iArr[j6.fd] = -13683656;
+        iArr[j6.gd] = -13683656;
+        iArr[j6.jb] = -13286860;
+        iArr[j6.kb] = -13286860;
+        iArr[j6.hd] = -1;
+        iArr[j6.id] = -1;
+        iArr[j6.qb] = -1048610;
+        iArr[j6.jd] = -1050370;
+        iArr[j6.rb] = -1967921;
+        iArr[j6.kd] = -1;
+        iArr[j6.ld] = -4143413;
+        iArr[j6.md] = -7752511;
+        iArr[j6.ob] = -9391780;
+        iArr[j6.pb] = -9391780;
+        iArr[j6.nd] = -6182221;
+        iArr[j6.od] = -7752511;
+        iArr[j6.sb] = -9391780;
+        iArr[j6.nb] = -9391780;
+        iArr[j6.pd] = -13683656;
+        iArr[j6.qd] = -13683656;
+        iArr[j6.lb] = -13286860;
+        iArr[j6.mb] = -13286860;
+        iArr[j6.rd] = -11625772;
+        iArr[j6.tb] = -11162801;
+        iArr[j6.sd] = -6182221;
+        iArr[j6.ub] = -10112933;
+        iArr[j6.td] = -7752511;
+        iArr[j6.vb] = -10112933;
+        iArr[j6.ud] = -1774864;
+        iArr[j6.vd] = 1071966960;
+        iArr[j6.wb] = -4463700;
+        iArr[j6.xb] = 1069278124;
+        iArr[j6.wd] = -4399384;
+        iArr[j6.yb] = -5644906;
+        iArr[j6.xd] = -14509328;
+        iArr[j6.zb] = -8863118;
+        iArr[j6.yd] = -2169365;
+        iArr[j6.Ab] = -4463700;
+        iArr[j6.zd] = -4399384;
+        iArr[j6.Bb] = -5644906;
+        iArr[j6.Ad] = -14509328;
+        iArr[j6.Cb] = -8863118;
+        iArr[j6.Bd] = -1314571;
+        iArr[j6.Db] = -2427453;
+        iArr[j6.Cd] = -3413258;
+        iArr[j6.Eb] = -3806041;
+        iArr[j6.Dd] = -14054705;
+        iArr[j6.Fb] = -11162801;
+        iArr[j6.Ed] = -6182221;
+        iArr[j6.Gb] = -10112933;
+        iArr[j6.Fd] = -7752511;
+        iArr[j6.Hb] = -10112933;
+        iArr[j6.Gd] = -1314571;
+        iArr[j6.Ib] = -2427453;
+        iArr[j6.Hd] = -3413258;
+        iArr[j6.Jb] = -3806041;
+        iArr[j6.Id] = -6182221;
+        iArr[j6.Kb] = -10112933;
+        iArr[j6.Jd] = -7752511;
+        iArr[j6.Lb] = -10112933;
+        iArr[j6.Kd] = -1;
+        iArr[j6.Ld] = 862104035;
+        iArr[j6.Mb] = 862104035;
+        iArr[j6.Md] = 1717742051;
+        iArr[j6.He] = -986379;
+        iArr[j6.Ie] = -1709586;
+        iArr[j6.Je] = -7036497;
+        iArr[j6.Ke] = 301989888;
+        iArr[j6.Le] = -7038047;
+        iArr[j6.Me] = -6445909;
+        iArr[j6.Ne] = -7564905;
+        iArr[j6.Oe] = -10589834;
+        iArr[j6.Pe] = -1907225;
+        iArr[j6.Qe] = -11097104;
+        iArr[j6.Re] = -7564905;
+        iArr[j6.Se] = -14540254;
+        iArr[j6.Te] = -8221804;
+        iArr[j6.Ue] = -14184997;
+        iArr[j6.Ve] = -5130564;
+        iArr[j6.We] = -7697782;
+        iArr[j6.Xe] = -263961532;
+        iArr[j6.Ye] = 1723646920;
+        iArr[j6.Ze] = 1719700628;
+        iArr[j6.De] = -6113849;
+        iArr[j6.Ee] = -11102772;
+        iArr[j6.Fe] = -1;
+        iArr[j6.pe] = -1314571;
+        iArr[j6.qe] = -6113849;
+        iArr[j6.Pb] = -7880840;
+        iArr[j6.re] = -14509328;
+        iArr[j6.se] = -1;
+        iArr[j6.Qb] = -8863118;
+        iArr[j6.Rb] = -1048610;
+        iArr[j6.xe] = -9999761;
+        iArr[j6.ye] = -9999761;
+        iArr[j6.ze] = -8421505;
+        iArr[j6.Ae] = -14054705;
+        iArr[j6.Be] = -1;
+        iArr[j6.te] = -14509328;
+        iArr[j6.ue] = -7432805;
+        iArr[j6.ve] = -14054705;
+        iArr[j6.we] = -1513240;
+        iArr[j6.Sd] = -1;
+        iArr[j6.Ud] = -16777216;
+        iArr[j6.Vd] = -8025468;
+        iArr[j6.Wd] = -11230757;
+        iArr[j6.Td] = -16777216;
+        iArr[j6.Xd] = -7432805;
+        iArr[j6.ff] = -1;
+        iArr[j6.jf] = -2468275;
+        iArr[j6.kf] = -10637848;
+        iArr[j6.lf] = -14710309;
+        iArr[j6.gf] = -5120257;
+        iArr[j6.hf] = -1;
+        iArr[j6.mf] = -12937772;
+        iArr[j6.Yd] = -14509328;
+        iArr[j6.Zd] = -5987164;
+        iArr[j6.ae] = -1;
+        iArr[j6.be] = -16777216;
+        iArr[j6.nf] = -7432805;
+        iArr[j6.af] = -11688214;
+        iArr[j6.pf] = -1;
+        iArr[j6.qf] = -501273800;
+        iArr[j6.rf] = -1;
+        iArr[j6.sf] = -1;
+        iArr[j6.tf] = -14509328;
+        iArr[j6.of] = -5395027;
+        iArr[j6.bf] = -1;
+        iArr[j6.cf] = -14509328;
+        iArr[j6.df] = -9211021;
+        iArr[j6.ef] = -1;
+        iArr[j6.Ge] = -11037236;
+        iArr[j6.ce] = -1;
+        iArr[j6.de] = -8288378;
+        iArr[j6.ee] = -12605201;
+        iArr[j6.fe] = -14054705;
+        iArr[j6.ge] = -9011588;
+        iArr[j6.he] = -14054705;
+        iArr[j6.ie] = -14509328;
+        iArr[j6.je] = -10114080;
+        iArr[j6.Nb] = -8863118;
+        iArr[j6.Ob] = -9783964;
+        iArr[j6.ke] = -6113080;
+        iArr[j6.le] = 1711276032;
+        iArr[j6.me] = 2130706432;
+        iArr[j6.ne] = -1;
+        iArr[j6.oe] = -2500135;
+        iArr[j6.nc] = 553648127;
+        iArr[j6.Sc] = -12215336;
+        iArr[j6.Tc] = -9783200;
+        iArr[j6.uh] = -12937771;
+        iArr[j6.wh] = -8288630;
+        iArr[j6.xh] = -1;
+        iArr[j6.yh] = 303701281;
+        iArr[j6.zh] = -14509328;
+        iArr[j6.Ah] = -1;
+        iArr[j6.vh] = -14540254;
+        iArr[j6.Bh] = -14540254;
+        iArr[j6.Ch] = -12539616;
+        iArr[j6.Dh] = -6988581;
+        iArr[j6.Eh] = -7893872;
+        iArr[j6.Fh] = -12937771;
+        iArr[j6.Gh] = -11557143;
+        iArr[j6.Hh] = 251658240;
+        iArr[j6.Ni] = 251658240;
+        iArr[j6.Oi] = -13683656;
+        iArr[j6.Pi] = -7697782;
+        iArr[j6.Qi] = -7697782;
+        iArr[j6.Ri] = -1;
+        iArr[j6.Si] = -7564650;
+        iArr[j6.Ti] = -1315344;
+        iArr[j6.Ui] = -3810064;
+        iArr[j6.Vi] = -11228437;
+        iArr[j6.Wi] = -13421773;
+        iArr[j6.Xi] = -11753238;
+        iArr[j6.Ii] = -1973016;
+        iArr[j6.Ji] = -3551789;
+        iArr[j6.zi] = -1;
+        iArr[j6.Ai] = -10637333;
+        iArr[j6.Bi] = -1;
+        iArr[j6.Ci] = -6908266;
+        iArr[j6.rh] = -12211217;
+        iArr[j6.sh] = -12542501;
+        iArr[j6.th] = -1;
+        iArr[j6.mi] = -12149258;
+        iArr[j6.ni] = -1;
+        iArr[j6.oi] = -14906664;
+        iArr[j6.pi] = -11550140;
+        iArr[j6.qi] = -1;
+        iArr[j6.ri] = -13194460;
+        iArr[j6.si] = -13262875;
+        iArr[j6.ti] = -11753238;
+        iArr[j6.ui] = -12959675;
+        iArr[j6.vi] = -12414746;
+        iArr[j6.wi] = -1;
+        iArr[j6.xi] = -855310;
+        iArr[j6.yi] = -13262875;
+        iArr[j6.Di] = -16725933;
+        iArr[j6.Ei] = -47032;
+        iArr[j6.Mh] = -14509328;
+        iArr[j6.Nh] = -1;
+        iArr[j6.Oh] = -14509328;
+        iArr[j6.Ph] = -11093264;
+        iArr[j6.Qh] = -14513967;
+        iArr[j6.Rh] = -11496493;
+        iArr[j6.Sh] = -1;
+        iArr[j6.Th] = -11688214;
+        iArr[j6.xa] = -1776412;
+        iArr[j6.ya] = -15065823;
+        iArr[j6.t7] = -15065823;
+        iArr[j6.u7] = -15065823;
+        iArr[j6.v7] = -1;
+        iArr[j6.w7] = -14509328;
+        iArr[j6.x7] = -7763066;
+        iArr[j6.y7] = -12279325;
+        iArr[j6.z7] = -6445135;
+        iArr[j6.A7] = -1;
+        iArr[j6.Ih] = -13196562;
+        iArr[j6.Jh] = -986123;
+        iArr[j6.Kh] = -4735293;
+        iArr[j6.Lh] = -1182729;
+        iArr[j6.i7] = -10567099;
+        iArr[j6.k7] = -1;
+        iArr[j6.j7] = -5195326;
+        iArr[j6.Uh] = -4801083;
+        iArr[j6.Vh] = 251658240;
+        iArr[j6.Wh] = -14509328;
+        iArr[j6.Xh] = -6182221;
+        iArr[j6.Yh] = -11361317;
+        iArr[j6.Zh] = -16777216;
+        iArr[j6.ai] = -8617336;
+        iArr[j6.bi] = -14540254;
+        iArr[j6.ci] = -855310;
+        iArr[j6.di] = -1;
+        iArr[j6.ei] = -11157919;
+        iArr[j6.fi] = -1;
+        iArr[j6.gi] = -1971470;
+        iArr[j6.hi] = -10313520;
+        iArr[j6.ii] = -15095832;
+        iArr[j6.ji] = -6710887;
+        iArr[j6.ki] = -14043401;
+        iArr[j6.li] = -1;
+        iArr[j6.Ce] = -12348980;
+        iArr[j6.Fi] = -366530760;
+        iArr[j6.Gi] = -8008961;
+        iArr[j6.Hi] = -1;
+        iArr[j6.Vb] = 775919907;
+        iArr[j6.uf] = 1348643299;
+        iArr[j6.vf] = -12476440;
+        iArr[j6.Wb] = -12476440;
+        iArr[j6.Xb] = 506491665;
+        iArr[j6.wf] = 508584819;
+        iArr[j6.xf] = -1308622848;
+        iArr[j6.yf] = -1056964608;
+        iArr[j6.zf] = -15033089;
+        iArr[j6.Af] = -1184275;
+        iArr[j6.Bf] = -1184275;
+        iArr[j6.Cf] = -15065823;
+        iArr[j6.Df] = -14509328;
+        iArr[j6.Ef] = -14509328;
+        iArr[j6.Ff] = -459521;
+        iArr[j6.Gf] = -464151;
+        iArr[j6.Hf] = -464151;
+        iArr[j6.If] = -3387319;
+        iArr[j6.Jf] = -1510172;
+        iArr[j6.Kf] = -1510172;
+        iArr[j6.Lf] = -12539616;
+        iArr[j6.Mf] = -1444870;
+        iArr[j6.Nf] = -1444870;
+        iArr[j6.Of] = -14054705;
+        iArr[j6.Pf] = -2296629;
+        iArr[j6.Qf] = -2296629;
+        iArr[j6.Rf] = -11293879;
+        iArr[j6.Sf] = -11293879;
+        iArr[j6.Tf] = -11293879;
+        iArr[j6.Uf] = -328455;
+        iArr[j6.Vf] = -1381941;
+        iArr[j6.Wf] = -1381941;
+        iArr[j6.Xf] = -3387319;
+        iArr[j6.Yf] = -2296629;
+        iArr[j6.Zf] = -2296629;
+        iArr[j6.ag] = -12539616;
+        iArr[j6.bg] = -2296629;
+        iArr[j6.cg] = -2296629;
+        iArr[j6.dg] = -11293879;
+        iArr[j6.Yi] = 2133140777;
+        iArr[j6.Zi] = 2133140777;
+        iArr[j6.aj] = 437792059;
+        iArr[j6.bj] = 855638016;
+        iArr[j6.cj] = -1713180935;
+        iArr[j6.dj] = -658846503;
+        iArr[j6.ej] = 746495415;
+        iArr[j6.fj] = -15692829;
+        iArr[j6.gj] = -2959913;
+        iArr[j6.hj] = -13467675;
+        iArr[j6.ij] = -10369198;
+        iArr[j6.jj] = -2075818;
+        iArr[j6.kj] = -1333971;
+        iArr[j6.lj] = -10966803;
+        iArr[j6.mj] = -7352519;
+        iArr[j6.nj] = -881607;
+        iArr[j6.oj] = -8422925;
+        iArr[j6.pj] = -6325784;
+        iArr[j6.qj] = -12529462;
+        iArr[j6.rj] = -1118482;
+        iArr[j6.tj] = -13467675;
+        iArr[j6.uj] = -10369198;
+        iArr[j6.wj] = -2075818;
+        iArr[j6.yj] = -1333971;
+        iArr[j6.sj] = -10966803;
+        iArr[j6.vj] = -7352519;
+        iArr[j6.xj] = -881607;
+        iArr[j6.zj] = -6325784;
+        iArr[j6.Aj] = -12529462;
+        iArr[j6.wg] = -9718023;
+        iArr[j6.Fg] = -8919716;
+        iArr[j6.Gg] = -8528726;
+        iArr[j6.Hg] = -11089922;
+        iArr[j6.Sg] = -1;
+        iArr[j6.Qg] = -8024684;
+        iArr[j6.Rg] = -13616313;
+        iArr[j6.vg] = -35467;
+        iArr[j6.Pg] = -13023660;
+        iArr[j6.xg] = 2100052301;
+        iArr[j6.yg] = 2099422443;
+        iArr[j6.zg] = -2110540545;
+        iArr[j6.Ag] = 2099796282;
+        iArr[j6.Bg] = 2098771793;
+        iArr[j6.Cg] = -2111520954;
+        iArr[j6.Dg] = 2113363036;
+        iArr[j6.Eg] = -2100212396;
+        iArr[j6.Og] = -14107905;
+        iArr[j6.Kg] = -14933463;
+        iArr[j6.Lg] = -14010285;
+        iArr[j6.Mg] = -13878715;
+        iArr[j6.Ng] = -2106088964;
+        iArr[j6.Ig] = -11297032;
+        iArr[j6.Jg] = -10038021;
+        iArr[j6.jg] = -15130842;
+        iArr[j6.kg] = -14538189;
+        iArr[j6.lg] = -8024684;
+        iArr[j6.mg] = -8485236;
+        iArr[j6.gg] = -15789289;
+        iArr[j6.hg] = -1;
+        iArr[j6.ig] = 515562495;
+        iArr[j6.sg] = -36752;
+        iArr[j6.rg] = -9471616;
+        iArr[j6.og] = -8813686;
+        iArr[j6.ng] = -1;
+        iArr[j6.tg] = -14933463;
+        iArr[j6.ug] = -14933463;
+        iArr[j6.pg] = -11683585;
+        iArr[j6.qg] = -8917379;
+        iArr[j6.eg] = 251658239;
+        iArr[j6.fg] = -14538189;
+        iArr[j6.Vg] = -13906177;
+        iArr[j6.Wg] = -16156957;
+        iArr[j6.Tg] = -15551198;
+        iArr[j6.Ug] = -16722239;
+        iArr[j6.Zg] = -10434565;
+        iArr[j6.ah] = -11427847;
+        iArr[j6.Xg] = -11350435;
+        iArr[j6.Yg] = -16731712;
+        iArr[j6.bh] = -8021590;
+        iArr[j6.ch] = -14455406;
+        iArr[j6.dh] = -13873813;
+        iArr[j6.eh] = -15955316;
+        iArr[j6.fh] = -14136203;
+        iArr[j6.ih] = -11033346;
+        iArr[j6.jh] = -1026983;
+        iArr[j6.kh] = -9015575;
+        iArr[j6.gh] = -9998178;
+        iArr[j6.hh] = -13676424;
+        iArr[j6.lh] = 2138612735;
+        iArr[j6.mh] = 863544319;
+        iArr[j6.nh] = -2368549;
+        iArr[j6.oh] = -14509328;
+        iArr[j6.Sb] = -8863118;
+        iArr[j6.Cj] = -14509328;
+        iArr[j6.Ej] = -14054705;
+        iArr[j6.Dj] = -11162801;
+        iArr[j6.Fj] = -1;
+        iArr[j6.Gj] = -1;
+        iArr[j6.Hj] = -1;
+        iArr[j6.Ij] = -16777216;
+        iArr[j6.Kj] = -11875005;
+        iArr[j6.Lj] = -11164161;
+        iArr[j6.Mj] = -5806081;
+        iArr[j6.Nj] = -2401123;
+        iArr[j6.Oj] = -816858;
+        iArr[j6.Pj] = -11164161;
+        iArr[j6.Qj] = -5806081;
+        iArr[j6.Rj] = -2401123;
+        iArr[j6.Sj] = -816858;
+        iArr[j6.Tj] = -1;
+        iArr[j6.Vj] = -1;
+        iArr[j6.Wj] = -1839878;
+        iArr[j6.Xj] = -15436801;
+        iArr[j6.Yj] = -4167942;
+        iArr[j6.Uj] = i0.a.k(-1, 90);
+        iArr[j6.Zj] = i0.a.k(-1, 90);
+        iArr[j6.ak] = -10773017;
+        iArr[j6.bk] = -5535779;
+        iArr[j6.ck] = -1600322;
+        iArr[j6.dk] = -11613090;
+        iArr[j6.ek] = -7631473;
+        iArr[j6.fk] = -79802;
+        iArr[j6.gk] = -1273334;
+        iArr[j6.hk] = -13852932;
+        iArr[j6.ik] = -13647485;
+        iArr[j6.jk] = -13852932;
+        iArr[j6.kk] = -13647485;
+        iArr[j6.lk] = -8270291;
+        iArr[j6.mk] = -15155914;
+        iArr[j6.nk] = -38053;
+        iArr[j6.ok] = -374668;
+        iArr[j6.pk] = -9467746;
+        iArr[j6.qk] = 305952003;
+        iArr[j6.rk] = -526345;
+        iArr[j6.sk] = -2166580;
+        iArr[j6.tk] = -2039584;
+        iArr[j6.uk] = -3548234;
+        iArr[j6.vk] = -1710619;
+        iArr[j6.wk] = 862894441;
+        iArr[j6.xk] = -920071;
+        iArr[j6.zk] = -1972501;
+        iArr[j6.Ak] = -3813931;
+        iArr[j6.Bk] = -1774628;
+        iArr[j6.Ck] = -3353150;
+        iArr[j6.Dk] = -6380376;
+        iArr[j6.Ek] = -8084613;
+        iArr[j6.Fk] = -2565928;
+        iArr[j6.Gk] = -3417915;
+        iArr[j6.Ik] = -2075818;
+        iArr[j6.Jk] = -11682817;
+        iArr[j6.Kk] = -8422925;
+        iArr[j6.Lk] = -13123293;
+        iArr[j6.Mk] = -13467675;
+        iArr[j6.Nk] = Integer.MIN_VALUE;
+        iArr[j6.Ok] = -881607;
+        iArr[j6.Pk] = -1;
+        iArr[j6.Qk] = -986896;
+        iArr[j6.Rk] = -14509328;
+        iArr[j6.Sk] = -986896;
+        iArr[j6.Jj] = 1089514271;
+        iArr[j6.Wk] = -1726275033;
+        iArr[j6.Xk] = -1726275033;
+        iArr[j6.Yk] = -1;
+        iArr[j6.Zk] = -1;
+        iArr[j6.al] = -15035930;
+        iArr[j6.bl] = -15892529;
+        iArr[j6.cl] = -15065823;
+        iArr[j6.el] = -2406842;
+        iArr[j6.dl] = -14509328;
+        iArr[j6.fl] = -12537547;
+        iArr[j6.gl] = -15299621;
+        iArr[j6.hl] = -14509328;
+        iArr[j6.il] = -14054705;
+        return iArr;
     }
 
-    public final void a(int i10) {
-        int i11;
-        StaticLayout staticLayout = this.c;
-        if (staticLayout == null) {
-            return;
+    public static String i(int i10) {
+        if (d == null) {
+            d = d();
         }
-        if (staticLayout.getLineCount() > 0) {
-            this.a0 = (int) Math.max(Math.ceil(this.c.getLineWidth(0)), Math.ceil(this.c.getLineRight(0) - this.c.getLineLeft(0)));
-            StaticLayout staticLayout2 = this.e;
-            if (staticLayout2 != null) {
-                this.c0 = staticLayout2.getLineBottom(staticLayout2.getLineCount() - 1);
-            } else if (this.r <= 1 || this.c.getLineCount() <= 0) {
-                this.c0 = this.c.getLineBottom(0);
-            } else {
-                StaticLayout staticLayout3 = this.c;
-                this.c0 = staticLayout3.getLineBottom(staticLayout3.getLineCount() - 1);
-            }
-            int i12 = this.n & 7;
-            if (i12 == 1) {
-                this.V = ((i10 - this.a0) / 2) - ((int) this.c.getLineLeft(0));
-            } else if (i12 == 3) {
-                StaticLayout staticLayout4 = this.d;
-                if (staticLayout4 != null) {
-                    this.V = -((int) staticLayout4.getLineLeft(0));
-                } else {
-                    this.V = -((int) this.c.getLineLeft(0));
-                }
-            } else if (this.c.getLineLeft(0) == 0.0f) {
-                StaticLayout staticLayout5 = this.d;
-                if (staticLayout5 != null) {
-                    this.V = (int) (i10 - staticLayout5.getLineWidth(0));
-                } else {
-                    this.V = i10 - this.a0;
-                }
-            } else {
-                this.V = -AndroidUtilities.dp(8.0f);
-            }
-            this.V = getPaddingLeft() + this.V;
-            if (this.i0) {
-                i11 = (this.w == null || this.h0) ? 0 : (int) (r0.getIntrinsicWidth() * this.D);
-                if (this.x != null && !this.h0) {
-                    i11 += (int) (r4.getIntrinsicWidth() * this.D);
-                }
-            } else {
-                i11 = 0;
-            }
-            this.M = this.a0 + i11 > i10 - this.n0;
-            b();
-            StaticLayout staticLayout6 = this.e;
-            if (staticLayout6 != null && this.p0 > 0) {
-                this.r0 = staticLayout6.getPrimaryHorizontal(0) - this.d.getPrimaryHorizontal(0);
-            }
-        }
-        int i13 = this.B;
-        if (i13 >= 0) {
-            this.C = this.c.getPrimaryHorizontal(i13);
-        } else {
-            this.C = 0.0f;
-        }
+        return (String) d.get(i10);
     }
 
-    public final void b() {
-        int i10 = ((!this.L || (!this.M && this.N == 0.0f)) && !this.j0) ? 0 : 2;
-        if (getLayerType() != i10) {
-            setLayerType(i10, null);
-            invalidate();
-        }
+    public static double[] j(double[] dArr, double[] dArr2) {
+        double d10 = dArr[0];
+        double d11 = dArr2[0];
+        double d12 = dArr[1];
+        double d13 = dArr2[1];
+        double d14 = dArr[2];
+        double d15 = dArr2[2];
+        return new double[]{(d14 * d15) + (d12 * d13) + (d10 * d11), (dArr[5] * d15) + (dArr[4] * d13) + (dArr[3] * d11), (dArr[8] * d15) + (dArr[7] * d13) + (dArr[6] * d11)};
     }
 
-    public final void c(Canvas canvas) {
-        ArrayList arrayList = this.u0;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        Path path = this.w0;
-        path.rewind();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            int i11 = i10 + 1;
-            Rect bounds = ((gh.k) arrayList.get(i10)).getBounds();
-            path.addRect(bounds.left, bounds.top, bounds.right, bounds.bottom, Path.Direction.CW);
-            i10 = i11;
-        }
-        canvas.clipPath(path, Region.Op.DIFFERENCE);
-    }
-
-    public void d(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        CharSequence charSequence;
-        int dp;
-        int i14;
-        int dp2;
-        Stack stack = this.v0;
-        ArrayList arrayList = this.u0;
-        CharSequence charSequence2 = this.s;
-        this.B = -1;
-        boolean z10 = false;
-        this.y0 = false;
-        if (charSequence2 != null) {
-            try {
-                Drawable drawable = this.v;
-                if (drawable == null || this.g0) {
-                    i11 = i10;
-                } else {
-                    drawable.getIntrinsicWidth();
-                    i11 = (i10 - this.v.getIntrinsicWidth()) - this.E;
-                }
-                if (this.i0) {
-                    i12 = 0;
-                } else {
-                    if (this.w == null || this.h0) {
-                        i12 = 0;
-                    } else {
-                        i12 = (int) (r9.getIntrinsicWidth() * this.D);
-                        i11 = (i11 - i12) - this.E;
-                    }
-                    if (this.x != null && !this.h0) {
-                        i12 += (int) (r10.getIntrinsicWidth() * this.D);
-                        i11 = (i11 - i12) - this.E;
-                    }
-                }
-                CharSequence charSequence3 = charSequence2;
-                if (this.A != null) {
-                    charSequence3 = charSequence2;
-                    if (this.y != null) {
-                        int indexOf = charSequence2.toString().indexOf(this.A);
-                        this.B = indexOf;
-                        if (indexOf >= 0) {
-                            SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence2);
-                            org.telegram.ui.Cells.n2 n2Var = new org.telegram.ui.Cells.n2(this.y.getIntrinsicWidth());
-                            int i15 = this.B;
-                            valueOf.setSpan(n2Var, i15, this.A.length() + i15, 0);
-                            charSequence3 = valueOf;
-                        } else {
-                            i11 = (i11 - this.y.getIntrinsicWidth()) - this.E;
-                            charSequence3 = charSequence2;
-                        }
-                    }
-                }
-                CharSequence charSequence4 = charSequence3;
-                boolean z11 = this.x0;
-                TextPaint textPaint = this.h;
-                if (z11 && i12 != 0 && !this.h0 && !charSequence4.equals(TextUtils.ellipsize(charSequence4, textPaint, i11, TextUtils.TruncateAt.END))) {
-                    this.y0 = true;
-                    i11 = i11 + i12 + this.E;
-                }
-                int i16 = i11;
-                if (this.H) {
-                    CharSequence ellipsize = !this.j0 ? TextUtils.ellipsize(charSequence4, textPaint, i16, TextUtils.TruncateAt.END) : charSequence4;
-                    if (this.j0 || ellipsize.equals(charSequence4)) {
-                        i14 = i16;
-                        CharSequence charSequence5 = ellipsize;
-                        int length = charSequence5.length();
-                        if (!this.L && !this.j0) {
-                            dp2 = i14 + AndroidUtilities.dp(8.0f);
-                            this.c = new StaticLayout(charSequence5, 0, length, textPaint, dp2, getAlignment(), 1.0f, 0.0f, false);
-                            this.e = null;
-                            this.f = null;
-                            this.d = null;
-                        }
-                        dp2 = AndroidUtilities.dp(2000.0f);
-                        this.c = new StaticLayout(charSequence5, 0, length, textPaint, dp2, getAlignment(), 1.0f, 0.0f, false);
-                        this.e = null;
-                        this.f = null;
-                        this.d = null;
-                    } else {
-                        Layout.Alignment alignment = getAlignment();
-                        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c3 = bw0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.t0, false);
-                        i14 = i16;
-                        this.e = c3;
-                        if (c3 != null) {
-                            int lineEnd = c3.getLineEnd(0);
-                            int lineStart = this.e.getLineStart(1);
-                            CharSequence subSequence = charSequence4.subSequence(0, lineEnd);
-                            SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(charSequence4);
-                            valueOf2.setSpan(new gz(z10), 0, lineStart, 0);
-                            String subSequence2 = lineEnd < ellipsize.length() ? ellipsize.subSequence(lineEnd, ellipsize.length()) : "…";
-                            this.d = new StaticLayout(ellipsize, 0, ellipsize.length(), textPaint, this.L ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            StaticLayout staticLayout = new StaticLayout(subSequence, 0, subSequence.length(), textPaint, this.L ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.c = staticLayout;
-                            if (staticLayout.getLineLeft(0) != 0.0f) {
-                                subSequence2 = "\u200f" + ((Object) subSequence2);
-                            }
-                            CharSequence charSequence6 = subSequence2;
-                            this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.L ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = bw0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.p0, getAlignment(), 0.0f, false, truncateAt, i14 + this.p0, this.t0, false);
-                        }
-                    }
-                    i13 = i14;
-                } else if (this.r > 1) {
-                    StaticLayout c6 = bw0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
-                    i13 = i16;
-                    this.c = c6;
-                } else {
-                    i13 = i16;
-                    if (!this.L && !this.j0) {
-                        charSequence = TextUtils.ellipsize(charSequence4, textPaint, i13, TextUtils.TruncateAt.END);
-                        int length2 = charSequence.length();
-                        if (!this.L && !this.j0) {
-                            dp = AndroidUtilities.dp(8.0f) + i13;
-                            this.c = new StaticLayout(charSequence, 0, length2, textPaint, dp, getAlignment(), 1.0f, 0.0f, false);
-                        }
-                        dp = AndroidUtilities.dp(2000.0f);
-                        this.c = new StaticLayout(charSequence, 0, length2, textPaint, dp, getAlignment(), 1.0f, 0.0f, false);
-                    }
-                    charSequence = charSequence4;
-                    int length22 = charSequence.length();
-                    if (!this.L) {
-                        dp = AndroidUtilities.dp(8.0f) + i13;
-                        this.c = new StaticLayout(charSequence, 0, length22, textPaint, dp, getAlignment(), 1.0f, 0.0f, false);
-                    }
-                    dp = AndroidUtilities.dp(2000.0f);
-                    this.c = new StaticLayout(charSequence, 0, length22, textPaint, dp, getAlignment(), 1.0f, 0.0f, false);
-                }
-                stack.addAll(arrayList);
-                arrayList.clear();
-                StaticLayout staticLayout2 = this.c;
-                if (staticLayout2 != null && (staticLayout2.getText() instanceof Spannable)) {
-                    gh.k.b(this, this.c, -2, -2, stack, arrayList);
-                }
-                a(i13);
-            } catch (Exception unused) {
+    public static int s(String str) {
+        if (e == null) {
+            if (d == null) {
+                d = d();
             }
-        } else {
-            this.c = null;
-            this.a0 = 0;
-            this.c0 = 0;
+            HashMap hashMap = new HashMap();
+            for (int i10 = 0; i10 < d.size(); i10++) {
+                hashMap.put((String) d.valueAt(i10), Integer.valueOf(d.keyAt(i10)));
+            }
+            e = hashMap;
         }
-        org.telegram.ui.Components.y5.release(this, this.D0);
-        if (this.G0) {
-            this.D0 = org.telegram.ui.Components.y5.update(this.E0, this, this.D0, this.c);
+        if (((Integer) e.get(str)) == null) {
+            return -1;
         }
-        invalidate();
+        return ((Integer) e.get(str)).intValue();
     }
 
-    public final void e(Canvas canvas) {
-        float f9 = this.I;
-        int i10 = 0;
-        ArrayList arrayList = this.u0;
-        if (f9 <= 0.0f || this.q0 == 0) {
-            canvas.save();
-            c(canvas);
-            org.telegram.ui.Components.u5 u5Var = this.D0;
-            if (u5Var != null) {
-                u5Var.a();
-            }
-            this.c.draw(canvas);
-            canvas.restore();
-            org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, this.c, this.D0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.F0);
-            int size = arrayList.size();
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                ((gh.k) obj).draw(canvas);
-            }
-            return;
-        }
-        canvas.save();
-        float f10 = -this.q0;
-        float f11 = this.I;
-        canvas.translate((this.r0 * f11) + (f10 * f11), 0.0f);
-        float f12 = this.a;
-        float f13 = -this.q0;
-        float f14 = this.I;
-        this.a = com.google.android.recaptcha.internal.a.d(this.r0, f14, f13 * f14, f12);
-        canvas.save();
-        c(canvas);
-        org.telegram.ui.Components.u5 u5Var2 = this.D0;
-        if (u5Var2 != null) {
-            u5Var2.a();
-        }
-        this.c.draw(canvas);
-        canvas.restore();
-        org.telegram.ui.Components.y5.drawAnimatedEmojis(canvas, this.c, this.D0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.F0);
-        int size2 = arrayList.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList.get(i10);
-            i10++;
-            ((gh.k) obj2).draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    public final boolean f() {
-        if (!this.f0 || getMeasuredHeight() == 0 || this.H) {
-            requestLayout();
-            return true;
-        }
-        d(((getMaxTextWidth() - getPaddingLeft()) - getPaddingRight()) - this.s0);
-        if ((this.n & 112) == 16) {
-            this.W = (getMeasuredHeight() - this.c0) / 2;
-            return true;
-        }
-        this.W = getPaddingTop();
+    public boolean a() {
         return true;
     }
 
-    public final void g(dw0 dw0Var, String str) {
-        Drawable drawable = this.y;
-        if (drawable == dw0Var) {
-            return;
-        }
-        if (drawable != null) {
-            drawable.setCallback(null);
-        }
-        this.y = dw0Var;
-        if (dw0Var != null) {
-            dw0Var.setCallback(this);
-        }
-        f();
-        this.A = str;
+    public boolean b() {
+        return true;
     }
 
-    @Override // android.view.View
-    public Drawable getBackground() {
-        Drawable drawable = this.K;
-        return drawable != null ? drawable : super.getBackground();
+    public boolean c() {
+        return true;
     }
 
-    public float getExactWidth() {
-        return (getPaint().measureText(getText().toString()) + getSideDrawablesSize()) - ((this.v == null && this.w == null && this.x == null) ? 0 : this.E);
-    }
-
-    public float getExactWidthIncludeDrawables() {
-        return getExactWidth() + (this.v != null ? r1.getIntrinsicWidth() : 0) + (this.w != null ? r1.getIntrinsicWidth() : 0) + (this.x != null ? r1.getIntrinsicWidth() : 0);
-    }
-
-    public float getFullAlpha() {
-        return this.I;
-    }
-
-    public Layout getLayout() {
-        return this.c;
-    }
-
-    public float getLayoutX() {
-        return this.a;
-    }
-
-    public float getLayoutY() {
-        return this.b;
-    }
-
-    public Drawable getLeftDrawable() {
-        return this.v;
-    }
-
-    public int getLineCount() {
-        StaticLayout staticLayout = this.c;
-        int lineCount = staticLayout != null ? staticLayout.getLineCount() : 0;
-        StaticLayout staticLayout2 = this.e;
-        return staticLayout2 != null ? staticLayout2.getLineCount() + lineCount : lineCount;
-    }
-
-    public int getMaxTextWidth() {
-        Drawable drawable;
-        Drawable drawable2;
-        int i10 = 0;
-        int measuredWidth = getMeasuredWidth() - ((!this.h0 || (drawable2 = this.w) == null) ? 0 : drawable2.getIntrinsicWidth() + this.E);
-        if (this.h0 && (drawable = this.x) != null) {
-            i10 = this.E + drawable.getIntrinsicWidth();
-        }
-        return measuredWidth - i10;
-    }
-
-    public TextPaint getPaint() {
-        return this.h;
-    }
-
-    public Drawable getRightDrawable() {
-        return this.w;
-    }
-
-    public Drawable getRightDrawable2() {
-        return this.x;
-    }
-
-    public boolean getRightDrawableOutside() {
-        return this.h0;
-    }
-
-    public int getRightDrawableWidth() {
-        if (this.w == null) {
-            return 0;
-        }
-        return (int) ((r0.getIntrinsicWidth() * this.D) + this.E);
-    }
-
-    public int getRightDrawableX() {
-        return this.d0;
-    }
-
-    public int getRightDrawableY() {
-        return this.e0;
-    }
-
-    public int getSideDrawablesSize() {
-        Drawable drawable = this.v;
-        int intrinsicWidth = drawable != null ? drawable.getIntrinsicWidth() + this.E : 0;
-        if (this.w != null) {
-            intrinsicWidth += ((int) (r1.getIntrinsicWidth() * this.D)) + this.E;
-        }
-        return this.x != null ? ((int) (r1.getIntrinsicWidth() * this.D)) + this.E + intrinsicWidth : intrinsicWidth;
-    }
-
-    public CharSequence getText() {
-        CharSequence charSequence = this.s;
-        return charSequence == null ? "" : charSequence;
-    }
-
-    public int getTextColor() {
-        return this.h.getColor();
-    }
-
-    public int getTextHeight() {
-        return this.c0;
-    }
-
-    public TextPaint getTextPaint() {
-        return this.h;
-    }
-
-    public int getTextStartX() {
-        int i10 = 0;
-        if (this.c == null) {
-            return 0;
-        }
-        Drawable drawable = this.v;
-        if (drawable != null && (this.n & 7) == 3) {
-            i10 = this.E + drawable.getIntrinsicWidth();
-        }
-        Drawable drawable2 = this.y;
-        if (drawable2 != null && this.B < 0 && (this.n & 7) == 3) {
-            i10 += drawable2.getIntrinsicWidth() + this.E;
-        }
-        return ((int) getX()) + this.V + i10;
-    }
-
-    public int getTextStartY() {
-        if (this.c == null) {
-            return 0;
-        }
-        return (int) getY();
-    }
-
-    public int getTextWidth() {
-        int i10 = this.a0;
-        if (this.i0) {
-            r2 = (this.x != null ? (int) (r3.getIntrinsicWidth() * this.D) : 0) + (this.w != null ? (int) (r1.getIntrinsicWidth() * this.D) : 0);
-        }
-        return i10 + r2;
-    }
-
-    public final void h(int i10, int i11) {
-        if (this.p0 == i10 && this.q0 == i11) {
-            return;
-        }
-        this.p0 = i10;
-        this.q0 = i11;
-        d(((getMaxTextWidth() - getPaddingLeft()) - getPaddingRight()) - this.s0);
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
+    public boolean f() {
         return false;
     }
 
-    public final boolean i(Drawable drawable) {
-        Drawable drawable2 = this.w;
-        if (drawable2 == drawable) {
-            return false;
-        }
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.w = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        f();
+    @Override // org.telegram.ui.ActionBar.a3
+    public boolean g() {
         return true;
     }
 
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        Drawable drawable2 = this.v;
-        if (drawable == drawable2) {
-            invalidate(drawable2.getBounds());
-            return;
-        }
-        Drawable drawable3 = this.w;
-        if (drawable == drawable3) {
-            invalidate(drawable3.getBounds());
-            return;
-        }
-        Drawable drawable4 = this.x;
-        if (drawable == drawable4) {
-            invalidate(drawable4.getBounds());
-            return;
-        }
-        Drawable drawable5 = this.y;
-        if (drawable == drawable5) {
-            invalidate(drawable5.getBounds());
-        }
+    public Animator h() {
+        return null;
     }
 
-    public final boolean j(Drawable drawable) {
-        Drawable drawable2 = this.x;
-        if (drawable2 == drawable) {
-            return false;
-        }
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.x = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        f();
+    public boolean r() {
         return true;
     }
 
-    public boolean k(CharSequence charSequence) {
-        return l(charSequence, false);
+    public void k() {
     }
 
-    public boolean l(CharSequence charSequence, boolean z10) {
-        CharSequence charSequence2 = this.s;
-        if (charSequence2 == null && charSequence == null) {
-            return false;
-        }
-        if (!z10 && charSequence2 != null && charSequence2.equals(charSequence)) {
-            return false;
-        }
-        this.s = charSequence;
-        this.P = 500;
-        f();
-        return true;
+    public void l() {
     }
 
-    public final void m() {
-        if ((this.Q == null || this.R == null) && this.L) {
-            Paint paint = new Paint();
-            this.Q = paint;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(6.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, tileMode));
-            Paint paint2 = this.Q;
-            PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
-            paint2.setXfermode(new PorterDuffXfermode(mode));
-            Paint paint3 = new Paint();
-            this.R = paint3;
-            paint3.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(6.0f), 0.0f, new int[]{0, -1}, new float[]{0.0f, 1.0f}, tileMode));
-            this.R.setXfermode(new PorterDuffXfermode(mode));
-        }
-        Boolean bool = this.l0;
-        boolean booleanValue = bool != null ? bool.booleanValue() : false;
-        if (!(this.S != null && this.T == AndroidUtilities.dp(this.m0) && this.k0 == booleanValue) && this.j0) {
-            if (this.S == null) {
-                this.S = new Paint();
-            }
-            this.k0 = booleanValue;
-            if (booleanValue) {
-                Paint paint4 = this.S;
-                int dp = AndroidUtilities.dp(this.m0);
-                this.T = dp;
-                paint4.setShader(new LinearGradient(0.0f, 0.0f, dp, 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-            } else {
-                Paint paint5 = this.S;
-                int dp2 = AndroidUtilities.dp(this.m0);
-                this.T = dp2;
-                paint5.setShader(new LinearGradient(0.0f, 0.0f, dp2, 0.0f, new int[]{0, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-            }
-            this.S.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
+    public void m() {
     }
 
-    @Override // android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.G0 = true;
-        this.D0 = org.telegram.ui.Components.y5.update(this.E0, this, this.D0, this.c);
+    public void n() {
     }
 
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.G0 = false;
-        org.telegram.ui.Components.y5.release(this, this.D0);
-        this.f0 = false;
+    public void o(tf.e0 e0Var) {
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        int intrinsicWidth;
-        float f9;
-        float f10;
-        int e10;
-        int i10;
-        int e11;
-        int i11;
-        int e12;
-        int i12;
-        float f11;
-        float f12;
-        boolean z10;
-        float A;
-        int e13;
-        int i13;
-        int e14;
-        int i14;
-        float f13;
-        int e15;
-        int i15;
-        int e16;
-        int i16;
-        int e17;
-        int i17;
-        int e18;
-        int i18;
-        super.onDraw(canvas);
-        this.a = 0.0f;
-        this.b = 0.0f;
-        boolean z11 = this.L && (this.M || this.N != 0.0f);
-        this.b0 = this.a0;
-        Drawable drawable = this.v;
-        if (drawable == null || this.g0) {
-            intrinsicWidth = (!this.g0 || drawable == null) ? 0 : this.E + drawable.getIntrinsicWidth();
-        } else {
-            int i19 = (int) (-this.N);
-            int i20 = this.n;
-            if ((i20 & 7) == 1) {
-                i19 += this.V;
-            }
-            int measuredHeight = (i20 & 112) == 16 ? ((getMeasuredHeight() - this.v.getIntrinsicHeight()) / 2) + this.F : this.F + ((this.c0 - this.v.getIntrinsicHeight()) / 2) + getPaddingTop();
-            Drawable drawable2 = this.v;
-            drawable2.setBounds(i19, measuredHeight, drawable2.getIntrinsicWidth() + i19, this.v.getIntrinsicHeight() + measuredHeight);
-            this.v.draw(canvas);
-            int i21 = this.n & 7;
-            intrinsicWidth = (i21 == 3 || i21 == 1) ? this.v.getIntrinsicWidth() + this.E : 0;
-            this.b0 = this.v.getIntrinsicWidth() + this.E + this.b0;
-        }
-        Drawable drawable3 = this.y;
-        if (drawable3 != null && this.A != null) {
-            int i22 = (int) ((-this.N) + this.C);
-            int i23 = this.n;
-            if ((i23 & 7) == 1) {
-                i22 += this.V;
-            }
-            int measuredHeight2 = (i23 & 112) == 16 ? ((getMeasuredHeight() - this.y.getIntrinsicHeight()) / 2) + this.F : this.F + ((this.c0 - drawable3.getIntrinsicHeight()) / 2);
-            Drawable drawable4 = this.y;
-            drawable4.setBounds(i22, measuredHeight2, drawable4.getIntrinsicWidth() + i22, this.y.getIntrinsicHeight() + measuredHeight2);
-            this.y.draw(canvas);
-            if (this.B < 0) {
-                int i24 = this.n & 7;
-                if (i24 == 3 || i24 == 1) {
-                    intrinsicWidth += this.y.getIntrinsicWidth() + this.E;
-                }
-                this.b0 = this.y.getIntrinsicWidth() + this.E + this.b0;
-            }
-        }
-        int i25 = intrinsicWidth;
-        if (this.w == null || this.y0 || this.D <= 0.0f || this.h0 || this.i0) {
-            f9 = 0.0f;
-        } else {
-            int i26 = this.a0 + i25 + this.E + ((int) (-this.N));
-            int i27 = this.n & 7;
-            if (i27 == 1 || i27 == 5) {
-                i26 += this.V;
-            }
-            int intrinsicWidth2 = (int) (r3.getIntrinsicWidth() * this.D);
-            int intrinsicHeight = (int) (this.w.getIntrinsicHeight() * this.D);
-            if ((this.n & 112) == 16) {
-                e18 = (getMeasuredHeight() - intrinsicHeight) / 2;
-                i18 = this.G;
-            } else {
-                e18 = j7.l1.e(this.c0, intrinsicHeight, 2, getPaddingTop());
-                i18 = this.G;
-            }
-            int i28 = e18 + i18;
-            f9 = 0.0f;
-            this.w.setBounds(i26, i28, i26 + intrinsicWidth2, i28 + intrinsicHeight);
-            this.d0 = i26 + (intrinsicWidth2 >> 1);
-            this.e0 = i28 + (intrinsicHeight >> 1);
-            this.w.draw(canvas);
-            this.b0 = this.E + intrinsicWidth2 + this.b0;
-        }
-        if (this.x != null && !this.y0 && this.D > f9 && !this.h0 && !this.i0) {
-            int i29 = this.a0 + i25 + this.E + ((int) (-this.N));
-            if (this.w != null) {
-                i29 += ((int) (r5.getIntrinsicWidth() * this.D)) + this.E;
-            }
-            int i30 = this.n & 7;
-            if (i30 == 1 || i30 == 5) {
-                i29 += this.V;
-            }
-            int intrinsicWidth3 = (int) (this.x.getIntrinsicWidth() * this.D);
-            int intrinsicHeight2 = (int) (this.x.getIntrinsicHeight() * this.D);
-            if ((this.n & 112) == 16) {
-                e17 = (getMeasuredHeight() - intrinsicHeight2) / 2;
-                i17 = this.G;
-            } else {
-                e17 = j7.l1.e(this.c0, intrinsicHeight2, 2, getPaddingTop());
-                i17 = this.G;
-            }
-            int i31 = e17 + i17;
-            this.x.setBounds(i29, i31, i29 + intrinsicWidth3, intrinsicHeight2 + i31);
-            this.x.draw(canvas);
-            this.b0 = this.E + intrinsicWidth3 + this.b0;
-        }
-        int dp = AndroidUtilities.dp(16.0f) + this.b0;
-        float f14 = this.N;
-        if (f14 != f9) {
-            if (this.v != null && !this.g0) {
-                int i32 = ((int) (-f14)) + dp;
-                int measuredHeight3 = (this.n & 112) == 16 ? ((getMeasuredHeight() - this.v.getIntrinsicHeight()) / 2) + this.F : this.F + ((this.c0 - this.v.getIntrinsicHeight()) / 2) + getPaddingTop();
-                Drawable drawable5 = this.v;
-                drawable5.setBounds(i32, measuredHeight3, drawable5.getIntrinsicWidth() + i32, this.v.getIntrinsicHeight() + measuredHeight3);
-                this.v.draw(canvas);
-            }
-            if (this.w == null || this.h0) {
-                f10 = 16.0f;
-            } else {
-                int intrinsicWidth4 = (int) (r3.getIntrinsicWidth() * this.D);
-                int intrinsicHeight3 = (int) (this.w.getIntrinsicHeight() * this.D);
-                int i33 = this.a0 + i25 + this.E + ((int) (-this.N)) + dp;
-                if ((this.n & 112) == 16) {
-                    e16 = (getMeasuredHeight() - intrinsicHeight3) / 2;
-                    i16 = this.G;
-                } else {
-                    e16 = j7.l1.e(this.c0, intrinsicHeight3, 2, getPaddingTop());
-                    i16 = this.G;
-                }
-                int i34 = e16 + i16;
-                f10 = 16.0f;
-                this.w.setBounds(i33, i34, i33 + intrinsicWidth4, i34 + intrinsicHeight3);
-                this.d0 = i33 + (intrinsicWidth4 >> 1);
-                this.e0 = i34 + (intrinsicHeight3 >> 1);
-                this.w.draw(canvas);
-            }
-            if (this.x != null && !this.h0) {
-                int intrinsicWidth5 = (int) (r3.getIntrinsicWidth() * this.D);
-                int intrinsicHeight4 = (int) (this.x.getIntrinsicHeight() * this.D);
-                int i35 = this.a0 + i25 + this.E + ((int) (-this.N)) + dp;
-                if (this.w != null) {
-                    i35 += ((int) (r6.getIntrinsicWidth() * this.D)) + this.E;
-                }
-                if ((this.n & 112) == 16) {
-                    e15 = (getMeasuredHeight() - intrinsicHeight4) / 2;
-                    i15 = this.G;
-                } else {
-                    e15 = j7.l1.e(this.c0, intrinsicHeight4, 2, getPaddingTop());
-                    i15 = this.G;
-                }
-                int i36 = e15 + i15;
-                this.x.setBounds(i35, i36, intrinsicWidth5 + i35, intrinsicHeight4 + i36);
-                this.x.draw(canvas);
-            }
-        } else {
-            f10 = 16.0f;
-        }
-        if (this.c != null) {
-            if (this.g0 || this.h0 || this.j0 || this.n0 > 0) {
-                canvas.save();
-                int maxTextWidth = getMaxTextWidth() - this.n0;
-                Drawable drawable6 = this.w;
-                canvas.clipRect(i25, 0, maxTextWidth - AndroidUtilities.dp((drawable6 == null || (drawable6 instanceof org.telegram.ui.Components.n5) || !this.h0) ? 0.0f : 2.0f), getMeasuredHeight());
-            }
-            Emoji.emojiDrawingUseAlpha = false;
-            if (this.K != null) {
-                int i37 = (int) ((this.V + i25) - this.N);
-                int i38 = this.a0;
-                int i39 = (i38 / 2) + i37;
-                int max = Math.max(getPaddingRight() + getPaddingLeft() + i38, this.o0);
-                int i40 = i39 - (max / 2);
-                this.K.setBounds(i40, 0, max + i40, getMeasuredHeight());
-                this.K.draw(canvas);
-            }
-            if (this.V + i25 != 0 || this.W != 0 || this.N != f9) {
-                canvas.save();
-                canvas.translate((this.V + i25) - this.N, this.W);
-                this.a = ((this.V + i25) - this.N) + this.a;
-                this.b += this.W;
-            }
-            e(canvas);
-            StaticLayout staticLayout = this.f;
-            TextPaint textPaint = this.h;
-            if (staticLayout == null || this.I >= 1.0f) {
-                f11 = 0.0f;
-            } else {
-                int alpha = textPaint.getAlpha();
-                textPaint.setAlpha((int) ((1.0f - this.I) * 255.0f));
-                canvas.save();
-                if (this.f.getText().length() == 1) {
-                    f13 = AndroidUtilities.dp(this.t0 == 1 ? 0.5f : 4.0f);
-                } else {
-                    f13 = 0.0f;
-                }
-                if (this.c.getLineLeft(0) != f9) {
-                    canvas.translate((-this.c.getLineWidth(0)) + f13, 0.0f);
-                    f11 = 0.0f;
-                } else {
-                    f11 = 0.0f;
-                    canvas.translate(this.c.getLineWidth(0) - f13, 0.0f);
-                }
-                float f15 = -this.q0;
-                float f16 = this.I;
-                canvas.translate((this.r0 * f16) + (f15 * f16), f11);
-                this.f.draw(canvas);
-                canvas.restore();
-                textPaint.setAlpha(alpha);
-            }
-            if (this.e == null || this.I <= f11) {
-                f12 = 0.0f;
-            } else {
-                int alpha2 = textPaint.getAlpha();
-                textPaint.setAlpha((int) (this.I * 255.0f));
-                float f17 = -this.q0;
-                float f18 = this.I;
-                float f19 = this.r0;
-                float f20 = ((f18 * f19) + (f17 * f18)) - f19;
-                f12 = 0.0f;
-                canvas.translate(f20, 0.0f);
-                this.e.draw(canvas);
-                textPaint.setAlpha(alpha2);
-            }
-            if (this.N != f12) {
-                canvas.translate(dp, f12);
-                e(canvas);
-            }
-            if (this.V + i25 != 0 || this.W != 0 || this.N != f12) {
-                canvas.restore();
-            }
-            if (this.w != null && !this.y0 && this.D > 0.0f && !this.h0 && this.i0) {
-                int i41 = this.a0 + i25 + this.E + ((int) (-this.N));
-                int i42 = this.n & 7;
-                if (i42 == 1 || i42 == 5) {
-                    i41 += this.V;
-                }
-                int intrinsicWidth6 = (int) (r3.getIntrinsicWidth() * this.D);
-                int intrinsicHeight5 = (int) (this.w.getIntrinsicHeight() * this.D);
-                if ((this.n & 112) == 16) {
-                    e14 = (getMeasuredHeight() - intrinsicHeight5) / 2;
-                    i14 = this.G;
-                } else {
-                    e14 = j7.l1.e(this.c0, intrinsicHeight5, 2, getPaddingTop());
-                    i14 = this.G;
-                }
-                int i43 = e14 + i14;
-                this.w.setBounds(i41, i43, i41 + intrinsicWidth6, i43 + intrinsicHeight5);
-                this.d0 = i41 + (intrinsicWidth6 >> 1);
-                this.e0 = i43 + (intrinsicHeight5 >> 1);
-                this.w.draw(canvas);
-                this.b0 = this.E + intrinsicWidth6 + this.b0;
-            }
-            if (this.x != null && !this.y0 && this.D > 0.0f && !this.h0 && this.i0) {
-                int i44 = this.a0 + i25 + this.E + ((int) (-this.N));
-                if (this.w != null) {
-                    i44 += ((int) (r4.getIntrinsicWidth() * this.D)) + this.E;
-                }
-                int i45 = this.n & 7;
-                if (i45 == 1 || i45 == 5) {
-                    i44 += this.V;
-                }
-                int intrinsicWidth7 = (int) (this.x.getIntrinsicWidth() * this.D);
-                int intrinsicHeight6 = (int) (this.x.getIntrinsicHeight() * this.D);
-                if ((this.n & 112) == 16) {
-                    e13 = (getMeasuredHeight() - intrinsicHeight6) / 2;
-                    i13 = this.G;
-                } else {
-                    e13 = j7.l1.e(this.c0, intrinsicHeight6, 2, getPaddingTop());
-                    i13 = this.G;
-                }
-                int i46 = e13 + i13;
-                this.x.setBounds(i44, i46, i44 + intrinsicWidth7, intrinsicHeight6 + i46);
-                this.x.draw(canvas);
-                this.b0 = this.E + intrinsicWidth7 + this.b0;
-            }
-            if (z11) {
-                if (this.N < AndroidUtilities.dp(10.0f)) {
-                    this.Q.setAlpha((int) ((this.N / AndroidUtilities.dp(10.0f)) * 255.0f));
-                } else {
-                    if (this.N > (AndroidUtilities.dp(f10) + this.b0) - AndroidUtilities.dp(10.0f)) {
-                        this.Q.setAlpha((int) org.telegram.ui.b.c(this.N - ((AndroidUtilities.dp(f10) + this.b0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
-                    } else {
-                        this.Q.setAlpha(255);
-                    }
-                }
-                canvas.drawRect(i25, 0.0f, AndroidUtilities.dp(6.0f) + i25, getMeasuredHeight(), this.Q);
-                canvas.save();
-                canvas.translate((getMaxTextWidth() - this.n0) - AndroidUtilities.dp(6.0f), 0.0f);
-                canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(6.0f), getMeasuredHeight(), this.R);
-                canvas.restore();
-            } else if (this.j0 && this.M && this.S != null) {
-                canvas.save();
-                m();
-                if (!this.k0) {
-                    int maxTextWidth2 = (getMaxTextWidth() - this.n0) - this.T;
-                    Drawable drawable7 = this.w;
-                    canvas.translate(maxTextWidth2 - AndroidUtilities.dp((drawable7 == null || (drawable7 instanceof org.telegram.ui.Components.n5) || !this.h0) ? 0.0f : 2.0f), 0.0f);
-                }
-                canvas.drawRect(i25, 0.0f, this.T, getMeasuredHeight(), this.S);
-                canvas.restore();
-            }
-            if (!this.L || (!this.M && this.N == 0.0f)) {
-                z10 = true;
-            } else {
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                long j10 = elapsedRealtime - this.O;
-                if (j10 > 17) {
-                    j10 = 17;
-                }
-                int i47 = this.P;
-                if (i47 > 0) {
-                    this.P = (int) (i47 - j10);
-                    z10 = true;
-                } else {
-                    int dp2 = AndroidUtilities.dp(f10) + this.b0;
-                    if (this.N < AndroidUtilities.dp(100.0f)) {
-                        A = u3.c.c(this.N, AndroidUtilities.dp(100.0f), 20.0f, 30.0f);
-                        z10 = true;
-                    } else {
-                        z10 = true;
-                        A = this.N >= ((float) (dp2 - AndroidUtilities.dp(100.0f))) ? org.telegram.messenger.x3.A(this.N - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f) : 50.0f;
-                    }
-                    float dp3 = ((j10 / 1000.0f) * AndroidUtilities.dp(A)) + this.N;
-                    this.N = dp3;
-                    this.O = elapsedRealtime;
-                    if (dp3 > dp2) {
-                        this.N = 0.0f;
-                        this.P = 500;
-                    }
-                    b();
-                }
-                invalidate();
-            }
-            Emoji.emojiDrawingUseAlpha = z10;
-            if (this.g0 || this.h0 || this.j0 || this.n0 > 0) {
-                canvas.restore();
-            }
-        }
-        Drawable drawable8 = this.v;
-        if (drawable8 != null && this.g0) {
-            int intrinsicWidth8 = drawable8.getIntrinsicWidth();
-            int intrinsicHeight7 = this.v.getIntrinsicHeight();
-            if ((this.n & 112) == 16) {
-                e12 = (getMeasuredHeight() - intrinsicHeight7) / 2;
-                i12 = this.F;
-            } else {
-                e12 = j7.l1.e(this.c0, intrinsicHeight7, 2, getPaddingTop());
-                i12 = this.F;
-            }
-            int i48 = e12 + i12;
-            this.v.setBounds(0, i48, intrinsicWidth8, intrinsicHeight7 + i48);
-            this.v.draw(canvas);
-        }
-        if (this.w != null && this.h0) {
-            int i49 = this.a0 + i25 + this.E;
-            float f21 = this.N;
-            int min = Math.min(i49 + (f21 == 0.0f ? -dp : (int) (-f21)) + dp, (getMaxTextWidth() - this.n0) + this.E);
-            int intrinsicWidth9 = (int) (this.w.getIntrinsicWidth() * this.D);
-            int intrinsicHeight8 = (int) (this.w.getIntrinsicHeight() * this.D);
-            if ((this.n & 112) == 16) {
-                e11 = (getMeasuredHeight() - intrinsicHeight8) / 2;
-                i11 = this.G;
-            } else {
-                e11 = j7.l1.e(this.c0, intrinsicHeight8, 2, getPaddingTop());
-                i11 = this.G;
-            }
-            int i50 = e11 + i11;
-            this.w.setBounds(min, i50, min + intrinsicWidth9, i50 + intrinsicHeight8);
-            this.d0 = min + (intrinsicWidth9 >> 1);
-            this.e0 = i50 + (intrinsicHeight8 >> 1);
-            this.w.draw(canvas);
-        }
-        if (this.x == null || !this.h0) {
-            return;
-        }
-        int i51 = i25 + this.a0 + this.E;
-        float f22 = this.N;
-        int min2 = Math.min(i51 + (f22 == 0.0f ? -dp : (int) (-f22)) + dp, (getMaxTextWidth() - this.n0) + this.E);
-        if (this.w != null) {
-            min2 += ((int) (r3.getIntrinsicWidth() * this.D)) + this.E;
-        }
-        int intrinsicWidth10 = (int) (this.x.getIntrinsicWidth() * this.D);
-        int intrinsicHeight9 = (int) (this.x.getIntrinsicHeight() * this.D);
-        if ((this.n & 112) == 16) {
-            e10 = (getMeasuredHeight() - intrinsicHeight9) / 2;
-            i10 = this.G;
-        } else {
-            e10 = j7.l1.e(this.c0, intrinsicHeight9, 2, getPaddingTop());
-            i10 = this.G;
-        }
-        int i52 = e10 + i10;
-        this.x.setBounds(min2, i52, intrinsicWidth10 + min2, intrinsicHeight9 + i52);
-        this.x.draw(canvas);
+    @Override // org.telegram.ui.ActionBar.a3
+    public void onOpenAnimationEnd() {
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setText(this.s);
+    public void p(kg.f fVar) {
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        this.f0 = true;
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        Drawable drawable;
-        Drawable drawable2;
-        Drawable drawable3;
-        Drawable drawable4;
-        Drawable drawable5;
-        Drawable drawable6;
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int i12 = this.U;
-        int i13 = AndroidUtilities.displaySize.x;
-        if (i12 != i13) {
-            this.U = i13;
-            this.N = 0.0f;
-            this.P = 500;
-            b();
-        }
-        d((((((size - getPaddingLeft()) - getPaddingRight()) - this.s0) - ((!this.g0 || (drawable6 = this.v) == null) ? 0 : drawable6.getIntrinsicWidth() + this.E)) - ((!this.h0 || (drawable5 = this.w) == null) ? 0 : drawable5.getIntrinsicWidth() + this.E)) - ((!this.h0 || (drawable4 = this.x) == null) ? 0 : drawable4.getIntrinsicWidth() + this.E));
-        if (View.MeasureSpec.getMode(i11) != 1073741824) {
-            size2 = getPaddingBottom() + getPaddingTop() + this.c0;
-        }
-        if (this.J) {
-            size = Math.max(Math.min(size, getPaddingRight() + getPaddingLeft() + this.a0 + this.s0 + ((!this.g0 || (drawable3 = this.v) == null) ? 0 : drawable3.getIntrinsicWidth() + this.E) + ((!this.h0 || (drawable2 = this.w) == null) ? 0 : drawable2.getIntrinsicWidth() + this.E) + ((!this.h0 || (drawable = this.x) == null) ? 0 : drawable.getIntrinsicWidth() + this.E)), 0);
-        }
-        setMeasuredDimension(size, size2);
-        if ((this.n & 112) == 16) {
-            this.W = j7.l1.e((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), this.c0, 2, getPaddingTop());
-        } else {
-            this.W = getPaddingTop();
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.z0 != null && this.w != null) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(this.d0 - AndroidUtilities.dp(16.0f), this.e0 - AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f) + this.d0, AndroidUtilities.dp(16.0f) + this.e0);
-            if (motionEvent.getAction() == 0 && rectF.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.A0 = true;
-                this.B0 = motionEvent.getX();
-                this.C0 = motionEvent.getY();
-                getParent().requestDisallowInterceptTouchEvent(true);
-                Object obj = this.w;
-                if (obj instanceof g5) {
-                    ((h01) ((g5) obj)).f.c(true);
-                }
-            } else if (motionEvent.getAction() == 2 && this.A0) {
-                if (Math.abs(motionEvent.getX() - this.B0) >= AndroidUtilities.touchSlop || Math.abs(motionEvent.getY() - this.C0) >= AndroidUtilities.touchSlop) {
-                    this.A0 = false;
-                    getParent().requestDisallowInterceptTouchEvent(false);
-                    Object obj2 = this.w;
-                    if (obj2 instanceof g5) {
-                        ((h01) ((g5) obj2)).f.c(false);
-                    }
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.A0 && motionEvent.getAction() == 1) {
-                    this.z0.onClick(this);
-                    Object obj3 = this.w;
-                    if (obj3 instanceof g5) {
-                        ((h01) ((g5) obj3)).f.c(false);
-                    }
-                }
-                this.A0 = false;
-                getParent().requestDisallowInterceptTouchEvent(false);
-            }
-        }
-        return super.onTouchEvent(motionEvent) || this.A0;
-    }
-
-    public void setAlignment(Layout.Alignment alignment) {
-        this.H0 = alignment;
-        requestLayout();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        if (this.r > 1) {
-            super.setBackgroundDrawable(drawable);
-        } else {
-            this.K = drawable;
-        }
-    }
-
-    public void setBuildFullLayout(boolean z10) {
-        this.H = z10;
-    }
-
-    public void setCanHideRightDrawable(boolean z10) {
-        this.x0 = z10;
-    }
-
-    public void setDrawablePadding(int i10) {
-        if (this.E == i10) {
-            return;
-        }
-        this.E = i10;
-        f();
-    }
-
-    public void setEllipsizeByGradient(int i10) {
-        if (!this.L) {
-            this.j0 = true;
-            this.l0 = null;
-            m();
-            b();
-        }
-        this.m0 = i10;
-        m();
-    }
-
-    public void setEmojiCacheType(int i10) {
-        if (i10 != this.E0) {
-            org.telegram.ui.Components.y5.release(this, this.D0);
-            this.E0 = i10;
-            if (this.G0) {
-                this.D0 = org.telegram.ui.Components.y5.update(i10, this, this.D0, this.c);
-            }
-        }
-    }
-
-    public void setEmojiColor(int i10) {
-        this.F0 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-    }
-
-    public void setFullAlpha(float f9) {
-        this.I = f9;
-        invalidate();
-    }
-
-    public void setFullTextMaxLines(int i10) {
-        this.t0 = i10;
-    }
-
-    public void setGravity(int i10) {
-        this.n = i10;
-    }
-
-    public void setLeftDrawable(int i10) {
-        setLeftDrawable(i10 == 0 ? null : getContext().getResources().getDrawable(i10));
-    }
-
-    public void setLeftDrawableOutside(boolean z10) {
-        this.g0 = z10;
-    }
-
-    public void setLeftDrawableTopPadding(int i10) {
-        this.F = i10;
-    }
-
-    public void setLinkTextColor(int i10) {
-        this.h.linkColor = i10;
-        invalidate();
-    }
-
-    public void setMaxLines(int i10) {
-        this.r = i10;
-    }
-
-    public void setMinWidth(int i10) {
-        this.o0 = i10;
-    }
-
-    public void setMinusWidth(int i10) {
-        if (i10 == this.s0) {
-            return;
-        }
-        this.s0 = i10;
-        f();
-    }
-
-    public void setRightDrawable(int i10) {
-        i(i10 == 0 ? null : getContext().getResources().getDrawable(i10));
-    }
-
-    public void setRightDrawableInside(boolean z10) {
-        this.i0 = z10;
-    }
-
-    public void setRightDrawableOnClick(View.OnClickListener onClickListener) {
-        this.z0 = onClickListener;
-    }
-
-    public void setRightDrawableOutside(boolean z10) {
-        this.h0 = z10;
-    }
-
-    public void setRightDrawableScale(float f9) {
-        this.D = f9;
-    }
-
-    public void setRightDrawableTopPadding(int i10) {
-        this.G = i10;
-    }
-
-    public void setRightPadding(int i10) {
-        if (this.n0 != i10) {
-            this.n0 = i10;
-            int maxTextWidth = ((getMaxTextWidth() - getPaddingLeft()) - getPaddingRight()) - this.s0;
-            Drawable drawable = this.v;
-            if (drawable != null && !this.g0) {
-                maxTextWidth = (maxTextWidth - drawable.getIntrinsicWidth()) - this.E;
-            }
-            int i11 = 0;
-            if (!this.i0) {
-                if (this.w != null && !this.h0) {
-                    i11 = (int) (r0.getIntrinsicWidth() * this.D);
-                    maxTextWidth = (maxTextWidth - i11) - this.E;
-                }
-                if (this.x != null && !this.h0) {
-                    i11 = (int) (r0.getIntrinsicWidth() * this.D);
-                    maxTextWidth = (maxTextWidth - i11) - this.E;
-                }
-            }
-            if (this.A != null && this.y != null) {
-                int indexOf = this.s.toString().indexOf(this.A);
-                this.B = indexOf;
-                if (indexOf < 0) {
-                    maxTextWidth = (maxTextWidth - this.y.getIntrinsicWidth()) - this.E;
-                }
-            }
-            if (this.x0 && i11 != 0 && !this.h0) {
-                if (!this.s.equals(TextUtils.ellipsize(this.s, this.h, maxTextWidth, TextUtils.TruncateAt.END))) {
-                    this.y0 = true;
-                    maxTextWidth = maxTextWidth + i11 + this.E;
-                }
-            }
-            a(maxTextWidth);
-            invalidate();
-        }
-    }
-
-    public void setScrollNonFitText(boolean z10) {
-        if (this.L == z10) {
-            return;
-        }
-        this.L = z10;
-        m();
-        requestLayout();
-        b();
-    }
-
-    public void setSideDrawablesColor(int i10) {
-        g6.w1(i10, this.w);
-        g6.w1(i10, this.v);
-    }
-
-    public void setTextColor(int i10) {
-        this.h.setColor(i10);
-        invalidate();
-    }
-
-    public void setTextSize(int i10) {
-        setTextSizePx(AndroidUtilities.dp(i10));
-    }
-
-    public void setTextSizePx(int i10) {
-        float f9 = i10;
-        TextPaint textPaint = this.h;
-        if (f9 == textPaint.getTextSize()) {
-            return;
-        }
-        textPaint.setTextSize(f9);
-        f();
-    }
-
-    public void setTypeface(Typeface typeface) {
-        this.h.setTypeface(typeface);
-    }
-
-    public void setWidthWrapContent(boolean z10) {
-        this.J = z10;
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.w || drawable == this.x || drawable == this.v || super.verifyDrawable(drawable);
-    }
-
-    public void setLeftDrawable(Drawable drawable) {
-        Drawable drawable2 = this.v;
-        if (drawable2 == drawable) {
-            return;
-        }
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.v = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        f();
-    }
-
-    public void setEllipsizeByGradient(boolean z10) {
-        if (this.L == z10) {
-            return;
-        }
-        this.j0 = z10;
-        this.l0 = null;
-        m();
-        b();
+    public void q(EditText editText) {
     }
 }

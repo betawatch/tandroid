@@ -11,39 +11,21 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class v extends androidx.activity.l implements e0.c, e0.d {
-    public boolean H;
+public abstract class v extends androidx.activity.m implements e0.c, e0.d {
+    public final androidx.biometric.f0 G;
     public boolean I;
-    public final m5.i F = new m5.i(new u(this), 3);
-    public final androidx.lifecycle.v G = new androidx.lifecycle.v(this);
-    public boolean J = true;
+    public boolean J;
+    public final androidx.lifecycle.v H = new androidx.lifecycle.v(this);
+    public boolean K = true;
 
     public v() {
-        ((g2.e) this.e.c).f("android:support:lifecycle", new androidx.activity.e(this, 1));
-        final int i10 = 0;
+        int i10 = 1;
+        this.G = new androidx.biometric.f0(new u(this), i10);
+        ((g2.e) this.e.c).f("android:support:lifecycle", new androidx.activity.e(this, i10));
+        final int i11 = 0;
         o(new q0.a(this) { // from class: androidx.fragment.app.t
-            public final /* synthetic */ v b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // q0.a
-            public final void accept(Object obj) {
-                switch (i10) {
-                    case 0:
-                        this.b.F.I();
-                        break;
-                    default:
-                        this.b.F.I();
-                        break;
-                }
-            }
-        });
-        final int i11 = 1;
-        this.A.add(new q0.a(this) { // from class: androidx.fragment.app.t
             public final /* synthetic */ v b;
 
             {
@@ -54,38 +36,58 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i11) {
                     case 0:
-                        this.b.F.I();
+                        this.b.G.m();
                         break;
                     default:
-                        this.b.F.I();
+                        this.b.G.m();
+                        break;
+                }
+            }
+        });
+        final int i12 = 1;
+        this.B.add(new q0.a(this) { // from class: androidx.fragment.app.t
+            public final /* synthetic */ v b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // q0.a
+            public final void accept(Object obj) {
+                switch (i12) {
+                    case 0:
+                        this.b.G.m();
+                        break;
+                    default:
+                        this.b.G.m();
                         break;
                 }
             }
         });
         androidx.activity.f fVar = new androidx.activity.f(this, 1);
-        com.google.android.gms.internal.cast.d0 d0Var = this.b;
-        d0Var.getClass();
-        if (((androidx.activity.l) d0Var.c) != null) {
+        com.google.android.gms.internal.cast.c0 c0Var = this.b;
+        c0Var.getClass();
+        if (((androidx.activity.m) c0Var.c) != null) {
             fVar.a();
         }
-        ((CopyOnWriteArraySet) d0Var.b).add(fVar);
+        ((CopyOnWriteArraySet) c0Var.b).add(fVar);
     }
 
     public static boolean t(j0 j0Var) {
-        boolean z10 = false;
-        for (s sVar : j0Var.c.u()) {
+        boolean z4 = false;
+        for (s sVar : j0Var.c.z()) {
             if (sVar != null) {
-                u uVar = sVar.G;
+                u uVar = sVar.H;
                 if ((uVar == null ? null : uVar.e) != null) {
-                    z10 |= t(sVar.l());
+                    z4 |= t(sVar.l());
                 }
-                if (sVar.Z.c.compareTo(androidx.lifecycle.n.d) >= 0) {
-                    sVar.Z.g();
-                    z10 = true;
+                if (sVar.a0.c.compareTo(androidx.lifecycle.n.d) >= 0) {
+                    sVar.a0.g();
+                    z4 = true;
                 }
             }
         }
-        return z10;
+        return z4;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -137,28 +139,28 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
         String str3 = str + "  ";
         printWriter.print(str3);
         printWriter.print("mCreated=");
-        printWriter.print(this.H);
-        printWriter.print(" mResumed=");
         printWriter.print(this.I);
-        printWriter.print(" mStopped=");
+        printWriter.print(" mResumed=");
         printWriter.print(this.J);
+        printWriter.print(" mStopped=");
+        printWriter.print(this.K);
         if (getApplication() != null) {
-            new v5.n(this, f()).i(str3, printWriter);
+            new q5.g0(this, f()).y(str3, printWriter);
         }
-        ((u) this.F.b).d.w(str, fileDescriptor, printWriter, strArr);
+        ((u) this.G.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
-    @Override // androidx.activity.l, android.app.Activity
+    @Override // androidx.activity.m, android.app.Activity
     public void onActivityResult(int i10, int i11, Intent intent) {
-        this.F.I();
+        this.G.m();
         super.onActivityResult(i10, i11, intent);
     }
 
-    @Override // androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.activity.m, e0.h, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.G.e(androidx.lifecycle.m.ON_CREATE);
-        k0 k0Var = ((u) this.F.b).d;
+        this.H.e(androidx.lifecycle.m.ON_CREATE);
+        k0 k0Var = ((u) this.G.b).d;
         k0Var.H = false;
         k0Var.I = false;
         k0Var.O.i = false;
@@ -167,24 +169,24 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // android.app.Activity, android.view.LayoutInflater.Factory2
     public final View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
-        x xVar = (x) ((u) this.F.b).d.f.onCreateView(view, str, context, attributeSet);
+        x xVar = (x) ((u) this.G.b).d.f.onCreateView(view, str, context, attributeSet);
         return xVar == null ? super.onCreateView(view, str, context, attributeSet) : xVar;
     }
 
     @Override // android.app.Activity
     public void onDestroy() {
         super.onDestroy();
-        ((u) this.F.b).d.l();
-        this.G.e(androidx.lifecycle.m.ON_DESTROY);
+        ((u) this.G.b).d.l();
+        this.H.e(androidx.lifecycle.m.ON_DESTROY);
     }
 
-    @Override // androidx.activity.l, android.app.Activity, android.view.Window.Callback
+    @Override // androidx.activity.m, android.app.Activity, android.view.Window.Callback
     public final boolean onMenuItemSelected(int i10, MenuItem menuItem) {
         if (super.onMenuItemSelected(i10, menuItem)) {
             return true;
         }
         if (i10 == 6) {
-            return ((u) this.F.b).d.j();
+            return ((u) this.G.b).d.j();
         }
         return false;
     }
@@ -192,46 +194,46 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
     @Override // android.app.Activity
     public void onPause() {
         super.onPause();
-        this.I = false;
-        ((u) this.F.b).d.u(5);
-        this.G.e(androidx.lifecycle.m.ON_PAUSE);
+        this.J = false;
+        ((u) this.G.b).d.u(5);
+        this.H.e(androidx.lifecycle.m.ON_PAUSE);
     }
 
     @Override // android.app.Activity
     public final void onPostResume() {
         super.onPostResume();
-        this.G.e(androidx.lifecycle.m.ON_RESUME);
-        k0 k0Var = ((u) this.F.b).d;
+        this.H.e(androidx.lifecycle.m.ON_RESUME);
+        k0 k0Var = ((u) this.G.b).d;
         k0Var.H = false;
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(7);
     }
 
-    @Override // androidx.activity.l, android.app.Activity
+    @Override // androidx.activity.m, android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.F.I();
+        this.G.m();
         super.onRequestPermissionsResult(i10, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
-        m5.i iVar = this.F;
-        iVar.I();
+        androidx.biometric.f0 f0Var = this.G;
+        f0Var.m();
         super.onResume();
-        this.I = true;
-        ((u) iVar.b).d.A(true);
+        this.J = true;
+        ((u) f0Var.b).d.A(true);
     }
 
     @Override // android.app.Activity
     public void onStart() {
-        m5.i iVar = this.F;
-        iVar.I();
-        u uVar = (u) iVar.b;
+        androidx.biometric.f0 f0Var = this.G;
+        f0Var.m();
+        u uVar = (u) f0Var.b;
         super.onStart();
-        this.J = false;
-        if (!this.H) {
-            this.H = true;
+        this.K = false;
+        if (!this.I) {
+            this.I = true;
             k0 k0Var = uVar.d;
             k0Var.H = false;
             k0Var.I = false;
@@ -239,7 +241,7 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
             k0Var.u(4);
         }
         uVar.d.A(true);
-        this.G.e(androidx.lifecycle.m.ON_START);
+        this.H.e(androidx.lifecycle.m.ON_START);
         k0 k0Var2 = uVar.d;
         k0Var2.H = false;
         k0Var2.I = false;
@@ -249,29 +251,29 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.F.I();
+        this.G.m();
     }
 
     @Override // android.app.Activity
     public void onStop() {
         super.onStop();
-        this.J = true;
+        this.K = true;
         while (t(s())) {
         }
-        k0 k0Var = ((u) this.F.b).d;
+        k0 k0Var = ((u) this.G.b).d;
         k0Var.I = true;
         k0Var.O.i = true;
         k0Var.u(4);
-        this.G.e(androidx.lifecycle.m.ON_STOP);
+        this.H.e(androidx.lifecycle.m.ON_STOP);
     }
 
     public final k0 s() {
-        return ((u) this.F.b).d;
+        return ((u) this.G.b).d;
     }
 
     @Override // android.app.Activity, android.view.LayoutInflater.Factory
     public final View onCreateView(String str, Context context, AttributeSet attributeSet) {
-        x xVar = (x) ((u) this.F.b).d.f.onCreateView(null, str, context, attributeSet);
+        x xVar = (x) ((u) this.G.b).d.f.onCreateView(null, str, context, attributeSet);
         return xVar == null ? super.onCreateView(str, context, attributeSet) : xVar;
     }
 }

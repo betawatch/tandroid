@@ -1,87 +1,142 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoIPServiceState;
-import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class gh1 extends org.telegram.ui.Components.voip.y2 {
-    public final Path s;
-    public final RectF v;
-    public final /* synthetic */ oh1 w;
+public final class gh1 extends org.telegram.ui.Components.l81 {
+    public boolean Q;
+    public final Path R;
+    public final /* synthetic */ hh1 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gh1(Activity activity, boolean z10, oh1 oh1Var) {
-        super(activity);
-        this.w = oh1Var;
-        this.c = new AnimationNotificationsLocker();
-        this.a = activity;
-        setSystemUiVisibility(1792);
-        AndroidUtilities.lockOrientation(activity, 1);
-        OrientationHelper.cameraRotationDisabled = true;
-        if (!z10) {
-            this.e = true;
-        }
-        this.s = new Path();
-        this.v = new RectF();
+    public gh1(hh1 hh1Var, Context context) {
+        super(context, null);
+        this.S = hh1Var;
+        this.R = new Path();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        oh1 oh1Var = this.w;
-        if (!oh1Var.A0 || getAlpha() == 0.0f) {
-            super.dispatchDraw(canvas);
-            return;
+        if (this.Q) {
+            Path path = this.R;
+            path.rewind();
+            float dpf2 = AndroidUtilities.dpf2(24.0f);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, AndroidUtilities.statusBarHeight, getWidth(), getHeight());
+            path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
         }
-        float scaleX = oh1Var.Y.getScaleX() * oh1Var.Y.getWidth();
-        float scaleY = oh1Var.Y.getScaleY() * oh1Var.Y.getHeight();
-        float x4 = oh1Var.Y.getX() + ((oh1Var.Y.getWidth() - scaleX) / 2.0f);
-        float y8 = oh1Var.Y.getY() + ((oh1Var.Y.getHeight() - scaleY) / 2.0f);
-        canvas.save();
-        Path path = this.s;
-        path.rewind();
-        RectF rectF = this.v;
-        rectF.set(x4, y8, scaleX + x4, scaleY + y8);
-        float dp = AndroidUtilities.dp(4.0f);
-        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-        path.close();
-        canvas.clipPath(path);
         super.dispatchDraw(canvas);
-        canvas.restore();
+        if (this.Q) {
+            canvas.restore();
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        VoIPServiceState sharedState;
-        oh1 oh1Var = this.w;
-        if (oh1Var.C0 || oh1Var.A0) {
-            return false;
+    @Override // org.telegram.ui.Components.l81
+    public float getAvailableTranslationX() {
+        return getMeasuredWidth();
+    }
+
+    @Override // org.telegram.ui.Components.l81
+    public long getManualScrollDuration() {
+        return 320L;
+    }
+
+    @Override // org.telegram.ui.Components.l81
+    public final boolean j(MotionEvent motionEvent) {
+        Object X = ((vg0) this.S).X();
+        if (X instanceof ug0) {
+            return ((ug0) X).S(motionEvent, false);
         }
-        int keyCode = keyEvent.getKeyCode();
-        if (keyCode == 4 && keyEvent.getAction() == 1) {
-            oh1Var.p();
-            return true;
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.l81
+    public final boolean k(MotionEvent motionEvent) {
+        Object X = ((vg0) this.S).X();
+        if (X instanceof ug0) {
+            return ((ug0) X).S(motionEvent, true);
         }
-        if ((keyCode != 25 && keyCode != 24) || oh1Var.l0 != 15 || (sharedState = VoIPService.getSharedState()) == null) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        sharedState.stopRinging();
-        return true;
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
     }
 
     @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.w.i1) {
+    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        super.setLayoutParams(layoutParams);
+    }
+
+    public void setTabletLayout(boolean z4) {
+        if (this.Q == z4) {
             return;
         }
-        super.draw(canvas);
+        this.Q = z4;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.l81
+    public final void t(View view, View view2, int i10, int i11) {
+        this.S.U();
+    }
+
+    @Override // org.telegram.ui.Components.l81
+    public final void u() {
+        oy oyVar;
+        hh1 hh1Var = this.S;
+        vg0 vg0Var = (vg0) hh1Var;
+        if (vg0Var.C != null) {
+            vg0Var.m0(vg0Var.c.getCurrentPosition(), true);
+            vg0Var.n0(0.0f, false);
+        }
+        vg0Var.d0();
+        gh1 gh1Var = vg0Var.c;
+        if (gh1Var != null) {
+            int currentPosition = gh1Var.getCurrentPosition();
+            if (currentPosition != 2 && vg0Var.x) {
+                vg0Var.W(2);
+                vg0Var.x = false;
+            }
+            if (currentPosition != 3) {
+                vg0Var.W(3);
+            }
+            Integer num = vg0Var.F;
+            if (num != null && currentPosition == 0 && (oyVar = vg0Var.G) != null) {
+                oyVar.w4(num.intValue());
+                vg0Var.F = null;
+            }
+        }
+        hh1Var.U();
+    }
+
+    @Override // org.telegram.ui.Components.l81
+    public final void w(boolean z4) {
+        hh1 hh1Var = this.S;
+        vg0 vg0Var = (vg0) hh1Var;
+        boolean z10 = !z4;
+        if (vg0Var.C != null) {
+            float positionAnimated = vg0Var.c.getPositionAnimated();
+            vg0Var.n0(positionAnimated, z10);
+            if (!z4) {
+                vg0Var.m0(Math.round(positionAnimated), true);
+            }
+        }
+        vg0Var.h0();
+        vg0Var.d0();
+        vg0Var.b.invalidate();
+        hh1Var.U();
+        hh1Var.checkSystemBarColors();
     }
 }

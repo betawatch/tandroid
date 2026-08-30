@@ -9,57 +9,57 @@ import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Base64;
+import b7.w0;
 import com.google.android.gms.fido.common.Transport;
-import h7.w6;
+import j7.a7;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
-import o6.b0;
-import o6.e0;
-import o6.i0;
-import o6.k;
-import o6.m;
-import o6.o;
-import o6.s;
-import o6.t;
-import o6.u;
-import o6.v;
-import o6.w;
-import o6.x;
-import o6.y;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaDataController;
+import q6.b0;
+import q6.e0;
+import q6.i0;
+import q6.k;
+import q6.m;
+import q6.o;
+import q6.s;
+import q6.t;
+import q6.u;
+import q6.v;
+import q6.w;
+import q6.x;
+import q6.y;
 import v0.i;
-import z6.s0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
     public i f;
     public Executor g;
     public CancellationSignal h;
-    public final c1.d i;
+    public final c1.e i;
 
     public e(Context context) {
         j.e(context, "context");
         this.e = context;
-        this.i = new c1.d(this, new Handler(Looper.getMainLooper()), 1);
+        this.i = new c1.e(this, new Handler(Looper.getMainLooper()), 1);
     }
 
     public static v0.f e(u uVar) {
         JSONObject jSONObject;
         try {
             k kVar = uVar.f;
-            s0 s0Var = uVar.c;
+            w0 w0Var = uVar.c;
             try {
                 JSONObject jSONObject2 = new JSONObject();
-                if (s0Var != null && s0Var.u().length > 0) {
-                    jSONObject2.put("rawId", g6.b.c(s0Var.u()));
+                if (w0Var != null && w0Var.u().length > 0) {
+                    jSONObject2.put("rawId", i6.b.c(w0Var.u()));
                 }
                 String str = uVar.n;
                 if (str != null) {
@@ -74,16 +74,16 @@ public final class e extends b1.d {
                     jSONObject2.put("id", str3);
                 }
                 String str4 = "response";
-                o6.i iVar = uVar.e;
-                boolean z10 = true;
+                q6.i iVar = uVar.e;
+                boolean z4 = true;
                 if (iVar != null) {
-                    jSONObject = iVar.b();
+                    jSONObject = iVar.e();
                 } else {
-                    o6.j jVar = uVar.d;
+                    q6.j jVar = uVar.d;
                     if (jVar != null) {
-                        jSONObject = jVar.b();
+                        jSONObject = jVar.e();
                     } else {
-                        z10 = false;
+                        z4 = false;
                         if (kVar != null) {
                             try {
                                 JSONObject jSONObject3 = new JSONObject();
@@ -94,8 +94,8 @@ public final class e extends b1.d {
                                 }
                                 str4 = "error";
                                 jSONObject = jSONObject3;
-                            } catch (JSONException e10) {
-                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e10);
+                            } catch (JSONException e) {
+                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);
                             }
                         } else {
                             jSONObject = null;
@@ -105,10 +105,10 @@ public final class e extends b1.d {
                 if (jSONObject != null) {
                     jSONObject2.put(str4, jSONObject);
                 }
-                o6.g gVar = uVar.h;
+                q6.g gVar = uVar.h;
                 if (gVar != null) {
-                    jSONObject2.put("clientExtensionResults", gVar.b());
-                } else if (z10) {
+                    jSONObject2.put("clientExtensionResults", gVar.e());
+                } else if (z4) {
                     jSONObject2.put("clientExtensionResults", new JSONObject());
                 }
                 String jSONObject4 = jSONObject2.toString();
@@ -116,8 +116,8 @@ public final class e extends b1.d {
                 Bundle bundle = new Bundle();
                 bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
                 return new v0.f(jSONObject4, bundle);
-            } catch (JSONException e11) {
-                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e11);
+            } catch (JSONException e6) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e6);
             }
         } catch (Throwable th2) {
             throw new w0.c("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
@@ -126,9 +126,9 @@ public final class e extends b1.d {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final v d(v0.e request) {
-        o6.f fVar;
+        q6.f fVar;
         m mVar;
-        o6.f fVar2;
+        q6.f fVar2;
         String str;
         JSONArray jSONArray;
         ArrayList arrayList;
@@ -138,7 +138,7 @@ public final class e extends b1.d {
         String str2 = request.d;
         Context context = this.e;
         j.e(context, "context");
-        if (w5.d.d.d(context, w5.e.a) == 0) {
+        if (y5.d.d.d(context, y5.e.a) == 0) {
             PackageManager packageManager = context.getPackageManager();
             j.d(packageManager, "getPackageManager(...)");
             if (Build.VERSION.SDK_INT >= 28) {
@@ -153,7 +153,7 @@ public final class e extends b1.d {
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a2 = w6.a(jSONObject);
+        byte[] a2 = a7.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");
@@ -251,8 +251,8 @@ public final class e extends b1.d {
                             arrayList.add(Transport.a(jSONArray4.getString(i13)));
                             i13++;
                             jSONArray4 = jSONArray5;
-                        } catch (m6.a e10) {
-                            throw new y0.a(new x0.a(4), e10.getMessage());
+                        } catch (o6.a e) {
+                            throw new y0.a(new x0.a(4), e.getMessage());
                         }
                     }
                 } else {
@@ -271,7 +271,7 @@ public final class e extends b1.d {
         LinkedHashMap linkedHashMap5 = g.a;
         String optString5 = jSONObject.optString("attestation", "none");
         j.b(optString5);
-        o6.e a10 = o6.e.a(optString5.length() != 0 ? optString5 : "none");
+        q6.e a10 = q6.e.a(optString5.length() != 0 ? optString5 : "none");
         Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getLong("timeout") / MediaDataController.MAX_STYLE_RUNS_COUNT) : null;
         if (jSONObject.has("authenticatorSelection")) {
             JSONObject jSONObject6 = jSONObject.getJSONObject("authenticatorSelection");
@@ -282,7 +282,7 @@ public final class e extends b1.d {
             Boolean valueOf2 = Boolean.valueOf(optBoolean);
             String optString7 = jSONObject6.optString("authenticatorAttachment", "");
             j.b(optString7);
-            o6.c a12 = optString7.length() > 0 ? o6.c.a(optString7) : null;
+            q6.c a12 = optString7.length() > 0 ? q6.c.a(optString7) : null;
             fVar = null;
             mVar = new m(a12 == null ? null : a12.a, valueOf2, null, a11 == null ? null : a11.a);
         } else {
@@ -293,7 +293,7 @@ public final class e extends b1.d {
             JSONObject jSONObject7 = jSONObject.getJSONObject("extensions");
             String optString8 = jSONObject7.optString("appid", "");
             j.b(optString8);
-            fVar2 = new o6.f(optString8.length() > 0 ? new s(optString8) : fVar, null, jSONObject7.optBoolean("uvm", false) ? new i0(true) : fVar, null, null, null, null, null, jSONObject7.optBoolean("thirdPartyPayment", false) ? new t(true) : fVar, null, null, null);
+            fVar2 = new q6.f(optString8.length() > 0 ? new s(optString8) : fVar, null, jSONObject7.optBoolean("uvm", false) ? new i0(true) : fVar, null, null, null, null, null, jSONObject7.optBoolean("thirdPartyPayment", false) ? new t(true) : fVar, null, null, null);
         } else {
             fVar2 = fVar;
         }

@@ -1,30 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class cw0 extends cg.l2 {
-    public final /* synthetic */ dw0 J;
+public final /* synthetic */ class cw0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cw0(dw0 dw0Var, Context context) {
-        super(context);
-        this.J = dw0Var;
+    public /* synthetic */ cw0(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
-    @Override // cg.l2, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.r.getVisibility() == 0) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
-            dw0 dw0Var = this.J;
-            dw0Var.d.n.j0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, dw0Var.d.n.K);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), dw0Var.d.n.j0.f);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        pw0 pw0Var = (pw0) obj;
+        pw0 pw0Var2 = (pw0) obj2;
+        switch (this.a) {
+            case 0:
+                MessagesController messagesController = this.b;
+                i10 = messagesController.businessFeaturesTypesToPosition.get(pw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController.businessFeaturesTypesToPosition.get(pw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
+            default:
+                MessagesController messagesController2 = this.b;
+                i10 = messagesController2.premiumFeaturesTypesToPosition.get(pw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController2.premiumFeaturesTypesToPosition.get(pw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
         }
-        super.dispatchDraw(canvas);
+        return i10 - i11;
     }
 }

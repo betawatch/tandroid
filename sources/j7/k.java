@@ -1,175 +1,252 @@
 package j7;
 
-import java.util.AbstractMap;
-import java.util.ConcurrentModificationException;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.charset.Charset;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class k implements Iterator {
-    public final /* synthetic */ int a = 0;
-    public int b;
-    public int c;
-    public int d;
-    public final /* synthetic */ AbstractMap e;
+public final class k implements u9.e {
+    public static final Charset f = Charset.forName("UTF-8");
+    public static final u9.c g = new u9.c("key", vh.v2.h(e2.c.n(i.class, new e(1))));
+    public static final u9.c h = new u9.c("value", vh.v2.h(e2.c.n(i.class, new e(2))));
+    public static final j i = j.b;
+    public OutputStream a;
+    public final HashMap b;
+    public final HashMap c;
+    public final u9.d d;
+    public final l e = new l(this, 0);
 
-    public k(n nVar) {
-        this.e = nVar;
-        this.b = nVar.e;
-        this.c = nVar.isEmpty() ? -1 : 0;
-        this.d = -1;
+    public k(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, u9.d dVar) {
+        this.a = byteArrayOutputStream;
+        this.b = hashMap;
+        this.c = hashMap2;
+        this.d = dVar;
     }
 
-    public abstract Object a(int i10);
-
-    public abstract Object b(int i10);
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-            case 0:
-                if (this.c >= 0) {
-                }
-                break;
-            case 1:
-                if (this.c >= 0) {
-                }
-                break;
-            default:
-                if (this.c >= 0) {
-                }
-                break;
+    public static int i(u9.c cVar) {
+        i iVar = (i) cVar.b(i.class);
+        if (iVar != null) {
+            return ((e) iVar).a;
         }
-        return false;
+        throw new u9.b("Field has no @Protobuf config");
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-            case 0:
-                n nVar = (n) this.e;
-                if (nVar.e != this.b) {
-                    throw new ConcurrentModificationException();
-                }
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
-                int i10 = this.c;
-                this.d = i10;
-                Object b10 = b(i10);
-                int i11 = this.c + 1;
-                if (i11 >= nVar.f) {
-                    i11 = -1;
-                }
-                this.c = i11;
-                return b10;
-            case 1:
-                l7.d dVar = (l7.d) this.e;
-                if (dVar.e != this.b) {
-                    throw new ConcurrentModificationException();
-                }
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
-                int i12 = this.c;
-                this.d = i12;
-                Object b11 = b(i12);
-                int i13 = this.c + 1;
-                if (i13 >= dVar.f) {
-                    i13 = -1;
-                }
-                this.c = i13;
-                return b11;
-            default:
-                q8.p pVar = (q8.p) this.e;
-                if (pVar.e != this.b) {
-                    throw new ConcurrentModificationException();
-                }
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
-                int i14 = this.c;
-                this.d = i14;
-                Object a2 = a(i14);
-                int i15 = this.c + 1;
-                if (i15 >= pVar.f) {
-                    i15 = -1;
-                }
-                this.c = i15;
-                return a2;
+    @Override // u9.e
+    public final /* synthetic */ u9.e a(u9.c cVar, int i10) {
+        h(cVar, i10, true);
+        return this;
+    }
+
+    @Override // u9.e
+    public final u9.e b(u9.c cVar, long j10) {
+        if (j10 == 0) {
+            return this;
+        }
+        i iVar = (i) cVar.b(i.class);
+        if (iVar == null) {
+            throw new u9.b("Field has no @Protobuf config");
+        }
+        k(((e) iVar).a << 3);
+        l(j10);
+        return this;
+    }
+
+    @Override // u9.e
+    public final u9.e c(u9.c cVar, double d) {
+        f(cVar, d, true);
+        return this;
+    }
+
+    @Override // u9.e
+    public final /* synthetic */ u9.e d(u9.c cVar, boolean z4) {
+        h(cVar, z4 ? 1 : 0, true);
+        return this;
+    }
+
+    @Override // u9.e
+    public final u9.e e(u9.c cVar, Object obj) {
+        g(cVar, obj, true);
+        return this;
+    }
+
+    public final void f(u9.c cVar, double d, boolean z4) {
+        if (z4 && d == 0.0d) {
+            return;
+        }
+        k((i(cVar) << 3) | 1);
+        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
+    }
+
+    public final void g(u9.c cVar, Object obj, boolean z4) {
+        if (obj == null) {
+            return;
+        }
+        if (obj instanceof CharSequence) {
+            CharSequence charSequence = (CharSequence) obj;
+            if (z4 && charSequence.length() == 0) {
+                return;
+            }
+            k((i(cVar) << 3) | 2);
+            byte[] bytes = charSequence.toString().getBytes(f);
+            k(bytes.length);
+            this.a.write(bytes);
+            return;
+        }
+        if (obj instanceof Collection) {
+            Iterator it = ((Collection) obj).iterator();
+            while (it.hasNext()) {
+                g(cVar, it.next(), false);
+            }
+            return;
+        }
+        if (obj instanceof Map) {
+            Iterator it2 = ((Map) obj).entrySet().iterator();
+            while (it2.hasNext()) {
+                j(i, cVar, (Map.Entry) it2.next(), false);
+            }
+            return;
+        }
+        if (obj instanceof Double) {
+            f(cVar, ((Double) obj).doubleValue(), z4);
+            return;
+        }
+        if (obj instanceof Float) {
+            float floatValue = ((Float) obj).floatValue();
+            if (z4 && floatValue == 0.0f) {
+                return;
+            }
+            k((i(cVar) << 3) | 5);
+            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
+            return;
+        }
+        if (obj instanceof Number) {
+            long longValue = ((Number) obj).longValue();
+            if (z4 && longValue == 0) {
+                return;
+            }
+            i iVar = (i) cVar.b(i.class);
+            if (iVar == null) {
+                throw new u9.b("Field has no @Protobuf config");
+            }
+            k(((e) iVar).a << 3);
+            l(longValue);
+            return;
+        }
+        if (obj instanceof Boolean) {
+            h(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z4);
+            return;
+        }
+        if (obj instanceof byte[]) {
+            byte[] bArr = (byte[]) obj;
+            if (z4 && bArr.length == 0) {
+                return;
+            }
+            k((i(cVar) << 3) | 2);
+            k(bArr.length);
+            this.a.write(bArr);
+            return;
+        }
+        u9.d dVar = (u9.d) this.b.get(obj.getClass());
+        if (dVar != null) {
+            j(dVar, cVar, obj, z4);
+            return;
+        }
+        u9.f fVar = (u9.f) this.c.get(obj.getClass());
+        if (fVar != null) {
+            l lVar = this.e;
+            lVar.b = false;
+            lVar.d = cVar;
+            lVar.c = z4;
+            fVar.a(obj, lVar);
+            return;
+        }
+        if (obj instanceof g) {
+            h(cVar, ((g) obj).zza(), true);
+        } else if (obj instanceof Enum) {
+            h(cVar, ((Enum) obj).ordinal(), true);
+        } else {
+            j(this.d, cVar, obj, z4);
         }
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                n nVar = (n) this.e;
-                int i10 = nVar.e;
-                int i11 = this.b;
-                if (i10 != i11) {
-                    throw new ConcurrentModificationException();
+    public final void h(u9.c cVar, int i10, boolean z4) {
+        if (z4 && i10 == 0) {
+            return;
+        }
+        i iVar = (i) cVar.b(i.class);
+        if (iVar == null) {
+            throw new u9.b("Field has no @Protobuf config");
+        }
+        k(((e) iVar).a << 3);
+        k(i10);
+    }
+
+    public final void j(u9.d dVar, u9.c cVar, Object obj, boolean z4) {
+        f fVar = new f(0);
+        fVar.b = 0L;
+        try {
+            OutputStream outputStream = this.a;
+            this.a = fVar;
+            try {
+                dVar.a(obj, this);
+                this.a = outputStream;
+                long j10 = fVar.b;
+                fVar.close();
+                if (z4 && j10 == 0) {
+                    return;
                 }
-                int i12 = this.d;
-                if (!(i12 >= 0)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
+                k((i(cVar) << 3) | 2);
+                l(j10);
+                dVar.a(obj, this);
+            } catch (Throwable th2) {
+                this.a = outputStream;
+                throw th2;
+            }
+        } catch (Throwable th3) {
+            try {
+                fVar.close();
+            } catch (Throwable th4) {
+                try {
+                    Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th3, th4);
+                } catch (Exception unused) {
                 }
-                this.b = i11 + 32;
-                Object[] objArr = nVar.c;
-                objArr.getClass();
-                nVar.remove(objArr[i12]);
-                this.c--;
-                this.d = -1;
-                return;
-            case 1:
-                l7.d dVar = (l7.d) this.e;
-                int i13 = dVar.e;
-                int i14 = this.b;
-                if (i13 != i14) {
-                    throw new ConcurrentModificationException();
-                }
-                int i15 = this.d;
-                if (!(i15 >= 0)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
-                }
-                this.b = i14 + 32;
-                Object[] objArr2 = dVar.c;
-                objArr2.getClass();
-                dVar.remove(objArr2[i15]);
-                this.c--;
-                this.d = -1;
-                return;
-            default:
-                q8.p pVar = (q8.p) this.e;
-                int i16 = pVar.e;
-                int i17 = this.b;
-                if (i16 != i17) {
-                    throw new ConcurrentModificationException();
-                }
-                int i18 = this.d;
-                if (!(i18 >= 0)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
-                }
-                this.b = i17 + 32;
-                pVar.remove(pVar.i()[i18]);
-                this.c--;
-                this.d = -1;
-                return;
+            }
+            throw th3;
         }
     }
 
-    public k(l7.d dVar) {
-        this.e = dVar;
-        this.b = dVar.e;
-        this.c = dVar.isEmpty() ? -1 : 0;
-        this.d = -1;
+    public final void k(int i10) {
+        while (true) {
+            long j10 = i10 & (-128);
+            OutputStream outputStream = this.a;
+            if (j10 == 0) {
+                outputStream.write(i10 & 127);
+                return;
+            } else {
+                outputStream.write((i10 & 127) | 128);
+                i10 >>>= 7;
+            }
+        }
     }
 
-    public k(q8.p pVar) {
-        this.e = pVar;
-        this.b = pVar.e;
-        this.c = pVar.isEmpty() ? -1 : 0;
-        this.d = -1;
+    public final void l(long j10) {
+        while (true) {
+            long j11 = (-128) & j10;
+            OutputStream outputStream = this.a;
+            if (j11 == 0) {
+                outputStream.write(((int) j10) & 127);
+                return;
+            } else {
+                outputStream.write((((int) j10) & 127) | 128);
+                j10 >>>= 7;
+            }
+        }
     }
 }

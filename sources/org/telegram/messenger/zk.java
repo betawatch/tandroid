@@ -1,27 +1,76 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.ArrayList;
+import java.util.Set;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ zk(TranslateController translateController, long j10, int i10) {
-        this.a = i10;
-        this.b = translateController;
+    public /* synthetic */ zk(long j10, Set set, TranslateController.PendingTranslation pendingTranslation, TranslateController translateController, TLObject tLObject, TLRPC.TL_error tL_error, boolean z4) {
+        this.d = translateController;
+        this.e = pendingTranslation;
+        this.f = tLObject;
+        this.b = z4;
+        this.h = tL_error;
         this.c = j10;
+        this.n = set;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkDialogTranslatable$17(this.c);
+                TranslateController translateController = (TranslateController) this.d;
+                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
+                TLObject tLObject = (TLObject) this.f;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
+                Set set = (Set) this.n;
+                translateController.lambda$pushToTranslate$22(pendingTranslation, tLObject, this.b, tL_error, this.c, set);
+                break;
+            case 1:
+                ((MediaDataController) this.d).lambda$broadcastReplyMessages$179((ArrayList) this.e, this.b, (ArrayList) this.f, (ArrayList) this.h, (a0.h) this.n, this.c);
                 break;
             default:
-                this.b.lambda$checkDialogMessageSure$11(this.c);
+                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
+                TLObject tLObject2 = (TLObject) this.f;
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
+                RequestDelegate requestDelegate = (RequestDelegate) this.n;
+                memberRequestsController.lambda$getImporters$0(tL_error2, tLObject2, tL_chatInviteImporter, this.b, this.c, requestDelegate);
                 break;
         }
+    }
+
+    public /* synthetic */ zk(long j10, MemberRequestsController memberRequestsController, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.TL_error tL_error, boolean z4) {
+        this.d = memberRequestsController;
+        this.h = tL_error;
+        this.f = tLObject;
+        this.e = tL_chatInviteImporter;
+        this.b = z4;
+        this.c = j10;
+        this.n = requestDelegate;
+    }
+
+    public /* synthetic */ zk(MediaDataController mediaDataController, ArrayList arrayList, boolean z4, ArrayList arrayList2, ArrayList arrayList3, a0.h hVar, long j10) {
+        this.d = mediaDataController;
+        this.e = arrayList;
+        this.b = z4;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.n = hVar;
+        this.c = j10;
     }
 }

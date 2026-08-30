@@ -1,44 +1,46 @@
 package lh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w3 b;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.LinearLayout;
 
-    public /* synthetic */ p3(w3 w3Var, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes4.dex */
+public final class p3 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g5 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ p3(g5 g5Var, Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = w3Var;
+        this.b = g5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 0:
-                ((z8) this.b.l.M1).g(false);
+                if (this.b.V0.c(0)) {
+                    break;
+                }
                 break;
             case 1:
-                d4 d4Var = this.b.l;
-                x3 x3Var = d4Var.M1;
-                if (x3Var != null) {
-                    i9 i9Var = ((z8) x3Var).d;
-                    i9Var.V0 = false;
-                    i9Var.P();
+                if (this.b.V0.c(1)) {
+                    break;
                 }
-                d4Var.f1(false);
-                d4Var.d3 = true;
-                d4Var.G0.D(true);
                 break;
             case 2:
-                d4 d4Var2 = this.b.l;
-                d4Var2.Q3 = true;
-                d4Var2.setActive(false);
+                if (this.b.V0.c(2)) {
+                    break;
+                }
                 break;
             default:
-                d4 d4Var3 = this.b.l;
-                d4Var3.Q3 = true;
-                d4Var3.setActive(false);
+                if (this.b.V0.c(3)) {
+                    break;
+                }
                 break;
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

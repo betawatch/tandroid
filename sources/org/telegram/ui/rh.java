@@ -1,41 +1,41 @@
 package org.telegram.ui;
 
-import android.view.View;
-import j$.util.Objects;
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rh implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class rh implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ xn c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ rh(int i10) {
-        this.a = i10;
+    public /* synthetic */ rh(int i10, xn xnVar, boolean z4) {
+        this.b = i10;
+        this.c = xnVar;
+        this.d = z4;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                MessageObject messageObject = (MessageObject) obj;
-                return Boolean.valueOf((messageObject == null || messageObject.getFactCheck() == null) ? false : true);
-            case 1:
-                MessageObject messageObject2 = (MessageObject) obj;
-                return Boolean.valueOf((messageObject2 == null || messageObject2.getEffect() == null) ? false : true);
-            case 2:
-                return LocaleController.formatPluralString("Hours", ((Integer) obj).intValue(), new Object[0]);
-            case 3:
-                return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
-            case 4:
-                View view = (View) obj;
-                return Boolean.valueOf(((view instanceof org.telegram.ui.Cells.y8) || (view instanceof org.telegram.ui.Cells.x6) || (view instanceof k10) || (view instanceof org.telegram.ui.Cells.s3) || (view instanceof org.telegram.ui.Cells.z1) || Objects.equals(view.getTag(), -33024)) ? false : true);
-            case 5:
-                return Boolean.valueOf(org.telegram.ui.Components.k51.K(((Integer) obj).intValue()));
+                boolean z4 = this.d;
+                this.c.yc(this.b, z4);
+                break;
             default:
-                return String.format(Locale.US, "%.1f%%", Float.valueOf(((Integer) obj).intValue() / 10.0f));
+                int i10 = this.b;
+                xn xnVar = this.c;
+                if (i10 != 2) {
+                    xnVar.U9();
+                    xnVar.Yb();
+                }
+                sh.p0.f(org.telegram.ui.Components.qc.a0(xnVar), i10, this.d);
+                break;
         }
+    }
+
+    public /* synthetic */ rh(xn xnVar, boolean z4, int i10) {
+        this.c = xnVar;
+        this.d = z4;
+        this.b = i10;
     }
 }

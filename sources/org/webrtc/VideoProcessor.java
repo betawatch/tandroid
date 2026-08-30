@@ -1,10 +1,10 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public interface VideoProcessor extends CapturerObserver {
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class FrameAdaptationParameters {
         public final int cropHeight;
         public final int cropWidth;
@@ -15,7 +15,7 @@ public interface VideoProcessor extends CapturerObserver {
         public final int scaleWidth;
         public final long timestampNs;
 
-        public FrameAdaptationParameters(int i10, int i11, int i12, int i13, int i14, int i15, long j10, boolean z10) {
+        public FrameAdaptationParameters(int i10, int i11, int i12, int i13, int i14, int i15, long j10, boolean z4) {
             this.cropX = i10;
             this.cropY = i11;
             this.cropWidth = i12;
@@ -23,7 +23,7 @@ public interface VideoProcessor extends CapturerObserver {
             this.scaleWidth = i14;
             this.scaleHeight = i15;
             this.timestampNs = j10;
-            this.drop = z10;
+            this.drop = z4;
         }
     }
 

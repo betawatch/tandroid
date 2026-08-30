@@ -1,85 +1,185 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mh implements org.telegram.ui.yp0 {
-    public boolean a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ni d;
+public final class mh extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ li b;
 
-    public mh(ni niVar, HashMap hashMap, ArrayList arrayList) {
-        this.d = niVar;
-        this.b = hashMap;
-        this.c = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ mh(li liVar, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = liVar;
     }
 
-    @Override // org.telegram.ui.yp0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.yp0
-    public final void h(int i10, boolean z10, boolean z11) {
-        if (z10) {
-            return;
-        }
-        HashMap hashMap = this.b;
-        if (hashMap.isEmpty() || this.a) {
-            return;
-        }
-        this.a = true;
-        ArrayList arrayList = new ArrayList();
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.c;
-            if (i11 >= arrayList2.size()) {
-                ((org.telegram.ui.tn) this.d.b0).d8(i10, arrayList, z11);
-                return;
-            }
-            Object obj = hashMap.get(arrayList2.get(i11));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList.add(sendingMediaInfo);
-            MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-            String str = searchImage.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.searchImage = searchImage;
-            }
-            sendingMediaInfo.thumbPath = searchImage.thumbPath;
-            sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-            CharSequence charSequence = searchImage.caption;
-            sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-            sendingMediaInfo.entities = searchImage.entities;
-            sendingMediaInfo.masks = searchImage.stickers;
-            sendingMediaInfo.ttl = searchImage.ttl;
-            TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-            if (botInlineResult != null && searchImage.type == 1) {
-                sendingMediaInfo.inlineResult = botInlineResult;
-                sendingMediaInfo.params = searchImage.params;
-            }
-            searchImage.date = (int) (System.currentTimeMillis() / 1000);
-            i11++;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                canvas.save();
+                canvas.clipRect(0.0f, this.b.S1, getMeasuredWidth(), getMeasuredHeight());
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.yp0
-    public final void a() {
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                li liVar = this.b;
+                mh mhVar = liVar.A0;
+                if (liVar.z0.getAlpha() > 0.0f) {
+                    float f10 = liVar.T1;
+                    if (f10 != 0.0f && f10 != mhVar.getTop() + liVar.T1) {
+                        ValueAnimator valueAnimator = liVar.U1;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                        }
+                        float top = liVar.T1 - (mhVar.getTop() + liVar.S1);
+                        liVar.S1 = top;
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
+                        liVar.U1 = ofFloat;
+                        ofFloat.addUpdateListener(new f6(this, 10));
+                        liVar.U1.setInterpolator(nr.f);
+                        liVar.U1.setDuration(200L);
+                        liVar.U1.start();
+                        liVar.T1 = 0.0f;
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.yp0
-    public final void b(Editable editable) {
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 3:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                li liVar = this.b;
+                di diVar = liVar.v0;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = liVar.g0;
+                if (diVar == chatAttachAlertPhotoLayout) {
+                    accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", chatAttachAlertPhotoLayout.getSelectedItemsCount(), new Object[0]));
+                } else {
+                    hk hkVar = liVar.m0;
+                    if (diVar == hkVar) {
+                        accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendFiles", hkVar.getSelectedItemsCount(), new Object[0]));
+                    } else {
+                        wi wiVar = liVar.i0;
+                        if (diVar == wiVar) {
+                            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendAudio", wiVar.getSelectedItemsCount(), new Object[0]));
+                        }
+                    }
+                }
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.yp0
-    public final /* synthetic */ void g() {
+    @Override // android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.f1.getVisibility() != 0) {
+                    return false;
+                }
+                return super.onInterceptTouchEvent(motionEvent);
+            default:
+                return super.onInterceptTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                li liVar = this.b;
+                if (liVar.E && liVar.F != 0) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(36.0f) + (AndroidUtilities.dp(80.0f) * Integer.bitCount(liVar.F))), TLObject.FLAG_30), i11);
+                    break;
+                } else {
+                    super.onMeasure(i10, i11);
+                    break;
+                }
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.f1.getVisibility() != 0) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        ViewGroup viewGroup;
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f10);
+                li liVar = this.b;
+                liVar.a2(0);
+                viewGroup = ((org.telegram.ui.ActionBar.g3) liVar).containerView;
+                viewGroup.invalidate();
+                break;
+            case 1:
+            default:
+                super.setAlpha(f10);
+                break;
+            case 2:
+                super.setAlpha(f10);
+                invalidate();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        switch (this.a) {
+            case 1:
+                super.setTranslationY(f10);
+                this.b.v0.j();
+                break;
+            default:
+                super.setTranslationY(f10);
+                break;
+        }
     }
 }

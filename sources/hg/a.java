@@ -1,166 +1,110 @@
 package hg;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import cf.f;
-import jh.u4;
-import kg.o0;
-import org.telegram.ui.Components.eo0;
-import org.telegram.ui.Components.s21;
-import org.telegram.ui.Components.yp;
-import th.q0;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class a implements Drawable.Callback {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class a extends bg.b {
+    public CharSequence c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public Object f;
+    public boolean g;
+    public long h;
+    public int i;
+    public int j;
+    public List k;
+    public int l;
+    public TLObject m;
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                break;
-            case 3:
-                ((u4) this.b).f.invalidate();
-                break;
-            case 4:
-                ((k2.d) this.b).invalidateSelf();
-                break;
-            case 5:
-                o0 o0Var = (o0) this.b;
-                View view = o0Var.W;
-                if (view != null) {
-                    view.invalidate();
-                    if (o0Var.R && o0Var.W.getParent() != null && (o0Var.W.getParent().getParent() instanceof View)) {
-                        ((View) o0Var.W.getParent().getParent()).invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 6:
-                ((yp) this.b).invalidateSelf();
-                break;
-            case 7:
-                ((eo0) this.b).b.run();
-                break;
-            case 8:
-                ((f) this.b).invalidateSelf();
-                break;
-            case 9:
-                ((s21) this.b).invalidateSelf();
-                break;
-            default:
-                ((q0) this.b).b.invalidate();
-                break;
+    public static a b(TLRPC.Chat chat, int i10, boolean z4) {
+        a aVar = new a(9, false);
+        aVar.e = chat;
+        aVar.d = null;
+        aVar.g = z4;
+        aVar.i = i10;
+        return aVar;
+    }
+
+    public static a c(CharSequence charSequence, boolean z4) {
+        a aVar = new a(7, false);
+        aVar.c = charSequence;
+        aVar.g = z4;
+        return aVar;
+    }
+
+    public static a d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i10, long j10, boolean z4, boolean z10) {
+        a aVar = new a(17, z4);
+        aVar.i = i10;
+        aVar.h = j10;
+        aVar.m = tL_starsGiveawayOption;
+        aVar.g = z10;
+        return aVar;
+    }
+
+    public static a e(int i10, int i11, boolean z4, ArrayList arrayList) {
+        a aVar = new a(11, i11 == i10);
+        aVar.l = i10;
+        aVar.g = z4;
+        aVar.f = arrayList;
+        return aVar;
+    }
+
+    public static a f(String str) {
+        a aVar = new a(6, false);
+        aVar.c = str;
+        return aVar;
+    }
+
+    public static boolean g(List list, List list2) {
+        if (list == null && list2 == null) {
+            return true;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.scheduleDrawable(drawable, runnable, j10);
-                    break;
-                }
-                break;
-            case 4:
-                ((k2.d) this.b).scheduleSelf(runnable, j10);
-                break;
-            case 5:
-                View view = ((o0) this.b).W;
-                if (view != null) {
-                    view.scheduleDrawable(drawable, runnable, j10);
-                    break;
-                }
-                break;
-            case 6:
-                ((yp) this.b).scheduleSelf(runnable, j10);
-                break;
-            case 8:
-                ((f) this.b).scheduleSelf(runnable, j10);
-                break;
+        if (list == null || list2 == null || list.size() != list2.size()) {
+            return false;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 4:
-                ((k2.d) this.b).unscheduleSelf(runnable);
-                break;
-            case 5:
-                View view = ((o0) this.b).W;
-                if (view != null) {
-                    view.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 6:
-                ((yp) this.b).unscheduleSelf(runnable);
-                break;
-            case 8:
-                ((f) this.b).unscheduleSelf(runnable);
-                break;
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            if (((Integer) list.get(i10)).intValue() != ((Integer) list2.get(i10)).intValue()) {
+                return false;
+            }
         }
+        return true;
     }
 
-    public /* synthetic */ a(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // bg.b
+    public final boolean a(bg.b bVar) {
+        a aVar;
+        int i10;
+        int i11;
+        if (this == bVar) {
+            return true;
+        }
+        if (a.class == bVar.getClass() && (i10 = (aVar = (a) bVar).a) == (i11 = this.a)) {
+            return i11 == 0 ? this.g == aVar.g : i10 == 17 ? this.i == aVar.i && this.h == aVar.h && this.m == aVar.m && this.g == aVar.g && this.b == aVar.b : i11 == 5 ? this.i == aVar.i && g(this.k, aVar.k) : i11 == 13 && this.i == aVar.i && TextUtils.equals(this.c, aVar.c);
+        }
+        return false;
     }
 
-    private final void a(Drawable drawable) {
-    }
-
-    private final void f(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void g(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void h(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void i(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void b(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void c(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void d(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void e(Drawable drawable, Runnable runnable, long j10) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || a.class != obj.getClass()) {
+            return false;
+        }
+        a aVar = (a) obj;
+        int i10 = this.a;
+        if (i10 != aVar.a) {
+            return false;
+        }
+        if (i10 == 0) {
+            return true;
+        }
+        return i10 == 17 ? this.i == aVar.i && this.m == aVar.m : i10 == 5 ? g(this.k, aVar.k) : i10 == 13 ? TextUtils.equals(this.c, aVar.c) : this.e == aVar.e && this.f == aVar.f && this.d == aVar.d && this.m == aVar.m && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && this.h == aVar.h && this.l == aVar.l && TextUtils.equals(this.c, aVar.c);
     }
 }

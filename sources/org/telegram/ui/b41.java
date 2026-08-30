@@ -1,31 +1,126 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.graphics.Bitmap;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b41 implements View.OnClickListener {
+public final /* synthetic */ class b41 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f41 b;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public /* synthetic */ b41(f41 f41Var, int i10) {
+    public /* synthetic */ b41(SecretMediaViewer secretMediaViewer, int i10) {
         this.a = i10;
-        this.b = f41Var;
+        this.b = secretMediaViewer;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = 4;
+        SecretMediaViewer secretMediaViewer = this.b;
+        switch (i10) {
             case 0:
-                f41 f41Var = this.b;
-                if (f41Var.U == null) {
-                    f41Var.dismiss();
+                secretMediaViewer.H0 = null;
+                secretMediaViewer.j0 = 0;
+                secretMediaViewer.e.setLayerType(0, null);
+                secretMediaViewer.e.setVisibility(4);
+                secretMediaViewer.s = false;
+                secretMediaViewer.K = null;
+                secretMediaViewer.J = false;
+                secretMediaViewer.i();
+                new ArrayList();
+                AndroidUtilities.runOnUIThread(new b41(secretMediaViewer, i11), 50L);
+                break;
+            case 1:
+                ah.d dVar = secretMediaViewer.e;
+                if (dVar != null) {
+                    dVar.setLayerType(0, null);
+                    secretMediaViewer.e.setVisibility(4);
+                    secretMediaViewer.j0 = 0;
+                    secretMediaViewer.s = false;
+                    secretMediaViewer.K = null;
+                    secretMediaViewer.J = false;
+                    secretMediaViewer.i();
+                    new ArrayList();
+                    AndroidUtilities.runOnUIThread(new b41(secretMediaViewer, i11), 50L);
+                    secretMediaViewer.e.setScaleX(1.0f);
+                    secretMediaViewer.e.setScaleY(1.0f);
                     break;
                 }
                 break;
+            case 2:
+                h41 h41Var = secretMediaViewer.y;
+                if (h41Var != null) {
+                    long n10 = h41Var.n();
+                    long p10 = secretMediaViewer.y.p();
+                    if (p10 == -9223372036854775807L) {
+                        n10 = 0;
+                        p10 = 0;
+                    }
+                    if (p10 > 0) {
+                        org.telegram.ui.Components.k71 k71Var = secretMediaViewer.N;
+                        if (!k71Var.f) {
+                            k71Var.h(n10 / p10, false);
+                            secretMediaViewer.O.invalidate();
+                        }
+                    }
+                    int[] iArr = secretMediaViewer.g1;
+                    Arrays.fill(iArr, 0);
+                    int[] iArr2 = secretMediaViewer.h1;
+                    Arrays.fill(iArr2, 0);
+                    h41 h41Var2 = secretMediaViewer.y;
+                    if (h41Var2 != null) {
+                        long max = Math.max(0L, h41Var2.n()) / 1000;
+                        long max2 = Math.max(0L, secretMediaViewer.y.p()) / 1000;
+                        iArr[0] = (int) (max / 60);
+                        iArr[1] = (int) (max % 60);
+                        iArr2[0] = (int) (max2 / 60);
+                        iArr2[1] = (int) (max2 % 60);
+                    }
+                    int i12 = iArr[0];
+                    String format = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr[1]));
+                    int i13 = iArr2[0];
+                    String format2 = i13 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i13 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i13), Integer.valueOf(iArr2[1]));
+                    org.telegram.ui.ActionBar.k5 k5Var = secretMediaViewer.P;
+                    Locale locale = Locale.ROOT;
+                    k5Var.l(format + " / " + format2, false);
+                    if (secretMediaViewer.y.y()) {
+                        AndroidUtilities.runOnUIThread(secretMediaViewer.f1, 17L);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                secretMediaViewer.m(false, true);
+                break;
             default:
-                this.b.dismiss();
+                ImageReceiver.BitmapHolder bitmapHolder = secretMediaViewer.f0;
+                if (bitmapHolder != null) {
+                    bitmapHolder.release();
+                    secretMediaViewer.f0 = null;
+                }
+                secretMediaViewer.h.setImageBitmap((Bitmap) null);
+                try {
+                    if (secretMediaViewer.d.getParent() != null) {
+                        ((WindowManager) secretMediaViewer.b.getSystemService("window")).removeView(secretMediaViewer.d);
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                secretMediaViewer.g0 = false;
                 break;
         }
+    }
+
+    public /* synthetic */ b41(SecretMediaViewer secretMediaViewer, ju0 ju0Var, int i10) {
+        this.a = i10;
+        this.b = secretMediaViewer;
     }
 }

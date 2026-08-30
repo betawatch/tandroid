@@ -1,152 +1,130 @@
 package nh;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.jq;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class a extends View {
-    public final ImageReceiver a;
-    public final String b;
-    public final String c;
-    public final TextPaint d;
-    public StaticLayout e;
-    public float f;
+public final class a extends FrameLayout {
+    public final ImageView a;
+    public final org.telegram.ui.Components.j6 b;
+    public final Paint c;
+    public final Paint d;
+    public boolean e;
+    public int f;
     public float h;
-    public final TextPaint n;
-    public StaticLayout r;
-    public float s;
-    public float v;
+    public ValueAnimator n;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+    public a(Context context, qg.b bVar) {
         super(context);
-        String str2;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.n = textPaint2;
-        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.g6.K0(false));
-        setMinimumWidth(AndroidUtilities.dp(196.0f));
-        setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i11 = org.telegram.ui.ActionBar.g6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        textPaint2.setAlpha(102);
-        textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
-        String str3 = "";
-        String str4 = "" + ((Object) str);
-        this.b = str4;
-        this.c = j7.l1.k(i10, "");
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        jq jqVar = new jq(org.telegram.ui.ActionBar.g6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        jqVar.w = false;
-        int dp = AndroidUtilities.dp(18.0f);
-        int dp2 = AndroidUtilities.dp(18.0f);
-        jqVar.e = dp;
-        jqVar.f = dp2;
-        if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, jqVar, (Object) null, 0);
-        } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(jqVar);
-        } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, jqVar, (Object) null, 0);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.h = 1.0f;
+        k7.d6.a(this);
+        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
+        this.b = j6Var;
+        j6Var.r(-9866632);
+        j6Var.t(AndroidUtilities.dp(9.0f));
+        j6Var.setCallback(this);
+        j6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
+        j6Var.D = true;
+        paint.setColor(-14670806);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        FrameLayout frameLayout = new FrameLayout(context);
+        ng.i iVar = new ng.i();
+        iVar.a(bVar);
+        iVar.g.setColor(-14670806);
+        iVar.invalidateSelf();
+        iVar.f = AndroidUtilities.dp(1.0f);
+        frameLayout.setBackground(iVar);
+        addView(frameLayout, k7.b6.e(40, 40, 17));
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.menu_comments);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
+        frameLayout.addView(imageView, k7.b6.e(20, 20, 17));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setImageResource(R.drawable.menu_comments_arrow);
+        imageView2.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
+        frameLayout.addView(imageView2, k7.b6.e(20, 20, 17));
+        imageView2.setPivotX(AndroidUtilities.dp(10.27f));
+        imageView2.setPivotY(AndroidUtilities.dp(9.58f));
+    }
+
+    public final void a(boolean z4, boolean z10) {
+        if (z10 && this.e == z4) {
+            return;
+        }
+        this.e = z4;
+        ImageView imageView = this.a;
+        if (z10) {
+            org.telegram.ui.b.p(imageView.animate().rotation(z4 ? 0.0f : 180.0f), nr.h, 420L);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, jqVar, (Object) null, 0);
+            imageView.setRotation(z4 ? 0.0f : 180.0f);
         }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append((Object) str4);
-        if (i10 > 0) {
-            str3 = " " + LocaleController.formatPluralStringComma("Media", i10);
-        }
-        sb2.append(str3);
-        setContentDescription(sb2.toString());
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        float paddingLeft = getPaddingLeft();
-        float dp = AndroidUtilities.dp(30.0f);
-        float dp2 = AndroidUtilities.dp(30.0f);
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(paddingLeft, (getMeasuredHeight() - AndroidUtilities.dp(30.0f)) / 2.0f, dp, dp2);
-        imageReceiver.draw(canvas);
-        float dp3 = paddingLeft + AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f);
-        if (this.e != null) {
-            canvas.save();
-            canvas.translate(dp3 - this.h, (getMeasuredHeight() - this.e.getHeight()) / 2.0f);
-            this.e.draw(canvas);
-            dp3 = dp3 + this.f + AndroidUtilities.dp(6.0f);
-            canvas.restore();
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        super.dispatchDraw(canvas);
+        float f10 = this.h;
+        org.telegram.ui.Components.j6 j6Var = this.b;
+        float g10 = j6Var.g() * f10;
+        float max = Math.max(AndroidUtilities.dp(12.0f), j6Var.d() + AndroidUtilities.dp(6.0f));
+        canvas.save();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
+        canvas.scale(g10, g10, rectF.centerX(), rectF.centerY());
+        rectF.inset(-AndroidUtilities.dp(2.0f), -AndroidUtilities.dp(2.0f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
+        rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
+        canvas.translate(((max - j6Var.d()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
+        j6Var.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    public void setCount(int i10) {
+        this.b.q(i10 <= 0 ? "" : LocaleController.formatNumber(i10, ','), true, true);
+        if (this.f != i10) {
+            ValueAnimator valueAnimator = this.n;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.n = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.n = ofFloat;
+            ofFloat.addUpdateListener(new dg.o1(this, 19));
+            this.n.addListener(new cg.l0(this, 15));
+            this.n.setInterpolator(new OvershootInterpolator(2.5f));
+            this.n.setDuration(200L);
+            this.n.start();
+            this.f = i10;
         }
-        if (this.r != null) {
-            canvas.save();
-            canvas.translate(dp3 - this.v, AndroidUtilities.dpf2(1.6f) + ((getMeasuredHeight() - this.r.getHeight()) / 2.0f));
-            this.r.draw(canvas);
-            canvas.restore();
-        }
+        invalidate();
     }
 
     @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(12.0f)) - getPaddingLeft()) - getPaddingRight();
-        StaticLayout staticLayout = this.e;
-        if (staticLayout == null || staticLayout.getWidth() != size) {
-            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            String str = this.b;
-            TextPaint textPaint = this.d;
-            CharSequence ellipsize = TextUtils.ellipsize(str, textPaint, size, truncateAt);
-            int max = Math.max(0, size);
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            StaticLayout staticLayout2 = new StaticLayout(ellipsize, textPaint, max, alignment, 1.0f, 0.0f, false);
-            this.e = staticLayout2;
-            this.h = staticLayout2.getLineCount() > 0 ? this.e.getLineLeft(0) : 0.0f;
-            float lineWidth = this.e.getLineCount() > 0 ? this.e.getLineWidth(0) : 0.0f;
-            this.f = lineWidth;
-            int dp = size - ((int) (lineWidth + AndroidUtilities.dp(8.0f)));
-            TextPaint textPaint2 = this.n;
-            StaticLayout staticLayout3 = new StaticLayout(TextUtils.ellipsize(this.c, textPaint2, dp, truncateAt), textPaint2, Math.max(0, dp), alignment, 1.0f, 0.0f, false);
-            this.r = staticLayout3;
-            this.v = staticLayout3.getLineCount() > 0 ? this.r.getLineLeft(0) : 0.0f;
-            this.s = this.r.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
-        }
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            setMeasuredDimension((int) Math.min(AndroidUtilities.dp(12.0f) + AndroidUtilities.dp(30.0f) + getPaddingLeft() + this.f + AndroidUtilities.dp(8.0f) + this.s + getPaddingRight(), View.MeasureSpec.getSize(i10)), AndroidUtilities.dp(48.0f));
-        } else if (View.MeasureSpec.getMode(i10) == 1073741824) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(48.0f));
-        }
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.b || super.verifyDrawable(drawable);
     }
 }

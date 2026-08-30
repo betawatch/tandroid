@@ -2,13 +2,13 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class z0 extends c1 {
     public final WindowInsets.Builder c;
 
     public z0() {
-        this.c = android.support.v4.media.session.z.g();
+        this.c = android.support.v4.media.session.y.g();
     }
 
     @Override // r0.c1
@@ -49,9 +49,9 @@ public class z0 extends c1 {
         WindowInsets.Builder g10;
         WindowInsets g11 = m1Var.g();
         if (g11 != null) {
-            g10 = android.support.v4.media.session.z.h(g11);
+            g10 = android.support.v4.media.session.y.h(g11);
         } else {
-            g10 = android.support.v4.media.session.z.g();
+            g10 = android.support.v4.media.session.y.g();
         }
         this.c = g10;
     }

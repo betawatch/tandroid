@@ -14,9 +14,9 @@ public final class e {
                 this.a = CoderResult.UNDERFLOW;
                 return -1;
             }
-            char c6 = charBuffer.get();
-            if (Character.isLowSurrogate(c6)) {
-                int codePoint = Character.toCodePoint(c3, c6);
+            char c10 = charBuffer.get();
+            if (Character.isLowSurrogate(c10)) {
+                int codePoint = Character.toCodePoint(c3, c10);
                 this.b = true;
                 this.a = null;
                 return codePoint;
@@ -47,9 +47,9 @@ public final class e {
             this.a = CoderResult.UNDERFLOW;
             return -1;
         }
-        char c6 = cArr[i10 + 1];
-        if (Character.isLowSurrogate(c6)) {
-            int codePoint = Character.toCodePoint(c3, c6);
+        char c10 = cArr[i10 + 1];
+        if (Character.isLowSurrogate(c10)) {
+            int codePoint = Character.toCodePoint(c3, c10);
             this.b = true;
             this.a = null;
             return codePoint;

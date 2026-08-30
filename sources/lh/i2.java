@@ -1,82 +1,71 @@
 package lh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class i2 extends AnimatorListenerAdapter {
+public final /* synthetic */ class i2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ d4 c;
+    public final /* synthetic */ g5 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ mf.a d;
+    public final /* synthetic */ Runnable e;
 
-    public /* synthetic */ i2(d4 d4Var, boolean z10, int i10) {
+    public /* synthetic */ i2(g5 g5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, mf.a aVar, Runnable runnable, int i10) {
         this.a = i10;
-        this.c = d4Var;
-        this.b = z10;
+        this.b = g5Var;
+        this.c = tL_starGiftUnique;
+        this.d = aVar;
+        this.e = runnable;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        float hideInterfaceAlpha;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        mf.b bVar = mf.b.a;
+        mf.b bVar2 = mf.b.b;
+        Runnable runnable = this.e;
+        mf.a aVar = this.d;
+        TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
+        g5 g5Var = this.b;
+        switch (i10) {
             case 0:
-                if (!this.b) {
-                    d4 d4Var = this.c;
-                    d4Var.n3.setVisibility(8);
-                    d4Var.n3.n();
-                    break;
+                g5Var.getClass();
+                tL_starGiftUnique.flags |= 16;
+                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
+                ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
+                tL_starGiftUnique.resell_amount = arrayList;
+                arrayList.add(aVar.e(bVar).o());
+                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
+                g5Var.b0.setResellPrice(aVar);
+                kh.a3 a3Var = g5Var.a1;
+                if (a3Var != null) {
+                    a3Var.run();
                 }
+                if (runnable != null) {
+                    runnable.run();
+                }
+                yh.s(R.string.Gift2ResaleEnable, new Object[]{g5Var.C1()}, g5Var.getBulletinFactory(), R.raw.contact_check, 36);
                 break;
             default:
-                d4 d4Var2 = this.c;
-                n8 n8Var = d4Var2.y0;
-                bh.d dVar = d4Var2.u0;
-                ImageView imageView = d4Var2.t0;
-                ImageView imageView2 = d4Var2.s0;
-                z3 z3Var = d4Var2.k1;
-                d4Var2.Z3 = this.b ? 1.0f : 0.0f;
-                z3Var.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.Z3);
-                z3Var.setAlpha(1.0f - d4Var2.Z3);
-                imageView2.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.Z3);
-                imageView2.setAlpha(1.0f - d4Var2.Z3);
-                imageView.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.Z3);
-                imageView.setAlpha(1.0f - d4Var2.Z3);
-                dVar.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.Z3);
-                dVar.setAlpha((1.0f - d4Var2.Z3) * d4Var2.a3);
-                y2 y2Var = d4Var2.S1;
-                if (y2Var != null) {
-                    y2Var.setTranslationY(AndroidUtilities.dp(8.0f) * d4Var2.Z3);
-                    d4Var2.S1.setAlpha(1.0f - d4Var2.Z3);
+                tL_starGiftUnique.flags |= 16;
+                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
+                ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
+                tL_starGiftUnique.resell_amount = arrayList2;
+                arrayList2.add(aVar.e(bVar).o());
+                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
+                g5Var.b0.setResellPrice(aVar);
+                kh.a3 a3Var2 = g5Var.a1;
+                if (a3Var2 != null) {
+                    a3Var2.run();
                 }
-                if (n8Var != null) {
-                    n8Var.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.Z3);
-                    n8Var.setAlpha(1.0f - d4Var2.Z3);
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-                d4Var2.G0.setAlpha(1.0f - d4Var2.Z3);
-                x3 x3Var = d4Var2.M1;
-                float f9 = x3Var != null ? ((z8) x3Var).d.R : 0.0f;
-                hideInterfaceAlpha = d4Var2.getHideInterfaceAlpha();
-                y2 y2Var2 = d4Var2.z0;
-                if (y2Var2 != null) {
-                    y2Var2.setAlpha((1.0f - d4Var2.Z3) * (1.0f - f9) * hideInterfaceAlpha);
-                }
-                ImageView imageView3 = d4Var2.J0;
-                if (imageView3 != null) {
-                    imageView3.setAlpha((1.0f - d4Var2.Z3) * (1.0f - f9) * hideInterfaceAlpha);
-                }
-                y2 y2Var3 = d4Var2.L0;
-                if (y2Var3 != null) {
-                    y2Var3.setAlpha((1.0f - d4Var2.Z3) * (1.0f - f9) * hideInterfaceAlpha);
-                }
-                n2 n2Var = d4Var2.X1;
-                if (n2Var != null) {
-                    n2Var.setAlpha(1.0f - d4Var2.Z3);
-                    d4Var2.invalidate();
-                }
-                d4Var2.Y0.invalidate();
                 break;
         }
     }

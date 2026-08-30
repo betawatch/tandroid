@@ -12,11 +12,11 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b61;
-import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n61;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends ApplicationLoader {
     private static long lastUpdateCheckTime;
@@ -28,7 +28,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public void appCenterLogInternal(Throwable th2) {
         try {
-            c9.c cVar = (c9.c) u8.g.c().b(c9.c.class);
+            e9.c cVar = (e9.c) w8.g.c().b(e9.c.class);
             if (cVar == null) {
                 throw new NullPointerException("FirebaseCrashlytics component is not present.");
             }
@@ -50,7 +50,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
         if (Build.VERSION.SDK_INT < 26 || ApplicationLoader.applicationContext.getPackageManager().canRequestPackageInstalls()) {
             return true;
         }
-        org.telegram.ui.Components.c5.j(context, null).show();
+        org.telegram.ui.Components.z4.j(context, null).show();
         return false;
     }
 
@@ -66,9 +66,9 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
-    public void checkUpdate(boolean z10, Runnable runnable) {
+    public void checkUpdate(boolean z4, Runnable runnable) {
         if (isCustomUpdate()) {
-            BetaUpdaterController.getInstance().checkForUpdate(z10, runnable);
+            BetaUpdaterController.getInstance().checkForUpdate(z4, runnable);
         }
     }
 
@@ -128,12 +128,12 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
 
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean openApkInstall(Activity activity, TLRPC.Document document) {
-        boolean z10 = false;
+        boolean z4 = false;
         try {
             FileLoader.getAttachFileName(document);
             File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true);
-            z10 = pathToAttach.exists();
-            if (z10) {
+            z4 = pathToAttach.exists();
+            if (z4) {
                 Intent intent = new Intent("android.intent.action.VIEW");
                 intent.setFlags(1);
                 if (Build.VERSION.SDK_INT >= 24) {
@@ -143,23 +143,23 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 }
                 try {
                     activity.startActivityForResult(intent, 500);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
-        } catch (Exception e11) {
-            FileLog.e(e11);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
-        return z10;
+        return z4;
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
     public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         try {
-            new b61(context, betaUpdate).show();
+            new m61(context, betaUpdate).show();
             return true;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return true;
         }
     }
@@ -179,7 +179,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                 if (ConnectionsManager.getInstance(UserConfig.selectedAccount).isTestBackend()) {
                     str2 = str2 + " [TEST SERVER]";
                 }
-                c9.c cVar = (c9.c) u8.g.c().b(c9.c.class);
+                e9.c cVar = (e9.c) w8.g.c().b(e9.c.class);
                 if (cVar == null) {
                     throw new NullPointerException("FirebaseCrashlytics component is not present.");
                 }
@@ -206,12 +206,12 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override // org.telegram.messenger.ApplicationLoader
     public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         if (isCustomUpdate()) {
-            return new c61(activity, viewGroup);
+            return new n61(activity, viewGroup);
         }
         return null;
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
-    public void logDualCameraInternal(boolean z10, boolean z11) {
+    public void logDualCameraInternal(boolean z4, boolean z10) {
     }
 }

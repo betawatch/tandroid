@@ -1,30 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ff implements View.OnClickListener {
+public final /* synthetic */ class ff implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
+    public final /* synthetic */ xn b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ff(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i10) {
+    public /* synthetic */ ff(xn xnVar, boolean z4, int i10) {
         this.a = i10;
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.b = xnVar;
+        this.c = z4;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.getSwipeBack().b(true);
-                break;
-            case 1:
-                this.b.getSwipeBack().b(true);
+                this.b.presentFragment(new PremiumPreviewFragment(0, this.c ? "upload_speed" : "download_speed"));
                 break;
             default:
-                this.b.getSwipeBack().b(true);
+                this.b.yc(0, this.c);
                 break;
         }
     }

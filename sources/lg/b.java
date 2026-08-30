@@ -1,192 +1,159 @@
 package lg;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.Shader;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.Date;
+import k7.b6;
+import nh.y3;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.Cells.va;
+import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b extends Drawable {
-    public final Paint a;
-    public final ng.d b;
-    public final Matrix c;
-    public LinearGradient d;
-    public final Matrix e;
-    public LinearGradient f;
-    public BitmapShader g;
-    public ComposeShader h;
-    public final Matrix i;
-    public final Paint j;
-    public Bitmap k;
-    public int l;
-    public boolean m;
-    public final Paint n;
-    public int o;
-    public boolean p;
-    public int q;
+public final class b extends va {
+    public final TextView U;
+    public final FrameLayout V;
+    public Drawable W;
+    public Drawable a0;
+    public TL_stories.Boost b0;
+    public final a c0;
 
-    public b(ng.d dVar) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = new Matrix();
-        this.e = new Matrix();
-        this.i = new Matrix();
-        Paint paint2 = new Paint(1);
-        this.j = paint2;
-        this.n = new Paint(1);
-        this.q = 255;
-        this.b = dVar;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        paint2.setFilterBitmap(true);
-        b(AndroidUtilities.dp(40.0f), false);
+    public b(Context context) {
+        super(context, 0, 0, false);
+        this.c0 = new a(getContext());
+        this.V = new FrameLayout(getContext());
+        TextView textView = new TextView(getContext());
+        this.U = textView;
+        textView.setTextColor(j6.v0(j6.G6, this.y));
+        this.U.setTypeface(AndroidUtilities.bold());
+        this.U.setTextSize(12.0f);
+        this.U.setGravity(17);
+        this.V.addView(this.U, b6.c(22.0f, -2));
+        this.V.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+        FrameLayout frameLayout = this.V;
+        boolean z4 = LocaleController.isRTL;
+        addView(frameLayout, b6.d(-2, -2.0f, (z4 ? 3 : 5) | 48, z4 ? 9 : 0, 9.0f, z4 ? 0 : 9, 0.0f));
     }
 
-    public static LinearGradient a(int i10, boolean z10) {
-        int alpha = Color.alpha(i10);
-        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 285), i0.a.k(i10, (alpha * 176) / 285), i0.a.k(i10, (alpha * 232) / 285)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 255), i0.a.k(i10, (alpha * 176) / 255), i0.a.k(i10, (alpha * 232) / 255), i0.a.k(i10, (alpha * 255) / 255)}, (float[]) null, Shader.TileMode.CLAMP);
-    }
-
-    public final void b(int i10, boolean z10) {
-        if (this.l == i10 && this.m == z10) {
-            return;
-        }
-        this.l = i10;
-        this.m = z10;
-        LinearGradient a2 = a(-16777216, z10);
-        this.d = a2;
-        this.a.setShader(a2);
-        this.n.setShader(null);
-        Matrix matrix = this.c;
-        matrix.reset();
-        matrix.setScale(1.0f, i10);
-        if (i10 < 0) {
-            matrix.postTranslate(0.0f, -i10);
-        }
-        this.d.setLocalMatrix(matrix);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int height;
-        int i10;
-        boolean z10;
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.q == 0) {
-            return;
-        }
-        ng.d dVar = this.b;
-        qg.a i11 = dVar.i();
-        while (i11 instanceof qg.e) {
-            i11 = ((qg.e) i11).a;
-        }
-        boolean z11 = this.p;
-        Matrix matrix = this.c;
-        Matrix matrix2 = this.e;
-        if (!z11 && (i11 instanceof qg.c)) {
-            int color = ((qg.c) i11).a.getColor();
-            int i12 = this.o;
-            Paint paint = this.n;
-            if (i12 != color || this.f == null) {
-                LinearGradient a2 = a(color, this.m);
-                this.f = a2;
-                this.o = color;
-                paint.setShader(a2);
-            }
-            height = this.l < 0 ? bounds.height() + this.l : 0;
-            matrix2.set(matrix);
-            matrix2.postTranslate(bounds.left, bounds.top + height);
-            this.f.setLocalMatrix(matrix2);
-            paint.setAlpha(this.q);
-            canvas.drawRect(bounds, paint);
-            return;
-        }
-        if (z11 || !(i11 instanceof qg.b) || (i10 = Build.VERSION.SDK_INT) < 28) {
-            int saveLayerAlpha = canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, this.q);
-            height = this.l < 0 ? bounds.height() + this.l : 0;
-            dVar.draw(canvas);
-            canvas.translate(bounds.left, bounds.top + height);
-            canvas.drawRect(0.0f, -height, bounds.width(), bounds.height() - height, this.a);
-            canvas.restoreToCount(saveLayerAlpha);
-            return;
-        }
-        qg.b bVar = (qg.b) i11;
-        Bitmap bitmap = bVar.d;
-        if (bitmap == null) {
-            return;
-        }
-        boolean z12 = true;
-        if (this.o != -16777216 || this.f == null) {
-            this.f = a(-16777216, this.m);
-            this.o = -16777216;
-            z10 = true;
+    private void setAvatarColorByMonths(int i10) {
+        z8 z8Var = this.B;
+        if (i10 == 12) {
+            z8Var.i(-31392, -2796986);
+        } else if (i10 == 6) {
+            z8Var.i(-10703110, -12481584);
         } else {
-            z10 = false;
+            z8Var.i(-6631068, -11945404);
         }
-        if (this.g == null || this.k != bitmap) {
-            this.k = bitmap;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.g = bitmapShader;
-            if (i10 >= 33) {
-                bitmapShader.setFilterMode(2);
+    }
+
+    public TL_stories.Boost getBoost() {
+        return this.b0;
+    }
+
+    @Override // org.telegram.ui.Cells.va
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.va, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.P) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, j6.k0);
+        }
+    }
+
+    public void setStatus(TL_stories.Boost boost) {
+        this.b0 = boost;
+        boolean z4 = boost.gift;
+        FrameLayout frameLayout = this.V;
+        TextView textView = this.U;
+        k5 k5Var = this.b;
+        if (z4 || boost.giveaway) {
+            frameLayout.setVisibility(0);
+            int i10 = ((boost.expires - boost.date) / 30) / 86400;
+            long j10 = boost.stars;
+            y3 y3Var = this.a;
+            z8 z8Var = this.B;
+            if (j10 > 0) {
+                k5Var.l(LocaleController.formatPluralString("BoostingBoostStars", (int) j10, new Object[0]), false);
+                z8Var.g(26);
+                y3Var.e(null, z8Var);
+                k5Var.i(null);
+            } else if (boost.unclaimed) {
+                k5Var.l(LocaleController.getString(R.string.BoostingUnclaimed), false);
+                z8Var.g(18);
+                setAvatarColorByMonths(i10);
+                y3Var.e(null, z8Var);
+                k5Var.i(null);
+            } else if (boost.user_id == -1) {
+                k5Var.l(LocaleController.getString(R.string.BoostingToBeDistributed), false);
+                z8Var.g(19);
+                setAvatarColorByMonths(i10);
+                y3Var.e(null, z8Var);
+                k5Var.i(null);
+            }
+            String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(boost.expires * 1000));
+            long j11 = boost.stars;
+            k5 k5Var2 = this.c;
+            if (j11 > 0) {
+                k5Var2.l(LocaleController.formatString(R.string.BoostingStarsExpires, format), false);
+            } else {
+                k5Var2.l(LocaleController.formatString(R.string.BoostingExpires, format), false);
+            }
+            if (boost.gift) {
+                if (this.a0 == null) {
+                    Drawable drawable = getResources().getDrawable(R.drawable.mini_gift);
+                    this.a0 = drawable;
+                    drawable.setColorFilter(new PorterDuffColorFilter(-3240417, PorterDuff.Mode.MULTIPLY));
+                }
+                textView.setTextColor(-3240417);
+                textView.setCompoundDrawablesWithIntrinsicBounds(this.a0, (Drawable) null, (Drawable) null, (Drawable) null);
+                textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
+                textView.setText(LocaleController.getString(R.string.BoostingGift));
+                frameLayout.setBackground(j6.c0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), j6.l1(0.2f, -3240417)));
+            }
+            if (boost.giveaway) {
+                if (this.W == null) {
+                    Drawable drawable2 = getResources().getDrawable(R.drawable.mini_giveaway);
+                    this.W = drawable2;
+                    drawable2.setColorFilter(new PorterDuffColorFilter(-13397548, PorterDuff.Mode.MULTIPLY));
+                }
+                textView.setTextColor(-13397548);
+                textView.setCompoundDrawablesWithIntrinsicBounds(this.W, (Drawable) null, (Drawable) null, (Drawable) null);
+                textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
+                textView.setText(LocaleController.getString(R.string.BoostingGiveaway));
+                frameLayout.setBackground(j6.c0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), j6.l1(0.2f, -13397548)));
             }
         } else {
-            z12 = z10;
+            frameLayout.setVisibility(8);
         }
-        Paint paint2 = this.j;
-        if (z12 || this.h == null) {
-            ComposeShader composeShader = new ComposeShader(this.g, this.f, PorterDuff.Mode.DST_IN);
-            this.h = composeShader;
-            paint2.setShader(composeShader);
+        int i11 = boost.multiplier;
+        if (i11 > 0) {
+            String valueOf = String.valueOf(i11);
+            a aVar = this.c0;
+            aVar.f = valueOf;
+            aVar.e = aVar.a.measureText(valueOf);
+            aVar.invalidateSelf();
+            k5Var.i(aVar);
+        } else {
+            k5Var.i(null);
         }
-        height = this.l < 0 ? bounds.height() + this.l : 0;
-        matrix2.set(matrix);
-        matrix2.postTranslate(bounds.left, bounds.top + height);
-        this.f.setLocalMatrix(matrix2);
-        Matrix matrix3 = bVar.b;
-        Matrix matrix4 = this.i;
-        matrix4.set(matrix3);
-        matrix4.postTranslate(-dVar.a, -dVar.b);
-        this.g.setLocalMatrix(matrix4);
-        paint2.setAlpha(this.q);
-        canvas.drawRect(bounds, paint2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.q;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.b.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.q = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        if (frameLayout.getVisibility() != 0) {
+            k5Var.setPadding(0, k5Var.getPaddingTop(), 0, k5Var.getPaddingBottom());
+        } else {
+            int dp = AndroidUtilities.dp(22.0f) + ((int) textView.getPaint().measureText(textView.getText().toString()));
+            k5Var.setPadding(LocaleController.isRTL ? dp : 0, k5Var.getPaddingTop(), LocaleController.isRTL ? 0 : dp, k5Var.getPaddingBottom());
+        }
     }
 }

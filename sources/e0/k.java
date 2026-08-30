@@ -4,12 +4,12 @@ import android.app.PendingIntent;
 import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class k {
     public final Bundle a;
     public IconCompat b;
-    public final r0[] c;
+    public final q0[] c;
     public final boolean d;
     public final boolean e;
     public final int f;
@@ -17,7 +17,7 @@ public final class k {
     public final CharSequence h;
     public final PendingIntent i;
 
-    public k(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, r0[] r0VarArr, r0[] r0VarArr2, boolean z10, int i10, boolean z11) {
+    public k(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, q0[] q0VarArr, q0[] q0VarArr2, boolean z4, int i10, boolean z10) {
         this.e = true;
         this.b = iconCompat;
         if (iconCompat != null && iconCompat.i() == 2) {
@@ -26,10 +26,10 @@ public final class k {
         this.h = t.d(charSequence);
         this.i = pendingIntent;
         this.a = bundle == null ? new Bundle() : bundle;
-        this.c = r0VarArr;
-        this.d = z10;
+        this.c = q0VarArr;
+        this.d = z4;
         this.f = i10;
-        this.e = z11;
+        this.e = z10;
     }
 
     public final IconCompat a() {

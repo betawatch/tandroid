@@ -7,12 +7,12 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import j7.l1;
+import kh.a2;
 import m.b3;
 import m.c3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b extends BaseAdapter implements Filterable {
     public boolean a;
@@ -124,13 +124,13 @@ public abstract class b extends BaseAdapter implements Filterable {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
         if (!this.c.moveToPosition(i10)) {
-            throw new IllegalStateException(l1.k(i10, "couldn't move cursor to position "));
+            throw new IllegalStateException(a2.j(i10, "couldn't move cursor to position "));
         }
         if (view == null) {
             c3 c3Var = (c3) this;
             view = c3Var.s.inflate(c3Var.n, viewGroup, false);
             view.setTag(new b3(view));
-            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(c3Var.A);
+            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(c3Var.B);
         }
         a(view, this.c);
         return view;

@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c0 extends GestureDetector.SimpleOnGestureListener {
     public boolean a = true;
@@ -23,26 +23,26 @@ public final class c0 extends GestureDetector.SimpleOnGestureListener {
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public final void onLongPress(MotionEvent motionEvent) {
-        n1 T;
+        l1 T;
         if (this.a) {
             e0 e0Var = this.b;
-            View k9 = e0Var.k(motionEvent);
+            View k10 = e0Var.k(motionEvent);
             b0 b0Var = e0Var.x;
-            if (k9 == null || (T = e0Var.D.T(k9)) == null) {
+            if (k10 == null || (T = e0Var.E.T(k10)) == null) {
                 return;
             }
-            RecyclerView recyclerView = e0Var.D;
-            int e10 = b0Var.e(recyclerView, T);
+            RecyclerView recyclerView = e0Var.E;
+            int e = b0Var.e(recyclerView, T);
             WeakHashMap weakHashMap = r0.j0.a;
-            if ((b0Var.b(e10, recyclerView.getLayoutDirection()) & 16711680) != 0) {
+            if ((b0Var.b(e, recyclerView.getLayoutDirection()) & 16711680) != 0) {
                 int pointerId = motionEvent.getPointerId(0);
                 int i10 = e0Var.w;
                 if (pointerId == i10) {
                     int findPointerIndex = motionEvent.findPointerIndex(i10);
-                    float x4 = motionEvent.getX(findPointerIndex);
-                    float y8 = motionEvent.getY(findPointerIndex);
-                    e0Var.d = x4;
-                    e0Var.e = y8;
+                    float x10 = motionEvent.getX(findPointerIndex);
+                    float y10 = motionEvent.getY(findPointerIndex);
+                    e0Var.d = x10;
+                    e0Var.e = y10;
                     e0Var.r = 0.0f;
                     e0Var.n = 0.0f;
                     if (b0Var.k()) {

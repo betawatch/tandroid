@@ -1,40 +1,42 @@
 package lh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class b9 extends AnimatorListenerAdapter {
+public final /* synthetic */ class b9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r8 b;
+    public final /* synthetic */ xn b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Chat d;
 
-    public /* synthetic */ b9(r8 r8Var, int i10) {
+    public /* synthetic */ b9(xn xnVar, long j10, TLRPC.Chat chat, int i10) {
         this.a = i10;
-        this.b = r8Var;
+        this.b = xnVar;
+        this.c = j10;
+        this.d = chat;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.Chat chat = this.d;
+        long j10 = this.c;
+        xn xnVar = this.b;
+        switch (i10) {
             case 0:
-                super.onAnimationEnd(animator);
-                i9 i9Var = this.b.b;
-                w6 w6Var = i9Var.q1;
-                if (w6Var != null) {
-                    w6Var.b();
-                    i9Var.v.removeView(i9Var.q1);
-                }
-                i9Var.q1 = null;
-                i9Var.P();
+                qc.a0(xnVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j10, chat.title)), R.raw.stars_send).k(true);
                 break;
             default:
-                super.onAnimationEnd(animator);
-                w6 w6Var2 = this.b.b.q1;
-                if (w6Var2 != null) {
-                    w6Var2.a(true);
-                    break;
-                }
+                Pattern pattern = LaunchActivity.y1;
+                qc.a0(xnVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j10, chat.title)), R.raw.stars_send).k(true);
                 break;
         }
     }

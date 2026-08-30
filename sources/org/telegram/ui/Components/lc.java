@@ -1,79 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lc extends jb {
-    public final h9 a;
-    public final y80 b;
-    public final y80 c;
-    public final LinearLayout d;
+public final /* synthetic */ class lc implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public lc(Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        super(context, c6Var);
-        h9 h9Var = new h9(context, false);
-        this.a = h9Var;
-        h9Var.setStyle(11);
-        h9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-        addView(h9Var, i7.f6.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
-        if (z10) {
-            LinearLayout linearLayout = new LinearLayout(getContext());
-            this.d = linearLayout;
-            linearLayout.setOrientation(1);
-            addView(linearLayout, i7.f6.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
-            cg.c2 c2Var = new cg.c2(context, 4, null);
-            this.b = c2Var;
-            NotificationCenter.listenEmojiLoading(c2Var);
-            Typeface typeface = Typeface.SANS_SERIF;
-            c2Var.setTypeface(typeface);
-            c2Var.setTextSize(1, 14.0f);
-            c2Var.setTypeface(AndroidUtilities.bold());
-            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            c2Var.setEllipsize(truncateAt);
-            c2Var.setMaxLines(1);
-            linearLayout.addView(c2Var);
-            y80 y80Var = new y80(context, null);
-            this.c = y80Var;
-            y80Var.setTypeface(typeface);
-            y80Var.setTextSize(1, 12.0f);
-            y80Var.setEllipsize(truncateAt);
-            y80Var.setSingleLine(false);
-            y80Var.setMaxLines(3);
-            y80Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
-            linearLayout.addView(y80Var, i7.f6.t(-2, -2, 0, 0, 0, 0, 0));
-        } else {
-            cg.c2 c2Var2 = new cg.c2(context, 3, null);
-            this.b = c2Var2;
-            NotificationCenter.listenEmojiLoading(c2Var2);
-            c2Var2.setTypeface(Typeface.SANS_SERIF);
-            c2Var2.setTextSize(1, 15.0f);
-            c2Var2.setEllipsize(TextUtils.TruncateAt.END);
-            c2Var2.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-            c2Var2.setGravity(LocaleController.isRTL ? 5 : 3);
-            addView(c2Var2, i7.f6.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
-        }
-        this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
-        setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Hi));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.g6.Fi));
+    public /* synthetic */ lc(int i10, ic icVar, long j10) {
+        this.c = i10;
+        this.d = icVar;
+        this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public CharSequence getAccessibilityText() {
-        return this.b.getText();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.StickerSet stickerSet;
+        int i10 = this.a;
+        int i11 = this.c;
+        long j10 = this.b;
+        Object obj2 = this.d;
+        switch (i10) {
+            case 0:
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.hp(11, (ic) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
+                break;
+            default:
+                ((yu0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
+                break;
+        }
     }
 
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
-        y80 y80Var = this.c;
-        if (y80Var != null) {
-            y80Var.setTextColor(i10);
-        }
+    public /* synthetic */ lc(yu0 yu0Var, long j10, int i10) {
+        this.d = yu0Var;
+        this.b = j10;
+        this.c = i10;
     }
 }

@@ -1,120 +1,103 @@
 package ch;
 
-import ag.j2;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.PointF;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
 import android.view.View;
-import jf.r;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.jr;
-import org.telegram.ui.Components.np;
+import android.view.ViewGroup;
+import android.view.animation.PathInterpolator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.WeakHashMap;
+import k7.w8;
+import org.telegram.messenger.beta.R;
+import r0.j0;
+import r0.m1;
+import r0.q0;
+import r0.r0;
+import r0.u0;
+import r0.w0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e extends bh.h implements Drawable.Callback, vd.b {
-    public final String b;
-    public final Drawable d;
-    public final np f;
-    public bh.g h;
-    public TLRPC.WebPage n;
-    public final vd.a r;
-    public final vd.a s;
-    public final j2 c = new j2((char) 0, 17);
-    public final Paint e = new Paint(1);
+public final class e extends cb.e {
+    public static final RectF e;
+    public static final Rect f;
+    public final ViewGroup b;
+    public int c;
+    public final be.b d = new be.b(true);
 
-    public e(String str) {
-        np npVar = new np(-1);
-        this.f = npVar;
-        jr jrVar = jr.h;
-        this.r = new vd.a(0, this, jrVar, 320L, false);
-        this.s = new vd.a(0, this, jrVar, 320L, false);
-        this.b = str;
-        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
-        this.d = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.media_link_24).mutate();
-        npVar.setCallback(this);
-        npVar.b(g6.w0(null, g6.o7, false));
-        npVar.a = AndroidUtilities.dp(15.0f);
+    static {
+        new PointF();
+        e = new RectF();
+        f = new Rect();
     }
 
-    @Override // vd.b
-    public final void N(int i10, float f9, float f10, vd.c cVar) {
-        bh.g gVar = this.h;
-        if (gVar != null) {
-            gVar.invalidate();
+    public e(ViewGroup viewGroup) {
+        this.b = viewGroup;
+        WeakHashMap weakHashMap = j0.a;
+        if (Build.VERSION.SDK_INT >= 30) {
+            u0.g(viewGroup, this);
+            return;
+        }
+        PathInterpolator pathInterpolator = r0.e;
+        View.OnApplyWindowInsetsListener q0Var = new q0(viewGroup, this);
+        viewGroup.setTag(R.id.tag_window_insets_animation_callback, q0Var);
+        if (viewGroup.getTag(R.id.tag_compat_insets_dispatch) == null && viewGroup.getTag(R.id.tag_on_apply_window_listener) == null) {
+            viewGroup.setOnApplyWindowInsetsListener(q0Var);
         }
     }
 
-    @Override // bh.h
-    public final void a(View view) {
-        super.a(view);
-        this.h = (bh.g) view;
-    }
-
-    @Override // bh.h
-    public final void b() {
-        super.b();
-        this.h = null;
-    }
-
-    @Override // bh.h
-    public final void c(Canvas canvas, int i10, int i11) {
-        float f9 = i10;
-        float f10 = i11;
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(0.0f, 0.0f, f9, f10);
-        imageReceiver.draw(canvas);
-        np npVar = this.f;
-        npVar.setBounds(0, 0, i10, i11);
-        int w02 = g6.w0(null, g6.a7, false);
-        vd.a aVar = this.s;
-        int d = i0.a.d(aVar.e, w02, TLObject.FLAG_30);
-        Paint paint = this.e;
-        paint.setColor(d);
-        canvas.drawRoundRect(0.0f, 0.0f, f9, f10, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), paint);
-        int d10 = i0.a.d(aVar.e, g6.w0(null, g6.o7, false), -1);
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        j2 j2Var = this.c;
-        j2Var.getClass();
-        if (((PorterDuffColorFilter) j2Var.c) == null || j2Var.b != d10 || ((PorterDuff.Mode) j2Var.d) != mode) {
-            j2Var.c = new PorterDuffColorFilter(d10, mode);
-            j2Var.b = d10;
-            j2Var.d = mode;
+    public static m1 L(m1 m1Var, View view, View view2) {
+        if (view == null || view2 == null || m1Var == null) {
+            return null;
         }
-        PorterDuffColorFilter porterDuffColorFilter = (PorterDuffColorFilter) j2Var.c;
-        Drawable drawable = this.d;
-        drawable.setColorFilter(porterDuffColorFilter);
-        r.e(this.d, f9 / 2.0f, f10 / 2.0f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
-        vd.a aVar2 = this.r;
-        r.b(canvas, drawable, 1.0f - aVar2.e);
-        r.b(canvas, npVar, aVar2.e);
+        RectF rectF = e;
+        if (!ug.i.c(view, view2, rectF)) {
+            return null;
+        }
+        Rect rect = f;
+        rectF.round(rect);
+        int i10 = rect.left;
+        int i11 = rect.top;
+        int width = view2.getWidth() - rect.right;
+        int height = view2.getHeight() - rect.bottom;
+        if (i10 == 0 && i11 == 0 && width == 0 && height == 0) {
+            return m1Var;
+        }
+        return m1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        bh.g gVar = this.h;
-        if (gVar != null) {
-            gVar.invalidate();
+    @Override // cb.e
+    public final void H() {
+        int i10 = this.c - 1;
+        this.c = i10;
+        if (i10 == 0) {
+            Iterator it = this.d.iterator();
+            while (it.hasNext()) {
+                ((d) it.next()).J();
+            }
         }
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-    }
-
-    @Override // vd.b
-    public final /* synthetic */ void z(float f9, int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+    @Override // cb.e
+    public final m1 I(m1 m1Var, List list) {
+        Iterator it = list.iterator();
+        int i10 = 0;
+        while (it.hasNext()) {
+            i10 |= ((w0) it.next()).a.c();
+        }
+        if (w8.a(i10, 8)) {
+            Iterator it2 = this.d.iterator();
+            while (it2.hasNext()) {
+                d dVar = (d) it2.next();
+                m1 L = L(m1Var, dVar.N(), this.b);
+                if (L != null) {
+                    dVar.k(L);
+                }
+            }
+        }
+        return m1Var;
     }
 }

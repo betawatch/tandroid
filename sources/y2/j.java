@@ -2,15 +2,15 @@ package y2;
 
 import java.io.Closeable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j implements Closeable {
-    public pc.a a;
+    public rc.a a;
     public a3.c b;
-    public pc.a c;
-    public ha.c d;
-    public pc.a e;
-    public pc.a f;
+    public rc.a c;
+    public o5.i d;
+    public rc.a e;
+    public rc.a f;
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {

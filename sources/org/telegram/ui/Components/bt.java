@@ -1,346 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.media.AudioDeviceInfo;
-import android.media.AudioManager;
-import android.os.Build;
-import android.os.PowerManager;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.PhotoViewer;
-import org.webrtc.MediaStreamTrack;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class bt implements SensorEventListener {
-    public int A;
-    public int B;
-    public long C;
-    public boolean E;
-    public boolean F;
-    public float H;
-    public final SensorManager a;
-    public final AudioManager b;
-    public final Sensor c;
-    public final Sensor d;
-    public final Sensor e;
-    public final Sensor f;
-    public final PowerManager.WakeLock h;
-    public boolean n;
-    public boolean r;
-    public x61 s;
-    public boolean v;
-    public long w;
-    public int x;
-    public int y;
-    public long D = 0;
-    public float G = -100.0f;
-    public final float[] I = new float[3];
-    public final float[] J = new float[3];
-    public final float[] K = new float[3];
-
-    public bt() {
-        SensorManager sensorManager = (SensorManager) ApplicationLoader.applicationContext.getSystemService("sensor");
-        this.a = sensorManager;
-        this.c = sensorManager.getDefaultSensor(8);
-        Sensor defaultSensor = sensorManager.getDefaultSensor(10);
-        this.e = defaultSensor;
-        Sensor defaultSensor2 = sensorManager.getDefaultSensor(9);
-        this.f = defaultSensor2;
-        if (defaultSensor == null || defaultSensor2 == null) {
-            if (BuildVars.LOGS_ENABLED) {
-                FileLog.d("gravity or linear sensor not found");
-            }
-            this.d = sensorManager.getDefaultSensor(1);
-            this.e = null;
-            this.f = null;
-        }
-        this.h = ((PowerManager) ApplicationLoader.applicationContext.getSystemService("power")).newWakeLock(32, "telegram:proximity_lock2");
-        this.b = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+public final class bt extends org.telegram.ui.ActionBar.g3 {
+    public static /* synthetic */ void m(bt btVar) {
+        btVar.dismiss();
+        DownloadController.getInstance(btVar.currentAccount).clearRecentDownloadedFiles();
     }
 
-    public final void a() {
-        x61 x61Var = this.s;
-        if (x61Var == null) {
+    public static void n(Activity activity, org.telegram.ui.ActionBar.p2 p2Var) {
+        if (p2Var == null || activity == null) {
             return;
         }
-        x61Var.T(this.r ? 0 : 3);
-    }
+        final bt btVar = new bt(activity, false);
+        btVar.setApplyBottomPadding(false);
+        btVar.setApplyTopPadding(false);
+        int i10 = org.telegram.ui.ActionBar.j6.d6;
+        btVar.fixNavigationBar(btVar.getThemedColor(i10));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        frameLayout.addView(linearLayout);
+        ImageView imageView = new ImageView(activity);
+        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(btVar.getThemedColor(org.telegram.ui.ActionBar.j6.i6), 1, -1));
+        imageView.setColorFilter(btVar.getThemedColor(org.telegram.ui.ActionBar.j6.Ji));
+        imageView.setImageResource(R.drawable.ic_layer_close);
+        final int i11 = 0;
+        imageView.setOnClickListener(new View.OnClickListener(btVar) { // from class: org.telegram.ui.Components.at
+            public final /* synthetic */ bt b;
 
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x02b5, code lost:
-    
-        if (r6.isBluetoothScoOn() == false) goto L157;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x02f9  */
-    @Override // android.hardware.SensorEventListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        Sensor sensor;
-        char c3;
-        char c6;
-        char c10;
-        long j10;
-        Sensor sensor2;
-        double d;
-        boolean z10;
-        int i10;
-        boolean z11;
-        int i11;
-        AudioManager audioManager;
-        PowerManager.WakeLock wakeLock;
-        boolean z12;
-        boolean isHeld;
-        if (this.n && VoIPService.getSharedInstance() == null) {
-            int type = sensorEvent.sensor.getType();
-            Sensor sensor3 = this.f;
-            Sensor sensor4 = this.e;
-            float[] fArr = this.K;
-            float[] fArr2 = this.I;
-            Sensor sensor5 = this.d;
-            float[] fArr3 = this.J;
-            if (type == 8) {
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("proximity changed to " + sensorEvent.values[0] + " max value = " + sensorEvent.sensor.getMaximumRange());
-                }
-                float f9 = this.G;
-                float f10 = sensorEvent.values[0];
-                if (f9 != f10) {
-                    this.F = true;
-                }
-                this.G = f10;
-                if (this.F) {
-                    this.E = f10 < 5.0f && f10 != this.c.getMaximumRange();
-                }
-                sensor2 = sensor3;
-                c3 = 0;
-                c6 = 2;
-                c10 = 1;
-                j10 = 0;
-            } else {
-                Sensor sensor6 = sensorEvent.sensor;
-                if (sensor6 == sensor5) {
-                    if (this.D == 0) {
-                        d = 0.9800000190734863d;
-                        c6 = 2;
-                        c10 = 1;
-                    } else {
-                        c6 = 2;
-                        c10 = 1;
-                        d = 1.0d / (((sensorEvent.timestamp - r8) / 1.0E9d) + 1.0d);
-                    }
-                    this.D = sensorEvent.timestamp;
-                    double d10 = 1.0d - d;
-                    float[] fArr4 = sensorEvent.values;
-                    j10 = 0;
-                    c3 = 0;
-                    float f11 = (float) ((fArr4[0] * d10) + (fArr2[0] * d));
-                    fArr2[0] = f11;
-                    sensor = sensor3;
-                    float f12 = (float) ((fArr4[c10] * d10) + (fArr2[c10] * d));
-                    fArr2[c10] = f12;
-                    float f13 = (float) ((d10 * fArr4[c6]) + (d * fArr2[c6]));
-                    fArr2[c6] = f13;
-                    fArr3[0] = (fArr4[0] * 0.19999999f) + (f11 * 0.8f);
-                    fArr3[c10] = (fArr4[c10] * 0.19999999f) + (f12 * 0.8f);
-                    fArr3[c6] = (fArr4[c6] * 0.19999999f) + (f13 * 0.8f);
-                    fArr[0] = fArr4[0] - fArr2[0];
-                    fArr[c10] = fArr4[c10] - fArr2[c10];
-                    fArr[c6] = fArr4[c6] - fArr2[c6];
-                } else {
-                    sensor = sensor3;
-                    c3 = 0;
-                    c6 = 2;
-                    c10 = 1;
-                    j10 = 0;
-                    if (sensor6 == sensor4) {
-                        float[] fArr5 = sensorEvent.values;
-                        fArr[0] = fArr5[0];
-                        fArr[1] = fArr5[1];
-                        fArr[2] = fArr5[2];
-                    } else {
-                        sensor2 = sensor;
-                        if (sensor6 == sensor2) {
-                            float[] fArr6 = sensorEvent.values;
-                            float f14 = fArr6[0];
-                            fArr2[0] = f14;
-                            fArr3[0] = f14;
-                            float f15 = fArr6[1];
-                            fArr2[1] = f15;
-                            fArr3[1] = f15;
-                            float f16 = fArr6[2];
-                            fArr2[2] = f16;
-                            fArr3[2] = f16;
-                        }
-                    }
-                }
-                sensor2 = sensor;
+            {
+                this.b = btVar;
             }
-            Sensor sensor7 = sensorEvent.sensor;
-            if (sensor7 == sensor4 || sensor7 == sensor2 || sensor7 == sensor5) {
-                float f17 = (fArr2[c6] * fArr[c6]) + (fArr2[c10] * fArr[c10]) + (fArr2[c3] * fArr[c3]);
-                int i12 = this.A;
-                if (i12 != 6 && ((f17 > 0.0f && this.H > 0.0f) || (f17 < 0.0f && this.H < 0.0f))) {
-                    if (f17 > 0.0f) {
-                        z10 = f17 > 15.0f;
-                        i10 = 1;
-                    } else {
-                        z10 = f17 < -15.0f;
-                        i10 = 2;
-                    }
-                    int i13 = this.y;
-                    if (i13 != 0 && i13 != i10) {
-                        int i14 = this.x;
-                        if (i14 != 6 || !z10) {
-                            if (!z10) {
-                                this.B++;
-                            }
-                            if (this.B == 10 || i14 != 6 || i12 != 0) {
-                                this.x = 0;
-                                this.y = 0;
-                                this.A = 0;
-                                this.B = 0;
-                            }
-                        } else if (i12 < 6) {
-                            int i15 = i12 + 1;
-                            this.A = i15;
-                            if (i15 == 6) {
-                                this.x = 0;
-                                this.y = 0;
-                                this.B = 0;
-                                this.C = System.currentTimeMillis();
-                                if (BuildVars.LOGS_ENABLED && BuildVars.DEBUG_PRIVATE_VERSION) {
-                                    FileLog.d("motion detected");
-                                }
-                            }
-                        }
-                    } else if (z10 && i12 == 0 && (i13 == 0 || i13 == i10)) {
-                        int i16 = this.x;
-                        if (i16 < 6 && !this.E) {
-                            this.y = i10;
-                            int i17 = i16 + 1;
-                            this.x = i17;
-                            if (i17 == 6) {
-                                this.B = 0;
-                            }
-                        }
-                    } else {
-                        if (!z10) {
-                            this.B++;
-                        }
-                        if (i13 != i10 || this.B == 10 || this.x != 6 || i12 != 0) {
-                            this.A = 0;
-                            this.x = 0;
-                            this.y = 0;
-                            this.B = 0;
-                        }
-                    }
-                }
-                this.H = f17;
-                this.v = fArr3[c10] > 2.5f && Math.abs(fArr3[c6]) < 4.0f && Math.abs(fArr3[0]) > 1.5f;
-            }
-            if (this.A == 6 || this.v) {
-                this.w = System.currentTimeMillis();
-            }
-            if (this.A == 6 || this.v || System.currentTimeMillis() - this.w < 60) {
-                try {
-                    i11 = Build.VERSION.SDK_INT;
-                    audioManager = this.b;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
-                if (i11 >= 23) {
-                    AudioDeviceInfo[] devices = audioManager.getDevices(2);
-                    for (AudioDeviceInfo audioDeviceInfo : devices) {
-                        int type2 = audioDeviceInfo.getType();
-                        if ((type2 == 8 || type2 == 7 || type2 == 26 || type2 == 27 || type2 == 4 || type2 == 3) && audioDeviceInfo.isSink()) {
-                            break;
-                        }
-                    }
-                    if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.t1().Q1()) {
-                        z11 = true;
-                        wakeLock = this.h;
-                        if (wakeLock != null && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
-                            isHeld = wakeLock.isHeld();
-                            if (!isHeld && !z11) {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.d("wake lock releasing");
-                                }
-                                wakeLock.release();
-                            } else if (!isHeld && z11) {
-                                if (BuildVars.LOGS_ENABLED) {
-                                    FileLog.d("wake lock acquiring");
-                                }
-                                wakeLock.acquire();
-                            }
-                        }
-                        z12 = this.E;
-                        if (!z12 && z11) {
-                            if (!this.r) {
-                                this.r = true;
-                                a();
-                            }
-                            this.A = 0;
-                            this.x = 0;
-                            this.y = 0;
-                            this.B = 0;
-                        } else if (z12 || !((sensor5 == null || sensor4 == null) && sensor2 == null && !VoIPService.isAnyKindOfCallActive())) {
-                            if (!this.E && this.r) {
-                                this.r = false;
-                                a();
-                            }
-                        } else if (!this.r) {
-                            this.r = true;
-                            a();
-                        }
-                        if (this.C == j10 && this.A == 6 && Math.abs(System.currentTimeMillis() - this.C) > 1000) {
-                            this.A = 0;
-                            this.x = 0;
-                            this.y = 0;
-                            this.B = 0;
-                            this.C = j10;
-                            return;
-                        }
-                        return;
-                    }
-                } else if (!audioManager.isWiredHeadsetOn()) {
-                    if (!audioManager.isBluetoothA2dpOn()) {
-                    }
-                }
-            }
-            z11 = false;
-            wakeLock = this.h;
-            if (wakeLock != null) {
-                isHeld = wakeLock.isHeld();
-                if (!isHeld) {
-                }
-                if (!isHeld) {
-                    if (BuildVars.LOGS_ENABLED) {
-                    }
-                    wakeLock.acquire();
-                }
-            }
-            z12 = this.E;
-            if (!z12) {
-            }
-            if (z12) {
-            }
-            if (!this.E) {
-                this.r = false;
-                a();
-            }
-            if (this.C == j10) {
-            }
-        }
-    }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        this.b.dismiss();
+                        break;
+                    default:
+                        bt.m(this.b);
+                        break;
+                }
+            }
+        });
+        int dp = AndroidUtilities.dp(8.0f);
+        imageView.setPadding(dp, dp, dp, dp);
+        frameLayout.addView(imageView, k7.b6.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
+        ax0 ax0Var = new ax0(activity, btVar.currentAccount);
+        ax0Var.setStickerNum(9);
+        ax0Var.getImageReceiver().setAutoRepeat(1);
+        linearLayout.addView(ax0Var, k7.b6.t(110, 110, 1, 0, 26, 0, 0));
+        TextView textView = new TextView(activity);
+        textView.setGravity(1);
+        int i12 = org.telegram.ui.ActionBar.j6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setText(LocaleController.getString(R.string.DownloadedFiles));
+        linearLayout.addView(textView, k7.b6.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
+        TextView textView2 = new TextView(activity);
+        textView2.setGravity(1);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
+        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", R.string.DownloadedFilesMessage, new Object[0]));
+        linearLayout.addView(textView2, k7.b6.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
+        TextView textView3 = new TextView(activity);
+        textView3.setGravity(17);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView3.setEllipsize(truncateAt);
+        textView3.setSingleLine(true);
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setText(LocaleController.getString(R.string.ManageDeviceStorage));
+        textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        int dp2 = AndroidUtilities.dp(8.0f);
+        int i13 = org.telegram.ui.ActionBar.j6.Oh;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i13, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
+        textView3.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, w02, k10, k10));
+        linearLayout.addView(textView3, k7.b6.d(-1, 48.0f, 0, 14.0f, 28.0f, 14.0f, 6.0f));
+        TextView textView4 = new TextView(activity);
+        textView4.setGravity(17);
+        textView4.setEllipsize(truncateAt);
+        textView4.setSingleLine(true);
+        textView4.setTextSize(1, 14.0f);
+        textView4.setTypeface(AndroidUtilities.bold());
+        textView4.setText(LocaleController.getString(R.string.ClearDownloadsList));
+        textView4.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
+        int dp3 = AndroidUtilities.dp(8.0f);
+        int k11 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i13, false), 120);
+        textView4.setBackground(org.telegram.ui.ActionBar.j6.i0(dp3, dp3, dp3, dp3, 0, k11, k11));
+        textView4.setLetterSpacing(0.025f);
+        linearLayout.addView(textView4, k7.b6.d(-1, 48.0f, 0, 14.0f, 0.0f, 14.0f, 6.0f));
+        NestedScrollView nestedScrollView = new NestedScrollView(activity);
+        nestedScrollView.addView(frameLayout);
+        btVar.setCustomView(nestedScrollView);
+        textView3.setOnClickListener(new w2(15, btVar, p2Var));
+        final int i14 = 1;
+        textView4.setOnClickListener(new View.OnClickListener(btVar) { // from class: org.telegram.ui.Components.at
+            public final /* synthetic */ bt b;
+
+            {
+                this.b = btVar;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        this.b.dismiss();
+                        break;
+                    default:
+                        bt.m(this.b);
+                        break;
+                }
+            }
+        });
+        btVar.show();
     }
 }

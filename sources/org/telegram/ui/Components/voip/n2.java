@@ -1,186 +1,173 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import android.R;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Point;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.Components.jr;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.oh1;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.y80;
+import org.telegram.ui.ng0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class n2 extends FrameLayout {
-    public static final /* synthetic */ int h = 0;
-    public final float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public final /* synthetic */ o2 f;
+public class n2 extends TextView {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(o2 o2Var, Context context) {
-        super(context);
-        this.f = o2Var;
-        this.a = ViewConfiguration.get(context).getScaledTouchSlop();
-        setOutlineProvider(new eg.k1(16));
-        setClipToOutline(true);
+    public n2(p2 p2Var, Activity activity, n1 n1Var) {
+        super(activity);
+        this.d = p2Var;
+        this.c = n1Var;
+        this.b = new RectF();
+        n1Var.a(this);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        o2 o2Var = this.f;
-        o2Var.n.setPivotX(o2Var.r.getMeasuredWidth());
-        o2Var.n.setPivotY(o2Var.r.getMeasuredHeight());
-        o2Var.n.setTranslationX((1.0f / getScaleX()) * (-AndroidUtilities.dp(4.0f)) * o2Var.s);
-        o2Var.n.setTranslationY((1.0f / getScaleY()) * (-AndroidUtilities.dp(4.0f)) * o2Var.s);
-        o2Var.n.setRoundCorners((1.0f / getScaleY()) * AndroidUtilities.dp(8.0f) * o2Var.s);
-        o2Var.n.setScaleX(((1.0f - o2Var.s) * 0.6f) + 0.4f);
-        o2Var.n.setScaleY(((1.0f - o2Var.s) * 0.6f) + 0.4f);
-        o2Var.n.setAlpha(Math.min(1.0f, 1.0f - o2Var.s));
-        super.dispatchDraw(canvas);
+    public boolean a() {
+        return false;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.b = AndroidUtilities.dp(16.0f);
-        this.c = AndroidUtilities.dp(16.0f);
-        this.d = AndroidUtilities.dp(60.0f);
-        this.e = AndroidUtilities.dp(16.0f);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x002b, code lost:
-    
-        if (r4 != 3) goto L63;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        o2 o2Var = this.f;
-        if (o2.P || o2.Q == null) {
-            return false;
-        }
-        AndroidUtilities.cancelRunOnUIThread(o2Var.I);
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        ViewParent parent = getParent();
-        int action = motionEvent.getAction();
-        if (action != 0) {
-            if (action != 1) {
-                if (action == 2) {
-                    o2 o2Var2 = this.f;
-                    float f9 = rawX - o2Var2.D;
-                    float f10 = rawY - o2Var2.E;
-                    if (!o2Var2.F) {
-                        float f11 = (f10 * f10) + (f9 * f9);
-                        float f12 = this.a;
-                        if (f11 > f12 * f12) {
-                            if (parent != null) {
-                                parent.requestDisallowInterceptTouchEvent(true);
-                            }
-                            o2 o2Var3 = this.f;
-                            o2Var3.F = true;
-                            o2Var3.D = rawX;
-                            o2Var3.E = rawY;
-                            f9 = 0.0f;
-                            f10 = 0.0f;
-                        }
-                    }
-                    o2 o2Var4 = this.f;
-                    if (o2Var4.F) {
-                        WindowManager.LayoutParams layoutParams = o2Var4.d;
-                        layoutParams.x = (int) (layoutParams.x + f9);
-                        layoutParams.y = (int) (layoutParams.y + f10);
-                        o2Var4.D = rawX;
-                        o2Var4.E = rawY;
-                        AndroidUtilities.updateViewLayout(o2Var4.c, o2Var4.a, layoutParams);
-                        return true;
-                    }
-                }
-            }
-            AnimatorSet animatorSet = this.f.J;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-            }
-            if (motionEvent.getAction() == 1 && !this.f.F && System.currentTimeMillis() - this.f.G < 150) {
-                Context context = getContext();
-                boolean z10 = context instanceof LaunchActivity;
-                if (z10 && !ApplicationLoader.mainInterfacePaused) {
-                    oh1.w((Activity) context, this.f.H);
-                } else if (z10) {
-                    Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
-                    intent.setAction("voip");
-                    context.startActivity(intent);
-                }
-                this.f.F = false;
-                return false;
-            }
-            if (parent != null) {
-                parent.requestDisallowInterceptTouchEvent(false);
-                Point point = AndroidUtilities.displaySize;
-                int i10 = point.x;
-                int i11 = point.y + o2.S;
-                float f13 = this.d;
-                float f14 = this.e;
-                o2 o2Var5 = this.f;
-                float left = o2Var5.b.getLeft() + o2Var5.d.x;
-                float measuredWidth = this.f.b.getMeasuredWidth() + left;
-                o2 o2Var6 = this.f;
-                float top = o2Var6.b.getTop() + o2Var6.d.y;
-                float measuredHeight = this.f.b.getMeasuredHeight() + top;
-                this.f.J = new AnimatorSet();
-                float f15 = this.b;
-                if (left < f15) {
-                    o2 o2Var7 = this.f;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(o2Var7.d.x, f15 - o2Var7.b.getLeft());
-                    ofFloat.addUpdateListener(this.f.K);
-                    this.f.J.playTogether(ofFloat);
-                } else if (measuredWidth > i10 - this.c) {
-                    o2 o2Var8 = this.f;
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(o2Var8.d.x, (i10 - o2Var8.b.getRight()) - this.c);
-                    ofFloat2.addUpdateListener(this.f.K);
-                    this.f.J.playTogether(ofFloat2);
-                }
-                if (top < f13) {
-                    o2 o2Var9 = this.f;
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(o2Var9.d.y, f13 - o2Var9.b.getTop());
-                    ofFloat3.addUpdateListener(this.f.L);
-                    this.f.J.playTogether(ofFloat3);
-                } else if (measuredHeight > i11 - f14) {
-                    o2 o2Var10 = this.f;
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(o2Var10.d.y, (i11 - o2Var10.b.getMeasuredHeight()) - f14);
-                    ofFloat4.addUpdateListener(this.f.L);
-                    this.f.J.playTogether(ofFloat4);
-                }
-                this.f.J.setDuration(150L).setInterpolator(jr.f);
-                this.f.J.start();
-            }
-            this.f.F = false;
-            o2.Q.getClass();
-            return true;
-        }
-        o2 o2Var11 = this.f;
-        o2Var11.D = rawX;
-        o2Var11.E = rawY;
-        o2Var11.G = System.currentTimeMillis();
-        AnimatorSet animatorSet2 = this.f.J;
-        if (animatorSet2 != null) {
-            animatorSet2.cancel();
-        }
+    public boolean b() {
         return true;
+    }
+
+    public void c() {
+        CharSequence text;
+        i90 i90Var = (i90) this.c;
+        Layout layout = getLayout();
+        if (layout == null || (text = layout.getText()) == null) {
+            return;
+        }
+        y80 y80Var = new y80(0);
+        float dp = AndroidUtilities.dp(3.0f);
+        float dp2 = AndroidUtilities.dp(6.0f);
+        y80Var.q = dp;
+        y80Var.r = dp2;
+        int length = text.length();
+        y80Var.d(layout, 0, 0.0f);
+        layout.getSelectionPath(0, length, y80Var);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(y80Var.s, y80Var.u, y80Var.t, y80Var.v);
+        ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        i90Var.x = y80Var;
+        i90Var.j(4.0f);
+        int themedColor = ((ng0) this.d).getThemedColor(j6.Ld);
+        i90Var.f(j6.l1(0.85f, themedColor), j6.l1(2.0f, themedColor), j6.l1(3.5f, themedColor), j6.l1(6.0f, themedColor));
+        i90Var.k();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float paddingTop;
+        switch (this.a) {
+            case 0:
+                RectF rectF = (RectF) this.b;
+                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                float x10 = ((View) getParent()).getX() + getX();
+                p2 p2Var = (p2) this.d;
+                float x11 = ((View) p2Var.getParent()).getX() + p2Var.getX() + x10;
+                float y10 = ((View) p2Var.getParent()).getY() + p2Var.getY() + ((View) getParent()).getY() + getY();
+                n1 n1Var = (n1) this.c;
+                n1Var.d(x11, y10);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), n1Var.b());
+                super.onDraw(canvas);
+                break;
+            default:
+                i90 i90Var = (i90) this.c;
+                canvas.save();
+                if ((getGravity() & 16) == 0 || getLayout() == null) {
+                    paddingTop = getPaddingTop();
+                } else {
+                    paddingTop = ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
+                }
+                canvas.translate(getPaddingLeft(), paddingTop);
+                ((org.telegram.ui.Cells.z) this.b).draw(canvas);
+                canvas.restore();
+                super.onDraw(canvas);
+                if (a() || i90Var.c()) {
+                    canvas.save();
+                    canvas.translate(getPaddingLeft(), paddingTop);
+                    i90Var.draw(canvas);
+                    canvas.restore();
+                    invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                super.onLayout(z4, i10, i11, i12, i13);
+                c();
+                break;
+            default:
+                super.onLayout(z4, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) this.b;
+                if (b() && motionEvent.getAction() == 0) {
+                    zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
+                    zVar.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
+                } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
+                    zVar.setState(new int[0]);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        switch (this.a) {
+            case 1:
+                super.setText(charSequence, bufferType);
+                c();
+                break;
+            default:
+                super.setText(charSequence, bufferType);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 1:
+                return drawable == ((org.telegram.ui.Cells.z) this.b) || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n2(ng0 ng0Var, Context context) {
+        super(context);
+        this.d = ng0Var;
+        org.telegram.ui.Cells.z f02 = j6.f0(j6.l1(0.1f, j6.w0(null, j6.I6, false)), 7, -1);
+        this.b = f02;
+        i90 i90Var = new i90();
+        this.c = i90Var;
+        f02.setCallback(this);
+        i90Var.C = true;
+        i90Var.u = 0.8f;
     }
 }

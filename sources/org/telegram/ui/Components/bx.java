@@ -1,16 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class bx extends org.telegram.ui.tn {
-    @Override // org.telegram.ui.tn, org.telegram.ui.ActionBar.o2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        org.telegram.ui.dk dkVar;
-        super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || (dkVar = this.U) == null) {
-            return;
+public final class bx extends mv {
+    public final /* synthetic */ TLRPC.StickerSet T;
+    public final /* synthetic */ kz U;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bx(kz kzVar, org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
+        super(p2Var, context, f6Var, arrayList);
+        this.U = kzVar;
+        this.T = stickerSet;
+    }
+
+    @Override // org.telegram.ui.Components.mv
+    public final void X(boolean z4) {
+        kz kzVar = this.U;
+        ArrayList arrayList = kzVar.m1;
+        TLRPC.StickerSet stickerSet = this.T;
+        if (!z4) {
+            arrayList.remove(Long.valueOf(stickerSet.id));
+        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
+            arrayList.add(Long.valueOf(stickerSet.id));
         }
-        dkVar.s1();
-        this.U.postDelayed(new rp(this, 13), 100L);
+        kzVar.V();
+    }
+
+    @Override // org.telegram.ui.Components.mv, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        this.U.t2 = false;
+        super.dismiss();
     }
 }

@@ -1,14 +1,14 @@
 package n1;
 
-import bd.p;
-import i7.c7;
+import dd.p;
 import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import k7.p7;
 import kotlin.jvm.internal.j;
-import uc.i;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c extends i implements p {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final class c extends i implements p {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public c(p pVar, sc.c cVar, int i10) {
+    public c(p pVar, uc.c cVar, int i10) {
         super(2, cVar);
         this.a = i10;
         switch (i10) {
@@ -32,10 +32,10 @@ public final class c extends i implements p {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [bd.p, uc.i] */
-    /* JADX WARN: Type inference failed for: r1v1, types: [bd.p, uc.i] */
-    @Override // uc.a
-    public final sc.c create(Object obj, sc.c cVar) {
+    /* JADX WARN: Type inference failed for: r1v0, types: [dd.p, wc.i] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [dd.p, wc.i] */
+    @Override // wc.a
+    public final uc.c create(Object obj, uc.c cVar) {
         switch (this.a) {
             case 0:
                 c cVar2 = new c(this.d, cVar, 0);
@@ -48,25 +48,25 @@ public final class c extends i implements p {
         }
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final Object invoke(Object obj, Object obj2) {
         b bVar = (b) obj;
-        sc.c cVar = (sc.c) obj2;
+        uc.c cVar = (uc.c) obj2;
         switch (this.a) {
         }
-        return ((c) create(bVar, cVar)).invokeSuspend(qc.i.a);
+        return ((c) create(bVar, cVar)).invokeSuspend(sc.i.a);
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [bd.p, uc.i] */
-    /* JADX WARN: Type inference failed for: r5v12, types: [bd.p, uc.i] */
-    @Override // uc.a
+    /* JADX WARN: Type inference failed for: r1v1, types: [dd.p, wc.i] */
+    /* JADX WARN: Type inference failed for: r5v12, types: [dd.p, wc.i] */
+    @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         switch (this.a) {
             case 0:
-                tc.a aVar = tc.a.a;
+                vc.a aVar = vc.a.a;
                 int i10 = this.b;
                 if (i10 == 0) {
-                    c7.b(obj);
+                    p7.b(obj);
                     b bVar = (b) this.c;
                     this.b = 1;
                     obj = this.d.invoke(bVar, this);
@@ -77,23 +77,23 @@ public final class c extends i implements p {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    c7.b(obj);
+                    p7.b(obj);
                 }
                 b bVar2 = (b) obj;
                 bVar2.b.set(true);
                 return bVar2;
             default:
-                tc.a aVar2 = tc.a.a;
+                vc.a aVar2 = vc.a.a;
                 int i11 = this.b;
                 if (i11 != 0) {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     b bVar3 = (b) this.c;
-                    c7.b(obj);
+                    p7.b(obj);
                     return bVar3;
                 }
-                c7.b(obj);
+                p7.b(obj);
                 Map unmodifiableMap = DesugarCollections.unmodifiableMap(((b) this.c).a);
                 j.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
                 b bVar4 = new b(new LinkedHashMap(unmodifiableMap), false);

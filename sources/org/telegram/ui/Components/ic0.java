@@ -1,172 +1,166 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Color;
+import android.graphics.ComposeShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.os.Build;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class ic0 extends hv0 implements r0.n, View.OnLayoutChangeListener {
-    public final a5.e s0;
-    public View t0;
-    public hc0 u0;
-    public org.telegram.ui.ActionBar.d3 v0;
-    public int w0;
-    public int x0;
-    public boolean y0;
+public final class ic0 {
+    public static final float[] k = new float[4];
+    public static final Matrix l = new Matrix();
+    public final gc0 d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final s5.m a = new s5.m(new k2(17));
+    public final b4.e0 b = new b4.e0(17, (byte) 0);
+    public final i10 c = new i10();
+    public final Matrix i = new Matrix();
+    public final RectF j = new RectF();
 
-    public ic0(Context context) {
-        super(context, null);
-        this.s0 = new a5.e();
-    }
-
-    public void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
-        hc0 hc0Var;
-        if (viewGroup != this.t0 || (hc0Var = this.u0) == null || ((org.telegram.ui.q7) hc0Var).getListView() == null) {
-            return;
-        }
-        int top = this.u0.getTop();
-        if (i11 >= 0) {
-            org.telegram.ui.ActionBar.d3 d3Var = this.v0;
-            if (d3Var != null) {
-                d3Var.onNestedPreScroll(viewGroup, i10, i11, iArr);
-                return;
-            }
-            return;
-        }
-        if (top > this.w0) {
-            if (this.v0 == null || this.t0.canScrollVertically(i11)) {
-                return;
-            }
-            this.v0.onNestedScroll(viewGroup, 0, 0, i10, i11);
-            return;
-        }
-        jl0 listView = ((org.telegram.ui.q7) this.u0).getListView();
-        int L0 = ((f2.j0) listView.getLayoutManager()).L0();
-        if (L0 != -1) {
-            f2.n1 K = listView.K(L0);
-            int top2 = K != null ? K.a.getTop() : -1;
-            int paddingTop = listView.getPaddingTop();
-            if (top2 == paddingTop && L0 == 0) {
-                return;
-            }
-            iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
-            listView.scrollBy(0, i11);
-        }
-    }
-
-    public final boolean Z() {
-        hc0 hc0Var = this.u0;
-        return hc0Var != null && hc0Var.getTop() == this.w0;
-    }
-
-    public final void a0(hc0 hc0Var, int i10) {
-        this.x0 = i10;
-        if (this.u0 != hc0Var) {
-            this.u0 = hc0Var;
-            if (this.y0 && hc0Var != null) {
-                org.telegram.ui.q7 q7Var = (org.telegram.ui.q7) hc0Var;
-                if (q7Var.getListView() != null) {
-                    q7Var.getListView().addOnLayoutChangeListener(this);
-                }
-            }
-        }
-        b0();
-    }
-
-    public final void b0() {
-        View view = this.t0;
-        if (view == null || this.u0 == null) {
-            return;
-        }
-        if (this.x0 != 0) {
-            this.w0 = view.getPaddingTop() + this.x0;
+    public ic0() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d = new gc0();
         } else {
-            this.w0 = (view.getMeasuredHeight() - this.t0.getPaddingBottom()) - this.u0.getMeasuredHeight();
+            this.d = null;
         }
     }
 
-    @Override // org.telegram.ui.Components.hv0
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    public static void a(Matrix matrix, float[] fArr) {
+        Matrix matrix2 = l;
+        matrix.invert(matrix2);
+        float[] fArr2 = k;
+        fArr2[0] = 0.0f;
+        fArr2[1] = 0.0f;
+        fArr2[2] = 1.0f;
+        fArr2[3] = 1.0f;
+        matrix2.mapPoints(fArr2);
+        fArr[0] = fArr2[2] - fArr2[0];
+        fArr[1] = fArr2[3] - fArr2[1];
+        fArr[2] = fArr2[0];
+        fArr[3] = fArr2[1];
     }
 
-    public void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        hc0 hc0Var;
-        if (viewGroup != this.t0 || (hc0Var = this.u0) == null || ((org.telegram.ui.q7) hc0Var).getListView() == null) {
+    public static boolean b(float f10) {
+        return Math.abs(f10 - 1.0f) <= 1.0E-4f;
+    }
+
+    public final void c(RectF rectF) {
+        float f10 = this.e;
+        float f11 = this.f;
+        RectF rectF2 = this.j;
+        rectF2.set(0.0f, 0.0f, f10, f11);
+        Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
+        Matrix matrix = this.i;
+        matrix.setRectToRect(rectF2, rectF, scaleToFit);
+        i10 i10Var = this.c;
+        hc0 hc0Var = (hc0) i10Var.c;
+        hc0Var.b.set(matrix);
+        BitmapShader bitmapShader = hc0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
+        }
+        hc0 hc0Var2 = (hc0) i10Var.d;
+        hc0Var2.b.set(matrix);
+        BitmapShader bitmapShader2 = hc0Var2.d;
+        if (bitmapShader2 != null) {
+            bitmapShader2.setLocalMatrix(matrix);
+        }
+        gc0 gc0Var = this.d;
+        if (gc0Var == null || Build.VERSION.SDK_INT < 33) {
             return;
         }
-        jl0 listView = ((org.telegram.ui.q7) this.u0).getListView();
-        if (this.u0.getTop() == this.w0) {
-            iArr[1] = i13;
-            listView.scrollBy(0, i13);
+        float[] fArr = gc0Var.g;
+        a(matrix, fArr);
+        gc0Var.e.a(fArr);
+        gc0Var.f.a(fArr);
+    }
+
+    public final void d(Matrix matrix) {
+        i10 i10Var = this.c;
+        float[] fArr = (float[]) i10Var.h;
+        a(matrix, fArr);
+        hc0 hc0Var = (hc0) i10Var.e;
+        hc0Var.b.set(matrix);
+        BitmapShader bitmapShader = hc0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
         }
-    }
-
-    public void n(int i10, View view) {
-        this.s0.a = 0;
-        org.telegram.ui.ActionBar.d3 d3Var = this.v0;
-        if (d3Var != null) {
-            d3Var.onStopNestedScroll(view);
+        boolean z4 = false;
+        hc0Var.a(b(fArr[0]) && b(fArr[1]));
+        gc0 gc0Var = this.d;
+        if (gc0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
         }
-    }
-
-    public boolean o(View view, View view2, int i10, int i11) {
-        return view != null && view.isAttachedToWindow() && i10 == 2;
-    }
-
-    @Override // org.telegram.ui.Components.hv0, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.y0 = true;
-        hc0 hc0Var = this.u0;
-        if (hc0Var != null) {
-            hc0Var.addOnLayoutChangeListener(this);
+        float[] fArr2 = gc0Var.g;
+        a(matrix, fArr2);
+        hc0 hc0Var2 = gc0Var.d;
+        if (b(fArr2[0]) && b(fArr2[1])) {
+            z4 = true;
         }
+        hc0Var2.a(z4);
+        gc0Var.e.b(fArr2);
+        gc0Var.f.b(fArr2);
     }
 
-    @Override // org.telegram.ui.Components.hv0, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.y0 = false;
-        hc0 hc0Var = this.u0;
-        if (hc0Var != null) {
-            hc0Var.removeOnLayoutChangeListener(this);
+    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i10, int i11, int i12, boolean z4) {
+        Bitmap bitmap3;
+        Bitmap bitmap4 = (Bitmap) this.a.i(bitmap2);
+        if (i12 >= 0) {
+            int k10 = i0.a.k(i10, ((Color.alpha(i10) * i11) * i12) / 25500);
+            b4.e0 e0Var = this.b;
+            tg.a aVar = (tg.a) e0Var.c;
+            if (aVar.a(bitmap) || k10 != e0Var.b || ((Bitmap) e0Var.d) == null) {
+                Bitmap bitmap5 = (Bitmap) e0Var.d;
+                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) e0Var.d).getHeight() != bitmap.getHeight()) {
+                    e0Var.d = Bitmap.createBitmap(bitmap);
+                }
+                Utilities.applySoftLight(bitmap, (Bitmap) e0Var.d, k10);
+                aVar.b(bitmap);
+                e0Var.b = k10;
+            }
+            bitmap3 = (Bitmap) e0Var.d;
+        } else {
+            bitmap3 = null;
         }
-    }
-
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        b0();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        b0();
-    }
-
-    public void s(View view, View view2, int i10, int i11) {
-        this.s0.a = i10;
-    }
-
-    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.d3 d3Var) {
-        this.v0 = d3Var;
-    }
-
-    public void setChildLayout(hc0 hc0Var) {
-        a0(hc0Var, 0);
-    }
-
-    public void setTargetListView(View view) {
-        this.t0 = view;
-        b0();
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public void onStopNestedScroll(View view) {
-    }
-
-    public void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+        Bitmap bitmap6 = bitmap3;
+        this.e = bitmap.getWidth();
+        this.f = bitmap.getHeight();
+        this.g = bitmap4.getWidth();
+        this.h = bitmap4.getHeight();
+        gc0 gc0Var = this.d;
+        if (gc0Var != null && z4 && Build.VERSION.SDK_INT >= 33) {
+            return gc0Var.a(bitmap, bitmap4, bitmap6, i11, i12);
+        }
+        i10 i10Var = this.c;
+        dt dtVar = (dt) i10Var.f;
+        dt dtVar2 = (dt) i10Var.g;
+        hc0 hc0Var = (hc0) i10Var.d;
+        Paint paint = (Paint) i10Var.b;
+        hc0 hc0Var2 = (hc0) i10Var.c;
+        boolean b10 = hc0Var2.b(bitmap);
+        hc0 hc0Var3 = (hc0) i10Var.e;
+        boolean b11 = b10 | hc0Var3.b(bitmap4);
+        if (i12 >= 0) {
+            if ((hc0Var.b(bitmap6) | b11) || i10Var.a != 1) {
+                i10Var.a = 1;
+                paint.setShader(new ComposeShader(hc0Var2.d, new ComposeShader(hc0Var.d, hc0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
+                return paint;
+            }
+        } else if ((dtVar2.a(i0.a.k(-1, ((-i12) * i11) / 100)) | b11 | dtVar.a(-16777216)) || i10Var.a != 2) {
+            i10Var.a = 2;
+            paint.setShader(new ComposeShader((lf.k) dtVar.b, new ComposeShader(new ComposeShader(hc0Var2.d, hc0Var3.d, PorterDuff.Mode.DST_IN), (lf.k) dtVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
+            return paint;
+        }
+        return paint;
     }
 }

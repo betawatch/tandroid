@@ -1,27 +1,123 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class em0 {
-    public static final em0 a;
-    public static final em0 b;
-    public static final /* synthetic */ em0[] c;
+public final class em0 extends Drawable {
+    public long a;
+    public boolean b;
+    public Paint c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public int h;
+    public int i;
+    public org.telegram.ui.Cells.t1 j;
+    public float k;
+    public int l;
+    public int m;
+    public org.telegram.ui.ActionBar.f6 n;
 
-    static {
-        em0 em0Var = new em0("LINE", 0);
-        a = em0Var;
-        em0 em0Var2 = new em0("TAB", 1);
-        b = em0Var2;
-        c = new em0[]{em0Var, em0Var2};
+    public final void a() {
+        if (this.b) {
+            return;
+        }
+        this.a = System.currentTimeMillis();
+        this.b = true;
+        this.j.invalidate();
     }
 
-    public static em0 valueOf(String str) {
-        return (em0) Enum.valueOf(em0.class, str);
+    public final void b() {
+        if (this.b) {
+            this.b = false;
+        }
     }
 
-    public static em0[] values() {
-        return (em0[]) c.clone();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.c;
+        paint.setColor(i0.a.d(this.k, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, this.n), this.l));
+        int i10 = this.m;
+        if (i10 != 255) {
+            paint.setAlpha((int) ((paint.getAlpha() / 255.0f) * i10));
+        }
+        int i11 = getBounds().left;
+        int i12 = getBounds().top;
+        int i13 = 0;
+        while (i13 < 3) {
+            Canvas canvas2 = canvas;
+            canvas2.drawRect(AndroidUtilities.dp(2.0f) + i11, AndroidUtilities.dp((this.d * 7.0f) + 2.0f) + i12, AndroidUtilities.dp(4.0f) + i11, AndroidUtilities.dp(10.0f) + i12, paint);
+            canvas2.drawRect(AndroidUtilities.dp(5.0f) + i11, AndroidUtilities.dp((this.e * 7.0f) + 2.0f) + i12, AndroidUtilities.dp(7.0f) + i11, AndroidUtilities.dp(10.0f) + i12, paint);
+            canvas2.drawRect(AndroidUtilities.dp(8.0f) + i11, AndroidUtilities.dp((this.f * 7.0f) + 2.0f) + i12, AndroidUtilities.dp(10.0f) + i11, AndroidUtilities.dp(10.0f) + i12, paint);
+            i13++;
+            canvas = canvas2;
+        }
+        if (this.b) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.a;
+            this.a = currentTimeMillis;
+            if (j10 > 50) {
+                j10 = 50;
+            }
+            float f10 = j10;
+            float f11 = ((f10 / 300.0f) * this.g) + this.d;
+            this.d = f11;
+            if (f11 > 1.0f) {
+                this.g = -1;
+                this.d = 1.0f;
+            } else if (f11 < 0.0f) {
+                this.g = 1;
+                this.d = 0.0f;
+            }
+            float f12 = ((f10 / 310.0f) * this.h) + this.e;
+            this.e = f12;
+            if (f12 > 1.0f) {
+                this.h = -1;
+                this.e = 1.0f;
+            } else if (f12 < 0.0f) {
+                this.h = 1;
+                this.e = 0.0f;
+            }
+            float f13 = ((f10 / 320.0f) * this.i) + this.f;
+            this.f = f13;
+            if (f13 > 1.0f) {
+                this.i = -1;
+                this.f = 1.0f;
+            } else if (f13 < 0.0f) {
+                this.i = 1;
+                this.f = 0.0f;
+            }
+            this.j.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.m = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,28 +1,28 @@
 package androidx.biometric;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+    public final /* synthetic */ r b;
 
-    public /* synthetic */ h(q qVar, int i10) {
+    public /* synthetic */ h(r rVar, int i10) {
         this.a = i10;
-        this.b = qVar;
+        this.b = rVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                z zVar = this.b.h0;
-                if (zVar.e == null) {
-                    zVar.e = new w();
+                a0 a0Var = this.b.i0;
+                if (a0Var.e == null) {
+                    a0Var.e = new x();
                 }
-                zVar.e.b();
+                a0Var.e.b();
                 break;
             default:
-                this.b.h0.w = false;
+                this.b.i0.w = false;
                 break;
         }
     }

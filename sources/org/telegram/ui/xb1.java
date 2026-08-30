@@ -1,39 +1,16 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class xb1 extends i7.c6 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class xb1 extends f2.l {
+    public final /* synthetic */ cd1 F;
 
-    public /* synthetic */ xb1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
+    public xb1(cd1 cd1Var) {
+        this.F = cd1Var;
     }
 
-    @Override // i7.c6
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((oh1) this.b).v.invalidate();
-                break;
-        }
-    }
-
-    @Override // i7.c6
-    public void b(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                Point point = AndroidUtilities.displaySize;
-                if ((point.x <= point.y) == (i10 <= i11)) {
-                    ((qc1) this.b).t0.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        this.F.r0.f1();
     }
 }

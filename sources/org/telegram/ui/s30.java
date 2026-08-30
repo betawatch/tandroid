@@ -1,44 +1,24 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class s30 implements TextWatcher {
-    public final /* synthetic */ r50 a;
+public final class s30 extends f2.l {
+    public final /* synthetic */ c60 F;
 
-    public s30(r50 r50Var) {
-        this.a = r50Var;
+    public s30(c60 c60Var) {
+        this.F = c60Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        r50 r50Var = this.a;
-        r50Var.w3.a(TextUtils.isEmpty(editable), true);
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        int i10 = r50Var.Z;
-        if (codePointCount + 25 > i10) {
-            str = "" + (i10 - codePointCount);
-        } else {
-            str = null;
-        }
-        r50Var.I.a();
-        r50Var.I.setText(str);
-        r50Var.I.setTextColor(codePointCount >= i10 ? -1280137 : -1);
-        if (codePointCount > i10) {
-            BotWebViewVibrationEffect.APP_ERROR.vibrate();
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        ViewGroup viewGroup;
+        c60 c60Var = this.F;
+        c60Var.N.invalidate();
+        c60Var.X1.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.g3) c60Var).containerView;
+        viewGroup.invalidate();
+        c60.J0(c60Var);
     }
 }

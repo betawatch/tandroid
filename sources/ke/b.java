@@ -1,57 +1,36 @@
 package ke;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import android.support.v4.media.session.MediaSessionCompat$Token;
+import ne.s;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final Map a;
-    public static final Pattern b;
+public final class b {
+    public final boolean a;
+    public final int b;
+    public boolean c;
+    public boolean d;
+    public final Object e;
+    public final Object f;
+    public final Object g;
 
-    static {
-        HashMap hashMap = new HashMap();
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(b.class.getResourceAsStream("/org/commonmark/internal/util/entities.properties"), Charset.forName("UTF-8")));
-            while (true) {
-                try {
-                    String readLine = bufferedReader.readLine();
-                    if (readLine == null) {
-                        bufferedReader.close();
-                        hashMap.put("NewLine", "\n");
-                        a = hashMap;
-                        b = Pattern.compile("^&#[Xx]?");
-                        return;
-                    }
-                    if (readLine.length() != 0) {
-                        int indexOf = readLine.indexOf("=");
-                        hashMap.put(readLine.substring(0, indexOf), readLine.substring(indexOf + 1));
-                    }
-                } finally {
-                }
-            }
-        } catch (IOException e10) {
-            throw new IllegalStateException("Failed reading data for HTML named character references", e10);
-        }
+    public b(boolean z4, int i10, String str, String str2, MediaSessionCompat$Token mediaSessionCompat$Token, boolean z10, boolean z11) {
+        this.a = z4;
+        this.b = i10;
+        this.f = str;
+        this.g = str2;
+        this.e = mediaSessionCompat$Token;
+        this.c = z10;
+        this.d = z11;
     }
 
-    public static String a(String str) {
-        Matcher matcher = b.matcher(str);
-        if (!matcher.find()) {
-            String str2 = (String) a.get(com.google.android.recaptcha.internal.a.m(str, 1, 1));
-            return str2 != null ? str2 : str;
-        }
-        try {
-            int parseInt = Integer.parseInt(str.substring(matcher.end(), str.length() - 1), matcher.end() == 2 ? 10 : 16);
-            return parseInt == 0 ? "�" : new String(Character.toChars(parseInt));
-        } catch (IllegalArgumentException unused) {
-            return "�";
-        }
+    public b(s sVar, int i10, b bVar, c cVar, boolean z4) {
+        this.c = true;
+        this.d = false;
+        this.e = sVar;
+        this.b = i10;
+        this.a = z4;
+        this.f = bVar;
+        this.g = cVar;
     }
 }

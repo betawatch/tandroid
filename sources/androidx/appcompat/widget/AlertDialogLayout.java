@@ -7,15 +7,15 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import j7.l1;
 import java.util.WeakHashMap;
+import kh.a2;
 import m.w1;
 import m.x1;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.j0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends x1 {
     public AlertDialogLayout(Context context) {
@@ -42,8 +42,8 @@ public class AlertDialogLayout extends x1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int e10;
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        int d;
         int i14;
         int i15;
         int paddingLeft = getPaddingLeft();
@@ -71,7 +71,7 @@ public class AlertDialogLayout extends x1 {
                 WeakHashMap weakHashMap = j0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    e10 = l1.e(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin;
+                    d = a2.d(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin;
                     i14 = ((LinearLayout.LayoutParams) w1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
                     i15 = ((LinearLayout.LayoutParams) w1Var).leftMargin + paddingLeft;
@@ -82,10 +82,10 @@ public class AlertDialogLayout extends x1 {
                     childAt.layout(i15, i21, measuredWidth + i15, i21 + measuredHeight2);
                     paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) w1Var).bottomMargin + i21;
                 } else {
-                    e10 = paddingRight - measuredWidth;
+                    d = paddingRight - measuredWidth;
                     i14 = ((LinearLayout.LayoutParams) w1Var).rightMargin;
                 }
-                i15 = e10 - i14;
+                i15 = d - i14;
                 if (h(i19)) {
                 }
                 int i212 = paddingTop + ((LinearLayout.LayoutParams) w1Var).topMargin;

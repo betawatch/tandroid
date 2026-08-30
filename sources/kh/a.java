@@ -1,22 +1,44 @@
 package kh;
 
-import f5.c;
-import java.io.File;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.il0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes4.dex */
-public final class a {
-    public final File a;
-    public long b;
-    public long c;
-    public int d;
-    public c e;
-    public MessageObject f;
-    public int g;
-    public int h;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class a implements il0 {
+    public final /* synthetic */ int a;
 
-    public a(File file) {
-        this.a = file;
+    public /* synthetic */ a(int i10) {
+        this.a = i10;
+    }
+
+    @Override // org.telegram.ui.Components.il0
+    public final void f(int i10, View view) {
+        switch (this.a) {
+            case 0:
+                int i11 = d.X;
+                break;
+            case 1:
+                int i12 = s.x0;
+                break;
+            case 2:
+                if (view instanceof org.telegram.ui.Cells.x) {
+                    ((org.telegram.ui.Cells.x) view).a();
+                    break;
+                }
+                break;
+            case 3:
+                boolean z4 = ChatAttachAlertPhotoLayout.n1;
+                if (view instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                    t5Var.w.b(t5Var);
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void a(int i10, View view) {
     }
 }

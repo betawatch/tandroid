@@ -1,11 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface pn0 {
-    void e(float f9);
+public final class pn0 extends f2.l {
+    public final /* synthetic */ org.telegram.ui.xx F;
 
-    void f(org.telegram.ui.Cells.p2 p2Var);
+    public pn0(org.telegram.ui.xx xxVar) {
+        this.F = xxVar;
+    }
 
-    void finish();
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        this.F.invalidate();
+    }
 }

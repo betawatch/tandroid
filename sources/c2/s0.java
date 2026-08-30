@@ -1,38 +1,79 @@
 package c2;
 
+import android.os.Bundle;
+import android.os.DeadObjectException;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.RemoteException;
+import android.util.Log;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class s0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
+public final class s0 implements IBinder.DeathRecipient {
+    public final Messenger a;
+    public final u0 b;
+    public final Messenger c;
+    public int f;
+    public int g;
+    public final /* synthetic */ y0 i;
+    public int d = 1;
+    public int e = 1;
+    public final SparseArray h = new SparseArray();
 
-    public /* synthetic */ s0(t0 t0Var, int i10) {
-        this.a = i10;
-        this.b = t0Var;
+    public s0(y0 y0Var, Messenger messenger) {
+        this.i = y0Var;
+        this.a = messenger;
+        u0 u0Var = new u0(this);
+        this.b = u0Var;
+        this.c = new Messenger(u0Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                SparseArray sparseArray = this.b.h;
-                int size = sparseArray.size();
-                for (int i10 = 0; i10 < size; i10++) {
-                    ((x0) sparseArray.valueAt(i10)).getClass();
-                    x0.a(null, null);
-                }
-                sparseArray.clear();
-                break;
-            default:
-                t0 t0Var = this.b;
-                a1 a1Var = t0Var.i;
-                if (a1Var.y == t0Var) {
-                    a1Var.p();
-                    break;
-                }
-                break;
+    public final void a(int i10) {
+        int i11 = this.d;
+        this.d = i11 + 1;
+        b(5, i11, i10, null, null);
+    }
+
+    public final boolean b(int i10, int i11, int i12, Bundle bundle, Bundle bundle2) {
+        Message obtain = Message.obtain();
+        obtain.what = i10;
+        obtain.arg1 = i11;
+        obtain.arg2 = i12;
+        obtain.obj = bundle;
+        obtain.setData(bundle2);
+        obtain.replyTo = this.c;
+        try {
+            this.a.send(obtain);
+            return true;
+        } catch (DeadObjectException unused) {
+            return false;
+        } catch (RemoteException e) {
+            if (i10 == 2) {
+                return false;
+            }
+            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e);
+            return false;
         }
+    }
+
+    @Override // android.os.IBinder.DeathRecipient
+    public final void binderDied() {
+        this.i.s.post(new r0(this, 1));
+    }
+
+    public final void c(int i10, int i11) {
+        Bundle h = android.support.v4.media.a.h(i11, "volume");
+        int i12 = this.d;
+        this.d = i12 + 1;
+        b(7, i12, i10, null, h);
+    }
+
+    public final void d(int i10, int i11) {
+        Bundle h = android.support.v4.media.a.h(i11, "volume");
+        int i12 = this.d;
+        this.d = i12 + 1;
+        b(8, i12, i10, null, h);
     }
 }

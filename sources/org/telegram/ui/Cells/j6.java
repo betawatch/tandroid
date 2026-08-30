@@ -1,53 +1,106 @@
 package org.telegram.ui.Cells;
 
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.util.Property;
 import android.view.View;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.tn;
-import org.telegram.ui.LaunchActivity;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j6 extends lh.h7 {
-    public final /* synthetic */ int S = 0;
-    public final /* synthetic */ View T;
+public class j6 extends FrameLayout {
+    public final TextView a;
+    public final RadioButton b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(l6 l6Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(c6Var, false);
-        this.T = l6Var;
+    public j6(Context context) {
+        this(context, null);
     }
 
-    @Override // lh.h7
-    public final void f(long j10) {
-        switch (this.S) {
-            case 0:
-                ((l6) this.T).b(j10);
-                break;
-            case 1:
-                sa saVar = (sa) this.T;
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(saVar.getContext(), j10, lh.b7.a((jl0) saVar.getParent()));
-                    break;
-                }
-                break;
-            default:
-                tn tnVar = (tn) this.T;
-                tnVar.D.getOrCreateStoryViewer().D(tnVar.getContext(), j10, new org.telegram.ui.Components.u(this, 25));
-                break;
+    public final void a(boolean z4, boolean z10) {
+        this.b.a(z4, z10);
+    }
+
+    public final void b(ArrayList arrayList, boolean z4) {
+        super.setEnabled(z4);
+        RadioButton radioButton = this.b;
+        TextView textView = this.a;
+        if (arrayList == null) {
+            textView.setAlpha(z4 ? 1.0f : 0.5f);
+            radioButton.setAlpha(z4 ? 1.0f : 0.5f);
+        } else {
+            float[] fArr = {z4 ? 1.0f : 0.5f};
+            Property property = View.ALPHA;
+            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
+            arrayList.add(ObjectAnimator.ofFloat(radioButton, (Property<RadioButton, Float>) property, z4 ? 1.0f : 0.5f));
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(sa saVar) {
-        super(null, false);
-        this.T = saVar;
+    public final void c(String str, boolean z4, boolean z10) {
+        this.a.setText(str);
+        this.b.a(z4, false);
+        this.c = z10;
+        setWillNotDraw(!z10);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(tn tnVar) {
-        super(null, true);
-        this.T = tnVar;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.c ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(34.0f);
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    }
+
+    public void setRadioIcon(Drawable drawable) {
+        this.b.setIcon(drawable);
+    }
+
+    public void setTextColor(int i10) {
+        this.a.setTextColor(i10);
+    }
+
+    public j6(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.b.l(org.telegram.ui.ActionBar.j6.G6, f6Var, textView, 1, 16.0f);
+        textView.setLines(1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        float f10 = 21;
+        addView(textView, k7.b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
+        RadioButton radioButton = new RadioButton(context);
+        this.b = radioButton;
+        radioButton.setSize(AndroidUtilities.dp(20.0f));
+        radioButton.b(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.g7, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h7, f6Var));
+        boolean z4 = LocaleController.isRTL;
+        addView(radioButton, k7.b6.d(22, 22.0f, (z4 ? 3 : 5) | 48, z4 ? 22 : 0, 14.0f, z4 ? 0 : 22, 0.0f));
     }
 }

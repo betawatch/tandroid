@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class f1 extends l0 {
     private static Map<Object, f1> zzd = new ConcurrentHashMap();
@@ -24,8 +24,8 @@ public abstract class f1 extends l0 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 f1Var = zzd.get(cls);
-            } catch (ClassNotFoundException e10) {
-                throw new IllegalStateException("Class initialization cannot fail.", e10);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
         if (f1Var != null) {
@@ -42,10 +42,10 @@ public abstract class f1 extends l0 {
     public static Object f(Method method, f1 f1Var, Object... objArr) {
         try {
             return method.invoke(f1Var, objArr);
-        } catch (IllegalAccessException e10) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
-        } catch (InvocationTargetException e11) {
-            Throwable cause = e11.getCause();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e6) {
+            Throwable cause = e6.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -112,10 +112,10 @@ public abstract class f1 extends l0 {
 
     public final String toString() {
         String obj = super.toString();
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("# ");
-        sb2.append(obj);
-        e1.p(this, sb2, 0);
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("# ");
+        sb.append(obj);
+        e1.p(this, sb, 0);
+        return sb.toString();
     }
 }

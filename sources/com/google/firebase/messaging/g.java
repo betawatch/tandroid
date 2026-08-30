@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import androidx.biometric.f0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -13,9 +14,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.ib0;
+import org.telegram.ui.rb0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class g extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
@@ -27,7 +28,7 @@ public abstract class g extends Service {
     private int runningTasks;
 
     public g() {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new g9.w("Firebase-Messaging-Intent-Handle"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new i9.u("Firebase-Messaging-Intent-Handle"));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         this.executor = Executors.unconfigurableExecutorService(threadPoolExecutor);
         this.lock = new Object();
@@ -36,7 +37,7 @@ public abstract class g extends Service {
 
     public final void a(Intent intent) {
         if (intent != null) {
-            c0.b(intent);
+            b0.b(intent);
         }
         synchronized (this.lock) {
             try {
@@ -75,7 +76,7 @@ public abstract class g extends Service {
                 Log.d(TAG, "Service received bind request");
             }
             if (this.binder == null) {
-                this.binder = new d0(new za.c(this, 10));
+                this.binder = new c0(new f0(this, 7));
             }
         } catch (Throwable th2) {
             throw th2;
@@ -105,7 +106,7 @@ public abstract class g extends Service {
             a(intent);
             return 2;
         }
-        b10.addOnCompleteListener(new ib0(1), new a9.s(4, this, intent));
+        b10.addOnCompleteListener(new rb0(1), new c1.b(2, this, intent));
         return 3;
     }
 

@@ -1,150 +1,165 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j61 extends View {
-    public final n6 a;
-    public final n6 b;
-    public final Paint c;
-    public final Paint d;
-    public final Paint e;
-    public boolean f;
-    public final d6 h;
-    public final int[] n;
+public final class j61 extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public final TextPaint c;
+    public final TextPaint d;
+    public final TextPaint e;
+    public final Paint f;
+    public final RectF g;
+    public final rc h;
+    public final yd.b i;
+    public Runnable j;
+    public StaticLayout k;
+    public StaticLayout l;
+    public StaticLayout m;
+    public String n;
+    public String o;
+    public String p;
+    public int q;
+    public int r;
+    public final int s;
+    public final int t;
+    public final int u;
+    public final int v;
+    public final int w;
+    public final int x;
+    public final int y;
 
-    public j61(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        Paint paint3 = new Paint(1);
-        this.e = paint3;
-        jr jrVar = jr.h;
-        this.h = new d6(this, 0L, 300L, jrVar);
-        this.n = new int[]{144, 240, 360, 480, 720, 1080, 1440, 2160};
-        n6 n6Var = new n6(true, false, false, false);
-        this.a = n6Var;
-        n6Var.k(0.4f, 360L, jrVar);
-        n6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        n6Var.r(-1);
-        n6Var.t(AndroidUtilities.dpf2(10.6f));
-        n6Var.setCallback(this);
-        n6Var.b = 17;
-        n6 n6Var2 = new n6(true, false, false, false);
-        this.b = n6Var2;
-        n6Var2.k(0.2f, 360L, jrVar);
-        n6Var2.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        n6Var2.r(-1);
-        n6Var2.t(AndroidUtilities.dpf2(8.6f));
-        n6Var2.setCallback(this);
-        n6Var2.b = 5;
-        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
-        n6Var2.a.setXfermode(new PorterDuffXfermode(mode));
-        n6Var2.G = AndroidUtilities.displaySize.x;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint2.setColor(-1);
-        paint3.setXfermode(new PorterDuffXfermode(mode));
+    public j61() {
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.d = textPaint2;
+        TextPaint textPaint3 = new TextPaint(1);
+        this.e = textPaint3;
+        this.f = new Paint(1);
+        this.g = new RectF();
+        rc rcVar = new rc((View) null);
+        this.h = rcVar;
+        this.i = new yd.b(new ja.c(this, 27));
+        this.s = AndroidUtilities.dp(62.33f);
+        this.t = AndroidUtilities.dp(12.0f);
+        this.u = AndroidUtilities.dp(30.0f);
+        this.v = AndroidUtilities.dp(15.0f);
+        this.w = AndroidUtilities.dp(7.0f);
+        this.x = AndroidUtilities.dp(12.0f);
+        this.y = AndroidUtilities.dp(2.0f);
+        this.a = ApplicationLoader.applicationContext.getDrawable(R.drawable.send_plane_26).mutate();
+        this.b = ApplicationLoader.applicationContext.getDrawable(R.drawable.large_unsupported).mutate();
+        rcVar.f = new nq0(this, 28);
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint2.setTextSize(AndroidUtilities.dp(12.0f));
+        textPaint3.setTypeface(AndroidUtilities.bold());
+        textPaint3.setTextSize(AndroidUtilities.dp(14.0f));
+        b();
     }
 
-    public final void a(int i10, boolean z10, boolean z11) {
-        this.f = !z10 || z11;
-        n6 n6Var = this.a;
-        n6 n6Var2 = this.b;
-        if (z11) {
-            n6Var.q("GIF", true, true);
-            n6Var2.q("", true, true);
-        } else {
-            n6Var.q(i10 >= 720 ? "HD" : "SD", true, true);
-            int[] iArr = this.n;
-            int length = iArr.length - 1;
-            while (true) {
-                if (length < 0) {
-                    length = -1;
-                    break;
-                } else if (i10 >= iArr[length]) {
-                    break;
-                } else {
-                    length--;
-                }
-            }
-            if (length < 0) {
-                n6Var2.q("", true, true);
-            } else if (length == 6) {
-                n6Var2.q("2K", TextUtils.isEmpty(n6Var2.g), true);
-            } else if (length == 7) {
-                n6Var2.q("4K", TextUtils.isEmpty(n6Var2.g), true);
-            } else {
-                n6Var2.q("" + iArr[length], TextUtils.isEmpty(n6Var2.g), true);
-            }
+    public final int a(int i10) {
+        this.q = i10;
+        String str = this.p;
+        int length = str.length();
+        TextPaint textPaint = this.e;
+        float measureText = textPaint.measureText((CharSequence) str, 0, length);
+        String str2 = this.p;
+        int ceil = (int) Math.ceil(measureText);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+        this.m = new StaticLayout(str2, textPaint, ceil, alignment, 1.0f, 0.0f, false);
+        int dp = (((i10 - this.s) - ((int) ((this.t * 2) + measureText))) - this.x) - AndroidUtilities.dp(11.0f);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        TextPaint textPaint2 = this.c;
+        this.k = new StaticLayout(TextUtils.ellipsize(this.n, textPaint2, dp, truncateAt), textPaint2, dp, alignment, 1.0f, 0.0f, false);
+        this.l = new StaticLayout(this.o, this.d, dp, alignment, 1.0f, 0.0f, false);
+        int max = (this.w * 2) + Math.max(this.l.getHeight() + this.k.getHeight() + this.y, this.u);
+        this.r = max;
+        setBounds(0, 0, this.q, max);
+        return this.r;
+    }
+
+    public final void b() {
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ic, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        this.a.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.l1(0.11f, -16777216), mode));
+        this.c.setColor(w02);
+        this.d.setColor(i0.a.k(w02, 179));
+        this.e.setColor(w02);
+        this.f.setColor(org.telegram.ui.ActionBar.j6.l1(0.11f, -16777216));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.k == null || this.l == null || this.m == null) {
+            return;
         }
-        setClickable(!this.f);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        float e10 = (1.0f - (this.h.e(this.f) * 0.35f)) * 255.0f;
-        int i10 = (int) e10;
-        Paint paint = this.c;
-        paint.setAlpha(i10);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
-        float dpf2 = AndroidUtilities.dpf2(21.33f);
-        float dpf22 = AndroidUtilities.dpf2(6.0f);
-        n6 n6Var = this.a;
-        float max = Math.max(dpf2, n6Var.d() + dpf22);
-        float dpf23 = AndroidUtilities.dpf2(17.33f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - max) / 2.0f, (getHeight() - dpf23) / 2.0f, (getWidth() + max) / 2.0f, (getHeight() + dpf23) / 2.0f);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(4.0f), AndroidUtilities.dpf2(4.0f), paint);
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.set(0, (int) ((getHeight() - dpf23) / 2.0f), getWidth(), (int) ((getHeight() + dpf23) / 2.0f));
-        n6Var.setBounds(rect);
-        n6Var.w = i10;
-        n6Var.draw(canvas);
-        n6 n6Var2 = this.b;
-        rect.set((int) ((AndroidUtilities.dpf2(16.0f) + (getWidth() / 2.0f)) - (n6Var2.d() + (AndroidUtilities.dpf2(2.0f) * n6Var2.g()))), (int) ((getHeight() / 2.0f) - AndroidUtilities.dpf2(14.0f)), (int) (AndroidUtilities.dpf2(16.0f) + (getWidth() / 2.0f)), (int) (((getHeight() / 2.0f) - AndroidUtilities.dpf2(14.0f)) + AndroidUtilities.dpf2(8.33f)));
-        rectF.set(rect);
-        rectF.inset(-AndroidUtilities.dpf2(1.33f), -AndroidUtilities.dpf2(1.33f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), this.e);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        rectF.set(rect);
-        int g10 = (int) (n6Var2.g() * e10);
-        Paint paint2 = this.d;
-        paint2.setAlpha(g10);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), paint2);
-        rect.offset((int) (-AndroidUtilities.dpf2(1.33f)), 0);
+        int i10 = getBounds().left;
+        int i11 = getBounds().right;
+        int centerY = getBounds().centerY();
+        int height = centerY - ((this.l.getHeight() + (this.k.getHeight() + this.y)) / 2);
         canvas.save();
-        n6Var2.setBounds(rect);
-        n6Var2.draw(canvas);
+        canvas.translate(this.s + i10, height);
+        this.k.draw(canvas);
+        canvas.translate(0.0f, this.k.getHeight() + r4);
+        this.l.draw(canvas);
+        canvas.restore();
+        float width = this.m.getWidth();
+        int i12 = this.t;
+        int dp = i11 - AndroidUtilities.dp(11.0f);
+        float f10 = centerY - (this.u / 2);
+        RectF rectF = this.g;
+        rectF.set(dp - ((int) (width + (i12 * 2))), f10, dp, r6 + r5);
+        float a2 = this.h.a(0.05f);
+        canvas.save();
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        org.telegram.ui.ActionBar.j6.l1(0.18f, -1);
+        int i13 = this.v;
+        canvas.drawRoundRect(rectF, i13, i13, this.f);
+        canvas.save();
+        canvas.translate(r3 + i12, ((r5 - this.m.getHeight()) / 2.0f) + f10);
+        this.m.draw(canvas);
         canvas.restore();
         canvas.restore();
-        canvas.restore();
+        float dp2 = AndroidUtilities.dp(29.66f) + i10;
+        float f11 = centerY + 1;
+        Drawable drawable = this.b;
+        lf.r.d(drawable, dp2, f11, 17);
+        drawable.draw(canvas);
+        float dp3 = AndroidUtilities.dp(29.66f) + i10;
+        Drawable drawable2 = this.a;
+        lf.r.d(drawable2, dp3, f11, 17);
+        drawable2.draw(canvas);
     }
 
-    public void setPhotoState(boolean z10) {
-        this.f = false;
-        this.a.q(z10 ? "HD" : "SD", true, true);
-        this.b.q("", false, true);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || this.b == drawable || super.verifyDrawable(drawable);
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

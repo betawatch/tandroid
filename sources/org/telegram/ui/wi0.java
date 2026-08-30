@@ -1,37 +1,49 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wi0 extends ig.k {
-    public boolean F;
-    public final /* synthetic */ zi0 G;
+public final class wi0 extends org.telegram.ui.Components.zn {
+    public final /* synthetic */ aj0 s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wi0(zi0 zi0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.G = zi0Var;
+    public wi0(aj0 aj0Var, Context context) {
+        super(context, null, false, null);
+        this.s0 = aj0Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(64.0f) + getMeasuredHeight();
-        zi0 zi0Var = this.G;
-        zi0Var.h0 = dp;
-        zi0Var.g0.G();
-        if (this.F != zi0Var.isKeyboardVisible()) {
-            boolean isKeyboardVisible = zi0Var.isKeyboardVisible();
-            this.F = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                org.telegram.ui.Components.jl0 jl0Var = zi0Var.d;
-                uh.n nVar = new uh.n(zi0Var.getContext(), 2, 0.6f);
-                nVar.a = 1;
-                nVar.p = AndroidUtilities.dp(36.0f);
-                jl0Var.getLayoutManager().w0(nVar);
-            }
+    @Override // org.telegram.ui.Components.zn, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        aj0 aj0Var = this.s0;
+        aj0Var.T.setImageCoords(aj0Var.Y.getAvatarImageView().getX(), aj0Var.Y.getAvatarImageView().getY(), aj0Var.Y.getAvatarImageView().getWidth(), aj0Var.Y.getAvatarImageView().getHeight());
+        if (aj0Var.V) {
+            canvas.save();
+            canvas.scale(0.9f, 0.9f, aj0Var.T.getCenterX(), aj0Var.T.getCenterY());
+            aj0Var.T.draw(canvas);
+            canvas.restore();
         }
+        if (aj0Var.U) {
+            int centerX = (int) (aj0Var.T.getCenterX() - (org.telegram.ui.ActionBar.j6.U0.getIntrinsicWidth() / 2));
+            int centerY = (int) (aj0Var.T.getCenterY() - (org.telegram.ui.ActionBar.j6.U0.getIntrinsicHeight() / 2));
+            Drawable drawable = org.telegram.ui.ActionBar.j6.U0;
+            drawable.setBounds(centerX, centerY, drawable.getIntrinsicWidth() + centerX, org.telegram.ui.ActionBar.j6.U0.getIntrinsicHeight() + centerY);
+            org.telegram.ui.ActionBar.j6.U0.draw(canvas);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zn, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.s0.T.onAttachedToWindow();
+    }
+
+    @Override // org.telegram.ui.Components.zn, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.s0.T.onDetachedFromWindow();
     }
 }

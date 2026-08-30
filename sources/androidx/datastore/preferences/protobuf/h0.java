@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h0 extends i0 {
     @Override // androidx.datastore.preferences.protobuf.i0
@@ -36,8 +36,8 @@ public final class h0 extends i0 {
             return zVar;
         }
         int size = zVar.size();
-        z e10 = zVar.e(size == 0 ? 10 : size * 2);
-        s1.o(obj, j10, e10);
-        return e10;
+        z e = zVar.e(size == 0 ? 10 : size * 2);
+        s1.o(obj, j10, e);
+        return e;
     }
 }

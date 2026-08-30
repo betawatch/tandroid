@@ -4,7 +4,7 @@ import android.content.Intent;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e0 {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final class e0 {
                         }
                         Iterator it = arrayList2.iterator();
                         Iterator it2 = arrayList.iterator();
-                        ArrayList arrayList3 = new ArrayList(Math.min(rc.i.d(arrayList2), rc.i.d(arrayList)));
+                        ArrayList arrayList3 = new ArrayList(Math.min(tc.i.d(arrayList2), tc.i.d(arrayList)));
                         while (it.hasNext() && it2.hasNext()) {
-                            arrayList3.add(new qc.d(it.next(), it2.next()));
+                            arrayList3.add(new sc.d(it.next(), it2.next()));
                         }
                         break;
                     }

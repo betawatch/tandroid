@@ -1,112 +1,63 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.content.Context;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rd implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class rd implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ rd(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ rd(int i10, ph.d dVar, org.telegram.ui.ActionBar.g3 g3Var, long j10) {
+        this.b = i10;
+        this.d = dVar;
+        this.e = g3Var;
+        this.c = j10;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        int b10;
-        int b11;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                de deVar = (de) this.b;
-                t91 t91Var = (t91) this.c;
-                if (i10 == 5) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                    nd ndVar = new nd(deVar, twoStepVerificationActivity, 1);
-                    twoStepVerificationActivity.V = 1;
-                    twoStepVerificationActivity.X = ndVar;
-                    deVar.M0.setLoading(true);
-                    twoStepVerificationActivity.s0(new od(deVar, t91Var, twoStepVerificationActivity, 1));
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.b;
-                org.telegram.ui.Components.u1 u1Var = (org.telegram.ui.Components.u1) this.c;
-                if ((i10 == 6 || keyEvent.getKeyCode() == 66) && c2Var.isShowing()) {
-                    u1Var.g(c2Var, 0);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Components.mn mnVar = (org.telegram.ui.Components.mn) this.b;
-                org.telegram.ui.Components.ln lnVar = (org.telegram.ui.Components.ln) this.c;
-                org.telegram.ui.Components.on onVar = mnVar.d;
-                wa1 wa1Var = onVar.s;
-                if (i10 == 5) {
-                    View F = wa1Var.F(lnVar);
-                    f2.n1 T = F == null ? null : wa1Var.T(F);
-                    if (T != null && (b10 = T.b()) != -1) {
-                        int i11 = b10 - onVar.p0;
-                        int i12 = onVar.I;
-                        int i13 = i12 - 1;
-                        if (i11 == i13 && i12 < onVar.F) {
-                            onVar.P();
-                            break;
-                        } else if (i11 != i13) {
-                            f2.n1 K = wa1Var.K(b10 + 1);
-                            if (K != null) {
-                                View view = K.a;
-                                if (view instanceof org.telegram.ui.Cells.a6) {
-                                    ((org.telegram.ui.Cells.a6) view).getTextView().requestFocus();
-                                    break;
-                                }
-                            }
-                        } else {
-                            AndroidUtilities.hideKeyboard(lnVar.getTextView());
-                            break;
-                        }
+                ke keVar = (ke) this.d;
+                Context context = (Context) this.e;
+                if (view.isEnabled()) {
+                    ph.d dVar = keVar.Q0;
+                    if (!dVar.K) {
+                        dVar.setLoading(true);
+                        TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
+                        int i10 = this.b;
+                        tL_payments_getStarsRevenueAdsAccountUrl.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new dg.d3(24, keVar, context));
+                        break;
                     }
                 }
                 break;
             default:
-                tu0 tu0Var = (tu0) this.b;
-                su0 su0Var = (su0) this.c;
-                vu0 vu0Var = tu0Var.d;
-                if (i10 == 5) {
-                    wa1 wa1Var2 = vu0Var.c;
-                    View F2 = wa1Var2.F(su0Var);
-                    f2.n1 T2 = F2 == null ? null : wa1Var2.T(F2);
-                    if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i14 = b11 - vu0Var.j0;
-                        int i15 = vu0Var.y;
-                        int i16 = i15 - 1;
-                        if (i14 == i16 && i15 < vu0Var.n) {
-                            vu0Var.f0();
-                            break;
-                        } else if (i14 != i16) {
-                            f2.n1 K2 = vu0Var.c.K(b11 + 1);
-                            if (K2 != null) {
-                                View view2 = K2.a;
-                                if (view2 instanceof org.telegram.ui.Cells.a6) {
-                                    ((org.telegram.ui.Cells.a6) view2).getTextView().requestFocus();
-                                    break;
-                                }
-                            }
-                        } else {
-                            AndroidUtilities.hideKeyboard(su0Var.getTextView());
-                            break;
-                        }
-                    }
-                }
+                ph.d dVar2 = (ph.d) this.d;
+                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.e;
+                TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
+                createconferencecall.random_id = Utilities.random.nextInt();
+                int i11 = this.b;
+                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new lh.u(i11, dVar2, g3Var, this.c));
                 break;
         }
-        return true;
+    }
+
+    public /* synthetic */ rd(ke keVar, int i10, long j10, Context context) {
+        this.d = keVar;
+        this.b = i10;
+        this.c = j10;
+        this.e = context;
     }
 }

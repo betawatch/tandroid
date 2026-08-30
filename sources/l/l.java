@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class l implements DialogInterface.OnKeyListener, DialogInterface.OnClickListener, DialogInterface.OnDismissListener, w {
     public d0 a;
@@ -13,15 +13,15 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
     public g c;
 
     @Override // l.w
-    public final void b(k kVar, boolean z10) {
+    public final void c(k kVar, boolean z4) {
         g.f fVar;
-        if ((z10 || kVar == this.a) && (fVar = this.b) != null) {
+        if ((z4 || kVar == this.a) && (fVar = this.b) != null) {
             fVar.dismiss();
         }
     }
 
     @Override // l.w
-    public final boolean h(k kVar) {
+    public final boolean e0(k kVar) {
         return false;
     }
 
@@ -37,7 +37,7 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        this.c.b(this.a, true);
+        this.c.c(this.a, true);
     }
 
     @Override // android.content.DialogInterface.OnKeyListener

@@ -1,7 +1,5 @@
 package i0;
 
-import a0.k;
-import ag.o1;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -10,14 +8,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Trace;
 import android.util.Log;
-import androidx.biometric.o;
-import com.google.android.gms.common.api.internal.q1;
-import f5.b0;
-import g9.l;
-import h7.f8;
-import h7.m8;
+import androidx.biometric.k;
+import androidx.biometric.p;
+import com.google.android.gms.common.api.internal.s1;
+import h5.b0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
+import j7.i8;
+import j7.z7;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,16 +23,16 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import lh.m7;
+import n7.qa;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final f8 a;
+    public static final z7 a;
     public static final a0.j b;
 
     static {
-        m8.a("TypefaceCompat static init");
+        i8.a("TypefaceCompat static init");
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 29) {
             a = new j();
@@ -70,15 +68,15 @@ public abstract class e {
         Typeface a2;
         Typeface typeface;
         List unmodifiableList;
-        Typeface typeface2;
-        int i13 = 16;
+        int i13 = 10;
         if (dVar instanceof h0.g) {
             h0.g gVar = (h0.g) dVar;
             String str2 = gVar.e;
             a2 = null;
-            boolean z10 = false;
+            boolean z4 = false;
             Object[] objArr = 0;
             Object[] objArr2 = 0;
+            Object[] objArr3 = 0;
             if (str2 != null && !str2.isEmpty()) {
                 typeface = Typeface.create(str2, 0);
                 Typeface create = Typeface.create(Typeface.DEFAULT, 0);
@@ -87,46 +85,47 @@ public abstract class e {
             }
             typeface = null;
             if (typeface != null) {
-                new Handler(Looper.getMainLooper()).post(new ef.c(i13, b0Var, typeface));
+                new Handler(Looper.getMainLooper()).post(new gf.c(i13, b0Var, typeface));
                 return typeface;
             }
             int i14 = 1;
-            boolean z11 = gVar.d == 0;
+            boolean z10 = gVar.d == 0;
             int i15 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            o1 o1Var = new o1(i13, z10);
-            o1Var.b = b0Var;
+            o5.i iVar = new o5.i(20);
+            iVar.b = b0Var;
             o0.d dVar2 = gVar.b;
             if (dVar2 != null) {
-                Object[] objArr3 = {gVar.a, dVar2};
+                Object[] objArr4 = {gVar.a, dVar2};
                 ArrayList arrayList = new ArrayList(2);
                 for (int i16 = 0; i16 < 2; i16++) {
-                    Object obj = objArr3[i16];
+                    Object obj = objArr4[i16];
                     Objects.requireNonNull(obj);
                     arrayList.add(obj);
                 }
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
             } else {
-                Object[] objArr4 = {gVar.a};
+                Object[] objArr5 = {gVar.a};
                 ArrayList arrayList2 = new ArrayList(1);
-                Object obj2 = objArr4[0];
+                Object obj2 = objArr5[0];
                 Objects.requireNonNull(obj2);
                 arrayList2.add(obj2);
                 unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
             }
-            o oVar = new o(handler, 4);
-            l lVar = new l(o1Var, oVar, objArr2 == true ? 1 : 0, 25);
+            p pVar = new p(handler, 4);
+            qa qaVar = new qa(iVar, pVar, z4, 3);
             int i17 = 26;
-            if (!z11) {
+            if (!z10) {
                 String a10 = o0.h.a(i12, unmodifiableList);
-                typeface2 = (Typeface) o0.h.a.a(a10);
+                Typeface typeface2 = (Typeface) o0.h.a.a(a10);
                 if (typeface2 != null) {
-                    oVar.execute(new ab.o(i17, o1Var, typeface2));
+                    pVar.execute(new k(iVar, typeface2, objArr2 == true ? 1 : 0, i17));
+                    a2 = typeface2;
                 } else {
-                    o0.f fVar = new o0.f(lVar, objArr == true ? 1 : 0);
+                    o0.f fVar = new o0.f(qaVar, objArr == true ? 1 : 0);
                     synchronized (o0.h.c) {
                         try {
-                            k kVar = o0.h.d;
+                            a0.k kVar = o0.h.d;
                             ArrayList arrayList3 = (ArrayList) kVar.get(a10);
                             if (arrayList3 != null) {
                                 arrayList3.add(fVar);
@@ -138,11 +137,11 @@ public abstract class e {
                                 ThreadPoolExecutor threadPoolExecutor = o0.h.b;
                                 o0.f fVar2 = new o0.f(a10, i14);
                                 Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
-                                q1 q1Var = new q1();
-                                q1Var.b = eVar;
-                                q1Var.c = fVar2;
-                                q1Var.d = handler2;
-                                threadPoolExecutor.execute(q1Var);
+                                s1 s1Var = new s1();
+                                s1Var.b = eVar;
+                                s1Var.c = fVar2;
+                                s1Var.d = handler2;
+                                threadPoolExecutor.execute(s1Var);
                             }
                         } finally {
                         }
@@ -159,45 +158,45 @@ public abstract class e {
                 Objects.requireNonNull(obj3);
                 arrayList5.add(obj3);
                 String a11 = o0.h.a(i12, DesugarCollections.unmodifiableList(arrayList5));
-                typeface2 = (Typeface) o0.h.a.a(a11);
-                if (typeface2 != null) {
-                    oVar.execute(new ab.o(i17, o1Var, typeface2));
+                Typeface typeface3 = (Typeface) o0.h.a.a(a11);
+                if (typeface3 != null) {
+                    pVar.execute(new k(iVar, typeface3, objArr3 == true ? 1 : 0, i17));
+                    a2 = typeface3;
                 } else if (i15 == -1) {
-                    Object[] objArr5 = {dVar3};
+                    Object[] objArr6 = {dVar3};
                     ArrayList arrayList6 = new ArrayList(1);
-                    Object obj4 = objArr5[0];
+                    Object obj4 = objArr6[0];
                     Objects.requireNonNull(obj4);
                     arrayList6.add(obj4);
                     o0.g b10 = o0.h.b(a11, context, DesugarCollections.unmodifiableList(arrayList6), i12);
-                    lVar.p(b10);
+                    qaVar.c1(b10);
                     a2 = b10.a;
                 } else {
                     try {
                         try {
                             try {
                                 o0.g gVar2 = (o0.g) o0.h.b.submit(new o0.e(a11, context, dVar3, i12, 0)).get(i15, TimeUnit.MILLISECONDS);
-                                lVar.p(gVar2);
+                                qaVar.c1(gVar2);
                                 a2 = gVar2.a;
                             } catch (TimeoutException unused) {
                                 throw new InterruptedException("timeout");
                             }
-                        } catch (InterruptedException e10) {
-                            throw e10;
-                        } catch (ExecutionException e11) {
-                            throw new RuntimeException(e11);
+                        } catch (InterruptedException e) {
+                            throw e;
+                        } catch (ExecutionException e6) {
+                            throw new RuntimeException(e6);
                         }
                     } catch (InterruptedException unused2) {
-                        ((o) lVar.c).execute(new m7((o1) lVar.b, -3));
+                        ((p) qaVar.c).execute(new m2.b((o5.i) qaVar.b, -3));
                     }
                 }
             }
-            a2 = typeface2;
         } else {
             a2 = a.a(context, (h0.e) dVar, resources, i12);
             if (a2 != null) {
-                new Handler(Looper.getMainLooper()).post(new ef.c(i13, b0Var, a2));
+                new Handler(Looper.getMainLooper()).post(new gf.c(i13, b0Var, a2));
             } else {
-                b0Var.a();
+                b0Var.b();
             }
         }
         if (a2 != null) {

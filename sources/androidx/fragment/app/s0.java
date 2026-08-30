@@ -3,17 +3,17 @@ package androidx.fragment.app;
 import android.util.Log;
 import java.io.Writer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class s0 extends Writer {
     public final StringBuilder b = new StringBuilder(128);
     public final String a = "FragmentManager";
 
     public final void a() {
-        StringBuilder sb2 = this.b;
-        if (sb2.length() > 0) {
-            Log.d(this.a, sb2.toString());
-            sb2.delete(0, sb2.length());
+        StringBuilder sb = this.b;
+        if (sb.length() > 0) {
+            Log.d(this.a, sb.toString());
+            sb.delete(0, sb.length());
         }
     }
 

@@ -1,65 +1,79 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
+import android.text.Spannable;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z4 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
 
-    public /* synthetic */ z4(int i10, String str, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, long j10) {
-        this.c = i10;
-        this.d = str;
-        this.e = inputFile;
-        this.f = inputEncryptedFile;
-        this.h = bArr;
-        this.n = bArr2;
-        this.b = j10;
+    public /* synthetic */ z4(Object obj, int i10, int i11, Serializable serializable, int i12) {
+        this.a = i12;
+        this.e = obj;
+        this.b = i10;
+        this.c = i11;
+        this.d = serializable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ImageLoader.5.lambda$fileDidUploaded$1(this.c, (String) this.d, (TLRPC.InputFile) this.e, (TLRPC.InputEncryptedFile) this.f, (byte[]) this.h, (byte[]) this.n, this.b);
+                ((ImageLoader.5) this.e).lambda$fileDidFailedLoad$6((String) this.d, this.b, this.c);
                 break;
             case 1:
-                ((MessagesController) this.d).lambda$ensureMessagesLoaded$459((boolean[]) this.e, (TLRPC.Chat) this.f, (Runnable[]) this.h, this.b, this.c, (MessagesController.MessagesLoadedCallback) this.n);
+                CodeHighlighting.lambda$highlight$5((Spannable) this.e, this.b, this.c, (String) this.d);
+                break;
+            case 2:
+                ((MediaDataController) this.e).lambda$loadReactions$11((List) this.d, this.b, this.c);
+                break;
+            case 3:
+                ((MediaDataController) this.e).lambda$putReactionsToCache$16((ArrayList) this.d, this.b, this.c);
+                break;
+            case 4:
+                ((MessagesController) this.e).lambda$getDifference$350((TLRPC.updates_Difference) this.d, this.b, this.c);
+                break;
+            case 5:
+                ((MessagesController.DialogPhotos) this.e).lambda$load$0((TLRPC.photos_Photos) this.d, this.b, this.c);
+                break;
+            case 6:
+                ((MessagesController.DialogPhotos) this.e).lambda$load$2((TLRPC.messages_Messages) this.d, this.b, this.c);
+                break;
+            case 7:
+                ((MessagesStorage) this.e).lambda$saveSecretParams$7(this.b, this.c, (byte[]) this.d);
+                break;
+            case 8:
+                ((NotificationCenter) this.e).lambda$postNotificationDebounced$2(this.b, (Object[]) this.d, this.c);
                 break;
             default:
-                ((MessagesController) this.e).lambda$reloadWebPages$186((HashMap) this.f, (String) this.d, (TLObject) this.h, (a0.h) this.n, this.b, this.c);
+                ((SecretChatHelper) this.e).lambda$resendMessages$15(this.b, (TLRPC.EncryptedChat) this.d, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ z4(MessagesController messagesController, HashMap hashMap, String str, TLObject tLObject, a0.h hVar, long j10, int i10) {
-        this.e = messagesController;
-        this.f = hashMap;
-        this.d = str;
-        this.h = tLObject;
-        this.n = hVar;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ z4(Object obj, int i10, Object obj2, int i11, int i12) {
+        this.a = i12;
+        this.e = obj;
+        this.b = i10;
+        this.d = obj2;
+        this.c = i11;
     }
 
-    public /* synthetic */ z4(MessagesController messagesController, boolean[] zArr, TLRPC.Chat chat, Runnable[] runnableArr, long j10, int i10, MessagesController.MessagesLoadedCallback messagesLoadedCallback) {
-        this.d = messagesController;
-        this.e = zArr;
-        this.f = chat;
-        this.h = runnableArr;
-        this.b = j10;
-        this.c = i10;
-        this.n = messagesLoadedCallback;
+    public /* synthetic */ z4(Object obj, Object obj2, int i10, int i11, int i12) {
+        this.a = i12;
+        this.e = obj;
+        this.d = obj2;
+        this.b = i10;
+        this.c = i11;
     }
 }

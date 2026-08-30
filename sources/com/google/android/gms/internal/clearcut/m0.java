@@ -20,7 +20,7 @@ public final class m0 extends LinkedHashMap {
 
     public static int b(Object obj) {
         if (!(obj instanceof byte[])) {
-            if (obj instanceof r1) {
+            if (obj instanceof q1) {
                 throw new UnsupportedOperationException();
             }
             return obj.hashCode();
@@ -61,7 +61,7 @@ public final class m0 extends LinkedHashMap {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean equals(Object obj) {
-        boolean z10;
+        boolean z4;
         if (obj instanceof Map) {
             Map map = (Map) obj;
             if (this != map) {
@@ -75,13 +75,13 @@ public final class m0 extends LinkedHashMap {
                         }
                     }
                 }
-                z10 = false;
-                if (!z10) {
+                z4 = false;
+                if (!z4) {
                     return true;
                 }
             }
-            z10 = true;
-            if (!z10) {
+            z4 = true;
+            if (!z4) {
             }
         }
         return false;

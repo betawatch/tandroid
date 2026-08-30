@@ -1,396 +1,487 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
+import android.content.Context;
 import android.text.TextUtils;
-import android.text.style.ImageSpan;
-import android.text.style.RelativeSizeSpan;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.view.ViewGroup;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lu extends org.telegram.ui.Components.jl0 {
-    public static final /* synthetic */ int l3 = 0;
-    public boolean T2;
-    public int U2;
-    public final f2.j0 V2;
-    public final ju W2;
-    public final ArrayList X2;
-    public final ArrayList Y2;
-    public final float[] Z2;
-    public final int[] a3;
-    public final ArrayList b3;
-    public ku[] c3;
-    public ku[] d3;
-    public final boolean[] e3;
-    public long f3;
-    public long g3;
-    public long h3;
-    public boolean i3;
-    public iu j3;
-    public final /* synthetic */ pu k3;
+public final class lu extends org.telegram.ui.Components.rl0 {
+    public final Context c;
+    public final /* synthetic */ DataSettingsActivity d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lu(pu puVar, Activity activity) {
-        super(activity, null);
-        this.k3 = puVar;
-        this.T2 = false;
-        this.U2 = 0;
-        this.X2 = new ArrayList();
-        this.Y2 = new ArrayList();
-        this.Z2 = new float[7];
-        this.a3 = new int[7];
-        this.b3 = new ArrayList();
-        this.e3 = new boolean[7];
-        f2.j0 j0Var = new f2.j0();
-        this.V2 = j0Var;
-        setLayoutManager(j0Var);
-        ju juVar = new ju(this, 0);
-        this.W2 = juVar;
-        setAdapter(juVar);
-        p1();
-        setOnItemClickListener(new j(this, 7));
-        f2.l lVar = new f2.l();
-        lVar.n(220L);
-        lVar.o(org.telegram.ui.Components.jr.h);
-        lVar.C = false;
-        lVar.m = false;
-        setItemAnimator(lVar);
+    public lu(DataSettingsActivity dataSettingsActivity, Context context) {
+        this.d = dataSettingsActivity;
+        this.c = context;
     }
 
-    public final void A1(boolean z10) {
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
         int i10;
         int i11;
-        String string;
-        SpannableString spannableString;
-        SpannableString spannableString2;
-        String format;
-        ArrayList arrayList = this.X2;
-        arrayList.clear();
-        ArrayList arrayList2 = this.Y2;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        int i12 = 0;
-        arrayList2.add(new gu(0, false));
-        int i13 = 1;
-        long j10 = 0;
-        String formatString = this.f3 > 0 ? LocaleController.formatString(R.string.YourNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(x1())) : LocaleController.formatString(R.string.NoNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(x1()));
-        arrayList2.add(new gu(1, formatString));
-        ArrayList arrayList3 = new ArrayList();
-        int i14 = 0;
-        while (true) {
-            ku[] kuVarArr = this.c3;
-            if (i14 >= kuVarArr.length) {
-                break;
-            }
-            ku kuVar = kuVarArr[i14];
-            long j11 = j10;
-            long j12 = kuVar.c;
-            int i15 = kuVar.d;
-            boolean z11 = this.i3 || this.b3.contains(Integer.valueOf(i15));
-            if (j12 > j11 || z11) {
-                int i16 = this.a3[i15];
-                if (i16 <= 0) {
-                    Object[] objArr = new Object[i13];
-                    objArr[i12] = Integer.valueOf(i13);
-                    format = String.format("<%d%%", objArr);
-                } else {
-                    Integer valueOf = Integer.valueOf(i16);
-                    Object[] objArr2 = new Object[i13];
-                    objArr2[i12] = valueOf;
-                    format = String.format("%d%%", objArr2);
-                }
-                SpannableString spannableString3 = new SpannableString(format);
-                spannableString3.setSpan(new org.telegram.ui.Components.t41(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
-                spannableString3.setSpan(new RelativeSizeSpan(0.8f), i12, spannableString3.length(), 33);
-                fu fuVar = new fu();
-                fuVar.a = 0.1d;
-                spannableString3.setSpan(fuVar, 0, spannableString3.length(), 33);
-                int i17 = pu.f[i15];
-                int[] iArr = pu.d[i15];
-                arrayList3.add(new gu(i14, i17, iArr[0], iArr[1], j12 == j11 ? LocaleController.getString(pu.h[i15]) : TextUtils.concat(LocaleController.getString(pu.h[i15]), "  ", spannableString3), AndroidUtilities.formatFileSize(j12)));
-            }
-            i14++;
-            j10 = j11;
-            i13 = 1;
-            i12 = 0;
-        }
-        long j13 = j10;
-        if (!arrayList3.isEmpty()) {
-            SpannableString spannableString4 = new SpannableString("^");
-            Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_upload).mutate();
-            int i18 = org.telegram.ui.ActionBar.g6.G6;
-            org.telegram.ui.ActionBar.c6 c6Var = this.l2;
-            int v02 = org.telegram.ui.ActionBar.g6.v0(i18, c6Var);
-            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-            mutate.setColorFilter(new PorterDuffColorFilter(v02, mode));
-            mutate.setBounds(0, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(18.0f));
-            spannableString4.setSpan(new ImageSpan(mutate, 2), 0, 1, 33);
-            SpannableString spannableString5 = new SpannableString("v");
-            Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.msg_mini_download).mutate();
-            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(i18, c6Var), mode));
-            mutate2.setBounds(0, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(18.0f));
-            spannableString5.setSpan(new ImageSpan(mutate2, 2), 0, 1, 33);
-            int i19 = 0;
-            while (i19 < arrayList3.size()) {
-                int i20 = ((gu) arrayList3.get(i19)).h;
-                if (i20 < 0 || this.e3[i20]) {
-                    spannableString = spannableString4;
-                    spannableString2 = spannableString5;
-                } else {
-                    ku kuVar2 = this.c3[i20];
-                    int[] iArr2 = pu.n;
-                    int i21 = kuVar2.d;
-                    int i22 = kuVar2.g;
-                    int i23 = kuVar2.h;
-                    long j14 = kuVar2.e;
-                    spannableString = spannableString4;
-                    spannableString2 = spannableString5;
-                    long j15 = kuVar2.f;
-                    int i24 = iArr2[i21];
-                    if (i24 == 0) {
-                        if (j15 > j13 || i23 > 0) {
-                            i19++;
-                            arrayList3.add(i19, gu.b(LocaleController.formatPluralStringComma("OutgoingCallsCount", i23), AndroidUtilities.formatFileSize(j15)));
-                        }
-                        if (j14 > j13 || i22 > 0) {
-                            i19++;
-                            arrayList3.add(i19, gu.b(LocaleController.formatPluralStringComma("IncomingCallsCount", i22), AndroidUtilities.formatFileSize(j14)));
-                        }
-                    } else if (i24 != 1) {
-                        if (j15 > j13 || i23 > 0) {
-                            i19++;
-                            arrayList3.add(i19, gu.b(TextUtils.concat(spannableString, " ", AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("FilesSentCount", i23))), AndroidUtilities.formatFileSize(j15)));
-                        }
-                        if (j14 > j13 || i22 > 0) {
-                            i19++;
-                            arrayList3.add(i19, gu.b(TextUtils.concat(spannableString2, " ", AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("FilesReceivedCount", i22))), AndroidUtilities.formatFileSize(j14)));
-                        }
-                    } else {
-                        if (j15 > j13 || i23 > 0) {
-                            i19++;
-                            arrayList3.add(i19, gu.b(TextUtils.concat(spannableString, " ", LocaleController.getString(R.string.BytesSent)), AndroidUtilities.formatFileSize(j15)));
-                        }
-                        if (j14 > j13 || i22 > 0) {
-                            i19++;
-                            arrayList3.add(i19, gu.b(TextUtils.concat(spannableString2, " ", LocaleController.getString(R.string.BytesReceived)), AndroidUtilities.formatFileSize(j14)));
-                            i19++;
-                            spannableString4 = spannableString;
-                            spannableString5 = spannableString2;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int b10 = l1Var.b();
+        DataSettingsActivity dataSettingsActivity = this.d;
+        if (b10 != dataSettingsActivity.e && b10 != dataSettingsActivity.f && b10 != dataSettingsActivity.h && b10 != dataSettingsActivity.s) {
+            i10 = dataSettingsActivity.useLessDataForCallsRow;
+            if (b10 != i10 && b10 != dataSettingsActivity.v) {
+                i11 = dataSettingsActivity.proxyRow;
+                if (b10 != i11) {
+                    i12 = dataSettingsActivity.clearDraftsRow;
+                    if (b10 != i12 && b10 != dataSettingsActivity.B && b10 != dataSettingsActivity.y && b10 != dataSettingsActivity.C && b10 != dataSettingsActivity.D && b10 != dataSettingsActivity.K && b10 != dataSettingsActivity.H && b10 != dataSettingsActivity.G && b10 != dataSettingsActivity.n) {
+                        i13 = dataSettingsActivity.saveToGalleryGroupsRow;
+                        if (b10 != i13) {
+                            i14 = dataSettingsActivity.saveToGalleryPeerRow;
+                            if (b10 != i14) {
+                                i15 = dataSettingsActivity.saveToGalleryChannelsRow;
+                                if (b10 != i15) {
+                                    i16 = dataSettingsActivity.resetDownloadRow;
+                                    if (b10 != i16) {
+                                        return false;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-                i19++;
-                spannableString4 = spannableString;
-                spannableString5 = spannableString2;
-            }
-            arrayList2.addAll(arrayList3);
-            if (!this.i3) {
-                arrayList2.add(new gu(3, LocaleController.getString(R.string.DataUsageSectionsInfo) + "\n"));
             }
         }
-        if (!this.i3) {
-            arrayList2.add(new gu(4, LocaleController.getString(R.string.TotalNetworkUsage)));
-            arrayList2.add(new gu(-1, R.drawable.msg_filled_data_sent, -11565578, -13276952, LocaleController.getString(R.string.BytesSent), AndroidUtilities.formatFileSize(this.h3)));
-            arrayList2.add(new gu(-1, R.drawable.msg_filled_data_received, -11154873, -14175180, LocaleController.getString(R.string.BytesReceived), AndroidUtilities.formatFileSize(this.g3)));
-        }
-        if (arrayList3.isEmpty()) {
-            i10 = 3;
-        } else {
-            i10 = 3;
-            arrayList2.add(new gu(3, formatString));
-        }
-        if (this.U2 != 0) {
-            if (arrayList3.isEmpty()) {
-                arrayList2.add(new gu(i10, false));
-            }
-            arrayList2.add(new gu(-2, R.drawable.msg_download_settings, -11565578, -13276952, LocaleController.getString(R.string.AutomaticDownloadSettings), null));
-            int i25 = this.U2;
-            if (i25 != 1) {
-                i11 = 3;
-                string = i25 != 3 ? LocaleController.getString(R.string.AutomaticDownloadSettingsInfoWiFi) : LocaleController.getString(R.string.AutomaticDownloadSettingsInfoRoaming);
-            } else {
-                i11 = 3;
-                string = LocaleController.getString(R.string.AutomaticDownloadSettingsInfoMobile);
-            }
-            arrayList2.add(new gu(i11, string));
-        }
-        if (!arrayList3.isEmpty()) {
-            arrayList2.add(new gu(5, LocaleController.getString(R.string.ResetStatistics)));
-        }
-        arrayList2.add(new gu(3, false));
-        ju juVar = this.W2;
-        if (juVar != null) {
-            if (z10) {
-                juVar.E(arrayList, arrayList2);
-            } else {
-                juVar.l();
-            }
-        }
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+    @Override // f2.o0
+    public final int h() {
+        return this.d.R;
     }
 
-    public final long w1(int i10) {
+    @Override // f2.o0
+    public final int j(int i10) {
         int i11;
         int i12;
         int i13;
-        int i14;
-        int i15 = this.U2;
-        pu puVar = this.k3;
-        if (i15 == 1 || i15 == 2 || i15 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-            return StatsController.getInstance(i11).getReceivedBytesCount(this.U2 - 1, i10);
+        DataSettingsActivity dataSettingsActivity = this.d;
+        if (i10 == dataSettingsActivity.r || i10 == dataSettingsActivity.w || i10 == dataSettingsActivity.L || i10 == dataSettingsActivity.N || i10 == dataSettingsActivity.I || i10 == dataSettingsActivity.O || i10 == dataSettingsActivity.Q) {
+            return 0;
         }
-        i12 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long receivedBytesCount = StatsController.getInstance(i12).getReceivedBytesCount(0, i10);
-        i13 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long receivedBytesCount2 = StatsController.getInstance(i13).getReceivedBytesCount(1, i10) + receivedBytesCount;
-        i14 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        return StatsController.getInstance(i14).getReceivedBytesCount(2, i10) + receivedBytesCount2;
+        if (i10 == dataSettingsActivity.d || i10 == dataSettingsActivity.x || i10 == dataSettingsActivity.J || i10 == 0 || i10 == dataSettingsActivity.M || i10 == dataSettingsActivity.F || i10 == dataSettingsActivity.P) {
+            return 2;
+        }
+        if (i10 == dataSettingsActivity.B || i10 == dataSettingsActivity.y || i10 == dataSettingsActivity.C || i10 == dataSettingsActivity.D || i10 == dataSettingsActivity.G || i10 == dataSettingsActivity.H) {
+            return 3;
+        }
+        if (i10 == dataSettingsActivity.E) {
+            return 4;
+        }
+        if (i10 == dataSettingsActivity.e || i10 == dataSettingsActivity.h || i10 == dataSettingsActivity.f) {
+            return 5;
+        }
+        i11 = dataSettingsActivity.saveToGalleryGroupsRow;
+        if (i10 == i11) {
+            return 5;
+        }
+        i12 = dataSettingsActivity.saveToGalleryPeerRow;
+        if (i10 == i12) {
+            return 5;
+        }
+        i13 = dataSettingsActivity.saveToGalleryChannelsRow;
+        if (i10 == i13) {
+            return 5;
+        }
+        return (i10 == dataSettingsActivity.s || i10 == dataSettingsActivity.v || i10 == dataSettingsActivity.n) ? 6 : 1;
     }
 
-    public final long x1() {
-        int i10;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01fa  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x02b5  */
+    @Override // f2.o0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(f2.l1 l1Var, int i10) {
         int i11;
         int i12;
-        int i13;
-        int i14 = this.U2;
-        pu puVar = this.k3;
-        if (i14 == 1 || i14 == 2 || i14 == 3) {
-            i10 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-            return StatsController.getInstance(i10).getResetStatsDate(this.U2 - 1);
-        }
-        i11 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long resetStatsDate = StatsController.getInstance(i11).getResetStatsDate(0);
-        i12 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long resetStatsDate2 = StatsController.getInstance(i12).getResetStatsDate(1);
-        i13 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long[] jArr = {resetStatsDate, resetStatsDate2, StatsController.getInstance(i13).getResetStatsDate(2)};
-        long j10 = Long.MAX_VALUE;
-        for (int i15 = 0; i15 < 3; i15++) {
-            long j11 = jArr[i15];
-            if (j10 > j11) {
-                j10 = j11;
-            }
-        }
-        return j10;
-    }
-
-    public final long y1(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15 = this.U2;
-        pu puVar = this.k3;
-        if (i15 == 1 || i15 == 2 || i15 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-            return StatsController.getInstance(i11).getSentBytesCount(this.U2 - 1, i10);
-        }
-        i12 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long sentBytesCount = StatsController.getInstance(i12).getSentBytesCount(0, i10);
-        i13 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        long sentBytesCount2 = StatsController.getInstance(i13).getSentBytesCount(1, i10) + sentBytesCount;
-        i14 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-        return StatsController.getInstance(i14).getSentBytesCount(2, i10) + sentBytesCount2;
-    }
-
-    public final void z1() {
-        int i10;
-        int i11;
-        int recivedItemsCount;
-        int i12;
-        boolean z10;
-        int sentItemsCount;
         int i13;
         int i14;
         int i15;
         int i16;
         int i17;
         int i18;
-        this.f3 = w1(6) + y1(6);
-        this.g3 = w1(6);
-        this.h3 = y1(6);
-        if (this.c3 == null) {
-            this.c3 = new ku[7];
+        boolean z4;
+        int i19;
+        int i20;
+        CharSequence charSequence;
+        CharSequence charSequence2;
+        boolean z10;
+        CharSequence string;
+        int i21;
+        int i22;
+        DownloadController.Preset currentWiFiPreset;
+        CharSequence charSequence3;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        boolean z11;
+        CharSequence charSequence4;
+        int i27;
+        int i28;
+        int i29;
+        int i30 = l1Var.f;
+        View view = l1Var.a;
+        String str = null;
+        r5 = null;
+        r5 = null;
+        DownloadController.Preset preset = null;
+        int i31 = 0;
+        DataSettingsActivity dataSettingsActivity = this.d;
+        switch (i30) {
+            case 1:
+                org.telegram.ui.Cells.aa aaVar = (org.telegram.ui.Cells.aa) view;
+                aaVar.setCanDisable(false);
+                aaVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+                i11 = dataSettingsActivity.useLessDataForCallsRow;
+                if (i10 != i11) {
+                    i12 = dataSettingsActivity.proxyRow;
+                    if (i10 != i12) {
+                        i13 = dataSettingsActivity.resetDownloadRow;
+                        if (i10 != i13) {
+                            if (i10 != dataSettingsActivity.K) {
+                                i14 = dataSettingsActivity.clearDraftsRow;
+                                if (i10 == i14) {
+                                    aaVar.setIcon(0);
+                                    aaVar.b(LocaleController.getString(R.string.PrivacyDeleteCloudDrafts), false);
+                                    break;
+                                }
+                            } else {
+                                aaVar.setIcon(0);
+                                aaVar.b(LocaleController.getString(R.string.VoipQuickReplies), false);
+                                break;
+                            }
+                        } else {
+                            aaVar.setIcon(0);
+                            aaVar.setCanDisable(true);
+                            aaVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p7, false));
+                            aaVar.b(LocaleController.getString(R.string.ResetAutomaticMediaDownload), false);
+                            break;
+                        }
+                    } else {
+                        aaVar.setIcon(0);
+                        aaVar.b(LocaleController.getString(R.string.ProxySettings), false);
+                        break;
+                    }
+                } else {
+                    aaVar.setIcon(0);
+                    int i32 = MessagesController.getGlobalMainSettings().getInt("VoipDataSaving", org.telegram.ui.Components.voip.f2.c());
+                    if (i32 == 0) {
+                        str = LocaleController.getString(R.string.UseLessDataNever);
+                    } else if (i32 == 1) {
+                        str = LocaleController.getString(R.string.UseLessDataOnMobile);
+                    } else if (i32 == 2) {
+                        str = LocaleController.getString(R.string.UseLessDataAlways);
+                    } else if (i32 == 3) {
+                        str = LocaleController.getString(R.string.UseLessDataOnRoaming);
+                    }
+                    aaVar.c(LocaleController.getString(R.string.VoipUseLessData), str, dataSettingsActivity.S, true);
+                    dataSettingsActivity.S = false;
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+                if (i10 != dataSettingsActivity.d) {
+                    if (i10 != 0) {
+                        if (i10 != dataSettingsActivity.J) {
+                            if (i10 != dataSettingsActivity.M) {
+                                if (i10 != dataSettingsActivity.x) {
+                                    if (i10 != dataSettingsActivity.F) {
+                                        if (i10 == dataSettingsActivity.P) {
+                                            m4Var.setText(LocaleController.getString(R.string.SaveToGallerySettings));
+                                            break;
+                                        }
+                                    } else {
+                                        m4Var.setText(LocaleController.getString(R.string.AutoplayMedia));
+                                        break;
+                                    }
+                                } else {
+                                    m4Var.setText(LocaleController.getString(R.string.Streaming));
+                                    break;
+                                }
+                            } else {
+                                m4Var.setText(LocaleController.getString(R.string.Proxy));
+                                break;
+                            }
+                        } else {
+                            m4Var.setText(LocaleController.getString(R.string.Calls));
+                            break;
+                        }
+                    } else {
+                        m4Var.setText(LocaleController.getString(R.string.DataUsage));
+                        break;
+                    }
+                } else {
+                    m4Var.setText(LocaleController.getString(R.string.AutomaticMediaDownload));
+                    break;
+                }
+                break;
+            case 3:
+                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
+                if (i10 != dataSettingsActivity.y) {
+                    if (i10 != dataSettingsActivity.B) {
+                        if (i10 != dataSettingsActivity.D) {
+                            if (i10 != dataSettingsActivity.C) {
+                                if (i10 != dataSettingsActivity.G) {
+                                    if (i10 == dataSettingsActivity.H) {
+                                        s8Var.f(LocaleController.getString(R.string.AutoplayVideo), SharedConfig.isAutoplayVideo(), false);
+                                        break;
+                                    }
+                                } else {
+                                    s8Var.f(LocaleController.getString(R.string.AutoplayGIF), SharedConfig.isAutoplayGifs(), true);
+                                    break;
+                                }
+                            } else {
+                                s8Var.f("(beta only) Stream All Videos", SharedConfig.streamAllVideo, false);
+                                break;
+                            }
+                        } else {
+                            s8Var.f("(beta only) Show MKV as Video", SharedConfig.streamMkv, true);
+                            break;
+                        }
+                    }
+                } else {
+                    s8Var.f(LocaleController.getString(R.string.EnableStreaming), SharedConfig.streamMedia, dataSettingsActivity.C != -1);
+                    break;
+                }
+                break;
+            case 4:
+                org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+                if (i10 == dataSettingsActivity.E) {
+                    a9Var.setText(LocaleController.getString(R.string.EnableAllStreamingInfo));
+                    break;
+                }
+                break;
+            case 5:
+                org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
+                i15 = dataSettingsActivity.saveToGalleryPeerRow;
+                if (i10 != i15) {
+                    i16 = dataSettingsActivity.saveToGalleryGroupsRow;
+                    if (i10 != i16) {
+                        i17 = dataSettingsActivity.saveToGalleryChannelsRow;
+                        if (i10 == i17) {
+                            CharSequence string2 = LocaleController.getString(R.string.SaveToGalleryChannels);
+                            SaveToGallerySettingsHelper.SharedSettings sharedSettings = SaveToGallerySettingsHelper.channels;
+                            i25 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                            CharSequence createDescription = sharedSettings.createDescription(i25);
+                            z4 = SaveToGallerySettingsHelper.channels.enabled();
+                            charSequence2 = string2;
+                            z10 = false;
+                            charSequence = createDescription;
+                        } else {
+                            if (i10 == dataSettingsActivity.e) {
+                                string = LocaleController.getString(R.string.WhenUsingMobileData);
+                                i23 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                                z4 = DownloadController.getInstance(i23).mobilePreset.enabled;
+                                i24 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                                currentWiFiPreset = DownloadController.getInstance(i24).getCurrentMobilePreset();
+                            } else if (i10 == dataSettingsActivity.h) {
+                                string = LocaleController.getString(R.string.WhenConnectedOnWiFi);
+                                i21 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                                z4 = DownloadController.getInstance(i21).wifiPreset.enabled;
+                                i22 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                                currentWiFiPreset = DownloadController.getInstance(i22).getCurrentWiFiPreset();
+                            } else {
+                                CharSequence string3 = LocaleController.getString(R.string.WhenRoaming);
+                                i18 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                                z4 = DownloadController.getInstance(i18).roamingPreset.enabled;
+                                i19 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                                DownloadController.Preset currentRoamingPreset = DownloadController.getInstance(i19).getCurrentRoamingPreset();
+                                i20 = dataSettingsActivity.resetDownloadRow;
+                                preset = currentRoamingPreset;
+                                charSequence = null;
+                                charSequence2 = string3;
+                                z10 = i20 >= 0;
+                            }
+                            preset = currentWiFiPreset;
+                            charSequence3 = null;
+                        }
+                        if (preset == null) {
+                            StringBuilder sb = new StringBuilder();
+                            int i33 = 0;
+                            boolean z12 = false;
+                            int i34 = 0;
+                            boolean z13 = false;
+                            boolean z14 = false;
+                            while (true) {
+                                int[] iArr = preset.mask;
+                                if (i33 < iArr.length) {
+                                    if (!z12 && (iArr[i33] & 1) != 0) {
+                                        i34++;
+                                        z12 = true;
+                                    }
+                                    if (!z13 && (iArr[i33] & 4) != 0) {
+                                        i34++;
+                                        z13 = true;
+                                    }
+                                    if (!z14 && (iArr[i33] & 8) != 0) {
+                                        i34++;
+                                        z14 = true;
+                                    }
+                                    i33++;
+                                } else {
+                                    if (!preset.enabled || i34 == 0) {
+                                        sb.append(LocaleController.getString(R.string.NoMediaAutoDownload));
+                                    } else {
+                                        if (z12) {
+                                            sb.append(LocaleController.getString(R.string.AutoDownloadPhotosOn));
+                                        }
+                                        if (z13) {
+                                            if (sb.length() > 0) {
+                                                sb.append(", ");
+                                            }
+                                            sb.append(LocaleController.getString(R.string.AutoDownloadVideosOn));
+                                            i27 = 8;
+                                            sb.append(String.format(" (%1$s)", AndroidUtilities.formatFileSize(preset.sizes[DownloadController.typeToIndex(4)], true, false)));
+                                        } else {
+                                            i27 = 8;
+                                        }
+                                        if (z14) {
+                                            if (sb.length() > 0) {
+                                                sb.append(", ");
+                                            }
+                                            sb.append(LocaleController.getString(R.string.AutoDownloadFilesOn));
+                                            sb.append(String.format(" (%1$s)", AndroidUtilities.formatFileSize(preset.sizes[DownloadController.typeToIndex(i27)], true, false)));
+                                        }
+                                    }
+                                    if ((z12 || z13 || z14) && z4) {
+                                        i31 = 1;
+                                    }
+                                    z11 = i31;
+                                    charSequence4 = sb;
+                                }
+                            }
+                        } else {
+                            z11 = z4;
+                            charSequence4 = charSequence;
+                        }
+                        CharSequence charSequence5 = charSequence4;
+                        j5Var.setAnimationsEnabled(true);
+                        j5Var.b(charSequence2, charSequence5, 0, z11, 0, true, z10, false);
+                        break;
+                    } else {
+                        string = LocaleController.getString(R.string.SaveToGalleryGroups);
+                        SaveToGallerySettingsHelper.SharedSettings sharedSettings2 = SaveToGallerySettingsHelper.groups;
+                        i26 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                        CharSequence createDescription2 = sharedSettings2.createDescription(i26);
+                        z4 = SaveToGallerySettingsHelper.groups.enabled();
+                        charSequence3 = createDescription2;
+                    }
+                } else {
+                    string = LocaleController.getString(R.string.SaveToGalleryPrivate);
+                    SaveToGallerySettingsHelper.SharedSettings sharedSettings3 = SaveToGallerySettingsHelper.user;
+                    i28 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                    CharSequence createDescription3 = sharedSettings3.createDescription(i28);
+                    z4 = SaveToGallerySettingsHelper.user.enabled();
+                    charSequence3 = createDescription3;
+                }
+                charSequence2 = string;
+                z10 = true;
+                charSequence = charSequence3;
+                if (preset == null) {
+                }
+                CharSequence charSequence52 = charSequence4;
+                j5Var.setAnimationsEnabled(true);
+                j5Var.b(charSequence2, charSequence52, 0, z11, 0, true, z10, false);
+                break;
+            case 6:
+                org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
+                if (i10 != dataSettingsActivity.s) {
+                    if (i10 != dataSettingsActivity.v) {
+                        if (i10 == dataSettingsActivity.n) {
+                            String absolutePath = ((File) dataSettingsActivity.c.get(0)).getAbsolutePath();
+                            if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
+                                int size = dataSettingsActivity.c.size();
+                                while (true) {
+                                    if (i31 < size) {
+                                        String absolutePath2 = ((File) dataSettingsActivity.c.get(i31)).getAbsolutePath();
+                                        if (absolutePath2.startsWith(SharedConfig.storageCacheDir)) {
+                                            absolutePath = absolutePath2;
+                                        } else {
+                                            i31++;
+                                        }
+                                    }
+                                }
+                            }
+                            o8Var.p(LocaleController.getString(R.string.StoragePath), LocaleController.getString((absolutePath == null || absolutePath.contains("/storage/emulated/")) ? R.string.InternalStorage : R.string.SdCard), true, R.drawable.msg_filled_sdcard, -1007845, -1996271, false);
+                            break;
+                        }
+                    } else {
+                        i29 = ((org.telegram.ui.ActionBar.p2) dataSettingsActivity).currentAccount;
+                        StatsController statsController = StatsController.getInstance(i29);
+                        o8Var.p(LocaleController.getString(R.string.NetworkUsage), AndroidUtilities.formatFileSize(statsController.getSentBytesCount(2, 6) + statsController.getSentBytesCount(1, 6) + statsController.getSentBytesCount(0, 6) + statsController.getReceivedBytesCount(2, 6) + statsController.getReceivedBytesCount(1, 6) + statsController.getReceivedBytesCount(0, 6)), true, R.drawable.msg_filled_datausage, -11154873, -14175180, dataSettingsActivity.n != -1);
+                        break;
+                    }
+                } else {
+                    if (dataSettingsActivity.U) {
+                        o8Var.p(LocaleController.getString(R.string.StorageUsage), "", false, R.drawable.msg_filled_storageusage, -11565578, -13276952, true);
+                        o8Var.f(45, true, dataSettingsActivity.T);
+                    } else {
+                        String string4 = LocaleController.getString(R.string.StorageUsage);
+                        long j10 = dataSettingsActivity.V;
+                        o8Var.p(string4, j10 <= 0 ? "" : AndroidUtilities.formatFileSize(j10), true, R.drawable.msg_filled_storageusage, -11565578, -13276952, true);
+                        o8Var.f(45, false, dataSettingsActivity.T);
+                    }
+                    dataSettingsActivity.T = false;
+                    break;
+                }
+                break;
         }
-        if (this.d3 == null) {
-            this.d3 = new ku[7];
-        }
-        int i19 = 0;
-        while (true) {
-            int[] iArr = pu.n;
-            int length = iArr.length;
-            float[] fArr = this.Z2;
-            if (i19 >= length) {
-                Arrays.sort(this.c3, new org.telegram.ui.Components.wp0(4));
-                AndroidUtilities.roundPercents(fArr, this.a3);
-                Arrays.fill(this.e3, true);
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        Context context = this.c;
+        View o8Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.o8(context) : new org.telegram.ui.Cells.j5(context) : new org.telegram.ui.Cells.a9(context) : new org.telegram.ui.Cells.s8(context) : new org.telegram.ui.Cells.m4(context, 22) : new org.telegram.ui.Cells.aa(context) : new org.telegram.ui.Cells.z6(context, (b) null);
+        return yh.o(o8Var, o8Var, -1, -2);
+    }
+
+    @Override // f2.o0
+    public final void y(f2.l1 l1Var) {
+        if (l1Var.f == 3) {
+            org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) l1Var.a;
+            int b10 = l1Var.b();
+            DataSettingsActivity dataSettingsActivity = this.d;
+            if (b10 == dataSettingsActivity.B) {
+                s8Var.setChecked(SharedConfig.saveStreamMedia);
                 return;
             }
-            int i20 = iArr[i19];
-            long w12 = w1(i20) + y1(i20);
-            ku[] kuVarArr = this.d3;
-            ku[] kuVarArr2 = this.c3;
-            long w13 = w1(iArr[i19]);
-            long y12 = y1(iArr[i19]);
-            int i21 = iArr[i19];
-            int i22 = this.U2;
-            pu puVar = this.k3;
-            if (i22 == 1 || i22 == 2 || i22 == 3) {
-                i10 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                i11 = 1;
-                recivedItemsCount = StatsController.getInstance(i10).getRecivedItemsCount(this.U2 - 1, i21);
-            } else {
-                i16 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                int recivedItemsCount2 = StatsController.getInstance(i16).getRecivedItemsCount(0, i21);
-                i17 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                int recivedItemsCount3 = StatsController.getInstance(i17).getRecivedItemsCount(1, i21) + recivedItemsCount2;
-                i18 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                recivedItemsCount = StatsController.getInstance(i18).getRecivedItemsCount(2, i21) + recivedItemsCount3;
-                i11 = 1;
+            if (b10 == dataSettingsActivity.y) {
+                s8Var.setChecked(SharedConfig.streamMedia);
+                return;
             }
-            int i23 = iArr[i19];
-            int i24 = this.U2;
-            if (i24 == i11 || i24 == 2 || i24 == 3) {
-                i12 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                z10 = true;
-                sentItemsCount = StatsController.getInstance(i12).getSentItemsCount(this.U2 - 1, i23);
-            } else {
-                i13 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                int sentItemsCount2 = StatsController.getInstance(i13).getSentItemsCount(0, i23);
-                i14 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                int sentItemsCount3 = StatsController.getInstance(i14).getSentItemsCount(1, i23) + sentItemsCount2;
-                i15 = ((org.telegram.ui.ActionBar.o2) puVar).currentAccount;
-                sentItemsCount = StatsController.getInstance(i15).getSentItemsCount(2, i23) + sentItemsCount3;
-                z10 = true;
+            if (b10 == dataSettingsActivity.C) {
+                s8Var.setChecked(SharedConfig.streamAllVideo);
+                return;
             }
-            ku kuVar = new ku();
-            kuVar.d = i19;
-            kuVar.c = w12;
-            kuVar.b = z10;
-            kuVar.e = w13;
-            kuVar.g = recivedItemsCount;
-            kuVar.f = y12;
-            kuVar.h = sentItemsCount;
-            kuVarArr2[i19] = kuVar;
-            kuVarArr[i19] = kuVar;
-            fArr[i19] = w12 / this.f3;
-            i19++;
+            if (b10 == dataSettingsActivity.D) {
+                s8Var.setChecked(SharedConfig.streamMkv);
+            } else if (b10 == dataSettingsActivity.G) {
+                s8Var.setChecked(SharedConfig.isAutoplayGifs());
+            } else if (b10 == dataSettingsActivity.H) {
+                s8Var.setChecked(SharedConfig.isAutoplayVideo());
+            }
         }
     }
 }

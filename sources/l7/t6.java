@@ -1,19 +1,36 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class t6 implements s9.d {
-    public static final t6 a = new t6();
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    static {
-        com.google.android.recaptcha.internal.a.t(j7.l1.q(w.class, new s(1)));
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class t6 extends c6.a {
+    public static final Parcelable.Creator<t6> CREATOR = new t5(1);
+    public final int a;
+    public final float b;
+    public final int c;
+
+    public t6(int i10, int i11, float f10, int i12) {
+        if (i10 != 1) {
+            throw new IllegalArgumentException("Unknown language.");
+        }
+        this.a = i11;
+        this.b = f10;
+        this.c = i12;
     }
 
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = j7.f5.q(parcel, 20293);
+        j7.f5.s(parcel, 2, 4);
+        parcel.writeInt(1);
+        j7.f5.s(parcel, 3, 4);
+        parcel.writeInt(this.a);
+        j7.f5.s(parcel, 4, 4);
+        parcel.writeFloat(this.b);
+        j7.f5.s(parcel, 5, 4);
+        parcel.writeInt(this.c);
+        j7.f5.r(parcel, q10);
     }
 }

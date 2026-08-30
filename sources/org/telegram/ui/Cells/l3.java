@@ -1,33 +1,76 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v41;
-import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.f51;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class l3 extends v41 {
-    public static final /* synthetic */ int a = 0;
+public final class l3 {
+    public boolean a;
+    public StaticLayout b;
+    public StaticLayout c;
+    public int d;
+    public int e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
 
-    static {
-        v41.setup(new l3());
-    }
-
-    @Override // org.telegram.ui.Components.v41
-    public final void bindView(View view, w41 w41Var, boolean z10, k51 k51Var, u51 u51Var) {
-        m3 m3Var = (m3) view;
-        m3Var.a((TLRPC.StickerSetCovered) w41Var.G, z10, w41Var.t, false);
-        m3Var.e.a(w41Var.t, false);
-        m3Var.setAddOnClickListener(w41Var.D);
-    }
-
-    @Override // org.telegram.ui.Components.v41
-    public final View createView(Context context, jl0 jl0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new m3(context, c6Var);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void a(t1 t1Var) {
+        TLRPC.Message message;
+        String str;
+        SpannableStringBuilder e = nh.m7.e(R.string.ExpiredStory, false, new Object[0]);
+        MessageObject messageObject = t1Var.getMessageObject();
+        if (messageObject != null && (message = messageObject.messageOwner) != null) {
+            TLRPC.MessageMedia messageMedia = message.media;
+            if (messageMedia instanceof TLRPC.TL_messageMediaStory) {
+                TLRPC.User user = MessagesController.getInstance(t1Var.F7).getUser(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
+                String str2 = user == null ? "DELETED" : user.first_name;
+                int minTabletSide = (int) ((AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() : t1Var.getParentWidth()) * 0.4f);
+                String string = LocaleController.getString(R.string.From);
+                TextPaint textPaint = org.telegram.ui.ActionBar.j6.X2;
+                int ceil = (int) Math.ceil(textPaint.measureText(string + " "));
+                if (str2 == null) {
+                    str2 = "";
+                }
+                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.j6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
+                String string2 = LocaleController.getString(R.string.FromFormatted);
+                int indexOf = string2.indexOf("%1$s");
+                String format = String.format(string2, str3);
+                if (indexOf >= 0) {
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
+                    spannableStringBuilder.setSpan(new f51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    str = spannableStringBuilder;
+                } else {
+                    str = format;
+                }
+                TextPaint textPaint2 = org.telegram.ui.ActionBar.j6.Z2;
+                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e, 0, e.length()) + 1.0f));
+                Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+                this.b = new StaticLayout(e, textPaint2, dp, alignment, 1.0f, 0.0f, false);
+                this.c = new StaticLayout(str, textPaint2, AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)), alignment, 1.0f, 0.0f, false);
+                this.e = 0;
+                this.h = AndroidUtilities.dp(4.0f);
+                this.i = AndroidUtilities.dp(12.0f);
+                this.e = (int) e2.c.A(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
+                this.d = t1Var.getExtraTextX() + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
+                return;
+            }
+        }
+        this.h = AndroidUtilities.dp(4.0f);
+        this.i = AndroidUtilities.dp(12.0f);
+        this.e = 0;
+        this.d = 0;
     }
 }

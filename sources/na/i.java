@@ -1,31 +1,24 @@
 package na;
 
-import java.io.IOException;
-import java.io.StringWriter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public final l i() {
-        if (this instanceof l) {
-            return (l) this;
-        }
-        throw new IllegalStateException("Not a JSON Object: " + this);
+public final class i extends wc.c {
+    public /* synthetic */ Object a;
+    public final /* synthetic */ k b;
+    public int c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(k kVar, wc.c cVar) {
+        super(cVar);
+        this.b = kVar;
     }
 
-    public String n() {
-        throw new UnsupportedOperationException(getClass().getSimpleName());
-    }
-
-    public final String toString() {
-        try {
-            StringWriter stringWriter = new StringWriter();
-            va.b bVar = new va.b(stringWriter);
-            bVar.n = 1;
-            pa.d.l(this, bVar);
-            return stringWriter.toString();
-        } catch (IOException e10) {
-            throw new AssertionError(e10);
-        }
+    @Override // wc.a
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.c |= TLObject.FLAG_31;
+        return this.b.c(null, null, this);
     }
 }

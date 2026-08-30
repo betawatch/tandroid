@@ -1,21 +1,35 @@
 package i9;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class y implements s9.d {
-    public static final y a = new y();
-    public static final s9.c b = s9.c.c("platform");
-    public static final s9.c c = s9.c.c("version");
-    public static final s9.c d = s9.c.c("buildVersion");
-    public static final s9.c e = s9.c.c("jailbroken");
+import android.os.Looper;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
-    @Override // s9.a
-    public final void a(Object obj, Object obj2) {
-        s9.e eVar = (s9.e) obj2;
-        z0 z0Var = (z0) ((b2) obj);
-        eVar.b(b, z0Var.a);
-        eVar.e(c, z0Var.b);
-        eVar.e(d, z0Var.c);
-        eVar.d(e, z0Var.d);
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public abstract class y {
+    public static final ExecutorService a = h.a("awaitEvenIfOnMainThread task continuation executor");
+
+    public static Object a(Task task) {
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        task.continueWith(a, new gg.f(countDownLatch, 5));
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            countDownLatch.await(3L, TimeUnit.SECONDS);
+        } else {
+            countDownLatch.await(4L, TimeUnit.SECONDS);
+        }
+        if (task.isSuccessful()) {
+            return task.getResult();
+        }
+        if (task.isCanceled()) {
+            throw new CancellationException("Task is already canceled");
+        }
+        if (task.isComplete()) {
+            throw new IllegalStateException(task.getException());
+        }
+        throw new TimeoutException();
     }
 }

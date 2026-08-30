@@ -1,32 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class y41 extends URLSpan {
-    public final h01 a;
+public final class y41 implements ux0 {
+    public final /* synthetic */ e51 a;
 
-    public y41(String str, h01 h01Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = h01Var;
+    public y41(e51 e51Var) {
+        this.a = e51Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        ye.d.p(view.getContext(), Uri.parse(getURL()), true, true);
+    @Override // org.telegram.ui.Components.ux0
+    public final boolean b() {
+        return this.a.b.a();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        h01 h01Var = this.a;
-        if (h01Var != null) {
-            h01Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(true);
+    @Override // org.telegram.ui.Components.ux0
+    public final boolean c() {
+        return this.a.b.c();
+    }
+
+    @Override // org.telegram.ui.Components.ux0
+    public final void d(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z4, boolean z10, int i10, int i11) {
+        this.a.b.f(document, obj, z10, i10);
     }
 }

@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends com.google.android.gms.internal.cast.a implements c {
+public final class a extends a7.a implements c {
     public final int U0(int i10, String str, String str2, Bundle bundle) {
         Parcel S0 = S0();
         S0.writeInt(i10);

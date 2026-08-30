@@ -1,84 +1,188 @@
 package nh;
 
-import android.text.TextUtils;
+import j$.util.DesugarArrays;
+import j$.util.stream.Collectors;
 import java.util.ArrayList;
-import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.qd;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class t {
-    public static ArrayList f;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int[] d;
-    public final ArrayList e = new ArrayList();
+public abstract class t {
+    public static int[] a() {
+        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, 280, 10, -2013375, -1482439, -7666429, 500, RichMessageLayout.PART_MAX_HEIGHT_DP, 200, 7, -1214690, -1214690, -6606592, MediaDataController.MAX_LINKS_COUNT, 600, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 4, -1926647, -1926647, -6668800, 100, 300, 110, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
+    }
 
-    public t(String str) {
-        str = str == null ? "." : str;
-        this.a = str;
-        String[] split = str.split("/");
-        int length = split.length;
-        this.c = length;
-        this.d = new int[length];
-        int i10 = 0;
-        for (int i11 = 0; i11 < split.length; i11++) {
-            this.d[i11] = split[i11].length();
-            i10 = Math.max(i10, split[i11].length());
-        }
-        this.b = i10;
-        for (int i12 = 0; i12 < split.length; i12++) {
-            for (int i13 = 0; i13 < split[i12].length(); i13++) {
-                this.e.add(new s(this, i13, i12));
+    public static int b(int i10, int i11, int i12) {
+        int[] iArr = MessagesController.getInstance(i10).starsGroupcallMessageLimits;
+        for (int i13 = 0; i13 < iArr.length / 7; i13++) {
+            int i14 = i13 * 7;
+            if (i11 >= iArr[i14]) {
+                return iArr[i14 + 1 + i12];
             }
         }
+        return 0;
     }
 
-    public static ArrayList a() {
-        if (f == null) {
-            ArrayList arrayList = new ArrayList();
-            f = arrayList;
-            arrayList.add(new t("./."));
-            f.add(new t(".."));
-            f.add(new t("../."));
-            f.add(new t("./.."));
-            f.add(new t("././."));
-            f.add(new t("..."));
-            f.add(new t("../.."));
-            f.add(new t("./../.."));
-            f.add(new t("../../."));
-            f.add(new t("../../.."));
-            if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                f.add(new t("../../../.."));
-                f.add(new t(".../.../..."));
-                f.add(new t("..../..../...."));
-                f.add(new t(".../.../.../..."));
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ab, code lost:
+    
+        if (r6.equals("color_bg") == false) goto L42;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int[] c(TLRPC.TL_jsonArray tL_jsonArray) {
+        char c3;
+        int[] iArr = new int[tL_jsonArray.value.size() * 7];
+        for (int i10 = 0; i10 < tL_jsonArray.value.size(); i10++) {
+            TLRPC.JSONValue jSONValue = tL_jsonArray.value.get(i10);
+            if (jSONValue instanceof TLRPC.TL_jsonObject) {
+                ArrayList<TLRPC.TL_jsonObjectValue> arrayList = ((TLRPC.TL_jsonObject) jSONValue).value;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue = arrayList.get(i11);
+                    i11++;
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue2 = tL_jsonObjectValue;
+                    TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue2.value;
+                    int i12 = 2;
+                    int i13 = -1;
+                    if (jSONValue2 instanceof TLRPC.TL_jsonNumber) {
+                        int i14 = (int) ((TLRPC.TL_jsonNumber) jSONValue2).value;
+                        String str = tL_jsonObjectValue2.key;
+                        str.getClass();
+                        switch (str.hashCode()) {
+                            case -1544802595:
+                                if (str.equals("text_length_max")) {
+                                    c3 = 0;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case -1186480213:
+                                if (str.equals("pin_period")) {
+                                    c3 = 1;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 109757537:
+                                if (str.equals("stars")) {
+                                    c3 = 2;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            case 1686749675:
+                                if (str.equals("emoji_max")) {
+                                    c3 = 3;
+                                    break;
+                                }
+                                c3 = 65535;
+                                break;
+                            default:
+                                c3 = 65535;
+                                break;
+                        }
+                        switch (c3) {
+                            case 0:
+                                break;
+                            case 1:
+                                i12 = 1;
+                                break;
+                            case 2:
+                                i12 = 0;
+                                break;
+                            case 3:
+                                i12 = 3;
+                                break;
+                            default:
+                                i12 = -1;
+                                break;
+                        }
+                        if (i12 >= 0) {
+                            iArr[(i10 * 7) + i12] = i14;
+                        }
+                    } else if (jSONValue2 instanceof TLRPC.TL_jsonString) {
+                        String str2 = ((TLRPC.TL_jsonString) jSONValue2).value;
+                        String str3 = tL_jsonObjectValue2.key;
+                        str3.getClass();
+                        switch (str3.hashCode()) {
+                            case -1354842834:
+                                if (str3.equals("color1")) {
+                                    i12 = 0;
+                                    break;
+                                }
+                                i12 = -1;
+                                break;
+                            case -1354842833:
+                                if (str3.equals("color2")) {
+                                    i12 = 1;
+                                    break;
+                                }
+                                i12 = -1;
+                                break;
+                            case -628825439:
+                                break;
+                            default:
+                                i12 = -1;
+                                break;
+                        }
+                        switch (i12) {
+                            case 0:
+                                i13 = 4;
+                                break;
+                            case 1:
+                                i13 = 5;
+                                break;
+                            case 2:
+                                i13 = 6;
+                                break;
+                        }
+                        if (i13 >= 0) {
+                            try {
+                                iArr[(i10 * 7) + i13] = (int) Long.parseLong("FF" + str2, 16);
+                            } catch (Exception e) {
+                                FileLog.e(e);
+                            }
+                        }
+                    }
+                }
             }
         }
-        return f;
+        return iArr;
     }
 
-    public static int b() {
-        ArrayList a2 = a();
-        int size = a2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = a2.get(i11);
-            i11++;
-            i10 = Math.max(i10, ((t) obj).e.size());
+    public static int[] d(String str) {
+        if (str == null || str.length() == 0) {
+            return a();
         }
-        return i10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof t)) {
-            return false;
+        try {
+            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.e4(1)).toArray();
+        } catch (Exception e) {
+            FileLog.e(e);
+            return a();
         }
-        return TextUtils.equals(this.a, ((t) obj).a);
     }
 
-    public final String toString() {
-        return this.a;
+    public static boolean e(int[] iArr, int[] iArr2) {
+        if (iArr2 != null && iArr.length == iArr2.length) {
+            for (int i10 = 0; i10 < iArr.length; i10++) {
+                if (iArr[i10] == iArr2[i10]) {
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static String f(int[] iArr) {
+        return (String) DesugarArrays.stream(iArr).mapToObj(new qd(0)).collect(Collectors.joining(","));
     }
 }

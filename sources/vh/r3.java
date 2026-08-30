@@ -1,0 +1,13552 @@
+package vh;
+
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.net.Uri;
+import android.text.Editable;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.util.SparseIntArray;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
+import android.webkit.MimeTypeMap;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Map;
+import java.io.File;
+import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import k7.b6;
+import k7.i8;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AppGlobalConfig;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.rg;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Cells.m9;
+import org.telegram.ui.Cells.x9;
+import org.telegram.ui.Cells.y9;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.vq0;
+import org.telegram.ui.yh;
+import org.telegram.ui.zt0;
+import org.webrtc.MediaStreamTrack;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes4.dex */
+public final class r3 extends g61 {
+    public static final ArrayList p4 = new ArrayList();
+    public TL_iv.pageTableCell A3;
+    public TL_iv.pageTableCell B3;
+    public long C3;
+    public float D3;
+    public float E3;
+    public boolean F3;
+    public c2 G3;
+    public int H3;
+    public d1 I3;
+    public final h J3;
+    public ArrayList K3;
+    public int L3;
+    public int M3;
+    public int N3;
+    public boolean O3;
+    public a P3;
+    public boolean Q3;
+    public final j3 R3;
+    public final m2 S3;
+    public final k3 T3;
+    public final l3 U3;
+    public final m3 V3;
+    public final IdentityHashMap W3;
+    public final IdentityHashMap X3;
+    public a Y3;
+    public a Z3;
+    public final n3 a4;
+    public final w2 b4;
+    public final int c3;
+    public final x2 c4;
+    public final f6 d3;
+    public final y2 d4;
+    public final p3 e3;
+    public final z2 e4;
+    public MessageObject f3;
+    public i5 f4;
+    public boolean g3;
+    public o70 g4;
+    public TL_iv.RichMessage h3;
+    public int h4;
+    public final ArrayList i3;
+    public int i4;
+    public final HashMap j3;
+    public final n2 j4;
+    public final f3 k3;
+    public final a3 k4;
+    public final y9 l3;
+    public final ph.j5 l4;
+    public int m3;
+    public final ArrayList m4;
+    public int n3;
+    public am0 n4;
+    public int o3;
+    public int o4;
+    public boolean p3;
+    public float q3;
+    public float r3;
+    public float s3;
+    public float t3;
+    public View u3;
+    public b v3;
+    public boolean w3;
+    public boolean x3;
+    public boolean y3;
+    public boolean z3;
+
+    public r3(Context context, int i10, f6 f6Var, p3 p3Var) {
+        super(context, i10, 0, false, new ph.d4(r1, 29), new rh.e(r1, 11), null, f6Var);
+        this.g3 = true;
+        this.i3 = new ArrayList();
+        this.j3 = new HashMap();
+        this.m3 = -1;
+        this.n3 = -1;
+        this.o3 = 0;
+        this.J3 = new h(this, 2);
+        this.O3 = true;
+        this.R3 = new j3(this);
+        this.S3 = new m2(this);
+        this.T3 = new k3(this);
+        this.U3 = new l3(this);
+        this.V3 = new m3(this);
+        this.W3 = new IdentityHashMap();
+        this.X3 = new IdentityHashMap();
+        this.a4 = new n3(this);
+        this.b4 = new w2(this);
+        this.c4 = new x2(this);
+        this.d4 = new y2(this);
+        this.e4 = new z2(this);
+        this.h4 = -1;
+        this.i4 = -1;
+        this.j4 = new n2(this);
+        this.k4 = new a3(this);
+        ph.j5 j5Var = new ph.j5(this, 15);
+        this.l4 = j5Var;
+        this.m4 = new ArrayList();
+        this.o4 = -1;
+        r3[] r3VarArr = {this};
+        this.c3 = i10;
+        this.d3 = f6Var;
+        this.e3 = p3Var;
+        this.V2.r = false;
+        setClipToPadding(false);
+        setClipChildren(false);
+        B1(new o2(this, 0), false);
+        setReorderLongPressEnabled(false);
+        w1(true);
+        f3 f3Var = new f3(this, p3Var);
+        this.k3 = f3Var;
+        f3Var.T(this);
+        f3Var.E0 = this.U2;
+        y9 o10 = f3Var.o(context);
+        this.l3 = o10;
+        AndroidUtilities.removeFromParent(o10);
+        f3Var.D = new h3(this, p3Var);
+        j(new jh.l(9, this, p3Var));
+        this.G3 = new c2(j5Var);
+    }
+
+    public static boolean A3(TL_iv.PageBlock pageBlock) {
+        return (E3(pageBlock) || (pageBlock instanceof TL_iv.pageBlockDetails)) ? false : true;
+    }
+
+    public static boolean B3(TL_iv.PageBlock pageBlock) {
+        return (pageBlock instanceof TL_iv.pageBlockCollage) || (pageBlock instanceof TL_iv.pageBlockSlideshow);
+    }
+
+    public static boolean C3(TL_iv.PageBlock pageBlock) {
+        return (pageBlock instanceof TL_iv.pageBlockHeading1) || (pageBlock instanceof TL_iv.pageBlockHeading2) || (pageBlock instanceof TL_iv.pageBlockHeading3) || (pageBlock instanceof TL_iv.pageBlockHeading4) || (pageBlock instanceof TL_iv.pageBlockHeading5) || (pageBlock instanceof TL_iv.pageBlockHeading6);
+    }
+
+    public static boolean D3(TL_iv.PageBlock pageBlock) {
+        return (pageBlock instanceof TL_iv.pageBlockPhoto) || (pageBlock instanceof TL_iv.pageBlockVideo) || B3(pageBlock);
+    }
+
+    public static boolean E3(TL_iv.PageBlock pageBlock) {
+        return (pageBlock instanceof TL_iv.pageBlockDivider) || (pageBlock instanceof TL_iv.pageBlockPhoto) || (pageBlock instanceof TL_iv.pageBlockVideo) || (pageBlock instanceof TL_iv.pageBlockCollage) || (pageBlock instanceof TL_iv.pageBlockSlideshow) || (pageBlock instanceof TL_iv.pageBlockAudio) || (pageBlock instanceof TL_iv.pageBlockDocument) || (pageBlock instanceof TL_iv.pageBlockMath) || (pageBlock instanceof TL_iv.pageBlockMap) || (pageBlock instanceof TL_iv.pageBlockTable) || (pageBlock instanceof TL_iv.pageBlockButtonRow) || (pageBlock instanceof TL_iv.pageBlockList) || (pageBlock instanceof TL_iv.pageBlockOrderedList);
+    }
+
+    public static boolean F3(a aVar) {
+        return aVar != null && !aVar.i && !x3(aVar) && (aVar.b instanceof TL_iv.pageBlockParagraph) && aVar.c == 0 && aVar.d == 0 && !aVar.e && aVar.k.isEmpty();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0128, code lost:
+    
+        r18 = r7;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0154, code lost:
+    
+        r22.L();
+        r12 = false;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void I1(r3[] r3VarArr, ArrayList arrayList, w51 w51Var) {
+        int i10;
+        boolean z4;
+        ArrayList arrayList2;
+        boolean z10;
+        int i11;
+        r3 r3Var = r3VarArr[0];
+        if (r3Var != null) {
+            ArrayList arrayList3 = r3Var.i3;
+            r3Var.a2();
+            ArrayList arrayList4 = r3Var.m4;
+            arrayList4.clear();
+            HashMap hashMap = new HashMap();
+            int i12 = 0;
+            int i13 = 0;
+            while (true) {
+                i10 = 1;
+                if (i12 >= arrayList3.size()) {
+                    break;
+                }
+                a aVar = (a) arrayList3.get(i12);
+                boolean z11 = aVar.i;
+                ArrayList arrayList5 = aVar.k;
+                if (!z11) {
+                    for (int i14 = 0; i14 < arrayList5.size(); i14++) {
+                        Map.-EL.merge(hashMap, (Long) arrayList5.get(i14), 1, new r2());
+                    }
+                    if (aVar.b instanceof TL_iv.pageBlockParagraph) {
+                        i13++;
+                    }
+                }
+                i12++;
+            }
+            boolean z12 = i13 == 1;
+            ArrayList arrayList6 = new ArrayList();
+            int i15 = -1;
+            int i16 = 0;
+            boolean z13 = false;
+            a aVar2 = null;
+            int i17 = -1;
+            while (i16 < arrayList3.size()) {
+                a aVar3 = (a) arrayList3.get(i16);
+                boolean z14 = aVar3.i;
+                ArrayList arrayList7 = aVar3.k;
+                if (z14) {
+                    boolean z15 = i17 != i15;
+                    if (!arrayList6.isEmpty()) {
+                        android.support.v4.media.a.u(i10, arrayList6);
+                    }
+                    if (i17 == i15 || arrayList6.size() >= i17) {
+                        if (!z15) {
+                            if (z13) {
+                                w51Var.L();
+                                z13 = false;
+                            }
+                            int i18 = r0.a;
+                            i51 J = i51.J(r0.class);
+                            J.G = aVar3;
+                            arrayList.add(J);
+                            arrayList4.add(aVar3);
+                        }
+                        z4 = z12;
+                        arrayList2 = arrayList6;
+                    } else {
+                        z4 = z12;
+                        arrayList2 = arrayList6;
+                        i17 = -1;
+                    }
+                } else {
+                    boolean z16 = i17 != i15;
+                    if (x3(aVar3)) {
+                        if (!z16) {
+                            boolean z17 = ((TL_iv.pageBlockDetails) aVar3.b).open;
+                            if (!arrayList6.isEmpty() || z17) {
+                                if (z13) {
+                                    w51Var.L();
+                                    z13 = false;
+                                }
+                            } else if (!z13) {
+                                w51Var.M();
+                                z13 = true;
+                            }
+                            z2 z2Var = r3Var.e4;
+                            int i19 = p0.a;
+                            i51 J2 = i51.J(p0.class);
+                            J2.G = aVar3;
+                            J2.H = z2Var;
+                            arrayList.add(J2);
+                            arrayList4.add(aVar3);
+                            if (!z17) {
+                                i17 = arrayList6.size() + 1;
+                            }
+                        }
+                        arrayList6.add(aVar3);
+                    } else if (!z16) {
+                        if (aVar2 != null) {
+                            ArrayList arrayList8 = aVar2.k;
+                            int size = arrayList8.size();
+                            int i20 = 0;
+                            while (true) {
+                                z4 = z12;
+                                if (i20 >= size || i20 >= arrayList7.size()) {
+                                    break;
+                                }
+                                arrayList2 = arrayList6;
+                                if (!((Long) arrayList8.get(i20)).equals(arrayList7.get(i20))) {
+                                    break;
+                                }
+                                i20++;
+                                z12 = z4;
+                                arrayList6 = arrayList2;
+                            }
+                            int i21 = size - 1;
+                            while (i21 >= i20) {
+                                Long l10 = (Long) arrayList8.get(i21);
+                                l10.getClass();
+                                Integer num = (Integer) hashMap.get(l10);
+                                if (num != null) {
+                                    i11 = i20;
+                                    if (num.intValue() >= 2 || i21 > 0 || r3Var.j3.containsKey(l10)) {
+                                    }
+                                } else {
+                                    i11 = i20;
+                                }
+                                i21--;
+                                i20 = i11;
+                            }
+                        } else {
+                            z4 = z12;
+                            arrayList2 = arrayList6;
+                        }
+                        if (aVar2 != null) {
+                            r3Var.s3(aVar2, arrayList7, hashMap, arrayList);
+                        }
+                        if (arrayList2.isEmpty()) {
+                            if (!z13) {
+                                w51Var.M();
+                                z13 = true;
+                            }
+                        } else if (z13) {
+                            w51Var.L();
+                            z13 = false;
+                        }
+                        TL_iv.PageBlock pageBlock = aVar3.b;
+                        if (pageBlock instanceof TL_iv.pageBlockDivider) {
+                            m2 m2Var = r3Var.S3;
+                            int i22 = t0.a;
+                            i51 J3 = i51.J(t0.class);
+                            J3.G = aVar3;
+                            J3.H = m2Var;
+                            arrayList.add(J3);
+                        } else if (D3(pageBlock)) {
+                            k3 k3Var = r3Var.T3;
+                            int i23 = n4.a;
+                            i51 J4 = i51.J(n4.class);
+                            J4.d = (int) aVar3.a;
+                            J4.G = aVar3;
+                            J4.H = k3Var;
+                            arrayList.add(J4);
+                        } else {
+                            TL_iv.PageBlock pageBlock2 = aVar3.b;
+                            if (pageBlock2 instanceof TL_iv.pageBlockAudio) {
+                                l3 l3Var = r3Var.U3;
+                                int i24 = w.a;
+                                i51 J5 = i51.J(w.class);
+                                J5.G = aVar3;
+                                J5.H = l3Var;
+                                arrayList.add(J5);
+                            } else if (pageBlock2 instanceof TL_iv.pageBlockDocument) {
+                                m3 m3Var = r3Var.V3;
+                                int i25 = v0.a;
+                                i51 J6 = i51.J(v0.class);
+                                J6.G = aVar3;
+                                J6.H = m3Var;
+                                arrayList.add(J6);
+                            } else if (pageBlock2 instanceof TL_iv.pageBlockMap) {
+                                n3 n3Var = r3Var.a4;
+                                int i26 = h4.a;
+                                i51 J7 = i51.J(h4.class);
+                                J7.G = aVar3;
+                                J7.H = n3Var;
+                                arrayList.add(J7);
+                            } else if (pageBlock2 instanceof TL_iv.pageBlockMath) {
+                                w2 w2Var = r3Var.b4;
+                                int i27 = j4.a;
+                                i51 J8 = i51.J(j4.class);
+                                J8.G = aVar3;
+                                J8.H = w2Var;
+                                arrayList.add(J8);
+                            } else if (pageBlock2 instanceof TL_iv.pageBlockTable) {
+                                y2 y2Var = r3Var.d4;
+                                int i28 = g5.a;
+                                i51 J9 = i51.J(g5.class);
+                                J9.G = aVar3;
+                                J9.H = y2Var;
+                                arrayList.add(J9);
+                            } else if (pageBlock2 instanceof TL_iv.pageBlockButtonRow) {
+                                j3 j3Var = r3Var.R3;
+                                int i29 = d0.a;
+                                i51 J10 = i51.J(d0.class);
+                                J10.G = aVar3;
+                                J10.H = j3Var;
+                                arrayList.add(J10);
+                            } else {
+                                aVar3.p = i16 == 0;
+                                aVar3.q = z4 && (pageBlock2 instanceof TL_iv.pageBlockParagraph);
+                                if (arrayList3.size() == 2 && i16 == 1 && (aVar3.b instanceof TL_iv.pageBlockParagraph) && (((a) arrayList3.get(0)).b instanceof TL_iv.pageBlockHeading1)) {
+                                    z10 = true;
+                                    a3 a3Var = r3Var.k4;
+                                    int i30 = t5.a;
+                                    i51 J11 = i51.J(t5.class);
+                                    J11.G = aVar3;
+                                    J11.H = a3Var;
+                                    J11.r = z10;
+                                    arrayList.add(J11);
+                                    arrayList4.add(aVar3);
+                                    aVar2 = aVar3;
+                                }
+                                z10 = false;
+                                a3 a3Var2 = r3Var.k4;
+                                int i302 = t5.a;
+                                i51 J112 = i51.J(t5.class);
+                                J112.G = aVar3;
+                                J112.H = a3Var2;
+                                J112.r = z10;
+                                arrayList.add(J112);
+                                arrayList4.add(aVar3);
+                                aVar2 = aVar3;
+                            }
+                        }
+                        arrayList4.add(aVar3);
+                        aVar2 = aVar3;
+                    }
+                    z4 = z12;
+                    arrayList2 = arrayList6;
+                }
+                i16++;
+                z12 = z4;
+                arrayList6 = arrayList2;
+                i10 = 1;
+                i15 = -1;
+            }
+            if (z13) {
+                w51Var.L();
+            }
+            if (aVar2 != null) {
+                r3Var.s3(aVar2, p4, hashMap, arrayList);
+            }
+            int i31 = 0;
+            while (i31 < arrayList4.size()) {
+                a aVar4 = (a) arrayList4.get(i31);
+                aVar4.n = false;
+                aVar4.o = false;
+                aVar4.l = 0;
+                aVar4.m = 0;
+                int size2 = aVar4.k.size();
+                if (size2 != 0) {
+                    a aVar5 = i31 > 0 ? (a) arrayList4.get(i31 - 1) : null;
+                    int i32 = i31 + 1;
+                    a aVar6 = i32 < arrayList4.size() ? (a) arrayList4.get(i32) : null;
+                    aVar4.l = size2 - l4(aVar4, aVar5);
+                    int l42 = size2 - l4(aVar4, aVar6);
+                    aVar4.m = l42;
+                    aVar4.n = aVar4.l > 0;
+                    aVar4.o = l42 > 0;
+                }
+                i31++;
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void J2(ArrayList arrayList, a aVar) {
+        TLRPC.Document document;
+        TL_iv.pageBlockCollage pageblockcollage;
+        TL_iv.PageBlock pageBlock = aVar.b;
+        if (pageBlock instanceof TL_iv.pageBlockDivider) {
+            arrayList.add(pageBlock);
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
+            s sVar = aVar.g;
+            if (sVar == null || !sVar.b()) {
+                return;
+            }
+            TL_iv.PageBlock pageBlock2 = aVar.b;
+            if (((TL_iv.pageBlockPhoto) pageBlock2).photo_id != 0) {
+                if (pageBlock2.caption == null) {
+                    pageBlock2.caption = new TL_iv.PageCaption();
+                    aVar.b.caption.text = new TL_iv.textEmpty();
+                    aVar.b.caption.credit = new TL_iv.textEmpty();
+                }
+                arrayList.add(aVar.b);
+                return;
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockVideo) {
+            s sVar2 = aVar.g;
+            if (sVar2 == null || !sVar2.b()) {
+                return;
+            }
+            TL_iv.PageBlock pageBlock3 = aVar.b;
+            if (((TL_iv.pageBlockVideo) pageBlock3).video_id != 0) {
+                if (pageBlock3.caption == null) {
+                    pageBlock3.caption = new TL_iv.PageCaption();
+                    aVar.b.caption.text = new TL_iv.textEmpty();
+                    aVar.b.caption.credit = new TL_iv.textEmpty();
+                }
+                arrayList.add(aVar.b);
+                return;
+            }
+            return;
+        }
+        if (B3(pageBlock)) {
+            ArrayList g32 = g3(aVar.b);
+            List Q3 = Q3(aVar);
+            ArrayList<TL_iv.PageBlock> arrayList2 = new ArrayList<>();
+            for (int i10 = 0; g32 != null && i10 < g32.size() && i10 < Q3.size(); i10++) {
+                TL_iv.PageBlock pageBlock4 = (TL_iv.PageBlock) g32.get(i10);
+                if (((s) Q3.get(i10)).b()) {
+                    if ((pageBlock4 instanceof TL_iv.pageBlockPhoto ? ((TL_iv.pageBlockPhoto) pageBlock4).photo_id : pageBlock4 instanceof TL_iv.pageBlockVideo ? ((TL_iv.pageBlockVideo) pageBlock4).video_id : 0L) != 0) {
+                        h0.d(pageBlock4);
+                        arrayList2.add(pageBlock4);
+                    }
+                }
+            }
+            if (arrayList2.size() < 2) {
+                if (arrayList2.size() == 1) {
+                    arrayList.add(arrayList2.get(0));
+                    return;
+                }
+                return;
+            }
+            if (aVar.b instanceof TL_iv.pageBlockSlideshow) {
+                TL_iv.pageBlockSlideshow pageblockslideshow = new TL_iv.pageBlockSlideshow();
+                pageblockslideshow.items = arrayList2;
+                pageblockslideshow.caption = aVar.b.caption;
+                pageblockcollage = pageblockslideshow;
+            } else {
+                TL_iv.pageBlockCollage pageblockcollage2 = new TL_iv.pageBlockCollage();
+                pageblockcollage2.items = arrayList2;
+                pageblockcollage2.caption = aVar.b.caption;
+                pageblockcollage = pageblockcollage2;
+            }
+            h0.d(pageblockcollage);
+            arrayList.add(pageblockcollage);
+            return;
+        }
+        TL_iv.PageBlock pageBlock5 = aVar.b;
+        if (pageBlock5 instanceof TL_iv.pageBlockAudio) {
+            s sVar3 = aVar.g;
+            if (sVar3 == null || !sVar3.b()) {
+                return;
+            }
+            TL_iv.PageBlock pageBlock6 = aVar.b;
+            if (((TL_iv.pageBlockAudio) pageBlock6).audio_id != 0) {
+                if (pageBlock6.caption == null) {
+                    pageBlock6.caption = new TL_iv.PageCaption();
+                    aVar.b.caption.text = new TL_iv.textEmpty();
+                    aVar.b.caption.credit = new TL_iv.textEmpty();
+                }
+                arrayList.add(aVar.b);
+                return;
+            }
+            return;
+        }
+        if (pageBlock5 instanceof TL_iv.pageBlockDocument) {
+            s sVar4 = aVar.g;
+            if (sVar4 != null && (document = sVar4.h) != null) {
+                ((TL_iv.pageBlockDocument) pageBlock5).document_id = document.id;
+            }
+            if (sVar4 == null || !sVar4.b()) {
+                return;
+            }
+            TL_iv.PageBlock pageBlock7 = aVar.b;
+            if (((TL_iv.pageBlockDocument) pageBlock7).document_id != 0) {
+                h0.d(pageBlock7);
+                arrayList.add(aVar.b);
+                return;
+            }
+            return;
+        }
+        if (pageBlock5 instanceof TL_iv.pageBlockMap) {
+            TL_iv.pageBlockMap pageblockmap = (TL_iv.pageBlockMap) pageBlock5;
+            int i11 = i4.J;
+            if (pageblockmap.geo instanceof TLRPC.TL_geoPoint) {
+                if (pageblockmap.caption == null) {
+                    TL_iv.PageCaption pageCaption = new TL_iv.PageCaption();
+                    pageblockmap.caption = pageCaption;
+                    pageCaption.text = new TL_iv.textEmpty();
+                    pageblockmap.caption.credit = new TL_iv.textEmpty();
+                }
+                arrayList.add(pageblockmap);
+                return;
+            }
+            return;
+        }
+        if (pageBlock5 instanceof TL_iv.pageBlockMath) {
+            if (TextUtils.isEmpty(((TL_iv.pageBlockMath) pageBlock5).source)) {
+                return;
+            }
+            arrayList.add(aVar.b);
+            return;
+        }
+        if (!(pageBlock5 instanceof TL_iv.pageBlockTable)) {
+            if (!(pageBlock5 instanceof TL_iv.pageBlockButtonRow)) {
+                arrayList.add(pageBlock5);
+                return;
+            }
+            TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock5;
+            ArrayList<TL_keyboard.PageButton> arrayList3 = pageblockbuttonrow.buttons;
+            if (arrayList3 == null || arrayList3.isEmpty()) {
+                return;
+            }
+            arrayList.add(pageblockbuttonrow);
+            return;
+        }
+        TL_iv.pageBlockTable pageblocktable = (TL_iv.pageBlockTable) pageBlock5;
+        if (pageblocktable.title == null) {
+            pageblocktable.title = new TL_iv.textEmpty();
+        }
+        if (pageblocktable.rows != null) {
+            for (int i12 = 0; i12 < pageblocktable.rows.size(); i12++) {
+                TL_iv.pageTableRow pagetablerow = pageblocktable.rows.get(i12);
+                if (pagetablerow.cells != null) {
+                    for (int i13 = 0; i13 < pagetablerow.cells.size(); i13++) {
+                        TL_iv.pageTableCell pagetablecell = pagetablerow.cells.get(i13);
+                        if (pagetablecell.text == null) {
+                            z5.c(pagetablecell, "");
+                        } else {
+                            pagetablecell.flags |= 128;
+                        }
+                        pagetablecell.flags = pagetablecell.colspan > 1 ? pagetablecell.flags | 2 : pagetablecell.flags & (-3);
+                        pagetablecell.flags = pagetablecell.rowspan > 1 ? pagetablecell.flags | 4 : pagetablecell.flags & (-5);
+                    }
+                }
+            }
+        }
+        if (O4(pageblocktable)) {
+            arrayList.add(pageblocktable);
+        }
+    }
+
+    public static void K1(r3 r3Var, int i10, int i11, int i12) {
+        if (i10 < 0) {
+            return;
+        }
+        KeyEvent.Callback m9 = r3Var.U2.m(i10);
+        if (m9 instanceof v5) {
+            v5 v5Var = (v5) m9;
+            d1 authorEditText = (i11 == 1 && v5Var.n()) ? v5Var.getAuthorEditText() : v5Var.getEditText();
+            authorEditText.s();
+            authorEditText.setSelection(Math.max(0, Math.min(i12, authorEditText.length())));
+            return;
+        }
+        if (!(m9 instanceof i5)) {
+            if (m9 instanceof i0) {
+                d1 captionEditText = ((i0) m9).getCaptionEditText();
+                captionEditText.s();
+                captionEditText.setSelection(Math.max(0, Math.min(i12, captionEditText.length())));
+                return;
+            }
+            return;
+        }
+        i5 i5Var = (i5) m9;
+        d1 l10 = i5Var.l(i11);
+        if (l10 == null) {
+            l10 = i5Var.l(0);
+        }
+        if (l10 == null) {
+            return;
+        }
+        l10.s();
+        l10.setSelection(Math.max(0, Math.min(i12, l10.length())));
+    }
+
+    public static boolean K2(TL_iv.PageBlock pageBlock) {
+        return (pageBlock instanceof TL_iv.pageBlockPreformatted) || (pageBlock instanceof TL_iv.pageBlockBlockquote) || (pageBlock instanceof TL_iv.pageBlockPullquote);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0065, code lost:
+    
+        if (r4 != null) goto L18;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static TL_iv.PageBlock L1(r3 r3Var, a aVar, int i10, int i11) {
+        TL_iv.PageBlock TLdeserialize;
+        r3Var.getClass();
+        if (!A3(aVar.b)) {
+            return null;
+        }
+        Editable M4 = r3Var.M4(aVar);
+        int length = M4.length();
+        int max = Math.max(0, Math.min(i10, length));
+        if (i11 >= 0) {
+            length = Math.max(0, Math.min(i11, length));
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M4.subSequence(Math.min(max, length), Math.max(max, length)));
+        TL_iv.PageBlock pageBlock = aVar.b;
+        if (pageBlock != null) {
+            try {
+                L2(pageBlock);
+                SerializedData serializedData = new SerializedData(pageBlock.getObjectSize());
+                pageBlock.serializeToStream(serializedData);
+                SerializedData serializedData2 = new SerializedData(serializedData.toByteArray());
+                TLdeserialize = TL_iv.PageBlock.TLdeserialize(serializedData2, serializedData2.readInt32(true), true);
+                serializedData.cleanup();
+                serializedData2.cleanup();
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+            }
+        }
+        TLdeserialize = new TL_iv.pageBlockParagraph();
+        TLdeserialize.text = new TL_iv.textEmpty();
+        v5.d(TLdeserialize, spannableStringBuilder);
+        return TLdeserialize;
+    }
+
+    public static void L2(TL_iv.PageBlock pageBlock) {
+        if (pageBlock == null) {
+            return;
+        }
+        if (pageBlock.text == null) {
+            pageBlock.text = new TL_iv.textEmpty();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockPreformatted) {
+            TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) pageBlock;
+            if (pageblockpreformatted.language == null) {
+                pageblockpreformatted.language = "";
+                return;
+            }
+        }
+        if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
+            TL_iv.pageBlockBlockquote pageblockblockquote = (TL_iv.pageBlockBlockquote) pageBlock;
+            if (pageblockblockquote.caption == null) {
+                pageblockblockquote.caption = new TL_iv.textEmpty();
+                return;
+            }
+        }
+        if (pageBlock instanceof TL_iv.pageBlockPullquote) {
+            TL_iv.pageBlockPullquote pageblockpullquote = (TL_iv.pageBlockPullquote) pageBlock;
+            if (pageblockpullquote.caption == null) {
+                pageblockpullquote.caption = new TL_iv.textEmpty();
+            }
+        }
+    }
+
+    public static void M1(r3 r3Var, d1 d1Var) {
+        if (d1Var == null) {
+            r3Var.getClass();
+            return;
+        }
+        d1Var.adaptiveCreateLinkDialog = r3Var.g3;
+        d1Var.setInlineButtonContext(r3Var.c3);
+        d1Var.setInlineButtonClickListener(new n2(r3Var));
+    }
+
+    public static void N1(a aVar, s sVar, r3 r3Var) {
+        p3 p3Var = r3Var.e3;
+        IdentityHashMap identityHashMap = r3Var.X3;
+        IdentityHashMap identityHashMap2 = r3Var.W3;
+        if (sVar != null) {
+            u4 u4Var = (u4) identityHashMap2.remove(sVar);
+            if (u4Var != null) {
+                u4Var.b();
+            }
+            q4 q4Var = (q4) identityHashMap.remove(sVar);
+            if (q4Var != null) {
+                q4Var.a();
+            }
+            c2 c2Var = r3Var.G3;
+            if (c2Var != null) {
+                c2Var.d();
+            }
+            r3Var.q4(aVar, sVar);
+            c2 c2Var2 = r3Var.G3;
+            if (c2Var2 != null) {
+                c2Var2.h();
+            }
+            p3Var.onContentChanged();
+            return;
+        }
+        ArrayList arrayList = r3Var.i3;
+        for (s sVar2 : Q3(aVar)) {
+            u4 u4Var2 = (u4) identityHashMap2.remove(sVar2);
+            if (u4Var2 != null) {
+                u4Var2.b();
+            }
+            q4 q4Var2 = (q4) identityHashMap.remove(sVar2);
+            if (q4Var2 != null) {
+                q4Var2.a();
+            }
+        }
+        int indexOf = arrayList.indexOf(aVar);
+        if (indexOf >= 0) {
+            c2 c2Var3 = r3Var.G3;
+            if (c2Var3 != null) {
+                c2Var3.d();
+            }
+            arrayList.remove(indexOf);
+            r3Var.V2.N(true);
+            c2 c2Var4 = r3Var.G3;
+            if (c2Var4 != null) {
+                c2Var4.h();
+            }
+        }
+        p3Var.onContentChanged();
+    }
+
+    public static void N2(ArrayList arrayList, ArrayList arrayList2, int i10, boolean z4, int i11, boolean z10, boolean z11) {
+        boolean z12 = false;
+        if (arrayList2 != null) {
+            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList2.get(i12);
+                if ((pageBlock instanceof TL_iv.pageBlockList) || (pageBlock instanceof TL_iv.pageBlockOrderedList)) {
+                    if (!z12) {
+                        S1(arrayList, null, i10, i11, z10, z11);
+                        z12 = true;
+                    }
+                    O2(arrayList, pageBlock, i10 + 1);
+                } else if (z12) {
+                    arrayList.add(new a(pageBlock, i10, z4 ? 1 : 0));
+                } else {
+                    if (pageBlock instanceof TL_iv.pageBlockParagraph) {
+                        S1(arrayList, ((TL_iv.pageBlockParagraph) pageBlock).text, i10, i11, z10, z11);
+                    } else {
+                        a aVar = new a(pageBlock, i10, i11);
+                        aVar.e = z10;
+                        aVar.f = z11;
+                        arrayList.add(aVar);
+                    }
+                    z12 = true;
+                }
+            }
+        }
+        if (z12) {
+            return;
+        }
+        S1(arrayList, null, i10, i11, z10, z11);
+    }
+
+    public static TL_iv.PageBlock N3(a aVar, s sVar) {
+        if (!B3(aVar.b)) {
+            return aVar.b;
+        }
+        ArrayList g32 = g3(aVar.b);
+        ArrayList arrayList = aVar.h;
+        int indexOf = arrayList != null ? arrayList.indexOf(sVar) : -1;
+        if (indexOf < 0 || g32 == null || indexOf >= g32.size()) {
+            return null;
+        }
+        return (TL_iv.PageBlock) g32.get(indexOf);
+    }
+
+    public static void O1(r3 r3Var) {
+        if (r3Var.F3) {
+            return;
+        }
+        c2 c2Var = r3Var.G3;
+        if (c2Var != null) {
+            c2Var.h();
+        }
+        r3Var.e3.n();
+        r3Var.o4();
+    }
+
+    public static void O2(ArrayList arrayList, TL_iv.PageBlock pageBlock, int i10) {
+        int i11 = 0;
+        if (!(pageBlock instanceof TL_iv.pageBlockOrderedList)) {
+            ArrayList<TL_iv.PageListItem> arrayList2 = ((TL_iv.pageBlockList) pageBlock).items;
+            int size = arrayList2.size();
+            while (i11 < size) {
+                TL_iv.PageListItem pageListItem = arrayList2.get(i11);
+                i11++;
+                TL_iv.PageListItem pageListItem2 = pageListItem;
+                if (pageListItem2 instanceof TL_iv.TL_pageListItemText) {
+                    S1(arrayList, ((TL_iv.TL_pageListItemText) pageListItem2).text, i10, 0, pageListItem2.checkbox, pageListItem2.checked);
+                } else if (pageListItem2 instanceof TL_iv.TL_pageListItemBlocks) {
+                    N2(arrayList, ((TL_iv.TL_pageListItemBlocks) pageListItem2).blocks, i10, false, 0, pageListItem2.checkbox, pageListItem2.checked);
+                }
+            }
+            return;
+        }
+        ArrayList<TL_iv.PageListOrderedItem> arrayList3 = ((TL_iv.pageBlockOrderedList) pageBlock).items;
+        int size2 = arrayList3.size();
+        int i12 = 1;
+        while (i11 < size2) {
+            TL_iv.PageListOrderedItem pageListOrderedItem = arrayList3.get(i11);
+            i11++;
+            TL_iv.PageListOrderedItem pageListOrderedItem2 = pageListOrderedItem;
+            if (pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemText) {
+                S1(arrayList, ((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem2).text, i10, i12, pageListOrderedItem2.checkbox, pageListOrderedItem2.checked);
+            } else if (pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemBlocks) {
+                int i13 = i12;
+                N2(arrayList, ((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem2).blocks, i10, true, i13, pageListOrderedItem2.checkbox, pageListOrderedItem2.checked);
+                i12 = i13;
+            }
+            i12++;
+        }
+    }
+
+    public static boolean O4(TL_iv.pageBlockTable pageblocktable) {
+        TL_iv.RichText richText = pageblocktable.title;
+        if (richText != null && !TextUtils.isEmpty(x5.l(richText))) {
+            return true;
+        }
+        if (pageblocktable.rows == null) {
+            return false;
+        }
+        for (int i10 = 0; i10 < pageblocktable.rows.size(); i10++) {
+            TL_iv.pageTableRow pagetablerow = pageblocktable.rows.get(i10);
+            for (int i11 = 0; i11 < pagetablerow.cells.size(); i11++) {
+                if (!z5.g(pagetablerow.cells.get(i11)).isEmpty()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void P1(r3 r3Var, a aVar) {
+        ArrayList arrayList = r3Var.i3;
+        int indexOf = arrayList.indexOf(aVar);
+        if (indexOf < 0) {
+            return;
+        }
+        c2 c2Var = r3Var.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+        aVar2.k.addAll(aVar.k);
+        arrayList.add(indexOf + 1, aVar2);
+        r3Var.s4();
+        r3Var.V2.N(false);
+        c2 c2Var2 = r3Var.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        r3Var.post(new j2(r3Var, aVar2, 23));
+    }
+
+    public static FrameLayout P4(i5 i5Var, boolean z4) {
+        l5 m9;
+        z5 model = i5Var.getModel();
+        if (model != null) {
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i11 = z4 ? -1 : ConnectionsManager.DEFAULT_DATACENTER_ID;
+            TL_iv.pageTableCell pagetablecell = null;
+            for (TL_iv.pageTableCell pagetablecell2 : i5Var.getSelectedCells()) {
+                int a2 = model.a(pagetablecell2);
+                int o10 = z4 ? (z5.o(pagetablecell2) + model.b(pagetablecell2)) - 1 : model.b(pagetablecell2);
+                if (!z4 ? o10 < i11 || (o10 == i11 && a2 < i10) : o10 > i11 || (o10 == i11 && a2 < i10)) {
+                    pagetablecell = pagetablecell2;
+                    i10 = a2;
+                    i11 = o10;
+                }
+            }
+            if (pagetablecell != null && (m9 = i5Var.getGrid().m(pagetablecell)) != null) {
+                return m9;
+            }
+        }
+        return i5Var;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00d2, code lost:
+    
+        if (((java.lang.Long) r7.k.get(r9)).longValue() == r11) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x0118, code lost:
+    
+        if (((java.lang.Long) r7.k.get(r9)).longValue() == r11) goto L62;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0137  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean Q1(r3 r3Var, a aVar, boolean z4) {
+        int i10;
+        d1 editText;
+        Editable text;
+        c2 c2Var;
+        c2 c2Var2;
+        int i11;
+        ArrayList arrayList = r3Var.m4;
+        w51 w51Var = r3Var.V2;
+        ArrayList arrayList2 = r3Var.i3;
+        int indexOf = arrayList2.indexOf(aVar);
+        if (indexOf >= 0) {
+            TL_iv.PageBlock pageBlock = aVar.b;
+            ArrayList arrayList3 = aVar.k;
+            if (C3(pageBlock) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || (pageBlock instanceof TL_iv.pageBlockBlockquote)) {
+                r3Var.U4(aVar, new TL_iv.pageBlockParagraph(), 0, 0, false, false);
+                return true;
+            }
+            if (aVar.c > 0) {
+                c2 c2Var3 = r3Var.G3;
+                if (c2Var3 != null) {
+                    c2Var3.d();
+                }
+                View z12 = r3Var.z1(aVar);
+                if (z12 instanceof v5) {
+                    v5 v5Var = (v5) z12;
+                    if (v5Var.getEditText().isFocused()) {
+                        i11 = v5Var.getEditText().getSelectionEnd();
+                        r3Var.t2(indexOf);
+                        r3Var.s4();
+                        if (r3Var.findFocus() instanceof d1) {
+                            w51Var.N(false);
+                            c2 c2Var4 = r3Var.G3;
+                            if (c2Var4 != null) {
+                                c2Var4.h();
+                            }
+                            r3Var.post(new u2(r3Var, aVar, 1));
+                            return true;
+                        }
+                        r3Var.X1();
+                        c2 c2Var5 = r3Var.G3;
+                        if (c2Var5 != null) {
+                            c2Var5.h();
+                        }
+                        if (i11 >= 0) {
+                            r3Var.post(new l2(r3Var, aVar, i11, 2));
+                            return true;
+                        }
+                    }
+                }
+                i11 = -1;
+                r3Var.t2(indexOf);
+                r3Var.s4();
+                if (r3Var.findFocus() instanceof d1) {
+                }
+            } else {
+                if (!arrayList3.isEmpty() && z4) {
+                    ArrayList arrayList4 = ((a) arrayList2.get(indexOf)).k;
+                    if (!arrayList4.isEmpty()) {
+                        int size = arrayList4.size() - 1;
+                        long longValue = ((Long) arrayList4.get(size)).longValue();
+                        if (indexOf != 0) {
+                            a aVar2 = (a) arrayList2.get(indexOf - 1);
+                            if (aVar2.k.size() > size) {
+                            }
+                        }
+                        c2Var = r3Var.G3;
+                        if (c2Var != null) {
+                            c2Var.d();
+                        }
+                        arrayList3.remove(arrayList3.size() - 1);
+                        r3Var.x2();
+                        r3Var.s4();
+                        w51Var.N(false);
+                        c2Var2 = r3Var.G3;
+                        if (c2Var2 != null) {
+                            c2Var2.h();
+                        }
+                        r3Var.post(new u2(r3Var, aVar, 2));
+                        return true;
+                    }
+                    ArrayList arrayList5 = ((a) arrayList2.get(indexOf)).k;
+                    if (!arrayList5.isEmpty()) {
+                        int size2 = arrayList5.size() - 1;
+                        long longValue2 = ((Long) arrayList5.get(size2)).longValue();
+                        int i12 = indexOf + 1;
+                        if (i12 < arrayList2.size()) {
+                            a aVar3 = (a) arrayList2.get(i12);
+                            if (aVar3.k.size() > size2) {
+                            }
+                        }
+                    }
+                    c2Var = r3Var.G3;
+                    if (c2Var != null) {
+                    }
+                    arrayList3.remove(arrayList3.size() - 1);
+                    r3Var.x2();
+                    r3Var.s4();
+                    w51Var.N(false);
+                    c2Var2 = r3Var.G3;
+                    if (c2Var2 != null) {
+                    }
+                    r3Var.post(new u2(r3Var, aVar, 2));
+                    return true;
+                }
+                if (indexOf > 0) {
+                    int i13 = indexOf - 1;
+                    a aVar4 = (a) arrayList2.get(i13);
+                    if (x3(aVar4) || aVar4.i) {
+                        if (z4 && (!x3(aVar4) || ((i10 = indexOf + 1) < arrayList2.size() && !((a) arrayList2.get(i10)).i))) {
+                            c2 c2Var6 = r3Var.G3;
+                            if (c2Var6 != null) {
+                                c2Var6.d();
+                            }
+                            arrayList2.remove(indexOf);
+                            r3Var.s4();
+                            w51Var.N(false);
+                            c2 c2Var7 = r3Var.G3;
+                            if (c2Var7 != null) {
+                                c2Var7.h();
+                            }
+                            r3Var.post(new u2(r3Var, aVar4, 3));
+                        }
+                    } else {
+                        if (E3(aVar4.b)) {
+                            c2 c2Var8 = r3Var.G3;
+                            if (c2Var8 != null) {
+                                c2Var8.d();
+                            }
+                            arrayList2.remove(i13);
+                            r3Var.s4();
+                            w51Var.N(false);
+                            c2 c2Var9 = r3Var.G3;
+                            if (c2Var9 != null) {
+                                c2Var9.h();
+                            }
+                            r3Var.post(new u2(r3Var, aVar, 4));
+                            return true;
+                        }
+                        c2 c2Var10 = r3Var.G3;
+                        if (c2Var10 != null) {
+                            c2Var10.d();
+                        }
+                        View z13 = r3Var.z1(aVar4);
+                        int indexOf2 = arrayList.indexOf(aVar);
+                        if (!(z13 instanceof v5) || indexOf2 < 0) {
+                            SpannableStringBuilder A = v5.A(aVar4.b);
+                            int length = A.length();
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(A);
+                            spannableStringBuilder.append((CharSequence) v5.A(aVar.b));
+                            v5.d(aVar4.b, spannableStringBuilder);
+                            arrayList2.remove(indexOf);
+                            r3Var.x2();
+                            r3Var.s4();
+                            w51Var.N(false);
+                            c2 c2Var11 = r3Var.G3;
+                            if (c2Var11 != null) {
+                                c2Var11.h();
+                            }
+                            r3Var.post(new l2(r3Var, aVar4, length, 5));
+                            return true;
+                        }
+                        v5 v5Var2 = (v5) z13;
+                        d1 editText2 = v5Var2.getEditText();
+                        int length2 = editText2.length();
+                        SpannableStringBuilder A2 = v5.A(aVar.b);
+                        Editable text2 = editText2.getText();
+                        if (text2 != null && A2 != null && A2.length() != 0) {
+                            editText2.h = true;
+                            text2.append((CharSequence) A2);
+                            editText2.h = false;
+                        }
+                        v5.d(aVar4.b, editText2.getText());
+                        View z14 = r3Var.z1(aVar);
+                        if ((z14 instanceof v5) && (text = (editText = ((v5) z14).getEditText()).getText()) != null && text.length() > 0) {
+                            editText.h = true;
+                            text.delete(0, text.length());
+                            editText.h = false;
+                        }
+                        v5Var2.B();
+                        editText2.setSelection(Math.max(0, Math.min(length2, editText2.length())));
+                        arrayList2.remove(indexOf);
+                        boolean x22 = r3Var.x2();
+                        r3Var.s4();
+                        if (x22) {
+                            w51Var.N(false);
+                            c2 c2Var12 = r3Var.G3;
+                            if (c2Var12 != null) {
+                                c2Var12.h();
+                            }
+                            r3Var.post(new l2(r3Var, aVar4, Math.max(0, length2), 4));
+                            return true;
+                        }
+                        w51Var.S();
+                        r3Var.p4(indexOf);
+                        f2.t0 itemAnimator = r3Var.getItemAnimator();
+                        r3Var.setItemAnimator(null);
+                        w51Var.u(indexOf2);
+                        if ((aVar4.d > 0 || aVar.d > 0) && indexOf2 < arrayList.size()) {
+                            w51Var.q(indexOf2, arrayList.size() - indexOf2);
+                        }
+                        r3Var.post(new t2(r3Var, itemAnimator, 1));
+                        c2 c2Var13 = r3Var.G3;
+                        if (c2Var13 != null) {
+                            c2Var13.h();
+                            return true;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public static List Q3(a aVar) {
+        if (aVar == null) {
+            return Collections.EMPTY_LIST;
+        }
+        if (B3(aVar.b)) {
+            ArrayList arrayList = aVar.h;
+            return arrayList != null ? arrayList : Collections.EMPTY_LIST;
+        }
+        s sVar = aVar.g;
+        return sVar != null ? Collections.singletonList(sVar) : Collections.EMPTY_LIST;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static d1 R3(View view) {
+        if (view instanceof v5) {
+            return ((v5) view).getEditText();
+        }
+        if (view instanceof i0) {
+            return ((i0) view).getCaptionEditText();
+        }
+        if (view instanceof q0) {
+            return ((q0) view).getEditText();
+        }
+        return null;
+    }
+
+    public static void S1(ArrayList arrayList, TL_iv.RichText richText, int i10, int i11, boolean z4, boolean z10) {
+        TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+        if (richText == null) {
+            richText = new TL_iv.textEmpty();
+        }
+        pageblockparagraph.text = richText;
+        a aVar = new a(pageblockparagraph, i10, i11);
+        aVar.e = z4;
+        aVar.f = z10;
+        arrayList.add(aVar);
+    }
+
+    public static TL_iv.PageBlock S3(TL_iv.PageBlock pageBlock) {
+        if (pageBlock instanceof TL_iv.pageBlockHeading1) {
+            return new TL_iv.pageBlockHeading1();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockHeading2) {
+            return new TL_iv.pageBlockHeading2();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockHeading3) {
+            return new TL_iv.pageBlockHeading3();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockHeading4) {
+            return new TL_iv.pageBlockHeading4();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockHeading5) {
+            return new TL_iv.pageBlockHeading5();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockHeading6) {
+            return new TL_iv.pageBlockHeading6();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
+            return new TL_iv.pageBlockBlockquote();
+        }
+        if (pageBlock instanceof TL_iv.pageBlockPullquote) {
+            return new TL_iv.pageBlockPullquote();
+        }
+        if (!(pageBlock instanceof TL_iv.pageBlockPreformatted)) {
+            return pageBlock instanceof TL_iv.pageBlockFooter ? new TL_iv.pageBlockFooter() : new TL_iv.pageBlockParagraph();
+        }
+        TL_iv.pageBlockPreformatted pageblockpreformatted = new TL_iv.pageBlockPreformatted();
+        pageblockpreformatted.language = ((TL_iv.pageBlockPreformatted) pageBlock).language;
+        return pageblockpreformatted;
+    }
+
+    public static s T3(MediaController.PhotoEntry photoEntry, String str) {
+        s sVar = new s();
+        sVar.b = photoEntry.isVideo;
+        sVar.e = str;
+        sVar.j = photoEntry.width;
+        sVar.k = photoEntry.height;
+        String str2 = photoEntry.imagePath;
+        boolean z4 = (str2 == null || str == null || !str.equals(str2)) ? false : true;
+        sVar.l = z4 ? 0 : photoEntry.orientation;
+        sVar.m = z4 ? 0 : photoEntry.invert;
+        sVar.a = 1;
+        sVar.f = 0.0f;
+        return sVar;
+    }
+
+    public static i5 U2(d1 d1Var) {
+        for (ViewParent parent = d1Var.getParent(); parent != null; parent = parent.getParent()) {
+            if (parent instanceof i5) {
+                return (i5) parent;
+            }
+        }
+        return null;
+    }
+
+    public static void W2(ArrayList arrayList, ArrayList arrayList2, java.util.Map map) {
+        TL_iv.RichText richText;
+        if (arrayList2 == null) {
+            return;
+        }
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) obj;
+            if ((pageBlock instanceof TL_iv.pageBlockList) || (pageBlock instanceof TL_iv.pageBlockOrderedList)) {
+                O2(arrayList, pageBlock, 1);
+            } else if (pageBlock instanceof TL_iv.pageBlockDetails) {
+                TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
+                if (pageblockdetails.title == null) {
+                    pageblockdetails.title = new TL_iv.textEmpty();
+                }
+                arrayList.add(new a(pageblockdetails, 0, 0));
+                int size2 = arrayList.size();
+                W2(arrayList, pageblockdetails.blocks, map);
+                if (arrayList.size() == size2) {
+                    arrayList.add(new a(new TL_iv.pageBlockParagraph(), 0, 0));
+                }
+                a aVar = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                aVar.i = true;
+                arrayList.add(aVar);
+            } else if (pageBlock instanceof TL_iv.pageBlockBlockquoteBlocks) {
+                TL_iv.pageBlockBlockquoteBlocks pageblockblockquoteblocks = (TL_iv.pageBlockBlockquoteBlocks) pageBlock;
+                long a2 = m0.a();
+                W2(arrayList, pageblockblockquoteblocks.blocks, map);
+                for (int size3 = arrayList.size(); size3 < arrayList.size(); size3++) {
+                    ((a) arrayList.get(size3)).k.add(0, Long.valueOf(a2));
+                }
+                if (map != null && (richText = pageblockblockquoteblocks.caption) != null && !(richText instanceof TL_iv.textEmpty)) {
+                    map.put(Long.valueOf(a2), pageblockblockquoteblocks.caption);
+                }
+            } else {
+                arrayList.add(new a(pageBlock, 0, 0));
+            }
+        }
+    }
+
+    public static ArrayList X2(TL_iv.RichMessage richMessage, HashMap hashMap) {
+        ArrayList arrayList = new ArrayList();
+        W2(arrayList, richMessage.blocks, hashMap);
+        return arrayList;
+    }
+
+    public static void Z1(TL_iv.pageBlockParagraph pageblockparagraph, String str) {
+        TL_iv.textPlain textplain = new TL_iv.textPlain();
+        textplain.text = str;
+        pageblockparagraph.text = textplain;
+    }
+
+    public static int[] a5(i5 i5Var) {
+        z5 z5Var = i5Var.C;
+        for (int size = z5Var != null ? z5Var.g.size() : 0; size >= 0; size--) {
+            d1 l10 = i5Var.l(size);
+            int length = l10 != null ? l10.length() : 0;
+            if (length > 0) {
+                return new int[]{size, length};
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList g3(TL_iv.PageBlock pageBlock) {
+        if (pageBlock instanceof TL_iv.pageBlockCollage) {
+            return ((TL_iv.pageBlockCollage) pageBlock).items;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
+            return ((TL_iv.pageBlockSlideshow) pageBlock).items;
+        }
+        return null;
+    }
+
+    public static boolean h4(d1 d1Var, float f10, float f11) {
+        if (d1Var != null && d1Var.getVisibility() == 0) {
+            d1Var.getLocationOnScreen(new int[2]);
+            float f12 = f10 - r1[0];
+            float f13 = f11 - r1[1];
+            if (f12 >= 0.0f && f13 >= 0.0f && f12 <= d1Var.getWidth() && f13 <= d1Var.getHeight()) {
+                int offsetForPosition = d1Var.getOffsetForPosition(f12, f13);
+                if (offsetForPosition < 0) {
+                    offsetForPosition = 0;
+                }
+                d1Var.s();
+                d1Var.setSelection(Math.max(0, Math.min(offsetForPosition, d1Var.length())));
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static int k4(int i10, a aVar, boolean z4) {
+        if (aVar == null) {
+            return AndroidUtilities.dp(2.0f);
+        }
+        return org.telegram.messenger.y3.D(16.0f, Math.max(0, i10 - (aVar.k.size() - (z4 ? aVar.l : aVar.m))), AndroidUtilities.dp(2.0f));
+    }
+
+    public static boolean l3(TL_iv.PageBlock pageBlock) {
+        return (pageBlock instanceof TL_iv.pageBlockMap) || (pageBlock instanceof TL_iv.pageBlockAudio) || (pageBlock instanceof TL_iv.pageBlockDocument) || D3(pageBlock);
+    }
+
+    public static int l4(a aVar, a aVar2) {
+        ArrayList arrayList = aVar.k;
+        int i10 = 0;
+        if (aVar2 == null) {
+            return 0;
+        }
+        ArrayList arrayList2 = aVar2.k;
+        int min = Math.min(arrayList.size(), arrayList2.size());
+        while (i10 < min && ((Long) arrayList.get(i10)).equals(arrayList2.get(i10))) {
+            i10++;
+        }
+        return i10;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    public void setEditTextsLocked(boolean z4) {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof v5) {
+                ((v5) childAt).setLocked(z4);
+            } else if (childAt instanceof i5) {
+                ((i5) childAt).setLocked(z4);
+            } else if (childAt instanceof i0) {
+                ((i0) childAt).getCaptionEditText().setLocked(z4);
+            } else if (childAt instanceof q0) {
+                ((q0) childAt).setLocked(z4);
+            } else if (childAt instanceof u0) {
+                childAt.invalidate();
+            }
+        }
+    }
+
+    public static boolean v3(int i10) {
+        return i10 == 21 || i10 == 22 || i10 == 19 || i10 == 20;
+    }
+
+    public static int w2(int i10) {
+        if (i10 == 4) {
+            return 114971;
+        }
+        if (i10 == 16384) {
+            return 32772;
+        }
+        if (i10 == 32768) {
+            return LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD;
+        }
+        return 4;
+    }
+
+    public static boolean x3(a aVar) {
+        return aVar != null && (aVar.b instanceof TL_iv.pageBlockDetails);
+    }
+
+    public static boolean z3(TL_iv.PageBlock pageBlock) {
+        return ((pageBlock instanceof TL_iv.pageBlockBlockquote) || (pageBlock instanceof TL_iv.pageBlockBlockquoteBlocks) || (pageBlock instanceof TL_iv.pageBlockPullquote) || E3(pageBlock) || (pageBlock instanceof TL_iv.pageBlockDetails) || !v5.z(pageBlock).isEmpty()) ? false : true;
+    }
+
+    @Override // org.telegram.ui.Components.g61
+    public final boolean A1() {
+        return this.Q3;
+    }
+
+    public final ArrayList A2(int i10, int i11) {
+        TLRPC.Photo photo;
+        ArrayList arrayList = new ArrayList();
+        HashSet hashSet = new HashSet();
+        while (i10 <= i11) {
+            ArrayList arrayList2 = this.i3;
+            if (i10 >= arrayList2.size()) {
+                break;
+            }
+            for (s sVar : Q3((a) arrayList2.get(i10))) {
+                if (sVar.b() && (photo = sVar.g) != null && hashSet.add(Long.valueOf(photo.id))) {
+                    arrayList.add(sVar.g);
+                }
+            }
+            i10++;
+        }
+        return arrayList;
+    }
+
+    public final View A4(int i10) {
+        if (i10 < 0) {
+            return null;
+        }
+        return this.U2.m(i10);
+    }
+
+    public final ArrayList B2() {
+        TLRPC.Photo photo;
+        ArrayList arrayList = new ArrayList();
+        HashSet hashSet = new HashSet();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.i3;
+            if (i10 >= arrayList2.size()) {
+                return arrayList;
+            }
+            for (s sVar : Q3((a) arrayList2.get(i10))) {
+                if (sVar.b() && (photo = sVar.g) != null && hashSet.add(Long.valueOf(photo.id))) {
+                    arrayList.add(sVar.g);
+                }
+            }
+            i10++;
+        }
+    }
+
+    public final int[] B4() {
+        ArrayList arrayList = this.i3;
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y()) {
+            a Q2 = Q2();
+            int indexOf = Q2 != null ? arrayList.indexOf(Q2) : -1;
+            if (indexOf >= 0) {
+                return new int[]{indexOf, indexOf};
+            }
+            return null;
+        }
+        int indexOf2 = arrayList.indexOf(y4(f3Var.u0));
+        int indexOf3 = arrayList.indexOf(y4(f3Var.x0));
+        if (indexOf2 < 0 || indexOf3 < 0) {
+            return null;
+        }
+        return new int[]{Math.min(indexOf2, indexOf3), Math.max(indexOf2, indexOf3)};
+    }
+
+    @Override // org.telegram.ui.Components.g61
+    public final void C1() {
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.v();
+        }
+    }
+
+    public final void C2() {
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.h();
+        }
+        ArrayList arrayList = this.i3;
+        SpannableStringBuilder k10 = w4.k(arrayList);
+        G2();
+        arrayList.clear();
+        HashMap hashMap = this.j3;
+        hashMap.clear();
+        this.h3 = null;
+        W2(arrayList, w4.b(k10), hashMap);
+        this.V2.N(false);
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.onContentChanged();
+            p3Var.H();
+        }
+    }
+
+    public final boolean C4() {
+        f3 f3Var = this.k3;
+        if (f3Var != null && f3Var.y()) {
+            if (L3()) {
+                int i10 = f3Var.u0;
+                int i11 = f3Var.v0;
+                int i12 = f3Var.y0;
+                int i13 = f3Var.w0;
+                int i14 = f3Var.z0;
+                int i15 = i11;
+                while (i15 <= i12) {
+                    d1 N4 = N4(i10, i15);
+                    if (N4 != null) {
+                        int length = N4.length();
+                        int i16 = i15 == i11 ? i13 : 0;
+                        int i17 = i15 == i12 ? i14 : length;
+                        if (i11 == i12) {
+                            i16 = Math.min(i13, i14);
+                            i17 = Math.max(i13, i14);
+                        }
+                        if (Math.max(0, Math.min(i16, length)) < Math.max(0, Math.min(i17, length))) {
+                            return true;
+                        }
+                    }
+                    i15++;
+                }
+            } else if (y3()) {
+                d1 I2 = I2(f3Var.u0);
+                if (I2 != null && Math.max(0, Math.min(Math.min(f3Var.w0, f3Var.z0), I2.length())) < Math.max(0, Math.min(Math.max(f3Var.w0, f3Var.z0), I2.length()))) {
+                    return true;
+                }
+            } else if (w3()) {
+                d1 s22 = s2(f3Var.u0);
+                if (s22 != null) {
+                    int i18 = f3Var.w0;
+                    int i19 = f3Var.z0;
+                    if (Math.max(0, Math.min(Math.min(i18, i19), s22.length())) < Math.max(0, Math.min(Math.max(i18, i19), s22.length()))) {
+                        return true;
+                    }
+                }
+            } else if (G3()) {
+                d1 j42 = j4(f3Var.u0);
+                if (j42 != null) {
+                    int i20 = f3Var.w0;
+                    int i21 = f3Var.z0;
+                    if (Math.max(0, Math.min(Math.min(i20, i21), j42.length())) < Math.max(0, Math.min(Math.max(i20, i21), j42.length()))) {
+                        return true;
+                    }
+                }
+            } else {
+                int i22 = f3Var.u0;
+                int i23 = f3Var.x0;
+                int i24 = f3Var.w0;
+                int i25 = f3Var.z0;
+                if (i22 >= 0 && i23 >= 0 && i23 >= i22 && i23 < this.m4.size()) {
+                    int i26 = i22;
+                    while (i26 <= i23) {
+                        a y42 = y4(i26);
+                        if (y42 != null) {
+                            if (y42.t == 0) {
+                                TL_iv.PageBlock pageBlock = y42.b;
+                                if (!A3(pageBlock)) {
+                                    continue;
+                                } else if (pageBlock instanceof TL_iv.pageBlockPreformatted) {
+                                    continue;
+                                }
+                            }
+                            int i27 = i2(i26);
+                            if (Math.max(0, Math.min(i26 == i22 ? i24 : 0, i27)) < Math.max(0, Math.min(i26 == i23 ? i25 : i27, i27))) {
+                                return true;
+                            }
+                        }
+                        i26++;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.g61
+    public final void D1() {
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.B();
+        }
+        x4();
+    }
+
+    public final a D2() {
+        int i10;
+        a y42;
+        a Q2 = Q2();
+        if (Q2 != null) {
+            return Q2;
+        }
+        f3 f3Var = this.k3;
+        if (f3Var == null || (i10 = f3Var.u0) < 0 || (y42 = y4(i10)) == null) {
+            return null;
+        }
+        return y42;
+    }
+
+    public final int[] D4() {
+        f3 f3Var = this.k3;
+        if (f3Var == null) {
+            return null;
+        }
+        int i10 = f3Var.u0;
+        int i11 = f3Var.x0;
+        if (i10 < 0 || i11 < 0) {
+            return null;
+        }
+        a y42 = y4(i10);
+        a y43 = y4(i11);
+        if (y42 == null || y43 == null) {
+            return null;
+        }
+        ArrayList arrayList = this.i3;
+        int indexOf = arrayList.indexOf(y42);
+        int indexOf2 = arrayList.indexOf(y43);
+        if (indexOf < 0 || indexOf2 < 0) {
+            return null;
+        }
+        if (indexOf > indexOf2) {
+            indexOf = indexOf2;
+            indexOf2 = indexOf;
+        }
+        return new int[]{indexOf, indexOf2};
+    }
+
+    @Override // org.telegram.ui.Components.g61
+    public final void E1(f2.l1 l1Var) {
+        p3 p3Var = this.e3;
+        if (p3Var == null || l1Var == null) {
+            return;
+        }
+        View view = l1Var.a;
+        view.getLocationOnScreen(new int[2]);
+        view.getWidth();
+        this.Q3 = p3Var.b(view.getHeight() + r1[1]);
+    }
+
+    public final void E2() {
+        ArrayList arrayList;
+        f3 f3Var = this.k3;
+        int i10 = f3Var.u0;
+        int i11 = f3Var.w0;
+        int i12 = f3Var.x0;
+        if (W1(i10, i11, i12, f3Var.z0, new String[]{""})) {
+            return;
+        }
+        if (i10 > i12) {
+            i12 = i10;
+            i10 = i12;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        int max = Math.max(0, i10);
+        while (true) {
+            arrayList = this.i3;
+            if (max > i12) {
+                break;
+            }
+            ArrayList arrayList3 = this.m4;
+            if (max >= arrayList3.size()) {
+                break;
+            }
+            a aVar = (a) arrayList3.get(max);
+            if (aVar.t == 0 && arrayList.indexOf(aVar) >= 0) {
+                arrayList2.add(aVar);
+            }
+            max++;
+        }
+        if (arrayList2.isEmpty()) {
+            return;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        int indexOf = arrayList.indexOf(arrayList2.get(0));
+        arrayList.removeAll(arrayList2);
+        if (arrayList.isEmpty()) {
+            arrayList.add(new a(new TL_iv.pageBlockParagraph(), 0, 0));
+        }
+        HashMap hashMap = this.j3;
+        if (!hashMap.isEmpty()) {
+            HashSet hashSet = new HashSet();
+            for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                hashSet.addAll(((a) arrayList.get(i13)).k);
+            }
+            hashMap.keySet().retainAll(hashSet);
+        }
+        x2();
+        V3();
+        s4();
+        f3Var.f(false);
+        this.V2.N(false);
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        post(new j2(this, (a) arrayList.get(Math.max(0, Math.min(indexOf, arrayList.size() - 1))), 0));
+    }
+
+    public final void E4(d1 d1Var) {
+        d1Var.adaptiveCreateLinkDialog = this.g3;
+        d1Var.makeSelectedUrl(new b(this, 4));
+    }
+
+    @Override // org.telegram.ui.Components.g61
+    public final void F1(f2.l1 l1Var) {
+        a aVar = this.P3;
+        this.P3 = null;
+        this.Q3 = false;
+        if (aVar == null) {
+            if (l1Var != null) {
+                View view = l1Var.a;
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
+                return;
+            }
+            return;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        r4(aVar);
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.onContentChanged();
+        }
+    }
+
+    public final boolean F2() {
+        f3 f3Var = this.k3;
+        if (f3Var != null && f3Var.y()) {
+            f3Var.f(false);
+            return true;
+        }
+        if (this.f4 == null) {
+            return false;
+        }
+        M2();
+        return true;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0230  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0235 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x024e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0267  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x026d  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0282  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x02b3  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x02b8  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0462  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x047d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x048b  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x04a6 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x04af  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x04bf  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x04cf A[LOOP:13: B:176:0x04cd->B:177:0x04cf, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x04e0 A[LOOP:14: B:180:0x04de->B:181:0x04e0, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0516  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0540  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0552  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x0565  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0578  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x059c  */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x05c0  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x05d7  */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x05ea  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x05d4  */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x0543  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x051d  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x04fe  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x04a4 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x04aa A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x047b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0480 A[EDGE_INSN: B:254:0x0480->B:143:0x0480 BREAK  A[LOOP:9: B:132:0x045c->B:244:0x045c], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x02bb  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x02b5  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x0285  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0278  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x026f  */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x0260  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00cd A[LOOP:3: B:45:0x00c7->B:47:0x00cd, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0130 A[LOOP:4: B:53:0x012a->B:55:0x0130, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x01be  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x01cc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0205 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0216 A[LOOP:8: B:96:0x0210->B:98:0x0216, LOOP_END] */
+    /* JADX WARN: Type inference failed for: r6v29 */
+    /* JADX WARN: Type inference failed for: r6v30, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r6v34 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void F4(i5 i5Var) {
+        int i10;
+        int i11;
+        HashSet hashSet;
+        Iterator<TL_iv.pageTableCell> it;
+        boolean z4;
+        HashSet hashSet2;
+        Iterator<TL_iv.pageTableCell> it2;
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        char c3;
+        int i12;
+        int i13;
+        boolean z13;
+        boolean z14;
+        o70 o70Var;
+        LinkedHashSet linkedHashSet;
+        int dp;
+        int i14;
+        int[] iArr;
+        boolean z15;
+        FrameLayout P4;
+        int i15;
+        int i16;
+        int i17;
+        boolean z16;
+        Iterator it3;
+        Iterator it4;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        final int i22;
+        final int i23;
+        boolean z17;
+        String string;
+        final ?? r62;
+        int i24;
+        int i25;
+        HashSet hashSet3;
+        Iterator<TL_iv.pageTableCell> it5;
+        boolean z18;
+        boolean equals;
+        final i5 i5Var2 = i5Var;
+        final z5 model = i5Var2.getModel();
+        LinkedHashSet linkedHashSet2 = i5Var2.E;
+        if (model == null) {
+            return;
+        }
+        TL_iv.pageBlockTable pageblocktable = model.a;
+        Set<TL_iv.pageTableCell> selectedCells = i5Var2.getSelectedCells();
+        if (selectedCells.isEmpty()) {
+            return;
+        }
+        int size = selectedCells.size();
+        if (size >= 2) {
+            int i26 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i27 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i28 = -1;
+            int i29 = -1;
+            for (TL_iv.pageTableCell pagetablecell : selectedCells) {
+                int b10 = model.b(pagetablecell);
+                int a2 = model.a(pagetablecell);
+                int o10 = z5.o(pagetablecell);
+                int i30 = pagetablecell.colspan;
+                if (i30 == 0) {
+                    i30 = 1;
+                }
+                i26 = Math.min(i26, b10);
+                i27 = Math.min(i27, a2);
+                i28 = Math.max(i28, (b10 + o10) - 1);
+                i29 = Math.max(i29, (a2 + i30) - 1);
+            }
+            HashSet hashSet4 = new HashSet();
+            loop1: while (i26 <= i28) {
+                for (int i31 = i27; i31 <= i29; i31++) {
+                    if (i26 < 0 || i31 < 0 || i26 >= model.b || i31 >= model.c) {
+                        equals = false;
+                        break loop1;
+                    }
+                    hashSet4.add(model.d[i26][i31]);
+                }
+                i26++;
+            }
+            equals = hashSet4.equals(new HashSet(selectedCells));
+            if (equals) {
+                i10 = 1;
+                if (size == 1) {
+                    TL_iv.pageTableCell next = selectedCells.iterator().next();
+                    if (z5.n(next) <= 1) {
+                        int i32 = next.rowspan;
+                        if (i32 == 0) {
+                            i32 = 1;
+                        }
+                        if (i32 <= 1) {
+                            z18 = false;
+                            if (z18) {
+                                i11 = 1;
+                                hashSet = new HashSet();
+                                it = selectedCells.iterator();
+                                while (it.hasNext()) {
+                                    hashSet.add(Integer.valueOf(model.b(it.next())));
+                                }
+                                if (!hashSet.isEmpty()) {
+                                    Iterator it6 = hashSet.iterator();
+                                    loop18: while (it6.hasNext()) {
+                                        int intValue = ((Integer) it6.next()).intValue();
+                                        if (intValue >= 0 && intValue < model.b) {
+                                            for (int i33 = 0; i33 < model.c; i33++) {
+                                                if (model.e[intValue][i33] == intValue && selectedCells.contains(model.d[intValue][i33])) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                    z4 = true;
+                                    hashSet2 = new HashSet();
+                                    it2 = selectedCells.iterator();
+                                    while (it2.hasNext()) {
+                                        hashSet2.add(Integer.valueOf(model.a(it2.next())));
+                                    }
+                                    if (!hashSet2.isEmpty()) {
+                                        Iterator it7 = hashSet2.iterator();
+                                        loop16: while (it7.hasNext()) {
+                                            int intValue2 = ((Integer) it7.next()).intValue();
+                                            if (intValue2 >= 0 && intValue2 < model.c) {
+                                                for (int i34 = 0; i34 < model.b; i34++) {
+                                                    if (model.f[i34][intValue2] == intValue2 && selectedCells.contains(model.d[i34][intValue2])) {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        z10 = true;
+                                        if (!selectedCells.isEmpty() || model.b <= 0 || model.c <= 0) {
+                                            z11 = false;
+                                        } else {
+                                            HashSet hashSet5 = new HashSet();
+                                            for (int i35 = 0; i35 < model.b; i35++) {
+                                                for (int i36 = 0; i36 < model.c; i36++) {
+                                                    hashSet5.add(model.d[i35][i36]);
+                                                }
+                                            }
+                                            z11 = hashSet5.equals(new HashSet(selectedCells));
+                                        }
+                                        z12 = z11 || (model.b == 1 && model.c == 1);
+                                        if (z4 || z11) {
+                                            c3 = 1;
+                                        } else {
+                                            HashSet hashSet6 = new HashSet();
+                                            Iterator<TL_iv.pageTableCell> it8 = selectedCells.iterator();
+                                            while (it8.hasNext()) {
+                                                hashSet6.add(Integer.valueOf(model.b(it8.next())));
+                                            }
+                                            c3 = 1;
+                                            if (hashSet6.size() < model.b) {
+                                                i12 = 1;
+                                                if (z10 && !z11) {
+                                                    hashSet3 = new HashSet();
+                                                    it5 = selectedCells.iterator();
+                                                    while (it5.hasNext()) {
+                                                        hashSet3.add(Integer.valueOf(model.a(it5.next())));
+                                                    }
+                                                    if (hashSet3.size() < model.c) {
+                                                        i13 = 1;
+                                                        z13 = !z12 && z10 && model.c < MessagesController.getInstance(this.c3).config.richMessageMaxTableCols.get();
+                                                        z14 = !z12 && z4;
+                                                        o70Var = this.g4;
+                                                        if (o70Var != null) {
+                                                            linkedHashSet = linkedHashSet2;
+                                                            this.g4 = null;
+                                                            o70Var.u();
+                                                        } else {
+                                                            linkedHashSet = linkedHashSet2;
+                                                        }
+                                                        dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+                                                        FrameLayout P42 = P4(i5Var2, false);
+                                                        i14 = i13;
+                                                        iArr = new int[2];
+                                                        P42.getLocationOnScreen(iArr);
+                                                        if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+                                                            P4 = P42;
+                                                            z15 = true;
+                                                        } else {
+                                                            z15 = true;
+                                                            P4 = P4(i5Var2, true);
+                                                        }
+                                                        final o70 C = this.e3.C(P4);
+                                                        C.s = 0;
+                                                        C.t = false;
+                                                        C.Z = z15;
+                                                        LinearLayout linearLayout = new LinearLayout(getContext());
+                                                        linearLayout.setMinimumWidth(AndroidUtilities.dp(208.0f));
+                                                        linearLayout.setOrientation(1);
+                                                        TextView textView = new TextView(getContext());
+                                                        textView.setText(LocaleController.getString(R.string.ArticleAlignment));
+                                                        i15 = i10;
+                                                        textView.setTextSize(1, 12.0f);
+                                                        textView.setGravity(17);
+                                                        textView.setTextColor(j6.v0(j6.y6, this.m2));
+                                                        linearLayout.addView(textView, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                                        LinearLayout linearLayout2 = new LinearLayout(getContext());
+                                                        i16 = i11;
+                                                        i17 = i12;
+                                                        linearLayout2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                                                        linearLayout2.setOrientation(0);
+                                                        linearLayout.addView(linearLayout2, b6.q(-2, -2, 17));
+                                                        Context context = getContext();
+                                                        int i37 = R.drawable.iv_align_horiz_left;
+                                                        f6 f6Var = this.d3;
+                                                        u1 u1Var = new u1(context, i37, f6Var);
+                                                        u1Var.e = 4;
+                                                        u1Var.e();
+                                                        u1Var.b();
+                                                        int i38 = j6.G8;
+                                                        u1Var.c(i38);
+                                                        boolean z19 = z4;
+                                                        linearLayout2.addView(u1Var, b6.n(32, 32));
+                                                        u1 u1Var2 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var);
+                                                        u1Var2.e = 4;
+                                                        u1Var2.e();
+                                                        u1Var2.b();
+                                                        u1Var2.c(i38);
+                                                        linearLayout2.addView(u1Var2, b6.n(32, 32));
+                                                        u1 u1Var3 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var);
+                                                        u1Var3.e = 4;
+                                                        u1Var3.e();
+                                                        u1Var3.b();
+                                                        u1Var3.c(i38);
+                                                        final u1[] u1VarArr = {u1Var, u1Var2, u1Var3};
+                                                        boolean z20 = z10;
+                                                        linearLayout2.addView(u1Var3, b6.n(32, 32));
+                                                        z16 = z11;
+                                                        linearLayout2.addView(new Space(getContext()), b6.n(8, 0));
+                                                        u1 u1Var4 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var);
+                                                        u1Var4.e = 4;
+                                                        u1Var4.e();
+                                                        u1Var4.b();
+                                                        u1Var4.c(i38);
+                                                        linearLayout2.addView(u1Var4, b6.n(32, 32));
+                                                        u1 u1Var5 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var);
+                                                        u1Var5.e = 4;
+                                                        u1Var5.e();
+                                                        u1Var5.b();
+                                                        u1Var5.c(i38);
+                                                        linearLayout2.addView(u1Var5, b6.n(32, 32));
+                                                        u1 u1Var6 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var);
+                                                        u1Var6.e = 4;
+                                                        u1Var6.e();
+                                                        u1Var6.b();
+                                                        u1Var6.c(i38);
+                                                        final u1[] u1VarArr2 = {u1Var4, u1Var5, u1Var6};
+                                                        linearLayout2.addView(u1Var6, b6.n(32, 32));
+                                                        C.q(linearLayout);
+                                                        it3 = linkedHashSet.iterator();
+                                                        int i39 = -1;
+                                                        while (true) {
+                                                            if (!it3.hasNext()) {
+                                                                break;
+                                                            }
+                                                            TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) it3.next();
+                                                            if (pagetablecell2 != null) {
+                                                                if (pagetablecell2.align_right) {
+                                                                    i25 = 2;
+                                                                } else if (pagetablecell2.align_center) {
+                                                                    i25 = 1;
+                                                                }
+                                                                if (i39 == -1) {
+                                                                    if (i39 != i25) {
+                                                                        i39 = -1;
+                                                                        break;
+                                                                    }
+                                                                } else {
+                                                                    i39 = i25;
+                                                                }
+                                                            }
+                                                            i25 = 0;
+                                                            if (i39 == -1) {
+                                                            }
+                                                        }
+                                                        it4 = linkedHashSet.iterator();
+                                                        int i40 = -1;
+                                                        while (true) {
+                                                            if (!it4.hasNext()) {
+                                                                i18 = i40;
+                                                                break;
+                                                            }
+                                                            TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) it4.next();
+                                                            if (pagetablecell3 != null) {
+                                                                if (pagetablecell3.valign_bottom) {
+                                                                    i24 = 2;
+                                                                } else if (pagetablecell3.valign_middle) {
+                                                                    i24 = 1;
+                                                                }
+                                                                if (i40 == -1) {
+                                                                    if (i40 != i24) {
+                                                                        i18 = -1;
+                                                                        break;
+                                                                    }
+                                                                } else {
+                                                                    i40 = i24;
+                                                                }
+                                                            }
+                                                            i24 = 0;
+                                                            if (i40 == -1) {
+                                                            }
+                                                        }
+                                                        i19 = 0;
+                                                        while (i19 < 3) {
+                                                            u1VarArr[i19].setSelected(i19 == i39);
+                                                            i19++;
+                                                        }
+                                                        i21 = 0;
+                                                        while (i21 < 3) {
+                                                            u1VarArr2[i21].setSelected(i21 == i18);
+                                                            i21++;
+                                                        }
+                                                        for (i22 = 0; i22 < 3; i22++) {
+                                                            final int i41 = 0;
+                                                            u1VarArr[i22].setOnClickListener(new View.OnClickListener() { // from class: vh.g2
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view) {
+                                                                    switch (i41) {
+                                                                        case 0:
+                                                                            i5 i5Var3 = i5Var2;
+                                                                            k5 k5Var = i5Var3.v;
+                                                                            Iterator it9 = i5Var3.E.iterator();
+                                                                            while (true) {
+                                                                                boolean hasNext = it9.hasNext();
+                                                                                int i42 = i22;
+                                                                                if (!hasNext) {
+                                                                                    k5Var.invalidate();
+                                                                                    y2 y2Var = i5Var3.B;
+                                                                                    if (y2Var != null && i5Var3.a != null) {
+                                                                                        y2Var.a();
+                                                                                    }
+                                                                                    int i43 = 0;
+                                                                                    while (i43 < 3) {
+                                                                                        u1VarArr[i43].setSelected(i43 == i42);
+                                                                                        i43++;
+                                                                                    }
+                                                                                    break;
+                                                                                } else {
+                                                                                    TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) it9.next();
+                                                                                    z5.k(pagetablecell4, i42);
+                                                                                    l5 m9 = k5Var.m(pagetablecell4);
+                                                                                    if (m9 != null && m9.b != null) {
+                                                                                        m9.a();
+                                                                                        m9.invalidate();
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            break;
+                                                                        default:
+                                                                            i5 i5Var4 = i5Var2;
+                                                                            k5 k5Var2 = i5Var4.v;
+                                                                            Iterator it10 = i5Var4.E.iterator();
+                                                                            while (true) {
+                                                                                boolean hasNext2 = it10.hasNext();
+                                                                                int i44 = i22;
+                                                                                if (!hasNext2) {
+                                                                                    k5Var2.invalidate();
+                                                                                    y2 y2Var2 = i5Var4.B;
+                                                                                    if (y2Var2 != null && i5Var4.a != null) {
+                                                                                        y2Var2.a();
+                                                                                    }
+                                                                                    int i45 = 0;
+                                                                                    while (i45 < 3) {
+                                                                                        u1VarArr[i45].setSelected(i45 == i44);
+                                                                                        i45++;
+                                                                                    }
+                                                                                    break;
+                                                                                } else {
+                                                                                    TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it10.next();
+                                                                                    z5.m(pagetablecell5, i44);
+                                                                                    l5 m10 = k5Var2.m(pagetablecell5);
+                                                                                    if (m10 != null && m10.b != null) {
+                                                                                        m10.a();
+                                                                                        m10.invalidate();
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            break;
+                                                                    }
+                                                                }
+                                                            });
+                                                        }
+                                                        i23 = 0;
+                                                        for (i20 = 3; i23 < i20; i20 = 3) {
+                                                            final int i42 = 1;
+                                                            u1VarArr2[i23].setOnClickListener(new View.OnClickListener() { // from class: vh.g2
+                                                                @Override // android.view.View.OnClickListener
+                                                                public final void onClick(View view) {
+                                                                    switch (i42) {
+                                                                        case 0:
+                                                                            i5 i5Var3 = i5Var2;
+                                                                            k5 k5Var = i5Var3.v;
+                                                                            Iterator it9 = i5Var3.E.iterator();
+                                                                            while (true) {
+                                                                                boolean hasNext = it9.hasNext();
+                                                                                int i422 = i23;
+                                                                                if (!hasNext) {
+                                                                                    k5Var.invalidate();
+                                                                                    y2 y2Var = i5Var3.B;
+                                                                                    if (y2Var != null && i5Var3.a != null) {
+                                                                                        y2Var.a();
+                                                                                    }
+                                                                                    int i43 = 0;
+                                                                                    while (i43 < 3) {
+                                                                                        u1VarArr2[i43].setSelected(i43 == i422);
+                                                                                        i43++;
+                                                                                    }
+                                                                                    break;
+                                                                                } else {
+                                                                                    TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) it9.next();
+                                                                                    z5.k(pagetablecell4, i422);
+                                                                                    l5 m9 = k5Var.m(pagetablecell4);
+                                                                                    if (m9 != null && m9.b != null) {
+                                                                                        m9.a();
+                                                                                        m9.invalidate();
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            break;
+                                                                        default:
+                                                                            i5 i5Var4 = i5Var2;
+                                                                            k5 k5Var2 = i5Var4.v;
+                                                                            Iterator it10 = i5Var4.E.iterator();
+                                                                            while (true) {
+                                                                                boolean hasNext2 = it10.hasNext();
+                                                                                int i44 = i23;
+                                                                                if (!hasNext2) {
+                                                                                    k5Var2.invalidate();
+                                                                                    y2 y2Var2 = i5Var4.B;
+                                                                                    if (y2Var2 != null && i5Var4.a != null) {
+                                                                                        y2Var2.a();
+                                                                                    }
+                                                                                    int i45 = 0;
+                                                                                    while (i45 < 3) {
+                                                                                        u1VarArr2[i45].setSelected(i45 == i44);
+                                                                                        i45++;
+                                                                                    }
+                                                                                    break;
+                                                                                } else {
+                                                                                    TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it10.next();
+                                                                                    z5.m(pagetablecell5, i44);
+                                                                                    l5 m10 = k5Var2.m(pagetablecell5);
+                                                                                    if (m10 != null && m10.b != null) {
+                                                                                        m10.a();
+                                                                                        m10.invalidate();
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            break;
+                                                                    }
+                                                                }
+                                                            });
+                                                            i23++;
+                                                        }
+                                                        C.o();
+                                                        C.S = 208;
+                                                        if (!linkedHashSet.isEmpty()) {
+                                                            Iterator it9 = linkedHashSet.iterator();
+                                                            while (it9.hasNext()) {
+                                                                if (!((TL_iv.pageTableCell) it9.next()).header) {
+                                                                }
+                                                            }
+                                                            z17 = true;
+                                                            if (!z17) {
+                                                                string = LocaleController.getString(R.string.ArticleRemoveHighlight);
+                                                            } else if (z16 || !(size <= 1 || z20 || z19)) {
+                                                                string = LocaleController.getString(R.string.ArticleHighlightCells);
+                                                            } else {
+                                                                string = LocaleController.getString(z20 ? R.string.ArticleHighlightColumn : z19 ? R.string.ArticleHighlightRow : R.string.ArticleHighlightCell);
+                                                            }
+                                                            C.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                                                            if (i15 != 0) {
+                                                                final int i43 = 2;
+                                                                C.c(R.drawable.iv_table_merge, LocaleController.getString(R.string.ArticleMergeCells), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i43) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i44 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i44 = Math.min(i44, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i45 = 0;
+                                                                                                for (int i46 = 0; i46 < z5Var.b; i46++) {
+                                                                                                    iArr2[i46] = i45;
+                                                                                                    if (!zArr[i46]) {
+                                                                                                        i45++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i45 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i47 = 0;
+                                                                                                    while (i47 < size2) {
+                                                                                                        Object obj = arrayList2.get(i47);
+                                                                                                        i47++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i48 = pagetablecell4.colspan;
+                                                                                                        if (i48 == 0) {
+                                                                                                            i48 = 1;
+                                                                                                        }
+                                                                                                        int i49 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i50 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i49 < 0) {
+                                                                                                                    i49 = i51;
+                                                                                                                }
+                                                                                                                i50++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i49 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i49], a10, i50, i48});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i45);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i44, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, false);
+                                                            }
+                                                            if (i16 != 0) {
+                                                                final int i44 = 3;
+                                                                C.c(R.drawable.iv_table_unmerge, LocaleController.getString(R.string.ArticleSplitCells), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i44) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i45 = 0;
+                                                                                                for (int i46 = 0; i46 < z5Var.b; i46++) {
+                                                                                                    iArr2[i46] = i45;
+                                                                                                    if (!zArr[i46]) {
+                                                                                                        i45++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i45 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i47 = 0;
+                                                                                                    while (i47 < size2) {
+                                                                                                        Object obj = arrayList2.get(i47);
+                                                                                                        i47++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i48 = pagetablecell4.colspan;
+                                                                                                        if (i48 == 0) {
+                                                                                                            i48 = 1;
+                                                                                                        }
+                                                                                                        int i49 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i50 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i49 < 0) {
+                                                                                                                    i49 = i51;
+                                                                                                                }
+                                                                                                                i50++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i49 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i49], a10, i50, i48});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i45);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, false);
+                                                            }
+                                                            if (z13) {
+                                                                final int i45 = 4;
+                                                                C.c(R.drawable.iv_table_insert_left, LocaleController.getString(R.string.ArticleInsertLeft), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i45) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i46 = 0; i46 < z5Var.b; i46++) {
+                                                                                                    iArr2[i46] = i452;
+                                                                                                    if (!zArr[i46]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i47 = 0;
+                                                                                                    while (i47 < size2) {
+                                                                                                        Object obj = arrayList2.get(i47);
+                                                                                                        i47++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i48 = pagetablecell4.colspan;
+                                                                                                        if (i48 == 0) {
+                                                                                                            i48 = 1;
+                                                                                                        }
+                                                                                                        int i49 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i50 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i49 < 0) {
+                                                                                                                    i49 = i51;
+                                                                                                                }
+                                                                                                                i50++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i49 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i49], a10, i50, i48});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, false);
+                                                                final int i46 = 5;
+                                                                C.c(R.drawable.iv_table_insert_right, LocaleController.getString(R.string.ArticleInsertRight), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i46) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i462 = 0; i462 < z5Var.b; i462++) {
+                                                                                                    iArr2[i462] = i452;
+                                                                                                    if (!zArr[i462]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i47 = 0;
+                                                                                                    while (i47 < size2) {
+                                                                                                        Object obj = arrayList2.get(i47);
+                                                                                                        i47++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i48 = pagetablecell4.colspan;
+                                                                                                        if (i48 == 0) {
+                                                                                                            i48 = 1;
+                                                                                                        }
+                                                                                                        int i49 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i50 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i49 < 0) {
+                                                                                                                    i49 = i51;
+                                                                                                                }
+                                                                                                                i50++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i49 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i49], a10, i50, i48});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, false);
+                                                            }
+                                                            if (z14) {
+                                                                final int i47 = 6;
+                                                                C.c(R.drawable.iv_table_insert_top, LocaleController.getString(R.string.ArticleInsertAbove), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i47) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i462 = 0; i462 < z5Var.b; i462++) {
+                                                                                                    iArr2[i462] = i452;
+                                                                                                    if (!zArr[i462]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i472 = 0;
+                                                                                                    while (i472 < size2) {
+                                                                                                        Object obj = arrayList2.get(i472);
+                                                                                                        i472++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i48 = pagetablecell4.colspan;
+                                                                                                        if (i48 == 0) {
+                                                                                                            i48 = 1;
+                                                                                                        }
+                                                                                                        int i49 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i50 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i49 < 0) {
+                                                                                                                    i49 = i51;
+                                                                                                                }
+                                                                                                                i50++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i49 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i49], a10, i50, i48});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, false);
+                                                                final int i48 = 7;
+                                                                C.c(R.drawable.iv_table_insert_bottom, LocaleController.getString(R.string.ArticleInsertBelow), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i48) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i462 = 0; i462 < z5Var.b; i462++) {
+                                                                                                    iArr2[i462] = i452;
+                                                                                                    if (!zArr[i462]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i472 = 0;
+                                                                                                    while (i472 < size2) {
+                                                                                                        Object obj = arrayList2.get(i472);
+                                                                                                        i472++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i482 = pagetablecell4.colspan;
+                                                                                                        if (i482 == 0) {
+                                                                                                            i482 = 1;
+                                                                                                        }
+                                                                                                        int i49 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i50 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i49 < 0) {
+                                                                                                                    i49 = i51;
+                                                                                                                }
+                                                                                                                i50++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i49 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i49], a10, i50, i482});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, false);
+                                                            }
+                                                            if (i14 == 0) {
+                                                                int i49 = R.drawable.iv_table_remove;
+                                                                String string2 = LocaleController.getString(R.string.ArticleDeleteColumn);
+                                                                final int i50 = 8;
+                                                                Runnable runnable = new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i50) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i462 = 0; i462 < z5Var.b; i462++) {
+                                                                                                    iArr2[i462] = i452;
+                                                                                                    if (!zArr[i462]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i472 = 0;
+                                                                                                    while (i472 < size2) {
+                                                                                                        Object obj = arrayList2.get(i472);
+                                                                                                        i472++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i482 = pagetablecell4.colspan;
+                                                                                                        if (i482 == 0) {
+                                                                                                            i482 = 1;
+                                                                                                        }
+                                                                                                        int i492 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i502 = 0;
+                                                                                                        for (int i51 = b13; i51 < b13 + o11 && i51 < z5Var.b; i51++) {
+                                                                                                            if (!zArr[i51]) {
+                                                                                                                if (i492 < 0) {
+                                                                                                                    i492 = i51;
+                                                                                                                }
+                                                                                                                i502++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i492 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i492], a10, i502, i482});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                };
+                                                                r62 = 1;
+                                                                C.c(i49, string2, runnable, true);
+                                                            } else {
+                                                                r62 = 1;
+                                                            }
+                                                            if (i17 != 0) {
+                                                                final int i51 = 0;
+                                                                C.c(R.drawable.iv_table_remove, LocaleController.getString(R.string.ArticleDeleteRow), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (i51) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i462 = 0; i462 < z5Var.b; i462++) {
+                                                                                                    iArr2[i462] = i452;
+                                                                                                    if (!zArr[i462]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i472 = 0;
+                                                                                                    while (i472 < size2) {
+                                                                                                        Object obj = arrayList2.get(i472);
+                                                                                                        i472++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i482 = pagetablecell4.colspan;
+                                                                                                        if (i482 == 0) {
+                                                                                                            i482 = 1;
+                                                                                                        }
+                                                                                                        int i492 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i502 = 0;
+                                                                                                        for (int i512 = b13; i512 < b13 + o11 && i512 < z5Var.b; i512++) {
+                                                                                                            if (!zArr[i512]) {
+                                                                                                                if (i492 < 0) {
+                                                                                                                    i492 = i512;
+                                                                                                                }
+                                                                                                                i502++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i492 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i492], a10, i502, i482});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, r62);
+                                                            }
+                                                            if (z16) {
+                                                                C.c(R.drawable.iv_table_remove, LocaleController.getString(R.string.ArticleDeleteTable), new Runnable(this) { // from class: vh.h2
+                                                                    public final /* synthetic */ r3 b;
+
+                                                                    {
+                                                                        this.b = this;
+                                                                    }
+
+                                                                    /* JADX WARN: Code restructure failed: missing block: B:93:0x016b, code lost:
+                                                                    
+                                                                        if (r5 <= 1) goto L84;
+                                                                     */
+                                                                    @Override // java.lang.Runnable
+                                                                    /*
+                                                                        Code decompiled incorrectly, please refer to instructions dump.
+                                                                    */
+                                                                    public final void run() {
+                                                                        r3 r3Var;
+                                                                        boolean z21;
+                                                                        int b11;
+                                                                        ArrayList arrayList;
+                                                                        r3 r3Var2;
+                                                                        boolean z22;
+                                                                        switch (r62) {
+                                                                            case 0:
+                                                                                r3 r3Var3 = this.b;
+                                                                                r3Var3.getClass();
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet3 = i5Var3.E;
+                                                                                if (i5Var3.C == null || linkedHashSet3.isEmpty()) {
+                                                                                    r3Var = r3Var3;
+                                                                                } else {
+                                                                                    HashSet hashSet7 = new HashSet();
+                                                                                    Iterator it10 = linkedHashSet3.iterator();
+                                                                                    int i442 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it10.hasNext()) {
+                                                                                        int b12 = i5Var3.C.b((TL_iv.pageTableCell) it10.next());
+                                                                                        hashSet7.add(Integer.valueOf(b12));
+                                                                                        i442 = Math.min(i442, b12);
+                                                                                    }
+                                                                                    linkedHashSet3.clear();
+                                                                                    z5 z5Var = i5Var3.C;
+                                                                                    z5Var.getClass();
+                                                                                    if (hashSet7.isEmpty()) {
+                                                                                        r3Var = r3Var3;
+                                                                                        z21 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr = new boolean[z5Var.b];
+                                                                                        Iterator it11 = hashSet7.iterator();
+                                                                                        while (true) {
+                                                                                            z21 = true;
+                                                                                            if (it11.hasNext()) {
+                                                                                                int intValue3 = ((Integer) it11.next()).intValue();
+                                                                                                if (intValue3 >= 0 && intValue3 < z5Var.b) {
+                                                                                                    zArr[intValue3] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr2 = new int[z5Var.b];
+                                                                                                int i452 = 0;
+                                                                                                for (int i462 = 0; i462 < z5Var.b; i462++) {
+                                                                                                    iArr2[i462] = i452;
+                                                                                                    if (!zArr[i462]) {
+                                                                                                        i452++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i452 == 0) {
+                                                                                                    z5Var.a.rows.clear();
+                                                                                                    z5Var.i();
+                                                                                                    r3Var = r3Var3;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap = new IdentityHashMap();
+                                                                                                    ArrayList arrayList2 = z5Var.g;
+                                                                                                    int size2 = arrayList2.size();
+                                                                                                    int i472 = 0;
+                                                                                                    while (i472 < size2) {
+                                                                                                        Object obj = arrayList2.get(i472);
+                                                                                                        i472++;
+                                                                                                        TL_iv.pageTableCell pagetablecell4 = (TL_iv.pageTableCell) obj;
+                                                                                                        int b13 = z5Var.b(pagetablecell4);
+                                                                                                        int a10 = z5Var.a(pagetablecell4);
+                                                                                                        int o11 = z5.o(pagetablecell4);
+                                                                                                        int i482 = pagetablecell4.colspan;
+                                                                                                        if (i482 == 0) {
+                                                                                                            i482 = 1;
+                                                                                                        }
+                                                                                                        int i492 = -1;
+                                                                                                        r3 r3Var4 = r3Var3;
+                                                                                                        int[] iArr3 = iArr2;
+                                                                                                        int i502 = 0;
+                                                                                                        for (int i512 = b13; i512 < b13 + o11 && i512 < z5Var.b; i512++) {
+                                                                                                            if (!zArr[i512]) {
+                                                                                                                if (i492 < 0) {
+                                                                                                                    i492 = i512;
+                                                                                                                }
+                                                                                                                i502++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i492 >= 0) {
+                                                                                                            identityHashMap.put(pagetablecell4, new int[]{iArr3[i492], a10, i502, i482});
+                                                                                                        }
+                                                                                                        r3Var3 = r3Var4;
+                                                                                                        iArr2 = iArr3;
+                                                                                                    }
+                                                                                                    r3Var = r3Var3;
+                                                                                                    z5Var.j(identityHashMap, i452);
+                                                                                                    z5Var.i();
+                                                                                                    z21 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var3.v();
+                                                                                    if (z21) {
+                                                                                        i5Var3.q(i442, 0);
+                                                                                    }
+                                                                                }
+                                                                                r3Var.M2();
+                                                                                break;
+                                                                            case 1:
+                                                                                r3 r3Var5 = this.b;
+                                                                                r3Var5.getClass();
+                                                                                a row = i5Var2.getRow();
+                                                                                r3Var5.M2();
+                                                                                if (row != null) {
+                                                                                    c2 c2Var = r3Var5.G3;
+                                                                                    if (c2Var != null) {
+                                                                                        c2Var.d();
+                                                                                    }
+                                                                                    r3Var5.r4(row);
+                                                                                    c2 c2Var2 = r3Var5.G3;
+                                                                                    if (c2Var2 != null) {
+                                                                                        c2Var2.h();
+                                                                                    }
+                                                                                    p3 p3Var = r3Var5.e3;
+                                                                                    if (p3Var != null) {
+                                                                                        p3Var.onContentChanged();
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                break;
+                                                                            case 2:
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet4 = i5Var4.E;
+                                                                                if (i5Var4.C != null && linkedHashSet4.size() >= 2) {
+                                                                                    HashSet hashSet8 = new HashSet(linkedHashSet4);
+                                                                                    Iterator it12 = hashSet8.iterator();
+                                                                                    int i52 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i53 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    int i54 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it12.hasNext()) {
+                                                                                        TL_iv.pageTableCell pagetablecell5 = (TL_iv.pageTableCell) it12.next();
+                                                                                        i53 = Math.min(i53, i5Var4.C.b(pagetablecell5));
+                                                                                        i54 = Math.min(i54, i5Var4.C.a(pagetablecell5));
+                                                                                    }
+                                                                                    linkedHashSet4.clear();
+                                                                                    z5 z5Var2 = i5Var4.C;
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var2.a;
+                                                                                    if (hashSet8.size() >= 2) {
+                                                                                        Iterator it13 = hashSet8.iterator();
+                                                                                        int i55 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                        int i56 = -1;
+                                                                                        int i57 = -1;
+                                                                                        while (it13.hasNext()) {
+                                                                                            TL_iv.pageTableCell pagetablecell6 = (TL_iv.pageTableCell) it13.next();
+                                                                                            int b14 = z5Var2.b(pagetablecell6);
+                                                                                            int a11 = z5Var2.a(pagetablecell6);
+                                                                                            int o12 = z5.o(pagetablecell6);
+                                                                                            int i58 = pagetablecell6.colspan;
+                                                                                            if (i58 == 0) {
+                                                                                                i58 = 1;
+                                                                                            }
+                                                                                            i52 = Math.min(i52, b14);
+                                                                                            i55 = Math.min(i55, a11);
+                                                                                            i56 = Math.max(i56, (b14 + o12) - 1);
+                                                                                            i57 = Math.max(i57, (a11 + i58) - 1);
+                                                                                        }
+                                                                                        HashSet hashSet9 = new HashSet();
+                                                                                        int i59 = i52;
+                                                                                        while (true) {
+                                                                                            if (i59 <= i56) {
+                                                                                                for (int i60 = i55; i60 <= i57; i60++) {
+                                                                                                    if (i59 >= 0 && i60 >= 0 && i59 < z5Var2.b && i60 < z5Var2.c) {
+                                                                                                        hashSet9.add(z5Var2.d[i59][i60]);
+                                                                                                    }
+                                                                                                }
+                                                                                                i59++;
+                                                                                            } else if (hashSet9.equals(new HashSet(hashSet8))) {
+                                                                                                StringBuilder sb = new StringBuilder();
+                                                                                                ArrayList arrayList3 = new ArrayList(hashSet9);
+                                                                                                Collections.sort(arrayList3, new d4.t(z5Var2, 6));
+                                                                                                int size3 = arrayList3.size();
+                                                                                                int i61 = 0;
+                                                                                                while (i61 < size3) {
+                                                                                                    Object obj2 = arrayList3.get(i61);
+                                                                                                    i61++;
+                                                                                                    String g10 = z5.g((TL_iv.pageTableCell) obj2);
+                                                                                                    if (g10.isEmpty()) {
+                                                                                                        arrayList = arrayList3;
+                                                                                                    } else {
+                                                                                                        if (sb.length() > 0) {
+                                                                                                            arrayList = arrayList3;
+                                                                                                            sb.append("\n");
+                                                                                                        } else {
+                                                                                                            arrayList = arrayList3;
+                                                                                                        }
+                                                                                                        sb.append(g10);
+                                                                                                    }
+                                                                                                    arrayList3 = arrayList;
+                                                                                                }
+                                                                                                TL_iv.pageTableCell pagetablecell7 = z5Var2.d[i52][i55];
+                                                                                                int i62 = (i57 - i55) + 1;
+                                                                                                int i63 = (i56 - i52) + 1;
+                                                                                                if (i62 <= 1) {
+                                                                                                    i62 = 0;
+                                                                                                }
+                                                                                                pagetablecell7.colspan = i62;
+                                                                                                int i64 = i63 > 1 ? i63 : 0;
+                                                                                                pagetablecell7.rowspan = i64;
+                                                                                                int i65 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i62 > 0 ? i65 | 2 : i65 & (-3);
+                                                                                                int i66 = pagetablecell7.flags;
+                                                                                                pagetablecell7.flags = i64 > 0 ? i66 | 4 : i66 & (-5);
+                                                                                                z5.c(pagetablecell7, sb.toString());
+                                                                                                Iterator it14 = hashSet9.iterator();
+                                                                                                while (it14.hasNext()) {
+                                                                                                    TL_iv.pageTableCell pagetablecell8 = (TL_iv.pageTableCell) it14.next();
+                                                                                                    if (pagetablecell8 != pagetablecell7 && (b11 = z5Var2.b(pagetablecell8)) >= 0 && b11 < pageblocktable2.rows.size()) {
+                                                                                                        pageblocktable2.rows.get(b11).cells.remove(pagetablecell8);
+                                                                                                    }
+                                                                                                }
+                                                                                                z5Var2.i();
+                                                                                                i5Var4.v();
+                                                                                                i5Var4.v.invalidate();
+                                                                                                i5Var4.q(i53, i54);
+                                                                                                i5Var4.t();
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    linkedHashSet4.addAll(hashSet8);
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 3:
+                                                                                i5 i5Var5 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet5 = i5Var5.E;
+                                                                                if (i5Var5.C != null && linkedHashSet5.size() == 1) {
+                                                                                    TL_iv.pageTableCell pagetablecell9 = (TL_iv.pageTableCell) linkedHashSet5.iterator().next();
+                                                                                    if (z5.n(pagetablecell9) <= 1) {
+                                                                                        int i67 = pagetablecell9.rowspan;
+                                                                                        if (i67 == 0) {
+                                                                                            i67 = 1;
+                                                                                            break;
+                                                                                        }
+                                                                                    }
+                                                                                    int b15 = i5Var5.C.b(pagetablecell9);
+                                                                                    int a12 = i5Var5.C.a(pagetablecell9);
+                                                                                    linkedHashSet5.clear();
+                                                                                    if (i5Var5.C.p(pagetablecell9)) {
+                                                                                        i5Var5.v();
+                                                                                        i5Var5.v.invalidate();
+                                                                                        i5Var5.q(b15, a12);
+                                                                                        i5Var5.t();
+                                                                                    } else {
+                                                                                        linkedHashSet5.add(pagetablecell9);
+                                                                                    }
+                                                                                }
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 4:
+                                                                                i5Var2.i(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 5:
+                                                                                i5Var2.i(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 6:
+                                                                                i5Var2.j(true);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            case 7:
+                                                                                i5Var2.j(false);
+                                                                                this.b.M2();
+                                                                                break;
+                                                                            default:
+                                                                                r3 r3Var6 = this.b;
+                                                                                r3Var6.getClass();
+                                                                                i5 i5Var6 = i5Var2;
+                                                                                LinkedHashSet linkedHashSet6 = i5Var6.E;
+                                                                                if (i5Var6.C == null || linkedHashSet6.isEmpty()) {
+                                                                                    r3Var2 = r3Var6;
+                                                                                } else {
+                                                                                    HashSet hashSet10 = new HashSet();
+                                                                                    Iterator it15 = linkedHashSet6.iterator();
+                                                                                    int i68 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                                                                    while (it15.hasNext()) {
+                                                                                        int a13 = i5Var6.C.a((TL_iv.pageTableCell) it15.next());
+                                                                                        hashSet10.add(Integer.valueOf(a13));
+                                                                                        i68 = Math.min(i68, a13);
+                                                                                    }
+                                                                                    linkedHashSet6.clear();
+                                                                                    z5 z5Var3 = i5Var6.C;
+                                                                                    z5Var3.getClass();
+                                                                                    if (hashSet10.isEmpty()) {
+                                                                                        r3Var2 = r3Var6;
+                                                                                        z22 = false;
+                                                                                    } else {
+                                                                                        boolean[] zArr2 = new boolean[z5Var3.c];
+                                                                                        Iterator it16 = hashSet10.iterator();
+                                                                                        while (true) {
+                                                                                            z22 = true;
+                                                                                            if (it16.hasNext()) {
+                                                                                                int intValue4 = ((Integer) it16.next()).intValue();
+                                                                                                if (intValue4 >= 0 && intValue4 < z5Var3.c) {
+                                                                                                    zArr2[intValue4] = true;
+                                                                                                }
+                                                                                            } else {
+                                                                                                int[] iArr4 = new int[z5Var3.c];
+                                                                                                int i69 = 0;
+                                                                                                for (int i70 = 0; i70 < z5Var3.c; i70++) {
+                                                                                                    iArr4[i70] = i69;
+                                                                                                    if (!zArr2[i70]) {
+                                                                                                        i69++;
+                                                                                                    }
+                                                                                                }
+                                                                                                if (i69 == 0) {
+                                                                                                    z5Var3.a.rows.clear();
+                                                                                                    z5Var3.i();
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                } else {
+                                                                                                    IdentityHashMap identityHashMap2 = new IdentityHashMap();
+                                                                                                    ArrayList arrayList4 = z5Var3.g;
+                                                                                                    int size4 = arrayList4.size();
+                                                                                                    int i71 = 0;
+                                                                                                    while (i71 < size4) {
+                                                                                                        Object obj3 = arrayList4.get(i71);
+                                                                                                        i71++;
+                                                                                                        TL_iv.pageTableCell pagetablecell10 = (TL_iv.pageTableCell) obj3;
+                                                                                                        int b16 = z5Var3.b(pagetablecell10);
+                                                                                                        int a14 = z5Var3.a(pagetablecell10);
+                                                                                                        int o13 = z5.o(pagetablecell10);
+                                                                                                        int i72 = pagetablecell10.colspan;
+                                                                                                        if (i72 == 0) {
+                                                                                                            i72 = 1;
+                                                                                                        }
+                                                                                                        int i73 = -1;
+                                                                                                        r3 r3Var7 = r3Var6;
+                                                                                                        int[] iArr5 = iArr4;
+                                                                                                        boolean[] zArr3 = zArr2;
+                                                                                                        int i74 = 0;
+                                                                                                        for (int i75 = a14; i75 < a14 + i72 && i75 < z5Var3.c; i75++) {
+                                                                                                            if (!zArr3[i75]) {
+                                                                                                                if (i73 < 0) {
+                                                                                                                    i73 = i75;
+                                                                                                                }
+                                                                                                                i74++;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        if (i73 >= 0) {
+                                                                                                            identityHashMap2.put(pagetablecell10, new int[]{b16, iArr5[i73], o13, i74});
+                                                                                                        }
+                                                                                                        r3Var6 = r3Var7;
+                                                                                                        iArr4 = iArr5;
+                                                                                                        zArr2 = zArr3;
+                                                                                                    }
+                                                                                                    r3Var2 = r3Var6;
+                                                                                                    z5Var3.j(identityHashMap2, z5Var3.b);
+                                                                                                    z5Var3.i();
+                                                                                                    z22 = true;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    i5Var6.v();
+                                                                                    if (z22) {
+                                                                                        i5Var6.q(0, i68);
+                                                                                    }
+                                                                                }
+                                                                                r3Var2.M2();
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, r62);
+                                                                C.o();
+                                                                final int i52 = 0;
+                                                                C.i(new Runnable() { // from class: vh.i2
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        switch (i52) {
+                                                                            case 0:
+                                                                                C.n0 = true;
+                                                                                boolean z21 = !model.a.bordered;
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                z5 z5Var = i5Var3.C;
+                                                                                if (z5Var != null) {
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var.a;
+                                                                                    if (pageblocktable2.bordered != z21) {
+                                                                                        pageblocktable2.bordered = z21;
+                                                                                        i5Var3.v.invalidate();
+                                                                                        y2 y2Var = i5Var3.B;
+                                                                                        if (y2Var != null && i5Var3.a != null) {
+                                                                                            y2Var.a();
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                r4[0].setChecked(z21);
+                                                                                break;
+                                                                            default:
+                                                                                C.n0 = true;
+                                                                                boolean z22 = !model.a.compact;
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                z5 z5Var2 = i5Var4.C;
+                                                                                if (z5Var2 != null) {
+                                                                                    TL_iv.pageBlockTable pageblocktable3 = z5Var2.a;
+                                                                                    if (pageblocktable3.compact != z22) {
+                                                                                        pageblocktable3.compact = z22;
+                                                                                        k5 k5Var = i5Var4.v;
+                                                                                        if (k5Var.a != null) {
+                                                                                            for (int i53 = 0; i53 < k5Var.getChildCount(); i53++) {
+                                                                                                View childAt = k5Var.getChildAt(i53);
+                                                                                                if (childAt instanceof l5) {
+                                                                                                    ((l5) childAt).setCompact(k5Var.a.a.compact);
+                                                                                                }
+                                                                                            }
+                                                                                            k5Var.requestLayout();
+                                                                                            k5Var.invalidate();
+                                                                                        }
+                                                                                        i5Var4.w.requestLayout();
+                                                                                        i5Var4.requestLayout();
+                                                                                        y2 y2Var2 = i5Var4.B;
+                                                                                        if (y2Var2 != null && i5Var4.a != null) {
+                                                                                            y2Var2.a();
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                r4[1].setChecked(z22);
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, LocaleController.getString(R.string.ArticleTableBordered), pageblocktable.bordered);
+                                                                final int i53 = 1;
+                                                                i5Var2 = i5Var;
+                                                                C.i(new Runnable() { // from class: vh.i2
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        switch (i53) {
+                                                                            case 0:
+                                                                                C.n0 = true;
+                                                                                boolean z21 = !model.a.bordered;
+                                                                                i5 i5Var3 = i5Var2;
+                                                                                z5 z5Var = i5Var3.C;
+                                                                                if (z5Var != null) {
+                                                                                    TL_iv.pageBlockTable pageblocktable2 = z5Var.a;
+                                                                                    if (pageblocktable2.bordered != z21) {
+                                                                                        pageblocktable2.bordered = z21;
+                                                                                        i5Var3.v.invalidate();
+                                                                                        y2 y2Var = i5Var3.B;
+                                                                                        if (y2Var != null && i5Var3.a != null) {
+                                                                                            y2Var.a();
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                r4[0].setChecked(z21);
+                                                                                break;
+                                                                            default:
+                                                                                C.n0 = true;
+                                                                                boolean z22 = !model.a.compact;
+                                                                                i5 i5Var4 = i5Var2;
+                                                                                z5 z5Var2 = i5Var4.C;
+                                                                                if (z5Var2 != null) {
+                                                                                    TL_iv.pageBlockTable pageblocktable3 = z5Var2.a;
+                                                                                    if (pageblocktable3.compact != z22) {
+                                                                                        pageblocktable3.compact = z22;
+                                                                                        k5 k5Var = i5Var4.v;
+                                                                                        if (k5Var.a != null) {
+                                                                                            for (int i532 = 0; i532 < k5Var.getChildCount(); i532++) {
+                                                                                                View childAt = k5Var.getChildAt(i532);
+                                                                                                if (childAt instanceof l5) {
+                                                                                                    ((l5) childAt).setCompact(k5Var.a.a.compact);
+                                                                                                }
+                                                                                            }
+                                                                                            k5Var.requestLayout();
+                                                                                            k5Var.invalidate();
+                                                                                        }
+                                                                                        i5Var4.w.requestLayout();
+                                                                                        i5Var4.requestLayout();
+                                                                                        y2 y2Var2 = i5Var4.B;
+                                                                                        if (y2Var2 != null && i5Var4.a != null) {
+                                                                                            y2Var2.a();
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                r4[1].setChecked(z22);
+                                                                                break;
+                                                                        }
+                                                                    }
+                                                                }, LocaleController.getString(R.string.ArticleTableCompact), pageblocktable.compact);
+                                                                final org.telegram.ui.ActionBar.g1[] g1VarArr = {C.y(), C.y()};
+                                                            }
+                                                            C.p = new tf.h1(this, C, i5Var2, 10);
+                                                            this.g4 = C;
+                                                            C.Z();
+                                                        }
+                                                        z17 = false;
+                                                        if (!z17) {
+                                                        }
+                                                        C.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                                                        if (i15 != 0) {
+                                                        }
+                                                        if (i16 != 0) {
+                                                        }
+                                                        if (z13) {
+                                                        }
+                                                        if (z14) {
+                                                        }
+                                                        if (i14 == 0) {
+                                                        }
+                                                        if (i17 != 0) {
+                                                        }
+                                                        if (z16) {
+                                                        }
+                                                        C.p = new tf.h1(this, C, i5Var2, 10);
+                                                        this.g4 = C;
+                                                        C.Z();
+                                                    }
+                                                }
+                                                i13 = 0;
+                                                if (z12) {
+                                                }
+                                                if (z12) {
+                                                }
+                                                o70Var = this.g4;
+                                                if (o70Var != null) {
+                                                }
+                                                dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+                                                FrameLayout P422 = P4(i5Var2, false);
+                                                i14 = i13;
+                                                iArr = new int[2];
+                                                P422.getLocationOnScreen(iArr);
+                                                if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+                                                }
+                                                final o70 C2 = this.e3.C(P4);
+                                                C2.s = 0;
+                                                C2.t = false;
+                                                C2.Z = z15;
+                                                LinearLayout linearLayout3 = new LinearLayout(getContext());
+                                                linearLayout3.setMinimumWidth(AndroidUtilities.dp(208.0f));
+                                                linearLayout3.setOrientation(1);
+                                                TextView textView2 = new TextView(getContext());
+                                                textView2.setText(LocaleController.getString(R.string.ArticleAlignment));
+                                                i15 = i10;
+                                                textView2.setTextSize(1, 12.0f);
+                                                textView2.setGravity(17);
+                                                textView2.setTextColor(j6.v0(j6.y6, this.m2));
+                                                linearLayout3.addView(textView2, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                                LinearLayout linearLayout22 = new LinearLayout(getContext());
+                                                i16 = i11;
+                                                i17 = i12;
+                                                linearLayout22.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                                                linearLayout22.setOrientation(0);
+                                                linearLayout3.addView(linearLayout22, b6.q(-2, -2, 17));
+                                                Context context2 = getContext();
+                                                int i372 = R.drawable.iv_align_horiz_left;
+                                                f6 f6Var2 = this.d3;
+                                                u1 u1Var7 = new u1(context2, i372, f6Var2);
+                                                u1Var7.e = 4;
+                                                u1Var7.e();
+                                                u1Var7.b();
+                                                int i382 = j6.G8;
+                                                u1Var7.c(i382);
+                                                boolean z192 = z4;
+                                                linearLayout22.addView(u1Var7, b6.n(32, 32));
+                                                u1 u1Var22 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var2);
+                                                u1Var22.e = 4;
+                                                u1Var22.e();
+                                                u1Var22.b();
+                                                u1Var22.c(i382);
+                                                linearLayout22.addView(u1Var22, b6.n(32, 32));
+                                                u1 u1Var32 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var2);
+                                                u1Var32.e = 4;
+                                                u1Var32.e();
+                                                u1Var32.b();
+                                                u1Var32.c(i382);
+                                                final u1[] u1VarArr3 = {u1Var7, u1Var22, u1Var32};
+                                                boolean z202 = z10;
+                                                linearLayout22.addView(u1Var32, b6.n(32, 32));
+                                                z16 = z11;
+                                                linearLayout22.addView(new Space(getContext()), b6.n(8, 0));
+                                                u1 u1Var42 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var2);
+                                                u1Var42.e = 4;
+                                                u1Var42.e();
+                                                u1Var42.b();
+                                                u1Var42.c(i382);
+                                                linearLayout22.addView(u1Var42, b6.n(32, 32));
+                                                u1 u1Var52 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var2);
+                                                u1Var52.e = 4;
+                                                u1Var52.e();
+                                                u1Var52.b();
+                                                u1Var52.c(i382);
+                                                linearLayout22.addView(u1Var52, b6.n(32, 32));
+                                                u1 u1Var62 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var2);
+                                                u1Var62.e = 4;
+                                                u1Var62.e();
+                                                u1Var62.b();
+                                                u1Var62.c(i382);
+                                                final u1[] u1VarArr22 = {u1Var42, u1Var52, u1Var62};
+                                                linearLayout22.addView(u1Var62, b6.n(32, 32));
+                                                C2.q(linearLayout3);
+                                                it3 = linkedHashSet.iterator();
+                                                int i392 = -1;
+                                                while (true) {
+                                                    if (!it3.hasNext()) {
+                                                    }
+                                                }
+                                                it4 = linkedHashSet.iterator();
+                                                int i402 = -1;
+                                                while (true) {
+                                                    if (!it4.hasNext()) {
+                                                    }
+                                                }
+                                                i19 = 0;
+                                                while (i19 < 3) {
+                                                }
+                                                i21 = 0;
+                                                while (i21 < 3) {
+                                                }
+                                                while (i22 < 3) {
+                                                }
+                                                i23 = 0;
+                                                while (i23 < i20) {
+                                                }
+                                                C2.o();
+                                                C2.S = 208;
+                                                if (!linkedHashSet.isEmpty()) {
+                                                }
+                                                z17 = false;
+                                                if (!z17) {
+                                                }
+                                                C2.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                                                if (i15 != 0) {
+                                                }
+                                                if (i16 != 0) {
+                                                }
+                                                if (z13) {
+                                                }
+                                                if (z14) {
+                                                }
+                                                if (i14 == 0) {
+                                                }
+                                                if (i17 != 0) {
+                                                }
+                                                if (z16) {
+                                                }
+                                                C2.p = new tf.h1(this, C2, i5Var2, 10);
+                                                this.g4 = C2;
+                                                C2.Z();
+                                            }
+                                        }
+                                        i12 = 0;
+                                        if (z10) {
+                                            hashSet3 = new HashSet();
+                                            it5 = selectedCells.iterator();
+                                            while (it5.hasNext()) {
+                                            }
+                                            if (hashSet3.size() < model.c) {
+                                            }
+                                        }
+                                        i13 = 0;
+                                        if (z12) {
+                                        }
+                                        if (z12) {
+                                        }
+                                        o70Var = this.g4;
+                                        if (o70Var != null) {
+                                        }
+                                        dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+                                        FrameLayout P4222 = P4(i5Var2, false);
+                                        i14 = i13;
+                                        iArr = new int[2];
+                                        P4222.getLocationOnScreen(iArr);
+                                        if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+                                        }
+                                        final o70 C22 = this.e3.C(P4);
+                                        C22.s = 0;
+                                        C22.t = false;
+                                        C22.Z = z15;
+                                        LinearLayout linearLayout32 = new LinearLayout(getContext());
+                                        linearLayout32.setMinimumWidth(AndroidUtilities.dp(208.0f));
+                                        linearLayout32.setOrientation(1);
+                                        TextView textView22 = new TextView(getContext());
+                                        textView22.setText(LocaleController.getString(R.string.ArticleAlignment));
+                                        i15 = i10;
+                                        textView22.setTextSize(1, 12.0f);
+                                        textView22.setGravity(17);
+                                        textView22.setTextColor(j6.v0(j6.y6, this.m2));
+                                        linearLayout32.addView(textView22, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                        LinearLayout linearLayout222 = new LinearLayout(getContext());
+                                        i16 = i11;
+                                        i17 = i12;
+                                        linearLayout222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                                        linearLayout222.setOrientation(0);
+                                        linearLayout32.addView(linearLayout222, b6.q(-2, -2, 17));
+                                        Context context22 = getContext();
+                                        int i3722 = R.drawable.iv_align_horiz_left;
+                                        f6 f6Var22 = this.d3;
+                                        u1 u1Var72 = new u1(context22, i3722, f6Var22);
+                                        u1Var72.e = 4;
+                                        u1Var72.e();
+                                        u1Var72.b();
+                                        int i3822 = j6.G8;
+                                        u1Var72.c(i3822);
+                                        boolean z1922 = z4;
+                                        linearLayout222.addView(u1Var72, b6.n(32, 32));
+                                        u1 u1Var222 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var22);
+                                        u1Var222.e = 4;
+                                        u1Var222.e();
+                                        u1Var222.b();
+                                        u1Var222.c(i3822);
+                                        linearLayout222.addView(u1Var222, b6.n(32, 32));
+                                        u1 u1Var322 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var22);
+                                        u1Var322.e = 4;
+                                        u1Var322.e();
+                                        u1Var322.b();
+                                        u1Var322.c(i3822);
+                                        final u1[] u1VarArr32 = {u1Var72, u1Var222, u1Var322};
+                                        boolean z2022 = z10;
+                                        linearLayout222.addView(u1Var322, b6.n(32, 32));
+                                        z16 = z11;
+                                        linearLayout222.addView(new Space(getContext()), b6.n(8, 0));
+                                        u1 u1Var422 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var22);
+                                        u1Var422.e = 4;
+                                        u1Var422.e();
+                                        u1Var422.b();
+                                        u1Var422.c(i3822);
+                                        linearLayout222.addView(u1Var422, b6.n(32, 32));
+                                        u1 u1Var522 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var22);
+                                        u1Var522.e = 4;
+                                        u1Var522.e();
+                                        u1Var522.b();
+                                        u1Var522.c(i3822);
+                                        linearLayout222.addView(u1Var522, b6.n(32, 32));
+                                        u1 u1Var622 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var22);
+                                        u1Var622.e = 4;
+                                        u1Var622.e();
+                                        u1Var622.b();
+                                        u1Var622.c(i3822);
+                                        final u1[] u1VarArr222 = {u1Var422, u1Var522, u1Var622};
+                                        linearLayout222.addView(u1Var622, b6.n(32, 32));
+                                        C22.q(linearLayout32);
+                                        it3 = linkedHashSet.iterator();
+                                        int i3922 = -1;
+                                        while (true) {
+                                            if (!it3.hasNext()) {
+                                            }
+                                        }
+                                        it4 = linkedHashSet.iterator();
+                                        int i4022 = -1;
+                                        while (true) {
+                                            if (!it4.hasNext()) {
+                                            }
+                                        }
+                                        i19 = 0;
+                                        while (i19 < 3) {
+                                        }
+                                        i21 = 0;
+                                        while (i21 < 3) {
+                                        }
+                                        while (i22 < 3) {
+                                        }
+                                        i23 = 0;
+                                        while (i23 < i20) {
+                                        }
+                                        C22.o();
+                                        C22.S = 208;
+                                        if (!linkedHashSet.isEmpty()) {
+                                        }
+                                        z17 = false;
+                                        if (!z17) {
+                                        }
+                                        C22.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                                        if (i15 != 0) {
+                                        }
+                                        if (i16 != 0) {
+                                        }
+                                        if (z13) {
+                                        }
+                                        if (z14) {
+                                        }
+                                        if (i14 == 0) {
+                                        }
+                                        if (i17 != 0) {
+                                        }
+                                        if (z16) {
+                                        }
+                                        C22.p = new tf.h1(this, C22, i5Var2, 10);
+                                        this.g4 = C22;
+                                        C22.Z();
+                                    }
+                                    z10 = false;
+                                    if (selectedCells.isEmpty()) {
+                                    }
+                                    z11 = false;
+                                    if (z11) {
+                                    }
+                                    if (z4) {
+                                    }
+                                    c3 = 1;
+                                    i12 = 0;
+                                    if (z10) {
+                                    }
+                                    i13 = 0;
+                                    if (z12) {
+                                    }
+                                    if (z12) {
+                                    }
+                                    o70Var = this.g4;
+                                    if (o70Var != null) {
+                                    }
+                                    dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+                                    FrameLayout P42222 = P4(i5Var2, false);
+                                    i14 = i13;
+                                    iArr = new int[2];
+                                    P42222.getLocationOnScreen(iArr);
+                                    if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+                                    }
+                                    final o70 C222 = this.e3.C(P4);
+                                    C222.s = 0;
+                                    C222.t = false;
+                                    C222.Z = z15;
+                                    LinearLayout linearLayout322 = new LinearLayout(getContext());
+                                    linearLayout322.setMinimumWidth(AndroidUtilities.dp(208.0f));
+                                    linearLayout322.setOrientation(1);
+                                    TextView textView222 = new TextView(getContext());
+                                    textView222.setText(LocaleController.getString(R.string.ArticleAlignment));
+                                    i15 = i10;
+                                    textView222.setTextSize(1, 12.0f);
+                                    textView222.setGravity(17);
+                                    textView222.setTextColor(j6.v0(j6.y6, this.m2));
+                                    linearLayout322.addView(textView222, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                    LinearLayout linearLayout2222 = new LinearLayout(getContext());
+                                    i16 = i11;
+                                    i17 = i12;
+                                    linearLayout2222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                                    linearLayout2222.setOrientation(0);
+                                    linearLayout322.addView(linearLayout2222, b6.q(-2, -2, 17));
+                                    Context context222 = getContext();
+                                    int i37222 = R.drawable.iv_align_horiz_left;
+                                    f6 f6Var222 = this.d3;
+                                    u1 u1Var722 = new u1(context222, i37222, f6Var222);
+                                    u1Var722.e = 4;
+                                    u1Var722.e();
+                                    u1Var722.b();
+                                    int i38222 = j6.G8;
+                                    u1Var722.c(i38222);
+                                    boolean z19222 = z4;
+                                    linearLayout2222.addView(u1Var722, b6.n(32, 32));
+                                    u1 u1Var2222 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var222);
+                                    u1Var2222.e = 4;
+                                    u1Var2222.e();
+                                    u1Var2222.b();
+                                    u1Var2222.c(i38222);
+                                    linearLayout2222.addView(u1Var2222, b6.n(32, 32));
+                                    u1 u1Var3222 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var222);
+                                    u1Var3222.e = 4;
+                                    u1Var3222.e();
+                                    u1Var3222.b();
+                                    u1Var3222.c(i38222);
+                                    final u1[] u1VarArr322 = {u1Var722, u1Var2222, u1Var3222};
+                                    boolean z20222 = z10;
+                                    linearLayout2222.addView(u1Var3222, b6.n(32, 32));
+                                    z16 = z11;
+                                    linearLayout2222.addView(new Space(getContext()), b6.n(8, 0));
+                                    u1 u1Var4222 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var222);
+                                    u1Var4222.e = 4;
+                                    u1Var4222.e();
+                                    u1Var4222.b();
+                                    u1Var4222.c(i38222);
+                                    linearLayout2222.addView(u1Var4222, b6.n(32, 32));
+                                    u1 u1Var5222 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var222);
+                                    u1Var5222.e = 4;
+                                    u1Var5222.e();
+                                    u1Var5222.b();
+                                    u1Var5222.c(i38222);
+                                    linearLayout2222.addView(u1Var5222, b6.n(32, 32));
+                                    u1 u1Var6222 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var222);
+                                    u1Var6222.e = 4;
+                                    u1Var6222.e();
+                                    u1Var6222.b();
+                                    u1Var6222.c(i38222);
+                                    final u1[] u1VarArr2222 = {u1Var4222, u1Var5222, u1Var6222};
+                                    linearLayout2222.addView(u1Var6222, b6.n(32, 32));
+                                    C222.q(linearLayout322);
+                                    it3 = linkedHashSet.iterator();
+                                    int i39222 = -1;
+                                    while (true) {
+                                        if (!it3.hasNext()) {
+                                        }
+                                    }
+                                    it4 = linkedHashSet.iterator();
+                                    int i40222 = -1;
+                                    while (true) {
+                                        if (!it4.hasNext()) {
+                                        }
+                                    }
+                                    i19 = 0;
+                                    while (i19 < 3) {
+                                    }
+                                    i21 = 0;
+                                    while (i21 < 3) {
+                                    }
+                                    while (i22 < 3) {
+                                    }
+                                    i23 = 0;
+                                    while (i23 < i20) {
+                                    }
+                                    C222.o();
+                                    C222.S = 208;
+                                    if (!linkedHashSet.isEmpty()) {
+                                    }
+                                    z17 = false;
+                                    if (!z17) {
+                                    }
+                                    C222.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                                    if (i15 != 0) {
+                                    }
+                                    if (i16 != 0) {
+                                    }
+                                    if (z13) {
+                                    }
+                                    if (z14) {
+                                    }
+                                    if (i14 == 0) {
+                                    }
+                                    if (i17 != 0) {
+                                    }
+                                    if (z16) {
+                                    }
+                                    C222.p = new tf.h1(this, C222, i5Var2, 10);
+                                    this.g4 = C222;
+                                    C222.Z();
+                                }
+                                z4 = false;
+                                hashSet2 = new HashSet();
+                                it2 = selectedCells.iterator();
+                                while (it2.hasNext()) {
+                                }
+                                if (!hashSet2.isEmpty()) {
+                                }
+                                z10 = false;
+                                if (selectedCells.isEmpty()) {
+                                }
+                                z11 = false;
+                                if (z11) {
+                                }
+                                if (z4) {
+                                }
+                                c3 = 1;
+                                i12 = 0;
+                                if (z10) {
+                                }
+                                i13 = 0;
+                                if (z12) {
+                                }
+                                if (z12) {
+                                }
+                                o70Var = this.g4;
+                                if (o70Var != null) {
+                                }
+                                dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+                                FrameLayout P422222 = P4(i5Var2, false);
+                                i14 = i13;
+                                iArr = new int[2];
+                                P422222.getLocationOnScreen(iArr);
+                                if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+                                }
+                                final o70 C2222 = this.e3.C(P4);
+                                C2222.s = 0;
+                                C2222.t = false;
+                                C2222.Z = z15;
+                                LinearLayout linearLayout3222 = new LinearLayout(getContext());
+                                linearLayout3222.setMinimumWidth(AndroidUtilities.dp(208.0f));
+                                linearLayout3222.setOrientation(1);
+                                TextView textView2222 = new TextView(getContext());
+                                textView2222.setText(LocaleController.getString(R.string.ArticleAlignment));
+                                i15 = i10;
+                                textView2222.setTextSize(1, 12.0f);
+                                textView2222.setGravity(17);
+                                textView2222.setTextColor(j6.v0(j6.y6, this.m2));
+                                linearLayout3222.addView(textView2222, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                                LinearLayout linearLayout22222 = new LinearLayout(getContext());
+                                i16 = i11;
+                                i17 = i12;
+                                linearLayout22222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                                linearLayout22222.setOrientation(0);
+                                linearLayout3222.addView(linearLayout22222, b6.q(-2, -2, 17));
+                                Context context2222 = getContext();
+                                int i372222 = R.drawable.iv_align_horiz_left;
+                                f6 f6Var2222 = this.d3;
+                                u1 u1Var7222 = new u1(context2222, i372222, f6Var2222);
+                                u1Var7222.e = 4;
+                                u1Var7222.e();
+                                u1Var7222.b();
+                                int i382222 = j6.G8;
+                                u1Var7222.c(i382222);
+                                boolean z192222 = z4;
+                                linearLayout22222.addView(u1Var7222, b6.n(32, 32));
+                                u1 u1Var22222 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var2222);
+                                u1Var22222.e = 4;
+                                u1Var22222.e();
+                                u1Var22222.b();
+                                u1Var22222.c(i382222);
+                                linearLayout22222.addView(u1Var22222, b6.n(32, 32));
+                                u1 u1Var32222 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var2222);
+                                u1Var32222.e = 4;
+                                u1Var32222.e();
+                                u1Var32222.b();
+                                u1Var32222.c(i382222);
+                                final u1[] u1VarArr3222 = {u1Var7222, u1Var22222, u1Var32222};
+                                boolean z202222 = z10;
+                                linearLayout22222.addView(u1Var32222, b6.n(32, 32));
+                                z16 = z11;
+                                linearLayout22222.addView(new Space(getContext()), b6.n(8, 0));
+                                u1 u1Var42222 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var2222);
+                                u1Var42222.e = 4;
+                                u1Var42222.e();
+                                u1Var42222.b();
+                                u1Var42222.c(i382222);
+                                linearLayout22222.addView(u1Var42222, b6.n(32, 32));
+                                u1 u1Var52222 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var2222);
+                                u1Var52222.e = 4;
+                                u1Var52222.e();
+                                u1Var52222.b();
+                                u1Var52222.c(i382222);
+                                linearLayout22222.addView(u1Var52222, b6.n(32, 32));
+                                u1 u1Var62222 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var2222);
+                                u1Var62222.e = 4;
+                                u1Var62222.e();
+                                u1Var62222.b();
+                                u1Var62222.c(i382222);
+                                final u1[] u1VarArr22222 = {u1Var42222, u1Var52222, u1Var62222};
+                                linearLayout22222.addView(u1Var62222, b6.n(32, 32));
+                                C2222.q(linearLayout3222);
+                                it3 = linkedHashSet.iterator();
+                                int i392222 = -1;
+                                while (true) {
+                                    if (!it3.hasNext()) {
+                                    }
+                                }
+                                it4 = linkedHashSet.iterator();
+                                int i402222 = -1;
+                                while (true) {
+                                    if (!it4.hasNext()) {
+                                    }
+                                }
+                                i19 = 0;
+                                while (i19 < 3) {
+                                }
+                                i21 = 0;
+                                while (i21 < 3) {
+                                }
+                                while (i22 < 3) {
+                                }
+                                i23 = 0;
+                                while (i23 < i20) {
+                                }
+                                C2222.o();
+                                C2222.S = 208;
+                                if (!linkedHashSet.isEmpty()) {
+                                }
+                                z17 = false;
+                                if (!z17) {
+                                }
+                                C2222.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                                if (i15 != 0) {
+                                }
+                                if (i16 != 0) {
+                                }
+                                if (z13) {
+                                }
+                                if (z14) {
+                                }
+                                if (i14 == 0) {
+                                }
+                                if (i17 != 0) {
+                                }
+                                if (z16) {
+                                }
+                                C2222.p = new tf.h1(this, C2222, i5Var2, 10);
+                                this.g4 = C2222;
+                                C2222.Z();
+                            }
+                        }
+                    }
+                    z18 = true;
+                    if (z18) {
+                    }
+                }
+                i11 = 0;
+                hashSet = new HashSet();
+                it = selectedCells.iterator();
+                while (it.hasNext()) {
+                }
+                if (!hashSet.isEmpty()) {
+                }
+                z4 = false;
+                hashSet2 = new HashSet();
+                it2 = selectedCells.iterator();
+                while (it2.hasNext()) {
+                }
+                if (!hashSet2.isEmpty()) {
+                }
+                z10 = false;
+                if (selectedCells.isEmpty()) {
+                }
+                z11 = false;
+                if (z11) {
+                }
+                if (z4) {
+                }
+                c3 = 1;
+                i12 = 0;
+                if (z10) {
+                }
+                i13 = 0;
+                if (z12) {
+                }
+                if (z12) {
+                }
+                o70Var = this.g4;
+                if (o70Var != null) {
+                }
+                dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+                FrameLayout P4222222 = P4(i5Var2, false);
+                i14 = i13;
+                iArr = new int[2];
+                P4222222.getLocationOnScreen(iArr);
+                if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+                }
+                final o70 C22222 = this.e3.C(P4);
+                C22222.s = 0;
+                C22222.t = false;
+                C22222.Z = z15;
+                LinearLayout linearLayout32222 = new LinearLayout(getContext());
+                linearLayout32222.setMinimumWidth(AndroidUtilities.dp(208.0f));
+                linearLayout32222.setOrientation(1);
+                TextView textView22222 = new TextView(getContext());
+                textView22222.setText(LocaleController.getString(R.string.ArticleAlignment));
+                i15 = i10;
+                textView22222.setTextSize(1, 12.0f);
+                textView22222.setGravity(17);
+                textView22222.setTextColor(j6.v0(j6.y6, this.m2));
+                linearLayout32222.addView(textView22222, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+                LinearLayout linearLayout222222 = new LinearLayout(getContext());
+                i16 = i11;
+                i17 = i12;
+                linearLayout222222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                linearLayout222222.setOrientation(0);
+                linearLayout32222.addView(linearLayout222222, b6.q(-2, -2, 17));
+                Context context22222 = getContext();
+                int i3722222 = R.drawable.iv_align_horiz_left;
+                f6 f6Var22222 = this.d3;
+                u1 u1Var72222 = new u1(context22222, i3722222, f6Var22222);
+                u1Var72222.e = 4;
+                u1Var72222.e();
+                u1Var72222.b();
+                int i3822222 = j6.G8;
+                u1Var72222.c(i3822222);
+                boolean z1922222 = z4;
+                linearLayout222222.addView(u1Var72222, b6.n(32, 32));
+                u1 u1Var222222 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var22222);
+                u1Var222222.e = 4;
+                u1Var222222.e();
+                u1Var222222.b();
+                u1Var222222.c(i3822222);
+                linearLayout222222.addView(u1Var222222, b6.n(32, 32));
+                u1 u1Var322222 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var22222);
+                u1Var322222.e = 4;
+                u1Var322222.e();
+                u1Var322222.b();
+                u1Var322222.c(i3822222);
+                final u1[] u1VarArr32222 = {u1Var72222, u1Var222222, u1Var322222};
+                boolean z2022222 = z10;
+                linearLayout222222.addView(u1Var322222, b6.n(32, 32));
+                z16 = z11;
+                linearLayout222222.addView(new Space(getContext()), b6.n(8, 0));
+                u1 u1Var422222 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var22222);
+                u1Var422222.e = 4;
+                u1Var422222.e();
+                u1Var422222.b();
+                u1Var422222.c(i3822222);
+                linearLayout222222.addView(u1Var422222, b6.n(32, 32));
+                u1 u1Var522222 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var22222);
+                u1Var522222.e = 4;
+                u1Var522222.e();
+                u1Var522222.b();
+                u1Var522222.c(i3822222);
+                linearLayout222222.addView(u1Var522222, b6.n(32, 32));
+                u1 u1Var622222 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var22222);
+                u1Var622222.e = 4;
+                u1Var622222.e();
+                u1Var622222.b();
+                u1Var622222.c(i3822222);
+                final u1[] u1VarArr222222 = {u1Var422222, u1Var522222, u1Var622222};
+                linearLayout222222.addView(u1Var622222, b6.n(32, 32));
+                C22222.q(linearLayout32222);
+                it3 = linkedHashSet.iterator();
+                int i3922222 = -1;
+                while (true) {
+                    if (!it3.hasNext()) {
+                    }
+                }
+                it4 = linkedHashSet.iterator();
+                int i4022222 = -1;
+                while (true) {
+                    if (!it4.hasNext()) {
+                    }
+                }
+                i19 = 0;
+                while (i19 < 3) {
+                }
+                i21 = 0;
+                while (i21 < 3) {
+                }
+                while (i22 < 3) {
+                }
+                i23 = 0;
+                while (i23 < i20) {
+                }
+                C22222.o();
+                C22222.S = 208;
+                if (!linkedHashSet.isEmpty()) {
+                }
+                z17 = false;
+                if (!z17) {
+                }
+                C22222.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+                if (i15 != 0) {
+                }
+                if (i16 != 0) {
+                }
+                if (z13) {
+                }
+                if (z14) {
+                }
+                if (i14 == 0) {
+                }
+                if (i17 != 0) {
+                }
+                if (z16) {
+                }
+                C22222.p = new tf.h1(this, C22222, i5Var2, 10);
+                this.g4 = C22222;
+                C22222.Z();
+            }
+        }
+        i10 = 0;
+        if (size == 1) {
+        }
+        i11 = 0;
+        hashSet = new HashSet();
+        it = selectedCells.iterator();
+        while (it.hasNext()) {
+        }
+        if (!hashSet.isEmpty()) {
+        }
+        z4 = false;
+        hashSet2 = new HashSet();
+        it2 = selectedCells.iterator();
+        while (it2.hasNext()) {
+        }
+        if (!hashSet2.isEmpty()) {
+        }
+        z10 = false;
+        if (selectedCells.isEmpty()) {
+        }
+        z11 = false;
+        if (z11) {
+        }
+        if (z4) {
+        }
+        c3 = 1;
+        i12 = 0;
+        if (z10) {
+        }
+        i13 = 0;
+        if (z12) {
+        }
+        if (z12) {
+        }
+        o70Var = this.g4;
+        if (o70Var != null) {
+        }
+        dp = AndroidUtilities.dp(((i10 + 1 + i11 + (z13 ? 2 : 0) + (z14 ? 2 : 0) + i13 + i12 + (z11 ? 3 : 0)) * 48) + 68 + (z11 ? 8 : 0));
+        FrameLayout P42222222 = P4(i5Var2, false);
+        i14 = i13;
+        iArr = new int[2];
+        P42222222.getLocationOnScreen(iArr);
+        if ((iArr[c3] - dp) - AndroidUtilities.dp(8.0f) >= AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight) {
+        }
+        final o70 C222222 = this.e3.C(P4);
+        C222222.s = 0;
+        C222222.t = false;
+        C222222.Z = z15;
+        LinearLayout linearLayout322222 = new LinearLayout(getContext());
+        linearLayout322222.setMinimumWidth(AndroidUtilities.dp(208.0f));
+        linearLayout322222.setOrientation(1);
+        TextView textView222222 = new TextView(getContext());
+        textView222222.setText(LocaleController.getString(R.string.ArticleAlignment));
+        i15 = i10;
+        textView222222.setTextSize(1, 12.0f);
+        textView222222.setGravity(17);
+        textView222222.setTextColor(j6.v0(j6.y6, this.m2));
+        linearLayout322222.addView(textView222222, b6.k(0.0f, 5.0f, 0.0f, 4.0f, -1, -2));
+        LinearLayout linearLayout2222222 = new LinearLayout(getContext());
+        i16 = i11;
+        i17 = i12;
+        linearLayout2222222.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        linearLayout2222222.setOrientation(0);
+        linearLayout322222.addView(linearLayout2222222, b6.q(-2, -2, 17));
+        Context context222222 = getContext();
+        int i37222222 = R.drawable.iv_align_horiz_left;
+        f6 f6Var222222 = this.d3;
+        u1 u1Var722222 = new u1(context222222, i37222222, f6Var222222);
+        u1Var722222.e = 4;
+        u1Var722222.e();
+        u1Var722222.b();
+        int i38222222 = j6.G8;
+        u1Var722222.c(i38222222);
+        boolean z19222222 = z4;
+        linearLayout2222222.addView(u1Var722222, b6.n(32, 32));
+        u1 u1Var2222222 = new u1(getContext(), R.drawable.iv_align_horiz_middle, f6Var222222);
+        u1Var2222222.e = 4;
+        u1Var2222222.e();
+        u1Var2222222.b();
+        u1Var2222222.c(i38222222);
+        linearLayout2222222.addView(u1Var2222222, b6.n(32, 32));
+        u1 u1Var3222222 = new u1(getContext(), R.drawable.iv_align_horiz_right, f6Var222222);
+        u1Var3222222.e = 4;
+        u1Var3222222.e();
+        u1Var3222222.b();
+        u1Var3222222.c(i38222222);
+        final u1[] u1VarArr322222 = {u1Var722222, u1Var2222222, u1Var3222222};
+        boolean z20222222 = z10;
+        linearLayout2222222.addView(u1Var3222222, b6.n(32, 32));
+        z16 = z11;
+        linearLayout2222222.addView(new Space(getContext()), b6.n(8, 0));
+        u1 u1Var4222222 = new u1(getContext(), R.drawable.iv_align_vert_top, f6Var222222);
+        u1Var4222222.e = 4;
+        u1Var4222222.e();
+        u1Var4222222.b();
+        u1Var4222222.c(i38222222);
+        linearLayout2222222.addView(u1Var4222222, b6.n(32, 32));
+        u1 u1Var5222222 = new u1(getContext(), R.drawable.iv_align_vert_middle, f6Var222222);
+        u1Var5222222.e = 4;
+        u1Var5222222.e();
+        u1Var5222222.b();
+        u1Var5222222.c(i38222222);
+        linearLayout2222222.addView(u1Var5222222, b6.n(32, 32));
+        u1 u1Var6222222 = new u1(getContext(), R.drawable.iv_align_vert_bottom, f6Var222222);
+        u1Var6222222.e = 4;
+        u1Var6222222.e();
+        u1Var6222222.b();
+        u1Var6222222.c(i38222222);
+        final u1[] u1VarArr2222222 = {u1Var4222222, u1Var5222222, u1Var6222222};
+        linearLayout2222222.addView(u1Var6222222, b6.n(32, 32));
+        C222222.q(linearLayout322222);
+        it3 = linkedHashSet.iterator();
+        int i39222222 = -1;
+        while (true) {
+            if (!it3.hasNext()) {
+            }
+        }
+        it4 = linkedHashSet.iterator();
+        int i40222222 = -1;
+        while (true) {
+            if (!it4.hasNext()) {
+            }
+        }
+        i19 = 0;
+        while (i19 < 3) {
+        }
+        i21 = 0;
+        while (i21 < 3) {
+        }
+        while (i22 < 3) {
+        }
+        i23 = 0;
+        while (i23 < i20) {
+        }
+        C222222.o();
+        C222222.S = 208;
+        if (!linkedHashSet.isEmpty()) {
+        }
+        z17 = false;
+        if (!z17) {
+        }
+        C222222.c(!z17 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, string, new vq0(this, i5Var2, z17, 13), false);
+        if (i15 != 0) {
+        }
+        if (i16 != 0) {
+        }
+        if (z13) {
+        }
+        if (z14) {
+        }
+        if (i14 == 0) {
+        }
+        if (i17 != 0) {
+        }
+        if (z16) {
+        }
+        C222222.p = new tf.h1(this, C222222, i5Var2, 10);
+        this.g4 = C222222;
+        C222222.Z();
+    }
+
+    @Override // org.telegram.ui.Components.g61
+    public final void G1(f2.l1 l1Var) {
+        int b10;
+        i51 G;
+        a aVar = null;
+        if (l1Var != null && (b10 = l1Var.b()) >= 0 && (G = this.V2.G(b10)) != null) {
+            Object obj = G.G;
+            if (obj instanceof a) {
+                aVar = (a) obj;
+            }
+        }
+        this.P3 = aVar;
+        this.Q3 = false;
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.q();
+        }
+    }
+
+    public final void G2() {
+        f3 f3Var = this.k3;
+        if (f3Var != null) {
+            f3Var.f(true);
+        }
+        M2();
+        n3();
+        IdentityHashMap identityHashMap = this.W3;
+        Iterator it = identityHashMap.values().iterator();
+        while (it.hasNext()) {
+            ((u4) it.next()).b();
+        }
+        identityHashMap.clear();
+        IdentityHashMap identityHashMap2 = this.X3;
+        Iterator it2 = identityHashMap2.values().iterator();
+        while (it2.hasNext()) {
+            ((q4) it2.next()).a();
+        }
+        identityHashMap2.clear();
+    }
+
+    public final boolean G3() {
+        int i10;
+        a y42;
+        f3 f3Var = this.k3;
+        return f3Var != null && f3Var.y() && (i10 = f3Var.u0) == f3Var.x0 && i10 >= 0 && i10 < this.m4.size() && f3Var.v0 == 1 && f3Var.y0 == 1 && (y42 = y4(i10)) != null && v5.p(y42.b);
+    }
+
+    public final v5 G4() {
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y()) {
+            return null;
+        }
+        int i10 = f3Var.u0;
+        int i11 = f3Var.x0;
+        a y42 = y4(i10);
+        if (i10 == i11 && y42 != null && A3(y42.b)) {
+            return u2(i10);
+        }
+        return null;
+    }
+
+    public final int H2(int i10) {
+        int i11 = 0;
+        for (int i12 = 0; i12 < i10; i12++) {
+            ArrayList arrayList = this.i3;
+            if (i12 >= arrayList.size()) {
+                break;
+            }
+            if (x3((a) arrayList.get(i12))) {
+                i11++;
+            } else if (((a) arrayList.get(i12)).i) {
+                i11--;
+            }
+        }
+        return i11;
+    }
+
+    public final boolean H3(int i10, int i11) {
+        if (i10 >= 0) {
+            ArrayList arrayList = this.i3;
+            if (i11 < arrayList.size() && i10 <= i11) {
+                boolean z4 = false;
+                while (i10 <= i11) {
+                    a aVar = (a) arrayList.get(i10);
+                    if (!aVar.i && !x3(aVar)) {
+                        if (!aVar.k.isEmpty() || v5.p(aVar.b)) {
+                            z4 = true;
+                        }
+                    }
+                    i10++;
+                }
+                return z4;
+            }
+        }
+        return false;
+    }
+
+    public final Editable H4(int i10, int i11, int i12, int i13) {
+        if (i10 != i12) {
+            return null;
+        }
+        if (x3(y4(i10))) {
+            d1 I2 = I2(i10);
+            if (I2 != null) {
+                return I2.getText();
+            }
+            return null;
+        }
+        if (G3()) {
+            d1 j42 = j4(i10);
+            if (j42 != null) {
+                return j42.getText();
+            }
+            return null;
+        }
+        a y42 = y4(i10);
+        if (y42 == null || !A3(y42.b)) {
+            return null;
+        }
+        int i22 = i2(i10);
+        if (v2.d(i11, i13, i22, 0) >= yh.d(i11, i13, i22, 0)) {
+            return null;
+        }
+        v5 u22 = u2(i10);
+        return u22 != null ? u22.getEditText().getText() : v5.A(y42.b);
+    }
+
+    public final d1 I2(int i10) {
+        if (!x3(y4(i10))) {
+            return null;
+        }
+        View A4 = A4(i10);
+        if (A4 instanceof q0) {
+            return ((q0) A4).getEditText();
+        }
+        return null;
+    }
+
+    public final boolean I3() {
+        f3 f3Var = this.k3;
+        if (f3Var != null && f3Var.y()) {
+            int i10 = f3Var.u0;
+            int i11 = f3Var.x0;
+            if (i10 >= 0 && i11 >= 0 && i11 >= i10) {
+                boolean z4 = false;
+                while (i10 <= i11) {
+                    a y42 = y4(i10);
+                    if (y42 != null) {
+                        if (C3(y42.b)) {
+                            z4 = true;
+                        }
+                    }
+                    i10++;
+                }
+                return z4;
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0020, code lost:
+    
+        if (r12 > r13) goto L12;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0162 A[LOOP:2: B:68:0x0160->B:69:0x0162, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x016f A[LOOP:3: B:72:0x0169->B:74:0x016f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0067  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean I4(int i10, int i11, int i12, int i13, ArrayList arrayList) {
+        int i14;
+        a aVar;
+        CharSequence A;
+        CharSequence A2;
+        CharSequence subSequence;
+        CharSequence subSequence2;
+        c2 c2Var;
+        ArrayList arrayList2;
+        SpannableStringBuilder A3;
+        int length;
+        int i15;
+        c2 c2Var2;
+        if (i10 >= 0 && i11 >= 0) {
+            ArrayList arrayList3 = this.i3;
+            if (i10 < arrayList3.size() && i11 < arrayList3.size()) {
+                if (i10 <= i11) {
+                    if (i10 == i11) {
+                    }
+                    for (i14 = i10; i14 <= i11; i14++) {
+                        a aVar2 = (a) arrayList3.get(i14);
+                        if (!aVar2.i && !x3(aVar2) && !E3(aVar2.b) && !l3(aVar2.b) && !(aVar2.b instanceof TL_iv.pageBlockTable)) {
+                        }
+                    }
+                    aVar = (a) arrayList3.get(i10);
+                    a aVar3 = (a) arrayList3.get(i11);
+                    A = v5.A(aVar.b);
+                    A2 = i10 != i11 ? A : v5.A(aVar3.b);
+                    if (A == null) {
+                        A = "";
+                    }
+                    if (A2 == null) {
+                        A2 = "";
+                    }
+                    int max = Math.max(0, Math.min(i12, A.length()));
+                    int max2 = Math.max(0, Math.min(i13, A2.length()));
+                    subSequence = A.subSequence(0, max);
+                    subSequence2 = A2.subSequence(max2, A2.length());
+                    c2Var = this.G3;
+                    if (c2Var != null) {
+                        c2Var.d();
+                    }
+                    if (arrayList.size() == 1 || !F3((a) arrayList.get(0))) {
+                        arrayList2 = new ArrayList(arrayList);
+                        if (subSequence.length() > 0) {
+                            TL_iv.PageBlock S3 = S3(aVar.b);
+                            v5.d(S3, subSequence);
+                            arrayList2.add(0, new a(S3, aVar.c, aVar.d));
+                        }
+                        aVar = (a) kh.a2.i(1, arrayList);
+                        if (aVar != null) {
+                            if (x3(aVar)) {
+                                length = x5.r(((TL_iv.pageBlockDetails) aVar.b).title, null, true).length();
+                            } else {
+                                TL_iv.PageBlock pageBlock = aVar.b;
+                                if (((pageBlock instanceof TL_iv.pageBlockParagraph) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || (pageBlock instanceof TL_iv.pageBlockBlockquote) || (pageBlock instanceof TL_iv.pageBlockPullquote) || C3(pageBlock)) && (A3 = v5.A(aVar.b)) != null) {
+                                    length = A3.length();
+                                }
+                            }
+                            if (subSequence2.length() > 0) {
+                                TL_iv.PageBlock S32 = S3(aVar3.b);
+                                v5.d(S32, subSequence2);
+                                arrayList2.add(new a(S32, aVar3.c, aVar3.d));
+                            }
+                            while (i11 >= i10) {
+                                arrayList3.remove(i11);
+                                i11--;
+                            }
+                            for (i15 = 0; i15 < arrayList2.size(); i15++) {
+                                arrayList3.add(i10 + i15, (a) arrayList2.get(i15));
+                            }
+                        }
+                        length = 0;
+                        if (subSequence2.length() > 0) {
+                        }
+                        while (i11 >= i10) {
+                        }
+                        while (i15 < arrayList2.size()) {
+                        }
+                    } else {
+                        CharSequence A4 = v5.A(((a) arrayList.get(0)).b);
+                        CharSequence charSequence = A4 != null ? A4 : "";
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(subSequence);
+                        spannableStringBuilder.append(charSequence);
+                        length = spannableStringBuilder.length();
+                        spannableStringBuilder.append(subSequence2);
+                        v5.d(aVar.b, spannableStringBuilder);
+                        while (i11 > i10) {
+                            arrayList3.remove(i11);
+                            i11--;
+                        }
+                    }
+                    s4();
+                    this.k3.f(false);
+                    this.V2.N(false);
+                    c2Var2 = this.G3;
+                    if (c2Var2 != null) {
+                        c2Var2.h();
+                    }
+                    post(new l2(this, aVar, length, 1));
+                    return true;
+                }
+                i11 = i10;
+                i10 = i11;
+                i13 = i12;
+                i12 = i13;
+                while (i14 <= i11) {
+                }
+                aVar = (a) arrayList3.get(i10);
+                a aVar32 = (a) arrayList3.get(i11);
+                A = v5.A(aVar.b);
+                if (i10 != i11) {
+                }
+                if (A == null) {
+                }
+                if (A2 == null) {
+                }
+                int max3 = Math.max(0, Math.min(i12, A.length()));
+                int max22 = Math.max(0, Math.min(i13, A2.length()));
+                subSequence = A.subSequence(0, max3);
+                subSequence2 = A2.subSequence(max22, A2.length());
+                c2Var = this.G3;
+                if (c2Var != null) {
+                }
+                if (arrayList.size() == 1) {
+                }
+                arrayList2 = new ArrayList(arrayList);
+                if (subSequence.length() > 0) {
+                }
+                aVar = (a) kh.a2.i(1, arrayList);
+                if (aVar != null) {
+                }
+                length = 0;
+                if (subSequence2.length() > 0) {
+                }
+                while (i11 >= i10) {
+                }
+                while (i15 < arrayList2.size()) {
+                }
+                s4();
+                this.k3.f(false);
+                this.V2.N(false);
+                c2Var2 = this.G3;
+                if (c2Var2 != null) {
+                }
+                post(new l2(this, aVar, length, 1));
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005d A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean J3(int i10, int i11, int i12, int i13, int i14) {
+        int length;
+        int d;
+        int d10;
+        int max;
+        int max2;
+        if (y3()) {
+            d1 I2 = I2(i11);
+            return (I2 == null || (max = Math.max(0, Math.min(Math.min(i12, i14), I2.length()))) >= (max2 = Math.max(0, Math.min(Math.max(i12, i14), I2.length()))) || (i10 & I2.getCurrentStyle(max, max2)) == 0) ? false : true;
+        }
+        if (!G3()) {
+            int i15 = i11;
+            boolean z4 = false;
+            while (i15 <= i13) {
+                a y42 = y4(i15);
+                if (y42 != null) {
+                    TL_iv.PageBlock pageBlock = y42.b;
+                    if (A3(pageBlock) && !(pageBlock instanceof TL_iv.pageBlockPreformatted)) {
+                        int i22 = i2(i15);
+                        int i16 = i15 == i11 ? i12 : 0;
+                        int i17 = i15 == i13 ? i14 : i22;
+                        int max3 = Math.max(0, Math.min(i16, i22));
+                        int max4 = Math.max(0, Math.min(i17, i22));
+                        if (max3 < max4) {
+                            v5 u22 = u2(i15);
+                            if (u22 != null ? (u22.getStyleDelegate().getCurrentStyle(max3, max4) & i10) != 0 : x5.i(max3, max4, i10, v5.A(y4(i15).b))) {
+                                z4 = true;
+                            }
+                        } else {
+                            continue;
+                        }
+                    }
+                }
+                i15++;
+            }
+            return z4;
+        }
+        d1 j42 = j4(i11);
+        if (j42 != null && (d = v2.d(i12, i14, (length = j42.length()), 0)) < (d10 = yh.d(i12, i14, length, 0)) && (i10 & j42.getCurrentStyle(d, d10)) != 0) {
+        }
+    }
+
+    public final void J4(View view) {
+        f2.l1 T;
+        int b10;
+        if (view == null || this.W2 == null || !this.Z2 || (T = T(view)) == null || (b10 = T.b()) < 0 || this.V2.H(b10) < 0) {
+            return;
+        }
+        this.x3 = true;
+        f3 f3Var = this.k3;
+        if (f3Var.y()) {
+            f3Var.f(false);
+        }
+        try {
+            view.performHapticFeedback(0);
+        } catch (Exception unused) {
+        }
+        this.W2.r(T);
+    }
+
+    public final boolean K3(int i10, int i11, int i12, int i13, int i14, int i15) {
+        int i16 = i12;
+        boolean z4 = false;
+        while (i16 <= i14) {
+            d1 N4 = N4(i11, i16);
+            if (N4 != null) {
+                int length = N4.length();
+                int i17 = i16 == i12 ? i13 : 0;
+                int i18 = i16 == i14 ? i15 : length;
+                if (i12 == i14) {
+                    i17 = Math.min(i13, i15);
+                    i18 = Math.max(i13, i15);
+                }
+                int max = Math.max(0, Math.min(i17, length));
+                int max2 = Math.max(0, Math.min(i18, length));
+                if (max >= max2) {
+                    continue;
+                } else {
+                    if ((N4.getCurrentStyle(max, max2) & i10) == 0) {
+                        return false;
+                    }
+                    z4 = true;
+                }
+            }
+            i16++;
+        }
+        return z4;
+    }
+
+    public final void K4(a aVar, s sVar, MediaController.PhotoEntry photoEntry) {
+        long j10;
+        u4 u4Var = (u4) this.W3.remove(sVar);
+        if (u4Var != null) {
+            u4Var.b();
+        }
+        IdentityHashMap identityHashMap = this.X3;
+        q4 q4Var = (q4) identityHashMap.remove(sVar);
+        if (q4Var != null) {
+            q4Var.a();
+        }
+        sVar.a = 1;
+        sVar.f = 0.0f;
+        q4 q4Var2 = new q4(this.c3, photoEntry, new d3(aVar, sVar, this));
+        identityHashMap.put(sVar, q4Var2);
+        if (q4Var2.f || q4Var2.h || q4Var2.n) {
+            return;
+        }
+        q4Var2.f = true;
+        int i10 = photoEntry.width;
+        int i11 = photoEntry.height;
+        if (i10 <= 0 || i11 <= 0) {
+            try {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeFile(photoEntry.path, options);
+                i10 = options.outWidth;
+                i11 = options.outHeight;
+            } catch (Exception unused) {
+            }
+        }
+        VideoEditedInfo videoEditedInfo = null;
+        r7 = null;
+        ArrayList<VideoEditedInfo.MediaEntity> arrayList = null;
+        videoEditedInfo = null;
+        if (i10 > 0 && i11 > 0) {
+            int i12 = photoEntry.orientation;
+            if (i12 == 90 || i12 == 270) {
+                int i13 = i11;
+                i11 = i10;
+                i10 = i13;
+            }
+            VideoEditedInfo videoEditedInfo2 = new VideoEditedInfo();
+            videoEditedInfo2.startTime = 0L;
+            videoEditedInfo2.start = 0L;
+            videoEditedInfo2.endTime = Math.min(3000L, photoEntry.averageDuration);
+            while (true) {
+                j10 = videoEditedInfo2.endTime;
+                if (j10 <= 0 || j10 >= 1000) {
+                    break;
+                } else {
+                    videoEditedInfo2.endTime = j10 * 2;
+                }
+            }
+            if (j10 <= 0) {
+                videoEditedInfo2.endTime = 3000L;
+            }
+            long j11 = videoEditedInfo2.endTime;
+            videoEditedInfo2.end = j11;
+            videoEditedInfo2.compressQuality = 1;
+            videoEditedInfo2.rotationValue = 0;
+            videoEditedInfo2.originalPath = photoEntry.path;
+            videoEditedInfo2.estimatedSize = (int) ((r13 / 1000.0f) * 115200.0f);
+            videoEditedInfo2.estimatedDuration = j11;
+            videoEditedInfo2.framerate = 30;
+            videoEditedInfo2.originalDuration = j11;
+            videoEditedInfo2.filterState = photoEntry.savedFilterState;
+            String str = photoEntry.croppedPaintPath;
+            if (str != null) {
+                videoEditedInfo2.paintPath = str;
+                ArrayList<VideoEditedInfo.MediaEntity> arrayList2 = photoEntry.croppedMediaEntities;
+                if (arrayList2 != null && !arrayList2.isEmpty()) {
+                    arrayList = photoEntry.croppedMediaEntities;
+                }
+                videoEditedInfo2.mediaEntities = arrayList;
+            } else {
+                videoEditedInfo2.paintPath = photoEntry.paintPath;
+                videoEditedInfo2.mediaEntities = photoEntry.mediaEntities;
+            }
+            videoEditedInfo2.isPhoto = true;
+            MediaController.CropState cropState = photoEntry.cropState;
+            if (cropState != null) {
+                int i14 = cropState.transformRotation;
+                if (i14 == 90 || i14 == 270) {
+                    int i15 = i11;
+                    i11 = i10;
+                    i10 = i15;
+                }
+                i10 = (int) (i10 * cropState.cropPw);
+                i11 = (int) (i11 * cropState.cropPh);
+            }
+            float f10 = i10;
+            float f11 = i11;
+            float max = Math.max(f10 / 854.0f, f11 / 854.0f);
+            if (max < 1.0f) {
+                max = 1.0f;
+            }
+            int i16 = (int) (f10 / max);
+            int i17 = (int) (f11 / max);
+            if (i16 % 16 != 0) {
+                i16 = Math.max(1, Math.round(i16 / 16.0f)) * 16;
+            }
+            if (i17 % 16 != 0) {
+                i17 = Math.max(1, Math.round(i17 / 16.0f)) * 16;
+            }
+            videoEditedInfo2.resultWidth = i16;
+            videoEditedInfo2.originalWidth = i16;
+            videoEditedInfo2.resultHeight = i17;
+            videoEditedInfo2.originalHeight = i17;
+            videoEditedInfo2.bitrate = -1;
+            videoEditedInfo2.muted = true;
+            videoEditedInfo2.avatarStartTime = 0L;
+            videoEditedInfo = videoEditedInfo2;
+        }
+        q4Var2.d = videoEditedInfo;
+        if (videoEditedInfo == null || !videoEditedInfo.needConvert()) {
+            q4Var2.b();
+            return;
+        }
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.id = 1;
+        String absolutePath = new File(FileLoader.getDirectory(4), "rich_anim_" + SharedConfig.getLastLocalId() + ".mp4").getAbsolutePath();
+        q4Var2.e = absolutePath;
+        tL_message.attachPath = absolutePath;
+        MessageObject messageObject = new MessageObject(q4Var2.a, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
+        q4Var2.c = messageObject;
+        messageObject.videoEditedInfo = q4Var2.d;
+        NotificationCenter notificationCenter = NotificationCenter.getInstance(q4Var2.a);
+        notificationCenter.addObserver(q4Var2, NotificationCenter.filePreparingStarted);
+        notificationCenter.addObserver(q4Var2, NotificationCenter.fileNewChunkAvailable);
+        notificationCenter.addObserver(q4Var2, NotificationCenter.filePreparingFailed);
+        MediaController.getInstance().scheduleVideoConvert(q4Var2.c, false, false, false);
+    }
+
+    public final boolean L3() {
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y()) {
+            return false;
+        }
+        int i10 = f3Var.u0;
+        int i11 = f3Var.x0;
+        a y42 = y4(i10);
+        return i10 == i11 && y42 != null && (y42.b instanceof TL_iv.pageBlockTable);
+    }
+
+    public final void L4(a aVar, s sVar, String str, boolean z4, int i10, int i11, int i12) {
+        IdentityHashMap identityHashMap = this.W3;
+        u4 u4Var = (u4) identityHashMap.remove(sVar);
+        if (u4Var != null) {
+            u4Var.b();
+        }
+        u4 u4Var2 = new u4(this.c3, str, z4, i10, i11, i12, new e3(aVar, sVar, this));
+        identityHashMap.put(sVar, u4Var2);
+        u4Var2.d();
+    }
+
+    public final void M2() {
+        if (this.y3) {
+            requestDisallowInterceptTouchEvent(false);
+        }
+        this.y3 = false;
+        this.z3 = false;
+        this.A3 = null;
+        this.B3 = null;
+        o70 o70Var = this.g4;
+        if (o70Var != null) {
+            this.g4 = null;
+            o70Var.u();
+        }
+        i5 i5Var = this.f4;
+        if (i5Var != null) {
+            LinkedHashSet linkedHashSet = i5Var.E;
+            if (!linkedHashSet.isEmpty()) {
+                linkedHashSet.clear();
+                i5Var.v.invalidate();
+                i5Var.t();
+            }
+            this.f4 = null;
+        }
+        this.i4 = -1;
+        this.h4 = -1;
+        setEditTextsLocked(false);
+    }
+
+    public final boolean M3() {
+        AppGlobalConfig appGlobalConfig = MessagesController.getInstance(this.c3).config;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            i11 += Q3((a) arrayList.get(i10)).size();
+            i10++;
+        }
+        ArrayList Z2 = Z2();
+        d2 d2Var = new d2();
+        d2Var.d = i11;
+        d2Var.b = Z2.size() + d2Var.b;
+        for (int i12 = 0; i12 < Z2.size(); i12++) {
+            d2.b((TL_iv.PageBlock) Z2.get(i12), 1, d2Var);
+        }
+        return d2Var.a <= appGlobalConfig.richMessageLengthLimit.get() && d2Var.b <= appGlobalConfig.richMessageMaxBlocks.get() && d2Var.c <= appGlobalConfig.richMessageMaxDepth.get() && d2Var.d <= appGlobalConfig.richMessageMaxMedia.get() && d2Var.e <= appGlobalConfig.richMessageMaxTableCols.get();
+    }
+
+    public final Editable M4(a aVar) {
+        View z12 = z1(aVar);
+        return z12 instanceof v5 ? ((v5) z12).getEditText().getText() : v5.A(aVar.b);
+    }
+
+    public final d1 N4(int i10, int i11) {
+        View A4 = A4(i10);
+        if (A4 instanceof i5) {
+            return ((i5) A4).l(i11);
+        }
+        return null;
+    }
+
+    public final int[] O3(int i10) {
+        int i11 = 0;
+        for (int i12 = 0; i12 < this.K3.size(); i12++) {
+            int length = v5.z(((a) this.K3.get(i12)).b).length();
+            if (i10 <= i11 + length) {
+                return new int[]{i12, i10 - i11};
+            }
+            i11 += length + 1;
+        }
+        int size = this.K3.size() - 1;
+        return new int[]{size, v5.z(((a) this.K3.get(size)).b).length()};
+    }
+
+    public final d1 P2() {
+        View findFocus = findFocus();
+        if (findFocus instanceof d1) {
+            return (d1) findFocus;
+        }
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof v5) {
+                return ((v5) childAt).getEditText();
+            }
+        }
+        return null;
+    }
+
+    public final int P3(int i10) {
+        int i11 = 1;
+        int i12 = i10 + 1;
+        while (true) {
+            ArrayList arrayList = this.i3;
+            if (i12 >= arrayList.size()) {
+                return arrayList.size();
+            }
+            a aVar = (a) arrayList.get(i12);
+            if (x3(aVar)) {
+                i11++;
+            } else if (aVar.i && i11 - 1 == 0) {
+                return i12;
+            }
+            i12++;
+        }
+    }
+
+    public final a Q2() {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof v5) {
+                v5 v5Var = (v5) childAt;
+                if (v5Var.getEditText().isFocused() || (v5Var.n() && v5Var.h.isFocused())) {
+                    return v5Var.getRow();
+                }
+            }
+        }
+        return null;
+    }
+
+    public final void Q4() {
+        int[] B4 = B4();
+        if (B4 == null) {
+            return;
+        }
+        int i10 = B4[0];
+        int i11 = B4[1];
+        if (i10 >= 0) {
+            ArrayList arrayList = this.i3;
+            if (i11 >= arrayList.size() || i10 > i11) {
+                return;
+            }
+            c2 c2Var = this.G3;
+            if (c2Var != null) {
+                c2Var.d();
+            }
+            if (H3(i10, i11)) {
+                for (int i12 = i10; i12 <= i11; i12++) {
+                    a aVar = (a) arrayList.get(i12);
+                    boolean z4 = aVar.i;
+                    ArrayList arrayList2 = aVar.k;
+                    if (!z4 && !x3(aVar)) {
+                        if (v5.p(aVar.b)) {
+                            TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                            pageblockparagraph.text = aVar.b.text;
+                            aVar.b = pageblockparagraph;
+                        } else if (!arrayList2.isEmpty()) {
+                            android.support.v4.media.a.u(1, arrayList2);
+                        }
+                    }
+                }
+            } else {
+                long a2 = m0.a();
+                for (int i13 = i10; i13 <= i11; i13++) {
+                    a aVar2 = (a) arrayList.get(i13);
+                    boolean z10 = aVar2.i;
+                    ArrayList arrayList3 = aVar2.k;
+                    if (!z10 && !x3(aVar2)) {
+                        if (v5.p(aVar2.b)) {
+                            long a10 = m0.a();
+                            TL_iv.RichText k10 = v5.k(aVar2.b);
+                            if (k10 != null && !(k10 instanceof TL_iv.textEmpty)) {
+                                this.j3.put(Long.valueOf(a10), k10);
+                            }
+                            arrayList3.add(Long.valueOf(a10));
+                            TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
+                            pageblockparagraph2.text = aVar2.b.text;
+                            aVar2.b = pageblockparagraph2;
+                        }
+                        arrayList3.add(0, Long.valueOf(a2));
+                    }
+                }
+            }
+            x2();
+            V3();
+            s4();
+            f3 f3Var = this.k3;
+            boolean z11 = f3Var != null && f3Var.y();
+            a aVar3 = (a) arrayList.get(Math.max(0, Math.min(i10, arrayList.size() - 1)));
+            a aVar4 = (a) arrayList.get(Math.max(0, Math.min(i11, arrayList.size() - 1)));
+            this.V2.N(false);
+            c2 c2Var2 = this.G3;
+            if (c2Var2 != null) {
+                c2Var2.h();
+            }
+            if (z11) {
+                post(new tf.h1(this, aVar3, aVar4, 11));
+            } else {
+                post(new j2(this, aVar3, 9));
+            }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00d5  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void R1(TL_iv.PageBlock pageBlock) {
+        c2 c2Var;
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.d();
+        }
+        a Q2 = Q2();
+        if (Q2 == null) {
+            Q2 = this.Z3;
+        }
+        ArrayList arrayList = this.i3;
+        int indexOf = Q2 != null ? arrayList.indexOf(Q2) : -1;
+        if (indexOf >= 0 && (Q2.b instanceof TL_iv.pageBlockBlockquote)) {
+            long a2 = m0.a();
+            TL_iv.RichText richText = ((TL_iv.pageBlockBlockquote) Q2.b).caption;
+            if (richText != null && !(richText instanceof TL_iv.textEmpty)) {
+                this.j3.put(Long.valueOf(a2), richText);
+            }
+            Q2.k.add(Long.valueOf(a2));
+            Q2.b = new TL_iv.pageBlockParagraph();
+        }
+        boolean z4 = indexOf >= 0 && !Q2.k.isEmpty();
+        if (indexOf >= 0) {
+            TL_iv.PageBlock pageBlock2 = Q2.b;
+            if ((pageBlock2 instanceof TL_iv.pageBlockParagraph) && Q2.g == null && v5.z(pageBlock2).isEmpty()) {
+                Q2.b = pageBlock;
+                this.Z3 = Q2;
+                if (l3(pageBlock)) {
+                    int indexOf2 = arrayList.indexOf(Q2) + 1;
+                    if (indexOf2 >= arrayList.size() || E3(((a) arrayList.get(indexOf2)).b)) {
+                        a aVar = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                        if (z4) {
+                            aVar.k.addAll(Q2.k);
+                        }
+                        arrayList.add(indexOf2, aVar);
+                        Q2 = aVar;
+                    } else {
+                        Q2 = (a) arrayList.get(indexOf2);
+                    }
+                }
+                this.V2.N(false);
+                c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.h();
+                }
+                post(new j2(this, Q2, 1));
+            }
+        }
+        a aVar2 = new a(pageBlock, 0, 0);
+        if (z4) {
+            aVar2.k.addAll(Q2.k);
+        }
+        if (indexOf >= 0) {
+            arrayList.add(indexOf + 1, aVar2);
+        } else {
+            arrayList.add(aVar2);
+        }
+        Q2 = aVar2;
+        this.Z3 = Q2;
+        if (l3(pageBlock)) {
+        }
+        this.V2.N(false);
+        c2Var = this.G3;
+        if (c2Var != null) {
+        }
+        post(new j2(this, Q2, 1));
+    }
+
+    public final i5 R2() {
+        View findFocus = findFocus();
+        if (findFocus instanceof d1) {
+            return U2((d1) findFocus);
+        }
+        return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00cc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void R4(a aVar, TL_iv.PageBlock pageBlock, int i10, int i11, boolean z4, boolean z10) {
+        a aVar2;
+        c2 c2Var;
+        ArrayList arrayList = this.i3;
+        int indexOf = arrayList.indexOf(aVar);
+        if (indexOf < 0) {
+            return;
+        }
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.d();
+        }
+        aVar.b = pageBlock;
+        aVar.c = i10;
+        aVar.d = i11;
+        aVar.e = z4;
+        aVar.f = z10;
+        s4();
+        boolean z11 = pageBlock instanceof TL_iv.pageBlockTable;
+        if (z11) {
+            int i12 = indexOf + 1;
+            if (i12 >= arrayList.size() || E3(((a) arrayList.get(i12)).b)) {
+                arrayList.add(i12, new a(new TL_iv.pageBlockParagraph(), 0, 0));
+            }
+        } else if (E3(pageBlock)) {
+            if (D3(pageBlock) && aVar.g == null) {
+                aVar.g = new s();
+            }
+            int i13 = indexOf + 1;
+            if (i13 >= arrayList.size() || E3(((a) arrayList.get(i13)).b)) {
+                aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                arrayList.add(i13, aVar2);
+            } else {
+                aVar2 = (a) arrayList.get(i13);
+            }
+            if (aVar2 == aVar || z11 || E3(pageBlock) || !(findFocus() instanceof d1)) {
+                this.V2.N(false);
+                c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.h();
+                }
+                post(new j2(this, aVar2, 18));
+            }
+            X1();
+            c2 c2Var3 = this.G3;
+            if (c2Var3 != null) {
+                c2Var3.h();
+            }
+            View z12 = z1(aVar);
+            if (z12 instanceof v5) {
+                v5 v5Var = (v5) z12;
+                v5Var.B();
+                v5Var.getEditText().setSelection(v5Var.getEditText().length());
+                return;
+            }
+            return;
+        }
+        aVar2 = aVar;
+        if (aVar2 == aVar) {
+        }
+        this.V2.N(false);
+        c2Var = this.G3;
+        if (c2Var != null) {
+        }
+        post(new j2(this, aVar2, 18));
+    }
+
+    public final TLRPC.Document S2(long j10) {
+        TLRPC.Document document;
+        ArrayList<TLRPC.Document> arrayList;
+        TLRPC.Document document2;
+        if (j10 == 0) {
+            return null;
+        }
+        int i10 = 0;
+        for (int i11 = 0; i11 < this.i3.size(); i11++) {
+            for (s sVar : Q3((a) this.i3.get(i11))) {
+                if (sVar != null && (document2 = sVar.h) != null && document2.id == j10) {
+                    return document2;
+                }
+            }
+        }
+        TL_iv.RichMessage richMessage = this.h3;
+        if (richMessage != null && (arrayList = richMessage.documents) != null) {
+            int size = arrayList.size();
+            while (i10 < size) {
+                TLRPC.Document document3 = arrayList.get(i10);
+                i10++;
+                TLRPC.Document document4 = document3;
+                if (document4 != null && document4.id == j10) {
+                    return document4;
+                }
+            }
+        }
+        HashMap hashMap = p4.a;
+        synchronized (p4.class) {
+            document = j10 != 0 ? (TLRPC.Document) p4.b.get(Long.valueOf(j10)) : null;
+        }
+        return document;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0185, code lost:
+    
+        if (r2 == false) goto L99;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00b3, code lost:
+    
+        if (r2 != false) goto L138;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0189, code lost:
+    
+        r2 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x018a, code lost:
+    
+        r7 = r14.m4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0193, code lost:
+    
+        if (r2 >= r7.size()) goto L141;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0195, code lost:
+    
+        r7 = (vh.a) r7.get(r2);
+        r12 = r7.t;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x019f, code lost:
+    
+        if (r12 == 0) goto L105;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x01a1, code lost:
+    
+        r0.Y(r2, vh.x5.l((org.telegram.tgnet.tl.TL_iv.RichText) r14.j3.get(java.lang.Long.valueOf(r12))));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x01ed, code lost:
+    
+        r2 = r2 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x01b5, code lost:
+    
+        r0.Y(r2, vh.v5.z(r7.b));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x01c4, code lost:
+    
+        if (vh.v5.p(r7.b) == false) goto L144;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x01c6, code lost:
+    
+        r7 = vh.x5.l(vh.v5.k(r7.b));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x01d4, code lost:
+    
+        if (r7.isEmpty() != false) goto L145;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x01d6, code lost:
+    
+        r0.B0.put(65536 + r2, org.telegram.ui.Cells.m9.Z(r7));
+        r3.put(r2, java.lang.Math.max(2, r3.get(r2)));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x01f0, code lost:
+    
+        r2 = r7.size() - 1;
+        r7 = (vh.a) r7.get(r2);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x01ff, code lost:
+    
+        if (r7.t != 0) goto L116;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0207, code lost:
+    
+        if (vh.v5.p(r7.b) == false) goto L116;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0209, code lost:
+    
+        r7 = vh.x5.l(vh.v5.k(r7.b));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x021a, code lost:
+    
+        if (r7.isEmpty() != false) goto L139;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x021c, code lost:
+    
+        r7 = r7.length();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0220, code lost:
+    
+        if (r2 < 0) goto L138;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0224, code lost:
+    
+        if (r0.F == null) goto L132;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0226, code lost:
+    
+        r8 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x022d, code lost:
+    
+        if (r8 >= r0.F.getChildCount()) goto L146;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x022f, code lost:
+    
+        r10 = r0.F.getChildAt(r8);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0237, code lost:
+    
+        if ((r10 instanceof org.telegram.ui.Cells.l9) == false) goto L148;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0239, code lost:
+    
+        r10 = (org.telegram.ui.Cells.l9) r10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x023f, code lost:
+    
+        if (r0.e0(r10) != r2) goto L149;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0241, code lost:
+    
+        r5 = r10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0243, code lost:
+    
+        r8 = r8 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0246, code lost:
+    
+        r0.W = r5;
+        r0.u = 0;
+        r0.v = r7;
+        r0.u0 = 0;
+        r0.x0 = r2;
+        r0.v0 = 0;
+        r0.y0 = 1;
+        r0.w0 = 0;
+        r0.z0 = r7;
+        r3.put(0, java.lang.Math.max(1, r3.get(0)));
+        r3.put(r2, java.lang.Math.max(2, r3.get(r2)));
+        r0.G0 = 0;
+        r0.I0 = 0;
+        r0.H0 = 0;
+        r2 = r0.C;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0276, code lost:
+    
+        if (r2 == null) goto L135;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0278, code lost:
+    
+        r2.setVisibility(0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x027b, code lost:
+    
+        r0.V();
+        r0.x();
+        r0.v();
+        org.telegram.messenger.AndroidUtilities.cancelRunOnUIThread(r4);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r4);
+        r0 = r0.D;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x028c, code lost:
+    
+        if (r0 == null) goto L138;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x028e, code lost:
+    
+        r0.a(true);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0292, code lost:
+    
+        r0.j0(0, r2);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0295, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x0214, code lost:
+    
+        r7 = "";
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x0291, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean S4() {
+        i5 i5Var;
+        int[] a52;
+        int[] a53;
+        boolean z4;
+        boolean z10;
+        int length;
+        i0 i0Var;
+        v5 v5Var;
+        int k10;
+        if (this.i3.isEmpty()) {
+            return false;
+        }
+        f3 f3Var = this.k3;
+        boolean y10 = f3Var.y();
+        SparseIntArray sparseIntArray = f3Var.D0;
+        org.telegram.ui.Cells.g gVar = f3Var.r0;
+        l9 l9Var = null;
+        if (y10) {
+            int i10 = f3Var.u0;
+            if (i10 == f3Var.x0) {
+                View A4 = A4(i10);
+                if ((A4 instanceof i5) && (((a52 = a5((i5Var = (i5) A4))) == null || f3Var.v0 != 0 || f3Var.w0 != 0 || f3Var.y0 != a52[0] || f3Var.z0 != a52[1]) && (a53 = a5(i5Var)) != null)) {
+                    int i11 = a53[0];
+                    int i12 = a53[1];
+                    ArrayList arrayList = f3Var.F0;
+                    int e02 = f3Var.e0(i5Var);
+                    if (e02 >= 0 && (i11 != 0 || i12 != 0)) {
+                        f3Var.W = i5Var;
+                        f3Var.x0 = e02;
+                        f3Var.u0 = e02;
+                        f3Var.v0 = 0;
+                        f3Var.y0 = i11;
+                        f3Var.w0 = 0;
+                        f3Var.z0 = i12;
+                        f3Var.u = 0;
+                        f3Var.v = i12;
+                        f3Var.G0 = e02;
+                        f3Var.I0 = 0;
+                        f3Var.H0 = 0;
+                        f3Var.i0(i5Var, e02);
+                        arrayList.clear();
+                        i5Var.fillTextLayoutBlocks(arrayList);
+                        if (!arrayList.isEmpty() && arrayList.size() > 0) {
+                            f3Var.a = ((x9) arrayList.get(0)).getX();
+                            f3Var.b = ((x9) arrayList.get(0)).getY();
+                        } else if (!arrayList.isEmpty()) {
+                            f3Var.a = ((x9) arrayList.get(0)).getX();
+                            f3Var.b = ((x9) arrayList.get(0)).getY();
+                        }
+                        y9 y9Var = f3Var.C;
+                        if (y9Var != null) {
+                            y9Var.setVisibility(0);
+                        }
+                        f3Var.V();
+                        f3Var.x();
+                        f3Var.v();
+                        AndroidUtilities.cancelRunOnUIThread(gVar);
+                        AndroidUtilities.runOnUIThread(gVar);
+                        k7.x5 x5Var = f3Var.D;
+                        if (x5Var != null) {
+                            x5Var.a(true);
+                        }
+                        i5Var.invalidate();
+                        z4 = true;
+                    }
+                }
+            }
+            z4 = false;
+        } else {
+            d1 P2 = P2();
+            if (P2 != 0 && P2.getText() != null && (length = P2.getText().length()) > 0) {
+                i5 U2 = U2(P2);
+                if (U2 != null) {
+                    if (P2 == U2.getTitleEditText()) {
+                        k10 = 0;
+                    } else {
+                        l5 o10 = U2.o(P2);
+                        k10 = o10 != null ? U2.k(o10.b) : -1;
+                    }
+                    if (k10 >= 0) {
+                        P2.setSelection(P2.getSelectionEnd());
+                        z10 = f3Var.k0(U2, k10, 0, length);
+                    }
+                } else {
+                    if (!(P2 instanceof i0)) {
+                        ViewParent parent = P2.getParent();
+                        while (true) {
+                            if (parent == null) {
+                                i0Var = null;
+                                break;
+                            }
+                            if (parent instanceof i0) {
+                                i0Var = (i0) parent;
+                                break;
+                            }
+                            parent = parent.getParent();
+                        }
+                    } else {
+                        i0Var = (i0) P2;
+                    }
+                    if (i0Var instanceof l9) {
+                        P2.setSelection(P2.getSelectionEnd());
+                        z10 = f3Var.k0((l9) i0Var, 0, 0, length);
+                    } else {
+                        ViewParent parent2 = P2.getParent();
+                        while (true) {
+                            if (parent2 == null) {
+                                v5Var = null;
+                                break;
+                            }
+                            if (parent2 instanceof v5) {
+                                v5Var = (v5) parent2;
+                                break;
+                            }
+                            parent2 = parent2.getParent();
+                        }
+                        if (v5Var != null) {
+                            int i13 = P2 == v5Var.getAuthorEditText() ? 1 : 0;
+                            P2.setSelection(P2.getSelectionEnd());
+                            z10 = f3Var.k0(v5Var, i13, 0, length);
+                        }
+                    }
+                }
+            }
+            z10 = false;
+        }
+    }
+
+    public final void T1(a aVar, MediaController.PhotoEntry photoEntry) {
+        r3 r3Var;
+        if (aVar != null && D3(aVar.b)) {
+            String str = photoEntry.imagePath;
+            if (str == null) {
+                str = photoEntry.path;
+            }
+            String str2 = str;
+            if (!TextUtils.isEmpty(str2)) {
+                c2 c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.d();
+                }
+                s T3 = T3(photoEntry, str2);
+                boolean c3 = q4.c(photoEntry);
+                TL_iv.PageBlock pageblockvideo = (photoEntry.isVideo || c3) ? new TL_iv.pageBlockVideo() : new TL_iv.pageBlockPhoto();
+                if (B3(aVar.b)) {
+                    g3(aVar.b).add(pageblockvideo);
+                    if (aVar.h == null) {
+                        aVar.h = new ArrayList();
+                    }
+                    aVar.h.add(T3);
+                } else {
+                    s sVar = aVar.g;
+                    if (sVar == null || sVar.a == 0) {
+                        aVar.b = pageblockvideo;
+                        aVar.g = T3;
+                    } else {
+                        TL_iv.pageBlockCollage pageblockcollage = new TL_iv.pageBlockCollage();
+                        pageblockcollage.caption = aVar.b.caption;
+                        h0.d(pageblockcollage);
+                        ArrayList<TL_iv.PageBlock> arrayList = new ArrayList<>();
+                        pageblockcollage.items = arrayList;
+                        arrayList.add(aVar.b);
+                        pageblockcollage.items.add(pageblockvideo);
+                        ArrayList arrayList2 = new ArrayList();
+                        aVar.h = arrayList2;
+                        arrayList2.add(aVar.g);
+                        aVar.h.add(T3);
+                        aVar.g = null;
+                        aVar.b = pageblockcollage;
+                    }
+                }
+                this.V2.N(false);
+                n4(aVar);
+                if (c3) {
+                    K4(aVar, T3, photoEntry);
+                    r3Var = this;
+                } else {
+                    r3Var = this;
+                    r3Var.L4(aVar, T3, str2, photoEntry.isVideo, photoEntry.width, photoEntry.height, photoEntry.duration);
+                }
+                c2 c2Var2 = r3Var.G3;
+                if (c2Var2 != null) {
+                    c2Var2.h();
+                }
+                r3Var.e3.onContentChanged();
+            }
+        }
+    }
+
+    public final int T2(int i10, int i11) {
+        while (i10 >= 0) {
+            ArrayList arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            a aVar = (a) arrayList.get(i10);
+            if (!aVar.i) {
+                int i12 = 0;
+                int i13 = -1;
+                for (int i14 = 0; i14 < i10; i14++) {
+                    a aVar2 = (a) arrayList.get(i14);
+                    if (x3(aVar2)) {
+                        i12++;
+                        if (i13 == -1 && !((TL_iv.pageBlockDetails) aVar2.b).open) {
+                            i13 = i12;
+                        }
+                    } else if (aVar2.i) {
+                        if (i13 != -1 && i12 == i13) {
+                            i13 = -1;
+                        }
+                        i12--;
+                    }
+                }
+                if (i13 != -1) {
+                    continue;
+                } else {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    if (!E3(pageBlock) || l3(pageBlock) || (pageBlock instanceof TL_iv.pageBlockTable)) {
+                        return i10;
+                    }
+                }
+            }
+            i10 += i11;
+        }
+        return -1;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00f5, code lost:
+    
+        if (r4 <= r2) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x0141, code lost:
+    
+        r1.l0(r11, r12, r13);
+        r1.m0();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0147, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x013f, code lost:
+    
+        if (r5 <= r4.getLineRight(r2)) goto L61;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean T4(View view, float f10, float f11) {
+        int lineForVertical;
+        int lineForVertical2;
+        l5 m9;
+        int lineForVertical3;
+        if (view != 0) {
+            f3 f3Var = this.k3;
+            if (!f3Var.y()) {
+                int left = (int) ((f10 - view.getLeft()) - getLeft());
+                int top = (int) ((f11 - view.getTop()) - getTop());
+                if (view instanceof v5) {
+                    v5 v5Var = (v5) view;
+                    d1 d1Var = v5Var.h;
+                    d1 d1Var2 = v5Var.f;
+                    LinearLayout linearLayout = v5Var.b;
+                    if (v5.y(d1Var2, d1Var2.getLeft() + linearLayout.getLeft(), d1Var2.getTop() + linearLayout.getTop(), left, top) || (d1Var.getVisibility() == 0 && v5.y(d1Var, d1Var.getLeft(), d1Var.getTop(), left, top))) {
+                        f3Var.l0(v5Var, left, top);
+                        f3Var.m0();
+                        return true;
+                    }
+                } else if (view instanceof i5) {
+                    i5 i5Var = (i5) view;
+                    h5 h5Var = i5Var.w;
+                    org.telegram.ui.g2 g2Var = i5Var.s;
+                    k5 k5Var = i5Var.v;
+                    TL_iv.pageTableCell m10 = i5Var.m(left, top);
+                    if (m10 != null && (m9 = k5Var.m(m10)) != null) {
+                        d1 d1Var3 = m9.a;
+                        int scrollX = g2Var.getScrollX() + (((left - g2Var.getLeft()) - h5Var.getLeft()) - k5Var.getLeft());
+                        int top2 = ((top - g2Var.getTop()) - h5Var.getTop()) - k5Var.getTop();
+                        int left2 = (scrollX - m9.getLeft()) - d1Var3.getLeft();
+                        int top3 = (top2 - m9.getTop()) - d1Var3.getTop();
+                        Layout layout = d1Var3.getLayout();
+                        if (layout != null) {
+                            int paddingTop = top3 - d1Var3.getPaddingTop();
+                            int paddingLeft = left2 - d1Var3.getPaddingLeft();
+                            if (paddingTop >= 0 && paddingTop < layout.getHeight() && (lineForVertical3 = layout.getLineForVertical(paddingTop)) >= 0 && lineForVertical3 < layout.getLineCount()) {
+                                float lineLeft = layout.getLineLeft(lineForVertical3);
+                                float lineRight = layout.getLineRight(lineForVertical3);
+                                float f12 = paddingLeft;
+                                if (f12 >= lineLeft) {
+                                }
+                            }
+                        }
+                    }
+                    d1 d1Var4 = i5Var.r;
+                    Layout layout2 = d1Var4.getLayout();
+                    if (layout2 != null) {
+                        int paddingLeft2 = left - (d1Var4.getPaddingLeft() + d1Var4.getLeft());
+                        int paddingTop2 = top - (d1Var4.getPaddingTop() + d1Var4.getTop());
+                        if (paddingTop2 >= 0 && paddingTop2 < layout2.getHeight() && (lineForVertical2 = layout2.getLineForVertical(paddingTop2)) >= 0 && lineForVertical2 < layout2.getLineCount()) {
+                            float f13 = paddingLeft2;
+                            if (f13 >= layout2.getLineLeft(lineForVertical2)) {
+                            }
+                        }
+                    }
+                } else if (view instanceof i0) {
+                    if (((i0) view).a(left, top)) {
+                        f3Var.l0(view, left, top);
+                        f3Var.m0();
+                        return true;
+                    }
+                } else if (view instanceof q0) {
+                    q0 q0Var = (q0) view;
+                    d1 d1Var5 = q0Var.d;
+                    Layout layout3 = d1Var5.getLayout();
+                    if (layout3 != null && d1Var5.length() != 0) {
+                        int paddingLeft3 = left - (d1Var5.getPaddingLeft() + d1Var5.getLeft());
+                        int paddingTop3 = top - (d1Var5.getPaddingTop() + d1Var5.getTop());
+                        if (paddingTop3 >= 0 && paddingTop3 < layout3.getHeight() && (lineForVertical = layout3.getLineForVertical(paddingTop3)) >= 0 && lineForVertical < layout3.getLineCount()) {
+                            int dp = AndroidUtilities.dp(24.0f);
+                            int max = Math.max(0, (d1Var5.getWidth() - d1Var5.getPaddingLeft()) - d1Var5.getPaddingRight());
+                            float f14 = dp;
+                            float max2 = Math.max(0.0f, layout3.getLineLeft(lineForVertical) - f14);
+                            float min = Math.min(max, layout3.getLineRight(lineForVertical) + f14);
+                            float f15 = paddingLeft3;
+                            if (f15 >= max2 && f15 <= min) {
+                                f3Var.l0(q0Var, left, top);
+                                f3Var.m0();
+                                return true;
+                            }
+                        }
+                    }
+                } else if (view instanceof k4) {
+                    k4 k4Var = (k4) view;
+                    if (k4Var.w != null) {
+                        int[] iArr = new int[4];
+                        k4Var.i(iArr);
+                        if (left >= iArr[0] && left <= iArr[2] && top >= iArr[1] && top <= iArr[3]) {
+                            f3Var.l0(view, left, top);
+                            f3Var.m0();
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public final void U1(TL_iv.RichMessage richMessage) {
+        ArrayList<TL_iv.PageBlock> arrayList;
+        int indexOf;
+        if (richMessage == null || (arrayList = richMessage.blocks) == null || arrayList.isEmpty()) {
+            return;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        TL_iv.RichMessage richMessage2 = this.h3;
+        if (richMessage2 == null) {
+            this.h3 = richMessage;
+        } else {
+            ArrayList<TLRPC.Photo> arrayList2 = richMessage.photos;
+            if (arrayList2 != null) {
+                richMessage2.photos.addAll(arrayList2);
+            }
+            ArrayList<TLRPC.Document> arrayList3 = richMessage.documents;
+            if (arrayList3 != null) {
+                this.h3.documents.addAll(arrayList3);
+            }
+        }
+        ArrayList arrayList4 = new ArrayList();
+        W2(arrayList4, richMessage.blocks, this.j3);
+        if (arrayList4.isEmpty()) {
+            return;
+        }
+        for (int i10 = 0; i10 < arrayList4.size(); i10++) {
+            v4((a) arrayList4.get(i10));
+        }
+        ArrayList arrayList5 = this.i3;
+        int size = arrayList5.size();
+        a Q2 = Q2();
+        if (Q2 != null && (indexOf = arrayList5.indexOf(Q2)) >= 0) {
+            TL_iv.PageBlock pageBlock = Q2.b;
+            if ((pageBlock instanceof TL_iv.pageBlockParagraph) && v5.z(pageBlock).isEmpty()) {
+                arrayList5.remove(indexOf);
+                size = indexOf;
+            } else {
+                size = indexOf + 1;
+            }
+        }
+        arrayList5.addAll(size, arrayList4);
+        V3();
+        s4();
+        this.V2.N(false);
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.onContentChanged();
+        }
+    }
+
+    public final a U3(int i10, int i11) {
+        while (i10 >= 0) {
+            ArrayList arrayList = this.m4;
+            if (i10 >= arrayList.size()) {
+                return null;
+            }
+            a aVar = (a) arrayList.get(i10);
+            if (!aVar.i) {
+                if (aVar.t == 0) {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    if (E3(pageBlock) && !l3(pageBlock) && !(pageBlock instanceof TL_iv.pageBlockTable)) {
+                    }
+                }
+                return aVar;
+            }
+            i10 += i11;
+        }
+        return null;
+    }
+
+    public final void U4(a aVar, TL_iv.PageBlock pageBlock, int i10, int i11, boolean z4, boolean z10) {
+        if (aVar == null) {
+            aVar = X4();
+        }
+        a aVar2 = aVar;
+        if (aVar2 == null || pageBlock == null) {
+            return;
+        }
+        ArrayList arrayList = this.i3;
+        if (arrayList.indexOf(aVar2) < 0 || x3(aVar2) || aVar2.i) {
+            return;
+        }
+        TL_iv.PageBlock pageBlock2 = aVar2.b;
+        if (pageBlock != pageBlock2 && A3(pageBlock2) && A3(pageBlock)) {
+            v5 u22 = u2(arrayList.indexOf(aVar2));
+            v5.d(pageBlock, u22 != null ? u22.getEditText().getText() : v5.A(aVar2.b));
+            TL_iv.RichText k10 = v5.k(aVar2.b);
+            if (k10 != null && v5.k(pageBlock) != null) {
+                if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
+                    ((TL_iv.pageBlockBlockquote) pageBlock).caption = k10;
+                } else if (pageBlock instanceof TL_iv.pageBlockPullquote) {
+                    ((TL_iv.pageBlockPullquote) pageBlock).caption = k10;
+                }
+            }
+        }
+        R4(aVar2, pageBlock, i10, i11, z4, z10);
+    }
+
+    public final a V1(a aVar, int i10) {
+        int i11;
+        ArrayList arrayList = this.m4;
+        int indexOf = arrayList.indexOf(aVar);
+        if (indexOf < 0 || (i11 = indexOf + i10) < 0 || i11 >= arrayList.size()) {
+            return null;
+        }
+        a aVar2 = (a) arrayList.get(i11);
+        if (aVar2.t != 0) {
+            return aVar2;
+        }
+        return null;
+    }
+
+    public final void V2() {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            KeyEvent.Callback childAt = getChildAt(i10);
+            if (childAt instanceof v5) {
+                v5 v5Var = (v5) childAt;
+                v5Var.f.n();
+                v5Var.h.n();
+            } else if (childAt instanceof i0) {
+                ((i0) childAt).getCaptionEditText().n();
+            } else if (childAt instanceof q0) {
+                ((q0) childAt).getEditText().n();
+            }
+        }
+    }
+
+    public final void V3() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            a aVar = (a) arrayList.get(i10);
+            if (!aVar.k.isEmpty() && v5.p(aVar.b)) {
+                long a2 = m0.a();
+                TL_iv.RichText k10 = v5.k(aVar.b);
+                if (k10 != null && !(k10 instanceof TL_iv.textEmpty)) {
+                    this.j3.put(Long.valueOf(a2), k10);
+                }
+                aVar.k.add(Long.valueOf(a2));
+                TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                pageblockparagraph.text = aVar.b.text;
+                aVar.b = pageblockparagraph;
+            }
+            i10++;
+        }
+    }
+
+    public final void V4(a aVar, TL_iv.PageBlock pageBlock) {
+        if (aVar == null) {
+            aVar = X4();
+        }
+        a aVar2 = aVar;
+        if (aVar2 == null) {
+            return;
+        }
+        U4(aVar2, pageBlock, aVar2.c, aVar2.d, aVar2.e, aVar2.f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0122, code lost:
+    
+        r4 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e8, code lost:
+    
+        r8 = r4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00e9, code lost:
+    
+        if (r8 <= 0) goto L271;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ef, code lost:
+    
+        if (H2(r8) <= 0) goto L272;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x00f1, code lost:
+    
+        r8 = r8 - 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x00f4, code lost:
+    
+        r9 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x00f5, code lost:
+    
+        r12 = r9 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x00fb, code lost:
+    
+        if (r12 >= r5.size()) goto L274;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0101, code lost:
+    
+        if (H2(r12) <= 0) goto L273;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0103, code lost:
+    
+        r9 = r12;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0105, code lost:
+    
+        r13 = (vh.a) r5.get(r4);
+        r7 = (vh.a) r5.get(r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0113, code lost:
+    
+        if (r8 != r4) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x0119, code lost:
+    
+        if (x3(r13) != false) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x011d, code lost:
+    
+        if (r13.i == false) goto L60;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0120, code lost:
+    
+        r4 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0123, code lost:
+    
+        if (r9 != r6) goto L69;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x0129, code lost:
+    
+        if (x3(r7) != false) goto L69;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x012d, code lost:
+    
+        if (r7.i == false) goto L68;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0130, code lost:
+    
+        r6 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x0133, code lost:
+    
+        r10 = new java.lang.StringBuilder();
+        r17 = r4;
+        r18 = r6;
+        r4 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x013e, code lost:
+    
+        if (r4 >= r25.length) goto L275;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0140, code lost:
+    
+        if (r4 <= 0) goto L277;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0142, code lost:
+    
+        r10.append(' ');
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0147, code lost:
+    
+        r10.append(r25[r4]);
+        r4 = r4 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x014f, code lost:
+    
+        r3 = r10.toString();
+        r4 = r20.G3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0155, code lost:
+    
+        if (r4 == null) goto L79;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0157, code lost:
+    
+        r4.d();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x015a, code lost:
+    
+        if (r17 != false) goto L85;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x015c, code lost:
+    
+        r4 = vh.v5.z(r13.b);
+        r1 = r4.substring(0, java.lang.Math.max(0, java.lang.Math.min(r1, r4.length())));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0173, code lost:
+    
+        if (r18 != false) goto L83;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0175, code lost:
+    
+        r4 = vh.v5.z(r7.b);
+        r15 = r4.substring(java.lang.Math.max(0, java.lang.Math.min(r2, r4.length())));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x018b, code lost:
+    
+        vh.v5.f(r13.b, r1 + r3 + r15);
+        r5.subList(r8 + 1, r12).clear();
+        r1 = r3.length() + r1.length();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x01b5, code lost:
+    
+        r6 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0219, code lost:
+    
+        if (r5.isEmpty() == false) goto L91;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x021b, code lost:
+    
+        r13 = new vh.a(new org.telegram.tgnet.tl.TL_iv.pageBlockParagraph(), r6, r6);
+        r5.add(r13);
+        r1 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x0229, code lost:
+    
+        s4();
+        r11.f(r6);
+        r14.N(r6);
+        r2 = r20.G3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0234, code lost:
+    
+        if (r2 == null) goto L94;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0236, code lost:
+    
+        r2.h();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0239, code lost:
+    
+        post(new vh.l2(r20, r13, r1, 3));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0242, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x01b7, code lost:
+    
+        if (r18 != false) goto L87;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x01b9, code lost:
+    
+        r1 = vh.v5.z(r7.b);
+        r1 = r1.substring(java.lang.Math.max(0, java.lang.Math.min(r2, r1.length())));
+        vh.v5.f(r7.b, r3 + r1);
+        r5.subList(r8, r9).clear();
+        r1 = r3.length();
+        r13 = r7;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x01f1, code lost:
+    
+        r5.subList(r8, r12).clear();
+        r1 = new org.telegram.tgnet.tl.TL_iv.pageBlockParagraph();
+        Z1(r1, r3);
+        r6 = 0;
+        r13 = new vh.a(r1, 0, 0);
+        r5.add(java.lang.Math.min(r8, r5.size()), r13);
+        r1 = r3.length();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0132, code lost:
+    
+        r6 = true;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v23 */
+    /* JADX WARN: Type inference failed for: r6v25, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r6v26 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean W1(int i10, int i11, int i12, int i13, String[] strArr) {
+        String str;
+        i5 i5Var;
+        z5 model;
+        int max;
+        int length;
+        int length2;
+        int i14 = i11;
+        int i15 = i13;
+        a y42 = y4(i10);
+        ArrayList arrayList = this.i3;
+        int indexOf = arrayList.indexOf(y42);
+        int indexOf2 = arrayList.indexOf(y4(i12));
+        if (indexOf >= 0 && indexOf2 >= 0 && indexOf < arrayList.size() && indexOf2 < arrayList.size()) {
+            a aVar = (a) arrayList.get(indexOf);
+            a aVar2 = (a) arrayList.get(indexOf2);
+            f3 f3Var = this.k3;
+            if (indexOf == indexOf2 && x3(aVar)) {
+                View z12 = z1(aVar);
+                if ((z12 instanceof q0) && (aVar.b instanceof TL_iv.pageBlockDetails)) {
+                    d1 editText = ((q0) z12).getEditText();
+                    c2 c2Var = this.G3;
+                    if (c2Var != null) {
+                        c2Var.d();
+                    }
+                    StringBuilder sb = new StringBuilder();
+                    for (int i16 = 0; i16 < strArr.length; i16++) {
+                        if (i16 > 0) {
+                            sb.append(' ');
+                        }
+                        sb.append(strArr[i16]);
+                    }
+                    String sb2 = sb.toString();
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(editText.getText());
+                    int length3 = spannableStringBuilder.length();
+                    int d = v2.d(i14, i15, length3, 0);
+                    spannableStringBuilder.replace(d, yh.d(i14, i15, length3, 0), (CharSequence) sb2);
+                    editText.setTextSilently(spannableStringBuilder);
+                    editText.invalidateEffects();
+                    ((TL_iv.pageBlockDetails) aVar.b).title = x5.f(spannableStringBuilder);
+                    int length4 = sb2.length() + d;
+                    f3Var.f(false);
+                    c2 c2Var2 = this.G3;
+                    if (c2Var2 != null) {
+                        c2Var2.h();
+                    }
+                    post(new q2(editText, length4, 0));
+                    return true;
+                }
+            } else {
+                int i17 = indexOf;
+                while (true) {
+                    w51 w51Var = this.V2;
+                    str = "";
+                    if (i17 > indexOf2) {
+                        c2 c2Var3 = this.G3;
+                        if (c2Var3 != null) {
+                            c2Var3.d();
+                        }
+                        TL_iv.PageBlock pageBlock = aVar.b;
+                        boolean z4 = pageBlock instanceof TL_iv.pageBlockTable;
+                        boolean z10 = aVar2.b instanceof TL_iv.pageBlockTable;
+                        p3 p3Var = this.e3;
+                        if (!z4 && !z10) {
+                            boolean l32 = l3(pageBlock);
+                            boolean l33 = l3(aVar2.b);
+                            if (!l32 && !l33) {
+                                if (indexOf != indexOf2 || !v5.p(aVar.b) || f3Var.v0 != 1 || f3Var.y0 != 1) {
+                                    String z11 = v5.z(aVar.b);
+                                    String z13 = indexOf == indexOf2 ? z11 : v5.z(aVar2.b);
+                                    int max2 = Math.max(0, Math.min(i14, z11.length()));
+                                    int max3 = Math.max(0, Math.min(i15, z13.length()));
+                                    String substring = z11.substring(0, max2);
+                                    String substring2 = z13.substring(max3);
+                                    if (strArr.length <= 1) {
+                                        str = strArr.length != 0 ? strArr[0] : "";
+                                        v5.f(aVar.b, substring + str + substring2);
+                                        if (indexOf2 > indexOf) {
+                                            while (indexOf2 > indexOf) {
+                                                arrayList.remove(indexOf2);
+                                                indexOf2--;
+                                            }
+                                        }
+                                        length2 = str.length() + substring.length();
+                                    } else {
+                                        TL_iv.PageBlock pageBlock2 = aVar.b;
+                                        StringBuilder l10 = e2.c.l(substring);
+                                        l10.append(strArr[0]);
+                                        v5.f(pageBlock2, l10.toString());
+                                        if (indexOf2 > indexOf) {
+                                            while (indexOf2 > indexOf) {
+                                                arrayList.remove(indexOf2);
+                                                indexOf2--;
+                                            }
+                                        }
+                                        for (int i18 = 1; i18 < strArr.length - 1; i18++) {
+                                            TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                                            Z1(pageblockparagraph, strArr[i18]);
+                                            int i19 = indexOf + i18;
+                                            int i20 = aVar.c;
+                                            int i21 = aVar.d;
+                                            if (i21 > 0) {
+                                                i21 += i18;
+                                            }
+                                            arrayList.add(i19, new a(pageblockparagraph, i20, i21));
+                                        }
+                                        String str2 = strArr[strArr.length - 1];
+                                        TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
+                                        Z1(pageblockparagraph2, str2 + substring2);
+                                        int length5 = (strArr.length + indexOf) - 1;
+                                        int i22 = aVar.c;
+                                        int i23 = aVar.d;
+                                        if (i23 > 0) {
+                                            i23 = (i23 + strArr.length) - 1;
+                                        }
+                                        arrayList.add(length5, new a(pageblockparagraph2, i22, i23));
+                                        indexOf = (indexOf + strArr.length) - 1;
+                                        length2 = str2.length();
+                                    }
+                                    s4();
+                                    a aVar3 = (indexOf < 0 || indexOf >= arrayList.size()) ? null : (a) arrayList.get(indexOf);
+                                    f3Var.f(false);
+                                    w51Var.N(false);
+                                    c2 c2Var4 = this.G3;
+                                    if (c2Var4 != null) {
+                                        c2Var4.h();
+                                    }
+                                    post(new l2(this, aVar3, length2, 0));
+                                    return true;
+                                }
+                                View z14 = z1(aVar);
+                                if (z14 instanceof v5) {
+                                    v5 v5Var = (v5) z14;
+                                    d1 authorEditText = v5Var.getAuthorEditText();
+                                    c2 c2Var5 = this.G3;
+                                    if (c2Var5 != null) {
+                                        c2Var5.d();
+                                    }
+                                    StringBuilder sb3 = new StringBuilder();
+                                    for (int i24 = 0; i24 < strArr.length; i24++) {
+                                        if (i24 > 0) {
+                                            sb3.append(' ');
+                                        }
+                                        sb3.append(strArr[i24]);
+                                    }
+                                    String sb4 = sb3.toString();
+                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(authorEditText.getText());
+                                    int length6 = spannableStringBuilder2.length();
+                                    int d10 = v2.d(i14, i15, length6, 0);
+                                    spannableStringBuilder2.replace(d10, yh.d(i14, i15, length6, 0), (CharSequence) sb4);
+                                    authorEditText.setTextSilently(spannableStringBuilder2);
+                                    authorEditText.invalidateEffects();
+                                    v5Var.w();
+                                    int length7 = sb4.length() + d10;
+                                    f3Var.f(false);
+                                    c2 c2Var6 = this.G3;
+                                    if (c2Var6 != null) {
+                                        c2Var6.h();
+                                    }
+                                    p3Var.onContentChanged();
+                                    post(new q2(authorEditText, length7, 1));
+                                    return true;
+                                }
+                            } else if (l32 && l33 && indexOf == indexOf2) {
+                                KeyEvent.Callback z15 = z1(aVar);
+                                if (z15 instanceof i0) {
+                                    i0 i0Var = (i0) z15;
+                                    d1 captionEditText = i0Var.getCaptionEditText();
+                                    c2 c2Var7 = this.G3;
+                                    if (c2Var7 != null) {
+                                        c2Var7.d();
+                                    }
+                                    StringBuilder sb5 = new StringBuilder();
+                                    for (int i25 = 0; i25 < strArr.length; i25++) {
+                                        if (i25 > 0) {
+                                            sb5.append(' ');
+                                        }
+                                        sb5.append(strArr[i25]);
+                                    }
+                                    String sb6 = sb5.toString();
+                                    SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(captionEditText.getText());
+                                    int length8 = spannableStringBuilder3.length();
+                                    int d11 = v2.d(i14, i15, length8, 0);
+                                    spannableStringBuilder3.replace(d11, yh.d(i14, i15, length8, 0), (CharSequence) sb6);
+                                    captionEditText.setTextSilently(spannableStringBuilder3);
+                                    captionEditText.invalidateEffects();
+                                    i0Var.b();
+                                    int length9 = sb6.length() + d11;
+                                    f3Var.f(false);
+                                    c2 c2Var8 = this.G3;
+                                    if (c2Var8 != null) {
+                                        c2Var8.h();
+                                    }
+                                    post(new q2(captionEditText, length9, 2));
+                                    return true;
+                                }
+                            }
+                        } else if (z4 && z10 && indexOf == indexOf2) {
+                            int i26 = f3Var.v0;
+                            int i27 = f3Var.y0;
+                            View z16 = z1(aVar);
+                            if ((z16 instanceof i5) && (model = (i5Var = (i5) z16).getModel()) != null) {
+                                ArrayList arrayList2 = model.g;
+                                if (i26 == 0 && i27 == 0) {
+                                    TL_iv.PageBlock pageBlock3 = aVar.b;
+                                    if (pageBlock3 instanceof TL_iv.pageBlockTable) {
+                                        TL_iv.pageBlockTable pageblocktable = (TL_iv.pageBlockTable) pageBlock3;
+                                        c2 c2Var9 = this.G3;
+                                        if (c2Var9 != null) {
+                                            c2Var9.d();
+                                        }
+                                        String l11 = x5.l(pageblocktable.title);
+                                        int max4 = Math.max(0, Math.min(Math.min(i14, i15), l11.length()));
+                                        int max5 = Math.max(0, Math.min(Math.max(i14, i15), l11.length()));
+                                        StringBuilder sb7 = new StringBuilder();
+                                        for (int i28 = 0; i28 < strArr.length; i28++) {
+                                            if (i28 > 0) {
+                                                sb7.append(' ');
+                                            }
+                                            sb7.append(strArr[i28]);
+                                        }
+                                        String sb8 = sb7.toString();
+                                        String str3 = l11.substring(0, max4) + sb8 + l11.substring(max5);
+                                        TL_iv.textPlain textplain = new TL_iv.textPlain();
+                                        textplain.text = str3;
+                                        pageblocktable.title = textplain;
+                                        d1 titleEditText = i5Var.getTitleEditText();
+                                        titleEditText.setTextSilently(str3);
+                                        titleEditText.invalidateEffects();
+                                        int length10 = sb8.length() + max4;
+                                        f3Var.f(false);
+                                        c2 c2Var10 = this.G3;
+                                        if (c2Var10 != null) {
+                                            c2Var10.h();
+                                        }
+                                        p3Var.onContentChanged();
+                                        post(new q2(titleEditText, length10, 4));
+                                        return true;
+                                    }
+                                } else {
+                                    int i29 = i26 - 1;
+                                    int i30 = i27 - 1;
+                                    int size = arrayList2.size();
+                                    if (i29 >= 0 && i29 < size && i30 >= 0 && i30 < size) {
+                                        c2 c2Var11 = this.G3;
+                                        if (c2Var11 != null) {
+                                            c2Var11.d();
+                                        }
+                                        if (i29 > i30 || (i29 == i30 && i14 > i15)) {
+                                            i15 = i14;
+                                            i14 = i15;
+                                            i30 = i29;
+                                            i29 = i30;
+                                        }
+                                        StringBuilder sb9 = new StringBuilder();
+                                        for (int i31 = 0; i31 < strArr.length; i31++) {
+                                            if (i31 > 0) {
+                                                sb9.append('\n');
+                                            }
+                                            sb9.append(strArr[i31]);
+                                        }
+                                        String sb10 = sb9.toString();
+                                        TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) arrayList2.get(i29);
+                                        TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) arrayList2.get(i30);
+                                        if (i29 == i30) {
+                                            String g10 = z5.g(pagetablecell);
+                                            max = Math.max(0, Math.min(i14, g10.length()));
+                                            String str4 = g10.substring(0, max) + sb10 + g10.substring(Math.max(0, Math.min(i15, g10.length())));
+                                            z5.c(pagetablecell, str4);
+                                            l5 m9 = i5Var.getGrid().m(pagetablecell);
+                                            if (m9 != null) {
+                                                m9.a.setTextSilently(str4);
+                                            }
+                                            length = sb10.length();
+                                        } else {
+                                            String g11 = z5.g(pagetablecell);
+                                            max = Math.max(0, Math.min(i14, g11.length()));
+                                            String str5 = g11.substring(0, max) + sb10;
+                                            z5.c(pagetablecell, str5);
+                                            l5 m10 = i5Var.getGrid().m(pagetablecell);
+                                            if (m10 != null) {
+                                                m10.a.setTextSilently(str5);
+                                            }
+                                            for (int i32 = i29 + 1; i32 < i30; i32++) {
+                                                TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) arrayList2.get(i32);
+                                                z5.c(pagetablecell3, "");
+                                                l5 m11 = i5Var.getGrid().m(pagetablecell3);
+                                                if (m11 != null) {
+                                                    m11.a.setTextSilently("");
+                                                }
+                                            }
+                                            String g12 = z5.g(pagetablecell2);
+                                            String substring3 = g12.substring(Math.max(0, Math.min(i15, g12.length())));
+                                            z5.c(pagetablecell2, substring3);
+                                            l5 m12 = i5Var.getGrid().m(pagetablecell2);
+                                            if (m12 != null) {
+                                                m12.a.setTextSilently(substring3);
+                                            }
+                                            length = sb10.length();
+                                        }
+                                        int i33 = length + max;
+                                        f3Var.f(false);
+                                        c2 c2Var12 = this.G3;
+                                        if (c2Var12 != null) {
+                                            c2Var12.h();
+                                        }
+                                        post(new zt0(i5Var, pagetablecell, i33, 19));
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        if (((a) arrayList.get(i17)).i || x3((a) arrayList.get(i17))) {
+                            break;
+                        }
+                        i17++;
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0036  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean W3(a aVar, boolean z4) {
+        int i10;
+        c2 c2Var;
+        int indexOf = this.i3.indexOf(aVar);
+        if (indexOf >= 0) {
+            View z12 = z1(aVar);
+            if (z12 instanceof v5) {
+                v5 v5Var = (v5) z12;
+                if (v5Var.getEditText().isFocused()) {
+                    i10 = v5Var.getEditText().getSelectionEnd();
+                    c2Var = this.G3;
+                    if (c2Var != null) {
+                        c2Var.d();
+                    }
+                    if (q3(indexOf, z4, false)) {
+                        s4();
+                        if (findFocus() instanceof d1) {
+                            X1();
+                        } else {
+                            this.V2.N(false);
+                        }
+                        c2 c2Var2 = this.G3;
+                        if (c2Var2 != null) {
+                            c2Var2.h();
+                        }
+                        if (i10 < 0) {
+                            return true;
+                        }
+                        post(new l2(this, aVar, i10, 2));
+                        return true;
+                    }
+                }
+            }
+            i10 = -1;
+            c2Var = this.G3;
+            if (c2Var != null) {
+            }
+            if (q3(indexOf, z4, false)) {
+            }
+        }
+        return false;
+    }
+
+    public final void W4(a aVar, int i10) {
+        if (aVar == null) {
+            aVar = X4();
+        }
+        a aVar2 = aVar;
+        if (aVar2 == null) {
+            return;
+        }
+        if (i10 == 0) {
+            U4(aVar2, aVar2.b, 0, 0, false, false);
+            return;
+        }
+        int max = Math.max(1, aVar2.c);
+        int max2 = i10 == 2 ? Math.max(1, aVar2.d) : 0;
+        boolean z4 = i10 == 3;
+        TL_iv.PageBlock pageBlock = aVar2.b;
+        if (!(pageBlock instanceof TL_iv.pageBlockParagraph)) {
+            pageBlock = new TL_iv.pageBlockParagraph();
+        }
+        U4(aVar2, pageBlock, max, max2, z4, z4 && aVar2.f);
+    }
+
+    public final void X1() {
+        v5 v5Var;
+        a aVar;
+        s5 s5Var;
+        this.V2.S();
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if ((childAt instanceof v5) && (aVar = (v5Var = (v5) childAt).x) != null && (s5Var = v5Var.y) != null) {
+                v5Var.g(aVar, s5Var, v5Var.B);
+            }
+        }
+    }
+
+    public final void X3() {
+        int length;
+        int d;
+        int d10;
+        int length2;
+        int d11;
+        int d12;
+        int length3;
+        int d13;
+        int d14;
+        int length4;
+        int d15;
+        int d16;
+        d1 N4;
+        int length5;
+        int d17;
+        int d18;
+        boolean L3 = L3();
+        f3 f3Var = this.k3;
+        if (L3) {
+            int i10 = f3Var.u0;
+            int i11 = f3Var.v0;
+            if (i11 == f3Var.y0 && (N4 = N4(i10, i11)) != null && (d17 = v2.d(f3Var.w0, f3Var.z0, (length5 = N4.length()), 0)) < (d18 = yh.d(f3Var.w0, f3Var.z0, length5, 0))) {
+                c2 c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.d();
+                }
+                if (x5.h(N4.getText(), d17, d18)) {
+                    x5.n(N4.getText(), d17, d18);
+                    N4.invalidateEffects();
+                    g4(i10, i11);
+                    c2 c2Var2 = this.G3;
+                    if (c2Var2 != null) {
+                        c2Var2.h();
+                    }
+                    o4();
+                }
+                N4.setSelectionOverride(d17, d18);
+                N4.makeSelectedDate();
+                return;
+            }
+            return;
+        }
+        if (y3()) {
+            int i12 = f3Var.u0;
+            d1 I2 = I2(i12);
+            if (I2 != null && (d15 = v2.d(f3Var.w0, f3Var.z0, (length4 = I2.length()), 0)) < (d16 = yh.d(f3Var.w0, f3Var.z0, length4, 0))) {
+                c2 c2Var3 = this.G3;
+                if (c2Var3 != null) {
+                    c2Var3.d();
+                }
+                if (x5.h(I2.getText(), d15, d16)) {
+                    x5.n(I2.getText(), d15, d16);
+                    I2.invalidateEffects();
+                    e4(i12);
+                    c2 c2Var4 = this.G3;
+                    if (c2Var4 != null) {
+                        c2Var4.h();
+                    }
+                    o4();
+                }
+                I2.setSelectionOverride(d15, d16);
+                I2.makeSelectedDate();
+                return;
+            }
+            return;
+        }
+        if (w3()) {
+            int i13 = f3Var.u0;
+            d1 s22 = s2(i13);
+            if (s22 != null && (d13 = v2.d(f3Var.w0, f3Var.z0, (length3 = s22.length()), 0)) < (d14 = yh.d(f3Var.w0, f3Var.z0, length3, 0))) {
+                c2 c2Var5 = this.G3;
+                if (c2Var5 != null) {
+                    c2Var5.d();
+                }
+                if (x5.h(s22.getText(), d13, d14)) {
+                    x5.n(s22.getText(), d13, d14);
+                    s22.invalidateEffects();
+                    d4(i13);
+                    c2 c2Var6 = this.G3;
+                    if (c2Var6 != null) {
+                        c2Var6.h();
+                    }
+                    o4();
+                }
+                s22.setSelectionOverride(d13, d14);
+                s22.makeSelectedDate();
+                return;
+            }
+            return;
+        }
+        if (!G3()) {
+            v5 G4 = G4();
+            if (G4 != null && (d = v2.d(f3Var.w0, f3Var.z0, (length = G4.getEditText().length()), 0)) < (d10 = yh.d(f3Var.w0, f3Var.z0, length, 0))) {
+                c2 c2Var7 = this.G3;
+                if (c2Var7 != null) {
+                    c2Var7.d();
+                }
+                if (x5.h(G4.getEditText().getText(), d, d10)) {
+                    x5.n(G4.getEditText().getText(), d, d10);
+                    G4.getEditText().invalidateEffects();
+                    G4.x();
+                    c2 c2Var8 = this.G3;
+                    if (c2Var8 != null) {
+                        c2Var8.h();
+                    }
+                    o4();
+                }
+                G4.getEditText().setSelectionOverride(d, d10);
+                G4.getEditText().makeSelectedDate();
+                return;
+            }
+            return;
+        }
+        int i14 = f3Var.u0;
+        d1 j42 = j4(i14);
+        if (j42 != null && (d11 = v2.d(f3Var.w0, f3Var.z0, (length2 = j42.length()), 0)) < (d12 = yh.d(f3Var.w0, f3Var.z0, length2, 0))) {
+            c2 c2Var9 = this.G3;
+            if (c2Var9 != null) {
+                c2Var9.d();
+            }
+            if (x5.h(j42.getText(), d11, d12)) {
+                x5.n(j42.getText(), d11, d12);
+                j42.invalidateEffects();
+                f4(i14);
+                c2 c2Var10 = this.G3;
+                if (c2Var10 != null) {
+                    c2Var10.h();
+                }
+                o4();
+            }
+            j42.setSelectionOverride(d11, d12);
+            j42.makeSelectedDate();
+        }
+    }
+
+    public final a X4() {
+        f3 f3Var;
+        int i10;
+        a Q2 = Q2();
+        return (Q2 == null && (f3Var = this.k3) != null && f3Var.y() && (i10 = f3Var.u0) == f3Var.x0) ? y4(i10) : Q2;
+    }
+
+    public final boolean Y1(int i10, int i11) {
+        f3 f3Var;
+        ArrayList arrayList = this.K3;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            int max = Math.max(0, Math.min(i10, i11));
+            int max2 = Math.max(0, Math.max(i10, i11));
+            int[] O3 = O3(max);
+            int[] O32 = O3(max2);
+            a aVar = (a) this.K3.get(O3[0]);
+            if (O3[0] == O32[0] || max == max2) {
+                View z12 = z1(aVar);
+                if (z12 instanceof v5) {
+                    v5 v5Var = (v5) z12;
+                    v5Var.B();
+                    d1 editText = v5Var.getEditText();
+                    int length = editText.length();
+                    editText.setSelection(Math.min(O3[1], length), Math.min(O32[1], length));
+                }
+            } else {
+                View z13 = z1(aVar);
+                View z14 = z1(this.K3.get(O32[0]));
+                if ((z13 instanceof v5) && (z14 instanceof v5)) {
+                    int i12 = 0;
+                    while (true) {
+                        ArrayList arrayList2 = this.i3;
+                        int size = arrayList2.size();
+                        f3Var = this.k3;
+                        if (i12 >= size) {
+                            break;
+                        }
+                        f3Var.Y(i12, v5.z(((a) arrayList2.get(i12)).b));
+                        i12++;
+                    }
+                    v5 v5Var2 = (v5) z13;
+                    int length2 = v5Var2.getEditText().length();
+                    if (O3[1] >= length2) {
+                        length2 = Math.max(0, length2 - 1);
+                    }
+                    if (!f3Var.k0(v5Var2, 0, O3[1], length2)) {
+                        v5Var2.B();
+                        return true;
+                    }
+                    f3Var.c0(0, O32[1], (v5) z14);
+                    return true;
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final ArrayList Y2(int i10, int i11, int i12, boolean z4) {
+        TL_iv.pageBlockBlockquoteBlocks pageblockblockquoteblocks;
+        int i13;
+        int i14;
+        ArrayList arrayList = new ArrayList();
+        int i15 = i10;
+        while (i15 < i11) {
+            ArrayList arrayList2 = this.i3;
+            a aVar = (a) arrayList2.get(i15);
+            boolean z10 = aVar.i;
+            ArrayList arrayList3 = aVar.k;
+            if (z10) {
+                i15++;
+            } else if (arrayList3.size() > i12) {
+                Long l10 = (Long) arrayList3.get(i12);
+                long longValue = l10.longValue();
+                int i16 = i15 + 1;
+                while (i16 < i11) {
+                    a aVar2 = (a) arrayList2.get(i16);
+                    if (aVar2.k.size() <= i12 || ((Long) aVar2.k.get(i12)).longValue() != longValue) {
+                        break;
+                    }
+                    i16++;
+                }
+                ArrayList<TL_iv.PageBlock> Y2 = Y2(i15, i16, i12 + 1, true);
+                if (Y2.isEmpty()) {
+                    pageblockblockquoteblocks = null;
+                } else {
+                    TL_iv.RichText richText = (TL_iv.RichText) this.j3.get(l10);
+                    if (richText == null) {
+                        richText = new TL_iv.textEmpty();
+                    }
+                    if (Y2.size() == 1 && (Y2.get(0) instanceof TL_iv.pageBlockParagraph)) {
+                        TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                        pageblockblockquote.text = Y2.get(0).text != null ? Y2.get(0).text : new TL_iv.textEmpty();
+                        pageblockblockquote.caption = richText;
+                        pageblockblockquoteblocks = pageblockblockquote;
+                    } else {
+                        pageblockblockquoteblocks = new TL_iv.pageBlockBlockquoteBlocks();
+                        pageblockblockquoteblocks.blocks = Y2;
+                        pageblockblockquoteblocks.caption = richText;
+                    }
+                }
+                if (pageblockblockquoteblocks != null) {
+                    arrayList.add(pageblockblockquoteblocks);
+                }
+                i15 = i16;
+            } else if (x3(aVar)) {
+                TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
+                if (pageblockdetails.title == null) {
+                    pageblockdetails.title = new TL_iv.textEmpty();
+                }
+                int P3 = P3(i15);
+                pageblockdetails.blocks = Y2(i15 + 1, Math.min(P3, i11), i12, true);
+                arrayList.add(pageblockdetails);
+                i15 = P3 + 1;
+            } else {
+                int i17 = aVar.c;
+                if (i17 <= 0) {
+                    J2(arrayList, aVar);
+                    i15++;
+                    i13 = i11;
+                    i14 = i12;
+                } else {
+                    int[] iArr = {i15};
+                    boolean z11 = aVar.d > 0;
+                    i13 = i11;
+                    i14 = i12;
+                    TL_iv.PageBlock k22 = k2(i15, i17, i13, i14, z11, iArr);
+                    if (k22 != null) {
+                        arrayList.add(k22);
+                    }
+                    int i18 = iArr[0];
+                    i15 = i18 <= 0 ? i13 : i18;
+                }
+                i11 = i13;
+                i12 = i14;
+            }
+        }
+        if (!z4) {
+            while (!arrayList.isEmpty() && z3((TL_iv.PageBlock) arrayList.get(0))) {
+                arrayList.remove(0);
+            }
+            while (!arrayList.isEmpty() && z3((TL_iv.PageBlock) kh.a2.i(1, arrayList))) {
+                android.support.v4.media.a.u(1, arrayList);
+            }
+        }
+        return arrayList;
+    }
+
+    public final void Y3(int i10) {
+        c2 c2Var;
+        int i11;
+        boolean z4;
+        SpannableStringBuilder spannableStringBuilder;
+        int i12;
+        int length;
+        int d;
+        int d10;
+        int length2;
+        int d11;
+        int d12;
+        int length3;
+        int d13;
+        int d14;
+        c2 c2Var2;
+        int i13;
+        f3 f3Var = this.k3;
+        if (f3Var != null && f3Var.y()) {
+            boolean L3 = L3();
+            p3 p3Var = this.e3;
+            int i14 = 0;
+            if (L3) {
+                int i15 = f3Var.u0;
+                int i16 = f3Var.v0;
+                int i17 = f3Var.y0;
+                int i18 = f3Var.w0;
+                int i19 = f3Var.z0;
+                boolean K3 = K3(i10, i15, i16, i18, i17, i19);
+                int w22 = !K3 ? w2(i10) : 0;
+                c2 c2Var3 = this.G3;
+                if (c2Var3 != null) {
+                    c2Var3.d();
+                }
+                this.F3 = true;
+                int i20 = i16;
+                boolean z10 = false;
+                while (i20 <= i17) {
+                    d1 N4 = N4(i15, i20);
+                    if (N4 == null) {
+                        i13 = i16;
+                    } else {
+                        int length4 = N4.length();
+                        int i21 = i20 == i16 ? i18 : 0;
+                        int i22 = i20 == i17 ? i19 : length4;
+                        if (i16 == i17) {
+                            i21 = Math.min(i18, i19);
+                            i22 = Math.max(i18, i19);
+                        }
+                        int i23 = i21;
+                        i13 = i16;
+                        int max = Math.max(0, Math.min(i23, length4));
+                        int max2 = Math.max(0, Math.min(i22, length4));
+                        if (max < max2) {
+                            if (K3) {
+                                N4.removeStyle(i10, max, max2);
+                            } else {
+                                if (w22 != 0) {
+                                    N4.removeStyle(w22, max, max2);
+                                }
+                                N4.addStyle(i10, max, max2);
+                            }
+                            N4.invalidateEffects();
+                            N4.requestLayout();
+                            g4(i15, i20);
+                            z10 = true;
+                        }
+                    }
+                    i20++;
+                    i16 = i13;
+                }
+                this.F3 = false;
+                if (z10 && (c2Var2 = this.G3) != null) {
+                    c2Var2.h();
+                }
+                p3Var.n();
+                if (z10) {
+                    o4();
+                }
+            } else if (y3()) {
+                int i24 = f3Var.u0;
+                d1 I2 = I2(i24);
+                if (I2 != null && (d13 = v2.d(f3Var.w0, f3Var.z0, (length3 = I2.length()), 0)) < (d14 = yh.d(f3Var.w0, f3Var.z0, length3, 0))) {
+                    boolean z11 = (I2.getCurrentStyle(d13, d14) & i10) == 0;
+                    c2 c2Var4 = this.G3;
+                    if (c2Var4 != null) {
+                        c2Var4.d();
+                    }
+                    this.F3 = true;
+                    if (z11) {
+                        int w23 = w2(i10);
+                        if (w23 != 0) {
+                            I2.removeStyle(w23, d13, d14);
+                        }
+                        I2.addStyle(i10, d13, d14);
+                    } else {
+                        I2.removeStyle(i10, d13, d14);
+                    }
+                    this.F3 = false;
+                    e4(i24);
+                    I2.invalidateEffects();
+                    I2.requestLayout();
+                    c2 c2Var5 = this.G3;
+                    if (c2Var5 != null) {
+                        c2Var5.h();
+                    }
+                    p3Var.n();
+                    o4();
+                }
+            } else if (w3()) {
+                int i25 = f3Var.u0;
+                d1 s22 = s2(i25);
+                if (s22 != null && (d11 = v2.d(f3Var.w0, f3Var.z0, (length2 = s22.length()), 0)) < (d12 = yh.d(f3Var.w0, f3Var.z0, length2, 0))) {
+                    boolean z12 = (s22.getCurrentStyle(d11, d12) & i10) == 0;
+                    int w24 = z12 ? w2(i10) : 0;
+                    c2 c2Var6 = this.G3;
+                    if (c2Var6 != null) {
+                        c2Var6.d();
+                    }
+                    this.F3 = true;
+                    if (z12) {
+                        if (w24 != 0) {
+                            s22.removeStyle(w24, d11, d12);
+                        }
+                        s22.addStyle(i10, d11, d12);
+                    } else {
+                        s22.removeStyle(i10, d11, d12);
+                    }
+                    s22.invalidateEffects();
+                    s22.requestLayout();
+                    d4(i25);
+                    this.F3 = false;
+                    c2 c2Var7 = this.G3;
+                    if (c2Var7 != null) {
+                        c2Var7.h();
+                    }
+                    p3Var.n();
+                    o4();
+                }
+            } else if (G3()) {
+                int i26 = f3Var.u0;
+                d1 j42 = j4(i26);
+                if (j42 != null && (d = v2.d(f3Var.w0, f3Var.z0, (length = j42.length()), 0)) < (d10 = yh.d(f3Var.w0, f3Var.z0, length, 0))) {
+                    boolean z13 = (j42.getCurrentStyle(d, d10) & i10) == 0;
+                    int w25 = z13 ? w2(i10) : 0;
+                    c2 c2Var8 = this.G3;
+                    if (c2Var8 != null) {
+                        c2Var8.d();
+                    }
+                    this.F3 = true;
+                    if (z13) {
+                        if (w25 != 0) {
+                            j42.removeStyle(w25, d, d10);
+                        }
+                        j42.addStyle(i10, d, d10);
+                    } else {
+                        j42.removeStyle(i10, d, d10);
+                    }
+                    j42.invalidateEffects();
+                    j42.requestLayout();
+                    f4(i26);
+                    this.F3 = false;
+                    c2 c2Var9 = this.G3;
+                    if (c2Var9 != null) {
+                        c2Var9.h();
+                    }
+                    p3Var.n();
+                    o4();
+                }
+            } else {
+                int i27 = f3Var.u0;
+                int i28 = f3Var.x0;
+                int i29 = f3Var.w0;
+                int i30 = f3Var.z0;
+                if (i27 >= 0 && i28 >= 0 && i28 >= i27 && i28 < this.m4.size()) {
+                    int i31 = i10;
+                    boolean J3 = J3(i31, i27, i29, i28, i30);
+                    boolean z14 = !J3;
+                    int w26 = !J3 ? w2(i31) : 0;
+                    c2 c2Var10 = this.G3;
+                    if (c2Var10 != null) {
+                        c2Var10.d();
+                    }
+                    this.F3 = true;
+                    int i32 = i27;
+                    boolean z15 = false;
+                    while (i32 <= i28) {
+                        a y42 = y4(i32);
+                        if (y42 != null) {
+                            TL_iv.PageBlock pageBlock = y42.b;
+                            if (A3(pageBlock) && !(pageBlock instanceof TL_iv.pageBlockPreformatted)) {
+                                int i210 = i2(i32);
+                                int i33 = i32 == i27 ? i29 : 0;
+                                z4 = z15;
+                                int i34 = i32 == i28 ? i30 : i210;
+                                int max3 = Math.max(i14, Math.min(i33, i210));
+                                int max4 = Math.max(i14, Math.min(i34, i210));
+                                if (max3 >= max4) {
+                                    i11 = w26;
+                                    z15 = z4;
+                                    i32++;
+                                    i31 = i10;
+                                    w26 = i11;
+                                    i14 = 0;
+                                } else {
+                                    v5 u22 = u2(i32);
+                                    if (u22 != null) {
+                                        org.telegram.ui.ActionBar.x4 styleDelegate = u22.getStyleDelegate();
+                                        if (J3) {
+                                            styleDelegate.removeStyle(i31, max3, max4);
+                                        } else {
+                                            if (w26 != 0) {
+                                                styleDelegate.removeStyle(w26, max3, max4);
+                                            }
+                                            styleDelegate.addStyle(i31, max3, max4);
+                                        }
+                                        u22.getEditText().invalidateEffects();
+                                        u22.getEditText().requestLayout();
+                                        u22.x();
+                                        i11 = w26;
+                                    } else {
+                                        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(v5.A(y42.b));
+                                        if (J3 || w26 == 0) {
+                                            i11 = w26;
+                                            spannableStringBuilder = spannableStringBuilder2;
+                                            i12 = max3;
+                                        } else {
+                                            i11 = w26;
+                                            i12 = max3;
+                                            x5.o(spannableStringBuilder2, i12, max4, i11, false, null);
+                                            spannableStringBuilder = spannableStringBuilder2;
+                                        }
+                                        x5.o(spannableStringBuilder, i12, max4, i31, z14, null);
+                                        v5.d(y42.b, spannableStringBuilder);
+                                    }
+                                    z15 = true;
+                                    i32++;
+                                    i31 = i10;
+                                    w26 = i11;
+                                    i14 = 0;
+                                }
+                            }
+                        }
+                        i11 = w26;
+                        z4 = z15;
+                        z15 = z4;
+                        i32++;
+                        i31 = i10;
+                        w26 = i11;
+                        i14 = 0;
+                    }
+                    boolean z16 = z15;
+                    this.F3 = false;
+                    if (z16 && (c2Var = this.G3) != null) {
+                        c2Var.h();
+                    }
+                    p3Var.n();
+                    if (z16) {
+                        o4();
+                    }
+                }
+            }
+        }
+    }
+
+    public final void Y4(float f10, float f11) {
+        TL_iv.pageTableCell m9;
+        i5 i5Var = this.f4;
+        if (!this.y3 || i5Var == null || this.u3 != i5Var || (m9 = i5Var.m((int) ((f10 - i5Var.getLeft()) - getLeft()), (int) ((f11 - i5Var.getTop()) - getTop()))) == null || m9 == this.B3) {
+            return;
+        }
+        this.B3 = m9;
+        i5Var.w(this.A3, m9);
+    }
+
+    public final ArrayList Z2() {
+        return Y2(0, this.i3.size(), 0, false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:5:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:8:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void Z3(View view) {
+        d1 editText;
+        d1 d1Var;
+        r3 r3Var;
+        q3 q3Var = null;
+        if (l2()) {
+            boolean L3 = L3();
+            f3 f3Var = this.k3;
+            if (L3) {
+                int i10 = f3Var.u0;
+                int i11 = f3Var.v0;
+                if (i11 == f3Var.y0) {
+                    editText = N4(i10, i11);
+                    d1Var = editText;
+                    if (d1Var != null) {
+                        int length = d1Var.length();
+                        r3Var = this;
+                        q3Var = new q3(r3Var, d1Var, v2.d(f3Var.w0, f3Var.z0, length, 0), yh.d(f3Var.w0, f3Var.z0, length, 0), null);
+                    }
+                }
+            } else {
+                if (y3()) {
+                    editText = I2(f3Var.u0);
+                } else if (w3()) {
+                    editText = s2(f3Var.u0);
+                } else if (G3()) {
+                    editText = j4(f3Var.u0);
+                } else {
+                    v5 G4 = G4();
+                    if (G4 != null) {
+                        editText = G4.getEditText();
+                    }
+                }
+                d1Var = editText;
+                if (d1Var != null) {
+                }
+            }
+            if (q3Var == null) {
+                o3(false);
+                r3Var.e3.w(q3Var, view);
+                return;
+            }
+            return;
+        }
+        r3Var = this;
+        if (q3Var == null) {
+        }
+    }
+
+    public final void Z4(String str, a aVar) {
+        a aVar2;
+        if (aVar != null) {
+            TL_iv.PageBlock pageBlock = aVar.b;
+            if (pageBlock instanceof TL_iv.pageBlockPreformatted) {
+                TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) pageBlock;
+                if (TextUtils.equals(pageblockpreformatted.language, str)) {
+                    return;
+                }
+                c2 c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.d();
+                }
+                pageblockpreformatted.language = str;
+                v5 u22 = u2(this.i3.indexOf(aVar));
+                if (u22 != null && (aVar2 = u22.x) != null) {
+                    u22.I(aVar2.b, true);
+                    u22.E = null;
+                    u22.C();
+                }
+                c2 c2Var2 = this.G3;
+                if (c2Var2 != null) {
+                    c2Var2.h();
+                }
+            }
+        }
+    }
+
+    public final void a2() {
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        ArrayList arrayList4 = new ArrayList();
+        ArrayList arrayList5 = new ArrayList();
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList6 = this.i3;
+            if (i11 >= arrayList6.size()) {
+                return;
+            }
+            a aVar = (a) arrayList6.get(i11);
+            ArrayList arrayList7 = aVar.j;
+            ArrayList arrayList8 = aVar.k;
+            arrayList7.clear();
+            if (aVar.i) {
+                if (!arrayList.isEmpty()) {
+                    android.support.v4.media.a.u(1, arrayList);
+                }
+                arrayList2.clear();
+                arrayList3.clear();
+                arrayList4.clear();
+                arrayList5.clear();
+            } else {
+                for (int i12 = 0; i12 < arrayList8.size(); i12++) {
+                    ((Long) arrayList8.get(i12)).getClass();
+                    arrayList7.add(new m0());
+                }
+                for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                    arrayList7.add((m0) arrayList.get(i13));
+                }
+                int max = Math.max(i10, aVar.c);
+                if (max == 0) {
+                    arrayList2.clear();
+                    arrayList3.clear();
+                    arrayList4.clear();
+                    arrayList5.clear();
+                } else {
+                    boolean z4 = aVar.d > 0;
+                    while (arrayList2.size() > max) {
+                        arrayList2.remove(arrayList2.size() - 1);
+                        arrayList3.remove(arrayList3.size() - 1);
+                        arrayList4.remove(arrayList4.size() - 1);
+                        arrayList5.remove(arrayList5.size() - 1);
+                    }
+                    int i14 = 1;
+                    while (i14 <= max) {
+                        int i15 = i14 - 1;
+                        boolean z10 = i14 == max;
+                        boolean z11 = i15 < arrayList2.size();
+                        if (z11 && z10) {
+                            if (((Boolean) arrayList3.get(i15)).booleanValue() != z4) {
+                                z11 = false;
+                            }
+                        }
+                        if (!z11) {
+                            while (arrayList2.size() > i15) {
+                                arrayList2.remove(arrayList2.size() - 1);
+                                arrayList3.remove(arrayList3.size() - 1);
+                                arrayList4.remove(arrayList4.size() - 1);
+                                arrayList5.remove(arrayList5.size() - 1);
+                            }
+                            arrayList2.add(Long.valueOf(m0.a()));
+                            arrayList3.add(Boolean.valueOf(z10 ? z4 : false));
+                            arrayList4.add(0);
+                            arrayList5.add(0L);
+                        }
+                        ((Long) arrayList2.get(i15)).getClass();
+                        if (z10) {
+                            if (((Long) arrayList5.get(i15)).longValue() == 0 || !E3(aVar.b)) {
+                                arrayList4.set(i15, Integer.valueOf(((Integer) arrayList4.get(i15)).intValue() + 1));
+                                arrayList5.set(i15, Long.valueOf(aVar.a));
+                            } else {
+                                ((Integer) arrayList4.get(i15)).getClass();
+                                ((Long) arrayList5.get(i15)).getClass();
+                            }
+                            arrayList7.add(new m0());
+                        } else {
+                            ((Boolean) arrayList3.get(i15)).getClass();
+                            arrayList7.add(new m0());
+                        }
+                        i14++;
+                    }
+                }
+                if (x3(aVar)) {
+                    boolean z12 = ((TL_iv.pageBlockDetails) aVar.b).open;
+                    m0.a();
+                    arrayList.add(new m0());
+                    arrayList2.clear();
+                    arrayList3.clear();
+                    arrayList4.clear();
+                    arrayList5.clear();
+                }
+                if (v5.p(aVar.b)) {
+                    m0.a();
+                    arrayList7.add(new m0());
+                }
+            }
+            i11++;
+            i10 = 0;
+        }
+    }
+
+    public final boolean a3() {
+        ArrayList arrayList = this.i3;
+        a aVar = arrayList.isEmpty() ? null : (a) kh.a2.i(1, arrayList);
+        if (aVar != null && !E3(aVar.b) && !aVar.i && !x3(aVar) && !K2(aVar.b)) {
+            if (!(z1(aVar) instanceof v5)) {
+                return false;
+            }
+            e3(aVar);
+            return true;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+        arrayList.add(aVar2);
+        this.V2.N(false);
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        post(new j2(this, aVar2, 21));
+        return true;
+    }
+
+    public final void a4() {
+        int length;
+        int d;
+        int d10;
+        int length2;
+        int d11;
+        int d12;
+        int length3;
+        int d13;
+        int d14;
+        int length4;
+        int d15;
+        int d16;
+        d1 N4;
+        int length5;
+        int d17;
+        int d18;
+        boolean L3 = L3();
+        p3 p3Var = this.e3;
+        f3 f3Var = this.k3;
+        if (L3) {
+            int i10 = f3Var.u0;
+            int i11 = f3Var.v0;
+            if (i11 == f3Var.y0 && (N4 = N4(i10, i11)) != null && (d17 = v2.d(f3Var.w0, f3Var.z0, (length5 = N4.length()), 0)) < (d18 = yh.d(f3Var.w0, f3Var.z0, length5, 0))) {
+                if (x5.h(N4.getText(), d17, d18)) {
+                    c2 c2Var = this.G3;
+                    if (c2Var != null) {
+                        c2Var.d();
+                    }
+                    x5.n(N4.getText(), d17, d18);
+                    N4.invalidateEffects();
+                    g4(i10, i11);
+                    c2 c2Var2 = this.G3;
+                    if (c2Var2 != null) {
+                        c2Var2.h();
+                    }
+                    p3Var.n();
+                    o4();
+                    return;
+                }
+                c2 c2Var3 = this.G3;
+                if (c2Var3 != null) {
+                    c2Var3.d();
+                }
+                if (x5.g(N4.getText(), d17, d18)) {
+                    x5.m(N4.getText(), d17, d18);
+                    N4.invalidateEffects();
+                    g4(i10, i11);
+                    c2 c2Var4 = this.G3;
+                    if (c2Var4 != null) {
+                        c2Var4.h();
+                    }
+                    o4();
+                }
+                N4.setSelectionOverride(d17, d18);
+                o3(false);
+                E4(N4);
+                return;
+            }
+            return;
+        }
+        if (y3()) {
+            int i12 = f3Var.u0;
+            d1 I2 = I2(i12);
+            if (I2 != null && (d15 = v2.d(f3Var.w0, f3Var.z0, (length4 = I2.length()), 0)) < (d16 = yh.d(f3Var.w0, f3Var.z0, length4, 0))) {
+                if (x5.h(I2.getText(), d15, d16)) {
+                    c2 c2Var5 = this.G3;
+                    if (c2Var5 != null) {
+                        c2Var5.d();
+                    }
+                    x5.n(I2.getText(), d15, d16);
+                    I2.invalidateEffects();
+                    e4(i12);
+                    c2 c2Var6 = this.G3;
+                    if (c2Var6 != null) {
+                        c2Var6.h();
+                    }
+                    p3Var.n();
+                    o4();
+                    return;
+                }
+                c2 c2Var7 = this.G3;
+                if (c2Var7 != null) {
+                    c2Var7.d();
+                }
+                if (x5.g(I2.getText(), d15, d16)) {
+                    x5.m(I2.getText(), d15, d16);
+                    I2.invalidateEffects();
+                    e4(i12);
+                    c2 c2Var8 = this.G3;
+                    if (c2Var8 != null) {
+                        c2Var8.h();
+                    }
+                    o4();
+                }
+                I2.setSelectionOverride(d15, d16);
+                o3(false);
+                E4(I2);
+                return;
+            }
+            return;
+        }
+        if (w3()) {
+            int i13 = f3Var.u0;
+            d1 s22 = s2(i13);
+            if (s22 != null && (d13 = v2.d(f3Var.w0, f3Var.z0, (length3 = s22.length()), 0)) < (d14 = yh.d(f3Var.w0, f3Var.z0, length3, 0))) {
+                if (x5.h(s22.getText(), d13, d14)) {
+                    c2 c2Var9 = this.G3;
+                    if (c2Var9 != null) {
+                        c2Var9.d();
+                    }
+                    x5.n(s22.getText(), d13, d14);
+                    s22.invalidateEffects();
+                    d4(i13);
+                    c2 c2Var10 = this.G3;
+                    if (c2Var10 != null) {
+                        c2Var10.h();
+                    }
+                    p3Var.n();
+                    o4();
+                    return;
+                }
+                c2 c2Var11 = this.G3;
+                if (c2Var11 != null) {
+                    c2Var11.d();
+                }
+                if (x5.g(s22.getText(), d13, d14)) {
+                    x5.m(s22.getText(), d13, d14);
+                    s22.invalidateEffects();
+                    d4(i13);
+                    c2 c2Var12 = this.G3;
+                    if (c2Var12 != null) {
+                        c2Var12.h();
+                    }
+                    o4();
+                }
+                s22.setSelectionOverride(d13, d14);
+                o3(false);
+                E4(s22);
+                return;
+            }
+            return;
+        }
+        if (!G3()) {
+            v5 G4 = G4();
+            if (G4 != null && (d = v2.d(f3Var.w0, f3Var.z0, (length = G4.getEditText().length()), 0)) < (d10 = yh.d(f3Var.w0, f3Var.z0, length, 0))) {
+                if (x5.h(G4.getEditText().getText(), d, d10)) {
+                    c2 c2Var13 = this.G3;
+                    if (c2Var13 != null) {
+                        c2Var13.d();
+                    }
+                    x5.n(G4.getEditText().getText(), d, d10);
+                    G4.getEditText().invalidateEffects();
+                    G4.x();
+                    c2 c2Var14 = this.G3;
+                    if (c2Var14 != null) {
+                        c2Var14.h();
+                    }
+                    p3Var.n();
+                    o4();
+                    return;
+                }
+                c2 c2Var15 = this.G3;
+                if (c2Var15 != null) {
+                    c2Var15.d();
+                }
+                if (x5.g(G4.getEditText().getText(), d, d10)) {
+                    x5.m(G4.getEditText().getText(), d, d10);
+                    G4.getEditText().invalidateEffects();
+                    G4.x();
+                    c2 c2Var16 = this.G3;
+                    if (c2Var16 != null) {
+                        c2Var16.h();
+                    }
+                    o4();
+                }
+                G4.getEditText().setSelectionOverride(d, d10);
+                o3(false);
+                E4(G4.getEditText());
+                return;
+            }
+            return;
+        }
+        int i14 = f3Var.u0;
+        d1 j42 = j4(i14);
+        if (j42 != null && (d11 = v2.d(f3Var.w0, f3Var.z0, (length2 = j42.length()), 0)) < (d12 = yh.d(f3Var.w0, f3Var.z0, length2, 0))) {
+            if (x5.h(j42.getText(), d11, d12)) {
+                c2 c2Var17 = this.G3;
+                if (c2Var17 != null) {
+                    c2Var17.d();
+                }
+                x5.n(j42.getText(), d11, d12);
+                j42.invalidateEffects();
+                f4(i14);
+                c2 c2Var18 = this.G3;
+                if (c2Var18 != null) {
+                    c2Var18.h();
+                }
+                p3Var.n();
+                o4();
+                return;
+            }
+            c2 c2Var19 = this.G3;
+            if (c2Var19 != null) {
+                c2Var19.d();
+            }
+            if (x5.g(j42.getText(), d11, d12)) {
+                x5.m(j42.getText(), d11, d12);
+                j42.invalidateEffects();
+                f4(i14);
+                c2 c2Var20 = this.G3;
+                if (c2Var20 != null) {
+                    c2Var20.h();
+                }
+                o4();
+            }
+            j42.setSelectionOverride(d11, d12);
+            o3(false);
+            E4(j42);
+        }
+    }
+
+    public final void b2(MessageObject messageObject) {
+        TLRPC.Document document;
+        if (messageObject == null || (document = messageObject.getDocument()) == null) {
+            return;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        TL_iv.pageBlockAudio pageblockaudio = new TL_iv.pageBlockAudio();
+        a aVar = new a(pageblockaudio, 0, 0);
+        s sVar = new s();
+        aVar.g = sVar;
+        sVar.c = true;
+        long j10 = document.id;
+        boolean z4 = j10 == 0 || document.dc_id == 0 || document.access_hash == 0;
+        if (z4) {
+            TLRPC.Message message = messageObject.messageOwner;
+            String str = message != null ? message.attachPath : null;
+            if (TextUtils.isEmpty(str)) {
+                return;
+            }
+            s sVar2 = aVar.g;
+            sVar2.i = document;
+            sVar2.e = str;
+            sVar2.a = 1;
+            sVar2.f = 0.0f;
+        } else {
+            sVar.h = document;
+            sVar.i = document;
+            sVar.a = 2;
+            pageblockaudio.audio_id = j10;
+        }
+        u3(aVar);
+        if (z4) {
+            s sVar3 = aVar.g;
+            String str2 = sVar3.e;
+            IdentityHashMap identityHashMap = this.W3;
+            u4 u4Var = (u4) identityHashMap.remove(sVar3);
+            if (u4Var != null) {
+                u4Var.b();
+            }
+            u4 u4Var2 = new u4(this.c3, str2, document, new c3(aVar, sVar3, this));
+            identityHashMap.put(sVar3, u4Var2);
+            u4Var2.d();
+        }
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        this.e3.onContentChanged();
+    }
+
+    public final void b3(a aVar, boolean z4) {
+        View z12 = z1(aVar);
+        if (!(z12 instanceof a5)) {
+            c3(aVar, z4);
+            return;
+        }
+        d1 d1Var = ((a5) z12).r;
+        d1Var.r();
+        d1Var.setSelection(z4 ? d1Var.length() : 0);
+    }
+
+    public final void b4() {
+        d1 editText;
+        Runnable f2Var;
+        int length;
+        final int d;
+        final int d10;
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y()) {
+            return;
+        }
+        int i10 = 1;
+        int i11 = 0;
+        if (L3()) {
+            int i12 = f3Var.u0;
+            int i13 = f3Var.v0;
+            if (i13 != f3Var.y0) {
+                return;
+            }
+            editText = N4(i12, i13);
+            f2Var = new k2(this, i12, i13, 1);
+        } else if (y3()) {
+            int i14 = f3Var.u0;
+            editText = I2(i14);
+            f2Var = new e2(this, i14, 3);
+        } else if (w3()) {
+            int i15 = f3Var.u0;
+            editText = s2(i15);
+            f2Var = new e2(this, i15, i11);
+        } else if (G3()) {
+            int i16 = f3Var.u0;
+            editText = j4(i16);
+            f2Var = new e2(this, i16, i10);
+        } else {
+            v5 G4 = G4();
+            if (G4 == null) {
+                return;
+            }
+            editText = G4.getEditText();
+            f2Var = new f2(G4, i11);
+        }
+        final d1 d1Var = editText;
+        final Runnable runnable = f2Var;
+        if (d1Var != null && (d = v2.d(f3Var.w0, f3Var.z0, (length = d1Var.length()), 0)) <= (d10 = yh.d(f3Var.w0, f3Var.z0, length, 0))) {
+            Editable text = d1Var.getText();
+            int i17 = r.h;
+            String str = null;
+            if (text != null) {
+                r[] rVarArr = (r[]) text.getSpans(d, d10, r.class);
+                if (rVarArr.length > 0) {
+                    str = rVarArr[0].a;
+                }
+            }
+            if (str == null) {
+                str = d1Var.getText().subSequence(d, d10).toString();
+            }
+            final float dp = AndroidUtilities.dp(SharedConfig.fontSize + 4);
+            int i18 = j6.G6;
+            f6 f6Var = this.d3;
+            final int v02 = j6.v0(i18, f6Var);
+            p.U(getContext(), str, new Utilities.Callback() { // from class: vh.s2
+                @Override // org.telegram.messenger.Utilities.Callback
+                public final void run(Object obj) {
+                    r a2;
+                    String str2 = (String) obj;
+                    r3 r3Var = r3.this;
+                    r3Var.getClass();
+                    if (TextUtils.isEmpty(str2) || (a2 = r.a(str2, v02, dp)) == null) {
+                        return;
+                    }
+                    c2 c2Var = r3Var.G3;
+                    if (c2Var != null) {
+                        c2Var.d();
+                    }
+                    f3 f3Var2 = r3Var.k3;
+                    if (f3Var2 != null) {
+                        f3Var2.f(false);
+                    }
+                    d1 d1Var2 = d1Var;
+                    d1Var2.setLocked(false);
+                    SpannableString spannableString = new SpannableString(" ");
+                    spannableString.setSpan(a2, 0, 1, 33);
+                    Editable text2 = d1Var2.getText();
+                    int max = Math.max(0, Math.min(d, text2.length()));
+                    text2.replace(max, Math.max(max, Math.min(d10, text2.length())), spannableString);
+                    runnable.run();
+                    c2 c2Var2 = r3Var.G3;
+                    if (c2Var2 != null) {
+                        c2Var2.h();
+                    }
+                    r3Var.e3.onContentChanged();
+                    int min = Math.min(max + 1, d1Var2.length());
+                    d1Var2.r();
+                    r3Var.post(new q2(d1Var2, min, 3));
+                }
+            }, f6Var);
+        }
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(5:(1:9)(1:(4:37|11|12|(4:14|16|17|(1:27)(4:19|(1:21)(1:26)|22|24)))(1:36))|10|11|12|(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0078, code lost:
+    
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0079, code lost:
+    
+        org.telegram.messenger.FileLog.e(r0);
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x006c A[Catch: Exception -> 0x0078, TRY_LEAVE, TryCatch #0 {Exception -> 0x0078, blocks: (B:12:0x0046, B:14:0x006c), top: B:11:0x0046 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b5(CharSequence charSequence) {
+        String str;
+        ClipboardManager clipboardManager;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        f3 f3Var = this.k3;
+        a y42 = y4(f3Var.u0);
+        ArrayList arrayList = this.i3;
+        int indexOf = arrayList.indexOf(y42);
+        int indexOf2 = arrayList.indexOf(y4(f3Var.x0));
+        int i14 = f3Var.w0;
+        int i15 = f3Var.z0;
+        try {
+            if (indexOf >= 0 && indexOf2 >= 0 && indexOf < arrayList.size() && indexOf2 < arrayList.size()) {
+                if (indexOf > indexOf2) {
+                    i13 = i15;
+                    i12 = indexOf;
+                    i11 = indexOf2;
+                } else if (indexOf != indexOf2 || i14 <= i15) {
+                    i10 = i15;
+                    i11 = indexOf;
+                    i12 = indexOf2;
+                    i13 = i14;
+                    HashMap hashMap = this.j3;
+                    StringBuilder sb = new StringBuilder();
+                    p1 p1Var = new p1();
+                    x3.F(sb, arrayList, new int[]{i11}, i12, i11, i12, i13, i10, p1Var, false, 0, hashMap);
+                    p1Var.b(sb);
+                    str = sb.toString();
+                    if (!TextUtils.isEmpty(str)) {
+                        p4.a(A2(i11, i12), z2(i11, i12));
+                        clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
+                        if (clipboardManager != null) {
+                            return;
+                        }
+                        clipboardManager.setPrimaryClip(str != null ? ClipData.newHtmlText("label", charSequence, str) : ClipData.newPlainText("label", charSequence));
+                        return;
+                    }
+                } else {
+                    i13 = i15;
+                    i11 = indexOf;
+                    i12 = indexOf2;
+                }
+                i10 = i14;
+                HashMap hashMap2 = this.j3;
+                StringBuilder sb2 = new StringBuilder();
+                p1 p1Var2 = new p1();
+                x3.F(sb2, arrayList, new int[]{i11}, i12, i11, i12, i13, i10, p1Var2, false, 0, hashMap2);
+                p1Var2.b(sb2);
+                str = sb2.toString();
+                if (!TextUtils.isEmpty(str)) {
+                }
+            }
+            clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
+            if (clipboardManager != null) {
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+            return;
+        }
+        str = null;
+    }
+
+    public final void c2(String str) {
+        int i10;
+        if (TextUtils.isEmpty(str)) {
+            return;
+        }
+        File file = new File(str);
+        if (file.exists()) {
+            TLRPC.TL_document tL_document = new TLRPC.TL_document();
+            tL_document.id = 0L;
+            tL_document.dc_id = 0;
+            tL_document.size = file.length();
+            String name = file.getName();
+            int lastIndexOf = name.lastIndexOf(46);
+            String mimeTypeFromExtension = (lastIndexOf < 0 || (i10 = lastIndexOf + 1) >= name.length()) ? null : MimeTypeMap.getSingleton().getMimeTypeFromExtension(name.substring(i10).toLowerCase());
+            if (TextUtils.isEmpty(mimeTypeFromExtension)) {
+                mimeTypeFromExtension = "application/octet-stream";
+            }
+            tL_document.mime_type = mimeTypeFromExtension;
+            TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
+            tL_documentAttributeFilename.file_name = name;
+            tL_document.attributes.add(tL_documentAttributeFilename);
+            d2(tL_document, str);
+        }
+    }
+
+    public final void c3(a aVar, boolean z4) {
+        View z12 = z1(aVar);
+        if (!(z12 instanceof i5)) {
+            if (z4 && (z12 instanceof v5)) {
+                v5 v5Var = (v5) z12;
+                if (v5Var.n()) {
+                    v5Var.i();
+                    return;
+                }
+            }
+            d1 R3 = R3(z12);
+            if (R3 == null) {
+                d3(aVar);
+                return;
+            }
+            R3.r();
+            if (z4) {
+                R3.setSelection(R3.length());
+                return;
+            }
+            return;
+        }
+        i5 i5Var = (i5) z12;
+        d1 d1Var = i5Var.r;
+        z5 z5Var = i5Var.C;
+        if (z5Var == null) {
+            return;
+        }
+        if (!z4) {
+            d1Var.r();
+            d1Var.setSelection(0);
+        } else {
+            if (z5Var.g.isEmpty()) {
+                return;
+            }
+            l5 m9 = i5Var.v.m((TL_iv.pageTableCell) kh.a2.i(1, i5Var.C.g));
+            if (m9 == null) {
+                return;
+            }
+            d1 d1Var2 = m9.a;
+            d1Var2.r();
+            d1Var2.setSelection(d1Var2.length());
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0049 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c4() {
+        ClipData primaryClip;
+        String str;
+        boolean isEmpty;
+        r3 r3Var;
+        HashMap hashMap;
+        ArrayList w42;
+        CharSequence coerceToText;
+        ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
+        if (clipboardManager == null || !clipboardManager.hasPrimaryClip() || (primaryClip = clipboardManager.getPrimaryClip()) == null || primaryClip.getItemCount() == 0) {
+            return;
+        }
+        ClipData.Item itemAt = primaryClip.getItemAt(0);
+        if (primaryClip.getDescription() != null && primaryClip.getDescription().hasMimeType("text/html")) {
+            try {
+                str = itemAt.getHtmlText();
+            } catch (Exception unused) {
+            }
+            isEmpty = TextUtils.isEmpty(str);
+            f3 f3Var = this.k3;
+            if (!isEmpty) {
+                try {
+                    hashMap = new HashMap();
+                    w42 = w4(x3.z(str, hashMap));
+                } catch (Exception e) {
+                    e = e;
+                    r3Var = this;
+                }
+                if (!w42.isEmpty()) {
+                    ArrayList arrayList = this.i3;
+                    r3Var = this;
+                    try {
+                        if (r3Var.I4(arrayList.indexOf(y4(f3Var.u0)), arrayList.indexOf(y4(f3Var.x0)), f3Var.w0, f3Var.z0, w42)) {
+                            if (hashMap.isEmpty()) {
+                                return;
+                            }
+                            r3Var.j3.putAll(hashMap);
+                            return;
+                        }
+                    } catch (Exception e6) {
+                        e = e6;
+                        FileLog.e(e);
+                        coerceToText = itemAt.coerceToText(getContext());
+                        if (coerceToText == null) {
+                        }
+                        r3Var.W1(f3Var.u0, f3Var.w0, f3Var.x0, f3Var.z0, coerceToText.toString().split("\n", -1));
+                    }
+                    coerceToText = itemAt.coerceToText(getContext());
+                    if (coerceToText == null) {
+                        coerceToText = "";
+                    }
+                    r3Var.W1(f3Var.u0, f3Var.w0, f3Var.x0, f3Var.z0, coerceToText.toString().split("\n", -1));
+                }
+            }
+            r3Var = this;
+            coerceToText = itemAt.coerceToText(getContext());
+            if (coerceToText == null) {
+            }
+            r3Var.W1(f3Var.u0, f3Var.w0, f3Var.x0, f3Var.z0, coerceToText.toString().split("\n", -1));
+        }
+        str = null;
+        isEmpty = TextUtils.isEmpty(str);
+        f3 f3Var2 = this.k3;
+        if (!isEmpty) {
+        }
+        r3Var = this;
+        coerceToText = itemAt.coerceToText(getContext());
+        if (coerceToText == null) {
+        }
+        r3Var.W1(f3Var2.u0, f3Var2.w0, f3Var2.x0, f3Var2.z0, coerceToText.toString().split("\n", -1));
+    }
+
+    public final void d2(TLRPC.Document document, String str) {
+        if (document == null) {
+            return;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        TL_iv.pageBlockDocument pageblockdocument = new TL_iv.pageBlockDocument();
+        a aVar = new a(pageblockdocument, 0, 0);
+        s sVar = new s();
+        aVar.g = sVar;
+        sVar.d = true;
+        long j10 = document.id;
+        boolean z4 = j10 == 0 || document.dc_id == 0 || document.access_hash == 0;
+        if (!z4) {
+            sVar.h = document;
+            sVar.a = 2;
+            pageblockdocument.document_id = j10;
+        } else {
+            if (TextUtils.isEmpty(str) || !e2.c.t(str)) {
+                return;
+            }
+            s sVar2 = aVar.g;
+            sVar2.h = document;
+            sVar2.e = str;
+            sVar2.a = 1;
+            sVar2.f = 0.0f;
+        }
+        u3(aVar);
+        if (z4) {
+            s sVar3 = aVar.g;
+            IdentityHashMap identityHashMap = this.W3;
+            u4 u4Var = (u4) identityHashMap.remove(sVar3);
+            if (u4Var != null) {
+                u4Var.b();
+            }
+            u4 u4Var2 = new u4(this.c3, str, document, new b3(this, sVar3, aVar, str));
+            identityHashMap.put(sVar3, u4Var2);
+            u4Var2.d();
+        }
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        this.e3.onContentChanged();
+    }
+
+    public final void d3(a aVar) {
+        View z12 = z1(aVar);
+        if (z12 instanceof v5) {
+            ((v5) z12).B();
+        } else if (z12 instanceof q0) {
+            ((q0) z12).d.r();
+        }
+    }
+
+    public final void d4(int i10) {
+        KeyEvent.Callback A4 = A4(i10);
+        if (A4 instanceof i0) {
+            ((i0) A4).b();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.g61, org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ArrayList arrayList;
+        int i10;
+        Long l10;
+        a aVar;
+        View view;
+        Long l11;
+        int i11;
+        int i12;
+        ArrayList arrayList2;
+        a aVar2;
+        a aVar3;
+        float f10;
+        boolean z4;
+        int childCount = getChildCount();
+        if (childCount != 0) {
+            int i13 = 0;
+            int i14 = 0;
+            while (true) {
+                arrayList = this.m4;
+                if (i13 >= childCount) {
+                    break;
+                }
+                int R = RecyclerView.R(getChildAt(i13));
+                a aVar4 = (R < 0 || R >= arrayList.size()) ? null : (a) arrayList.get(R);
+                if (aVar4 != null) {
+                    ArrayList arrayList3 = aVar4.k;
+                    if (arrayList3.size() > i14) {
+                        i14 = arrayList3.size();
+                    }
+                }
+                i13++;
+            }
+            if (i14 != 0) {
+                if (this.n4 == null) {
+                    am0 am0Var = new am0(this);
+                    this.n4 = am0Var;
+                    am0Var.a(null, null, null, this.d3, 1);
+                    i8.a(this.n4, this.d3);
+                }
+                int i15 = 0;
+                while (i15 < i14) {
+                    float f11 = 0.0f;
+                    long j10 = 0;
+                    float f12 = 0.0f;
+                    int i16 = 0;
+                    boolean z10 = false;
+                    a aVar5 = null;
+                    a aVar6 = null;
+                    float f13 = 1.0f;
+                    while (i16 <= childCount) {
+                        if (i16 < childCount) {
+                            View childAt = getChildAt(i16);
+                            int R2 = RecyclerView.R(childAt);
+                            aVar = (R2 < 0 || R2 >= arrayList.size()) ? null : (a) arrayList.get(R2);
+                            if (aVar != null) {
+                                ArrayList arrayList4 = aVar.k;
+                                if (i15 < arrayList4.size()) {
+                                    l10 = (Long) arrayList4.get(i15);
+                                    i10 = childCount;
+                                    view = childAt;
+                                }
+                            }
+                            i10 = childCount;
+                            view = childAt;
+                            l10 = null;
+                        } else {
+                            i10 = childCount;
+                            l10 = null;
+                            aVar = null;
+                            view = null;
+                        }
+                        if (!z10 || (l10 != null && l10.longValue() == j10)) {
+                            l11 = l10;
+                            i11 = i15;
+                            i12 = i14;
+                            arrayList2 = arrayList;
+                            aVar2 = aVar5;
+                            aVar3 = aVar6;
+                            f10 = f13;
+                        } else {
+                            int k42 = k4(i15, aVar5, true);
+                            l11 = l10;
+                            int k43 = k4(i15, aVar6, false);
+                            if (f12 - f11 <= AndroidUtilities.dp(4.0f)) {
+                                i11 = i15;
+                                i12 = i14;
+                                arrayList2 = arrayList;
+                            } else {
+                                int dp = AndroidUtilities.dp(16.0f) * i15;
+                                i11 = i15;
+                                int dp2 = AndroidUtilities.dp(16.0f) + dp;
+                                i12 = i14;
+                                arrayList2 = arrayList;
+                                int B = org.telegram.messenger.y3.B(16.0f, getWidth(), dp);
+                                if (B - dp2 > AndroidUtilities.dp(8.0f)) {
+                                    float floor = (float) Math.floor(SharedConfig.bubbleRadius / 3.0f);
+                                    RectF rectF = AndroidUtilities.rectTmp;
+                                    rectF.set(dp2, k42 + f11, B, f12 - k43);
+                                    aVar2 = aVar5;
+                                    aVar3 = aVar6;
+                                    this.n4.b(canvas, rectF, floor, floor, floor, f13);
+                                    f10 = f13;
+                                    this.n4.e(canvas, rectF, f10);
+                                    z10 = false;
+                                }
+                            }
+                            aVar2 = aVar5;
+                            aVar3 = aVar6;
+                            f10 = f13;
+                            z10 = false;
+                        }
+                        if (view == null || l11 == null) {
+                            aVar5 = aVar2;
+                            aVar = aVar3;
+                        } else {
+                            if (z10) {
+                                aVar5 = aVar2;
+                                z4 = z10;
+                            } else {
+                                j10 = l11.longValue();
+                                f11 = Float.MAX_VALUE;
+                                f12 = -3.4028235E38f;
+                                aVar5 = aVar;
+                                z4 = true;
+                                f10 = 1.0f;
+                            }
+                            if (aVar == null || aVar != this.P3) {
+                                float y10 = view.getY();
+                                float height = view.getHeight() + y10;
+                                if (y10 < f11) {
+                                    f11 = y10;
+                                }
+                                if (height > f12) {
+                                    f12 = height;
+                                }
+                                f13 = Math.min(f10, view.getAlpha());
+                                z10 = z4;
+                                i16++;
+                                aVar6 = aVar;
+                                childCount = i10;
+                                i15 = i11;
+                                i14 = i12;
+                                arrayList = arrayList2;
+                            } else {
+                                z10 = z4;
+                            }
+                        }
+                        f13 = f10;
+                        i16++;
+                        aVar6 = aVar;
+                        childCount = i10;
+                        i15 = i11;
+                        i14 = i12;
+                        arrayList = arrayList2;
+                    }
+                    i15++;
+                }
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    public final void e2(Uri uri) {
+        if (uri == null) {
+            return;
+        }
+        a aVar = this.Y3;
+        String str = null;
+        this.Y3 = null;
+        Context context = getContext();
+        if (context == null) {
+            return;
+        }
+        try {
+            str = context.getContentResolver().getType(uri);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        String str2 = str;
+        boolean startsWith = str2 != null ? str2.startsWith(MediaStreamTrack.VIDEO_TRACK_KIND) : uri.toString().contains(MediaStreamTrack.VIDEO_TRACK_KIND);
+        int i10 = this.o4;
+        this.o4 = i10 - 1;
+        Utilities.globalQueue.postRunnable(new org.telegram.messenger.s1(this, uri, startsWith, str2, i10, aVar));
+    }
+
+    public final void e3(a aVar) {
+        View z12 = z1(aVar);
+        if (z12 instanceof v5) {
+            v5 v5Var = (v5) z12;
+            v5Var.B();
+            d1 editText = v5Var.getEditText();
+            editText.setSelection(editText.length());
+            return;
+        }
+        if (z12 instanceof q0) {
+            q0 q0Var = (q0) z12;
+            q0Var.d.r();
+            d1 editText2 = q0Var.getEditText();
+            editText2.setSelection(editText2.length());
+        }
+    }
+
+    public final void e4(int i10) {
+        a y42 = y4(i10);
+        d1 I2 = I2(i10);
+        if (!x3(y42) || I2 == null) {
+            return;
+        }
+        ((TL_iv.pageBlockDetails) y42.b).title = x5.f(I2.getText());
+    }
+
+    public final void f2(MediaController.PhotoEntry photoEntry) {
+        r3 r3Var;
+        String str = photoEntry.imagePath;
+        if (str == null) {
+            str = photoEntry.path;
+        }
+        String str2 = str;
+        if (TextUtils.isEmpty(str2)) {
+            return;
+        }
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            c2Var.d();
+        }
+        boolean c3 = q4.c(photoEntry);
+        a aVar = new a((photoEntry.isVideo || c3) ? new TL_iv.pageBlockVideo() : new TL_iv.pageBlockPhoto(), 0, 0);
+        aVar.g = T3(photoEntry, str2);
+        u3(aVar);
+        if (c3) {
+            K4(aVar, aVar.g, photoEntry);
+            r3Var = this;
+        } else {
+            r3Var = this;
+            r3Var.L4(aVar, aVar.g, str2, photoEntry.isVideo, photoEntry.width, photoEntry.height, photoEntry.duration);
+        }
+        c2 c2Var2 = r3Var.G3;
+        if (c2Var2 != null) {
+            c2Var2.h();
+        }
+        r3Var.e3.onContentChanged();
+    }
+
+    public final void f3(a aVar) {
+        View z12 = z1(aVar);
+        if (z12 instanceof v5) {
+            v5 v5Var = (v5) z12;
+            v5Var.B();
+            v5Var.getEditText().setSelection(0);
+        } else if (z12 instanceof q0) {
+            q0 q0Var = (q0) z12;
+            q0Var.d.r();
+            q0Var.getEditText().setSelection(0);
+        }
+    }
+
+    public final void f4(int i10) {
+        View A4 = A4(i10);
+        if (A4 instanceof v5) {
+            ((v5) A4).w();
+        }
+    }
+
+    public final void g2(i5 i5Var) {
+        i5 i5Var2 = this.f4;
+        if (i5Var2 != null && i5Var2 != i5Var) {
+            LinkedHashSet linkedHashSet = i5Var2.E;
+            if (!linkedHashSet.isEmpty()) {
+                linkedHashSet.clear();
+                i5Var2.v.invalidate();
+                i5Var2.t();
+            }
+        }
+        this.f4 = i5Var;
+        this.z3 = false;
+        this.i4 = -1;
+        this.h4 = -1;
+        i5Var.setCellSelectionListener(this.j4);
+        f3 f3Var = this.k3;
+        if (f3Var != null && f3Var.y()) {
+            f3Var.f(false);
+        }
+        setEditTextsLocked(true);
+    }
+
+    public final void g4(int i10, int i11) {
+        l5 m9;
+        View A4 = A4(i10);
+        if (A4 instanceof i5) {
+            i5 i5Var = (i5) A4;
+            if (i11 == 0) {
+                i5Var.u();
+                return;
+            }
+            TL_iv.pageTableCell h = i5Var.h(i11);
+            if (h == null || (m9 = i5Var.getGrid().m(h)) == null) {
+                return;
+            }
+            z5.d(h, m9.a.getText());
+        }
+    }
+
+    public d1 getFocusedEditTextOrNull() {
+        View findFocus = findFocus();
+        if (findFocus instanceof d1) {
+            return (d1) findFocus;
+        }
+        return null;
+    }
+
+    public g4 getMapDelegate() {
+        return this.a4;
+    }
+
+    public View getOverlayView() {
+        return this.l3;
+    }
+
+    public m9 getTextSelectionHelper() {
+        return this.k3;
+    }
+
+    public final i3 h2() {
+        int i10;
+        int i11;
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y() || G3()) {
+            return null;
+        }
+        a y42 = y4(f3Var.u0);
+        ArrayList arrayList = this.i3;
+        int indexOf = arrayList.indexOf(y42);
+        int indexOf2 = arrayList.indexOf(y4(f3Var.x0));
+        if (indexOf < 0 || indexOf2 < 0) {
+            return null;
+        }
+        if (indexOf > indexOf2) {
+            i11 = indexOf;
+            i10 = indexOf2;
+        } else {
+            i10 = indexOf;
+            i11 = indexOf2;
+        }
+        for (int i12 = i10; i12 <= i11; i12++) {
+            a aVar = (a) arrayList.get(i12);
+            if (aVar.i || x3(aVar)) {
+                return null;
+            }
+        }
+        return new i3(this, i10, i11, f3Var.w0, f3Var.z0);
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x056f, code lost:
+    
+        if (r0 != false) goto L72;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:232:0x08ed, code lost:
+    
+        if (r6 == false) goto L598;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:261:0x06b1, code lost:
+    
+        if (r3 < (r5.getLineCount() - 1)) goto L452;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:285:0x072c, code lost:
+    
+        r13 = r4.getRow();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:299:0x07a8, code lost:
+    
+        if (r15.getLineForOffset(r6.getEditText().getSelectionEnd()) >= (r15.getLineCount() - 1)) goto L540;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:460:0x02c4, code lost:
+    
+        if (r3 < r14.size()) goto L233;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:560:0x048b, code lost:
+    
+        if (r3 < r14.size()) goto L332;
+     */
+    /* JADX WARN: Failed to find 'out' block for switch in B:600:0x052f. Please report as an issue. */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0174 A[LOOP:0: B:128:0x016e->B:130:0x0174, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x018a  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x01ff A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x057b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:204:0x05b5  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x05cb A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x05d9  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x05e3  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0600  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x0667  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0833  */
+    /* JADX WARN: Removed duplicated region for block: B:311:0x0867  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x08b9  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x084d  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x05fb A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x05db  */
+    /* JADX WARN: Removed duplicated region for block: B:385:0x08f5 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:392:0x090c  */
+    /* JADX WARN: Removed duplicated region for block: B:402:0x092c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:419:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:506:0x039a  */
+    /* JADX WARN: Removed duplicated region for block: B:509:0x03a1  */
+    /* JADX WARN: Removed duplicated region for block: B:530:0x0408  */
+    /* JADX WARN: Removed duplicated region for block: B:538:0x0423  */
+    /* JADX WARN: Removed duplicated region for block: B:611:0x015a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean h3(KeyEvent keyEvent) {
+        boolean z4;
+        boolean z10;
+        View findFocus;
+        i5 U2;
+        int i10;
+        i5 i5Var;
+        a5 a5Var;
+        a aVar;
+        int indexOf;
+        boolean z11;
+        d1 R3;
+        Layout layout;
+        Layout layout2;
+        int i11;
+        final float primaryHorizontal;
+        a U3;
+        int i12;
+        boolean z12;
+        int i13;
+        int i14;
+        int i42;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        boolean c02;
+        Layout layout3;
+        int i19;
+        int length;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int max;
+        a Q2;
+        int indexOf2;
+        boolean z13;
+        int i25;
+        int i26;
+        int unicodeChar;
+        boolean z14;
+        c2 c2Var;
+        if (keyEvent.getAction() != 0) {
+            return false;
+        }
+        int keyCode = keyEvent.getKeyCode();
+        boolean isShiftPressed = keyEvent.isShiftPressed();
+        boolean isCtrlPressed = keyEvent.isCtrlPressed();
+        boolean isAltPressed = keyEvent.isAltPressed();
+        f3 f3Var = this.k3;
+        boolean y10 = f3Var.y();
+        if (isCtrlPressed && !isAltPressed && (c2Var = this.G3) != null) {
+            if (keyCode == 54 && !isShiftPressed) {
+                c2Var.k();
+                return true;
+            }
+            if ((keyCode == 54 && isShiftPressed) || keyCode == 53) {
+                c2Var.i();
+                return true;
+            }
+        }
+        if (isCtrlPressed && !isAltPressed) {
+            int i27 = 4;
+            if (isShiftPressed) {
+                if (keyCode != 41) {
+                    if (keyCode != 44) {
+                        if (keyCode == 47 || keyCode == 52) {
+                            i27 = 8;
+                        }
+                        i27 = 0;
+                    } else {
+                        i27 = 256;
+                    }
+                }
+                z14 = false;
+            } else {
+                if (keyCode == 30) {
+                    i27 = 1;
+                } else if (keyCode != 33) {
+                    if (keyCode == 37) {
+                        i27 = 2;
+                    } else if (keyCode != 39) {
+                        if (keyCode == 49) {
+                            i27 = 16;
+                        }
+                        i27 = 0;
+                    } else {
+                        i27 = 0;
+                        z14 = true;
+                    }
+                }
+                z14 = false;
+            }
+            if (z14) {
+                a4();
+                return true;
+            }
+            if (i27 != 0) {
+                Y3(i27);
+                return true;
+            }
+        }
+        if (keyCode == 111 && y10) {
+            f3Var.f(false);
+            return true;
+        }
+        if (y10) {
+            if (isCtrlPressed && !isShiftPressed && keyCode == 31) {
+                CharSequence s6 = f3Var.s();
+                if (s6 != null && s6.length() != 0) {
+                    b5(s6);
+                    return true;
+                }
+                return true;
+            }
+            if (isCtrlPressed && !isShiftPressed && keyCode == 52) {
+                CharSequence s9 = f3Var.s();
+                if (s9 != null && s9.length() > 0) {
+                    b5(s9);
+                }
+                E2();
+                return true;
+            }
+            if (isCtrlPressed && keyCode == 50) {
+                c4();
+                return true;
+            }
+            if (keyCode == 67 || keyCode == 112) {
+                E2();
+                return true;
+            }
+            if (keyCode == 66) {
+                t4("\n");
+                return true;
+            }
+            if (!isCtrlPressed && !isAltPressed && (unicodeChar = keyEvent.getUnicodeChar(keyEvent.getMetaState())) >= 32) {
+                t4(String.valueOf((char) unicodeChar));
+                return true;
+            }
+        }
+        ArrayList arrayList = this.i3;
+        if (!y10 && isShiftPressed && v3(keyCode) && (Q2 = Q2()) != null && (indexOf2 = arrayList.indexOf(Q2)) >= 0) {
+            View z15 = z1(Q2);
+            if (z15 instanceof v5) {
+                v5 v5Var = (v5) z15;
+                d1 editText = v5Var.getEditText();
+                if (editText.getLayout() != null) {
+                    int selectionEnd = editText.getSelectionEnd();
+                    int length2 = editText.length();
+                    switch (keyCode) {
+                        case 19:
+                        case 21:
+                            if (selectionEnd <= 0) {
+                                z13 = false;
+                                i25 = !z13 ? indexOf2 + 1 : indexOf2 - 1;
+                                if (i25 >= 0 && i25 < arrayList.size()) {
+                                    a aVar2 = (a) arrayList.get(i25);
+                                    for (i26 = 0; i26 < arrayList.size(); i26++) {
+                                        f3Var.Y(i26, v5.z(((a) arrayList.get(i26)).b));
+                                    }
+                                    if (length2 != 0) {
+                                        int max2 = Math.max(0, Math.min(editText.getSelectionStart(), length2));
+                                        if (z13) {
+                                            if (max2 >= length2) {
+                                                length2--;
+                                            }
+                                            if (f3Var.k0(v5Var, 0, max2, length2)) {
+                                                KeyEvent.Callback z16 = z1(aVar2);
+                                                if (z16 instanceof l9) {
+                                                    f3Var.c0(0, 0, (l9) z16);
+                                                    return true;
+                                                }
+                                                u0(i25);
+                                                post(new j2(this, aVar2, 14));
+                                                return true;
+                                            }
+                                        } else if (f3Var.k0(v5Var, 0, max2, max2 > 0 ? 0 : 1)) {
+                                            KeyEvent.Callback z17 = z1(aVar2);
+                                            if (z17 instanceof l9) {
+                                                f3Var.c0(0, z17 instanceof v5 ? ((v5) z17).getEditText().length() : 0, (l9) z17);
+                                                return true;
+                                            }
+                                            u0(i25);
+                                            post(new j2(this, aVar2, 15));
+                                            return true;
+                                        }
+                                    }
+                                    if (!y10 && isShiftPressed && v3(keyCode)) {
+                                        boolean z18 = isCtrlPressed || isAltPressed;
+                                        int i28 = f3Var.G0;
+                                        int i29 = f3Var.I0;
+                                        int i30 = f3Var.H0;
+                                        int i31 = f3Var.u0;
+                                        int i32 = f3Var.v0;
+                                        int i33 = f3Var.w0;
+                                        int i34 = f3Var.x0;
+                                        boolean z19 = z18;
+                                        int i35 = f3Var.y0;
+                                        int i36 = f3Var.z0;
+                                        if (i28 == i31 && i29 == i32 && i30 == i33) {
+                                            i31 = i34;
+                                            i32 = i35;
+                                        } else {
+                                            i36 = i33;
+                                        }
+                                        View A4 = A4(i31);
+                                        if (A4 != null) {
+                                            if (!(A4 instanceof i5)) {
+                                                z4 = isCtrlPressed;
+                                                z10 = isAltPressed;
+                                                if (A4 instanceof v5) {
+                                                    Layout layout4 = ((v5) A4).getEditText().getLayout();
+                                                    if (layout4 != null) {
+                                                        CharSequence text = layout4.getText();
+                                                        int length3 = text.length();
+                                                        switch (keyCode) {
+                                                            case 19:
+                                                                int lineForOffset = layout4.getLineForOffset(i36) - 1;
+                                                                if (lineForOffset >= 0) {
+                                                                    i13 = layout4.getOffsetForHorizontal(lineForOffset, layout4.getPrimaryHorizontal(i36));
+                                                                    i15 = i31;
+                                                                    break;
+                                                                } else {
+                                                                    i14 = i31 - 1;
+                                                                    if (i14 >= 0) {
+                                                                        i42 = i4(i14);
+                                                                        int i37 = i42;
+                                                                        i15 = i14;
+                                                                        i13 = i37;
+                                                                        break;
+                                                                    } else {
+                                                                        i15 = i31;
+                                                                        i13 = 0;
+                                                                        break;
+                                                                    }
+                                                                }
+                                                            case 20:
+                                                                int lineForOffset2 = layout4.getLineForOffset(i36) + 1;
+                                                                if (lineForOffset2 < layout4.getLineCount()) {
+                                                                    i13 = layout4.getOffsetForHorizontal(lineForOffset2, layout4.getPrimaryHorizontal(i36));
+                                                                } else {
+                                                                    int i38 = i31 + 1;
+                                                                    if (i38 < arrayList.size()) {
+                                                                        i15 = i38;
+                                                                        i13 = 0;
+                                                                        break;
+                                                                    } else {
+                                                                        i13 = length3;
+                                                                    }
+                                                                }
+                                                                i15 = i31;
+                                                                break;
+                                                            case 21:
+                                                                if (z19) {
+                                                                    BreakIterator wordInstance = BreakIterator.getWordInstance();
+                                                                    wordInstance.setText(text.toString());
+                                                                    int preceding = wordInstance.preceding(Math.max(0, Math.min(i36, text.length())));
+                                                                    i13 = preceding == -1 ? 0 : preceding;
+                                                                } else {
+                                                                    i13 = Math.max(0, i36 - 1);
+                                                                }
+                                                                if (i13 == i36 && i36 <= 0 && i31 - 1 >= 0) {
+                                                                    i13 = i4(i15);
+                                                                    break;
+                                                                }
+                                                                i15 = i31;
+                                                                break;
+                                                            case 22:
+                                                                if (z19) {
+                                                                    BreakIterator wordInstance2 = BreakIterator.getWordInstance();
+                                                                    wordInstance2.setText(text.toString());
+                                                                    i13 = wordInstance2.following(Math.min(i36, text.length()));
+                                                                    if (i13 == -1) {
+                                                                        i13 = text.length();
+                                                                    }
+                                                                } else {
+                                                                    i13 = Math.min(length3, i36 + 1);
+                                                                }
+                                                                if (i13 == i36) {
+                                                                    if (i36 >= length3) {
+                                                                        i15 = i31 + 1;
+                                                                        break;
+                                                                    }
+                                                                }
+                                                                i15 = i31;
+                                                                break;
+                                                            default:
+                                                                i13 = i36;
+                                                                i15 = i31;
+                                                                break;
+                                                        }
+                                                        i16 = i13;
+                                                        i17 = i15;
+                                                        i18 = i32;
+                                                    }
+                                                    c02 = false;
+                                                    break;
+                                                } else {
+                                                    if ((A4 instanceof u0) || (A4 instanceof o4) || (A4 instanceof x) || (A4 instanceof i4) || (A4 instanceof k4)) {
+                                                        switch (keyCode) {
+                                                            case 19:
+                                                            case 21:
+                                                                i14 = i31 - 1;
+                                                                if (i14 >= 0) {
+                                                                    i42 = i4(i14);
+                                                                    int i372 = i42;
+                                                                    i15 = i14;
+                                                                    i13 = i372;
+                                                                    break;
+                                                                }
+                                                                i13 = i36;
+                                                                i15 = i31;
+                                                                break;
+                                                            case 20:
+                                                            case 22:
+                                                                int i39 = i31 + 1;
+                                                                if (i39 < arrayList.size()) {
+                                                                    i15 = i39;
+                                                                    i13 = 0;
+                                                                    break;
+                                                                }
+                                                                i13 = i36;
+                                                                i15 = i31;
+                                                                break;
+                                                            default:
+                                                                i13 = i36;
+                                                                i15 = i31;
+                                                                break;
+                                                        }
+                                                        i16 = i13;
+                                                        i17 = i15;
+                                                        i18 = i32;
+                                                    }
+                                                    c02 = false;
+                                                }
+                                                return true;
+                                            }
+                                            i5 i5Var2 = (i5) A4;
+                                            z5 model = i5Var2.getModel();
+                                            if (model != null) {
+                                                ArrayList arrayList2 = model.g;
+                                                if (!arrayList2.isEmpty()) {
+                                                    int size = arrayList2.size() + 1;
+                                                    int i40 = (i32 < 0 || i32 >= size) ? 0 : i32;
+                                                    d1 l10 = i5Var2.l(i40);
+                                                    if (l10 != null) {
+                                                        Layout layout5 = l10.getLayout();
+                                                        z4 = isCtrlPressed;
+                                                        layout3 = layout5;
+                                                    } else {
+                                                        z4 = isCtrlPressed;
+                                                        layout3 = null;
+                                                    }
+                                                    if (layout3 != null) {
+                                                        CharSequence text2 = layout3.getText();
+                                                        z10 = isAltPressed;
+                                                        int length4 = text2.length();
+                                                        switch (keyCode) {
+                                                            case 19:
+                                                                int lineForOffset3 = layout3.getLineForOffset(i36) - 1;
+                                                                if (lineForOffset3 >= 0) {
+                                                                    length = layout3.getOffsetForHorizontal(lineForOffset3, layout3.getPrimaryHorizontal(i36));
+                                                                } else if (i40 == 0) {
+                                                                    i21 = i31 - 1;
+                                                                    if (i21 >= 0) {
+                                                                        length = i4(i21);
+                                                                        i32 = 0;
+                                                                        break;
+                                                                    }
+                                                                    i21 = i31;
+                                                                    length = 0;
+                                                                    break;
+                                                                } else {
+                                                                    int i41 = i40 - 1;
+                                                                    if (i41 >= 0 && i41 < arrayList2.size()) {
+                                                                        TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) arrayList2.get(i41);
+                                                                        int b10 = model.b(pagetablecell);
+                                                                        int a2 = model.a(pagetablecell);
+                                                                        int i43 = b10 - 1;
+                                                                        if (i43 >= 0) {
+                                                                            i19 = arrayList2.indexOf(model.d[i43][Math.min(a2, model.c - 1)]);
+                                                                            if (i19 < 0) {
+                                                                                i20 = i19 + 1;
+                                                                                d1 l11 = i5Var2.l(i20);
+                                                                                Layout layout6 = l11 != null ? l11.getLayout() : null;
+                                                                                length = layout6 != null ? layout6.getText().length() : 0;
+                                                                            } else {
+                                                                                length = i5Var2.getTitleEditText().length();
+                                                                                i20 = 0;
+                                                                            }
+                                                                            i32 = i20;
+                                                                        }
+                                                                    }
+                                                                    i19 = -1;
+                                                                    if (i19 < 0) {
+                                                                    }
+                                                                    i32 = i20;
+                                                                }
+                                                                i21 = i31;
+                                                                break;
+                                                            case 20:
+                                                                int lineForOffset4 = layout3.getLineForOffset(i36) + 1;
+                                                                int i44 = length4;
+                                                                if (lineForOffset4 < layout3.getLineCount()) {
+                                                                    length = layout3.getOffsetForHorizontal(lineForOffset4, layout3.getPrimaryHorizontal(i36));
+                                                                    i21 = i31;
+                                                                    break;
+                                                                } else {
+                                                                    if (i40 == 0) {
+                                                                        if (size > 1) {
+                                                                            i21 = i31;
+                                                                            length = 0;
+                                                                            i32 = 1;
+                                                                            break;
+                                                                        } else {
+                                                                            i21 = i31 + 1;
+                                                                            if (i21 >= arrayList.size()) {
+                                                                                i21 = i31;
+                                                                            }
+                                                                            length = 0;
+                                                                            i32 = 0;
+                                                                            break;
+                                                                        }
+                                                                    } else {
+                                                                        int i45 = i40 - 1;
+                                                                        if (i45 < 0 || i45 >= arrayList2.size()) {
+                                                                            i22 = 1;
+                                                                        } else {
+                                                                            TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) arrayList2.get(i45);
+                                                                            int b11 = model.b(pagetablecell2);
+                                                                            int a10 = model.a(pagetablecell2);
+                                                                            i22 = 1;
+                                                                            int max3 = Math.max(1, z5.o(pagetablecell2)) + b11;
+                                                                            if (max3 < model.b) {
+                                                                                i23 = arrayList2.indexOf(model.d[max3][Math.min(a10, model.c - 1)]);
+                                                                                if (i23 < 0) {
+                                                                                    i24 = i23 + i22;
+                                                                                    i21 = i31;
+                                                                                } else {
+                                                                                    int i46 = i31 + 1;
+                                                                                    if (i46 < arrayList.size()) {
+                                                                                        i21 = i46;
+                                                                                        i24 = 0;
+                                                                                    } else {
+                                                                                        i21 = i31;
+                                                                                        i24 = i32;
+                                                                                        i32 = i24;
+                                                                                    }
+                                                                                }
+                                                                                i44 = 0;
+                                                                                i32 = i24;
+                                                                            }
+                                                                        }
+                                                                        i23 = -1;
+                                                                        if (i23 < 0) {
+                                                                        }
+                                                                        i44 = 0;
+                                                                        i32 = i24;
+                                                                    }
+                                                                    length = i44;
+                                                                    break;
+                                                                }
+                                                            case 21:
+                                                                if (z19) {
+                                                                    BreakIterator wordInstance3 = BreakIterator.getWordInstance();
+                                                                    wordInstance3.setText(text2.toString());
+                                                                    int preceding2 = wordInstance3.preceding(Math.max(0, Math.min(i36, text2.length())));
+                                                                    max = preceding2 == -1 ? 0 : preceding2;
+                                                                } else {
+                                                                    max = Math.max(0, i36 - 1);
+                                                                }
+                                                                if (max == i36 && i36 <= 0) {
+                                                                    int i47 = i40 - 1;
+                                                                    if (i47 >= 0) {
+                                                                        d1 l12 = i5Var2.l(i47);
+                                                                        Layout layout7 = l12 != null ? l12.getLayout() : null;
+                                                                        length = layout7 != null ? layout7.getText().length() : 0;
+                                                                        i32 = i47;
+                                                                        i21 = i31;
+                                                                        break;
+                                                                    } else {
+                                                                        int i48 = i31 - 1;
+                                                                        if (i48 >= 0) {
+                                                                            i21 = i48;
+                                                                            length = i4(i48);
+                                                                            i32 = 0;
+                                                                            break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                length = max;
+                                                                i21 = i31;
+                                                            case 22:
+                                                                if (z19) {
+                                                                    BreakIterator wordInstance4 = BreakIterator.getWordInstance();
+                                                                    wordInstance4.setText(text2.toString());
+                                                                    length = wordInstance4.following(Math.min(i36, text2.length()));
+                                                                    if (length == -1) {
+                                                                        length = text2.length();
+                                                                    }
+                                                                } else {
+                                                                    length = Math.min(length4, i36 + 1);
+                                                                }
+                                                                if (length == i36 && i36 >= length4) {
+                                                                    int i49 = i40 + 1;
+                                                                    if (i49 < size) {
+                                                                        i32 = i49;
+                                                                        i21 = i31;
+                                                                        length = 0;
+                                                                        break;
+                                                                    } else {
+                                                                        i21 = i31 + 1;
+                                                                        break;
+                                                                    }
+                                                                }
+                                                                i21 = i31;
+                                                                break;
+                                                            default:
+                                                                length = i36;
+                                                                i21 = i31;
+                                                                break;
+                                                        }
+                                                        i16 = length;
+                                                        i17 = i21;
+                                                        i18 = i32;
+                                                        i32 = i40;
+                                                    }
+                                                }
+                                            }
+                                            z4 = isCtrlPressed;
+                                            if (i17 != i31 || i18 != i32 || i16 != i36) {
+                                                if (i17 != i31) {
+                                                    u0(i17);
+                                                }
+                                                KeyEvent.Callback A42 = A4(i17);
+                                                if (A42 instanceof l9) {
+                                                    c02 = f3Var.c0(i18, i16, (l9) A42);
+                                                    break;
+                                                } else {
+                                                    post(new rg(this, i17, i18, i16, 2));
+                                                }
+                                            }
+                                            c02 = true;
+                                            break;
+                                        } else {
+                                            z4 = isCtrlPressed;
+                                        }
+                                        z10 = isAltPressed;
+                                        c02 = false;
+                                    } else {
+                                        z4 = isCtrlPressed;
+                                        z10 = isAltPressed;
+                                    }
+                                    if (!y10 && !isShiftPressed && !z4 && !z10 && v3(keyCode)) {
+                                        boolean z20 = keyCode == 22 || keyCode == 20;
+                                        this.m3 = z20 ? f3Var.x0 : f3Var.u0;
+                                        this.n3 = z20 ? f3Var.z0 : f3Var.w0;
+                                        this.o3 = z20 ? f3Var.y0 : f3Var.v0;
+                                        f3Var.f(false);
+                                        return true;
+                                    }
+                                    if (z4 || keyCode != 29 || (!f3Var.b0() && !S4())) {
+                                        if (!y10 && !isShiftPressed && !z4 && !z10 && (keyCode == 20 || keyCode == 19)) {
+                                            boolean z21 = keyCode != 20;
+                                            i10 = 0;
+                                            while (true) {
+                                                if (i10 >= getChildCount()) {
+                                                    View childAt = getChildAt(i10);
+                                                    if (childAt instanceof i5) {
+                                                        i5Var = (i5) childAt;
+                                                        if (i5Var.getTitleEditText().isFocused()) {
+                                                        }
+                                                    }
+                                                    i10++;
+                                                } else {
+                                                    i5Var = null;
+                                                }
+                                            }
+                                            w51 w51Var = this.V2;
+                                            if (i5Var == null) {
+                                                int indexOf3 = arrayList.indexOf(i5Var.getRow());
+                                                if (indexOf3 >= 0) {
+                                                    if (!z21) {
+                                                        int T2 = T2(indexOf3 - 1, -1);
+                                                        if (T2 >= 0) {
+                                                            post(new j2(this, (a) arrayList.get(T2), 5));
+                                                        }
+                                                    } else if (!i5Var.r()) {
+                                                        int T22 = T2(indexOf3 + 1, 1);
+                                                        if (T22 < 0) {
+                                                            a aVar3 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                                                            arrayList.add(aVar3);
+                                                            w51Var.N(false);
+                                                            post(new j2(this, aVar3, 2));
+                                                        } else {
+                                                            post(new j2(this, (a) arrayList.get(T22), 4));
+                                                        }
+                                                    }
+                                                    z12 = true;
+                                                    break;
+                                                }
+                                                z12 = false;
+                                                break;
+                                            } else {
+                                                int i50 = 0;
+                                                while (true) {
+                                                    if (i50 < getChildCount()) {
+                                                        View childAt2 = getChildAt(i50);
+                                                        if (childAt2 instanceof a5) {
+                                                            a5Var = (a5) childAt2;
+                                                            if (a5Var.r.isFocused()) {
+                                                            }
+                                                        }
+                                                        i50++;
+                                                    } else {
+                                                        a5Var = null;
+                                                    }
+                                                }
+                                                if (a5Var != null) {
+                                                    d1 d1Var = a5Var.r;
+                                                    int indexOf4 = this.m4.indexOf(a5Var.getRow());
+                                                    if (indexOf4 >= 0) {
+                                                        Layout layout8 = d1Var.getLayout();
+                                                        int lineForOffset5 = layout8 != null ? layout8.getLineForOffset(d1Var.getSelectionEnd()) : 0;
+                                                        if (z21) {
+                                                            if (layout8 != null) {
+                                                                i12 = 1;
+                                                                break;
+                                                            } else {
+                                                                i12 = 1;
+                                                            }
+                                                            a U32 = U3(indexOf4 + i12, i12);
+                                                            if (U32 == null) {
+                                                                a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                                                                arrayList.add(aVar4);
+                                                                w51Var.N(false);
+                                                                post(new j2(this, aVar4, 6));
+                                                            } else {
+                                                                post(new j2(this, U32, 7));
+                                                            }
+                                                            z12 = true;
+                                                        } else if ((layout8 == null || lineForOffset5 <= 0) && (U3 = U3(indexOf4 - 1, -1)) != null) {
+                                                            post(new j2(this, U3, 8));
+                                                            z12 = true;
+                                                        }
+                                                    }
+                                                    z12 = false;
+                                                } else {
+                                                    int i51 = 0;
+                                                    while (true) {
+                                                        if (i51 < getChildCount()) {
+                                                            KeyEvent.Callback childAt3 = getChildAt(i51);
+                                                            if (childAt3 instanceof v5) {
+                                                                v5 v5Var2 = (v5) childAt3;
+                                                                if (v5Var2.getEditText().isFocused() || (v5Var2.n() && v5Var2.h.isFocused())) {
+                                                                }
+                                                                i51++;
+                                                            } else if (childAt3 instanceof i0) {
+                                                                i0 i0Var = (i0) childAt3;
+                                                                if (i0Var.getCaptionEditText().isFocused()) {
+                                                                    aVar = i0Var.getRow();
+                                                                } else {
+                                                                    i51++;
+                                                                }
+                                                            } else {
+                                                                if (childAt3 instanceof q0) {
+                                                                    q0 q0Var = (q0) childAt3;
+                                                                    if (q0Var.getEditText().isFocused()) {
+                                                                        aVar = q0Var.getRow();
+                                                                    }
+                                                                } else {
+                                                                    continue;
+                                                                }
+                                                                i51++;
+                                                            }
+                                                        } else {
+                                                            aVar = null;
+                                                        }
+                                                    }
+                                                    if (aVar != null && (indexOf = arrayList.indexOf(aVar)) >= 0) {
+                                                        View z110 = z1(aVar);
+                                                        boolean z22 = z110 instanceof v5;
+                                                        if (z22) {
+                                                            final v5 v5Var3 = (v5) z110;
+                                                            d1 d1Var2 = v5Var3.f;
+                                                            d1 d1Var3 = v5Var3.h;
+                                                            if (v5Var3.n()) {
+                                                                if (!z21 || d1Var3.isFocused()) {
+                                                                    z11 = z21;
+                                                                    if (!z11 && d1Var3.isFocused() && ((layout2 = v5Var3.getAuthorEditText().getLayout()) == null || layout2.getLineForOffset(v5Var3.getAuthorEditText().getSelectionEnd()) <= 0)) {
+                                                                        Layout layout9 = d1Var3.getLayout();
+                                                                        final float primaryHorizontal2 = layout9 == null ? 0.0f : layout9.getPrimaryHorizontal(Math.max(0, Math.min(d1Var3.getSelectionEnd(), d1Var3.length())));
+                                                                        d1Var2.r();
+                                                                        final int i52 = 0;
+                                                                        d1Var2.post(new Runnable() { // from class: vh.m5
+                                                                            @Override // java.lang.Runnable
+                                                                            public final void run() {
+                                                                                switch (i52) {
+                                                                                    case 0:
+                                                                                        d1 d1Var4 = v5Var3.f;
+                                                                                        Layout layout10 = d1Var4.getLayout();
+                                                                                        int length5 = d1Var4.length();
+                                                                                        if (layout10 != null) {
+                                                                                            length5 = layout10.getOffsetForHorizontal(Math.max(0, layout10.getLineCount() - 1), primaryHorizontal2);
+                                                                                        }
+                                                                                        d1Var4.setSelection(Math.max(0, Math.min(length5, d1Var4.length())));
+                                                                                        break;
+                                                                                    default:
+                                                                                        d1 d1Var5 = v5Var3.h;
+                                                                                        Layout layout11 = d1Var5.getLayout();
+                                                                                        int length6 = d1Var5.length();
+                                                                                        if (layout11 != null) {
+                                                                                            length6 = layout11.getOffsetForHorizontal(0, primaryHorizontal2);
+                                                                                        }
+                                                                                        d1Var5.setSelection(Math.max(0, Math.min(length6, d1Var5.length())));
+                                                                                        break;
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                        z12 = true;
+                                                                    }
+                                                                    if (z22) {
+                                                                        R3 = R3(z110);
+                                                                    } else {
+                                                                        v5 v5Var4 = (v5) z110;
+                                                                        R3 = (v5Var4.n() && v5Var4.h.isFocused()) ? v5Var4.getAuthorEditText() : v5Var4.getEditText();
+                                                                    }
+                                                                    if (R3 != null && (layout = R3.getLayout()) != null) {
+                                                                        int lineForOffset6 = layout.getLineForOffset(R3.getSelectionEnd());
+                                                                        if (z11) {
+                                                                            if (lineForOffset6 <= 0) {
+                                                                                a V1 = V1(aVar, -1);
+                                                                                if (V1 != null) {
+                                                                                    post(new j2(this, V1, 13));
+                                                                                } else {
+                                                                                    int T23 = T2(indexOf - 1, -1);
+                                                                                    if (T23 >= 0) {
+                                                                                        post(new j2(this, (a) arrayList.get(T23), 3));
+                                                                                    }
+                                                                                }
+                                                                                z12 = true;
+                                                                            }
+                                                                        } else if (lineForOffset6 >= layout.getLineCount() - 1) {
+                                                                            a V12 = V1(aVar, 1);
+                                                                            if (V12 != null) {
+                                                                                post(new j2(this, V12, 10));
+                                                                            } else {
+                                                                                int T24 = T2(indexOf + 1, 1);
+                                                                                if (T24 < 0) {
+                                                                                    a aVar5 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                                                                                    arrayList.add(aVar5);
+                                                                                    w51Var.N(false);
+                                                                                    post(new j2(this, aVar5, 11));
+                                                                                } else {
+                                                                                    post(new j2(this, (a) arrayList.get(T24), 12));
+                                                                                }
+                                                                            }
+                                                                            z12 = true;
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    Layout layout10 = v5Var3.getEditText().getLayout();
+                                                                    if (layout10 != null) {
+                                                                        z11 = z21;
+                                                                        break;
+                                                                    }
+                                                                    Layout layout11 = d1Var2.getLayout();
+                                                                    if (layout11 == null) {
+                                                                        i11 = 0;
+                                                                        primaryHorizontal = 0.0f;
+                                                                    } else {
+                                                                        i11 = 0;
+                                                                        primaryHorizontal = layout11.getPrimaryHorizontal(Math.max(0, Math.min(d1Var2.getSelectionEnd(), d1Var2.length())));
+                                                                    }
+                                                                    if (d1Var3.getVisibility() != 0) {
+                                                                        d1Var3.setVisibility(i11);
+                                                                        v5Var3.requestLayout();
+                                                                    }
+                                                                    d1Var3.r();
+                                                                    final int i53 = 1;
+                                                                    d1Var3.post(new Runnable() { // from class: vh.m5
+                                                                        @Override // java.lang.Runnable
+                                                                        public final void run() {
+                                                                            switch (i53) {
+                                                                                case 0:
+                                                                                    d1 d1Var4 = v5Var3.f;
+                                                                                    Layout layout102 = d1Var4.getLayout();
+                                                                                    int length5 = d1Var4.length();
+                                                                                    if (layout102 != null) {
+                                                                                        length5 = layout102.getOffsetForHorizontal(Math.max(0, layout102.getLineCount() - 1), primaryHorizontal);
+                                                                                    }
+                                                                                    d1Var4.setSelection(Math.max(0, Math.min(length5, d1Var4.length())));
+                                                                                    break;
+                                                                                default:
+                                                                                    d1 d1Var5 = v5Var3.h;
+                                                                                    Layout layout112 = d1Var5.getLayout();
+                                                                                    int length6 = d1Var5.length();
+                                                                                    if (layout112 != null) {
+                                                                                        length6 = layout112.getOffsetForHorizontal(0, primaryHorizontal);
+                                                                                    }
+                                                                                    d1Var5.setSelection(Math.max(0, Math.min(length6, d1Var5.length())));
+                                                                                    break;
+                                                                            }
+                                                                        }
+                                                                    });
+                                                                    z12 = true;
+                                                                }
+                                                            }
+                                                        }
+                                                        z11 = z21;
+                                                        if (z22) {
+                                                        }
+                                                        if (R3 != null) {
+                                                            int lineForOffset62 = layout.getLineForOffset(R3.getSelectionEnd());
+                                                            if (z11) {
+                                                            }
+                                                        }
+                                                    }
+                                                    z12 = false;
+                                                }
+                                            }
+                                        }
+                                        if (!y10 && !z4 && !z10 && keyCode == 61) {
+                                            findFocus = findFocus();
+                                            if (findFocus instanceof d1) {
+                                                if ((U2 = U2((r3 = (d1) findFocus))) != null) {
+                                                    if (findFocus != U2.getTitleEditText()) {
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        if (keyCode == 61 && y10) {
+                                            int i54 = f3Var.u0;
+                                            int i55 = f3Var.x0;
+                                            if (i54 >= 0 && i55 >= i54) {
+                                                if (i54 != i55) {
+                                                    int indexOf5 = arrayList.indexOf(y4(i54));
+                                                    int indexOf6 = arrayList.indexOf(y4(i55));
+                                                    if (indexOf5 < 0 || indexOf6 < indexOf5) {
+                                                        return true;
+                                                    }
+                                                    m4(indexOf5, indexOf6, isShiftPressed);
+                                                    return true;
+                                                }
+                                                a y42 = y4(i54);
+                                                if (y42 != null) {
+                                                    W3(y42, isShiftPressed);
+                                                    return true;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                            break;
+                        case 20:
+                        case 22:
+                            if (selectionEnd >= length2) {
+                                z13 = true;
+                                if (!z13) {
+                                }
+                                if (i25 >= 0) {
+                                    a aVar22 = (a) arrayList.get(i25);
+                                    while (i26 < arrayList.size()) {
+                                    }
+                                    if (length2 != 0) {
+                                    }
+                                    if (!y10) {
+                                    }
+                                    z4 = isCtrlPressed;
+                                    z10 = isAltPressed;
+                                    if (!y10) {
+                                    }
+                                    if (z4) {
+                                        break;
+                                    }
+                                    if (!y10) {
+                                        if (keyCode != 20) {
+                                        }
+                                        i10 = 0;
+                                        while (true) {
+                                            if (i10 >= getChildCount()) {
+                                            }
+                                            i10++;
+                                        }
+                                        w51 w51Var2 = this.V2;
+                                        if (i5Var == null) {
+                                        }
+                                    }
+                                    if (!y10) {
+                                        findFocus = findFocus();
+                                        if ((findFocus instanceof d1) && (U2 = U2((r3 = (d1) findFocus))) != null) {
+                                        }
+                                    }
+                                    return keyCode == 61 ? false : false;
+                                }
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        if (!y10) {
+        }
+        z4 = isCtrlPressed;
+        z10 = isAltPressed;
+        if (!y10) {
+        }
+        if (z4) {
+        }
+        if (!y10) {
+        }
+        if (!y10) {
+        }
+        if (keyCode == 61) {
+        }
+    }
+
+    public final int i2(int i10) {
+        d1 I2 = I2(i10);
+        if (I2 != null) {
+            return I2.length();
+        }
+        v5 u22 = u2(i10);
+        if (u22 != null) {
+            return u22.getEditText().length();
+        }
+        a y42 = y4(i10);
+        if (y42 == null) {
+            return 0;
+        }
+        return v5.z(y42.b).length();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:237:0x043b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean i3(MotionEvent motionEvent) {
+        boolean z4;
+        a row;
+        int i10;
+        i5 i5Var;
+        int action = motionEvent.getAction();
+        f3 f3Var = this.k3;
+        View view = null;
+        if (action == 0) {
+            this.s3 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            this.t3 = y10;
+            this.w3 = false;
+            this.x3 = false;
+            int i11 = (int) this.s3;
+            int top = ((int) y10) - getTop();
+            i5 i5Var2 = this.f4;
+            if (i5Var2 == null) {
+                i5Var2 = R2();
+            }
+            if (i5Var2 != null && i5Var2.getParent() == this) {
+                int left = i11 - i5Var2.getLeft();
+                int top2 = top - i5Var2.getTop();
+                if (i5Var2.p(left, top2) >= 0 || i5Var2.n(left, top2) >= 0) {
+                    view = i5Var2;
+                    this.u3 = view;
+                    long eventTime = motionEvent.getEventTime();
+                    z4 = f3Var.y() && eventTime - this.C3 <= ((long) ViewConfiguration.getDoubleTapTimeout()) && Math.abs(this.s3 - this.D3) <= ((float) AndroidUtilities.dp(24.0f)) && Math.abs(this.t3 - this.E3) <= ((float) AndroidUtilities.dp(24.0f));
+                    this.C3 = eventTime;
+                    float f10 = this.s3;
+                    this.D3 = f10;
+                    float f11 = this.t3;
+                    this.E3 = f11;
+                    if (!z4 && T4(this.u3, f10, f11)) {
+                        this.x3 = true;
+                        this.C3 = 0L;
+                        org.telegram.ui.Cells.g gVar = f3Var.r0;
+                        if (!f3Var.y()) {
+                            return true;
+                        }
+                        f3Var.i = false;
+                        f3Var.R = false;
+                        f3Var.k = false;
+                        y9 y9Var = f3Var.C;
+                        if (y9Var != null) {
+                            y9Var.invalidate();
+                        }
+                        AndroidUtilities.cancelRunOnUIThread(gVar);
+                        AndroidUtilities.runOnUIThread(gVar);
+                        return true;
+                    }
+                    if (this.u3 != null) {
+                        Runnable runnable = this.v3;
+                        if (runnable != null) {
+                            removeCallbacks(runnable);
+                        }
+                        b bVar = new b(this, 2);
+                        this.v3 = bVar;
+                        postDelayed(bVar, ViewConfiguration.getLongPressTimeout());
+                    }
+                }
+            }
+            int i12 = 0;
+            while (true) {
+                if (i12 >= getChildCount()) {
+                    break;
+                }
+                View childAt = getChildAt(i12);
+                if (top >= childAt.getTop() && top < childAt.getBottom() && i11 >= childAt.getLeft() && i11 < childAt.getRight()) {
+                    view = childAt;
+                    break;
+                }
+                i12++;
+            }
+            this.u3 = view;
+            long eventTime2 = motionEvent.getEventTime();
+            if (f3Var.y()) {
+            }
+            this.C3 = eventTime2;
+            float f102 = this.s3;
+            this.D3 = f102;
+            float f112 = this.t3;
+            this.E3 = f112;
+            if (!z4) {
+            }
+            if (this.u3 != null) {
+            }
+        } else {
+            if (action == 1) {
+                Runnable runnable2 = this.v3;
+                if (runnable2 != null) {
+                    removeCallbacks(runnable2);
+                    this.v3 = null;
+                }
+                if (this.y3) {
+                    Y4(motionEvent.getX(), motionEvent.getY());
+                    i5 i5Var3 = this.f4;
+                    if (this.y3) {
+                        requestDisallowInterceptTouchEvent(false);
+                    }
+                    this.y3 = false;
+                    this.A3 = null;
+                    this.B3 = null;
+                    this.z3 = i5Var3 != null && i5Var3.getSelectedCells().size() > 1;
+                    if (i5Var3 != null && !i5Var3.E.isEmpty()) {
+                        F4(i5Var3);
+                    }
+                    this.u3 = null;
+                    this.x3 = false;
+                    return true;
+                }
+                if (!this.w3 && !this.x3) {
+                    View view2 = this.u3;
+                    if (view2 instanceof i5) {
+                        if (j3((i5) view2, (int) ((motionEvent.getX() - r0.getLeft()) - getLeft()), (int) ((motionEvent.getY() - r0.getTop()) - getTop()))) {
+                            this.u3 = null;
+                            this.x3 = false;
+                            return false;
+                        }
+                    }
+                }
+                if (!this.w3 && !this.x3 && (i5Var = this.f4) != null) {
+                    View view3 = this.u3;
+                    if (view3 == i5Var) {
+                        i5 i5Var4 = (i5) view3;
+                        TL_iv.pageTableCell m9 = i5Var4.m((int) ((motionEvent.getX() - i5Var4.getLeft()) - getLeft()), (int) ((motionEvent.getY() - i5Var4.getTop()) - getTop()));
+                        if (m9 != null) {
+                            if (this.h4 >= 0 || this.i4 >= 0) {
+                                M2();
+                            } else {
+                                LinkedHashSet linkedHashSet = i5Var4.E;
+                                if (!linkedHashSet.remove(m9)) {
+                                    linkedHashSet.add(m9);
+                                }
+                                i5Var4.v.invalidate();
+                                i5Var4.t();
+                            }
+                        }
+                    } else if (view3 != null) {
+                        M2();
+                    }
+                }
+                boolean z10 = this.w3;
+                w51 w51Var = this.V2;
+                ArrayList arrayList = this.i3;
+                if (!z10 && !this.x3 && this.u3 == null && !f3Var.y() && this.f4 == null) {
+                    float x10 = motionEvent.getX();
+                    float y11 = motionEvent.getY();
+                    View view4 = (View) getParent();
+                    if (view4 != null && x10 >= getLeft() && x10 <= getRight()) {
+                        int paddingTop = getPaddingTop() + getTop();
+                        for (int i13 = 0; i13 < getChildCount(); i13++) {
+                            paddingTop = Math.max(paddingTop, getChildAt(i13).getBottom() + getTop());
+                        }
+                        int B = org.telegram.messenger.y3.B(60.0f, view4.getHeight(), Math.max(Math.max(this.N3, this.L3), this.M3));
+                        if (y11 >= paddingTop && y11 <= B) {
+                            a aVar = arrayList.isEmpty() ? null : (a) kh.a2.i(1, arrayList);
+                            if (aVar == null || !aVar.k.isEmpty() || E3(aVar.b) || aVar.i || x3(aVar) || K2(aVar.b)) {
+                                c2 c2Var = this.G3;
+                                if (c2Var != null) {
+                                    c2Var.d();
+                                }
+                                a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                                arrayList.add(aVar2);
+                                w51Var.N(false);
+                                c2 c2Var2 = this.G3;
+                                if (c2Var2 != null) {
+                                    c2Var2.h();
+                                }
+                                post(new j2(this, aVar2, 19));
+                            } else {
+                                e3(aVar);
+                            }
+                        }
+                    }
+                }
+                if (!this.w3 && !this.x3 && this.u3 == null && !f3Var.y() && this.f4 == null) {
+                    float x11 = motionEvent.getX();
+                    float y12 = motionEvent.getY();
+                    if (this.O3 && x11 >= getLeft() && x11 <= getRight()) {
+                        int i14 = 0;
+                        while (true) {
+                            if (i14 >= getChildCount()) {
+                                i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                                break;
+                            }
+                            View childAt2 = getChildAt(i14);
+                            if (RecyclerView.R(childAt2) == 0) {
+                                i10 = childAt2.getTop() + getTop();
+                                break;
+                            }
+                            i14++;
+                        }
+                        if (i10 != Integer.MAX_VALUE) {
+                            if (y12 >= AndroidUtilities.dp(60.0f) + getTop() && y12 <= i10) {
+                                a aVar3 = arrayList.isEmpty() ? null : (a) arrayList.get(0);
+                                if (aVar3 == null || E3(aVar3.b) || aVar3.i || x3(aVar3) || K2(aVar3.b)) {
+                                    c2 c2Var3 = this.G3;
+                                    if (c2Var3 != null) {
+                                        c2Var3.d();
+                                    }
+                                    a aVar4 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                                    arrayList.add(0, aVar4);
+                                    w51Var.N(false);
+                                    c2 c2Var4 = this.G3;
+                                    if (c2Var4 != null) {
+                                        c2Var4.h();
+                                    }
+                                    post(new j2(this, aVar4, 16));
+                                } else {
+                                    f3(aVar3);
+                                }
+                            }
+                        }
+                    }
+                }
+                if (!this.w3 && !this.x3 && (this.u3 instanceof k4) && !f3Var.y() && this.f4 == null && (row = ((k4) this.u3).getRow()) != null) {
+                    TL_iv.PageBlock pageBlock = row.b;
+                    if (pageBlock instanceof TL_iv.pageBlockMath) {
+                        TL_iv.pageBlockMath pageblockmath = (TL_iv.pageBlockMath) pageBlock;
+                        p.U(getContext(), TextUtils.isEmpty(pageblockmath.source) ? "" : pageblockmath.source, new org.telegram.ui.web.u1(23, this, pageblockmath), this.d3);
+                    }
+                }
+                this.u3 = null;
+                this.x3 = false;
+                return false;
+            }
+            if (action == 2) {
+                if (this.y3 && this.u3 == this.f4) {
+                    Y4(motionEvent.getX(), motionEvent.getY());
+                    this.w3 = true;
+                    return true;
+                }
+                float x12 = motionEvent.getX() - this.s3;
+                float y13 = motionEvent.getY() - this.t3;
+                if ((y13 * y13) + (x12 * x12) > AndroidUtilities.dp(8.0f) * AndroidUtilities.dp(8.0f)) {
+                    this.w3 = true;
+                    Runnable runnable3 = this.v3;
+                    if (runnable3 != null) {
+                        removeCallbacks(runnable3);
+                        this.v3 = null;
+                        return false;
+                    }
+                }
+            } else if (action == 3) {
+                Runnable runnable4 = this.v3;
+                if (runnable4 != null) {
+                    removeCallbacks(runnable4);
+                    this.v3 = null;
+                }
+                if (this.y3) {
+                    M2();
+                }
+                this.u3 = null;
+                this.x3 = false;
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public final int i4(int i10) {
+        Layout layout;
+        View A4 = A4(i10);
+        if (!(A4 instanceof v5) || (layout = ((v5) A4).getEditText().getLayout()) == null) {
+            return 0;
+        }
+        return layout.getText().length();
+    }
+
+    public final TL_iv.RichMessage j2() {
+        if (!k3()) {
+            return null;
+        }
+        ArrayList<TL_iv.PageBlock> Z2 = Z2();
+        if (Z2.isEmpty()) {
+            return null;
+        }
+        TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
+        richMessage.blocks = Z2;
+        richMessage.photos = B2();
+        richMessage.documents = y2();
+        return richMessage;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0050, code lost:
+    
+        r11 = r11 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x00d8, code lost:
+    
+        r0 = r0 + 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean j3(i5 i5Var, int i10, int i11) {
+        z5 z5Var;
+        z5 z5Var2;
+        int p10 = i5Var.p(i10, i11);
+        LinkedHashSet linkedHashSet = i5Var.E;
+        k5 k5Var = i5Var.v;
+        if (p10 >= 0) {
+            int r10 = (k5Var.v() && p10 == k5Var.k()) ? k5Var.r() : p10;
+            if (i5Var == this.f4 && (z5Var2 = i5Var.C) != null && p10 >= 0 && r10 >= p10 && r10 < z5Var2.b && !linkedHashSet.isEmpty()) {
+                int i12 = p10;
+                loop0: while (i12 <= r10) {
+                    int i13 = 0;
+                    while (true) {
+                        z5 z5Var3 = i5Var.C;
+                        if (i13 < z5Var3.c) {
+                            if (!linkedHashSet.contains(z5Var3.d[i12][i13])) {
+                                break loop0;
+                            }
+                            i13++;
+                        }
+                    }
+                }
+                F4(i5Var);
+                return true;
+            }
+            g2(i5Var);
+            z5 z5Var4 = i5Var.C;
+            if (z5Var4 != null && p10 >= 0 && r10 >= p10 && r10 < z5Var4.b) {
+                linkedHashSet.clear();
+                for (int i14 = p10; i14 <= r10; i14++) {
+                    int i15 = 0;
+                    while (true) {
+                        z5 z5Var5 = i5Var.C;
+                        if (i15 < z5Var5.c) {
+                            TL_iv.pageTableCell pagetablecell = z5Var5.d[i14][i15];
+                            if (pagetablecell != null) {
+                                linkedHashSet.add(pagetablecell);
+                            }
+                            i15++;
+                        }
+                    }
+                }
+                k5Var.invalidate();
+                i5Var.t();
+            }
+            this.h4 = p10;
+            return true;
+        }
+        int n10 = i5Var.n(i10, i11);
+        if (n10 < 0) {
+            return false;
+        }
+        int q10 = (k5Var.u() && n10 == k5Var.j()) ? k5Var.q() : n10;
+        if (i5Var == this.f4 && (z5Var = i5Var.C) != null && n10 >= 0 && q10 >= n10 && q10 < z5Var.c && !linkedHashSet.isEmpty()) {
+            int i16 = n10;
+            loop4: while (i16 <= q10) {
+                int i17 = 0;
+                while (true) {
+                    z5 z5Var6 = i5Var.C;
+                    if (i17 < z5Var6.b) {
+                        if (!linkedHashSet.contains(z5Var6.d[i17][i16])) {
+                            break loop4;
+                        }
+                        i17++;
+                    }
+                }
+            }
+            F4(i5Var);
+            return true;
+        }
+        g2(i5Var);
+        z5 z5Var7 = i5Var.C;
+        if (z5Var7 != null && n10 >= 0 && q10 >= n10 && q10 < z5Var7.c) {
+            linkedHashSet.clear();
+            for (int i18 = n10; i18 <= q10; i18++) {
+                int i19 = 0;
+                while (true) {
+                    z5 z5Var8 = i5Var.C;
+                    if (i19 < z5Var8.b) {
+                        TL_iv.pageTableCell pagetablecell2 = z5Var8.d[i19][i18];
+                        if (pagetablecell2 != null) {
+                            linkedHashSet.add(pagetablecell2);
+                        }
+                        i19++;
+                    }
+                }
+            }
+            k5Var.invalidate();
+            i5Var.t();
+        }
+        this.i4 = n10;
+        return true;
+    }
+
+    public final d1 j4(int i10) {
+        View A4 = A4(i10);
+        if (A4 instanceof v5) {
+            return ((v5) A4).getAuthorEditText();
+        }
+        return null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x0091, code lost:
+    
+        r2 = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0088, code lost:
+    
+        r9 = r6;
+        r14 = r7;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final TL_iv.PageBlock k2(int i10, int i11, int i12, int i13, boolean z4, int[] iArr) {
+        int i14;
+        TL_iv.RichText richText;
+        int i15;
+        a aVar;
+        TL_iv.RichText richText2;
+        ArrayList arrayList;
+        boolean z10;
+        int i16 = i12;
+        int i17 = i13;
+        TL_iv.pageBlockOrderedList pageblockorderedlist = z4 ? new TL_iv.pageBlockOrderedList() : null;
+        TL_iv.pageBlockList pageblocklist = z4 ? null : new TL_iv.pageBlockList();
+        int i18 = i10;
+        int i19 = 1;
+        while (i18 < i16) {
+            r3 r3Var = this;
+            ArrayList arrayList2 = r3Var.i3;
+            a aVar2 = (a) arrayList2.get(i18);
+            if (aVar2.k.size() > i17 || (i14 = aVar2.c) < i11) {
+                break;
+            }
+            if (i14 == i11) {
+                if ((aVar2.d > 0) != z4) {
+                    break;
+                }
+            }
+            if (i14 > i11) {
+                break;
+            }
+            boolean E3 = E3(aVar2.b);
+            if (E3) {
+                richText = null;
+            } else {
+                TL_iv.PageBlock pageBlock = aVar2.b;
+                richText = pageBlock == null ? null : pageBlock.text;
+                if (richText == null) {
+                    richText = new TL_iv.textEmpty();
+                }
+            }
+            int i20 = i18 + 1;
+            ArrayList arrayList3 = new ArrayList();
+            if (E3) {
+                J2(arrayList3, aVar2);
+            }
+            while (true) {
+                if (i20 >= i16) {
+                    i15 = i20;
+                    aVar = aVar2;
+                    richText2 = richText;
+                    arrayList = arrayList3;
+                    break;
+                }
+                a aVar3 = (a) arrayList2.get(i20);
+                if (aVar3.k.size() <= i17) {
+                    aVar = aVar2;
+                    int i21 = aVar3.c;
+                    if (i21 < i11) {
+                        break;
+                    }
+                    if (i21 != i11) {
+                        if (aVar3.d > 0) {
+                            richText2 = richText;
+                            z10 = true;
+                        } else {
+                            richText2 = richText;
+                            z10 = false;
+                        }
+                        ArrayList arrayList4 = arrayList3;
+                        int[] iArr2 = {i20};
+                        r3 r3Var2 = r3Var;
+                        i15 = i20;
+                        arrayList = arrayList4;
+                        TL_iv.PageBlock k22 = r3Var2.k2(i15, i21, i16, i17, z10, iArr2);
+                        if (k22 != null) {
+                            arrayList.add(k22);
+                        }
+                        i20 = iArr2[0];
+                        if (i20 <= i15) {
+                            break;
+                        }
+                        r3Var = this;
+                        i16 = i12;
+                        i17 = i13;
+                        richText = richText2;
+                        aVar2 = aVar;
+                        arrayList3 = arrayList;
+                    } else {
+                        if (!E3(aVar3.b)) {
+                            break;
+                        }
+                        J2(arrayList3, aVar3);
+                        i20++;
+                        aVar2 = aVar;
+                    }
+                } else {
+                    i15 = i20;
+                    aVar = aVar2;
+                    break;
+                }
+            }
+            if (E3 || !arrayList.isEmpty()) {
+                ArrayList<TL_iv.PageBlock> arrayList5 = new ArrayList<>();
+                if (!E3) {
+                    TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                    pageblockparagraph.text = richText2;
+                    arrayList5.add(pageblockparagraph);
+                }
+                arrayList5.addAll(arrayList);
+                if (arrayList5.isEmpty()) {
+                    i16 = i12;
+                    i17 = i13;
+                    i18 = i15;
+                } else if (z4) {
+                    TL_iv.TL_pageListOrderedItemBlocks tL_pageListOrderedItemBlocks = new TL_iv.TL_pageListOrderedItemBlocks();
+                    tL_pageListOrderedItemBlocks.num = android.support.v4.media.a.l(i19, ".");
+                    tL_pageListOrderedItemBlocks.blocks = arrayList5;
+                    tL_pageListOrderedItemBlocks.checkbox = aVar.e;
+                    tL_pageListOrderedItemBlocks.checked = aVar.f;
+                    pageblockorderedlist.items.add(tL_pageListOrderedItemBlocks);
+                } else {
+                    TL_iv.TL_pageListItemBlocks tL_pageListItemBlocks = new TL_iv.TL_pageListItemBlocks();
+                    tL_pageListItemBlocks.blocks = arrayList5;
+                    tL_pageListItemBlocks.checkbox = aVar.e;
+                    tL_pageListItemBlocks.checked = aVar.f;
+                    pageblocklist.items.add(tL_pageListItemBlocks);
+                }
+            } else if (z4) {
+                TL_iv.TL_pageListOrderedItemText tL_pageListOrderedItemText = new TL_iv.TL_pageListOrderedItemText();
+                tL_pageListOrderedItemText.num = android.support.v4.media.a.l(i19, ".");
+                tL_pageListOrderedItemText.text = richText2;
+                tL_pageListOrderedItemText.checkbox = aVar.e;
+                tL_pageListOrderedItemText.checked = aVar.f;
+                pageblockorderedlist.items.add(tL_pageListOrderedItemText);
+            } else {
+                TL_iv.TL_pageListItemText tL_pageListItemText = new TL_iv.TL_pageListItemText();
+                tL_pageListItemText.text = richText2;
+                tL_pageListItemText.checkbox = aVar.e;
+                tL_pageListItemText.checked = aVar.f;
+                pageblocklist.items.add(tL_pageListItemText);
+            }
+            i19++;
+            i16 = i12;
+            i17 = i13;
+            i18 = i15;
+        }
+        iArr[0] = i18;
+        if (z4) {
+            if (!pageblockorderedlist.items.isEmpty()) {
+                return pageblockorderedlist;
+            }
+        } else if (!pageblocklist.items.isEmpty()) {
+            return pageblocklist;
+        }
+        return null;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x002f, code lost:
+    
+        if ((r3 instanceof org.telegram.tgnet.tl.TL_iv.pageBlockDocument) == false) goto L22;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean k3() {
+        int i10 = 0;
+        loop0: while (true) {
+            ArrayList arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                return false;
+            }
+            a aVar = (a) arrayList.get(i10);
+            if (!v5.z(aVar.b).isEmpty()) {
+                break;
+            }
+            if (!D3(aVar.b)) {
+                TL_iv.PageBlock pageBlock = aVar.b;
+                if (!(pageBlock instanceof TL_iv.pageBlockAudio)) {
+                }
+            }
+            for (s sVar : Q3(aVar)) {
+                if (sVar.b() || sVar.a()) {
+                    break loop0;
+                }
+            }
+            TL_iv.PageBlock pageBlock2 = aVar.b;
+            if ((pageBlock2 instanceof TL_iv.pageBlockMath) && !TextUtils.isEmpty(((TL_iv.pageBlockMath) pageBlock2).source)) {
+                break;
+            }
+            TL_iv.PageBlock pageBlock3 = aVar.b;
+            if (pageBlock3 instanceof TL_iv.pageBlockMap) {
+                int i11 = i4.J;
+                if (((TL_iv.pageBlockMap) pageBlock3).geo instanceof TLRPC.TL_geoPoint) {
+                    return true;
+                }
+            }
+            if ((pageBlock3 instanceof TL_iv.pageBlockTable) && O4((TL_iv.pageBlockTable) pageBlock3)) {
+                break;
+            }
+            TL_iv.PageBlock pageBlock4 = aVar.b;
+            if ((pageBlock4 instanceof TL_iv.pageBlockButtonRow) && !((TL_iv.pageBlockButtonRow) pageBlock4).buttons.isEmpty()) {
+                break;
+            }
+            i10++;
+        }
+        return true;
+    }
+
+    public final boolean l2() {
+        d1 editText;
+        int length;
+        int d;
+        int d10;
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y() || f3Var.u0 != f3Var.x0) {
+            return false;
+        }
+        if (L3()) {
+            int i10 = f3Var.u0;
+            int i11 = f3Var.v0;
+            if (i11 != f3Var.y0) {
+                return false;
+            }
+            editText = N4(i10, i11);
+        } else if (y3()) {
+            editText = I2(f3Var.u0);
+        } else if (w3()) {
+            editText = s2(f3Var.u0);
+        } else if (G3()) {
+            editText = j4(f3Var.u0);
+        } else {
+            v5 G4 = G4();
+            if (G4 == null) {
+                return false;
+            }
+            editText = G4.getEditText();
+        }
+        if (editText == null || (d = v2.d(f3Var.w0, f3Var.z0, (length = editText.length()), 0)) >= (d10 = yh.d(f3Var.w0, f3Var.z0, length, 0))) {
+            return false;
+        }
+        Editable text = editText.getText();
+        if (text != null && d < d10) {
+            for (e4 e4Var : (e4[]) text.getSpans(d, d10, e4.class)) {
+                if (text.getSpanStart(e4Var) < d10 && text.getSpanEnd(e4Var) > d) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public final boolean m2() {
+        int[] D4 = D4();
+        if (D4 == null) {
+            return n2(D2());
+        }
+        for (int i10 = D4[0]; i10 <= D4[1]; i10++) {
+            if (n2((a) this.i3.get(i10))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final boolean m3() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                return false;
+            }
+            Iterator it = Q3((a) arrayList.get(i10)).iterator();
+            while (it.hasNext()) {
+                if (((s) it.next()).a()) {
+                    return true;
+                }
+            }
+            i10++;
+        }
+    }
+
+    public final boolean m4(int i10, int i11, boolean z4) {
+        boolean z10;
+        if (i10 >= 0 && i11 >= i10) {
+            ArrayList arrayList = this.i3;
+            if (i11 < arrayList.size()) {
+                c2 c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.d();
+                }
+                if (z4) {
+                    z10 = false;
+                    while (i11 >= i10) {
+                        if (q3(i11, true, true)) {
+                            z10 = true;
+                        }
+                        i11--;
+                    }
+                } else {
+                    a aVar = (a) arrayList.get(i10);
+                    if (aVar.c >= 1 && (i10 == 0 || ((a) arrayList.get(i10 - 1)).c < aVar.c)) {
+                        return false;
+                    }
+                    z10 = false;
+                    while (i10 <= i11) {
+                        if (q3(i10, false, true)) {
+                            z10 = true;
+                        }
+                        i10++;
+                    }
+                }
+                if (z10) {
+                    s4();
+                    if (findFocus() instanceof d1) {
+                        X1();
+                    } else {
+                        this.V2.N(false);
+                    }
+                    c2 c2Var2 = this.G3;
+                    if (c2Var2 != null) {
+                        c2Var2.h();
+                    }
+                }
+                return z10;
+            }
+        }
+        return false;
+    }
+
+    public final boolean n2(a aVar) {
+        ArrayList arrayList;
+        int indexOf;
+        if (aVar == null || (indexOf = (arrayList = this.i3).indexOf(aVar)) < 0 || indexOf < 0 || indexOf >= arrayList.size()) {
+            return false;
+        }
+        a aVar2 = (a) arrayList.get(indexOf);
+        if (aVar2.c == 0) {
+            TL_iv.PageBlock pageBlock = aVar2.b;
+            if (!(pageBlock instanceof TL_iv.pageBlockParagraph) && !C3(pageBlock) && !(pageBlock instanceof TL_iv.pageBlockPreformatted) && !(pageBlock instanceof TL_iv.pageBlockFooter) && !o2(indexOf)) {
+                return false;
+            }
+        } else if (indexOf <= 0 || ((a) arrayList.get(indexOf - 1)).c < aVar2.c) {
+            return false;
+        }
+        return p3(indexOf);
+    }
+
+    public final void n3() {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            KeyEvent.Callback childAt = getChildAt(i10);
+            if (childAt instanceof v5) {
+                v5 v5Var = (v5) childAt;
+                v5Var.f.hideActionMode();
+                v5Var.h.hideActionMode();
+            } else if (childAt instanceof i5) {
+                i5 i5Var = (i5) childAt;
+                k5 k5Var = i5Var.v;
+                i5Var.r.hideActionMode();
+                for (int i11 = 0; i11 < k5Var.getChildCount(); i11++) {
+                    View childAt2 = k5Var.getChildAt(i11);
+                    if (childAt2 instanceof l5) {
+                        ((l5) childAt2).a.hideActionMode();
+                    }
+                }
+            } else if (childAt instanceof i0) {
+                ((i0) childAt).getCaptionEditText().hideActionMode();
+            } else if (childAt instanceof q0) {
+                ((q0) childAt).getEditText().hideActionMode();
+            }
+        }
+    }
+
+    public final void n4(a aVar) {
+        View z12 = z1(aVar);
+        if (z12 instanceof o4) {
+            o4 o4Var = (o4) z12;
+            ArrayList arrayList = o4Var.y;
+            if (o4Var.a == null) {
+                return;
+            }
+            o4Var.n();
+            if (o4Var.T >= arrayList.size()) {
+                o4Var.T = Math.max(0, arrayList.size() - 1);
+            }
+            o4Var.o(false);
+            o4Var.requestLayout();
+            o4Var.invalidate();
+        }
+    }
+
+    public final boolean o2(int i10) {
+        if (i10 <= 0) {
+            return false;
+        }
+        ArrayList arrayList = this.i3;
+        return i10 < arrayList.size() && E3(((a) arrayList.get(i10)).b) && ((a) arrayList.get(i10 - 1)).c >= 1;
+    }
+
+    public final void o3(boolean z4) {
+        f3 f3Var = this.k3;
+        if (f3Var != null) {
+            if (z4) {
+                f3Var.f(false);
+            } else {
+                AndroidUtilities.cancelRunOnUIThread(f3Var.r0);
+                f3Var.v();
+            }
+        }
+        if (z4) {
+            V2();
+        } else {
+            n3();
+        }
+    }
+
+    public final void o4() {
+        post(new b(this, 3));
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnGlobalFocusChangeListener(this.J3);
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        getViewTreeObserver().removeOnGlobalFocusChangeListener(this.J3);
+        this.X2 = false;
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        int i14 = i13 - i11;
+        int i15 = this.H3;
+        boolean z10 = i15 > 0 && i14 < i15;
+        super.onLayout(z4, i10, i11, i12, i13);
+        if (z10) {
+            View findFocus = findFocus();
+            View F = findFocus == null ? null : F(findFocus);
+            if (F != null) {
+                int dp = (AndroidUtilities.dp(8.0f) + F.getBottom()) - (i14 - getPaddingBottom());
+                if (dp > 0) {
+                    post(new e2(this, dp, 2));
+                }
+            }
+        }
+        this.H3 = i14;
+    }
+
+    public final boolean p2() {
+        int[] D4 = D4();
+        if (D4 == null) {
+            return q2(D2());
+        }
+        for (int i10 = D4[0]; i10 <= D4[1]; i10++) {
+            if (q2((a) this.i3.get(i10))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final boolean p3(int i10) {
+        return ((a) this.i3.get(i10)).c + 1 <= MessagesController.getInstance(this.c3).config.richMessageMaxDepth.get() + (-6);
+    }
+
+    public final void p4(int i10) {
+        ArrayList arrayList = this.i3;
+        int min = Math.min(arrayList.size() - 1, i10 + 1);
+        for (int max = Math.max(0, i10 - 1); max <= min; max++) {
+            a aVar = (a) arrayList.get(max);
+            if (aVar.c > 0) {
+                View z12 = z1(aVar);
+                if (z12 instanceof v5) {
+                    ((v5) z12).F();
+                }
+            }
+        }
+    }
+
+    public final boolean q2(a aVar) {
+        ArrayList arrayList;
+        int indexOf;
+        return aVar != null && (indexOf = (arrayList = this.i3).indexOf(aVar)) >= 0 && aVar.c > 0 && indexOf >= 0 && indexOf < arrayList.size() && ((a) arrayList.get(indexOf)).c > 0;
+    }
+
+    public final boolean q3(int i10, boolean z4, boolean z10) {
+        int i11 = 0;
+        if (i10 >= 0) {
+            ArrayList arrayList = this.i3;
+            if (i10 < arrayList.size()) {
+                a aVar = (a) arrayList.get(i10);
+                if (z4) {
+                    if (aVar.c > 0) {
+                        t2(i10);
+                        return true;
+                    }
+                } else if (aVar.c == 0) {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    boolean z11 = (pageBlock instanceof TL_iv.pageBlockParagraph) || C3(pageBlock) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || (pageBlock instanceof TL_iv.pageBlockFooter);
+                    if ((z11 || o2(i10)) && p3(i10)) {
+                        a aVar2 = i10 > 0 ? (a) arrayList.get(i10 - 1) : null;
+                        if (!z11) {
+                            aVar.c = aVar2.c;
+                            aVar.d = aVar2.d > 0 ? 1 : 0;
+                            aVar.e = false;
+                            aVar.f = false;
+                            return true;
+                        }
+                        aVar.c = 1;
+                        if (aVar2 != null && aVar2.d > 0) {
+                            i11 = 1;
+                        }
+                        aVar.d = i11;
+                        return true;
+                    }
+                } else if ((z10 || (i10 != 0 && ((a) arrayList.get(i10 - 1)).c >= aVar.c)) && p3(i10)) {
+                    aVar.c++;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public final void q4(a aVar, s sVar) {
+        if (aVar == null) {
+            return;
+        }
+        if (!B3(aVar.b)) {
+            r4(aVar);
+            return;
+        }
+        ArrayList g32 = g3(aVar.b);
+        ArrayList arrayList = aVar.h;
+        int indexOf = arrayList != null ? arrayList.indexOf(sVar) : -1;
+        if (indexOf >= 0) {
+            aVar.h.remove(indexOf);
+            if (g32 != null && indexOf < g32.size()) {
+                g32.remove(indexOf);
+            }
+        }
+        if (aVar.h.isEmpty()) {
+            r4(aVar);
+            return;
+        }
+        int size = aVar.h.size();
+        w51 w51Var = this.V2;
+        if (size != 1) {
+            w51Var.N(true);
+            n4(aVar);
+            return;
+        }
+        TL_iv.PageCaption pageCaption = aVar.b.caption;
+        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) g32.get(0);
+        aVar.b = pageBlock;
+        pageBlock.caption = pageCaption;
+        aVar.g = (s) aVar.h.get(0);
+        aVar.h = null;
+        w51Var.N(true);
+        n4(aVar);
+    }
+
+    public final boolean r2() {
+        c2 c2Var = this.G3;
+        if (c2Var != null) {
+            return c2Var.e || !c2Var.b.isEmpty();
+        }
+        return false;
+    }
+
+    public final void r3(boolean z4) {
+        int i10;
+        int i11;
+        int[] D4 = D4();
+        if (D4 != null && (i10 = D4[0]) != (i11 = D4[1])) {
+            m4(i10, i11, z4);
+            return;
+        }
+        a D2 = D4 == null ? D2() : (a) this.i3.get(D4[0]);
+        if (D2 != null) {
+            W3(D2, z4);
+        }
+    }
+
+    public final void r4(a aVar) {
+        ArrayList arrayList = this.i3;
+        int indexOf = arrayList.indexOf(aVar);
+        if (indexOf >= 0) {
+            arrayList.remove(indexOf);
+            this.V2.N(true);
+        }
+    }
+
+    public final d1 s2(int i10) {
+        KeyEvent.Callback A4 = A4(i10);
+        if (A4 instanceof i0) {
+            return ((i0) A4).getCaptionEditText();
+        }
+        return null;
+    }
+
+    public final void s3(a aVar, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2) {
+        ArrayList arrayList3 = aVar.k;
+        int size = arrayList3.size();
+        int i10 = 0;
+        while (i10 < size && i10 < arrayList.size() && ((Long) arrayList3.get(i10)).equals(arrayList.get(i10))) {
+            i10++;
+        }
+        for (int i11 = size - 1; i11 >= i10; i11--) {
+            Long l10 = (Long) arrayList3.get(i11);
+            long longValue = l10.longValue();
+            Integer num = (Integer) hashMap.get(l10);
+            if (num != null && (num.intValue() >= 2 || i11 != 0 || this.j3.containsKey(l10))) {
+                a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                aVar2.t = longValue;
+                for (int i12 = 0; i12 <= i11; i12++) {
+                    aVar2.k.add((Long) arrayList3.get(i12));
+                }
+                int i13 = z4.a;
+                i51 J = i51.J(z4.class);
+                J.G = aVar2;
+                J.H = this.c4;
+                arrayList2.add(J);
+                this.m4.add(aVar2);
+            }
+        }
+    }
+
+    public final void s4() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            a aVar = (a) arrayList.get(i10);
+            if (aVar.c > 0 && aVar.d > 0 && !E3(aVar.b)) {
+                int i11 = aVar.c;
+                int i12 = 1;
+                for (int i13 = i10 - 1; i13 >= 0; i13--) {
+                    a aVar2 = (a) arrayList.get(i13);
+                    int i14 = aVar2.c;
+                    if (i14 < i11) {
+                        break;
+                    }
+                    if (i14 == i11 && !E3(aVar2.b)) {
+                        if (aVar2.d <= 0) {
+                            break;
+                        } else {
+                            i12++;
+                        }
+                    }
+                }
+                aVar.d = i12;
+            }
+            i10++;
+        }
+    }
+
+    public void setAdaptiveLinkDialogs(boolean z4) {
+        this.g3 = z4;
+    }
+
+    public void setAllowTapAboveContent(boolean z4) {
+        this.O3 = z4;
+    }
+
+    public void setFileRefParentObject(MessageObject messageObject) {
+        this.f3 = messageObject;
+    }
+
+    public void setInitialText(CharSequence charSequence) {
+        if (charSequence == null) {
+            return;
+        }
+        this.K3 = new ArrayList();
+        ArrayList arrayList = this.i3;
+        W2(arrayList, w4.b(charSequence), this.j3);
+        for (int size = arrayList.size(); size < arrayList.size(); size++) {
+            this.K3.add((a) arrayList.get(size));
+        }
+        this.V2.N(false);
+    }
+
+    public final void t2(int i10) {
+        a aVar;
+        int i11;
+        ArrayList arrayList = this.i3;
+        a aVar2 = (a) arrayList.get(i10);
+        int i12 = aVar2.c;
+        if (i12 <= 0) {
+            return;
+        }
+        int i13 = i12 - 1;
+        aVar2.c = i13;
+        if (i13 == 0) {
+            aVar2.d = 0;
+            aVar2.e = false;
+            aVar2.f = false;
+        }
+        while (true) {
+            i10++;
+            if (i10 >= arrayList.size() || (i11 = (aVar = (a) arrayList.get(i10)).c) <= i12) {
+                return;
+            } else {
+                aVar.c = i11 - 1;
+            }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0079  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t3() {
+        c2 c2Var;
+        c2 c2Var2 = this.G3;
+        if (c2Var2 != null) {
+            c2Var2.d();
+        }
+        TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
+        pageblockdetails.open = true;
+        pageblockdetails.title = new TL_iv.textEmpty();
+        a aVar = new a(pageblockdetails, 0, 0);
+        a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+        a aVar3 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+        aVar3.i = true;
+        a Q2 = Q2();
+        ArrayList arrayList = this.i3;
+        int indexOf = Q2 != null ? arrayList.indexOf(Q2) : -1;
+        if (Q2 != null) {
+            TL_iv.PageBlock pageBlock = Q2.b;
+            if ((pageBlock instanceof TL_iv.pageBlockParagraph) && Q2.g == null && !Q2.i && v5.z(pageBlock).isEmpty()) {
+                arrayList.remove(indexOf);
+                arrayList.add(indexOf, aVar3);
+                arrayList.add(indexOf, aVar2);
+                arrayList.add(indexOf, aVar);
+                this.V2.N(false);
+                c2Var = this.G3;
+                if (c2Var != null) {
+                    c2Var.h();
+                }
+                post(new j2(this, aVar, 20));
+            }
+        }
+        indexOf = indexOf >= 0 ? indexOf + 1 : arrayList.size();
+        arrayList.add(indexOf, aVar3);
+        arrayList.add(indexOf, aVar2);
+        arrayList.add(indexOf, aVar);
+        this.V2.N(false);
+        c2Var = this.G3;
+        if (c2Var != null) {
+        }
+        post(new j2(this, aVar, 20));
+    }
+
+    public final void t4(String str) {
+        f3 f3Var = this.k3;
+        W1(f3Var.u0, f3Var.w0, f3Var.x0, f3Var.z0, str.split("\n", -1));
+    }
+
+    public final v5 u2(int i10) {
+        if (i10 < 0) {
+            return null;
+        }
+        View m9 = this.U2.m(i10);
+        if (m9 instanceof v5) {
+            return (v5) m9;
+        }
+        return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00ae  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void u3(a aVar) {
+        boolean z4;
+        int indexOf;
+        int indexOf2;
+        ArrayList arrayList = aVar.k;
+        a Q2 = Q2();
+        if (Q2 == null) {
+            Q2 = this.Z3;
+        }
+        ArrayList arrayList2 = this.i3;
+        int indexOf3 = Q2 != null ? arrayList2.indexOf(Q2) : -1;
+        if (indexOf3 < 0 || !(Q2.b instanceof TL_iv.pageBlockBlockquote)) {
+            z4 = false;
+        } else {
+            long a2 = m0.a();
+            TL_iv.RichText richText = ((TL_iv.pageBlockBlockquote) Q2.b).caption;
+            if (richText != null && !(richText instanceof TL_iv.textEmpty)) {
+                this.j3.put(Long.valueOf(a2), richText);
+            }
+            Q2.k.add(Long.valueOf(a2));
+            Q2.b = new TL_iv.pageBlockParagraph();
+            z4 = true;
+        }
+        boolean z10 = indexOf3 >= 0 && !Q2.k.isEmpty();
+        if (z10) {
+            arrayList.clear();
+            arrayList.addAll(Q2.k);
+        }
+        if (indexOf3 >= 0) {
+            TL_iv.PageBlock pageBlock = Q2.b;
+            if ((pageBlock instanceof TL_iv.pageBlockParagraph) && Q2.g == null && v5.z(pageBlock).isEmpty()) {
+                arrayList2.set(indexOf3, aVar);
+                this.Z3 = aVar;
+                indexOf = arrayList2.indexOf(aVar);
+                if (indexOf < arrayList2.size() - 1 || E3(((a) arrayList2.get(indexOf + 1)).b)) {
+                    a aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+                    if (z10) {
+                        aVar2.k.addAll(arrayList);
+                    }
+                    arrayList2.add(indexOf + 1, aVar2);
+                }
+                this.V2.N(!z4);
+                indexOf2 = arrayList2.indexOf(aVar) + 1;
+                if (indexOf2 > 0 || indexOf2 >= arrayList2.size() || E3(((a) arrayList2.get(indexOf2)).b)) {
+                    return;
+                }
+                post(new j2(this, (a) arrayList2.get(indexOf2), 17));
+                return;
+            }
+        }
+        if (indexOf3 >= 0) {
+            arrayList2.add(indexOf3 + 1, aVar);
+        } else {
+            arrayList2.add(aVar);
+        }
+        this.Z3 = aVar;
+        indexOf = arrayList2.indexOf(aVar);
+        if (indexOf < arrayList2.size() - 1) {
+        }
+        a aVar22 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
+        if (z10) {
+        }
+        arrayList2.add(indexOf + 1, aVar22);
+        this.V2.N(!z4);
+        indexOf2 = arrayList2.indexOf(aVar) + 1;
+        if (indexOf2 > 0) {
+        }
+    }
+
+    public final s u4(TL_iv.PageBlock pageBlock) {
+        TLRPC.Photo photo;
+        ArrayList<TLRPC.Photo> arrayList;
+        if (pageBlock instanceof TL_iv.pageBlockAudio) {
+            TLRPC.Document S2 = S2(((TL_iv.pageBlockAudio) pageBlock).audio_id);
+            if (S2 == null) {
+                return null;
+            }
+            s sVar = new s();
+            sVar.c = true;
+            sVar.a = 2;
+            sVar.h = S2;
+            sVar.i = S2;
+            return sVar;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockDocument) {
+            TLRPC.Document S22 = S2(((TL_iv.pageBlockDocument) pageBlock).document_id);
+            if (S22 == null) {
+                return null;
+            }
+            s sVar2 = new s();
+            sVar2.d = true;
+            sVar2.a = 2;
+            sVar2.h = S22;
+            return sVar2;
+        }
+        int i10 = 0;
+        if (pageBlock instanceof TL_iv.pageBlockVideo) {
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            TLRPC.Document S23 = S2(pageblockvideo.video_id);
+            if (S23 == null) {
+                return null;
+            }
+            s sVar3 = new s();
+            sVar3.b = true;
+            sVar3.a = 2;
+            sVar3.h = S23;
+            sVar3.n = pageblockvideo.spoiler;
+            while (i10 < S23.attributes.size()) {
+                if (S23.attributes.get(i10) instanceof TLRPC.TL_documentAttributeVideo) {
+                    TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) S23.attributes.get(i10);
+                    sVar3.j = tL_documentAttributeVideo.w;
+                    sVar3.k = tL_documentAttributeVideo.h;
+                    return sVar3;
+                }
+                i10++;
+            }
+            return sVar3;
+        }
+        if (!(pageBlock instanceof TL_iv.pageBlockPhoto)) {
+            return null;
+        }
+        TL_iv.pageBlockPhoto pageblockphoto = (TL_iv.pageBlockPhoto) pageBlock;
+        long j10 = pageblockphoto.photo_id;
+        if (j10 == 0) {
+            photo = null;
+        } else {
+            int i11 = 0;
+            loop1: while (true) {
+                if (i11 < this.i3.size()) {
+                    for (s sVar4 : Q3((a) this.i3.get(i11))) {
+                        if (sVar4 != null && (photo = sVar4.g) != null && photo.id == j10) {
+                            break loop1;
+                        }
+                    }
+                    i11++;
+                } else {
+                    TL_iv.RichMessage richMessage = this.h3;
+                    if (richMessage != null && (arrayList = richMessage.photos) != null) {
+                        int size = arrayList.size();
+                        while (i10 < size) {
+                            TLRPC.Photo photo2 = arrayList.get(i10);
+                            i10++;
+                            photo = photo2;
+                            if (photo != null && photo.id == j10) {
+                                break;
+                            }
+                        }
+                    }
+                    HashMap hashMap = p4.a;
+                    synchronized (p4.class) {
+                        photo = j10 == 0 ? null : (TLRPC.Photo) p4.a.get(Long.valueOf(j10));
+                    }
+                }
+            }
+        }
+        if (photo == null) {
+            return null;
+        }
+        s sVar5 = new s();
+        sVar5.a = 2;
+        sVar5.g = photo;
+        sVar5.n = pageblockphoto.spoiler;
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
+        if (closestPhotoSizeWithSize != null) {
+            sVar5.j = closestPhotoSizeWithSize.w;
+            sVar5.k = closestPhotoSizeWithSize.h;
+        }
+        return sVar5;
+    }
+
+    public final void v2() {
+        G2();
+        this.h3 = null;
+        this.Y3 = null;
+        this.Z3 = null;
+        this.G3 = new c2(this.l4);
+        z4();
+        this.G3.j();
+        p3 p3Var = this.e3;
+        if (p3Var != null) {
+            p3Var.H();
+        }
+    }
+
+    public final void v4(a aVar) {
+        TL_iv.PageBlock pageBlock;
+        if (this.h3 == null || aVar == null || (pageBlock = aVar.b) == null) {
+            return;
+        }
+        if (!B3(pageBlock)) {
+            s u42 = u4(aVar.b);
+            if (u42 != null) {
+                aVar.g = u42;
+                return;
+            }
+            return;
+        }
+        ArrayList g32 = g3(aVar.b);
+        aVar.h = new ArrayList();
+        if (g32 != null) {
+            for (int i10 = 0; i10 < g32.size(); i10++) {
+                s u43 = u4((TL_iv.PageBlock) g32.get(i10));
+                ArrayList arrayList = aVar.h;
+                if (u43 == null) {
+                    u43 = new s();
+                }
+                arrayList.add(u43);
+            }
+        }
+    }
+
+    public final boolean w3() {
+        int i10;
+        f3 f3Var = this.k3;
+        if (f3Var == null || !f3Var.y() || (i10 = f3Var.u0) != f3Var.x0 || i10 < 0 || i10 >= this.m4.size()) {
+            return false;
+        }
+        return A4(i10) instanceof i0;
+    }
+
+    public final ArrayList w4(ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList(arrayList.size());
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            a aVar = (a) obj;
+            if (B3(aVar.b)) {
+                ArrayList g32 = g3(aVar.b);
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                if (g32 != null) {
+                    int size2 = g32.size();
+                    int i11 = 0;
+                    while (i11 < size2) {
+                        Object obj2 = g32.get(i11);
+                        i11++;
+                        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) obj2;
+                        s u42 = u4(pageBlock);
+                        if (u42 != null) {
+                            arrayList3.add(pageBlock);
+                            arrayList4.add(u42);
+                        }
+                    }
+                    g32.clear();
+                    g32.addAll(arrayList3);
+                }
+                if (!arrayList4.isEmpty()) {
+                    aVar.h = arrayList4;
+                    arrayList2.add(aVar);
+                }
+            } else {
+                TL_iv.PageBlock pageBlock2 = aVar.b;
+                if ((pageBlock2 instanceof TL_iv.pageBlockPhoto) || (pageBlock2 instanceof TL_iv.pageBlockVideo) || (pageBlock2 instanceof TL_iv.pageBlockAudio) || (pageBlock2 instanceof TL_iv.pageBlockDocument)) {
+                    s u43 = u4(pageBlock2);
+                    if (u43 != null) {
+                        aVar.g = u43;
+                        arrayList2.add(aVar);
+                    }
+                } else {
+                    arrayList2.add(aVar);
+                }
+            }
+        }
+        return arrayList2;
+    }
+
+    public final boolean x2() {
+        ArrayList arrayList;
+        HashMap hashMap = new HashMap();
+        int i10 = 0;
+        while (true) {
+            arrayList = this.i3;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            a aVar = (a) arrayList.get(i10);
+            boolean z4 = aVar.i;
+            ArrayList arrayList2 = aVar.k;
+            if (!z4) {
+                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                    Map.-EL.merge(hashMap, (Long) arrayList2.get(i11), 1, new r2());
+                }
+            }
+            i10++;
+        }
+        boolean z10 = false;
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            a aVar2 = (a) arrayList.get(i12);
+            ArrayList arrayList3 = aVar2.k;
+            if (arrayList3.size() == 1 && (aVar2.b instanceof TL_iv.pageBlockParagraph)) {
+                Long l10 = (Long) arrayList3.get(0);
+                l10.getClass();
+                Integer num = (Integer) hashMap.get(l10);
+                if (num != null && num.intValue() == 1) {
+                    TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                    TL_iv.RichText richText = aVar2.b.text;
+                    if (richText == null) {
+                        richText = new TL_iv.textEmpty();
+                    }
+                    pageblockblockquote.text = richText;
+                    TL_iv.RichText richText2 = (TL_iv.RichText) this.j3.remove(l10);
+                    if (richText2 == null) {
+                        richText2 = new TL_iv.textEmpty();
+                    }
+                    pageblockblockquote.caption = richText2;
+                    aVar2.b = pageblockblockquote;
+                    arrayList3.clear();
+                    z10 = true;
+                }
+            }
+        }
+        return z10;
+    }
+
+    public final void x4() {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            KeyEvent.Callback childAt = getChildAt(i10);
+            if (childAt instanceof f4) {
+                y yVar = (y) ((f4) childAt);
+                yVar.b.a(yVar.a, new rh.e(yVar, 8));
+            }
+        }
+        invalidate();
+    }
+
+    public final ArrayList y2() {
+        TLRPC.Document document;
+        s sVar;
+        TLRPC.Document document2;
+        ArrayList arrayList = new ArrayList();
+        HashSet hashSet = new HashSet();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.i3;
+            if (i10 >= arrayList2.size()) {
+                return arrayList;
+            }
+            a aVar = (a) arrayList2.get(i10);
+            if ((aVar.b instanceof TL_iv.pageBlockDocument) && (sVar = aVar.g) != null && sVar.b() && (document2 = aVar.g.h) != null) {
+                ((TL_iv.pageBlockDocument) aVar.b).document_id = document2.id;
+            }
+            for (s sVar2 : Q3(aVar)) {
+                if (sVar2.b() && (document = sVar2.h) != null) {
+                    long j10 = document.id;
+                    if (j10 != 0 && document.access_hash != 0 && hashSet.add(Long.valueOf(j10))) {
+                        arrayList.add(sVar2.h);
+                    }
+                }
+            }
+            i10++;
+        }
+    }
+
+    public final boolean y3() {
+        int i10;
+        f3 f3Var = this.k3;
+        return f3Var != null && f3Var.y() && (i10 = f3Var.u0) == f3Var.x0 && x3(y4(i10));
+    }
+
+    public final a y4(int i10) {
+        if (i10 < 0) {
+            return null;
+        }
+        ArrayList arrayList = this.m4;
+        if (i10 < arrayList.size()) {
+            return (a) arrayList.get(i10);
+        }
+        return null;
+    }
+
+    public final ArrayList z2(int i10, int i11) {
+        TLRPC.Document document;
+        ArrayList arrayList = new ArrayList();
+        HashSet hashSet = new HashSet();
+        while (i10 <= i11) {
+            ArrayList arrayList2 = this.i3;
+            if (i10 >= arrayList2.size()) {
+                break;
+            }
+            for (s sVar : Q3((a) arrayList2.get(i10))) {
+                if (sVar.b() && (document = sVar.h) != null && hashSet.add(Long.valueOf(document.id))) {
+                    arrayList.add(sVar.h);
+                }
+            }
+            i10++;
+        }
+        return arrayList;
+    }
+
+    public final void z4() {
+        ArrayList arrayList = this.i3;
+        arrayList.clear();
+        arrayList.add(new a(new TL_iv.pageBlockHeading1(), 0, 0));
+        arrayList.add(new a(new TL_iv.pageBlockParagraph(), 0, 0));
+        this.V2.N(false);
+    }
+}

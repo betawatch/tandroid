@@ -1,10 +1,16 @@
 package j7;
 
-import java.util.Collection;
-import java.util.Set;
+import android.R;
+import android.content.Context;
+import android.content.res.TypedArray;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface v extends Collection {
-    Set zza();
+public abstract class v {
+    public static int a(Context context, int i10) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(R.style.Animation.Activity, new int[]{i10});
+        int resourceId = obtainStyledAttributes.getResourceId(0, -1);
+        obtainStyledAttributes.recycle();
+        return resourceId;
+    }
 }

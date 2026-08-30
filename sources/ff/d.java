@@ -1,9 +1,31 @@
 package ff;
 
-import android.os.Binder;
+import android.content.Context;
+import android.os.Build;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class d extends Binder implements e {
-    public static final /* synthetic */ int a = 0;
+public abstract class d {
+    public static final int[] a = new int[2];
+
+    public static int a(Context context) {
+        if (AndroidUtilities.checkInlinePermissions(context)) {
+            return 2;
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            return AndroidUtilities.checkPipPermissions(context) ? 1 : -2;
+        }
+        return -1;
+    }
+
+    public static WindowManager.LayoutParams b(Context context, boolean z4) {
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.gravity = 51;
+        layoutParams.format = -3;
+        layoutParams.type = (z4 || !AndroidUtilities.checkInlinePermissions(context)) ? 2 : Build.VERSION.SDK_INT >= 26 ? 2038 : 2003;
+        layoutParams.flags = 520;
+        return layoutParams;
+    }
 }

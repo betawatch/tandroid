@@ -2,7 +2,7 @@ package a0;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class l implements Cloneable {
     public /* synthetic */ int[] a;
@@ -123,9 +123,9 @@ public final class l implements Cloneable {
         if (i17 - i11 != 0) {
             int[] iArr = this.a;
             int i18 = i11 + 1;
-            rc.f.b(i18, i11, i17, iArr, iArr);
+            tc.f.b(i18, i11, i17, iArr, iArr);
             Object[] objArr2 = this.b;
-            rc.f.c(i18, i11, this.c, objArr2, objArr2);
+            tc.f.c(i18, i11, this.c, objArr2, objArr2);
         }
         this.a[i11] = i10;
         this.b[i11] = obj;
@@ -137,25 +137,25 @@ public final class l implements Cloneable {
         if (i10 <= 0) {
             return "{}";
         }
-        StringBuilder sb2 = new StringBuilder(i10 * 28);
-        sb2.append('{');
+        StringBuilder sb = new StringBuilder(i10 * 28);
+        sb.append('{');
         int i11 = this.c;
         for (int i12 = 0; i12 < i11; i12++) {
             if (i12 > 0) {
-                sb2.append(", ");
+                sb.append(", ");
             }
-            sb2.append(this.a[i12]);
-            sb2.append('=');
+            sb.append(this.a[i12]);
+            sb.append('=');
             Object obj = this.b[i12];
             if (obj != this) {
-                sb2.append(obj);
+                sb.append(obj);
             } else {
-                sb2.append("(this Map)");
+                sb.append("(this Map)");
             }
         }
-        sb2.append('}');
-        String sb3 = sb2.toString();
-        kotlin.jvm.internal.j.d(sb3, "buffer.toString()");
-        return sb3;
+        sb.append('}');
+        String sb2 = sb.toString();
+        kotlin.jvm.internal.j.d(sb2, "buffer.toString()");
+        return sb2;
     }
 }

@@ -1,68 +1,39 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.zz0;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class j0 extends Drawable {
-    public final float a = 0.75f;
-    public final Drawable b;
-    public final zz0 c;
+public final /* synthetic */ class j0 implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public j0(Context context, int i10) {
-        this.b = context.getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
-        zz0 zz0Var = new zz0(j7.l1.k(i10, ""), 8.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        this.c = zz0Var;
-        zz0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    public /* synthetic */ j0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
-        Drawable drawable = this.b;
-        drawable.setBounds(bounds);
-        drawable.draw(canvas);
-        this.c.c(bounds.centerX() - (this.c.c / 2.0f), AndroidUtilities.dp(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.b.getAlpha();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return (int) (this.b.getIntrinsicHeight() * this.a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.b.getIntrinsicWidth() * this.a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                n0 n0Var = (n0) this.b;
+                n0Var.getClass();
+                n0Var.U(mf.a.i(0L, i10 == 0 ? mf.b.a : mf.b.b), true, false, true);
+                n0Var.a0.setText("");
+                break;
+            case 1:
+                s0 s0Var = (s0) this.b;
+                s0Var.getClass();
+                s0Var.q(mf.a.i(0L, i10 == 0 ? mf.b.a : mf.b.b), true, false, true);
+                s0Var.h.setText("");
+                break;
+            default:
+                k4 k4Var = (k4) this.b;
+                k4Var.getClass();
+                k4Var.q = i10 == 0 ? mf.b.a : mf.b.b;
+                k4Var.a(true);
+                break;
+        }
     }
 }

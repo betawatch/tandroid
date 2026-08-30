@@ -1,61 +1,28 @@
 package nh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.q71;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class c8 extends q71 {
+public final /* synthetic */ class c8 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ e9 c;
+    public final /* synthetic */ d8 b;
 
-    public /* synthetic */ c8(e9 e9Var, Context context, int i10) {
+    public /* synthetic */ c8(d8 d8Var, int i10) {
         this.a = i10;
-        this.c = e9Var;
-        this.b = context;
+        this.b = d8Var;
     }
 
-    @Override // org.telegram.ui.Components.q71
-    public final void b(View view, int i10, int i11) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                ((y8) view).b(i11);
+                d8.c(this.b, (TLRPC.TL_messages_stickerSet) obj);
                 break;
             default:
-                ((y8) view).b(i11);
+                d8.b(this.b, (TLRPC.TL_messages_stickerSet) obj);
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public final View d(int i10) {
-        switch (this.a) {
-        }
-        return new y8(this.c, this.b);
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public final int e() {
-        switch (this.a) {
-            case 0:
-                return 2;
-            default:
-                return 1;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.q71
-    public final int h(int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 0) {
-                    return 0;
-                }
-                return this.c.I;
-            default:
-                return 5;
         }
     }
 }

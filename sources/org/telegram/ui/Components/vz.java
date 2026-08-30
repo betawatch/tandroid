@@ -1,270 +1,495 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.SurfaceTexture;
+import android.opengl.GLES20;
+import android.opengl.Matrix;
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+import java.util.Locale;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vz implements al0, bl0 {
-    public final /* synthetic */ f00 a;
+public final class vz extends DispatchQueue {
+    public final int[] B;
+    public boolean C;
+    public boolean D;
+    public final ba E;
+    public ha F;
+    public final zz G;
+    public int H;
+    public int I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public boolean Q;
+    public int R;
+    public int S;
+    public int T;
+    public int U;
+    public final FloatBuffer V;
+    public boolean W;
+    public long X;
+    public final fv Y;
+    public boolean Z;
+    public final SurfaceTexture a;
+    public final Runnable a0;
+    public EGL10 b;
+    public EGLDisplay c;
+    public EGLContext d;
+    public EGLSurface e;
+    public boolean f;
+    public final boolean h;
+    public volatile int n;
+    public volatile int r;
+    public Bitmap s;
+    public final int v;
+    public SurfaceTexture w;
+    public boolean x;
+    public final float[] y;
 
-    public /* synthetic */ vz(f00 f00Var) {
-        this.a = f00Var;
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public void b(float f9, float f10, int i10, View view) {
-        f00 f00Var = this.a;
-        a00 a00Var = f00Var.F;
-        if (((org.telegram.ui.fw) a00Var).b.f2) {
-            return;
-        }
-        d00 d00Var = (d00) view;
-        if (!f00Var.n) {
-            if (i10 != f00Var.G || a00Var == null) {
-                f00Var.f(d00Var.b, i10);
-                return;
-            } else {
-                ((org.telegram.ui.fw) a00Var).b.x4(true, false);
-                return;
+    public vz(SurfaceTexture surfaceTexture, Bitmap bitmap, int i10, boolean z4, boolean z10, ba baVar, int i11, int i12) {
+        super("PhotoFilterGLThread", false);
+        this.y = new float[16];
+        this.B = new int[1];
+        this.a0 = new sz(this, 1);
+        this.a = surfaceTexture;
+        this.n = i11;
+        this.r = i12;
+        this.s = bitmap;
+        this.v = i10;
+        this.E = baVar;
+        boolean z11 = baVar != null;
+        this.D = z11;
+        if (z11) {
+            ha haVar = new ha();
+            this.F = haVar;
+            ba baVar2 = haVar.t;
+            if (baVar2 != null && baVar2.m != null) {
+                baVar2.m = null;
+            }
+            haVar.t = baVar;
+            if (baVar != null && baVar.m != haVar) {
+                baVar.m = haVar;
+                baVar.d();
             }
         }
-        if (i10 != 0) {
-            int dp = AndroidUtilities.dp(6.0f);
-            RectF rectF = d00Var.f;
-            float f11 = dp;
-            if (rectF.left - f11 >= f9 || rectF.right + f11 <= f9) {
-                return;
-            }
-            org.telegram.ui.fw fwVar = (org.telegram.ui.fw) f00Var.F;
-            fwVar.d(fwVar.b.getMessagesController().getDialogFilters().get(d00Var.b.a));
+        this.h = false;
+        zz zzVar = new zz(false, null);
+        this.G = zzVar;
+        zzVar.i1 = z10;
+        float[] fArr = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f};
+        if (z4) {
+            fArr[2] = 0.0f;
+            fArr[0] = 1.0f;
+            fArr[6] = 0.0f;
+            fArr[4] = 1.0f;
         }
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
+        allocateDirect.order(ByteOrder.nativeOrder());
+        FloatBuffer asFloatBuffer = allocateDirect.asFloatBuffer();
+        this.V = asFloatBuffer;
+        asFloatBuffer.put(fArr);
+        asFloatBuffer.position(0);
+        start();
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean b1(View view) {
-        return false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0208  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x020f  */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0216  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x020b  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x01eb  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x01cd  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x016b  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x017c  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01e4  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x01fd  */
-    @Override // org.telegram.ui.Components.bl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean c(int i10, View view) {
-        org.telegram.ui.ActionBar.l lVar;
-        MessagesController.DialogFilter dialogFilter;
-        ArrayList arrayList;
-        boolean z10;
-        MessagesController.DialogFilter dialogFilter2;
-        boolean z11;
-        boolean z12;
-        int i11;
-        boolean z13;
-        TLRPC.Chat chat;
-        f00 f00Var = this.a;
-        a00 a00Var = f00Var.F;
-        if (!((org.telegram.ui.fw) a00Var).b.f2 && !f00Var.n) {
-            d00 d00Var = (d00) view;
-            org.telegram.ui.fw fwVar = (org.telegram.ui.fw) a00Var;
-            org.telegram.ui.fy fyVar = fwVar.b;
-            if (fyVar.N0 == 0) {
-                lVar = ((org.telegram.ui.ActionBar.o2) fyVar).actionBar;
-                if (!lVar.s() && fyVar.P == 0.0f) {
-                    j70 j70Var = fyVar.H0;
-                    if (j70Var != null && j70Var.D()) {
-                        fyVar.H0.u();
-                        fyVar.H0 = null;
-                        return false;
+    public static void b(vz vzVar) {
+        yz yzVar;
+        if (vzVar.f) {
+            vzVar.c();
+            if (vzVar.x) {
+                vzVar.w.updateTexImage();
+                vzVar.w.getTransformMatrix(vzVar.y);
+                vzVar.g();
+                vzVar.x = false;
+                zz zzVar = vzVar.G;
+                zzVar.P0 = vzVar.y;
+                zzVar.W0 = false;
+                vzVar.C = true;
+            }
+            if (vzVar.W) {
+                if (vzVar.h && ((yzVar = vzVar.G.f1) == null || yzVar.b())) {
+                    GLES20.glViewport(0, 0, vzVar.n, vzVar.r);
+                    GLES20.glBindFramebuffer(36160, 0);
+                    GLES20.glUseProgram(vzVar.L);
+                    GLES20.glActiveTexture(33984);
+                    GLES20.glBindTexture(36197, vzVar.B[0]);
+                    GLES20.glUniform1i(vzVar.P, 0);
+                    GLES20.glEnableVertexAttribArray(vzVar.O);
+                    int i10 = vzVar.O;
+                    FloatBuffer floatBuffer = vzVar.V;
+                    if (floatBuffer == null) {
+                        floatBuffer = vzVar.G.a1;
                     }
-                    if (d00Var.getId() != fyVar.v0.getDefaultTabId()) {
-                        ArrayList<MessagesController.DialogFilter> dialogFilters = fyVar.getMessagesController().getDialogFilters();
-                        int id2 = d00Var.getId();
-                        if (dialogFilters != null && id2 >= 0 && id2 < dialogFilters.size()) {
-                            dialogFilter = dialogFilters.get(d00Var.getId());
-                            boolean z14 = dialogFilter != null;
-                            boolean[] zArr = {true};
-                            MessagesController messagesController = fyVar.getMessagesController();
-                            arrayList = new ArrayList(!z14 ? messagesController.getDialogs(fyVar.R2) : messagesController.getAllDialogs());
-                            if (dialogFilter == null) {
-                                MessagesController.DialogFilter dialogFilter3 = fyVar.getMessagesController().getDialogFilters().get(d00Var.getId());
-                                if (dialogFilter3 != null) {
-                                    int i12 = 0;
-                                    while (i12 < arrayList.size()) {
-                                        boolean z15 = z14;
-                                        if (!dialogFilter3.includesDialog(fyVar.getAccountInstance(), ((TLRPC.Dialog) arrayList.get(i12)).id)) {
-                                            arrayList.remove(i12);
-                                            i12--;
-                                        }
-                                        i12++;
-                                        z14 = z15;
-                                    }
-                                    z10 = z14;
-                                    z11 = dialogFilter3.isChatlist() || (dialogFilter3.neverShow.isEmpty() && (dialogFilter3.flags & (~(MessagesController.DIALOG_FILTER_FLAG_CHATLIST | MessagesController.DIALOG_FILTER_FLAG_CHATLIST_ADMIN))) == 0);
-                                    if (z11) {
-                                        int i13 = 0;
-                                        while (true) {
-                                            if (i13 >= dialogFilter3.alwaysShow.size()) {
-                                                break;
-                                            }
-                                            long longValue = dialogFilter3.alwaysShow.get(i13).longValue();
-                                            if (longValue < 0 && (chat = fyVar.getMessagesController().getChat(Long.valueOf(-longValue))) != null && org.telegram.ui.p00.g0(chat)) {
-                                                zArr[0] = false;
-                                                break;
-                                            }
-                                            i13++;
-                                        }
-                                    }
-                                } else {
-                                    z10 = z14;
-                                    z11 = false;
-                                }
-                                if (!arrayList.isEmpty()) {
-                                    int i14 = 0;
-                                    while (true) {
-                                        if (i14 >= arrayList.size()) {
-                                            dialogFilter2 = dialogFilter3;
-                                            z13 = true;
-                                            break;
-                                        }
-                                        dialogFilter2 = dialogFilter3;
-                                        int i15 = i14;
-                                        if (!fyVar.getMessagesController().isDialogMuted(((TLRPC.Dialog) arrayList.get(i14)).id, 0L)) {
-                                            z13 = false;
-                                            break;
-                                        }
-                                        i14 = i15 + 1;
-                                        dialogFilter3 = dialogFilter2;
-                                    }
-                                    z12 = !z13;
-                                    boolean z16 = false;
-                                    for (i11 = 0; i11 < arrayList.size(); i11++) {
-                                        if (((TLRPC.Dialog) arrayList.get(i11)).unread_mark || ((TLRPC.Dialog) arrayList.get(i11)).unread_count > 0) {
-                                            z16 = true;
-                                        }
-                                    }
-                                    j70 H = j70.H(fyVar, d00Var);
-                                    sv svVar = new sv(3, (byte) 0);
-                                    Paint paint = new Paint(1);
-                                    svVar.c = paint;
-                                    svVar.b = new RectF();
-                                    paint.setColor(fwVar.b.getThemedColor(org.telegram.ui.ActionBar.g6.G8));
-                                    H.W(svVar);
-                                    H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.ui(fwVar, 23), fyVar.getMessagesController().getDialogFilters().size() > 1);
-                                    boolean z17 = z10;
-                                    H.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new jh.r5(fwVar, z17, dialogFilter, 22), false);
-                                    H.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new jh.r5(fwVar, arrayList, z12, 23), dialogFilter == null && !arrayList.isEmpty());
-                                    H.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.Components.voip.o(11, fwVar, arrayList), z16);
-                                    H.l(R.drawable.msg_share, org.telegram.ui.p00.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.lq(fwVar, zArr, dialogFilter2, 3), z11);
-                                    H.m(!z17, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.Components.voip.o(12, fwVar, dialogFilter));
-                                    H.s = 96;
-                                    H.i = 3;
-                                    H.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
-                                    H.Z();
-                                    fyVar.H0 = H;
-                                    f00Var.B.d1(true);
-                                    return true;
-                                }
-                                dialogFilter2 = dialogFilter3;
-                            } else {
-                                z10 = z14;
-                                dialogFilter2 = null;
-                                z11 = false;
-                            }
-                            z12 = false;
-                            boolean z162 = false;
-                            while (i11 < arrayList.size()) {
-                            }
-                            j70 H2 = j70.H(fyVar, d00Var);
-                            sv svVar2 = new sv(3, (byte) 0);
-                            Paint paint2 = new Paint(1);
-                            svVar2.c = paint2;
-                            svVar2.b = new RectF();
-                            paint2.setColor(fwVar.b.getThemedColor(org.telegram.ui.ActionBar.g6.G8));
-                            H2.W(svVar2);
-                            H2.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.ui(fwVar, 23), fyVar.getMessagesController().getDialogFilters().size() > 1);
-                            boolean z172 = z10;
-                            H2.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new jh.r5(fwVar, z172, dialogFilter, 22), false);
-                            if (dialogFilter == null) {
-                            }
-                            H2.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new jh.r5(fwVar, arrayList, z12, 23), dialogFilter == null && !arrayList.isEmpty());
-                            H2.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.Components.voip.o(11, fwVar, arrayList), z162);
-                            H2.l(R.drawable.msg_share, org.telegram.ui.p00.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.lq(fwVar, zArr, dialogFilter2, 3), z11);
-                            H2.m(!z172, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.Components.voip.o(12, fwVar, dialogFilter));
-                            H2.s = 96;
-                            H2.i = 3;
-                            H2.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
-                            H2.Z();
-                            fyVar.H0 = H2;
-                            f00Var.B.d1(true);
-                            return true;
-                        }
+                    GLES20.glVertexAttribPointer(i10, 2, 5126, false, 8, (Buffer) floatBuffer);
+                    GLES20.glEnableVertexAttribArray(vzVar.M);
+                    GLES20.glVertexAttribPointer(vzVar.M, 2, 5126, false, 8, (Buffer) vzVar.G.b1);
+                    GLES20.glUniformMatrix4fv(vzVar.N, 1, false, vzVar.y, 0);
+                    GLES20.glDrawArrays(5, 0, 4);
+                    vzVar.b.eglSwapBuffers(vzVar.c, vzVar.e);
+                    ha haVar = vzVar.F;
+                    if (haVar != null) {
+                        haVar.a(vzVar.y, vzVar.B[0], vzVar.T, vzVar.U);
+                        return;
                     }
-                    dialogFilter = null;
-                    if (dialogFilter != null) {
+                    return;
+                }
+                if (vzVar.Y == null || vzVar.C) {
+                    GLES20.glViewport(0, 0, vzVar.R, vzVar.S);
+                    vzVar.G.f();
+                    vzVar.G.d();
+                    if (vzVar.Y == null) {
+                        vzVar.G.e();
                     }
-                    boolean[] zArr2 = {true};
-                    MessagesController messagesController2 = fyVar.getMessagesController();
-                    arrayList = new ArrayList(!z14 ? messagesController2.getDialogs(fyVar.R2) : messagesController2.getAllDialogs());
-                    if (dialogFilter == null) {
+                    vzVar.G.c();
+                    vzVar.Q = vzVar.G.b();
+                    vzVar.Z = true;
+                }
+                if (vzVar.Z) {
+                    GLES20.glViewport(0, 0, vzVar.n, vzVar.r);
+                    GLES20.glBindFramebuffer(36160, 0);
+                    int g10 = vzVar.G.g(1 ^ (vzVar.Q ? 1 : 0));
+                    GLES20.glUseProgram(vzVar.H);
+                    GLES20.glActiveTexture(33984);
+                    GLES20.glBindTexture(3553, g10);
+                    GLES20.glUniform1i(vzVar.K, 0);
+                    GLES20.glEnableVertexAttribArray(vzVar.J);
+                    int i11 = vzVar.J;
+                    FloatBuffer floatBuffer2 = vzVar.V;
+                    if (floatBuffer2 == null) {
+                        floatBuffer2 = vzVar.G.a1;
                     }
-                    z12 = false;
-                    boolean z1622 = false;
-                    while (i11 < arrayList.size()) {
+                    GLES20.glVertexAttribPointer(i11, 2, 5126, false, 8, (Buffer) floatBuffer2);
+                    GLES20.glEnableVertexAttribArray(vzVar.I);
+                    GLES20.glVertexAttribPointer(vzVar.I, 2, 5126, false, 8, (Buffer) vzVar.G.Z0);
+                    GLES20.glDrawArrays(5, 0, 4);
+                    vzVar.b.eglSwapBuffers(vzVar.c, vzVar.e);
+                    ha haVar2 = vzVar.F;
+                    if (haVar2 != null) {
+                        haVar2.a(null, g10, vzVar.R, vzVar.S);
                     }
-                    j70 H22 = j70.H(fyVar, d00Var);
-                    sv svVar22 = new sv(3, (byte) 0);
-                    Paint paint22 = new Paint(1);
-                    svVar22.c = paint22;
-                    svVar22.b = new RectF();
-                    paint22.setColor(fwVar.b.getThemedColor(org.telegram.ui.ActionBar.g6.G8));
-                    H22.W(svVar22);
-                    H22.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new org.telegram.ui.ui(fwVar, 23), fyVar.getMessagesController().getDialogFilters().size() > 1);
-                    boolean z1722 = z10;
-                    H22.c(R.drawable.msg_edit, LocaleController.getString(z10 ? R.string.FilterEditAll : R.string.FilterEdit), new jh.r5(fwVar, z1722, dialogFilter, 22), false);
-                    if (dialogFilter == null) {
-                    }
-                    H22.l(z12 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z12 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new jh.r5(fwVar, arrayList, z12, 23), dialogFilter == null && !arrayList.isEmpty());
-                    H22.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new org.telegram.ui.Components.voip.o(11, fwVar, arrayList), z1622);
-                    H22.l(R.drawable.msg_share, org.telegram.ui.p00.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.lq(fwVar, zArr2, dialogFilter2, 3), z11);
-                    H22.m(!z1722, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new org.telegram.ui.Components.voip.o(12, fwVar, dialogFilter));
-                    H22.s = 96;
-                    H22.i = 3;
-                    H22.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
-                    H22.Z();
-                    fyVar.H0 = H22;
-                    f00Var.B.d1(true);
-                    return true;
                 }
             }
         }
-        return false;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void o0(View view, float f9, float f10) {
+    public final void c() {
+        if (this.d.equals(this.b.eglGetCurrentContext()) && this.e.equals(this.b.eglGetCurrentSurface(12377))) {
+            return;
+        }
+        EGL10 egl10 = this.b;
+        EGLDisplay eGLDisplay = this.c;
+        EGLSurface eGLSurface = this.e;
+        if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.d) || !BuildVars.LOGS_ENABLED) {
+            return;
+        }
+        org.telegram.messenger.y3.u(this.b, new StringBuilder("eglMakeCurrent failed "));
+    }
+
+    public final void e(boolean z4, boolean z10, boolean z11) {
+        postRunnable(new tz(this, z4, z11, z10, 0));
+    }
+
+    public final void f(yz yzVar) {
+        postRunnable(new il(21, this, yzVar));
+    }
+
+    public final void finish() {
+        this.s = null;
+        if (this.e != null) {
+            EGL10 egl10 = this.b;
+            EGLDisplay eGLDisplay = this.c;
+            EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+            egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT);
+            this.b.eglDestroySurface(this.c, this.e);
+            this.e = null;
+        }
+        EGLContext eGLContext = this.d;
+        if (eGLContext != null) {
+            ba baVar = this.E;
+            if (baVar != null) {
+                synchronized (baVar.f) {
+                    try {
+                        if (baVar.g == eGLContext) {
+                            baVar.g = null;
+                        }
+                    } finally {
+                    }
+                }
+            }
+            this.b.eglDestroyContext(this.c, this.d);
+            this.d = null;
+        }
+        EGLDisplay eGLDisplay2 = this.c;
+        if (eGLDisplay2 != null) {
+            this.b.eglTerminate(eGLDisplay2);
+            this.c = null;
+        }
+        SurfaceTexture surfaceTexture = this.a;
+        if (surfaceTexture != null) {
+            surfaceTexture.release();
+        }
+    }
+
+    public final void g() {
+        int i10;
+        int i11;
+        if (this.W || (i10 = this.T) <= 0 || (i11 = this.U) <= 0) {
+            return;
+        }
+        this.G.i(this.s, this.v, this.B[0], i10, i11);
+        this.W = true;
+        zz zzVar = this.G;
+        this.R = zzVar.X0;
+        this.S = zzVar.Y0;
+    }
+
+    public final boolean h(ph.t6 t6Var) {
+        int h;
+        int h9;
+        int a2 = t6Var != null ? t6Var.a() : 0;
+        String readRes = a2 == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : a2 == 2 ? AndroidUtilities.readRes(R.raw.hdr2sdr_pq) : "";
+        if (a2 != 0) {
+            h = zz.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
+            h9 = zz.h(35632, String.format(Locale.US, "%1$s\nvarying highp vec2 vTextureCoord;void main() {gl_FragColor = TEX(vTextureCoord);}", readRes));
+        } else {
+            h = zz.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
+            h9 = zz.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replace("sampler2D", "samplerExternalOES"));
+        }
+        if (h == 0 || h9 == 0) {
+            return false;
+        }
+        int i10 = this.L;
+        if (i10 != 0) {
+            GLES20.glDeleteProgram(i10);
+        }
+        int glCreateProgram = GLES20.glCreateProgram();
+        this.L = glCreateProgram;
+        GLES20.glAttachShader(glCreateProgram, h);
+        GLES20.glAttachShader(this.L, h9);
+        GLES20.glBindAttribLocation(this.L, 0, "position");
+        GLES20.glBindAttribLocation(this.L, 1, "inputTexCoord");
+        GLES20.glLinkProgram(this.L);
+        int[] iArr = new int[1];
+        GLES20.glGetProgramiv(this.L, 35714, iArr, 0);
+        if (iArr[0] == 0) {
+            GLES20.glDeleteProgram(this.L);
+            this.L = 0;
+        } else {
+            this.M = GLES20.glGetAttribLocation(this.L, "position");
+            this.O = GLES20.glGetAttribLocation(this.L, "inputTexCoord");
+            this.P = GLES20.glGetUniformLocation(this.L, "sourceImage");
+            this.N = GLES20.glGetUniformLocation(this.L, "videoMatrix");
+        }
+        return true;
+    }
+
+    public final void i(int i10, int i11) {
+        if (this.F == null) {
+            return;
+        }
+        postRunnable(new rz(this, i10, i11, 2));
+    }
+
+    @Override // org.telegram.messenger.DispatchQueue, java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        EGLContext eGLContext;
+        int i10;
+        int i11;
+        ha haVar;
+        EGL10 egl10 = (EGL10) EGLContext.getEGL();
+        this.b = egl10;
+        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+        this.c = eglGetDisplay;
+        boolean z4 = false;
+        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+            if (BuildVars.LOGS_ENABLED) {
+                org.telegram.messenger.y3.u(this.b, new StringBuilder("eglGetDisplay failed "));
+            }
+            finish();
+        } else {
+            int i12 = 2;
+            if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
+                int[] iArr = new int[1];
+                EGLConfig[] eGLConfigArr = new EGLConfig[1];
+                if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
+                    if (BuildVars.LOGS_ENABLED) {
+                        org.telegram.messenger.y3.u(this.b, new StringBuilder("eglChooseConfig failed "));
+                    }
+                    finish();
+                } else if (iArr[0] > 0) {
+                    EGLConfig eGLConfig = eGLConfigArr[0];
+                    int[] iArr2 = {12440, 2, 12344};
+                    ba baVar = this.E;
+                    if (baVar != null) {
+                        synchronized (baVar.f) {
+                            try {
+                                eGLContext = baVar.g;
+                                if (eGLContext == null) {
+                                    eGLContext = EGL10.EGL_NO_CONTEXT;
+                                }
+                            } finally {
+                            }
+                        }
+                    } else {
+                        eGLContext = EGL10.EGL_NO_CONTEXT;
+                    }
+                    EGLContext eglCreateContext = this.b.eglCreateContext(this.c, eGLConfig, eGLContext, iArr2);
+                    this.d = eglCreateContext;
+                    if (eglCreateContext == null) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            org.telegram.messenger.y3.u(this.b, new StringBuilder("eglCreateContext failed "));
+                        }
+                        finish();
+                    } else {
+                        ba baVar2 = this.E;
+                        if (baVar2 != null) {
+                            baVar2.a(eglCreateContext);
+                        }
+                        SurfaceTexture surfaceTexture = this.a;
+                        if (surfaceTexture != null) {
+                            EGLSurface eglCreateWindowSurface = this.b.eglCreateWindowSurface(this.c, eGLConfig, surfaceTexture, null);
+                            this.e = eglCreateWindowSurface;
+                            if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
+                                if (BuildVars.LOGS_ENABLED) {
+                                    org.telegram.messenger.y3.u(this.b, new StringBuilder("createWindowSurface failed "));
+                                }
+                                finish();
+                            } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
+                                int h = zz.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+                                int h9 = zz.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
+                                if (h != 0 && h9 != 0) {
+                                    int glCreateProgram = GLES20.glCreateProgram();
+                                    this.H = glCreateProgram;
+                                    GLES20.glAttachShader(glCreateProgram, h);
+                                    GLES20.glAttachShader(this.H, h9);
+                                    GLES20.glBindAttribLocation(this.H, 0, "position");
+                                    GLES20.glBindAttribLocation(this.H, 1, "inputTexCoord");
+                                    GLES20.glLinkProgram(this.H);
+                                    int[] iArr3 = new int[1];
+                                    GLES20.glGetProgramiv(this.H, 35714, iArr3, 0);
+                                    if (iArr3[0] == 0) {
+                                        GLES20.glDeleteProgram(this.H);
+                                        this.H = 0;
+                                    } else {
+                                        this.I = GLES20.glGetAttribLocation(this.H, "position");
+                                        this.J = GLES20.glGetAttribLocation(this.H, "inputTexCoord");
+                                        this.K = GLES20.glGetUniformLocation(this.H, "sourceImage");
+                                    }
+                                    if (h(null)) {
+                                        Bitmap bitmap = this.s;
+                                        if (bitmap != null) {
+                                            i10 = bitmap.getWidth();
+                                            i11 = this.s.getHeight();
+                                        } else {
+                                            i10 = this.T;
+                                            i11 = this.U;
+                                        }
+                                        int i13 = i10;
+                                        int i14 = i11;
+                                        if (this.Y != null) {
+                                            GLES20.glGenTextures(1, this.B, 0);
+                                            Matrix.setIdentityM(this.y, 0);
+                                            SurfaceTexture surfaceTexture2 = new SurfaceTexture(this.B[0]);
+                                            this.w = surfaceTexture2;
+                                            surfaceTexture2.setOnFrameAvailableListener(new uz(this, 0));
+                                            GLES20.glBindTexture(36197, this.B[0]);
+                                            GLES20.glTexParameterf(36197, 10240, 9729.0f);
+                                            GLES20.glTexParameterf(36197, 10241, 9728.0f);
+                                            GLES20.glTexParameteri(36197, 10242, 33071);
+                                            GLES20.glTexParameteri(36197, 10243, 33071);
+                                            AndroidUtilities.runOnUIThread(new sz(this, i12));
+                                        }
+                                        if (this.D && (haVar = this.F) != null && !haVar.b(this.n / this.r, this.E.a)) {
+                                            FileLog.e("Failed to create uiBlurFramebuffer");
+                                            this.D = false;
+                                            this.F = null;
+                                        }
+                                        if (this.G.a()) {
+                                            if (i13 != 0 && i14 != 0) {
+                                                this.G.i(this.s, this.v, this.B[0], i13, i14);
+                                                this.W = true;
+                                                zz zzVar = this.G;
+                                                this.R = zzVar.X0;
+                                                this.S = zzVar.Y0;
+                                            }
+                                            z4 = true;
+                                        } else {
+                                            finish();
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (BuildVars.LOGS_ENABLED) {
+                                    org.telegram.messenger.y3.u(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                }
+                                finish();
+                            }
+                        } else {
+                            finish();
+                        }
+                    }
+                } else {
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.e("eglConfig not initialized");
+                    }
+                    finish();
+                }
+            } else {
+                if (BuildVars.LOGS_ENABLED) {
+                    org.telegram.messenger.y3.u(this.b, new StringBuilder("eglInitialize failed "));
+                }
+                finish();
+            }
+        }
+        this.f = z4;
+        super.run();
+    }
+
+    public vz(SurfaceTexture surfaceTexture, fv fvVar, ph.t6 t6Var, ba baVar, int i10, int i11) {
+        super("VideoFilterGLThread", false);
+        this.y = new float[16];
+        this.B = new int[1];
+        this.a0 = new sz(this, 1);
+        this.a = surfaceTexture;
+        this.n = i10;
+        this.r = i11;
+        this.Y = fvVar;
+        this.E = baVar;
+        boolean z4 = baVar != null;
+        this.D = z4;
+        if (z4) {
+            ha haVar = new ha();
+            this.F = haVar;
+            ba baVar2 = haVar.t;
+            if (baVar2 != null && baVar2.m != null) {
+                baVar2.m = null;
+            }
+            haVar.t = baVar;
+            if (baVar != null && baVar.m != haVar) {
+                baVar.m = haVar;
+                baVar.d();
+            }
+        }
+        this.h = true;
+        this.G = new zz(true, t6Var);
+        start();
     }
 }

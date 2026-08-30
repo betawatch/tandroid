@@ -1,31 +1,28 @@
 package ph;
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g3 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class g3 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n3 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ g3(n3 n3Var, int i10) {
+    public /* synthetic */ g3(Object obj, int i10) {
         this.a = i10;
-        this.b = n3Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
         switch (this.a) {
             case 0:
-                this.b.E.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((i3) this.b).d();
                 break;
             default:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                i3 i3Var = this.b.n;
-                if (i3Var.getWebView() != null) {
-                    i3Var.getWebView().setScrollY(intValue);
-                    break;
-                }
+                xf.c cVar = (xf.c) this.b;
+                cVar.c.setPivotX(r2.getMeasuredWidth() * 0.7f);
+                cVar.b.setPivotX(r1.getMeasuredWidth() * 0.7f);
                 break;
         }
     }

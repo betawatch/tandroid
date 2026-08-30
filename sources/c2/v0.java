@@ -1,32 +1,25 @@
 package c2;
 
-import android.os.Handler;
-import android.os.Looper;
+import android.os.Bundle;
+import android.util.Log;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class v0 extends Handler {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v0(Looper looper, int i10) {
-        super(looper);
-        switch (i10) {
-            case 4:
-                super(looper);
-                Looper.getMainLooper();
-                break;
-            case 5:
-            default:
-                Looper.getMainLooper();
-                break;
-            case 6:
-                super(looper);
-                Looper.getMainLooper();
-                break;
-        }
+public final class v0 {
+    public final /* synthetic */ w0 a;
+
+    public v0(w0 w0Var) {
+        this.a = w0Var;
     }
 
-    public v0(Looper looper, Handler.Callback callback) {
-        super(looper, callback);
-        Looper.getMainLooper();
+    public static void a(String str, Bundle bundle) {
+        Log.d("MediaRouteProviderProxy", "Error: " + str + ", data: " + bundle);
+    }
+
+    public final void b(Bundle bundle) {
+        String string = bundle.getString("groupableTitle");
+        w0 w0Var = this.a;
+        w0Var.g = string;
+        w0Var.h = bundle.getString("transferableTitle");
     }
 }

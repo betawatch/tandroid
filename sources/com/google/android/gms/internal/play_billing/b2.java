@@ -1,8 +1,9 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class b2 extends IOException {
+public final class b2 extends c2 {
+    public b2() {
+        super("Protocol message tag had invalid wire type.");
+    }
 }

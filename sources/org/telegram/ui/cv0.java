@@ -1,74 +1,132 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 import android.view.View;
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class cv0 implements View.OnClickListener {
-    public final /* synthetic */ oh0 a;
-    public final /* synthetic */ tn b;
-    public final /* synthetic */ org.telegram.ui.Components.jl0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.j70 e;
-    public final /* synthetic */ org.telegram.ui.Components.j70 f;
-    public final /* synthetic */ iv0 h;
+public final class cv0 extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ dv0 C;
 
-    public cv0(iv0 iv0Var, oh0 oh0Var, tn tnVar, org.telegram.ui.Components.jl0 jl0Var, LinearLayout linearLayout, org.telegram.ui.Components.j70 j70Var, org.telegram.ui.Components.j70 j70Var2) {
-        this.h = iv0Var;
-        this.a = oh0Var;
-        this.b = tnVar;
-        this.c = jl0Var;
-        this.d = linearLayout;
-        this.e = j70Var;
-        this.f = j70Var2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cv0(dv0 dv0Var, Context context, int i10, e60 e60Var) {
+        super(context, i10, e60Var, null);
+        this.C = dv0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        oh0 oh0Var = this.a;
-        ArrayList arrayList = oh0Var.b;
-        ArrayList arrayList2 = oh0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean e() {
+        fv0 fv0Var = this.C.d;
+        jb1 jb1Var = fv0Var.c;
+        View F = jb1Var.F(this);
+        f2.l1 T = F == null ? null : jb1Var.T(F);
+        if (T != null) {
+            int b10 = T.b();
+            int i10 = fv0Var.y;
+            if (i10 == fv0Var.n && b10 == (fv0Var.k0 + i10) - 1) {
+                return false;
+            }
         }
-        int size = arrayList2.size();
-        iv0 iv0Var = this.h;
-        tn tnVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean f(org.telegram.ui.Cells.c6 c6Var) {
+        int b10;
+        fv0 fv0Var = this.C.d;
+        jb1 jb1Var = fv0Var.c;
+        View F = jb1Var.F(c6Var);
+        f2.l1 T = F == null ? null : jb1Var.T(F);
+        if (T == null || (b10 = T.b()) == -1) {
+            return false;
+        }
+        return fv0Var.w[b10 - fv0Var.k0];
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(dh.b bVar, ActionMode actionMode) {
+        if (bVar.isFocused() && bVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            xn.k8(menu, this.C.d.f.h, false, true, true, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void h(org.telegram.ui.Cells.c6 c6Var, boolean z4) {
+        int b10;
+        fv0 fv0Var = this.C.d;
+        if (z4 && fv0Var.I) {
+            Arrays.fill(fv0Var.w, false);
+            fv0Var.c.getChildCount();
+            for (int i10 = fv0Var.k0; i10 < fv0Var.k0 + fv0Var.y; i10++) {
+                f2.l1 K = fv0Var.c.K(i10);
+                if (K != null) {
+                    View view = K.a;
+                    if (view instanceof org.telegram.ui.Cells.c6) {
+                        ((org.telegram.ui.Cells.c6) view).r.a(false, true);
+                    }
+                }
             }
-            tnVar.presentFragment(new ProfileActivity(bundle, null));
-            iv0Var.c(false);
-            return;
         }
-        if (SharedConfig.messageSeenHintCount > 0 && tnVar.T0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.mc t10 = new org.telegram.ui.Components.tc(org.telegram.ui.Components.hb.a(iv0Var.getContext()), iv0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            tnVar.j1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        super.h(c6Var, z4);
+        jb1 jb1Var = fv0Var.c;
+        View F = jb1Var.F(c6Var);
+        f2.l1 T = F == null ? null : jb1Var.T(F);
+        if (T != null && (b10 = T.b()) != -1) {
+            fv0Var.w[b10 - fv0Var.k0] = z4;
         }
-        org.telegram.ui.Components.jl0 jl0Var = this.c;
-        jl0Var.requestLayout();
-        this.d.requestLayout();
-        jl0Var.getAdapter().l();
-        this.e.K(this.f);
+        fv0Var.i0();
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z4) {
+        fv0.d0(this.C.d, this, z4);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        fv0.e0(this.C.d, c6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean l(ArrayList arrayList) {
+        fv0 fv0Var = this.C.d;
+        if (!arrayList.isEmpty()) {
+            fv0Var.c.getClass();
+            int R = RecyclerView.R(this) - fv0Var.k0;
+            if (R >= 0) {
+                dh.b bVar = this.d;
+                bVar.getText().replace(bVar.getSelectionStart(), bVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i10 = R + 1;
+                while (!arrayList.isEmpty() && i10 < fv0Var.n) {
+                    for (int length = fv0Var.v.length - 1; length > i10; length--) {
+                        CharSequence[] charSequenceArr = fv0Var.v;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    fv0Var.v[i10] = (CharSequence) arrayList.remove(0);
+                    fv0Var.y++;
+                    i10++;
+                }
+                fv0Var.r0();
+                fv0Var.d0 = (fv0Var.k0 + i10) - 1;
+                fv0Var.b.l();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean o() {
+        return this.C.d.I;
     }
 }

@@ -1,53 +1,38 @@
 package nh;
 
-import android.os.Bundle;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class v6 extends x6 {
-    public final /* synthetic */ TLRPC.User b;
+public final class v6 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ TextView a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ TextView c;
+    public final /* synthetic */ x6 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v6(String str, TLRPC.User user) {
-        super(str);
-        this.b = user;
+    public v6(x6 x6Var, TextView textView, View view, TextView textView2) {
+        this.d = x6Var;
+        this.a = textView;
+        this.b = view;
+        this.c = textView2;
     }
 
-    @Override // nh.x6
-    public final String a() {
-        return LocaleController.getString(R.string.ViewProfile);
-    }
-
-    @Override // nh.x6
-    public final String b() {
-        return UserObject.getUserName(this.b);
-    }
-
-    @Override // nh.x6
-    public final void c(org.telegram.ui.ActionBar.o2 o2Var) {
-        TLRPC.User user = this.b;
-        if (user.id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-            o2Var.presentFragment(ProfileActivity.m4(user.id));
-            return;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        int[] iArr = new int[2];
+        TextView textView = this.a;
+        textView.getLocationOnScreen(iArr);
+        int dp = AndroidUtilities.dp(24.0f) + iArr[1];
+        int measuredHeight = this.b.getMeasuredHeight();
+        x6 x6Var = this.d;
+        if (dp > measuredHeight) {
+            textView.setLayoutParams(k7.b6.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
+            this.c.setLayoutParams(k7.b6.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
+            x6Var.requestLayout();
         }
-        Bundle bundle = new Bundle();
-        bundle.putLong("user_id", user.id);
-        bundle.putBoolean("my_profile", true);
-        o2Var.presentFragment(new ProfileActivity(bundle, null));
-    }
-
-    @Override // nh.x6
-    public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.e9 e9Var = new org.telegram.ui.Components.e9((org.telegram.ui.ActionBar.c6) null);
-        TLRPC.User user = this.b;
-        e9Var.r(user);
-        imageReceiver.setForUserOrChat(user, e9Var);
+        x6Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 }

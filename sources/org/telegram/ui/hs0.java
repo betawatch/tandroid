@@ -1,48 +1,113 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class hs0 extends org.telegram.ui.Components.q00 {
-    public final /* synthetic */ pr0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class hs0 extends f2.h1 {
+    public final float k;
+    public final LinearInterpolator i = new LinearInterpolator();
+    public final DecelerateInterpolator j = new DecelerateInterpolator(1.5f);
+    public int l = 0;
+    public int m = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hs0(PhotoViewer photoViewer, pr0 pr0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = pr0Var;
+    public hs0(Context context) {
+        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
     }
 
-    @Override // org.telegram.ui.Components.xn0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.i3;
-        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb3 = sb2.toString();
-        StringBuilder sb4 = new StringBuilder();
-        int[] iArr2 = photoViewer.j3;
-        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb4.append(' ');
-        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
+    @Override // f2.h1
+    public final PointF a(int i10) {
+        f2.v0 v0Var = this.c;
+        if (v0Var instanceof f2.i0) {
+            return ((f2.i0) v0Var).E0(i10);
+        }
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.q00
-    public final float k() {
-        return this.f.m3.c();
+    @Override // f2.h1
+    public final void d(int i10, int i11, f2.g1 g1Var) {
+        if (this.b.x.r() == 0) {
+            h();
+            return;
+        }
+        int i12 = this.l;
+        int i13 = i12 - i10;
+        if (i12 * i13 <= 0) {
+            i13 = 0;
+        }
+        this.l = i13;
+        int i14 = this.m;
+        int i15 = i14 - i11;
+        int i16 = i14 * i15 > 0 ? i15 : 0;
+        this.m = i16;
+        if (i13 == 0 && i16 == 0) {
+            PointF a2 = a(this.a);
+            if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+                g1Var.d = this.a;
+                h();
+            } else {
+                f2.h1.b(a2);
+                this.l = (int) (a2.x * 10000.0f);
+                this.m = (int) (a2.y * 10000.0f);
+                g1Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.q00
-    public final void l(float f9) {
-        this.e.c(f9);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.m3.h(f9, false);
-        photoViewer.n3.invalidate();
+    @Override // f2.h1
+    public final void f() {
+        this.m = 0;
+        this.l = 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003c, code lost:
+    
+        if (r4 < 0) goto L16;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // f2.h1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, f2.g1 g1Var) {
+        int i10;
+        int max;
+        f2.v0 v0Var = this.c;
+        if (v0Var != null && v0Var.d()) {
+            f2.w0 w0Var = (f2.w0) view.getLayoutParams();
+            int x10 = f2.v0.x(view) - ((ViewGroup.MarginLayoutParams) w0Var).leftMargin;
+            int y10 = f2.v0.y(view) + ((ViewGroup.MarginLayoutParams) w0Var).rightMargin;
+            int D = v0Var.D();
+            int E = v0Var.m - v0Var.E();
+            if (x10 <= D || y10 >= E) {
+                int i11 = y10 - x10;
+                int i12 = (E - D) - i11;
+                int i13 = i11 + i12;
+                i10 = i12 - x10;
+                if (i10 <= 0) {
+                    i10 = i13 - y10;
+                }
+                max = Math.max(180, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
+                if (max <= 0) {
+                    g1Var.b(-i10, 0, Math.max(400, max), this.j);
+                    return;
+                }
+                return;
+            }
+        }
+        i10 = 0;
+        max = Math.max(180, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
+        if (max <= 0) {
+        }
+    }
+
+    @Override // f2.h1
+    public final void e() {
     }
 }

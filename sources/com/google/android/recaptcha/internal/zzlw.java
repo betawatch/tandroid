@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.c0;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import ld.c0;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzlw extends i implements p {
     Object zza;
@@ -21,19 +22,19 @@ final class zzlw extends i implements p {
         this.zzd = zzgrVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         return new zzlw(this.zzc, this.zzd, cVar);
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlw) create((c0) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzlw) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x003e, code lost:
     
-        if (jd.e0.x(20000, r10, r9) == r1) goto L23;
+        if (ld.e0.x(20000, r10, r9) == r1) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006f, code lost:
     
@@ -43,35 +44,35 @@ final class zzlw extends i implements p {
     
         if (r10.zzw(r9) != r1) goto L16;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                c7.b(obj);
+                p7.b(obj);
                 zzly zzlyVar = this.zzc;
                 this.zzb = 1;
             } else {
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        c7.b(obj);
-                        return qc.i.a;
+                        p7.b(obj);
+                        return sc.i.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zza;
-                    c7.b(obj);
+                    p7.b(obj);
                     throw zzcgVar;
                 }
-                c7.b(obj);
+                p7.b(obj);
             }
             zzlv zzlvVar = new zzlv(this.zzc, this.zzd, null);
             this.zzb = 2;
-        } catch (Exception e10) {
-            e10.getMessage();
-            zzcg zza = zzh.zza(e10, new zzcg(zzce.zzb, zzcd.zzV, e10.getMessage(), null, 8, null));
+        } catch (Exception e) {
+            e.getMessage();
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzV, e.getMessage(), null, 8, null));
             zzdj zzn = this.zzc.zzn();
             zzmc zzmcVar = zzmc.zza;
             this.zza = zza;

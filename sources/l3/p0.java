@@ -1,64 +1,30 @@
 package l3;
 
-import java.io.Serializable;
+import java.nio.ByteBuffer;
+import k7.b7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class p0 {
+    public static final byte[] d = {79, 103, 103, 83, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, -43, -59, -9, 1, 19, 79, 112, 117, 115, 72, 101, 97, 100, 1, 2, 56, 1, Byte.MIN_VALUE, -69, 0, 0, 0, 0, 0};
+    public static final byte[] e = {79, 103, 103, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 11, -103, 87, 83, 1, 16, 79, 112, 117, 115, 84, 97, 103, 115, 0, 0, 0, 0, 0, 0, 0, 0};
     public int a;
     public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public Serializable g;
+    public Comparable c;
 
-    public boolean a(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        if ((i10 & (-2097152)) != -2097152 || (i11 = (i10 >>> 19) & 3) == 1 || (i12 = (i10 >>> 17) & 3) == 0 || (i13 = (i10 >>> 12) & 15) == 0 || i13 == 15 || (i14 = (i10 >>> 10) & 3) == 3) {
-            return false;
-        }
-        this.a = i11;
-        this.g = b.m[3 - i12];
-        int i15 = b.n[i14];
-        this.c = i15;
-        if (i11 == 2) {
-            this.c = i15 / 2;
-        } else if (i11 == 0) {
-            this.c = i15 / 4;
-        }
-        int i16 = (i10 >>> 9) & 1;
-        int i17 = 1152;
-        if (i12 != 1) {
-            if (i12 != 2) {
-                if (i12 != 3) {
-                    throw new IllegalArgumentException();
-                }
-                i17 = 384;
-            }
-        } else if (i11 != 3) {
-            i17 = 576;
-        }
-        this.f = i17;
-        if (i12 == 3) {
-            int i18 = i11 == 3 ? b.o[i13 - 1] : b.p[i13 - 1];
-            this.e = i18;
-            this.b = (((i18 * 12) / this.c) + i16) * 4;
-        } else {
-            if (i11 == 3) {
-                int i19 = i12 == 2 ? b.q[i13 - 1] : b.r[i13 - 1];
-                this.e = i19;
-                this.b = ((i19 * 144) / this.c) + i16;
-            } else {
-                int i20 = b.s[i13 - 1];
-                this.e = i20;
-                this.b = (((i12 == 1 ? 72 : 144) * i20) / this.c) + i16;
-            }
-        }
-        this.d = ((i10 >> 6) & 3) == 3 ? 1 : 2;
-        return true;
+    public static void a(ByteBuffer byteBuffer, long j10, int i10, int i11, boolean z4) {
+        byteBuffer.put((byte) 79);
+        byteBuffer.put((byte) 103);
+        byteBuffer.put((byte) 103);
+        byteBuffer.put((byte) 83);
+        byteBuffer.put((byte) 0);
+        byteBuffer.put(z4 ? (byte) 2 : (byte) 0);
+        byteBuffer.putLong(j10);
+        byteBuffer.putInt(0);
+        byteBuffer.putInt(i10);
+        byteBuffer.putInt(0);
+        long j11 = i11;
+        b7.b(j11, "out of range: %s", (j11 >> 8) == 0);
+        byteBuffer.put((byte) j11);
     }
 }

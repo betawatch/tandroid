@@ -2,7 +2,7 @@ package r0;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class e0 {
     public static CharSequence a(View view) {
@@ -17,15 +17,15 @@ public abstract class e0 {
         return view.isScreenReaderFocusable();
     }
 
-    public static void d(View view, boolean z10) {
-        view.setAccessibilityHeading(z10);
+    public static void d(View view, boolean z4) {
+        view.setAccessibilityHeading(z4);
     }
 
     public static void e(View view, CharSequence charSequence) {
         view.setAccessibilityPaneTitle(charSequence);
     }
 
-    public static void f(View view, boolean z10) {
-        view.setScreenReaderFocusable(z10);
+    public static void f(View view, boolean z4) {
+        view.setScreenReaderFocusable(z4);
     }
 }

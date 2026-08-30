@@ -11,9 +11,9 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import android.widget.Button;
-import org.telegram.ui.mh1;
+import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class c extends AccessibilityNodeProvider {
     public final e a;
@@ -24,7 +24,7 @@ public abstract class c extends AccessibilityNodeProvider {
 
     public c(e eVar) {
         this.a = eVar;
-        this.d = (AccessibilityManager) f0.e.f(eVar.getContext(), AccessibilityManager.class);
+        this.d = (AccessibilityManager) f0.f.f(eVar.getContext(), AccessibilityManager.class);
     }
 
     public final void a(int i10) {
@@ -63,7 +63,7 @@ public abstract class c extends AccessibilityNodeProvider {
                 text = staticLayout.getText();
             }
             text = null;
-        } else if (eVar2.N) {
+        } else if (eVar2.O) {
             StaticLayout staticLayout2 = eVar2.h;
             if (staticLayout2 != null) {
                 text = staticLayout2.getText();
@@ -87,9 +87,9 @@ public abstract class c extends AccessibilityNodeProvider {
         obtain2.setParent(eVar);
         Rect rect = this.c;
         if (i10 == 0) {
-            rect.set(eVar2.I);
-        } else if (i10 == 1) {
             rect.set(eVar2.J);
+        } else if (i10 == 1) {
+            rect.set(eVar2.K);
         } else {
             rect.setEmpty();
         }
@@ -112,14 +112,14 @@ public abstract class c extends AccessibilityNodeProvider {
         if (i11 != 16) {
             return false;
         }
-        d dVar = ((b) this).g.M;
+        d dVar = ((b) this).g.N;
         if (dVar != null) {
             if (i10 == 0) {
-                ((mh1) dVar).a();
+                ((yh1) dVar).a();
                 return true;
             }
             if (i10 == 1) {
-                ((mh1) dVar).b();
+                ((yh1) dVar).b();
             }
         }
         return true;

@@ -81,7 +81,7 @@ public final class q extends l {
         if (h.c(this, i, 0, 1)) {
             return;
         }
-        boolean z10 = false;
+        boolean z4 = false;
         while (true) {
             int i10 = this.lockState;
             if ((i10 & (-3)) == 0) {
@@ -91,13 +91,13 @@ public final class q extends l {
             } else if ((i10 & 2) == 0) {
                 if (h.c(this, i, i10, i10 | 2)) {
                     this.g = Thread.currentThread();
-                    z10 = true;
+                    z4 = true;
                 }
-            } else if (z10) {
+            } else if (z4) {
                 LockSupport.park(this);
             }
         }
-        if (z10) {
+        if (z4) {
             this.g = null;
         }
     }
@@ -144,7 +144,7 @@ public final class q extends l {
         r b11;
         r rVar = this.e;
         Class<?> cls = null;
-        boolean z10 = false;
+        boolean z4 = false;
         while (rVar != null) {
             int i12 = rVar.a;
             if (i12 > i10) {
@@ -163,7 +163,7 @@ public final class q extends l {
                         i11 = compareTo;
                     }
                 }
-                if (!z10) {
+                if (!z4) {
                     r rVar2 = rVar.f;
                     if (rVar2 != null && (b11 = rVar2.b(i10, obj, cls)) != null) {
                         return b11;
@@ -172,7 +172,7 @@ public final class q extends l {
                     if (rVar3 != null && (b10 = rVar3.b(i10, obj, cls)) != null) {
                         return b10;
                     }
-                    z10 = true;
+                    z4 = true;
                 }
                 i11 = i(obj, obj3);
             }
@@ -252,9 +252,9 @@ public final class q extends l {
                     }
                     rVar9 = rVar10;
                 }
-                boolean z10 = rVar9.i;
+                boolean z4 = rVar9.i;
                 rVar9.i = rVar.i;
-                rVar.i = z10;
+                rVar.i = z4;
                 r rVar11 = rVar9.g;
                 r rVar12 = rVar.e;
                 if (rVar9 == rVar8) {

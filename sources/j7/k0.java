@@ -1,6 +1,41 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.Map;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class k0 {
+    public static c5.i a(c5.i iVar, String[] strArr, Map map) {
+        int i10 = 0;
+        if (iVar == null) {
+            if (strArr == null) {
+                return null;
+            }
+            if (strArr.length == 1) {
+                return (c5.i) map.get(strArr[0]);
+            }
+            if (strArr.length > 1) {
+                c5.i iVar2 = new c5.i();
+                int length = strArr.length;
+                while (i10 < length) {
+                    iVar2.a((c5.i) map.get(strArr[i10]));
+                    i10++;
+                }
+                return iVar2;
+            }
+        } else {
+            if (strArr != null && strArr.length == 1) {
+                iVar.a((c5.i) map.get(strArr[0]));
+                return iVar;
+            }
+            if (strArr != null && strArr.length > 1) {
+                int length2 = strArr.length;
+                while (i10 < length2) {
+                    iVar.a((c5.i) map.get(strArr[i10]));
+                    i10++;
+                }
+            }
+        }
+        return iVar;
+    }
 }

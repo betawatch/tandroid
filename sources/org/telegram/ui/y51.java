@@ -1,61 +1,321 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class y51 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ z51 f;
+public final class y51 extends View {
+    public Drawable B;
+    public Rect C;
+    public float D;
+    public boolean E;
+    public ValueAnimator F;
+    public x51 G;
+    public Emoji.EmojiDrawable H;
+    public boolean I;
+    public boolean J;
+    public float K;
+    public float L;
+    public int M;
+    public boolean N;
+    public float O;
+    public float P;
+    public float Q;
+    public final o50 R;
+    public final /* synthetic */ q61 S;
+    public boolean a;
+    public boolean b;
+    public int c;
+    public TLRPC.Document d;
+    public org.telegram.ui.Components.u5 e;
+    public final ImageReceiver.BackgroundThreadDrawHolder[] f;
+    public ImageReceiver h;
+    public final ImageReceiver n;
+    public ImageReceiver r;
+    public boolean s;
+    public TL_stars.TL_starGiftUnique v;
+    public Integer w;
+    public mg.q0 x;
+    public boolean y;
 
-    public y51(z51 z51Var, boolean z10, Runnable runnable, boolean[] zArr, boolean z11, Runnable runnable2) {
-        this.f = z51Var;
-        this.a = z10;
-        this.b = runnable;
-        this.c = zArr;
-        this.d = z11;
-        this.e = runnable2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y51(q61 q61Var, Context context) {
+        super(context);
+        this.S = q61Var;
+        this.a = false;
+        this.b = false;
+        this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
+        ImageReceiver imageReceiver = new ImageReceiver();
+        this.n = imageReceiver;
+        this.Q = 1.0f;
+        this.R = new o50(this, 1);
+        imageReceiver.ignoreNotifications = true;
+        setFocusable(true);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        z51 z51Var = this.f;
-        n0 n0Var = z51Var.s;
-        boolean z10 = this.a;
-        float f9 = z10 ? 1.0f : 0.0f;
-        z51Var.E = f9;
-        AndroidUtilities.lerp(z51Var.c, z51Var.d, f9, z51Var.e);
-        n0Var.invalidate();
-        if (!z10) {
-            z51Var.v.setAlpha(z51Var.E);
+    public final void a(View view) {
+        if (this.h == null) {
+            ImageReceiver imageReceiver = new ImageReceiver(view);
+            this.h = imageReceiver;
+            imageReceiver.setLayerNum(7);
+            if (this.E) {
+                this.h.onAttachedToWindow();
+            }
+            this.h.setAspectFit(true);
         }
-        if (z51Var.E < 0.5f && !z10 && (runnable = this.b) != null) {
-            boolean[] zArr = this.c;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                runnable.run();
+    }
+
+    public final void b() {
+        Paint paint;
+        x51 x51Var = this.G;
+        if (x51Var != null) {
+            x51Var.h = false;
+            x51Var.n = -1;
+            if (x51Var.a != 2 || (paint = x51Var.x) == null) {
+                return;
+            }
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+            return;
+        }
+        Context context = getContext();
+        int i10 = eg.s1.I;
+        this.G = new x51(this, context);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30);
+        this.G.measure(makeMeasureSpec, makeMeasureSpec);
+        x51 x51Var2 = this.G;
+        x51Var2.layout(0, 0, x51Var2.getMeasuredWidth(), this.G.getMeasuredHeight());
+    }
+
+    public final void c(TLRPC.Document document, r51 r51Var) {
+        this.d = document;
+        a(r51Var);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.j6.m6, 0.2f);
+        if (this.S.T == 6) {
+            this.h.setImage(ImageLocation.getForDocument(document), !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? "34_34_firstframe" : "34_34", null, null, svgThumb, document.size, null, document, 0);
+        } else {
+            this.h.setImage(ImageLocation.getForDocument(document), "100_100_firstframe", null, null, svgThumb, 0L, "tgs", document, 0);
+        }
+        this.N = true;
+        this.e = null;
+    }
+
+    public final void d(boolean z4, boolean z10) {
+        if (this.I != z4) {
+            this.I = z4;
+            if (z10) {
+                return;
+            }
+            this.O = z4 ? 1.0f : 0.0f;
+            this.P = z4 ? 1.0f : 0.0f;
+        }
+    }
+
+    public final void e(boolean z4, boolean z10) {
+        if (this.I || !z4 || !z10 || this.S.T == 14) {
+            this.J = false;
+            d(z4, z10);
+            return;
+        }
+        this.J = true;
+        this.P = 1.0f;
+        this.O = 1.0f;
+        ValueAnimator valueAnimator = this.F;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.F.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.K, 1.6f, 0.7f);
+        this.F = ofFloat;
+        ofFloat.addUpdateListener(new v51(this, 2));
+        this.F.addListener(new w51(this, 2));
+        this.F.setInterpolator(new LinearInterpolator());
+        this.F.setDuration(200L);
+        this.F.start();
+    }
+
+    public final void f() {
+        if (!this.I || this.S.T == 14) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.F;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.F.cancel();
+        }
+        this.K = 1.0f;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+        this.F = ofFloat;
+        ofFloat.addUpdateListener(new v51(this, 1));
+        this.F.addListener(new w51(this, 1));
+        this.F.setInterpolator(new OvershootInterpolator(5.0f));
+        this.F.setDuration(350L);
+        this.F.start();
+        d(false, true);
+    }
+
+    public float getAnimatedScale() {
+        return this.Q;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (mg.g0.b || getParent() == null) {
+            return;
+        }
+        ((View) getParent()).invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.E) {
+            return;
+        }
+        this.E = true;
+        Drawable drawable = this.B;
+        if (drawable instanceof org.telegram.ui.Components.l5) {
+            ((org.telegram.ui.Components.l5) drawable).b(this.R);
+        }
+        ImageReceiver imageReceiver = this.h;
+        if (imageReceiver != null) {
+            imageReceiver.setParentView((View) getParent());
+            this.h.onAttachedToWindow();
+        }
+        this.n.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.E) {
+            this.E = false;
+            Drawable drawable = this.B;
+            if (drawable instanceof org.telegram.ui.Components.l5) {
+                ((org.telegram.ui.Components.l5) drawable).p(this.R);
+                nh.y2 y2Var = ((org.telegram.ui.Components.l5) this.B).k;
+                if (y2Var != null) {
+                    y2Var.setEmojiPaused(false);
+                }
+            }
+            ImageReceiver imageReceiver = this.h;
+            if (imageReceiver != null) {
+                imageReceiver.onDetachedFromWindow();
+                this.h.setEmojiPaused(false);
+            }
+            this.n.onDetachedFromWindow();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        String findAnimatedEmojiEmoticon;
+        org.telegram.ui.Components.u5 u5Var;
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.a) {
+            findAnimatedEmojiEmoticon = LocaleController.getString(R.string.RemoveStatus);
+        } else {
+            mg.q0 q0Var = this.x;
+            if (q0Var == null || (findAnimatedEmojiEmoticon = q0Var.f) == null) {
+                TLRPC.Document document = this.d;
+                if (document == null && (u5Var = this.e) != null && (document = u5Var.document) == null) {
+                    document = org.telegram.ui.Components.l5.f(this.S.S, u5Var.getDocumentId());
+                }
+                findAnimatedEmojiEmoticon = document != null ? MessageObject.findAnimatedEmojiEmoticon(document, null) : null;
             }
         }
-        if (!z10) {
-            if (this.d) {
-                z51Var.a.b = false;
-                z51Var.L.d0.invalidate();
+        if (findAnimatedEmojiEmoticon != null) {
+            accessibilityNodeInfo.setContentDescription(findAnimatedEmojiEmoticon);
+        }
+        accessibilityNodeInfo.setSelected(this.I);
+        accessibilityNodeInfo.setClickable(true);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+    }
+
+    public void setAnimatedScale(float f10) {
+        this.Q = f10;
+    }
+
+    public void setDrawable(Drawable drawable) {
+        Drawable drawable2 = this.B;
+        if (drawable2 != drawable) {
+            boolean z4 = this.E;
+            o50 o50Var = this.R;
+            if (z4 && drawable2 != null && (drawable2 instanceof org.telegram.ui.Components.l5)) {
+                ((org.telegram.ui.Components.l5) drawable2).p(o50Var);
             }
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 4);
+            this.B = drawable;
+            if (this.E && (drawable instanceof org.telegram.ui.Components.l5)) {
+                ((org.telegram.ui.Components.l5) drawable).b(o50Var);
+            }
         }
-        z51Var.G = null;
-        n0Var.invalidate();
-        Runnable runnable2 = this.e;
-        if (runnable2 != null) {
-            runnable2.run();
+    }
+
+    public void setEmojicon(String str) {
+        if (TextUtils.isEmpty(str)) {
+            this.H = null;
+        } else {
+            this.H = Emoji.getEmojiDrawable(str);
         }
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z4) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z4) {
+            super.setPressed(z4);
+            invalidate();
+            if (z4 && (valueAnimator = this.F) != null) {
+                valueAnimator.removeAllListeners();
+                this.F.cancel();
+            }
+            if (z4) {
+                return;
+            }
+            float f10 = this.K;
+            if (f10 == 0.0f || this.S.T == 14) {
+                return;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
+            this.F = ofFloat;
+            ofFloat.addUpdateListener(new v51(this, 0));
+            this.F.addListener(new w51(this, 0));
+            this.F.setInterpolator(new OvershootInterpolator(5.0f));
+            this.F.setDuration(350L);
+            this.F.start();
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        if (mg.g0.b) {
+            return;
+        }
+        super.invalidate(i10, i11, i12, i13);
     }
 }

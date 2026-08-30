@@ -1,47 +1,48 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class f7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g8 b;
-    public final /* synthetic */ j70 c;
+import android.view.ViewGroup;
 
-    public /* synthetic */ f7(g8 g8Var, j70 j70Var, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class f7 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ f7(Object obj, int i10) {
         this.a = i10;
-        this.b = g8Var;
-        this.c = j70Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f10, float f11) {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                g8 g8Var = this.b;
-                g8Var.getClass();
-                this.c.u();
-                g8Var.t0(1);
+                ((c8) this.b).Q.setBufferedProgress(f10 / 1000.0f);
                 break;
             case 1:
-                g8 g8Var2 = this.b;
-                g8Var2.getClass();
-                this.c.u();
-                g8Var2.t0(2);
+                ic icVar = (ic) this.b;
+                icVar.o = (int) f10;
+                icVar.l();
                 break;
             case 2:
-                g8 g8Var3 = this.b;
-                g8Var3.getClass();
-                this.c.u();
-                g8Var3.t0(4);
+                if (Math.abs(f10) > ((nb) this.b).getWidth()) {
+                    hVar.c();
+                    break;
+                }
                 break;
             case 3:
-                g8 g8Var4 = this.b;
-                g8Var4.getClass();
-                this.c.u();
-                g8Var4.t0(7);
+                li liVar = (li) ((lh.k3) this.b).d;
+                di diVar = liVar.w0;
+                if (diVar == liVar.j0 || diVar == liVar.k0 || (liVar.C && liVar.q1 != null)) {
+                    liVar.a2(1);
+                }
+                liVar.w0.k(liVar.i2);
+                viewGroup = ((org.telegram.ui.ActionBar.g3) liVar).containerView;
+                viewGroup.invalidate();
                 break;
             default:
-                g8.q(this.b, this.c);
+                ((dc0) this.b).z();
                 break;
         }
     }

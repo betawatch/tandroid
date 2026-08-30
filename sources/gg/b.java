@@ -1,75 +1,108 @@
 package gg;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Components.jq;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout {
-    public final h5 a;
-    public final ImageView b;
+public final class b extends View {
+    public final j6 a;
+    public float b;
+    public ValueAnimator c;
+    public int d;
+    public final Paint e;
 
-    public b(Context context, c6 c6Var) {
+    public b(Context context) {
         super(context);
-        h5 h5Var = new h5(context);
-        this.a = h5Var;
-        h5Var.setTextSize(16);
-        h5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        int i10 = g6.L6;
-        h5Var.setTextColor(g6.v0(i10, c6Var));
-        h5Var.setTag(Integer.valueOf(i10));
-        addView(h5Var);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView);
-        h5Var.k(LocaleController.getString(R.string.BoostingAddChannelOrGroup));
-        Drawable drawable = getResources().getDrawable(R.drawable.poll_add_circle);
-        Drawable drawable2 = getResources().getDrawable(R.drawable.poll_add_plus);
-        int v02 = g6.v0(g6.N6, c6Var);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        drawable.setColorFilter(new PorterDuffColorFilter(v02, mode));
-        drawable2.setColorFilter(new PorterDuffColorFilter(g6.v0(g6.k7, c6Var), mode));
-        imageView.setImageDrawable(new jq(drawable, drawable2));
-        setBackgroundColor(g6.v0(g6.h5, c6Var));
+        this.b = 1.0f;
+        j6 j6Var = new j6(false, false, true, false);
+        this.a = j6Var;
+        j6Var.k(0.3f, 250L, nr.h);
+        j6Var.setCallback(this);
+        j6Var.t(AndroidUtilities.dp(11.5f));
+        j6Var.u(AndroidUtilities.bold());
+        j6Var.r(-1);
+        j6Var.q("", true, true);
+        j6Var.b = 17;
+        Paint paint = new Paint(1);
+        this.e = paint;
+        paint.setColor(-6915073);
+        setVisibility(8);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int dp;
-        int i14 = i12 - i10;
-        h5 h5Var = this.a;
-        int textHeight = ((i13 - i11) - h5Var.getTextHeight()) / 2;
-        boolean z11 = LocaleController.isRTL;
-        ImageView imageView = this.b;
-        if (z11) {
-            dp = (getMeasuredWidth() - h5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
-        } else {
-            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
+    public final void a(int i10, boolean z4) {
+        if (!p0.i()) {
+            i10 = 0;
         }
-        h5Var.layout(dp, textHeight, h5Var.getMeasuredWidth() + dp, h5Var.getMeasuredHeight() + textHeight);
-        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(24.0f);
-        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
+        if (i10 > 0) {
+            setVisibility(0);
+        }
+        j6 j6Var = this.a;
+        if (z4) {
+            j6Var.b();
+        }
+        if (z4 && i10 != this.d && i10 > 0) {
+            ValueAnimator valueAnimator = this.c;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.c = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.c = ofFloat;
+            ofFloat.addUpdateListener(new dg.o1(this, 9));
+            this.c.addListener(new cg.l0(this, 6));
+            this.c.setInterpolator(new OvershootInterpolator(2.0f));
+            this.c.setDuration(200L);
+            this.c.start();
+        }
+        this.d = i10;
+        int length = j6Var.g.length();
+        j6Var.q("x" + i10, z4, true);
+        int length2 = j6Var.g.length();
+        invalidate();
+        if (length != length2) {
+            requestLayout();
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        Rect rect = AndroidUtilities.rectTmp2;
+        int dp = AndroidUtilities.dp(8.0f);
+        j6 j6Var = this.a;
+        rect.set(0, 0, dp + ((int) j6Var.d()), AndroidUtilities.dp(20.0f));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(rect);
+        if (this.b != 1.0f) {
+            canvas.save();
+            float f10 = this.b;
+            canvas.scale(f10, f10, rect.centerX(), rect.centerY());
+        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.e);
+        rect.set(0, 0, (int) rectF.width(), AndroidUtilities.dp(19.0f));
+        j6Var.setBounds(rect);
+        j6Var.draw(canvas);
+        if (this.b != 1.0f) {
+            canvas.restore();
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.a.measure(org.telegram.ui.b.d(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
-        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
-        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (this.a.e() + AndroidUtilities.dp(15.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
     }
 }

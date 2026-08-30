@@ -1,55 +1,38 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class k0 implements ActionMode.Callback {
-    public final /* synthetic */ int a;
+public final class k0 implements TextWatcher {
+    public final /* synthetic */ w0 a;
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        switch (this.a) {
+    public k0(w0 w0Var) {
+        this.a = w0Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        w0 w0Var = this.a;
+        h5 h5Var = w0Var.E;
+        if (h5Var != null) {
+            h5Var.q(w0Var.e);
         }
-        return false;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
+        w0Var.j();
+        if (w0Var.d0.isEmpty() || TextUtils.isEmpty(w0Var.e.getText()) || w0Var.e0 < 0) {
+            return;
         }
-        return false;
+        w0Var.e0 = -1;
+        w0Var.y();
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        int i10 = this.a;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    private final void a(ActionMode actionMode) {
-    }
-
-    private final void b(ActionMode actionMode) {
-    }
-
-    private final void c(ActionMode actionMode) {
-    }
-
-    private final void d(ActionMode actionMode) {
-    }
-
-    private final void e(ActionMode actionMode) {
-    }
-
-    private final void f(ActionMode actionMode) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

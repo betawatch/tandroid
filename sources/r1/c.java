@@ -1,6 +1,5 @@
 package r1;
 
-import a4.w;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -116,55 +115,55 @@ public final class c {
         if (g10 instanceof String) {
             return (String) g10;
         }
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         int i10 = 0;
         if (g10 instanceof long[]) {
             long[] jArr = (long[]) g10;
             while (i10 < jArr.length) {
-                sb2.append(jArr[i10]);
+                sb.append(jArr[i10]);
                 i10++;
                 if (i10 != jArr.length) {
-                    sb2.append(",");
+                    sb.append(",");
                 }
             }
-            return sb2.toString();
+            return sb.toString();
         }
         if (g10 instanceof int[]) {
             int[] iArr = (int[]) g10;
             while (i10 < iArr.length) {
-                sb2.append(iArr[i10]);
+                sb.append(iArr[i10]);
                 i10++;
                 if (i10 != iArr.length) {
-                    sb2.append(",");
+                    sb.append(",");
                 }
             }
-            return sb2.toString();
+            return sb.toString();
         }
         if (g10 instanceof double[]) {
             double[] dArr = (double[]) g10;
             while (i10 < dArr.length) {
-                sb2.append(dArr[i10]);
+                sb.append(dArr[i10]);
                 i10++;
                 if (i10 != dArr.length) {
-                    sb2.append(",");
+                    sb.append(",");
                 }
             }
-            return sb2.toString();
+            return sb.toString();
         }
         if (!(g10 instanceof e[])) {
             return null;
         }
         e[] eVarArr = (e[]) g10;
         while (i10 < eVarArr.length) {
-            sb2.append(eVarArr[i10].a);
-            sb2.append('/');
-            sb2.append(eVarArr[i10].b);
+            sb.append(eVarArr[i10].a);
+            sb.append('/');
+            sb.append(eVarArr[i10].b);
             i10++;
             if (i10 != eVarArr.length) {
-                sb2.append(",");
+                sb.append(",");
             }
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -207,8 +206,8 @@ public final class c {
                                 try {
                                     bVar.close();
                                     return str2;
-                                } catch (IOException e10) {
-                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
+                                } catch (IOException e) {
+                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e);
                                     return str2;
                                 }
                             }
@@ -228,22 +227,22 @@ public final class c {
                                     }
                                 }
                             }
-                            StringBuilder sb2 = new StringBuilder();
+                            StringBuilder sb = new StringBuilder();
                             while (i11 < i12) {
                                 byte b11 = bArr[i11];
                                 if (b11 == 0) {
-                                    str = sb2.toString();
+                                    str = sb.toString();
                                     break;
                                 } else {
                                     if (b11 >= 32) {
-                                        sb2.append((char) b11);
+                                        sb.append((char) b11);
                                     } else {
-                                        sb2.append('?');
+                                        sb.append('?');
                                     }
                                     i11++;
                                 }
                             }
-                            str = sb2.toString();
+                            str = sb.toString();
                         case 3:
                             str = new int[i12];
                             while (i11 < i12) {
@@ -296,26 +295,26 @@ public final class c {
                             try {
                                 bVar.close();
                                 return null;
-                            } catch (IOException e11) {
-                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
+                            } catch (IOException e6) {
+                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e6);
                                 return null;
                             }
                     }
                     try {
                         bVar.close();
                         return str;
-                    } catch (IOException e12) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
+                    } catch (IOException e10) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
                         return str;
                     }
-                } catch (IOException e13) {
-                    e = e13;
+                } catch (IOException e11) {
+                    e = e11;
                     Log.w("ExifInterface", "IOException occurred during reading a value", e);
                     if (bVar != null) {
                         try {
                             bVar.close();
-                        } catch (IOException e14) {
-                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
+                        } catch (IOException e12) {
+                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
                         }
                     }
                     return null;
@@ -326,14 +325,14 @@ public final class c {
                 if (inputStream2 != null) {
                     try {
                         inputStream2.close();
-                    } catch (IOException e15) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e15);
+                    } catch (IOException e13) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
                     }
                 }
                 throw th;
             }
-        } catch (IOException e16) {
-            e = e16;
+        } catch (IOException e14) {
+            e = e14;
             bVar = null;
         } catch (Throwable th3) {
             th = th3;
@@ -344,10 +343,10 @@ public final class c {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("(");
-        sb2.append(g.E[this.a]);
-        sb2.append(", data length:");
-        return w.l(this.d.length, ")", sb2);
+        StringBuilder sb = new StringBuilder("(");
+        sb.append(g.E[this.a]);
+        sb.append(", data length:");
+        return android.support.v4.media.a.m(this.d.length, ")", sb);
     }
 
     public c(long j10, byte[] bArr, int i10, int i11) {

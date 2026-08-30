@@ -1,70 +1,112 @@
 package f2;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MediaDataController;
+import android.os.Trace;
+import android.view.ViewGroup;
+import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class o0 {
-    public final RecyclerView a;
+public abstract class o0 {
+    public final p0 a = new p0();
+    public boolean b = false;
 
-    public /* synthetic */ o0(RecyclerView recyclerView) {
-        this.a = recyclerView;
+    public void B(q0 q0Var) {
+        this.a.registerObserver(q0Var);
     }
 
-    public void a(n1 n1Var, a5.e eVar, a5.e eVar2) {
-        boolean z10;
-        n1 T;
-        int i10;
-        RecyclerView recyclerView = this.a;
-        recyclerView.b.k(n1Var);
-        recyclerView.h(n1Var);
-        n1Var.q(false);
-        q1 q1Var = (q1) recyclerView.V;
-        q1Var.getClass();
-        int i11 = eVar.a;
-        int i12 = eVar.b;
-        View view = n1Var.a;
-        int left = eVar2 == null ? view.getLeft() : eVar2.a;
-        int top = eVar2 == null ? view.getTop() : eVar2.b;
-        if (n1Var.j() || (i11 == left && i12 == top)) {
-            int i13 = n1Var.h;
-            int i14 = -1;
-            if (i13 != -1) {
-                for (int i15 = 0; i15 < recyclerView.getChildCount(); i15++) {
-                    View childAt = recyclerView.getChildAt(i15);
-                    if (childAt != null && (T = recyclerView.T(childAt)) != null && !T.j() && (i10 = T.h) >= 0 && i10 < i13 && i10 > i14) {
-                        i14 = i10;
-                    }
-                }
-            }
-            n1Var.i = (n1Var.h - i14) + (i14 * MediaDataController.MAX_STYLE_RUNS_COUNT);
-            q1Var.s(n1Var, eVar);
-            z10 = true;
-        } else {
-            view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
-            z10 = q1Var.r(n1Var, eVar, i11, i12, left, top);
+    public final void C(boolean z4) {
+        if (this.a.a()) {
+            throw new IllegalStateException("Cannot change whether this adapter has stable IDs while the adapter has registered observers.");
         }
-        if (z10) {
-            recyclerView.l0();
+        this.b = z4;
+    }
+
+    public final l1 g(ViewGroup viewGroup, int i10) {
+        try {
+            int i11 = n0.g.a;
+            Trace.beginSection("RV CreateView");
+            l1 x10 = x(viewGroup, i10);
+            if (x10.a.getParent() != null) {
+                throw new IllegalStateException("ViewHolder views must not be attached when created. Ensure that you are not passing 'true' to the attachToRoot parameter of LayoutInflater.inflate(..., boolean attachToRoot)");
+            }
+            x10.f = i10;
+            Trace.endSection();
+            return x10;
+        } catch (Throwable th2) {
+            int i12 = n0.g.a;
+            Trace.endSection();
+            throw th2;
         }
     }
 
-    public void b(n1 n1Var) {
-        RecyclerView recyclerView = this.a;
-        w0 w0Var = recyclerView.x;
-        View view = n1Var.a;
-        d1 d1Var = recyclerView.b;
-        androidx.biometric.e eVar = w0Var.a;
-        ag.o1 o1Var = (ag.o1) eVar.b;
-        int indexOfChild = ((RecyclerView) o1Var.b).indexOfChild(view);
-        if (indexOfChild >= 0) {
-            if (((c) eVar.c).G(indexOfChild)) {
-                eVar.B(view);
-            }
-            o1Var.k(indexOfChild);
-        }
-        d1Var.g(view);
+    public abstract int h();
+
+    public long i(int i10) {
+        return -1L;
+    }
+
+    public int j(int i10) {
+        return 0;
+    }
+
+    public int k() {
+        return h();
+    }
+
+    public void l() {
+        this.a.b();
+    }
+
+    public void m(int i10) {
+        this.a.d(i10, 1, null);
+    }
+
+    public final void n(int i10, Object obj) {
+        this.a.d(i10, 1, obj);
+    }
+
+    public void o(int i10) {
+        this.a.e(i10, 1);
+    }
+
+    public void p(int i10, int i11) {
+        this.a.c(i10, i11);
+    }
+
+    public void q(int i10, int i11) {
+        this.a.d(i10, i11, null);
+    }
+
+    public void r(int i10, int i11, Object obj) {
+        this.a.d(i10, i11, obj);
+    }
+
+    public void s(int i10, int i11) {
+        this.a.e(i10, i11);
+    }
+
+    public void t(int i10, int i11) {
+        this.a.f(i10, i11);
+    }
+
+    public void u(int i10) {
+        this.a.f(i10, 1);
+    }
+
+    public abstract void v(l1 l1Var, int i10);
+
+    public void w(l1 l1Var, int i10, List list) {
+        v(l1Var, i10);
+    }
+
+    public abstract l1 x(ViewGroup viewGroup, int i10);
+
+    public void A(l1 l1Var) {
+    }
+
+    public void y(l1 l1Var) {
+    }
+
+    public void z(l1 l1Var) {
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c3 extends e1 {
     public final /* synthetic */ int b;
@@ -80,12 +80,12 @@ public final class c3 extends e1 {
                                 if (55296 <= charAt3 && charAt3 <= 57343 && ((i12 = i16 + 1) == str.length() || !Character.isSurrogatePair(charAt3, str.charAt(i12)))) {
                                     throw new b3(i16, length);
                                 }
-                                StringBuilder sb2 = new StringBuilder(37);
-                                sb2.append("Failed writing ");
-                                sb2.append(charAt3);
-                                sb2.append(" at index ");
-                                sb2.append(i17);
-                                throw new ArrayIndexOutOfBoundsException(sb2.toString());
+                                StringBuilder sb = new StringBuilder(37);
+                                sb.append("Failed writing ");
+                                sb.append(charAt3);
+                                sb.append(" at index ");
+                                sb.append(i17);
+                                throw new ArrayIndexOutOfBoundsException(sb.toString());
                             }
                             int i19 = i16 + 1;
                             if (i19 != str.length()) {
@@ -120,12 +120,12 @@ public final class c3 extends e1 {
                 int length2 = str.length();
                 if (length2 > i11 || bArr.length - i11 < i10) {
                     char charAt5 = str.charAt(length2 - 1);
-                    StringBuilder sb3 = new StringBuilder(37);
-                    sb3.append("Failed writing ");
-                    sb3.append(charAt5);
-                    sb3.append(" at index ");
-                    sb3.append(i10 + i11);
-                    throw new ArrayIndexOutOfBoundsException(sb3.toString());
+                    StringBuilder sb2 = new StringBuilder(37);
+                    sb2.append("Failed writing ");
+                    sb2.append(charAt5);
+                    sb2.append(" at index ");
+                    sb2.append(i10 + i11);
+                    throw new ArrayIndexOutOfBoundsException(sb2.toString());
                 }
                 int i22 = 0;
                 while (true) {
@@ -152,12 +152,12 @@ public final class c3 extends e1 {
                                     if (55296 <= charAt6 && charAt6 <= 57343 && ((i14 = i22 + 1) == length2 || !Character.isSurrogatePair(charAt6, str.charAt(i14)))) {
                                         throw new b3(i22, length2);
                                     }
-                                    StringBuilder sb4 = new StringBuilder(46);
-                                    sb4.append("Failed writing ");
-                                    sb4.append(charAt6);
-                                    sb4.append(" at index ");
-                                    sb4.append(j13);
-                                    throw new ArrayIndexOutOfBoundsException(sb4.toString());
+                                    StringBuilder sb3 = new StringBuilder(46);
+                                    sb3.append("Failed writing ");
+                                    sb3.append(charAt6);
+                                    sb3.append(" at index ");
+                                    sb3.append(j13);
+                                    throw new ArrayIndexOutOfBoundsException(sb3.toString());
                                 }
                                 int i23 = i22 + 1;
                                 if (i23 != length2) {

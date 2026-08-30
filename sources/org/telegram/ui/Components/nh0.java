@@ -1,15 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface nh0 {
-    void a(float f9);
+public final class nh0 implements m2.f {
+    public final /* synthetic */ vh0 a;
 
-    void b(float f9);
+    public nh0(vh0 vh0Var) {
+        this.a = vh0Var;
+    }
 
-    void c(cv cvVar, Canvas canvas);
+    @Override // m2.f
+    public final void a(int i10) {
+        vh0 vh0Var = this.a;
+        int i11 = vh0Var.l1;
+        boolean z4 = i10 >= i11;
+        if (i10 != i11) {
+            vh0Var.getClass();
+            vh0Var.l1 = i10;
+        }
+        MessagesController.DialogPhotos dialogPhotos = vh0Var.P0;
+        if (dialogPhotos != null) {
+            uh0 uh0Var = vh0Var.A0;
+            dialogPhotos.loadAfter(i10 - (uh0Var != null ? uh0Var.j() : 0), z4);
+        }
+    }
 
-    void d(int i10, int i11);
+    @Override // m2.f
+    public final void b(float f10, int i10, int i11) {
+        ImageLocation imageLocation;
+        vh0 vh0Var = this.a;
+        vh0Var.B(f10, i10);
+        if (i11 == 0) {
+            int k10 = vh0Var.A0.k(i10);
+            if (vh0Var.f1) {
+                k10--;
+            }
+            vh0Var.getCurrentItemView();
+            int childCount = vh0Var.getChildCount();
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = vh0Var.getChildAt(i12);
+                if (childAt instanceof p9) {
+                    uh0 uh0Var = vh0Var.A0;
+                    int k11 = uh0Var.k(uh0Var.d.indexOf(childAt));
+                    if (vh0Var.f1) {
+                        k11--;
+                    }
+                    ImageReceiver imageReceiver = ((p9) childAt).getImageReceiver();
+                    boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
+                    if (k11 >= 0 && k11 < vh0Var.T0.size()) {
+                        if (k11 == k10) {
+                            if (!allowStartAnimation) {
+                                imageReceiver.setAllowStartAnimation(true);
+                                imageReceiver.startAnimation();
+                            }
+                            ImageLocation imageLocation2 = (ImageLocation) vh0Var.T0.get(k11);
+                            if (imageLocation2 != null) {
+                                FileLoader.getInstance(vh0Var.I0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
+                            }
+                        } else if (allowStartAnimation) {
+                            y5 animation = imageReceiver.getAnimation();
+                            if (animation != null && (imageLocation = (ImageLocation) vh0Var.T0.get(k11)) != null) {
+                                animation.y(imageLocation.videoSeekTo, false, true);
+                            }
+                            imageReceiver.setAllowStartAnimation(false);
+                            imageReceiver.stopAnimation();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // m2.f
+    public final void c(int i10) {
+    }
 }

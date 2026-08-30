@@ -1,28 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class bf1 implements s01 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ cf1 b;
+public final class bf1 extends bg.b {
+    public final TLRPC.TL_forumTopic c;
 
-    public bf1(cf1 cf1Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = cf1Var;
-        this.a = tL_forumTopic;
+    public bf1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, true);
+        this.c = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.s01
-    public final void a0() {
-        ff1 ff1Var = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        ff1.U(ff1Var, tL_forumTopic.id);
-        AndroidUtilities.runOnUIThread(new t31(17, this, tL_forumTopic), 300L);
-    }
-
-    @Override // org.telegram.ui.s01
-    public final void m(bk0 bk0Var) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && bf1.class == obj.getClass()) {
+            bf1 bf1Var = (bf1) obj;
+            int i10 = this.a;
+            if (i10 == bf1Var.a && i10 == 0 && this.c.id == bf1Var.c.id) {
+                return true;
+            }
+        }
+        return false;
     }
 }

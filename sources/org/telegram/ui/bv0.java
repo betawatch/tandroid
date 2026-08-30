@@ -1,19 +1,39 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class bv0 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.j70 a;
+public final class bv0 extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ dv0 C;
 
-    public bv0(org.telegram.ui.Components.j70 j70Var) {
-        this.a = j70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bv0(dv0 dv0Var, Context context, int i10) {
+        super(context, i10, null, null);
+        this.C = dv0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.mc.e();
-        this.a.s();
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(dh.b bVar, ActionMode actionMode) {
+        if (bVar.isFocused() && bVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            xn.k8(menu, this.C.d.f.h, false, true, true, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z4) {
+        fv0.d0(this.C.d, this, z4);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        fv0.e0(this.C.d, c6Var);
     }
 }

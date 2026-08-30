@@ -1,19 +1,18 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class u3 implements s9.d {
+public final class u3 implements u9.d {
     public static final u3 a = new u3();
+    public static final u9.c b = new u9.c("confidence", vh.v2.h(e2.c.n(i.class, new e(1))));
+    public static final u9.c c = new u9.c("languageCode", vh.v2.h(e2.c.n(i.class, new e(2))));
 
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(h0.class, l1.h(2, com.google.android.recaptcha.internal.a.r(h0.class, new e0(1)))));
-    }
-
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // u9.a
+    public final void a(Object obj, Object obj2) {
+        f7 f7Var = (f7) obj;
+        u9.e eVar = (u9.e) obj2;
+        f7Var.getClass();
+        eVar.e(b, null);
+        eVar.e(c, f7Var.a);
     }
 }

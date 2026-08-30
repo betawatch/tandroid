@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class Utilities {
     private static final String RANDOM_STRING_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -38,72 +38,72 @@ public class Utilities {
     public static Pattern pattern = Pattern.compile("[\\-0-9]+");
     public static SecureRandom random = new SecureRandom();
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback<T> {
-        void run(T t10);
+        void run(T t6);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback0Return<ReturnType> {
         ReturnType run();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback2<T, T2> {
-        void run(T t10, T2 t22);
+        void run(T t6, T2 t22);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback2Return<T1, T2, ReturnType> {
         ReturnType run(T1 t12, T2 t22);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback3<T, T2, T3> {
-        void run(T t10, T2 t22, T3 t32);
+        void run(T t6, T2 t22, T3 t32);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback3Return<T1, T2, T3, ReturnType> {
         ReturnType run(T1 t12, T2 t22, T3 t32);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback4<T, T2, T3, T4> {
-        void run(T t10, T2 t22, T3 t32, T4 t42);
+        void run(T t6, T2 t22, T3 t32, T4 t42);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback4Return<T, T2, T3, T4, ReturnType> {
-        ReturnType run(T t10, T2 t22, T3 t32, T4 t42);
+        ReturnType run(T t6, T2 t22, T3 t32, T4 t42);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback5<T, T2, T3, T4, T5> {
-        void run(T t10, T2 t22, T3 t32, T4 t42, T5 t52);
+        void run(T t6, T2 t22, T3 t32, T4 t42, T5 t52);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback5Return<T, T2, T3, T4, T5, ReturnType> {
-        ReturnType run(T t10, T2 t22, T3 t32, T4 t42, T5 t52);
+        ReturnType run(T t6, T2 t22, T3 t32, T4 t42, T5 t52);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface CallbackReturn<Arg, ReturnType> {
         ReturnType run(Arg arg);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface CallbackVoidReturn<ReturnType> {
         ReturnType run();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IndexedConsumer<T> {
-        void accept(T t10, int i10);
+        void accept(T t6, int i10);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public enum libyuv_ScaleFilter {
         None,
         Linear,
@@ -114,14 +114,14 @@ public class Utilities {
     static {
         long nextLong = random.nextLong();
         q2.a aVar = new q2.a(0L);
-        long a2 = i7.w6.a(nextLong);
+        long a2 = k7.l6.a(nextLong);
         aVar.a = a2;
-        long a10 = i7.w6.a(a2);
+        long a10 = k7.l6.a(a2);
         aVar.b = a10;
         if (aVar.a == 0 && a10 == 0) {
-            long a11 = i7.w6.a(3735928559L);
+            long a11 = k7.l6.a(3735928559L);
             aVar.a = a11;
-            aVar.b = i7.w6.a(a11);
+            aVar.b = k7.l6.a(a11);
         }
         fastRandom = aVar;
         stageQueue = new DispatchQueue("stageQueue");
@@ -138,8 +138,8 @@ public class Utilities {
             fileInputStream.read(bArr);
             fileInputStream.close();
             random.setSeed(bArr);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -149,13 +149,13 @@ public class Utilities {
         }
         try {
             byte[] digest = MessageDigest.getInstance("MD5").digest(AndroidUtilities.getStringBytes(str));
-            StringBuilder sb2 = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             for (byte b10 : digest) {
-                sb2.append(Integer.toHexString((b10 & 255) | 256).substring(1, 3));
+                sb.append(Integer.toHexString((b10 & 255) | 256).substring(1, 3));
             }
-            return sb2.toString();
-        } catch (NoSuchAlgorithmException e10) {
-            FileLog.e(e10);
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -166,13 +166,13 @@ public class Utilities {
         }
         try {
             byte[] digest = MessageDigest.getInstance("SHA-256").digest(AndroidUtilities.getStringBytes(str));
-            StringBuilder sb2 = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             for (byte b10 : digest) {
-                sb2.append(Integer.toHexString((b10 & 255) | 256).substring(1, 3));
+                sb.append(Integer.toHexString((b10 & 255) | 256).substring(1, 3));
             }
-            return sb2.toString();
-        } catch (NoSuchAlgorithmException e10) {
-            FileLog.e(e10);
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -189,22 +189,22 @@ public class Utilities {
 
     public static native void aesCtrDecryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, int i10, long j10, int i11);
 
-    private static native void aesIgeEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z10, int i10, int i11);
+    private static native void aesIgeEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z4, int i10, int i11);
 
-    public static void aesIgeEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z10, boolean z11, int i10, int i11) {
-        if (!z11) {
+    public static void aesIgeEncryption(ByteBuffer byteBuffer, byte[] bArr, byte[] bArr2, boolean z4, boolean z10, int i10, int i11) {
+        if (!z10) {
             bArr2 = (byte[]) bArr2.clone();
         }
-        aesIgeEncryption(byteBuffer, bArr, bArr2, z10, i10, i11);
+        aesIgeEncryption(byteBuffer, bArr, bArr2, z4, i10, i11);
     }
 
-    private static native void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z10, int i10, int i11);
+    private static native void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z4, int i10, int i11);
 
-    public static void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z10, boolean z11, int i10, int i11) {
-        if (!z11) {
+    public static void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z4, boolean z10, int i10, int i11) {
+        if (!z10) {
             bArr3 = (byte[]) bArr3.clone();
         }
-        aesIgeEncryptionByteArray(bArr, bArr2, bArr3, z10, i10, i11);
+        aesIgeEncryptionByteArray(bArr, bArr2, bArr3, z4, i10, i11);
     }
 
     public static native boolean applyAlphaInvert(Bitmap bitmap, Bitmap bitmap2, int i10);
@@ -215,13 +215,13 @@ public class Utilities {
         if (bArr == null || bArr2 == null || i10 < 0 || i11 < 0 || bArr.length - i10 > bArr2.length - i11 || bArr.length - i10 < 0 || bArr2.length - i11 < 0) {
             return false;
         }
-        boolean z10 = true;
+        boolean z4 = true;
         for (int i12 = i10; i12 < bArr.length; i12++) {
             if (bArr[i12 + i10] != bArr2[i12 + i11]) {
-                z10 = false;
+                z4 = false;
             }
         }
-        return z10;
+        return z4;
     }
 
     public static native int averageBitmapColor(Bitmap bitmap, int i10, int i11, int i12, int i13);
@@ -267,11 +267,11 @@ public class Utilities {
         return Math.max(Math.min(i10, i11), i12);
     }
 
-    public static float clamp01(float f9) {
-        return clamp(f9, 1.0f, 0.0f);
+    public static float clamp01(float f10) {
+        return clamp(f10, 1.0f, 0.0f);
     }
 
-    public static native void clearDir(String str, int i10, long j10, boolean z10);
+    public static native void clearDir(String str, int i10, long j10, boolean z4);
 
     public static byte[] computePBKDF2(byte[] bArr, byte[] bArr2) {
         byte[] bArr3 = new byte[64];
@@ -284,8 +284,8 @@ public class Utilities {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
             messageDigest.update(bArr, i10, i11);
             return messageDigest.digest();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return new byte[20];
         }
     }
@@ -299,18 +299,18 @@ public class Utilities {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
             messageDigest.update(bArr, 0, bArr.length);
             return messageDigest.digest();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return new byte[64];
         }
     }
 
     public static native boolean copyBitmaps(Bitmap bitmap, Bitmap bitmap2);
 
-    public static float dist(float f9, float f10, float f11, float f12) {
-        float f13 = f9 - f11;
+    public static float dist(float f10, float f11, float f12, float f13) {
         float f14 = f10 - f12;
-        return (float) Math.sqrt((f14 * f14) + (f13 * f13));
+        float f15 = f11 - f13;
+        return (float) Math.sqrt((f15 * f15) + (f14 * f14));
     }
 
     public static int divCeil(int i10, int i11) {
@@ -323,19 +323,19 @@ public class Utilities {
 
     public static native boolean drawDitheredGradient(Bitmap bitmap, int[] iArr, int i10, int i11, int i12, int i13);
 
-    public static native boolean drawReplyLinePattern(Bitmap bitmap, int i10, int i11, int i12, int i13, boolean z10);
+    public static native boolean drawReplyLinePattern(Bitmap bitmap, int i10, int i11, int i12, int i13, boolean z4);
 
     public static native boolean expandAlphaToBlack(Bitmap bitmap, Bitmap bitmap2);
 
     public static native boolean extractAlpha(Bitmap bitmap, Bitmap bitmap2);
 
-    public static native void generateGradient(Bitmap bitmap, int i10, float f9, int[] iArr);
+    public static native void generateGradient(Bitmap bitmap, int i10, float f10, int[] iArr);
 
     public static String generateRandomString() {
         return generateRandomString(16);
     }
 
-    public static native long getDirSize(String str, int i10, boolean z10);
+    public static native long getDirSize(String str, int i10, boolean z4);
 
     public static String getExtension(String str) {
         int lastIndexOf = str.lastIndexOf(46);
@@ -412,7 +412,7 @@ public class Utilities {
     public static native int needInvert(Object obj);
 
     public static Integer parseInt(CharSequence charSequence) {
-        boolean z10;
+        boolean z4;
         int i10 = 0;
         if (charSequence == null) {
             return 0;
@@ -426,19 +426,19 @@ public class Utilities {
                 }
                 char charAt = charSequence.charAt(i12);
                 if (charAt != '-' && (charAt < '0' || charAt > '9')) {
-                    z10 = false;
-                    if (!z10 && i11 < 0) {
+                    z4 = false;
+                    if (!z4 && i11 < 0) {
                         i11 = i12;
-                    } else if (!z10 && i11 >= 0) {
+                    } else if (!z4 && i11 >= 0) {
                         i12++;
                         break;
                     }
                     i12++;
                 }
-                z10 = true;
-                if (!z10) {
+                z4 = true;
+                if (!z4) {
                 }
-                if (!z10) {
+                if (!z4) {
                     i12++;
                     break;
                 }
@@ -484,9 +484,9 @@ public class Utilities {
                 runnable.run();
             }
         } else {
-            c9 c9Var = new c9(new int[]{0}, callbackArr, runnable, 27);
+            d9 d9Var = new d9(new int[]{0}, callbackArr, runnable, 27);
             for (Callback<Runnable> callback : callbackArr) {
-                callback.run(c9Var);
+                callback.run(d9Var);
             }
         }
     }
@@ -503,9 +503,9 @@ public class Utilities {
         return stackBlurBitmapMax(bitmap, false);
     }
 
-    public static Bitmap stackBlurBitmapWithScaleFactor(Bitmap bitmap, float f9) {
-        int max = (int) Math.max(AndroidUtilities.dp(20.0f), bitmap.getWidth() / f9);
-        int max2 = (int) Math.max((AndroidUtilities.dp(20.0f) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f9);
+    public static Bitmap stackBlurBitmapWithScaleFactor(Bitmap bitmap, float f10) {
+        int max = (int) Math.max(AndroidUtilities.dp(20.0f), bitmap.getWidth() / f10);
+        int max2 = (int) Math.max((AndroidUtilities.dp(20.0f) * bitmap.getHeight()) / bitmap.getWidth(), bitmap.getHeight() / f10);
         Bitmap createBitmap = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
@@ -517,9 +517,9 @@ public class Utilities {
     }
 
     public static <T> void swapItems(List<T> list, int i10, int i11) {
-        T t10 = list.get(i10);
+        T t6 = list.get(i10);
         list.set(i10, list.get(i11));
-        list.set(i11, t10);
+        list.set(i11, t6);
     }
 
     public static long tryParseLong(String str, long j10) {
@@ -547,8 +547,8 @@ public class Utilities {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             messageDigest.update(bArr, i10, (int) j10);
             return messageDigest.digest();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return new byte[32];
         }
     }
@@ -557,25 +557,25 @@ public class Utilities {
         if (callbackArr == null || callbackArr.length <= i10) {
             return;
         }
-        callbackArr[i10].run(new r6(i10, callbackArr, 11));
+        callbackArr[i10].run(new s6(i10, callbackArr, 11));
     }
 
     public static String generateRandomString(int i10) {
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i11 = 0; i11 < i10; i11++) {
-            sb2.append(RANDOM_STRING_CHARS.charAt(fastRandom.nextInt(62)));
+            sb.append(RANDOM_STRING_CHARS.charAt(fastRandom.nextInt(62)));
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
-    public static Bitmap stackBlurBitmapMax(Bitmap bitmap, boolean z10) {
+    public static Bitmap stackBlurBitmapMax(Bitmap bitmap, boolean z4) {
         int dp = AndroidUtilities.dp(20.0f);
         int dp2 = (int) ((AndroidUtilities.dp(20.0f) * bitmap.getHeight()) / bitmap.getWidth());
         Bitmap createBitmap = Bitmap.createBitmap(dp, dp2, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         canvas.save();
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
-        if (z10) {
+        if (z4) {
             Path path = new Path();
             path.addCircle(bitmap.getWidth() / 2.0f, bitmap.getHeight() / 2.0f, (Math.min(bitmap.getWidth(), bitmap.getHeight()) / 2.0f) - 1.0f, Path.Direction.CW);
             canvas.clipPath(path);
@@ -586,8 +586,8 @@ public class Utilities {
         return createBitmap;
     }
 
-    public static float clamp(float f9, float f10, float f11) {
-        return Float.isNaN(f9) ? f11 : Float.isInfinite(f9) ? f10 : Math.max(Math.min(f9, f10), f11);
+    public static float clamp(float f10, float f11, float f12) {
+        return Float.isNaN(f10) ? f12 : Float.isInfinite(f10) ? f11 : Math.max(Math.min(f10, f11), f12);
     }
 
     public static double clamp(double d, double d10, double d11) {
@@ -604,8 +604,8 @@ public class Utilities {
                 byteBuffer.limit(i11);
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[20];
@@ -622,8 +622,8 @@ public class Utilities {
             messageDigest.update(bArr, 0, bArr.length);
             messageDigest.update(bArr2, 0, bArr2.length);
             return messageDigest.digest();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return new byte[64];
         }
     }
@@ -635,27 +635,27 @@ public class Utilities {
                 messageDigest.update(bArr2, 0, bArr2.length);
             }
             return messageDigest.digest();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return new byte[32];
         }
     }
 
     private static int parseInt(String str) {
-        boolean z10;
+        boolean z4;
         int length = str.length();
         int i10 = 0;
         char charAt = str.charAt(0);
         if (charAt == '-') {
-            z10 = false;
+            z4 = false;
         } else {
             i10 = '0' - charAt;
-            z10 = true;
+            z4 = true;
         }
         for (int i11 = 1; i11 < length; i11++) {
             i10 = ((i10 * 10) + 48) - str.charAt(i11);
         }
-        return z10 ? -i10 : i10;
+        return z4 ? -i10 : i10;
     }
 
     public static byte[] computeSHA512(byte[] bArr, byte[] bArr2, byte[] bArr3) {
@@ -665,8 +665,8 @@ public class Utilities {
             messageDigest.update(bArr2, 0, bArr2.length);
             messageDigest.update(bArr3, 0, bArr3.length);
             return messageDigest.digest();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return new byte[64];
         }
     }
@@ -682,8 +682,8 @@ public class Utilities {
                 byteBuffer.limit(i13);
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[32];

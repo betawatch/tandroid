@@ -1,76 +1,62 @@
 package org.telegram.ui.web;
 
-import android.text.TextUtils;
-import android.widget.EditText;
-import nh.m6;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.x3;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.Components.o51;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.c21;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class c1 extends e5 {
-    public final m6 f = new m6(this, 27);
-    public final /* synthetic */ d1 h;
+public abstract class c1 {
+    public static boolean a;
+    public static boolean b;
+    public static ArrayList c;
+    public static LongSparseArray d;
+    public static ArrayList e;
 
-    public c1(d1 d1Var) {
-        this.h = d1Var;
-    }
-
-    public static boolean t(String str, String str2) {
-        if (str == null || str2 == null) {
-            return false;
-        }
-        String lowerCase = str.toLowerCase();
-        String lowerCase2 = str2.toLowerCase();
-        if (lowerCase.startsWith(lowerCase2) || x3.w(" ", lowerCase2, lowerCase) || x3.w(".", lowerCase2, lowerCase)) {
-            return true;
-        }
-        String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-        String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-        return translitSafe.startsWith(translitSafe2) || x3.w(" ", translitSafe2, translitSafe) || x3.w(".", translitSafe2, translitSafe);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void m() {
-        d1 d1Var = this.h;
-        d1Var.n = null;
-        d1Var.h = false;
-        AndroidUtilities.cancelRunOnUIThread(this.f);
-        o51 o51Var = d1Var.a;
-        if (o51Var != null) {
-            o51Var.U2.N(true);
-            d1Var.a.T2.h1(0, 0);
-        }
-        d1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(d1Var.n) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void q(EditText editText) {
-        d1 d1Var = this.h;
-        boolean z10 = !TextUtils.isEmpty(d1Var.n);
-        String obj = editText.getText().toString();
-        if (!TextUtils.equals(d1Var.n, obj)) {
-            d1Var.n = obj;
-            d1Var.h = true;
-            m6 m6Var = this.f;
-            AndroidUtilities.cancelRunOnUIThread(m6Var);
-            AndroidUtilities.runOnUIThread(m6Var, 500L);
-            d1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
-        }
-        o51 o51Var = d1Var.a;
-        if (o51Var != null) {
-            o51Var.U2.N(true);
-            if (z10 != (!TextUtils.isEmpty(obj))) {
-                d1Var.a.T2.h1(0, 0);
+    public static ArrayList a(Utilities.Callback callback) {
+        boolean z4;
+        if (callback == null || b) {
+            z4 = false;
+        } else {
+            if (e == null) {
+                e = new ArrayList();
             }
+            e.add(callback);
+            z4 = true;
         }
+        b();
+        if (z4) {
+            return null;
+        }
+        return c;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void n() {
+    public static void b() {
+        if (a || b) {
+            return;
+        }
+        a = true;
+        c = new ArrayList();
+        d = new LongSparseArray();
+        Utilities.globalQueue.postRunnable(new c21(8));
+    }
+
+    public static void c(b1 b1Var) {
+        if (b1Var == null || b1Var.d == null) {
+            return;
+        }
+        b();
+        b1 b1Var2 = (b1) d.get(b1Var.a);
+        if (b1Var2 != null) {
+            b1Var2.d = b1Var.d;
+        } else {
+            c.add(b1Var);
+            d.put(b1Var.a, b1Var);
+        }
+        int i10 = 7;
+        AndroidUtilities.cancelRunOnUIThread(new c21(i10));
+        AndroidUtilities.runOnUIThread(new c21(i10), 1000L);
     }
 }

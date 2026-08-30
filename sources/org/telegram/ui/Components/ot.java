@@ -1,36 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ot implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class ot extends j6 {
+    public final /* synthetic */ int W;
+    public final /* synthetic */ EditTextBoldCursor X;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ ot(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
+        super(false, false, false, false);
+        this.W = i10;
+        this.X = editTextBoldCursor;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.W) {
             case 0:
-                jh.m mVar = (jh.m) this.b;
-                mVar.requestFocus();
-                AndroidUtilities.showKeyboard(mVar);
-                break;
-            case 1:
-                jh.m mVar2 = (jh.m) this.b;
-                mVar2.requestFocus();
-                AndroidUtilities.showKeyboard(mVar2);
+                this.X.invalidate();
                 break;
             default:
-                d4 d4Var = (d4) this.b;
-                d4Var.requestFocus();
-                AndroidUtilities.showKeyboard(d4Var);
+                this.X.invalidate();
                 break;
         }
     }

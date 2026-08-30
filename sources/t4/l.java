@@ -1,1178 +1,1010 @@
 package t4;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import com.google.android.gms.common.api.internal.v;
-import eg.n;
-import f5.d0;
-import f5.o;
-import j3.c0;
-import j3.h0;
-import j3.t0;
-import j3.u0;
+import android.net.Uri;
+import android.util.SparseArray;
+import b4.e0;
+import g5.g0;
+import g5.v0;
+import h5.d0;
+import j3.h2;
+import j3.m0;
+import j3.r1;
+import j7.i7;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.List;
-import q8.l0;
-import q8.z;
+import java.util.Map;
+import k7.y7;
+import kh.a2;
+import o4.l0;
+import o4.n0;
+import o4.s0;
+import o4.t0;
+import org.telegram.ui.Components.qk0;
+import p2.w;
+import ph.j5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class l extends j3.e implements Handler.Callback {
-    public long A;
-    public long B;
-    public long C;
-    public final Handler a;
-    public final h0 b;
-    public final i c;
-    public final u0 d;
-    public boolean e;
-    public boolean f;
-    public boolean h;
-    public int n;
-    public t0 r;
-    public g s;
-    public j v;
-    public k w;
-    public k x;
-    public int y;
+public final class l implements o4.t, u4.q {
+    public final k3.k B;
+    public final j5 C = new j5(this, 8);
+    public o4.s D;
+    public int E;
+    public t0 F;
+    public r[] G;
+    public r[] H;
+    public int I;
+    public ja.c J;
+    public final j a;
+    public final u4.c b;
+    public final qk0 c;
+    public final v0 d;
+    public final o3.o e;
+    public final o3.l f;
+    public final ab.a h;
+    public final e0 n;
+    public final g5.q r;
+    public final IdentityHashMap s;
+    public final o2.o v;
+    public final z9.d w;
+    public final boolean x;
+    public final int y;
 
-    public l(h0 h0Var, Looper looper) {
-        super(3);
-        Handler handler;
-        this.b = h0Var;
-        if (looper == null) {
-            handler = null;
+    public l(j jVar, u4.c cVar, qk0 qk0Var, v0 v0Var, o3.o oVar, o3.l lVar, ab.a aVar, e0 e0Var, g5.q qVar, z9.d dVar, boolean z4, int i10, k3.k kVar) {
+        this.a = jVar;
+        this.b = cVar;
+        this.c = qk0Var;
+        this.d = v0Var;
+        this.e = oVar;
+        this.f = lVar;
+        this.h = aVar;
+        this.n = e0Var;
+        this.r = qVar;
+        this.w = dVar;
+        this.x = z4;
+        this.y = i10;
+        this.B = kVar;
+        dVar.getClass();
+        this.J = new ja.c(new n0[0], 22);
+        this.s = new IdentityHashMap();
+        this.v = new o2.o(23);
+        this.G = new r[0];
+        this.H = new r[0];
+    }
+
+    public static j3.n0 e(j3.n0 n0Var, j3.n0 n0Var2, boolean z4) {
+        String p10;
+        e4.c cVar;
+        int i10;
+        String str;
+        String str2;
+        int i11;
+        int i12;
+        if (n0Var2 != null) {
+            p10 = n0Var2.r;
+            cVar = n0Var2.s;
+            i11 = n0Var2.P;
+            i10 = n0Var2.d;
+            i12 = n0Var2.e;
+            str = n0Var2.c;
+            str2 = n0Var2.b;
         } else {
-            int i10 = d0.a;
-            handler = new Handler(looper, this);
+            p10 = d0.p(1, n0Var.r);
+            cVar = n0Var.s;
+            if (z4) {
+                i11 = n0Var.P;
+                i10 = n0Var.d;
+                i12 = n0Var.e;
+                str = n0Var.c;
+                str2 = n0Var.b;
+            } else {
+                i10 = 0;
+                str = null;
+                str2 = null;
+                i11 = -1;
+                i12 = 0;
+            }
         }
-        this.a = handler;
-        this.c = i.a;
-        this.d = new u0();
-        this.A = -9223372036854775807L;
-        this.B = -9223372036854775807L;
-        this.C = -9223372036854775807L;
+        String c3 = h5.o.c(p10);
+        int i13 = z4 ? n0Var.f : -1;
+        int i14 = z4 ? n0Var.h : -1;
+        m0 m0Var = new m0();
+        m0Var.a = n0Var.a;
+        m0Var.b = str2;
+        m0Var.n = n0Var.B;
+        m0Var.o = c3;
+        m0Var.h = p10;
+        m0Var.i = cVar;
+        m0Var.f = i13;
+        m0Var.g = i14;
+        m0Var.B = i11;
+        m0Var.d = i10;
+        m0Var.e = i12;
+        m0Var.c = str;
+        return new j3.n0(m0Var);
     }
 
-    public final long a() {
-        if (this.y == -1) {
-            return Long.MAX_VALUE;
-        }
-        this.w.getClass();
-        if (this.y >= this.w.v()) {
-            return Long.MAX_VALUE;
-        }
-        return this.w.m(this.y);
-    }
-
-    public final long b(long j10) {
-        f5.a.i(j10 != -9223372036854775807L);
-        f5.a.i(this.B != -9223372036854775807L);
-        return j10 - this.B;
-    }
-
-    public final void c(c cVar) {
-        z zVar = cVar.a;
-        h0 h0Var = this.b;
-        h0Var.a.l.e(27, new c0(zVar));
-        h0Var.a.l.e(27, new n(cVar, 12));
-    }
-
-    public final void d() {
-        this.v = null;
-        this.y = -1;
-        k kVar = this.w;
-        if (kVar != null) {
-            kVar.release();
-            this.w = null;
-        }
-        k kVar2 = this.x;
-        if (kVar2 != null) {
-            kVar2.release();
-            this.x = null;
+    @Override // o4.t
+    public final void B(long j10) {
+        for (r rVar : this.H) {
+            if (rVar.P && !rVar.n()) {
+                int length = rVar.I.length;
+                for (int i10 = 0; i10 < length; i10++) {
+                    rVar.I[i10].h(j10, rVar.a0[i10]);
+                }
+            }
         }
     }
 
-    @Override // j3.e, j3.h2
-    public final String getName() {
-        return "TextRenderer";
-    }
-
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        if (message.what != 0) {
-            throw new IllegalStateException();
+    @Override // o4.n0
+    public final boolean C(long j10) {
+        if (this.F != null) {
+            return this.J.C(j10);
         }
-        c((c) message.obj);
-        return true;
-    }
-
-    @Override // j3.e
-    public final boolean isEnded() {
-        return this.f;
-    }
-
-    @Override // j3.e
-    public final boolean isReady() {
-        return true;
-    }
-
-    @Override // j3.e
-    public final void onDisabled() {
-        this.r = null;
-        this.A = -9223372036854775807L;
-        c cVar = new c(b(this.C), l0.e);
-        Handler handler = this.a;
-        if (handler != null) {
-            handler.obtainMessage(0, cVar).sendToTarget();
-        } else {
-            c(cVar);
+        for (r rVar : this.G) {
+            if (!rVar.Q) {
+                rVar.C(rVar.c0);
+            }
         }
-        this.B = -9223372036854775807L;
-        this.C = -9223372036854775807L;
-        d();
-        g gVar = this.s;
-        gVar.getClass();
-        gVar.release();
-        this.s = null;
-        this.n = 0;
+        return false;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00e8, code lost:
-    
-        if (r0.equals("application/dvbsubs") == false) goto L12;
-     */
-    @Override // j3.e
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onPositionReset(long j10, boolean z10) {
-        g aVar;
-        this.C = j10;
-        c cVar = new c(b(this.C), l0.e);
-        char c3 = 0;
-        Handler handler = this.a;
-        if (handler != null) {
-            handler.obtainMessage(0, cVar).sendToTarget();
-        } else {
-            c(cVar);
-        }
-        this.e = false;
-        this.f = false;
-        this.A = -9223372036854775807L;
-        if (this.n == 0) {
-            d();
-            g gVar = this.s;
-            gVar.getClass();
-            gVar.flush();
-            return;
-        }
-        d();
-        g gVar2 = this.s;
-        gVar2.getClass();
-        gVar2.release();
-        this.s = null;
-        this.n = 0;
-        this.h = true;
-        t0 t0Var = this.r;
+    @Override // o4.t
+    public final long K() {
+        return -9223372036854775807L;
+    }
+
+    @Override // o4.t
+    public final t0 V() {
+        t0 t0Var = this.F;
         t0Var.getClass();
-        this.c.getClass();
-        String str = t0Var.B;
-        int i10 = t0Var.T;
-        List list = t0Var.D;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case -1351681404:
-                    break;
-                case -1248334819:
-                    if (str.equals("application/pgs")) {
-                        c3 = 1;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case -1026075066:
-                    if (str.equals("application/x-mp4-vtt")) {
-                        c3 = 2;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case -1004728940:
-                    if (str.equals("text/vtt")) {
-                        c3 = 3;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 691401887:
-                    if (str.equals("application/x-quicktime-tx3g")) {
-                        c3 = 4;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 822864842:
-                    if (str.equals("text/x-ssa")) {
-                        c3 = 5;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 930165504:
-                    if (str.equals("application/x-mp4-cea-608")) {
-                        c3 = 6;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1201784583:
-                    if (str.equals("text/x-exoplayer-cues")) {
-                        c3 = 7;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1566015601:
-                    if (str.equals("application/cea-608")) {
-                        c3 = '\b';
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1566016562:
-                    if (str.equals("application/cea-708")) {
-                        c3 = '\t';
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1668750253:
-                    if (str.equals("application/x-subrip")) {
-                        c3 = '\n';
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1693976202:
-                    if (str.equals("application/ttml+xml")) {
-                        c3 = 11;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                default:
-                    c3 = 65535;
-                    break;
-            }
-            switch (c3) {
-                case 0:
-                    aVar = new c5.a(list);
-                    break;
-                case 1:
-                    aVar = new w4.b();
-                    break;
-                case 2:
-                    aVar = new c5.a();
-                    break;
-                case 3:
-                    aVar = new c5.k();
-                    break;
-                case 4:
-                    aVar = new b5.a(list);
-                    break;
-                case 5:
-                    aVar = new y4.a(list);
-                    break;
-                case 6:
-                case '\b':
-                    aVar = new u4.c(str, i10);
-                    break;
-                case 7:
-                    aVar = new v();
-                    break;
-                case '\t':
-                    aVar = new u4.f(i10, list);
-                    break;
-                case '\n':
-                    aVar = new z4.a();
-                    break;
-                case 11:
-                    aVar = new a5.f();
-                    break;
-            }
-            this.s = aVar;
-            return;
-        }
-        throw new IllegalArgumentException(u3.c.e("Attempted to create decoder for unsupported MIME type: ", str));
+        return t0Var;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00b6, code lost:
+    @Override // o4.n0
+    public final long X() {
+        return this.J.X();
+    }
+
+    @Override // u4.q
+    public final void a() {
+        for (r rVar : this.G) {
+            g5.m0 m0Var = rVar.s;
+            ArrayList arrayList = rVar.y;
+            if (!arrayList.isEmpty()) {
+                k kVar = (k) s8.l.h(arrayList);
+                int b10 = rVar.d.b(kVar);
+                if (b10 == 1) {
+                    kVar.X = true;
+                } else if (b10 == 2 && !rVar.g0 && m0Var.d()) {
+                    m0Var.b();
+                }
+            }
+        }
+        this.D.Z(this);
+    }
+
+    @Override // o4.n0
+    public final boolean b() {
+        return this.J.b();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x008f, code lost:
     
-        if (r5.equals("application/dvbsubs") == false) goto L10;
+        if ((((u4.b) r9.g.d.get(r18)) != null ? !u4.b.a(r4, r13) : false) != false) goto L25;
      */
-    @Override // j3.e
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0056 A[SYNTHETIC] */
+    @Override // u4.q
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onStreamChanged(t0[] t0VarArr, long j10, long j11) {
-        g aVar;
-        g bVar;
-        this.B = j11;
-        char c3 = 0;
-        t0 t0Var = t0VarArr[0];
-        this.r = t0Var;
-        if (this.s != null) {
-            this.n = 1;
-            return;
-        }
-        this.h = true;
-        t0Var.getClass();
-        this.c.getClass();
-        String str = t0Var.B;
-        int i10 = t0Var.T;
-        List list = t0Var.D;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case -1351681404:
-                    break;
-                case -1248334819:
-                    if (str.equals("application/pgs")) {
-                        c3 = 1;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case -1026075066:
-                    if (str.equals("application/x-mp4-vtt")) {
-                        c3 = 2;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case -1004728940:
-                    if (str.equals("text/vtt")) {
-                        c3 = 3;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 691401887:
-                    if (str.equals("application/x-quicktime-tx3g")) {
-                        c3 = 4;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 822864842:
-                    if (str.equals("text/x-ssa")) {
-                        c3 = 5;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 930165504:
-                    if (str.equals("application/x-mp4-cea-608")) {
-                        c3 = 6;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1201784583:
-                    if (str.equals("text/x-exoplayer-cues")) {
-                        c3 = 7;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1566015601:
-                    if (str.equals("application/cea-608")) {
-                        c3 = '\b';
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1566016562:
-                    if (str.equals("application/cea-708")) {
-                        c3 = '\t';
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1668750253:
-                    if (str.equals("application/x-subrip")) {
-                        c3 = '\n';
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                case 1693976202:
-                    if (str.equals("application/ttml+xml")) {
-                        c3 = 11;
-                        break;
-                    }
-                    c3 = 65535;
-                    break;
-                default:
-                    c3 = 65535;
-                    break;
-            }
-            switch (c3) {
-                case 0:
-                    aVar = new c5.a(list);
-                    bVar = aVar;
-                    this.s = bVar;
-                    return;
-                case 1:
-                    bVar = new w4.b();
-                    this.s = bVar;
-                    return;
-                case 2:
-                    bVar = new c5.a();
-                    this.s = bVar;
-                    return;
-                case 3:
-                    bVar = new c5.k();
-                    this.s = bVar;
-                    return;
-                case 4:
-                    aVar = new b5.a(list);
-                    bVar = aVar;
-                    this.s = bVar;
-                    return;
-                case 5:
-                    aVar = new y4.a(list);
-                    bVar = aVar;
-                    this.s = bVar;
-                    return;
-                case 6:
-                case '\b':
-                    bVar = new u4.c(str, i10);
-                    this.s = bVar;
-                    return;
-                case 7:
-                    bVar = new v();
-                    this.s = bVar;
-                    return;
-                case '\t':
-                    aVar = new u4.f(i10, list);
-                    bVar = aVar;
-                    this.s = bVar;
-                    return;
-                case '\n':
-                    bVar = new z4.a();
-                    this.s = bVar;
-                    return;
-                case 11:
-                    bVar = new a5.f();
-                    this.s = bVar;
-                    return;
-            }
-        }
-        throw new IllegalArgumentException(u3.c.e("Attempted to create decoder for unsupported MIME type: ", str));
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0345  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x03b5 A[EXC_TOP_SPLITTER, LOOP:1: B:124:0x03b5->B:147:0x0430, LOOP_START, PHI: r24
-      0x03b5: PHI (r24v2 j3.u0) = (r24v1 j3.u0), (r24v3 j3.u0) binds: [B:123:0x03b1, B:147:0x0430] A[DONT_GENERATE, DONT_INLINE], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:237:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x03a8  */
-    @Override // j3.e
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void render(long j10, long j11) {
+    public final boolean c(Uri uri, w wVar, boolean z4) {
+        long j10;
+        int i10;
+        int m9;
         boolean z10;
         boolean z11;
-        Object obj;
-        long j12;
-        Object obj2;
-        Object obj3;
-        Handler handler;
-        int i10;
-        char c3;
-        g aVar;
-        g bVar;
-        Object obj4;
-        long j13;
-        long m10;
-        String str;
-        char c6;
-        g aVar2;
-        int i11;
-        char c10;
-        g aVar3;
-        g bVar2;
-        u0 u0Var = this.d;
-        this.C = j10;
-        if (isCurrentStreamFinal()) {
-            long j14 = this.A;
-            if (j14 != -9223372036854775807L && j10 >= j14) {
-                d();
-                this.f = true;
-            }
-        }
-        if (this.f) {
-            return;
-        }
-        k kVar = this.x;
-        i iVar = this.c;
-        Handler handler2 = this.a;
-        if (kVar == null) {
-            g gVar = this.s;
-            gVar.getClass();
-            gVar.a(j10);
-            try {
-                g gVar2 = this.s;
-                gVar2.getClass();
-                this.x = (k) gVar2.dequeueOutputBuffer();
-            } catch (h e10) {
-                f5.a.p("TextRenderer", "Subtitle decoding failed. streamFormat=" + this.r, e10);
-                c cVar = new c(b(this.C), l0.e);
-                if (handler2 != null) {
-                    i11 = 0;
-                    handler2.obtainMessage(0, cVar).sendToTarget();
-                } else {
-                    i11 = 0;
-                    c(cVar);
-                }
-                d();
-                g gVar3 = this.s;
-                gVar3.getClass();
-                gVar3.release();
-                this.s = null;
-                this.n = i11;
-                this.h = true;
-                t0 t0Var = this.r;
-                t0Var.getClass();
-                iVar.getClass();
-                String str2 = t0Var.B;
-                int i12 = t0Var.T;
-                List list = t0Var.D;
-                if (str2 != null) {
-                    switch (str2.hashCode()) {
-                        case -1351681404:
-                            if (str2.equals("application/dvbsubs")) {
-                                c10 = 0;
+        boolean z12 = true;
+        for (r rVar : this.G) {
+            i iVar = rVar.d;
+            Uri[] uriArr = iVar.e;
+            if (d0.j(uriArr, uri)) {
+                if (!z4) {
+                    ab.a aVar = rVar.r;
+                    g0 a2 = i7.a(iVar.q);
+                    aVar.getClass();
+                    c4.e m32 = ab.a.m3(a2, wVar);
+                    if (m32 != null && m32.a == 2) {
+                        j10 = m32.b;
+                        i10 = 0;
+                        while (true) {
+                            if (i10 < uriArr.length) {
+                                i10 = -1;
                                 break;
                             }
-                            c10 = 65535;
-                            break;
-                        case -1248334819:
-                            if (str2.equals("application/pgs")) {
-                                c10 = 1;
+                            if (uriArr[i10].equals(uri)) {
                                 break;
                             }
-                            c10 = 65535;
-                            break;
-                        case -1026075066:
-                            if (str2.equals("application/x-mp4-vtt")) {
-                                c10 = 2;
-                                break;
+                            i10++;
+                        }
+                        if (i10 != -1 && (m9 = iVar.q.m(i10)) != -1) {
+                            iVar.s |= uri.equals(iVar.o);
+                            if (j10 != -9223372036854775807L) {
+                                if (iVar.q.d(m9, j10)) {
+                                }
+                                z10 = false;
+                                z11 = (z10 || j10 == -9223372036854775807L) ? false : true;
                             }
-                            c10 = 65535;
-                            break;
-                        case -1004728940:
-                            if (str2.equals("text/vtt")) {
-                                c10 = 3;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 691401887:
-                            if (str2.equals("application/x-quicktime-tx3g")) {
-                                c10 = 4;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 822864842:
-                            if (str2.equals("text/x-ssa")) {
-                                c10 = 5;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 930165504:
-                            if (str2.equals("application/x-mp4-cea-608")) {
-                                c10 = 6;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 1201784583:
-                            if (str2.equals("text/x-exoplayer-cues")) {
-                                c10 = 7;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 1566015601:
-                            if (str2.equals("application/cea-608")) {
-                                c10 = '\b';
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 1566016562:
-                            if (str2.equals("application/cea-708")) {
-                                c10 = '\t';
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 1668750253:
-                            if (str2.equals("application/x-subrip")) {
-                                c10 = '\n';
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 1693976202:
-                            if (str2.equals("application/ttml+xml")) {
-                                c10 = 11;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        default:
-                            c10 = 65535;
-                            break;
+                        }
+                        z10 = true;
+                        if (z10) {
+                        }
                     }
-                    switch (c10) {
-                        case 0:
-                            aVar3 = new c5.a(list);
-                            break;
-                        case 1:
-                            bVar2 = new w4.b();
-                            this.s = bVar2;
-                            return;
-                        case 2:
-                            bVar2 = new c5.a();
-                            this.s = bVar2;
-                            return;
-                        case 3:
-                            bVar2 = new c5.k();
-                            this.s = bVar2;
-                            return;
-                        case 4:
-                            aVar3 = new b5.a(list);
-                            break;
-                        case 5:
-                            aVar3 = new y4.a(list);
-                            break;
-                        case 6:
-                        case '\b':
-                            bVar2 = new u4.c(str2, i12);
-                            this.s = bVar2;
-                            return;
-                        case 7:
-                            bVar2 = new v();
-                            this.s = bVar2;
-                            return;
-                        case '\t':
-                            aVar3 = new u4.f(i12, list);
-                            break;
-                        case '\n':
-                            bVar2 = new z4.a();
-                            this.s = bVar2;
-                            return;
-                        case 11:
-                            bVar2 = new a5.f();
-                            this.s = bVar2;
-                            return;
-                    }
-                    bVar2 = aVar3;
-                    this.s = bVar2;
-                    return;
                 }
-                throw new IllegalArgumentException(u3.c.e("Attempted to create decoder for unsupported MIME type: ", str2));
-            }
-        }
-        String str3 = "Attempted to create decoder for unsupported MIME type: ";
-        u0 u0Var2 = u0Var;
-        if (getState() != 2) {
-            return;
-        }
-        if (this.w != null) {
-            long a2 = a();
-            z10 = false;
-            while (a2 <= j10) {
-                this.y++;
-                a2 = a();
+                j10 = -9223372036854775807L;
+                i10 = 0;
+                while (true) {
+                    if (i10 < uriArr.length) {
+                    }
+                    i10++;
+                }
+                if (i10 != -1) {
+                    iVar.s |= uri.equals(iVar.o);
+                    if (j10 != -9223372036854775807L) {
+                    }
+                }
                 z10 = true;
+                if (z10) {
+                }
+            } else {
+                z11 = true;
             }
-        } else {
-            z10 = false;
+            z12 &= z11;
         }
-        k kVar2 = this.x;
-        if (kVar2 != null) {
-            if (!kVar2.isEndOfStream()) {
-                z11 = z10;
-                obj = "application/dvbsubs";
-                if (kVar2.timeUs <= j10) {
-                    k kVar3 = this.w;
-                    if (kVar3 != null) {
-                        kVar3.release();
+        this.D.Z(this);
+        return z12;
+    }
+
+    public final r d(String str, int i10, Uri[] uriArr, j3.n0[] n0VarArr, j3.n0 n0Var, List list, Map map, long j10) {
+        return new r(str, i10, this.C, new i(this.a, this.b, uriArr, n0VarArr, this.c, this.d, this.v, list, this.B), map, this.r, j10, n0Var, this.e, this.f, this.h, this.n, this.y);
+    }
+
+    @Override // o4.n0
+    public final void f0(long j10) {
+        this.J.f0(j10);
+    }
+
+    @Override // o4.t
+    public final long h(long j10, h2 h2Var) {
+        r[] rVarArr = this.H;
+        int length = rVarArr.length;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= length) {
+                break;
+            }
+            r rVar = rVarArr[i10];
+            if (rVar.N == 2) {
+                i iVar = rVar.d;
+                u4.c cVar = iVar.g;
+                int h = iVar.q.h();
+                Uri[] uriArr = iVar.e;
+                u4.i a2 = (h >= uriArr.length || h == -1) ? null : cVar.a(uriArr[iVar.q.i()], true);
+                if (a2 != null) {
+                    s8.v vVar = a2.r;
+                    if (!vVar.isEmpty() && a2.c) {
+                        long j11 = a2.h - cVar.y;
+                        long j12 = j10 - j11;
+                        int c3 = d0.c(vVar, Long.valueOf(j12), true);
+                        long j13 = ((u4.f) vVar.get(c3)).e;
+                        return h2Var.a(j12, j13, c3 != vVar.size() - 1 ? ((u4.f) vVar.get(c3 + 1)).e : j13) + j11;
                     }
-                    j12 = j10;
-                    this.y = kVar2.e(j12);
-                    this.w = kVar2;
-                    this.x = null;
-                    z11 = true;
+                }
+            } else {
+                i10++;
+            }
+        }
+        return j10;
+    }
+
+    @Override // o4.n0
+    public final long l() {
+        return this.J.l();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:27:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01c7  */
+    @Override // o4.t
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void p(o4.s sVar, long j10) {
+        boolean z4;
+        List list;
+        List list2;
+        int i10;
+        boolean z10;
+        int i11;
+        boolean z11;
+        boolean z12;
+        int i12;
+        int o10;
+        r d;
+        Uri[] uriArr;
+        this.D = sVar;
+        u4.c cVar = this.b;
+        cVar.getClass();
+        cVar.e.add(this);
+        u4.l lVar = cVar.s;
+        lVar.getClass();
+        List list3 = lVar.g;
+        List list4 = lVar.e;
+        Map map = Collections.EMPTY_MAP;
+        boolean isEmpty = list4.isEmpty();
+        List list5 = lVar.h;
+        int i13 = 0;
+        this.E = 0;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        boolean z13 = this.x;
+        if (isEmpty) {
+            z4 = z13;
+            list = list3;
+            list2 = list5;
+        } else {
+            j3.n0 n0Var = lVar.j;
+            int size = list4.size();
+            int[] iArr = new int[size];
+            int i14 = 0;
+            int i15 = 0;
+            while (true) {
+                list2 = list5;
+                if (i14 >= list4.size()) {
+                    break;
+                }
+                j3.n0 n0Var2 = ((u4.k) list4.get(i14)).b;
+                int i16 = n0Var2.I;
+                String str = n0Var2.r;
+                if (i16 > 0 || d0.p(2, str) != null) {
+                    iArr[i14] = 2;
+                    i15++;
+                } else if (d0.p(1, str) != null) {
+                    iArr[i14] = 1;
+                    i13++;
+                } else {
+                    iArr[i14] = -1;
+                }
+                i14++;
+                list5 = list2;
+            }
+            if (i15 > 0) {
+                z10 = z13;
+                i11 = i15;
+                z11 = true;
+            } else if (i13 < size) {
+                z10 = z13;
+                i11 = size - i13;
+                z11 = false;
+                z12 = true;
+                Uri[] uriArr2 = new Uri[i11];
+                boolean z14 = z11;
+                j3.n0[] n0VarArr = new j3.n0[i11];
+                int[] iArr2 = new int[i11];
+                i12 = 0;
+                int i17 = 0;
+                while (i12 < list4.size()) {
+                    if (z14) {
+                        uriArr = uriArr2;
+                        if (iArr[i12] != 2) {
+                            i12++;
+                            uriArr2 = uriArr;
+                        }
+                    } else {
+                        uriArr = uriArr2;
+                    }
+                    if (!z12 || iArr[i12] != 1) {
+                        u4.k kVar = (u4.k) list4.get(i12);
+                        uriArr[i17] = kVar.a;
+                        n0VarArr[i17] = kVar.b;
+                        iArr2[i17] = i12;
+                        i17++;
+                    }
+                    i12++;
+                    uriArr2 = uriArr;
+                }
+                Uri[] uriArr3 = uriArr2;
+                String str2 = n0VarArr[0].r;
+                o10 = d0.o(2, str2);
+                int o11 = d0.o(1, str2);
+                boolean z15 = (o11 != 1 || (o11 == 0 && list3.isEmpty())) && o10 <= 1 && o11 + o10 > 0;
+                z4 = z10;
+                list = list3;
+                d = d("main", (!z14 || o11 <= 0) ? 0 : 1, uriArr3, n0VarArr, lVar.j, lVar.k, map, j10);
+                arrayList.add(d);
+                arrayList2.add(iArr2);
+                if (z4 && z15) {
+                    ArrayList arrayList3 = new ArrayList();
+                    if (o10 <= 0) {
+                        j3.n0[] n0VarArr2 = new j3.n0[i11];
+                        int i18 = 0;
+                        while (i18 < i11) {
+                            j3.n0 n0Var3 = n0VarArr[i18];
+                            String p10 = d0.p(2, n0Var3.r);
+                            String c3 = h5.o.c(p10);
+                            m0 m0Var = new m0();
+                            m0Var.a = n0Var3.a;
+                            m0Var.b = n0Var3.b;
+                            m0Var.n = n0Var3.B;
+                            m0Var.o = c3;
+                            m0Var.h = p10;
+                            m0Var.i = n0Var3.s;
+                            m0Var.f = n0Var3.f;
+                            m0Var.g = n0Var3.h;
+                            m0Var.t = n0Var3.H;
+                            m0Var.u = n0Var3.I;
+                            m0Var.v = n0Var3.J;
+                            m0Var.d = n0Var3.d;
+                            m0Var.e = n0Var3.e;
+                            n0VarArr2[i18] = new j3.n0(m0Var);
+                            i18++;
+                            n0VarArr = n0VarArr;
+                        }
+                        j3.n0[] n0VarArr3 = n0VarArr;
+                        arrayList3.add(new s0("main", n0VarArr2));
+                        if (o11 > 0 && (n0Var != null || list.isEmpty())) {
+                            arrayList3.add(new s0("main:audio", e(n0VarArr3[0], n0Var, false)));
+                        }
+                        List list6 = lVar.k;
+                        if (list6 != null) {
+                            for (int i19 = 0; i19 < list6.size(); i19++) {
+                                arrayList3.add(new s0(a2.j(i19, "main:cc:"), (j3.n0) list6.get(i19)));
+                            }
+                        }
+                    } else {
+                        j3.n0[] n0VarArr4 = new j3.n0[i11];
+                        for (int i20 = 0; i20 < i11; i20++) {
+                            n0VarArr4[i20] = e(n0VarArr[i20], n0Var, true);
+                        }
+                        arrayList3.add(new s0("main", n0VarArr4));
+                    }
+                    m0 m0Var2 = new m0();
+                    m0Var2.a = "ID3";
+                    m0Var2.o = "application/id3";
+                    s0 s0Var = new s0("main:id3", new j3.n0(m0Var2));
+                    arrayList3.add(s0Var);
+                    d.r((s0[]) arrayList3.toArray(new s0[0]), arrayList3.indexOf(s0Var));
+                }
+            } else {
+                z10 = z13;
+                i11 = size;
+                z11 = false;
+            }
+            z12 = false;
+            Uri[] uriArr22 = new Uri[i11];
+            boolean z142 = z11;
+            j3.n0[] n0VarArr5 = new j3.n0[i11];
+            int[] iArr22 = new int[i11];
+            i12 = 0;
+            int i172 = 0;
+            while (i12 < list4.size()) {
+            }
+            Uri[] uriArr32 = uriArr22;
+            String str22 = n0VarArr5[0].r;
+            o10 = d0.o(2, str22);
+            int o112 = d0.o(1, str22);
+            if (o112 != 1) {
+            }
+            z4 = z10;
+            list = list3;
+            d = d("main", (!z142 || o112 <= 0) ? 0 : 1, uriArr32, n0VarArr5, lVar.j, lVar.k, map, j10);
+            arrayList.add(d);
+            arrayList2.add(iArr22);
+            if (z4) {
+                ArrayList arrayList32 = new ArrayList();
+                if (o10 <= 0) {
+                }
+                m0 m0Var22 = new m0();
+                m0Var22.a = "ID3";
+                m0Var22.o = "application/id3";
+                s0 s0Var2 = new s0("main:id3", new j3.n0(m0Var22));
+                arrayList32.add(s0Var2);
+                d.r((s0[]) arrayList32.toArray(new s0[0]), arrayList32.indexOf(s0Var2));
+            }
+        }
+        ArrayList arrayList4 = new ArrayList(list.size());
+        ArrayList arrayList5 = new ArrayList(list.size());
+        ArrayList arrayList6 = new ArrayList(list.size());
+        HashSet hashSet = new HashSet();
+        int i21 = 0;
+        while (i21 < list.size()) {
+            List list7 = list;
+            String str3 = ((u4.j) list7.get(i21)).c;
+            if (hashSet.add(str3)) {
+                arrayList4.clear();
+                arrayList5.clear();
+                arrayList6.clear();
+                boolean z16 = true;
+                for (int i22 = 0; i22 < list7.size(); i22++) {
+                    String str4 = ((u4.j) list7.get(i22)).c;
+                    int i23 = d0.a;
+                    if (str3.equals(str4)) {
+                        u4.j jVar = (u4.j) list7.get(i22);
+                        arrayList6.add(Integer.valueOf(i22));
+                        Uri uri = jVar.a;
+                        j3.n0 n0Var4 = jVar.b;
+                        arrayList4.add(uri);
+                        arrayList5.add(n0Var4);
+                        z16 &= d0.o(1, n0Var4.r) == 1;
+                    }
+                }
+                String concat = "audio:".concat(str3);
+                int i24 = d0.a;
+                list = list7;
+                i10 = i21;
+                r d10 = d(concat, 1, (Uri[]) arrayList4.toArray(new Uri[0]), (j3.n0[]) arrayList5.toArray(new j3.n0[0]), null, Collections.EMPTY_LIST, map, j10);
+                arrayList2.add(y7.d(arrayList6));
+                arrayList.add(d10);
+                if (z4 && z16) {
+                    d10.r(new s0[]{new s0(concat, (j3.n0[]) arrayList5.toArray(new j3.n0[0]))}, new int[0]);
+                }
+            } else {
+                i10 = i21;
+                list = list7;
+            }
+            i21 = i10 + 1;
+        }
+        this.I = arrayList.size();
+        for (int i25 = 0; i25 < list2.size(); i25++) {
+            u4.j jVar2 = (u4.j) list2.get(i25);
+            StringBuilder m9 = a2.m(i25, "subtitle:", ":");
+            String str5 = jVar2.c;
+            j3.n0 n0Var5 = jVar2.b;
+            m9.append(str5);
+            String sb = m9.toString();
+            r d11 = d(sb, 3, new Uri[]{jVar2.a}, new j3.n0[]{n0Var5}, null, Collections.EMPTY_LIST, map, j10);
+            arrayList2.add(new int[]{i25});
+            arrayList.add(d11);
+            d11.r(new s0[]{new s0(sb, n0Var5)}, new int[0]);
+        }
+        this.G = (r[]) arrayList.toArray(new r[0]);
+        this.E = this.G.length;
+        for (int i26 = 0; i26 < this.I; i26++) {
+            this.G[i26].d.l = true;
+        }
+        for (r rVar : this.G) {
+            if (!rVar.Q) {
+                rVar.C(rVar.c0);
+            }
+        }
+        this.H = this.G;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x0110, code lost:
+    
+        if (r42 != r3.c0) goto L60;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0282  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x02e1 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0187  */
+    /* JADX WARN: Type inference failed for: r27v0 */
+    /* JADX WARN: Type inference failed for: r28v2 */
+    /* JADX WARN: Type inference failed for: r6v41 */
+    /* JADX WARN: Type inference failed for: r7v11 */
+    /* JADX WARN: Type inference failed for: r7v21, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v10 */
+    /* JADX WARN: Type inference failed for: r8v11 */
+    /* JADX WARN: Type inference failed for: r8v12 */
+    /* JADX WARN: Type inference failed for: r8v13 */
+    @Override // o4.t
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final long v(f5.c[] cVarArr, boolean[] zArr, l0[] l0VarArr, boolean[] zArr2, long j10) {
+        IdentityHashMap identityHashMap;
+        l0[] l0VarArr2;
+        i iVar;
+        i iVar2;
+        boolean z4;
+        int i10;
+        int[] iArr;
+        r[] rVarArr;
+        int i11;
+        int i12;
+        l0[] l0VarArr3;
+        int i13;
+        i iVar3;
+        int[] iArr2;
+        r rVar;
+        boolean z10;
+        boolean z11;
+        int i14;
+        int i15;
+        int i16;
+        boolean z12;
+        ?? r82;
+        int i17;
+        f5.c[] cVarArr2;
+        int i18;
+        g5.m0 m0Var;
+        int[] iArr3 = new int[cVarArr.length];
+        int[] iArr4 = new int[cVarArr.length];
+        int i19 = 0;
+        while (true) {
+            int length = cVarArr.length;
+            identityHashMap = this.s;
+            if (i19 >= length) {
+                break;
+            }
+            l0 l0Var = l0VarArr[i19];
+            iArr3[i19] = l0Var == null ? -1 : ((Integer) identityHashMap.get(l0Var)).intValue();
+            iArr4[i19] = -1;
+            f5.c cVar = cVarArr[i19];
+            if (cVar != null) {
+                s0 l10 = cVar.l();
+                int i20 = 0;
+                while (true) {
+                    r[] rVarArr2 = this.G;
+                    if (i20 < rVarArr2.length) {
+                        r rVar2 = rVarArr2[i20];
+                        rVar2.d();
+                        if (rVar2.V.b(l10) != -1) {
+                            iArr4[i19] = i20;
+                            break;
+                        }
+                        i20++;
+                    }
+                }
+            }
+            i19++;
+        }
+        identityHashMap.clear();
+        int length2 = cVarArr.length;
+        l0[] l0VarArr4 = new l0[length2];
+        int length3 = cVarArr.length;
+        l0[] l0VarArr5 = new l0[length3];
+        int length4 = cVarArr.length;
+        f5.c[] cVarArr3 = new f5.c[length4];
+        r[] rVarArr3 = new r[this.G.length];
+        int i21 = length3;
+        int i22 = 0;
+        int i23 = 0;
+        boolean z13 = false;
+        while (i22 < this.G.length) {
+            int i24 = length2;
+            int i25 = 0;
+            while (true) {
+                l0VarArr2 = l0VarArr4;
+                if (i25 >= cVarArr.length) {
+                    break;
+                }
+                l0VarArr5[i25] = iArr3[i25] == i22 ? l0VarArr[i25] : null;
+                cVarArr3[i25] = iArr4[i25] == i22 ? cVarArr[i25] : null;
+                i25++;
+                l0VarArr4 = l0VarArr2;
+            }
+            r rVar3 = this.G[i22];
+            g5.m0 m0Var2 = rVar3.s;
+            int i26 = i22;
+            i iVar4 = rVar3.d;
+            ArrayList arrayList = rVar3.y;
+            rVar3.d();
+            int i27 = rVar3.R;
+            ?? r27 = l0VarArr5;
+            int i28 = 0;
+            while (i28 < length4) {
+                n nVar = (n) r27[i28];
+                if (nVar == null || (cVarArr3[i28] != null && zArr[i28])) {
+                    i18 = i28;
+                    m0Var = m0Var2;
+                } else {
+                    i18 = i28;
+                    rVar3.R--;
+                    m0Var = m0Var2;
+                    if (nVar.c != -1) {
+                        r rVar4 = nVar.b;
+                        int i29 = nVar.a;
+                        rVar4.d();
+                        rVar4.X.getClass();
+                        int i30 = rVar4.X[i29];
+                        h5.a.i(rVar4.a0[i30]);
+                        rVar4.a0[i30] = false;
+                        nVar.c = -1;
+                    }
+                    r27[i18] = 0;
+                }
+                i28 = i18 + 1;
+                m0Var2 = m0Var;
+            }
+            g5.m0 m0Var3 = m0Var2;
+            boolean z14 = true;
+            if (!z13) {
+                if (!rVar3.f0) {
+                    iVar = iVar4;
+                } else if (i27 != 0) {
+                    iVar = iVar4;
+                }
+                iVar2 = iVar;
+                z4 = false;
+                f5.c cVar2 = iVar2.q;
+                boolean z15 = z4;
+                f5.c cVar3 = cVar2;
+                i10 = 0;
+                while (i10 < length4) {
+                    int i31 = i10;
+                    f5.c cVar4 = cVarArr3[i31];
+                    if (cVar4 == null) {
+                        i17 = length4;
+                        cVarArr2 = cVarArr3;
+                    } else {
+                        i17 = length4;
+                        cVarArr2 = cVarArr3;
+                        int b10 = rVar3.V.b(cVar4.l());
+                        if (b10 == rVar3.Y) {
+                            iVar2.q = cVar4;
+                            cVar3 = cVar4;
+                        }
+                        if (r27[i31] == 0) {
+                            rVar3.R++;
+                            n nVar2 = new n(rVar3, b10);
+                            r27[i31] = nVar2;
+                            zArr2[i31] = z14;
+                            if (rVar3.X != null) {
+                                nVar2.b();
+                                if (!z15) {
+                                    q qVar = rVar3.I[rVar3.X[b10]];
+                                    z15 = (qVar.D(j10, true) || qVar.q() == 0) ? false : true;
+                                }
+                            }
+                        }
+                    }
+                    i10 = i31 + 1;
+                    length4 = i17;
+                    cVarArr3 = cVarArr2;
+                    z14 = true;
+                }
+                int i32 = length4;
+                f5.c[] cVarArr4 = cVarArr3;
+                if (rVar3.R != 0) {
+                    iVar2.n = null;
+                    rVar3.T = null;
+                    rVar3.e0 = true;
+                    arrayList.clear();
+                    if (m0Var3.d()) {
+                        if (rVar3.P) {
+                            for (q qVar2 : rVar3.I) {
+                                qVar2.i();
+                            }
+                        }
+                        m0Var3.b();
+                    } else {
+                        rVar3.t();
+                    }
+                    int[] iArr5 = iArr4;
+                    rVar = rVar3;
+                    i14 = i21;
+                    iArr2 = iArr5;
+                    iArr = iArr3;
+                    rVarArr = rVarArr3;
+                    i12 = i24;
+                    l0VarArr3 = l0VarArr2;
+                    i13 = i26;
+                    iVar3 = iVar2;
+                } else {
+                    boolean z16 = true;
+                    if (arrayList.isEmpty() || d0.a(cVar3, cVar2)) {
+                        iArr = iArr3;
+                        rVarArr = rVarArr3;
+                        i11 = i21;
+                        i12 = i24;
+                        l0VarArr3 = l0VarArr2;
+                        i13 = i26;
+                        iVar3 = iVar2;
+                        iArr2 = iArr4;
+                        rVar = rVar3;
+                    } else {
+                        if (rVar3.f0) {
+                            iArr = iArr3;
+                            rVarArr = rVarArr3;
+                            i11 = i21;
+                            i12 = i24;
+                            l0VarArr3 = l0VarArr2;
+                            i13 = i26;
+                            iVar3 = iVar2;
+                            iArr2 = iArr4;
+                            rVar = rVar3;
+                        } else {
+                            long j11 = j10 < 0 ? -j10 : 0L;
+                            k j12 = rVar3.j();
+                            f5.c cVar5 = cVar3;
+                            iArr = iArr3;
+                            rVarArr = rVarArr3;
+                            i11 = i21;
+                            i12 = i24;
+                            l0VarArr3 = l0VarArr2;
+                            i13 = i26;
+                            iVar3 = iVar2;
+                            iArr2 = iArr4;
+                            rVar = rVar3;
+                            cVar5.v(j10, j11, -9223372036854775807L, rVar3.B, iVar2.a(j12, j10));
+                            if (cVar5.i() != iVar3.h.a(j12.d)) {
+                                z16 = true;
+                            } else {
+                                z16 = true;
+                            }
+                        }
+                        rVar.e0 = z16;
+                        z10 = true;
+                        z11 = true;
+                        if (z11) {
+                            i14 = i11;
+                        } else {
+                            rVar.u(j10, z10);
+                            i14 = i11;
+                            int i33 = 0;
+                            while (i33 < i14) {
+                                if (r27[i33] != 0) {
+                                    zArr2[i33] = z16;
+                                }
+                                i33++;
+                                z16 = true;
+                            }
+                        }
+                        z15 = z11;
+                    }
+                    z10 = z13;
+                    z11 = z15;
                     if (z11) {
                     }
-                    if (this.n != 2) {
+                    z15 = z11;
+                }
+                ArrayList arrayList2 = rVar.F;
+                arrayList2.clear();
+                for (i15 = 0; i15 < i14; i15++) {
+                    ?? r83 = r27[i15];
+                    if (r83 != 0) {
+                        arrayList2.add((n) r83);
                     }
                 }
-                j12 = j10;
-                if (z11) {
-                }
-                if (this.n != 2) {
-                }
-            } else if (!z10 && a() == Long.MAX_VALUE) {
-                if (this.n == 2) {
-                    d();
-                    g gVar4 = this.s;
-                    gVar4.getClass();
-                    gVar4.release();
-                    this.s = null;
-                    this.n = 0;
-                    this.h = true;
-                    t0 t0Var2 = this.r;
-                    t0Var2.getClass();
-                    iVar.getClass();
-                    String str4 = t0Var2.B;
-                    z11 = z10;
-                    int i13 = t0Var2.T;
-                    List list2 = t0Var2.D;
-                    if (str4 != null) {
-                        switch (str4.hashCode()) {
-                            case -1351681404:
-                                str = str3;
-                                if (str4.equals("application/dvbsubs")) {
-                                    c6 = 0;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case -1248334819:
-                                str = str3;
-                                if (str4.equals("application/pgs")) {
-                                    c6 = 1;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case -1026075066:
-                                str = str3;
-                                if (str4.equals("application/x-mp4-vtt")) {
-                                    c6 = 2;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case -1004728940:
-                                str = str3;
-                                if (str4.equals("text/vtt")) {
-                                    c6 = 3;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 691401887:
-                                str = str3;
-                                if (str4.equals("application/x-quicktime-tx3g")) {
-                                    c6 = 4;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 822864842:
-                                str = str3;
-                                if (str4.equals("text/x-ssa")) {
-                                    c6 = 5;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 930165504:
-                                str = str3;
-                                if (str4.equals("application/x-mp4-cea-608")) {
-                                    c6 = 6;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 1201784583:
-                                str = str3;
-                                if (str4.equals("text/x-exoplayer-cues")) {
-                                    c6 = 7;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 1566015601:
-                                str = str3;
-                                if (str4.equals("application/cea-608")) {
-                                    c6 = '\b';
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 1566016562:
-                                str = str3;
-                                if (str4.equals("application/cea-708")) {
-                                    c6 = '\t';
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 1668750253:
-                                str = str3;
-                                if (str4.equals("application/x-subrip")) {
-                                    c6 = '\n';
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            case 1693976202:
-                                str = str3;
-                                if (str4.equals("application/ttml+xml")) {
-                                    c6 = 11;
-                                    break;
-                                }
-                                c6 = 65535;
-                                break;
-                            default:
-                                str = str3;
-                                c6 = 65535;
-                                break;
-                        }
-                        switch (c6) {
-                            case 0:
-                                aVar2 = new c5.a(list2);
-                                break;
-                            case 1:
-                                aVar2 = new w4.b();
-                                break;
-                            case 2:
-                                aVar2 = new c5.a();
-                                break;
-                            case 3:
-                                aVar2 = new c5.k();
-                                break;
-                            case 4:
-                                aVar2 = new b5.a(list2);
-                                break;
-                            case 5:
-                                aVar2 = new y4.a(list2);
-                                break;
-                            case 6:
-                            case '\b':
-                                aVar2 = new u4.c(str4, i13);
-                                break;
-                            case 7:
-                                aVar2 = new v();
-                                break;
-                            case '\t':
-                                aVar2 = new u4.f(i13, list2);
-                                break;
-                            case '\n':
-                                aVar2 = new z4.a();
-                                break;
-                            case 11:
-                                aVar2 = new a5.f();
-                                break;
-                        }
-                        this.s = aVar2;
-                        str3 = str;
+                rVar.f0 = true;
+                i16 = 0;
+                z12 = false;
+                while (i16 < cVarArr.length) {
+                    ?? r72 = r27[i16];
+                    int i34 = i13;
+                    if (iArr2[i16] == i34) {
+                        r72.getClass();
+                        r82 = l0VarArr3;
+                        r82[i16] = r72;
+                        identityHashMap.put(r72, Integer.valueOf(i34));
+                        z12 = true;
                     } else {
-                        str = str3;
+                        r82 = l0VarArr3;
+                        if (iArr[i16] == i34) {
+                            h5.a.i(r72 == 0);
+                        }
                     }
-                    throw new IllegalArgumentException(u3.c.e(str, str4));
+                    i16++;
+                    l0VarArr3 = r82;
+                    i13 = i34;
                 }
-                z11 = z10;
-                d();
-                this.f = true;
-                obj = "application/dvbsubs";
-                j12 = j10;
-                if (z11) {
-                    obj2 = "application/x-mp4-vtt";
-                    obj3 = "application/x-mp4-cea-608";
-                    handler = handler2;
-                } else {
-                    this.w.getClass();
-                    int e11 = this.w.e(j12);
-                    if (e11 == 0 || this.w.v() == 0) {
-                        obj2 = "application/x-mp4-vtt";
-                        obj4 = "application/x-mp4-cea-608";
-                        j13 = this.w.timeUs;
+                l0[] l0VarArr6 = l0VarArr3;
+                int i35 = i13;
+                int i36 = i23;
+                if (!z12) {
+                    rVarArr[i36] = rVar;
+                    i23 = i36 + 1;
+                    if (i36 == 0) {
+                        iVar3.l = true;
+                        if (!z15) {
+                            r[] rVarArr4 = this.H;
+                            if (rVarArr4.length != 0 && rVar == rVarArr4[0]) {
+                            }
+                        }
+                        ((SparseArray) this.v.b).clear();
+                        z13 = true;
                     } else {
-                        if (e11 == -1) {
-                            m10 = this.w.m(r0.v() - 1);
-                        } else {
-                            m10 = this.w.m(e11 - 1);
-                        }
-                        obj2 = "application/x-mp4-vtt";
-                        obj4 = "application/x-mp4-cea-608";
-                        j13 = m10;
-                    }
-                    obj3 = obj4;
-                    c cVar2 = new c(b(j13), this.w.q(j12));
-                    if (handler2 != null) {
-                        handler = handler2;
-                        handler.obtainMessage(0, cVar2).sendToTarget();
-                    } else {
-                        handler = handler2;
-                        c(cVar2);
+                        iVar3.l = i35 < this.I;
                     }
                 }
-                if (this.n != 2) {
-                    return;
-                }
-                while (!this.e) {
-                    try {
-                        j jVar = this.v;
-                        if (jVar == null) {
-                            g gVar5 = this.s;
-                            gVar5.getClass();
-                            jVar = (j) gVar5.dequeueInputBuffer();
-                            if (jVar == null) {
-                                return;
-                            } else {
-                                this.v = jVar;
-                            }
-                        }
-                        if (this.n == 1) {
-                            try {
-                                jVar.setFlags(4);
-                                g gVar6 = this.s;
-                                gVar6.getClass();
-                                gVar6.queueInputBuffer(jVar);
-                                this.v = null;
-                                this.n = 2;
-                                return;
-                            } catch (h e12) {
-                                e = e12;
-                                f5.a.p("TextRenderer", "Subtitle decoding failed. streamFormat=" + this.r, e);
-                                c cVar3 = new c(b(this.C), l0.e);
-                                if (handler != null) {
-                                    i10 = 0;
-                                    handler.obtainMessage(0, cVar3).sendToTarget();
-                                } else {
-                                    i10 = 0;
-                                    c(cVar3);
-                                }
-                                d();
-                                g gVar7 = this.s;
-                                gVar7.getClass();
-                                gVar7.release();
-                                this.s = null;
-                                this.n = i10;
-                                this.h = true;
-                                t0 t0Var3 = this.r;
-                                t0Var3.getClass();
-                                iVar.getClass();
-                                String str5 = t0Var3.B;
-                                int i14 = t0Var3.T;
-                                List list3 = t0Var3.D;
-                                if (str5 != null) {
-                                    switch (str5.hashCode()) {
-                                        case -1351681404:
-                                            if (str5.equals(obj)) {
-                                                c3 = 0;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case -1248334819:
-                                            if (str5.equals("application/pgs")) {
-                                                c3 = 1;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case -1026075066:
-                                            if (str5.equals(obj2)) {
-                                                c3 = 2;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case -1004728940:
-                                            if (str5.equals("text/vtt")) {
-                                                c3 = 3;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 691401887:
-                                            if (str5.equals("application/x-quicktime-tx3g")) {
-                                                c3 = 4;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 822864842:
-                                            if (str5.equals("text/x-ssa")) {
-                                                c3 = 5;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 930165504:
-                                            if (str5.equals(obj3)) {
-                                                c3 = 6;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 1201784583:
-                                            if (str5.equals("text/x-exoplayer-cues")) {
-                                                c3 = 7;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 1566015601:
-                                            if (str5.equals("application/cea-608")) {
-                                                c3 = '\b';
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 1566016562:
-                                            if (str5.equals("application/cea-708")) {
-                                                c3 = '\t';
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 1668750253:
-                                            if (str5.equals("application/x-subrip")) {
-                                                c3 = '\n';
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        case 1693976202:
-                                            if (str5.equals("application/ttml+xml")) {
-                                                c3 = 11;
-                                                break;
-                                            }
-                                            c3 = 65535;
-                                            break;
-                                        default:
-                                            c3 = 65535;
-                                            break;
-                                    }
-                                    switch (c3) {
-                                        case 0:
-                                            aVar = new c5.a(list3);
-                                            bVar = aVar;
-                                            this.s = bVar;
-                                            return;
-                                        case 1:
-                                            bVar = new w4.b();
-                                            this.s = bVar;
-                                            return;
-                                        case 2:
-                                            bVar = new c5.a();
-                                            this.s = bVar;
-                                            return;
-                                        case 3:
-                                            bVar = new c5.k();
-                                            this.s = bVar;
-                                            return;
-                                        case 4:
-                                            aVar = new b5.a(list3);
-                                            bVar = aVar;
-                                            this.s = bVar;
-                                            return;
-                                        case 5:
-                                            aVar = new y4.a(list3);
-                                            bVar = aVar;
-                                            this.s = bVar;
-                                            return;
-                                        case 6:
-                                        case '\b':
-                                            bVar = new u4.c(str5, i14);
-                                            this.s = bVar;
-                                            return;
-                                        case 7:
-                                            bVar = new v();
-                                            this.s = bVar;
-                                            return;
-                                        case '\t':
-                                            aVar = new u4.f(i14, list3);
-                                            bVar = aVar;
-                                            this.s = bVar;
-                                            return;
-                                        case '\n':
-                                            bVar = new z4.a();
-                                            this.s = bVar;
-                                            return;
-                                        case 11:
-                                            bVar = new a5.f();
-                                            this.s = bVar;
-                                            return;
-                                    }
-                                }
-                                throw new IllegalArgumentException(u3.c.e(str3, str5));
-                            }
-                        }
-                        u0 u0Var3 = u0Var2;
-                        int readSource = readSource(u0Var3, jVar, 0);
-                        if (readSource == -4) {
-                            if (jVar.isEndOfStream()) {
-                                this.e = true;
-                                this.h = false;
-                            } else {
-                                t0 t0Var4 = u0Var3.b;
-                                if (t0Var4 == null) {
-                                    return;
-                                }
-                                jVar.n = t0Var4.F;
-                                jVar.c();
-                                this.h &= !jVar.isKeyFrame();
-                            }
-                            if (!this.h) {
-                                g gVar8 = this.s;
-                                gVar8.getClass();
-                                gVar8.queueInputBuffer(jVar);
-                                this.v = null;
-                            }
-                        } else if (readSource == -3) {
-                            return;
-                        }
-                        u0Var2 = u0Var3;
-                    } catch (h e13) {
-                        e = e13;
-                    }
-                }
-                return;
+                i22 = i35 + 1;
+                l0VarArr4 = l0VarArr6;
+                iArr4 = iArr2;
+                rVarArr3 = rVarArr;
+                l0VarArr5 = r27;
+                iArr3 = iArr;
+                length4 = i32;
+                cVarArr3 = cVarArr4;
+                i21 = i14;
+                length2 = i12;
             }
+            iVar = iVar4;
+            iVar2 = iVar;
+            z4 = true;
+            f5.c cVar22 = iVar2.q;
+            boolean z152 = z4;
+            f5.c cVar32 = cVar22;
+            i10 = 0;
+            while (i10 < length4) {
+            }
+            int i322 = length4;
+            f5.c[] cVarArr42 = cVarArr3;
+            if (rVar3.R != 0) {
+            }
+            ArrayList arrayList22 = rVar.F;
+            arrayList22.clear();
+            while (i15 < i14) {
+            }
+            rVar.f0 = true;
+            i16 = 0;
+            z12 = false;
+            while (i16 < cVarArr.length) {
+            }
+            l0[] l0VarArr62 = l0VarArr3;
+            int i352 = i13;
+            int i362 = i23;
+            if (!z12) {
+            }
+            i22 = i352 + 1;
+            l0VarArr4 = l0VarArr62;
+            iArr4 = iArr2;
+            rVarArr3 = rVarArr;
+            l0VarArr5 = r27;
+            iArr3 = iArr;
+            length4 = i322;
+            cVarArr3 = cVarArr42;
+            i21 = i14;
+            length2 = i12;
         }
-        z11 = z10;
-        obj = "application/dvbsubs";
-        j12 = j10;
-        if (z11) {
-        }
-        if (this.n != 2) {
+        System.arraycopy(l0VarArr4, 0, l0VarArr, 0, length2);
+        r[] rVarArr5 = (r[]) d0.I(i23, rVarArr3);
+        this.H = rVarArr5;
+        this.w.getClass();
+        this.J = new ja.c(rVarArr5, 22);
+        return j10;
+    }
+
+    @Override // o4.t
+    public final void x() {
+        for (r rVar : this.G) {
+            rVar.q();
+            if (rVar.g0 && !rVar.Q) {
+                throw r1.a("Loading finished before preparation is complete.", null);
+            }
         }
     }
 
-    @Override // j3.h2
-    public final int supportsFormat(t0 t0Var) {
-        this.c.getClass();
-        String str = t0Var.B;
-        if ("text/vtt".equals(str) || "text/x-ssa".equals(str) || "application/ttml+xml".equals(str) || "application/x-mp4-vtt".equals(str) || "application/x-subrip".equals(str) || "application/x-quicktime-tx3g".equals(str) || "application/cea-608".equals(str) || "application/x-mp4-cea-608".equals(str) || "application/cea-708".equals(str) || "application/dvbsubs".equals(str) || "application/pgs".equals(str) || "text/x-exoplayer-cues".equals(str)) {
-            return com.google.android.recaptcha.internal.a.b(t0Var.W == 0 ? 4 : 2, 0, 0);
+    @Override // o4.t
+    public final long z(long j10) {
+        r[] rVarArr = this.H;
+        if (rVarArr.length > 0) {
+            boolean u10 = rVarArr[0].u(j10, false);
+            int i10 = 1;
+            while (true) {
+                r[] rVarArr2 = this.H;
+                if (i10 >= rVarArr2.length) {
+                    break;
+                }
+                rVarArr2[i10].u(j10, u10);
+                i10++;
+            }
+            if (u10) {
+                ((SparseArray) this.v.b).clear();
+            }
         }
-        return o.i(t0Var.B) ? com.google.android.recaptcha.internal.a.b(1, 0, 0) : com.google.android.recaptcha.internal.a.b(0, 0, 0);
+        return j10;
     }
 }

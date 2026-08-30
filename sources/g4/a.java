@@ -2,25 +2,71 @@ package g4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import f5.d0;
-import j3.g1;
+import e4.b;
+import f8.o;
+import h5.d0;
+import j3.d1;
+import j3.m0;
+import j3.n0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends j {
-    public static final Parcelable.Creator<a> CREATOR = new d6.d(19);
+public final class a implements b {
+    public static final Parcelable.Creator<a> CREATOR;
+    public static final n0 h;
+    public static final n0 n;
+    public final String a;
     public final String b;
-    public final String c;
-    public final int d;
+    public final long c;
+    public final long d;
     public final byte[] e;
+    public int f;
 
-    public a(int i10, String str, String str2, byte[] bArr) {
-        super("APIC");
-        this.b = str;
-        this.c = str2;
-        this.d = i10;
+    static {
+        m0 m0Var = new m0();
+        m0Var.o = "application/id3";
+        h = new n0(m0Var);
+        m0 m0Var2 = new m0();
+        m0Var2.o = "application/x-scte35";
+        n = new n0(m0Var2);
+        CREATOR = new o(3);
+    }
+
+    public a(String str, String str2, long j10, long j11, byte[] bArr) {
+        this.a = str;
+        this.b = str2;
+        this.c = j10;
+        this.d = j11;
         this.e = bArr;
+    }
+
+    @Override // e4.b
+    public final n0 b() {
+        String str = this.a;
+        str.getClass();
+        switch (str) {
+            case "urn:scte:scte35:2014:bin":
+                return n;
+            case "https://aomedia.org/emsg/ID3":
+            case "https://developer.apple.com/streaming/emsg-id3":
+                return h;
+            default:
+                return null;
+        }
+    }
+
+    @Override // e4.b
+    public final byte[] d() {
+        if (b() != null) {
+            return this.e;
+        }
+        return null;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
     public final boolean equals(Object obj) {
@@ -29,7 +75,7 @@ public final class a extends j {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.d == aVar.d && d0.a(this.b, aVar.b) && d0.a(this.c, aVar.c) && Arrays.equals(this.e, aVar.e)) {
+            if (this.c == aVar.c && this.d == aVar.d && d0.a(this.a, aVar.a) && d0.a(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
                 return true;
             }
         }
@@ -37,38 +83,43 @@ public final class a extends j {
     }
 
     public final int hashCode() {
-        int i10 = (527 + this.d) * 31;
-        String str = this.b;
-        int hashCode = (i10 + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.c;
-        return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
+        if (this.f == 0) {
+            String str = this.a;
+            int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+            String str2 = this.b;
+            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+            long j10 = this.c;
+            int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+            long j11 = this.d;
+            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
+        }
+        return this.f;
     }
 
-    @Override // g4.j, b4.b
-    public final void populateMediaMetadata(g1 g1Var) {
-        g1Var.a(this.d, this.e);
-    }
-
-    @Override // g4.j
     public final String toString() {
-        return this.a + ": mimeType=" + this.b + ", description=" + this.c;
+        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.c);
-        parcel.writeInt(this.d);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.d);
         parcel.writeByteArray(this.e);
     }
 
     public a(Parcel parcel) {
-        super("APIC");
         String readString = parcel.readString();
         int i10 = d0.a;
-        this.b = readString;
-        this.c = parcel.readString();
-        this.d = parcel.readInt();
+        this.a = readString;
+        this.b = parcel.readString();
+        this.c = parcel.readLong();
+        this.d = parcel.readLong();
         this.e = parcel.createByteArray();
+    }
+
+    @Override // e4.b
+    public final /* synthetic */ void c(d1 d1Var) {
     }
 }

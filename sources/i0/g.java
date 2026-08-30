@@ -6,8 +6,8 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.util.Log;
-import h7.f8;
-import h7.g8;
+import j7.a8;
+import j7.z7;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,9 +20,9 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g extends f8 {
+public final class g extends z7 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -40,8 +40,8 @@ public final class g extends f8 {
             method2 = cls.getMethod("addFontWeightStyle", ByteBuffer.class, cls2, List.class, cls2, Boolean.TYPE);
             method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
             constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e10) {
-            Log.e("TypefaceCompatApi24Impl", e10.getClass().getName(), e10);
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
+            Log.e("TypefaceCompatApi24Impl", e.getClass().getName(), e);
             cls = null;
             method = null;
             method2 = null;
@@ -52,9 +52,9 @@ public final class g extends f8 {
         d = method;
     }
 
-    public static boolean g(Object obj, ByteBuffer byteBuffer, int i10, int i11, boolean z10) {
+    public static boolean g(Object obj, ByteBuffer byteBuffer, int i10, int i11, boolean z4) {
         try {
-            return ((Boolean) c.invoke(obj, byteBuffer, Integer.valueOf(i10), null, Integer.valueOf(i11), Boolean.valueOf(z10))).booleanValue();
+            return ((Boolean) c.invoke(obj, byteBuffer, Integer.valueOf(i10), null, Integer.valueOf(i11), Boolean.valueOf(z4))).booleanValue();
         } catch (IllegalAccessException | InvocationTargetException unused) {
             return false;
         }
@@ -70,7 +70,7 @@ public final class g extends f8 {
         }
     }
 
-    @Override // h7.f8
+    @Override // j7.z7
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         int i11;
@@ -87,10 +87,10 @@ public final class g extends f8 {
             while (i11 < length) {
                 h0.f fVar = fVarArr[i11];
                 int i12 = fVar.f;
-                File d10 = g8.d(context);
+                File d10 = a8.d(context);
                 if (d10 != null) {
                     try {
-                        if (g8.b(d10, resources, i12)) {
+                        if (a8.b(d10, resources, i12)) {
                             try {
                                 fileInputStream = new FileInputStream(d10);
                             } catch (IOException unused2) {
@@ -117,8 +117,8 @@ public final class g extends f8 {
         return null;
     }
 
-    @Override // h7.f8
-    public final Typeface b(Context context, o0.j[] jVarArr, int i10) {
+    @Override // j7.z7
+    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
         Object obj;
         try {
             obj = b.newInstance(null);
@@ -128,17 +128,17 @@ public final class g extends f8 {
         if (obj != null) {
             int i11 = 0;
             k kVar = new k(0);
-            int length = jVarArr.length;
+            int length = iVarArr.length;
             while (true) {
                 if (i11 < length) {
-                    o0.j jVar = jVarArr[i11];
-                    Uri uri = jVar.a;
+                    o0.i iVar = iVarArr[i11];
+                    Uri uri = iVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) kVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = g8.e(context, uri);
+                        byteBuffer = a8.e(context, uri);
                         kVar.put(uri, byteBuffer);
                     }
-                    if (byteBuffer == null || !g(obj, byteBuffer, jVar.b, jVar.c, jVar.d)) {
+                    if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {
                         break;
                     }
                     i11++;

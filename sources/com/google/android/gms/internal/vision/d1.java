@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -42,10 +42,10 @@ public abstract class d1 implements Cloneable {
             com.google.android.gms.internal.clearcut.m mVar = new com.google.android.gms.internal.clearcut.m();
             u0Var.getClass();
             a2.f(f1Var2, bArr, 0, i10, mVar);
-        } catch (n1 e10) {
-            throw e10;
-        } catch (IOException e11) {
-            throw new RuntimeException("Reading from byte array should not throw IOException.", e11);
+        } catch (n1 e) {
+            throw e;
+        } catch (IOException e6) {
+            throw new RuntimeException("Reading from byte array should not throw IOException.", e6);
         } catch (IndexOutOfBoundsException unused) {
             throw n1.a();
         }
@@ -76,22 +76,22 @@ public abstract class d1 implements Cloneable {
     }
 
     public final f1 f() {
-        f1 e10 = e();
-        boolean z10 = true;
-        byte byteValue = ((Byte) e10.e(1)).byteValue();
+        f1 e = e();
+        boolean z4 = true;
+        byte byteValue = ((Byte) e.e(1)).byteValue();
         if (byteValue != 1) {
             if (byteValue == 0) {
-                z10 = false;
+                z4 = false;
             } else {
                 k2 k2Var = k2.c;
                 k2Var.getClass();
-                z10 = k2Var.a(e10.getClass()).a(e10);
-                e10.e(2);
+                z4 = k2Var.a(e.getClass()).a(e);
+                e.e(2);
             }
         }
-        if (z10) {
-            return e10;
+        if (z4) {
+            return e;
         }
-        throw new a6.b("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+        throw new a7.b("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
     }
 }

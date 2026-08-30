@@ -7,10 +7,10 @@ import android.support.v4.media.MediaDescriptionCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$QueueItem implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new c0(1);
+    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new b0(1);
     public final MediaDescriptionCompat a;
     public final long b;
     public MediaSession.QueueItem c;
@@ -36,7 +36,7 @@ public final class MediaSessionCompat$QueueItem implements Parcelable {
         for (Object obj : list) {
             if (obj != null) {
                 MediaSession.QueueItem queueItem = (MediaSession.QueueItem) obj;
-                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(b0.b(queueItem)), b0.c(queueItem));
+                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(a0.b(queueItem)), a0.c(queueItem));
             } else {
                 mediaSessionCompat$QueueItem = null;
             }
@@ -51,10 +51,10 @@ public final class MediaSessionCompat$QueueItem implements Parcelable {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem {Description=");
-        sb2.append(this.a);
-        sb2.append(", Id=");
-        return a4.w.p(sb2, this.b, " }");
+        StringBuilder sb = new StringBuilder("MediaSession.QueueItem {Description=");
+        sb.append(this.a);
+        sb.append(", Id=");
+        return android.support.v4.media.a.q(sb, this.b, " }");
     }
 
     @Override // android.os.Parcelable

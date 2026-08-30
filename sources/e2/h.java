@@ -1,13 +1,12 @@
 package e2;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class h {
-    public static PackageInfo a(PackageManager packageManager, Context context) {
-        return packageManager.getPackageInfo(context.getPackageName(), PackageManager.PackageInfoFlags.of(0L));
+    public static Handler a(Looper looper) {
+        return Handler.createAsync(looper);
     }
 }

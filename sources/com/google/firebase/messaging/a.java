@@ -1,43 +1,45 @@
 package com.google.firebase.messaging;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class a implements s9.d {
-    public static final a a = new a();
-    public static final s9.c b = new s9.c("projectNumber", u3.c.h(u3.c.g(v9.d.class, new v9.a(1))));
-    public static final s9.c c = new s9.c("messageId", u3.c.h(u3.c.g(v9.d.class, new v9.a(2))));
-    public static final s9.c d = new s9.c("instanceId", u3.c.h(u3.c.g(v9.d.class, new v9.a(3))));
-    public static final s9.c e = new s9.c("messageType", u3.c.h(u3.c.g(v9.d.class, new v9.a(4))));
-    public static final s9.c f = new s9.c("sdkPlatform", u3.c.h(u3.c.g(v9.d.class, new v9.a(5))));
-    public static final s9.c g = new s9.c("packageName", u3.c.h(u3.c.g(v9.d.class, new v9.a(6))));
-    public static final s9.c h = new s9.c("collapseKey", u3.c.h(u3.c.g(v9.d.class, new v9.a(7))));
-    public static final s9.c i = new s9.c("priority", u3.c.h(u3.c.g(v9.d.class, new v9.a(8))));
-    public static final s9.c j = new s9.c("ttl", u3.c.h(u3.c.g(v9.d.class, new v9.a(9))));
-    public static final s9.c k = new s9.c("topic", u3.c.h(u3.c.g(v9.d.class, new v9.a(10))));
-    public static final s9.c l = new s9.c("bulkId", u3.c.h(u3.c.g(v9.d.class, new v9.a(11))));
-    public static final s9.c m = new s9.c("event", u3.c.h(u3.c.g(v9.d.class, new v9.a(12))));
-    public static final s9.c n = new s9.c("analyticsLabel", u3.c.h(u3.c.g(v9.d.class, new v9.a(13))));
-    public static final s9.c o = new s9.c("campaignId", u3.c.h(u3.c.g(v9.d.class, new v9.a(14))));
-    public static final s9.c p = new s9.c("composerLabel", u3.c.h(u3.c.g(v9.d.class, new v9.a(15))));
+import vh.v2;
 
-    @Override // s9.a
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class a implements u9.d {
+    public static final a a = new a();
+    public static final u9.c b = new u9.c("projectNumber", v2.h(v2.g(x9.d.class, new x9.a(1))));
+    public static final u9.c c = new u9.c("messageId", v2.h(v2.g(x9.d.class, new x9.a(2))));
+    public static final u9.c d = new u9.c("instanceId", v2.h(v2.g(x9.d.class, new x9.a(3))));
+    public static final u9.c e = new u9.c("messageType", v2.h(v2.g(x9.d.class, new x9.a(4))));
+    public static final u9.c f = new u9.c("sdkPlatform", v2.h(v2.g(x9.d.class, new x9.a(5))));
+    public static final u9.c g = new u9.c("packageName", v2.h(v2.g(x9.d.class, new x9.a(6))));
+    public static final u9.c h = new u9.c("collapseKey", v2.h(v2.g(x9.d.class, new x9.a(7))));
+    public static final u9.c i = new u9.c("priority", v2.h(v2.g(x9.d.class, new x9.a(8))));
+    public static final u9.c j = new u9.c("ttl", v2.h(v2.g(x9.d.class, new x9.a(9))));
+    public static final u9.c k = new u9.c("topic", v2.h(v2.g(x9.d.class, new x9.a(10))));
+    public static final u9.c l = new u9.c("bulkId", v2.h(v2.g(x9.d.class, new x9.a(11))));
+    public static final u9.c m = new u9.c("event", v2.h(v2.g(x9.d.class, new x9.a(12))));
+    public static final u9.c n = new u9.c("analyticsLabel", v2.h(v2.g(x9.d.class, new x9.a(13))));
+    public static final u9.c o = new u9.c("campaignId", v2.h(v2.g(x9.d.class, new x9.a(14))));
+    public static final u9.c p = new u9.c("composerLabel", v2.h(v2.g(x9.d.class, new x9.a(15))));
+
+    @Override // u9.a
     public final void a(Object obj, Object obj2) {
-        ga.d dVar = (ga.d) obj;
-        s9.e eVar = (s9.e) obj2;
-        eVar.c(b, dVar.a);
+        ia.d dVar = (ia.d) obj;
+        u9.e eVar = (u9.e) obj2;
+        eVar.b(b, dVar.a);
         eVar.e(c, dVar.b);
         eVar.e(d, dVar.c);
         eVar.e(e, dVar.d);
-        eVar.e(f, ga.c.b);
+        eVar.e(f, ia.c.b);
         eVar.e(g, dVar.e);
         eVar.e(h, dVar.f);
-        eVar.b(i, 0);
-        eVar.b(j, dVar.g);
+        eVar.a(i, 0);
+        eVar.a(j, dVar.g);
         eVar.e(k, dVar.h);
-        eVar.c(l, 0L);
-        eVar.e(m, ga.a.b);
+        eVar.b(l, 0L);
+        eVar.e(m, ia.a.b);
         eVar.e(n, dVar.i);
-        eVar.c(o, 0L);
+        eVar.b(o, 0L);
         eVar.e(p, dVar.j);
     }
 }

@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class RTCStats {
     private final String id;
@@ -17,26 +17,26 @@ public class RTCStats {
         this.members = map;
     }
 
-    private static void appendValue(StringBuilder sb2, Object obj) {
+    private static void appendValue(StringBuilder sb, Object obj) {
         if (!(obj instanceof Object[])) {
             if (!(obj instanceof String)) {
-                sb2.append(obj);
+                sb.append(obj);
                 return;
             }
-            sb2.append('\"');
-            sb2.append(obj);
-            sb2.append('\"');
+            sb.append('\"');
+            sb.append(obj);
+            sb.append('\"');
             return;
         }
         Object[] objArr = (Object[]) obj;
-        sb2.append('[');
+        sb.append('[');
         for (int i10 = 0; i10 < objArr.length; i10++) {
             if (i10 != 0) {
-                sb2.append(", ");
+                sb.append(", ");
             }
-            appendValue(sb2, objArr[i10]);
+            appendValue(sb, objArr[i10]);
         }
-        sb2.append(']');
+        sb.append(']');
     }
 
     public static RTCStats create(long j10, String str, String str2, Map map) {
@@ -60,19 +60,19 @@ public class RTCStats {
     }
 
     public String toString() {
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("{ timestampUs: ");
-        n10.append(this.timestampUs);
-        n10.append(", type: ");
-        n10.append(this.type);
-        n10.append(", id: ");
-        n10.append(this.id);
+        StringBuilder l10 = e2.c.l("{ timestampUs: ");
+        l10.append(this.timestampUs);
+        l10.append(", type: ");
+        l10.append(this.type);
+        l10.append(", id: ");
+        l10.append(this.id);
         for (Map.Entry<String, Object> entry : this.members.entrySet()) {
-            n10.append(", ");
-            n10.append(entry.getKey());
-            n10.append(": ");
-            appendValue(n10, entry.getValue());
+            l10.append(", ");
+            l10.append(entry.getKey());
+            l10.append(": ");
+            appendValue(l10, entry.getValue());
         }
-        n10.append(" }");
-        return n10.toString();
+        l10.append(" }");
+        return l10.toString();
     }
 }

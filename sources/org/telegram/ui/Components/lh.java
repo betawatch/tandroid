@@ -1,76 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lh extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ uh c;
+public final class lh extends org.telegram.ui.yt0 {
+    public final /* synthetic */ MediaController.PhotoEntry a;
+    public final /* synthetic */ li b;
 
-    public /* synthetic */ lh(uh uhVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = uhVar;
-        this.b = z10;
+    public lh(li liVar, MediaController.PhotoEntry photoEntry) {
+        this.b = liVar;
+        this.a = photoEntry;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                uh uhVar = this.c;
-                ni niVar = uhVar.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    niVar.t1.setVisibility(8);
-                } else {
-                    niVar.A1.setVisibility(8);
-                }
-                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
-                for (int i10 = 0; i10 < niVar.t0.size(); i10++) {
-                    ((ph.n3) niVar.t0.valueAt(i10)).setMeasureOffsetY(dp);
-                }
-                if (uhVar.a == animator) {
-                    uhVar.a = null;
-                    break;
-                }
-                break;
-            default:
-                ni niVar2 = this.c.e;
-                boolean z11 = this.b;
-                niVar2.x1 = z11;
-                if (!z11) {
-                    niVar2.y1.setVisibility(8);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z4, final int i11, int i12, final boolean z10) {
+        li liVar = this.b;
+        liVar.p2 = true;
+        if (liVar.W1 == null) {
+            return;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ni niVar = this.c.e;
-                if (this.b) {
-                    niVar.A1.setAlpha(0.0f);
-                    niVar.A1.setVisibility(0);
-                    int dp = AndroidUtilities.dp(36.0f);
-                    for (int i10 = 0; i10 < niVar.t0.size(); i10++) {
-                        ((ph.n3) niVar.t0.valueAt(i10)).setMeasureOffsetY(dp);
-                    }
-                    break;
-                } else {
-                    niVar.t1.setAlpha(0.0f);
-                    niVar.t1.setVisibility(0);
-                    break;
-                }
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+        final MediaController.PhotoEntry photoEntry = this.a;
+        photoEntry.editedInfo = videoEditedInfo;
+        z4.a0(liVar.G1, liVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.kh
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ArrayList arrayList = ChatAttachAlertPhotoLayout.q1;
+                arrayList.clear();
+                HashMap hashMap = ChatAttachAlertPhotoLayout.p1;
+                hashMap.clear();
+                arrayList.add(0);
+                hashMap.put(0, photoEntry);
+                lh.this.b.W1.H(7, true, z4, i11, 0, 0L, false, z10, ((Long) obj).longValue());
+            }
+        });
     }
 }

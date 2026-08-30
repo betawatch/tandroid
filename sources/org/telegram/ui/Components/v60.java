@@ -1,31 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class v60 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w60 b;
+public final class v60 extends zw0 {
+    public final /* synthetic */ int H;
 
-    public /* synthetic */ v60(w60 w60Var, int i10) {
-        this.a = i10;
-        this.b = w60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v60(Context context, View view, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+        super(context, view, i10, f6Var);
+        this.H = i11;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.zw0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.H) {
             case 0:
-                w60 w60Var = this.b;
-                w60Var.e.Z = null;
-                w60Var.requestLayout();
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
                 break;
             default:
-                w60 w60Var2 = this.b;
-                w60Var2.e.Z = null;
-                w60Var2.a = false;
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zw0, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.H) {
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
                 break;
         }
     }

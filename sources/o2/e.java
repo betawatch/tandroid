@@ -4,7 +4,7 @@ import android.webkit.WebView;
 import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e implements n {
     public static final String[] a = new String[0];
@@ -15,12 +15,12 @@ public final class e implements n {
     }
 
     @Override // o2.n
-    public final StaticsBoundaryInterface getStatics() {
-        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
+    public final String[] e() {
+        return a;
     }
 
     @Override // o2.n
-    public final String[] s() {
-        return a;
+    public final StaticsBoundaryInterface getStatics() {
+        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
     }
 }

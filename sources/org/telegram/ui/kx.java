@@ -1,193 +1,105 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Point;
-import android.text.TextUtils;
+import android.app.Activity;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kx implements lg.g, org.telegram.ui.Components.pn0, org.telegram.ui.Components.cl0, nh.xa, org.telegram.ui.Components.w10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fy b;
+public final class kx extends q61 {
+    public final /* synthetic */ g61[] a2;
+    public final /* synthetic */ oy b2;
 
-    public /* synthetic */ kx(fy fyVar, int i10) {
-        this.a = i10;
-        this.b = fyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kx(oy oyVar, oy oyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.f6 f6Var, g61[] g61VarArr) {
+        super(oyVar2, activity, true, num, 0, f6Var);
+        this.b2 = oyVar;
+        this.a2 = g61VarArr;
     }
 
-    @Override // nh.xa
-    public nh.bb a(long j10) {
-        xw xwVar = this.b.A0;
-        return nh.bb.c(xwVar != null ? xwVar.e(j10) : null);
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public boolean b(float f9, float f10, int i10, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.f6;
-        fy fyVar = this.b;
-        if (z10) {
-            org.telegram.ui.Cells.f6 f6Var = (org.telegram.ui.Cells.f6) view;
-            if (f6Var.j0) {
-                fyVar.N4(f6Var.getDialogId(), view);
-                return true;
-            }
+    @Override // org.telegram.ui.q61
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        int i10;
+        if (tL_starGiftUnique == null) {
+            return true;
         }
-        ox oxVar = fyVar.y0;
-        jh.e1 e1Var = oxVar.R;
-        return fyVar.o4(view, i10, f9, oxVar.U);
+        i10 = ((org.telegram.ui.ActionBar.p2) this.b2).currentAccount;
+        return lh.t7.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
     }
 
-    @Override // nh.xa
-    public void c(long j10, eg.z1 z1Var) {
-        fy fyVar = this.b;
-        if (fyVar.A0 == null) {
-            z1Var.run();
-            return;
-        }
-        fyVar.x4(false, true);
-        fyVar.M = true;
-        fyVar.fragmentView.invalidate();
-        if (j10 == 0 || j10 == fyVar.getUserConfig().getClientUserId()) {
-            fyVar.A0.O.h1(0, 0);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.q61
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        TLRPC.TL_emojiStatus tL_emojiStatus;
+        TLRPC.EmojiStatus emojiStatus;
+        int i10;
+        int i11;
+        int i12;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        g61[] g61VarArr = this.a2;
+        oy oyVar = this.b2;
+        if (l10 == null) {
+            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
         } else {
-            fyVar.A0.k(j10);
-        }
-        fyVar.a0[0].a.getViewTreeObserver().addOnPreDrawListener(new fh.f(2, this, z1Var));
-    }
-
-    @Override // lg.g
-    public void d(Canvas canvas) {
-        qg.d dVar;
-        qg.d dVar2;
-        switch (this.a) {
-            case 0:
-                fy fyVar = this.b;
-                int measuredWidth = fyVar.fragmentView.getMeasuredWidth();
-                int measuredHeight = fyVar.fragmentView.getMeasuredHeight();
-                canvas.drawColor(fyVar.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
-                if (SharedConfig.chatBlurEnabled()) {
-                    ax axVar = fyVar.B3;
-                    ze1 ze1Var = (axVar == null || !(axVar.getFragment() instanceof ze1)) ? null : (ze1) fyVar.B3.getFragment();
-                    if (ze1Var != null && ze1Var.getFragmentView() != null && !fyVar.f2 && (dVar = ze1Var.c1) != null) {
-                        canvas.save();
-                        canvas.translate(ze1Var.getFragmentView().getTranslationX(), ze1Var.getFragmentView().getTranslationY());
-                        dVar.E0(canvas, 0.0f, 0.0f, measuredWidth, measuredHeight);
-                        canvas.restore();
+            if (tL_starGiftUnique != null) {
+                i10 = ((org.telegram.ui.ActionBar.p2) oyVar).currentAccount;
+                TL_stars.SavedStarGift n10 = lh.t7.y(i10, false).n(tL_starGiftUnique.id);
+                if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
+                    MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
+                    Context context = getContext();
+                    i11 = ((org.telegram.ui.ActionBar.p2) oyVar).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.p2) oyVar).currentAccount;
+                    long clientUserId = UserConfig.getInstance(i12).getClientUserId();
+                    f6Var = ((org.telegram.ui.ActionBar.p2) oyVar).resourceProvider;
+                    lh.g5 g5Var = new lh.g5(context, i11, clientUserId, f6Var, null);
+                    g5Var.j2(n10, null);
+                    g5Var.m2();
+                    g5Var.show();
+                    g61 g61Var = g61VarArr[0];
+                    if (g61Var != null) {
+                        oyVar.J0 = null;
+                        g61Var.dismiss();
+                        return;
                     }
-                    fyVar.h4.b(canvas, -3);
-                    break;
+                    return;
                 }
-                break;
-            default:
-                fy fyVar2 = this.b;
-                int measuredWidth2 = fyVar2.fragmentView.getMeasuredWidth();
-                int measuredHeight2 = fyVar2.fragmentView.getMeasuredHeight();
-                canvas.drawColor(fyVar2.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
-                if (SharedConfig.chatBlurEnabled()) {
-                    ax axVar2 = fyVar2.B3;
-                    ze1 ze1Var2 = (axVar2 == null || !(axVar2.getFragment() instanceof ze1)) ? null : (ze1) fyVar2.B3.getFragment();
-                    if (ze1Var2 != null && ze1Var2.getFragmentView() != null && !fyVar2.f2 && (dVar2 = ze1Var2.d1) != null) {
-                        canvas.save();
-                        canvas.translate(ze1Var2.getFragmentView().getTranslationX(), ze1Var2.getFragmentView().getTranslationY());
-                        dVar2.E0(canvas, 0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                        canvas.restore();
-                    }
-                    fyVar2.h4.b(canvas, -2);
-                    break;
+                TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
+                tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
+                tL_emojiStatus = tL_inputEmojiStatusCollectible;
+                if (num != null) {
+                    tL_inputEmojiStatusCollectible.flags |= 1;
+                    tL_inputEmojiStatusCollectible.until = num.intValue();
+                    tL_emojiStatus = tL_inputEmojiStatusCollectible;
                 }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pn0
-    public void e(float f9) {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            this.b.movePreviewFragment(f9);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pn0
-    public void f(org.telegram.ui.Cells.p2 p2Var) {
-        this.b.H4(p2Var);
-    }
-
-    @Override // org.telegram.ui.Components.pn0
-    public void finish() {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            this.b.finishPreviewFragment();
-        }
-    }
-
-    public void g(rf.f0 f0Var) {
-        fy fyVar = this.b;
-        if (fyVar.l3) {
-            ox oxVar = fyVar.y0;
-            if (oxVar != null) {
-                oxVar.w0.remove(f0Var);
-                ox oxVar2 = fyVar.y0;
-                String obj = fyVar.f0.getSearchField().getText().toString();
-                View currentView = oxVar2.getCurrentView();
-                boolean z10 = TextUtils.isEmpty(oxVar2.G0) ? true : !oxVar2.a0;
-                oxVar2.G0 = obj;
-                oxVar2.O(currentView, oxVar2.getCurrentPosition(), obj, z10);
+            } else {
+                TLRPC.TL_emojiStatus tL_emojiStatus2 = new TLRPC.TL_emojiStatus();
+                tL_emojiStatus2.document_id = l10.longValue();
+                tL_emojiStatus = tL_emojiStatus2;
+                if (num != null) {
+                    tL_emojiStatus2.flags |= 1;
+                    tL_emojiStatus2.until = num.intValue();
+                    tL_emojiStatus = tL_emojiStatus2;
+                }
             }
-            fyVar.W4(true, null, null, false, true);
-            fyVar.U.a.q(fyVar.T.r);
+            emojiStatus = tL_emojiStatus;
         }
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public void h() {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            this.b.finishPreviewFragment();
+        oyVar.getMessagesController().updateEmojiStatus(emojiStatus, tL_starGiftUnique);
+        if (l10 != null) {
+            org.telegram.ui.Cells.o oVar = oyVar.B3;
+            mg.q0 q0Var = new mg.q0();
+            long longValue = l10.longValue();
+            q0Var.g = longValue;
+            q0Var.h = longValue;
+            oVar.a(q0Var);
         }
-    }
-
-    @Override // lg.g
-    public void q(g.x xVar) {
-        switch (this.a) {
-            case 0:
-                int i10 = org.telegram.ui.ActionBar.g6.d6;
-                fy fyVar = this.b;
-                xVar.a(fyVar.getThemedColor(i10));
-                xVar.b(SharedConfig.chatBlurEnabled());
-                if (SharedConfig.chatBlurEnabled()) {
-                    ax axVar = fyVar.B3;
-                    ze1 ze1Var = (axVar == null || !(axVar.getFragment() instanceof ze1)) ? null : (ze1) fyVar.B3.getFragment();
-                    if (ze1Var != null && ze1Var.getFragmentView() != null && !fyVar.f2) {
-                        xVar.b = true;
-                        break;
-                    }
-                }
-                break;
-            default:
-                int i11 = org.telegram.ui.ActionBar.g6.d6;
-                fy fyVar2 = this.b;
-                xVar.a(fyVar2.getThemedColor(i11));
-                xVar.b(SharedConfig.chatBlurEnabled());
-                if (SharedConfig.chatBlurEnabled()) {
-                    ax axVar2 = fyVar2.B3;
-                    ze1 ze1Var2 = (axVar2 == null || !(axVar2.getFragment() instanceof ze1)) ? null : (ze1) fyVar2.B3.getFragment();
-                    if (ze1Var2 != null && ze1Var2.getFragmentView() != null && !fyVar2.f2) {
-                        xVar.b = true;
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public void r(float f9) {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            this.b.movePreviewFragment(f9);
+        g61 g61Var2 = g61VarArr[0];
+        if (g61Var2 != null) {
+            oyVar.J0 = null;
+            g61Var2.dismiss();
         }
     }
 }

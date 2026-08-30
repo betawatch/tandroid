@@ -1,65 +1,26 @@
 package u6;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.common.api.k;
-import com.google.android.gms.common.api.l;
-import m.s3;
+import android.os.Parcel;
+import android.os.Parcelable;
+import j7.f5;
+import r5.c0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c extends z5.g {
-    public final Bundle Q;
+public final class c extends c6.a {
+    public static final Parcelable.Creator<c> CREATOR = new c0(17);
+    public final boolean a;
 
-    public c(Context context, Looper looper, k kVar, l lVar, s3 s3Var) {
-        super(context, looper, 212, s3Var, kVar, lVar, 0);
-        this.Q = new Bundle();
+    public c(boolean z4) {
+        this.a = z4;
     }
 
-    @Override // z5.g
-    public final boolean C() {
-        return true;
-    }
-
-    @Override // z5.g, com.google.android.gms.common.api.c
-    public final int k() {
-        return 17895000;
-    }
-
-    @Override // z5.g
-    public final IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.identity.internal.ISignInService");
-        return queryLocalInterface instanceof i ? (i) queryLocalInterface : new i(iBinder, "com.google.android.gms.auth.api.identity.internal.ISignInService", 9);
-    }
-
-    @Override // z5.g
-    public final w5.c[] r() {
-        return d.b;
-    }
-
-    @Override // z5.g
-    public final Bundle t() {
-        return this.Q;
-    }
-
-    @Override // z5.g
-    public final String v() {
-        return "com.google.android.gms.auth.api.identity.internal.ISignInService";
-    }
-
-    @Override // z5.g
-    public final String w() {
-        return "com.google.android.gms.auth.api.identity.service.signin.START";
-    }
-
-    @Override // z5.g
-    public final boolean y() {
-        return true;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int q10 = f5.q(dest, 20293);
+        f5.s(dest, 1, 4);
+        dest.writeInt(this.a ? 1 : 0);
+        f5.r(dest, q10);
     }
 }

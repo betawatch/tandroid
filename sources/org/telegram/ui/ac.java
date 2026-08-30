@@ -1,28 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ChannelBoostsController;
+import j$.util.Objects;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ac implements f5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vc b;
+public final class ac extends bg.b {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    public /* synthetic */ ac(vc vcVar, int i10) {
-        this.a = i10;
-        this.b = vcVar;
+    public ac(int i10, String str) {
+        super(i10, false);
+        this.c = str;
     }
 
-    @Override // f5.d
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                vc.W(this.b, (ChannelBoostsController.CanApplyBoost) obj);
-                break;
-            default:
-                this.b.W0((TL_stories.TL_premium_boostsStatus) obj);
-                break;
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z4 = this.f;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || ac.class != obj.getClass()) {
+            return false;
+        }
+        ac acVar = (ac) obj;
+        TL_stories.Boost boost = acVar.d;
+        boolean z10 = acVar.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = acVar.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z4 == z10;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z4 == z10 && this.g == acVar.g;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public ac(TL_stories.Boost boost, boolean z4, int i10) {
+        super(5, true);
+        this.d = boost;
+        this.f = z4;
+        this.g = i10;
     }
 }

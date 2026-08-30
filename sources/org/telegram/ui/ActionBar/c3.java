@@ -1,50 +1,61 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c3 extends AnimatorListenerAdapter {
+public final /* synthetic */ class c3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d3 b;
+    public final /* synthetic */ e3 b;
 
-    public /* synthetic */ c3(d3 d3Var, int i10) {
+    public /* synthetic */ c3(e3 e3Var, int i10) {
         this.a = i10;
-        this.b = d3Var;
+        this.b = e3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        d3 d3Var = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                d3Var.y = 0.0f;
-                d3Var.C.containerView.setTranslationX(0.0f);
-                d3Var.C.container.invalidate();
+                e3 e3Var = this.b;
+                g3 g3Var = e3Var.D;
+                g3Var.containerView.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                g3Var.onContainerViewTranslation();
+                g3Var.onSmoothContainerViewLayout(g3Var.containerView.getTranslationY());
+                e3Var.invalidate();
                 break;
             case 1:
-                d3Var.C.skipDismissAnimation = true;
-                d3Var.C.containerView.setTranslationX(d3Var.getMeasuredWidth());
-                d3Var.C.dismiss();
-                d3Var.C.container.invalidate();
+                e3 e3Var2 = this.b;
+                e3Var2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e3Var2.y = floatValue;
+                g3 g3Var2 = e3Var2.D;
+                g3Var2.containerView.setTranslationX(floatValue);
+                g3Var2.container.invalidate();
                 break;
             case 2:
-                d3Var.C.containerView.setTranslationY(0.0f);
-                d3Var.C.onContainerViewTranslation();
-                f3 f3Var = d3Var.C;
-                f3Var.onSmoothContainerViewLayout(f3Var.containerView.getTranslationY());
-                d3Var.invalidate();
+                e3 e3Var3 = this.b;
+                e3Var3.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e3Var3.y = floatValue2;
+                g3 g3Var3 = e3Var3.D;
+                g3Var3.containerView.setTranslationX(floatValue2);
+                g3Var3.container.invalidate();
+                break;
+            case 3:
+                e3 e3Var4 = this.b;
+                e3Var4.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g3 g3Var4 = e3Var4.D;
+                g3Var4.backDrawable.setAlpha(g3Var4.dimBehind ? (int) (g3Var4.dimBehindAlpha * floatValue3) : 0);
                 break;
             default:
-                AnimatorSet animatorSet = d3Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    d3Var.h = null;
+                g3 g3Var5 = this.b.D;
+                e3 e3Var5 = g3Var5.container;
+                if (e3Var5 != null) {
+                    e3Var5.invalidate();
                 }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                g3Var5.onContainerViewTranslation();
                 break;
         }
     }

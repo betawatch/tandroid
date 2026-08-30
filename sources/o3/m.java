@@ -1,13 +1,15 @@
 package o3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public interface m {
-    public static final ab.b u = new ab.b(16);
+    void b(int i10, o4.v vVar);
 
-    void D1(t tVar);
+    void c(int i10, o4.v vVar, int i11);
 
-    w Z1(int i10, int i11);
+    void e(int i10, o4.v vVar, Exception exc);
 
-    void e1();
+    void j(int i10, o4.v vVar);
+
+    void k(int i10, o4.v vVar);
 }

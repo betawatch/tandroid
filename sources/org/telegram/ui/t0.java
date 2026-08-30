@@ -1,10 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t0 extends org.telegram.ui.Components.qv0 {
-    @Override // f2.k0
-    public final int p() {
-        return -1;
+public final class t0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ l4 a;
+
+    public t0(l4 l4Var) {
+        this.a = l4Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AndroidUtilities.runOnUIThread(new rt0(this, 6));
     }
 }

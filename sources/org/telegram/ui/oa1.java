@@ -1,70 +1,72 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
+import android.app.Activity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class oa1 extends FrameLayout {
-    public final org.telegram.ui.Components.ao0 a;
-    public final int b;
-    public final TextPaint c;
-    public final /* synthetic */ ThemeActivity d;
+public final class oa1 extends org.telegram.ui.ActionBar.g3 {
+    public static oa1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oa1(ThemeActivity themeActivity, Context context) {
-        super(context);
-        this.d = themeActivity;
-        this.b = 17;
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.ao0 ao0Var = new org.telegram.ui.Components.ao0(context);
-        this.a = ao0Var;
-        ao0Var.setReportChanges(true);
-        ao0Var.setSeparatorsCount(18);
-        ao0Var.setDelegate(new fv0(this, 3));
-        ao0Var.setImportantForAccessibility(2);
-        addView(ao0Var, i7.f6.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+    public static /* synthetic */ void m(oa1 oa1Var, oy oyVar) {
+        if (oyVar.getParentActivity() == null) {
+            return;
+        }
+        MessagesController.getInstance(oa1Var.currentAccount).clearQueryTime();
+        oyVar.getMessagesStorage().clearLocalDatabase();
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
+    public static void n(oy oyVar) {
+        if (b == null) {
+            oa1 oa1Var = new oa1(oyVar.getParentActivity(), false);
+            Activity parentActivity = oyVar.getParentActivity();
+            LinearLayout h = kh.a2.h(parentActivity, 1);
+            org.telegram.ui.Components.ax0 ax0Var = new org.telegram.ui.Components.ax0(parentActivity, oa1Var.currentAccount);
+            ax0Var.setStickerNum(7);
+            ax0Var.getImageReceiver().setAutoRepeat(1);
+            h.addView(ax0Var, k7.b6.t(144, 144, 1, 0, 16, 0, 0));
+            TextView textView = new TextView(parentActivity);
+            textView.setGravity(8388611);
+            int i10 = org.telegram.ui.ActionBar.j6.j5;
+            org.telegram.messenger.y3.t(textView, org.telegram.ui.ActionBar.j6.w0(null, i10, false), 1, 20.0f);
+            textView.setText(LocaleController.getString(R.string.SuggestClearDatabaseTitle));
+            h.addView(textView, k7.b6.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
+            TextView textView2 = new TextView(parentActivity);
+            textView2.setGravity(8388611);
+            textView2.setTextSize(1, 15.0f);
+            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+            textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString("SuggestClearDatabaseMessage", R.string.SuggestClearDatabaseMessage, AndroidUtilities.formatFileSize(oyVar.getMessagesStorage().getDatabaseSize()))));
+            h.addView(textView2, k7.b6.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+            TextView textView3 = new TextView(parentActivity);
+            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+            textView3.setGravity(17);
+            textView3.setTextSize(1, 14.0f);
+            textView3.setTypeface(AndroidUtilities.bold());
+            textView3.setText(LocaleController.getString(R.string.ClearLocalDatabase));
+            textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+            int dp = AndroidUtilities.dp(6.0f);
+            int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false);
+            int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false), 120);
+            textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, w02, k10, k10));
+            h.addView(textView3, k7.b6.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+            textView3.setOnClickListener(new gb0(23, oa1Var, oyVar));
+            ScrollView scrollView = new ScrollView(parentActivity);
+            scrollView.addView(h);
+            oa1Var.setCustomView(scrollView);
+            b = oa1Var;
+            oa1Var.show();
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.I6, false);
-        TextPaint textPaint = this.c;
-        textPaint.setColor(w02);
-        canvas.drawText("" + SharedConfig.bubbleRadius, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-        this.a.setProgress(SharedConfig.bubbleRadius / this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
+    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        b = null;
     }
 }

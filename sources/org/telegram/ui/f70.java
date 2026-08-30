@@ -1,91 +1,123 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f70 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final float c;
-    public float d;
-    public final View e;
-    public boolean f;
-    public float h;
-    public int n;
+public final class f70 extends org.telegram.ui.Components.rl0 {
+    public final Context c;
+    public final /* synthetic */ g70 d;
 
-    public f70(View view, float f9, int i10) {
-        f5 f5Var = new f5(this, 2);
-        this.f = true;
-        this.n = 255;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.setCurrentAccount(i10);
-        this.c = f9;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), 855638016);
-        View view2 = this.e;
-        if (view2 == view) {
-            return;
+    public f70(g70 g70Var, Context context) {
+        this.d = g70Var;
+        this.c = context;
+    }
+
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        int b10 = l1Var.b();
+        g70 g70Var = this.d;
+        return b10 == g70Var.r || b10 == g70Var.n || b10 == g70Var.s || b10 == 0;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        g70 g70Var = this.d;
+        if (g70Var.e) {
+            return 0;
         }
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(f5Var);
-            if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.onDetachedFromWindow();
+        return g70Var.w;
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        g70 g70Var = this.d;
+        if (i10 == g70Var.n || i10 == g70Var.s || i10 == g70Var.r) {
+            return 0;
+        }
+        if (i10 == g70Var.v || i10 == g70Var.h) {
+            return 1;
+        }
+        return i10 == 0 ? 2 : 0;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        int i11 = l1Var.f;
+        View view = l1Var.a;
+        g70 g70Var = this.d;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.aa aaVar = (org.telegram.ui.Cells.aa) view;
+            if (i10 == g70Var.n) {
+                aaVar.b(LocaleController.getString(R.string.CopyLink), true);
+                return;
+            } else if (i10 == g70Var.s) {
+                aaVar.b(LocaleController.getString(R.string.ShareLink), false);
+                return;
+            } else {
+                if (i10 == g70Var.r) {
+                    aaVar.b(LocaleController.getString(R.string.RevokeLink), true);
+                    return;
+                }
+                return;
             }
         }
-        View view3 = this.e;
-        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
+        if (i11 != 1) {
+            if (i11 != 2) {
+                return;
+            }
+            org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = g70Var.f;
+            n8Var.a.setText(tL_chatInviteExported != null ? tL_chatInviteExported.link : "error");
+            n8Var.setWillNotDraw(true);
+            return;
         }
-        this.e = view;
-        imageReceiver.setParentView(view);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(f5Var);
+        org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+        int i12 = g70Var.v;
+        Context context = this.c;
+        if (i10 == i12) {
+            a9Var.setText("");
+            a9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.V0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
+        } else if (i10 == g70Var.h) {
+            TLRPC.Chat chat = g70Var.getMessagesController().getChat(Long.valueOf(g70Var.d));
+            if (!ChatObject.isChannel(chat) || chat.megagroup) {
+                a9Var.setText(LocaleController.getString(R.string.LinkInfo));
+            } else {
+                a9Var.setText(LocaleController.getString(R.string.ChannelLinkInfo));
+            }
+            a9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.j6.b7));
         }
     }
 
-    public final void a(float f9) {
-        float dp = AndroidUtilities.dp(f9);
-        this.d = dp;
-        this.b.setRoundRadius((int) dp);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
-        boolean z10 = this.f;
-        Paint paint2 = this.a;
-        if (z10 && this.n != paint.getAlpha()) {
-            int alpha = paint.getAlpha();
-            this.n = alpha;
-            paint2.setAlpha(alpha);
-            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.g6.l1(this.n / 255.0f, 855638016));
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            FrameLayout aaVar = new org.telegram.ui.Cells.aa(context);
+            aaVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            frameLayout = aaVar;
+        } else if (i10 != 1) {
+            org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(context);
+            TextView textView = new TextView(context);
+            n8Var.a = textView;
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+            textView.setTextSize(1, 16.0f);
+            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+            n8Var.addView(textView, k7.b6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
+            n8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            frameLayout = n8Var;
+        } else {
+            frameLayout = new org.telegram.ui.Cells.a9(context);
         }
-        float f10 = this.h + f9;
-        float dp = (((i12 + i14) / 2.0f) + 0.0f) - (AndroidUtilities.dp(this.c) / 2.0f);
-        if (this.f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(f10, dp, AndroidUtilities.dp(this.c) + f10, AndroidUtilities.dp(this.c) + dp);
-            float f11 = this.d;
-            canvas.drawRoundRect(rectF, f11, f11, paint2);
-        }
-        float dp2 = AndroidUtilities.dp(this.c);
-        float dp3 = AndroidUtilities.dp(this.c);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(f10, dp, dp2, dp3);
-        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
-        imageReceiver.draw(canvas);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
+        return new org.telegram.ui.Components.el0(frameLayout);
     }
 }

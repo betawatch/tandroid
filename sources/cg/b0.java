@@ -1,76 +1,354 @@
 package cg;
 
-import android.view.ViewGroup;
-import java.util.HashSet;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import android.view.View;
+import android.widget.EditText;
+import j$.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+import kh.k5;
+import kh.l4;
+import kh.l5;
+import kh.m4;
+import kh.m5;
+import kh.n4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.Emoji;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.nn;
+import org.telegram.ui.Components.on;
+import org.telegram.ui.Components.qn;
+import org.telegram.ui.PasscodeActivity;
+import org.telegram.ui.av0;
+import org.telegram.ui.bv0;
+import org.telegram.ui.cv0;
+import org.telegram.ui.dv0;
+import org.telegram.ui.fv0;
+import org.telegram.ui.jb1;
+import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements Runnable {
+public final class b0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v0 b;
+    public Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ b0(v0 v0Var, int i10) {
+    public /* synthetic */ b0(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = v0Var;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        f2.l1 T;
         int i10 = this.a;
-        v0 v0Var = this.b;
+        Object obj = this.c;
         switch (i10) {
             case 0:
-                if (LaunchActivity.R() != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    v0Var.G0.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), m2Var);
+                c0 c0Var = (c0) obj;
+                e0 e0Var = c0Var.f;
+                if (!c0Var.e && ((String) this.b) != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(((String) this.b).toString(), editable.toString())) {
+                    int b10 = k7.n.b(Integer.parseInt(editable.toString()), 0, 255);
+                    int i11 = c0Var.d;
+                    int argb = i11 != 1 ? i11 != 2 ? Color.argb(Color.alpha(e0Var.f), b10, Color.green(e0Var.f), Color.blue(e0Var.f)) : Color.argb(Color.alpha(e0Var.f), Color.red(e0Var.f), Color.green(e0Var.f), b10) : Color.argb(Color.alpha(e0Var.f), Color.red(e0Var.f), b10, Color.blue(e0Var.f));
+                    int i12 = e0.s;
+                    e0Var.m(argb, 5);
                     break;
                 }
                 break;
             case 1:
-                v0Var.t0.e(v0Var.X, false);
-                v0Var.z1();
+                ((String[]) this.b)[0] = editable.toString();
+                ((n4) obj).V2.N(true);
                 break;
             case 2:
-                HashSet hashSet = v0Var.u0;
-                tc X = tc.X();
-                if (X != null) {
-                    if (hashSet.size() != 1) {
-                        X.Q(R.raw.voip_invite, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("InviteLinkSent", hashSet.size(), Integer.valueOf(hashSet.size())))).j();
-                        break;
-                    } else {
-                        X.Q(R.raw.voip_invite, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.InviteLinkSentSingle, ContactsController.formatName((TLRPC.User) hashSet.iterator().next())))).j();
-                        break;
-                    }
-                }
+                ((String[]) this.b)[0] = editable.toString();
+                ((l4) obj).V2.N(true);
                 break;
             case 3:
-                nh.d dVar = v0Var.O0;
-                TLRPC.ChatFull t12 = v0Var.t1();
-                dVar.c(Math.max(t12.boosts_unrestrict - t12.boosts_applied, 0), false);
+                ((String[]) this.b)[0] = editable.toString();
+                ((m4) obj).V2.N(true);
                 break;
-            default:
-                if (ChatObject.hasAdminRights(v0Var.s1())) {
-                    if (v0Var.A0.getParent() != null) {
-                        ((ViewGroup) v0Var.A0.getParent()).removeView(v0Var.A0);
+            case 4:
+                ((String[]) this.b)[0] = editable.toString();
+                ((k5) obj).V2.N(true);
+                break;
+            case 5:
+                ((String[]) this.b)[0] = editable.toString();
+                ((l5) obj).V2.N(true);
+                break;
+            case 6:
+                ((String[]) this.b)[0] = editable.toString();
+                ((m5) obj).V2.N(true);
+                break;
+            case 7:
+                qn qnVar = ((on) obj).d;
+                mn mnVar = (mn) this.b;
+                if (mnVar.getTag() == null) {
+                    f2.l1 K = qnVar.s.K(qnVar.m0);
+                    if (K != null && qnVar.x != null) {
+                        for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                            editable.removeSpan(imageSpan);
+                        }
+                        Emoji.replaceEmoji(editable, mnVar.getEditField().getPaint().getFontMetricsInt(), false);
+                        qnVar.x.setDirection(1);
+                        qnVar.x.setDelegate(mnVar);
+                        qnVar.x.setTranslationY(K.a.getY());
+                        qnVar.x.e();
                     }
-                    h0 h0Var = v0Var.H0;
-                    if (h0Var != null && h0Var.getParent() != null) {
-                        ((ViewGroup) v0Var.H0.getParent()).removeView(v0Var.H0);
+                    qnVar.M = editable;
+                    if (K != null) {
+                        qn.K(qnVar, K.a, qnVar.m0);
                     }
-                    v0Var.d.setPadding(0, 0, 0, 0);
+                    qnVar.T();
                     break;
                 }
                 break;
+            case 8:
+                qn qnVar2 = ((on) obj).d;
+                jb1 jb1Var = qnVar2.s;
+                nn nnVar = (nn) this.b;
+                View F = jb1Var.F(nnVar);
+                T = F != null ? jb1Var.T(F) : null;
+                if (T != null) {
+                    View view = T.a;
+                    int b11 = T.b();
+                    int i13 = b11 - qnVar2.q0;
+                    if (i13 >= 0 && i13 < qnVar2.H.length) {
+                        if (qnVar2.x != null) {
+                            for (ImageSpan imageSpan2 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                                editable.removeSpan(imageSpan2);
+                            }
+                            Emoji.replaceEmoji(editable, nnVar.getEditField().getPaint().getFontMetricsInt(), false);
+                            float y10 = (view.getY() - AndroidUtilities.dp(166.0f)) + view.getMeasuredHeight();
+                            if (y10 > 0.0f) {
+                                qnVar2.x.setDirection(0);
+                                qnVar2.x.setTranslationY(y10);
+                            } else {
+                                qnVar2.x.setDirection(1);
+                                qnVar2.x.setTranslationY(view.getY());
+                            }
+                            qnVar2.x.setDelegate(nnVar);
+                            qnVar2.x.e();
+                        }
+                        qnVar2.H[i13] = editable;
+                        qn.K(qnVar2, nnVar, b11);
+                        qnVar2.T();
+                        break;
+                    }
+                }
+                break;
+            case 9:
+                break;
+            case 10:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) obj;
+                if (passcodeActivity.x == 1 && passcodeActivity.B == 0) {
+                    if (TextUtils.isEmpty(editable) && passcodeActivity.s.getVisibility() != 8) {
+                        if (((AtomicBoolean) this.b).get()) {
+                            passcodeActivity.s.callOnClick();
+                        }
+                        AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity.s, false, 0.1f, true);
+                        break;
+                    } else if (!TextUtils.isEmpty(editable) && passcodeActivity.s.getVisibility() != 0) {
+                        AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity.s, true, 0.1f, true);
+                        break;
+                    }
+                }
+                break;
+            case 11:
+                fv0 fv0Var = ((dv0) obj).d;
+                av0 av0Var = (av0) this.b;
+                if (av0Var.getTag() == null) {
+                    f2.l1 K2 = fv0Var.c.K(fv0Var.f0);
+                    if (K2 != null && fv0Var.N != null) {
+                        for (ImageSpan imageSpan3 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                            editable.removeSpan(imageSpan3);
+                        }
+                        Emoji.replaceEmoji(editable, av0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                        fv0Var.N.setDirection(1);
+                        fv0Var.N.setDelegate(av0Var);
+                        fv0Var.N.setTranslationY(K2.a.getY());
+                        fv0Var.N.e();
+                    }
+                    fv0Var.B = editable;
+                    if (K2 != null) {
+                        fv0.c0(fv0Var, K2.a, fv0Var.f0);
+                    }
+                    fv0Var.i0();
+                    break;
+                }
+                break;
+            case 12:
+                fv0 fv0Var2 = ((dv0) obj).d;
+                bv0 bv0Var = (bv0) this.b;
+                if (bv0Var.getTag() == null) {
+                    f2.l1 K3 = fv0Var2.c.K(fv0Var2.f0);
+                    if (K3 != null && fv0Var2.N != null) {
+                        for (ImageSpan imageSpan4 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                            editable.removeSpan(imageSpan4);
+                        }
+                        Emoji.replaceEmoji(editable, bv0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                        fv0Var2.N.setDirection(1);
+                        fv0Var2.N.setDelegate(bv0Var);
+                        fv0Var2.N.setTranslationY(K3.a.getY());
+                        fv0Var2.N.e();
+                    }
+                    fv0Var2.C = editable;
+                    if (K3 != null) {
+                        fv0.c0(fv0Var2, K3.a, fv0Var2.g0);
+                    }
+                    fv0Var2.i0();
+                    break;
+                }
+                break;
+            default:
+                fv0 fv0Var3 = ((dv0) obj).d;
+                jb1 jb1Var2 = fv0Var3.c;
+                cv0 cv0Var = (cv0) this.b;
+                View F2 = jb1Var2.F(cv0Var);
+                T = F2 != null ? jb1Var2.T(F2) : null;
+                if (T != null) {
+                    View view2 = T.a;
+                    int b12 = T.b() - fv0Var3.k0;
+                    if (b12 >= 0 && b12 < fv0Var3.v.length) {
+                        if (fv0Var3.N != null) {
+                            for (ImageSpan imageSpan5 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                                editable.removeSpan(imageSpan5);
+                            }
+                            Emoji.replaceEmoji(editable, cv0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                            float y11 = (view2.getY() - AndroidUtilities.dp(166.0f)) + view2.getMeasuredHeight();
+                            if (y11 > 0.0f) {
+                                fv0Var3.N.setDirection(0);
+                                fv0Var3.N.setTranslationY(y11);
+                            } else {
+                                fv0Var3.N.setDirection(1);
+                                fv0Var3.N.setTranslationY(view2.getY());
+                            }
+                            fv0Var3.N.setDelegate(cv0Var);
+                            fv0Var3.N.e();
+                        }
+                        fv0Var3.v[b12] = editable;
+                        fv0.c0(fv0Var3, cv0Var, b12);
+                        fv0Var3.i0();
+                        break;
+                    }
+                }
+                break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                this.b = charSequence.toString();
+                break;
+            case 9:
+                EditText editText = (EditText) this.b;
+                editText.post(new rq(this, editText, (AtomicReference) this.c, 25));
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public /* synthetic */ b0(Object obj, Object obj2, boolean z4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
+    }
+
+    public b0(c0 c0Var) {
+        this.a = 0;
+        this.c = c0Var;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void A(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void g(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void h(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void i(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void j(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void k(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void l(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void m(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void n(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void o(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void p(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void q(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void r(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void s(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void t(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void u(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void v(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void w(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void x(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void y(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void z(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

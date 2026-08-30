@@ -1,195 +1,93 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j90 extends i7.t {
-    public int a;
-    public final TL_iv.PageBlock b;
-    public TL_iv.textConcat c = new TL_iv.textConcat();
+public final class j90 extends ReplacementSpan {
+    public final int a;
+    public View b;
+    public final i90 c;
+    public final int d;
+    public float e;
+    public float f;
+    public float h;
+    public boolean n;
 
-    public j90(TL_iv.PageBlock pageBlock) {
-        this.b = pageBlock;
+    public j90(int i10, View view) {
+        this(view, i10, AndroidUtilities.dp(2.0f), null);
     }
 
-    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
-        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
+    public final void a(int i10, int i11) {
+        Integer valueOf = Integer.valueOf(i10);
+        i90 i90Var = this.c;
+        i90Var.o = valueOf;
+        i90Var.p = Integer.valueOf(i11);
     }
 
-    @Override // i7.t
-    public final void a(le.b bVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+        View view;
+        boolean z4 = this.n;
+        int i15 = this.a;
+        if (z4 && (view = this.b) != null && view.getMeasuredWidth() > 0) {
+            i15 = ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i15;
         }
-        this.a = i10 + 1;
-        try {
-            v(bVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // i7.t
-    public final void b(le.c cVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(cVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // i7.t
-    public final void c(le.d dVar) {
-        TL_iv.textFixed textfixed = new TL_iv.textFixed();
-        textfixed.text = m90.j(dVar.h);
-        w(textfixed);
-    }
-
-    @Override // i7.t
-    public final void d(le.e eVar) {
-        if (eVar instanceof ee.a) {
-            TL_iv.textStrike textstrike = new TL_iv.textStrike();
-            textstrike.text = y(eVar);
-            w(textstrike);
-        } else if (eVar instanceof jc.d) {
-            w(m90.c(((jc.d) eVar).g));
+        float f11 = this.f;
+        i90 i90Var = this.c;
+        if (f11 > 0.0f) {
+            float f12 = (i12 + i14) / 2.0f;
+            int i16 = (int) f10;
+            float f13 = f11 / 2.0f;
+            i90Var.setBounds(i16, (int) (f12 - f13), i15 + i16, (int) (f13 + f12));
         } else {
-            v(eVar);
+            int i17 = (int) f10;
+            float w10 = e2.c.w(1.0f, this.e, org.telegram.messenger.y3.B(2.0f, i14, i12) / 2.0f, i12);
+            float f14 = this.d;
+            i90Var.setBounds(i17, (int) (w10 + f14), i15 + i17, (int) (((i14 - AndroidUtilities.dp(2.0f)) - ((1.0f - this.e) * (org.telegram.messenger.y3.B(2.0f, i14, i12) / 2.0f))) + f14));
+        }
+        i90Var.setAlpha((int) ((paint == null ? 255 : paint.getAlpha()) * this.h));
+        i90Var.draw(canvas);
+        View view2 = this.b;
+        if (view2 != null) {
+            view2.invalidate();
         }
     }
 
-    @Override // i7.t
-    public final void e(le.g gVar) {
-        TL_iv.textItalic textitalic = new TL_iv.textItalic();
-        textitalic.text = y(gVar);
-        w(textitalic);
-    }
-
-    @Override // i7.t
-    public final void i(le.k kVar) {
-        w(y(kVar));
-    }
-
-    @Override // i7.t
-    public final void k(le.n nVar) {
-        if (!(nVar instanceof jc.a)) {
-            v(nVar);
-            return;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        View view;
+        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
+        if (fontMetricsInt != null) {
+            fontMetricsInt.ascent = (int) fontMetrics.ascent;
+            fontMetricsInt.bottom = (int) fontMetrics.bottom;
+            fontMetricsInt.descent = (int) fontMetrics.descent;
+            fontMetricsInt.leading = (int) fontMetrics.leading;
+            fontMetricsInt.top = (int) fontMetrics.top;
         }
-        if (!this.c.texts.isEmpty()) {
-            w(m90.j("\n"));
+        i90 i90Var = this.c;
+        if (i90Var.o == null && i90Var.p == null) {
+            i90Var.e(org.telegram.ui.ActionBar.j6.l1(0.1f, paint.getColor()), org.telegram.ui.ActionBar.j6.l1(0.25f, paint.getColor()));
         }
-        w(m90.c(((jc.a) nVar).g));
-        w(m90.j("\n"));
+        boolean z4 = this.n;
+        int i12 = this.a;
+        return (!z4 || (view = this.b) == null || view.getMeasuredWidth() <= 0) ? i12 : ((this.b.getMeasuredWidth() - this.b.getPaddingLeft()) - this.b.getPaddingRight()) - i12;
     }
 
-    @Override // i7.t
-    public final void l(le.o oVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(oVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // i7.t
-    public final void m(le.q qVar) {
-        int i10 = this.a;
-        if (i10 >= 64) {
-            return;
-        }
-        this.a = i10 + 1;
-        try {
-            v(qVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // i7.t
-    public final void n(le.r rVar) {
-        if (!this.c.texts.isEmpty()) {
-            w(m90.j("\n\n"));
-        }
-        v(rVar);
-    }
-
-    @Override // i7.t
-    public final void o(le.s sVar) {
-        w(m90.j(sVar.g));
-    }
-
-    @Override // i7.t
-    public final void q(le.d dVar) {
-        w(m90.j(dVar.h));
-    }
-
-    @Override // i7.t
-    public final void r(le.g gVar) {
-        w(m90.j("\n"));
-    }
-
-    @Override // i7.t
-    public final void s(le.k kVar) {
-        String str = kVar.h;
-        if (str == null) {
-            str = "";
-        }
-        String trim = str.trim();
-        if (trim.startsWith("mailto:")) {
-            TL_iv.RichText textemail = new TL_iv.textEmail();
-            textemail.text = y(kVar);
-            textemail.email = trim.substring(7);
-            w(textemail);
-            return;
-        }
-        if (trim.startsWith("tel:")) {
-            TL_iv.textPhone textphone = new TL_iv.textPhone();
-            textphone.text = y(kVar);
-            textphone.phone = trim.substring(4);
-            w(textphone);
-            return;
-        }
-        TL_iv.RichText texturl = new TL_iv.textUrl();
-        texturl.text = y(kVar);
-        texturl.url = trim;
-        w(texturl);
-    }
-
-    @Override // i7.t
-    public final void t(le.g gVar) {
-        w(m90.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
-    }
-
-    @Override // i7.t
-    public final void u(le.g gVar) {
-        TL_iv.textBold textbold = new TL_iv.textBold();
-        textbold.text = y(gVar);
-        w(textbold);
-    }
-
-    public final void w(TL_iv.RichText richText) {
-        this.c.texts.add(richText);
-    }
-
-    public final TL_iv.RichText y(le.p pVar) {
-        TL_iv.textConcat textconcat = this.c;
-        this.c = new TL_iv.textConcat();
-        v(pVar);
-        TL_iv.RichText x4 = x(this.c);
-        this.c = textconcat;
-        return x4;
+    public j90(View view, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.e = 1.0f;
+        this.f = -1.0f;
+        this.h = 1.0f;
+        this.n = false;
+        this.b = view;
+        this.a = i10;
+        this.d = i11;
+        i90 i90Var = new i90(f6Var);
+        this.c = i90Var;
+        i90Var.j(4.0f);
     }
 }

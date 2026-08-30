@@ -1,162 +1,86 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.graphics.Paint;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import java.util.ArrayList;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class hy0 {
-    public final org.telegram.ui.ActionBar.c6 a;
-    public StaticLayout b;
-    public final ArrayList c = new ArrayList(2);
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+public final class hy0 extends FrameLayout {
+    public float B;
+    public float C;
+    public ValueAnimator D;
+    public ValueAnimator E;
+    public cb.m F;
+    public float G;
+    public boolean H;
+    public org.telegram.ui.Components.voip.h I;
+    public Paint a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public boolean e;
+    public eg.h0 f;
+    public TextView h;
+    public TextView n;
+    public TextView r;
+    public TextView s;
+    public TextView v;
+    public View w;
+    public int x;
+    public org.telegram.ui.Cells.aa y;
 
-    public hy0(org.telegram.ui.ActionBar.c6 c6Var) {
-        this.a = c6Var;
+    @Override // android.view.View
+    public final void invalidate() {
+        TextView textView = this.s;
+        TextView textView2 = this.r;
+        TextView textView3 = this.n;
+        TextView textView4 = this.h;
+        super.invalidate();
+        this.f.invalidate();
+        int i10 = this.x;
+        int i11 = org.telegram.ui.ActionBar.j6.Vi;
+        if (i10 != org.telegram.ui.ActionBar.j6.w0(null, i11, false)) {
+            this.x = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
+            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+        }
+        this.y.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        this.w.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d7, false));
     }
 
-    public static void c(StringBuilder sb2, int i10, boolean z10) {
-        if (sb2.length() > 0) {
-            if (z10) {
-                sb2.append(' ');
-                sb2.append(LocaleController.getString(R.string.SuggestionOfferInfoTitleEditedAnd));
-                sb2.append(' ');
-            } else {
-                sb2.append(", ");
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        cb.m mVar = this.F;
+        if (mVar != null) {
+            mVar.a = true;
+            AnimatorSet animatorSet = (AnimatorSet) mVar.c;
+            if (animatorSet.isRunning()) {
+                return;
             }
+            animatorSet.start();
         }
-        sb2.append(LocaleController.getString(i10));
     }
 
-    public final int a() {
-        return this.g;
-    }
-
-    public final void b(MessageObject messageObject) {
-        float f9;
-        int i10;
-        char c3;
-        TLRPC.Message message;
-        TLRPC.SuggestedPost suggestedPost = (messageObject == null || (message = messageObject.messageOwner) == null) ? null : message.suggested_post;
-        if (suggestedPost == null) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        cb.m mVar = this.F;
+        if (mVar != null) {
+            mVar.a = false;
+            ((AnimatorSet) mVar.c).cancel();
         }
-        MessageSuggestionParams of2 = MessageSuggestionParams.of(suggestedPost);
-        org.telegram.ui.ActionBar.c6 c6Var = this.a;
-        Paint G = c6Var != null ? c6Var.G("paintChatActionText3") : null;
-        if (G == null) {
-            G = org.telegram.ui.ActionBar.g6.S0("paintChatActionText3");
-        }
-        TextPaint textPaint = (TextPaint) G;
-        this.g = AndroidUtilities.dp(14.0f) * 2;
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        kf.a aVar = of2.amount;
-        if (aVar != null && !aVar.k()) {
-            arrayList.add(new gy0(new zz0(LocaleController.getString(R.string.SuggestionOfferInfoPrice), textPaint), new zz0(LocaleController.bold(of2.amount.f()), textPaint)));
-        }
-        if (suggestedPost.schedule_date > 0) {
-            arrayList.add(new gy0(new zz0(LocaleController.getString(R.string.SuggestionOfferInfoTime), textPaint), new zz0(LocaleController.bold(LocaleController.formatDateTime(suggestedPost.schedule_date, true)), textPaint)));
-        }
-        int size = arrayList.size();
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            gy0 gy0Var = (gy0) obj;
-            f10 = Math.max(f10, gy0Var.a.l());
-            f11 = Math.max(f11, gy0Var.b.l());
-            int j10 = ((int) gy0Var.a.j()) + this.g;
-            this.g = j10;
-            this.g = AndroidUtilities.dp(7.0f) + j10;
-        }
-        int dp = (int) (f11 + f10 + AndroidUtilities.dp(11.0f));
-        int max = Math.max(dp, AndroidUtilities.dp(160.0f));
-        String name = DialogObject.getName(messageObject.getFromChatId());
-        int editedSuggestionFlags = messageObject.getEditedSuggestionFlags();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (editedSuggestionFlags == 0) {
-            if (messageObject.isOutOwner()) {
-                spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SuggestionOfferInfoTitleYou));
-            } else {
-                spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.SuggestionOfferInfoTitle, name));
-            }
-            f9 = 11.0f;
-        } else {
-            MessageObject messageObject2 = messageObject.replyMessageObject;
-            if (messageObject2 != null) {
-                DialogObject.getName(messageObject2.getFromChatId());
-            }
-            StringBuilder sb2 = new StringBuilder();
-            int i12 = editedSuggestionFlags & 4;
-            int i13 = editedSuggestionFlags & 2;
-            int i14 = editedSuggestionFlags & 8;
-            int i15 = editedSuggestionFlags & 1;
-            int i16 = (i12 != 0 ? 1 : 0) + (i13 != 0 ? 1 : 0) + (i14 != 0 ? 1 : 0) + (i15 != 0 ? 1 : 0);
-            if (i15 != 0) {
-                f9 = 11.0f;
-                c(sb2, R.string.SuggestionOfferInfoTitleEditedPrice, i16 == 1);
-                i10 = 1;
-            } else {
-                f9 = 11.0f;
-                i10 = 0;
-            }
-            if (i13 != 0) {
-                i10++;
-                c3 = 0;
-                c(sb2, R.string.SuggestionOfferInfoTitleEditedTime, i16 == i10);
-            } else {
-                c3 = 0;
-            }
-            if (i12 != 0) {
-                i10++;
-                c(sb2, R.string.SuggestionOfferInfoTitleEditedText, i16 == i10);
-            }
-            if (i14 != 0) {
-                c(sb2, R.string.SuggestionOfferInfoTitleEditedMedia, i16 == i10 + 1);
-            }
-            if (messageObject.isOutOwner()) {
-                int i17 = R.string.SuggestionOfferInfoTitleEditedFromYou;
-                Object[] objArr = new Object[1];
-                objArr[c3] = sb2;
-                spannableStringBuilder.append((CharSequence) LocaleController.formatString(i17, objArr));
-            } else {
-                int i18 = R.string.SuggestionOfferInfoTitleEditedFromX;
-                Object[] objArr2 = new Object[2];
-                objArr2[c3] = name;
-                objArr2[1] = sb2;
-                spannableStringBuilder.append((CharSequence) LocaleController.formatString(i18, objArr2));
-            }
-        }
-        this.b = new StaticLayout(AndroidUtilities.replaceTags(spannableStringBuilder), textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        int i19 = 0;
-        for (int i20 = 0; i20 < this.b.getLineCount(); i20++) {
-            i19 = (int) Math.max(i19, this.b.getLineWidth(i20));
-        }
-        int height = this.b.getHeight() + this.g;
-        this.g = height;
-        this.g = AndroidUtilities.dp(5.0f) + height;
-        int D = org.telegram.messenger.x3.D(24.0f, 2, Math.max(dp, i19));
-        this.h = D;
-        this.d = (D - max) / 2;
-        this.e = (D - dp) / 2;
-        this.f = (int) (AndroidUtilities.dp(f9) + r1 + f10);
     }
 }

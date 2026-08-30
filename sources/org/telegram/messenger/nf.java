@@ -1,44 +1,44 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ nf(int i10, long j10, MessagesStorage messagesStorage) {
-        this.a = i10;
+    public /* synthetic */ nf(MessagesStorage messagesStorage, int i10, int i11) {
+        this.a = i11;
         this.b = messagesStorage;
-        this.c = j10;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteStoryPushMessage$39(this.c);
+                this.b.lambda$readAllDialogs$65(this.c);
                 break;
             case 1:
-                this.b.lambda$clearUserPhotos$92(this.c);
+                this.b.lambda$checkIfFolderEmptyInternal$245(this.c);
                 break;
             case 2:
-                this.b.lambda$removeAllTopics$56(this.c);
+                this.b.lambda$clearDownloadQueue$184(this.c);
                 break;
             case 3:
-                this.b.lambda$deleteWallpaper$79(this.c);
+                this.b.lambda$putMessagesInternal$196(this.c);
                 break;
             case 4:
-                this.b.lambda$deleteSavedDialog$55(this.c);
+                this.b.lambda$getDownloadQueue$186(this.c);
                 break;
             case 5:
-                this.b.lambda$onDeleteQueryComplete$91(this.c);
+                this.b.lambda$getUnsentMessages$152(this.c);
                 break;
             case 6:
-                this.b.lambda$removePendingTask$11(this.c);
+                this.b.lambda$checkIfFolderEmpty$246(this.c);
                 break;
             default:
-                this.b.lambda$loadChannelAdmins$123(this.c);
+                this.b.lambda$clearWidgetDialogs$167(this.c);
                 break;
         }
     }

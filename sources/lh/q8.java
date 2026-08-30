@@ -1,75 +1,44 @@
 package lh;
 
-import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q8 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i9 b;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g3[] c;
 
-    public /* synthetic */ q8(i9 i9Var, int i10) {
+    public /* synthetic */ q8(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.g3[] g3VarArr, int i10) {
         this.a = i10;
-        this.b = i9Var;
+        this.b = editTextBoldCursor;
+        this.c = g3VarArr;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i9 i9Var = this.b;
-                i9Var.Q = floatValue;
-                i9Var.o();
-                w8 w8Var = i9Var.s;
-                if (w8Var != null) {
-                    w8Var.invalidate();
-                }
-                d1 d1Var = i9Var.w0;
-                if (d1Var != null) {
-                    d1Var.v((1.0f - i9Var.R) * i9Var.Q);
-                    break;
-                }
+                this.c[0].setFocusable(true);
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.runOnUIThread(new b(editTextBoldCursor, 13));
                 break;
             case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i9 i9Var2 = this.b;
-                i9Var2.Q = floatValue2;
-                x8 x8Var = i9Var2.v;
-                if (x8Var != null && floatValue2 > 0.6f && t.c && x8Var.a) {
-                    x8Var.a(false);
-                }
-                d1 d1Var2 = i9Var2.w0;
-                if (d1Var2 != null) {
-                    d1Var2.v((1.0f - i9Var2.R) * i9Var2.Q);
-                }
-                i9Var2.o();
-                w8 w8Var2 = i9Var2.s;
-                if (w8Var2 != null) {
-                    w8Var2.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i9 i9Var3 = this.b;
-                i9Var3.V = floatValue3;
-                i9Var3.Z = Utilities.clamp(i9Var3.V / AndroidUtilities.dp(200.0f), 1.0f, 0.0f);
-                y8 y8Var = i9Var3.j0;
-                d4 currentPeerView = y8Var == null ? null : y8Var.getCurrentPeerView();
-                if (currentPeerView != null) {
-                    currentPeerView.invalidate();
-                    break;
-                }
+                AndroidUtilities.hideKeyboard(this.b);
+                this.c[0].dismiss();
                 break;
             default:
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i9 i9Var4 = this.b;
-                i9Var4.a0 = floatValue4;
-                i9Var4.v.invalidate();
+                AndroidUtilities.hideKeyboard(this.b);
+                this.c[0].dismiss();
                 break;
         }
+    }
+
+    public /* synthetic */ q8(org.telegram.ui.ActionBar.g3[] g3VarArr, EditTextBoldCursor editTextBoldCursor) {
+        this.a = 0;
+        this.c = g3VarArr;
+        this.b = editTextBoldCursor;
     }
 }

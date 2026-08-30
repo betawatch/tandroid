@@ -1,82 +1,55 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Intent;
-import android.net.Uri;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cx0 implements Runnable {
+public final /* synthetic */ class cx0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ ex0 b;
 
-    public /* synthetic */ cx0(ProfileActivity profileActivity, TLRPC.User user, int i10) {
+    public /* synthetic */ cx0(ex0 ex0Var, int i10) {
         this.a = i10;
-        this.b = profileActivity;
-        this.c = user;
+        this.b = ex0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
+        int i11;
         switch (this.a) {
             case 0:
-                ProfileActivity profileActivity = this.b;
-                TLRPC.User user = this.c;
-                profileActivity.getClass();
-                profileActivity.presentFragment(tn.R9(user.id));
+                PrivacyControlActivity privacyControlActivity = this.b.d;
+                privacyControlActivity.I = ((Integer) obj).intValue();
+                AndroidUtilities.updateVisibleRow(privacyControlActivity.d, privacyControlActivity.g0);
+                privacyControlActivity.E0();
                 break;
-            case 1:
-                ProfileActivity profileActivity2 = this.b;
-                TLRPC.User user2 = this.c;
-                if (profileActivity2.getParentActivity() != null) {
-                    TLRPC.UserFull userFull = profileActivity2.r2;
-                    org.telegram.ui.Components.voip.h2.n(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.r2, profileActivity2.getAccountInstance());
-                    break;
-                }
-                break;
-            case 2:
-                ProfileActivity profileActivity3 = this.b;
-                TLRPC.User user3 = this.c;
-                if (profileActivity3.getParentActivity() != null) {
-                    TLRPC.UserFull userFull2 = profileActivity3.r2;
-                    org.telegram.ui.Components.voip.h2.n(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.r2, profileActivity3.getAccountInstance());
-                    break;
-                }
-                break;
-            case 3:
-                ProfileActivity profileActivity4 = this.b;
-                TLRPC.User user4 = this.c;
-                profileActivity4.getClass();
-                try {
-                    Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:+" + user4.phone));
-                    intent.addFlags(TLObject.FLAG_28);
-                    profileActivity4.getParentActivity().startActivityForResult(intent, 500);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
             default:
-                ProfileActivity profileActivity5 = this.b;
-                TLRPC.User user5 = this.c;
-                try {
-                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
-                    if (AndroidUtilities.shouldShowClipboardToast()) {
-                        org.telegram.ui.Components.tc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
-                        break;
-                    }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
+                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
+                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
+                updatebirthday.flags |= 1;
+                updatebirthday.birthday = tL_birthday;
+                ex0 ex0Var = this.b;
+                PrivacyControlActivity privacyControlActivity2 = ex0Var.d;
+                TLRPC.UserFull userFull = privacyControlActivity2.getMessagesController().getUserFull(privacyControlActivity2.getUserConfig().getClientUserId());
+                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
+                if (userFull != null) {
+                    userFull.flags2 |= 32;
+                    userFull.birthday = tL_birthday;
+                    privacyControlActivity2.getMessagesStorage().updateUserInfo(userFull, false);
                 }
+                privacyControlActivity2.getMessagesController().invalidateContentSettings();
+                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new rr0(ex0Var, userFull, tL_birthday2, 1), 1024);
+                i10 = ((org.telegram.ui.ActionBar.p2) privacyControlActivity2).currentAccount;
+                MessagesController.getInstance(i10).removeSuggestion(0L, "BIRTHDAY_SETUP");
+                i11 = ((org.telegram.ui.ActionBar.p2) privacyControlActivity2).currentAccount;
+                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumPromoUpdated, new Object[0]);
+                privacyControlActivity2.F0(true);
                 break;
         }
     }

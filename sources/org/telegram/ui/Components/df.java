@@ -1,69 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class df implements View.OnTouchListener {
-    public final /* synthetic */ int a = 0;
-    public final Rect b = new Rect();
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final class df extends rh.w {
+    public boolean s;
+    public final /* synthetic */ ChatActivityEnterView v;
 
-    public df(org.telegram.ui.hp0 hp0Var) {
-        this.c = hp0Var;
-    }
-
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ef efVar;
-        org.telegram.ui.ActionBar.o1 o1Var;
-        org.telegram.ui.ActionBar.o1 o1Var2;
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                if (motionEvent.getActionMasked() == 0 && (efVar = chatActivityEnterView.J0) != null && efVar.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        chatActivityEnterView.J0.dismiss();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                org.telegram.ui.hp0 hp0Var = (org.telegram.ui.hp0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (o1Var = hp0Var.E) != null && o1Var.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        hp0Var.E.d(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.zp0 zp0Var = (org.telegram.ui.zp0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (o1Var2 = zp0Var.i0) != null && o1Var2.isShowing()) {
-                    Rect rect3 = this.b;
-                    view.getHitRect(rect3);
-                    if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        zp0Var.i0.d(true);
-                        break;
-                    }
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public df(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.v = chatActivityEnterView;
+        this.a = null;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.f = true;
+        this.b = new c5.e();
+        ph.e1 e1Var = new ph.e1(this, context, 1);
+        this.c = e1Var;
+        e1Var.setOverScrollMode(2);
+        e1Var.setClipToPadding(false);
+        e1Var.setClipToOutline(true);
+        e1Var.j(new lb0(this, 14));
+        addView(e1Var);
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ii, false));
+        pg.b bVar = this.r;
+        if (bVar != null) {
+            bVar.u();
         }
-        return false;
+        invalidate();
+        setClipChildren(false);
+        this.s = false;
     }
 
-    public df(org.telegram.ui.zp0 zp0Var) {
-        this.c = zp0Var;
-    }
-
-    public df(ChatActivityEnterView chatActivityEnterView) {
-        this.c = chatActivityEnterView;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        if (this.s) {
+            return;
+        }
+        this.s = true;
+        this.v.C1();
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
@@ -25,17 +25,17 @@ public final class RenderSynchronizer {
     private boolean renderWindowOpen;
     private final long targetFrameIntervalNanos;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Listener {
         void onRenderWindowClose();
 
         void onRenderWindowOpen();
     }
 
-    public RenderSynchronizer(float f9) {
+    public RenderSynchronizer(float f10) {
         this.lock = new Object();
         this.listeners = new CopyOnWriteArrayList();
-        this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f9);
+        this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f10);
         Handler handler = new Handler(Looper.getMainLooper());
         this.mainThreadHandler = handler;
         handler.post(new n(this, 1));

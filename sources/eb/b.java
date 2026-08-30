@@ -1,32 +1,15 @@
 package eb;
 
-import a5.j;
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.Collections;
-import z5.l;
+import androidx.lifecycle.b0;
+import androidx.lifecycle.m;
+import androidx.lifecycle.s;
+import com.google.android.gms.common.api.n;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements a9.e {
-    public static final /* synthetic */ b b = new b(0);
-    public static final /* synthetic */ b c = new b(1);
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ b(int i10) {
-        this.a = i10;
-    }
-
-    @Override // a9.e
-    public final Object I0(j jVar) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = new ArrayList(jVar.r(db.a.class));
-                l.j("No delegate creator registered.", !arrayList.isEmpty());
-                Collections.sort(arrayList, c.a);
-                return new e((Context) jVar.a(Context.class), (db.a) arrayList.get(0));
-            default:
-                return new a((e) jVar.a(e.class), (ab.d) jVar.a(ab.d.class));
-        }
-    }
+public interface b extends Closeable, s, n {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @b0(m.ON_DESTROY)
+    void close();
 }

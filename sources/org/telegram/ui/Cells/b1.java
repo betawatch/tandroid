@@ -2,10 +2,10 @@ package org.telegram.ui.Cells;
 
 import android.util.Property;
 import android.view.View;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.gu0;
+import org.telegram.ui.Components.pk0;
+import org.telegram.ui.qu0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class b1 extends Property {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final class b1 extends Property {
     public final Object get(Object obj) {
         switch (this.a) {
             case 0:
-                return Float.valueOf(((s1) obj).ve);
+                return Float.valueOf(((t1) obj).we);
             case 1:
                 return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
             case 2:
-                return Float.valueOf(((fk0) obj).v);
+                return Float.valueOf(((pk0) obj).v);
             default:
-                return Float.valueOf(((gu0) obj).a);
+                return Float.valueOf(((qu0) obj).a);
         }
     }
 
@@ -34,16 +34,16 @@ public final class b1 extends Property {
     public final void set(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((s1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
+                ((t1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
                 break;
             case 1:
                 ((View) obj).setTranslationY(((Integer) obj2).intValue());
                 break;
             case 2:
-                ((fk0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                ((pk0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             default:
-                ((gu0) obj).b(((Float) obj2).floatValue());
+                ((qu0) obj).b(((Float) obj2).floatValue());
                 break;
         }
     }

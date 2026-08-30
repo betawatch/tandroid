@@ -20,7 +20,7 @@ public final class w implements p0 {
     }
 
     @Override // com.google.android.gms.internal.clearcut.p0
-    public final y0 zzb(Class cls) {
+    public final x0 zzb(Class cls) {
         switch (this.a) {
             case 0:
                 if (!z.class.isAssignableFrom(cls)) {
@@ -28,10 +28,10 @@ public final class w implements p0 {
                     throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
                 }
                 try {
-                    return (y0) z.d(cls.asSubclass(z.class)).a(3);
-                } catch (Exception e10) {
+                    return (x0) z.d(cls.asSubclass(z.class)).a(3);
+                } catch (Exception e) {
                     String name2 = cls.getName();
-                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e10);
+                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
                 }
             default:
                 throw new IllegalStateException("This should never be called.");

@@ -1,8 +1,9 @@
 package u1;
 
 import android.view.animation.Interpolator;
+import e2.c;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b implements Interpolator {
     public final float[] a;
@@ -14,18 +15,18 @@ public abstract class b implements Interpolator {
     }
 
     @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f9) {
-        if (f9 >= 1.0f) {
+    public final float getInterpolation(float f10) {
+        if (f10 >= 1.0f) {
             return 1.0f;
         }
-        if (f9 <= 0.0f) {
+        if (f10 <= 0.0f) {
             return 0.0f;
         }
         float[] fArr = this.a;
-        int min = Math.min((int) ((fArr.length - 1) * f9), fArr.length - 2);
-        float f10 = this.b;
-        float w10 = com.google.android.recaptcha.internal.a.w(min, f10, f9, f10);
-        float f11 = fArr[min];
-        return com.google.android.recaptcha.internal.a.z(fArr[min + 1], f11, w10, f11);
+        int min = Math.min((int) ((fArr.length - 1) * f10), fArr.length - 2);
+        float f11 = this.b;
+        float d = c.d(min, f11, f10, f11);
+        float f12 = fArr[min];
+        return c.w(fArr[min + 1], f12, d, f12);
     }
 }

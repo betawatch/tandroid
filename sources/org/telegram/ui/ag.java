@@ -1,77 +1,50 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.view.View;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ag implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class ag implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
+    public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ ag(Object obj, float f9, int i10) {
+    public /* synthetic */ ag(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f9;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
         switch (this.a) {
             case 0:
-                tn tnVar = (tn) this.c;
-                tnVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tnVar.D8 = floatValue;
-                tnVar.H8 = floatValue / this.b;
-                View view = tnVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
+                xn xnVar = (xn) this.b;
+                TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
+                MessageObject messageObject = (MessageObject) this.d;
+                gg.q qVar = (gg.q) this.e;
+                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) mf.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                if (xnVar.getParentActivity() == null) {
+                    return false;
                 }
-                break;
-            case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    View view2 = (View) arrayList.get(i10);
-                    if (view2 != null) {
-                        view2.setTranslationY(this.b * floatValue2);
-                    }
+                if ((xnVar.L0.getVisibility() == 0 && tL_inlineButtonTypeUrl == null && !mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) && !mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) && !mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) && !mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) && !mf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null) {
+                    return false;
                 }
-                break;
-            case 2:
-                ((org.telegram.ui.Components.on) this.c).A.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 3:
-                ((vu0) this.c).N.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
+                xnVar.Z9(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
+                try {
+                    qVar.performHapticFeedback(0, 1);
+                } catch (Exception unused) {
+                }
+                return true;
             default:
-                d11 d11Var = (d11) this.c;
-                d11Var.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                d11Var.a.setTranslationX(lerp);
-                d11Var.b.setTranslationX(lerp);
-                ImageView imageView = d11Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.hp hpVar = d11Var.f;
-                hpVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
-                float f9 = (floatValue3 * 0.5f) + 0.5f;
-                hpVar.setScaleX(f9);
-                hpVar.setScaleY(f9);
-                hpVar.setAlpha(floatValue3);
-                float f10 = 1.0f - floatValue3;
-                float f11 = (f10 * 0.5f) + 0.5f;
-                imageView.setScaleX(f11);
-                imageView.setScaleY(f11);
-                imageView.setAlpha(f10);
-                break;
+                return org.telegram.ui.Components.li.q((org.telegram.ui.Components.li) this.b, (Context) this.c, (org.telegram.ui.ActionBar.f6) this.d, (org.telegram.ui.ActionBar.p2) this.e, view);
         }
     }
 }

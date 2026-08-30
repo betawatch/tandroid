@@ -1,20 +1,60 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fs0 extends cu0 {
-    public final /* synthetic */ qu0 p0;
+public final class fs0 extends t00 {
+    public final /* synthetic */ tr0 R;
+    public final /* synthetic */ yu0 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs0(qu0 qu0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(qu0Var, context, c6Var);
-        this.p0 = qu0Var;
+    public fs0(yu0 yu0Var, Context context, tr0 tr0Var) {
+        super(context, null);
+        this.S = yu0Var;
+        this.R = tr0Var;
     }
 
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
-    public final int f(int i10) {
-        return this.p0.V0(i10);
+    @Override // org.telegram.ui.Components.t00
+    public final int getColumnsCount() {
+        return this.S.j1[yu0.p0(this.R.C) ? 1 : 0];
+    }
+
+    @Override // org.telegram.ui.Components.t00
+    public final int getViewType() {
+        setIsSingleCell(false);
+        int i10 = this.R.C;
+        if (i10 == 0 || i10 == 5) {
+            return 2;
+        }
+        if (i10 == 1) {
+            return 3;
+        }
+        if (i10 != 2 && i10 != 4) {
+            if (i10 == 3) {
+                return 5;
+            }
+            if (i10 != 7) {
+                if (i10 == 6) {
+                    if (this.S.F0.getTabsCount() == 1) {
+                        setIsSingleCell(true);
+                        return 1;
+                    }
+                } else if (yu0.p0(i10)) {
+                    return 27;
+                }
+                return 1;
+            }
+        }
+        return 6;
+    }
+
+    @Override // org.telegram.ui.Components.t00, android.view.View
+    public final void onDraw(Canvas canvas) {
+        yu0 yu0Var = this.S;
+        yu0Var.Q0.setColor(yu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), yu0Var.Q0);
+        super.onDraw(canvas);
     }
 }

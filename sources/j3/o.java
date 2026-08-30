@@ -1,32 +1,49 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class o implements p8.i {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.content.Context;
+import android.content.Intent;
 
-    public /* synthetic */ o(Object obj, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class o implements r8.i, org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+
+    public /* synthetic */ o(Context context, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = context;
     }
 
-    @Override // p8.i
-    public final Object get() {
+    @Override // r8.i
+    public Object get() {
         switch (this.a) {
             case 0:
-                return (j) this.b;
+                return new l(this.b);
             case 1:
-                return (d5.u) this.b;
+                return new ab.a(this.b, new r3.i());
             case 2:
-                return (l) this.b;
-            case 3:
-                return Boolean.valueOf(((q0) this.b).K);
+                return new f5.p(this.b, new db.a(6));
+            default:
+                return g5.s.b(this.b);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 4:
+                try {
+                    this.b.startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
             default:
                 try {
-                    return (l4.b0) ((Class) this.b).getConstructor(null).newInstance(null);
-                } catch (Exception e10) {
-                    throw new IllegalStateException(e10);
+                    this.b.startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
+                    break;
+                } catch (Exception unused2) {
+                    return;
                 }
         }
     }

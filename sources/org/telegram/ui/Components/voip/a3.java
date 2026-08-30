@@ -1,48 +1,59 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b3 b;
+    public final /* synthetic */ c3 b;
 
-    public /* synthetic */ a3(b3 b3Var, int i10) {
+    public /* synthetic */ a3(c3 c3Var, int i10) {
         this.a = i10;
-        this.b = b3Var;
+        this.b = c3Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                b3 b3Var = this.b;
-                b3Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                b3Var.d = intValue;
-                b3Var.e = intValue;
-                b3Var.f = intValue;
-                b3Var.h = intValue;
-                b3Var.n = intValue;
-                b3Var.invalidate();
+                c3 c3Var = this.b;
+                c3Var.getClass();
+                c3Var.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                c3Var.invalidate();
+                c3Var.Q.c();
+                break;
+            case 1:
+                c3 c3Var2 = this.b;
+                c3Var2.getClass();
+                c3Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c3Var2.invalidate();
+                c3Var2.Q.c();
+                break;
+            case 2:
+                c3 c3Var3 = this.b;
+                c3Var3.getClass();
+                c3Var3.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                c3Var3.invalidate();
+                c3Var3.Q.c();
+                break;
+            case 3:
+                c3 c3Var4 = this.b;
+                c3Var4.getClass();
+                c3Var4.B = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                c3Var4.invalidate();
+                break;
+            case 4:
+                c3 c3Var5 = this.b;
+                c3Var5.getClass();
+                c3Var5.C = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                c3Var5.invalidate();
                 break;
             default:
-                b3 b3Var2 = this.b;
-                b3Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b3Var2.d = AndroidUtilities.lerp(b3Var2.B, AndroidUtilities.dp(56.0f), floatValue);
-                b3Var2.e = AndroidUtilities.lerp(b3Var2.B, AndroidUtilities.dp(36.0f), floatValue);
-                b3Var2.f = AndroidUtilities.lerp(b3Var2.B, AndroidUtilities.dp(60.0f), floatValue);
-                b3Var2.h = AndroidUtilities.lerp(b3Var2.B, AndroidUtilities.dp(36.0f), floatValue);
-                b3Var2.n = AndroidUtilities.lerp(b3Var2.B, AndroidUtilities.dp(64.0f), floatValue);
-                b3Var2.r = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
-                b3Var2.s = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
-                b3Var2.v = AndroidUtilities.lerp(0, 0, floatValue);
-                b3Var2.w = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
-                b3Var2.x = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
-                b3Var2.invalidate();
+                c3 c3Var6 = this.b;
+                c3Var6.getClass();
+                c3Var6.B = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                c3Var6.invalidate();
                 break;
         }
     }

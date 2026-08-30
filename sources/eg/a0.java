@@ -1,44 +1,39 @@
 package eg;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a0 implements Runnable {
+public final /* synthetic */ class a0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Chat b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ v0 b;
 
-    public /* synthetic */ a0(TLRPC.Chat chat, int i10, ArrayList arrayList, Utilities.Callback callback, int i11) {
-        this.a = i11;
-        this.b = chat;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = callback;
+    public /* synthetic */ a0(v0 v0Var, int i10) {
+        this.a = i10;
+        this.b = v0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                TLRPC.Chat chat = this.b;
-                ArrayList arrayList = this.d;
-                if (chat == null) {
-                    q0.m(this.c, arrayList);
-                }
-                this.e.run(arrayList);
+                AndroidUtilities.runOnUIThread(new a1.e(24, this.b, tLObject));
                 break;
-            default:
-                TLRPC.Chat chat2 = this.b;
-                ArrayList arrayList2 = this.d;
-                if (chat2 == null) {
-                    q0.m(this.c, arrayList2);
+            case 1:
+                boolean z4 = tLObject instanceof TLRPC.TL_boolTrue;
+                v0 v0Var = this.b;
+                if (!z4) {
+                    v0Var.getClass();
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(v0Var.E0);
+                    break;
                 }
-                this.e.run(arrayList2);
+            default:
+                v0.U(this.b, tLObject, tL_error);
                 break;
         }
     }

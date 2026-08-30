@@ -3,7 +3,7 @@ package a0;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b implements Iterator {
     public int a;
@@ -23,25 +23,25 @@ public final class b implements Iterator {
 
     @Override // java.util.Iterator
     public final Object next() {
-        Object e10;
+        Object e;
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
         int i10 = this.b;
         switch (this.d) {
             case 0:
-                e10 = ((f) this.e).e(i10);
+                e = ((f) this.e).e(i10);
                 break;
             case 1:
-                e10 = ((f) this.e).h(i10);
+                e = ((f) this.e).h(i10);
                 break;
             default:
-                e10 = ((g) this.e).b[i10];
+                e = ((g) this.e).b[i10];
                 break;
         }
         this.b++;
         this.c = true;
-        return e10;
+        return e;
     }
 
     @Override // java.util.Iterator

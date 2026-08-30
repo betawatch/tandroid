@@ -1,26 +1,87 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class y50 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ FrameLayout a;
-    public final /* synthetic */ a60 b;
+public final class y50 extends Drawable {
+    public long b;
+    public int d;
+    public final View e;
+    public final Paint a = new Paint(1);
+    public float c = 1.0f;
 
-    public y50(a60 a60Var, FrameLayout frameLayout) {
-        this.b = a60Var;
-        this.a = frameLayout;
+    public y50(View view) {
+        this.e = view;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        a60 a60Var = this.b;
-        if (a60Var.v0 == null) {
-            a60Var.v0 = (oc) a60Var.y0(a60Var.V);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int dp;
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        View view = this.e;
+        if (view instanceof org.telegram.ui.ActionBar.k5) {
+            dp = AndroidUtilities.dp(1.0f) + centerY;
+            centerX -= AndroidUtilities.dp(3.0f);
+        } else {
+            dp = AndroidUtilities.dp(2.0f) + centerY;
         }
-        a60Var.v0.f.setOnClickListener(new t50(this, 1));
+        Paint paint = this.a;
+        paint.setColor(-1147527);
+        paint.setAlpha((int) (this.c * 255.0f));
+        canvas.drawCircle(centerX, dp, AndroidUtilities.dp(4.0f), paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = elapsedRealtime - this.b;
+        if (j10 > 17) {
+            j10 = 17;
+        }
+        this.b = elapsedRealtime;
+        int i10 = this.d;
+        if (i10 == 0) {
+            float f10 = (j10 / 2000.0f) + this.c;
+            this.c = f10;
+            if (f10 >= 1.0f) {
+                this.c = 1.0f;
+                this.d = 1;
+            }
+        } else if (i10 == 1) {
+            float f11 = this.c - (j10 / 2000.0f);
+            this.c = f11;
+            if (f11 < 0.5f) {
+                this.c = 0.5f;
+                this.d = 0;
+            }
+        }
+        view.invalidate();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

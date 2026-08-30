@@ -4,26 +4,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class s4 extends g4 implements RunnableFuture {
+public final class s4 extends f4 implements RunnableFuture {
     public volatile r4 n;
 
     public s4(Callable callable) {
         this.n = new r4(this, callable);
     }
 
-    @Override // com.google.android.gms.internal.cast.g4
+    @Override // com.google.android.gms.internal.cast.f4
     public final String b() {
         r4 r4Var = this.n;
-        return r4Var != null ? a4.w.n("task=[", r4Var.toString(), "]") : super.b();
+        return r4Var != null ? android.support.v4.media.a.o("task=[", r4Var.toString(), "]") : super.b();
     }
 
-    @Override // com.google.android.gms.internal.cast.g4
+    @Override // com.google.android.gms.internal.cast.f4
     public final void c() {
         r4 r4Var;
         Object obj = this.a;
-        if ((obj instanceof y3) && ((y3) obj).a && (r4Var = this.n) != null) {
+        if ((obj instanceof x3) && ((x3) obj).a && (r4Var = this.n) != null) {
             k4 k4Var = r4.d;
             k4 k4Var2 = r4.c;
             Runnable runnable = (Runnable) r4Var.get();

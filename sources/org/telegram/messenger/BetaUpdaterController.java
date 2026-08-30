@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -27,7 +27,7 @@ public class BetaUpdaterController {
     private String version;
     private int versionCode;
     private boolean firstCheck = true;
-    private final Runnable scheduledUpdateCheck = new u(this, 1);
+    private final Runnable scheduledUpdateCheck = new v(this, 1);
 
     public BetaUpdaterController() {
         load();
@@ -36,8 +36,8 @@ public class BetaUpdaterController {
     private String getCurrentVersion() {
         try {
             return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionName;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return "";
         }
     }
@@ -45,8 +45,8 @@ public class BetaUpdaterController {
     private int getCurrentVersionCode() {
         try {
             return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return 0;
         }
     }
@@ -94,8 +94,8 @@ public class BetaUpdaterController {
                     if (!TextUtils.isEmpty(this.path)) {
                         try {
                             new File(this.path).delete();
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                     }
                     this.path = null;
@@ -125,7 +125,7 @@ public class BetaUpdaterController {
                 if (this.versionCode == i11 || ApplicationLoader.mainInterfacePaused) {
                     return;
                 }
-                Context context = LaunchActivity.C1;
+                Context context = LaunchActivity.D1;
                 if (context == null) {
                     context = ApplicationLoader.applicationContext;
                 }
@@ -140,8 +140,8 @@ public class BetaUpdaterController {
                 if (!TextUtils.isEmpty(this.path)) {
                     try {
                         new File(this.path).delete();
-                    } catch (Exception e11) {
-                        FileLog.e(e11);
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
                     }
                 }
                 this.path = null;
@@ -178,14 +178,14 @@ public class BetaUpdaterController {
             AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
             if (runnable != null) {
             }
-        } catch (Exception e12) {
-            FileLog.e("Failed to check for beta update at null received: " + str, e12);
+        } catch (Exception e10) {
+            FileLog.e("Failed to check for beta update at null received: " + str, e10);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
-        AndroidUtilities.runOnUIThread(new f0(this, str, runnable, 6));
+        AndroidUtilities.runOnUIThread(new g0(this, str, runnable, 6));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -203,8 +203,8 @@ public class BetaUpdaterController {
         if (!TextUtils.isEmpty(this.path)) {
             try {
                 new File(this.path).delete();
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         this.path = file.getAbsolutePath();
@@ -216,12 +216,12 @@ public class BetaUpdaterController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$downloadUpdate$5(File file) {
-        AndroidUtilities.runOnUIThread(new d3(12, this, file));
+        AndroidUtilities.runOnUIThread(new e3(12, this, file));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$downloadUpdate$6(Float f9) {
-        this.downloadingProgress = f9.floatValue();
+    public /* synthetic */ void lambda$downloadUpdate$6(Float f10) {
+        this.downloadingProgress = f10.floatValue();
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateLoading, new Object[0]);
     }
 
@@ -290,14 +290,14 @@ public class BetaUpdaterController {
         }
     }
 
-    public void checkForUpdate(boolean z10, Runnable runnable) {
+    public void checkForUpdate(boolean z4, Runnable runnable) {
         if (this.checkingForUpdate) {
             return;
         }
         if (this.firstCheck) {
-            z10 = true;
+            z4 = true;
         }
-        if (!z10) {
+        if (!z4) {
             if (System.currentTimeMillis() - this.lastCheck < (ApplicationLoader.mainInterfacePaused ? CHECK_INTERVAL_PAUSED : BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL)) {
                 if (runnable != null) {
                     runnable.run();
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.f1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.g1(new x(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {
@@ -345,7 +345,7 @@ public class BetaUpdaterController {
         return this.downloading;
     }
 
-    private void downloadUpdate(boolean z10) {
+    private void downloadUpdate(boolean z4) {
         if (this.downloading || !TextUtils.isEmpty(this.path)) {
             return;
         }
@@ -353,17 +353,17 @@ public class BetaUpdaterController {
         this.downloadingProgress = 0.0f;
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateLoading, new Object[0]);
         if (TextUtils.isEmpty(this.fileUrl)) {
-            if (z10) {
+            if (z4) {
                 this.downloading = false;
                 return;
             } else {
-                checkForUpdate(true, new u(this, 0));
+                checkForUpdate(true, new v(this, 0));
                 return;
             }
         }
         final int i10 = 0;
         final int i11 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.w
             public final /* synthetic */ BetaUpdaterController b;
 
             {
@@ -381,7 +381,7 @@ public class BetaUpdaterController {
                         break;
                 }
             }
-        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.v
+        }, new Utilities.Callback(this) { // from class: org.telegram.messenger.w
             public final /* synthetic */ BetaUpdaterController b;
 
             {

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class k2 {
     public static final k2 c = new k2();
@@ -11,7 +11,7 @@ public final class k2 {
     public final y1 a = new y1();
 
     public final n2 a(Class cls) {
-        n2 k9;
+        n2 k10;
         Class cls2;
         Charset charset = j1.a;
         if (cls == null) {
@@ -33,17 +33,17 @@ public final class k2 {
         l0 l0Var = zzb.a;
         if ((i10 & 2) == 2) {
             if (f1.class.isAssignableFrom(cls)) {
-                k9 = new f2(o2.d, w0.a, l0Var);
+                k10 = new f2(o2.d, w0.a, l0Var);
             } else {
                 p2 p2Var = o2.b;
                 v0 v0Var = w0.b;
                 if (v0Var == null) {
                     throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
                 }
-                k9 = new f2(p2Var, v0Var, l0Var);
+                k10 = new f2(p2Var, v0Var, l0Var);
             }
         } else if (f1.class.isAssignableFrom(cls)) {
-            k9 = (zzb.d & 1) == 1 ? e2.k(zzb, g2.b, s1.b, o2.d, w0.a, c2.b) : e2.k(zzb, g2.b, s1.b, o2.d, null, c2.b);
+            k10 = (zzb.d & 1) == 1 ? e2.k(zzb, g2.b, s1.b, o2.d, w0.a, c2.b) : e2.k(zzb, g2.b, s1.b, o2.d, null, c2.b);
         } else if ((zzb.d & 1) == 1) {
             h2 h2Var = g2.a;
             u1 u1Var = s1.a;
@@ -52,11 +52,11 @@ public final class k2 {
             if (v0Var2 == null) {
                 throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
             }
-            k9 = e2.k(zzb, h2Var, u1Var, p2Var2, v0Var2, c2.a);
+            k10 = e2.k(zzb, h2Var, u1Var, p2Var2, v0Var2, c2.a);
         } else {
-            k9 = e2.k(zzb, g2.a, s1.a, o2.c, null, c2.a);
+            k10 = e2.k(zzb, g2.a, s1.a, o2.c, null, c2.a);
         }
-        n2 n2Var2 = (n2) concurrentHashMap.putIfAbsent(cls, k9);
-        return n2Var2 != null ? n2Var2 : k9;
+        n2 n2Var2 = (n2) concurrentHashMap.putIfAbsent(cls, k10);
+        return n2Var2 != null ? n2Var2 : k10;
     }
 }

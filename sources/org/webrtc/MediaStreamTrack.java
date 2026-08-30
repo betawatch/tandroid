@@ -1,15 +1,15 @@
 package org.webrtc;
 
-import j7.l1;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
     private long nativeTrack;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
@@ -26,7 +26,7 @@ public class MediaStreamTrack {
                     return mediaType;
                 }
             }
-            throw new IllegalArgumentException(l1.k(i10, "Unknown native media type: "));
+            throw new IllegalArgumentException(a2.j(i10, "Unknown native media type: "));
         }
 
         public int getNative() {
@@ -34,7 +34,7 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public enum State {
         LIVE,
         ENDED;
@@ -79,7 +79,7 @@ public class MediaStreamTrack {
 
     private static native State nativeGetState(long j10);
 
-    private static native boolean nativeSetEnabled(long j10, boolean z10);
+    private static native boolean nativeSetEnabled(long j10, boolean z4);
 
     public void dispose() {
         checkMediaStreamTrackExists();
@@ -107,9 +107,9 @@ public class MediaStreamTrack {
         return nativeGetKind(this.nativeTrack);
     }
 
-    public boolean setEnabled(boolean z10) {
+    public boolean setEnabled(boolean z4) {
         checkMediaStreamTrackExists();
-        return nativeSetEnabled(this.nativeTrack, z10);
+        return nativeSetEnabled(this.nativeTrack, z4);
     }
 
     public State state() {

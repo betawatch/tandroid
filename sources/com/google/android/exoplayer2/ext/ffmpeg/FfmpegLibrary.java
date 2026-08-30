@@ -1,30 +1,20 @@
 package com.google.android.exoplayer2.ext.ffmpeg;
 
-import j3.r0;
-import org.telegram.messenger.NativeLoader;
+import j3.l0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+@Deprecated
 /* loaded from: classes.dex */
-public final class FfmpegLibrary {
-    private static final String TAG = "FfmpegLibrary";
-    private static int inputBufferPaddingSize;
-    private static String version;
+public abstract class FfmpegLibrary {
+    public static String a;
+    public static int b;
 
     static {
-        r0.a("goog.exo.ffmpeg");
-        inputBufferPaddingSize = -1;
+        l0.a("goog.exo.ffmpeg");
+        b = -1;
     }
 
-    private FfmpegLibrary() {
-    }
-
-    private static native int ffmpegGetInputBufferPaddingSize();
-
-    private static native String ffmpegGetVersion();
-
-    private static native boolean ffmpegHasDecoder(String str);
-
-    public static String getCodecName(String str) {
+    public static String a(String str) {
         str.getClass();
         switch (str) {
             case "audio/eac3-joc":
@@ -64,42 +54,35 @@ public final class FfmpegLibrary {
         }
     }
 
-    public static int getInputBufferPaddingSize() {
-        if (!isAvailable()) {
-            return -1;
+    public static int b() {
+        if (b == -1) {
+            b = ffmpegGetInputBufferPaddingSize();
         }
-        if (inputBufferPaddingSize == -1) {
-            inputBufferPaddingSize = ffmpegGetInputBufferPaddingSize();
-        }
-        return inputBufferPaddingSize;
+        return b;
     }
 
-    public static String getVersion() {
-        if (!isAvailable()) {
-            return null;
+    public static String c() {
+        if (a == null) {
+            a = ffmpegGetVersion();
         }
-        if (version == null) {
-            version = ffmpegGetVersion();
-        }
-        return version;
+        return a;
     }
 
-    public static boolean isAvailable() {
-        return NativeLoader.loaded();
-    }
-
-    public static boolean supportsFormat(String str) {
-        String codecName;
-        if (!isAvailable() || (codecName = getCodecName(str)) == null) {
+    public static boolean d(String str) {
+        String a2 = a(str);
+        if (a2 == null) {
             return false;
         }
-        if (ffmpegHasDecoder(codecName)) {
+        if (ffmpegHasDecoder(a2)) {
             return true;
         }
-        f5.a.K(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
+        h5.a.K("FfmpegLibrary", "No " + a2 + " decoder available. Check the FFmpeg build configuration.");
         return false;
     }
 
-    public static void setLibraries(String... strArr) {
-    }
+    private static native int ffmpegGetInputBufferPaddingSize();
+
+    private static native String ffmpegGetVersion();
+
+    private static native boolean ffmpegHasDecoder(String str);
 }

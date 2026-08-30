@@ -1,197 +1,195 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.dd1;
-import org.telegram.ui.fd1;
-import org.telegram.ui.wc1;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class p90 extends k7.g0 {
+    public int a;
+    public final TL_iv.PageBlock b;
+    public TL_iv.textConcat c = new TL_iv.textConcat();
 
-    public /* synthetic */ p90(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
+    public p90(TL_iv.PageBlock pageBlock) {
+        this.b = pageBlock;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        CheckBoxBase checkBoxBase;
-        CheckBoxBase[] checkBoxBaseArr;
-        CheckBoxBase checkBoxBase2;
+    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
+        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
+    }
+
+    @Override // k7.g0
+    public final void a(ne.b bVar) {
         int i10 = this.a;
-        int i11 = 1;
-        int i12 = 0;
-        boolean z10 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                y90 y90Var = (y90) obj;
-                if (!z10) {
-                    y90Var.getClass();
-                    break;
-                } else {
-                    y90Var.C.setVisibility(8);
-                    break;
-                }
-            case 1:
-                ((tm0) obj).C.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
-                break;
-            case 2:
-                qu0 qu0Var = (qu0) obj;
-                if (!z10) {
-                    qu0Var.i0.setVisibility(8);
-                    break;
-                } else {
-                    qu0Var.getClass();
-                    break;
-                }
-            case 3:
-                gr0 gr0Var = (gr0) obj;
-                if (!z10) {
-                    gr0Var.Q.m0.setVisibility(0);
-                    break;
-                } else {
-                    gr0Var.getClass();
-                    break;
-                }
-            case 4:
-                kr0 kr0Var = (kr0) obj;
-                if (!z10) {
-                    kr0Var.D.m0.setVisibility(0);
-                    break;
-                } else {
-                    kr0Var.getClass();
-                    break;
-                }
-            case 5:
-                hv0 hv0Var = (hv0) obj;
-                ArrayList arrayList = hv0Var.r;
-                gv0 gv0Var = hv0Var.n;
-                if (gv0Var != null) {
-                    gv0Var.G(hv0Var.f, z10);
-                }
-                while (i12 < arrayList.size()) {
-                    ((gv0) arrayList.get(i12)).G(hv0Var.f, z10);
-                    i12++;
-                }
-                break;
-            case 6:
-                iv0 iv0Var = (iv0) obj;
-                ArrayList arrayList2 = iv0Var.r;
-                gv0 gv0Var2 = iv0Var.n;
-                if (gv0Var2 != null) {
-                    gv0Var2.G(iv0Var.u0, z10);
-                }
-                while (i12 < arrayList2.size()) {
-                    ((gv0) arrayList2.get(i12)).G(iv0Var.u0, z10);
-                    i12++;
-                }
-                break;
-            case 7:
-                ((Utilities.Callback2) obj).run(null, Boolean.valueOf(z10));
-                break;
-            case 8:
-                ((k51) obj).P(z10);
-                break;
-            case 9:
-                org.telegram.ui.nz nzVar = (org.telegram.ui.nz) obj;
-                nzVar.Z(nzVar.L, z10);
-                break;
-            case 10:
-                org.telegram.ui.fg0 fg0Var = (org.telegram.ui.fg0) obj;
-                if (!z10) {
-                    fg0Var.S.setVisibility(8);
-                    break;
-                }
-                break;
-            case 11:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (!z10) {
-                    photoViewer.R0.setVisibility(8);
-                    break;
-                } else {
-                    Drawable[] drawableArr = PhotoViewer.P8;
-                    photoViewer.getClass();
-                    break;
-                }
-            case 12:
-                ((ProfileActivity) obj).e5(z10, true);
-                break;
-            case 13:
-                ye.d.s(((org.telegram.ui.vz0) obj).e.getParentActivity(), LocaleController.getString(z10 ? R.string.ProfileBotOpenAppInfoOwnerLink : R.string.ProfileBotOpenAppInfoLink));
-                break;
-            case 14:
-                org.telegram.ui.z11 z11Var = (org.telegram.ui.z11) obj;
-                org.telegram.ui.a21 a21Var = z11Var.O;
-                ep epVar = z11Var.b;
-                if (epVar != null && epVar.d != null) {
-                    z11Var.a(z10, true);
-                    if (z11Var.G != null) {
-                        z11Var.M = true;
-                        a21Var.G = z10;
-                        a21Var.d0(a21Var.K, a21Var.F, false);
-                    }
-                    if (epVar.d != null) {
-                        while (i12 < epVar.d.size()) {
-                            ((fp) epVar.d.get(i12)).c = z10 ? 1 : 0;
-                            ((fp) epVar.d.get(i12)).e = a21Var.b0(((fp) epVar.d.get(i12)).a, z10);
-                            i12++;
-                        }
-                        a21Var.r = null;
-                        epVar.l();
-                        break;
-                    }
-                }
-                break;
-            case 15:
-                fd1 fd1Var = (fd1) obj;
-                AndroidUtilities.runOnUIThread(new wc1(fd1Var, i11));
-                org.telegram.ui.Cells.s1 s1Var = fd1Var.G;
-                if (s1Var != null) {
-                    s1Var.setVisibility(0);
-                    if (!z10) {
-                        org.telegram.ui.Cells.s1 s1Var2 = fd1Var.G;
-                        int O2 = s1Var2.O2(fd1Var.K);
-                        dd1 dd1Var = fd1Var.E;
-                        CheckBoxBase[] checkBoxBaseArr2 = s1Var2.N8;
-                        if (checkBoxBaseArr2 != null && O2 >= 0 && O2 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[O2]) != null && dd1Var != null && (checkBoxBaseArr = dd1Var.N8) != null && O2 >= 0 && O2 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[O2]) != null) {
-                            ObjectAnimator objectAnimator = checkBoxBase.p;
-                            if (objectAnimator != null) {
-                                objectAnimator.cancel();
-                                checkBoxBase.p = null;
-                            }
-                            checkBoxBase.setProgress(checkBoxBase2.getProgress());
-                            checkBoxBase.f(-1, checkBoxBase2.q, true);
-                        }
-                    }
-                    org.telegram.ui.Cells.s1 s1Var3 = fd1Var.G;
-                    s1Var3.G7 = -1;
-                    s1Var3.invalidate();
-                }
-                org.telegram.ui.pm pmVar = fd1Var.Y;
-                if (pmVar != null) {
-                    AndroidUtilities.runOnUIThread(pmVar);
-                    fd1Var.Y = null;
-                    break;
-                }
-                break;
-            default:
-                ((qh.o0) obj).f(z10, false);
-                break;
+        if (i10 >= 64) {
+            return;
         }
+        this.a = i10 + 1;
+        try {
+            v(bVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // k7.g0
+    public final void b(ne.c cVar) {
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
+        }
+        this.a = i10 + 1;
+        try {
+            v(cVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // k7.g0
+    public final void c(ne.d dVar) {
+        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+        textfixed.text = s90.j(dVar.h);
+        w(textfixed);
+    }
+
+    @Override // k7.g0
+    public final void d(ne.e eVar) {
+        if (eVar instanceof ge.a) {
+            TL_iv.textStrike textstrike = new TL_iv.textStrike();
+            textstrike.text = y(eVar);
+            w(textstrike);
+        } else if (eVar instanceof lc.d) {
+            w(s90.c(((lc.d) eVar).g));
+        } else {
+            v(eVar);
+        }
+    }
+
+    @Override // k7.g0
+    public final void e(ne.g gVar) {
+        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+        textitalic.text = y(gVar);
+        w(textitalic);
+    }
+
+    @Override // k7.g0
+    public final void i(ne.k kVar) {
+        w(y(kVar));
+    }
+
+    @Override // k7.g0
+    public final void k(ne.n nVar) {
+        if (!(nVar instanceof lc.a)) {
+            v(nVar);
+            return;
+        }
+        if (!this.c.texts.isEmpty()) {
+            w(s90.j("\n"));
+        }
+        w(s90.c(((lc.a) nVar).g));
+        w(s90.j("\n"));
+    }
+
+    @Override // k7.g0
+    public final void l(ne.o oVar) {
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
+        }
+        this.a = i10 + 1;
+        try {
+            v(oVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // k7.g0
+    public final void m(ne.q qVar) {
+        int i10 = this.a;
+        if (i10 >= 64) {
+            return;
+        }
+        this.a = i10 + 1;
+        try {
+            v(qVar);
+        } finally {
+            this.a--;
+        }
+    }
+
+    @Override // k7.g0
+    public final void n(ne.r rVar) {
+        if (!this.c.texts.isEmpty()) {
+            w(s90.j("\n\n"));
+        }
+        v(rVar);
+    }
+
+    @Override // k7.g0
+    public final void o(ne.s sVar) {
+        w(s90.j(sVar.g));
+    }
+
+    @Override // k7.g0
+    public final void q(ne.d dVar) {
+        w(s90.j(dVar.h));
+    }
+
+    @Override // k7.g0
+    public final void r(ne.g gVar) {
+        w(s90.j("\n"));
+    }
+
+    @Override // k7.g0
+    public final void s(ne.k kVar) {
+        String str = kVar.h;
+        if (str == null) {
+            str = "";
+        }
+        String trim = str.trim();
+        if (trim.startsWith("mailto:")) {
+            TL_iv.RichText textemail = new TL_iv.textEmail();
+            textemail.text = y(kVar);
+            textemail.email = trim.substring(7);
+            w(textemail);
+            return;
+        }
+        if (trim.startsWith("tel:")) {
+            TL_iv.textPhone textphone = new TL_iv.textPhone();
+            textphone.text = y(kVar);
+            textphone.phone = trim.substring(4);
+            w(textphone);
+            return;
+        }
+        TL_iv.RichText texturl = new TL_iv.textUrl();
+        texturl.text = y(kVar);
+        texturl.url = trim;
+        w(texturl);
+    }
+
+    @Override // k7.g0
+    public final void t(ne.g gVar) {
+        w(s90.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
+    }
+
+    @Override // k7.g0
+    public final void u(ne.g gVar) {
+        TL_iv.textBold textbold = new TL_iv.textBold();
+        textbold.text = y(gVar);
+        w(textbold);
+    }
+
+    public final void w(TL_iv.RichText richText) {
+        this.c.texts.add(richText);
+    }
+
+    public final TL_iv.RichText y(ne.p pVar) {
+        TL_iv.textConcat textconcat = this.c;
+        this.c = new TL_iv.textConcat();
+        v(pVar);
+        TL_iv.RichText x10 = x(this.c);
+        this.c = textconcat;
+        return x10;
     }
 }

@@ -79,23 +79,23 @@ public final class Period implements Serializable {
         if (this == d) {
             return "P0D";
         }
-        StringBuilder sb2 = new StringBuilder("P");
+        StringBuilder sb = new StringBuilder("P");
         int i10 = this.a;
         if (i10 != 0) {
-            sb2.append(i10);
-            sb2.append('Y');
+            sb.append(i10);
+            sb.append('Y');
         }
         int i11 = this.b;
         if (i11 != 0) {
-            sb2.append(i11);
-            sb2.append('M');
+            sb.append(i11);
+            sb.append('M');
         }
         int i12 = this.c;
         if (i12 != 0) {
-            sb2.append(i12);
-            sb2.append('D');
+            sb.append(i12);
+            sb.append('D');
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     private Object writeReplace() {

@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.e0;
-import qc.f;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import ld.e0;
+import sc.f;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzf extends i implements p {
     int zza;
@@ -24,16 +25,16 @@ final class zzf extends i implements p {
         this.zzd = str;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzf zzfVar = new zzf(this.zzb, this.zzc, this.zzd, cVar);
         zzfVar.zze = obj;
         return zzfVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzf) create((zzgr) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzf) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0032, code lost:
@@ -44,16 +45,16 @@ final class zzf extends i implements p {
     
         return r1;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                c7.b(obj);
+                p7.b(obj);
                 zzgr zzgrVar = (zzgr) this.zze;
                 long j10 = this.zzb;
                 zze zzeVar = new zze(zzgrVar, this.zzc, this.zzd, null);
@@ -62,22 +63,22 @@ final class zzf extends i implements p {
             } else {
                 if (i10 != 1) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    c7.b(obj);
+                    p7.b(obj);
                     throw zzcgVar;
                 }
-                c7.b(obj);
+                p7.b(obj);
             }
             Object obj2 = ((f) obj).a;
-            c7.b(obj2);
+            p7.b(obj2);
             return (zzxx) obj2;
-        } catch (Exception e10) {
-            zzcg zza = zzh.zza(e10, new zzcg(zzce.zzb, zzcd.zzaa, e10.getMessage(), null, 8, null));
+        } catch (Exception e) {
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), null, 8, null));
             zzg zzgVar = this.zzc;
             String str = this.zzd;
             long j11 = this.zzb;
             this.zze = zza;
             this.zza = 2;
-            if (zzgVar.zze(str, j11, e10, this) != aVar) {
+            if (zzgVar.zze(str, j11, e, this) != aVar) {
                 throw zza;
             }
         }

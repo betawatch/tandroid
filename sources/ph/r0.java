@@ -1,135 +1,111 @@
 package ph;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.NativeByteBuffer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class r0 implements SensorEventListener {
+public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
-    public long b;
-    public float[] c;
-    public final /* synthetic */ u0 d;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ s0 c;
 
-    public r0(u0 u0Var, int i10) {
+    public /* synthetic */ r0(MessagesStorage messagesStorage, s0 s0Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = u0Var;
-                this.c = new float[3];
-                break;
-            default:
-                this.d = u0Var;
-                break;
-        }
+        this.b = messagesStorage;
+        this.c = s0Var;
     }
 
-    public final void c() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        SQLiteDatabase database;
+        SQLiteDatabase database2;
         switch (this.a) {
             case 0:
-                u0 u0Var = this.d;
-                if (u0Var.k != null && this.c != null) {
-                    this.b = System.currentTimeMillis();
+                MessagesStorage messagesStorage = this.b;
+                s0 s0Var = this.c;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
                     try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("x", -this.c[0]);
-                        jSONObject.put("y", -this.c[1]);
-                        jSONObject.put("z", -this.c[2]);
-                        u0Var.k.d("window.Telegram.WebView.receiveEvent('accelerometer_changed', " + jSONObject + ");");
-                        break;
-                    } catch (Exception unused) {
+                        database = messagesStorage.getDatabase();
+                    } catch (Throwable th2) {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th2;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    if (sQLitePreparedStatement == null) {
                         return;
                     }
                 }
-                break;
+                if (database == null) {
+                    return;
+                }
+                sQLitePreparedStatement = database.executeFast("REPLACE INTO story_drafts VALUES (?, ?, ?, ?)");
+                sQLitePreparedStatement.requery();
+                int i10 = 1;
+                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(true);
+                s0Var.b(nativeByteBuffer);
+                NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(nativeByteBuffer.length());
+                s0Var.b(nativeByteBuffer2);
+                sQLitePreparedStatement.bindLong(1, s0Var.a);
+                sQLitePreparedStatement.bindLong(2, s0Var.b);
+                sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer2);
+                if (!s0Var.G) {
+                    i10 = s0Var.M ? 2 : 0;
+                }
+                sQLitePreparedStatement.bindInteger(4, i10);
+                sQLitePreparedStatement.step();
+                nativeByteBuffer2.reuse();
+                sQLitePreparedStatement.dispose();
+                sQLitePreparedStatement.dispose();
+                return;
             default:
-                float[] fArr = this.c;
-                u0 u0Var2 = this.d;
-                if (u0Var2.k != null) {
-                    this.b = System.currentTimeMillis();
+                MessagesStorage messagesStorage2 = this.b;
+                s0 s0Var2 = this.c;
+                SQLitePreparedStatement sQLitePreparedStatement2 = null;
+                try {
                     try {
-                        JSONObject jSONObject2 = new JSONObject();
-                        jSONObject2.put("x", fArr[0]);
-                        jSONObject2.put("y", fArr[1]);
-                        jSONObject2.put("z", fArr[2]);
-                        u0Var2.k.d("window.Telegram.WebView.receiveEvent('gyroscope_changed', " + jSONObject2 + ");");
-                    } catch (Exception unused2) {
+                        database2 = messagesStorage2.getDatabase();
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
+                        if (sQLitePreparedStatement2 == null) {
+                            return;
+                        }
                     }
-                    fArr[0] = 0.0f;
-                    fArr[1] = 0.0f;
-                    fArr[2] = 0.0f;
-                    break;
+                    if (database2 == null) {
+                        return;
+                    }
+                    sQLitePreparedStatement2 = database2.executeFast("INSERT INTO story_drafts VALUES (?, ?, ?, ?)");
+                    sQLitePreparedStatement2.requery();
+                    int i11 = 1;
+                    NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(true);
+                    s0Var2.b(nativeByteBuffer3);
+                    NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(nativeByteBuffer3.length());
+                    s0Var2.b(nativeByteBuffer4);
+                    sQLitePreparedStatement2.bindLong(1, s0Var2.a);
+                    sQLitePreparedStatement2.bindLong(2, s0Var2.b);
+                    sQLitePreparedStatement2.bindByteBuffer(3, nativeByteBuffer4);
+                    if (!s0Var2.G) {
+                        i11 = s0Var2.M ? 2 : 0;
+                    }
+                    sQLitePreparedStatement2.bindInteger(4, i11);
+                    sQLitePreparedStatement2.step();
+                    nativeByteBuffer4.reuse();
+                    sQLitePreparedStatement2.dispose();
+                    sQLitePreparedStatement2.dispose();
+                    return;
+                } catch (Throwable th3) {
+                    if (sQLitePreparedStatement2 != null) {
+                        sQLitePreparedStatement2.dispose();
+                    }
+                    throw th3;
                 }
-                break;
         }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        switch (this.a) {
-            case 0:
-                u0 u0Var = this.d;
-                org.telegram.ui.web.t1 t1Var = u0Var.m;
-                if (t1Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(t1Var);
-                    u0Var.m = null;
-                }
-                if (!u0Var.l && u0Var.k != null) {
-                    long currentTimeMillis = System.currentTimeMillis() - this.b;
-                    this.c = sensorEvent.values;
-                    long j10 = u0Var.c;
-                    if (currentTimeMillis >= j10) {
-                        c();
-                        break;
-                    } else {
-                        org.telegram.ui.web.t1 t1Var2 = new org.telegram.ui.web.t1(this, 5);
-                        u0Var.m = t1Var2;
-                        AndroidUtilities.runOnUIThread(t1Var2, j10 - currentTimeMillis);
-                        break;
-                    }
-                }
-                break;
-            default:
-                u0 u0Var2 = this.d;
-                org.telegram.ui.web.t1 t1Var3 = u0Var2.o;
-                if (t1Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(t1Var3);
-                    u0Var2.o = null;
-                }
-                if (!u0Var2.l && u0Var2.k != null) {
-                    float[] fArr = this.c;
-                    float f9 = fArr[0];
-                    float[] fArr2 = sensorEvent.values;
-                    fArr[0] = f9 + fArr2[0];
-                    fArr[1] = fArr[1] + fArr2[1];
-                    fArr[2] = fArr[2] + fArr2[2];
-                    long currentTimeMillis2 = System.currentTimeMillis() - this.b;
-                    long j11 = u0Var2.e;
-                    if (currentTimeMillis2 >= j11) {
-                        c();
-                        break;
-                    } else {
-                        org.telegram.ui.web.t1 t1Var4 = new org.telegram.ui.web.t1(this, 6);
-                        u0Var2.o = t1Var4;
-                        AndroidUtilities.runOnUIThread(t1Var4, j11 - currentTimeMillis2);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    private final void a(Sensor sensor, int i10) {
-    }
-
-    private final void b(Sensor sensor, int i10) {
     }
 }

@@ -1,42 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.Layout;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class s5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y5 b;
+public final class s5 {
+    public Layout a;
+    public final ArrayList b = new ArrayList();
 
-    public /* synthetic */ s5(y5 y5Var, int i10) {
-        this.a = i10;
-        this.b = y5Var;
+    public s5(View view, Layout layout) {
+        this.a = layout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        Runnable runnable2;
-        switch (this.a) {
-            case 0:
-                this.b.scaleAnimator = null;
-                boolean unused = y5.lockPositionChanging = false;
-                break;
-            case 1:
-                y5 y5Var = this.b;
-                y5Var.scaleAnimator = null;
-                runnable = y5Var.removedAction;
-                if (runnable != null) {
-                    runnable2 = y5Var.removedAction;
-                    runnable2.run();
-                    y5Var.removedAction = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.moveAnimator = null;
-                break;
-        }
+    public final void a() {
+        this.b.size();
     }
 }

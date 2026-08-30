@@ -1,62 +1,23 @@
 package org.telegram.ui;
 
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class qi extends ye.c {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
-    public final /* synthetic */ tn g;
-    public final /* synthetic */ Object h;
+public final class qi extends org.telegram.ui.Cells.v0 {
+    public final /* synthetic */ xn h2;
 
-    public /* synthetic */ qi(tn tnVar, int i10, Object obj, org.telegram.ui.Cells.s1 s1Var, int i11) {
-        this.d = i11;
-        this.g = tnVar;
-        this.e = i10;
-        this.h = obj;
-        this.f = s1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qi(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, xn xnVar) {
+        super(activity, f6Var, false);
+        this.h2 = xnVar;
     }
 
-    @Override // ye.c
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new bg.f(this, this.e, 21), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new bg.f(this, this.e, 23), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // ye.c
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                tn tnVar = this.g;
-                tnVar.sb = i10;
-                tnVar.tb = 1;
-                tnVar.ub = (CharacterStyle) this.h;
-                this.f.invalidate();
-                break;
-            default:
-                int i11 = this.e;
-                tn tnVar2 = this.g;
-                tnVar2.sb = i11;
-                tnVar2.tb = 3;
-                tnVar2.vb = (String) this.h;
-                this.f.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Cells.v0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        float y10 = getY();
+        xn xnVar = this.h2;
+        W(xnVar.O0.getY() + y10, xnVar.U0.getBackgroundSizeY());
     }
 }

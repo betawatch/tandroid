@@ -1,43 +1,40 @@
 package qh;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.c2;
+import android.app.Activity;
+import android.view.ViewGroup;
+import f2.l1;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
+import ph.d4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements MessagesStorage.LongCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+public final class d extends w51 {
+    public final /* synthetic */ g K;
 
-    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, c2 c2Var, long j10, boolean z10, int i10) {
-        this.a = i10;
-        this.e = notificationCenterDelegate;
-        this.b = c2Var;
-        this.c = j10;
-        this.d = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(g gVar, sl0 sl0Var, Activity activity, int i10, int i11, d4 d4Var, f6 f6Var) {
+        super(sl0Var, activity, i10, i11, true, d4Var, f6Var);
+        this.K = gVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public final void run(long j10) {
-        switch (this.a) {
-            case 0:
-                g gVar = (g) this.e;
-                gVar.getClass();
-                this.b.dismiss();
-                if (j10 != 0) {
-                    gVar.a = -j10;
-                    gVar.b = gVar.getMessagesController().getChat(Long.valueOf(j10));
-                    gVar.W(this.c, this.d);
-                    break;
-                }
-                break;
-            default:
-                i0.p((i0) this.e, this.b, this.c, this.d, j10);
-                break;
+    @Override // org.telegram.ui.Components.w51, f2.o0
+    public final l1 x(ViewGroup viewGroup, int i10) {
+        f6 f6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
         }
+        g gVar = this.K;
+        Activity parentActivity = gVar.getParentActivity();
+        int i11 = j6.L6;
+        f6Var = ((p2) gVar).resourceProvider;
+        m4 m4Var = new m4(parentActivity, i11, 21, 0, false, f6Var);
+        m4Var.setHeight(25);
+        return new el0(m4Var);
     }
 }

@@ -1,25 +1,99 @@
 package ld;
 
-import i7.i8;
+import k7.f7;
+import k7.g8;
+import k7.p7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final /* synthetic */ a[] a;
+public abstract class a extends u1 implements uc.c, c0 {
+    public final uc.h c;
 
-    static {
-        a[] aVarArr = {new a("SUSPEND", 0), new a("DROP_OLDEST", 1), new a("DROP_LATEST", 2)};
-        a = aVarArr;
-        i8.a(aVarArr);
+    public a(uc.h hVar, boolean z4) {
+        super(z4);
+        x((f1) hVar.get(b0.b));
+        this.c = hVar.plus(this);
     }
 
-    public static a valueOf(String str) {
-        return (a) Enum.valueOf(a.class, str);
+    @Override // ld.u1
+    public final void F(Object obj) {
+        if (obj instanceof v) {
+            v.b.get((v) obj);
+        }
     }
 
-    public static a[] values() {
-        return (a[]) a.clone();
+    public final void L(d0 d0Var, a aVar, dd.p pVar) {
+        Object invoke;
+        int ordinal = d0Var.ordinal();
+        if (ordinal == 0) {
+            f7.a(pVar, aVar, this);
+            return;
+        }
+        if (ordinal != 1) {
+            if (ordinal == 2) {
+                kotlin.jvm.internal.j.e(pVar, "<this>");
+                g8.b(g8.a(pVar, aVar, this)).resumeWith(sc.i.a);
+                return;
+            }
+            if (ordinal != 3) {
+                throw new a7.b();
+            }
+            try {
+                uc.h hVar = this.c;
+                Object k10 = qd.a.k(hVar, null);
+                try {
+                    if (pVar instanceof wc.a) {
+                        kotlin.jvm.internal.t.a(2, pVar);
+                        invoke = pVar.invoke(aVar, this);
+                    } else {
+                        kotlin.jvm.internal.j.e(pVar, "<this>");
+                        uc.h hVar2 = this.c;
+                        Object dVar = hVar2 == uc.i.a ? new vc.d(this) : new vc.e(this, hVar2);
+                        kotlin.jvm.internal.t.a(2, pVar);
+                        invoke = pVar.invoke(aVar, dVar);
+                    }
+                    if (invoke != vc.a.a) {
+                        resumeWith(invoke);
+                    }
+                } finally {
+                    qd.a.f(hVar, k10);
+                }
+            } catch (Throwable th2) {
+                resumeWith(p7.a(th2));
+            }
+        }
+    }
+
+    @Override // ld.c0
+    public final uc.h c() {
+        return this.c;
+    }
+
+    @Override // uc.c
+    public final uc.h getContext() {
+        return this.c;
+    }
+
+    @Override // ld.u1
+    public final String k() {
+        return getClass().getSimpleName().concat(" was cancelled");
+    }
+
+    @Override // uc.c
+    public final void resumeWith(Object obj) {
+        Throwable a2 = sc.f.a(obj);
+        if (a2 != null) {
+            obj = new v(a2, false);
+        }
+        Object B = B(obj);
+        if (B == e0.e) {
+            return;
+        }
+        g(B);
+    }
+
+    @Override // ld.u1
+    public final void w(a7.b bVar) {
+        e0.m(bVar, this.c);
     }
 }

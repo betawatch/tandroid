@@ -1,45 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class cb0 extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ int H;
+public final /* synthetic */ class cb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qb0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cb0(int i10, int i11, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10, boolean z11) {
-        super(i10, context, c6Var, z10, z11);
-        this.H = i11;
+    public /* synthetic */ cb0(qb0 qb0Var, int i10) {
+        this.a = i10;
+        this.b = qb0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1
-    public final void i() {
-        switch (this.H) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                setBackground(null);
-                break;
-            default:
-                setBackground(null);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.H) {
-            case 0:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
+                qb0 qb0Var = this.b;
+                ib0 ib0Var = qb0Var.f;
+                if (!qb0Var.W.d.webpageTop) {
+                    ib0Var.w0(ib0Var.computeVerticalScrollRange() - (ib0Var.computeVerticalScrollExtent() + ib0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, wh.n.V);
+                    break;
+                } else {
+                    ib0Var.w0(-ib0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, wh.n.V);
                     break;
                 }
-                break;
             default:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
+                this.b.g(true, false);
                 break;
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

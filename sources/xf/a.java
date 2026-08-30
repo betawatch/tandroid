@@ -1,30 +1,32 @@
 package xf;
 
-import org.telegram.ui.Components.q6;
+import android.graphics.Paint;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class a {
-    public final CharSequence a;
-    public final int b = 2;
-    public final Runnable c;
-    public final float d;
-    public final float e;
-    public final q6 f;
+public final class a extends f {
+    public final f6 q;
+    public final Paint r;
+    public int s;
 
-    public a(String str, Runnable runnable) {
-        this.a = str;
-        this.c = runnable;
+    public a(wf.a aVar, f6 f6Var) {
+        super(aVar, false, null);
+        Paint paint = new Paint();
+        this.r = paint;
+        this.s = 0;
+        this.q = f6Var;
+        Paint paint2 = this.c;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint.setStyle(style);
+        this.c.setAntiAlias(false);
     }
 
-    public a(String str) {
-        this.a = str;
-    }
-
-    public a(String str, float f9, float f10, q6 q6Var) {
-        this.a = str;
-        this.d = f9;
-        this.e = f10;
-        this.f = q6Var;
+    @Override // xf.f
+    public final void a() {
+        super.a();
+        this.s = i0.a.d(0.3f, j6.v0(j6.d6, this.q), this.m);
     }
 }

@@ -1,39 +1,72 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class pz0 extends ReplacementSpan {
-    public float a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Paint d;
+public final class pz0 extends FrameLayout {
+    public final sz0 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
 
-    public pz0(int i10, Paint paint, String str) {
-        this.b = str;
-        this.c = i10;
-        this.d = paint;
+    public pz0(sz0 sz0Var, View view, boolean z4) {
+        super(sz0Var.getContext());
+        this.d = false;
+        this.e = true;
+        this.a = sz0Var;
+        setWillNotDraw(false);
+        if (!z4) {
+            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
+        }
+        addView(view, k7.b6.c(-1.0f, -1));
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
-        float f10 = (i12 + i14) / 2.0f;
-        float dp = AndroidUtilities.dp(19.0f);
-        paint.setColor(this.c);
-        float f11 = dp / 2.0f;
-        canvas.drawRoundRect(f9, f10 - f11, f9 + this.a + AndroidUtilities.dp(11.33f), f10 + f11, f11, f11, this.d);
-        canvas.drawText(this.b, AndroidUtilities.dpf2(5.66f) + f9, i14 - AndroidUtilities.dp(6.0f), paint);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        float dpf2 = AndroidUtilities.dpf2(11.33f);
-        float measureText = paint.measureText(this.b);
-        this.a = measureText;
-        return (int) (dpf2 + measureText);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z4 = this.b;
+        sz0 sz0Var = this.a;
+        if (z4 || this.c) {
+            canvas2 = canvas;
+            float dp = AndroidUtilities.dp(10.0f);
+            float[] fArr = sz0Var.c;
+            boolean z10 = this.b;
+            float f10 = (z10 && this.d) ? dp : 0.0f;
+            fArr[1] = f10;
+            fArr[0] = f10;
+            float f11 = (z10 && this.e) ? dp : 0.0f;
+            fArr[3] = f11;
+            fArr[2] = f11;
+            boolean z11 = this.c;
+            float f12 = (z11 && this.e) ? dp : 0.0f;
+            fArr[5] = f12;
+            fArr[4] = f12;
+            if (!z11 || !this.d) {
+                dp = 0.0f;
+            }
+            fArr[7] = dp;
+            fArr[6] = dp;
+            sz0Var.b.rewind();
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f13 = sz0Var.h;
+            rectF.set(f13, f13, getWidth() - sz0Var.h, (sz0Var.h * AndroidUtilities.dp(this.c ? -1.0f : 1.0f)) + getHeight());
+            if (!this.e) {
+                rectF.right += sz0Var.f;
+            }
+            sz0Var.b.addRoundRect(rectF, sz0Var.c, Path.Direction.CW);
+            canvas2.drawPath(sz0Var.b, sz0Var.e);
+        } else {
+            float f14 = sz0Var.h;
+            canvas2 = canvas;
+            canvas2.drawRect(f14, f14, getWidth() - sz0Var.h, getHeight() + sz0Var.h, sz0Var.e);
+        }
+        super.onDraw(canvas2);
     }
 }

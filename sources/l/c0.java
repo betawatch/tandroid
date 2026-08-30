@@ -19,14 +19,14 @@ import m.s1;
 import org.telegram.messenger.beta.R;
 import r0.j0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
-    public ViewTreeObserver A;
-    public boolean B;
+    public ViewTreeObserver B;
     public boolean C;
-    public int D;
-    public boolean F;
+    public boolean D;
+    public int E;
+    public boolean G;
     public final Context b;
     public final k c;
     public final h d;
@@ -38,15 +38,15 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public View w;
     public View x;
     public w y;
-    public final androidx.mediarouter.app.h r = new androidx.mediarouter.app.h(this, 2);
-    public final df.b s = new df.b(this, 6);
-    public int E = 0;
+    public final androidx.mediarouter.app.k r = new androidx.mediarouter.app.k(this, 2);
+    public final ff.b s = new ff.b(this, 5);
+    public int F = 0;
 
-    public c0(Context context, k kVar, View view, int i10, boolean z10) {
+    public c0(Context context, k kVar, View view, int i10, boolean z4) {
         this.b = context;
         this.c = kVar;
-        this.e = z10;
-        this.d = new h(kVar, LayoutInflater.from(context), z10, R.layout.abc_popup_menu_item_layout);
+        this.e = z4;
+        this.d = new h(kVar, LayoutInflater.from(context), z4, R.layout.abc_popup_menu_item_layout);
         this.h = i10;
         Resources resources = context.getResources();
         this.f = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
@@ -57,18 +57,18 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
 
     @Override // l.b0
     public final boolean a() {
-        return !this.B && this.n.K.isShowing();
+        return !this.C && this.n.L.isShowing();
     }
 
     @Override // l.x
-    public final void b(k kVar, boolean z10) {
+    public final void c(k kVar, boolean z4) {
         if (kVar != this.c) {
             return;
         }
         dismiss();
         w wVar = this.y;
         if (wVar != null) {
-            wVar.b(kVar, z10);
+            wVar.c(kVar, z4);
         }
     }
 
@@ -86,7 +86,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
 
     @Override // l.x
     public final void e() {
-        this.C = false;
+        this.D = false;
         h hVar = this.d;
         if (hVar != null) {
             hVar.notifyDataSetChanged();
@@ -98,53 +98,48 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
         return this.n.c;
     }
 
-    @Override // l.x
-    public final void g(w wVar) {
-        this.y = wVar;
-    }
-
     @Override // l.b0
-    public final void h() {
+    public final void g() {
         View view;
         if (a()) {
             return;
         }
-        if (this.B || (view = this.w) == null) {
+        if (this.C || (view = this.w) == null) {
             throw new IllegalStateException("StandardMenuPopup cannot be used without an anchor");
         }
         this.x = view;
         k2 k2Var = this.n;
-        m.y yVar = k2Var.K;
-        m.y yVar2 = k2Var.K;
-        yVar.setOnDismissListener(this);
-        k2Var.B = this;
-        k2Var.J = true;
-        yVar2.setFocusable(true);
+        m.x xVar = k2Var.L;
+        m.x xVar2 = k2Var.L;
+        xVar.setOnDismissListener(this);
+        k2Var.C = this;
+        k2Var.K = true;
+        xVar2.setFocusable(true);
         View view2 = this.x;
-        boolean z10 = this.A == null;
+        boolean z4 = this.B == null;
         ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
-        this.A = viewTreeObserver;
-        if (z10) {
+        this.B = viewTreeObserver;
+        if (z4) {
             viewTreeObserver.addOnGlobalLayoutListener(this.r);
         }
         view2.addOnAttachStateChangeListener(this.s);
-        k2Var.A = view2;
-        k2Var.w = this.E;
-        boolean z11 = this.C;
+        k2Var.B = view2;
+        k2Var.w = this.F;
+        boolean z10 = this.D;
         Context context = this.b;
         h hVar = this.d;
-        if (!z11) {
-            this.D = s.m(hVar, context, this.f);
-            this.C = true;
+        if (!z10) {
+            this.E = s.m(hVar, context, this.f);
+            this.D = true;
         }
-        k2Var.r(this.D);
-        yVar2.setInputMethodMode(2);
+        k2Var.r(this.E);
+        xVar2.setInputMethodMode(2);
         Rect rect = this.a;
-        k2Var.I = rect != null ? new Rect(rect) : null;
-        k2Var.h();
+        k2Var.J = rect != null ? new Rect(rect) : null;
+        k2Var.g();
         s1 s1Var = k2Var.c;
         s1Var.setOnKeyListener(this);
-        if (this.F) {
+        if (this.G) {
             k kVar = this.c;
             if (kVar.m != null) {
                 FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(context).inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) s1Var, false);
@@ -156,39 +151,44 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
                 s1Var.addHeaderView(frameLayout, null, false);
             }
         }
-        k2Var.p(hVar);
-        k2Var.h();
+        k2Var.o(hVar);
+        k2Var.g();
+    }
+
+    @Override // l.x
+    public final void h(w wVar) {
+        this.y = wVar;
     }
 
     @Override // l.x
     public final boolean j(d0 d0Var) {
-        boolean z10;
+        boolean z4;
         if (d0Var.hasVisibleItems()) {
             v vVar = new v(this.b, d0Var, this.x, this.e, this.h, 0);
             w wVar = this.y;
             vVar.h = wVar;
             s sVar = vVar.i;
             if (sVar != null) {
-                sVar.g(wVar);
+                sVar.h(wVar);
             }
             int size = d0Var.f.size();
             int i10 = 0;
             while (true) {
                 if (i10 >= size) {
-                    z10 = false;
+                    z4 = false;
                     break;
                 }
                 MenuItem item = d0Var.getItem(i10);
                 if (item.isVisible() && item.getIcon() != null) {
-                    z10 = true;
+                    z4 = true;
                     break;
                 }
                 i10++;
             }
-            vVar.g = z10;
+            vVar.g = z4;
             s sVar2 = vVar.i;
             if (sVar2 != null) {
-                sVar2.o(z10);
+                sVar2.o(z4);
             }
             vVar.j = this.v;
             this.v = null;
@@ -196,7 +196,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             k2 k2Var = this.n;
             int i11 = k2Var.f;
             int n10 = k2Var.n();
-            int i12 = this.E;
+            int i12 = this.F;
             View view = this.w;
             WeakHashMap weakHashMap = j0.a;
             if ((Gravity.getAbsoluteGravity(i12, view.getLayoutDirection()) & 7) == 5) {
@@ -209,7 +209,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             }
             w wVar2 = this.y;
             if (wVar2 != null) {
-                wVar2.h(d0Var);
+                wVar2.e0(d0Var);
             }
             return true;
         }
@@ -222,21 +222,21 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.s
-    public final void o(boolean z10) {
-        this.d.c = z10;
+    public final void o(boolean z4) {
+        this.d.c = z4;
     }
 
     @Override // android.widget.PopupWindow.OnDismissListener
     public final void onDismiss() {
-        this.B = true;
+        this.C = true;
         this.c.c(true);
-        ViewTreeObserver viewTreeObserver = this.A;
+        ViewTreeObserver viewTreeObserver = this.B;
         if (viewTreeObserver != null) {
             if (!viewTreeObserver.isAlive()) {
-                this.A = this.x.getViewTreeObserver();
+                this.B = this.x.getViewTreeObserver();
             }
-            this.A.removeGlobalOnLayoutListener(this.r);
-            this.A = null;
+            this.B.removeGlobalOnLayoutListener(this.r);
+            this.B = null;
         }
         this.x.removeOnAttachStateChangeListener(this.s);
         PopupWindow.OnDismissListener onDismissListener = this.v;
@@ -256,7 +256,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
 
     @Override // l.s
     public final void p(int i10) {
-        this.E = i10;
+        this.F = i10;
     }
 
     @Override // l.s
@@ -270,8 +270,8 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.s
-    public final void s(boolean z10) {
-        this.F = z10;
+    public final void s(boolean z4) {
+        this.G = z4;
     }
 
     @Override // l.s

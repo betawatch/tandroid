@@ -1,12 +1,11 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class n1 {
-    public final /* synthetic */ BasePendingResult a;
+import android.content.DialogInterface;
 
-    public final void finalize() {
-        BasePendingResult.m(this.a.h);
-        super.finalize();
-    }
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public abstract class n1 extends l implements DialogInterface.OnCancelListener {
+    public abstract void a(y5.a aVar, int i10);
+
+    public abstract void b();
 }

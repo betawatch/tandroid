@@ -1,36 +1,38 @@
 package nh;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y7 b;
+public final class q7 extends FrameLayout {
+    public d4 a;
+    public long b;
+    public ArrayList c;
+    public boolean d;
+    public final /* synthetic */ y8 e;
 
-    public /* synthetic */ q7(y7 y7Var, int i10) {
-        this.a = i10;
-        this.b = y7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q7(y8 y8Var, Context context) {
+        super(context);
+        this.e = y8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                y7.Q(this.b);
-                break;
-            case 1:
-                this.b.X();
-                break;
-            default:
-                y7 y7Var = this.b;
-                org.telegram.ui.Cells.g3 g3Var = y7Var.U;
-                if (y7Var.isShowing()) {
-                    g3Var.b.requestFocus();
-                    AndroidUtilities.showKeyboard(g3Var.b);
-                    break;
-                }
-                break;
+    public final void a(boolean z4) {
+        if (this.d != z4) {
+            this.d = z4;
+            invalidate();
+            this.a.setIsVisible(z4);
+            this.e.A();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.d) {
+            super.dispatchDraw(canvas);
         }
     }
 }

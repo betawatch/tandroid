@@ -1,30 +1,33 @@
 package gg;
 
-import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.y8;
-import org.telegram.ui.Components.jq;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class f0 extends y8 {
-    public final c6 v;
+public final /* synthetic */ class f0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public f0(Context context, c6 c6Var) {
-        super(context, c6Var);
-        this.v = c6Var;
+    public /* synthetic */ f0(Utilities.Callback callback, Utilities.Callback callback2, int i10) {
+        this.a = i10;
+        this.b = callback;
+        this.c = callback2;
     }
 
-    public void setBackground(boolean z10) {
-        Context context = getContext();
-        int i10 = z10 ? R.drawable.greydivider_bottom : R.drawable.greydivider;
-        int i11 = g6.b7;
-        c6 c6Var = this.v;
-        jq jqVar = new jq(new ColorDrawable(g6.v0(g6.a7, c6Var)), g6.U0(context, i10, g6.v0(i11, c6Var)), 0, 0);
-        jqVar.w = true;
-        setBackground(jqVar);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b(tL_error, this.b, this.c, 7));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.c(tL_error, this.b, tLObject, this.c, 4));
+                break;
+        }
     }
 }

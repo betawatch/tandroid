@@ -1,38 +1,111 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import java.util.regex.Pattern;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r80 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final /* synthetic */ class r80 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ g00 h;
 
-    public /* synthetic */ r80(ih.u5 u5Var, int i10) {
-        this.a = i10;
-        this.b = u5Var;
+    public /* synthetic */ r80(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, g00 g00Var) {
+        this.b = launchActivity;
+        this.d = tLObject;
+        this.e = i10;
+        this.f = str;
+        this.c = tL_error;
+        this.h = g00Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        Runnable runnable = this.b;
-        String str = (String) obj;
+        g00 g00Var = this.h;
+        String str = this.f;
+        TLObject tLObject = this.d;
+        TLRPC.TL_error tL_error = this.c;
         switch (i10) {
             case 0:
-                Pattern pattern = LaunchActivity.x1;
-                if (runnable != null && "paid".equals(str)) {
-                    runnable.run();
-                    break;
+                Pattern pattern = LaunchActivity.y1;
+                boolean z4 = tLObject instanceof TLRPC.User;
+                LaunchActivity launchActivity = this.b;
+                if (z4) {
+                    TLRPC.User user = (TLRPC.User) tLObject;
+                    MessagesController.getInstance(this.e).putUser(user, false);
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", user.id);
+                    launchActivity.p0(new xn(bundle));
+                } else {
+                    StringBuilder t6 = android.support.v4.media.a.t("cant import contact token. token=", str, " err=");
+                    t6.append(tL_error == null ? null : tL_error.text);
+                    FileLog.e(t6.toString());
+                    org.telegram.messenger.y3.s(R.string.NoUsernameFound, org.telegram.ui.Components.qc.a0((org.telegram.ui.ActionBar.p2) kh.a2.i(1, launchActivity.a0)), null);
                 }
-                break;
-            default:
-                if (runnable != null && "paid".equals(str)) {
-                    runnable.run();
+                try {
+                    g00Var.run();
                     break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            default:
+                Pattern pattern2 = LaunchActivity.y1;
+                LaunchActivity launchActivity2 = this.b;
+                if (tL_error != null) {
+                    org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+                    if (U != null) {
+                        if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
+                            org.telegram.ui.Components.qc.a0(U).Q(R.raw.fire_on, 36, launchActivity2.getString(R.string.UniqueGiftNotFoundBurned)).j();
+                        } else {
+                            org.telegram.ui.Components.qc.a0(U).Q(R.raw.error, 36, launchActivity2.getString(R.string.UniqueGiftNotFound)).j();
+                        }
+                    }
+                } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
+                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
+                    MessagesController.getInstance(launchActivity2.L).putUsers(tL_payments_uniqueStarGift.users, false);
+                    MessagesController.getInstance(launchActivity2.L).putChats(tL_payments_uniqueStarGift.chats, false);
+                    org.telegram.ui.ActionBar.p2 U2 = LaunchActivity.U();
+                    TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
+                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                        lh.g5 g5Var = new lh.g5(launchActivity2, this.e, 0L, null, null);
+                        g5Var.h2(str, (TL_stars.TL_starGiftUnique) starGift, null);
+                        if (U2 == null) {
+                            g5Var.show();
+                        } else if (U2.getLastStoryViewer() == null || !U2.getLastStoryViewer().H0) {
+                            U2.showDialog(g5Var);
+                        } else {
+                            U2.getLastStoryViewer().showDialog(g5Var);
+                        }
+                    }
+                }
+                try {
+                    g00Var.run();
+                    break;
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ r80(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, g00 g00Var) {
+        this.b = launchActivity;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.e = i10;
+        this.f = str;
+        this.h = g00Var;
     }
 }

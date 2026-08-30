@@ -1,6 +1,6 @@
 package x2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h extends a {
     public final Integer a;
@@ -106,29 +106,29 @@ public final class h extends a {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("AndroidClientInfo{sdkVersion=");
-        sb2.append(this.a);
-        sb2.append(", model=");
-        sb2.append(this.b);
-        sb2.append(", hardware=");
-        sb2.append(this.c);
-        sb2.append(", device=");
-        sb2.append(this.d);
-        sb2.append(", product=");
-        sb2.append(this.e);
-        sb2.append(", osBuild=");
-        sb2.append(this.f);
-        sb2.append(", manufacturer=");
-        sb2.append(this.g);
-        sb2.append(", fingerprint=");
-        sb2.append(this.h);
-        sb2.append(", locale=");
-        sb2.append(this.i);
-        sb2.append(", country=");
-        sb2.append(this.j);
-        sb2.append(", mccMnc=");
-        sb2.append(this.k);
-        sb2.append(", applicationBuild=");
-        return a4.w.q(sb2, this.l, "}");
+        StringBuilder sb = new StringBuilder("AndroidClientInfo{sdkVersion=");
+        sb.append(this.a);
+        sb.append(", model=");
+        sb.append(this.b);
+        sb.append(", hardware=");
+        sb.append(this.c);
+        sb.append(", device=");
+        sb.append(this.d);
+        sb.append(", product=");
+        sb.append(this.e);
+        sb.append(", osBuild=");
+        sb.append(this.f);
+        sb.append(", manufacturer=");
+        sb.append(this.g);
+        sb.append(", fingerprint=");
+        sb.append(this.h);
+        sb.append(", locale=");
+        sb.append(this.i);
+        sb.append(", country=");
+        sb.append(this.j);
+        sb.append(", mccMnc=");
+        sb.append(this.k);
+        sb.append(", applicationBuild=");
+        return android.support.v4.media.a.r(sb, this.l, "}");
     }
 }

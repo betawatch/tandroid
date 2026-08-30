@@ -1,260 +1,350 @@
 package lh;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.util.SparseIntArray;
-import j$.util.Objects;
-import java.util.HashSet;
+import android.animation.ValueAnimator;
+import android.opengl.Matrix;
+import java.util.Arrays;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gj0;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.gx;
+import org.telegram.ui.oy;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public class b implements org.telegram.ui.ActionBar.c6 {
-    public final HashSet a = new HashSet();
-    public final SparseIntArray b;
-    public final Paint c;
-    public Paint d;
-    public PorterDuffColorFilter e;
-    public org.telegram.ui.ActionBar.d5 f;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public b() {
-        SparseIntArray sparseIntArray = new SparseIntArray();
-        this.b = sparseIntArray;
-        Paint paint = new Paint();
-        this.c = paint;
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.xf, -1308622848);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.yf, -1056964608);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Yi, -1214008894);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Zi, -1946157057);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.aj, 452984831);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.bj, -665229191);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.cj, -667862461);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.dj, -665229191);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Oi, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.J5, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.q7, -2406842);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.H5, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.qf, i0.a.d(0.2f, -16777216, -1));
-        int i10 = org.telegram.ui.ActionBar.g6.P5;
-        sparseIntArray.put(i10, i0.a.d(0.5f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Q5, i0.a.d(0.5f, -16777216, -1));
-        int i11 = org.telegram.ui.ActionBar.g6.O5;
-        sparseIntArray.put(i11, i0.a.k(-1, 17));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.E8, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.F8, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.p7, -1152913);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.i6, 385875967);
-        int i12 = org.telegram.ui.ActionBar.g6.I5;
-        sparseIntArray.put(i12, 436207615);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Se, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.ai, -1711276033);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.H6, i0.a.d(0.5f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.t5, i0.a.d(0.5f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ii, i0.a.d(0.2f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.j5, -592138);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.r5, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.v6, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Te, 1946157055);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ve, 1946157055);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.vf, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Mh, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.s8, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.pf, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ie, i0.a.k(-1, 30));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.He, -14670806);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.y8, -1);
-        sparseIntArray.put(i10, i0.a.d(0.5f, -16777216, -1));
-        sparseIntArray.put(i11, i0.a.k(-1, 17));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.y6, i0.a.k(-1, 127));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.ae, -14606046);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Zd, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.jf, -1221292);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.df, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.kf, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.ef, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.nf, 2030043135);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.mf, -10638868);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Wd, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Vd, org.telegram.ui.ActionBar.g6.l1(0.6f, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.uf, -1515107571);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.hc, -5316609);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ud, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Xd, org.telegram.ui.ActionBar.g6.l1(0.9f, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Wk, org.telegram.ui.ActionBar.g6.l1(0.8f, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Sd, -14670806);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.h5, -14737633);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.i5, -16777216);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.M5, -15393241);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.d6, -15198183);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.G6, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Le, -8553090);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.h6, -10177027);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Pe, 181267199);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Je, i0.a.k(-1, 125));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Me, -2130706433);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ne, i0.a.k(-1, 125));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Oe, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Qe, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ke, i0.a.k(-16777216, 30));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Re, i0.a.k(-1, 125));
-        int i13 = org.telegram.ui.ActionBar.g6.d7;
-        sparseIntArray.put(i13, -16777216);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.zf, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.U5, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.e7, -14079703);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.f7, -8158332);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.a7, -16777216);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.L6, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.l6, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.k6, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.A6, i0.a.d(0.3f, -1, -16777216));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Fi, -14605274);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Gi, -7616267);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Hi, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.H8, -233499371);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ue, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.B6, -8355712);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.ng, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.fg, -14538189);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.A5, -14538189);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Z8, -9316522);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.X8, -1446156);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.lc, -2110438831);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.M6, -10263709);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.N6, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.B5, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.E5, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.n5, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.wj, -832444);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.i7, -12692893);
-        int i14 = org.telegram.ui.ActionBar.g6.j7;
-        sparseIntArray.put(i14, -10329502);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.C5, -1);
-        sparseIntArray.put(i12, 436207615);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.ci, -13816531);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.di, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.bi, -657931);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.J7, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Xh, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Yh, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.G8, -232841441);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.t8, 385875967);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.m7, -12500671);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.l7, -13133079);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.n7, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Oh, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.k5, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.R5, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.gc, -12147733);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.q5, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.ui, -592138);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.wi, -14737633);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.xi, -12632257);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.vi, -8796932);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ji, 1140850687);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Aa, i0.a.d(0.4f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Da, 0);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ea, 0);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Fa, 0);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Md, i0.a.k(-1, 75));
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.h7, -10177041);
-        sparseIntArray.put(i14, -12237499);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.k7, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.K7, -10703370);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.L7, -12547121);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Vk, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Tk, -1207959553);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Uk, 352321535);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Si, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Vi, -11292689);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ti, -12829636);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Ui, -11184811);
-        sparseIntArray.put(org.telegram.ui.ActionBar.g6.Zk, -15198183);
-        b();
-        paint.setColor(C0(i13));
+    public /* synthetic */ b(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final ColorFilter B() {
-        if (this.e == null) {
-            this.e = new PorterDuffColorFilter(C0(org.telegram.ui.ActionBar.g6.G6), PorterDuff.Mode.SRC_IN);
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0378  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x037d A[ADDED_TO_REGION, LOOP:1: B:146:0x037d->B:147:0x037f, LOOP_START, PHI: r4
+      0x037d: PHI (r4v1 int) = (r4v0 int), (r4v2 int) binds: [B:145:0x037b, B:147:0x037f] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x03ab  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x037a  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        char c3;
+        boolean z4;
+        int i10;
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 0:
+                c cVar = (c) obj;
+                cVar.getClass();
+                new aa(cVar.getContext(), cVar.b).show();
+                break;
+            case 1:
+                p pVar = (p) obj;
+                pVar.getClass();
+                try {
+                    sl0 currentListView = pVar.u0.C.getCurrentListView();
+                    if (currentListView != null && currentListView.getAdapter() != null) {
+                        currentListView.getAdapter().l();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+            case 2:
+                new fw0(((f0) obj).getContext()).show();
+                break;
+            case 3:
+                AndroidUtilities.showKeyboard(((n0) obj).a0);
+                break;
+            case 4:
+                AndroidUtilities.showKeyboard(((s0) obj).h);
+                break;
+            case 5:
+                AndroidUtilities.showKeyboard(((w0) obj).c);
+                break;
+            case 6:
+                f4 f4Var = (f4) obj;
+                f4Var.e0 = false;
+                f4Var.g0 = false;
+                f4Var.a(f4Var.T, f4Var.U, f4Var.V, f4Var.W);
+                break;
+            case 7:
+                ((v3) obj).invalidateSelf();
+                break;
+            case 8:
+                y3 y3Var = (y3) obj;
+                x3 x3Var = y3Var.E;
+                int i12 = 3;
+                if (x3Var == null) {
+                    c3 = 2;
+                    if (Math.abs(y3Var.d) <= 1.0E-4f && Math.abs(y3Var.e) <= 1.0E-4f) {
+                        z4 = false;
+                        if (y3Var.D == null ? true : z4) {
+                            for (int i13 = 0; i13 < 6; i13++) {
+                                Matrix.multiplyMV(y3Var.n, 0, y3Var.c, 0, y3Var.h[i13], 0);
+                                y3Var.r[i13] = y3Var.n[c3];
+                            }
+                            Arrays.sort(y3Var.s, new d4.t(y3Var, i12));
+                            y3Var.invalidate();
+                        }
+                        if (!y3Var.isAttachedToWindow()) {
+                            AndroidUtilities.runOnUIThread(y3Var.F, 16L);
+                            break;
+                        }
+                    } else {
+                        y3Var.a();
+                    }
+                } else {
+                    y3 y3Var2 = x3Var.a;
+                    float[] fArr = x3Var.h;
+                    if (!x3Var.e && (i10 = x3Var.c) != 0) {
+                        if (x3Var.l) {
+                            y3Var2.a();
+                        } else {
+                            int b10 = m1.j.b(((w3) x3Var.b.get(i10 - 1)).a);
+                            if (b10 == 1 || b10 == 2) {
+                                c3 = 2;
+                                y3Var2.a();
+                                int i14 = x3Var.f - 1;
+                                x3Var.f = i14;
+                                if (i14 <= 0) {
+                                    x3Var.b();
+                                }
+                            } else if (b10 == 3) {
+                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (x3Var.f / x3Var.g)), 3.0d));
+                                float f10 = 1.0f - pow;
+                                c3 = 2;
+                                if (Math.abs(x3Var.j * f10) > 1.0E-4f || Math.abs(x3Var.k * f10) > 1.0E-4f) {
+                                    float[] fArr2 = new float[16];
+                                    float f11 = x3Var.j * f10 * 0.96f;
+                                    y3Var2.getClass();
+                                    y3.b(1.0f, 0.0f, f11, fArr2);
+                                    y3Var2.getClass();
+                                    y3.d(fArr2, fArr, fArr);
+                                    float f12 = x3Var.k * f10 * 0.96f;
+                                    y3Var2.getClass();
+                                    y3.b(0.0f, 1.0f, f12, fArr2);
+                                    y3.d(fArr2, fArr, fArr);
+                                }
+                                float[] fArr3 = x3Var.i;
+                                float[] fArr4 = y3Var2.c;
+                                for (int i15 = 0; i15 < 16; i15++) {
+                                    float f13 = fArr[i15];
+                                    fArr4[i15] = e2.c.w(fArr3[i15], f13, pow, f13);
+                                }
+                                float[] fArr5 = {fArr4[0], fArr4[1], fArr4[2]};
+                                float[] fArr6 = {fArr4[4], fArr4[5], fArr4[6]};
+                                float[] fArr7 = new float[3];
+                                y3.e(fArr5);
+                                y3.c(fArr5, fArr6, fArr7);
+                                y3.e(fArr7);
+                                y3.c(fArr7, fArr5, fArr6);
+                                fArr4[0] = fArr5[0];
+                                fArr4[1] = fArr5[1];
+                                fArr4[2] = fArr5[2];
+                                fArr4[4] = fArr6[0];
+                                fArr4[5] = fArr6[1];
+                                fArr4[6] = fArr6[2];
+                                fArr4[8] = fArr7[0];
+                                fArr4[9] = fArr7[1];
+                                fArr4[10] = fArr7[2];
+                                int i16 = x3Var.f - 1;
+                                x3Var.f = i16;
+                                if (i16 <= 0) {
+                                    System.arraycopy(x3Var.i, 0, y3Var2.c, 0, 16);
+                                    y3Var2.d = 0.0f;
+                                    y3Var2.e = 0.0f;
+                                    x3Var.b();
+                                }
+                            }
+                        }
+                    }
+                    c3 = 2;
+                }
+                z4 = true;
+                if (y3Var.D == null ? true : z4) {
+                }
+                if (!y3Var.isAttachedToWindow()) {
+                }
+                break;
+            case 9:
+                ((a4) obj).invalidate();
+                break;
+            case 10:
+                ((e4) obj).invalidateSelf();
+                break;
+            case 11:
+                c5 c5Var = (c5) obj;
+                b bVar = c5Var.f0;
+                org.telegram.ui.Components.p9[] p9VarArr = c5Var.d;
+                if (!p9VarArr[2 - c5Var.o0].getImageReceiver().hasImageLoaded()) {
+                    AndroidUtilities.cancelRunOnUIThread(bVar);
+                    AndroidUtilities.runOnUIThread(bVar, 150L);
+                    break;
+                } else {
+                    c5.d dVar = c5Var.R;
+                    if (dVar != null && dVar.b == 1 && c5Var.isAttachedToWindow()) {
+                        AndroidUtilities.cancelRunOnUIThread(bVar);
+                        ValueAnimator valueAnimator = c5Var.e0;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                            c5Var.e0 = null;
+                        }
+                        int i17 = 1 - c5Var.o0;
+                        c5Var.o0 = i17;
+                        gj0 lottieAnimation = p9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
+                        gj0 lottieAnimation2 = p9VarArr[c5Var.o0 + 1].getImageReceiver().getLottieAnimation();
+                        if (lottieAnimation2 != null && lottieAnimation != null) {
+                            lottieAnimation2.Q(lottieAnimation.r(), false);
+                        }
+                        c5Var.T.c();
+                        int i18 = c5Var.o0 + 1;
+                        TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = c5Var.S;
+                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) c5Var.V.c();
+                        stargiftattributebackdropArr[i18] = stargiftattributebackdrop;
+                        c5Var.e(i18, stargiftattributebackdrop);
+                        c5Var.g(1, (TL_stars.starGiftAttributePattern) c5Var.U.c(), true);
+                        c5Var.a();
+                        float f14 = c5Var.o0;
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f14, f14);
+                        c5Var.e0 = ofFloat;
+                        ofFloat.addUpdateListener(new y4(c5Var, 2));
+                        c5Var.e0.addListener(new b5(c5Var));
+                        c5Var.e0.setDuration(320L);
+                        c5Var.e0.setInterpolator(nr.h);
+                        c5Var.e0.start();
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                ((fg.i) obj).setPaused(true);
+                break;
+            case 13:
+                AndroidUtilities.showKeyboard((EditTextBoldCursor) obj);
+                break;
+            case 14:
+                ((w0[]) obj)[0].dismiss();
+                break;
+            case 15:
+                u9 u9Var = (u9) obj;
+                u9Var.getClass();
+                try {
+                    sl0 currentListView2 = ((ja) u9Var.J0).O.getCurrentListView();
+                    if (currentListView2 != null && currentListView2.getAdapter() != null) {
+                        currentListView2.getAdapter().l();
+                        break;
+                    }
+                } catch (Throwable unused2) {
+                    return;
+                }
+                break;
+            case 16:
+                af.g.s(((z9) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 17:
+                af.g.s(((aa) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 18:
+                mg.v vVar = (mg.v) ((o5.i) obj).b;
+                mg.u uVar = vVar.b;
+                if (uVar != null) {
+                    uVar.d();
+                }
+                vVar.a.z7(true);
+                break;
+            case 19:
+                ((ValueAnimator) obj).start();
+                break;
+            case 20:
+                org.telegram.ui.ActionBar.p2 p2Var = ((mg.z) obj).c2.r;
+                if (p2Var instanceof xn) {
+                    p2Var.showDialog(new eg.o1(p2Var, 11, false));
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
+                    if (R != null) {
+                        R.showDialog(new eg.o1(p2Var, 11, false));
+                        break;
+                    }
+                }
+                break;
+            case 21:
+                oy oyVar = ((gx) obj).L0;
+                if (!oyVar.I || !oyVar.X3().G()) {
+                    oyVar.x4(true, true);
+                    break;
+                } else {
+                    oyVar.B0.h();
+                    break;
+                }
+                break;
+            case 22:
+                ((nh.c1) obj).a.t(false);
+                break;
+            case 23:
+                nh.e1 e1Var = ((nh.d1) obj).a;
+                NotificationCenter.getInstance(e1Var.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(e1Var.g()));
+                break;
+            case 24:
+                nh.j1 j1Var = (nh.j1) obj;
+                j1Var.E = false;
+                j1Var.p(false);
+                j1Var.Q = false;
+                break;
+            case 25:
+                ((nh.e3) obj).a.Q0();
+                break;
+            case 26:
+                nh.d4 d4Var = ((nh.i3) obj).x;
+                nh.x3 x3Var2 = d4Var.N1;
+                if (x3Var2 != null) {
+                    if (!d4Var.Q1 && !d4Var.R1 && !d4Var.S1) {
+                        nh.i9 i9Var = ((nh.z8) x3Var2).d;
+                        if (!i9Var.k0.getCurrentPeerView().d1(true) && !i9Var.k0.E(true)) {
+                            i9Var.q(true);
+                            break;
+                        }
+                    } else if (d4Var.L1.e) {
+                        d4Var.J2.b.loopBack();
+                        break;
+                    } else {
+                        d4Var.T0 = 0L;
+                        break;
+                    }
+                }
+                break;
+            case 27:
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj;
+                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                    break;
+                }
+                break;
+            case 28:
+                ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
+                int i19 = ProfileStoriesView.p0;
+                profileStoriesView.getClass();
+                AndroidUtilities.vibrateCursor(profileStoriesView);
+                break;
+            default:
+                nh.d5.a(((nh.z4) obj).d);
+                break;
         }
-        return this.e;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final int C0(int i10) {
-        SparseIntArray sparseIntArray = this.b;
-        int indexOfKey = sparseIntArray.indexOfKey(i10);
-        if (indexOfKey >= 0) {
-            return sparseIntArray.valueAt(indexOfKey);
-        }
-        Integer valueOf = Integer.valueOf(i10);
-        HashSet hashSet = this.a;
-        if (!hashSet.contains(valueOf)) {
-            hashSet.add(Integer.valueOf(i10));
-        }
-        return org.telegram.ui.ActionBar.g6.w0(null, i10, false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final Paint G(String str) {
-        if (str.equals("paintDivider")) {
-            return this.c;
-        }
-        if (!str.equals("paintChatActionBackground")) {
-            return org.telegram.ui.ActionBar.g6.S0(str);
-        }
-        if (this.d == null) {
-            Paint paint = new Paint(1);
-            this.d = paint;
-            paint.setColor(i0.a.d(0.1f, -16777216, -1));
-        }
-        return this.d;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final boolean a() {
-        return org.telegram.ui.ActionBar.g6.I.q();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final int g1(int i10) {
-        return C0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final Drawable getDrawable(String str) {
-        if (!Objects.equals(str, "drawableMsgOutMedia")) {
-            return null;
-        }
-        if (this.f == null) {
-            this.f = new org.telegram.ui.ActionBar.d5(1, true, false, this);
-        }
-        return this.f;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final int h0(int i10) {
-        return C0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void l(float f9, float f10, int i10, int i11) {
-        org.telegram.ui.ActionBar.g6.q(f9, f10, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ boolean l0() {
-        return false;
-    }
-
-    public void b() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void L0(int i10, int i11) {
     }
 }

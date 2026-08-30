@@ -1,35 +1,41 @@
 package cg;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.c81;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w b;
-    public final /* synthetic */ v c;
+public final class t extends c81 {
+    public final /* synthetic */ u a;
 
-    public /* synthetic */ t(w wVar, v vVar, int i10) {
-        this.a = i10;
-        this.b = wVar;
-        this.c = vVar;
+    public t(u uVar) {
+        this.a = uVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                w wVar = this.b;
-                wVar.getClass();
-                this.c.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wVar.invalidate();
-                break;
-            default:
-                w wVar2 = this.b;
-                wVar2.getClass();
-                this.c.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wVar2.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Components.c81
+    public final View d(int i10) {
+        u uVar = this.a;
+        return i10 != 1 ? i10 != 2 ? (x) uVar.b : (d0) uVar.d : (w) uVar.c;
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final int e() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final CharSequence g(int i10) {
+        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.PaintPaletteGrid).toUpperCase() : LocaleController.getString(R.string.PaintPaletteSliders).toUpperCase() : LocaleController.getString(R.string.PaintPaletteSpectrum).toUpperCase();
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final int h(int i10) {
+        return i10;
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final void b(View view, int i10, int i11) {
     }
 }

@@ -1,7 +1,7 @@
 package androidx.savedstate;
 
-import a4.w;
 import android.os.Bundle;
+import android.support.v4.media.a;
 import androidx.lifecycle.j0;
 import androidx.lifecycle.m;
 import androidx.lifecycle.p0;
@@ -18,8 +18,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.j;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final f a;
@@ -61,10 +62,10 @@ public final class Recreator implements r {
                         if (!(fVar instanceof u0)) {
                             throw new IllegalStateException("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner");
                         }
-                        t0 f9 = ((u0) fVar).f();
+                        t0 f10 = ((u0) fVar).f();
                         e g10 = fVar.g();
-                        f9.getClass();
-                        LinkedHashMap linkedHashMap = f9.a;
+                        f10.getClass();
+                        LinkedHashMap linkedHashMap = f10.a;
                         Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
                         while (it.hasNext()) {
                             String key = (String) it.next();
@@ -76,14 +77,14 @@ public final class Recreator implements r {
                         if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
                             g10.g();
                         }
-                    } catch (Exception e10) {
-                        throw new RuntimeException(u3.c.e("Failed to instantiate ", str2), e10);
+                    } catch (Exception e) {
+                        throw new RuntimeException(v2.e("Failed to instantiate ", str2), e);
                     }
-                } catch (NoSuchMethodException e11) {
-                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e11);
+                } catch (NoSuchMethodException e6) {
+                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e6);
                 }
-            } catch (ClassNotFoundException e12) {
-                throw new RuntimeException(w.n("Class ", str2, " wasn't found"), e12);
+            } catch (ClassNotFoundException e10) {
+                throw new RuntimeException(a.o("Class ", str2, " wasn't found"), e10);
             }
         }
     }

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.net.HttpURLConnection;
 import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzhm {
     private final zzii zza;
@@ -20,10 +20,10 @@ public final class zzhm {
             zza.setDoOutput(true);
             zza.setRequestProperty("Content-Type", "application/x-protobuffer");
             return new zzhl(zza);
-        } catch (zzcg e10) {
-            throw e10;
-        } catch (Exception e11) {
-            throw new zzcg(zzce.zzc, zzcd.zzai, e11.getMessage(), null, 8, null);
+        } catch (zzcg e) {
+            throw e;
+        } catch (Exception e6) {
+            throw new zzcg(zzce.zzc, zzcd.zzai, e6.getMessage(), null, 8, null);
         }
     }
 

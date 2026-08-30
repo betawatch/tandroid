@@ -1,11 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzed extends i implements p {
     int zza;
@@ -26,23 +27,23 @@ final class zzed extends i implements p {
         this.zzf = j10;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzed zzedVar = new zzed(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, cVar);
         zzedVar.zzg = obj;
         return zzedVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzed) create((zzhh) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzed) create((zzhh) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final Object invokeSuspend(Object obj) {
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
-        c7.b(obj);
+        p7.b(obj);
         if (i10 != 0) {
             return obj;
         }

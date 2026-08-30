@@ -1,87 +1,29 @@
 package nh;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jr;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class h7 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.Components.e9 b;
-    public final org.telegram.ui.Components.t9 c;
-    public final TextView d;
-    public ViewPropertyAnimator e;
+public final class h7 extends ImageReceiver {
+    public final /* synthetic */ Runnable[] a;
+    public final /* synthetic */ j7 b;
 
-    public h7(Activity activity, int i10) {
-        super(activity);
-        this.a = i10;
-        this.b = new org.telegram.ui.Components.e9((org.telegram.ui.ActionBar.c6) null);
-        org.telegram.ui.Components.t9 t9Var = new org.telegram.ui.Components.t9(activity);
-        this.c = t9Var;
-        t9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
-        addView(t9Var, i7.f6.d(30, 30.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(activity);
-        this.d = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(-1);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setSingleLine();
-        textView.setLines(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, i7.f6.d(-1, -2.0f, 51, 53.0f, 11.33f, 12.0f, 0.0f));
-        TextView textView2 = new TextView(activity);
-        textView2.setTextSize(1, 12.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.g6.l1(0.85f, -1));
-        addView(textView2, i7.f6.d(-1, -2.0f, 51, 53.0f, 29.33f, 12.0f, 0.0f));
-        textView2.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.LiveStoryPeerChange), false, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.33f), 1.0f));
-        set(null);
+    public h7(Runnable[] runnableArr, j7 j7Var) {
+        this.a = runnableArr;
+        this.b = j7Var;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        ViewPropertyAnimator viewPropertyAnimator = this.e;
-        if (viewPropertyAnimator != null) {
-            viewPropertyAnimator.cancel();
-            this.e = null;
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z4, int i11) {
+        boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z4, i11);
+        Runnable runnable = this.a[0];
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.b.c.run();
         }
-        if (!z11) {
-            setVisibility(z10 ? 0 : 8);
-            setAlpha(z10 ? 1.0f : 0.0f);
-        } else {
-            setVisibility(0);
-            ViewPropertyAnimator duration = animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(jr.h).withEndAction(new hh.f(10, this, z10)).setDuration(320L);
-            this.e = duration;
-            duration.start();
-        }
-    }
-
-    public void set(TLRPC.InputPeer inputPeer) {
-        int i10 = this.a;
-        long clientUserId = inputPeer == null ? UserConfig.getInstance(i10).getClientUserId() : DialogObject.getPeerDialogId(inputPeer);
-        TextView textView = this.d;
-        org.telegram.ui.Components.t9 t9Var = this.c;
-        org.telegram.ui.Components.e9 e9Var = this.b;
-        if (clientUserId >= 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(clientUserId));
-            e9Var.r(user);
-            t9Var.e(user, e9Var);
-            textView.setText(UserObject.getUserName(user));
-            return;
-        }
-        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-clientUserId));
-        e9Var.q(chat);
-        t9Var.e(chat, e9Var);
-        textView.setText(chat == null ? "" : chat.title);
+        AndroidUtilities.runOnUIThread(new n5(this, 5));
+        return imageBitmapByKey;
     }
 }

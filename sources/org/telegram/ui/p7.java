@@ -1,15 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class p7 {
-    public final String a;
-    public final int b;
-    public final d7 c;
+import android.content.Context;
 
-    public p7(String str, int i10, d7 d7Var) {
-        this.a = str;
-        this.b = i10;
-        this.c = d7Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class p7 extends org.telegram.ui.Cells.r7 {
+    public final /* synthetic */ q7 D0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p7(q7 q7Var, Context context, org.telegram.ui.Cells.q7 q7Var2, int i10) {
+        super(context, q7Var2, i10);
+        this.D0 = q7Var;
+    }
+
+    @Override // org.telegram.ui.Cells.r7
+    public final void h() {
+        this.D0.v.v.r(null, (mh.a) getTag(), true);
     }
 }

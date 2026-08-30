@@ -39,7 +39,7 @@ public final class q0 extends CountedCompleter {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long j10 = this.c;
-        boolean z10 = false;
+        boolean z4 = false;
         q0 q0Var = this;
         while (spliterator.estimateSize() > j10 && (trySplit = spliterator.trySplit()) != null) {
             q0 q0Var2 = new q0(q0Var, trySplit, q0Var.f);
@@ -55,14 +55,14 @@ public final class q0 extends CountedCompleter {
                     q0Var2.addToPendingCount(-1);
                 }
             }
-            if (z10) {
+            if (z4) {
                 spliterator = trySplit;
                 q0Var = q0Var2;
                 q0Var2 = q0Var3;
             } else {
                 q0Var = q0Var3;
             }
-            z10 = !z10;
+            z4 = !z4;
             q0Var2.fork();
         }
         if (q0Var.getPendingCount() > 0) {

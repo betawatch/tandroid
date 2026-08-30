@@ -1,18 +1,36 @@
 package fg;
 
-import android.view.View;
-import ig.n;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements f5.d {
-    public final /* synthetic */ boolean a;
+public final class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    @Override // f5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        if (view instanceof n) {
-            ((n) view).g(this.a, true);
+    public /* synthetic */ f(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        ValueAnimator valueAnimator;
+        switch (this.a) {
+            case 0:
+                i iVar = this.b;
+                AnimatorSet animatorSet = iVar.Q;
+                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = iVar.P) != null && valueAnimator.isRunning())) {
+                    iVar.h(iVar.F);
+                    break;
+                } else {
+                    iVar.k();
+                    break;
+                }
+            default:
+                this.b.i();
+                break;
         }
     }
 }

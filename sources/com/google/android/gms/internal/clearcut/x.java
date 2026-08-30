@@ -14,18 +14,18 @@ public abstract class x implements Cloneable {
     public final void a(z zVar) {
         b();
         z zVar2 = this.b;
-        w0 w0Var = w0.c;
-        w0Var.getClass();
-        w0Var.a(zVar2.getClass()).c(zVar2, zVar);
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        v0Var.a(zVar2.getClass()).c(zVar2, zVar);
     }
 
     public final void b() {
         if (this.c) {
             z zVar = (z) this.b.a(4);
             z zVar2 = this.b;
-            w0 w0Var = w0.c;
-            w0Var.getClass();
-            w0Var.a(zVar.getClass()).c(zVar, zVar2);
+            v0 v0Var = v0.c;
+            v0Var.getClass();
+            v0Var.a(zVar.getClass()).c(zVar, zVar2);
             this.b = zVar;
             this.c = false;
         }
@@ -36,9 +36,9 @@ public abstract class x implements Cloneable {
             return this.b;
         }
         z zVar = this.b;
-        w0 w0Var = w0.c;
-        w0Var.getClass();
-        w0Var.a(zVar.getClass()).b(zVar);
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        v0Var.a(zVar.getClass()).b(zVar);
         this.c = true;
         return this.b;
     }

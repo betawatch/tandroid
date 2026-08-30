@@ -1,110 +1,272 @@
 package nb;
 
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.StandardCharsets;
-import java.nio.charset.UnsupportedCharsetException;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.SystemClock;
+import android.util.Log;
+import b4.e0;
+import b6.m;
+import c2.p;
+import cb.f;
+import cb.h;
+import cb.k;
+import cb.o;
+import j7.d9;
+import j7.e8;
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
+import k.j;
+import l7.ja;
+import l7.w0;
+import m.s3;
+import n7.bg;
+import n7.eg;
+import n7.fg;
+import n7.gb;
+import n7.ge;
+import n7.gg;
+import n7.hb;
+import n7.hg;
+import n7.i1;
+import n7.ib;
+import n7.ig;
+import n7.jg;
+import n7.kg;
+import n7.wf;
+import n7.xf;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class e {
-    public static final ArrayList c = new ArrayList();
-    public final CharsetEncoder[] a;
-    public final int b;
+public final class e extends f {
+    public static final y5.c[] k = {k.c};
+    public static final ib.a l = ib.a.a;
+    public final Context d;
+    public final mb.e e;
+    public final xf f;
+    public final d9 g;
+    public boolean h = true;
+    public boolean i;
+    public eg j;
 
-    static {
-        String[] strArr = {"IBM437", "ISO-8859-2", "ISO-8859-3", "ISO-8859-4", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "ISO-8859-10", "ISO-8859-11", "ISO-8859-13", "ISO-8859-14", "ISO-8859-15", "ISO-8859-16", "windows-1250", "windows-1251", "windows-1252", "windows-1256", "Shift_JIS"};
-        for (int i10 = 0; i10 < 20; i10++) {
-            String str = strArr[i10];
-            if (((c) c.d.get(str)) != null) {
-                try {
-                    c.add(Charset.forName(str).newEncoder());
-                } catch (UnsupportedCharsetException unused) {
+    public e(h hVar, mb.e eVar, xf xfVar, d9 d9Var) {
+        m.i(hVar, "MlKitContext can not be null");
+        m.i(eVar, "SubjectSegmenterOptions can not be null");
+        this.d = hVar.b();
+        this.e = eVar;
+        this.f = xfVar;
+        this.g = d9Var;
+    }
+
+    @Override // cb.j
+    public final synchronized void b() {
+        hg fgVar;
+        try {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            Context context = this.d;
+            y5.c[] cVarArr = k;
+            if (!k.a(context, cVarArr)) {
+                if (!this.i) {
+                    k.c(this.d, cVarArr);
+                    this.i = true;
                 }
+                f(hb.c, elapsedRealtime);
+                throw new ya.a("Waiting for the subject segmentation optional module to be downloaded. Please wait.", 14);
+            }
+            try {
+                if (this.j == null) {
+                    IBinder b10 = m6.e.c(this.d, m6.e.b, "com.google.android.gms.mlkit_subject_segmentation").b("com.google.android.gms.mlkit.segmentation.subject.SubjectSegmenterCreator");
+                    int i10 = gg.a;
+                    if (b10 == null) {
+                        fgVar = null;
+                    } else {
+                        IInterface queryLocalInterface = b10.queryLocalInterface("com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenterCreator");
+                        fgVar = queryLocalInterface instanceof hg ? (hg) queryLocalInterface : new fg(b10, "com.google.mlkit.vision.segmentation.subject.aidls.ISubjectSegmenterCreator", 7);
+                    }
+                    l6.b bVar = new l6.b(this.d);
+                    this.e.getClass();
+                    mb.e eVar = this.e;
+                    this.j = ((fg) fgVar).U0(bVar, new kg(false, eVar.a, eVar.b, false, eVar.c));
+                }
+                try {
+                    eg egVar = this.j;
+                    egVar.getClass();
+                    Parcel obtain = Parcel.obtain();
+                    obtain.writeInterfaceToken(egVar.c);
+                    egVar.Q0(obtain, 1);
+                    f(hb.b, elapsedRealtime);
+                } catch (RemoteException e) {
+                    f(hb.d, elapsedRealtime);
+                    throw new ya.a("Failed to init module subject segmenter", e);
+                }
+            } catch (Exception e6) {
+                f(hb.f, elapsedRealtime);
+                throw new ya.a("Failed to load subject segmentation module", e6);
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+    }
+
+    @Override // cb.j
+    public final synchronized void c() {
+        try {
+            try {
+                eg egVar = this.j;
+                if (egVar != null) {
+                    Parcel obtain = Parcel.obtain();
+                    obtain.writeInterfaceToken(egVar.c);
+                    egVar.Q0(obtain, 2);
+                }
+                this.j = null;
+            } catch (RemoteException unused) {
+                Log.e("SubjectSegmenterTask", "Failed to release subject segmenter");
+            }
+            this.h = true;
+            xf xfVar = this.f;
+            ib ibVar = ib.N4;
+            xfVar.getClass();
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            if (xfVar.d(ibVar, elapsedRealtime)) {
+                xfVar.i.put(ibVar, Long.valueOf(elapsedRealtime));
+                s3 s3Var = new s3();
+                s3Var.c = gb.b;
+                o.a.execute(new p(xfVar, new e0(s3Var, 0), ibVar, xfVar.c(), false, 7));
+            }
+        } finally {
+            this.j = null;
+        }
+    }
+
+    @Override // cb.f
+    public final Object e(hb.a aVar) {
+        Throwable th2;
+        l6.b bVar;
+        e eVar;
+        hb.a aVar2;
+        synchronized (this) {
+            try {
+                try {
+                    long elapsedRealtime = SystemClock.elapsedRealtime();
+                    eg egVar = this.j;
+                    m.h(egVar);
+                    bg bgVar = new bg(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), e8.a(aVar.d));
+                    int i10 = aVar.e;
+                    try {
+                        if (i10 != -1) {
+                            if (i10 != 17) {
+                                if (i10 == 35) {
+                                    bVar = new l6.b(null);
+                                } else if (i10 != 842094169) {
+                                    throw new ya.a("Unsupported image format: " + aVar.e, 3);
+                                }
+                            }
+                            m.h(null);
+                            throw null;
+                        }
+                        Bitmap bitmap = aVar.a;
+                        m.h(bitmap);
+                        bVar = new l6.b(bitmap);
+                        try {
+                            jg U0 = egVar.U0(bVar, bgVar);
+                            ArrayList arrayList = new ArrayList();
+                            if (this.e.b) {
+                                for (ig igVar : U0.a) {
+                                    float[] fArr = igVar.a;
+                                    if (fArr != null) {
+                                        FloatBuffer allocate = FloatBuffer.allocate(fArr.length);
+                                        allocate.put(fArr);
+                                        allocate.rewind();
+                                    }
+                                    arrayList.add(new mb.a(igVar.b, igVar.c, igVar.d, igVar.e, igVar.f));
+                                }
+                            }
+                            eVar = this;
+                            aVar2 = aVar;
+                            try {
+                                eVar.g(hb.b, elapsedRealtime, this.h, aVar2, U0);
+                                eVar.h = false;
+                                float[] fArr2 = U0.b;
+                                if (fArr2 != null) {
+                                    try {
+                                        try {
+                                            FloatBuffer allocate2 = FloatBuffer.allocate(fArr2.length);
+                                            allocate2.put(fArr2);
+                                            allocate2.rewind();
+                                        } catch (RemoteException e) {
+                                            e = e;
+                                            eVar.g(hb.e, elapsedRealtime, eVar.h, aVar2, null);
+                                            throw new ya.a("Failed to run thin subject segmenter.", e);
+                                        }
+                                    } catch (RemoteException e6) {
+                                        e = e6;
+                                    }
+                                }
+                                return new mb.b(arrayList);
+                            } catch (RemoteException e10) {
+                                e = e10;
+                            }
+                        } catch (RemoteException e11) {
+                            e = e11;
+                            eVar = this;
+                            aVar2 = aVar;
+                        }
+                    } catch (Throwable th3) {
+                        th2 = th3;
+                        throw th2;
+                    }
+                } catch (Throwable th4) {
+                    th = th4;
+                    th2 = th;
+                    throw th2;
+                }
+            } catch (Throwable th5) {
+                th = th5;
             }
         }
     }
 
-    public e(String str, Charset charset) {
-        int i10;
-        boolean z10;
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(StandardCharsets.ISO_8859_1.newEncoder());
-        int i11 = 0;
-        boolean z11 = charset != null && charset.name().startsWith("UTF");
-        int i12 = 0;
-        while (true) {
-            i10 = -1;
-            if (i12 >= str.length()) {
-                break;
+    public final void f(final hb hbVar, final long j10) {
+        this.f.b(new wf() { // from class: nb.d
+            @Override // n7.wf
+            public final e0 zza() {
+                s3 s3Var = new s3();
+                s3Var.c = gb.b;
+                w0 w0Var = new w0(11, false);
+                w0Var.d = e.this.e.a();
+                w0Var.b = hbVar;
+                w0Var.c = Long.valueOf((SystemClock.elapsedRealtime() - j10) & Long.MAX_VALUE);
+                s3Var.e = new ge(w0Var);
+                return new e0(s3Var, 0);
             }
-            int size = arrayList.size();
-            int i13 = 0;
-            while (i13 < size) {
-                Object obj = arrayList.get(i13);
-                i13++;
-                CharsetEncoder charsetEncoder = (CharsetEncoder) obj;
-                char charAt = str.charAt(i12);
-                if (charAt == 65535 || charsetEncoder.canEncode(charAt)) {
-                    z10 = true;
-                    break;
-                }
+        }, ib.L4);
+    }
+
+    public final void g(hb hbVar, long j10, boolean z4, hb.a aVar, jg jgVar) {
+        long elapsedRealtime = SystemClock.elapsedRealtime() - j10;
+        this.f.b(new j(this, elapsedRealtime, hbVar, z4, aVar, jgVar), ib.M4);
+        w0 w0Var = new w0(9, false);
+        w0Var.d = this.e.a();
+        w0Var.b = hbVar;
+        w0Var.c = Boolean.valueOf(z4);
+        o.a.execute(new ja(this.f, new i1(w0Var), elapsedRealtime));
+        long currentTimeMillis = System.currentTimeMillis();
+        long j11 = currentTimeMillis - elapsedRealtime;
+        d9 d9Var = this.g;
+        int i10 = hbVar.a;
+        synchronized (d9Var) {
+            AtomicLong atomicLong = d9Var.b;
+            long elapsedRealtime2 = SystemClock.elapsedRealtime();
+            if (atomicLong.get() != -1 && elapsedRealtime2 - d9Var.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
+                return;
             }
-            z10 = false;
-            if (!z10) {
-                ArrayList arrayList2 = c;
-                int size2 = arrayList2.size();
-                int i14 = 0;
-                while (true) {
-                    if (i14 >= size2) {
-                        break;
-                    }
-                    Object obj2 = arrayList2.get(i14);
-                    i14++;
-                    CharsetEncoder charsetEncoder2 = (CharsetEncoder) obj2;
-                    if (charsetEncoder2.canEncode(str.charAt(i12))) {
-                        arrayList.add(charsetEncoder2);
-                        z10 = true;
-                        break;
-                    }
-                }
-            }
-            if (!z10) {
-                z11 = true;
-            }
-            i12++;
+            d9Var.a.f(new b6.p(0, Arrays.asList(new b6.k(24336, i10, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new f2.c(d9Var, elapsedRealtime2, 5));
         }
-        if (arrayList.size() != 1 || z11) {
-            this.a = new CharsetEncoder[arrayList.size() + 2];
-            int size3 = arrayList.size();
-            int i15 = 0;
-            int i16 = 0;
-            while (i16 < size3) {
-                Object obj3 = arrayList.get(i16);
-                i16++;
-                this.a[i15] = (CharsetEncoder) obj3;
-                i15++;
-            }
-            this.a[i15] = StandardCharsets.UTF_8.newEncoder();
-            this.a[i15 + 1] = StandardCharsets.UTF_16BE.newEncoder();
-        } else {
-            this.a = new CharsetEncoder[]{(CharsetEncoder) arrayList.get(0)};
-        }
-        if (charset != null) {
-            while (true) {
-                CharsetEncoder[] charsetEncoderArr = this.a;
-                if (i11 < charsetEncoderArr.length) {
-                    if (charsetEncoderArr[i11] != null && charset.name().equals(this.a[i11].charset().name())) {
-                        i10 = i11;
-                        break;
-                    }
-                    i11++;
-                } else {
-                    break;
-                }
-            }
-        }
-        this.b = i10;
     }
 }

@@ -2,123 +2,123 @@ package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class o4 implements p5.h {
-    public final /* synthetic */ a5.j a;
+public final class o4 implements r5.h {
+    public final /* synthetic */ c5.j a;
 
-    public /* synthetic */ o4(a5.j jVar) {
+    public /* synthetic */ o4(c5.j jVar) {
         this.a = jVar;
     }
 
-    @Override // p5.h
-    public void a(p5.f fVar, String str) {
-        w6 w6Var = new w6(new ag.j2(7, 4));
-        a5.j jVar = this.a;
-        a5.j.y(jVar, w6Var);
-        v6 v6Var = (v6) jVar.d;
-        z5.l.h(v6Var);
-        v6Var.a((p5.c) fVar);
-        v6 v6Var2 = (v6) jVar.d;
-        z5.l.h(v6Var2);
-        String str2 = v6Var2.k;
+    @Override // r5.h
+    public void e(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(8, 3);
+        e0Var.c = Integer.valueOf(i10);
+        v6 v6Var = new v6(e0Var);
+        c5.j jVar = this.a;
+        c5.j.D(jVar, v6Var);
+        jVar.F();
+    }
+
+    @Override // r5.h
+    public void f(r5.f fVar, String str) {
+        v6 v6Var = new v6(new b4.e0(4, 3));
+        c5.j jVar = this.a;
+        c5.j.D(jVar, v6Var);
+        u6 u6Var = (u6) jVar.d;
+        b6.m.h(u6Var);
+        u6Var.a((r5.c) fVar);
+        u6 u6Var2 = (u6) jVar.d;
+        b6.m.h(u6Var2);
+        String str2 = u6Var2.k;
         if (str2 == null) {
-            v6Var2.k = str;
+            u6Var2.k = str;
         } else {
             if (TextUtils.equals(str, str2)) {
                 return;
             }
-            v6Var2.b(4);
+            u6Var2.b(4);
         }
     }
 
-    @Override // p5.h
-    public void b(p5.f fVar) {
-        p5.c cVar = (p5.c) fVar;
-        ag.j2 j2Var = new ag.j2(2, 4);
-        a5.j jVar = this.a;
-        j2Var.d = Boolean.valueOf(((d) jVar.b).d == 2);
-        a5.j.y(jVar, new w6(j2Var));
-        v6 v6Var = (v6) jVar.d;
-        z5.l.h(v6Var);
-        v6Var.a(cVar);
+    @Override // r5.h
+    public /* bridge */ /* synthetic */ void h(r5.f fVar, boolean z4) {
+        v6 v6Var = new v6(new b4.e0(4, 3));
+        c5.j jVar = this.a;
+        c5.j.D(jVar, v6Var);
+        u6 u6Var = (u6) jVar.d;
+        b6.m.h(u6Var);
+        u6Var.a((r5.c) fVar);
+    }
+
+    @Override // r5.h
+    public void i(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(6, 3);
+        e0Var.c = Integer.valueOf(i10);
+        v6 v6Var = new v6(e0Var);
+        c5.j jVar = this.a;
+        c5.j.D(jVar, v6Var);
+        u6 u6Var = (u6) jVar.d;
+        b6.m.h(u6Var);
+        u6Var.a((r5.c) fVar);
+    }
+
+    @Override // r5.h
+    public void j(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(5, 3);
+        e0Var.c = Integer.valueOf(i10);
+        v6 v6Var = new v6(e0Var);
+        c5.j jVar = this.a;
+        c5.j.D(jVar, v6Var);
+        jVar.F();
+    }
+
+    @Override // r5.h
+    public void k(r5.f fVar) {
+        r5.c cVar = (r5.c) fVar;
+        b4.e0 e0Var = new b4.e0(2, 3);
+        c5.j jVar = this.a;
+        e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
+        c5.j.D(jVar, new v6(e0Var));
+        u6 u6Var = (u6) jVar.d;
+        b6.m.h(u6Var);
+        u6Var.a(cVar);
         cVar.l = (o4) jVar.e;
     }
 
-    @Override // p5.h
-    public void c(p5.f fVar, int i10) {
-        ag.j2 j2Var = new ag.j2(6, 4);
-        j2Var.c = Integer.valueOf(i10);
-        w6 w6Var = new w6(j2Var);
-        a5.j jVar = this.a;
-        a5.j.y(jVar, w6Var);
-        v6 v6Var = (v6) jVar.d;
-        z5.l.h(v6Var);
-        v6Var.a((p5.c) fVar);
-    }
-
-    @Override // p5.h
-    public /* bridge */ /* synthetic */ void d(p5.f fVar) {
-    }
-
-    @Override // p5.h
-    public void e(p5.f fVar, int i10) {
-        ag.j2 j2Var = new ag.j2(8, 4);
-        j2Var.c = Integer.valueOf(i10);
-        w6 w6Var = new w6(j2Var);
-        a5.j jVar = this.a;
-        a5.j.y(jVar, w6Var);
-        jVar.B();
-    }
-
-    @Override // p5.h
-    public void f(p5.f fVar, String str) {
-        w6 w6Var = new w6(new ag.j2(4, 4));
-        a5.j jVar = this.a;
-        a5.j.y(jVar, w6Var);
-        v6 v6Var = (v6) jVar.d;
-        z5.l.h(v6Var);
-        v6Var.a((p5.c) fVar);
-        v6 v6Var2 = (v6) jVar.d;
-        z5.l.h(v6Var2);
-        String str2 = v6Var2.k;
+    @Override // r5.h
+    public void l(r5.f fVar, String str) {
+        v6 v6Var = new v6(new b4.e0(7, 3));
+        c5.j jVar = this.a;
+        c5.j.D(jVar, v6Var);
+        u6 u6Var = (u6) jVar.d;
+        b6.m.h(u6Var);
+        u6Var.a((r5.c) fVar);
+        u6 u6Var2 = (u6) jVar.d;
+        b6.m.h(u6Var2);
+        String str2 = u6Var2.k;
         if (str2 == null) {
-            v6Var2.k = str;
+            u6Var2.k = str;
         } else {
             if (TextUtils.equals(str, str2)) {
                 return;
             }
-            v6Var2.b(4);
+            u6Var2.b(4);
         }
     }
 
-    @Override // p5.h
-    public void g(p5.f fVar, int i10) {
-        ag.j2 j2Var = new ag.j2(9, 4);
-        j2Var.c = Integer.valueOf(i10);
-        a5.j jVar = this.a;
-        j2Var.d = Boolean.valueOf(((d) jVar.b).d == 2);
-        a5.j.y(jVar, new w6(j2Var));
-        jVar.B();
+    @Override // r5.h
+    public /* bridge */ /* synthetic */ void n(r5.f fVar) {
     }
 
-    @Override // p5.h
-    public /* bridge */ /* synthetic */ void h(p5.f fVar, boolean z10) {
-        w6 w6Var = new w6(new ag.j2(4, 4));
-        a5.j jVar = this.a;
-        a5.j.y(jVar, w6Var);
-        v6 v6Var = (v6) jVar.d;
-        z5.l.h(v6Var);
-        v6Var.a((p5.c) fVar);
-    }
-
-    @Override // p5.h
-    public void j(p5.f fVar, int i10) {
-        ag.j2 j2Var = new ag.j2(5, 4);
-        j2Var.c = Integer.valueOf(i10);
-        w6 w6Var = new w6(j2Var);
-        a5.j jVar = this.a;
-        a5.j.y(jVar, w6Var);
-        jVar.B();
+    @Override // r5.h
+    public void q(r5.f fVar, int i10) {
+        b4.e0 e0Var = new b4.e0(9, 3);
+        e0Var.c = Integer.valueOf(i10);
+        c5.j jVar = this.a;
+        e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
+        c5.j.D(jVar, new v6(e0Var));
+        jVar.F();
     }
 }

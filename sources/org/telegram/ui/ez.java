@@ -1,20 +1,14 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ez extends FrameLayout {
-    public gh.s a;
-
-    public gh.s getSubtitleTextView() {
-        return this.a;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+public final class ez extends org.telegram.ui.Components.g61 {
+    @Override // org.telegram.ui.Components.sl0
+    public final Integer W0(int i10) {
+        org.telegram.ui.Components.i51 G = this.V2.G(i10);
+        if (G == null || G.d != 2) {
+            return super.W0(i10);
+        }
+        return 0;
     }
 }

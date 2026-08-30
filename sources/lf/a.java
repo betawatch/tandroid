@@ -1,17 +1,38 @@
 package lf;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public float a = 1.0f;
+public final class a extends TLObject {
+    public int a;
+    public long b;
+    public TLRPC.InputStorePaymentPurpose c;
 
-    public abstract short a();
+    public static a a(SerializedData serializedData, int i10) {
+        return (a) TLObject.TLdeserialize(a.class, i10 != 495638674 ? null : new a(), serializedData, i10, true);
+    }
 
-    public abstract int b();
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        this.a = inputSerializedData.readInt32(z4);
+        this.b = inputSerializedData.readInt64(z4);
+        if ((this.a & 1) != 0) {
+            this.c = TLRPC.InputStorePaymentPurpose.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+        }
+    }
 
-    public abstract boolean c();
-
-    public abstract void d();
-
-    public abstract void e(int i10, int i11);
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(495638674);
+        outputSerializedData.writeInt32(this.a);
+        outputSerializedData.writeInt64(this.b);
+        if ((this.a & 1) != 0) {
+            this.c.serializeToStream(outputSerializedData);
+        }
+    }
 }

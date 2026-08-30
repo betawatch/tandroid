@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c {
     public final TextPaint a;
@@ -70,30 +70,30 @@ public final class c {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("{");
-        StringBuilder sb3 = new StringBuilder("textSize=");
+        StringBuilder sb = new StringBuilder("{");
+        StringBuilder sb2 = new StringBuilder("textSize=");
         TextPaint textPaint = this.a;
-        sb3.append(textPaint.getTextSize());
-        sb2.append(sb3.toString());
-        sb2.append(", textScaleX=" + textPaint.getTextScaleX());
-        sb2.append(", textSkewX=" + textPaint.getTextSkewX());
+        sb2.append(textPaint.getTextSize());
+        sb.append(sb2.toString());
+        sb.append(", textScaleX=" + textPaint.getTextScaleX());
+        sb.append(", textSkewX=" + textPaint.getTextSkewX());
         int i10 = Build.VERSION.SDK_INT;
-        sb2.append(", letterSpacing=" + textPaint.getLetterSpacing());
-        sb2.append(", elegantTextHeight=" + textPaint.isElegantTextHeight());
+        sb.append(", letterSpacing=" + textPaint.getLetterSpacing());
+        sb.append(", elegantTextHeight=" + textPaint.isElegantTextHeight());
         if (i10 >= 24) {
-            sb2.append(", textLocale=" + textPaint.getTextLocales());
+            sb.append(", textLocale=" + textPaint.getTextLocales());
         } else {
-            sb2.append(", textLocale=" + textPaint.getTextLocale());
+            sb.append(", textLocale=" + textPaint.getTextLocale());
         }
-        sb2.append(", typeface=" + textPaint.getTypeface());
+        sb.append(", typeface=" + textPaint.getTypeface());
         if (i10 >= 26) {
-            sb2.append(", variationSettings=" + textPaint.getFontVariationSettings());
+            sb.append(", variationSettings=" + textPaint.getFontVariationSettings());
         }
-        sb2.append(", textDir=" + this.b);
-        sb2.append(", breakStrategy=" + this.c);
-        sb2.append(", hyphenationFrequency=" + this.d);
-        sb2.append("}");
-        return sb2.toString();
+        sb.append(", textDir=" + this.b);
+        sb.append(", breakStrategy=" + this.c);
+        sb.append(", hyphenationFrequency=" + this.d);
+        sb.append("}");
+        return sb.toString();
     }
 
     public c(PrecomputedText.Params params) {

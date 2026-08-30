@@ -1,114 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.drawable.GradientDrawable;
-import android.util.Property;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class aa extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public TextView a;
-    public TextView b;
-    public bg.x2 c;
-    public bg.x2 d;
-    public bj0 e;
-    public ScrollView f;
-    public AnimatorSet h;
-    public TLRPC.TL_help_appUpdate n;
-    public String r;
-    public int s;
-    public int v;
-    public GradientDrawable w;
-    public GradientDrawable x;
+public abstract class aa extends sl0 {
+    public int U2;
+    public int V2;
+    public int W2;
+    public boolean X2;
+    public int Y2;
+    public boolean Z2;
 
-    public final void a(boolean z10) {
-        bg.x2 x2Var = this.d;
-        TextView textView = this.b;
-        bg.x2 x2Var2 = this.c;
-        AnimatorSet animatorSet = this.h;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        this.h = new AnimatorSet();
-        Property property = View.ALPHA;
-        Property property2 = View.SCALE_Y;
-        Property property3 = View.SCALE_X;
-        int i10 = 0;
-        if (z10) {
-            x2Var2.setVisibility(0);
-            x2Var.setEnabled(false);
-            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(x2Var2, (Property<bg.x2, Float>) property3, 1.0f), ObjectAnimator.ofFloat(x2Var2, (Property<bg.x2, Float>) property2, 1.0f), ObjectAnimator.ofFloat(x2Var2, (Property<bg.x2, Float>) property, 1.0f));
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        if (this.U2 == 0 || Z0()) {
+            super.dispatchDraw(canvas);
         } else {
-            textView.setVisibility(0);
-            x2Var.setEnabled(true);
-            this.h.playTogether(ObjectAnimator.ofFloat(x2Var2, (Property<bg.x2, Float>) property3, 0.1f), ObjectAnimator.ofFloat(x2Var2, (Property<bg.x2, Float>) property2, 0.1f), ObjectAnimator.ofFloat(x2Var2, (Property<bg.x2, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
-        }
-        this.h.addListener(new z9(i10, this, z10));
-        this.h.setDuration(150L);
-        this.h.start();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.fileLoaded) {
-            String str = (String) objArr[0];
-            String str2 = this.r;
-            if (str2 == null || !str2.equals(str)) {
-                return;
-            }
-            a(false);
-            ApplicationLoader.applicationLoaderInstance.openApkInstall((Activity) getContext(), this.n.document);
-            return;
-        }
-        if (i10 == NotificationCenter.fileLoadFailed) {
-            String str3 = (String) objArr[0];
-            String str4 = this.r;
-            if (str4 == null || !str4.equals(str3)) {
-                return;
-            }
-            a(false);
-            return;
-        }
-        if (i10 == NotificationCenter.fileLoadProgressChanged) {
-            String str5 = (String) objArr[0];
-            String str6 = this.r;
-            if (str6 == null || !str6.equals(str5)) {
-                return;
-            }
-            this.e.e(Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue()), true);
+            canvas.clipRect(0, this.U2, getMeasuredWidth(), getMeasuredHeight() + this.Y2);
+            super.dispatchDraw(canvas);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        GradientDrawable gradientDrawable = this.w;
-        ScrollView scrollView = this.f;
-        gradientDrawable.setBounds(scrollView.getLeft(), scrollView.getTop(), scrollView.getRight(), AndroidUtilities.dp(16.0f) + scrollView.getTop());
-        gradientDrawable.draw(canvas);
-        GradientDrawable gradientDrawable2 = this.x;
-        gradientDrawable2.setBounds(scrollView.getLeft(), scrollView.getBottom() - AndroidUtilities.dp(18.0f), scrollView.getRight(), scrollView.getBottom());
-        gradientDrawable2.draw(canvas);
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view.getY() + view.getMeasuredHeight() >= this.U2 || this.Z2 || Z0()) {
+            return super.drawChild(canvas, view, j10);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.sl0, og.a
+    public final void e(Canvas canvas, RectF rectF) {
+        this.Z2 = true;
+        super.e(canvas, rectF);
+        this.Z2 = false;
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        x1();
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.X2 = true;
+        x1();
+        super.setPadding(getPaddingLeft(), this.V2 + this.U2, getPaddingRight(), getPaddingBottom());
+        this.X2 = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.X2) {
+            return;
+        }
+        super.requestLayout();
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 == 8) {
-            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoaded);
-            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoadFailed);
-            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoadProgressChanged);
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        this.V2 = i11;
+        this.W2 = i13;
+        super.setPadding(i10, i11 + this.U2, i12, i13);
+    }
+
+    public int w1() {
+        return AndroidUtilities.dp(203.0f);
+    }
+
+    public final void x1() {
+        if (getLayoutParams() == null) {
+            return;
+        }
+        if (!SharedConfig.chatBlurEnabled()) {
+            this.U2 = 0;
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
+        } else {
+            this.U2 = w1();
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.U2;
         }
     }
 }

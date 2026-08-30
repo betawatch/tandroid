@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a implements g0 {
     public final ArrayList a;
@@ -73,9 +73,9 @@ public final class a implements g0 {
                 q0 q0Var = (q0) arrayList.get(i11);
                 s sVar = q0Var.b;
                 if (sVar != null) {
-                    sVar.E += i10;
+                    sVar.F += i10;
                     if (j0.K(2)) {
-                        Log.v("FragmentManager", "Bump nesting of " + q0Var.b + " to " + q0Var.b.E);
+                        Log.v("FragmentManager", "Bump nesting of " + q0Var.b + " to " + q0Var.b.F);
                     }
                 }
             }
@@ -93,12 +93,12 @@ public final class a implements g0 {
                     arrayList.remove(size - 1);
                     size--;
                 } else {
-                    int i10 = q0Var.b.K;
+                    int i10 = q0Var.b.L;
                     q0Var.a = 2;
                     q0Var.c = false;
                     for (int i11 = size - 1; i11 >= 0; i11--) {
                         q0 q0Var2 = (q0) arrayList.get(i11);
-                        if (q0Var2.c && q0Var2.b.K == i10) {
+                        if (q0Var2.c && q0Var2.b.L == i10) {
                             arrayList.remove(i11);
                             size--;
                         }
@@ -109,7 +109,7 @@ public final class a implements g0 {
         }
     }
 
-    public final int e(boolean z10, boolean z11) {
+    public final int e(boolean z4, boolean z10) {
         if (this.r) {
             throw new IllegalStateException("commit already called");
         }
@@ -120,21 +120,21 @@ public final class a implements g0 {
             printWriter.close();
         }
         this.r = true;
-        boolean z12 = this.g;
+        boolean z11 = this.g;
         j0 j0Var = this.q;
-        if (z12) {
+        if (z11) {
             this.s = j0Var.k.getAndIncrement();
         } else {
             this.s = -1;
         }
-        if (z11) {
-            j0Var.y(this, z10);
+        if (z10) {
+            j0Var.y(this, z4);
         }
         return this.s;
     }
 
     public final void f(int i10, s sVar, String str) {
-        String str2 = sVar.X;
+        String str2 = sVar.Y;
         if (str2 != null) {
             t1.c.c(sVar, str2);
         }
@@ -144,33 +144,33 @@ public final class a implements g0 {
             throw new IllegalStateException("Fragment " + cls.getCanonicalName() + " must be a public static class to be  properly recreated from instance state.");
         }
         if (str != null) {
-            String str3 = sVar.L;
+            String str3 = sVar.M;
             if (str3 != null && !str.equals(str3)) {
-                StringBuilder sb2 = new StringBuilder("Can't change tag of fragment ");
-                sb2.append(sVar);
-                sb2.append(": was ");
-                throw new IllegalStateException(a4.w.o(sVar.L, " now ", str, sb2));
+                StringBuilder sb = new StringBuilder("Can't change tag of fragment ");
+                sb.append(sVar);
+                sb.append(": was ");
+                throw new IllegalStateException(android.support.v4.media.a.p(sVar.M, " now ", str, sb));
             }
-            sVar.L = str;
+            sVar.M = str;
         }
         if (i10 != 0) {
             if (i10 == -1) {
                 throw new IllegalArgumentException("Can't add fragment " + sVar + " with tag " + str + " to container view with no id");
             }
-            int i11 = sVar.J;
+            int i11 = sVar.K;
             if (i11 != 0 && i11 != i10) {
-                throw new IllegalStateException("Can't change container ID of fragment " + sVar + ": was " + sVar.J + " now " + i10);
+                throw new IllegalStateException("Can't change container ID of fragment " + sVar + ": was " + sVar.K + " now " + i10);
             }
-            sVar.J = i10;
             sVar.K = i10;
+            sVar.L = i10;
         }
         b(new q0(1, sVar));
-        sVar.F = this.q;
+        sVar.G = this.q;
     }
 
-    public final void g(String str, PrintWriter printWriter, boolean z10) {
+    public final void g(String str, PrintWriter printWriter, boolean z4) {
         String str2;
-        if (z10) {
+        if (z4) {
             printWriter.print(str);
             printWriter.print("mName=");
             printWriter.print(this.h);
@@ -266,7 +266,7 @@ public final class a implements g0 {
             printWriter.print(str2);
             printWriter.print(" ");
             printWriter.println(q0Var.b);
-            if (z10) {
+            if (z4) {
                 if (q0Var.d != 0 || q0Var.e != 0) {
                     printWriter.print(str);
                     printWriter.print("enterAnim=#");
@@ -286,7 +286,7 @@ public final class a implements g0 {
     }
 
     public final void h(s sVar) {
-        j0 j0Var = sVar.F;
+        j0 j0Var = sVar.G;
         if (j0Var == null || j0Var == this.q) {
             b(new q0(3, sVar));
             return;
@@ -295,18 +295,18 @@ public final class a implements g0 {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(128);
-        sb2.append("BackStackEntry{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
+        StringBuilder sb = new StringBuilder(128);
+        sb.append("BackStackEntry{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
         if (this.s >= 0) {
-            sb2.append(" #");
-            sb2.append(this.s);
+            sb.append(" #");
+            sb.append(this.s);
         }
         if (this.h != null) {
-            sb2.append(" ");
-            sb2.append(this.h);
+            sb.append(" ");
+            sb.append(this.h);
         }
-        sb2.append("}");
-        return sb2.toString();
+        sb.append("}");
+        return sb.toString();
     }
 }

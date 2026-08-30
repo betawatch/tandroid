@@ -1,73 +1,111 @@
 package j5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.internal.cast.o;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import z5.l;
+import e2.c;
+import f7.b;
+import h5.w;
+import j3.d0;
+import j3.e;
+import j3.n0;
+import java.nio.ByteBuffer;
+import n3.i;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends a6.a {
-    public static final Parcelable.Creator<a> CREATOR = new i4.g(14);
-    public final boolean a;
-    public final String b;
-    public final String c;
-    public final boolean d;
-    public final String e;
-    public final ArrayList f;
-    public final boolean h;
+public final class a extends e {
+    public final i B;
+    public final w C;
+    public d0 D;
+    public long E;
 
-    public a(boolean z10, String str, String str2, boolean z11, String str3, ArrayList arrayList, boolean z12) {
-        boolean z13 = true;
-        if (z11 && z12) {
-            z13 = false;
-        }
-        l.a("filterByAuthorizedAccounts and requestVerifiedPhoneNumber must not both be true; the Verified Phone Number feature only works in sign-ups.", z13);
-        this.a = z10;
-        if (z10) {
-            l.i(str, "serverClientId must be provided if Google ID tokens are requested");
-        }
-        this.b = str;
-        this.c = str2;
-        this.d = z11;
-        ArrayList arrayList2 = null;
-        if (arrayList != null && !arrayList.isEmpty()) {
-            arrayList2 = new ArrayList(arrayList);
-            Collections.sort(arrayList2);
-        }
-        this.f = arrayList2;
-        this.e = str3;
-        this.h = z12;
+    public a() {
+        super(6);
+        this.B = new i(1, 0);
+        this.C = new w();
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof a)) {
-            return false;
+    @Override // j3.e, j3.b2
+    public final void b(int i10, Object obj) {
+        if (i10 == 8) {
+            this.D = (d0) obj;
         }
-        a aVar = (a) obj;
-        return this.a == aVar.a && l.l(this.b, aVar.b) && l.l(this.c, aVar.c) && this.d == aVar.d && l.l(this.e, aVar.e) && l.l(this.f, aVar.f) && this.h == aVar.h;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, this.c, Boolean.valueOf(this.d), this.e, this.f, Boolean.valueOf(this.h)});
+    @Override // j3.e
+    public final String g() {
+        return "CameraMotionRenderer";
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = o.q(parcel, 20293);
-        o.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        o.l(parcel, 2, this.b);
-        o.l(parcel, 3, this.c);
-        o.s(parcel, 4, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        o.l(parcel, 5, this.e);
-        o.n(parcel, 6, this.f);
-        o.s(parcel, 7, 4);
-        parcel.writeInt(this.h ? 1 : 0);
-        o.r(parcel, q6);
+    @Override // j3.e
+    public final boolean i() {
+        return h();
+    }
+
+    @Override // j3.e
+    public final boolean j() {
+        return true;
+    }
+
+    @Override // j3.e
+    public final void k() {
+        d0 d0Var = this.D;
+        if (d0Var != null) {
+            d0Var.d();
+        }
+    }
+
+    @Override // j3.e
+    public final void m(long j10, boolean z4) {
+        this.E = Long.MIN_VALUE;
+        d0 d0Var = this.D;
+        if (d0Var != null) {
+            d0Var.d();
+        }
+    }
+
+    @Override // j3.e
+    public final void t(long j10, long j11) {
+        float[] fArr;
+        while (!h() && this.E < 100000 + j10) {
+            i iVar = this.B;
+            iVar.c();
+            b bVar = this.c;
+            bVar.l();
+            if (s(bVar, iVar, 0) != -4 || iVar.e(4)) {
+                return;
+            }
+            this.E = iVar.f;
+            if (this.D != null && !iVar.e(TLObject.FLAG_31)) {
+                iVar.l();
+                ByteBuffer byteBuffer = iVar.d;
+                int i10 = h5.d0.a;
+                if (byteBuffer.remaining() != 16) {
+                    fArr = null;
+                } else {
+                    byte[] array = byteBuffer.array();
+                    int limit = byteBuffer.limit();
+                    w wVar = this.C;
+                    wVar.D(limit, array);
+                    wVar.F(byteBuffer.arrayOffset() + 4);
+                    float[] fArr2 = new float[3];
+                    for (int i11 = 0; i11 < 3; i11++) {
+                        fArr2[i11] = Float.intBitsToFloat(wVar.i());
+                    }
+                    fArr = fArr2;
+                }
+                if (fArr != null) {
+                    this.D.c();
+                }
+            }
+        }
+    }
+
+    @Override // j3.e
+    public final int x(n0 n0Var) {
+        return "application/x-camera-motion".equals(n0Var.C) ? c.b(4, 0, 0) : c.b(0, 0, 0);
+    }
+
+    @Override // j3.e
+    public final void r(n0[] n0VarArr, long j10, long j11) {
     }
 }

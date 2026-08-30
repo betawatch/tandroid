@@ -1,50 +1,31 @@
 package n7;
 
-import android.content.Context;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.common.api.k;
-import com.google.android.gms.common.api.l;
-import m.s3;
-import z5.g;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends g {
-    public final Context Q;
+public final class a extends l7.k {
+    public final /* synthetic */ int f;
+    public final /* synthetic */ d h;
 
-    public a(Context context, Looper looper, k kVar, l lVar, s3 s3Var) {
-        super(context, looper, 45, s3Var, kVar, lVar, 0);
-        this.Q = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a(d dVar, int i10) {
+        super(dVar);
+        this.f = i10;
+        this.h = dVar;
     }
 
-    @Override // z5.g
-    public final boolean C() {
-        return true;
-    }
-
-    @Override // z5.g, com.google.android.gms.common.api.c
-    public final int k() {
-        return 12200000;
-    }
-
-    @Override // z5.g
-    public final /* bridge */ /* synthetic */ IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+    @Override // l7.k
+    public final Object a(int i10) {
+        switch (this.f) {
+            case 0:
+                Object[] objArr = this.h.c;
+                objArr.getClass();
+                return objArr[i10];
+            case 1:
+                return new c(this.h, i10);
+            default:
+                Object[] objArr2 = this.h.d;
+                objArr2.getClass();
+                return objArr2[i10];
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.safetynet.internal.ISafetyNetService");
-        return queryLocalInterface instanceof c ? (c) queryLocalInterface : new c(iBinder);
-    }
-
-    @Override // z5.g
-    public final String v() {
-        return "com.google.android.gms.safetynet.internal.ISafetyNetService";
-    }
-
-    @Override // z5.g
-    public final String w() {
-        return "com.google.android.gms.safetynet.service.START";
     }
 }

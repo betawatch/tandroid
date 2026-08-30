@@ -1,87 +1,83 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ra implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+import java.util.HashSet;
+import java.util.Set;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ ra(MessagesController messagesController, long j10, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ra implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+
+    public /* synthetic */ ra(BaseController baseController, Object obj, boolean z4, long j10, Object obj2, int i10) {
         this.a = i10;
-        this.b = messagesController;
+        this.d = baseController;
+        this.e = obj;
+        this.b = z4;
         this.c = j10;
+        this.f = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$setChannelSlowMode$93(this.c);
+                ((MessagesController) this.d).lambda$getSendAsPeers$443((a0.h) this.e, this.c, (MessagesController.SendAsPeersInfo) this.f, this.b, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$setChatReactions$470(this.c);
+                TranslateController translateController = (TranslateController) this.d;
+                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
+                Set set = (Set) this.f;
+                translateController.lambda$pushToTranslate$23(pendingTranslation, this.b, this.c, set, tLObject, tL_error);
                 break;
             case 2:
-                this.b.lambda$getChannelDifference$343(this.c);
+                ((ChatThemeController) this.d).lambda$setWallpaperToPeer$17(this.c, this.b, (String) this.e, (Runnable) this.f, tLObject, tL_error);
                 break;
             case 3:
-                this.b.lambda$deleteDialog$140(this.c);
-                break;
-            case 4:
-                this.b.lambda$setDefaultBannedRole$97(this.c);
-                break;
-            case 5:
-                this.b.lambda$processUpdateArray$383(this.c);
-                break;
-            case 6:
-                this.b.lambda$getSavedReactionTags$488(this.c);
-                break;
-            case 7:
-                this.b.lambda$getChannelDifference$334(this.c);
-                break;
-            case 8:
-                this.b.lambda$getChannelDifference$335(this.c);
-                break;
-            case 9:
-                this.b.lambda$getChannelDifference$336(this.c);
-                break;
-            case 10:
-                this.b.lambda$getChannelDifference$337(this.c);
-                break;
-            case 11:
-                this.b.lambda$removeDialog$134(this.c);
-                break;
-            case 12:
-                this.b.lambda$deleteParticipantFromChat$312(this.c);
-                break;
-            case 13:
-                this.b.lambda$setParticipantBannedRole$90(this.c);
-                break;
-            case 14:
-                this.b.lambda$deleteDialog$139(this.c);
-                break;
-            case 15:
-                this.b.lambda$setBoostsToUnblockRestrictions$95(this.c);
-                break;
-            case 16:
-                this.b.lambda$deleteParticipantFromChat$315(this.c);
-                break;
-            case 17:
-                this.b.lambda$addUserToChat$298(this.c);
-                break;
-            case 18:
-                this.b.lambda$addUserToChat$309(this.c);
-                break;
-            case 19:
-                this.b.lambda$addUserToChat$307(this.c);
-                break;
-            case 20:
-                this.b.lambda$getChannelDifference$344(this.c);
+                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
+                RequestDelegate requestDelegate = (RequestDelegate) this.f;
+                memberRequestsController.lambda$getImporters$1(tL_chatInviteImporter, this.b, this.c, requestDelegate, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$getChannelDifference$345(this.c);
+                ((TopicsController) this.d).lambda$reloadTopics$16(this.b, this.c, (HashSet) this.e, (Runnable) this.f, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ ra(ChatThemeController chatThemeController, long j10, boolean z4, String str, Runnable runnable) {
+        this.a = 2;
+        this.d = chatThemeController;
+        this.c = j10;
+        this.b = z4;
+        this.e = str;
+        this.f = runnable;
+    }
+
+    public /* synthetic */ ra(MessagesController messagesController, a0.h hVar, long j10, MessagesController.SendAsPeersInfo sendAsPeersInfo, boolean z4) {
+        this.a = 0;
+        this.d = messagesController;
+        this.e = hVar;
+        this.c = j10;
+        this.f = sendAsPeersInfo;
+        this.b = z4;
+    }
+
+    public /* synthetic */ ra(TopicsController topicsController, boolean z4, long j10, HashSet hashSet, Runnable runnable) {
+        this.a = 4;
+        this.d = topicsController;
+        this.b = z4;
+        this.c = j10;
+        this.e = hashSet;
+        this.f = runnable;
     }
 }

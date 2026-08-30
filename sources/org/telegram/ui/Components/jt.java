@@ -1,32 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jt implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class jt extends EdgeEffect {
+    public final int a;
+    public final ht b;
+    public final RecyclerView c;
+    public final vp d;
+    public boolean e;
 
-    public /* synthetic */ jt(Object obj, int i10) {
+    public jt(RecyclerView recyclerView, int i10, ht htVar) {
+        super(recyclerView.getContext());
+        this.d = new vp(this, 7);
+        this.c = recyclerView;
         this.a = i10;
-        this.b = obj;
+        this.b = htVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        Editable text;
-        pi0[] pi0VarArr;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                int i11 = EditTextBoldCursor.a;
-                return Boolean.valueOf(editTextBoldCursor.hasSelection() && editTextBoldCursor.getSelectionStart() >= 0 && editTextBoldCursor.getSelectionEnd() >= 0 && editTextBoldCursor.getSelectionStart() != editTextBoldCursor.getSelectionEnd() && (text = editTextBoldCursor.getText()) != null && ((pi0VarArr = (pi0[]) text.getSpans(editTextBoldCursor.getSelectionStart(), editTextBoldCursor.getSelectionEnd(), pi0.class)) == null || pi0VarArr.length == 0));
-            default:
-                return ((r40) obj).getCloseIntoObject();
+    public final void a() {
+        boolean b10 = b();
+        if (this.e != b10) {
+            this.e = b10;
+            ht htVar = this.b;
+            if (htVar != null) {
+                htVar.a(this.a, b10);
+            }
         }
+    }
+
+    public final boolean b() {
+        if (isFinished()) {
+            return false;
+        }
+        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final boolean draw(Canvas canvas) {
+        boolean draw = super.draw(canvas);
+        this.c.postOnAnimation(this.d);
+        return draw;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void finish() {
+        super.finish();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onAbsorb(int i10) {
+        super.onAbsorb(i10);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f10) {
+        super.onPull(f10);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final float onPullDistance(float f10, float f11) {
+        float onPullDistance = super.onPullDistance(f10, f11);
+        a();
+        return onPullDistance;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onRelease() {
+        super.onRelease();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void setSize(int i10, int i11) {
+        super.setSize(i10, i11);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f10, float f11) {
+        super.onPull(f10, f11);
+        a();
     }
 }

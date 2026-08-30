@@ -1,31 +1,31 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class o9 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final w e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+import java.util.AbstractMap;
 
-    public /* synthetic */ o9(h7.d8 d8Var) {
-        this.a = d8Var.a;
-        this.b = d8Var.b;
-        this.c = d8Var.c;
-        this.d = d8Var.d;
-        this.e = (w) d8Var.k;
-        this.f = d8Var.e;
-        this.g = (Boolean) d8Var.f;
-        this.h = (Boolean) d8Var.g;
-        this.i = (Boolean) d8Var.h;
-        this.j = d8Var.i;
-        this.k = (Integer) d8Var.j;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class o9 extends l9 {
+    public final /* synthetic */ a c;
+
+    public o9(a aVar) {
+        this.c = aVar;
+    }
+
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i10) {
+        a aVar = this.c;
+        j8.a(i10, aVar.e);
+        int i11 = i10 + i10;
+        Object[] objArr = aVar.d;
+        Object obj = objArr[i11];
+        obj.getClass();
+        Object obj2 = objArr[i11 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.e;
     }
 }

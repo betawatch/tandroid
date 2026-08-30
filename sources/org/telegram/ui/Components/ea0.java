@@ -1,36 +1,54 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ea0 extends f2.v {
-    public final /* synthetic */ ka0 c;
+public final class ea0 extends jh.v {
+    public final /* synthetic */ int E = 0;
+    public final /* synthetic */ Object F;
 
-    public ea0(ka0 ka0Var) {
-        this.c = ka0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ea0(org.telegram.ui.qh0 qh0Var, org.telegram.ui.qh0 qh0Var2, FrameLayout frameLayout, long j10) {
+        super(qh0Var2, frameLayout, j10, true);
+        this.F = qh0Var;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        ka0 ka0Var = this.c;
-        rf.v0 v0Var = ka0Var.f;
-        if (i10 == 0) {
-            return 100;
+    @Override // jh.v
+    public final void f(String str, boolean z4, boolean z10) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.E) {
+            case 0:
+                jh.c cVar = (jh.c) this.F;
+                zw0 zw0Var = cVar.T;
+                if (!this.e.isEmpty()) {
+                    if (!z10) {
+                        super.f(str, z4, z10);
+                        break;
+                    } else {
+                        cVar.w.G.setText("");
+                        break;
+                    }
+                } else if (zw0Var.getVisibility() != 4) {
+                    zw0Var.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!z10) {
+                    super.f(str, z4, z10);
+                    break;
+                } else {
+                    kVar = ((org.telegram.ui.ActionBar.p2) ((org.telegram.ui.qh0) this.F)).actionBar;
+                    kVar.setSearchFieldText("");
+                    break;
+                }
         }
-        int i11 = i10 - 1;
-        Object J = v0Var.J(i11);
-        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
-            return 100;
-        }
-        if (J instanceof TLRPC.Document) {
-            return 20;
-        }
-        if (v0Var.I() != null || v0Var.Q != null) {
-            i10 = i11;
-        }
-        da0 da0Var = ka0Var.d;
-        da0Var.B1();
-        return da0Var.R.get(i10);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ea0(jh.c cVar, org.telegram.ui.ActionBar.p2 p2Var, FrameLayout frameLayout, long j10) {
+        super(p2Var, frameLayout, j10, false);
+        this.F = cVar;
     }
 }

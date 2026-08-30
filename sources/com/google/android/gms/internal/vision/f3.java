@@ -2,10 +2,11 @@ package com.google.android.gms.internal.vision;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import j7.f5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f3 extends a6.a {
+public final class f3 extends c6.a {
     public static final Parcelable.Creator<f3> CREATOR = new a1(1);
     public int a;
     public int b;
@@ -13,37 +14,37 @@ public final class f3 extends a6.a {
     public long d;
     public int e;
 
-    public static f3 b(androidx.biometric.e eVar) {
+    public static f3 e(androidx.biometric.e eVar) {
         f3 f3Var = new f3();
-        c8.a aVar = (c8.a) eVar.b;
+        e8.a aVar = (e8.a) eVar.b;
         f3Var.a = aVar.a;
         f3Var.b = aVar.b;
         f3Var.e = aVar.c;
         aVar.getClass();
         f3Var.c = 0;
-        ((c8.a) eVar.b).getClass();
+        ((e8.a) eVar.b).getClass();
         f3Var.d = 0L;
         return f3Var;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
+        int q10 = f5.q(parcel, 20293);
         int i11 = this.a;
-        com.google.android.gms.internal.cast.o.s(parcel, 2, 4);
+        f5.s(parcel, 2, 4);
         parcel.writeInt(i11);
         int i12 = this.b;
-        com.google.android.gms.internal.cast.o.s(parcel, 3, 4);
+        f5.s(parcel, 3, 4);
         parcel.writeInt(i12);
         int i13 = this.c;
-        com.google.android.gms.internal.cast.o.s(parcel, 4, 4);
+        f5.s(parcel, 4, 4);
         parcel.writeInt(i13);
         long j10 = this.d;
-        com.google.android.gms.internal.cast.o.s(parcel, 5, 8);
+        f5.s(parcel, 5, 8);
         parcel.writeLong(j10);
         int i14 = this.e;
-        com.google.android.gms.internal.cast.o.s(parcel, 6, 4);
+        f5.s(parcel, 6, 4);
         parcel.writeInt(i14);
-        com.google.android.gms.internal.cast.o.r(parcel, q6);
+        f5.r(parcel, q10);
     }
 }

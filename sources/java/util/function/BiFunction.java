@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface BiFunction<T, U, R> {
-    R apply(T t10, U u10);
+    R apply(T t6, U u10);
 }

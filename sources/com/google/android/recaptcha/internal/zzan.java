@@ -1,11 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzan extends i implements p {
     int zza;
@@ -20,32 +21,32 @@ final class zzan extends i implements p {
         this.zzc = str;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzan zzanVar = new zzan(this.zzb, this.zzc, cVar);
         zzanVar.zzd = obj;
         return zzanVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzan) create((zzgr) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzan) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0029, code lost:
     
         if (r5 != r0) goto L10;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
         if (i10 == 0) {
-            c7.b(obj);
+            p7.b(obj);
             zzgrVar = (zzgr) this.zzd;
             zzar zzarVar = this.zzb;
             String str = this.zzc;
@@ -54,11 +55,11 @@ final class zzan extends i implements p {
             obj = zzarVar.zze(str, this);
         } else {
             if (i10 != 1) {
-                c7.b(obj);
+                p7.b(obj);
                 return obj;
             }
             zzgrVar = (zzgr) this.zzd;
-            c7.b(obj);
+            p7.b(obj);
         }
         this.zzd = null;
         this.zza = 2;

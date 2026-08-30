@@ -1,36 +1,24 @@
 package wd;
 
-import android.view.MotionEvent;
-import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface a {
-    boolean forceEnableVibration();
+public abstract class a {
+    public static final DecelerateInterpolator a;
 
-    long getLongPressDuration();
-
-    boolean ignoreHapticFeedbackSettings(float f9, float f10);
-
-    boolean needCancelTouchBySlopMove();
-
-    boolean needClickAt(View view, float f9, float f10);
-
-    boolean needLongPress(float f9, float f10);
-
-    void onClickAt(View view, float f9, float f10);
-
-    void onClickTouchDown(View view, float f9, float f10);
-
-    void onClickTouchMove(View view, float f9, float f10);
-
-    void onClickTouchUp(View view, float f9, float f10);
-
-    void onLongPressCancelled(View view, float f9, float f10);
-
-    void onLongPressFinish(View view, float f9, float f10);
-
-    void onLongPressMove(View view, MotionEvent motionEvent, float f9, float f10, float f11, float f12);
-
-    boolean onLongPressRequestedAt(View view, float f9, float f10);
+    static {
+        new AnticipateOvershootInterpolator();
+        a = new DecelerateInterpolator();
+        new AccelerateInterpolator();
+        new DecelerateInterpolator(1.78f);
+        new LinearInterpolator();
+        new OvershootInterpolator(3.2f);
+        new AccelerateDecelerateInterpolator();
+    }
 }

@@ -1,61 +1,76 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ih implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ni b;
-    public final /* synthetic */ boolean c;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ ih(ni niVar, boolean z10, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class ih extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ rh c;
+
+    public /* synthetic */ ih(rh rhVar, boolean z4, int i10) {
         this.a = i10;
-        this.b = niVar;
-        this.c = z10;
+        this.c = rhVar;
+        this.b = z4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                ni niVar = this.b;
+                rh rhVar = this.c;
+                li liVar = rhVar.e;
+                boolean z4 = this.b;
+                if (z4) {
+                    liVar.u1.setVisibility(8);
+                } else {
+                    liVar.B1.setVisibility(8);
+                }
+                int dp = z4 ? AndroidUtilities.dp(36.0f) : 0;
+                for (int i10 = 0; i10 < liVar.u0.size(); i10++) {
+                    ((rh.o3) liVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
+                }
+                if (rhVar.a == animator) {
+                    rhVar.a = null;
+                    break;
+                }
+                break;
+            default:
+                li liVar2 = this.c.e;
+                boolean z10 = this.b;
+                liVar2.y1 = z10;
                 if (!z10) {
-                    niVar.Y0.setVisibility(8);
-                    break;
-                } else {
-                    niVar.getClass();
+                    liVar2.z1.setVisibility(8);
                     break;
                 }
-            case 1:
-                boolean z11 = this.c;
-                ni niVar2 = this.b;
-                if (!z11) {
-                    niVar2.w.setVisibility(8);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                li liVar = this.c.e;
+                if (this.b) {
+                    liVar.B1.setAlpha(0.0f);
+                    liVar.B1.setVisibility(0);
+                    int dp = AndroidUtilities.dp(36.0f);
+                    for (int i10 = 0; i10 < liVar.u0.size(); i10++) {
+                        ((rh.o3) liVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
+                    }
                     break;
                 } else {
-                    niVar2.getClass();
-                    break;
-                }
-            case 2:
-                boolean z12 = this.c;
-                ni niVar3 = this.b;
-                if (!z12) {
-                    niVar3.y.setVisibility(8);
-                    break;
-                } else {
-                    niVar3.getClass();
+                    liVar.u1.setAlpha(0.0f);
+                    liVar.u1.setVisibility(0);
                     break;
                 }
             default:
-                boolean z13 = this.c;
-                ni niVar4 = this.b;
-                if (!z13) {
-                    niVar4.getClass();
-                    break;
-                } else {
-                    niVar4.t1.setVisibility(4);
-                    break;
-                }
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

@@ -6,15 +6,15 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b {
     public final LinkedHashMap a;
     public final AtomicBoolean b;
 
-    public b(LinkedHashMap linkedHashMap, boolean z10) {
+    public b(LinkedHashMap linkedHashMap, boolean z4) {
         this.a = linkedHashMap;
-        this.b = new AtomicBoolean(z10);
+        this.b = new AtomicBoolean(z4);
     }
 
     public final Object a(d key) {
@@ -39,7 +39,7 @@ public final class b {
                 linkedHashMap.put(key, obj);
                 return;
             }
-            Set unmodifiableSet = DesugarCollections.unmodifiableSet(rc.g.p((Iterable) obj));
+            Set unmodifiableSet = DesugarCollections.unmodifiableSet(tc.g.p((Iterable) obj));
             j.d(unmodifiableSet, "unmodifiableSet(value.toSet())");
             linkedHashMap.put(key, unmodifiableSet);
         }
@@ -57,10 +57,10 @@ public final class b {
     }
 
     public final String toString() {
-        return rc.g.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
+        return tc.g.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
     }
 
-    public /* synthetic */ b(boolean z10) {
-        this(new LinkedHashMap(), z10);
+    public /* synthetic */ b(boolean z4) {
+        this(new LinkedHashMap(), z4);
     }
 }

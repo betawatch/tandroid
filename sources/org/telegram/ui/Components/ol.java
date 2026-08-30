@@ -1,72 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ol extends jl0 {
-    public final /* synthetic */ int T2;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout U2;
+public final class ol extends AnimatorListenerAdapter {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ol(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, c6Var);
-        this.T2 = i10;
-        this.U2 = chatAttachAlertPhotoLayout;
+    public ol(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.T2) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.U2.b.X1[0] - AndroidUtilities.dp(80.0f)) {
-                    break;
-                }
-                break;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.T2) {
-            case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
-                PhotoViewer.t1().y0();
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.T2) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.U2.b.X1[0] - AndroidUtilities.dp(80.0f)) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        switch (this.T2) {
-            case 0:
-                if (!this.U2.F0) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.requestLayout();
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        ImageView imageView = chatAttachAlertPhotoLayout.o0;
+        am amVar = chatAttachAlertPhotoLayout.M;
+        imageView.setImageResource((amVar == null || !amVar.isFrontface()) ? R.drawable.camera_revert2 : R.drawable.camera_revert1);
+        ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.o0, (Property<ImageView, Float>) View.SCALE_X, 1.0f).setDuration(100L).start();
     }
 }

@@ -13,35 +13,35 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.zz0;
+import org.telegram.ui.Components.k01;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class c0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
-    public final org.telegram.ui.ActionBar.c6 c;
-    public final zz0 d;
-    public final zz0 e;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public final k01 d;
+    public final k01 e;
     public final Drawable f;
     public final Drawable g;
     public int h;
     public int i;
     public final Paint j;
 
-    public c0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+    public c0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         Paint paint = new Paint(1);
         this.j = paint;
         this.b = i10;
-        this.c = c6Var;
-        zz0 zz0Var = new zz0(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
-        this.d = zz0Var;
+        this.c = f6Var;
+        k01 k01Var = new k01(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
+        this.d = k01Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        zz0Var.a();
-        zz0 zz0Var2 = new zz0("", 13.0f, null);
-        this.e = zz0Var2;
-        zz0Var2.n(4);
-        zz0Var2.a();
+        k01Var.a();
+        k01 k01Var2 = new k01("", 13.0f, null);
+        this.e = k01Var2;
+        k01Var2.n(4);
+        k01Var2.a();
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
         this.f = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -56,14 +56,14 @@ public final class c0 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        org.telegram.ui.ActionBar.c6 c6Var = this.c;
-        Paint T0 = org.telegram.ui.ActionBar.g6.T0("paintChatActionBackground", c6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        Paint T0 = org.telegram.ui.ActionBar.j6.T0("paintChatActionBackground", f6Var);
         float dp = AndroidUtilities.dp(16.0f);
         float dp2 = AndroidUtilities.dp(16.0f);
         RectF rectF = this.a;
         canvas.drawRoundRect(rectF, dp, dp2, T0);
-        if (c6Var != null ? c6Var.l0() : org.telegram.ui.ActionBar.g6.a1()) {
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.g6.T0("paintChatActionBackgroundDarken", c6Var));
+        if (f6Var != null ? f6Var.m0() : org.telegram.ui.ActionBar.j6.a1()) {
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.j6.T0("paintChatActionBackgroundDarken", f6Var));
         }
         canvas.save();
         canvas.translate(0.0f, rectF.top + AndroidUtilities.dp(17.0f));
@@ -78,14 +78,14 @@ public final class c0 extends Drawable {
         canvas.translate(0.0f, AndroidUtilities.dp(70.0f));
         canvas.translate(0.0f, AndroidUtilities.dp(14.0f));
         float centerX2 = rectF.centerX();
-        zz0 zz0Var = this.d;
-        this.d.c(centerX2 - (zz0Var.l() / 2.0f), zz0Var.j() / 2.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, zz0Var.j());
+        k01 k01Var = this.d;
+        this.d.c(centerX2 - (k01Var.l() / 2.0f), k01Var.j() / 2.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, k01Var.j());
         canvas.translate(0.0f, AndroidUtilities.dp(4.0f));
         float centerX3 = rectF.centerX();
-        zz0 zz0Var2 = this.e;
-        this.e.c(centerX3 - (zz0Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, zz0Var2.j());
+        k01 k01Var2 = this.e;
+        this.e.c(centerX3 - (k01Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, k01Var2.j());
         canvas.translate(0.0f, AndroidUtilities.dp(2.0f));
         int centerX4 = (int) (rectF.centerX() - AndroidUtilities.dp(10.0f));
         int centerX5 = (int) (rectF.centerX() + AndroidUtilities.dp(10.0f));

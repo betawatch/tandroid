@@ -3,9 +3,9 @@ package androidx.lifecycle;
 import java.io.File;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class k0 extends kotlin.jvm.internal.k implements bd.a {
+public final class k0 extends kotlin.jvm.internal.k implements dd.a {
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
@@ -16,16 +16,16 @@ public final class k0 extends kotlin.jvm.internal.k implements bd.a {
         this.c = obj;
     }
 
-    @Override // bd.a
+    @Override // dd.a
     public final Object invoke() {
         switch (this.b) {
             case 0:
                 return j0.e((u0) this.c);
             case 1:
-                File file = (File) ((k1.a0) this.c).a.invoke();
+                File file = (File) ((k1.d0) this.c).a.invoke();
                 String it = file.getAbsolutePath();
-                synchronized (k1.a0.s) {
-                    LinkedHashSet linkedHashSet = k1.a0.r;
+                synchronized (k1.d0.s) {
+                    LinkedHashSet linkedHashSet = k1.d0.r;
                     if (linkedHashSet.contains(it)) {
                         throw new IllegalStateException(("There are multiple DataStores active for the same file: " + file + ". You should either maintain your DataStore as a singleton or confirm that there is no two DataStore's active on the same file (by confirming that the scope is cancelled).").toString());
                     }
@@ -37,7 +37,7 @@ public final class k0 extends kotlin.jvm.internal.k implements bd.a {
                 File file2 = (File) ((m1.b) this.c).invoke();
                 String name = file2.getName();
                 kotlin.jvm.internal.j.d(name, "getName(...)");
-                if (hd.j.j(name, "").equals("preferences_pb")) {
+                if (jd.j.j(name, "").equals("preferences_pb")) {
                     return file2;
                 }
                 throw new IllegalStateException(("File extension for file: " + file2 + " does not match required extension for Preferences file: preferences_pb").toString());

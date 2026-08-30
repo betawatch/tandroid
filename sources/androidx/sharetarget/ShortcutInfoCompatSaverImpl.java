@@ -1,19 +1,19 @@
 package androidx.sharetarget;
 
 import a0.f;
-import ab.o;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
+import androidx.biometric.k;
 import androidx.core.graphics.drawable.IconCompat;
 import c0.l;
-import e0.p0;
-import f7.p;
+import e0.o0;
 import g0.c;
 import g0.e;
-import g9.n;
+import h2.g;
+import h2.h;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +24,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ShortcutInfoCompatSaverImpl extends e {
     public static final Object h = new Object();
@@ -44,7 +44,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new o(this, file, false, 14));
+        threadPoolExecutor.submit(new k(13, this, file));
     }
 
     public static void f(File file) {
@@ -87,9 +87,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
             cVar2.k = cVar.k;
             cVar2.l = cVar.l;
             cVar2.m = cVar.m;
-            p0[] p0VarArr = cVar.i;
-            if (p0VarArr != null) {
-                cVar2.i = (p0[]) Arrays.copyOf(p0VarArr, p0VarArr.length);
+            o0[] o0VarArr = cVar.i;
+            if (o0VarArr != null) {
+                cVar2.i = (o0[]) Arrays.copyOf(o0VarArr, o0VarArr.length);
             }
             if (cVar.j != null) {
                 cVar2.j = new HashSet(cVar.j);
@@ -114,13 +114,13 @@ public class ShortcutInfoCompatSaverImpl extends e {
 
     @Override // g0.e
     public final List b() {
-        return (List) this.d.submit(new p(this, 2)).get();
+        return (List) this.d.submit(new h2.f(this, 0)).get();
     }
 
     @Override // g0.e
     public final Object c() {
         l lVar = new l();
-        this.d.submit(new o(this, lVar, false, 15));
+        this.d.submit(new k(14, this, lVar));
         return lVar;
     }
 
@@ -139,9 +139,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            h2.f fVar = (h2.f) obj;
-            if (!TextUtils.isEmpty(fVar.b)) {
-                arrayList2.add(fVar.b);
+            h hVar = (h) obj;
+            if (!TextUtils.isEmpty(hVar.b)) {
+                arrayList2.add(hVar.b);
             }
         }
         for (File file : this.g.listFiles()) {
@@ -154,11 +154,11 @@ public class ShortcutInfoCompatSaverImpl extends e {
     public final IconCompat g(String str) {
         int i10;
         Context context = this.a;
-        h2.f fVar = (h2.f) this.d.submit(new n(4, this, str)).get();
-        if (fVar == null) {
+        h hVar = (h) this.d.submit(new g(0, this, str)).get();
+        if (hVar == null) {
             return null;
         }
-        String str2 = fVar.a;
+        String str2 = hVar.a;
         if (!TextUtils.isEmpty(str2)) {
             try {
                 i10 = context.getResources().getIdentifier(str2, null, null);
@@ -169,10 +169,10 @@ public class ShortcutInfoCompatSaverImpl extends e {
                 return IconCompat.d(context, i10);
             }
         }
-        if (TextUtils.isEmpty(fVar.b)) {
+        if (TextUtils.isEmpty(hVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new p(fVar, 3)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new h2.f(hVar, 1)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }
@@ -180,9 +180,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final void h(l lVar) {
-        o oVar = new o(this, new ArrayList(this.b.values()), false, 12);
+        k kVar = new k(11, this, new ArrayList(this.b.values()));
         l lVar2 = new l();
-        this.e.submit(new o(16, lVar2, oVar));
-        lVar2.c(new o(13, lVar2, lVar), this.d);
+        this.e.submit(new k(lVar2, kVar, false, 15));
+        lVar2.c(new k(lVar2, lVar, false, 12), this.d);
     }
 }

@@ -1,54 +1,46 @@
 package o5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.util.Log;
+import b4.e0;
+import b6.m;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.u;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c extends a6.a {
-    public final long a;
-    public final long b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public static final s5.b f = new s5.b("AdBreakStatus", null);
-    public static final Parcelable.Creator<c> CREATOR = new v(9);
+public final class c implements Runnable {
+    public static final e0 c = new e0("RevokeAccessOperation", new String[0]);
+    public final String a;
+    public final u b;
 
-    public c(long j10, long j11, String str, String str2, long j12) {
-        this.a = j10;
-        this.b = j11;
-        this.c = str;
-        this.d = str2;
-        this.e = j12;
+    public c(String str) {
+        m.f(str);
+        this.a = str;
+        this.b = new u(null, 0);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        e0 e0Var = c;
+        Status status = Status.h;
+        try {
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://accounts.google.com/o/oauth2/revoke?token=" + this.a).openConnection();
+            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            int responseCode = httpURLConnection.getResponseCode();
+            if (responseCode == 200) {
+                status = Status.e;
+            } else {
+                Log.e((String) e0Var.c, ((String) e0Var.d).concat("Unable to revoke access!"));
+            }
+            e0Var.f("Response Code: " + responseCode, new Object[0]);
+        } catch (IOException e) {
+            Log.e((String) e0Var.c, ((String) e0Var.d).concat("IOException when revoking access: ".concat(String.valueOf(e.toString()))));
+        } catch (Exception e6) {
+            Log.e((String) e0Var.c, ((String) e0Var.d).concat("Exception when revoking access: ".concat(String.valueOf(e6.toString()))));
         }
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        c cVar = (c) obj;
-        return this.a == cVar.a && this.b == cVar.b && s5.a.d(this.c, cVar.c) && s5.a.d(this.d, cVar.d) && this.e == cVar.e;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Long.valueOf(this.b), this.c, this.d, Long.valueOf(this.e)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
-        com.google.android.gms.internal.cast.o.s(parcel, 2, 8);
-        parcel.writeLong(this.a);
-        com.google.android.gms.internal.cast.o.s(parcel, 3, 8);
-        parcel.writeLong(this.b);
-        com.google.android.gms.internal.cast.o.l(parcel, 4, this.c);
-        com.google.android.gms.internal.cast.o.l(parcel, 5, this.d);
-        com.google.android.gms.internal.cast.o.s(parcel, 6, 8);
-        parcel.writeLong(this.e);
-        com.google.android.gms.internal.cast.o.r(parcel, q6);
+        this.b.a(status);
     }
 }

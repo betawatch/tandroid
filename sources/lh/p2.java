@@ -1,36 +1,48 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ka0;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.w21;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class p2 extends ka0 {
-    public final /* synthetic */ d4 R;
+public final /* synthetic */ class p2 implements org.telegram.ui.ActionBar.c2, MessagesController.IsInChatCheckedCallback {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p2(d4 d4Var, Context context, long j10, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, j10, 0L, o2Var, c6Var);
-        this.R = d4Var;
+    public /* synthetic */ p2(g5 g5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.PaymentForm paymentForm, TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails, long j10, CharSequence charSequence) {
+        this.b = g5Var;
+        this.c = tL_starGiftUnique;
+        this.d = paymentForm;
+        this.e = tL_inputInvoiceStarGiftDropOriginalDetails;
+        this.a = j10;
+        this.f = charSequence;
     }
 
-    @Override // org.telegram.ui.Components.ka0
-    public final void f(Canvas canvas, Rect rect, float f9) {
-        d4 d4Var = this.R;
-        bg.c2 c2Var = d4Var.L1;
-        c2Var.w(getX(), -getY(), getX() + getMeasuredWidth(), (-getY()) + getMeasuredHeight());
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(rect);
-        rectF.offset(0.0f, 0.0f);
-        canvas.drawRoundRect(rectF, f9, f9, (Paint) c2Var.d);
-        canvas.drawRoundRect(rectF, f9, f9, d4Var.j2);
-        if (rectF.top < getMeasuredHeight() - 1) {
-            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, d4Var.x0.G("paintDivider"));
-        }
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        g5.L0((g5) this.b, (TL_stars.TL_starGiftUnique) this.c, (TLRPC.PaymentForm) this.d, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e, this.a, (CharSequence) this.f, d2Var);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
+    public void run(boolean z4, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
+        AndroidUtilities.runOnUIThread(new g((w21) this.b, z4, (org.telegram.ui.ActionBar.g1) this.c, (o70) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
+    }
+
+    public /* synthetic */ p2(w21 w21Var, org.telegram.ui.ActionBar.g1 g1Var, o70 o70Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.b = w21Var;
+        this.c = g1Var;
+        this.d = o70Var;
+        this.a = j10;
+        this.e = user;
+        this.f = chat;
     }
 }

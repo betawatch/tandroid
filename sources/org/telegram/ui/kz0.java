@@ -1,43 +1,72 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz0 implements View.OnClickListener {
+public final class kz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vz0 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ProfileActivity c;
 
-    public /* synthetic */ kz0(vz0 vz0Var, int i10) {
+    public /* synthetic */ kz0(ProfileActivity profileActivity, boolean z4, int i10) {
         this.a = i10;
-        this.b = vz0Var;
+        this.c = profileActivity;
+        this.b = z4;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 0:
-                vz0 vz0Var = this.b;
-                ProfileActivity profileActivity = vz0Var.e;
-                TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.a1));
-                MessagesController messagesController = profileActivity.getMessagesController();
-                ProfileActivity profileActivity2 = vz0Var.e;
-                messagesController.openApp(profileActivity2, user, null, profileActivity2.getClassGuid(), null);
+            case 1:
+                this.c.c0 = null;
                 break;
             default:
-                ProfileActivity profileActivity3 = this.b.e;
-                profileActivity3.K4 = !profileActivity3.K4;
-                if (!profileActivity3.J4) {
-                    profileActivity3.J4 = true;
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        org.telegram.ui.Cells.y3 y3Var;
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.c;
+                boolean z4 = this.b;
+                ProfileActivity.n1(profileActivity, z4);
+                profileActivity.V.setClickable(true);
+                if (z4) {
+                    org.telegram.ui.ActionBar.w0 w0Var = profileActivity.R0;
+                    if (w0Var.C.getWidth() != 0 && !w0Var.e.isFocused()) {
+                        w0Var.e.requestFocus();
+                        AndroidUtilities.showKeyboard(w0Var.e);
+                    }
                 }
-                profileActivity3.F4();
-                view.requestLayout();
-                profileActivity3.d.m(profileActivity3.K3);
-                int i10 = profileActivity3.Q5;
-                if (i10 >= 0) {
-                    profileActivity3.c.h1(i10, profileActivity3.R5 - profileActivity3.a.getPaddingTop());
+                profileActivity.k4(true);
+                profileActivity.S1 = null;
+                profileActivity.fragmentView.invalidate();
+                if (z4) {
+                    profileActivity.R4 = true;
+                    profileActivity.F4();
+                    Activity parentActivity = profileActivity.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.p2) profileActivity).classGuid;
+                    AndroidUtilities.requestAdjustResize(parentActivity, i10);
+                    profileActivity.M.setPreventMoving(false);
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.c;
+                if (profileActivity2.c0 != null && (y3Var = profileActivity2.d0) != null) {
+                    if (!this.b) {
+                        y3Var.setVisibility(4);
+                    }
+                    profileActivity2.c0 = null;
                     break;
                 }
                 break;

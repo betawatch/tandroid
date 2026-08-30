@@ -1,69 +1,66 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e41 implements org.telegram.ui.Components.u61, org.telegram.ui.Components.q61 {
-    public final /* synthetic */ f41 a;
+public final class e41 extends Fade {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
-    public /* synthetic */ e41(f41 f41Var) {
-        this.a = f41Var;
-    }
-
-    @Override // org.telegram.ui.Components.q61
-    public boolean needUpdate() {
-        return this.a.R.i != null;
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public /* synthetic */ void onRenderedFirstFrame(k3.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public void onStateChanged(boolean z10, int i10) {
-        f41 f41Var = this.a;
-        if (i10 == 4) {
-            f41Var.dismiss();
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(f41Var.V);
-            AndroidUtilities.runOnUIThread(f41Var.V, 16L);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e41(SecretMediaViewer secretMediaViewer, boolean z4, boolean z10, int i10) {
+        super(1);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.d = secretMediaViewer;
+                this.b = z4;
+                this.c = z10;
+                super(2);
+                break;
+            default:
+                this.d = secretMediaViewer;
+                this.b = z4;
+                this.c = z10;
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.u61
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.W) {
+                    onAppear.addListener(new ls0(this, 16));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new h11(this, 4));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
     }
 
-    @Override // org.telegram.ui.Components.q61
-    public void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr) {
-        this.a.R.e(z10, true, fArr);
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public void onRenderedFirstFrame() {
-        AndroidUtilities.runOnUIThread(new ky0(this, 14));
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public /* synthetic */ void onSeekFinished(k3.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public /* synthetic */ void onSeekStarted(k3.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public void onError(org.telegram.ui.Components.x61 x61Var, Exception exc) {
-    }
-
-    @Override // org.telegram.ui.Components.u61
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f9) {
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.W) {
+                    onDisappear.addListener(new ls0(this, 17));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new h11(this, 5));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+        }
     }
 }

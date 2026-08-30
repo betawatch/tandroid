@@ -1,59 +1,53 @@
 package nh;
 
-import android.net.Uri;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.g20;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+public final class q0 extends TextView {
+    public int a;
+    public final g20 b;
 
-    public /* synthetic */ q0(u0 u0Var, int i10) {
-        this.a = i10;
-        this.b = u0Var;
+    public q0(Context context) {
+        super(context);
+        this.a = -1;
+        this.b = new g20();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                Float f9 = (Float) obj;
-                t0 t0Var = this.b.n;
-                if (t0Var != null) {
-                    t0Var.setProgress(f9.floatValue());
-                    break;
-                }
-                break;
-            case 1:
-                Uri uri = (Uri) obj;
-                u0 u0Var = this.b;
-                if (u0Var.c && u0Var.r != null) {
-                    u0Var.n.b(R.raw.ic_save_to_gallery, 3500, LocaleController.getString("VideoSavedHint"));
-                    u0Var.c = false;
-                    u0Var.d();
-                    u0Var.v = uri;
-                    break;
-                }
-                break;
-            default:
-                Uri uri2 = (Uri) obj;
-                u0 u0Var2 = this.b;
-                u0Var2.c = false;
-                u0Var2.d();
-                t0 t0Var2 = u0Var2.n;
-                if (t0Var2 != null) {
-                    t0Var2.a();
-                    u0Var2.n = null;
-                }
-                t0 t0Var3 = new t0(u0Var2.getContext());
-                u0Var2.n = t0Var3;
-                t0Var3.b(R.raw.ic_save_to_gallery, 2500, LocaleController.getString("PhotoSavedHint"));
-                u0Var2.b.addView(u0Var2.n);
-                u0Var2.v = uri2;
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.a < 0) {
+            this.a = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
         }
+        if (this.a <= AndroidUtilities.dp(100.0f)) {
+            super.onDraw(canvas);
+            return;
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getWidth() - AndroidUtilities.dp(15.0f), 0.0f, getWidth(), getHeight());
+        this.b.b(canvas, rectF, 2, 1.0f);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31), i11);
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.a = -1;
     }
 }

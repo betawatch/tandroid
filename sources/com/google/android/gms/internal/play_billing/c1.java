@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c1 extends u1 {
+public final class c1 extends v1 {
     private static final c1 zzb;
     private int zzd;
     private String zze = "";
@@ -10,17 +10,17 @@ public final class c1 extends u1 {
     static {
         c1 c1Var = new c1();
         zzb = c1Var;
-        u1.k(c1.class, c1Var);
+        v1.k(c1.class, c1Var);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.u1
+    @Override // com.google.android.gms.internal.play_billing.v1
     public final Object d(int i10) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new r2(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001ဈ\u0000", new Object[]{"zzd", "zze"});
+            return new s2(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001ဈ\u0000", new Object[]{"zzd", "zze"});
         }
         if (i11 == 3) {
             return new c1();

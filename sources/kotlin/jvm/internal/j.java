@@ -1,13 +1,12 @@
 package kotlin.jvm.internal;
 
-import a4.w;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
-import org.telegram.ui.th;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final Object[] a = new Object[0];
@@ -55,9 +54,9 @@ public abstract class j {
                 i10++;
             }
             StackTraceElement stackTraceElement = stackTrace[i10];
-            StringBuilder k9 = th.k("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
-            k9.append(str);
-            NullPointerException nullPointerException = new NullPointerException(k9.toString());
+            StringBuilder m9 = yh.m("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
+            m9.append(str);
+            NullPointerException nullPointerException = new NullPointerException(m9.toString());
             f(nullPointerException, j.class.getName());
             throw nullPointerException;
         }
@@ -80,7 +79,7 @@ public abstract class j {
     }
 
     public static void h(String str) {
-        a6.b bVar = new a6.b(w.n("lateinit property ", str, " has not been initialized"));
+        a7.b bVar = new a7.b(android.support.v4.media.a.o("lateinit property ", str, " has not been initialized"));
         f(bVar, j.class.getName());
         throw bVar;
     }

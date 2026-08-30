@@ -2,6 +2,7 @@ package com.google.mlkit.nl.languageid.bundled.internal;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import b6.m;
 import com.google.mlkit.nl.languageid.IdentifiedLanguage;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,10 +10,9 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import wa.a;
-import z5.l;
+import ya.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -25,12 +25,12 @@ public class ThickLanguageIdentifier {
 
     private native void nativeDestroy(long j10);
 
-    private native IdentifiedLanguage[] nativeIdentifyPossibleLanguages(long j10, byte[] bArr, float f9);
+    private native IdentifiedLanguage[] nativeIdentifyPossibleLanguages(long j10, byte[] bArr, float f10);
 
     private native long nativeInitFromBuffer(MappedByteBuffer mappedByteBuffer, long j10);
 
     public final ArrayList a(String str) {
-        l.k(this.b != 0);
+        m.k(this.b != 0);
         IdentifiedLanguage[] nativeIdentifyPossibleLanguages = nativeIdentifyPossibleLanguages(this.b, str.getBytes(StandardCharsets.UTF_8), 0.5f);
         ArrayList arrayList = new ArrayList();
         for (IdentifiedLanguage identifiedLanguage : nativeIdentifyPossibleLanguages) {
@@ -40,14 +40,14 @@ public class ThickLanguageIdentifier {
     }
 
     public final void b() {
-        l.k(this.b == 0);
+        m.k(this.b == 0);
         synchronized (ThickLanguageIdentifier.class) {
             if (!c) {
                 try {
                     System.loadLibrary("language_id_l2c_jni");
                     c = true;
-                } catch (UnsatisfiedLinkError e10) {
-                    throw new a("Couldn't load language identification library.", e10);
+                } catch (UnsatisfiedLinkError e) {
+                    throw new a("Couldn't load language identification library.", e);
                 }
             }
         }
@@ -67,8 +67,8 @@ public class ThickLanguageIdentifier {
                 }
             } finally {
             }
-        } catch (IOException e11) {
-            throw new a("Couldn't open language identification model file", e11);
+        } catch (IOException e6) {
+            throw new a("Couldn't open language identification model file", e6);
         }
     }
 

@@ -1,20 +1,33 @@
 package h7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class h {
-    public static final h a;
-    public static final /* synthetic */ h[] b;
+import j$.util.Objects;
+import j7.t7;
+import java.util.AbstractMap;
 
-    static {
-        h hVar = new h("DEFAULT", 0);
-        a = hVar;
-        b = new h[]{hVar, new h("SIGNED", 1), new h("FIXED", 2)};
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class h extends d {
+    public final /* synthetic */ i c;
+
+    public h(i iVar) {
+        this.c = iVar;
     }
 
-    public static h[] values() {
-        return (h[]) b.clone();
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i10) {
+        i iVar = this.c;
+        t7.a(i10, iVar.e);
+        Object[] objArr = iVar.d;
+        int i11 = i10 + i10;
+        Object obj = objArr[i11];
+        Objects.requireNonNull(obj);
+        Object obj2 = objArr[i11 + 1];
+        Objects.requireNonNull(obj2);
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.e;
     }
 }

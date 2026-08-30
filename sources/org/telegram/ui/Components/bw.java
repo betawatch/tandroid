@@ -1,125 +1,264 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.ColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.util.Pair;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.CompoundEmoji;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class bw extends tv {
-    public final /* synthetic */ fz c0;
+public final /* synthetic */ class bw implements kl0, xd.b, nm0, ug.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kz b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bw(fz fzVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10, uv uvVar, boolean z11) {
-        super(context, c6Var, true, false, true, z10, 0, uvVar, org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.v6, c6Var), z11);
-        this.c0 = fzVar;
+    public /* synthetic */ bw(kz kzVar, int i10) {
+        this.a = i10;
+        this.b = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.tv
-    public final boolean d() {
-        return this.c0.Q0;
+    @Override // xd.b
+    public void L(int i10, float f10, float f11, xd.c cVar) {
+        this.b.T();
     }
 
-    @Override // org.telegram.ui.Components.tv
-    public final void e() {
-        fz fzVar = this.c0;
-        ArrayList arrayList = fzVar.j1;
-        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || MessagesController.getEmojiSettings(fzVar.Y0).getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
-            return;
-        }
-        UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
-    }
-
-    @Override // org.telegram.ui.Components.tv
-    public final boolean g(rx rxVar) {
-        return rxVar.f || this.c0.l1.contains(Long.valueOf(rxVar.b.id));
-    }
-
-    @Override // org.telegram.ui.Components.tv
-    public final ColorFilter getEmojiColorFilter() {
-        return this.c0.a2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0095  */
-    @Override // org.telegram.ui.Components.tv
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean h(int i10) {
-        Integer num;
+    @Override // org.telegram.ui.Components.nm0
+    public void a(int i10) {
         int i11;
-        qy qyVar;
-        fz fzVar = this.c0;
-        ArrayList arrayList = fzVar.m1;
-        nx nxVar = fzVar.N;
-        if (fzVar.b0) {
+        vy vyVar;
+        switch (this.a) {
+            case 2:
+                kz kzVar = this.b;
+                py pyVar = kzVar.f0;
+                int i12 = kzVar.Z0;
+                oy oyVar = kzVar.k0;
+                ry ryVar = kzVar.h0;
+                if (i10 != kzVar.p0 || !oyVar.x.isEmpty()) {
+                    kzVar.e0.B0();
+                    kzVar.m0.k(i10, 0);
+                    if (i10 == kzVar.o0 || i10 == kzVar.p0) {
+                        kzVar.l0.d.setText("");
+                        if (i10 != kzVar.p0 || (i11 = oyVar.F) < 1) {
+                            ky kyVar = kzVar.q1;
+                            pyVar.h1((kyVar == null || !kyVar.A()) ? 1 : 0, 0);
+                        } else {
+                            pyVar.h1(i11, -AndroidUtilities.dp(4.0f));
+                        }
+                        if (i10 == kzVar.p0) {
+                            ArrayList<String> arrayList = MessagesController.getInstance(i12).gifSearchEmojies;
+                            if (!arrayList.isEmpty()) {
+                                ryVar.a(arrayList.get(0), true);
+                            }
+                        }
+                    } else {
+                        ArrayList<String> arrayList2 = MessagesController.getInstance(i12).gifSearchEmojies;
+                        kzVar.g0.H(arrayList2.get(i10 - kzVar.q0));
+                        int i13 = i10 - kzVar.q0;
+                        if (i13 > 0) {
+                            ryVar.a(arrayList2.get(i13 - 1), true);
+                        }
+                        if (i10 - kzVar.q0 < arrayList2.size() - 1) {
+                            ryVar.a(arrayList2.get((i10 - kzVar.q0) + 1), true);
+                        }
+                    }
+                    kzVar.G(2);
+                    break;
+                }
+                break;
+            default:
+                kz kzVar2 = this.b;
+                sw swVar = kzVar2.D0;
+                ArrayList arrayList3 = kzVar2.a1;
+                tw twVar = kzVar2.y0;
+                bz bzVar = kzVar2.v0;
+                pw pwVar = kzVar2.A0;
+                if (!kzVar2.P0) {
+                    if (i10 != kzVar2.E1) {
+                        if (swVar != null && (vyVar = swVar.r) != null && vyVar.getSelectedCategory() != null) {
+                            swVar.c(null, false);
+                            vyVar.F1(null);
+                        }
+                        if (i10 != kzVar2.C1) {
+                            if (i10 != kzVar2.D1) {
+                                if (i10 != kzVar2.F1) {
+                                    int i14 = i10 - kzVar2.B1;
+                                    if (i14 < arrayList3.size()) {
+                                        if (i14 >= arrayList3.size()) {
+                                            i14 = arrayList3.size() - 1;
+                                        }
+                                        kzVar2.F0 = false;
+                                        pwVar.B0();
+                                        kzVar2.I(bzVar.E(arrayList3.get(i14)), 0);
+                                        kzVar2.G(0);
+                                        kzVar2.p(0);
+                                        int i15 = kzVar2.D1;
+                                        if (i15 <= 0 && (i15 = kzVar2.C1) <= 0) {
+                                            i15 = kzVar2.B1;
+                                        }
+                                        twVar.k(i10, i15);
+                                        kzVar2.U1 = false;
+                                        kzVar2.a0();
+                                        break;
+                                    }
+                                } else {
+                                    pwVar.B0();
+                                    kzVar2.I(bzVar.E("premium"), 0);
+                                    kzVar2.G(0);
+                                    int i16 = kzVar2.F1;
+                                    twVar.k(i16, i16 > 0 ? i16 : kzVar2.B1);
+                                    break;
+                                }
+                            } else {
+                                pwVar.B0();
+                                kzVar2.I(bzVar.E("fav"), 0);
+                                kzVar2.G(0);
+                                int i17 = kzVar2.D1;
+                                twVar.k(i17, i17 > 0 ? i17 : kzVar2.B1);
+                                break;
+                            }
+                        } else {
+                            pwVar.B0();
+                            kzVar2.I(bzVar.E("recent"), 0);
+                            kzVar2.G(0);
+                            int i18 = kzVar2.C1;
+                            twVar.k(i18, i18 > 0 ? i18 : kzVar2.B1);
+                            break;
+                        }
+                    } else {
+                        kzVar2.q1.o(new e51(kzVar2.getContext(), new cx(kzVar2), kzVar2.u1, kzVar2.v1, kzVar2.w1, null, kzVar2.W1));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // ug.g
+    public void d(RectF rectF, View view) {
+        this.b.C();
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public boolean f(int i10, View view) {
+        String str;
+        int i11;
+        kz kzVar = this.b;
+        int i12 = kzVar.z1;
+        ix ixVar = kzVar.M;
+        int[] iArr = kzVar.A1;
+        ru ruVar = kzVar.y1;
+        if (!(view instanceof sy)) {
             return false;
         }
-        ey eyVar = fzVar.O;
-        if (eyVar != null) {
-            eyVar.F(null, true);
+        sy syVar = (sy) view;
+        if (syVar.c) {
+            View F = ixVar.F(view);
+            f2.l1 T = F != null ? ixVar.T(F) : null;
+            if (T != null && T.b() <= kzVar.getRecentEmoji().size()) {
+                kzVar.q1.n();
+            }
+            ixVar.w1(view);
+            return true;
         }
-        cw cwVar = fzVar.R;
-        if (cwVar != null && (qyVar = cwVar.r) != null) {
-            qyVar.F1(null);
+        if (syVar.getSpan() != null || (str = (String) syVar.getTag()) == null) {
+            return false;
         }
-        if (i10 == 0) {
-            num = Integer.valueOf(fzVar.W ? 1 : 0);
+        String replace = str.replace("🏻", "").replace("🏼", "").replace("🏽", "").replace("🏾", "").replace("🏿", "");
+        String str2 = syVar.c ? null : Emoji.emojiColor.get(replace);
+        boolean isCompound = CompoundEmoji.isCompound(replace);
+        if (!isCompound && !EmojiData.emojiColoredMap.contains(replace)) {
+            return false;
+        }
+        kzVar.O1 = syVar;
+        kzVar.R1 = kzVar.P1;
+        kzVar.S1 = kzVar.Q1;
+        if (isCompound) {
+            replace = kz.g(replace, str2);
         } else {
-            i10--;
-            num = null;
-        }
-        if (num == null && i10 < EmojiData.dataColored.length && nxVar.s.indexOfKey(i10) >= 0) {
-            num = Integer.valueOf(nxVar.s.get(i10));
-        }
-        if (num == null) {
-            ArrayList<rx> emojipacks = fzVar.getEmojipacks();
-            int length = i10 - EmojiData.dataColored.length;
-            if (emojipacks != null && length >= 0 && length < emojipacks.size()) {
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList.size()) {
-                        i12 = -1;
-                        break;
-                    }
-                    if (((rx) arrayList.get(i12)).b.id == emojipacks.get(length).b.id) {
-                        break;
-                    }
-                    i12++;
-                }
-                num = Integer.valueOf(nxVar.s.get(i12 + EmojiData.dataColored.length));
-                i11 = AndroidUtilities.dp(-9.0f);
-                if (num != null) {
-                    fzVar.L.B0();
-                    fzVar.W(num.intValue());
-                    fzVar.H(num.intValue(), i11);
-                    fzVar.n(null, 0);
-                }
-                return true;
+            int indexOf = CompoundEmoji.skinTones.indexOf(str2) + 1;
+            qu quVar = ruVar.c;
+            int[] iArr2 = quVar.n;
+            if (iArr2[0] != indexOf) {
+                iArr2[0] = indexOf;
+                quVar.invalidate();
             }
         }
-        i11 = 0;
-        if (num != null) {
+        ruVar.getClass();
+        qu quVar2 = ruVar.c;
+        int i13 = ruVar.e;
+        boolean z4 = CompoundEmoji.getCompoundEmojiDrawable(replace) != null;
+        ruVar.d = z4;
+        Drawable[] drawableArr = quVar2.b;
+        int[] iArr3 = quVar2.n;
+        quVar2.f = z4;
+        quVar2.e = replace;
+        if (z4) {
+            drawableArr[0] = CompoundEmoji.getCompoundEmojiDrawable(replace, -1, -1);
+            drawableArr[1] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, 0, -2);
+            drawableArr[2] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, 1, -2);
+            drawableArr[3] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, 2, -2);
+            drawableArr[4] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, 3, -2);
+            drawableArr[5] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, 4, -2);
+            drawableArr[6] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, -2, 0);
+            drawableArr[7] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, -2, 1);
+            drawableArr[8] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, -2, 2);
+            drawableArr[9] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, -2, 3);
+            drawableArr[10] = CompoundEmoji.getCompoundEmojiDrawable(quVar2.e, -2, 4);
+            Pair<Integer, Integer> isHandshake = CompoundEmoji.isHandshake(replace);
+            if (isHandshake != null) {
+                int intValue = ((Integer) isHandshake.first).intValue();
+                if (iArr3[0] != intValue) {
+                    iArr3[0] = intValue;
+                    quVar2.invalidate();
+                }
+                int intValue2 = ((Integer) isHandshake.second).intValue();
+                if (iArr3[1] != intValue2) {
+                    iArr3[1] = intValue2;
+                    quVar2.invalidate();
+                }
+                quVar2.D = iArr3[0] == iArr3[1];
+            }
+            quVar2.F = true;
+        } else {
+            int i14 = 0;
+            while (i14 < 6) {
+                drawableArr[i14] = Emoji.getEmojiBigDrawable(i14 != 0 ? kz.g(replace, CompoundEmoji.skinTones.get(i14 - 1)) : replace);
+                i14++;
+            }
         }
+        quVar2.invalidate();
+        ruVar.setWidth(AndroidUtilities.dp((ruVar.d ? 3 : 0) + 30) + (i13 * 6));
+        ruVar.setHeight(((ruVar.d ? 2 : 1) * i13) + AndroidUtilities.dp(ruVar.d ? 11.66f : 15.0f));
+        int dp = AndroidUtilities.dp((ruVar.d ? 3 : 0) + 30) + (i13 * 6);
+        int dp2 = ((ruVar.d ? 2 : 1) * i13) + AndroidUtilities.dp(ruVar.d ? 11.66f : 15.0f);
+        syVar.getLocationOnScreen(iArr);
+        if (ruVar.d) {
+            i11 = 0;
+        } else {
+            i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (quVar2.n[0] * i12);
+        }
+        if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
+            i11 = org.telegram.ui.b.C(5.0f, iArr[0] - i11, i11);
+        } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
+            i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
+        }
+        int i15 = -i11;
+        int top = syVar.getTop() < 0 ? syVar.getTop() : 0;
+        quVar2.setArrowX((AndroidUtilities.dp(AndroidUtilities.isTablet() ? 30.0f : 22.0f) - i15) + ((int) AndroidUtilities.dpf2(0.5f)));
+        ruVar.setFocusable(true);
+        ruVar.showAsDropDown(view, i15, (((view.getMeasuredHeight() - i12) / 2) + ((-view.getMeasuredHeight()) - dp2)) - top);
+        kzVar.h.requestDisallowInterceptTouchEvent(true);
+        ixVar.d1(true);
+        ixVar.w1(view);
         return true;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f9) {
-        if (getTranslationY() != f9) {
-            super.setTranslationY(f9);
-            fz fzVar = this.c0;
-            View view = fzVar.K;
-            if (view != null) {
-                view.setTranslationY(f9);
-            }
-            fzVar.F.invalidate();
-        }
+    @Override // xd.b
+    public /* synthetic */ void z(float f10, int i10) {
     }
 }

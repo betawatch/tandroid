@@ -1,59 +1,53 @@
 package org.telegram.messenger;
 
-import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e9 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ long b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ BaseController h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ e9(MediaDataController mediaDataController, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, String str, boolean z11) {
-        this.e = mediaDataController;
-        this.c = z10;
-        this.f = tL_messages_stickerSet;
-        this.b = i10;
-        this.h = str;
-        this.d = z11;
+    public /* synthetic */ e9(MediaDataController mediaDataController, boolean z4, ArrayList arrayList, int i10, long j10, boolean z10, ArrayList arrayList2, boolean z11) {
+        this.h = mediaDataController;
+        this.c = z4;
+        this.n = arrayList;
+        this.f = i10;
+        this.b = j10;
+        this.d = z10;
+        this.r = arrayList2;
+        this.e = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.e).lambda$processLoadedDiceStickers$89(this.c, (TLRPC.TL_messages_stickerSet) this.f, this.b, (String) this.h, this.d);
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(org.telegram.ui.ActionBar.g6.k1((org.telegram.ui.ActionBar.z5) this.e, (File) this.f, this.b, this.c, (TLRPC.Document) this.h, this.d), 15));
+                ((MediaDataController) this.h).lambda$processLoadedFeaturedStickers$63(this.c, (ArrayList) this.n, this.f, this.b, this.d, (ArrayList) this.r, this.e);
                 break;
             default:
-                ((rf.v0) this.e).U((CharSequence) this.f, this.b, (ArrayList) this.h, this.c, this.d);
+                ((MessagesStorage) this.h).lambda$loadChatInfo$144((TLRPC.ChatFull[]) this.n, this.b, this.c, this.d, this.e, this.f, (CountDownLatch) this.r);
                 break;
         }
     }
 
-    public /* synthetic */ e9(org.telegram.ui.ActionBar.z5 z5Var, File file, int i10, boolean z10, TLRPC.Document document, boolean z11) {
-        this.e = z5Var;
-        this.f = file;
-        this.b = i10;
-        this.c = z10;
-        this.h = document;
-        this.d = z11;
-    }
-
-    public /* synthetic */ e9(rf.v0 v0Var, CharSequence charSequence, int i10, ArrayList arrayList, boolean z10, boolean z11) {
-        this.e = v0Var;
-        this.f = charSequence;
-        this.b = i10;
-        this.h = arrayList;
-        this.c = z10;
-        this.d = z11;
+    public /* synthetic */ e9(MessagesStorage messagesStorage, TLRPC.ChatFull[] chatFullArr, long j10, boolean z4, boolean z10, boolean z11, int i10, CountDownLatch countDownLatch) {
+        this.h = messagesStorage;
+        this.n = chatFullArr;
+        this.b = j10;
+        this.c = z4;
+        this.d = z10;
+        this.e = z11;
+        this.f = i10;
+        this.r = countDownLatch;
     }
 }

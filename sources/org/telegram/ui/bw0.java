@@ -1,80 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class bw0 extends org.telegram.ui.Components.jl0 {
-    public final Paint T2;
-    public final Path U2;
-    public final /* synthetic */ ew0 V2;
+public final /* synthetic */ class bw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PremiumPreviewFragment b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bw0(ew0 ew0Var, Context context) {
-        super(context, null);
-        this.V2 = ew0Var;
-        Paint paint = new Paint(1);
-        this.T2 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.h5, false));
-        this.U2 = new Path();
+    public /* synthetic */ bw0(PremiumPreviewFragment premiumPreviewFragment, int i10) {
+        this.a = i10;
+        this.b = premiumPreviewFragment;
     }
 
-    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Path path = this.U2;
-        path.rewind();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        path.addRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
-        canvas.drawPath(path, this.T2);
-        canvas.save();
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.V2.n.m0 >= 1.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.V2.n.m0 >= 1.0f) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        PremiumPreviewFragment premiumPreviewFragment = this.V2.n;
-        int i14 = 0;
-        int i15 = 0;
-        while (true) {
-            ArrayList arrayList = premiumPreviewFragment.d;
-            if (i14 >= arrayList.size()) {
-                premiumPreviewFragment.K = i15;
-                return;
-            }
-            premiumPreviewFragment.I.a((gw0) arrayList.get(i14), false);
-            premiumPreviewFragment.I.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            ((gw0) arrayList.get(i14)).h = i15;
-            i15 += premiumPreviewFragment.I.getMeasuredHeight();
-            i14++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.j0();
+                break;
+            case 1:
+                PremiumPreviewFragment premiumPreviewFragment = this.b;
+                premiumPreviewFragment.a.postOnAnimation(new bw0(premiumPreviewFragment, 0));
+                break;
+            default:
+                this.b.getMediaDataController().loadPremiumPromo(false);
+                break;
         }
     }
 }

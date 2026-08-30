@@ -10,13 +10,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
-import k1.m;
+import k1.n;
 import kotlin.jvm.internal.j;
 import m1.h;
 import m1.i;
 import m1.k;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class g {
     public static final g a = new g();
@@ -41,13 +41,13 @@ public final class g {
                 k value = (k) entry.getValue();
                 j.d(name, "name");
                 j.d(value, "value");
-                int x4 = value.x();
-                switch (x4 == 0 ? -1 : f.a[m1.j.b(x4)]) {
+                int x10 = value.x();
+                switch (x10 == 0 ? -1 : f.a[m1.j.b(x10)]) {
                     case -1:
                         throw new k1.a("Value case is null.", null);
                     case 0:
                     default:
-                        throw new a6.b();
+                        throw new a7.b();
                     case 1:
                         bVar.b(new d(name), Boolean.valueOf(value.p()));
                         break;
@@ -71,9 +71,9 @@ public final class g {
                         break;
                     case 7:
                         d dVar2 = new d(name);
-                        z k9 = value.w().k();
-                        j.d(k9, "value.stringSet.stringsList");
-                        bVar.b(dVar2, rc.g.p(k9));
+                        z k10 = value.w().k();
+                        j.d(k10, "value.stringSet.stringsList");
+                        bVar.b(dVar2, tc.g.p(k10));
                         break;
                     case 8:
                         throw new k1.a("Value not set.", null);
@@ -82,78 +82,78 @@ public final class g {
             Map unmodifiableMap = DesugarCollections.unmodifiableMap(bVar.a);
             j.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
             return new b(new LinkedHashMap(unmodifiableMap), true);
-        } catch (c0 e10) {
-            throw new k1.a("Unable to parse preferences proto.", e10);
+        } catch (c0 e) {
+            throw new k1.a("Unable to parse preferences proto.", e);
         }
     }
 
-    public final void b(Object obj, m mVar) {
+    public final void b(Object obj, n nVar) {
         x a2;
         Map unmodifiableMap = DesugarCollections.unmodifiableMap(((b) obj).a);
         j.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
-        m1.d k9 = m1.f.k();
+        m1.d k10 = m1.f.k();
         for (Map.Entry entry : unmodifiableMap.entrySet()) {
             d dVar = (d) entry.getKey();
             Object value = entry.getValue();
             String str = dVar.a;
             if (value instanceof Boolean) {
-                i y8 = k.y();
-                boolean booleanValue = ((Boolean) value).booleanValue();
-                y8.c();
-                k.m((k) y8.b, booleanValue);
-                a2 = y8.a();
-            } else if (value instanceof Float) {
                 i y10 = k.y();
-                float floatValue = ((Number) value).floatValue();
+                boolean booleanValue = ((Boolean) value).booleanValue();
                 y10.c();
-                k.n((k) y10.b, floatValue);
+                k.m((k) y10.b, booleanValue);
                 a2 = y10.a();
-            } else if (value instanceof Double) {
+            } else if (value instanceof Float) {
                 i y11 = k.y();
-                double doubleValue = ((Number) value).doubleValue();
+                float floatValue = ((Number) value).floatValue();
                 y11.c();
-                k.l((k) y11.b, doubleValue);
+                k.n((k) y11.b, floatValue);
                 a2 = y11.a();
-            } else if (value instanceof Integer) {
+            } else if (value instanceof Double) {
                 i y12 = k.y();
-                int intValue = ((Number) value).intValue();
+                double doubleValue = ((Number) value).doubleValue();
                 y12.c();
-                k.o((k) y12.b, intValue);
+                k.l((k) y12.b, doubleValue);
                 a2 = y12.a();
-            } else if (value instanceof Long) {
+            } else if (value instanceof Integer) {
                 i y13 = k.y();
-                long longValue = ((Number) value).longValue();
+                int intValue = ((Number) value).intValue();
                 y13.c();
-                k.i((k) y13.b, longValue);
+                k.o((k) y13.b, intValue);
                 a2 = y13.a();
-            } else if (value instanceof String) {
+            } else if (value instanceof Long) {
                 i y14 = k.y();
+                long longValue = ((Number) value).longValue();
                 y14.c();
-                k.j((k) y14.b, (String) value);
+                k.i((k) y14.b, longValue);
                 a2 = y14.a();
+            } else if (value instanceof String) {
+                i y15 = k.y();
+                y15.c();
+                k.j((k) y15.b, (String) value);
+                a2 = y15.a();
             } else {
                 if (!(value instanceof Set)) {
                     throw new IllegalStateException(j.g(value.getClass().getName(), "PreferencesSerializer does not support type: "));
                 }
-                i y15 = k.y();
+                i y16 = k.y();
                 m1.g l10 = h.l();
                 l10.c();
                 h.i((h) l10.b, (Set) value);
-                y15.c();
-                k.k((k) y15.b, l10);
-                a2 = y15.a();
+                y16.c();
+                k.k((k) y16.b, l10);
+                a2 = y16.a();
             }
-            k9.getClass();
-            k9.c();
-            m1.f.i((m1.f) k9.b).put(str, (k) a2);
+            k10.getClass();
+            k10.c();
+            m1.f.i((m1.f) k10.b).put(str, (k) a2);
         }
-        m1.f fVar = (m1.f) k9.a();
+        m1.f fVar = (m1.f) k10.a();
         int a10 = fVar.a();
         Logger logger = androidx.datastore.preferences.protobuf.k.h;
         if (a10 > 4096) {
             a10 = 4096;
         }
-        androidx.datastore.preferences.protobuf.k kVar = new androidx.datastore.preferences.protobuf.k(mVar, a10);
+        androidx.datastore.preferences.protobuf.k kVar = new androidx.datastore.preferences.protobuf.k(nVar, a10);
         fVar.c(kVar);
         if (kVar.f > 0) {
             kVar.B();

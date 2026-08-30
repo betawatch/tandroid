@@ -1,22 +1,22 @@
 package ih;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class g implements vd.b, jf.o {
-    public final /* synthetic */ t a;
+import android.content.Context;
+import android.view.TextureView;
 
-    @Override // vd.b
-    public void N(int i10, float f9, float f10, vd.c cVar) {
-        this.a.a0();
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class g extends TextureView {
+    public final /* synthetic */ j a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g(j jVar, Context context) {
+        super(context);
+        this.a = jVar;
     }
 
-    @Override // jf.o
-    public void e(long j10) {
-        t tVar = this.a;
-        tVar.b0(j10, tVar.s0);
-    }
-
-    @Override // vd.b
-    public /* synthetic */ void z(float f9, int i10) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        j jVar = this.a;
+        setMeasuredDimension(jVar.g, jVar.h);
     }
 }

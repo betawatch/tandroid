@@ -1,24 +1,24 @@
 package d6;
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.internal.cast.o;
+import b6.p;
+import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.internal.v;
+import com.google.android.gms.common.api.internal.w;
+import com.google.android.gms.common.api.j;
+import com.google.android.gms.tasks.Task;
+import o5.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b extends a6.a {
-    public static final Parcelable.Creator<b> CREATOR = new w.a(29);
-    public final PendingIntent a;
+public final class b extends j {
+    public static final e k = new e("ClientTelemetry.API", new a8.j(4), new d());
 
-    public b(PendingIntent pendingIntent) {
-        this.a = pendingIntent;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = o.q(parcel, 20293);
-        o.k(parcel, 1, this.a, i10);
-        o.r(parcel, q6);
+    public final Task f(p pVar) {
+        v e = w.e();
+        e.d = new y5.c[]{y6.b.a};
+        e.b = false;
+        e.c = new i(pVar, 11);
+        return e(2, e.e());
     }
 }

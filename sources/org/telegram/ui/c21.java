@@ -1,113 +1,208 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.os.Looper;
+import android.util.LongSparseArray;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c21 extends org.telegram.ui.ActionBar.o2 {
-    public b21 a;
-    public org.telegram.ui.Components.jl0 b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-    public org.telegram.ui.Cells.h3[] n;
+public final /* synthetic */ class c21 implements Runnable {
+    public final /* synthetic */ int a;
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString(R.string.VoipQuickReplies));
-        if (AndroidUtilities.isTablet()) {
-            this.actionBar.setOccupyStatusBar(false);
-        }
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new al0(this, 11));
-        this.a = new b21(this, context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.jl0 jl0Var = new org.telegram.ui.Components.jl0(context, null);
-        this.b = jl0Var;
-        jl0Var.p1();
-        this.b.setVerticalScrollBarEnabled(false);
-        this.b.setLayoutManager(new f2.j0(1, false));
-        frameLayout2.addView(this.b, i7.f6.e(-1, -1, 51));
-        this.b.setAdapter(this.a);
-        this.actionBar.setAdaptiveBackground(this.b);
-        return this.fragmentView;
+    public /* synthetic */ c21(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final ArrayList getThemeDescriptions() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 16, new Class[]{org.telegram.ui.Cells.y9.class, org.telegram.ui.Cells.q8.class, org.telegram.ui.Cells.h3.class}, null, null, null, org.telegram.ui.ActionBar.g6.d6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.g6.a7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.g6.s8));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.g6.v8));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.g6.A8));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.g6.t8));
-        int i10 = org.telegram.ui.ActionBar.g6.G6;
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 4, new Class[]{org.telegram.ui.Cells.h3.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, TLObject.FLAG_23, new Class[]{org.telegram.ui.Cells.h3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.H6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.g6.i6));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.g6.k0, null, null, org.telegram.ui.ActionBar.g6.d7));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.y9.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.i6(this.b, 0, new Class[]{org.telegram.ui.Cells.y9.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.g6.I6));
-        return arrayList;
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public final boolean onFragmentCreate() {
-        super.onFragmentCreate();
-        this.c = 1;
-        this.d = 2;
-        this.e = 3;
-        this.h = 5;
-        this.f = 4;
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0074  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        org.telegram.ui.Components.qc a02;
         int i10 = 0;
-        SharedPreferences.Editor edit = getParentActivity().getSharedPreferences("mainconfig", 0).edit();
-        while (true) {
-            org.telegram.ui.Cells.h3[] h3VarArr = this.n;
-            if (i10 >= h3VarArr.length) {
-                edit.commit();
-                return;
-            }
-            org.telegram.ui.Cells.h3 h3Var = h3VarArr[i10];
-            if (h3Var != null) {
-                String obj = h3Var.getTextView().getText().toString();
-                if (TextUtils.isEmpty(obj)) {
-                    edit.remove("quick_reply_msg" + (i10 + 1));
-                } else {
-                    edit.putString("quick_reply_msg" + (i10 + 1), obj);
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 1:
+                org.telegram.ui.Components.qc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+                if (U != null && (a02 = org.telegram.ui.Components.qc.a0(U)) != null) {
+                    org.telegram.ui.Components.ic M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    M.j = 5000;
+                    M.j();
+                    break;
                 }
-            }
-            i10++;
+                break;
+            case 3:
+                int i11 = y81.a0;
+                break;
+            case 4:
+                org.telegram.ui.ActionBar.j6.N = false;
+                org.telegram.ui.ActionBar.j6.E(false);
+                break;
+            case 5:
+                if (VoIPService.getSharedState() != null) {
+                    VoIPService.getSharedState().acceptIncomingCall();
+                    break;
+                }
+                break;
+            case 6:
+                int[][] iArr = WallpapersListActivity.h0;
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 7:
+                Utilities.globalQueue.postRunnable(new c21(9));
+                break;
+            case 8:
+                ArrayList arrayList = new ArrayList();
+                LongSparseArray longSparseArray = new LongSparseArray();
+                try {
+                    File file = new File(FileLoader.getDirectory(4), "webhistory.dat");
+                    if (file.exists()) {
+                        SerializedData serializedData = new SerializedData(file);
+                        long readInt64 = serializedData.readInt64(true);
+                        for (long j10 = 0; j10 < readInt64; j10++) {
+                            org.telegram.ui.web.b1 b1Var = new org.telegram.ui.web.b1();
+                            b1Var.readParams(serializedData, true);
+                            arrayList.add(b1Var);
+                            longSparseArray.put(b1Var.a, b1Var);
+                        }
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                AndroidUtilities.runOnUIThread(new kg1(10, arrayList, longSparseArray));
+                break;
+            case 9:
+                try {
+                    File file2 = new File(FileLoader.getDirectory(4), "webhistory.dat");
+                    if (!file2.exists()) {
+                        file2.createNewFile();
+                    }
+                    long size = org.telegram.ui.web.c1.c.size();
+                    SerializedData serializedData2 = new SerializedData(true);
+                    serializedData2.writeInt64(size);
+                    ArrayList arrayList2 = org.telegram.ui.web.c1.c;
+                    int size2 = arrayList2.size();
+                    int i12 = 0;
+                    while (i12 < size2) {
+                        Object obj = arrayList2.get(i12);
+                        i12++;
+                        ((org.telegram.ui.web.b1) obj).serializeToStream(serializedData2);
+                    }
+                    SerializedData serializedData3 = new SerializedData(serializedData2.length());
+                    serializedData3.writeInt64(size);
+                    ArrayList arrayList3 = org.telegram.ui.web.c1.c;
+                    int size3 = arrayList3.size();
+                    while (i10 < size3) {
+                        Object obj2 = arrayList3.get(i10);
+                        i10++;
+                        ((org.telegram.ui.web.b1) obj2).serializeToStream(serializedData3);
+                    }
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                        fileOutputStream.write(serializedData3.toByteArray());
+                        fileOutputStream.close();
+                        break;
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
+                        return;
+                    }
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    return;
+                }
+            case 10:
+                break;
+            case 11:
+                int i13 = ph.y.u0;
+                break;
+            case 12:
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
+            case 13:
+                break;
+            case 14:
+                MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
+                break;
+            case 15:
+                HashSet hashSet = rh.q2.T0;
+                break;
+            case 16:
+                break;
+            case 17:
+                int i14 = th.g.C;
+                break;
+            case 18:
+                uf.p1[] p1VarArr = uf.p1.g;
+                break;
+            case 19:
+                SharedConfig.drawActionBarShadow = !SharedConfig.drawActionBarShadow;
+                SharedConfig.saveDebugConfig();
+                AndroidUtilities.forEachViews(LaunchActivity.D1.w0.getRootView(), new nh.e(19));
+                break;
+            default:
+                SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
+                String str = "Blue";
+                String string = sharedPreferences.getString("lastDayTheme", "Blue");
+                if (org.telegram.ui.ActionBar.j6.N0(string) == null || org.telegram.ui.ActionBar.j6.N0(string).q()) {
+                    string = "Blue";
+                }
+                String str2 = "Dark Blue";
+                String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+                if (org.telegram.ui.ActionBar.j6.N0(string2) == null || !org.telegram.ui.ActionBar.j6.N0(string2).q()) {
+                    string2 = "Dark Blue";
+                }
+                org.telegram.ui.ActionBar.i6 i6Var = org.telegram.ui.ActionBar.j6.I;
+                if (string.equals(string2)) {
+                    if (i6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                        str2 = string2;
+                        AndroidUtilities.runOnUIThread(new xg.a(org.telegram.ui.ActionBar.j6.I.q() ? org.telegram.ui.ActionBar.j6.N0(str2) : org.telegram.ui.ActionBar.j6.N0(str), 2), 200L);
+                        break;
+                    }
+                } else {
+                    str2 = string2;
+                }
+                str = string;
+                AndroidUtilities.runOnUIThread(new xg.a(org.telegram.ui.ActionBar.j6.I.q() ? org.telegram.ui.ActionBar.j6.N0(str2) : org.telegram.ui.ActionBar.j6.N0(str), 2), 200L);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void onResume() {
-        super.onResume();
-        b21 b21Var = this.a;
-        if (b21Var != null) {
-            b21Var.l();
-        }
+    public /* synthetic */ c21(Object obj, int i10) {
+        this.a = i10;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
     }
 }

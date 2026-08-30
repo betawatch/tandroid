@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class k extends MediaRouter2.TransferCallback {
     public final /* synthetic */ l a;
@@ -28,7 +28,7 @@ public final class k extends MediaRouter2.TransferCallback {
             int i10 = e.F;
             return;
         }
-        b0 c3 = eVar.c();
+        a0 c3 = eVar.c();
         if (eVar.e() != c3) {
             eVar.j(c3, 2);
         }
@@ -36,11 +36,11 @@ public final class k extends MediaRouter2.TransferCallback {
 
     @Override // android.media.MediaRouter2.TransferCallback
     public final void onTransfer(MediaRouter2.RoutingController routingController, MediaRouter2.RoutingController routingController2) {
-        b0 b0Var;
+        a0 a0Var;
         this.a.v.remove(routingController);
         if (routingController2 == this.a.r.getSystemController()) {
             e eVar = (e) this.a.s.b;
-            b0 c3 = eVar.c();
+            a0 c3 = eVar.c();
             if (eVar.e() != c3) {
                 eVar.j(c3, 3);
                 return;
@@ -53,27 +53,27 @@ public final class k extends MediaRouter2.TransferCallback {
             return;
         }
         int i10 = 0;
-        String id2 = a9.f.d(selectedRoutes.get(0)).getId();
+        String id2 = androidx.emoji2.text.w.d(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new h(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;
         int size = arrayList.size();
         while (true) {
             if (i10 >= size) {
-                b0Var = null;
+                a0Var = null;
                 break;
             }
             Object obj = arrayList.get(i10);
             i10++;
-            b0Var = (b0) obj;
-            if (b0Var.c() == eVar2.r && TextUtils.equals(id2, b0Var.b)) {
+            a0Var = (a0) obj;
+            if (a0Var.c() == eVar2.r && TextUtils.equals(id2, a0Var.b)) {
                 break;
             }
         }
-        if (b0Var == null) {
+        if (a0Var == null) {
             Log.w("GlobalMediaRouter", "onSelectRoute: The target RouteInfo is not found for descriptorId=" + id2);
         } else {
-            eVar2.j(b0Var, 3);
+            eVar2.j(a0Var, 3);
         }
         this.a.r(routingController2);
     }

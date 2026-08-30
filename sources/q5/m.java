@@ -1,22 +1,87 @@
 package q5;
 
-import com.google.android.gms.common.api.Status;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import j$.util.DesugarCollections;
+import j7.f5;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class m implements com.google.android.gms.common.api.q {
-    public final /* synthetic */ int a;
-    public final Status b;
+public final class m extends c6.a {
+    public static final Parcelable.Creator<m> CREATOR = new v(12);
+    public int a;
+    public String b;
+    public List c;
+    public List d;
+    public double e;
 
-    public /* synthetic */ m(Status status, int i10) {
-        this.a = i10;
-        this.b = status;
+    public final JSONObject e() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            int i10 = this.a;
+            if (i10 == 0) {
+                jSONObject.put("containerType", "GENERIC_CONTAINER");
+            } else if (i10 == 1) {
+                jSONObject.put("containerType", "AUDIOBOOK_CONTAINER");
+            }
+            if (!TextUtils.isEmpty(this.b)) {
+                jSONObject.put("title", this.b);
+            }
+            List list = this.c;
+            if (list != null && !list.isEmpty()) {
+                JSONArray jSONArray = new JSONArray();
+                Iterator it = this.c.iterator();
+                while (it.hasNext()) {
+                    jSONArray.put(((l) it.next()).g());
+                }
+                jSONObject.put("sections", jSONArray);
+            }
+            List list2 = this.d;
+            if (list2 != null && !list2.isEmpty()) {
+                jSONObject.put("containerImages", v5.a.b(this.d));
+            }
+            jSONObject.put("containerDuration", this.e);
+        } catch (JSONException unused) {
+        }
+        return jSONObject;
     }
 
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        switch (this.a) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return this.b;
+        if (!(obj instanceof m)) {
+            return false;
+        }
+        m mVar = (m) obj;
+        return this.a == mVar.a && TextUtils.equals(this.b, mVar.b) && b6.m.l(this.c, mVar.c) && b6.m.l(this.d, mVar.d) && this.e == mVar.e;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), this.b, this.c, this.d, Double.valueOf(this.e)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        int i11 = this.a;
+        f5.s(parcel, 2, 4);
+        parcel.writeInt(i11);
+        f5.l(parcel, 3, this.b);
+        List list = this.c;
+        f5.p(parcel, 4, list == null ? null : DesugarCollections.unmodifiableList(list));
+        List list2 = this.d;
+        f5.p(parcel, 5, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        double d = this.e;
+        f5.s(parcel, 6, 8);
+        parcel.writeDouble(d);
+        f5.r(parcel, q10);
     }
 }

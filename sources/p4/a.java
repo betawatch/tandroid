@@ -1,25 +1,88 @@
 package p4;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import android.net.Uri;
+import h5.d0;
+import j3.g;
+import java.util.Arrays;
+import org.telegram.ui.al0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a {
-    public final int a;
+public final class a implements g {
+    public static final String B;
+    public static final String C;
+    public static final al0 D;
+    public static final String r;
+    public static final String s;
+    public static final String v;
+    public static final String w;
+    public static final String x;
+    public static final String y;
+    public final long a;
     public final int b;
-    public final List c;
-    public final List d;
-    public final List e;
-    public final List f;
+    public final int c;
+    public final Uri[] d;
+    public final int[] e;
+    public final long[] f;
+    public final long h;
+    public final boolean n;
 
-    public a(int i10, int i11, ArrayList arrayList, List list, List list2, List list3) {
-        this.a = i10;
-        this.b = i11;
-        this.c = DesugarCollections.unmodifiableList(arrayList);
-        this.d = DesugarCollections.unmodifiableList(list);
-        this.e = DesugarCollections.unmodifiableList(list2);
-        this.f = DesugarCollections.unmodifiableList(list3);
+    static {
+        int i10 = d0.a;
+        r = Integer.toString(0, 36);
+        s = Integer.toString(1, 36);
+        v = Integer.toString(2, 36);
+        w = Integer.toString(3, 36);
+        x = Integer.toString(4, 36);
+        y = Integer.toString(5, 36);
+        B = Integer.toString(6, 36);
+        C = Integer.toString(7, 36);
+        D = new al0(14);
+    }
+
+    public a(long j10, int i10, int i11, int[] iArr, Uri[] uriArr, long[] jArr, long j11, boolean z4) {
+        h5.a.f(iArr.length == uriArr.length);
+        this.a = j10;
+        this.b = i10;
+        this.c = i11;
+        this.e = iArr;
+        this.d = uriArr;
+        this.f = jArr;
+        this.h = j11;
+        this.n = z4;
+    }
+
+    public final int a(int i10) {
+        int i11;
+        int i12 = i10 + 1;
+        while (true) {
+            int[] iArr = this.e;
+            if (i12 >= iArr.length || this.n || (i11 = iArr[i12]) == 0 || i11 == 1) {
+                break;
+            }
+            i12++;
+        }
+        return i12;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && Arrays.equals(this.d, aVar.d) && Arrays.equals(this.e, aVar.e) && Arrays.equals(this.f, aVar.f) && this.h == aVar.h && this.n == aVar.n) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i10 = ((this.b * 31) + this.c) * 31;
+        long j10 = this.a;
+        int hashCode = (Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((i10 + ((int) (j10 ^ (j10 >>> 32)))) * 31) + Arrays.hashCode(this.d)) * 31)) * 31)) * 31;
+        long j11 = this.h;
+        return ((hashCode + ((int) (j11 ^ (j11 >>> 32)))) * 31) + (this.n ? 1 : 0);
     }
 }

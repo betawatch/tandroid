@@ -1,19 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import i7.c7;
+import k7.p7;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
-import qc.i;
-import rc.f;
-import sc.c;
-import sd.d;
-import sd.e;
+import sc.i;
+import tc.f;
+import uc.c;
+import ud.a;
+import ud.d;
+import ud.e;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzdj {
     private Object zza;
-    private final sd.a zzb = e.a();
+    private final a zzb = e.a();
 
     public zzdj(Object obj) {
         this.zza = obj;
@@ -22,7 +23,7 @@ public final class zzdj {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
-    /* JADX WARN: Type inference failed for: r5v7, types: [sd.a] */
+    /* JADX WARN: Type inference failed for: r5v7, types: [ud.a] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -37,11 +38,11 @@ public final class zzdj {
                 if ((i11 & TLObject.FLAG_31) != 0) {
                     zzdgVar.zzd = i11 - TLObject.FLAG_31;
                     Object obj2 = zzdgVar.zzb;
-                    tc.a aVar = tc.a.a;
+                    vc.a aVar = vc.a.a;
                     i10 = zzdgVar.zzd;
                     if (i10 != 0) {
-                        c7.b(obj2);
-                        sd.a aVar2 = this.zzb;
+                        p7.b(obj2);
+                        a aVar2 = this.zzb;
                         zzdgVar.zze = (zzmc) obj;
                         zzdgVar.zza = aVar2;
                         zzdgVar.zzd = 1;
@@ -53,9 +54,9 @@ public final class zzdj {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ?? r52 = (sd.a) zzdgVar.zza;
+                        ?? r52 = (a) zzdgVar.zza;
                         zzmc zzmcVar = zzdgVar.zze;
-                        c7.b(obj2);
+                        p7.b(obj2);
                         dVar = r52;
                         obj = zzmcVar;
                     }
@@ -68,7 +69,7 @@ public final class zzdj {
         }
         zzdgVar = new zzdg(this, cVar);
         Object obj22 = zzdgVar.zzb;
-        tc.a aVar3 = tc.a.a;
+        vc.a aVar3 = vc.a.a;
         i10 = zzdgVar.zzd;
         if (i10 != 0) {
         }
@@ -77,7 +78,7 @@ public final class zzdj {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
-    /* JADX WARN: Type inference failed for: r5v7, types: [sd.a] */
+    /* JADX WARN: Type inference failed for: r5v7, types: [ud.a] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -92,11 +93,11 @@ public final class zzdj {
                 if ((i11 & TLObject.FLAG_31) != 0) {
                     zzdhVar.zzd = i11 - TLObject.FLAG_31;
                     Object obj = zzdhVar.zzb;
-                    tc.a aVar = tc.a.a;
+                    vc.a aVar = vc.a.a;
                     i10 = zzdhVar.zzd;
                     if (i10 != 0) {
-                        c7.b(obj);
-                        sd.a aVar2 = this.zzb;
+                        p7.b(obj);
+                        a aVar2 = this.zzb;
                         zzdhVar.zze = (zzmc[]) objArr;
                         zzdhVar.zza = aVar2;
                         zzdhVar.zzd = 1;
@@ -108,9 +109,9 @@ public final class zzdj {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ?? r52 = (sd.a) zzdhVar.zza;
+                        ?? r52 = (a) zzdhVar.zza;
                         zzmc[] zzmcVarArr = zzdhVar.zze;
-                        c7.b(obj);
+                        p7.b(obj);
                         dVar = r52;
                         objArr = zzmcVarArr;
                     }
@@ -123,7 +124,7 @@ public final class zzdj {
         }
         zzdhVar = new zzdh(this, cVar);
         Object obj2 = zzdhVar.zzb;
-        tc.a aVar3 = tc.a.a;
+        vc.a aVar3 = vc.a.a;
         i10 = zzdhVar.zzd;
         if (i10 != 0) {
         }
@@ -132,7 +133,7 @@ public final class zzdj {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0037  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
-    /* JADX WARN: Type inference failed for: r5v6, types: [sd.a] */
+    /* JADX WARN: Type inference failed for: r5v6, types: [ud.a] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -147,11 +148,11 @@ public final class zzdj {
                 if ((i11 & TLObject.FLAG_31) != 0) {
                     zzdiVar.zzd = i11 - TLObject.FLAG_31;
                     Object obj2 = zzdiVar.zzb;
-                    tc.a aVar = tc.a.a;
+                    vc.a aVar = vc.a.a;
                     i10 = zzdiVar.zzd;
                     if (i10 != 0) {
-                        c7.b(obj2);
-                        sd.a aVar2 = this.zzb;
+                        p7.b(obj2);
+                        a aVar2 = this.zzb;
                         zzdiVar.zze = (zzmc) obj;
                         zzdiVar.zza = aVar2;
                         zzdiVar.zzd = 1;
@@ -163,9 +164,9 @@ public final class zzdj {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ?? r52 = (sd.a) zzdiVar.zza;
+                        ?? r52 = (a) zzdiVar.zza;
                         zzmc zzmcVar = zzdiVar.zze;
-                        c7.b(obj2);
+                        p7.b(obj2);
                         dVar = r52;
                         obj = zzmcVar;
                     }
@@ -183,7 +184,7 @@ public final class zzdj {
         }
         zzdiVar = new zzdi(this, cVar);
         Object obj22 = zzdiVar.zzb;
-        tc.a aVar3 = tc.a.a;
+        vc.a aVar3 = vc.a.a;
         i10 = zzdiVar.zzd;
         if (i10 != 0) {
         }

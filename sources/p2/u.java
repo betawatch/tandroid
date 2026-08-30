@@ -1,319 +1,245 @@
 package p2;
 
-import android.R;
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.media.MediaCodecInfo;
-import android.media.MediaCodecList;
-import android.os.Message;
-import android.os.Parcel;
-import android.view.ContextThemeWrapper;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import androidx.appcompat.app.AlertController$RecycleListView;
-import com.google.android.gms.internal.play_billing.g4;
-import j$.util.DesugarCollections;
-import j7.l1;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+import android.os.IInterface;
+import com.google.android.gms.internal.play_billing.a4;
+import com.google.android.gms.internal.play_billing.b4;
+import com.google.android.gms.internal.play_billing.c4;
+import com.google.android.gms.internal.play_billing.d4;
+import com.google.android.gms.internal.play_billing.f3;
+import com.google.android.gms.internal.play_billing.g3;
+import com.google.android.gms.internal.play_billing.j3;
+import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.play_billing.l3;
+import com.google.android.gms.internal.play_billing.z3;
+import java.util.concurrent.TimeUnit;
+import n7.qa;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements a4.z {
-    public final /* synthetic */ int a;
-    public int b;
-    public Object c;
+public final class u implements ServiceConnection {
+    public final c a;
+    public final com.google.android.gms.internal.play_billing.m b;
+    public final com.google.android.gms.internal.play_billing.m c;
+    public final /* synthetic */ b d;
 
-    public /* synthetic */ u(char c3, int i10) {
-        this.a = i10;
+    public u(b bVar, c cVar) {
+        this.d = bVar;
+        com.google.android.gms.internal.play_billing.h hVar = bVar.B;
+        this.b = new com.google.android.gms.internal.play_billing.m(hVar);
+        this.c = new com.google.android.gms.internal.play_billing.m(hVar);
+        this.a = cVar;
     }
 
-    @Override // a4.z
-    public MediaCodecInfo a(int i10) {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
+    public final Long a(boolean z4) {
+        if (z4) {
+            com.google.android.gms.internal.play_billing.m mVar = this.b;
+            if (!mVar.b) {
+                return null;
+            }
+            long a2 = mVar.a.a();
+            if (!mVar.b) {
+                throw new IllegalStateException("This stopwatch is already stopped.");
+            }
+            mVar.b = false;
+            long j10 = (a2 - mVar.d) + mVar.c;
+            mVar.c = j10;
+            return Long.valueOf(TimeUnit.MILLISECONDS.convert(j10, TimeUnit.NANOSECONDS));
         }
-        return ((MediaCodecInfo[]) this.c)[i10];
-    }
-
-    public Object b() {
-        Object[] objArr = (Object[]) this.c;
-        int i10 = this.b;
-        if (i10 <= 0) {
+        com.google.android.gms.internal.play_billing.m mVar2 = this.c;
+        if (!mVar2.b) {
             return null;
         }
-        int i11 = i10 - 1;
-        Object obj = objArr[i11];
-        kotlin.jvm.internal.j.c(obj, "null cannot be cast to non-null type T of androidx.core.util.Pools.SimplePool");
-        objArr[i11] = null;
-        this.b--;
-        return obj;
+        long a10 = mVar2.a.a();
+        if (!mVar2.b) {
+            throw new IllegalStateException("This stopwatch is already stopped.");
+        }
+        mVar2.b = false;
+        long j11 = (a10 - mVar2.d) + mVar2.c;
+        mVar2.c = j11;
+        return Long.valueOf(TimeUnit.MILLISECONDS.convert(j11, TimeUnit.NANOSECONDS));
     }
 
-    public void c(long j10) {
-        int i10 = this.b;
-        long[] jArr = (long[]) this.c;
-        if (i10 == jArr.length) {
-            this.c = Arrays.copyOf(jArr, i10 * 2);
-        }
-        long[] jArr2 = (long[]) this.c;
-        int i11 = this.b;
-        this.b = i11 + 1;
-        jArr2[i11] = j10;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v1, types: [android.widget.ListAdapter] */
-    /* JADX WARN: Type inference failed for: r8v3 */
-    /* JADX WARN: Type inference failed for: r8v4 */
-    public g.f d() {
-        g.c cVar = (g.c) this.c;
-        g.f fVar = new g.f(cVar.a, this.b);
-        View view = cVar.e;
-        g.e eVar = fVar.f;
-        if (view != null) {
-            eVar.r = view;
-        } else {
-            CharSequence charSequence = cVar.d;
-            if (charSequence != null) {
-                eVar.d = charSequence;
-                TextView textView = eVar.p;
-                if (textView != null) {
-                    textView.setText(charSequence);
-                }
-            }
-            Drawable drawable = cVar.c;
-            if (drawable != null) {
-                eVar.n = drawable;
-                ImageView imageView = eVar.o;
-                if (imageView != null) {
-                    imageView.setVisibility(0);
-                    eVar.o.setImageDrawable(drawable);
-                }
-            }
-        }
-        CharSequence charSequence2 = cVar.f;
-        if (charSequence2 != null) {
-            androidx.biometric.y yVar = cVar.g;
-            eVar.getClass();
-            Message obtainMessage = yVar != null ? eVar.z.obtainMessage(-2, yVar) : null;
-            eVar.j = charSequence2;
-            eVar.k = obtainMessage;
-        }
-        if (cVar.i != null) {
-            AlertController$RecycleListView alertController$RecycleListView = (AlertController$RecycleListView) cVar.b.inflate(eVar.v, (ViewGroup) null);
-            int i10 = cVar.l ? eVar.w : eVar.x;
-            Object obj = cVar.i;
-            ?? r82 = obj;
-            if (obj == null) {
-                r82 = new g.d(cVar.a, i10, R.id.text1, null);
-            }
-            eVar.s = r82;
-            eVar.t = cVar.m;
-            if (cVar.j != null) {
-                alertController$RecycleListView.setOnItemClickListener(new g.b(cVar, eVar));
-            }
-            if (cVar.l) {
-                alertController$RecycleListView.setChoiceMode(1);
-            }
-            eVar.e = alertController$RecycleListView;
-        }
-        View view2 = cVar.k;
-        if (view2 != null) {
-            eVar.f = view2;
-            eVar.g = false;
-        }
-        fVar.setCancelable(true);
-        fVar.setCanceledOnTouchOutside(true);
-        fVar.setOnCancelListener(null);
-        fVar.setOnDismissListener(null);
-        l.l lVar = cVar.h;
-        if (lVar != null) {
-            fVar.setOnKeyListener(lVar);
-        }
-        return fVar;
-    }
-
-    public long e(int i10) {
-        if (i10 >= 0 && i10 < this.b) {
-            return ((long[]) this.c)[i10];
-        }
-        StringBuilder o10 = l1.o(i10, "Invalid index ", ", size is ");
-        o10.append(this.b);
-        throw new IndexOutOfBoundsException(o10.toString());
-    }
-
-    public synchronized List f() {
-        return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
-    }
-
-    public long g(o3.h hVar) {
-        f5.w wVar = (f5.w) this.c;
-        int i10 = 0;
-        hVar.f(wVar.a, 0, 1, false);
-        int i11 = wVar.a[0] & 255;
-        if (i11 == 0) {
-            return Long.MIN_VALUE;
-        }
-        int i12 = 128;
-        int i13 = 0;
-        while ((i11 & i12) == 0) {
-            i12 >>= 1;
-            i13++;
-        }
-        int i14 = i11 & (~i12);
-        hVar.f(wVar.a, 1, i13, false);
-        while (i10 < i13) {
-            i10++;
-            i14 = (wVar.a[i10] & 255) + (i14 << 8);
-        }
-        this.b = i13 + 1 + this.b;
-        return i14;
-    }
-
-    public void h(Object instance) {
-        Object[] objArr = (Object[]) this.c;
-        kotlin.jvm.internal.j.e(instance, "instance");
-        int i10 = this.b;
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (objArr[i11] == instance) {
-                throw new IllegalStateException("Already in the pool!");
-            }
-        }
-        int i12 = this.b;
-        if (i12 < objArr.length) {
-            objArr[i12] = instance;
-            this.b = i12 + 1;
-        }
-    }
-
-    @Override // a4.z
-    public boolean i(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
-    }
-
-    public String j(g4 g4Var) {
-        w wVar = (w) this.c;
-        int i10 = this.b;
+    public final void b(h hVar, int i10, String str, boolean z4) {
         try {
-            if (wVar.E == null) {
-                throw null;
+            j3 s6 = k3.s();
+            int i11 = hVar.a;
+            s6.c();
+            k3.r((k3) s6.b, i11);
+            String str2 = hVar.c;
+            s6.c();
+            k3.o((k3) s6.b, str2);
+            s6.c();
+            k3.q((k3) s6.b, i10);
+            if (str != null) {
+                s6.c();
+                k3.n((k3) s6.b, str);
             }
-            com.google.android.gms.internal.play_billing.g gVar = wVar.E;
-            String packageName = wVar.C.getPackageName();
-            String str = i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? i10 != 6 ? "QUERY_PRODUCT_DETAILS_ASYNC" : "START_CONNECTION" : "IS_FEATURE_SUPPORTED" : "CONSUME_ASYNC" : "ACKNOWLEDGE_PURCHASE" : "LAUNCH_BILLING_FLOW";
-            v vVar = new v(g4Var);
-            com.google.android.gms.internal.play_billing.e eVar = (com.google.android.gms.internal.play_billing.e) gVar;
-            Parcel S0 = eVar.S0();
-            S0.writeString(packageName);
-            S0.writeString(str);
-            int i11 = com.google.android.gms.internal.play_billing.d.a;
-            S0.writeStrongBinder(vVar);
+            Long a2 = a(z4);
+            b bVar = this.d;
+            if (!z4) {
+                z3 p10 = a4.p();
+                p10.c();
+                a4.n((a4) p10.b, (k3) s6.a());
+                if (a2 != null) {
+                    long longValue = a2.longValue();
+                    p10.c();
+                    a4.o((a4) p10.b, longValue);
+                }
+                bVar.h.t1((a4) p10.a());
+                return;
+            }
+            c4 r10 = d4.r();
+            r10.d(false);
+            r10.e();
+            if (a2 != null) {
+                long longValue2 = a2.longValue();
+                r10.c();
+                d4.p((d4) r10.b, longValue2);
+            }
+            f3 u10 = g3.u();
+            u10.d(s6);
+            u10.c();
+            g3.t((g3) u10.b, 6);
+            u10.e(r10);
+            bVar.h((g3) u10.a());
+        } catch (Throwable th2) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
+        }
+    }
+
+    public final void c(h hVar) {
+        b bVar = this.d;
+        synchronized (bVar.a) {
             try {
-                eVar.b.transact(1, S0, null, 1);
-                S0.recycle();
-                return "billingOverrideService.getBillingOverride";
+                if (bVar.b == 3) {
+                    return;
+                }
+                try {
+                    this.a.onBillingSetupFinished(hVar);
+                } catch (Throwable th2) {
+                    com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while calling onBillingSetupFinished.", th2);
+                }
+            } catch (Throwable th3) {
+                throw th3;
+            }
+        }
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onBindingDied(ComponentName componentName) {
+        com.google.android.gms.internal.play_billing.u.h("BillingClient", "Billing service died.");
+        try {
+            b bVar = this.d;
+            if (b.q(bVar)) {
+                qa qaVar = bVar.h;
+                f3 u10 = g3.u();
+                u10.c();
+                g3.t((g3) u10.b, 6);
+                j3 s6 = k3.s();
+                s6.c();
+                k3.q((k3) s6.b, 110);
+                u10.d(s6);
+                c4 r10 = d4.r();
+                r10.d(false);
+                r10.e();
+                u10.e(r10);
+                qaVar.m1((g3) u10.a());
+            } else {
+                bVar.h.s1(l3.n());
+            }
+        } catch (Throwable th2) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
+        }
+        b bVar2 = this.d;
+        synchronized (bVar2.a) {
+            if (bVar2.b != 3 && bVar2.b != 0) {
+                bVar2.k(0);
+                bVar2.m();
+                try {
+                    this.a.onBillingServiceDisconnected();
+                } catch (Throwable th3) {
+                    com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while calling onBillingServiceDisconnected.", th3);
+                }
+            }
+        }
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        com.google.android.gms.internal.play_billing.c aVar;
+        com.google.android.gms.internal.play_billing.u.g("BillingClient", "Billing service connected.");
+        b bVar = this.d;
+        synchronized (bVar.a) {
+            try {
+                if (bVar.b == 3) {
+                    return;
+                }
+                int i10 = com.google.android.gms.internal.play_billing.b.b;
+                if (iBinder == null) {
+                    aVar = null;
+                } else {
+                    IInterface queryLocalInterface = iBinder.queryLocalInterface("com.android.vending.billing.IInAppBillingService");
+                    aVar = queryLocalInterface instanceof com.google.android.gms.internal.play_billing.c ? (com.google.android.gms.internal.play_billing.c) queryLocalInterface : new com.google.android.gms.internal.play_billing.a(iBinder, "com.android.vending.billing.IInAppBillingService", 2);
+                }
+                bVar.i = aVar;
+                if (b.f(new h2.f(this, 8), 30000L, new tl0(this, 6), bVar.r(), bVar.e()) == null) {
+                    h u10 = bVar.u();
+                    bVar.j(25, u10);
+                    c(u10);
+                }
             } catch (Throwable th2) {
-                S0.recycle();
                 throw th2;
             }
-        } catch (Exception e10) {
-            wVar.F(95, 28, z.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e10);
-            g4Var.a(0);
-            return "billingOverrideService.getBillingOverride";
         }
     }
 
-    @Override // a4.z
-    public boolean q(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureRequired(str);
-    }
-
-    @Override // a4.z
-    public int r() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        com.google.android.gms.internal.play_billing.u.h("BillingClient", "Billing service disconnected.");
+        try {
+            b bVar = this.d;
+            if (b.q(bVar)) {
+                qa qaVar = bVar.h;
+                f3 u10 = g3.u();
+                u10.c();
+                g3.t((g3) u10.b, 6);
+                j3 s6 = k3.s();
+                s6.c();
+                k3.q((k3) s6.b, 109);
+                u10.d(s6);
+                c4 r10 = d4.r();
+                r10.d(false);
+                r10.e();
+                u10.e(r10);
+                qaVar.m1((g3) u10.a());
+            } else {
+                bVar.h.u1(b4.n());
+            }
+        } catch (Throwable th2) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
         }
-        return ((MediaCodecInfo[]) this.c).length;
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 12:
-                return new String((char[]) this.c, 0, this.b);
-            default:
-                return super.toString();
+        com.google.android.gms.internal.play_billing.m mVar = this.c;
+        mVar.c = 0L;
+        mVar.b = false;
+        mVar.a();
+        b bVar2 = this.d;
+        synchronized (bVar2.a) {
+            try {
+                if (bVar2.b == 3) {
+                    return;
+                }
+                bVar2.k(0);
+                try {
+                    this.a.onBillingServiceDisconnected();
+                } catch (Throwable th3) {
+                    com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while calling onBillingServiceDisconnected.", th3);
+                }
+            } finally {
+            }
         }
-    }
-
-    @Override // a4.z
-    public boolean x() {
-        return true;
-    }
-
-    public /* synthetic */ u(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-    }
-
-    public u(w5.a aVar, int i10) {
-        this.a = 3;
-        z5.l.h(aVar);
-        this.c = aVar;
-        this.b = i10;
-    }
-
-    public u(int i10, byte b10) {
-        this.a = i10;
-        switch (i10) {
-            case 7:
-                this.c = new ArrayList();
-                this.b = 128;
-                break;
-            case 8:
-                this.b = 0;
-                this.c = new StringBuilder();
-                break;
-            case 9:
-            case 10:
-            default:
-                this.c = new long[32];
-                break;
-            case 11:
-                this.c = new f5.w(8);
-                break;
-        }
-    }
-
-    public u(int i10) {
-        this.a = 9;
-        if (i10 > 0) {
-            this.c = new Object[i10];
-            return;
-        }
-        throw new IllegalArgumentException("The max pool size must be > 0");
-    }
-
-    public u(int i10, a5.e[] eVarArr) {
-        this.a = 10;
-        this.b = i10;
-        this.c = eVarArr;
-    }
-
-    public u(Context context) {
-        this.a = 5;
-        int e10 = g.f.e(context, 0);
-        this.c = new g.c(new ContextThemeWrapper(context, g.f.e(context, e10)));
-        this.b = e10;
-    }
-
-    public u(boolean z10, boolean z11) {
-        this.a = 1;
-        this.b = (z10 || z11) ? 1 : 0;
     }
 }

@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.e0;
-import jd.t;
+import dd.p;
+import k7.p7;
 import kotlin.jvm.internal.j;
-import sc.c;
-import uc.i;
+import ld.e0;
+import ld.t;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzga extends i implements p {
     final /* synthetic */ zzgb zza;
@@ -22,23 +23,23 @@ final class zzga extends i implements p {
         this.zzb = j10;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzga zzgaVar = new zzga(this.zza, this.zzb, cVar);
         zzgaVar.zzc = obj;
         return zzgaVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzga) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzga) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0041, code lost:
     
         if (com.google.android.recaptcha.internal.zzgb.zzo(r1, r9) == false) goto L13;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -48,14 +49,14 @@ final class zzga extends i implements p {
         zzdr zzdrVar;
         zzdt zzdtVar2;
         zzcg zzcgVar;
-        tc.a aVar = tc.a.a;
-        c7.b(obj);
+        a aVar = a.a;
+        p7.b(obj);
         zzhk zzhkVar = (zzhk) this.zzc;
         zzgb zzgbVar = this.zza;
         zzdv zze = zzgbVar.zze();
         zzdsVar = zzdv.zzb;
         boolean a2 = j.a(zze, zzdsVar);
-        qc.i iVar = qc.i.a;
+        sc.i iVar = sc.i.a;
         if (!a2) {
             zzdv zze2 = zzgbVar.zze();
             zzdtVar = zzdv.zzc;

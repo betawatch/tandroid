@@ -2,10 +2,10 @@ package i0;
 
 import android.graphics.Path;
 import android.util.Log;
-import h7.c8;
+import j7.y7;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d {
     public char a;
@@ -16,21 +16,21 @@ public final class d {
         this.b = fArr;
     }
 
-    public static void a(Path path, float f9, float f10, float f11, float f12, float f13, float f14, float f15, boolean z10, boolean z11) {
+    public static void a(Path path, float f10, float f11, float f12, float f13, float f14, float f15, float f16, boolean z4, boolean z10) {
         double d;
         double d10;
-        double radians = Math.toRadians(f15);
+        double radians = Math.toRadians(f16);
         double cos = Math.cos(radians);
         double sin = Math.sin(radians);
-        double d11 = f9;
-        double d12 = f10;
-        double d13 = f13;
+        double d11 = f10;
+        double d12 = f11;
+        double d13 = f14;
         double d14 = ((d12 * sin) + (d11 * cos)) / d13;
-        double d15 = f14;
-        double d16 = ((d12 * cos) + ((-f9) * sin)) / d15;
-        double d17 = f12;
-        double d18 = ((d17 * sin) + (f11 * cos)) / d13;
-        double d19 = ((d17 * cos) + ((-f11) * sin)) / d15;
+        double d15 = f15;
+        double d16 = ((d12 * cos) + ((-f10) * sin)) / d15;
+        double d17 = f13;
+        double d18 = ((d17 * sin) + (f12 * cos)) / d13;
+        double d19 = ((d17 * cos) + ((-f12) * sin)) / d15;
         double d20 = d14 - d18;
         double d21 = d16 - d19;
         double d22 = (d14 + d18) / 2.0d;
@@ -44,13 +44,13 @@ public final class d {
         if (d25 < 0.0d) {
             Log.w("PathParser", "Points are too far apart " + d24);
             float sqrt = (float) (Math.sqrt(d24) / 1.99999d);
-            a(path, f9, f10, f11, f12, f13 * sqrt, sqrt * f14, f15, z10, z11);
+            a(path, f10, f11, f12, f13, f14 * sqrt, sqrt * f15, f16, z4, z10);
             return;
         }
         double sqrt2 = Math.sqrt(d25);
         double d26 = sqrt2 * d20;
         double d27 = sqrt2 * d21;
-        if (z10 == z11) {
+        if (z4 == z10) {
             d = d22 - d27;
             d10 = d23 + d26;
         } else {
@@ -59,7 +59,7 @@ public final class d {
         }
         double atan2 = Math.atan2(d16 - d10, d14 - d);
         double atan22 = Math.atan2(d19 - d10, d18 - d) - atan2;
-        if (z11 != (atan22 >= 0.0d)) {
+        if (z10 != (atan22 >= 0.0d)) {
             atan22 = atan22 > 0.0d ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
         }
         double d28 = d * d13;
@@ -118,11 +118,10 @@ public final class d {
         d dVar;
         int i12;
         char c3;
-        float f9;
         float f10;
-        d dVar2;
-        boolean z10;
         float f11;
+        d dVar2;
+        boolean z4;
         float f12;
         float f13;
         float f14;
@@ -130,24 +129,25 @@ public final class d {
         float f16;
         float f17;
         float f18;
+        float f19;
         d[] dVarArr2 = dVarArr;
         Path path2 = path;
         float[] fArr2 = new float[6];
         int length = dVarArr2.length;
-        char c6 = 0;
-        char c10 = 'm';
+        char c10 = 0;
+        char c11 = 'm';
         int i13 = 0;
         while (i13 < length) {
             d dVar3 = dVarArr2[i13];
-            char c11 = dVar3.a;
+            char c12 = dVar3.a;
             float[] fArr3 = dVar3.b;
-            float f19 = fArr2[c6];
-            float f20 = fArr2[1];
-            float f21 = fArr2[2];
-            float f22 = fArr2[3];
-            float f23 = fArr2[4];
-            float f24 = fArr2[5];
-            switch (c11) {
+            float f20 = fArr2[c10];
+            float f21 = fArr2[1];
+            float f22 = fArr2[2];
+            float f23 = fArr2[3];
+            float f24 = fArr2[4];
+            float f25 = fArr2[5];
+            switch (c12) {
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                 case 'a':
                     i10 = 7;
@@ -171,91 +171,91 @@ public final class d {
                 case 'Z':
                 case 'z':
                     path2.close();
-                    path2.moveTo(f23, f24);
-                    f19 = f23;
-                    f21 = f19;
+                    path2.moveTo(f24, f25);
                     f20 = f24;
                     f22 = f20;
+                    f21 = f25;
+                    f23 = f21;
                 default:
                     i10 = 2;
                     break;
             }
-            float f25 = f23;
             float f26 = f24;
-            float f27 = f19;
+            float f27 = f25;
             float f28 = f20;
+            float f29 = f21;
             int i14 = 0;
             while (i14 < fArr3.length) {
-                if (c11 == 'A') {
+                if (c12 == 'A') {
                     fArr = fArr3;
                     i11 = i14;
                     dVar = dVar3;
-                    float f29 = f27;
                     float f30 = f28;
+                    float f31 = f29;
                     i12 = i13;
-                    c3 = c11;
+                    c3 = c12;
                     int i15 = i11 + 5;
                     int i16 = i11 + 6;
-                    a(path, f29, f30, fArr[i15], fArr[i16], fArr[i11], fArr[i11 + 1], fArr[i11 + 2], fArr[i11 + 3] != 0.0f, fArr[i11 + 4] != 0.0f);
-                    f21 = fArr[i15];
-                    f9 = fArr[i16];
-                    f22 = f9;
-                    f10 = f21;
-                } else if (c11 == 'C') {
+                    a(path, f30, f31, fArr[i15], fArr[i16], fArr[i11], fArr[i11 + 1], fArr[i11 + 2], fArr[i11 + 3] != 0.0f, fArr[i11 + 4] != 0.0f);
+                    f22 = fArr[i15];
+                    f10 = fArr[i16];
+                    f23 = f10;
+                    f11 = f22;
+                } else if (c12 == 'C') {
                     fArr = fArr3;
                     i11 = i14;
                     i12 = i13;
                     dVar = dVar3;
-                    c3 = c11;
+                    c3 = c12;
                     int i17 = i11 + 2;
                     int i18 = i11 + 3;
                     int i19 = i11 + 4;
                     int i20 = i11 + 5;
                     path2.cubicTo(fArr[i11], fArr[i11 + 1], fArr[i17], fArr[i18], fArr[i19], fArr[i20]);
-                    float f31 = fArr[i19];
-                    float f32 = fArr[i20];
-                    f21 = fArr[i17];
-                    f22 = fArr[i18];
-                    f9 = f32;
-                    f10 = f31;
-                } else if (c11 == 'H') {
+                    float f32 = fArr[i19];
+                    float f33 = fArr[i20];
+                    f22 = fArr[i17];
+                    f23 = fArr[i18];
+                    f10 = f33;
+                    f11 = f32;
+                } else if (c12 == 'H') {
                     fArr = fArr3;
                     i11 = i14;
                     dVar = dVar3;
-                    c3 = c11;
-                    f9 = f28;
+                    c3 = c12;
+                    f10 = f29;
                     i12 = i13;
-                    path2.lineTo(fArr[i11], f9);
-                    f10 = fArr[i11];
-                } else if (c11 == 'Q') {
+                    path2.lineTo(fArr[i11], f10);
+                    f11 = fArr[i11];
+                } else if (c12 == 'Q') {
                     fArr = fArr3;
                     i11 = i14;
                     i12 = i13;
                     dVar = dVar3;
-                    c3 = c11;
+                    c3 = c12;
                     int i21 = i11 + 1;
                     int i22 = i11 + 2;
                     int i23 = i11 + 3;
                     path2.quadTo(fArr[i11], fArr[i21], fArr[i22], fArr[i23]);
-                    float f33 = fArr[i11];
-                    float f34 = fArr[i21];
-                    float f35 = fArr[i22];
-                    float f36 = fArr[i23];
-                    f21 = f33;
+                    float f34 = fArr[i11];
+                    float f35 = fArr[i21];
+                    float f36 = fArr[i22];
+                    float f37 = fArr[i23];
                     f22 = f34;
-                    f10 = f35;
-                    f9 = f36;
-                } else if (c11 == 'V') {
+                    f23 = f35;
+                    f11 = f36;
+                    f10 = f37;
+                } else if (c12 == 'V') {
                     fArr = fArr3;
                     i11 = i14;
                     i12 = i13;
                     dVar = dVar3;
-                    f10 = f27;
-                    c3 = c11;
-                    path2.lineTo(f10, fArr[i11]);
-                    f9 = fArr[i11];
-                } else if (c11 != 'a') {
-                    if (c11 == 'c') {
+                    f11 = f28;
+                    c3 = c12;
+                    path2.lineTo(f11, fArr[i11]);
+                    f10 = fArr[i11];
+                } else if (c12 != 'a') {
+                    if (c12 == 'c') {
                         fArr = fArr3;
                         i11 = i14;
                         int i24 = i11 + 2;
@@ -263,108 +263,108 @@ public final class d {
                         int i26 = i11 + 4;
                         int i27 = i11 + 5;
                         path2.rCubicTo(fArr[i11], fArr[i11 + 1], fArr[i24], fArr[i25], fArr[i26], fArr[i27]);
-                        float f37 = fArr[i24] + f27;
-                        float f38 = fArr[i25] + f28;
-                        f27 += fArr[i26];
-                        f28 += fArr[i27];
-                        f21 = f37;
+                        float f38 = fArr[i24] + f28;
+                        float f39 = fArr[i25] + f29;
+                        f28 += fArr[i26];
+                        f29 += fArr[i27];
                         f22 = f38;
-                    } else if (c11 != 'h') {
-                        if (c11 != 'q') {
-                            if (c11 != 'v') {
-                                if (c11 == 'L') {
+                        f23 = f39;
+                    } else if (c12 != 'h') {
+                        if (c12 != 'q') {
+                            if (c12 != 'v') {
+                                if (c12 == 'L') {
                                     fArr = fArr3;
                                     i11 = i14;
                                     int i28 = i11 + 1;
                                     path2.lineTo(fArr[i11], fArr[i28]);
-                                    f10 = fArr[i11];
-                                    f9 = fArr[i28];
-                                } else if (c11 == 'M') {
+                                    f11 = fArr[i11];
+                                    f10 = fArr[i28];
+                                } else if (c12 == 'M') {
                                     fArr = fArr3;
                                     i11 = i14;
-                                    f10 = fArr[i11];
-                                    f9 = fArr[i11 + 1];
+                                    f11 = fArr[i11];
+                                    f10 = fArr[i11 + 1];
                                     if (i11 > 0) {
-                                        path2.lineTo(f10, f9);
+                                        path2.lineTo(f11, f10);
                                     } else {
-                                        path2.moveTo(f10, f9);
-                                        f25 = f10;
-                                        f26 = f9;
+                                        path2.moveTo(f11, f10);
+                                        f26 = f11;
+                                        f27 = f10;
                                     }
-                                } else if (c11 != 'S') {
-                                    if (c11 == 'T') {
+                                } else if (c12 != 'S') {
+                                    if (c12 == 'T') {
                                         fArr = fArr3;
                                         i11 = i14;
-                                        if (c10 == 'q' || c10 == 't' || c10 == 'Q' || c10 == 'T') {
-                                            f27 = (f27 * 2.0f) - f21;
+                                        if (c11 == 'q' || c11 == 't' || c11 == 'Q' || c11 == 'T') {
                                             f28 = (f28 * 2.0f) - f22;
+                                            f29 = (f29 * 2.0f) - f23;
                                         }
                                         int i29 = i11 + 1;
-                                        path2.quadTo(f27, f28, fArr[i11], fArr[i29]);
-                                        f10 = fArr[i11];
-                                        f9 = fArr[i29];
+                                        path2.quadTo(f28, f29, fArr[i11], fArr[i29]);
+                                        f11 = fArr[i11];
+                                        f10 = fArr[i29];
                                         dVar = dVar3;
-                                        f21 = f27;
                                         f22 = f28;
-                                    } else if (c11 == 'l') {
+                                        f23 = f29;
+                                    } else if (c12 == 'l') {
                                         fArr = fArr3;
                                         i11 = i14;
                                         int i30 = i11 + 1;
                                         path2.rLineTo(fArr[i11], fArr[i30]);
-                                        f27 += fArr[i11];
-                                        f14 = fArr[i30];
-                                    } else if (c11 == 'm') {
+                                        f28 += fArr[i11];
+                                        f15 = fArr[i30];
+                                    } else if (c12 == 'm') {
                                         fArr = fArr3;
                                         i11 = i14;
-                                        float f39 = fArr[i11];
-                                        f27 += f39;
-                                        float f40 = fArr[i11 + 1];
+                                        float f40 = fArr[i11];
                                         f28 += f40;
+                                        float f41 = fArr[i11 + 1];
+                                        f29 += f41;
                                         if (i11 > 0) {
-                                            path2.rLineTo(f39, f40);
+                                            path2.rLineTo(f40, f41);
                                         } else {
-                                            path2.rMoveTo(f39, f40);
+                                            path2.rMoveTo(f40, f41);
                                             dVar = dVar3;
-                                            f10 = f27;
-                                            f25 = f10;
-                                            f9 = f28;
-                                            f26 = f9;
+                                            f11 = f28;
+                                            f26 = f11;
+                                            f10 = f29;
+                                            f27 = f10;
                                         }
-                                    } else if (c11 != 's') {
-                                        if (c11 != 't') {
+                                    } else if (c12 != 's') {
+                                        if (c12 != 't') {
                                             fArr = fArr3;
                                             i11 = i14;
                                             dVar = dVar3;
-                                            f10 = f27;
+                                            f11 = f28;
                                         } else {
-                                            if (c10 == 'q' || c10 == 't' || c10 == 'Q' || c10 == 'T') {
-                                                f17 = f27 - f21;
+                                            if (c11 == 'q' || c11 == 't' || c11 == 'Q' || c11 == 'T') {
                                                 f18 = f28 - f22;
+                                                f19 = f29 - f23;
                                             } else {
+                                                f19 = 0.0f;
                                                 f18 = 0.0f;
-                                                f17 = 0.0f;
                                             }
                                             int i31 = i14 + 1;
-                                            path2.rQuadTo(f17, f18, fArr3[i14], fArr3[i31]);
-                                            float f41 = f17 + f27;
+                                            path2.rQuadTo(f18, f19, fArr3[i14], fArr3[i31]);
                                             float f42 = f18 + f28;
-                                            float f43 = f27 + fArr3[i14];
-                                            f28 += fArr3[i31];
-                                            f22 = f42;
+                                            float f43 = f19 + f29;
+                                            float f44 = f28 + fArr3[i14];
+                                            f29 += fArr3[i31];
+                                            f23 = f43;
                                             fArr = fArr3;
                                             i11 = i14;
                                             dVar = dVar3;
-                                            f10 = f43;
-                                            f21 = f41;
+                                            f11 = f44;
+                                            f22 = f42;
                                         }
-                                        f9 = f28;
+                                        f10 = f29;
                                     } else {
-                                        if (c10 == 'c' || c10 == 's' || c10 == 'C' || c10 == 'S') {
-                                            f15 = f28 - f22;
-                                            f16 = f27 - f21;
+                                        if (c11 == 'c' || c11 == 's' || c11 == 'C' || c11 == 'S') {
+                                            f16 = f29 - f23;
+                                            f17 = f28 - f22;
                                         } else {
+                                            f17 = 0.0f;
                                             f16 = 0.0f;
-                                            f15 = 0.0f;
                                         }
                                         int i32 = i14;
                                         int i33 = i32 + 1;
@@ -372,43 +372,43 @@ public final class d {
                                         int i35 = i32 + 3;
                                         fArr = fArr3;
                                         i11 = i32;
-                                        path2.rCubicTo(f16, f15, fArr3[i32], fArr3[i33], fArr3[i34], fArr3[i35]);
-                                        f11 = fArr[i11] + f27;
-                                        f12 = fArr[i33] + f28;
-                                        f27 += fArr[i34];
-                                        f13 = fArr[i35];
+                                        path2.rCubicTo(f17, f16, fArr3[i32], fArr3[i33], fArr3[i34], fArr3[i35]);
+                                        f12 = fArr[i11] + f28;
+                                        f13 = fArr[i33] + f29;
+                                        f28 += fArr[i34];
+                                        f14 = fArr[i35];
                                     }
                                     i12 = i13;
-                                    c3 = c11;
+                                    c3 = c12;
                                 } else {
                                     fArr = fArr3;
                                     i11 = i14;
-                                    if (c10 == 'c' || c10 == 's' || c10 == 'C' || c10 == 'S') {
-                                        f27 = (f27 * 2.0f) - f21;
+                                    if (c11 == 'c' || c11 == 's' || c11 == 'C' || c11 == 'S') {
                                         f28 = (f28 * 2.0f) - f22;
+                                        f29 = (f29 * 2.0f) - f23;
                                     }
-                                    float f44 = f27;
                                     float f45 = f28;
+                                    float f46 = f29;
                                     int i36 = i11 + 1;
                                     int i37 = i11 + 2;
                                     int i38 = i11 + 3;
-                                    path2.cubicTo(f44, f45, fArr[i11], fArr[i36], fArr[i37], fArr[i38]);
-                                    float f46 = fArr[i11];
-                                    f21 = f46;
-                                    f22 = fArr[i36];
-                                    f10 = fArr[i37];
-                                    f9 = fArr[i38];
+                                    path2.cubicTo(f45, f46, fArr[i11], fArr[i36], fArr[i37], fArr[i38]);
+                                    float f47 = fArr[i11];
+                                    f22 = f47;
+                                    f23 = fArr[i36];
+                                    f11 = fArr[i37];
+                                    f10 = fArr[i38];
                                 }
                                 i12 = i13;
                                 dVar = dVar3;
-                                c3 = c11;
+                                c3 = c12;
                             } else {
                                 fArr = fArr3;
                                 i11 = i14;
                                 path2.rLineTo(0.0f, fArr[i11]);
-                                f14 = fArr[i11];
+                                f15 = fArr[i11];
                             }
-                            f28 += f14;
+                            f29 += f15;
                         } else {
                             fArr = fArr3;
                             i11 = i14;
@@ -416,80 +416,80 @@ public final class d {
                             int i40 = i11 + 2;
                             int i41 = i11 + 3;
                             path2.rQuadTo(fArr[i11], fArr[i39], fArr[i40], fArr[i41]);
-                            f11 = fArr[i11] + f27;
-                            f12 = fArr[i39] + f28;
-                            f27 += fArr[i40];
-                            f13 = fArr[i41];
+                            f12 = fArr[i11] + f28;
+                            f13 = fArr[i39] + f29;
+                            f28 += fArr[i40];
+                            f14 = fArr[i41];
                         }
-                        f28 += f13;
-                        f21 = f11;
+                        f29 += f14;
                         f22 = f12;
+                        f23 = f13;
                     } else {
                         fArr = fArr3;
                         i11 = i14;
                         path2.rLineTo(fArr[i11], 0.0f);
-                        f27 += fArr[i11];
+                        f28 += fArr[i11];
                     }
                     dVar = dVar3;
-                    f10 = f27;
-                    f9 = f28;
+                    f11 = f28;
+                    f10 = f29;
                     i12 = i13;
-                    c3 = c11;
+                    c3 = c12;
                 } else {
                     fArr = fArr3;
                     i11 = i14;
                     int i42 = i11 + 5;
-                    float f47 = fArr[i42] + f27;
+                    float f48 = fArr[i42] + f28;
                     int i43 = i11 + 6;
-                    float f48 = fArr[i43] + f28;
-                    float f49 = fArr[i11];
-                    float f50 = fArr[i11 + 1];
-                    float f51 = fArr[i11 + 2];
+                    float f49 = fArr[i43] + f29;
+                    float f50 = fArr[i11];
+                    float f51 = fArr[i11 + 1];
+                    float f52 = fArr[i11 + 2];
                     if (fArr[i11 + 3] != 0.0f) {
                         dVar2 = dVar3;
-                        z10 = true;
+                        z4 = true;
                     } else {
                         dVar2 = dVar3;
-                        z10 = false;
+                        z4 = false;
                     }
                     dVar = dVar2;
-                    float f52 = f27;
-                    c3 = c11;
                     float f53 = f28;
+                    c3 = c12;
+                    float f54 = f29;
                     i12 = i13;
-                    a(path, f52, f53, f47, f48, f49, f50, f51, z10, fArr[i11 + 4] != 0.0f);
-                    f10 = f52 + fArr[i42];
-                    f9 = f53 + fArr[i43];
-                    f21 = f10;
-                    f22 = f9;
+                    a(path, f53, f54, f48, f49, f50, f51, f52, z4, fArr[i11 + 4] != 0.0f);
+                    f11 = f53 + fArr[i42];
+                    f10 = f54 + fArr[i43];
+                    f22 = f11;
+                    f23 = f10;
                 }
                 i14 = i11 + i10;
                 path2 = path;
                 dVar3 = dVar;
-                c11 = c3;
+                c12 = c3;
                 i13 = i12;
-                f27 = f10;
-                f28 = f9;
-                c10 = c11;
+                f28 = f11;
+                f29 = f10;
+                c11 = c12;
                 fArr3 = fArr;
             }
-            fArr2[0] = f27;
-            fArr2[1] = f28;
-            fArr2[2] = f21;
-            fArr2[3] = f22;
-            fArr2[4] = f25;
-            fArr2[5] = f26;
-            c10 = dVar3.a;
+            fArr2[0] = f28;
+            fArr2[1] = f29;
+            fArr2[2] = f22;
+            fArr2[3] = f23;
+            fArr2[4] = f26;
+            fArr2[5] = f27;
+            c11 = dVar3.a;
             i13++;
             dVarArr2 = dVarArr;
             path2 = path;
-            c6 = 0;
+            c10 = 0;
         }
     }
 
     public d(d dVar) {
         this.a = dVar.a;
         float[] fArr = dVar.b;
-        this.b = c8.b(fArr, fArr.length);
+        this.b = y7.b(fArr, fArr.length);
     }
 }

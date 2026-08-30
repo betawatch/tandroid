@@ -1,27 +1,20 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.view.ViewGroup;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class g40 extends Paint {
-    public final /* synthetic */ r50 a;
-
-    public g40(r50 r50Var) {
-        this.a = r50Var;
+public final class g40 extends FrameLayout {
+    public g40(LaunchActivity launchActivity) {
+        super(launchActivity);
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        super.setAlpha(i10);
-        r50 r50Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) r50Var).containerView;
-        if (viewGroup != null) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.f3) r50Var).containerView;
-            viewGroup2.invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() <= 0.95f) {
+            return false;
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

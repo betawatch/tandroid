@@ -1,22 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class xl extends org.telegram.ui.Cells.b0 {
-    public final /* synthetic */ em f;
+public final class xl extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.ui.Components.p9 c;
+    public final /* synthetic */ wn d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k5 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ gg.q h;
+    public final /* synthetic */ xn n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xl(em emVar, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, c6Var);
-        this.f = emVar;
+    public xl(xn xnVar, boolean z4, boolean z10, org.telegram.ui.Components.p9 p9Var, wn wnVar, org.telegram.ui.ActionBar.k5 k5Var, boolean z11, gg.q qVar) {
+        this.n = xnVar;
+        this.a = z4;
+        this.b = z10;
+        this.c = p9Var;
+        this.d = wnVar;
+        this.e = k5Var;
+        this.f = z11;
+        this.h = qVar;
     }
 
-    @Override // org.telegram.ui.Cells.b0
-    public final int getSideMenuWidth() {
-        tn tnVar = this.f.M;
-        int i10 = tn.Dc;
-        return tnVar.R8();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        xn xnVar = this.n;
+        xnVar.E2[1] = null;
+        xnVar.y2[1].setTranslationY(0.0f);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.n.E2;
+        if (animator.equals(animatorSetArr[1])) {
+            org.telegram.ui.Components.p9 p9Var = this.c;
+            boolean z4 = this.b;
+            boolean z10 = this.a;
+            if (!z10 && !z4 && p9Var == null) {
+                animatorSetArr[1] = null;
+                return;
+            }
+            animatorSetArr[1] = new AnimatorSet();
+            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.nr.h);
+            animatorSetArr[1].setDuration(360L);
+            ArrayList arrayList = new ArrayList();
+            if (z10) {
+                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<wn, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (z4) {
+                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.k5, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (this.f) {
+                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<gg.q, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            if (p9Var != null) {
+                arrayList.add(ObjectAnimator.ofFloat(p9Var, (Property<org.telegram.ui.Components.p9, Float>) View.TRANSLATION_Y, 0.0f));
+            }
+            animatorSetArr[1].addListener(new s5(this, 19));
+            animatorSetArr[1].playTogether(arrayList);
+            animatorSetArr[1].start();
+        }
     }
 }

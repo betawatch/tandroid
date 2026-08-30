@@ -10,9 +10,9 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.b2, Vector.TLDeserializer {
+public final /* synthetic */ class b implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.c2, Vector.TLDeserializer {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -28,22 +28,22 @@ public final /* synthetic */ class b implements OnSuccessListener, GenericProvid
     }
 
     @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
         switch (this.a) {
             case 26:
-                return TLRPC.Peer.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.Peer.TLdeserialize(inputSerializedData, i10, z4);
             case 27:
-                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i10, z4);
             case 28:
-                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i10, z4);
             default:
-                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i10, z4);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        c2Var.dismiss();
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        d2Var.dismiss();
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener

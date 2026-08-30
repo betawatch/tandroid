@@ -1,352 +1,175 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
+import android.graphics.drawable.Drawable;
+import android.media.AudioRecordingConfiguration;
+import android.net.Uri;
+import android.os.Bundle;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class al0 extends org.telegram.ui.ActionBar.k {
+public final /* synthetic */ class al0 implements org.telegram.ui.Components.sc0, org.telegram.ui.ActionBar.c2, Utilities.Callback2Return, org.telegram.ui.Components.tv0, j3.f, GenericProvider, androidx.car.app.utils.e, qg.c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ al0(Object obj, int i10) {
+    public /* synthetic */ al0(int i10) {
         this.a = i10;
-        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        Bitmap bitmap;
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        int i11 = this.a;
-        Object obj = this.b;
-        switch (i11) {
-            case 0:
-                if (i10 == -1) {
-                    ((PasskeysActivity) obj).finishFragment();
-                    break;
+    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration b(Object obj) {
+        return (AudioRecordingConfiguration) obj;
+    }
+
+    public Constructor a() {
+        switch (this.a) {
+            case 24:
+                if (Boolean.TRUE.equals(Class.forName("com.google.android.exoplayer2.ext.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
+                    return Class.forName("com.google.android.exoplayer2.ext.flac.FlacExtractor").asSubclass(r3.k.class).getConstructor(Integer.TYPE);
                 }
-                break;
-            case 1:
-                kp0 kp0Var = (kp0) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        if (kp0Var.c != null && !kp0Var.f) {
-                            ip0 ip0Var = kp0Var.d;
-                            float f9 = ip0Var.f - ip0Var.x;
-                            float f10 = ip0Var.v;
-                            float f11 = (ip0Var.h - ip0Var.y) / ip0Var.w;
-                            float f12 = ip0Var.d / f10;
-                            float f13 = ip0Var.e / f10;
-                            kp0 kp0Var2 = ip0Var.D;
-                            int width = (int) ((f9 / f10) * kp0Var2.a.getWidth());
-                            int height = (int) (f11 * kp0Var2.a.getHeight());
-                            int width2 = (int) (f12 * kp0Var2.a.getWidth());
-                            int width3 = (int) (f13 * kp0Var2.a.getWidth());
-                            if (width < 0) {
-                                width = 0;
-                            }
-                            if (height < 0) {
-                                height = 0;
-                            }
-                            if (width + width2 > kp0Var2.a.getWidth()) {
-                                width2 = kp0Var2.a.getWidth() - width;
-                            }
-                            if (height + width3 > kp0Var2.a.getHeight()) {
-                                width3 = kp0Var2.a.getHeight() - height;
-                            }
-                            try {
-                                bitmap = Bitmaps.createBitmap(kp0Var2.a, width, height, width2, width3);
-                            } catch (Throwable th2) {
-                                FileLog.e(th2);
-                                System.gc();
-                                try {
-                                    bitmap = Bitmaps.createBitmap(kp0Var2.a, width, height, width2, width3);
-                                } catch (Throwable th3) {
-                                    FileLog.e(th3);
-                                    bitmap = null;
-                                }
-                            }
-                            if (bitmap == kp0Var.a) {
-                                kp0Var.e = true;
-                            }
-                            ((org.telegram.ui.Components.s40) kp0Var.c).s(false, bitmap, null);
-                            kp0Var.f = true;
-                        }
-                        kp0Var.finishFragment();
-                        break;
-                    }
+                return null;
+            default:
+                return Class.forName("com.google.android.exoplayer2.decoder.midi.MidiExtractor").asSubclass(r3.k.class).getConstructor(null);
+        }
+    }
+
+    @Override // j3.f
+    public j3.g c(Bundle bundle) {
+        p4.a[] aVarArr;
+        switch (this.a) {
+            case 13:
+                ArrayList parcelableArrayList = bundle.getParcelableArrayList(p4.b.n);
+                if (parcelableArrayList == null) {
+                    aVarArr = new p4.a[0];
                 } else {
-                    kp0Var.finishFragment();
-                    break;
+                    p4.a[] aVarArr2 = new p4.a[parcelableArrayList.size()];
+                    for (int i10 = 0; i10 < parcelableArrayList.size(); i10++) {
+                        aVarArr2[i10] = (p4.a) p4.a.D.c((Bundle) parcelableArrayList.get(i10));
+                    }
+                    aVarArr = aVarArr2;
                 }
+                return new p4.b(aVarArr, bundle.getLong(p4.b.r, 0L), bundle.getLong(p4.b.s, -9223372036854775807L), bundle.getInt(p4.b.v, 0));
+            default:
+                long j10 = bundle.getLong(p4.a.r);
+                int i11 = bundle.getInt(p4.a.s);
+                int i12 = bundle.getInt(p4.a.C);
+                ArrayList parcelableArrayList2 = bundle.getParcelableArrayList(p4.a.v);
+                int[] intArray = bundle.getIntArray(p4.a.w);
+                long[] longArray = bundle.getLongArray(p4.a.x);
+                long j11 = bundle.getLong(p4.a.y);
+                boolean z4 = bundle.getBoolean(p4.a.B);
+                int[] iArr = intArray;
+                if (iArr == null) {
+                    iArr = new int[0];
+                }
+                Uri[] uriArr = parcelableArrayList2 == null ? new Uri[0] : (Uri[]) parcelableArrayList2.toArray(new Uri[0]);
+                if (longArray == null) {
+                    longArray = new long[0];
+                }
+                return new p4.a(j10, i11, i12, iArr, uriArr, longArray, j11, z4);
+        }
+    }
+
+    @Override // androidx.car.app.utils.e
+    public void call() {
+        throw null;
+    }
+
+    @Override // org.telegram.ui.Components.sc0
+    public String e(int i10) {
+        return i10 == 0 ? LocaleController.getString(R.string.AutoLockDisabled) : i10 == 1 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i10 == 2 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i10 == 3 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i10 == 4 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
+    }
+
+    @Override // qg.c
+    public int g(org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+        switch (this.a) {
+            case 26:
+                return rg.b.l(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sd, f6Var));
+            case 27:
+                if (!LiteMode.isEnabled(256)) {
+                    return org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G8, false);
+                }
+                return org.telegram.ui.ActionBar.j6.l1(z4 ? 0.85f : 0.825f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G8, false));
+            case 28:
+                return rg.b.l(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Zk, f6Var));
+            default:
+                return org.telegram.ui.ActionBar.j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Fi, f6Var));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tv0
+    public void h(int i10) {
+        SharedConfig.proxyRotationTimeout = i10;
+        SharedConfig.saveConfig();
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                Drawable[] drawableArr = PhotoViewer.Q8;
                 break;
             case 2:
-                zp0 zp0Var = (zp0) obj;
-                if (i10 != -1) {
-                    if (i10 != 1) {
-                        if (i10 == 2) {
-                            yp0 yp0Var = zp0Var.o0;
-                            if (yp0Var != null) {
-                                yp0Var.g();
-                            }
-                            zp0Var.finishFragment();
-                            break;
-                        }
-                    } else {
-                        boolean z10 = zp0Var.U;
-                        zp0Var.U = !z10;
-                        if (z10) {
-                            zp0Var.G.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
-                        } else {
-                            zp0Var.G.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
-                        }
-                        zp0Var.G.B0();
-                        zp0Var.I.h1(0, 0);
-                        zp0Var.H.l();
-                        break;
-                    }
-                } else {
-                    zp0Var.finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
             case 3:
-                if (i10 == -1) {
-                    ((eq0) obj).finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
             case 4:
-                PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) obj;
-                if (i10 != -1) {
-                    if (i10 != 1) {
-                        if (i10 == 2) {
-                            int i12 = PopupNotificationActivity.X;
-                            popupNotificationActivity.p();
-                            break;
-                        }
-                    } else {
-                        int i13 = PopupNotificationActivity.X;
-                        popupNotificationActivity.k();
-                        break;
-                    }
-                } else {
-                    popupNotificationActivity.i();
-                    popupNotificationActivity.finish();
-                    break;
-                }
+            case 7:
+            default:
+                d2Var.dismiss();
                 break;
             case 5:
-                pv0 pv0Var = (pv0) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        pv0Var.Y();
-                        break;
-                    }
-                } else if (pv0Var.onBackPressed(true)) {
-                    pv0Var.finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
             case 6:
-                if (i10 == -1) {
-                    ((PremiumPreviewFragment) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        privacyControlActivity.z0();
-                        break;
-                    }
-                } else if (privacyControlActivity.v0(true)) {
-                    privacyControlActivity.finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
             case 8:
-                if (i10 == -1) {
-                    ((PrivacySettingsActivity) obj).finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
             case 9:
-                if (i10 == -1) {
-                    ((bx0) obj).finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
             case 10:
-                if (i10 == -1) {
-                    ((ProxyListActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 11:
-                if (i10 == -1) {
-                    ((c21) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                if (i10 == -1) {
-                    ((i21) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 13:
-                if (i10 == -1) {
-                    ((b31) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 14:
-                if (i10 == -1) {
-                    ((SaveToGallerySettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 15:
-                if (i10 == -1) {
-                    ((SecretMediaViewer) obj).e(true, false);
-                    break;
-                }
-                break;
-            case 16:
-                if (i10 == -1) {
-                    ((SessionsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 17:
-                b81 b81Var = (b81) obj;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        b81Var.l0(new hg0(null));
-                        break;
-                    }
-                } else {
-                    b81Var.finishFragment();
-                    break;
-                }
-                break;
-            case 18:
-                if (i10 == -1) {
-                    ((t91) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 19:
-                StickersActivity stickersActivity = (StickersActivity) obj;
-                if (i10 != -1) {
-                    StickersActivity.d0(stickersActivity, i10);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 20:
-                vc1 vc1Var = (vc1) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        vc1.Y(vc1Var);
-                        break;
-                    }
-                } else {
-                    vc1Var.finishFragment();
-                    break;
-                }
-                break;
-            case 21:
-                if (i10 == -1) {
-                    ((md1) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 22:
-                if (i10 == -1) {
-                    ((ff1) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 23:
-                if (i10 == -1) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj;
-                    if (twoStepVerificationActivity.T < 0) {
-                        twoStepVerificationActivity.finishFragment();
-                        break;
-                    } else {
-                        twoStepVerificationActivity.x0();
-                        break;
-                    }
-                }
-                break;
-            case 24:
-                UserInfoActivity userInfoActivity = (UserInfoActivity) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        userInfoActivity.c0(true);
-                        break;
-                    }
-                } else if (userInfoActivity.onBackPressed(true)) {
-                    userInfoActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 25:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) obj;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        usersSelectActivity.X();
-                        break;
-                    }
-                } else {
-                    usersSelectActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 26:
-                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) obj;
-                if (i10 == -1) {
-                    lVar = ((org.telegram.ui.ActionBar.o2) d1Var).actionBar;
-                    if (!lVar.s()) {
-                        d1Var.finishFragment();
-                        break;
-                    } else {
-                        lVar2 = ((org.telegram.ui.ActionBar.o2) d1Var).actionBar;
-                        lVar2.r();
-                        d1Var.s.clear();
-                        AndroidUtilities.forEachViews((RecyclerView) d1Var.a, (f5.d) new l4.x0(15));
-                        break;
-                    }
-                }
-                break;
-            case 27:
-                if (i10 == -1) {
-                    ((ph.r) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 28:
-                if (i10 == -1) {
-                    ((ph.p2) obj).q();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == -1) {
-                    ((ph.x3) obj).finishFragment();
-                    break;
-                }
+                d2Var.dismiss();
                 break;
         }
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        MediaController.AlbumEntry albumEntry = ph.a3.g0;
+        return 0;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback2Return
+    public Object run(Object obj, Object obj2) {
+        Integer num = (Integer) obj;
+        Integer num2 = (Integer) obj2;
+        switch (this.a) {
+            case 4:
+                return num.intValue() == 0 ? lh.ja.X0(false, LocaleController.formatPluralStringComma("Stars", num2.intValue()), 0.66f, null) : LocaleController.formatNumber(num2.intValue(), ',');
+            default:
+                if (num.intValue() == 0) {
+                    return num2.intValue() == 0 ? LocaleController.getString(R.string.LiveStoryPricePerCommentFree) : LocaleController.formatPluralStringComma("Stars", num2.intValue());
+                }
+                return "" + num2;
+        }
+    }
+
+    public /* synthetic */ al0(r.a aVar, int i10, w.b bVar) {
+        this.a = 19;
+    }
+
+    @Override // org.telegram.ui.Components.tv0
+    public /* synthetic */ void m() {
     }
 }

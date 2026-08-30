@@ -1,53 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class r30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t30 b;
+public final class r30 implements tf.j1 {
+    public final /* synthetic */ s30 a;
 
-    public /* synthetic */ r30(t30 t30Var, int i10) {
-        this.a = i10;
-        this.b = t30Var;
+    public r30(s30 s30Var) {
+        this.a = s30Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                t30 t30Var = this.b;
-                if (t30Var.U == animator) {
-                    t30Var.U = null;
-                    t30Var.b();
-                    break;
-                }
-                break;
-            default:
-                t30 t30Var2 = this.b;
-                if (t30Var2.T == animator) {
-                    t30Var2.T = null;
-                    break;
-                }
-                break;
-        }
+    @Override // tf.j1
+    public final /* synthetic */ a0.h I() {
+        return null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                s30 s30Var = this.b.S;
-                if (s30Var != null) {
-                    ((org.telegram.ui.rr0) s30Var).a.a0.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    @Override // tf.j1
+    public final /* synthetic */ boolean Q(int i10) {
+        return true;
+    }
+
+    @Override // tf.j1
+    public final void g(int i10) {
+        s30 s30Var = this.a;
+        t30 t30Var = s30Var.w;
+        if (i10 < 0 || i10 != s30Var.n || s30Var.h) {
+            return;
         }
+        int i11 = s30Var.f - 1;
+        boolean z4 = t30Var.s.getVisibility() == 0;
+        s30Var.l();
+        if (s30Var.f > i11) {
+            t30Var.I(i11);
+        }
+        if (s30Var.d.e() || !t30Var.d.S0()) {
+            return;
+        }
+        t30Var.s.e(false, z4);
+    }
+
+    @Override // tf.j1
+    public final a0.h t() {
+        return this.a.w.b0;
+    }
+
+    @Override // tf.j1
+    public final /* synthetic */ void T(ArrayList arrayList) {
     }
 }

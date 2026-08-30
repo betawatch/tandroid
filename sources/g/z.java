@@ -6,16 +6,16 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class z extends k.a implements l.i {
     public final Context c;
     public final l.k d;
-    public ze.b e;
+    public f7.b e;
     public WeakReference f;
     public final /* synthetic */ a0 h;
 
-    public z(a0 a0Var, Context context, ze.b bVar) {
+    public z(a0 a0Var, Context context, f7.b bVar) {
         this.h = a0Var;
         this.c = context;
         this.e = bVar;
@@ -35,7 +35,7 @@ public final class z extends k.a implements l.i {
             a0Var.j = this;
             a0Var.k = this.e;
         } else {
-            this.e.O(this);
+            this.e.u(this);
         }
         this.e = null;
         a0Var.a(false);
@@ -84,7 +84,7 @@ public final class z extends k.a implements l.i {
         l.k kVar = this.d;
         kVar.w();
         try {
-            this.e.P(this, kVar);
+            this.e.v(this, kVar);
         } finally {
             kVar.v();
         }
@@ -92,7 +92,7 @@ public final class z extends k.a implements l.i {
 
     @Override // k.a
     public final boolean h() {
-        return this.h.f.E;
+        return this.h.f.F;
     }
 
     @Override // l.i
@@ -101,9 +101,9 @@ public final class z extends k.a implements l.i {
             return;
         }
         g();
-        m.i iVar = this.h.f.d;
-        if (iVar != null) {
-            iVar.l();
+        m.h hVar = this.h.f.d;
+        if (hVar != null) {
+            hVar.l();
         }
     }
 
@@ -134,16 +134,16 @@ public final class z extends k.a implements l.i {
     }
 
     @Override // k.a
-    public final void o(boolean z10) {
-        this.b = z10;
-        this.h.f.setTitleOptional(z10);
+    public final void o(boolean z4) {
+        this.b = z4;
+        this.h.f.setTitleOptional(z4);
     }
 
     @Override // l.i
-    public final boolean q(l.k kVar, MenuItem menuItem) {
-        ze.b bVar = this.e;
+    public final boolean p(l.k kVar, MenuItem menuItem) {
+        f7.b bVar = this.e;
         if (bVar != null) {
-            return ((com.google.firebase.messaging.s) bVar.a).F(this, menuItem);
+            return ((com.google.firebase.messaging.r) bVar.b).K(this, menuItem);
         }
         return false;
     }

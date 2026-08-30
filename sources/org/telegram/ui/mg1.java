@@ -1,54 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mg1 extends LinearLayout {
-    public final org.telegram.ui.ActionBar.c6 a;
-    public final ImageView b;
-    public final LinearLayout c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public boolean h;
-    public boolean n;
+public final class mg1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ og1 a;
 
-    public mg1(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        setOrientation(0);
-        this.a = c6Var;
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        addView(imageView, i7.f6.t(40, 40, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(linearLayout, i7.f6.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView i10 = th.i(linearLayout, textView, i7.f6.t(-1, -2, 7, 0, 0, 0, 0), context);
-        this.e = i10;
-        i10.setTextSize(1, 13.0f);
-        linearLayout.addView(i10, i7.f6.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.f = imageView2;
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, i7.f6.t(40, 40, 21, 12, 0, 12, 0));
+    public mg1(og1 og1Var) {
+        this.a = og1Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.e5 e5Var;
+        og1 og1Var = this.a;
+        if (i10 == -1) {
+            if (og1Var.D >= 0) {
+                e5Var = ((org.telegram.ui.ActionBar.p2) og1Var).parentLayout;
+                if (e5Var.getFragmentStack().size() == 1) {
+                    og1Var.I0();
+                    return;
+                }
+            }
+            og1Var.finishFragment();
+            return;
+        }
+        if (i10 == 1) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(og1Var.getParentActivity());
+            TL_account.Password password = og1Var.R;
+            String string = (password == null || !password.has_password) ? LocaleController.getString(R.string.CancelPasswordQuestion) : LocaleController.getString(R.string.CancelEmailQuestion);
+            String string2 = LocaleController.getString(R.string.CancelEmailQuestionTitle);
+            String string3 = LocaleController.getString(R.string.Abort);
+            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+            d2Var.Q = string;
+            d2Var.O = string2;
+            alertDialog$Builder.k(string3, new il0(this, 24));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder.a;
+            og1Var.showDialog(d2Var2);
+            TextView textView = (TextView) d2Var2.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
+            }
+        }
     }
 }

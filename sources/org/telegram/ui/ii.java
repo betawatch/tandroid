@@ -1,53 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ii extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ org.telegram.ui.Components.fk0 o;
-    public final /* synthetic */ tn p;
+public final class ii extends rh0 {
+    public final /* synthetic */ xn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ii(tn tnVar, wa waVar, org.telegram.ui.Components.fk0 fk0Var) {
-        super(waVar, -2, -2);
-        this.p = tnVar;
-        this.o = fk0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.o1
-    public final void d(boolean z10) {
-        super.d(true);
-        org.telegram.ui.Components.fk0 fk0Var = this.o;
-        if (fk0Var != null) {
-            fk0Var.d();
+    public ii(xn xnVar, Context context, int i10, MessageObject messageObject) {
+        super(context);
+        this.e = xnVar;
+        this.a = null;
+        if (!messageObject.isRoundVideo()) {
+            messageObject.isVoice();
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        tn tnVar = this.p;
-        if (tnVar.M8 != this) {
-            return;
-        }
-        org.telegram.ui.Components.mc mcVar = org.telegram.ui.Components.mc.w;
-        org.telegram.ui.Components.mc mcVar2 = tnVar.j1;
-        if (mcVar == mcVar2 && mcVar2 != null) {
-            mcVar2.b();
-            tnVar.j1 = null;
-        }
-        tnVar.M8 = null;
-        tnVar.P8 = null;
-        tnVar.O8 = null;
-        tnVar.v0.R = true;
-        if (tnVar.N8) {
-            tnVar.g8(false, true, 0.0f);
-        } else {
-            tnVar.N8 = true;
-        }
-        dk dkVar = tnVar.U;
-        if (dkVar == null || dkVar.getEditField() == null) {
-            return;
-        }
-        tnVar.U.getEditField().setAllowDrawCursor(true);
+        org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(context, null);
+        this.c = t00Var;
+        t00Var.f(org.telegram.ui.ActionBar.j6.G8, org.telegram.ui.ActionBar.j6.i6, -1);
+        t00Var.setViewType(13);
+        t00Var.setIsSingleCell(false);
+        addView(t00Var, k7.b6.c(-1.0f, -2));
+        org.telegram.ui.Components.e90 e90Var = new org.telegram.ui.Components.e90(context, null);
+        this.b = e90Var;
+        e90Var.setTextSize(1, 14.0f);
+        e90Var.setGravity(19);
+        e90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E8, false));
+        e90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
+        e90Var.setEllipsize(TextUtils.TruncateAt.END);
+        e90Var.setSingleLine();
+        e90Var.setLines(1);
+        e90Var.setMaxLines(1);
+        addView(e90Var, k7.b6.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
+        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
+        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
+        tL_channels_getMessageAuthor.id = messageObject.getId();
+        e90Var.setAlpha(0.0f);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new lh.s1(this, i10, 7));
+        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I5, false), 6, 0));
+        setEnabled(false);
     }
 }

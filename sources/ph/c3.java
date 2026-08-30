@@ -1,27 +1,20 @@
 package ph;
 
 import android.content.Context;
-import i7.f6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.k4;
-import org.telegram.ui.Components.y80;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class c3 extends k4 {
-    public final y80 r;
+public final class c3 extends a3 {
+    public final /* synthetic */ String h0;
 
-    public c3(Context context, c6 c6Var) {
-        super(context, c6Var);
-        y80 y80Var = new y80(context, c6Var);
-        this.r = y80Var;
-        y80Var.setTextSize(1, 14.0f);
-        y80Var.setTextColor(g6.v0(g6.z6, c6Var));
-        y80Var.setLinkTextColor(g6.v0(g6.L6, c6Var));
-        y80Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(y80Var, f6.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c3(int i10, Context context, nh.b bVar, float f10, String str) {
+        super(i10, context, bVar, null, true, f10, false, false);
+        this.h0 = str;
+    }
+
+    @Override // ph.a3
+    public final String getTitle() {
+        return this.h0;
     }
 }

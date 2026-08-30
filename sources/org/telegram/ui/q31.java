@@ -1,126 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.view.WindowManager;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q31 implements Runnable {
+public final /* synthetic */ class q31 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SecretMediaViewer b;
+    public final /* synthetic */ t31 b;
 
-    public /* synthetic */ q31(SecretMediaViewer secretMediaViewer, int i10) {
+    public /* synthetic */ q31(t31 t31Var, int i10) {
         this.a = i10;
-        this.b = secretMediaViewer;
+        this.b = t31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = 4;
-        SecretMediaViewer secretMediaViewer = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                secretMediaViewer.G0 = null;
-                secretMediaViewer.i0 = 0;
-                secretMediaViewer.e.setLayerType(0, null);
-                secretMediaViewer.e.setVisibility(4);
-                secretMediaViewer.s = false;
-                secretMediaViewer.J = null;
-                secretMediaViewer.I = false;
-                secretMediaViewer.i();
-                new ArrayList();
-                AndroidUtilities.runOnUIThread(new q31(secretMediaViewer, i11), 50L);
+                t31 t31Var = this.b;
+                t31Var.getClass();
+                t31Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t31Var.g();
                 break;
             case 1:
-                bg.d1 d1Var = secretMediaViewer.e;
-                if (d1Var != null) {
-                    d1Var.setLayerType(0, null);
-                    secretMediaViewer.e.setVisibility(4);
-                    secretMediaViewer.i0 = 0;
-                    secretMediaViewer.s = false;
-                    secretMediaViewer.J = null;
-                    secretMediaViewer.I = false;
-                    secretMediaViewer.i();
-                    new ArrayList();
-                    AndroidUtilities.runOnUIThread(new q31(secretMediaViewer, i11), 50L);
-                    secretMediaViewer.e.setScaleX(1.0f);
-                    secretMediaViewer.e.setScaleY(1.0f);
-                    break;
-                }
-                break;
-            case 2:
-                x31 x31Var = secretMediaViewer.y;
-                if (x31Var != null) {
-                    long o10 = x31Var.o();
-                    long q6 = secretMediaViewer.y.q();
-                    if (q6 == -9223372036854775807L) {
-                        o10 = 0;
-                        q6 = 0;
-                    }
-                    if (q6 > 0) {
-                        org.telegram.ui.Components.z61 z61Var = secretMediaViewer.M;
-                        if (!z61Var.f) {
-                            z61Var.h(o10 / q6, false);
-                            secretMediaViewer.N.invalidate();
-                        }
-                    }
-                    int[] iArr = secretMediaViewer.f1;
-                    Arrays.fill(iArr, 0);
-                    int[] iArr2 = secretMediaViewer.g1;
-                    Arrays.fill(iArr2, 0);
-                    x31 x31Var2 = secretMediaViewer.y;
-                    if (x31Var2 != null) {
-                        long max = Math.max(0L, x31Var2.o()) / 1000;
-                        long max2 = Math.max(0L, secretMediaViewer.y.q()) / 1000;
-                        iArr[0] = (int) (max / 60);
-                        iArr[1] = (int) (max % 60);
-                        iArr2[0] = (int) (max2 / 60);
-                        iArr2[1] = (int) (max2 % 60);
-                    }
-                    int i12 = iArr[0];
-                    String format = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr[1]));
-                    int i13 = iArr2[0];
-                    String format2 = i13 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i13 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i13), Integer.valueOf(iArr2[1]));
-                    org.telegram.ui.ActionBar.h5 h5Var = secretMediaViewer.O;
-                    Locale locale = Locale.ROOT;
-                    h5Var.l(format + " / " + format2, false);
-                    if (secretMediaViewer.y.z()) {
-                        AndroidUtilities.runOnUIThread(secretMediaViewer.e1, 17L);
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                secretMediaViewer.m(false, true);
+                t31 t31Var2 = this.b;
+                t31Var2.getClass();
+                t31Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t31Var2.g();
                 break;
             default:
-                ImageReceiver.BitmapHolder bitmapHolder = secretMediaViewer.e0;
-                if (bitmapHolder != null) {
-                    bitmapHolder.release();
-                    secretMediaViewer.e0 = null;
-                }
-                secretMediaViewer.h.setImageBitmap((Bitmap) null);
-                try {
-                    if (secretMediaViewer.d.getParent() != null) {
-                        ((WindowManager) secretMediaViewer.b.getSystemService("window")).removeView(secretMediaViewer.d);
-                    }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
-                secretMediaViewer.f0 = false;
+                t31 t31Var3 = this.b;
+                t31Var3.getClass();
+                t31Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t31Var3.g();
                 break;
         }
-    }
-
-    public /* synthetic */ q31(SecretMediaViewer secretMediaViewer, zt0 zt0Var, int i10) {
-        this.a = i10;
-        this.b = secretMediaViewer;
     }
 }

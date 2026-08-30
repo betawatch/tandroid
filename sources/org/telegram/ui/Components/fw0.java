@@ -1,115 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fw0 extends il0 {
-    public int c;
-    public final /* synthetic */ ow0 d;
+public final class fw0 extends sa {
+    public ps U;
 
-    public fw0(ow0 ow0Var) {
-        this.d = ow0Var;
+    public fw0(Context context) {
+        super(context, null, true, false, false, 1, null);
+        fixNavigationBar();
+        this.B = true;
+        this.y = true;
+        J();
+        sl0 sl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        sl0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new lb0(this, 6));
+        this.d.setOnItemClickListener(new k(this, 14));
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public final boolean D(f2.n1 n1Var) {
-        return n1Var.f == 1;
+    public static void P(fw0 fw0Var, int i10) {
+        i51 G = fw0Var.U.G(i10 - 1);
+        Object obj = G != null ? G.G : null;
+        if (obj instanceof TLRPC.User) {
+            MessagesController.getInstance(fw0Var.currentAccount).openApp(fw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
+        }
     }
 
-    @Override // f2.p0
-    public final int h() {
-        ow0 ow0Var = this.d;
-        kw0[] kw0VarArr = ow0Var.U2;
-        int length = (kw0VarArr == null ? 0 : kw0VarArr.length) + 1;
-        if (length != this.c) {
-            cg.h0 h0Var = ow0Var.h3;
-            if (h0Var != null) {
-                h0Var.requestLayout();
-            }
-            this.c = length;
-        }
-        return length;
+    @Override // org.telegram.ui.Components.sa
+    public final rl0 v(sl0 sl0Var) {
+        ps psVar = new ps(sl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.U = psVar;
+        psVar.r = false;
+        return psVar;
     }
 
-    @Override // f2.p0
-    public final int j(int i10) {
-        return i10 == 0 ? 0 : 1;
-    }
-
-    @Override // f2.p0
-    public final void v(f2.n1 n1Var, int i10) {
-        ow0 ow0Var;
-        kw0[] kw0VarArr;
-        if (n1Var.f != 1 || (kw0VarArr = (ow0Var = this.d).U2) == null) {
-            return;
-        }
-        int i11 = i10 - 1;
-        kw0 kw0Var = kw0VarArr[i11];
-        final jw0 jw0Var = (jw0) n1Var.a;
-        boolean z10 = ow0Var.i3 == i11;
-        jw0Var.getClass();
-        if (!TextUtils.isEmpty(kw0Var.d)) {
-            jw0Var.setContentDescription(kw0Var.d);
-        } else if (TextUtils.isEmpty(kw0Var.a)) {
-            jw0Var.setContentDescription(null);
-        } else {
-            jw0Var.setContentDescription(kw0Var.a);
-        }
-        ValueAnimator valueAnimator = jw0Var.C;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            jw0Var.C = null;
-        }
-        jw0Var.setImageResource(0);
-        jw0Var.a();
-        final boolean A1 = jw0Var.D.A1();
-        jw0Var.w = false;
-        jw0Var.y = 1.0f;
-        p5.h(UserConfig.selectedAccount).b(kw0Var.c, new m5() { // from class: org.telegram.ui.Components.hw0
-            @Override // org.telegram.ui.Components.m5
-            public final void a(TLRPC.Document document) {
-                boolean z11 = !A1;
-                jw0 jw0Var2 = jw0.this;
-                jw0Var2.setOnlyLastFrame(z11);
-                jw0Var2.g(24, 24, document);
-                jw0Var2.d();
-            }
-        });
-        AndroidUtilities.runOnUIThread(new fq0(jw0Var, 9), 60L);
-        jw0Var.l(z10, false);
-        jw0Var.setAlpha(ow0Var.k3);
-        jw0Var.setScaleX(ow0Var.k3);
-        jw0Var.setScaleY(ow0Var.k3);
-        jw0Var.j();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // f2.p0
-    public final f2.n1 x(ViewGroup viewGroup, int i10) {
-        jw0 jw0Var;
-        ow0 ow0Var = this.d;
-        if (i10 == 0) {
-            cg.h0 h0Var = new cg.h0(this, ow0Var.getContext(), 22);
-            ow0Var.h3 = h0Var;
-            jw0Var = h0Var;
-        } else {
-            jw0Var = new jw0(ow0Var, ow0Var.getContext());
-        }
-        return new vk0(jw0Var);
-    }
-
-    @Override // f2.p0
-    public final void y(f2.n1 n1Var) {
-        if (n1Var.f == 1) {
-            jw0 jw0Var = (jw0) n1Var.a;
-            jw0Var.l(this.d.i3 == n1Var.b() - 1, false);
-            jw0Var.j();
-        }
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

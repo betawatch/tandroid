@@ -1,21 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class rz0 extends org.telegram.ui.Cells.h5 {
-    public final /* synthetic */ vz0 v;
+public final class rz0 implements ph.u9 {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rz0(vz0 vz0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(18, 70, context, c6Var, false);
-        this.v = vz0Var;
+    public rz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Cells.h5
-    public final int a(int i10) {
-        this.v.e.getClass();
-        return i10;
+    @Override // ph.u9
+    public final ph.y9 a(long j10) {
+        ProfileActivity profileActivity = this.a;
+        if (j10 != profileActivity.a()) {
+            return null;
+        }
+        profileActivity.b0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.h2));
+        wy0 wy0Var = profileActivity.b0;
+        boolean isForum = ChatObject.isForum(profileActivity.B2);
+        if (wy0Var == null || wy0Var.getRootView() == null) {
+            return null;
+        }
+        float scaleX = ((View) wy0Var.getParent()).getScaleX();
+        float imageWidth = wy0Var.getImageReceiver().getImageWidth() * scaleX;
+        float f10 = isForum ? 0.32f * imageWidth : imageWidth;
+        ph.w9 w9Var = new ph.w9(wy0Var, 0);
+        float[] fArr = new float[2];
+        wy0Var.getRootView().getLocationOnScreen(new int[2]);
+        AndroidUtilities.getViewPositionInParent(wy0Var, (ViewGroup) wy0Var.getRootView(), fArr);
+        float imageX = (wy0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
+        float imageY = (wy0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
+        w9Var.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
+        w9Var.e = wy0Var.getImageReceiver();
+        w9Var.b = f10;
+        return w9Var;
+    }
+
+    @Override // ph.u9
+    public final void b(long j10, gg.y1 y1Var) {
+        ProfileActivity profileActivity = this.a;
+        profileActivity.b0.setHasStories(profileActivity.j4());
+        if (j10 == profileActivity.a() && profileActivity.l2 && profileActivity.h2 > 0.0f) {
+            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
+            profileActivity.a.post(new ob0(profileActivity, 14));
+        }
+        AndroidUtilities.runOnUIThread(y1Var, 30L);
     }
 }

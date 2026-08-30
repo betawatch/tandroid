@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class BirthdayController {
     private static volatile BirthdayController[] Instance = new BirthdayController[4];
@@ -25,7 +25,7 @@ public class BirthdayController {
     private boolean loading;
     private BirthdayState state;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class BirthdayState {
         public String todayKey;
         public String tomorrowKey;
@@ -139,7 +139,7 @@ public class BirthdayController {
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class TL_birthdays extends TLObject {
         public static final int constructor = 290452237;
         public ArrayList<TL_account.TL_contactBirthday> contacts;
@@ -148,21 +148,21 @@ public class BirthdayController {
             this.contacts = new ArrayList<>();
         }
 
-        public static TL_birthdays TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (TL_birthdays) TLObject.TLdeserialize(TL_birthdays.class, i10 != 290452237 ? null : new TL_birthdays(), inputSerializedData, i10, z10);
+        public static TL_birthdays TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
+            return (TL_birthdays) TLObject.TLdeserialize(TL_birthdays.class, i10 != 290452237 ? null : new TL_birthdays(), inputSerializedData, i10, z4);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+            int readInt32 = inputSerializedData.readInt32(z4);
             if (readInt32 != 481674261) {
-                if (z10) {
+                if (z4) {
                     throw new RuntimeException(String.format("wrong Vector magic, got %x", Integer.valueOf(readInt32)));
                 }
             } else {
-                int readInt322 = inputSerializedData.readInt32(z10);
+                int readInt322 = inputSerializedData.readInt32(z4);
                 for (int i10 = 0; i10 < readInt322; i10++) {
-                    this.contacts.add(TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10));
+                    this.contacts.add(TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4));
                 }
             }
         }
@@ -197,8 +197,8 @@ public class BirthdayController {
             try {
                 SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
                 TLdeserialize = TL_birthdays.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e) {
+                e = e;
                 birthdayController = this;
             }
             if (TLdeserialize != null && !TLdeserialize.contacts.isEmpty()) {
@@ -206,8 +206,8 @@ public class BirthdayController {
                 for (int i11 = 0; i11 < TLdeserialize.contacts.size(); i11++) {
                     try {
                         arrayList.add(Long.valueOf(TLdeserialize.contacts.get(i11).contact_id));
-                    } catch (Exception e11) {
-                        exc = e11;
+                    } catch (Exception e6) {
+                        exc = e6;
                         birthdayController = this;
                         FileLog.e(exc);
                         birthdayController.hiddenDays = mainSettings.getStringSet("bday_hidden", new HashSet());
@@ -215,9 +215,9 @@ public class BirthdayController {
                 }
                 birthdayController = this;
                 try {
-                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new h0(birthdayController, i10, arrayList, TLdeserialize, 0));
-                } catch (Exception e12) {
-                    e = e12;
+                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new i0(birthdayController, i10, arrayList, TLdeserialize, 0));
+                } catch (Exception e10) {
+                    e = e10;
                     exc = e;
                     FileLog.e(exc);
                     birthdayController.hiddenDays = mainSettings.getStringSet("bday_hidden", new HashSet());
@@ -274,7 +274,7 @@ public class BirthdayController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$check$3(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new d3(13, this, tLObject));
+        AndroidUtilities.runOnUIThread(new e3(13, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -287,7 +287,7 @@ public class BirthdayController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(int i10, ArrayList arrayList, TL_birthdays tL_birthdays) {
-        AndroidUtilities.runOnUIThread(new f0(this, tL_birthdays, MessagesStorage.getInstance(i10).getUsers(arrayList), 0));
+        AndroidUtilities.runOnUIThread(new g0(this, tL_birthdays, MessagesStorage.getInstance(i10).getUsers(arrayList), 0));
     }
 
     public void check() {
@@ -296,20 +296,20 @@ public class BirthdayController {
         }
         long currentTimeMillis = System.currentTimeMillis();
         long j10 = this.lastCheckDate;
-        boolean z10 = j10 == 0;
-        if (!z10) {
-            z10 = currentTimeMillis - j10 > ((long) (BuildVars.DEBUG_PRIVATE_VERSION ? 25000 : 43200000));
+        boolean z4 = j10 == 0;
+        if (!z4) {
+            z4 = currentTimeMillis - j10 > ((long) (BuildVars.DEBUG_PRIVATE_VERSION ? 25000 : 43200000));
         }
-        if (!z10) {
+        if (!z4) {
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(this.lastCheckDate);
             Calendar calendar2 = Calendar.getInstance();
             calendar2.setTimeInMillis(currentTimeMillis);
-            z10 = (calendar.get(5) == calendar2.get(5) && calendar.get(2) == calendar2.get(2) && calendar.get(1) == calendar2.get(1)) ? false : true;
+            z4 = (calendar.get(5) == calendar2.get(5) && calendar.get(2) == calendar2.get(2) && calendar.get(1) == calendar2.get(1)) ? false : true;
         }
-        if (z10) {
+        if (z4) {
             this.loading = true;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getBirthdays(), new g0(this, 0));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getBirthdays(), new h0(this, 0));
         }
     }
 

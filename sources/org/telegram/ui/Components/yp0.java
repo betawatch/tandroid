@@ -1,71 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yp0 extends rf.u {
-    public final /* synthetic */ zp0 n;
+public final class yp0 implements TextWatcher {
+    public final /* synthetic */ lq0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yp0(zp0 zp0Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(i10, context, c6Var, true, true);
-        this.n = zp0Var;
+    public yp0(lq0 lq0Var) {
+        this.a = lq0Var;
     }
 
-    @Override // rf.u, f2.p0
-    public final void v(f2.n1 n1Var, int i10) {
-        int i11;
-        TLRPC.Chat chat;
-        int i12;
-        int i13;
-        int i14;
-        org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) n1Var.a;
-        dq0 dq0Var = this.n.G;
-        TLRPC.User user = null;
-        if (dq0Var.d0 || dq0Var.e0) {
-            int i15 = org.telegram.ui.ActionBar.g6.ng;
-            int i16 = org.telegram.ui.ActionBar.g6.fg;
-            l4Var.b.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i15, false));
-            l4Var.D = i16;
-            l4Var.v.b(org.telegram.ui.ActionBar.g6.B5, i16, org.telegram.ui.ActionBar.g6.C5);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        lq0 lq0Var = this.a;
+        dq0 dq0Var = lq0Var.H;
+        zw0 zw0Var = lq0Var.N;
+        c20 c20Var = lq0Var.v0;
+        if (!TextUtils.isEmpty(c20Var.r.getText())) {
+            lq0Var.K0(false);
         }
-        i11 = ((org.telegram.ui.ActionBar.f3) dq0Var).currentAccount;
-        TLRPC.TL_topPeer tL_topPeer = MediaDataController.getInstance(i11).hints.get(i10);
-        TLRPC.Peer peer = tL_topPeer.peer;
-        long j10 = peer.user_id;
-        if (j10 != 0) {
-            i14 = ((org.telegram.ui.ActionBar.f3) dq0Var).currentAccount;
-            user = MessagesController.getInstance(i14).getUser(Long.valueOf(tL_topPeer.peer.user_id));
-            chat = null;
-        } else {
-            long j11 = peer.channel_id;
-            if (j11 != 0) {
-                j10 = -j11;
-                i13 = ((org.telegram.ui.ActionBar.f3) dq0Var).currentAccount;
-                chat = MessagesController.getInstance(i13).getChat(Long.valueOf(tL_topPeer.peer.channel_id));
-            } else {
-                long j12 = peer.chat_id;
-                if (j12 != 0) {
-                    j10 = -j12;
-                    i12 = ((org.telegram.ui.ActionBar.f3) dq0Var).currentAccount;
-                    chat = MessagesController.getInstance(i12).getChat(Long.valueOf(tL_topPeer.peer.chat_id));
-                } else {
-                    chat = null;
-                    j10 = 0;
+        if (lq0Var.x0) {
+            String obj = c20Var.r.getText().toString();
+            if (obj.length() != 0) {
+                if (zw0Var != null) {
+                    zw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                }
+            } else if (lq0Var.C.getAdapter() != dq0Var) {
+                int F0 = lq0.F0(lq0Var);
+                zw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                zw0Var.e(false, true);
+                lq0Var.K0(false);
+                dq0Var.l();
+                if (F0 > 0) {
+                    lq0Var.E.h1(0, -F0);
                 }
             }
+            hq0 hq0Var = lq0Var.J;
+            if (hq0Var != null) {
+                hq0Var.E(obj);
+            }
         }
-        boolean z10 = j10 == l4Var.getDialogId();
-        l4Var.setTag(Long.valueOf(j10));
-        l4Var.a(j10, user != null ? UserObject.getFirstName(user) : chat != null ? chat.title : "");
-        boolean z11 = dq0Var.Q.h(j10) >= 0;
-        if (l4Var.w) {
-            l4Var.v.a(z11, z10);
-        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

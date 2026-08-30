@@ -1,39 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class cx extends FrameLayout {
-    public final /* synthetic */ fz a;
+public final class cx extends b51 {
+    public final /* synthetic */ kz b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx(fz fzVar, Context context) {
-        super(context);
-        this.a = fzVar;
+    public cx(kz kzVar) {
+        this.b = kzVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        fz fzVar = this.a;
-        bw bwVar = fzVar.E;
-        cw cwVar = fzVar.R;
-        dx dxVar = fzVar.L;
-        if (view != dxVar && view != cwVar) {
-            return super.drawChild(canvas, view, j10);
+    @Override // org.telegram.ui.Components.b51
+    public final boolean a() {
+        return this.b.q1.b();
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final String[] b() {
+        return this.b.T0;
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final boolean c() {
+        return this.b.q1.c();
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final boolean d(u41 u41Var, MotionEvent motionEvent) {
+        org.telegram.ui.pt q10 = org.telegram.ui.pt.q();
+        kz kzVar = this.b;
+        kzVar.getMeasuredHeight();
+        return q10.r(motionEvent, u41Var, kzVar.d2, kzVar.W1);
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final boolean e(u41 u41Var, k kVar, MotionEvent motionEvent) {
+        org.telegram.ui.pt q10 = org.telegram.ui.pt.q();
+        kz kzVar = this.b;
+        kzVar.getMeasuredHeight();
+        return q10.s(motionEvent, u41Var, kVar, kzVar.d2, kzVar.W1);
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final void f(TLRPC.Document document, Object obj, boolean z4, int i10) {
+        this.b.q1.m(null, document, null, obj, null, z4, i10);
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z4) {
+        kz kzVar = this.b;
+        kzVar.q1.r(stickerSetCovered);
+        if (z4) {
+            kzVar.Z(true);
         }
-        canvas.save();
-        float y8 = bwVar.getY() + bwVar.getMeasuredHeight() + 1.0f;
-        if (view == dxVar && cwVar != null) {
-            y8 = Math.max(y8, cwVar.getY() + cwVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y8 - (AndroidUtilities.dp(16.0f) * fzVar.b.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        this.b.q1.h(stickerSetCovered);
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final void i(String[] strArr) {
+        this.b.T0 = strArr;
     }
 }

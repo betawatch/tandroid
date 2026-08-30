@@ -1,46 +1,37 @@
 package r8;
 
-import java.math.RoundingMode;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class b {
-    public static final /* synthetic */ int[] a;
+public final class b extends a {
+    public final char a;
 
-    static {
-        int[] iArr = new int[RoundingMode.values().length];
-        a = iArr;
-        try {
-            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public b(char c3) {
+        this.a = c3;
+    }
+
+    @Override // r8.a
+    public final boolean a(char c3) {
+        return c3 == this.a;
+    }
+
+    public final String toString() {
+        char[] cArr = new char[6];
+        cArr[0] = '\\';
+        cArr[1] = 'u';
+        cArr[2] = 0;
+        cArr[3] = 0;
+        cArr[4] = 0;
+        cArr[5] = 0;
+        char c3 = this.a;
+        for (int i10 = 0; i10 < 4; i10++) {
+            cArr[5 - i10] = "0123456789ABCDEF".charAt(c3 & 15);
+            c3 = (char) (c3 >> 4);
         }
-        try {
-            a[RoundingMode.DOWN.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[RoundingMode.FLOOR.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[RoundingMode.UP.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[RoundingMode.CEILING.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
+        String copyValueOf = String.copyValueOf(cArr);
+        StringBuilder sb = new StringBuilder(String.valueOf(copyValueOf).length() + 18);
+        sb.append("CharMatcher.is('");
+        sb.append(copyValueOf);
+        sb.append("')");
+        return sb.toString();
     }
 }

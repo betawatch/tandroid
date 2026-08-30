@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
-import jd.c0;
+import dd.p;
+import k7.p7;
 import kotlin.jvm.internal.q;
-import sc.c;
-import uc.i;
+import ld.c0;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzew extends i implements p {
     Object zza;
@@ -26,19 +27,19 @@ final class zzew extends i implements p {
         this.zzf = zzyeVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         return new zzew(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzew) create((c0) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzew) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0055  */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -49,14 +50,14 @@ final class zzew extends i implements p {
         zzev zzevVar;
         Object zzc;
         zzcg zzcgVar;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         if (this.zzb != 0) {
             qVar2 = (q) this.zza;
             try {
-                c7.b(obj);
+                p7.b(obj);
                 zzc = obj;
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e) {
+                e = e;
                 zzcgVar = (zzcg) qVar2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
@@ -64,14 +65,14 @@ final class zzew extends i implements p {
                 throw zzcgVar;
             }
         } else {
-            c7.b(obj);
+            p7.b(obj);
             q qVar3 = new q();
             try {
                 j10 = this.zzc;
                 zzevVar = new zzev(this.zze, this.zzd, this.zzf, qVar3, null);
                 qVar = qVar3;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e6) {
+                e = e6;
                 qVar = qVar3;
             }
             try {
@@ -82,8 +83,8 @@ final class zzew extends i implements p {
                     return aVar;
                 }
                 qVar2 = qVar;
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e10) {
+                e = e10;
                 qVar2 = qVar;
                 zzcgVar = (zzcg) qVar2.a;
                 if (zzcgVar != null) {

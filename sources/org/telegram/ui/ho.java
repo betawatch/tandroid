@@ -1,38 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ho implements Runnable {
+public final /* synthetic */ class ho implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 d;
+    public final /* synthetic */ po b;
 
-    public /* synthetic */ ho(org.telegram.ui.ActionBar.o2 o2Var, long j10, long j11, int i10) {
+    public /* synthetic */ ho(po poVar, int i10) {
         this.a = i10;
-        this.d = o2Var;
-        this.b = j10;
-        this.c = j11;
+        this.b = poVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.k51 k51Var;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new b5((ko) this.d, 4));
+                AndroidUtilities.runOnUIThread(new s1(this.b, tL_error, tLObject, 27));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new jo(this.b, 1));
                 break;
             default:
-                org.telegram.ui.web.w1 w1Var = (org.telegram.ui.web.w1) this.d;
-                w1Var.f = this.b;
-                w1Var.h = this.c;
-                org.telegram.ui.Components.o51 o51Var = w1Var.a;
-                if (o51Var != null && (k51Var = o51Var.U2) != null && o51Var.C) {
-                    k51Var.N(true);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new jo(this.b, 4));
                 break;
         }
     }

@@ -1,0 +1,37 @@
+package e9;
+
+import com.google.android.gms.tasks.TaskCompletionSource;
+import e3.g;
+import i9.p;
+import i9.y;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class b implements Callable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ p b;
+    public final /* synthetic */ g c;
+
+    public b(boolean z4, p pVar, g gVar) {
+        this.a = z4;
+        this.b = pVar;
+        this.c = gVar;
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        if (!this.a) {
+            return null;
+        }
+        p pVar = this.b;
+        ExecutorService executorService = pVar.k;
+        h2.g gVar = new h2.g(3, pVar, this.c);
+        ExecutorService executorService2 = y.a;
+        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        executorService.execute(new androidx.car.app.utils.b(gVar, executorService, taskCompletionSource, 10));
+        taskCompletionSource.getTask();
+        return null;
+    }
+}

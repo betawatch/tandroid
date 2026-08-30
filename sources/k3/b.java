@@ -1,31 +1,28 @@
 package k3;
 
-import g5.y;
-import g9.l;
-import j3.c2;
-import j3.v1;
-import l4.x;
+import i5.y;
+import j3.a2;
+import j3.t1;
+import o4.r;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public interface b {
-    void a(v1 v1Var);
+    void a(a2 a2Var, f7.b bVar);
 
-    void b(a aVar, x xVar);
+    void b(t1 t1Var);
 
-    void c(a aVar);
+    void c(a aVar, r rVar);
 
-    void d(y yVar);
+    void d(n3.f fVar);
 
-    void e(int i10);
+    void e(a aVar, int i10, long j10);
 
-    void f(m3.f fVar);
+    void f(r rVar);
 
-    void g(c2 c2Var, l lVar);
+    void g(y yVar);
 
-    void h(x xVar);
-
-    void i(int i10, long j10, a aVar);
+    void h(a aVar, int i10);
 
     void onRenderedFirstFrame(a aVar);
 

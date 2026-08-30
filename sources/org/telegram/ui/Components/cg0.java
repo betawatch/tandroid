@@ -1,158 +1,66 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.animation.AnimationUtils;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class cg0 extends Drawable {
-    public final Paint a;
-    public final int b;
-    public boolean c;
-    public float d;
-    public long e;
-    public View f;
-    public int g = 255;
-    public float h = 300.0f;
+public final class cg0 extends org.telegram.ui.o4 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public cg0(int i10) {
-        this.b = AndroidUtilities.dp(i10);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ cg0(Object obj, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = obj;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.c != z10) {
-            this.c = z10;
-            if (!z11) {
-                this.d = z10 ? 1.0f : 0.0f;
-            }
-            this.e = AnimationUtils.currentAnimationTimeMillis();
-            invalidateSelf();
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        MessageObject playingMessageObject;
+        switch (this.h) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
+                if (view == pipRoundVideoView.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
+                    pipRoundVideoView.B.set(AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), getMeasuredWidth() - AndroidUtilities.dpf2(1.5f), getMeasuredHeight() - AndroidUtilities.dpf2(1.5f));
+                    canvas.drawArc(pipRoundVideoView.B, -90.0f, playingMessageObject.audioProgress * 360.0f, false, org.telegram.ui.ActionBar.j6.k2);
+                }
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j10);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        int i10;
-        Canvas canvas2;
-        ud0 ud0Var;
-        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        long j10 = currentAnimationTimeMillis - this.e;
-        this.e = currentAnimationTimeMillis;
-        if (j10 > 18) {
-            j10 = 16;
-        }
-        boolean z10 = this.c;
-        if (z10) {
-            float f9 = this.d;
-            if (f9 < 1.0f) {
-                float f10 = (j10 / this.h) + f9;
-                this.d = f10;
-                if (f10 >= 1.0f) {
-                    this.d = 1.0f;
-                } else {
-                    View view = this.f;
-                    if (view != null) {
-                        view.invalidate();
+    @Override // org.telegram.ui.o4, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.h) {
+            case 1:
+                super.onMeasure(i10, i11);
+                e91 e91Var = (e91) this.n;
+                if (e91Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = e91Var.d.getLayoutParams();
+                    layoutParams.width = getMeasuredWidth();
+                    layoutParams.height = getMeasuredHeight();
+                    ImageView imageView = e91Var.e;
+                    if (imageView != null) {
+                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
+                        layoutParams2.width = getMeasuredWidth();
+                        layoutParams2.height = getMeasuredHeight();
+                        break;
                     }
-                    invalidateSelf();
                 }
-                Rect bounds = getBounds();
-                i10 = this.g;
-                if (i10 != 255) {
-                    canvas.save();
-                    canvas2 = canvas;
-                } else {
-                    canvas2 = canvas;
-                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i10, 31);
-                }
-                canvas2.translate(com.google.android.recaptcha.internal.a.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
-                float f11 = this.d * 500.0f;
-                float interpolation = f11 >= 100.0f ? jr.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (jr.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
-                int i11 = this.b;
-                canvas2.scale((i11 * 1.45f) / AndroidUtilities.dp(28.0f), (i11 * 1.5f) / AndroidUtilities.dp(28.0f));
-                canvas2.rotate(interpolation);
-                ud0Var = org.telegram.ui.ActionBar.g6.x3;
-                if (ud0Var != null) {
-                    Paint paint = this.a;
-                    ud0Var.b(canvas2, paint, f11);
-                    canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.g6.x3.b(canvas2, paint, f11);
-                }
-                canvas2.restore();
-            }
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        if (!z10) {
-            float f12 = this.d;
-            if (f12 > 0.0f) {
-                float f13 = f12 - (j10 / this.h);
-                this.d = f13;
-                if (f13 <= 0.0f) {
-                    this.d = 0.0f;
-                } else {
-                    View view2 = this.f;
-                    if (view2 != null) {
-                        view2.invalidate();
-                    }
-                    invalidateSelf();
-                }
-            }
-        }
-        Rect bounds2 = getBounds();
-        i10 = this.g;
-        if (i10 != 255) {
-        }
-        canvas2.translate(com.google.android.recaptcha.internal.a.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds2.centerX()), bounds2.centerY());
-        float f112 = this.d * 500.0f;
-        if (f112 >= 100.0f) {
-        }
-        int i112 = this.b;
-        canvas2.scale((i112 * 1.45f) / AndroidUtilities.dp(28.0f), (i112 * 1.5f) / AndroidUtilities.dp(28.0f));
-        canvas2.rotate(interpolation);
-        ud0Var = org.telegram.ui.ActionBar.g6.x3;
-        if (ud0Var != null) {
-        }
-        canvas2.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.g = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

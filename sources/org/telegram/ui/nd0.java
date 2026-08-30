@@ -1,33 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class nd0 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ pd0 a;
+public final class nd0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ng0 b;
 
-    public nd0(pd0 pd0Var) {
-        this.a = pd0Var;
+    public /* synthetic */ nd0(ng0 ng0Var, int i10) {
+        this.a = i10;
+        this.b = ng0Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        pd0 pd0Var = this.a;
-        int intValue = ((Integer) objArr[0]).intValue();
-        ((Integer) objArr[1]).getClass();
-        Intent intent = (Intent) objArr[2];
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
-        if (intValue == 200) {
-            try {
-                pd0Var.B = (GoogleSignInAccount) i7.l.b(intent).getResult(com.google.android.gms.common.api.f.class);
-                pd0Var.h(null);
-            } catch (com.google.android.gms.common.api.f e10) {
-                FileLog.e(e10);
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ng0 ng0Var = this.b;
+                if (ng0Var.d == animator) {
+                    ng0Var.d = null;
+                    break;
+                }
+                break;
+            default:
+                ng0 ng0Var2 = this.b;
+                ng0Var2.c.setVisibility(8);
+                if (ng0Var2.d == animator) {
+                    ng0Var2.d = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

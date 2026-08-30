@@ -1,23 +1,23 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class d8 {
-    public MessageObject a;
-    public ArrayList b;
-    public int c;
-    public boolean f;
-    public int h;
-    public float i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public float n;
-    public float d = 1.0f;
-    public float e = 1.0f;
-    public boolean g = true;
+public final class d8 implements MessagesStorage.BooleanCallback {
+    public final /* synthetic */ xn a;
+    public final /* synthetic */ e8 b;
+
+    public d8(e8 e8Var, xn xnVar) {
+        this.b = e8Var;
+        this.a = xnVar;
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public final void run(boolean z4) {
+        g8 g8Var = this.b.b;
+        g8Var.x.finishFragment();
+        j8 j8Var = g8Var.x;
+        this.a.S7(j8Var.M, j8Var.N + 86400, z4);
+    }
 }

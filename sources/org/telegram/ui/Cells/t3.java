@@ -1,70 +1,88 @@
 package org.telegram.ui.Cells;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class t3 extends FrameLayout {
-    public org.telegram.ui.Components.t9 a;
-    public org.telegram.ui.ActionBar.h5 b;
-    public org.telegram.ui.ActionBar.h5 c;
-    public ImageView d;
-    public org.telegram.ui.Components.e9 e;
-    public TLRPC.User f;
-    public Paint h;
-    public int n;
-    public boolean r;
+public final class t3 extends org.telegram.ui.Components.k6 {
+    public final /* synthetic */ int s;
 
-    public final void a(int i10, int i11) {
-        this.n = i10;
-        ImageView imageView = this.d;
-        imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
-        this.c.setTextColor(i11);
-        org.telegram.ui.ActionBar.g6.B1(imageView.getDrawable(), i11 & 620756991, true);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.r) {
-            canvas2 = canvas;
-            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(68.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(68.0f) : 0), getMeasuredHeight() - 1, this.h);
-        } else {
-            canvas2 = canvas;
-        }
-        super.dispatchDraw(canvas2);
-    }
-
-    public CharSequence getName() {
-        return this.b.getText();
-    }
-
-    public TLRPC.User getUser() {
-        return this.f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t3(Context context, boolean z4, boolean z10, boolean z11, int i10) {
+        super(context, z4, z10, z11);
+        this.s = i10;
     }
 
     @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+    public CharSequence getAccessibilityClassName() {
+        switch (this.s) {
+            case 0:
+                return Button.class.getName();
+            case 1:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
+            case 4:
+                if (!mg.g0.b(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.k6, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.s) {
+            case 2:
+                canvas.save();
+                canvas.translate(AndroidUtilities.dp(17.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.k6, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
+        switch (this.s) {
+            case 3:
+                super.onMeasure(i10, i11);
+                setPivotX(getMeasuredWidth());
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    public void setDrawDivider(boolean z10) {
-        this.r = z10;
-        invalidate();
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.s) {
+            case 4:
+                if (!mg.g0.b(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
     }
 }

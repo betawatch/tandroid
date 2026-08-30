@@ -1,32 +1,38 @@
 package l3;
 
-import ag.j2;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.provider.Settings;
 import android.util.Pair;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import k7.y7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class g {
-    public static final g c = new g(8, new int[]{2});
-    public static final g d = new g(8, new int[]{2, 5, 6});
-    public static final q8.q0 e;
+    public static final g c = new g(10, new int[]{2});
+    public static final s8.i0 d;
+    public static final s8.n0 e;
     public final int[] a;
     public final int b;
 
     static {
-        j2 j2Var = new j2(4, 21);
-        j2Var.l(5, 6);
-        j2Var.l(17, 6);
-        j2Var.l(7, 6);
-        j2Var.l(18, 6);
-        j2Var.l(6, 8);
-        j2Var.l(8, 8);
-        j2Var.l(14, 8);
-        e = j2Var.c();
+        Object[] objArr = {2, 5, 6};
+        s8.l.b(3, objArr);
+        d = s8.v.s(3, objArr);
+        b4.e0 e0Var = new b4.e0(4, 22);
+        e0Var.w(5, 6);
+        e0Var.w(17, 6);
+        e0Var.w(7, 6);
+        e0Var.w(30, 10);
+        e0Var.w(18, 6);
+        e0Var.w(6, 8);
+        e0Var.w(8, 8);
+        e0Var.w(14, 8);
+        e = e0Var.c();
     }
 
     public g(int i10, int[] iArr) {
@@ -41,69 +47,87 @@ public final class g {
     }
 
     public static g a(Context context) {
-        Intent M = f5.d0.M(context, null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"));
-        int i10 = f5.d0.a;
-        if (i10 >= 17) {
-            String str = f5.d0.c;
-            if (("Amazon".equals(str) || "Xiaomi".equals(str)) && Settings.Global.getInt(context.getContentResolver(), "external_surround_sound_enabled", 0) == 1) {
-                return d;
-            }
-        }
-        if (i10 >= 29 && (f5.d0.F(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
-            return new g(8, f.a());
-        }
-        if (M == null || M.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) == 0) {
-            return c;
-        }
-        return new g(M.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 8), M.getIntArrayExtra("android.media.extra.ENCODINGS"));
+        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0047, code lost:
+    public static g b(Context context, Intent intent) {
+        int i10 = h5.d0.a;
+        if (i10 < 23 || !e.b(context)) {
+            s8.y yVar = new s8.y();
+            if (i10 >= 17) {
+                String str = h5.d0.c;
+                if (("Amazon".equals(str) || "Xiaomi".equals(str)) && Settings.Global.getInt(context.getContentResolver(), "external_surround_sound_enabled", 0) == 1) {
+                    s8.i0 i0Var = d;
+                    i0Var.getClass();
+                    yVar.d(i0Var);
+                }
+            }
+            if (i10 >= 29 && (h5.d0.F(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
+                s8.v a2 = f.a();
+                a2.getClass();
+                yVar.d(a2);
+                return new g(10, y7.d(yVar.i()));
+            }
+            if (intent != null && intent.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) == 1) {
+                int[] intArrayExtra = intent.getIntArrayExtra("android.media.extra.ENCODINGS");
+                if (intArrayExtra != null) {
+                    List aVar = intArrayExtra.length == 0 ? Collections.EMPTY_LIST : new u8.a(0, intArrayExtra.length, intArrayExtra);
+                    aVar.getClass();
+                    yVar.d(aVar);
+                }
+                return new g(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), y7.d(yVar.i()));
+            }
+            s8.z i11 = yVar.i();
+            if (!i11.isEmpty()) {
+                return new g(10, y7.d(i11));
+            }
+        }
+        return c;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00a1, code lost:
     
-        if (r1 > r9.b) goto L58;
+        if (r1 != 5) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0087, code lost:
-    
-        if (r1 != 5) goto L48;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00be  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Pair b(j3.t0 t0Var) {
+    public final Pair c(j3.n0 n0Var) {
         int intValue;
-        int m10;
-        String str = t0Var.B;
+        int n10;
+        String str = n0Var.C;
         str.getClass();
-        int b10 = f5.o.b(str, t0Var.r);
+        int b10 = h5.o.b(str, n0Var.r);
         Integer valueOf = Integer.valueOf(b10);
-        q8.q0 q0Var = e;
-        if (q0Var.containsKey(valueOf)) {
+        s8.n0 n0Var2 = e;
+        if (n0Var2.containsKey(valueOf)) {
             int[] iArr = this.a;
             int i10 = 6;
             if (b10 == 18 && Arrays.binarySearch(iArr, 18) < 0) {
                 b10 = 6;
-            } else if (b10 == 8 && Arrays.binarySearch(iArr, 8) < 0) {
+            } else if ((b10 == 8 && Arrays.binarySearch(iArr, 8) < 0) || (b10 == 30 && Arrays.binarySearch(iArr, 30) < 0)) {
                 b10 = 7;
             }
             if (Arrays.binarySearch(iArr, b10) < 0) {
                 return null;
             }
-            int i11 = t0Var.O;
+            int i11 = n0Var.P;
             if (i11 == -1 || b10 == 18) {
-                int i12 = t0Var.P;
+                int i12 = n0Var.Q;
                 if (i12 == -1) {
                     i12 = 48000;
                 }
-                if (f5.d0.a >= 29) {
+                if (h5.d0.a >= 29) {
                     intValue = f.b(b10, i12);
                 } else {
-                    Object obj = q0Var.get(Integer.valueOf(b10));
+                    Object obj = n0Var2.get(Integer.valueOf(b10));
                     intValue = ((Integer) (obj != null ? obj : 0)).intValue();
                 }
                 i11 = intValue;
+            } else if (!n0Var.C.equals("audio/vnd.dts.uhd;profile=p2")) {
             }
-            int i13 = f5.d0.a;
+            int i13 = h5.d0.a;
             if (i13 <= 28) {
                 if (i11 == 7) {
                     i10 = 8;
@@ -111,20 +135,20 @@ public final class g {
                     if (i11 != 4) {
                     }
                 }
-                if (i13 <= 26 && "fugu".equals(f5.d0.b) && i10 == 1) {
+                if (i13 <= 26 && "fugu".equals(h5.d0.b) && i10 == 1) {
                     i10 = 2;
                 }
-                m10 = f5.d0.m(i10);
-                if (m10 != 0) {
-                    return Pair.create(Integer.valueOf(b10), Integer.valueOf(m10));
+                n10 = h5.d0.n(i10);
+                if (n10 != 0) {
+                    return Pair.create(Integer.valueOf(b10), Integer.valueOf(n10));
                 }
             }
             i10 = i11;
             if (i13 <= 26) {
                 i10 = 2;
             }
-            m10 = f5.d0.m(i10);
-            if (m10 != 0) {
+            n10 = h5.d0.n(i10);
+            if (n10 != 0) {
             }
         }
         return null;

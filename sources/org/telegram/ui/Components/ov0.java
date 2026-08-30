@@ -1,46 +1,57 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Region;
+import android.graphics.text.MeasuredText;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ov0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Document b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ org.telegram.ui.Cells.s1 e;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
-
-    public /* synthetic */ ov0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.s1 s1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
-        this.a = i11;
-        this.b = document;
-        this.c = i10;
-        this.d = messageObject;
-        this.e = s1Var;
-        this.f = tL_messages_stickerSet;
+public final class ov0 extends Canvas {
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path) {
+        return false;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Document document = this.b;
-                String attachFileName = FileLoader.getAttachFileName(document);
-                int i10 = this.c;
-                DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.d, this.e);
-                FileLoader.getInstance(i10).loadFile(document, this.f, 1, 1);
-                break;
-            default:
-                TLRPC.Document document2 = this.b;
-                String attachFileName2 = FileLoader.getAttachFileName(document2);
-                int i11 = this.c;
-                DownloadController.getInstance(i11).addLoadingFileObserver(attachFileName2, this.d, this.e);
-                FileLoader.getInstance(i11).loadFile(document2, this.f, 1, 1);
-                break;
-        }
+    @Override // android.graphics.Canvas
+    public final void drawText(CharSequence charSequence, int i10, int i11, float f10, float f11, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(String str, Path path, float f10, float f11, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f10, float f11, boolean z4, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path, Region.Op op) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, float f10, float f11, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f10, float f11, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f10, float f11, boolean z4, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, int i10, int i11, float f10, float f11, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f10, float f11, boolean z4, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(char[] cArr, int i10, int i11, float f10, float f11, Paint paint) {
     }
 }

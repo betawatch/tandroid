@@ -1,27 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class up implements kv0 {
-    public final /* synthetic */ sp a;
-    public final /* synthetic */ wp b;
+public abstract class up extends m2.h {
+    public tp t0;
 
-    public up(wp wpVar, sp spVar) {
-        this.b = wpVar;
-        this.a = spVar;
+    public up(Context context) {
+        super(context);
+        b(new sp((vh0) this));
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final void h(int i10) {
-        wp wpVar = this.b;
-        wpVar.r = i10;
-        wpVar.p(true);
+    @Override // m2.h
+    @Deprecated
+    public void setAdapter(m2.a aVar) {
+        if (!(aVar instanceof tp)) {
+            throw new IllegalArgumentException();
+        }
+        setAdapter((tp) aVar);
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final void m() {
-        int measuredHeight = this.b.c.getMeasuredHeight();
-        sp spVar = this.a;
-        spVar.y(0 - spVar.getScrollX(), measuredHeight - spVar.getScrollY(), false);
+    public void setAdapter(tp tpVar) {
+        this.t0 = tpVar;
+        super.setAdapter((m2.a) tpVar);
+        if (tpVar != null) {
+            x(tpVar.j(), false);
+        }
     }
 }

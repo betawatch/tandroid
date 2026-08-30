@@ -1,94 +1,79 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.tgnet.tl.TL_stories;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements f5.d {
+public final /* synthetic */ class uf implements org.telegram.ui.Components.xj0, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
+    public final /* synthetic */ xn b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ uf(tn tnVar, int i10) {
+    public /* synthetic */ uf(xn xnVar, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = tnVar;
+        this.b = xnVar;
+        this.c = messageObject;
     }
 
-    @Override // f5.d
-    public final void accept(Object obj) {
+    @Override // org.telegram.ui.Components.xj0
+    public void a(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
-                this.b.A1 = (ChannelBoostsController.CanApplyBoost) obj;
-                break;
-            case 1:
-                View view = (View) obj;
-                boolean z10 = view instanceof org.telegram.ui.Cells.s1;
-                tn tnVar = this.b;
-                if (!z10) {
-                    if (!(view instanceof org.telegram.ui.Cells.v0)) {
-                        if (!(view instanceof org.telegram.ui.Cells.u1)) {
-                            if (!(view instanceof org.telegram.ui.Cells.b0)) {
-                                if (view instanceof org.telegram.ui.Cells.h0) {
-                                    view.invalidate();
-                                    break;
-                                }
-                            } else {
-                                view.invalidate();
-                                break;
-                            }
-                        } else {
-                            ((org.telegram.ui.Cells.u1) view).getTextView().setTranslationX(tnVar.R8() / 2.0f);
-                            break;
-                        }
-                    } else {
-                        org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
-                        v0Var.a0 = tnVar.t9();
-                        v0Var.e0 = tnVar.C9();
-                        tnVar.B9();
-                        tnVar.Q8();
-                        int R8 = tnVar.R8();
-                        if (v0Var.f0 != R8) {
-                            v0Var.f0 = R8;
-                            v0Var.invalidate();
-                            break;
-                        }
-                    }
+                Bundle bundle = new Bundle();
+                if (j10 > 0) {
+                    bundle.putLong("user_id", j10);
                 } else {
-                    org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) view;
-                    s1Var.A8 = tnVar.t9();
-                    s1Var.B8 = tnVar.C9();
-                    boolean B9 = tnVar.B9();
-                    if (s1Var.C8 != B9) {
-                        s1Var.C8 = B9;
-                        tnVar.t0.getClass();
-                        int R = RecyclerView.R(view);
-                        s1Var.j8 = true;
-                        s1Var.forceLayout();
-                        if (R >= 0) {
-                            tnVar.w0.m(R);
-                        }
-                    }
-                    s1Var.D8 = tnVar.Q8();
-                    int R82 = tnVar.R8();
-                    if (s1Var.E8 != R82) {
-                        s1Var.E8 = R82;
-                        s1Var.y4();
-                        s1Var.invalidate();
-                        break;
-                    }
+                    bundle.putLong("chat_id", -j10);
                 }
+                xn xnVar = this.b;
+                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
+                    bundle.putInt("report_reaction_message_id", this.c.getId());
+                    bundle.putLong("report_reaction_from_dialog_id", xnVar.Q5);
+                }
+                xnVar.presentFragment(new ProfileActivity(bundle, null));
+                xnVar.A7(true);
                 break;
             default:
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null) {
-                    tn tnVar2 = this.b;
-                    tnVar2.z1 = tL_premium_boostsStatus;
-                    tnVar2.getMessagesController().getBoostsController().userCanBoostChannel(tnVar2.P5, tL_premium_boostsStatus, new uf(tnVar2, 0));
-                    break;
+                xn xnVar2 = this.b;
+                xnVar2.getClass();
+                Bundle bundle2 = new Bundle();
+                if (j10 > 0) {
+                    bundle2.putLong("user_id", j10);
+                } else {
+                    bundle2.putLong("chat_id", -j10);
                 }
+                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
+                    bundle2.putInt("report_reaction_message_id", this.c.getId());
+                    bundle2.putLong("report_reaction_from_dialog_id", xnVar2.Q5);
+                }
+                xnVar2.presentFragment(new ProfileActivity(bundle2, null));
+                xnVar2.A7(true);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        xn xnVar = this.b;
+        org.telegram.ui.ActionBar.d2[] d2VarArr = {new org.telegram.ui.ActionBar.d2(xnVar.getParentActivity(), 3, xnVar.ba)};
+        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
+        MessageObject messageObject = this.c;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
+        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
+        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
+        tL_inputMediaPoll.poll = tL_poll;
+        TLRPC.Poll poll = tL_messageMediaPoll.poll;
+        tL_poll.id = poll.id;
+        tL_poll.question = poll.question;
+        tL_poll.answers = poll.answers;
+        tL_poll.closed = true;
+        tL_messages_editMessage.media = tL_inputMediaPoll;
+        tL_messages_editMessage.peer = xnVar.getMessagesController().getInputPeer(xnVar.Q5);
+        tL_messages_editMessage.id = messageObject.getId();
+        tL_messages_editMessage.flags |= 16384;
+        AndroidUtilities.runOnUIThread(new pg(xnVar, d2VarArr, xnVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new ba(xnVar, d2VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }
 }

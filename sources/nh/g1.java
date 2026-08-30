@@ -1,282 +1,85 @@
 package nh;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ScaleGestureDetector;
+import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.z71;
-import org.telegram.ui.bk;
-import org.telegram.ui.fd1;
-import org.telegram.ui.iv0;
-import org.telegram.ui.t91;
-import org.telegram.ui.tn;
-import org.telegram.ui.v21;
-import org.telegram.ui.x21;
-import org.telegram.ui.y21;
-import org.telegram.ui.yo0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class g1 extends z71 {
-    public final /* synthetic */ int P;
-    public final /* synthetic */ Object Q;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g1(Object obj, Context context, int i10) {
-        super(context, null);
-        this.P = i10;
-        this.Q = obj;
+public final class g1 implements ScaleGestureDetector.OnScaleGestureListener {
+    public final void a() {
+        j1 j1Var = j1.W;
+        WindowManager.LayoutParams layoutParams = j1Var.c;
+        int n10 = (int) (j1Var.n() * j1Var.J);
+        layoutParams.width = n10;
+        j1Var.G = n10;
+        WindowManager.LayoutParams layoutParams2 = j1Var.c;
+        int m9 = (int) (j1Var.m() * j1Var.J);
+        layoutParams2.height = m9;
+        j1Var.H = m9;
+        AndroidUtilities.updateViewLayout(j1Var.b, j1Var.d, j1Var.c);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.z71
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean i(MotionEvent motionEvent) {
-        int i10;
-        View E;
-        int R;
-        switch (this.P) {
-            case 1:
-                e9 e9Var = (e9) this.Q;
-                View currentView = e9Var.b.getCurrentView();
-                if (!(currentView instanceof y8)) {
-                    return true;
-                }
-                if (getCurrentPosition() > 0) {
-                    e9Var.f1();
-                    return true;
-                }
-                y8 y8Var = (y8) currentView;
-                ArrayList arrayList = y8Var.H;
-                jl0 jl0Var = y8Var.f;
-                if (y8Var.a == 0 && motionEvent != null && (E = jl0Var.E(motionEvent.getX(), motionEvent.getY() - y8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
-                    m8 m8Var = (m8) arrayList.get(R);
-                    if (m8Var.a == 3 && !m8Var.n) {
-                        boolean z10 = LocaleController.isRTL;
-                        float x4 = motionEvent.getX();
-                        if (!z10 ? x4 > AndroidUtilities.dp(100.0f) : x4 < y8Var.getWidth() - AndroidUtilities.dp(100.0f)) {
-                            i10 = m8Var.i;
-                            if (i10 != -1) {
-                                e9Var.I = i10;
-                                if (i10 == 3) {
-                                    if (!e9Var.n.isEmpty() && !e9Var.r.isEmpty()) {
-                                        e9Var.J = i10;
-                                    }
-                                } else if (i10 != 4) {
-                                    e9Var.J = i10;
-                                } else if (!e9Var.d.isEmpty() && !e9Var.e.isEmpty()) {
-                                    e9Var.J = i10;
-                                }
-                                y8Var.f(true);
-                                y8Var.e(true);
-                            }
-                            if (i10 != -1) {
-                                e9Var.f1();
-                            }
-                            return i10 == -1;
-                        }
-                    }
-                }
-                i10 = -1;
-                if (i10 != -1) {
-                }
-                if (i10 != -1) {
-                }
-                if (i10 == -1) {
-                }
-                break;
-            case 2:
-                bk bkVar = ((tn) this.Q).l1;
-                return bkVar != null && bkVar.b > 0.5f;
-            default:
-                return super.i(motionEvent);
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final boolean onScale(ScaleGestureDetector scaleGestureDetector) {
+        j1 j1Var = j1.W;
+        j1Var.J = k7.n.a(scaleGestureDetector.getScaleFactor() * j1Var.J, 0.6f, j1Var.a);
+        j1Var.G = (int) (j1Var.n() * j1Var.J);
+        j1Var.H = (int) (j1Var.m() * j1Var.J);
+        AndroidUtilities.runOnUIThread(new cg.n0(this, 16));
+        o1.j jVar = j1Var.M;
+        jVar.b = j1Var.K;
+        jVar.c = true;
+        jVar.u.i = scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r4 - j1Var.G) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        o1.j jVar2 = j1Var.M;
+        if (!jVar2.f) {
+            jVar2.f();
         }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public boolean j(MotionEvent motionEvent) {
-        switch (this.P) {
-            case 8:
-                return getCurrentPosition() != 2;
-            default:
-                return super.j(motionEvent);
+        o1.j jVar3 = j1Var.N;
+        jVar3.b = j1Var.L;
+        jVar3.c = true;
+        jVar3.u.i = k7.n.a(scaleGestureDetector.getFocusY() - (j1Var.H / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - j1Var.H) - AndroidUtilities.dp(16.0f));
+        o1.j jVar4 = j1Var.N;
+        if (!jVar4.f) {
+            jVar4.f();
         }
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.z71
-    public boolean k(MotionEvent motionEvent) {
-        switch (this.P) {
-            case 5:
-                return false;
-            case 8:
-                return false;
-            default:
-                return super.k(motionEvent);
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
+        j1 j1Var = j1.W;
+        if (j1Var.B) {
+            j1Var.B = false;
         }
+        j1Var.C = true;
+        j1Var.c.width = (int) (j1Var.n() * j1Var.a);
+        j1Var.c.height = (int) (j1Var.m() * j1Var.a);
+        AndroidUtilities.updateViewLayout(j1Var.b, j1Var.d, j1Var.c);
+        return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.P) {
-            case 6:
-                super.onLayout(z10, i10, i11, i12, i13);
-                t91.Y((t91) this.Q);
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
+        j1 j1Var = j1.W;
+        if (!j1Var.M.f && !j1Var.N.f) {
+            a();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.z71, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.P) {
-            case 2:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
+        ArrayList arrayList = new ArrayList();
+        f1 f1Var = new f1(this, arrayList, 0);
+        o1.j jVar = j1Var.M;
+        if (jVar.f) {
+            jVar.a(f1Var);
+        } else {
+            arrayList.add(jVar);
         }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void t(View view, View view2, int i10, int i11) {
-        boolean z10;
-        switch (this.P) {
-            case 1:
-                e9 e9Var = (e9) this.Q;
-                z10 = ((org.telegram.ui.ActionBar.f3) e9Var).keyboardVisible;
-                if (z10) {
-                    e9Var.f1();
-                    break;
-                }
-                break;
+        o1.j jVar2 = j1Var.N;
+        if (jVar2.f) {
+            jVar2.a(f1Var);
+        } else {
+            arrayList.add(jVar2);
         }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void u() {
-        switch (this.P) {
-            case 6:
-                t91 t91Var = (t91) this.Q;
-                t91Var.m0(t91Var.e0.getCurrentPosition(), true);
-                t91Var.n0(0.0f, false);
-                t91.W(t91Var);
-                break;
-            case 8:
-                if (getCurrentPosition() == 1) {
-                    ((qh.i0) this.Q).v.d.U2.N(false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void v() {
-        v21 v21Var;
-        switch (this.P) {
-            case 5:
-                if ((getCurrentView() instanceof x21) && (v21Var = ((x21) getCurrentView()).n) != null) {
-                    AndroidUtilities.hideKeyboard(v21Var);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public final void w(boolean z10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        ViewGroup viewGroup3;
-        ViewGroup viewGroup4;
-        switch (this.P) {
-            case 0:
-                k2 k2Var = (k2) this.Q;
-                g1 g1Var = k2Var.f;
-                j2 j2Var = k2Var.h;
-                if (j2Var != null) {
-                    j2Var.B = g1Var.getPositionAnimated();
-                    j2Var.invalidate();
-                }
-                viewGroup = ((org.telegram.ui.ActionBar.f3) k2Var).containerView;
-                viewGroup.invalidate();
-                invalidate();
-                k2.C = g1Var.getCurrentPosition();
-                break;
-            case 1:
-                viewGroup2 = ((org.telegram.ui.ActionBar.f3) ((e9) this.Q)).containerView;
-                viewGroup2.invalidate();
-                break;
-            case 2:
-                tn tnVar = (tn) this.Q;
-                tnVar.T0.getClass();
-                tnVar.T0.getClass();
-                tnVar.l7();
-                tnVar.q9(1);
-                break;
-            case 3:
-                yo0 yo0Var = (yo0) this.Q;
-                yo0Var.D.setSelected(yo0Var.y.getPositionAnimated());
-                yo0Var.e.setProgressToGradient(1.0f - yo0Var.y.getPositionAnimated());
-                break;
-            case 4:
-                ((iv0) this.Q).e();
-                break;
-            case 5:
-                viewGroup3 = ((org.telegram.ui.ActionBar.f3) ((y21) this.Q)).containerView;
-                viewGroup3.invalidate();
-                break;
-            case 6:
-                t91 t91Var = (t91) this.Q;
-                float positionAnimated = t91Var.e0.getPositionAnimated();
-                t91Var.n0(positionAnimated, !z10);
-                if (!z10) {
-                    t91Var.m0(Math.round(positionAnimated), true);
-                }
-                t91.W(t91Var);
-                t91.Y(t91Var);
-                break;
-            case 7:
-                ((fd1) this.Q).e();
-                break;
-            default:
-                viewGroup4 = ((org.telegram.ui.ActionBar.f3) ((qh.i0) this.Q)).containerView;
-                viewGroup4.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void z(int i10) {
-        switch (this.P) {
-            case 2:
-                if (i10 == 0) {
-                    tn tnVar = (tn) this.Q;
-                    if (tnVar.o1) {
-                        tnVar.o1 = false;
-                        tnVar.m1.h.clear();
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g1(Context context, org.telegram.ui.ActionBar.c6 c6Var, tn tnVar) {
-        super(context, c6Var);
-        this.P = 2;
-        this.Q = tnVar;
     }
 }

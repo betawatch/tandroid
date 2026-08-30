@@ -1,0 +1,174 @@
+package dg;
+
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.lg0;
+import org.telegram.ui.Components.pu;
+import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.sr;
+import org.telegram.ui.ExternalActionActivity;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class m implements View.OnClickListener {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ m(int i10) {
+        this.a = i10;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 1:
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")));
+                    break;
+                } catch (ActivityNotFoundException e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 2:
+                int i10 = kh.s.x0;
+                break;
+            case 3:
+                sc[] scVarArr = kh.f0.m0;
+                break;
+            case 4:
+                int i11 = kh.m0.c0;
+                break;
+            case 5:
+                int i12 = lh.j1.A0;
+                break;
+            case 6:
+                int i13 = mg.f.e;
+                break;
+            case 7:
+                nh.j1.j();
+                break;
+            case 8:
+                int i14 = org.telegram.ui.Cells.x.I;
+                break;
+            case 9:
+                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, "contact"));
+                    break;
+                }
+                break;
+            case 10:
+                if (!MediaController.getInstance().isDownloadingCurrentMessage()) {
+                    if (!MediaController.getInstance().isMessagePaused()) {
+                        MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+                        break;
+                    } else {
+                        MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+                        break;
+                    }
+                }
+                break;
+            case 11:
+                int i15 = kq.b0;
+                break;
+            case 12:
+                int i16 = sr.s;
+                break;
+            case 13:
+                float[] fArr = FragmentContextView.J0;
+                MediaController.getInstance().updateSilent(false);
+                break;
+            case 14:
+                lg0 lg0Var = lg0.m0;
+                pu puVar = lg0Var.R;
+                if (puVar != null) {
+                    puVar.G();
+                } else {
+                    PhotoViewer photoViewer = lg0Var.S;
+                    if (photoViewer != null) {
+                        photoViewer.P0();
+                        MediaController.getInstance().tryResumePausedAudio();
+                    }
+                }
+                lg0.j(false);
+                break;
+            case 15:
+                org.telegram.ui.Components.voip.g1.j();
+                break;
+            case 16:
+                ((org.telegram.ui.Cells.z1) view).c(!r6.b(), true);
+                break;
+            case 17:
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance == null) {
+                    org.telegram.ui.Components.voip.m2.i();
+                    break;
+                } else {
+                    sharedInstance.hangUp();
+                    break;
+                }
+            case 18:
+                gg.v2.e0(0, null);
+                break;
+            case 19:
+                ArrayList arrayList = ExternalActionActivity.x;
+                break;
+            case 20:
+                break;
+            case 21:
+                Pattern pattern = LaunchActivity.y1;
+                break;
+            case 22:
+                break;
+            case 23:
+                try {
+                    view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
+                    break;
+                } catch (ActivityNotFoundException e6) {
+                    FileLog.e(e6);
+                    return;
+                }
+            case 24:
+                int i17 = ph.j3.d;
+                break;
+            case 25:
+                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                break;
+            case 26:
+                int i18 = rh.m.n;
+                break;
+            case 27:
+                break;
+            default:
+                int i19 = wg.c.e;
+                break;
+        }
+    }
+
+    public /* synthetic */ m(Object obj, int i10) {
+        this.a = i10;
+    }
+
+    private final void a(View view) {
+    }
+
+    private final void b(View view) {
+    }
+
+    private final void c(View view) {
+    }
+}

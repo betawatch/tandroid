@@ -1,36 +1,54 @@
 package fg;
 
-import a9.s;
-import eg.e1;
-import org.telegram.messenger.x3;
-import org.telegram.ui.fy;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.voip.k0;
+import org.telegram.ui.ai1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
+public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ c(e eVar, int i10) {
+    public /* synthetic */ c(Object obj, float f10, float f11, float f12, int i10) {
         this.a = i10;
-        this.b = eVar;
+        this.e = obj;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.E();
+                i iVar = (i) this.e;
+                iVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a aVar = iVar.b;
+                aVar.d = this.b * floatValue;
+                aVar.e = this.c * floatValue;
+                aVar.g = floatValue * this.d;
+                break;
+            case 1:
+                k0 k0Var = (k0) this.e;
+                k0Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k0Var.v0 = e2.c.w(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                k0Var.o0 = this.c * floatValue2;
+                k0Var.p0 = this.d * floatValue2;
+                k0Var.invalidate();
                 break;
             default:
-                StringBuilder sb2 = new StringBuilder("https://t.me/giftcode/");
-                e eVar = this.b;
-                sb2.append(eVar.h);
-                String sb3 = sb2.toString();
-                fy fyVar = new fy(x3.e(3, "onlySelect", "dialogsType", true));
-                fyVar.y2 = new s(17, eVar, sb3);
-                eVar.e.presentFragment(fyVar);
-                ((e1) eVar).r.dismiss();
+                ai1 ai1Var = (ai1) this.e;
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ai1Var.c1 = e2.c.w(1.0f, floatValue3, 1.0f, this.b * floatValue3);
+                ai1Var.V0 = this.c * floatValue3;
+                ai1Var.W0 = this.d * floatValue3;
+                ai1Var.s.invalidate();
                 break;
         }
     }

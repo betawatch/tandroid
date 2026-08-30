@@ -1,10 +1,11 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.Collection;
-import rc.f;
-import rc.g;
+import jd.a;
+import tc.f;
+import tc.g;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzjl implements zzjt {
     public static final zzjl zza = new zzjl();
@@ -29,92 +30,92 @@ public final class zzjl implements zzjt {
         }
         if (zza2 instanceof int[]) {
             int[] iArr = (int[]) zza2;
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append((CharSequence) "[");
+            StringBuilder sb = new StringBuilder();
+            sb.append((CharSequence) "[");
             int length = iArr.length;
             int i12 = 0;
             while (i11 < length) {
                 int i13 = iArr[i11];
                 i12++;
                 if (i12 > 1) {
-                    sb2.append((CharSequence) ",");
+                    sb.append((CharSequence) ",");
                 }
-                sb2.append((CharSequence) String.valueOf(i13));
+                sb.append((CharSequence) String.valueOf(i13));
                 i11++;
             }
-            sb2.append((CharSequence) "]");
-            h = sb2.toString();
+            sb.append((CharSequence) "]");
+            h = sb.toString();
         } else {
             if (zza2 instanceof byte[]) {
-                str = new String((byte[]) zza2, hd.a.a);
+                str = new String((byte[]) zza2, a.a);
             } else if (zza2 instanceof long[]) {
                 long[] jArr = (long[]) zza2;
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append((CharSequence) "[");
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append((CharSequence) "[");
                 int length2 = jArr.length;
                 int i14 = 0;
                 while (i11 < length2) {
                     long j10 = jArr[i11];
                     i14++;
                     if (i14 > 1) {
+                        sb2.append((CharSequence) ",");
+                    }
+                    sb2.append((CharSequence) String.valueOf(j10));
+                    i11++;
+                }
+                sb2.append((CharSequence) "]");
+                h = sb2.toString();
+            } else if (zza2 instanceof short[]) {
+                short[] sArr = (short[]) zza2;
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append((CharSequence) "[");
+                int length3 = sArr.length;
+                int i15 = 0;
+                while (i11 < length3) {
+                    short s6 = sArr[i11];
+                    i15++;
+                    if (i15 > 1) {
                         sb3.append((CharSequence) ",");
                     }
-                    sb3.append((CharSequence) String.valueOf(j10));
+                    sb3.append((CharSequence) String.valueOf((int) s6));
                     i11++;
                 }
                 sb3.append((CharSequence) "]");
                 h = sb3.toString();
-            } else if (zza2 instanceof short[]) {
-                short[] sArr = (short[]) zza2;
+            } else if (zza2 instanceof float[]) {
+                float[] fArr = (float[]) zza2;
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append((CharSequence) "[");
-                int length3 = sArr.length;
-                int i15 = 0;
-                while (i11 < length3) {
-                    short s10 = sArr[i11];
-                    i15++;
-                    if (i15 > 1) {
+                int length4 = fArr.length;
+                int i16 = 0;
+                while (i11 < length4) {
+                    float f10 = fArr[i11];
+                    i16++;
+                    if (i16 > 1) {
                         sb4.append((CharSequence) ",");
                     }
-                    sb4.append((CharSequence) String.valueOf((int) s10));
+                    sb4.append((CharSequence) String.valueOf(f10));
                     i11++;
                 }
                 sb4.append((CharSequence) "]");
                 h = sb4.toString();
-            } else if (zza2 instanceof float[]) {
-                float[] fArr = (float[]) zza2;
-                StringBuilder sb5 = new StringBuilder();
-                sb5.append((CharSequence) "[");
-                int length4 = fArr.length;
-                int i16 = 0;
-                while (i11 < length4) {
-                    float f9 = fArr[i11];
-                    i16++;
-                    if (i16 > 1) {
-                        sb5.append((CharSequence) ",");
-                    }
-                    sb5.append((CharSequence) String.valueOf(f9));
-                    i11++;
-                }
-                sb5.append((CharSequence) "]");
-                h = sb5.toString();
             } else if (zza2 instanceof double[]) {
                 double[] dArr = (double[]) zza2;
-                StringBuilder sb6 = new StringBuilder();
-                sb6.append((CharSequence) "[");
+                StringBuilder sb5 = new StringBuilder();
+                sb5.append((CharSequence) "[");
                 int length5 = dArr.length;
                 int i17 = 0;
                 while (i11 < length5) {
                     double d = dArr[i11];
                     i17++;
                     if (i17 > 1) {
-                        sb6.append((CharSequence) ",");
+                        sb5.append((CharSequence) ",");
                     }
-                    sb6.append((CharSequence) String.valueOf(d));
+                    sb5.append((CharSequence) String.valueOf(d));
                     i11++;
                 }
-                sb6.append((CharSequence) "]");
-                h = sb6.toString();
+                sb5.append((CharSequence) "]");
+                h = sb5.toString();
             } else if (zza2 instanceof char[]) {
                 str = new String((char[]) zza2);
             } else if (zza2 instanceof Object[]) {

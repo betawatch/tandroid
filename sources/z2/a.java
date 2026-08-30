@@ -1,10 +1,9 @@
 package z2;
 
-import a4.w;
 import m1.j;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a {
     public final int a;
@@ -36,10 +35,10 @@ public final class a {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("BackendResponse{status=");
+        StringBuilder sb = new StringBuilder("BackendResponse{status=");
         int i10 = this.a;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
-        sb2.append(", nextRequestWaitMillis=");
-        return w.p(sb2, this.b, "}");
+        sb.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
+        sb.append(", nextRequestWaitMillis=");
+        return android.support.v4.media.a.q(sb, this.b, "}");
     }
 }

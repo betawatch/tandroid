@@ -1,59 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dg implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ dg(tn tnVar, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class dg implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
+
+    public /* synthetic */ dg(xn xnVar, int i10) {
         this.a = i10;
-        this.b = tnVar;
+        this.b = xnVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Integer num = (Integer) obj;
-                tn tnVar = this.b;
-                tnVar.getClass();
-                if (num.intValue() != 0) {
-                    tnVar.Bc(true);
-                    tnVar.j(num.intValue(), 0, false, 0, true, 0);
-                    break;
-                } else {
-                    tnVar.h1 = 0;
-                    tnVar.Bc(true);
-                    tnVar.getMessagesController().markReactionsAsRead(tnVar.P5, tnVar.b());
-                    break;
-                }
+                xn.B0(this.b);
+                break;
             case 1:
-                Integer num2 = (Integer) obj;
-                tn tnVar2 = this.b;
-                tnVar2.getClass();
-                if (num2.intValue() != 0) {
-                    int i10 = tnVar2.i1 - 1;
-                    tnVar2.i1 = i10;
-                    if (i10 <= 0) {
-                        tnVar2.getMessagesController().markPollVotesAsRead(tnVar2.P5, tnVar2.b());
-                    }
-                    tnVar2.Ac(true);
-                    tnVar2.j(num2.intValue(), 0, false, 0, true, 0);
-                    break;
-                } else {
-                    tnVar2.i1 = 0;
-                    tnVar2.Ac(true);
-                    tnVar2.getMessagesController().markPollVotesAsRead(tnVar2.P5, tnVar2.b());
-                    break;
-                }
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 2:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 3:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 4:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 5:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 6:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 7:
+                this.b.Db = null;
+                break;
             default:
-                tn tnVar3 = this.b;
-                tnVar3.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                tnVar3.b7 = booleanValue;
-                if (!booleanValue) {
-                    tnVar3.r8();
+                dk dkVar = this.b.U1;
+                if (dkVar != null) {
+                    dkVar.c(false);
                     break;
                 }
                 break;

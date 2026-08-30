@@ -1,68 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class x41 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ d61 h;
+public final /* synthetic */ class x41 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x41(d61 d61Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.c6 c6Var, Integer num) {
-        super(context);
-        this.h = d61Var;
-        this.c = z10;
-        this.d = z11;
-        this.e = c6Var;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public /* synthetic */ x41(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        d61 d61Var = this.h;
-        if (!d61Var.M0) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
+                }
+                this.c.run();
+                break;
+            default:
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
+                }
+                this.c.run();
+                break;
         }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        canvas.save();
-        boolean z10 = this.d;
-        Paint paint = this.b;
-        if (z10) {
-            org.telegram.ui.ActionBar.g6.m(paint);
-        }
-        paint.setColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (d61Var.n()) {
-            AndroidUtilities.rectTmp.set((width - (d61Var.W0 * width)) + getPaddingLeft(), com.google.android.recaptcha.internal.a.z(1.0f, d61Var.X0, height, getPaddingTop()), ((width2 - width) * d61Var.W0) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            AndroidUtilities.rectTmp.set((width - (d61Var.W0 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * d61Var.W0) + getPaddingLeft() + width, (height * d61Var.X0) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
     }
 }

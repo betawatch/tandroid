@@ -1,45 +1,99 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lg b;
-    public final /* synthetic */ nh.t3 c;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-    public /* synthetic */ jg(lg lgVar, nh.t3 t3Var, int i10) {
-        this.a = i10;
-        this.b = lgVar;
-        this.c = t3Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class jg extends j1.b {
+    public final int[] o;
+    public final /* synthetic */ ChatActivityEnterView.RecordCircle p;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jg(ChatActivityEnterView.RecordCircle recordCircle, ChatActivityEnterView.RecordCircle recordCircle2) {
+        super(recordCircle2);
+        this.p = recordCircle;
+        this.o = new int[2];
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                lg lgVar = this.b;
-                nh.t3 t3Var = this.c;
-                lgVar.removeView(t3Var);
-                if (lgVar.b == t3Var) {
-                    lgVar.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.removeView(this.c);
-                break;
-            case 2:
-                this.b.removeView(this.c);
-                break;
-            default:
-                lg lgVar2 = this.b;
-                nh.t3 t3Var2 = this.c;
-                lgVar2.removeView(t3Var2);
-                if (lgVar2.a == t3Var2) {
-                    lgVar2.a = null;
-                    break;
-                }
-                break;
+    @Override // j1.b
+    public final int g(float f10, float f11) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (!chatActivityEnterView.o4 || chatActivityEnterView.J1 == null) {
+            return -1;
         }
+        if (chatActivityEnterView.P3.contains((int) f10, (int) f11)) {
+            return 1;
+        }
+        if (chatActivityEnterView.O3.contains(f10, f11)) {
+            return 2;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
+        if (slideTextView == null || (rect = slideTextView.G) == null) {
+            return -1;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(rect);
+        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.g1;
+        int[] iArr = this.o;
+        slideTextView2.getLocationOnScreen(iArr);
+        rectF.offset(iArr[0], iArr[1]);
+        chatActivityEnterView.J1.getLocationOnScreen(iArr);
+        rectF.offset(-iArr[0], -iArr[1]);
+        return rectF.contains(f10, f11) ? 3 : -1;
+    }
+
+    @Override // j1.b
+    public final void h(ArrayList arrayList) {
+        if (ChatActivityEnterView.this.o4) {
+            arrayList.add(1);
+            arrayList.add(3);
+        }
+    }
+
+    @Override // j1.b
+    public final boolean k(int i10, int i11) {
+        return true;
+    }
+
+    @Override // j1.b
+    public final void l(int i10, s0.e eVar) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (i10 == 1) {
+            eVar.h(chatActivityEnterView.P3);
+            eVar.o(LocaleController.getString("Send", R.string.Send));
+            return;
+        }
+        if (i10 == 2) {
+            Rect rect2 = chatActivityEnterView.Q3;
+            RectF rectF = chatActivityEnterView.O3;
+            rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            eVar.h(chatActivityEnterView.Q3);
+            eVar.o(LocaleController.getString(R.string.Stop));
+            return;
+        }
+        if (i10 != 3 || chatActivityEnterView.J1 == null) {
+            return;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
+        if (slideTextView != null && (rect = slideTextView.G) != null) {
+            Rect rect3 = AndroidUtilities.rectTmp2;
+            rect3.set(rect);
+            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.g1;
+            int[] iArr = this.o;
+            slideTextView2.getLocationOnScreen(iArr);
+            rect3.offset(iArr[0], iArr[1]);
+            chatActivityEnterView.J1.getLocationOnScreen(iArr);
+            rect3.offset(-iArr[0], -iArr[1]);
+            eVar.h(rect3);
+        }
+        eVar.o(LocaleController.getString("Cancel", R.string.Cancel));
     }
 }

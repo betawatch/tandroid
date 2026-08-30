@@ -1,26 +1,17 @@
 package t4;
 
-import f5.d0;
-import java.util.List;
-import q8.l0;
-import q8.x;
-import q8.z;
+import java.util.ArrayList;
+import k7.y7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c implements j3.g {
-    public static final /* synthetic */ int b = 0;
-    public final z a;
+public final class c implements j {
+    public static final int[] b = {8, 13, 11, 2, 0, 1, 7};
 
-    static {
-        x xVar = z.b;
-        new c(0L, l0.e);
-        int i10 = d0.a;
-        Integer.toString(0, 36);
-        Integer.toString(1, 36);
-    }
-
-    public c(long j10, List list) {
-        this.a = z.u(list);
+    public static void a(int i10, ArrayList arrayList) {
+        if (y7.b(i10, 0, 7, b) == -1 || arrayList.contains(Integer.valueOf(i10))) {
+            return;
+        }
+        arrayList.add(Integer.valueOf(i10));
     }
 }

@@ -1,16 +1,17 @@
 package s2;
 
+import j7.k5;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class u extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ m5.i f;
-    public static final /* synthetic */ m5.i h;
+    public static final /* synthetic */ a3.c f;
+    public static final /* synthetic */ a3.c h;
     public long[] e;
 
     static {
-        be.a aVar = new be.a(u.class, "SyncSampleBox.java");
+        de.a aVar = new de.a(u.class, "SyncSampleBox.java");
         aVar.e(aVar.d("getSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "[J"));
         f = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "java.lang.String"));
         h = aVar.e(aVar.d("setSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "[J", "sampleNumber", "void"));
@@ -19,7 +20,7 @@ public final class u extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = h7.o.a(r2.b.i(byteBuffer));
+        int a2 = k5.a(r2.b.i(byteBuffer));
         this.e = new long[a2];
         for (int i10 = 0; i10 < a2; i10++) {
             this.e[i10] = r2.b.i(byteBuffer);
@@ -41,9 +42,9 @@ public final class u extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = be.a.b(f, this, this);
+        com.google.firebase.messaging.r b10 = de.a.b(f, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
-        return a4.w.l(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
+        return android.support.v4.media.a.m(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
     }
 }

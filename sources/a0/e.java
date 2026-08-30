@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e implements Collection {
     public final /* synthetic */ f a;
@@ -70,17 +70,17 @@ public final class e implements Collection {
         f fVar = this.a;
         int i10 = fVar.c;
         int i11 = 0;
-        boolean z10 = false;
+        boolean z4 = false;
         while (i11 < i10) {
             if (collection.contains(fVar.h(i11))) {
                 fVar.f(i11);
                 i11--;
                 i10--;
-                z10 = true;
+                z4 = true;
             }
             i11++;
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection
@@ -88,17 +88,17 @@ public final class e implements Collection {
         f fVar = this.a;
         int i10 = fVar.c;
         int i11 = 0;
-        boolean z10 = false;
+        boolean z4 = false;
         while (i11 < i10) {
             if (!collection.contains(fVar.h(i11))) {
                 fVar.f(i11);
                 i11--;
                 i10--;
-                z10 = true;
+                z4 = true;
             }
             i11++;
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection

@@ -1,40 +1,31 @@
 package ph;
 
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class n extends h7.v {
-    public final /* synthetic */ p a;
+public final class n extends y5 {
+    public final /* synthetic */ p C;
 
-    public n(p pVar) {
-        this.a = pVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n(p pVar, Context context) {
+        super(context);
+        this.C = pVar;
     }
 
-    @Override // h7.v
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("BotBiometry onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        p pVar = this.a;
-        bh.v vVar = pVar.j;
-        if (vVar != null) {
-            pVar.j = null;
-            vVar.run(Boolean.FALSE, null);
+    @Override // ph.y5
+    public final void c() {
+        AndroidUtilities.cancelRunOnUIThread(this.h);
+        if (this.c <= 0) {
+            a(true);
+        } else {
+            CameraController.getInstance().stopVideoRecording(this.a.getCameraSessionRecording(), false, false);
         }
-    }
-
-    @Override // h7.v
-    public final void b() {
-        FileLog.d("BotBiometry onAuthenticationFailed");
-    }
-
-    @Override // h7.v
-    public final void c(androidx.biometric.u uVar) {
-        FileLog.d("BotBiometry onAuthenticationSucceeded");
-        p pVar = this.a;
-        bh.v vVar = pVar.j;
-        if (vVar != null) {
-            pVar.j = null;
-            vVar.run(Boolean.TRUE, uVar);
+        p pVar = this.C;
+        if (pVar.L1) {
+            pVar.z(true, false);
         }
     }
 }

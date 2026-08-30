@@ -1,26 +1,54 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ys extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ dt o;
+public final class ys implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ys(dt dtVar, ViewGroup viewGroup) {
-        super(viewGroup, -2, -2);
-        this.o = dtVar;
+    public ys(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        ht htVar = this.o.a;
-        htVar.k = null;
-        htVar.K = false;
-        if (htVar.R) {
-            htVar.n();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
+                return;
+            }
+            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (obj.equals("" + intValue)) {
+                return;
+            }
+            editTextBoldCursor.setText("" + intValue);
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        } catch (Exception e) {
+            FileLog.e(e);
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

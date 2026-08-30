@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -101,7 +101,7 @@ public class UserConfig extends BaseController {
     private void checkPremiumSelf(TLRPC.User user, final TLRPC.User user2) {
         if (user != null && user2 != null && user.premium != user2.premium) {
             final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.sl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.wl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -122,7 +122,7 @@ public class UserConfig extends BaseController {
             });
         } else if (user == null) {
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.sl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.wl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -212,7 +212,7 @@ public class UserConfig extends BaseController {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumStatusChangedGlobal, new Object[0]);
         getMediaDataController().loadPremiumPromo(false);
         getMediaDataController().loadReactions(false, null);
-        lh.s6 storiesController = getMessagesController().getStoriesController();
+        nh.t6 storiesController = getMessagesController().getStoriesController();
         storiesController.R = false;
         storiesController.S = null;
     }
@@ -236,11 +236,11 @@ public class UserConfig extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadGlobalTTl$4(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new vg(16, this, tLObject));
+        AndroidUtilities.runOnUIThread(new yg(16, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$saveConfig$0(boolean z10) {
+    public /* synthetic */ void lambda$saveConfig$0(boolean z4) {
         if (this.configLoaded) {
             synchronized (this.sync) {
                 try {
@@ -309,15 +309,15 @@ public class UserConfig extends BaseController {
                         }
                         if (this.currentUser == null) {
                             edit.remove("user");
-                        } else if (z10) {
+                        } else if (z4) {
                             SerializedData serializedData3 = new SerializedData();
                             this.currentUser.serializeToStream(serializedData3);
                             edit.putString("user", Base64.encodeToString(serializedData3.toByteArray(), 0));
                             serializedData3.cleanup();
                         }
                         edit.apply();
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                     }
                 } catch (Throwable th2) {
                     throw th2;
@@ -434,24 +434,24 @@ public class UserConfig extends BaseController {
 
     public long[] getDialogLoadOffsets(int i10) {
         SharedPreferences preferences = getPreferences();
-        StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetId");
+        StringBuilder sb = new StringBuilder("2dialogsLoadOffsetId");
+        sb.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        int i11 = preferences.getInt(sb.toString(), this.hasValidDialogLoadIds ? 0 : -1);
+        StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetDate");
         sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        int i11 = preferences.getInt(sb2.toString(), this.hasValidDialogLoadIds ? 0 : -1);
-        StringBuilder sb3 = new StringBuilder("2dialogsLoadOffsetDate");
+        int i12 = preferences.getInt(sb2.toString(), this.hasValidDialogLoadIds ? 0 : -1);
+        StringBuilder sb3 = new StringBuilder("2dialogsLoadOffsetUserId");
         sb3.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        int i12 = preferences.getInt(sb3.toString(), this.hasValidDialogLoadIds ? 0 : -1);
-        StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetUserId");
+        long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(preferences, sb3.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
+        StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetChatId");
         sb4.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(preferences, sb4.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
-        StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChatId");
+        long prefIntOrLong2 = AndroidUtilities.getPrefIntOrLong(preferences, sb4.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
+        StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChannelId");
         sb5.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        long prefIntOrLong2 = AndroidUtilities.getPrefIntOrLong(preferences, sb5.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
-        StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetChannelId");
-        sb6.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        long prefIntOrLong3 = AndroidUtilities.getPrefIntOrLong(preferences, sb6.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
-        StringBuilder sb7 = new StringBuilder("2dialogsLoadOffsetAccess");
-        sb7.append(i10 != 0 ? Integer.valueOf(i10) : "");
-        return new long[]{i11, i12, prefIntOrLong, prefIntOrLong2, prefIntOrLong3, preferences.getLong(sb7.toString(), this.hasValidDialogLoadIds ? 0L : -1L)};
+        long prefIntOrLong3 = AndroidUtilities.getPrefIntOrLong(preferences, sb5.toString(), this.hasValidDialogLoadIds ? 0L : -1L);
+        StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetAccess");
+        sb6.append(i10 != 0 ? Integer.valueOf(i10) : "");
+        return new long[]{i11, i12, prefIntOrLong, prefIntOrLong2, prefIntOrLong3, preferences.getLong(sb6.toString(), this.hasValidDialogLoadIds ? 0L : -1L)};
     }
 
     public Long getEmojiStatus() {
@@ -502,17 +502,17 @@ public class UserConfig extends BaseController {
 
     public int getTotalDialogsCount(int i10) {
         SharedPreferences preferences = getPreferences();
-        StringBuilder sb2 = new StringBuilder("2totalDialogsLoadCount");
-        sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        return preferences.getInt(sb2.toString(), 0);
+        StringBuilder sb = new StringBuilder("2totalDialogsLoadCount");
+        sb.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        return preferences.getInt(sb.toString(), 0);
     }
 
     public boolean isClientActivated() {
-        boolean z10;
+        boolean z4;
         synchronized (this.sync) {
-            z10 = this.currentUser != null;
+            z4 = this.currentUser != null;
         }
-        return z10;
+        return z4;
     }
 
     public boolean isConfigLoaded() {
@@ -546,7 +546,7 @@ public class UserConfig extends BaseController {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void loadConfig() {
-        boolean z10;
+        boolean z4;
         int i10;
         String string;
         String string2;
@@ -586,8 +586,8 @@ public class UserConfig extends BaseController {
                 this.notificationsSignUpSettingsLoaded = preferences.getBoolean("notificationsSignUpSettingsLoaded", false);
                 this.autoDownloadConfigLoadTime = preferences.getLong("autoDownloadConfigLoadTime", 0L);
                 if (!preferences.contains("2dialogsLoadOffsetId") && !preferences.getBoolean("hasValidDialogLoadIds", false)) {
-                    z10 = false;
-                    this.hasValidDialogLoadIds = z10;
+                    z4 = false;
+                    this.hasValidDialogLoadIds = z4;
                     this.sharingMyLocationUntil = preferences.getInt("sharingMyLocationUntil", 0);
                     this.lastMyLocationShareTime = preferences.getInt("lastMyLocationShareTime", 0);
                     this.filtersLoaded = preferences.getBoolean("filtersLoaded", false);
@@ -629,8 +629,8 @@ public class UserConfig extends BaseController {
                     }
                     this.configLoaded = true;
                 }
-                z10 = true;
-                this.hasValidDialogLoadIds = z10;
+                z4 = true;
+                this.hasValidDialogLoadIds = z4;
                 this.sharingMyLocationUntil = preferences.getInt("sharingMyLocationUntil", 0);
                 this.lastMyLocationShareTime = preferences.getInt("lastMyLocationShareTime", 0);
                 this.filtersLoaded = preferences.getBoolean("filtersLoaded", false);
@@ -675,7 +675,7 @@ public class UserConfig extends BaseController {
             return;
         }
         this.ttlIsLoading = true;
-        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new g0(this, 10));
+        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new h0(this, 10));
     }
 
     public void resetSavedPassword() {
@@ -690,8 +690,8 @@ public class UserConfig extends BaseController {
         }
     }
 
-    public void saveConfig(boolean z10) {
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new hh.f(16, this, z10));
+    public void saveConfig(boolean z4) {
+        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new jh.f(11, this, z4));
     }
 
     public void savePassword(byte[] bArr, byte[] bArr2) {
@@ -711,24 +711,24 @@ public class UserConfig extends BaseController {
 
     public void setDialogsLoadOffset(int i10, int i11, int i12, long j10, long j11, long j12, long j13) {
         SharedPreferences.Editor edit = getPreferences().edit();
-        StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetId");
+        StringBuilder sb = new StringBuilder("2dialogsLoadOffsetId");
+        sb.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        edit.putInt(sb.toString(), i11);
+        StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetDate");
         sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putInt(sb2.toString(), i11);
-        StringBuilder sb3 = new StringBuilder("2dialogsLoadOffsetDate");
+        edit.putInt(sb2.toString(), i12);
+        StringBuilder sb3 = new StringBuilder("2dialogsLoadOffsetUserId");
         sb3.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putInt(sb3.toString(), i12);
-        StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetUserId");
+        edit.putLong(sb3.toString(), j10);
+        StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetChatId");
         sb4.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putLong(sb4.toString(), j10);
-        StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChatId");
+        edit.putLong(sb4.toString(), j11);
+        StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChannelId");
         sb5.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putLong(sb5.toString(), j11);
-        StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetChannelId");
-        sb6.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putLong(sb6.toString(), j12);
-        StringBuilder sb7 = new StringBuilder("2dialogsLoadOffsetAccess");
-        sb7.append(i10 != 0 ? Integer.valueOf(i10) : "");
-        edit.putLong(sb7.toString(), j13);
+        edit.putLong(sb5.toString(), j12);
+        StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetAccess");
+        sb6.append(i10 != 0 ? Integer.valueOf(i10) : "");
+        edit.putLong(sb6.toString(), j13);
         edit.putBoolean("hasValidDialogLoadIds", true);
         edit.commit();
     }
@@ -737,22 +737,22 @@ public class UserConfig extends BaseController {
         this.globalTtl = i10;
     }
 
-    public void setPinnedDialogsLoaded(int i10, boolean z10) {
-        getPreferences().edit().putBoolean("2pinnedDialogsLoaded" + i10, z10).commit();
+    public void setPinnedDialogsLoaded(int i10, boolean z4) {
+        getPreferences().edit().putBoolean("2pinnedDialogsLoaded" + i10, z4).commit();
     }
 
-    public void setShowCallsTab(boolean z10) {
-        if (this.showCallsTab != z10) {
-            this.showCallsTab = z10;
+    public void setShowCallsTab(boolean z4) {
+        if (this.showCallsTab != z4) {
+            this.showCallsTab = z4;
             saveConfig(false);
         }
     }
 
     public void setTotalDialogsCount(int i10, int i11) {
         SharedPreferences.Editor edit = getPreferences().edit();
-        StringBuilder sb2 = new StringBuilder("2totalDialogsLoadCount");
-        sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putInt(sb2.toString(), i11).commit();
+        StringBuilder sb = new StringBuilder("2totalDialogsLoadCount");
+        sb.append(i10 == 0 ? "" : Integer.valueOf(i10));
+        edit.putInt(sb.toString(), i11).commit();
     }
 
     public void updateSaveGalleryExceptions(int i10, LongSparseArray<SaveToGallerySettingsHelper.DialogException> longSparseArray) {

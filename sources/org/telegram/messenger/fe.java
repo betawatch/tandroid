@@ -1,43 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fe implements RequestDelegate {
+public final /* synthetic */ class fe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ fe(BaseController baseController, long j10, int i10, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ fe(int i10, int i11, int i12, long j10, MessagesController messagesController, boolean z4) {
+        this.a = i12;
+        this.b = messagesController;
+        this.c = j10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z4;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
             case 0:
-                ((MessagesController) this.d).lambda$approveOrRejectSuggestedMessageImpl$506(this.b, this.c, tLObject, tL_error);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$242(this.c, this.d, this.e, this.f);
                 break;
             case 1:
-                ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new jh.x8((org.telegram.ui.m4) this.d, tLObject, this.c, this.b, 12));
+                int i11 = ChatActivityEnterView.j5;
+                ((ChatActivityEnterView) notificationCenterDelegate).T0(this.d, this.f, this.e, false, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ fe(org.telegram.ui.m4 m4Var, int i10, long j10) {
+    public /* synthetic */ fe(ChatActivityEnterView chatActivityEnterView, boolean z4, int i10, int i11, long j10) {
         this.a = 2;
-        this.d = m4Var;
-        this.c = i10;
-        this.b = j10;
+        this.b = chatActivityEnterView;
+        this.f = z4;
+        this.d = i10;
+        this.e = i11;
+        this.c = j10;
     }
 }

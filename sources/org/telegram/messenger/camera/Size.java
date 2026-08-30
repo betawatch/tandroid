@@ -1,8 +1,6 @@
 package org.telegram.messenger.camera;
 
-import a4.w;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class Size {
     public final int mHeight;
@@ -14,7 +12,7 @@ public final class Size {
     }
 
     private static NumberFormatException invalidSize(String str) {
-        throw new NumberFormatException(w.n("Invalid Size: \"", str, "\""));
+        throw new NumberFormatException(android.support.v4.media.a.o("Invalid Size: \"", str, "\""));
     }
 
     public static Size parseSize(String str) {

@@ -3,7 +3,7 @@ package androidx.datastore.preferences.protobuf;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class k extends s0 {
     public static final Logger h = Logger.getLogger(k.class.getName());
@@ -12,16 +12,16 @@ public final class k extends s0 {
     public final byte[] d;
     public final int e;
     public int f;
-    public final k1.m g;
+    public final k1.n g;
 
-    public k(k1.m mVar, int i10) {
+    public k(k1.n nVar, int i10) {
         if (i10 < 0) {
             throw new IllegalArgumentException("bufferSize must be >= 0");
         }
         int max = Math.max(i10, 20);
         this.d = new byte[max];
         this.e = max;
-        this.g = mVar;
+        this.g = nVar;
     }
 
     public static int A(long j10) {
@@ -143,10 +143,10 @@ public final class k extends s0 {
         }
     }
 
-    public final void F(int i10, boolean z10) {
+    public final void F(int i10, boolean z4) {
         C(11);
         o(i10, 0);
-        byte b10 = z10 ? (byte) 1 : (byte) 0;
+        byte b10 = z4 ? (byte) 1 : (byte) 0;
         int i11 = this.f;
         this.f = i11 + 1;
         this.d[i11] = b10;
@@ -216,53 +216,53 @@ public final class k extends s0 {
     public final void Q(String str) {
         try {
             int length = str.length() * 3;
-            int z10 = z(length);
-            int i10 = z10 + length;
+            int z4 = z(length);
+            int i10 = z4 + length;
             int i11 = this.e;
             if (i10 > i11) {
                 byte[] bArr = new byte[length];
-                int f9 = v1.a.f(str, bArr, 0, length);
-                T(f9);
-                E(bArr, 0, f9);
+                int f10 = v1.a.f(str, bArr, 0, length);
+                T(f10);
+                E(bArr, 0, f10);
                 return;
             }
             if (i10 > i11 - this.f) {
                 B();
             }
-            int z11 = z(str.length());
+            int z10 = z(str.length());
             int i12 = this.f;
             byte[] bArr2 = this.d;
             try {
                 try {
-                    if (z11 == z10) {
-                        int i13 = i12 + z11;
+                    if (z10 == z4) {
+                        int i13 = i12 + z10;
                         this.f = i13;
-                        int f10 = v1.a.f(str, bArr2, i13, i11 - i13);
+                        int f11 = v1.a.f(str, bArr2, i13, i11 - i13);
                         this.f = i12;
-                        p((f10 - i12) - z11);
-                        this.f = f10;
+                        p((f11 - i12) - z10);
+                        this.f = f11;
                     } else {
                         int b10 = v1.b(str);
                         p(b10);
                         this.f = v1.a.f(str, bArr2, this.f, b10);
                     }
-                } catch (u1 e10) {
+                } catch (u1 e) {
                     this.f = i12;
-                    throw e10;
+                    throw e;
                 }
-            } catch (ArrayIndexOutOfBoundsException e11) {
-                throw new j(e11);
+            } catch (ArrayIndexOutOfBoundsException e6) {
+                throw new j(e6);
             }
-        } catch (u1 e12) {
-            h.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
+        } catch (u1 e10) {
+            h.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
             byte[] bytes = str.getBytes(a0.a);
             try {
                 T(bytes.length);
                 l(0, bytes.length, bytes);
-            } catch (j e13) {
-                throw e13;
-            } catch (IndexOutOfBoundsException e14) {
-                throw new j(e14);
+            } catch (j e11) {
+                throw e11;
+            } catch (IndexOutOfBoundsException e12) {
+                throw new j(e12);
             }
         }
     }
@@ -347,9 +347,9 @@ public final class k extends s0 {
     }
 
     public final void p(int i10) {
-        boolean z10 = i;
+        boolean z4 = i;
         byte[] bArr = this.d;
-        if (z10) {
+        if (z4) {
             while ((i10 & (-128)) != 0) {
                 int i11 = this.f;
                 this.f = i11 + 1;
@@ -373,9 +373,9 @@ public final class k extends s0 {
     }
 
     public final void q(long j10) {
-        boolean z10 = i;
+        boolean z4 = i;
         byte[] bArr = this.d;
-        if (z10) {
+        if (z4) {
             while ((j10 & (-128)) != 0) {
                 int i10 = this.f;
                 this.f = i10 + 1;

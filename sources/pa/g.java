@@ -1,40 +1,306 @@
 package pa;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public abstract class g {
-    public static final int a;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicLongArray;
+import org.telegram.tgnet.TLObject;
+import q5.g0;
+import sa.c0;
+import sa.h1;
+import sa.x;
+import sa.x0;
+import sa.y0;
 
-    static {
-        int i10;
-        String property = System.getProperty("java.version");
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class g {
+    public static final c h = c.d;
+    public static final p i = t.a;
+    public static final q j = t.b;
+    public final ThreadLocal a = new ThreadLocal();
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
+    public final g0 c;
+    public final sa.j d;
+    public final List e;
+    public final boolean f;
+    public final c g;
+
+    public g(ra.f fVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
+        g0 g0Var = new g0(6, hashMap, arrayList4);
+        this.c = g0Var;
+        this.f = true;
+        this.g = cVar;
+        ArrayList arrayList5 = new ArrayList();
+        arrayList5.add(h1.A);
+        arrayList5.add(tVar == t.a ? sa.r.c : new sa.p(tVar, 1));
+        arrayList5.add(fVar);
+        arrayList5.addAll(arrayList3);
+        arrayList5.add(h1.p);
+        arrayList5.add(h1.g);
+        arrayList5.add(h1.d);
+        arrayList5.add(h1.e);
+        arrayList5.add(h1.f);
+        c0 c0Var = h1.k;
+        arrayList5.add(new y0(Long.TYPE, Long.class, c0Var));
+        arrayList5.add(new y0(Double.TYPE, Double.class, new d(0)));
+        arrayList5.add(new y0(Float.TYPE, Float.class, new d(1)));
+        arrayList5.add(tVar2 == t.b ? sa.q.b : new sa.p(new sa.q(tVar2), 0));
+        arrayList5.add(h1.h);
+        arrayList5.add(h1.i);
+        arrayList5.add(new x0(AtomicLong.class, new e(c0Var, 0).nullSafe(), 0));
+        int i10 = 0;
+        arrayList5.add(new x0(AtomicLongArray.class, new e(c0Var, 1).nullSafe(), i10));
+        arrayList5.add(h1.j);
+        arrayList5.add(h1.l);
+        arrayList5.add(h1.q);
+        arrayList5.add(h1.r);
+        arrayList5.add(new x0(BigDecimal.class, h1.m, i10));
+        arrayList5.add(new x0(BigInteger.class, h1.n, i10));
+        arrayList5.add(new x0(ra.h.class, h1.o, i10));
+        arrayList5.add(h1.s);
+        arrayList5.add(h1.t);
+        arrayList5.add(h1.v);
+        arrayList5.add(h1.w);
+        arrayList5.add(h1.y);
+        arrayList5.add(h1.u);
+        arrayList5.add(h1.b);
+        arrayList5.add(sa.h.c);
+        arrayList5.add(h1.x);
+        if (va.f.a) {
+            arrayList5.add(va.f.c);
+            arrayList5.add(va.f.b);
+            arrayList5.add(va.f.d);
+        }
+        arrayList5.add(sa.b.c);
+        arrayList5.add(h1.a);
+        arrayList5.add(new sa.d(0, g0Var));
+        arrayList5.add(new sa.d(1, g0Var));
+        sa.j jVar = new sa.j(g0Var);
+        this.d = jVar;
+        arrayList5.add(jVar);
+        arrayList5.add(h1.B);
+        arrayList5.add(new x(g0Var, fVar, jVar, arrayList4));
+        this.e = DesugarCollections.unmodifiableList(arrayList5);
+    }
+
+    public static void a(double d) {
+        if (Double.isNaN(d) || Double.isInfinite(d)) {
+            throw new IllegalArgumentException(d + " is not a valid double value as per JSON specification. To override this behavior, use GsonBuilder.serializeSpecialFloatingPointValues() method.");
+        }
+    }
+
+    public final u b(wa.a aVar) {
+        boolean z4;
+        Objects.requireNonNull(aVar, "type must not be null");
+        ConcurrentHashMap concurrentHashMap = this.b;
+        u uVar = (u) concurrentHashMap.get(aVar);
+        if (uVar != null) {
+            return uVar;
+        }
+        ThreadLocal threadLocal = this.a;
+        Map map = (Map) threadLocal.get();
+        if (map == null) {
+            map = new HashMap();
+            threadLocal.set(map);
+            z4 = true;
+        } else {
+            u uVar2 = (u) map.get(aVar);
+            if (uVar2 != null) {
+                return uVar2;
+            }
+            z4 = false;
+        }
         try {
-            String[] split = property.split("[._]", 3);
-            i10 = Integer.parseInt(split[0]);
-            if (i10 == 1 && split.length > 1) {
-                i10 = Integer.parseInt(split[1]);
-            }
-        } catch (NumberFormatException unused) {
-            i10 = -1;
-        }
-        if (i10 == -1) {
-            try {
-                StringBuilder sb2 = new StringBuilder();
-                for (int i11 = 0; i11 < property.length(); i11++) {
-                    char charAt = property.charAt(i11);
-                    if (!Character.isDigit(charAt)) {
-                        break;
-                    }
-                    sb2.append(charAt);
+            f fVar = new f();
+            map.put(aVar, fVar);
+            Iterator it = this.e.iterator();
+            u uVar3 = null;
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
                 }
-                i10 = Integer.parseInt(sb2.toString());
-            } catch (NumberFormatException unused2) {
-                i10 = -1;
+                uVar3 = ((v) it.next()).create(this, aVar);
+                if (uVar3 != null) {
+                    if (fVar.a != null) {
+                        throw new AssertionError("Delegate is already set");
+                    }
+                    fVar.a = uVar3;
+                    map.put(aVar, uVar3);
+                }
+            }
+            if (z4) {
+                threadLocal.remove();
+            }
+            if (uVar3 != null) {
+                if (z4) {
+                    concurrentHashMap.putAll(map);
+                }
+                return uVar3;
+            }
+            throw new IllegalArgumentException("GSON (2.11.0) cannot handle " + aVar);
+        } catch (Throwable th2) {
+            if (z4) {
+                threadLocal.remove();
+            }
+            throw th2;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r3 == r7) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0022, code lost:
+    
+        if (r3 == r7) goto L19;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0067  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final u c(v vVar, wa.a aVar) {
+        boolean z4;
+        Objects.requireNonNull(vVar, "skipPast must not be null");
+        Objects.requireNonNull(aVar, "type must not be null");
+        sa.j jVar = this.d;
+        jVar.getClass();
+        ConcurrentHashMap concurrentHashMap = jVar.b;
+        if (vVar != sa.j.c) {
+            Class cls = aVar.a;
+            v vVar2 = (v) concurrentHashMap.get(cls);
+            if (vVar2 == null) {
+                qa.a aVar2 = (qa.a) cls.getAnnotation(qa.a.class);
+                if (aVar2 != null) {
+                    Class value = aVar2.value();
+                    if (v.class.isAssignableFrom(value)) {
+                        v vVar3 = (v) jVar.a.I(new wa.a(value)).s2();
+                        v vVar4 = (v) concurrentHashMap.putIfAbsent(cls, vVar3);
+                        if (vVar4 != null) {
+                            vVar3 = vVar4;
+                        }
+                    }
+                }
+            }
+            z4 = false;
+            for (v vVar5 : this.e) {
+                if (z4) {
+                    u create = vVar5.create(this, aVar);
+                    if (create != null) {
+                        return create;
+                    }
+                } else if (vVar5 == vVar) {
+                    z4 = true;
+                }
+            }
+            if (z4) {
+                return b(aVar);
+            }
+            throw new IllegalArgumentException("GSON cannot serialize or deserialize " + aVar);
+        }
+        vVar = jVar;
+        z4 = false;
+        while (r0.hasNext()) {
+        }
+        if (z4) {
+        }
+    }
+
+    public final xa.b d(Writer writer) {
+        xa.b bVar = new xa.b(writer);
+        bVar.k(this.g);
+        bVar.r = this.f;
+        bVar.l(2);
+        bVar.v = false;
+        return bVar;
+    }
+
+    public final String e(TLObject tLObject) {
+        if (tLObject == null) {
+            StringWriter stringWriter = new StringWriter();
+            try {
+                g(d(stringWriter));
+                return stringWriter.toString();
+            } catch (IOException e) {
+                throw new j(e);
             }
         }
-        if (i10 == -1) {
-            i10 = 6;
+        Class cls = tLObject.getClass();
+        StringWriter stringWriter2 = new StringWriter();
+        try {
+            f(tLObject, cls, d(stringWriter2));
+            return stringWriter2.toString();
+        } catch (IOException e6) {
+            throw new j(e6);
         }
-        a = i10;
+    }
+
+    public final void f(Object obj, Class cls, xa.b bVar) {
+        u b10 = b(new wa.a(cls));
+        int i10 = bVar.n;
+        if (i10 == 2) {
+            bVar.n = 1;
+        }
+        boolean z4 = bVar.r;
+        boolean z10 = bVar.v;
+        bVar.r = this.f;
+        bVar.v = false;
+        try {
+            try {
+                b10.write(bVar, obj);
+            } catch (IOException e) {
+                throw new j(e);
+            } catch (AssertionError e6) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e6.getMessage(), e6);
+            }
+        } finally {
+            bVar.l(i10);
+            bVar.r = z4;
+            bVar.v = z10;
+        }
+    }
+
+    public final void g(xa.b bVar) {
+        k kVar = k.a;
+        int i10 = bVar.n;
+        boolean z4 = bVar.r;
+        boolean z10 = bVar.v;
+        bVar.r = this.f;
+        bVar.v = false;
+        if (i10 == 2) {
+            bVar.n = 1;
+        }
+        try {
+            try {
+                try {
+                    ra.d.l(kVar, bVar);
+                } catch (IOException e) {
+                    throw new j(e);
+                }
+            } catch (AssertionError e6) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e6.getMessage(), e6);
+            }
+        } finally {
+            bVar.l(i10);
+            bVar.r = z4;
+            bVar.v = z10;
+        }
+    }
+
+    public final String toString() {
+        return "{serializeNulls:false,factories:" + this.e + ",instanceCreators:" + this.c + "}";
     }
 }

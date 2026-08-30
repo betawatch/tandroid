@@ -1,55 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e81 implements org.telegram.ui.gp0 {
-    public final /* synthetic */ g81 a;
+public final class e81 extends f2.j0 {
+    public final /* synthetic */ org.telegram.ui.br r;
 
-    public e81(g81 g81Var) {
-        this.a = g81Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e81(org.telegram.ui.br brVar, Context context) {
+        super(context);
+        this.r = brVar;
     }
 
-    @Override // org.telegram.ui.gp0
-    public final void a(ArrayList arrayList) {
-        g81 g81Var = this.a;
-        try {
-            if (arrayList.isEmpty()) {
-                return;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.k81) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // f2.j0, f2.h1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, f2.g1 g1Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j10 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
             }
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
-            if (sendingMediaInfo.path != null) {
-                g81Var.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(g81Var.e));
-                g81Var.d.b(g81Var.e, loadBitmap, true);
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+            j10 -= AndroidUtilities.dp(60.0f);
         }
-    }
-
-    @Override // org.telegram.ui.gp0
-    public final void b() {
-        try {
-            Intent intent = new Intent("android.intent.action.PICK");
-            intent.setType("image/*");
-            this.a.b.startActivityForResult(intent, 11);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            g1Var.b(-j10, -k10, max, this.j);
         }
     }
 }

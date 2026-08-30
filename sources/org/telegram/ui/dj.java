@@ -1,30 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class dj implements MessagesStorage.BooleanCallback {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ej b;
+public final class dj extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ xn o;
 
-    public dj(ej ejVar, boolean z10) {
-        this.b = ejVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dj(xn xnVar, bj bjVar) {
+        super(bjVar, -2, -2);
+        this.o = xnVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public final void run(boolean z10) {
-        tn tnVar = this.b.b;
-        if (z10) {
-            TLRPC.User user = tnVar.f;
-            boolean z11 = this.a;
-            if (user != null || z11) {
-                tnVar.getMessagesStorage().getMessagesCount(tnVar.P5, new cj(1, this, z11));
-                return;
-            }
+    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        xn xnVar = this.o;
+        if (xnVar.N8 != this) {
+            return;
         }
-        tnVar.qa(tnVar.Z3, z10);
+        xnVar.N8 = null;
+        xnVar.Q8 = null;
+        xnVar.P8 = null;
+        xnVar.w0.R = true;
+        if (xnVar.O8) {
+            xnVar.g8(false, true, 0.0f);
+        } else {
+            xnVar.O8 = true;
+        }
+        jk jkVar = xnVar.V;
+        if (jkVar == null || jkVar.getEditField() == null) {
+            return;
+        }
+        xnVar.V.getEditField().setAllowDrawCursor(true);
     }
 }

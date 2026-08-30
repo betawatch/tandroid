@@ -1,21 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class kw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sy b;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ kw(sy syVar, int i10) {
-        this.a = i10;
-        this.b = syVar;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class kw extends f2.u0 {
+    public final /* synthetic */ kz a;
+
+    public kw(kz kzVar) {
+        this.a = kzVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // f2.u0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.i1 i1Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        kz kzVar = this.a;
+        f2.o0 adapter = kzVar.e0.getAdapter();
+        oy oyVar = kzVar.k0;
+        if (adapter == oyVar && R == oyVar.F) {
+            rect.set(0, 0, 0, 0);
+            return;
         }
-        this.b.d();
+        if (R == 0) {
+            oyVar.getClass();
+        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        py pyVar = kzVar.f0;
+        oyVar.getClass();
+        rect.right = pyVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

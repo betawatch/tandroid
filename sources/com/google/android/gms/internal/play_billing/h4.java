@@ -1,17 +1,45 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class h4 extends f4 {
-    public final /* synthetic */ i4 n;
+public final class h4 {
+    public Object a;
+    public j4 b;
+    public k4 c;
+    public boolean d;
 
-    public h4(i4 i4Var) {
-        this.n = i4Var;
+    public final void a(Object obj) {
+        this.d = true;
+        j4 j4Var = this.b;
+        if (j4Var != null) {
+            i4 i4Var = j4Var.b;
+            i4Var.getClass();
+            if (obj == null) {
+                obj = g4.h;
+            }
+            if (g4.f.d(i4Var, null, obj)) {
+                g4.c(i4Var);
+                this.a = null;
+                this.b = null;
+                this.c = null;
+            }
+        }
     }
 
-    @Override // com.google.android.gms.internal.play_billing.f4
-    public final String b() {
-        g4 g4Var = (g4) this.n.a.get();
-        return g4Var == null ? "Completer object has been garbage collected, future will fail soon" : a4.w.n("tag=[", String.valueOf(g4Var.a), "]");
+    public final void finalize() {
+        k4 k4Var;
+        j4 j4Var = this.b;
+        if (j4Var != null) {
+            i4 i4Var = j4Var.b;
+            if (!i4Var.isDone()) {
+                if (g4.f.d(i4Var, null, new g2(new c0.b("The completer object was garbage collected - this future would otherwise never complete. The tag was: ".concat(String.valueOf(this.a)), 4)))) {
+                    g4.c(i4Var);
+                }
+            }
+        }
+        if (this.d || (k4Var = this.c) == null) {
+            return;
+        }
+        k4Var.h(null);
     }
 }

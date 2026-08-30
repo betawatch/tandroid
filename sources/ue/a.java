@@ -1,61 +1,189 @@
 package ue;
 
-import android.graphics.Bitmap;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.RandomAccessFile;
-import we.l;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public String a;
-    public long b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public short g;
-    public String h;
-    public String i;
-    public short j;
-    public short k;
-    public String l;
-    public String m;
-    public String n;
-    public Bitmap o;
-    public Bitmap p;
-    public File q;
-
-    public static a a(File file) {
-        byte b10;
-        try {
-            byte[] bArr = new byte[12];
-            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-            randomAccessFile.readFully(bArr, 0, 8);
-            randomAccessFile.close();
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
-            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
-                return new ve.a(bufferedInputStream);
-            }
-            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
-                b bVar = new b(file);
-                if (bVar.s) {
-                    return null;
-                }
-                return bVar;
-            }
-            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
-                b bVar2 = new b(file);
-                if (bVar2.s) {
-                    return null;
-                }
-                return bVar2;
-            }
-            return new l(bufferedInputStream, file.length());
-        } catch (Exception unused) {
-            return null;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    public static int a(Locale locale) {
+        char c3;
+        char c10;
+        if (locale == null) {
+            return 0;
         }
+        String languageTag = locale.toLanguageTag();
+        languageTag.getClass();
+        switch (languageTag.hashCode()) {
+            case 3121:
+                if (languageTag.equals("ar")) {
+                    c3 = 0;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3201:
+                if (languageTag.equals("de")) {
+                    c3 = 1;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3241:
+                if (languageTag.equals("en")) {
+                    c3 = 2;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3246:
+                if (languageTag.equals("es")) {
+                    c3 = 3;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3371:
+                if (languageTag.equals("it")) {
+                    c3 = 4;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3428:
+                if (languageTag.equals("ko")) {
+                    c3 = 5;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3518:
+                if (languageTag.equals("nl")) {
+                    c3 = 6;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3651:
+                if (languageTag.equals("ru")) {
+                    c3 = 7;
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 3734:
+                if (languageTag.equals("uk")) {
+                    c3 = '\b';
+                    break;
+                }
+                c3 = 65535;
+                break;
+            case 106935481:
+                if (languageTag.equals("pt-BR")) {
+                    c3 = '\t';
+                    break;
+                }
+                c3 = 65535;
+                break;
+            default:
+                c3 = 65535;
+                break;
+        }
+        switch (c3) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case '\b':
+                break;
+            case '\t':
+                break;
+            default:
+                String language = locale.getLanguage();
+                language.getClass();
+                switch (language.hashCode()) {
+                    case 3121:
+                        if (language.equals("ar")) {
+                            c10 = 0;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3201:
+                        if (language.equals("de")) {
+                            c10 = 1;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3241:
+                        if (language.equals("en")) {
+                            c10 = 2;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3246:
+                        if (language.equals("es")) {
+                            c10 = 3;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3371:
+                        if (language.equals("it")) {
+                            c10 = 4;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3428:
+                        if (language.equals("ko")) {
+                            c10 = 5;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3518:
+                        if (language.equals("nl")) {
+                            c10 = 6;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3651:
+                        if (language.equals("ru")) {
+                            c10 = 7;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3734:
+                        if (language.equals("uk")) {
+                            c10 = '\b';
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    default:
+                        c10 = 65535;
+                        break;
+                }
+                switch (c10) {
+                }
+        }
+        return 0;
     }
 }

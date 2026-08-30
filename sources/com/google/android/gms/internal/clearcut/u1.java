@@ -1,55 +1,70 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.io.IOException;
+
 /* loaded from: classes.dex */
 public final class u1 extends z {
     private static volatile u0 zzbg;
-    private static final u1 zzbiv;
-    private int zzbb;
-    private String zzbis = "";
-    private long zzbit;
-    private long zzbiu;
-    private int zzya;
+    private static final u1 zzbir;
+    private c0 zzbiq = w0.c;
 
     static {
         u1 u1Var = new u1();
-        zzbiv = u1Var;
+        zzbir = u1Var;
         z.c(u1.class, u1Var);
     }
 
-    public static void f(u1 u1Var, long j10) {
-        u1Var.zzbb |= 4;
-        u1Var.zzbit = j10;
+    public static u1 f() {
+        return zzbir;
     }
 
-    public static void g(u1 u1Var, String str) {
-        u1Var.getClass();
-        str.getClass();
-        u1Var.zzbb |= 2;
-        u1Var.zzbis = str;
-    }
-
-    public static void h(u1 u1Var, long j10) {
-        u1Var.zzbb |= 8;
-        u1Var.zzbiu = j10;
-    }
-
-    public static t1 m() {
-        return (t1) ((x) zzbiv.a(5));
+    public static u1 g(byte[] bArr) {
+        z zVar = (z) zzbir.a(4);
+        try {
+            v0 v0Var = v0.c;
+            v0Var.getClass();
+            v0Var.a(zVar.getClass()).f(zVar, bArr, 0, bArr.length, new m());
+            v0Var.a(zVar.getClass()).b(zVar);
+            if (zVar.zzex != 0) {
+                throw new RuntimeException();
+            }
+            boolean z4 = true;
+            byte byteValue = ((Byte) zVar.a(1)).byteValue();
+            if (byteValue != 1) {
+                if (byteValue == 0) {
+                    z4 = false;
+                } else {
+                    z4 = v0Var.a(zVar.getClass()).g(zVar);
+                    zVar.a(2);
+                }
+            }
+            if (z4) {
+                return (u1) zVar;
+            }
+            throw new d0(new a7.b().getMessage());
+        } catch (IOException e) {
+            if (e.getCause() instanceof d0) {
+                throw ((d0) e.getCause());
+            }
+            throw new d0(e.getMessage());
+        } catch (IndexOutOfBoundsException unused) {
+            throw d0.a();
+        }
     }
 
     /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.clearcut.u0, java.lang.Object] */
     @Override // com.google.android.gms.internal.clearcut.z
     public final Object a(int i10) {
         u0 u0Var;
-        switch (w1.a[i10 - 1]) {
+        switch (v1.a[i10 - 1]) {
             case 1:
                 return new u1();
             case 2:
-                return new t1(zzbiv);
+                return new r1(zzbir);
             case 3:
-                return new y0(zzbiv, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0005\u0000\u0000\u0000\u0001\u0004\u0000\u0002\b\u0001\u0003\u0002\u0002\u0004\u0002\u0003", new Object[]{"zzbb", "zzya", "zzbis", "zzbit", "zzbiu"});
+                return new x0(zzbir, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0002\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzbiq", t1.class});
             case 4:
-                return zzbiv;
+                return zzbir;
             case 5:
                 u0 u0Var2 = zzbg;
                 if (u0Var2 != null) {
@@ -78,23 +93,7 @@ public final class u1 extends z {
         }
     }
 
-    public final int e() {
-        return this.zzya;
-    }
-
-    public final boolean i() {
-        return (this.zzbb & 1) == 1;
-    }
-
-    public final String j() {
-        return this.zzbis;
-    }
-
-    public final long k() {
-        return this.zzbit;
-    }
-
-    public final long l() {
-        return this.zzbiu;
+    public final c0 e() {
+        return this.zzbiq;
     }
 }

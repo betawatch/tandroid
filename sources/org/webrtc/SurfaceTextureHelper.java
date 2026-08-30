@@ -4,13 +4,13 @@ import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
 import android.os.Handler;
 import android.os.HandlerThread;
-import j7.l1;
 import java.util.concurrent.Callable;
+import kh.a2;
 import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -32,7 +32,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -43,7 +43,7 @@ public class SurfaceTextureHelper {
         void onRetainBuffer(VideoFrame.TextureBuffer textureBuffer);
     }
 
-    public static SurfaceTextureHelper create(final String str, final EglBase.Context context, final boolean z10, final YuvConverter yuvConverter, final FrameRefMonitor frameRefMonitor) {
+    public static SurfaceTextureHelper create(final String str, final EglBase.Context context, final boolean z4, final YuvConverter yuvConverter, final FrameRefMonitor frameRefMonitor) {
         HandlerThread handlerThread = new HandlerThread(str);
         handlerThread.start();
         final Handler handler = new Handler(handlerThread.getLooper());
@@ -51,9 +51,9 @@ public class SurfaceTextureHelper {
             @Override // java.util.concurrent.Callable
             public SurfaceTextureHelper call() {
                 try {
-                    return new SurfaceTextureHelper(EglBase.Context.this, handler, z10, yuvConverter, frameRefMonitor);
-                } catch (RuntimeException e10) {
-                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e10);
+                    return new SurfaceTextureHelper(EglBase.Context.this, handler, z4, yuvConverter, frameRefMonitor);
+                } catch (RuntimeException e) {
+                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e);
                     return null;
                 }
             }
@@ -207,13 +207,13 @@ public class SurfaceTextureHelper {
 
     public void setTextureSize(int i10, int i11) {
         if (i10 <= 0) {
-            throw new IllegalArgumentException(l1.k(i10, "Texture width must be positive, but was "));
+            throw new IllegalArgumentException(a2.j(i10, "Texture width must be positive, but was "));
         }
         if (i11 <= 0) {
-            throw new IllegalArgumentException(l1.k(i11, "Texture height must be positive, but was "));
+            throw new IllegalArgumentException(a2.j(i11, "Texture height must be positive, but was "));
         }
         this.surfaceTexture.setDefaultBufferSize(i10, i11);
-        this.handler.post(new j3.y(this, i10, i11, 11));
+        this.handler.post(new j3.v(this, i10, i11, 11));
     }
 
     public void startListening(VideoSink videoSink) {
@@ -235,7 +235,7 @@ public class SurfaceTextureHelper {
         return textureBuffer.toI420();
     }
 
-    private SurfaceTextureHelper(EglBase.Context context, Handler handler, boolean z10, YuvConverter yuvConverter, FrameRefMonitor frameRefMonitor) {
+    private SurfaceTextureHelper(EglBase.Context context, Handler handler, boolean z4, YuvConverter yuvConverter, FrameRefMonitor frameRefMonitor) {
         this.textureRefCountMonitor = new TextureBufferImpl.RefCountMonitor() { // from class: org.webrtc.SurfaceTextureHelper.2
             @Override // org.webrtc.TextureBufferImpl.RefCountMonitor
             public void onDestroy(TextureBufferImpl textureBufferImpl) {
@@ -276,7 +276,7 @@ public class SurfaceTextureHelper {
             throw new IllegalStateException("SurfaceTextureHelper must be created on the handler thread");
         }
         this.handler = handler;
-        this.timestampAligner = z10 ? new TimestampAligner() : null;
+        this.timestampAligner = z4 ? new TimestampAligner() : null;
         this.yuvConverter = yuvConverter;
         this.frameRefMonitor = frameRefMonitor;
         EglBase d = e.d(context, EglBase.CONFIG_PIXEL_BUFFER);
@@ -294,10 +294,10 @@ public class SurfaceTextureHelper {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);
                 }
             }, handler);
-        } catch (RuntimeException e10) {
+        } catch (RuntimeException e) {
             this.eglBase.release();
             handler.getLooper().quit();
-            throw e10;
+            throw e;
         }
     }
 
@@ -305,11 +305,11 @@ public class SurfaceTextureHelper {
         return create(str, context, false, new YuvConverter(), null);
     }
 
-    public static SurfaceTextureHelper create(String str, EglBase.Context context, boolean z10) {
-        return create(str, context, z10, new YuvConverter(), null);
+    public static SurfaceTextureHelper create(String str, EglBase.Context context, boolean z4) {
+        return create(str, context, z4, new YuvConverter(), null);
     }
 
-    public static SurfaceTextureHelper create(String str, EglBase.Context context, boolean z10, YuvConverter yuvConverter) {
-        return create(str, context, z10, yuvConverter, null);
+    public static SurfaceTextureHelper create(String str, EglBase.Context context, boolean z4, YuvConverter yuvConverter) {
+        return create(str, context, z4, yuvConverter, null);
     }
 }

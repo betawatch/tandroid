@@ -1,75 +1,63 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ng0 b;
+public final class jg0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ mg0 D;
 
-    public /* synthetic */ jg0(ng0 ng0Var, int i10) {
-        this.a = i10;
-        this.b = ng0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jg0(mg0 mg0Var, Context context) {
+        super(context);
+        this.D = mg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        zg.b[] bVarArr;
-        switch (this.a) {
-            case 0:
-                ng0.b0(this.b);
-                break;
-            case 1:
-                ng0 ng0Var = this.b;
-                ng0Var.getClass();
-                h9.m0(ng0Var);
-                break;
-            case 2:
-                ng0.c0(this.b);
-                break;
-            case 3:
-                ng0.a0(this.b);
-                break;
-            case 4:
-                AndroidUtilities.removeFromParent(this.b.M);
-                break;
-            case 5:
-                ng0 ng0Var2 = this.b;
-                ng0Var2.getClass();
-                new kj0(ng0Var2.getParentActivity(), ng0Var2).show();
-                break;
-            case 6:
-                ng0 ng0Var3 = this.b;
-                ng0Var3.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putBoolean("needFinishFragment", false);
-                ng0Var3.presentFragment(new h9(bundle));
-                break;
-            default:
-                ng0 ng0Var4 = this.b;
-                if (ng0Var4.getParentActivity() != null && (bVarArr = ng0Var4.G) != null) {
-                    float width = ((r1.getWidth() / 2.0f) + (ng0Var4.b.getWidth() - ((bVarArr[4].getX() + ng0Var4.B.getX()) + r1.getWidth()))) / AndroidUtilities.density;
-                    nh.t3 t3Var = new nh.t3(ng0Var4.getParentActivity(), 3);
-                    ng0Var4.M = t3Var;
-                    t3Var.setTranslationY(AndroidUtilities.dp(4.0f) + (-ng0Var4.H));
-                    ng0Var4.M.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                    ng0Var4.M.q(false);
-                    ng0Var4.M.i();
-                    ng0Var4.M.t(LocaleController.getString(R.string.SwitchAccountHint));
-                    ng0Var4.M.m(1.0f, (-width) + 7.33f);
-                    ng0Var4.b.addView(ng0Var4.M, i7.f6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
-                    nh.t3 t3Var2 = ng0Var4.M;
-                    t3Var2.h0 = new jg0(ng0Var4, 4);
-                    t3Var2.d = 8000L;
-                    t3Var2.v();
-                    org.telegram.ui.Components.h40.r.b();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z4, int i10, Rect rect) {
+        super.onFocusChanged(z4, i10, rect);
+        mg0 mg0Var = this.D;
+        ng0 ng0Var = mg0Var.S;
+        org.telegram.ui.Components.ad0 ad0Var = mg0Var.f;
+        float f10 = (z4 || mg0Var.a.isFocused()) ? 1.0f : 0.0f;
+        ad0Var.b(f10, f10, true);
+        if (!z4) {
+            if (mg0Var.x == 2) {
+                mg0Var.setCountryButtonText(null);
+            }
+        } else {
+            ng0Var.c.setEditText(this);
+            ng0Var.c.setDispatchBackWhenEmpty(true);
+            if (mg0Var.x == 2) {
+                mg0Var.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
+            }
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        mg0 mg0Var = this.D;
+        qj0 qj0Var = mg0Var.a;
+        if (i10 == 67 && mg0Var.b.length() == 0) {
+            qj0Var.requestFocus();
+            qj0Var.setSelection(qj0Var.length());
+            qj0Var.dispatchKeyEvent(keyEvent);
+        }
+        return super.onKeyDown(i10, keyEvent);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && !ng0.T0(this.D.S, this)) {
+            clearFocus();
+            requestFocus();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

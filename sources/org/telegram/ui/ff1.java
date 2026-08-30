@@ -1,97 +1,94 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.HashSet;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ff1 extends org.telegram.ui.ActionBar.o2 {
-    public df1 a;
-    public org.telegram.ui.Components.jl0 b;
-    public long c;
-    public ArrayList d;
-    public HashSet e;
+public final class ff1 extends org.telegram.ui.Components.c81 {
+    public final ArrayList a;
+    public final /* synthetic */ gf1 b;
 
-    public static void U(ff1 ff1Var, int i10) {
-        ff1Var.getNotificationsController().getNotificationsSettingsFacade().clearPreference(ff1Var.c, i10);
-        TL_account.updateNotifySettings updatenotifysettings = new TL_account.updateNotifySettings();
-        updatenotifysettings.settings = new TLRPC.TL_inputPeerNotifySettings();
-        TLRPC.TL_inputNotifyForumTopic tL_inputNotifyForumTopic = new TLRPC.TL_inputNotifyForumTopic();
-        tL_inputNotifyForumTopic.peer = ff1Var.getMessagesController().getInputPeer(ff1Var.c);
-        tL_inputNotifyForumTopic.top_msg_id = i10;
-        updatenotifysettings.peer = tL_inputNotifyForumTopic;
-        ff1Var.getConnectionsManager().sendRequest(updatenotifysettings, new lh.o5(5));
+    public ff1(gf1 gf1Var) {
+        this.b = gf1Var;
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        arrayList.add(new cf1(0));
+        cf1 cf1Var = new cf1(2);
+        cf1Var.b = 0;
+        arrayList.add(cf1Var);
+        cf1 cf1Var2 = new cf1(2);
+        cf1Var2.b = 1;
+        arrayList.add(cf1Var2);
+        cf1 cf1Var3 = new cf1(2);
+        cf1Var3.b = 2;
+        arrayList.add(cf1Var3);
+        cf1 cf1Var4 = new cf1(2);
+        cf1Var4.b = 3;
+        arrayList.add(cf1Var4);
+        cf1 cf1Var5 = new cf1(2);
+        cf1Var5.b = 4;
+        arrayList.add(cf1Var5);
     }
 
-    public final void V() {
-        ArrayList arrayList;
-        ArrayList arrayList2 = this.d;
-        if (this.isPaused || this.a == null) {
-            arrayList = null;
-        } else {
-            arrayList = new ArrayList();
-            arrayList.addAll(arrayList2);
-        }
-        arrayList2.clear();
-        arrayList2.add(new ef1(1, null));
-        ArrayList<TLRPC.TL_forumTopic> topics = getMessagesController().getTopicsController().getTopics(-this.c);
-        int i10 = 0;
-        if (topics != null) {
-            int i11 = 0;
-            while (i10 < topics.size()) {
-                if (this.e.contains(Integer.valueOf(topics.get(i10).id))) {
-                    arrayList2.add(new ef1(2, topics.get(i10)));
-                    i11 = 1;
-                }
-                i10++;
-            }
-            i10 = i11;
-        }
-        if (i10 != 0) {
-            arrayList2.add(new ef1(3, null));
-            arrayList2.add(new ef1(4, null));
-        }
-        arrayList2.add(new ef1(3, null));
-        df1 df1Var = this.a;
-        if (df1Var != null) {
-            df1Var.E(arrayList, arrayList2);
-        }
+    @Override // org.telegram.ui.Components.c81
+    public final void b(View view, int i10, int i11) {
+        gf1 gf1Var = this.b;
+        gf1Var.K(view, i10, gf1Var.V, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final View createView(Context context) {
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        th.y(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new al0(this, 22));
-        this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.jl0(context, null);
-        f2.l lVar = new f2.l();
-        lVar.C = false;
-        lVar.m = false;
-        this.b.setItemAnimator(lVar);
-        this.b.setLayoutManager(new f2.j0());
-        org.telegram.ui.Components.jl0 jl0Var = this.b;
-        df1 df1Var = new df1(this);
-        this.a = df1Var;
-        jl0Var.setAdapter(df1Var);
-        this.b.setOnItemClickListener(new cf1(this));
-        frameLayout.addView(this.b);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        return this.fragmentView;
+    @Override // org.telegram.ui.Components.c81
+    public final View d(int i10) {
+        int i11;
+        gf1 gf1Var = this.b;
+        kf1 kf1Var = gf1Var.q0;
+        if (i10 == 1) {
+            return gf1Var.Q;
+        }
+        if (i10 == 2) {
+            i11 = ((org.telegram.ui.ActionBar.p2) kf1Var).currentAccount;
+            org.telegram.ui.Components.dn0 dn0Var = new org.telegram.ui.Components.dn0(i11, kf1Var);
+            dn0Var.b.j(new ef1(0));
+            dn0Var.setUiCallback(gf1Var);
+            return dn0Var;
+        }
+        t10 t10Var = new t10(kf1Var);
+        t10Var.setChatPreviewDelegate(gf1Var.o0);
+        t10Var.setUiCallback(gf1Var);
+        t10Var.b.j(new ef1(1));
+        return t10Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final boolean onFragmentCreate() {
-        this.c = this.arguments.getLong("dialog_id");
-        V();
-        return super.onFragmentCreate();
+    @Override // org.telegram.ui.Components.c81
+    public final int e() {
+        return this.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final CharSequence g(int i10) {
+        ArrayList arrayList = this.a;
+        if (((cf1) arrayList.get(i10)).a == 0) {
+            return LocaleController.getString(R.string.SearchMessages);
+        }
+        if (((cf1) arrayList.get(i10)).a == 1) {
+            return LocaleController.getString(R.string.DownloadsTabs);
+        }
+        tf.e0 e0Var = tf.g0.Z2[((cf1) arrayList.get(i10)).b];
+        String str = e0Var.c;
+        return str != null ? str : LocaleController.getString(e0Var.b);
+    }
+
+    @Override // org.telegram.ui.Components.c81
+    public final int h(int i10) {
+        ArrayList arrayList = this.a;
+        if (((cf1) arrayList.get(i10)).a == 0) {
+            return 1;
+        }
+        if (((cf1) arrayList.get(i10)).a == 1) {
+            return 2;
+        }
+        return ((cf1) arrayList.get(i10)).a + i10;
     }
 }

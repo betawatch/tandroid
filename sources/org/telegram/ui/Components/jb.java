@@ -1,75 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.animation.ObjectAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class jb extends rb {
-    private ib button;
-    private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.c6 resourcesProvider;
-    public fc timerView;
-    private boolean wrapWidth;
+public final class jb implements mb {
+    public long a;
 
-    public jb(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.resourcesProvider = c6Var;
+    public boolean a(ye.m mVar) {
+        return mVar.b == this.a && ye.a.c(mVar);
     }
 
-    public ib getButton() {
-        return this.button;
+    @Override // org.telegram.ui.Components.mb
+    public void c(nb nbVar, wa waVar, ua uaVar, xa xaVar) {
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(nbVar, nb.IN_OUT_OFFSET_Y2, nbVar.getHeight());
+        ofFloat.setDuration(175L);
+        ofFloat.setInterpolator(gt.c);
+        ofFloat.addListener(new dg.y2(waVar, uaVar, 14));
+        ofFloat.addUpdateListener(new ag.a(11, xaVar, nbVar));
+        ofFloat.start();
     }
 
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        ib ibVar = this.button;
-        if (ibVar != null && view != ibVar) {
-            i11 = org.telegram.ui.b.C(12.0f, ibVar.getMeasuredWidth(), i11);
-        }
-        super.measureChildWithMargins(view, i10, i11, i12, i13);
-        if (view != this.button) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        this.childrenMeasuredWidth = 0;
-        if (this.wrapWidth) {
-            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
-        }
-        super.onMeasure(i10, i11);
-        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
-            return;
-        }
-        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
-    }
-
-    public void setButton(ib ibVar) {
-        ib ibVar2 = this.button;
-        if (ibVar2 != null) {
-            removeCallback(ibVar2);
-            removeView(this.button);
-        }
-        this.button = ibVar;
-        if (ibVar != null) {
-            addCallback(ibVar);
-            addView(ibVar, 0, i7.f6.h(-2.0f, -2.0f, 8388629));
-        }
-    }
-
-    public void setTimer() {
-        fc fcVar = new fc(getContext(), this.resourcesProvider);
-        this.timerView = fcVar;
-        fcVar.b = 5000L;
-        addView(fcVar, i7.f6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
-    }
-
-    public void setWrapWidth() {
-        this.wrapWidth = true;
+    @Override // org.telegram.ui.Components.mb
+    public void v(nb nbVar, wa waVar, fg fgVar, gl glVar) {
+        nbVar.setInOutOffset(nbVar.getMeasuredHeight());
+        glVar.accept(Float.valueOf(nbVar.getTranslationY()));
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(nbVar, nb.IN_OUT_OFFSET_Y2, 0.0f);
+        ofFloat.setDuration(this.a);
+        ofFloat.setInterpolator(gt.d);
+        ofFloat.addListener(new dg.y2(waVar, fgVar, 13));
+        ofFloat.addUpdateListener(new ag.a(12, glVar, nbVar));
+        ofFloat.start();
     }
 }

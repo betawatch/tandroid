@@ -1,29 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class h00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i00 b;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ h00(i00 i00Var, int i10) {
-        this.a = i10;
-        this.b = i00Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class h00 extends FrameLayout {
+    public ImageView a;
+    public TextView b;
+    public int c;
+    public boolean d;
+    public Boolean e;
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextView textView = this.b;
+        super.onDraw(canvas);
+        if (this.d) {
+            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.d();
-                break;
-            case 1:
-                this.b.a();
-                break;
-            default:
-                i00 i00Var = this.b;
-                i00Var.b(i00Var.y);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

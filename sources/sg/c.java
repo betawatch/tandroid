@@ -1,54 +1,28 @@
 package sg;
 
-import android.graphics.RectF;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c {
-    public final int a;
-    public final long b;
-    public long e;
-    public long f;
-    public long g;
-    public long h;
-    public boolean i;
-    public final RectF c = new RectF();
-    public float j = 0.0f;
-    public float k = 0.0f;
-    public float l = Float.MAX_VALUE;
-    public float m = 0.0f;
-    public final long d = Utilities.random.nextLong();
+public final class c implements a {
+    public final Paint a = new Paint(1);
 
-    public c(int i10, long j10) {
-        this.a = i10;
-        this.b = j10;
+    @Override // sg.a
+    public final void X(Canvas canvas, float f10, float f11, float f12, float f13) {
+        canvas.drawRect(f10, f11, f12, f13, this.a);
     }
 
-    public final TLRPC.TL_inputMessageReadMetric a() {
-        TLRPC.TL_inputMessageReadMetric tL_inputMessageReadMetric = new TLRPC.TL_inputMessageReadMetric();
-        tL_inputMessageReadMetric.msg_id = this.a;
-        tL_inputMessageReadMetric.view_id = this.d;
-        tL_inputMessageReadMetric.time_in_view_ms = (int) this.g;
-        tL_inputMessageReadMetric.active_time_in_view_ms = (int) this.h;
-        float f9 = this.k;
-        tL_inputMessageReadMetric.height_to_viewport_ratio_permille = f9 == 0.0f ? MediaDataController.MAX_STYLE_RUNS_COUNT : Math.round((this.j / f9) * 1000.0f);
-        tL_inputMessageReadMetric.seen_range_ratio_permille = b();
-        return tL_inputMessageReadMetric;
+    public final void a(int i10) {
+        this.a.setColor(i10);
     }
 
-    public final int b() {
-        float f9 = this.j;
-        if (f9 == 0.0f) {
-            return 0;
-        }
-        float f10 = this.l;
-        float f11 = this.m;
-        if (f10 > f11) {
-            return 0;
-        }
-        return Math.round(((f11 - f10) / f9) * 1000.0f);
+    @Override // sg.a
+    public final pg.b k() {
+        return new pg.d(this);
+    }
+
+    @Override // sg.a
+    public final /* synthetic */ void f() {
     }
 }

@@ -12,10 +12,10 @@ import android.os.Binder;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class p {
-    public static void a(Context context, boolean z10, TaskCompletionSource taskCompletionSource) {
+    public static void a(Context context, boolean z4, TaskCompletionSource taskCompletionSource) {
         try {
             if (Binder.getCallingUid() != context.getApplicationInfo().uid) {
                 Log.e("FirebaseMessaging", "error configuring notification delegate for package " + context.getPackageName());
@@ -30,7 +30,7 @@ public abstract class p {
             edit.putBoolean("proxy_notification_initialized", true);
             edit.apply();
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(NotificationManager.class);
-            if (z10) {
+            if (z4) {
                 notificationManager.setNotificationDelegate("com.google.android.gms");
             } else if ("com.google.android.gms".equals(notificationManager.getNotificationDelegate())) {
                 notificationManager.setNotificationDelegate(null);
@@ -54,8 +54,8 @@ public abstract class p {
         return Insets.of(i10, i11, i12, i13);
     }
 
-    public static void e(Notification.Builder builder, boolean z10) {
-        builder.setAllowSystemGeneratedContextualActions(z10);
+    public static void e(Notification.Builder builder, boolean z4) {
+        builder.setAllowSystemGeneratedContextualActions(z4);
     }
 
     public static void f(Notification.Builder builder, Notification.BubbleMetadata bubbleMetadata) {

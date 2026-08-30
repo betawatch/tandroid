@@ -1,17 +1,58 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.util.ArrayDeque;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class g50 extends File {
-    @Override // java.io.File
-    public final boolean delete() {
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.e("delete camera file");
+public final class g50 extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ g50(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        BasePendingResult basePendingResult;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new vp(this, 24));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.c10(this, 23));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.el0(this, 5));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.o0(this, 16));
+                break;
+            default:
+                s5.c cVar = (s5.c) this.b;
+                ArrayDeque arrayDeque = cVar.h;
+                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
+                    s5.h hVar = cVar.c;
+                    int[] e = u5.a.e(arrayDeque);
+                    hVar.getClass();
+                    b6.m.e("Must be called from the main thread.");
+                    if (hVar.w()) {
+                        s5.j jVar = new s5.j(hVar, e);
+                        s5.h.x(jVar);
+                        basePendingResult = jVar;
+                    } else {
+                        basePendingResult = s5.h.t();
+                    }
+                    cVar.k = basePendingResult;
+                    basePendingResult.i(new s5.q(cVar, 1));
+                    arrayDeque.clear();
+                    break;
+                }
+                break;
         }
-        return super.delete();
     }
 }

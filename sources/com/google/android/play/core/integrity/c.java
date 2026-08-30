@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder {
     private long a;
@@ -18,14 +18,14 @@ final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Buil
         if (this.b == 3) {
             return new e(this.a, 0, null);
         }
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         if ((this.b & 1) == 0) {
-            sb2.append(" cloudProjectNumber");
+            sb.append(" cloudProjectNumber");
         }
         if ((this.b & 2) == 0) {
-            sb2.append(" webViewRequestMode");
+            sb.append(" webViewRequestMode");
         }
-        throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
+        throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder

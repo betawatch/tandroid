@@ -1,29 +1,32 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class nz0 extends URLSpan {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ vz0 b;
+public final class nz0 implements gq {
+    public final /* synthetic */ oy a;
+    public final /* synthetic */ oz0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nz0(vz0 vz0Var, String str, String str2) {
-        super(str);
-        this.b = vz0Var;
-        this.a = str2;
+    public nz0(oz0 oz0Var, oy oyVar) {
+        this.b = oz0Var;
+        this.a = oyVar;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        ye.d.s(this.b.e.getParentActivity(), this.a);
+    @Override // org.telegram.ui.gq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        oz0 oz0Var = this.b;
+        oz0Var.b.K1 = true;
+        this.a.removeSelfFromStack();
+        NotificationCenter notificationCenter = oz0Var.b.getNotificationCenter();
+        ProfileActivity profileActivity = oz0Var.b;
+        int i11 = NotificationCenter.closeChats;
+        notificationCenter.removeObserver(profileActivity, i11);
+        oz0Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(true);
+    @Override // org.telegram.ui.gq
+    public final void a(TLRPC.User user) {
     }
 }

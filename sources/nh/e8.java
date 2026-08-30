@@ -1,71 +1,61 @@
 package nh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jr;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class e8 extends FrameLayout {
-    public final Paint a;
-    public final org.telegram.ui.Components.d6 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
-    public final /* synthetic */ h8 d;
+public final class e8 extends TLObject {
+    public final TL_stories.StoryItem a;
+    public int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e8(h8 h8Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.d = h8Var;
-        this.c = c6Var;
-        this.a = new Paint(1);
-        this.b = new org.telegram.ui.Components.d6(this, 0L, 350L, jr.h);
+    public e8(TL_stories.StoryItem storyItem) {
+        this.b = 0;
+        this.a = storyItem;
+        boolean z4 = storyItem.translated;
+        this.b = z4 ? 1 : 0;
+        int i10 = (z4 ? 1 : 0) + (storyItem.detectedLng != null ? 2 : 0);
+        this.b = i10;
+        int i11 = i10 + (storyItem.translatedText != null ? 4 : 0);
+        this.b = i11;
+        this.b = i11 + (storyItem.translatedLng != null ? 8 : 0);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.h5, this.c);
-        Paint paint = this.a;
-        paint.setColor(v02);
-        h8 h8Var = this.d;
-        float max = Math.max(0.0f, h8Var.s());
-        boolean z10 = max < ((float) AndroidUtilities.statusBarHeight);
-        org.telegram.ui.Components.d6 d6Var = this.b;
-        float lerp = AndroidUtilities.lerp(max, 0.0f, d6Var.e(z10));
-        RectF rectF = AndroidUtilities.rectTmp;
-        i10 = ((org.telegram.ui.ActionBar.f3) h8Var).backgroundPaddingLeft;
-        int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.f3) h8Var).backgroundPaddingLeft;
-        rectF.set(i10, lerp, width - i11, AndroidUtilities.dp(14.0f) + getHeight());
-        float dp = (1.0f - d6Var.c) * AndroidUtilities.dp(14.0f);
-        canvas.drawRoundRect(rectF, dp, dp, paint);
-        h8Var.n.setTranslationY(Math.max(AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight, AndroidUtilities.dp(14.0f) + lerp));
-        canvas.save();
-        i12 = ((org.telegram.ui.ActionBar.f3) h8Var).backgroundPaddingLeft;
-        int dp2 = AndroidUtilities.dp(14.0f) + AndroidUtilities.statusBarHeight;
-        int width2 = getWidth();
-        i13 = ((org.telegram.ui.ActionBar.f3) h8Var).backgroundPaddingLeft;
-        canvas.clipRect(i12, dp2, width2 - i13, getHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float y8 = motionEvent.getY();
-        h8 h8Var = this.d;
-        if (y8 >= h8Var.s()) {
-            return super.dispatchTouchEvent(motionEvent);
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        int readInt32 = inputSerializedData.readInt32(true);
+        this.b = readInt32;
+        boolean z10 = (readInt32 & 1) != 0;
+        TL_stories.StoryItem storyItem = this.a;
+        storyItem.translated = z10;
+        if ((readInt32 & 2) != 0) {
+            storyItem.detectedLng = inputSerializedData.readString(z4);
         }
-        h8Var.dismiss();
-        return true;
+        if ((this.b & 4) != 0) {
+            storyItem.translatedText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+        }
+        if ((this.b & 8) != 0) {
+            storyItem.translatedLng = inputSerializedData.readString(z4);
+        }
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(1);
+        outputSerializedData.writeInt32(this.b);
+        int i10 = this.b & 2;
+        TL_stories.StoryItem storyItem = this.a;
+        if (i10 != 0) {
+            outputSerializedData.writeString(storyItem.detectedLng);
+        }
+        if ((this.b & 4) != 0) {
+            storyItem.translatedText.serializeToStream(outputSerializedData);
+        }
+        if ((this.b & 8) != 0) {
+            outputSerializedData.writeString(storyItem.translatedLng);
+        }
     }
 }

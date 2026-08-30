@@ -1,34 +1,95 @@
 package ph;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.c6;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class i3 extends org.telegram.ui.web.z0 {
-    public final /* synthetic */ n3 L0;
+public class i3 {
+    public final View a;
+    public View b;
+    public final Utilities.Callback c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final Rect h = new Rect();
+    public final g3 i;
+    public final cf.d j;
+    public int k;
+    public int l;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i3(n3 n3Var, Context context, c6 c6Var, int i10) {
-        super(i10, context, c6Var, true);
-        this.L0 = n3Var;
+    public i3(View view, boolean z4, Utilities.Callback callback) {
+        g3 g3Var = new g3(this, 0);
+        this.i = g3Var;
+        cf.d dVar = new cf.d(this, 1);
+        this.j = dVar;
+        this.a = view;
+        this.c = callback;
+        this.b = view;
+        if (view.isAttachedToWindow()) {
+            view.getViewTreeObserver().addOnGlobalLayoutListener(dVar);
+            view.addOnLayoutChangeListener(g3Var);
+        }
+        view.addOnAttachStateChangeListener(new h3(this, z4, view));
     }
 
-    @Override // org.telegram.ui.web.z0
-    public final void G(org.telegram.ui.web.w0 w0Var) {
-        this.L0.F.setWebView(w0Var);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            n3 n3Var = this.L0;
-            if (!n3Var.L) {
-                n3Var.L = true;
-                n3Var.n.L();
+    public final void a() {
+        if (this.e) {
+            if (this.l < AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight) {
+                return;
+            } else {
+                this.e = false;
             }
         }
-        return super.dispatchTouchEvent(motionEvent);
+        Utilities.Callback callback = this.c;
+        if (callback != null) {
+            callback.run(Integer.valueOf(this.l));
+        }
+    }
+
+    public void b(boolean z4) {
+        this.d = z4;
+        d();
+    }
+
+    public final boolean c() {
+        return this.l > AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight || this.e;
+    }
+
+    public final void d() {
+        if (this.d) {
+            return;
+        }
+        boolean z4 = this.f;
+        View view = this.a;
+        if (z4) {
+            View view2 = this.b;
+            if (view2 != null) {
+                view = view2;
+            }
+            r0.m1 f10 = r0.j0.f(view);
+            this.l = f10 != null ? f10.a.f(8).d : 0;
+        } else {
+            Rect rect = this.h;
+            view.getWindowVisibleDisplayFrame(rect);
+            View view3 = this.b;
+            if (view3 != null) {
+                view = view3;
+            }
+            this.l = view.getHeight() - rect.bottom;
+        }
+        if (this.g) {
+            this.l = Math.max(0, this.l - AndroidUtilities.navigationBarHeight);
+        }
+        int i10 = this.k;
+        int i11 = this.l;
+        boolean z10 = i10 != i11;
+        this.k = i11;
+        if (z10) {
+            a();
+        }
     }
 }

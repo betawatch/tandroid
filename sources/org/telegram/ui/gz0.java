@@ -1,54 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class gz0 implements nh.xa {
-    public final /* synthetic */ ProfileActivity a;
+public final class gz0 extends org.telegram.ui.Components.lq0 {
+    public final /* synthetic */ ProfileActivity Y0;
 
-    public gz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gz0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.Y0 = profileActivity;
     }
 
-    @Override // nh.xa
-    public final nh.bb a(long j10) {
-        ProfileActivity profileActivity = this.a;
-        if (j10 != profileActivity.a()) {
-            return null;
+    @Override // org.telegram.ui.Components.lq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
+        if (z4) {
+            AndroidUtilities.runOnUIThread(new zq0(this, hVar, i10, 26), 250L);
         }
-        profileActivity.a0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.g2));
-        ly0 ly0Var = profileActivity.a0;
-        boolean isForum = ChatObject.isForum(profileActivity.A2);
-        if (ly0Var == null || ly0Var.getRootView() == null) {
-            return null;
-        }
-        float scaleX = ((View) ly0Var.getParent()).getScaleX();
-        float imageWidth = ly0Var.getImageReceiver().getImageWidth() * scaleX;
-        float f9 = isForum ? 0.32f * imageWidth : imageWidth;
-        nh.za zaVar = new nh.za(ly0Var, 0);
-        float[] fArr = new float[2];
-        ly0Var.getRootView().getLocationOnScreen(new int[2]);
-        AndroidUtilities.getViewPositionInParent(ly0Var, (ViewGroup) ly0Var.getRootView(), fArr);
-        float imageX = (ly0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
-        float imageY = (ly0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        zaVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        zaVar.e = ly0Var.getImageReceiver();
-        zaVar.b = f9;
-        return zaVar;
-    }
-
-    @Override // nh.xa
-    public final void c(long j10, eg.z1 z1Var) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.a0.setHasStories(profileActivity.j4());
-        if (j10 == profileActivity.a() && profileActivity.k2 && profileActivity.g2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new fb0(profileActivity, 14));
-        }
-        AndroidUtilities.runOnUIThread(z1Var, 30L);
     }
 }

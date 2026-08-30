@@ -13,12 +13,12 @@ public class n implements f {
     }
 
     @Override // j$.time.format.f
-    public boolean j(r rVar, StringBuilder sb2) {
+    public boolean j(r rVar, StringBuilder sb) {
         ZoneId zoneId = (ZoneId) rVar.b(this.a);
         if (zoneId == null) {
             return false;
         }
-        sb2.append(zoneId.getId());
+        sb.append(zoneId.getId());
         return true;
     }
 

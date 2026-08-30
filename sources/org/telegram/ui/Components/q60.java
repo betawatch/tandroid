@@ -1,49 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class q60 extends qw0 {
-    public final /* synthetic */ int G;
+public final class q60 extends org.telegram.ui.Cells.va {
+    public final TextView U;
+    public final TextView V;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q60(Context context, View view, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11) {
-        super(context, view, i10, c6Var);
-        this.G = i11;
-    }
-
-    @Override // org.telegram.ui.Components.qw0, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.G) {
-            case 0:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qw0, android.view.View
-    public void setVisibility(int i10) {
-        switch (this.G) {
-            case 2:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    e(false, false);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+    public q60(Context context) {
+        super(context, 6, 0, true);
+        LinearLayout f10 = org.telegram.messenger.y3.f(context, 1);
+        TextView textView = new TextView(context);
+        this.U = textView;
+        org.telegram.messenger.y3.t(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f);
+        f10.addView(textView, k7.b6.q(-2, -2, 5));
+        TextView textView2 = new TextView(context);
+        this.V = textView2;
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false));
+        textView2.setTextSize(1, 13.0f);
+        f10.addView(textView2, k7.b6.t(-2, -2, 5, 0, 1, 0, 0));
+        addView(f10, k7.b6.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
     }
 }

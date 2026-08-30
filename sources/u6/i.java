@@ -1,6 +1,27 @@
 package u6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import j7.f5;
+import r5.c0;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class i extends com.google.android.gms.internal.cast.a {
+public final class i extends c6.a {
+    public static final Parcelable.Creator<i> CREATOR = new c0(23);
+    public final Bundle a;
+
+    public i(Bundle responseBundle) {
+        kotlin.jvm.internal.j.e(responseBundle, "responseBundle");
+        this.a = responseBundle;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int q10 = f5.q(dest, 20293);
+        f5.b(dest, 1, this.a);
+        f5.r(dest, q10);
+    }
 }

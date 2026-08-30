@@ -1,29 +1,79 @@
 package q4;
 
-import java.util.List;
+import b4.e0;
+import o4.k0;
+import o4.l0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f extends n4.b {
-    public final List d;
-    public final long e;
+public final class f implements l0 {
+    public final h a;
+    public final k0 b;
+    public final int c;
+    public boolean d;
+    public final /* synthetic */ h e;
 
-    public f(long j10, List list) {
-        super(0L, list.size() - 1);
-        this.e = j10;
-        this.d = list;
+    public f(h hVar, h hVar2, k0 k0Var, int i10) {
+        this.e = hVar;
+        this.a = hVar2;
+        this.b = k0Var;
+        this.c = i10;
     }
 
-    @Override // n4.l
-    public final long b() {
-        a();
-        return this.e + ((r4.h) this.d.get((int) this.c)).e;
+    public final void b() {
+        if (this.d) {
+            return;
+        }
+        h hVar = this.e;
+        e0 e0Var = hVar.h;
+        int[] iArr = hVar.b;
+        int i10 = this.c;
+        e0Var.g(iArr[i10], hVar.c[i10], 0, null, hVar.G);
+        this.d = true;
     }
 
-    @Override // n4.l
-    public final long l() {
-        a();
-        r4.h hVar = (r4.h) this.d.get((int) this.c);
-        return this.e + hVar.e + hVar.c;
+    @Override // o4.l0
+    public final boolean d() {
+        h hVar = this.e;
+        return !hVar.k() && this.b.u(hVar.J);
+    }
+
+    @Override // o4.l0
+    public final int e(long j10) {
+        h hVar = this.e;
+        if (hVar.k()) {
+            return 0;
+        }
+        boolean z4 = hVar.J;
+        k0 k0Var = this.b;
+        int s6 = k0Var.s(j10, z4);
+        a aVar = hVar.I;
+        if (aVar != null) {
+            s6 = Math.min(s6, aVar.d(this.c + 1) - k0Var.q());
+        }
+        k0Var.E(s6);
+        if (s6 > 0) {
+            b();
+        }
+        return s6;
+    }
+
+    @Override // o4.l0
+    public final int f(f7.b bVar, n3.i iVar, int i10) {
+        h hVar = this.e;
+        if (hVar.k()) {
+            return -3;
+        }
+        a aVar = hVar.I;
+        k0 k0Var = this.b;
+        if (aVar != null && aVar.d(this.c + 1) <= k0Var.q()) {
+            return -3;
+        }
+        b();
+        return k0Var.z(bVar, iVar, i10, hVar.J);
+    }
+
+    @Override // o4.l0
+    public final void a() {
     }
 }

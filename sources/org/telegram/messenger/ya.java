@@ -1,52 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ya implements RequestDelegate {
+public final /* synthetic */ class ya implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ya(Object obj, int i10, Object obj2, int i11) {
+    public /* synthetic */ ya(BaseController baseController, int i10, int i11) {
         this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+        this.b = baseController;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$478(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$271(this.c, dialogInterface);
                 break;
             case 1:
-                ((FileLoadOperation) this.c).lambda$startDownloadRequest$28(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
-                break;
-            case 3:
-                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$convertToMegaGroup$266(this.c, dialogInterface);
                 break;
             default:
-                ((MessagesController) this.c).lambda$registerForPush$324(this.b, (String) this.d, tLObject, tL_error);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
                 break;
         }
-    }
-
-    public /* synthetic */ ya(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = mediaDataController;
-        this.d = stickerSet;
-        this.b = i10;
     }
 }

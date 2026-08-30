@@ -1,29 +1,49 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jc implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ jc(MessagesController messagesController, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i10) {
-        this.a = i10;
+    public /* synthetic */ jc(MessagesController messagesController, long j10, long j11, ArrayList arrayList) {
         this.b = messagesController;
-        this.c = tL_updatePeerBlocked;
+        this.c = j10;
+        this.d = j11;
+        this.e = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$391(this.c);
+                this.b.lambda$processUpdateArray$419(this.c, this.e, this.d);
+                break;
+            case 1:
+                this.b.lambda$checkUnreadPollVotesInternal2$431(this.c, this.d, 0, this.e);
                 break;
             default:
-                this.b.lambda$processUpdateArray$390(this.c);
+                this.b.lambda$deleteMessagesByPush$370(this.e, this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ jc(MessagesController messagesController, long j10, ArrayList arrayList, long j11) {
+        this.b = messagesController;
+        this.c = j10;
+        this.e = arrayList;
+        this.d = j11;
+    }
+
+    public /* synthetic */ jc(MessagesController messagesController, ArrayList arrayList, long j10, long j11) {
+        this.b = messagesController;
+        this.e = arrayList;
+        this.c = j10;
+        this.d = j11;
     }
 }

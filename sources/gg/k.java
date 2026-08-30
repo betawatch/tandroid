@@ -1,28 +1,27 @@
 package gg;
 
-import android.text.InputFilter;
-import android.text.Spanned;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class k extends InputFilter.LengthFilter {
-    public final /* synthetic */ m a;
+public final /* synthetic */ class k implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AtomicBoolean b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar) {
-        super(128);
-        this.a = mVar;
+    public /* synthetic */ k(AtomicBoolean atomicBoolean, int i10) {
+        this.a = i10;
+        this.b = atomicBoolean;
     }
 
-    @Override // android.text.InputFilter.LengthFilter, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
-        if (filter != null && filter.length() == 0) {
-            AndroidUtilities.shakeView(this.a.a);
-            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.set(true);
+                break;
+            default:
+                this.b.set(true);
+                break;
         }
-        return filter;
     }
 }

@@ -1,81 +1,195 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e0 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
+public final class e0 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.c6 b;
-    public int c;
-    public boolean d;
-    public TL_aicompose.AiComposeTone e;
-    public boolean f;
-    public final t9 h;
-    public final TextView n;
-    public float r;
+    public final org.telegram.ui.ActionBar.f6 b;
+    public final c0 c;
+    public int d;
+    public boolean e;
+    public int f;
+    public final z5 h;
+    public i n;
 
-    public e0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+    public e0(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
         super(context);
-        this.d = true;
         this.a = i10;
-        this.b = c6Var;
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, i7.f6.d(-2, -2.0f, 17, 0.0f, 2.0f, 0.0f, 2.0f));
-        t9 t9Var = new t9(context);
-        this.h = t9Var;
-        NotificationCenter.listenEmojiLoading(t9Var);
-        linearLayout.addView(t9Var, i7.f6.t(24, 24, 49, 0, 4, 0, 0));
-        TextView textView = new TextView(context);
-        this.n = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 12.0f);
-        textView.setGravity(17);
-        textView.setSingleLine();
-        linearLayout.addView(textView, i7.f6.t(-2, -2, 49, 0, 2, 0, 0));
-        i7.h6.b(this, 0.05f, 1.5f);
-        a(0.0f, true);
+        this.b = f6Var;
+        c0 c0Var = new c0(this, context, f6Var);
+        this.c = c0Var;
+        c0Var.setOrientation(0);
+        this.h = new z5(c0Var, 0L, 320L, nr.h);
+        if (!z4) {
+            addView(c0Var, k7.b6.e(-1, -1, 119));
+            return;
+        }
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
+        horizontalScrollView.setFillViewport(true);
+        horizontalScrollView.addView(c0Var);
+        addView(horizontalScrollView, k7.b6.e(-1, -1, 119));
     }
 
-    public final void a(float f9, boolean z10) {
-        if (z10 || Math.abs(f9 - this.r) >= 0.01f) {
-            this.r = f9;
-            int i10 = org.telegram.ui.ActionBar.g6.G6;
-            org.telegram.ui.ActionBar.c6 c6Var = this.b;
-            int v02 = org.telegram.ui.ActionBar.g6.v0(i10, c6Var);
-            int i11 = org.telegram.ui.ActionBar.g6.Oh;
-            int d = i0.a.d(f9, v02, org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-            int d10 = i0.a.d(f9, org.telegram.ui.ActionBar.g6.v0(i10, c6Var), org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-            PorterDuffColorFilter porterDuffColorFilter = !this.f ? new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN) : null;
-            t9 t9Var = this.h;
-            t9Var.setColorFilter(porterDuffColorFilter);
-            t9Var.setEmojiColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN));
-            t9Var.invalidate();
-            this.n.setTextColor(d10);
+    public final void a(int i10, String str, Utilities.Callback callback) {
+        c0 c0Var = this.c;
+        int childCount = c0Var.getChildCount();
+        d0 d0Var = new d0(getContext(), this.a, this.b);
+        d0Var.c = this.d;
+        d0Var.e();
+        d0Var.f = false;
+        d0Var.h.setImageResource(i10);
+        d0Var.n.setText(str);
+        d0Var.setOnClickListener(new kh.e2(childCount, 1, callback));
+        c0Var.addView(d0Var, k7.b6.o(0, -1, 1.0f, 119));
+    }
+
+    public final void b(TL_aicompose.AiComposeTone aiComposeTone, Utilities.Callback callback) {
+        d0 d0Var = new d0(getContext(), this.a, this.b);
+        d0Var.e = aiComposeTone;
+        d0Var.c = this.d;
+        d0Var.e();
+        TextView textView = d0Var.n;
+        p9 p9Var = d0Var.h;
+        if (aiComposeTone == null) {
+            d0Var.d = false;
+            d0Var.e();
+            int i10 = R.drawable.tone_create;
+            String string = LocaleController.getString(R.string.AIEditorStyleNewCreate);
+            d0Var.f = false;
+            p9Var.setImageResource(i10);
+            textView.setText(string);
+        } else if (aiComposeTone instanceof b0) {
+            d0Var.d = false;
+            d0Var.e();
+            int i11 = R.drawable.iv_prompt;
+            String string2 = LocaleController.getString(R.string.AIEditorStylePrompt);
+            d0Var.f = false;
+            p9Var.setImageResource(i11);
+            textView.setText(string2);
+        } else {
+            String str = aiComposeTone.title;
+            long j10 = aiComposeTone.emoji_id;
+            d0Var.f = true;
+            p9Var.setColorFilter(null);
+            p9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
+            textView.setText(str);
+            int i12 = d0Var.a;
+            if (ConnectionsManager.getInstance(i12).isTestBackend()) {
+                for (int i13 = 0; i13 < 4 && (!UserConfig.getInstance(i13).isClientActivated() || ConnectionsManager.getInstance(i13).isTestBackend()); i13++) {
+                }
+            }
+            p9Var.setAnimatedEmojiDrawable(new l5(9, i12, j10));
+        }
+        d0Var.setOnClickListener(new org.telegram.messenger.video.g(25, callback, aiComposeTone));
+        d0Var.setOnLongClickListener(new nh.f2(1, this, d0Var));
+        c0 c0Var = this.c;
+        c0Var.addView(d0Var, k7.b6.o(c0Var.getOrientation() == 0 ? 0 : -1, c0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
+    }
+
+    public final void c(int i10) {
+        if (this.f == i10) {
+            return;
+        }
+        this.f = i10;
+        c0 c0Var = this.c;
+        if (i10 >= 0 && i10 < c0Var.getChildCount()) {
+            View childAt = c0Var.getChildAt(i10);
+            if (childAt instanceof d0) {
+                p9 p9Var = ((d0) childAt).h;
+                if (p9Var.getAnimatedEmojiDrawable() != null) {
+                    nh.y2 y2Var = p9Var.getAnimatedEmojiDrawable().k;
+                    if (y2Var != null) {
+                        y2Var.startAnimation();
+                    }
+                } else {
+                    p9Var.getImageReceiver().startAnimation();
+                }
+            }
+        }
+        c0Var.invalidate();
+    }
+
+    public final void d(TL_aicompose.AiComposeTone aiComposeTone) {
+        TL_aicompose.AiComposeTone aiComposeTone2;
+        int i10 = 0;
+        while (true) {
+            c0 c0Var = this.c;
+            if (i10 >= c0Var.getChildCount()) {
+                return;
+            }
+            View childAt = c0Var.getChildAt(i10);
+            if ((childAt instanceof d0) && (aiComposeTone2 = ((d0) childAt).e) != null && aiComposeTone2 == aiComposeTone) {
+                c(i10);
+                return;
+            }
+            i10++;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void e() {
-        a(this.r, true);
-        boolean z10 = this.d;
-        org.telegram.ui.ActionBar.c6 c6Var = this.b;
-        int l1 = z10 ? org.telegram.ui.ActionBar.g6.l1(0.1f, org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Oh, c6Var)) : org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.i6, c6Var);
-        int i10 = this.c;
-        setBackground(org.telegram.ui.ActionBar.g6.Y(l1, i10, i10));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.e) {
+            Paint T0 = org.telegram.ui.ActionBar.j6.T0("paintDivider", this.b);
+            if (T0 == null) {
+                T0 = org.telegram.ui.ActionBar.j6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(10.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(10.0f), getHeight(), T0);
+        }
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+    public int getSelectedTab() {
+        return this.f;
+    }
+
+    public TL_aicompose.AiComposeTone getSelectedTone() {
+        int i10 = this.f;
+        if (i10 < 0) {
+            return null;
+        }
+        c0 c0Var = this.c;
+        if (i10 >= c0Var.getChildCount()) {
+            return null;
+        }
+        View childAt = c0Var.getChildAt(this.f);
+        if (childAt instanceof d0) {
+            return ((d0) childAt).e;
+        }
         return null;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    public void setDivider(boolean z4) {
+        this.e = z4;
+    }
+
+    @Override // android.view.View
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        this.c.setPadding(i10, i11, i12, i13);
+    }
+
+    public void setRoundRadius(int i10) {
+        this.d = i10;
     }
 }

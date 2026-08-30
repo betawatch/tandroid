@@ -1,28 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-import org.telegram.messenger.IMapsProvider;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sk implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bl b;
+public final class sk extends f2.z0 {
+    public final /* synthetic */ al a;
 
-    public /* synthetic */ sk(bl blVar, int i10) {
-        this.a = i10;
-        this.b = blVar;
+    public sk(al alVar) {
+        this.a = alVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                bl.J(this.b, (IMapsProvider.IMap) obj);
-                break;
-            default:
-                bl.R(this.b, (Location) obj);
-                break;
+    @Override // f2.z0
+    public final void a(RecyclerView recyclerView, int i10) {
+        el0 el0Var;
+        al alVar = this.a;
+        lh.e1 e1Var = alVar.M;
+        li liVar = alVar.b;
+        boolean z4 = i10 != 0;
+        alVar.I = z4;
+        if (!z4 && alVar.G != null) {
+            alVar.G = null;
         }
+        if (i10 == 0) {
+            int dp = AndroidUtilities.dp(13.0f);
+            int backgroundPaddingTop = liVar.getBackgroundPaddingTop();
+            if (((liVar.Y1[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (el0Var = (el0) e1Var.K(0)) == null) {
+                return;
+            }
+            View view = el0Var.a;
+            if (view.getTop() > alVar.x0 - alVar.w0) {
+                e1Var.v0(0, view.getTop() - (alVar.x0 - alVar.w0), null);
+            }
+        }
+    }
+
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        al alVar = this.a;
+        alVar.e0();
+        if (alVar.G != null) {
+            alVar.H += i11;
+        }
+        alVar.b.X1(alVar, i11);
     }
 }

@@ -39,8 +39,8 @@ public final class m0 extends p0 implements h5 {
         return null;
     }
 
-    public m0(IntConsumer intConsumer, boolean z10) {
-        super(z10);
+    public m0(IntConsumer intConsumer, boolean z4) {
+        super(z4);
         this.b = intConsumer;
     }
 

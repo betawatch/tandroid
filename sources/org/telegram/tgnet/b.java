@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -8,10 +8,10 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ b(int i10, int i11, int i12, boolean z10) {
+    public /* synthetic */ b(int i10, int i11, int i12, boolean z4) {
         this.a = i12;
         this.c = i10;
-        this.b = z10;
+        this.b = z4;
         this.d = i11;
     }
 
@@ -30,9 +30,9 @@ public final /* synthetic */ class b implements Runnable {
         }
     }
 
-    public /* synthetic */ b(boolean z10, int i10, int i11) {
+    public /* synthetic */ b(boolean z4, int i10, int i11) {
         this.a = 1;
-        this.b = z10;
+        this.b = z4;
         this.c = i10;
         this.d = i11;
     }

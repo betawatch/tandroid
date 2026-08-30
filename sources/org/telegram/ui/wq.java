@@ -1,41 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wq extends f2.l {
-    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
-    public final /* synthetic */ jr G;
+public final class wq extends jq {
+    public final /* synthetic */ boolean[] a1;
+    public final /* synthetic */ long b1;
+    public final /* synthetic */ pr c1;
 
-    public wq(jr jrVar) {
-        this.G = jrVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wq(pr prVar, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, long j12) {
+        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
+        this.c1 = prVar;
+        this.a1 = zArr;
+        this.b1 = j12;
     }
 
-    @Override // f2.l
-    public final void N() {
-        this.F.unlock();
-    }
-
-    @Override // f2.l
-    public final void O() {
-        this.G.c.invalidate();
-    }
-
-    @Override // f2.l
-    public final void P(f2.n1 n1Var) {
-        this.G.c.invalidate();
-    }
-
-    @Override // f2.l, f2.u0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            this.F.lock();
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
+        if (!z4 && z10 && this.a1[0]) {
+            pr prVar = this.c1;
+            if (org.telegram.ui.Components.qc.a(prVar)) {
+                long j10 = this.b1;
+                if (j10 > 0) {
+                    TLRPC.User user = getMessagesController().getUser(Long.valueOf(j10));
+                    if (user != null) {
+                        org.telegram.ui.Components.qc.C(prVar, user.first_name).j();
+                        return;
+                    }
+                    return;
+                }
+                TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-j10));
+                if (chat != null) {
+                    org.telegram.ui.Components.qc.C(prVar, chat.title).j();
+                }
+            }
         }
-        super.m();
     }
 }

@@ -1,16 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class jn0 extends f2.l {
-    public final /* synthetic */ org.telegram.ui.ox F;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-    public jn0(org.telegram.ui.ox oxVar) {
-        this.F = oxVar;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class jn0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ in0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TLRPC.Reaction c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] d;
+    public final /* synthetic */ View e;
+
+    public jn0(in0 in0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.d2[] d2VarArr, View view) {
+        this.a = in0Var;
+        this.b = i10;
+        this.c = reaction;
+        this.d = d2VarArr;
+        this.e = view;
     }
 
-    @Override // f2.l
-    public final void P(f2.n1 n1Var) {
-        this.F.invalidate();
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        if (i10 != 6) {
+            return false;
+        }
+        in0 in0Var = this.a;
+        String obj = in0Var.getText().toString();
+        if (obj.length() > 12) {
+            AndroidUtilities.shakeView(in0Var);
+            return true;
+        }
+        MessagesController.getInstance(this.b).renameSavedReactionTag(mg.q0.d(this.c), obj);
+        org.telegram.ui.ActionBar.d2[] d2VarArr = this.d;
+        org.telegram.ui.ActionBar.d2 d2Var = d2VarArr[0];
+        if (d2Var != null) {
+            d2Var.dismiss();
+        }
+        if (d2VarArr[0] == on0.E) {
+            on0.E = null;
+        }
+        View view = this.e;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

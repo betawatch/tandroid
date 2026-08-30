@@ -1,9 +1,9 @@
 package a0;
 
-import j7.l1;
 import java.util.Arrays;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h implements Cloneable {
     public /* synthetic */ boolean a;
@@ -171,7 +171,7 @@ public final class h implements Cloneable {
     public final long j(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.d)) {
-            throw new IllegalArgumentException(l1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(a2.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         if (this.a) {
             long[] jArr = this.b;
@@ -262,7 +262,7 @@ public final class h implements Cloneable {
             kotlin.jvm.internal.j.e(jArr2, "<this>");
             System.arraycopy(jArr2, i10, jArr2, i20, i19);
             Object[] objArr3 = this.c;
-            rc.f.c(i20, i10, this.d, objArr3, objArr3);
+            tc.f.c(i20, i10, this.d, objArr3, objArr3);
         }
         this.b[i10] = j10;
         this.c[i10] = obj;
@@ -308,7 +308,7 @@ public final class h implements Cloneable {
     public final Object n(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.d)) {
-            throw new IllegalArgumentException(l1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(a2.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         if (this.a) {
             long[] jArr = this.b;
@@ -335,26 +335,26 @@ public final class h implements Cloneable {
         if (m() <= 0) {
             return "{}";
         }
-        StringBuilder sb2 = new StringBuilder(this.d * 28);
-        sb2.append('{');
+        StringBuilder sb = new StringBuilder(this.d * 28);
+        sb.append('{');
         int i10 = this.d;
         for (int i11 = 0; i11 < i10; i11++) {
             if (i11 > 0) {
-                sb2.append(", ");
+                sb.append(", ");
             }
-            sb2.append(j(i11));
-            sb2.append('=');
+            sb.append(j(i11));
+            sb.append('=');
             Object n10 = n(i11);
-            if (n10 != sb2) {
-                sb2.append(n10);
+            if (n10 != sb) {
+                sb.append(n10);
             } else {
-                sb2.append("(this Map)");
+                sb.append("(this Map)");
             }
         }
-        sb2.append('}');
-        String sb3 = sb2.toString();
-        kotlin.jvm.internal.j.d(sb3, "StringBuilder(capacity).…builderAction).toString()");
-        return sb3;
+        sb.append('}');
+        String sb2 = sb.toString();
+        kotlin.jvm.internal.j.d(sb2, "StringBuilder(capacity).…builderAction).toString()");
+        return sb2;
     }
 
     public h() {

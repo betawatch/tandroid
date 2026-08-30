@@ -1,61 +1,23 @@
 package qf;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class b {
-    public final String a;
-    public final String b;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class b extends BitmapDrawable {
+    public final List a;
 
-    public b(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public b(Bitmap bitmap, List list) {
+        super(bitmap);
+        this.a = list;
     }
 
-    public static boolean a(b bVar, b bVar2) {
-        if (bVar == bVar2) {
-            return true;
+    public static BitmapDrawable a(Bitmap bitmap, List list) {
+        if (bitmap == null) {
+            return null;
         }
-        if (bVar == null || bVar2 == null) {
-            return false;
-        }
-        return bVar.equals(bVar2);
-    }
-
-    public static b c(TLRPC.ChatTheme chatTheme) {
-        if (chatTheme instanceof TLRPC.TL_chatTheme) {
-            return new b(((TLRPC.TL_chatTheme) chatTheme).emoticon, null);
-        }
-        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-            return new b(null, ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.slug);
-        }
-        return null;
-    }
-
-    public static b d(String str) {
-        return new b(str, null);
-    }
-
-    public final boolean b() {
-        return TextUtils.isEmpty(this.a) && TextUtils.isEmpty(this.b);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            if (TextUtils.equals(this.a, bVar.a) && TextUtils.equals(this.b, bVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.b;
-        return (str2 != null ? str2.hashCode() : 0) ^ hashCode;
+        return (list == null || list.isEmpty()) ? new BitmapDrawable(bitmap) : new b(bitmap, list);
     }
 }

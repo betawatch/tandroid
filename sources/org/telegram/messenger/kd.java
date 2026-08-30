@@ -1,44 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kd implements RequestDelegate {
+public final /* synthetic */ class kd implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
 
-    public /* synthetic */ kd(int i10) {
+    public /* synthetic */ kd(BaseController baseController, long j10, long j11, int i10) {
         this.a = i10;
+        this.d = baseController;
+        this.b = j10;
+        this.c = j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$removeSuggestion$40(tLObject, tL_error);
-                break;
-            case 1:
-                MessagesController.lambda$hidePromoDialog$135(tLObject, tL_error);
-                break;
-            case 2:
-                MessagesController.lambda$blockPeer$89(tLObject, tL_error);
-                break;
-            case 3:
-                MessagesController.lambda$logDeviceStats$31(tLObject, tL_error);
-                break;
-            case 4:
-                MessagesController.lambda$deleteParticipantFromChat$314(tLObject, tL_error);
-                break;
-            case 5:
-                NotificationsController.lambda$updateServerNotificationsSettings$51(tLObject, tL_error);
-                break;
-            case 6:
-                NotificationsController.lambda$updateServerNotificationsSettings$52(tLObject, tL_error);
+                ((MessagesController) this.d).lambda$markDialogAsReadNow$240(this.b, this.c);
                 break;
             default:
-                NotificationsController.lambda$updateServerNotificationsSettings$50(tLObject, tL_error);
+                ((NotificationsController) this.d).lambda$setOpenedDialogId$3(this.b, this.c);
                 break;
         }
     }

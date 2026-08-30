@@ -1,18 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class bn0 {
-    public kg.q0 a;
-    public int b;
-    public String c;
-    public int d;
+import android.view.View;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof bn0)) {
-            return false;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class bn0 implements View.OnClickListener {
+    public final /* synthetic */ cn0 a;
+
+    public bn0(cn0 cn0Var) {
+        this.a = cn0Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        dn0 dn0Var = this.a.c;
+        for (int i10 = 0; i10 < dn0Var.e.size(); i10++) {
+            MessageObject messageObject = (MessageObject) dn0Var.e.get(i10);
+            if (dn0Var.E) {
+                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().cancelLoadFile(messageObject.getDocument());
+            } else {
+                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().loadFile(messageObject.getDocument(), messageObject, 0, 0);
+                DownloadController.getInstance(dn0Var.d).updateFilesLoadingPriority();
+            }
         }
-        bn0 bn0Var = (bn0) obj;
-        return this.b == bn0Var.b && this.a.h == bn0Var.a.h && this.d == bn0Var.d;
+        dn0Var.d(true);
     }
 }

@@ -1,148 +1,139 @@
 package k3;
 
-import android.content.SharedPreferences;
-import android.widget.EditText;
-import lh.o5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegateTimestamp;
+import android.hardware.fingerprint.FingerprintManager;
+import android.media.AudioDeviceInfo;
+import android.media.MediaDrmResetException;
+import android.util.Base64;
+import com.google.firebase.sessions.FirebaseSessionsRegistrar;
+import kh.q5;
+import la.d0;
+import la.j0;
+import la.l;
+import la.n0;
+import la.s;
+import lh.g5;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.Components.qu0;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.og1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements f5.j, RequestDelegateTimestamp, b2, MessagesStorage.StringCallback {
+public final /* synthetic */ class e implements h5.j, r8.i, c2, GenericProvider, c9.e, Vector.TLDeserializer {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ e(Object obj, int i10, long j10, int i11) {
-        this.a = i11;
-        this.c = j10;
-        this.b = i10;
-        this.d = obj;
+    public /* synthetic */ e(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(c2 c2Var, int i10) {
-        int i11 = this.a;
-        Object obj = this.d;
-        int i12 = this.b;
-        long j10 = this.c;
-        switch (i11) {
-            case 2:
-                EditText editText = (EditText) obj;
-                if (j10 > 0) {
-                    TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
-                    String trim = editText.getText().toString().replace("\n", " ").replaceAll(" +", " ").trim();
-                    if (userFull != null) {
-                        String str = userFull.about;
-                        if ((str != null ? str : "").equals(trim)) {
-                            AndroidUtilities.hideKeyboard(editText);
-                            c2Var.dismiss();
-                            break;
-                        } else {
-                            userFull.about = trim;
-                            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j10), userFull);
-                        }
-                    }
-                    TL_account.updateProfile updateprofile = new TL_account.updateProfile();
-                    updateprofile.about = trim;
-                    updateprofile.flags |= 4;
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
-                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new o5(9), 2);
-                } else {
-                    long j11 = -j10;
-                    TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j11);
-                    String obj2 = editText.getText().toString();
-                    if (chatFull != null) {
-                        String str2 = chatFull.about;
-                        if ((str2 != null ? str2 : "").equals(obj2)) {
-                            AndroidUtilities.hideKeyboard(editText);
-                            c2Var.dismiss();
-                            break;
-                        } else {
-                            chatFull.about = obj2;
-                            NotificationCenter notificationCenter = NotificationCenter.getInstance(i12);
-                            int i13 = NotificationCenter.chatInfoDidLoad;
-                            Boolean bool = Boolean.FALSE;
-                            notificationCenter.lambda$postNotificationNameOnUIThread$1(i13, chatFull, 0, bool, bool);
-                        }
-                    }
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
-                    MessagesController.getInstance(i12).updateChatAbout(j11, obj2, chatFull);
-                }
-                c2Var.dismiss();
+    public static /* bridge */ /* synthetic */ FingerprintManager a(Object obj) {
+        return (FingerprintManager) obj;
+    }
+
+    public static /* bridge */ /* synthetic */ AudioDeviceInfo b(Object obj) {
+        return (AudioDeviceInfo) obj;
+    }
+
+    public static /* bridge */ /* synthetic */ boolean c(Object obj) {
+        return obj instanceof MediaDrmResetException;
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
+        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i10, z4);
+    }
+
+    @Override // c9.e
+    public Object f0(c5.j jVar) {
+        l lVar;
+        j0 j0Var;
+        d0 d0Var;
+        na.h hVar;
+        s sVar;
+        n0 n0Var;
+        switch (this.a) {
+            case 20:
+                lVar = FirebaseSessionsRegistrar.getComponents$lambda-0(jVar);
+                return lVar;
+            case 21:
+                j0Var = FirebaseSessionsRegistrar.getComponents$lambda-1(jVar);
+                return j0Var;
+            case 22:
+                d0Var = FirebaseSessionsRegistrar.getComponents$lambda-2(jVar);
+                return d0Var;
+            case 23:
+                hVar = FirebaseSessionsRegistrar.getComponents$lambda-3(jVar);
+                return hVar;
+            case 24:
+                sVar = FirebaseSessionsRegistrar.getComponents$lambda-4(jVar);
+                return sVar;
+            default:
+                n0Var = FirebaseSessionsRegistrar.getComponents$lambda-5(jVar);
+                return n0Var;
+        }
+    }
+
+    @Override // r8.i
+    public Object get() {
+        byte[] bArr = new byte[12];
+        h.i.nextBytes(bArr);
+        return Base64.encodeToString(bArr, 10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(d2 d2Var, int i10) {
+        switch (this.a) {
+            case 9:
+                d2Var.dismiss();
+                break;
+            case 10:
+                d2Var.dismiss();
+                break;
+            case 27:
+                g5.d2(new og1(6, null));
                 break;
             default:
-                Runnable runnable = (Runnable) obj;
-                SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
-                if (j10 != 0) {
-                    edit.putInt("color_" + j10, 0);
-                } else if (i12 == 1) {
-                    edit.putInt("MessagesLed", 0);
-                } else if (i12 == 0) {
-                    edit.putInt("GroupLed", 0);
-                } else if (i12 == 3) {
-                    edit.putInt("StoriesLed", 0);
-                } else if (i12 == 5 || i12 == 4) {
-                    edit.putInt("ReactionsLed", 0);
-                } else {
-                    edit.putInt("ChannelLed", 0);
-                }
-                edit.commit();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                int i11 = g5.n1;
                 break;
         }
     }
 
-    @Override // f5.j
+    @Override // h5.j
     public void invoke(Object obj) {
-        a aVar = (a) this.d;
-        ((b) obj).i(this.b, this.c, aVar);
+        b bVar = (b) obj;
+        switch (this.a) {
+            case 0:
+                bVar.getClass();
+                break;
+            case 1:
+                bVar.getClass();
+                break;
+            case 2:
+                bVar.getClass();
+                break;
+            case 3:
+                bVar.getClass();
+                break;
+            case 4:
+                bVar.getClass();
+                break;
+            default:
+                bVar.getClass();
+                break;
+        }
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        qu0.i((qu0) this.d, this.c, this.b, str);
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        int i10 = q5.h0;
+        return 0;
     }
 
-    public /* synthetic */ e(a aVar, int i10, long j10, long j11) {
-        this.a = 0;
-        this.d = aVar;
-        this.b = i10;
-        this.c = j10;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegateTimestamp
-    public void run(TLObject tLObject, TLRPC.TL_error tL_error, long j10) {
-        ((VoIPService) this.d).lambda$createGroupInstance$78(this.b, this.c, tLObject, tL_error, j10);
-    }
-
-    public /* synthetic */ e(VoIPService voIPService, int i10, long j10) {
-        this.a = 1;
-        this.d = voIPService;
-        this.b = i10;
-        this.c = j10;
-    }
-
-    public /* synthetic */ e(qu0 qu0Var, long j10, int i10) {
-        this.a = 4;
-        this.d = qu0Var;
-        this.c = j10;
-        this.b = i10;
+    public /* synthetic */ e(Object obj, int i10) {
+        this.a = i10;
     }
 }

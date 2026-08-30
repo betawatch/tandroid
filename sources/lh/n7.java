@@ -1,39 +1,43 @@
 package lh;
 
-import android.content.Context;
-import android.view.View;
+import j$.util.Objects;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class n7 extends d4 {
-    public final /* synthetic */ o7 a4;
+public final class n7 {
+    public final long a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n7(o7 o7Var, Context context, i9 i9Var, a4 a4Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i9Var, a4Var, c6Var);
-        this.a4 = o7Var;
+    public n7(long j10, int i10) {
+        this.a = j10;
+        this.b = i10;
     }
 
-    @Override // lh.d4
-    public final boolean K0() {
-        return getParent() != null && ((Integer) ((View) getParent()).getTag()).intValue() == this.a4.g.getCurrentItem();
+    public static n7 a(int i10, long j10) {
+        return new n7(j10, i10);
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (t.c) {
-            t.b.add(this);
-        } else {
-            super.invalidate();
+    public static n7 b(MessageObject messageObject) {
+        if (messageObject == null) {
+            return null;
         }
+        TLRPC.Message message = messageObject.messageOwner;
+        return (message == null || !(message.isThreadMessage || messageObject.isForwardedChannelPost()) || messageObject.messageOwner.fwd_from == null) ? new n7(messageObject.getDialogId(), messageObject.getId()) : new n7(messageObject.getFromChatId(), messageObject.messageOwner.fwd_from.saved_from_msg_id);
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (t.c) {
-            t.b.add(this);
-        } else {
-            super.invalidate(i10, i11, i12, i13);
+    public final boolean equals(Object obj) {
+        if (obj instanceof n7) {
+            n7 n7Var = (n7) obj;
+            if (n7Var.a == this.a && n7Var.b == this.b) {
+                return true;
+            }
         }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
     }
 }

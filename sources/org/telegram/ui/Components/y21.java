@@ -1,45 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class y21 extends f2.a1 {
-    public final /* synthetic */ k31 a;
+public final /* synthetic */ class y21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
 
-    public y21(k31 k31Var) {
-        this.a = k31Var;
+    public /* synthetic */ y21(String str, MessageObject messageObject, long j10, int i10) {
+        this.a = i10;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = str;
     }
 
-    @Override // f2.a1
-    public final void a(RecyclerView recyclerView, int i10) {
-        k31 k31Var = this.a;
-        x21 x21Var = k31Var.D;
-        if (i10 == 0) {
-            k31Var.C = false;
-        }
-        if ((i10 == 0 || i10 == 2) && k31Var.A(false) > 0.0f && k31Var.A(false) < AndroidUtilities.dp(96.0f) && x21Var.canScrollVertically(1) && k31.u(k31Var)) {
-            k31Var.C = true;
-            x21Var.v0(0, (int) k31Var.A(false), null);
-        }
-    }
-
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        k31 k31Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) k31Var).containerView;
-        viewGroup.invalidate();
-        boolean canScrollVertically = k31Var.D.canScrollVertically(1);
-        View view = k31Var.H;
-        Boolean bool = k31Var.M;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            k31Var.M = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.ui.b.q(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), jr.h, 320L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.d;
+        long j10 = this.c;
+        MessageObject messageObject = this.b;
+        switch (i10) {
+            case 0:
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
+                int i11 = NotificationCenter.voiceTranscriptionUpdate;
+                Long valueOf = Long.valueOf(j10);
+                Boolean bool = Boolean.TRUE;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
+                break;
+            default:
+                d31.g(messageObject, j10, str);
+                break;
         }
     }
 }

@@ -17,8 +17,8 @@ public abstract class a {
         if (Build.VERSION.SDK_INT < 24) {
             return false;
         }
-        boolean z10 = b;
-        if (!z10) {
+        boolean z4 = b;
+        if (!z4) {
             UserManager userManager = a;
             if (userManager == null) {
                 synchronized (a.class) {
@@ -29,7 +29,7 @@ public abstract class a {
                             a = userManager2;
                             if (userManager2 == null) {
                                 b = true;
-                                z10 = true;
+                                z4 = true;
                             } else {
                                 userManager = userManager2;
                             }
@@ -38,12 +38,12 @@ public abstract class a {
                     }
                 }
             }
-            z10 = userManager.isUserUnlocked();
-            b = z10;
-            if (z10) {
+            z4 = userManager.isUserUnlocked();
+            b = z4;
+            if (z4) {
                 a = null;
             }
         }
-        return !z10;
+        return !z4;
     }
 }

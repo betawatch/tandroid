@@ -8,14 +8,14 @@ import android.view.ActionMode;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import bg.m1;
+import dg.k1;
 import java.util.WeakHashMap;
 import m.q2;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.j0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ActionBarContainer extends FrameLayout {
     public boolean a;
@@ -90,19 +90,19 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = true;
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        boolean z10 = true;
         if (this.h) {
             Drawable drawable = this.f;
             if (drawable != null) {
                 drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             } else {
-                z11 = false;
+                z10 = false;
             }
         } else {
             if (this.d == null) {
-                z11 = false;
+                z10 = false;
             } else if (this.b.getVisibility() == 0) {
                 this.d.setBounds(this.b.getLeft(), this.b.getTop(), this.b.getRight(), this.b.getBottom());
             } else {
@@ -115,7 +115,7 @@ public class ActionBarContainer extends FrameLayout {
             }
             this.n = false;
         }
-        if (z11) {
+        if (z10) {
             invalidate();
         }
     }
@@ -153,11 +153,11 @@ public class ActionBarContainer extends FrameLayout {
                 this.d.setBounds(view.getLeft(), this.b.getTop(), this.b.getRight(), this.b.getBottom());
             }
         }
-        boolean z10 = false;
+        boolean z4 = false;
         if (!this.h ? !(this.d != null || this.e != null) : this.f == null) {
-            z10 = true;
+            z4 = true;
         }
-        setWillNotDraw(z10);
+        setWillNotDraw(z4);
         invalidate();
         invalidateOutline();
     }
@@ -170,18 +170,18 @@ public class ActionBarContainer extends FrameLayout {
             unscheduleDrawable(this.f);
         }
         this.f = drawable;
-        boolean z10 = this.h;
-        boolean z11 = false;
+        boolean z4 = this.h;
+        boolean z10 = false;
         if (drawable != null) {
             drawable.setCallback(this);
-            if (z10 && (drawable2 = this.f) != null) {
+            if (z4 && (drawable2 = this.f) != null) {
                 drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             }
         }
-        if (!z10 ? !(this.d != null || this.e != null) : this.f == null) {
-            z11 = true;
+        if (!z4 ? !(this.d != null || this.e != null) : this.f == null) {
+            z10 = true;
         }
-        setWillNotDraw(z11);
+        setWillNotDraw(z10);
         invalidate();
         invalidateOutline();
     }
@@ -199,35 +199,35 @@ public class ActionBarContainer extends FrameLayout {
                 throw null;
             }
         }
-        boolean z10 = false;
+        boolean z4 = false;
         if (!this.h ? !(this.d != null || this.e != null) : this.f == null) {
-            z10 = true;
+            z4 = true;
         }
-        setWillNotDraw(z10);
+        setWillNotDraw(z4);
         invalidate();
         invalidateOutline();
     }
 
-    public void setTransitioning(boolean z10) {
-        this.a = z10;
-        setDescendantFocusability(z10 ? 393216 : 262144);
+    public void setTransitioning(boolean z4) {
+        this.a = z4;
+        setDescendantFocusability(z4 ? 393216 : 262144);
     }
 
     @Override // android.view.View
     public void setVisibility(int i10) {
         super.setVisibility(i10);
-        boolean z10 = i10 == 0;
+        boolean z4 = i10 == 0;
         Drawable drawable = this.d;
         if (drawable != null) {
-            drawable.setVisible(z10, false);
+            drawable.setVisible(z4, false);
         }
         Drawable drawable2 = this.e;
         if (drawable2 != null) {
-            drawable2.setVisible(z10, false);
+            drawable2.setVisible(z4, false);
         }
         Drawable drawable3 = this.f;
         if (drawable3 != null) {
-            drawable3.setVisible(z10, false);
+            drawable3.setVisible(z4, false);
         }
     }
 
@@ -239,23 +239,23 @@ public class ActionBarContainer extends FrameLayout {
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
         Drawable drawable2 = this.d;
-        boolean z10 = this.h;
-        if (drawable == drawable2 && !z10) {
+        boolean z4 = this.h;
+        if (drawable == drawable2 && !z4) {
             return true;
         }
         if (drawable == this.e && this.n) {
             return true;
         }
-        return (drawable == this.f && z10) || super.verifyDrawable(drawable);
+        return (drawable == this.f && z4) || super.verifyDrawable(drawable);
     }
 
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        m1 m1Var = new m1(this);
+        k1 k1Var = new k1(this);
         WeakHashMap weakHashMap = j0.a;
-        setBackground(m1Var);
+        setBackground(k1Var);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.a);
-        boolean z10 = false;
+        boolean z4 = false;
         this.d = obtainStyledAttributes.getDrawable(0);
         this.e = obtainStyledAttributes.getDrawable(2);
         this.r = obtainStyledAttributes.getDimensionPixelSize(13, -1);
@@ -265,9 +265,9 @@ public class ActionBarContainer extends FrameLayout {
         }
         obtainStyledAttributes.recycle();
         if (!this.h ? !(this.d != null || this.e != null) : this.f == null) {
-            z10 = true;
+            z4 = true;
         }
-        setWillNotDraw(z10);
+        setWillNotDraw(z4);
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent

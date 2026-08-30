@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import r0.k0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class k implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -59,8 +59,8 @@ public class k implements Menu {
     public boolean w = false;
 
     public k(Context context) {
-        boolean z10;
-        boolean z11 = false;
+        boolean z4;
+        boolean z10 = false;
         this.a = context;
         Resources resources = context.getResources();
         this.b = resources;
@@ -74,17 +74,17 @@ public class k implements Menu {
             ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
             Method method = k0.a;
             if (Build.VERSION.SDK_INT >= 28) {
-                z10 = d1.f.B(viewConfiguration);
+                z4 = d1.f.B(viewConfiguration);
             } else {
                 Resources resources2 = context.getResources();
                 int identifier = resources2.getIdentifier("config_showMenuShortcutsWhenKeyboardPresent", "bool", "android");
-                z10 = identifier != 0 && resources2.getBoolean(identifier);
+                z4 = identifier != 0 && resources2.getBoolean(identifier);
             }
-            if (z10) {
-                z11 = true;
+            if (z4) {
+                z10 = true;
             }
         }
-        this.d = z11;
+        this.d = z10;
     }
 
     public final m a(int i10, int i11, int i12, CharSequence charSequence) {
@@ -154,7 +154,7 @@ public class k implements Menu {
         this.k = true;
     }
 
-    public final void c(boolean z10) {
+    public final void c(boolean z4) {
         if (this.s) {
             return;
         }
@@ -167,7 +167,7 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                xVar.b(this, z10);
+                xVar.c(this, z4);
             }
         }
         this.s = false;
@@ -197,7 +197,7 @@ public class k implements Menu {
 
     public boolean d(m mVar) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.u;
-        boolean z10 = false;
+        boolean z4 = false;
         if (!copyOnWriteArrayList.isEmpty() && this.v == mVar) {
             w();
             Iterator it = copyOnWriteArrayList.iterator();
@@ -207,28 +207,28 @@ public class k implements Menu {
                 if (xVar == null) {
                     copyOnWriteArrayList.remove(weakReference);
                 } else {
-                    z10 = xVar.k(mVar);
-                    if (z10) {
+                    z4 = xVar.k(mVar);
+                    if (z4) {
                         break;
                     }
                 }
             }
             v();
-            if (z10) {
+            if (z4) {
                 this.v = null;
             }
         }
-        return z10;
+        return z4;
     }
 
     public boolean e(k kVar, MenuItem menuItem) {
         i iVar = this.e;
-        return iVar != null && iVar.q(kVar, menuItem);
+        return iVar != null && iVar.p(kVar, menuItem);
     }
 
     public boolean f(m mVar) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.u;
-        boolean z10 = false;
+        boolean z4 = false;
         if (copyOnWriteArrayList.isEmpty()) {
             return false;
         }
@@ -240,17 +240,17 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                z10 = xVar.c(mVar);
-                if (z10) {
+                z4 = xVar.b(mVar);
+                if (z4) {
                     break;
                 }
             }
         }
         v();
-        if (z10) {
+        if (z4) {
             this.v = mVar;
         }
-        return z10;
+        return z4;
     }
 
     @Override // android.view.Menu
@@ -344,19 +344,19 @@ public class k implements Menu {
         if (this.k) {
             CopyOnWriteArrayList copyOnWriteArrayList = this.u;
             Iterator it = copyOnWriteArrayList.iterator();
-            boolean z10 = false;
+            boolean z4 = false;
             while (it.hasNext()) {
                 WeakReference weakReference = (WeakReference) it.next();
                 x xVar = (x) weakReference.get();
                 if (xVar == null) {
                     copyOnWriteArrayList.remove(weakReference);
                 } else {
-                    z10 |= xVar.d();
+                    z4 |= xVar.d();
                 }
             }
             ArrayList arrayList = this.i;
             ArrayList arrayList2 = this.j;
-            if (z10) {
+            if (z4) {
                 arrayList.clear();
                 arrayList2.clear();
                 int size = l10.size();
@@ -387,9 +387,9 @@ public class k implements Menu {
     }
 
     public final ArrayList l() {
-        boolean z10 = this.h;
+        boolean z4 = this.h;
         ArrayList arrayList = this.g;
-        if (!z10) {
+        if (!z4) {
             return arrayList;
         }
         arrayList.clear();
@@ -418,16 +418,16 @@ public class k implements Menu {
         return this.d;
     }
 
-    public final void p(boolean z10) {
+    public final void p(boolean z4) {
         if (this.p) {
             this.q = true;
-            if (z10) {
+            if (z4) {
                 this.r = true;
                 return;
             }
             return;
         }
-        if (z10) {
+        if (z4) {
             this.h = true;
             this.k = true;
         }
@@ -457,11 +457,11 @@ public class k implements Menu {
     @Override // android.view.Menu
     public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
         m g10 = g(i10, keyEvent);
-        boolean q6 = g10 != null ? q(g10, null, i11) : false;
+        boolean q10 = g10 != null ? q(g10, null, i11) : false;
         if ((i11 & 2) != 0) {
             c(true);
         }
-        return q6;
+        return q10;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0058  */
@@ -470,7 +470,7 @@ public class k implements Menu {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean q(MenuItem menuItem, x xVar, int i10) {
-        boolean z10;
+        boolean z4;
         m mVar = (m) menuItem;
         if (mVar == null || !mVar.isEnabled()) {
             return false;
@@ -482,21 +482,21 @@ public class k implements Menu {
             if (intent != null) {
                 try {
                     kVar.a.startActivity(intent);
-                } catch (ActivityNotFoundException e10) {
-                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e10);
+                } catch (ActivityNotFoundException e) {
+                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e);
                 }
             }
             n nVar = mVar.A;
             if (nVar == null || !nVar.a.onPerformDefaultAction()) {
-                z10 = false;
+                z4 = false;
                 n nVar2 = mVar.A;
-                boolean z11 = nVar2 == null && nVar2.a.hasSubMenu();
+                boolean z10 = nVar2 == null && nVar2.a.hasSubMenu();
                 if (!mVar.e()) {
-                    z10 |= mVar.expandActionView();
-                    if (z10) {
+                    z4 |= mVar.expandActionView();
+                    if (z4) {
                         c(true);
                     }
-                } else if (mVar.hasSubMenu() || z11) {
+                } else if (mVar.hasSubMenu() || z10) {
                     if ((i10 & 4) == 0) {
                         c(false);
                     }
@@ -506,7 +506,7 @@ public class k implements Menu {
                         d0Var.setHeaderTitle(mVar.e);
                     }
                     d0 d0Var2 = mVar.o;
-                    if (z11) {
+                    if (z10) {
                         nVar2.a.onPrepareSubMenu(d0Var2);
                     }
                     CopyOnWriteArrayList copyOnWriteArrayList = this.u;
@@ -523,23 +523,23 @@ public class k implements Menu {
                             }
                         }
                     }
-                    z10 |= r0;
-                    if (!z10) {
+                    z4 |= r0;
+                    if (!z4) {
                         c(true);
                     }
                 } else if ((i10 & 1) == 0) {
                     c(true);
                 }
-                return z10;
+                return z4;
             }
         }
-        z10 = true;
+        z4 = true;
         n nVar22 = mVar.A;
         if (nVar22 == null) {
         }
         if (!mVar.e()) {
         }
-        return z10;
+        return z4;
     }
 
     public final void r(x xVar) {
@@ -633,59 +633,59 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final void setGroupCheckable(int i10, boolean z10, boolean z11) {
+    public final void setGroupCheckable(int i10, boolean z4, boolean z10) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
         for (int i11 = 0; i11 < size; i11++) {
             m mVar = (m) arrayList.get(i11);
             if (mVar.b == i10) {
-                mVar.x = (mVar.x & (-5)) | (z11 ? 4 : 0);
-                mVar.setCheckable(z10);
+                mVar.x = (mVar.x & (-5)) | (z10 ? 4 : 0);
+                mVar.setCheckable(z4);
             }
         }
     }
 
     @Override // android.view.Menu
-    public void setGroupDividerEnabled(boolean z10) {
-        this.w = z10;
+    public void setGroupDividerEnabled(boolean z4) {
+        this.w = z4;
     }
 
     @Override // android.view.Menu
-    public final void setGroupEnabled(int i10, boolean z10) {
+    public final void setGroupEnabled(int i10, boolean z4) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
         for (int i11 = 0; i11 < size; i11++) {
             m mVar = (m) arrayList.get(i11);
             if (mVar.b == i10) {
-                mVar.setEnabled(z10);
+                mVar.setEnabled(z4);
             }
         }
     }
 
     @Override // android.view.Menu
-    public final void setGroupVisible(int i10, boolean z10) {
+    public final void setGroupVisible(int i10, boolean z4) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        boolean z11 = false;
+        boolean z10 = false;
         for (int i11 = 0; i11 < size; i11++) {
             m mVar = (m) arrayList.get(i11);
             if (mVar.b == i10) {
                 int i12 = mVar.x;
-                int i13 = (i12 & (-9)) | (z10 ? 0 : 8);
+                int i13 = (i12 & (-9)) | (z4 ? 0 : 8);
                 mVar.x = i13;
                 if (i12 != i13) {
-                    z11 = true;
+                    z10 = true;
                 }
             }
         }
-        if (z11) {
+        if (z10) {
             p(true);
         }
     }
 
     @Override // android.view.Menu
-    public void setQwertyMode(boolean z10) {
-        this.c = z10;
+    public void setQwertyMode(boolean z4) {
+        this.c = z4;
         p(false);
     }
 

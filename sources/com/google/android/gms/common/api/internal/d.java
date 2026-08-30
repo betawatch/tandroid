@@ -8,7 +8,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d implements Application.ActivityLifecycleCallbacks, ComponentCallbacks2 {
     public static final d e = new d();
@@ -38,7 +38,7 @@ public final class d implements Application.ActivityLifecycleCallbacks, Componen
         }
     }
 
-    public final void c(boolean z10) {
+    public final void c(boolean z4) {
         synchronized (e) {
             try {
                 ArrayList arrayList = this.c;
@@ -47,7 +47,7 @@ public final class d implements Application.ActivityLifecycleCallbacks, Componen
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((c) obj).a(z10);
+                    ((c) obj).a(z4);
                 }
             } catch (Throwable th2) {
                 throw th2;

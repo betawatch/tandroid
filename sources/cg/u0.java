@@ -1,951 +1,807 @@
 package cg;
 
-import android.animation.LayoutTransition;
-import android.content.Context;
-import android.graphics.Paint;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import i7.f6;
-import i7.h6;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+import lh.l7;
+import lh.r5;
+import nh.d3;
+import nh.d4;
+import nh.e3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.t9;
-import org.telegram.ui.Components.zz0;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.a60;
-import org.telegram.ui.tn;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.ActionBar.e4;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ak;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.gk;
+import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.xx0;
+import org.telegram.ui.Components.z4;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.c60;
+import org.telegram.ui.ch;
+import org.telegram.ui.dn0;
+import org.telegram.ui.dp;
+import org.telegram.ui.el0;
+import org.telegram.ui.g70;
+import org.telegram.ui.hf0;
+import org.telegram.ui.hp;
+import org.telegram.ui.jn;
+import org.telegram.ui.jo0;
+import org.telegram.ui.lp;
+import org.telegram.ui.m21;
+import org.telegram.ui.mp;
+import org.telegram.ui.nm0;
+import org.telegram.ui.og1;
+import org.telegram.ui.pm;
+import org.telegram.ui.pm0;
+import org.telegram.ui.v5;
+import org.telegram.ui.vn;
+import org.telegram.ui.xn;
+import ph.u6;
+import vh.o3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class u0 extends LinearLayout {
-    public TextView a;
-    public TextView b;
-    public final eg.b c;
-    public LinearLayout d;
-    public final /* synthetic */ v0 e;
+public final /* synthetic */ class u0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0a03  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0b9b  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0d7d  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0db2  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0de3  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0dca  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0da3  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0bd8  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0bdf  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0472  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0c2f  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0a14  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x09f1  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x04fa  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x051c  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x0554 A[LOOP:0: B:226:0x0552->B:227:0x0554, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x05ee  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x05f7  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x0613  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0499  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x0793  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x07a3  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x07b1  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x07a5  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0795  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x0641  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x05f0  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x0521  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0429  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x04db  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x04e2  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x08e0  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x08f6  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0983  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0912  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x09a8  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0417  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public u0(v0 v0Var, Context context) {
-        super(context);
+    public /* synthetic */ u0(Object obj, Object obj2, Object obj3, boolean z4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z4;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        char c3;
+        String[] split;
+        char c10;
+        char c11;
         int i10;
+        f6 f6Var;
+        eg.h0 h0Var;
+        byte[] bArr;
+        byte[] bArr2;
+        byte[] bArr3;
         int i11;
         int i12;
         int i13;
-        int i14;
-        String str;
-        String formatString;
-        boolean z10;
-        int i15;
-        int i16;
-        int i17;
-        float f9;
-        boolean z11;
-        int i18;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        int min;
-        int i19;
-        c6 c6Var;
-        c6 c6Var2;
-        ArrayList arrayList4;
-        boolean z12;
-        int i20;
-        int i21;
-        String str2;
-        int i22;
-        int i23;
-        int i24;
-        int i25;
-        int i26;
-        ArrayList arrayList5;
-        ArrayList arrayList6;
-        int size;
-        ArrayList arrayList7;
-        ArrayList arrayList8;
-        int size2;
-        c6 c6Var3;
-        int i27;
-        int i28;
-        c6 c6Var4;
-        c6 c6Var5;
-        c6 c6Var6;
-        ArrayList arrayList9;
-        int i29;
-        ArrayList arrayList10;
-        ArrayList arrayList11;
-        int i30;
-        int i31;
-        int i32;
-        int i33;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus;
-        c6 c6Var7;
-        c6 c6Var8;
-        int i34;
-        int i35;
-        c6 c6Var9;
-        final int i36;
-        c6 c6Var10;
-        c6 c6Var11;
-        c6 c6Var12;
-        c6 c6Var13;
-        c6 c6Var14;
-        int i37;
-        boolean z13;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2;
-        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus3;
-        float f10;
-        float f11;
-        int i38;
-        org.telegram.ui.ActionBar.o2 o2Var = v0Var.n;
-        this.e = v0Var;
-        setOrientation(1);
-        i10 = ((f3) v0Var).backgroundPaddingLeft;
-        int dp = AndroidUtilities.dp(6.0f) + i10;
-        i11 = ((f3) v0Var).backgroundPaddingLeft;
-        setPadding(dp, 0, AndroidUtilities.dp(6.0f) + i11, 0);
-        int i39 = v0Var.d0;
-        i12 = ((f3) v0Var).currentAccount;
-        androidx.emoji2.text.o u12 = v0.u1(i39, i12);
-        v0Var.I0 = u12;
-        int i40 = u12.a;
-        i13 = ((f3) v0Var).currentAccount;
-        MessagesController messagesController = MessagesController.getInstance(i13);
-        boolean premiumFeaturesBlocked = messagesController.premiumFeaturesBlocked();
-        boolean x12 = v0Var.x1();
-        if (i39 == 31) {
-            str = LocaleController.getString(x12 ? R.string.BoostingAdditionalFeaturesSubtitle : R.string.BoostingAdditionalFeaturesSubtitleChannel);
-        } else if (i39 == 32) {
-            str = v0Var.q1(true);
-        } else if (i39 == 19) {
-            org.telegram.ui.Cells.s1 s1Var = v0Var.c0;
-            if (s1Var != null) {
-                int i41 = s1Var.getMessageObject().messageOwner.from_boosts_applied;
-                TLRPC.Chat s12 = v0Var.s1();
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("GroupBoostedByUserWithTimes", i41, UserObject.getFirstName(v0Var.c0.getCurrentUser())));
-                spannableStringBuilder.append((CharSequence) " ");
-                spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.GroupBoostedByUserWithDescription, s12 == null ? "" : s12.title));
-                str = spannableStringBuilder.toString();
-            } else if (o2Var instanceof a60) {
-                str = LocaleController.formatPluralString("BoostingGroupBoostWhatAreBoostsDescription", eg.q0.g(), new Object[0]);
-            } else {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(v0Var.q1(true));
-                if (ChatObject.hasAdminRights(v0Var.s1()) && x12) {
-                    spannableStringBuilder2.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.BoostingPremiumUserCanBoostGroupWithLink));
-                }
-                str = spannableStringBuilder2.toString();
-            }
-        } else if (i39 == 18) {
-            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus4 = v0Var.X;
-            if (tL_premium_boostsStatus4.level == 0) {
-                int i42 = x12 ? R.string.GroupNeedBoostsDescription : R.string.ChannelNeedBoostsDescription;
-                int i43 = tL_premium_boostsStatus4.next_level_boosts;
-                str = LocaleController.formatString(i42, LocaleController.formatPluralString("MoreBoosts", i43, Integer.valueOf(i43)));
-            } else {
-                int i44 = x12 ? R.string.GroupNeedBoostsDescriptionNextLevel : R.string.ChannelNeedBoostsDescriptionNextLevel;
-                int i45 = tL_premium_boostsStatus4.next_level_boosts;
-                int i46 = tL_premium_boostsStatus4.boosts;
-                str = LocaleController.formatString(i44, LocaleController.formatPluralString("MoreBoosts", i45 - i46, Integer.valueOf(i45 - i46)), LocaleController.formatPluralString("BoostStories", v0Var.X.level + 1, new Object[0]));
-            }
-        } else if (i39 == 20) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForColorDescription : R.string.ChannelNeedBoostsForColorDescription, Integer.valueOf(v0Var.o1()));
-        } else if (i39 == 24) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForProfileColorDescription : R.string.ChannelNeedBoostsForProfileColorDescription, Integer.valueOf(v0Var.o1()));
-        } else if (i39 == 29) {
-            str = LocaleController.formatString(R.string.GroupNeedBoostsForCustomEmojiPackDescription, Integer.valueOf(messagesController.groupEmojiStickersLevelMin));
-        } else if (i39 == 30) {
-            str = LocaleController.formatString(R.string.ChannelNeedBoostsForSwitchOffAdsDescription, Integer.valueOf(messagesController.channelRestrictSponsoredLevelMin));
-        } else if (i39 == 35) {
-            str = LocaleController.formatString(R.string.ChannelNeedBoostsForAutotranslationDescription, Integer.valueOf(messagesController.channelAutotranslationLevelMin));
-        } else if (i39 == 25) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForEmojiStatusDescription : R.string.ChannelNeedBoostsForEmojiStatusDescription, Integer.valueOf(x12 ? messagesController.groupEmojiStatusLevelMin : messagesController.channelEmojiStatusLevelMin));
-        } else if (i39 == 26) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForWearCollectiblesDescription : R.string.ChannelNeedBoostsForWearCollectiblesDescription, Integer.valueOf(x12 ? messagesController.groupEmojiStatusLevelMin : messagesController.channelEmojiStatusLevelMin));
-        } else if (i39 == 27) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForReplyIconDescription : R.string.ChannelNeedBoostsForReplyIconDescription, Integer.valueOf(messagesController.channelBgIconLevelMin));
-        } else if (i39 == 28) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForProfileIconDescription : R.string.ChannelNeedBoostsForProfileIconDescription, Integer.valueOf(x12 ? messagesController.groupProfileBgIconLevelMin : messagesController.channelProfileIconLevelMin));
-        } else if (i39 == 22) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForWallpaperDescription : R.string.ChannelNeedBoostsForWallpaperDescription, Integer.valueOf(x12 ? messagesController.groupWallpaperLevelMin : messagesController.channelWallpaperLevelMin));
-        } else if (i39 == 23) {
-            str = LocaleController.formatString(x12 ? R.string.GroupNeedBoostsForCustomWallpaperDescription : R.string.ChannelNeedBoostsForCustomWallpaperDescription, Integer.valueOf(x12 ? messagesController.groupCustomWallpaperLevelMin : messagesController.channelCustomWallpaperLevelMin));
-        } else if (i39 == 21) {
-            int i47 = v0Var.N0;
-            str = LocaleController.formatPluralString("ReactionReachLvlForReaction", i47, Integer.valueOf(i47));
-        } else if (i39 == 11) {
-            formatString = !v0Var.U ? ChatObject.isChannelAndNotMegaGroup(v0Var.K0) ? v0Var.x0.size() == 1 ? LocaleController.formatString(R.string.InviteChannelRestrictedUsers2One, ContactsController.formatName((TLRPC.User) v0Var.x0.get(0))) : LocaleController.formatPluralString("InviteChannelRestrictedUsers2", v0Var.x0.size(), Integer.valueOf(v0Var.x0.size())) : v0Var.x0.size() == 1 ? LocaleController.formatString(R.string.InviteRestrictedUsers2One, ContactsController.formatName((TLRPC.User) v0Var.x0.get(0))) : LocaleController.formatPluralString("InviteRestrictedUsers2", v0Var.x0.size(), Integer.valueOf(v0Var.x0.size())) : ChatObject.isChannelAndNotMegaGroup(v0Var.K0) ? v0Var.x0.size() == 1 ? LocaleController.formatString(R.string.InviteChannelRestrictedUsersOne, ContactsController.formatName((TLRPC.User) v0Var.x0.get(0))) : LocaleController.formatPluralString("InviteChannelRestrictedUsers", v0Var.x0.size(), Integer.valueOf(v0Var.x0.size())) : v0Var.x0.size() == 1 ? LocaleController.formatString(R.string.InviteRestrictedUsersOne, ContactsController.formatName((TLRPC.User) v0Var.x0.get(0))) : LocaleController.formatPluralString("InviteRestrictedUsers", v0Var.x0.size(), Integer.valueOf(v0Var.x0.size()));
-            z10 = true;
-            androidx.emoji2.text.o oVar = v0Var.I0;
-            int i48 = oVar.b;
-            int i49 = oVar.c;
-            i15 = v0Var.s0;
-            if (i39 != 3) {
-                i38 = ((f3) v0Var).currentAccount;
-                i15 = MessagesController.getInstance(i38).dialogFilters.size() - 1;
-            } else if (i39 == 7) {
-                i15 = UserConfig.getActivatedAccountsCount();
-            } else if (i39 == 0) {
-                i16 = ((f3) v0Var).currentAccount;
-                ArrayList<TLRPC.Dialog> dialogs = MessagesController.getInstance(i16).getDialogs(0);
-                int size3 = dialogs.size();
-                int i50 = 0;
-                for (int i51 = 0; i51 < size3; i51++) {
-                    TLRPC.Dialog dialog = dialogs.get(i51);
-                    if (!(dialog instanceof TLRPC.TL_dialogFolder) && dialog.pinned) {
-                        i50++;
-                    }
-                }
-                i15 = i50;
-                i17 = ((f3) v0Var).currentAccount;
-                if (!UserConfig.getInstance(i17).isPremium() || v0Var.J0) {
-                    i15 = i49;
-                    f9 = 1.0f;
-                } else {
-                    i15 = i15 < 0 ? i48 : i15;
-                    if (i39 != 7) {
-                        f10 = i15;
-                        f11 = i49;
-                    } else if (i15 > i48) {
-                        f10 = i15 - i48;
-                        f11 = i49 - i48;
+        int i14 = 3;
+        int i15 = 13;
+        int i16 = 27;
+        int i17 = 4;
+        int i18 = 2;
+        r13 = null;
+        byte[] bArr4 = null;
+        r13 = null;
+        String str = null;
+        int i19 = 1;
+        int i20 = 0;
+        switch (this.a) {
+            case 0:
+                d1 d1Var = (d1) this.c;
+                b4.e0 e0Var = (b4.e0) this.d;
+                b4.e0 e0Var2 = (b4.e0) this.e;
+                boolean z4 = this.b;
+                int i21 = 0;
+                d1Var.f.f(new a1(d1Var, e0Var, i21));
+                d1Var.f.f(new a1(d1Var, e0Var2, i21));
+                d1Var.E = z4;
+                break;
+            case 1:
+                qc qcVar = (qc) this.c;
+                boolean z10 = this.b;
+                TLRPC.Chat chat = (TLRPC.Chat) this.d;
+                f6 f6Var2 = (f6) this.e;
+                int i22 = R.raw.star_premium_2;
+                ic M = qcVar.M(z10 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated), AndroidUtilities.replaceSingleTag(z10 ? LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckStatistic : R.string.BoostingCheckStatisticGroup) : LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup), j6.Gi, 0, new gg.i(chat), f6Var2), i22);
+                M.j = 5000;
+                M.j();
+                break;
+            case 2:
+                l7 l7Var = (l7) this.c;
+                int[] iArr = (int[]) this.d;
+                TLObject tLObject = (TLObject) this.e;
+                boolean z11 = this.b;
+                ArrayList arrayList = l7Var.l;
+                int i23 = l7Var.a;
+                if (iArr[0] == l7Var.m) {
+                    l7Var.i = false;
+                    l7Var.m = -1;
+                    if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
+                        TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
+                        MessagesController.getInstance(i23).putUsers(tL_payments_savedStarGifts.users, false);
+                        MessagesController.getInstance(i23).putChats(tL_payments_savedStarGifts.chats, false);
+                        if (z11) {
+                            arrayList.clear();
+                        }
+                        arrayList.addAll(tL_payments_savedStarGifts.gifts);
+                        l7Var.k = tL_payments_savedStarGifts.next_offset;
+                        l7Var.n = tL_payments_savedStarGifts.count;
+                        l7Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
+                        l7Var.j = arrayList.size() > l7Var.n || l7Var.k == null;
+                        c3 = 1;
                     } else {
-                        f9 = 0.5f;
+                        c3 = 1;
+                        l7Var.j = true;
                     }
-                    f9 = f10 / f11;
+                    NotificationCenter notificationCenter = NotificationCenter.getInstance(i23);
+                    int i24 = NotificationCenter.starUserGiftsLoaded;
+                    Object[] objArr = new Object[2];
+                    objArr[0] = Long.valueOf(l7Var.b);
+                    objArr[c3] = l7Var;
+                    notificationCenter.lambda$postNotificationNameOnUIThread$1(i24, objArr);
+                    break;
                 }
-                float f12 = i48 / i49;
-                if (i39 == 18 && i39 != 20 && i39 != 24 && i39 != 25 && i39 != 26) {
-                    if (i39 != 29 && i39 != 22 && i39 != 23 && i39 != 19 && i39 != 30 && i39 != 35 && i39 != 21 && i39 != 27 && i39 != 28 && i39 != 32) {
-                        z11 = false;
-                        i15 = z11 ? 0 : i15;
-                        if (i39 != 11 || i39 == 34) {
-                            i18 = ((f3) v0Var).currentAccount;
-                            if (!MessagesController.getInstance(i18).premiumFeaturesBlocked() && (((arrayList = v0Var.z0) != null && !arrayList.isEmpty()) || ((arrayList2 = v0Var.y0) != null && arrayList2.size() >= v0Var.x0.size()))) {
-                                arrayList3 = !v0Var.z0.isEmpty() ? v0Var.y0 : v0Var.z0;
-                                h9 h9Var = new h9(context, false);
-                                h9Var.a.q = AndroidUtilities.dp(3.33f);
-                                h9Var.setSize(AndroidUtilities.dp(72.0f));
-                                h9Var.setStepFactor(0.4f);
-                                min = Math.min(arrayList3.size(), 3);
-                                h9Var.setCount(min);
-                                for (i19 = 0; i19 < min; i19++) {
-                                    Long l10 = (Long) arrayList3.get(i19);
-                                    l10.getClass();
-                                    i30 = ((f3) v0Var).currentAccount;
-                                    TLRPC.User user = MessagesController.getInstance(i30).getUser(l10);
-                                    i31 = ((f3) v0Var).currentAccount;
-                                    h9Var.b(i19, user, i31);
-                                }
-                                h9Var.a(false);
-                                addView(h9Var, f6.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
-                                TextView textView = new TextView(context);
-                                textView.setGravity(17);
-                                org.telegram.ui.b.g(20.0f, 1, textView);
-                                int i52 = g6.j5;
-                                c6Var = ((f3) v0Var).resourcesProvider;
-                                textView.setTextColor(g6.v0(i52, c6Var));
-                                textView.setText(LocaleController.getString(R.string.InvitePremiumBlockedTitle));
-                                addView(textView, f6.t(-1, -2, 1, 32, 0, 32, 9));
-                                TextView textView2 = new TextView(context);
-                                textView2.setGravity(17);
-                                textView2.setTextSize(1, 14.0f);
-                                c6Var2 = ((f3) v0Var).resourcesProvider;
-                                textView2.setTextColor(g6.v0(i52, c6Var2));
-                                addView(textView2, f6.t(-1, -2, 1, 32, 0, 32, 19));
-                                boolean z14 = i39 != 34;
-                                arrayList4 = v0Var.y0;
-                                if (arrayList4 != null) {
-                                    arrayList10 = v0Var.y0;
-                                    int size4 = arrayList10.size();
-                                    arrayList11 = v0Var.z0;
-                                    if (size4 >= arrayList11.size()) {
-                                        z12 = true;
-                                        if (arrayList3.size() == 1) {
-                                            int i53 = z14 ? R.string.InviteCallMessagePremiumBlockedOne : z12 ? R.string.InviteMessagePremiumBlockedOne : R.string.InvitePremiumBlockedOne;
-                                            i29 = ((f3) v0Var).currentAccount;
-                                            str2 = LocaleController.formatString(i53, UserObject.getForcedFirstName(MessagesController.getInstance(i29).getUser((Long) arrayList3.get(0))));
-                                        } else if (arrayList3.size() == 2) {
-                                            int i54 = z14 ? R.string.InviteCallMessagePremiumBlockedTwo : z12 ? R.string.InviteMessagePremiumBlockedTwo : R.string.InvitePremiumBlockedTwo;
-                                            i25 = ((f3) v0Var).currentAccount;
-                                            String forcedFirstName = UserObject.getForcedFirstName(MessagesController.getInstance(i25).getUser((Long) arrayList3.get(0)));
-                                            i26 = ((f3) v0Var).currentAccount;
-                                            str2 = LocaleController.formatString(i54, forcedFirstName, UserObject.getForcedFirstName(MessagesController.getInstance(i26).getUser((Long) arrayList3.get(1))));
-                                        } else if (arrayList3.size() == 3) {
-                                            int i55 = z14 ? R.string.InviteCallMessagePremiumBlockedThree : z12 ? R.string.InviteMessagePremiumBlockedThree : R.string.InvitePremiumBlockedThree;
-                                            i22 = ((f3) v0Var).currentAccount;
-                                            String forcedFirstName2 = UserObject.getForcedFirstName(MessagesController.getInstance(i22).getUser((Long) arrayList3.get(0)));
-                                            i23 = ((f3) v0Var).currentAccount;
-                                            String forcedFirstName3 = UserObject.getForcedFirstName(MessagesController.getInstance(i23).getUser((Long) arrayList3.get(1)));
-                                            i24 = ((f3) v0Var).currentAccount;
-                                            str2 = LocaleController.formatString(i55, forcedFirstName2, forcedFirstName3, UserObject.getForcedFirstName(MessagesController.getInstance(i24).getUser((Long) arrayList3.get(2))));
-                                        } else {
-                                            String str3 = z14 ? "InviteCallMessagePremiumBlockedMany" : z12 ? "InviteMessagePremiumBlockedMany" : "InvitePremiumBlockedMany";
-                                            int size5 = arrayList3.size() - 2;
-                                            i20 = ((f3) v0Var).currentAccount;
-                                            String forcedFirstName4 = UserObject.getForcedFirstName(MessagesController.getInstance(i20).getUser((Long) arrayList3.get(0)));
-                                            i21 = ((f3) v0Var).currentAccount;
-                                            String formatPluralString = LocaleController.formatPluralString(str3, size5, forcedFirstName4, UserObject.getForcedFirstName(MessagesController.getInstance(i21).getUser((Long) arrayList3.get(1))));
-                                            int size6 = arrayList3.size() - 2;
-                                            int themedColor = v0Var.getThemedColor(g6.h5);
-                                            h9Var.b = new r1(g6.Lj, g6.Mj, -1, -1, null);
-                                            h9Var.c = new zz0(j7.l1.k(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-                                            Paint paint = new Paint(1);
-                                            h9Var.d = paint;
-                                            paint.setColor(themedColor);
-                                            str2 = formatPluralString;
-                                        }
-                                        textView2.setText(AndroidUtilities.replaceTags(str2));
-                                        arrayList5 = v0Var.z0;
-                                        if (arrayList5 == null) {
-                                            size = 0;
-                                        } else {
-                                            arrayList6 = v0Var.z0;
-                                            size = arrayList6.size();
-                                        }
-                                        arrayList7 = v0Var.y0;
-                                        if (arrayList7 == null) {
-                                            size2 = 0;
-                                        } else {
-                                            arrayList8 = v0Var.y0;
-                                            size2 = arrayList8.size();
-                                        }
-                                        if (size - size2 > 0 || ((size == 1 && size2 == 1) || !v0Var.U)) {
-                                            ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).bottomMargin = AndroidUtilities.dp(8.0f);
-                                            v0Var.f0 = true;
-                                        } else {
-                                            c6Var3 = ((f3) v0Var).resourcesProvider;
-                                            final int i56 = 0;
-                                            d1 d1Var = new d1(context, c6Var3, false);
-                                            h6.b(d1Var, 0.02f, 1.2f);
-                                            d1Var.a(LocaleController.getString(R.string.InvitePremiumBlockedSubscribe), new View.OnClickListener(this) { // from class: cg.r0
-                                                public final /* synthetic */ u0 b;
-
-                                                {
-                                                    this.b = this;
-                                                }
-
-                                                @Override // android.view.View.OnClickListener
-                                                public final void onClick(View view) {
-                                                    switch (i56) {
-                                                        case 0:
-                                                            org.telegram.ui.ActionBar.o2 o2Var2 = this.b.e.G0;
-                                                            if (o2Var2 != null) {
-                                                                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                                                                m2Var.a = true;
-                                                                o2Var2.showAsSheet(new PremiumPreviewFragment(0, "invite_privacy"), m2Var);
-                                                                break;
-                                                            }
-                                                            break;
-                                                        default:
-                                                            v0 v0Var2 = this.b.e;
-                                                            v0Var2.n.presentFragment(tn.R9(v0Var2.W));
-                                                            v0Var2.dismiss();
-                                                            break;
-                                                    }
-                                                }
-                                            }, false);
-                                            i27 = ((f3) v0Var).backgroundPaddingLeft;
-                                            float f13 = (i27 / AndroidUtilities.density) + 4.0f;
-                                            i28 = ((f3) v0Var).backgroundPaddingLeft;
-                                            addView(d1Var, f6.k(f13, 0.0f, (i28 / AndroidUtilities.density) + 4.0f, 18.0f, -1, 48));
-                                            s0 s0Var = new s0(this, context);
-                                            s0Var.setGravity(17);
-                                            int i57 = g6.z6;
-                                            c6Var4 = ((f3) v0Var).resourcesProvider;
-                                            s0Var.setTextColor(g6.v0(i57, c6Var4));
-                                            s0Var.setText(" " + LocaleController.getString(R.string.InvitePremiumBlockedOr) + " ");
-                                            s0Var.setTextSize(14.0f);
-                                            addView(s0Var, f6.t(190, -2, 1, 12, 0, 12, 20));
-                                            TextView textView3 = new TextView(context);
-                                            textView3.setGravity(17);
-                                            textView3.setTypeface(AndroidUtilities.bold());
-                                            textView3.setTextSize(1, 20.0f);
-                                            c6Var5 = ((f3) v0Var).resourcesProvider;
-                                            textView3.setTextColor(g6.v0(i52, c6Var5));
-                                            textView3.setText(LocaleController.getString(R.string.InviteBlockedTitle));
-                                            addView(textView3, f6.t(-1, -2, 1, 32, 0, 32, 9));
-                                            TextView textView4 = new TextView(context);
-                                            textView4.setGravity(17);
-                                            textView4.setTextSize(1, 14.0f);
-                                            c6Var6 = ((f3) v0Var).resourcesProvider;
-                                            textView4.setTextColor(g6.v0(i52, c6Var6));
-                                            arrayList9 = v0Var.z0;
-                                            if (arrayList9.size() <= 1) {
-                                                textView4.setText(LocaleController.getString(R.string.InviteBlockedOneMessage));
-                                            } else {
-                                                textView4.setText(LocaleController.getString(R.string.InviteBlockedManyMessage));
-                                            }
-                                            addView(textView4, f6.t(-1, -2, 1, 32, 0, 32, 19));
-                                        }
-                                        v0Var.L1();
-                                        return;
-                                    }
-                                }
-                                z12 = false;
-                                if (arrayList3.size() == 1) {
-                                }
-                                textView2.setText(AndroidUtilities.replaceTags(str2));
-                                arrayList5 = v0Var.z0;
-                                if (arrayList5 == null) {
-                                }
-                                arrayList7 = v0Var.y0;
-                                if (arrayList7 == null) {
-                                }
-                                if (size - size2 > 0) {
-                                }
-                                ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).bottomMargin = AndroidUtilities.dp(8.0f);
-                                v0Var.f0 = true;
-                                v0Var.L1();
-                                return;
+                break;
+            case 3:
+                e3 e3Var = (e3) this.c;
+                View view = (View) this.d;
+                mg.q0 q0Var = (mg.q0) this.e;
+                boolean z12 = this.b;
+                d4 d4Var = e3Var.a;
+                z4.a0(d4Var.z2, 1, d4Var.y1, new d3(e3Var, z12, q0Var, view));
+                break;
+            case 4:
+                ((CameraController) this.c).lambda$initCamera$3(this.b, (Exception) this.d, (Runnable) this.e);
+                break;
+            case 5:
+                String[] strArr = (String[]) this.c;
+                i6 i6Var = (i6) this.d;
+                boolean z13 = this.b;
+                org.telegram.ui.ActionBar.p pVar = (org.telegram.ui.ActionBar.p) this.e;
+                try {
+                    j6.g0 = j6.ql.get(j6.g5, -1);
+                    if (TextUtils.isEmpty(strArr[0])) {
+                        try {
+                            if (i6Var.c != null) {
+                                new File(i6Var.c).delete();
                             }
+                        } catch (Exception unused) {
                         }
-                        if (i39 != 31 && i39 != 34) {
-                            c6Var14 = ((f3) v0Var).resourcesProvider;
-                            t0 t0Var = new t0(this, context, i40, i15, i49, f12, c6Var14);
-                            v0Var.t0 = t0Var;
-                            if (z11) {
-                                t0Var.setBagePosition(f9);
-                                v0Var.t0.setType(i39);
-                                v0Var.t0.w.setVisibility(8);
-                                if (z10) {
-                                    t0 t0Var2 = v0Var.t0;
-                                    t0Var2.E.setVisibility(8);
-                                    w wVar = t0Var2.e;
-                                    if (wVar != null) {
-                                        wVar.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(3.0f));
-                                    }
-                                    t0Var2.F = true;
-                                } else {
-                                    i37 = ((f3) v0Var).currentAccount;
-                                    if (UserConfig.getInstance(i37).isPremium() || v0Var.J0) {
-                                        v0Var.t0.v.setVisibility(8);
-                                        if (i39 == 6) {
-                                            v0Var.t0.w.setText("2 GB");
-                                        } else {
-                                            v0Var.t0.w.setText(Integer.toString(i48));
-                                        }
-                                        z13 = false;
-                                        v0Var.t0.w.setVisibility(0);
-                                        if (i39 != 2 || i39 == 5) {
-                                            v0Var.t0.D = z13;
-                                        }
-                                        addView(v0Var.t0, f6.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
-                                    }
-                                }
-                            } else {
-                                tL_premium_boostsStatus2 = v0Var.X;
-                                if (tL_premium_boostsStatus2 != null) {
-                                    t0 t0Var3 = v0Var.t0;
-                                    tL_premium_boostsStatus3 = v0Var.X;
-                                    ChannelBoostsController.CanApplyBoost canApplyBoost = v0Var.Y;
-                                    t0Var3.e(tL_premium_boostsStatus3, canApplyBoost != null && canApplyBoost.boostedNow);
-                                }
+                        i6Var.c = null;
+                        j6.h0 = null;
+                    } else {
+                        j6.h0 = strArr[0];
+                        String absolutePath = new File(ApplicationLoader.getFilesDirFixed(), Utilities.MD5(j6.h0) + ".wp").getAbsolutePath();
+                        try {
+                            String str2 = i6Var.c;
+                            if (str2 != null && !str2.equals(absolutePath)) {
+                                new File(i6Var.c).delete();
                             }
-                            z13 = false;
-                            if (i39 != 2) {
-                            }
-                            v0Var.t0.D = z13;
-                            addView(v0Var.t0, f6.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
+                        } catch (Exception unused2) {
                         }
-                        if (i39 != 31) {
-                            FrameLayout frameLayout = new FrameLayout(context);
-                            ImageView imageView = new ImageView(context);
-                            imageView.setImageDrawable(f0.e.d(getContext(), R.drawable.large_boosts));
-                            i32 = 17;
-                            frameLayout.addView(imageView, f6.e(-2, -2, 17));
-                            frameLayout.setBackground(g6.K(AndroidUtilities.dp(79.0f), g6.u0(g6.Oh)));
-                            addView(frameLayout, f6.t(79, 79, 1, 0, 23, 0, 0));
+                        i6Var.c = absolutePath;
+                        try {
+                            Uri parse = Uri.parse(j6.h0);
+                            i6Var.e = parse.getQueryParameter("slug");
+                            String queryParameter = parse.getQueryParameter("mode");
+                            if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
+                                for (int i25 = 0; i25 < split.length; i25++) {
+                                    if ("blur".equals(split[i25])) {
+                                        i6Var.h = true;
+                                    } else if ("motion".equals(split[i25])) {
+                                        i6Var.n = true;
+                                    }
+                                }
+                            }
+                            Utilities.parseInt((CharSequence) parse.getQueryParameter("intensity")).getClass();
+                            i6Var.x = 45;
+                            try {
+                                String queryParameter2 = parse.getQueryParameter("bg_color");
+                                if (!TextUtils.isEmpty(queryParameter2)) {
+                                    i6Var.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
+                                    if (queryParameter2.length() >= 13 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(6))) {
+                                        i6Var.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
+                                    }
+                                    if (queryParameter2.length() >= 20 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(13))) {
+                                        i6Var.v = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
+                                    }
+                                    if (queryParameter2.length() == 27 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(20))) {
+                                        i6Var.w = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
+                                    }
+                                }
+                            } catch (Exception unused3) {
+                            }
+                            try {
+                                String queryParameter3 = parse.getQueryParameter("rotation");
+                                if (!TextUtils.isEmpty(queryParameter3)) {
+                                    i6Var.x = Utilities.parseInt((CharSequence) queryParameter3).intValue();
+                                }
+                            } catch (Exception unused4) {
+                            }
+                        } catch (Throwable th2) {
+                            FileLog.e(th2);
+                        }
+                    }
+                    if (!z13 && j6.M == null) {
+                        j6.K = i6Var;
+                        if (j6.I == j6.J) {
+                            j6.T = 2000;
+                            j6.U = SystemClock.elapsedRealtime();
+                            AndroidUtilities.runOnUIThread(new n0(19), 2100L);
+                        }
+                    }
+                    j6.I = i6Var;
+                    j6.n1(false, false);
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                if (j6.M == null && !j6.Q) {
+                    MessagesController.getInstance(i6Var.B).saveTheme(i6Var, i6Var.k(false), z13, false);
+                }
+                pVar.run();
+                break;
+            case 6:
+                xn.U((xn) this.c, (String) this.d, (MessageObject) this.e, this.b);
+                break;
+            case 7:
+                jn jnVar = (jn) this.c;
+                TLRPC.Message message = (TLRPC.Message) this.d;
+                boolean z14 = this.b;
+                MessageObject messageObject = (MessageObject) this.e;
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                int i26 = R.string.SuggestedMessageAcceptInfo;
+                xn xnVar = jnVar.a;
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i26, xnVar.getMessagesController().getPeerName(DialogObject.getPeerDialogId(message.from_id)))));
+                spannableStringBuilder.append((CharSequence) "\n\n");
+                mf.a m9 = mf.a.m(message.suggested_post.price);
+                int i27 = m9.a == mf.b.b ? xnVar.getMessagesController().config.tonSuggestedPostCommissionPermille.get() : xnVar.getMessagesController().config.starsSuggestedPostCommissionPermille.get();
+                if (z14) {
+                    c10 = 0;
+                    c11 = 1;
+                    m9 = mf.a.i((m9.b / 1000) * i27, m9.a);
+                } else {
+                    c10 = 0;
+                    c11 = 1;
+                }
+                if (message.suggested_post.schedule_date == 0) {
+                    if (z14) {
+                        int i28 = R.string.SuggestedMessageAcceptInfoAnytimeAdmin2;
+                        String f10 = m9.f();
+                        String G0 = rh.k.G0(i27);
+                        Object[] objArr2 = new Object[2];
+                        objArr2[c10] = f10;
+                        objArr2[c11] = G0;
+                        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i28, objArr2)));
+                    } else {
+                        int i29 = R.string.SuggestedMessageAcceptInfoAnytimeUser2;
+                        Object[] objArr3 = new Object[1];
+                        objArr3[c10] = m9.f();
+                        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i29, objArr3)));
+                    }
+                } else if (z14) {
+                    int i30 = R.string.SuggestedMessageAcceptInfoAdmin2;
+                    String f11 = m9.f();
+                    String o10 = lh.s0.o(message.suggested_post.schedule_date);
+                    String G02 = rh.k.G0(i27);
+                    Object[] objArr4 = new Object[3];
+                    objArr4[c10] = f11;
+                    objArr4[1] = o10;
+                    objArr4[2] = G02;
+                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i30, objArr4)));
+                } else {
+                    int i31 = R.string.SuggestedMessageAcceptInfoUser2;
+                    String f12 = m9.f();
+                    String o11 = lh.s0.o(message.suggested_post.schedule_date);
+                    Object[] objArr5 = new Object[2];
+                    objArr5[c10] = f12;
+                    objArr5[1] = o11;
+                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i31, objArr5)));
+                }
+                spannableStringBuilder.append(' ');
+                int i32 = R.string.SuggestedMessageAcceptInfo3;
+                i10 = ((p2) xnVar).currentAccount;
+                Object[] objArr6 = new Object[1];
+                objArr6[c10] = Long.valueOf(MessagesController.getInstance(i10).config.starsSuggestedPostAgeMin.get(TimeUnit.HOURS));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i32, objArr6)));
+                ic[] icVarArr = new ic[1];
+                v5 v5Var = new v5(icVarArr, i17);
+                org.telegram.ui.ActionBar.d2[] d2VarArr = new org.telegram.ui.ActionBar.d2[1];
+                org.telegram.ui.ActionBar.d2 v02 = z4.v0(xnVar, LocaleController.getString(R.string.SuggestedPostAcceptTitle), spannableStringBuilder, LocaleController.getString(message.suggested_post.schedule_date == 0 ? R.string.Next : R.string.SuggestedPostPublish), false, new gg.j0(jnVar, message, d2VarArr, messageObject, v5Var, 24));
+                d2VarArr[c10] = v02;
+                v02.setOnDismissListener(v5Var);
+                if (z14 && m9.a == mf.b.a) {
+                    bb a2 = cb.a(xnVar.getParentActivity());
+                    f6Var = ((p2) xnVar).resourceProvider;
+                    ic G = new qc(a2, f6Var).G(R.raw.info, 10, LocaleController.getString(R.string.SuggestedMessageAcceptStarsDisclaimer));
+                    G.j = 60000;
+                    G.k(true);
+                    icVarArr[c10] = G;
+                    break;
+                }
+                break;
+            case 8:
+                vn vnVar = (vn) this.c;
+                vnVar.j((e4) this.d, (TLRPC.WallPaper) this.e, this.b);
+                vnVar.g(vnVar.n);
+                pm pmVar = vnVar.S.U0;
+                if (pmVar != null && (h0Var = pmVar.I) != null) {
+                    h0Var.invalidate();
+                    break;
+                }
+                break;
+            case 9:
+                dp dpVar = (dp) this.c;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
+                TLObject tLObject2 = (TLObject) this.e;
+                boolean z15 = this.b;
+                if (tL_error == null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tLObject2;
+                    dpVar.i0 = tL_chatInviteExported;
+                    TLRPC.ChatFull chatFull = dpVar.V;
+                    if (chatFull != null) {
+                        chatFull.exported_invite = tL_chatInviteExported;
+                    }
+                    if (z15) {
+                        if (dpVar.getParentActivity() != null) {
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dpVar.getParentActivity());
+                            alertDialog$Builder.a.Q = LocaleController.getString(R.string.RevokeAlertNewLink);
+                            alertDialog$Builder.a.O = LocaleController.getString(R.string.RevokeLink);
+                            alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
+                            dpVar.showDialog(alertDialog$Builder.a);
+                        }
+                    }
+                }
+                x80 x80Var = dpVar.D;
+                if (x80Var != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported2 = dpVar.i0;
+                    x80Var.setLink(tL_chatInviteExported2 != null ? tL_chatInviteExported2.link : null);
+                    dpVar.D.c(dpVar.i0, dpVar.W);
+                    break;
+                }
+                break;
+            case 10:
+                mp mpVar = (mp) this.c;
+                TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
+                boolean z16 = this.b;
+                l80 l80Var = (l80) this.e;
+                chat2.join_to_send = z16;
+                mpVar.x.d.getMessagesController().toggleChatJoinToSend(chat2.id, z16, new r5(mpVar, z16, chat2, 11), new hp(i18, mpVar, l80Var));
+                break;
+            case 11:
+                mp mpVar2 = (mp) this.c;
+                TLRPC.Chat chat3 = (TLRPC.Chat) this.d;
+                boolean z17 = this.b;
+                k80 k80Var = (k80) this.e;
+                chat3.join_request = z17;
+                mpVar2.x.d.getMessagesController().toggleChatJoinRequest(chat3.id, z17, new lp(mpVar2, i20), new hp(i19, mpVar2, k80Var));
+                break;
+            case 12:
+                boolean z18 = this.b;
+                TLRPC.Chat chat4 = (TLRPC.Chat) this.c;
+                AlertDialog$Builder alertDialog$Builder2 = (AlertDialog$Builder) this.d;
+                boolean[] zArr = (boolean[]) this.e;
+                if (z18 && ChatObject.isChannel(chat4)) {
+                    View d = alertDialog$Builder2.a.d(-1);
+                    if (d instanceof TextView) {
+                        TextView textView = (TextView) d;
+                        if (zArr[0]) {
+                            textView.setText(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat4) ? R.string.ChannelDelete : R.string.DeleteMega));
+                            break;
+                        } else if (chat4.monoforum) {
+                            textView.setText(LocaleController.getString(R.string.LeaveConversationMenu));
+                            break;
+                        } else if (chat4.megagroup) {
+                            textView.setText(LocaleController.getString(R.string.LeaveMega));
+                            break;
                         } else {
-                            i32 = 17;
+                            textView.setText(LocaleController.getString(R.string.LeaveChannel));
+                            break;
                         }
-                        TextView textView5 = new TextView(context);
-                        this.a = textView5;
-                        textView5.setTypeface(AndroidUtilities.bold());
-                        if (i39 != 31) {
-                            this.a.setText(LocaleController.getString(R.string.BoostingAdditionalFeaturesTitle));
-                        } else if (i39 == 32) {
-                            this.a.setText(v0Var.r1());
-                        } else {
-                            i33 = 19;
-                            if (i39 == 19) {
-                                if (o2Var instanceof a60) {
-                                    this.a.setText(LocaleController.getString(R.string.BoostingGroupBoostWhatAreBoosts));
-                                } else {
-                                    this.a.setText(v0Var.r1());
-                                }
-                            } else if (i39 == 30) {
-                                this.a.setText(v0Var.r1());
-                            } else if (i39 == 35) {
-                                this.a.setText(LocaleController.getString(R.string.UnlockBoostChannelAutotranslation));
-                            } else if (i39 == 18) {
-                                tL_premium_boostsStatus = v0Var.X;
-                                if (tL_premium_boostsStatus.level == 0) {
-                                    this.a.setText(LocaleController.getString(R.string.BoostingEnableStories));
-                                } else {
-                                    this.a.setText(LocaleController.getString(R.string.BoostingIncreaseLevel));
-                                }
-                            } else if (i39 == 21) {
-                                this.a.setText(LocaleController.getString(R.string.ReactionCustomReactions));
-                            } else if (i39 == 20) {
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableColor));
-                            } else if (i39 == 24) {
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableProfileColor));
-                            } else if (i39 == 27) {
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableLinkIcon));
-                            } else if (i39 == 28) {
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableProfileIcon));
-                            } else if (i39 == 25) {
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableEmojiStatus));
-                            } else if (i39 == 26) {
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableWearCollectibles));
-                            } else {
-                                if (i39 != 29) {
-                                    if (i39 == 22 || i39 == 23) {
-                                        this.a.setText(LocaleController.getString(R.string.BoostingEnableWallpaper));
-                                    } else if (i39 == 11) {
-                                        if (v0Var.U) {
-                                            this.a.setText(LocaleController.getString(R.string.ChannelInviteViaLink));
+                    }
+                }
+                break;
+            case 13:
+                gk gkVar = (gk) this.c;
+                String str3 = (String) this.d;
+                boolean z19 = this.b;
+                ArrayList arrayList2 = (ArrayList) this.e;
+                gkVar.getClass();
+                String lowerCase = str3.trim().toLowerCase();
+                if (lowerCase.length() == 0) {
+                    AndroidUtilities.runOnUIThread(new hp(i16, gkVar, new ArrayList()));
+                    break;
+                } else {
+                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+                    if (!lowerCase.equals(translitString) && translitString.length() != 0) {
+                        str = translitString;
+                    }
+                    int i33 = (str != null ? 1 : 0) + 1;
+                    String[] strArr2 = new String[i33];
+                    strArr2[0] = lowerCase;
+                    if (str != null) {
+                        strArr2[1] = str;
+                    }
+                    ArrayList arrayList3 = new ArrayList();
+                    if (!z19) {
+                        for (int i34 = 0; i34 < arrayList2.size(); i34++) {
+                            ak akVar = (ak) arrayList2.get(i34);
+                            File file = akVar.f;
+                            if (file != null && !file.isDirectory()) {
+                                int i35 = 0;
+                                while (true) {
+                                    if (i35 < i33) {
+                                        String str4 = strArr2[i35];
+                                        String str5 = akVar.b;
+                                        if (str5 != null ? str5.toLowerCase().contains(str4) : false) {
+                                            arrayList3.add(akVar);
                                         } else {
-                                            this.a.setText(LocaleController.getString(R.string.ChannelInviteViaLinkRestricted));
+                                            i35++;
                                         }
-                                    } else if (i39 == 34) {
-                                        this.a.setText(LocaleController.getString(R.string.CallInviteViaLinkTitle));
-                                    } else if (i39 == 6) {
-                                        this.a.setText(LocaleController.getString(R.string.FileTooLarge));
-                                    } else if (i39 != 14 || v0Var.T <= 1) {
-                                        this.a.setText(LocaleController.getString(R.string.LimitReached));
-                                    } else {
-                                        this.a.setText(LocaleController.getString(R.string.CreateMultipleStories));
                                     }
-                                    this.a.setTextSize(1, 20.0f);
-                                    TextView textView6 = this.a;
-                                    int i58 = g6.G6;
-                                    c6Var7 = ((f3) v0Var).resourcesProvider;
-                                    textView6.setTextColor(g6.v0(i58, c6Var7));
-                                    this.a.setGravity(i32);
-                                    if (i39 != i33 || i39 == 32 || v0Var.y1()) {
-                                        eg.b bVar = new eg.b(context);
-                                        this.c = bVar;
-                                        bVar.a(v0Var.Y.boostCount, false);
-                                        if (i39 == 32) {
-                                            bVar.setVisibility(8);
-                                        }
-                                        if (v0Var.a0) {
-                                            addView(this.a, f6.t(-2, -2, 1, 0, z10 ? 8 : 22, 0, 0));
-                                            LinearLayout linearLayout = new LinearLayout(getContext());
-                                            linearLayout.setOrientation(0);
-                                            linearLayout.setClipChildren(false);
-                                            FrameLayout frameLayout2 = new FrameLayout(getContext());
-                                            int dp2 = AndroidUtilities.dp(14.0f);
-                                            int i59 = g6.a7;
-                                            c6Var8 = ((f3) v0Var).resourcesProvider;
-                                            frameLayout2.setBackground(g6.b0(dp2, g6.v0(i59, c6Var8)));
-                                            t9 t9Var = new t9(getContext());
-                                            t9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
-                                            i34 = ((f3) v0Var).currentAccount;
-                                            TLRPC.Chat chat = MessagesController.getInstance(i34).getChat(Long.valueOf(-v0Var.W));
-                                            e9 e9Var = new e9();
-                                            i35 = ((f3) v0Var).currentAccount;
-                                            e9Var.k(i35, chat);
-                                            t9Var.e(chat, e9Var);
-                                            frameLayout2.addView(t9Var, f6.c(28.0f, 28));
-                                            TextView textView7 = new TextView(getContext());
-                                            if (chat != null) {
-                                                textView7.setText(chat.title);
-                                            }
-                                            textView7.setSingleLine(true);
-                                            textView7.setMaxLines(1);
-                                            textView7.setEllipsize(TextUtils.TruncateAt.END);
-                                            textView7.setTextSize(1, 13.0f);
-                                            c6Var9 = ((f3) v0Var).resourcesProvider;
-                                            textView7.setTextColor(g6.v0(i58, c6Var9));
-                                            frameLayout2.addView(textView7, f6.d(-2, -2.0f, 16, 36.0f, 0.0f, 12.0f, 0.0f));
-                                            linearLayout.addView(frameLayout2, f6.t(-2, 28, 80, 18, 0, 18, 0));
-                                            LayoutTransition layoutTransition = new LayoutTransition();
-                                            layoutTransition.setDuration(100L);
-                                            layoutTransition.enableTransitionType(4);
-                                            linearLayout.setLayoutTransition(layoutTransition);
-                                            linearLayout.addView(bVar, f6.t(-2, -2, 48, -30, 2, 18, 0));
-                                            addView(linearLayout, f6.t(-2, 38, 17, 0, -4, 0, 12));
-                                            h6.a(linearLayout);
-                                            i36 = 1;
-                                            linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: cg.r0
-                                                public final /* synthetic */ u0 b;
-
-                                                {
-                                                    this.b = this;
-                                                }
-
-                                                @Override // android.view.View.OnClickListener
-                                                public final void onClick(View view) {
-                                                    switch (i36) {
-                                                        case 0:
-                                                            org.telegram.ui.ActionBar.o2 o2Var2 = this.b.e.G0;
-                                                            if (o2Var2 != null) {
-                                                                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                                                                m2Var.a = true;
-                                                                o2Var2.showAsSheet(new PremiumPreviewFragment(0, "invite_privacy"), m2Var);
-                                                                break;
-                                                            }
-                                                            break;
-                                                        default:
-                                                            v0 v0Var2 = this.b.e;
-                                                            v0Var2.n.presentFragment(tn.R9(v0Var2.W));
-                                                            v0Var2.dismiss();
-                                                            break;
-                                                    }
-                                                }
-                                            });
-                                            TextView textView8 = new TextView(context);
-                                            this.b = textView8;
-                                            textView8.setText(AndroidUtilities.replaceTags(formatString));
-                                            this.b.setTextSize(i36, 14.0f);
-                                            this.b.setGravity(i36);
-                                            TextView textView9 = this.b;
-                                            textView9.setLineSpacing(textView9.getLineSpacingExtra(), this.b.getLineSpacingMultiplier() * 1.1f);
-                                            if (i39 != 18) {
-                                                c6Var11 = ((f3) v0Var).resourcesProvider;
-                                                if (c6Var11 instanceof lh.b) {
-                                                    TextView textView10 = this.b;
-                                                    int i60 = g6.y6;
-                                                    c6Var13 = ((f3) v0Var).resourcesProvider;
-                                                    textView10.setTextColor(g6.v0(i60, c6Var13));
-                                                } else {
-                                                    TextView textView11 = this.b;
-                                                    c6Var12 = ((f3) v0Var).resourcesProvider;
-                                                    textView11.setTextColor(g6.v0(i58, c6Var12));
-                                                }
-                                            } else {
-                                                TextView textView12 = this.b;
-                                                c6Var10 = ((f3) v0Var).resourcesProvider;
-                                                textView12.setTextColor(g6.v0(i58, c6Var10));
-                                            }
-                                            if (i39 != i33) {
-                                                addView(this.b, f6.t(-2, -2, 1, 24, -2, 24, 17));
-                                            } else {
-                                                addView(this.b, f6.t(-2, -2, 1, 24, 0, 24, 24));
-                                            }
-                                            if (i39 == 31) {
-                                                ((ViewGroup.MarginLayoutParams) this.b.getLayoutParams()).bottomMargin = AndroidUtilities.dp(15.0f);
-                                                ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).bottomMargin = AndroidUtilities.dp(6.0f);
-                                                ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
-                                            }
-                                            v0Var.L1();
-                                            return;
-                                        }
-                                        LinearLayout linearLayout2 = new LinearLayout(context);
-                                        this.d = linearLayout2;
-                                        linearLayout2.setOrientation(0);
-                                        this.d.setWeightSum(1.0f);
-                                        this.d.addView(this.a, f6.o(-2, -2, 1.0f, 0));
-                                        this.d.addView(bVar, f6.t(-2, -2, 48, 0, 2, 0, 0));
-                                        addView(this.d, f6.t(-2, -2, 1, 12, z10 ? 8 : 22, 12, 9));
-                                    } else {
-                                        addView(this.a, f6.t(-2, -2, 1, 0, z10 ? 8 : 22, 0, 10));
-                                    }
-                                    i36 = 1;
-                                    TextView textView82 = new TextView(context);
-                                    this.b = textView82;
-                                    textView82.setText(AndroidUtilities.replaceTags(formatString));
-                                    this.b.setTextSize(i36, 14.0f);
-                                    this.b.setGravity(i36);
-                                    TextView textView92 = this.b;
-                                    textView92.setLineSpacing(textView92.getLineSpacingExtra(), this.b.getLineSpacingMultiplier() * 1.1f);
-                                    if (i39 != 18) {
-                                    }
-                                    if (i39 != i33) {
-                                    }
-                                    if (i39 == 31) {
-                                    }
-                                    v0Var.L1();
-                                    return;
                                 }
-                                this.a.setText(LocaleController.getString(R.string.BoostingEnableGroupEmojiPack));
-                            }
-                            this.a.setTextSize(1, 20.0f);
-                            TextView textView62 = this.a;
-                            int i582 = g6.G6;
-                            c6Var7 = ((f3) v0Var).resourcesProvider;
-                            textView62.setTextColor(g6.v0(i582, c6Var7));
-                            this.a.setGravity(i32);
-                            if (i39 != i33) {
-                            }
-                            eg.b bVar2 = new eg.b(context);
-                            this.c = bVar2;
-                            bVar2.a(v0Var.Y.boostCount, false);
-                            if (i39 == 32) {
-                            }
-                            if (v0Var.a0) {
                             }
                         }
-                        i33 = 19;
-                        this.a.setTextSize(1, 20.0f);
-                        TextView textView622 = this.a;
-                        int i5822 = g6.G6;
-                        c6Var7 = ((f3) v0Var).resourcesProvider;
-                        textView622.setTextColor(g6.v0(i5822, c6Var7));
-                        this.a.setGravity(i32);
-                        if (i39 != i33) {
+                    }
+                    AndroidUtilities.runOnUIThread(new hp(i16, gkVar, arrayList3));
+                    break;
+                }
+                break;
+            case 14:
+                h80.t((h80) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
+                break;
+            case 15:
+                lx0 lx0Var = (lx0) this.c;
+                TLObject tLObject3 = (TLObject) this.d;
+                boolean z20 = this.b;
+                org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) this.e;
+                xx0 xx0Var = lx0Var.a;
+                if (tLObject3 instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
+                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
+                    if (z20) {
+                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tLObject3, 0, null, false, false);
+                    } else {
+                        xx0Var.P = tL_messages_stickerSet;
+                        xx0Var.t0();
+                        xx0Var.B0();
+                    }
+                }
+                d2Var.dismiss();
+                break;
+            case 16:
+                g3 g3Var = (g3) this.c;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
+                boolean z21 = this.b;
+                org.telegram.ui.ActionBar.d2 d2Var2 = (org.telegram.ui.ActionBar.d2) this.e;
+                if (g3Var != null && !g3Var.isDismissed()) {
+                    g3Var.setFocusable(true);
+                    editTextBoldCursor.requestFocus();
+                    if (z21) {
+                        AndroidUtilities.runOnUIThread(new ch(i14, editTextBoldCursor));
+                        break;
+                    }
+                } else if (d2Var2 != null && d2Var2.isShowing()) {
+                    d2Var2.k(true);
+                    editTextBoldCursor.requestFocus();
+                    if (z21) {
+                        AndroidUtilities.runOnUIThread(new ch(i17, editTextBoldCursor));
+                        break;
+                    }
+                }
+                break;
+            case 17:
+                c60 c60Var = (c60) this.c;
+                TLObject tLObject4 = (TLObject) this.d;
+                TLRPC.ChatFull chatFull2 = (TLRPC.ChatFull) this.e;
+                boolean z22 = this.b;
+                if (tLObject4 instanceof TLRPC.TL_chatInviteExported) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported3 = (TLRPC.TL_chatInviteExported) tLObject4;
+                    if (chatFull2 != null) {
+                        chatFull2.exported_invite = tL_chatInviteExported3;
+                        break;
+                    } else {
+                        c60Var.u1(null, tL_chatInviteExported3.link, true, z22);
+                        break;
+                    }
+                }
+                break;
+            case 18:
+                g70 g70Var = (g70) this.c;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
+                TLObject tLObject5 = (TLObject) this.e;
+                boolean z23 = this.b;
+                if (tL_error2 == null) {
+                    g70Var.f = (TLRPC.TL_chatInviteExported) tLObject5;
+                    if (z23) {
+                        if (g70Var.getParentActivity() != null) {
+                            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(g70Var.getParentActivity());
+                            alertDialog$Builder3.a.Q = LocaleController.getString(R.string.RevokeAlertNewLink);
+                            alertDialog$Builder3.a.O = LocaleController.getString(R.string.RevokeLink);
+                            alertDialog$Builder3.h(LocaleController.getString(R.string.OK), null);
+                            g70Var.showDialog(alertDialog$Builder3.a);
                         }
-                        eg.b bVar22 = new eg.b(context);
-                        this.c = bVar22;
-                        bVar22.a(v0Var.Y.boostCount, false);
-                        if (i39 == 32) {
+                    }
+                }
+                g70Var.e = false;
+                g70Var.a.l();
+                break;
+            case 19:
+                pm0 pm0Var = (pm0) this.c;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.d;
+                TLObject tLObject6 = (TLObject) this.e;
+                boolean z24 = this.b;
+                dn0 dn0Var = pm0Var.e;
+                if (tL_error3 == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject6;
+                    dn0Var.G = password;
+                    TwoStepVerificationActivity.m0(password);
+                    dn0Var.B1(z24);
+                    break;
+                }
+                break;
+            case 20:
+                pm0 pm0Var2 = (pm0) this.c;
+                TLObject tLObject7 = (TLObject) this.d;
+                String str6 = (String) this.e;
+                boolean z25 = this.b;
+                dn0 dn0Var2 = pm0Var2.e;
+                TL_account.passwordSettings passwordsettings = (TL_account.passwordSettings) tLObject7;
+                TLRPC.TL_secureSecretSettings tL_secureSecretSettings = passwordsettings.secure_settings;
+                if (tL_secureSecretSettings != null) {
+                    dn0Var2.Z0 = tL_secureSecretSettings.secure_secret;
+                    dn0Var2.Y0 = tL_secureSecretSettings.secure_secret_id;
+                    TLRPC.SecurePasswordKdfAlgo securePasswordKdfAlgo = tL_secureSecretSettings.secure_algo;
+                    if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoSHA512) {
+                        bArr3 = ((TLRPC.TL_securePasswordKdfAlgoSHA512) securePasswordKdfAlgo).salt;
+                        dn0Var2.b1 = Utilities.computeSHA512(bArr3, AndroidUtilities.getStringBytes(str6), bArr3);
+                    } else if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) {
+                        TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 = (TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) securePasswordKdfAlgo;
+                        byte[] bArr5 = tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.salt;
+                        dn0Var2.b1 = Utilities.computePBKDF2(AndroidUtilities.getStringBytes(str6), tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.salt);
+                        bArr2 = bArr5;
+                    } else if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoUnknown) {
+                        AndroidUtilities.runOnUIThread(new el0(pm0Var2, i17));
+                        break;
+                    } else {
+                        bArr3 = new byte[0];
+                    }
+                    bArr2 = bArr3;
+                } else {
+                    TLRPC.SecurePasswordKdfAlgo securePasswordKdfAlgo2 = dn0Var2.G.new_secure_algo;
+                    if (securePasswordKdfAlgo2 instanceof TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) {
+                        TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002 = (TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) securePasswordKdfAlgo2;
+                        byte[] bArr6 = tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002.salt;
+                        dn0Var2.b1 = Utilities.computePBKDF2(AndroidUtilities.getStringBytes(str6), tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002.salt);
+                        bArr = bArr6;
+                    } else {
+                        bArr = new byte[0];
+                    }
+                    dn0Var2.Z0 = null;
+                    dn0Var2.Y0 = 0L;
+                    bArr2 = bArr;
+                }
+                AndroidUtilities.runOnUIThread(new u0(pm0Var2, passwordsettings, z25, bArr2, 21));
+                break;
+            case 21:
+                pm0 pm0Var3 = (pm0) this.c;
+                TL_account.passwordSettings passwordsettings2 = (TL_account.passwordSettings) this.d;
+                boolean z26 = this.b;
+                byte[] bArr7 = (byte[]) this.e;
+                dn0 dn0Var3 = pm0Var3.e;
+                dn0Var3.a1 = passwordsettings2.email;
+                if (z26) {
+                    dn0Var3.b1 = dn0Var3.M0;
+                }
+                byte[] bArr8 = dn0Var3.Z0;
+                byte[] bArr9 = dn0Var3.b1;
+                if (bArr8 != null && bArr8.length == 32) {
+                    byte[] bArr10 = new byte[32];
+                    System.arraycopy(bArr9, 0, bArr10, 0, 32);
+                    byte[] bArr11 = new byte[16];
+                    System.arraycopy(bArr9, 32, bArr11, 0, 16);
+                    byte[] bArr12 = new byte[32];
+                    System.arraycopy(bArr8, 0, bArr12, 0, 32);
+                    Utilities.aesCbcEncryptionByteArraySafe(bArr12, bArr10, bArr11, 0, 32, 0, 0);
+                    bArr4 = bArr12;
+                }
+                if (dn0.Z0(bArr4, Long.valueOf(dn0Var3.Y0)) && bArr7.length != 0 && dn0Var3.Y0 != 0) {
+                    if (dn0Var3.c == 0) {
+                        TL_account.getAllSecureValues getallsecurevalues = new TL_account.getAllSecureValues();
+                        i12 = ((p2) dn0Var3).currentAccount;
+                        ConnectionsManager.getInstance(i12).sendRequest(getallsecurevalues, new nm0(pm0Var3, i20));
+                        break;
+                    } else {
+                        pm0Var3.a();
+                        break;
+                    }
+                } else if (z26) {
+                    i11 = ((p2) dn0Var3).currentAccount;
+                    UserConfig.getInstance(i11).resetSavedPassword();
+                    dn0Var3.K0 = 0;
+                    dn0Var3.R1();
+                    break;
+                } else {
+                    TL_account.authorizationForm authorizationform = dn0Var3.y;
+                    if (authorizationform != null) {
+                        authorizationform.values.clear();
+                        dn0Var3.y.errors.clear();
+                    }
+                    byte[] bArr13 = dn0Var3.Z0;
+                    if (bArr13 != null && bArr13.length != 0) {
+                        pm0Var3.b();
+                        break;
+                    } else {
+                        Utilities.globalQueue.postRunnable(new hf0(pm0Var3, pm0Var3.b, pm0Var3.d, 12));
+                        break;
+                    }
+                }
+                break;
+            case 22:
+                jo0 jo0Var = (jo0) this.c;
+                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.d;
+                TLObject tLObject8 = (TLObject) this.e;
+                boolean z27 = this.b;
+                if (tL_error4 == null) {
+                    TL_account.Password password2 = (TL_account.Password) tLObject8;
+                    jo0Var.X = password2;
+                    TwoStepVerificationActivity.m0(password2);
+                    jo0Var.A0(z27);
+                    break;
+                }
+                break;
+            case 23:
+                m21.W((m21) this.c, this.b, (e4) this.d, (d5) this.e);
+                break;
+            case 24:
+                og1.c0((og1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
+                break;
+            case 25:
+                ph.g1 g1Var = (ph.g1) this.c;
+                TLObject tLObject9 = (TLObject) this.d;
+                String str7 = (String) this.e;
+                boolean z28 = this.b;
+                ph.i1 i1Var = g1Var.s;
+                if (g1Var.r) {
+                    if (tLObject9 instanceof TLRPC.messages_BotResults) {
+                        TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject9;
+                        ph.y1 y1Var = i1Var.r;
+                        ArrayList arrayList4 = i1Var.n;
+                        i13 = ((g3) y1Var).currentAccount;
+                        MessagesStorage.getInstance(i13).saveBotCache(str7, messages_botresults);
+                        g1Var.h = messages_botresults.next_offset;
+                        if (z28) {
+                            arrayList4.clear();
                         }
-                        if (v0Var.a0) {
+                        arrayList4.size();
+                        arrayList4.addAll(messages_botresults.results);
+                        g1Var.l();
+                    }
+                    i1Var.d.c(false);
+                    g1Var.r = false;
+                    break;
+                }
+                break;
+            case 26:
+                u6 u6Var = (u6) this.c;
+                Bitmap bitmap = (Bitmap) this.d;
+                boolean z29 = this.b;
+                Runnable runnable = (Runnable) this.e;
+                u6Var.getClass();
+                try {
+                    bitmap.compress(z29 ? Bitmap.CompressFormat.WEBP : Bitmap.CompressFormat.JPEG, 90, new FileOutputStream(u6Var.Z0));
+                } catch (Exception e6) {
+                    FileLog.e((Throwable) e6, false);
+                    if (z29) {
+                        try {
+                            bitmap.compress(Bitmap.CompressFormat.PNG, 90, new FileOutputStream(u6Var.Z0));
+                        } catch (Exception e10) {
+                            FileLog.e((Throwable) e10, false);
                         }
                     }
                 }
-                z11 = true;
-                if (z11) {
+                bitmap.recycle();
+                AndroidUtilities.runOnUIThread(runnable);
+                break;
+            case 27:
+                tf.z zVar = (tf.z) this.c;
+                boolean z30 = this.b;
+                u3 u3Var = (u3) this.d;
+                tf.w wVar = (tf.w) this.e;
+                if (!z30) {
+                    zVar.c = wVar;
+                    u3Var.setRightText(zVar.H(wVar));
+                    u3Var.setRightTextMargin(6);
+                    zVar.F.clear();
+                    zVar.d = true;
+                    zVar.l();
+                    zVar.Q();
+                    break;
                 }
-                if (i39 != 11) {
+                break;
+            default:
+                EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.c;
+                p2 p2Var = (p2) this.d;
+                boolean z31 = this.b;
+                o3 o3Var = (o3) this.e;
+                String trim = editTextBoldCursor2.getText().toString().trim();
+                if (!TextUtils.isEmpty(trim)) {
+                    vh.d4.k(p2Var, z31, new org.telegram.ui.web.m(i15, o3Var, trim));
+                    break;
                 }
-                i18 = ((f3) v0Var).currentAccount;
-                if (!MessagesController.getInstance(i18).premiumFeaturesBlocked()) {
-                    if (!v0Var.z0.isEmpty()) {
-                    }
-                    h9 h9Var2 = new h9(context, false);
-                    h9Var2.a.q = AndroidUtilities.dp(3.33f);
-                    h9Var2.setSize(AndroidUtilities.dp(72.0f));
-                    h9Var2.setStepFactor(0.4f);
-                    min = Math.min(arrayList3.size(), 3);
-                    h9Var2.setCount(min);
-                    while (i19 < min) {
-                    }
-                    h9Var2.a(false);
-                    addView(h9Var2, f6.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
-                    TextView textView13 = new TextView(context);
-                    textView13.setGravity(17);
-                    org.telegram.ui.b.g(20.0f, 1, textView13);
-                    int i522 = g6.j5;
-                    c6Var = ((f3) v0Var).resourcesProvider;
-                    textView13.setTextColor(g6.v0(i522, c6Var));
-                    textView13.setText(LocaleController.getString(R.string.InvitePremiumBlockedTitle));
-                    addView(textView13, f6.t(-1, -2, 1, 32, 0, 32, 9));
-                    TextView textView22 = new TextView(context);
-                    textView22.setGravity(17);
-                    textView22.setTextSize(1, 14.0f);
-                    c6Var2 = ((f3) v0Var).resourcesProvider;
-                    textView22.setTextColor(g6.v0(i522, c6Var2));
-                    addView(textView22, f6.t(-1, -2, 1, 32, 0, 32, 19));
-                    if (i39 != 34) {
-                    }
-                    arrayList4 = v0Var.y0;
-                    if (arrayList4 != null) {
-                    }
-                    z12 = false;
-                    if (arrayList3.size() == 1) {
-                    }
-                    textView22.setText(AndroidUtilities.replaceTags(str2));
-                    arrayList5 = v0Var.z0;
-                    if (arrayList5 == null) {
-                    }
-                    arrayList7 = v0Var.y0;
-                    if (arrayList7 == null) {
-                    }
-                    if (size - size2 > 0) {
-                    }
-                    ((ViewGroup.MarginLayoutParams) textView22.getLayoutParams()).bottomMargin = AndroidUtilities.dp(8.0f);
-                    v0Var.f0 = true;
-                    v0Var.L1();
-                    return;
-                }
-                if (i39 != 31) {
-                    c6Var14 = ((f3) v0Var).resourcesProvider;
-                    t0 t0Var4 = new t0(this, context, i40, i15, i49, f12, c6Var14);
-                    v0Var.t0 = t0Var4;
-                    if (z11) {
-                    }
-                    z13 = false;
-                    if (i39 != 2) {
-                    }
-                    v0Var.t0.D = z13;
-                    addView(v0Var.t0, f6.p(-1, -2, 0.0f, 0, -4, 0, -4, 0));
-                }
-                if (i39 != 31) {
-                }
-                TextView textView52 = new TextView(context);
-                this.a = textView52;
-                textView52.setTypeface(AndroidUtilities.bold());
-                if (i39 != 31) {
-                }
-                i33 = 19;
-                this.a.setTextSize(1, 20.0f);
-                TextView textView6222 = this.a;
-                int i58222 = g6.G6;
-                c6Var7 = ((f3) v0Var).resourcesProvider;
-                textView6222.setTextColor(g6.v0(i58222, c6Var7));
-                this.a.setGravity(i32);
-                if (i39 != i33) {
-                }
-                eg.b bVar222 = new eg.b(context);
-                this.c = bVar222;
-                bVar222.a(v0Var.Y.boostCount, false);
-                if (i39 == 32) {
-                }
-                if (v0Var.a0) {
-                }
-            }
-            i17 = ((f3) v0Var).currentAccount;
-            if (UserConfig.getInstance(i17).isPremium()) {
-            }
-            i15 = i49;
-            f9 = 1.0f;
-            float f122 = i48 / i49;
-            if (i39 == 18) {
-            }
-            z11 = true;
-            if (z11) {
-            }
-            if (i39 != 11) {
-            }
-            i18 = ((f3) v0Var).currentAccount;
-            if (!MessagesController.getInstance(i18).premiumFeaturesBlocked()) {
-            }
-            if (i39 != 31) {
-            }
-            if (i39 != 31) {
-            }
-            TextView textView522 = new TextView(context);
-            this.a = textView522;
-            textView522.setTypeface(AndroidUtilities.bold());
-            if (i39 != 31) {
-            }
-            i33 = 19;
-            this.a.setTextSize(1, 20.0f);
-            TextView textView62222 = this.a;
-            int i582222 = g6.G6;
-            c6Var7 = ((f3) v0Var).resourcesProvider;
-            textView62222.setTextColor(g6.v0(i582222, c6Var7));
-            this.a.setGravity(i32);
-            if (i39 != i33) {
-            }
-            eg.b bVar2222 = new eg.b(context);
-            this.c = bVar2222;
-            bVar2222.a(v0Var.Y.boostCount, false);
-            if (i39 == 32) {
-            }
-            if (v0Var.a0) {
-            }
-        } else if (i39 == 34) {
-            str = v0Var.x0.size() == 1 ? LocaleController.formatString(R.string.InviteCallRestrictedUsersOne, ContactsController.formatName((TLRPC.User) v0Var.x0.get(0))) : LocaleController.formatPluralString("InviteCallRestrictedUsers", v0Var.x0.size(), Integer.valueOf(v0Var.x0.size()));
-        } else if (premiumFeaturesBlocked) {
-            str = (String) v0Var.I0.f;
-        } else {
-            i14 = ((f3) v0Var).currentAccount;
-            str = (String) ((UserConfig.getInstance(i14).isPremium() || v0Var.J0) ? v0Var.I0.e : v0Var.I0.d);
+                break;
         }
-        formatString = str;
-        z10 = premiumFeaturesBlocked;
-        androidx.emoji2.text.o oVar2 = v0Var.I0;
-        int i482 = oVar2.b;
-        int i492 = oVar2.c;
-        i15 = v0Var.s0;
-        if (i39 != 3) {
-        }
-        i17 = ((f3) v0Var).currentAccount;
-        if (UserConfig.getInstance(i17).isPremium()) {
-        }
-        i15 = i492;
-        f9 = 1.0f;
-        float f1222 = i482 / i492;
-        if (i39 == 18) {
-        }
-        z11 = true;
-        if (z11) {
-        }
-        if (i39 != 11) {
-        }
-        i18 = ((f3) v0Var).currentAccount;
-        if (!MessagesController.getInstance(i18).premiumFeaturesBlocked()) {
-        }
-        if (i39 != 31) {
-        }
-        if (i39 != 31) {
-        }
-        TextView textView5222 = new TextView(context);
-        this.a = textView5222;
-        textView5222.setTypeface(AndroidUtilities.bold());
-        if (i39 != 31) {
-        }
-        i33 = 19;
-        this.a.setTextSize(1, 20.0f);
-        TextView textView622222 = this.a;
-        int i5822222 = g6.G6;
-        c6Var7 = ((f3) v0Var).resourcesProvider;
-        textView622222.setTextColor(g6.v0(i5822222, c6Var7));
-        this.a.setGravity(i32);
-        if (i39 != i33) {
-        }
-        eg.b bVar22222 = new eg.b(context);
-        this.c = bVar22222;
-        bVar22222.a(v0Var.Y.boostCount, false);
-        if (i39 == 32) {
-        }
-        if (v0Var.a0) {
-        }
+    }
+
+    public /* synthetic */ u0(Object obj, Object obj2, boolean z4, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z4;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ u0(Object obj, boolean z4, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z4;
+        this.d = obj2;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ u0(e3 e3Var, View view, mg.q0 q0Var, boolean z4, boolean z10) {
+        this.a = 3;
+        this.c = e3Var;
+        this.d = view;
+        this.e = q0Var;
+        this.b = z4;
+    }
+
+    public /* synthetic */ u0(boolean z4, TLRPC.Chat chat, AlertDialog$Builder alertDialog$Builder, boolean[] zArr) {
+        this.a = 12;
+        this.b = z4;
+        this.c = chat;
+        this.d = alertDialog$Builder;
+        this.e = zArr;
     }
 }

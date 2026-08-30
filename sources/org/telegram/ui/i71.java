@@ -1,88 +1,21 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class i71 extends org.telegram.ui.Components.jl0 {
-    public final /* synthetic */ int T2;
-    public final /* synthetic */ Object U2;
+public final class i71 implements View.OnClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ o71 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i71(Object obj, Context context, int i10) {
-        super(context, null);
-        this.T2 = i10;
-        this.U2 = obj;
+    public i71(o71 o71Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = o71Var;
+        this.a = tL_authorization;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public boolean E0(float f9) {
-        switch (this.T2) {
-            case 2:
-                org.telegram.ui.Components.ni niVar = ((sf.d0) this.U2).b;
-                return f9 >= ((float) ((AndroidUtilities.dp(30.0f) + niVar.X1[0]) + (!niVar.c0 ? AndroidUtilities.statusBarHeight : 0)));
-            default:
-                return super.E0(f9);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public Integer W0(int i10) {
-        int i11;
-        switch (this.T2) {
-            case 0:
-                i11 = ((SessionsActivity) this.U2).terminateAllSessionsRow;
-                org.telegram.ui.ActionBar.c6 c6Var = this.l2;
-                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.g6.l1(0.1f, org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.p7, c6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.i6, c6Var));
-            default:
-                return super.W0(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.T2) {
-            case 1:
-                org.telegram.ui.Components.gf gfVar = (org.telegram.ui.Components.gf) this.U2;
-                i71 i71Var = gfVar.c;
-                if (i71Var.getLayoutManager() != null && i71Var.getAdapter() != null && i71Var.getAdapter().h() != 0) {
-                    float dp = gfVar.h - AndroidUtilities.dp(8.0f);
-                    gfVar.e = dp - AndroidUtilities.dp(16.0f);
-                    ng.d dVar = gfVar.r;
-                    if (dVar != null) {
-                        dVar.draw(canvas);
-                    }
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set((getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(12.0f), dp - AndroidUtilities.dp(4.0f), (getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(12.0f), dp);
-                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), gfVar.d);
-                    super.dispatchDraw(canvas);
-                    break;
-                } else {
-                    super.dispatchDraw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void k0(int i10, int i11) {
-        int i12 = this.T2;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i71(sf.d0 d0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.T2 = 2;
-        this.U2 = d0Var;
-    }
-
-    private final void w1(int i10, int i11) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        o71.m(this.b, this.a.ip);
     }
 }

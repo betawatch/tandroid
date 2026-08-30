@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i0 implements k1 {
     public static final i0 b = new i0(0);
@@ -88,17 +88,17 @@ public final class i0 implements k1 {
                         j0Var = j0.y;
                         break;
                     case 13:
-                        j0Var = j0.A;
+                        j0Var = j0.B;
                         break;
                     case 14:
-                        j0Var = j0.B;
+                        j0Var = j0.C;
                         break;
                     case 15:
                     default:
                         j0Var = null;
                         break;
                     case 16:
-                        j0Var = j0.C;
+                        j0Var = j0.D;
                         break;
                 }
                 if (j0Var != null) {
@@ -146,7 +146,7 @@ public final class i0 implements k1 {
                         k0Var = k0.y;
                         break;
                     case 13:
-                        k0Var = k0.A;
+                        k0Var = k0.B;
                         break;
                     default:
                         k0Var = null;

@@ -1,27 +1,72 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class vy extends org.telegram.ui.Components.v41 {
-    public static final /* synthetic */ int a = 0;
+public final class vy extends f2.b0 {
+    public boolean d;
+    public final /* synthetic */ xy e;
 
-    static {
-        org.telegram.ui.Components.v41.setup(new vy());
+    public vy(xy xyVar) {
+        this.e = xyVar;
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final void bindView(View view, org.telegram.ui.Components.w41 w41Var, boolean z10, org.telegram.ui.Components.k51 k51Var, org.telegram.ui.Components.u51 u51Var) {
-        wy wyVar = (wy) view;
-        wyVar.b.setOnClickListener((View.OnClickListener) w41Var.G);
-        wyVar.e.setOnClickListener((View.OnClickListener) w41Var.H);
-        wyVar.a(w41Var.e, false);
+    @Override // f2.b0
+    public final void a(RecyclerView recyclerView, f2.l1 l1Var) {
+        super.a(recyclerView, l1Var);
+        l1Var.a.setPressed(false);
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final View createView(Context context, org.telegram.ui.Components.jl0 jl0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new wy(context, c6Var);
+    @Override // f2.b0
+    public final int e(RecyclerView recyclerView, f2.l1 l1Var) {
+        return l1Var.f != 3 ? f2.b0.l(0, 0) : f2.b0.l(3, 0);
+    }
+
+    @Override // f2.b0
+    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
+        if (l1Var.f != l1Var2.f) {
+            return false;
+        }
+        int b10 = l1Var.b();
+        int b11 = l1Var2.b();
+        xy xyVar = this.e;
+        uy uyVar = xyVar.a;
+        xy xyVar2 = uyVar.d;
+        int i10 = xyVar2.n;
+        ArrayList arrayList = xyVar2.e;
+        int i11 = b10 - i10;
+        int i12 = b11 - i10;
+        int i13 = xyVar2.r - i10;
+        if (i11 >= 0 && i12 >= 0 && i11 < i13 && i12 < i13) {
+            Long l10 = (Long) arrayList.get(i11);
+            arrayList.set(i11, (Long) arrayList.get(i12));
+            arrayList.set(i12, l10);
+            uyVar.p(b10, b11);
+            ((org.telegram.ui.Cells.g4) l1Var.a).setDrawDivider(b11 != xyVar.r - 1);
+            ((org.telegram.ui.Cells.g4) l1Var2.a).setDrawDivider(b10 != xyVar.r - 1);
+            this.d = true;
+        }
+        return true;
+    }
+
+    @Override // f2.b0
+    public final void p(f2.l1 l1Var, int i10) {
+        xy xyVar = this.e;
+        if (i10 != 0) {
+            xyVar.b.I0(false);
+            l1Var.a.setPressed(true);
+        } else if (this.d) {
+            wy wyVar = xyVar.f;
+            if (wyVar != null) {
+                wyVar.a();
+            }
+            this.d = false;
+        }
+    }
+
+    @Override // f2.b0
+    public final void q(f2.l1 l1Var) {
     }
 }

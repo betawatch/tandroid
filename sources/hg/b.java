@@ -1,747 +1,441 @@
 package hg;
 
-import ag.i0;
-import android.R;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.text.style.RelativeSizeSpan;
-import android.util.StateSet;
-import android.view.MotionEvent;
-import eg.h;
-import eg.q0;
-import j$.util.Objects;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import cg.h0;
+import f2.l1;
+import gg.r0;
+import ig.a0;
+import ig.f0;
+import ig.i;
+import ig.j;
+import ig.m;
+import ig.s;
+import ig.w;
+import ig.x;
+import ig.y;
+import ig.z;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
+import java.util.List;
+import lh.q9;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BillingController;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.x3;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.s1;
-import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.e9;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Cells.o8;
+import org.telegram.ui.Cells.z6;
+import org.telegram.ui.Components.k6;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.z8;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b {
-    public static final HashMap Y;
-    public StaticLayout A;
-    public TextPaint B;
-    public TextPaint C;
-    public TextPaint D;
-    public TextPaint E;
-    public TextPaint F;
-    public Paint G;
-    public TextPaint H;
-    public Paint I;
-    public Paint J;
-    public Paint K;
-    public Paint L;
-    public RectF M;
-    public RectF N;
-    public Rect O;
-    public Rect P;
-    public int[] Q;
-    public int R;
-    public z S;
-    public MessageObject T;
-    public boolean U;
-    public ImageReceiver[] a;
-    public e9[] b;
-    public final s1 c;
-    public ImageReceiver d;
-    public CharSequence[] e;
-    public TLRPC.Chat[] f;
-    public float[] g;
-    public boolean[] h;
-    public Rect[] i;
-    public boolean[] j;
-    public int m;
-    public float n;
-    public String o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public Drawable t;
-    public String u;
-    public int v;
-    public StaticLayout w;
-    public StaticLayout x;
-    public StaticLayout y;
-    public StaticLayout z;
-    public int k = 0;
-    public int l = 0;
-    public int V = -1;
-    public boolean W = false;
-    public boolean X = false;
+public final class b extends bg.c {
+    public final f6 d;
+    public sl0 f;
+    public r0 h;
+    public r0 n;
+    public s r;
+    public r0 s;
+    public TLRPC.Chat v;
+    public ArrayList e = new ArrayList();
+    public final HashMap w = new HashMap();
 
-    static {
-        HashMap hashMap = new HashMap();
-        Y = hashMap;
-        u3.c.l(1, hashMap, "1⃣", 3, "2⃣");
-        u3.c.l(6, hashMap, "3⃣", 12, "4⃣");
-        hashMap.put(24, "5⃣");
+    public b(f6 f6Var) {
+        this.d = f6Var;
+        h0 h0Var = new h0(this, 10);
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
+        messagesStorage.getStorageQueue().postRunnable(new gf.c(6, messagesStorage, h0Var));
     }
 
-    public b(s1 s1Var) {
-        this.c = s1Var;
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(l1 l1Var) {
+        int i10 = l1Var.f;
+        return i10 == 2 || i10 == 11 || i10 == 8 || i10 == 10 || i10 == 15 || i10 == 12 || i10 == 17 || i10 == 18;
     }
 
-    public final boolean a(MotionEvent motionEvent) {
-        MessageObject messageObject = this.T;
-        if (messageObject != null && messageObject.isGiveaway()) {
-            int x4 = (int) motionEvent.getX();
-            int y8 = (int) motionEvent.getY();
-            if (motionEvent.getAction() == 0) {
-                int i10 = 0;
-                while (true) {
-                    Rect[] rectArr = this.i;
-                    if (i10 < rectArr.length) {
-                        if (rectArr[i10].contains(x4, y8)) {
-                            this.V = i10;
-                            this.S.setHotspot(x4, y8);
-                            this.W = true;
-                            c(true);
-                            return true;
-                        }
-                        i10++;
-                    } else if (this.P.contains(x4, y8)) {
-                        this.X = true;
-                        return true;
-                    }
-                }
-            } else if (motionEvent.getAction() == 1) {
-                if (this.W) {
-                    s1 s1Var = this.c;
-                    if (s1Var.getDelegate() != null) {
-                        s1Var.getDelegate().L(this.V, s1Var);
-                    }
-                    s1Var.playSoundEffect(0);
-                    c(false);
-                    this.W = false;
-                }
-                if (this.X) {
-                    this.X = false;
-                    MessageObject messageObject2 = this.T;
-                    if (messageObject2 != null && messageObject2.messageOwner != null) {
-                        q0.d(messageObject2, new i0(messageObject2, 7), new h(0));
-                        return false;
-                    }
-                }
-            } else if (motionEvent.getAction() != 2 && motionEvent.getAction() == 3) {
-                if (this.W) {
-                    c(false);
-                }
-                this.W = false;
-                this.X = false;
+    public final int F(TLRPC.Chat chat) {
+        Integer num;
+        int i10;
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(UserConfig.selectedAccount).getChatFull(chat.id);
+        if (chatFull != null && (i10 = chatFull.participants_count) > 0) {
+            return i10;
+        }
+        HashMap hashMap = this.w;
+        return (hashMap.isEmpty() || (num = (Integer) hashMap.get(Long.valueOf(chat.id))) == null) ? chat.participants_count : num.intValue();
+    }
+
+    public final void G() {
+        for (int i10 = 0; i10 < this.e.size(); i10++) {
+            if (((a) this.e.get(i10)).a == 7) {
+                m(i10);
             }
         }
-        return false;
     }
 
-    public final void b(Canvas canvas, int i10, int i11, c6 c6Var) {
-        float f9;
-        boolean[] zArr;
-        int color;
-        int i12;
-        Canvas canvas2 = canvas;
-        MessageObject messageObject = this.T;
-        if (messageObject == null || !messageObject.isGiveaway()) {
+    @Override // f2.o0
+    public final int h() {
+        return this.e.size();
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return ((a) this.e.get(i10)).a;
+    }
+
+    @Override // f2.o0
+    public final void v(l1 l1Var, int i10) {
+        int i11 = l1Var.f;
+        View view = l1Var.a;
+        a aVar = (a) this.e.get(i10);
+        if (i11 == 0) {
+            s sVar = (s) view;
+            this.r = sVar;
+            sVar.setBoostViaGifsText(this.v);
+            this.r.setStars(aVar.g);
             return;
         }
-        z zVar = this.S;
-        s1 s1Var = this.c;
-        int i13 = 0;
-        if (zVar == null) {
-            int w02 = g6.w0(null, g6.i6, false);
-            this.R = w02;
-            z Y2 = g6.Y(w02, 12, 12);
-            this.S = Y2;
-            Y2.setCallback(s1Var);
+        if (i11 == 2) {
+            ig.e eVar = (ig.e) view;
+            int i12 = aVar.l;
+            int i13 = aVar.i;
+            TLRPC.User user = (TLRPC.User) aVar.f;
+            boolean z4 = aVar.b;
+            p9 p9Var = eVar.c;
+            f6 f6Var = eVar.a;
+            ig.c cVar = eVar.d;
+            k5 k5Var = eVar.e;
+            z8 z8Var = eVar.b;
+            boolean z10 = eVar.r == i12;
+            eVar.r = i12;
+            if (i12 == 0) {
+                cVar.k(LocaleController.getString(R.string.BoostingCreateGiveaway));
+                eVar.setSubtitle(LocaleController.getString(R.string.BoostingWinnersRandomly));
+                k5Var.setTextColor(j6.v0(j6.r5, f6Var));
+                z8Var.g(16);
+                z8Var.i(-15292942, -15630089);
+                eVar.setDivider(true);
+                eVar.setBackground(j6.V0(eVar.getContext(), R.drawable.greydivider_bottom, j6.b7));
+            } else if (i12 == 1) {
+                cVar.k(LocaleController.getString(R.string.BoostingAwardSpecificUsers));
+                if (i13 == 1 && user != null) {
+                    eVar.setSubtitle(eVar.e(Emoji.replaceEmoji(UserObject.getUserName(user), k5Var.getPaint().getFontMetricsInt(), false)));
+                } else if (i13 > 0) {
+                    eVar.setSubtitle(eVar.e(LocaleController.formatPluralString("Recipient", i13, new Object[0])));
+                } else {
+                    eVar.setSubtitle(eVar.e(LocaleController.getString(R.string.BoostingSelectRecipients)));
+                }
+                k5Var.setTextColor(j6.v0(j6.n5, f6Var));
+                z8Var.g(6);
+                z8Var.i(-3905294, -6923014);
+                eVar.setDivider(false);
+                eVar.setBackground(j6.V0(eVar.getContext(), R.drawable.greydivider_top, j6.b7));
+            } else if (i12 == 2) {
+                cVar.k(LocaleController.getString(R.string.BoostingPremium));
+                if (i13 == 1 && user != null) {
+                    eVar.setSubtitle(eVar.e(Emoji.replaceEmoji(UserObject.getUserName(user), k5Var.getPaint().getFontMetricsInt(), false)));
+                } else if (i13 > 0) {
+                    eVar.setSubtitle(eVar.e(LocaleController.formatPluralString("Recipient", i13, new Object[0])));
+                } else {
+                    eVar.setSubtitle(eVar.e(LocaleController.getString(R.string.BoostingWinnersRandomly)));
+                }
+                k5Var.setTextColor(j6.v0(j6.n5, f6Var));
+                z8Var.g(25);
+                z8Var.i(-3905294, -6923014);
+                eVar.setDivider(true);
+                eVar.setBackground(j6.V0(eVar.getContext(), R.drawable.greydivider_bottom, j6.b7));
+            } else if (i12 == 3) {
+                cVar.k(o8.a(LocaleController.getString(R.string.BoostingStars)));
+                eVar.setSubtitle(LocaleController.getString(R.string.BoostingWinnersRandomly));
+                k5Var.setTextColor(j6.v0(j6.r5, f6Var));
+                z8Var.g(26);
+                z8Var.i(-146917, -625593);
+                eVar.setDivider(false);
+                eVar.setBackground(j6.V0(eVar.getContext(), R.drawable.greydivider_top, j6.b7));
+            }
+            eVar.f.a(z4, z10);
+            p9Var.setImageDrawable(z8Var);
+            p9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+            return;
         }
-        this.E.setColor(g6.o2.getColor());
-        this.F.setColor(g6.l1(0.45f, g6.o2.getColor()));
-        this.G.setColor(g6.l1(0.15f, g6.o2.getColor()));
-        this.H.setColor(g6.o2.getColor());
-        if (this.T.isOutOwner()) {
-            TextPaint textPaint = this.D;
-            int i14 = g6.Xa;
-            textPaint.setColor(g6.v0(i14, c6Var));
-            this.I.setColor(g6.v0(i14, c6Var));
-            this.J.setColor(g6.v0(g6.ab, c6Var));
-        } else {
-            TextPaint textPaint2 = this.D;
-            int i15 = g6.Kc;
-            textPaint2.setColor(g6.v0(i15, c6Var));
-            this.I.setColor(g6.v0(i15, c6Var));
-            this.J.setColor(g6.v0(g6.Uc, c6Var));
+        if (i11 == 5) {
+            x xVar = (x) view;
+            List list = aVar.k;
+            int i14 = aVar.i;
+            xVar.getClass();
+            String[] strArr = new String[list.size()];
+            for (int i15 = 0; i15 < list.size(); i15++) {
+                strArr[i15] = String.valueOf((Integer) list.get(i15));
+            }
+            xVar.a.b(i14, null, strArr);
+            xVar.setCallBack(this.h);
+            return;
         }
-        if (this.U) {
-            this.I.setColor(g6.v0(g6.fk, c6Var));
+        if (i11 == 6) {
+            ((m4) view).setText(aVar.c);
+            return;
         }
-        canvas2.save();
-        int dp = i11 - AndroidUtilities.dp(4.0f);
-        canvas2.translate(dp, i10);
-        this.P.set(dp, i10, this.l + dp, this.k + i10);
-        canvas2.saveLayer(0.0f, 0.0f, this.l, this.k, this.K, 31);
-        this.d.draw(canvas2);
-        float f10 = this.l / 2.0f;
-        float dp2 = AndroidUtilities.dp(106.0f);
-        int dp3 = AndroidUtilities.dp(12.0f) + this.O.width();
-        int dp4 = AndroidUtilities.dp(10.0f) + this.O.height();
-        this.M.set(f10 - ((AndroidUtilities.dp(2.0f) + dp3) / 2.0f), dp2 - ((AndroidUtilities.dp(2.0f) + dp4) / 2.0f), ((AndroidUtilities.dp(2.0f) + dp3) / 2.0f) + f10, ((AndroidUtilities.dp(2.0f) + dp4) / 2.0f) + dp2);
-        canvas2.drawRoundRect(this.M, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), this.L);
-        float f11 = dp3 / 2.0f;
-        float f12 = dp4 / 2.0f;
-        this.M.set(f10 - f11, dp2 - f12, f10 + f11, dp2 + f12);
-        canvas2.drawRoundRect(this.M, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.I);
-        Drawable drawable = this.t;
-        if (drawable != null) {
-            drawable.setBounds(AndroidUtilities.dp(5.0f) + ((int) this.M.left), ((int) this.M.centerY()) - AndroidUtilities.dp(6.96f), AndroidUtilities.dp(21.24f) + ((int) this.M.left), AndroidUtilities.dp(6.96f) + ((int) this.M.centerY()));
-            this.t.draw(canvas2);
+        if (i11 == 7) {
+            f0 f0Var = (f0) view;
+            f0Var.setText(aVar.c);
+            f0Var.setBackground(aVar.g);
+            return;
         }
-        canvas2.drawText(this.u, this.M.centerX() + AndroidUtilities.dp(this.U ? 8.0f : 0.0f), this.M.centerY() + AndroidUtilities.dp(4.0f), this.U ? this.C : this.B);
-        canvas2.restore();
-        canvas2.translate(0.0f, AndroidUtilities.dp(128.0f));
-        int dp5 = AndroidUtilities.dp(128.0f) + i10;
-        canvas2.save();
-        canvas2.translate(this.v / 2.0f, 0.0f);
-        this.w.draw(canvas2);
-        canvas2.translate(0.0f, this.p);
-        if (this.x != null) {
-            canvas2.restore();
-            canvas2.save();
-            float dp6 = (this.p + this.m) - AndroidUtilities.dp(6.0f);
-            float f13 = this.l / 2.0f;
-            canvas2.drawText(this.o, f13, dp6, this.F);
-            f9 = 16.0f;
-            canvas2.drawLine(AndroidUtilities.dp(17.0f), dp6 - AndroidUtilities.dp(4.0f), (f13 - (this.n / 2.0f)) - AndroidUtilities.dp(6.0f), dp6 - AndroidUtilities.dp(4.0f), this.G);
-            canvas2 = canvas;
-            canvas2.drawLine(AndroidUtilities.dp(6.0f) + (this.n / 2.0f) + f13, dp6 - AndroidUtilities.dp(4.0f), this.l - AndroidUtilities.dp(16.0f), dp6 - AndroidUtilities.dp(4.0f), this.G);
-            canvas2.translate((this.l - this.x.getWidth()) / 2.0f, this.p);
-            this.x.draw(canvas2);
-            canvas2.restore();
-            canvas2.save();
-            canvas2.translate(this.v / 2.0f, this.m + this.p);
-        } else {
-            f9 = 16.0f;
-        }
-        this.y.draw(canvas2);
-        canvas2.restore();
-        canvas2.translate(0.0f, AndroidUtilities.dp(6.0f) + this.q);
-        int C = x3.C(6.0f, this.q, dp5);
-        int i16 = 0;
-        int i17 = 0;
-        while (true) {
-            boolean[] zArr2 = this.j;
-            if (i16 >= zArr2.length) {
+        switch (i11) {
+            case 9:
+                ig.h hVar = (ig.h) view;
+                TLRPC.InputPeer inputPeer = aVar.d;
+                if (inputPeer == null) {
+                    TLRPC.Chat chat = aVar.e;
+                    hVar.f(chat, aVar.i, aVar.g, F(chat));
+                } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
+                    TLRPC.Chat chat2 = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(inputPeer.chat_id));
+                    hVar.f(chat2, aVar.i, aVar.g, F(chat2));
+                } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
+                    TLRPC.Chat chat3 = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(inputPeer.channel_id));
+                    hVar.f(chat3, aVar.i, aVar.g, F(chat3));
+                }
+                hVar.setChatDeleteListener(this.n);
                 break;
-            }
-            if (zArr2[i16]) {
-                canvas2.save();
-                int i18 = i16;
-                float f14 = 0.0f;
-                do {
-                    f14 += this.g[i18] + AndroidUtilities.dp(40.0f);
-                    i18++;
-                    zArr = this.j;
-                    if (i18 >= zArr.length || this.h[i18]) {
-                        break;
-                    }
-                } while (zArr[i18]);
-                float f15 = f10 - (f14 / 2.0f);
-                canvas2.translate(f15, 0.0f);
-                int i19 = ((int) f15) + dp;
-                int i20 = i16;
-                while (true) {
-                    TLRPC.Chat chat = this.f[i20];
-                    if (this.T.isOutOwner()) {
-                        color = g6.v0(g6.Xa, c6Var);
-                    } else {
-                        int colorId = ChatObject.getColorId(chat);
-                        if (colorId < 7) {
-                            color = g6.v0(g6.r8[colorId], c6Var);
-                        } else {
-                            MessagesController.PeerColors peerColors = MessagesController.getInstance(UserConfig.selectedAccount).peerColors;
-                            MessagesController.PeerColor color2 = peerColors == null ? null : peerColors.getColor(colorId);
-                            color = color2 != null ? color2.getColor(i13, c6Var) : g6.v0(g6.r8[i13], c6Var);
-                        }
-                    }
-                    int i21 = this.V;
-                    i12 = (i21 < 0 || i21 != i20) ? i17 : color;
-                    this.D.setColor(color);
-                    this.J.setColor(color);
-                    this.J.setAlpha(25);
-                    this.a[i20].draw(canvas2);
-                    CharSequence charSequence = this.e[i20];
-                    int i22 = i19;
-                    canvas2.drawText(charSequence, 0, charSequence.length(), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(f9), this.D);
-                    this.N.set(0.0f, 0.0f, this.g[i20] + AndroidUtilities.dp(40.0f), AndroidUtilities.dp(24.0f));
-                    canvas2.drawRoundRect(this.N, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.J);
-                    float f16 = i22;
-                    this.i[i20].set(i22, C, (int) (this.N.width() + f16), AndroidUtilities.dp(24.0f) + C);
-                    canvas2.translate(this.N.width() + AndroidUtilities.dp(6.0f), 0.0f);
-                    i19 = (int) (this.N.width() + AndroidUtilities.dp(6.0f) + f16);
-                    i20++;
-                    boolean[] zArr3 = this.j;
-                    if (i20 >= zArr3.length || this.h[i20] || !zArr3[i20]) {
-                        break;
-                    }
-                    i17 = i12;
-                    i13 = 0;
+            case 10:
+                ((i) view).setDate(aVar.h);
+                break;
+            case 11:
+                w wVar = (w) view;
+                int i16 = aVar.l;
+                boolean z11 = aVar.b;
+                boolean z12 = aVar.g;
+                List list2 = (List) aVar.f;
+                TLRPC.Chat chat4 = this.v;
+                ig.c cVar2 = wVar.d;
+                wVar.r = i16;
+                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat4);
+                if (i16 == 0) {
+                    cVar2.k(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.BoostingAllSubscribers : R.string.BoostingAllMembers, new Object[0]));
+                } else if (i16 == 1) {
+                    cVar2.k(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.BoostingNewSubscribers : R.string.BoostingNewMembers, new Object[0]));
                 }
-                canvas2.restore();
-                canvas2.translate(0.0f, AndroidUtilities.dp(30.0f));
-                C += AndroidUtilities.dp(30.0f);
-                i16 = i20;
-                i17 = i12;
-            } else {
-                i16++;
-            }
-            i13 = 0;
-        }
-        if (this.A != null) {
-            canvas2.save();
-            canvas2.translate((this.l - this.A.getWidth()) / 2.0f, AndroidUtilities.dp(4.0f));
-            this.A.draw(canvas2);
-            canvas2.restore();
-            canvas2.translate(0.0f, this.s);
-        }
-        canvas2.translate(0.0f, AndroidUtilities.dp(6.0f));
-        canvas2.save();
-        canvas2.translate(this.v / 2.0f, 0.0f);
-        this.z.draw(canvas2);
-        canvas2.restore();
-        canvas2.restore();
-        if (this.V >= 0) {
-            int l1 = g6.l1(g6.I.q() ? 0.12f : 0.1f, i17);
-            if (this.R != l1) {
-                z zVar2 = this.S;
-                this.R = l1;
-                g6.B1(zVar2, l1, true);
-            }
-            this.S.setBounds(this.i[this.V]);
-            this.S.setCallback(s1Var);
+                wVar.f.a(z11, false);
+                wVar.setDivider(z12);
+                wVar.e.setTextColor(j6.v0(j6.n5, wVar.a));
+                if (list2.size() == 0) {
+                    wVar.setSubtitle(wVar.e(LocaleController.getString(R.string.BoostingFromAllCountries)));
+                    break;
+                } else if (list2.size() <= 3) {
+                    if (list2.size() == 1) {
+                        wVar.setSubtitle(wVar.e(LocaleController.formatString("BoostingFromAllCountries1", R.string.BoostingFromAllCountries1, ((TLRPC.TL_help_country) list2.get(0)).default_name)));
+                        break;
+                    } else if (list2.size() == 2) {
+                        wVar.setSubtitle(wVar.e(LocaleController.formatString("BoostingFromAllCountries2", R.string.BoostingFromAllCountries2, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name)));
+                        break;
+                    } else {
+                        wVar.setSubtitle(wVar.e(LocaleController.formatString("BoostingFromAllCountries3", R.string.BoostingFromAllCountries3, ((TLRPC.TL_help_country) list2.get(0)).default_name, ((TLRPC.TL_help_country) list2.get(1)).default_name, ((TLRPC.TL_help_country) list2.get(2)).default_name)));
+                        break;
+                    }
+                } else {
+                    wVar.setSubtitle(wVar.e(LocaleController.formatPluralString("BoostingFromCountriesCount", list2.size(), new Object[0])));
+                    break;
+                }
+            case 12:
+                j jVar = (j) view;
+                TLObject tLObject = aVar.m;
+                int i17 = aVar.i;
+                int i18 = aVar.j;
+                long j10 = aVar.h;
+                CharSequence charSequence = aVar.c;
+                boolean z13 = aVar.g;
+                boolean z14 = aVar.b;
+                ig.c cVar3 = jVar.d;
+                jVar.s = tLObject;
+                if (i17 >= 12) {
+                    cVar3.k(LocaleController.formatPluralString("Years", 1, new Object[0]));
+                } else {
+                    cVar3.k(LocaleController.formatPluralString("Months", i17, new Object[0]));
+                }
+                StringBuilder sb = new StringBuilder();
+                sb.append(BillingController.getInstance().formatCurrency(i18 > 0 ? j10 / i18 : j10, charSequence.toString()));
+                sb.append(" x ");
+                sb.append(i18);
+                jVar.setSubtitle(sb.toString());
+                k5 k5Var2 = jVar.r;
+                BillingController billingController = BillingController.getInstance();
+                if (i18 <= 0) {
+                    j10 = 0;
+                }
+                k5Var2.l(billingController.formatCurrency(j10, charSequence.toString()), false);
+                jVar.setDivider(z13);
+                jVar.f.a(z14, false);
+                break;
+            case 13:
+                z zVar = (z) view;
+                zVar.setText(aVar.c);
+                int i19 = aVar.i;
+                k6 k6Var = zVar.r;
+                String formatPluralString = i19 > 0 ? LocaleController.formatPluralString("BoostingBoostsCountTitle", i19, Integer.valueOf(i19)) : "";
+                k6Var.a();
+                k6Var.c(formatPluralString, true, true);
+                break;
+            case 14:
+                ((ig.f) view).setGiveaway((TL_stories.PrepaidGiveaway) aVar.f);
+                break;
+            case 15:
+                a0 a0Var = (a0) view;
+                CharSequence charSequence2 = aVar.c;
+                boolean z15 = aVar.b;
+                boolean z16 = aVar.g;
+                a0Var.H = aVar.l;
+                a0Var.f(charSequence2, z15, z16);
+                break;
+            case 16:
+                m mVar = (m) view;
+                mVar.setCount(aVar.i);
+                mVar.setAfterTextChangedListener(this.s);
+                break;
+            case 17:
+                y yVar = (y) view;
+                TLObject tLObject2 = aVar.m;
+                TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption = tLObject2 != null ? (TL_stars.TL_starsGiveawayOption) tLObject2 : null;
+                int i20 = aVar.i;
+                long j11 = aVar.h;
+                boolean z17 = aVar.b;
+                TextView textView = yVar.f;
+                k6 k6Var2 = yVar.d;
+                k6 k6Var3 = yVar.e;
+                boolean z18 = yVar.r == tL_starsGiveawayOption;
+                yVar.a.a(z17, z18);
+                yVar.r = tL_starsGiveawayOption;
+                if (z18) {
+                    k6Var3.a();
+                }
+                if (tL_starsGiveawayOption == null) {
+                    k6Var2.c(yVar.h, false, true);
+                    k6Var3.c(yVar.n, z18, true);
+                    textView.setText("");
+                } else {
+                    k6Var2.c(LocaleController.formatPluralStringComma("GiveawayStars", (int) tL_starsGiveawayOption.stars, ' '), false, true);
+                    k6Var3.c(LocaleController.formatPluralStringComma("BoostingStarOptionPerUser", (int) j11, ','), z18, true);
+                    textView.setText(BillingController.getInstance().formatCurrency(tL_starsGiveawayOption.amount, tL_starsGiveawayOption.currency));
+                }
+                int i21 = i20 + 1;
+                yVar.s = i21;
+                if (!z18) {
+                    yVar.v.d(i21, true);
+                }
+                yVar.invalidate();
+                break;
         }
     }
 
-    public final void c(boolean z10) {
-        z zVar;
-        MessageObject messageObject = this.T;
-        if (messageObject == null || !messageObject.isGiveaway() || (zVar = this.S) == null) {
-            return;
-        }
-        s1 s1Var = this.c;
-        if (!z10) {
-            zVar.setState(StateSet.NOTHING);
-            s1Var.invalidate();
-        } else {
-            zVar.setCallback(new a(this, 0));
-            this.S.setState(this.Q);
-            s1Var.invalidate();
-        }
-    }
-
-    public final void d(int i10, int i11, MessageObject messageObject) {
-        float f9;
-        float f10;
-        TLRPC.Document document;
-        String str;
-        this.T = null;
-        this.w = null;
-        this.x = null;
-        this.y = null;
-        this.z = null;
-        this.A = null;
-        this.k = 0;
-        this.l = 0;
-        this.m = 0;
-        this.n = 0.0f;
-        if (messageObject.isGiveaway()) {
-            this.T = messageObject;
-            if (this.B == null) {
-                this.B = new TextPaint(1);
-                this.C = new TextPaint(1);
-                this.D = new TextPaint(1);
-                this.E = new TextPaint(1);
-                this.F = new TextPaint(1);
-                this.G = new Paint(1);
-                this.H = new TextPaint(1);
-                this.I = new Paint(1);
-                this.J = new Paint(1);
-                this.K = new Paint();
-                this.L = new Paint();
-                this.M = new RectF();
-                this.N = new RectF();
-                this.O = new Rect();
-                this.P = new Rect();
-                this.Q = new int[]{R.attr.state_enabled, R.attr.state_pressed};
-                this.e = new CharSequence[10];
-                this.f = new TLRPC.Chat[10];
-                this.g = new float[10];
-                this.h = new boolean[10];
-                this.i = new Rect[10];
-                ImageReceiver imageReceiver = new ImageReceiver(this.c);
-                this.d = imageReceiver;
-                imageReceiver.setAllowLoadingOnAttachedOnly(true);
-                Paint paint = this.L;
-                PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
-                paint.setXfermode(new PorterDuffXfermode(mode));
-                this.B.setTypeface(AndroidUtilities.bold());
-                this.B.setXfermode(new PorterDuffXfermode(mode));
-                this.B.setTextSize(AndroidUtilities.dp(12.0f));
-                TextPaint textPaint = this.B;
-                Paint.Align align = Paint.Align.CENTER;
-                textPaint.setTextAlign(align);
-                this.C.setTypeface(AndroidUtilities.bold());
-                this.C.setTextSize(AndroidUtilities.dp(12.0f));
-                this.C.setTextAlign(align);
-                this.C.setColor(-1);
-                this.D.setTypeface(AndroidUtilities.bold());
-                this.D.setTextSize(AndroidUtilities.dp(13.0f));
-                this.H.setTextSize(AndroidUtilities.dp(13.0f));
-                this.E.setTextSize(AndroidUtilities.dp(14.0f));
-                this.F.setTextSize(AndroidUtilities.dp(14.0f));
-                this.F.setTextAlign(align);
-            }
-            if (this.a == null) {
-                this.a = new ImageReceiver[10];
-                this.b = new e9[10];
-                this.j = new boolean[10];
-                int i12 = 0;
-                while (true) {
-                    ImageReceiver[] imageReceiverArr = this.a;
-                    if (i12 >= imageReceiverArr.length) {
-                        break;
-                    }
-                    imageReceiverArr[i12] = new ImageReceiver(this.c);
-                    this.a[i12].setAllowLoadingOnAttachedOnly(true);
-                    this.a[i12].setRoundRadius(AndroidUtilities.dp(12.0f));
-                    this.b[i12] = new e9((c6) null);
-                    this.b[i12].u(AndroidUtilities.dp(18.0f));
-                    this.i[i12] = new Rect();
-                    i12++;
-                }
-            }
-            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageObject.messageOwner.media;
-            String str2 = UserConfig.getInstance(UserConfig.selectedAccount).premiumGiftsStickerPack;
-            if (str2 == null) {
-                MediaDataController.getInstance(UserConfig.selectedAccount).checkPremiumGiftStickers();
-                f9 = 12.0f;
-                f10 = 18.0f;
-            } else {
-                TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSetByName(str2);
-                if (stickerSetByName == null) {
-                    stickerSetByName = MediaDataController.getInstance(UserConfig.selectedAccount).getStickerSetByEmojiOrName(str2);
-                }
-                if (stickerSetByName != null) {
-                    String str3 = (String) Y.get(Integer.valueOf(tL_messageMediaGiveaway.months));
-                    ArrayList<TLRPC.TL_stickerPack> arrayList = stickerSetByName.packs;
-                    int size = arrayList.size();
-                    document = null;
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 >= size) {
-                            f9 = 12.0f;
-                            f10 = 18.0f;
-                            break;
-                        }
-                        TLRPC.TL_stickerPack tL_stickerPack = arrayList.get(i13);
-                        i13++;
-                        TLRPC.TL_stickerPack tL_stickerPack2 = tL_stickerPack;
-                        f9 = 12.0f;
-                        if (Objects.equals(tL_stickerPack2.emoticon, str3)) {
-                            ArrayList<Long> arrayList2 = tL_stickerPack2.documents;
-                            int size2 = arrayList2.size();
-                            int i14 = 0;
-                            f10 = 18.0f;
-                            while (i14 < size2) {
-                                Long l10 = arrayList2.get(i14);
-                                i14++;
-                                long longValue = l10.longValue();
-                                ArrayList<TLRPC.Document> arrayList3 = stickerSetByName.documents;
-                                int size3 = arrayList3.size();
-                                int i15 = 0;
-                                while (true) {
-                                    if (i15 >= size3) {
-                                        str = str3;
-                                        break;
-                                    }
-                                    TLRPC.Document document2 = arrayList3.get(i15);
-                                    i15++;
-                                    TLRPC.Document document3 = document2;
-                                    ArrayList<TLRPC.Document> arrayList4 = arrayList3;
-                                    str = str3;
-                                    if (document3.id == longValue) {
-                                        document = document3;
-                                        break;
-                                    } else {
-                                        str3 = str;
-                                        arrayList3 = arrayList4;
-                                    }
-                                }
-                                if (document != null) {
-                                    break;
-                                } else {
-                                    str3 = str;
-                                }
-                            }
-                            str = str3;
-                        } else {
-                            str = str3;
-                            f10 = 18.0f;
-                        }
-                        if (document != null) {
-                            break;
-                        } else {
-                            str3 = str;
-                        }
-                    }
-                    if (document == null && !stickerSetByName.documents.isEmpty()) {
-                        document = stickerSetByName.documents.get(0);
-                    }
+    @Override // f2.o0
+    public final l1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = viewGroup.getContext();
+        f6 f6Var = this.d;
+        switch (i10) {
+            case 2:
+                view = new ig.e(context, f6Var);
+                break;
+            case 3:
+                view = new View(context);
+                break;
+            case 4:
+                view = new z6(context, j6.v0(j6.a7, f6Var), 0);
+                break;
+            case 5:
+                view = new x(context, f6Var);
+                break;
+            case 6:
+                View m4Var = new m4(context, j6.L6, 21, 15, 3, false, false, this.d);
+                m4Var.setBackgroundColor(j6.v0(j6.h5, f6Var));
+                view = m4Var;
+                break;
+            case 7:
+                view = new f0(context, f6Var);
+                break;
+            case 8:
+                view = new ig.b(context, f6Var);
+                break;
+            case 9:
+                view = new ig.h(context, f6Var);
+                break;
+            case 10:
+                view = new i(context, f6Var);
+                break;
+            case 11:
+                w wVar = new w(context, f6Var);
+                wVar.c.setVisibility(8);
+                view = wVar;
+                break;
+            case 12:
+                view = new j(context, f6Var);
+                break;
+            case 13:
+                View zVar = new z(context, f6Var);
+                zVar.setBackgroundColor(j6.v0(j6.h5, f6Var));
+                view = zVar;
+                break;
+            case 14:
+                view = new ig.f(context, f6Var);
+                break;
+            case 15:
+                a0 a0Var = new a0(context, f6Var);
+                a0Var.setHeight(50);
+                view = a0Var;
+                break;
+            case 16:
+                view = new m(context, f6Var);
+                break;
+            case 17:
+                view = new y(context, f6Var);
+                break;
+            case 18:
+                q9 q9Var = new q9(context);
+                String string = LocaleController.getString(R.string.NotifyMoreOptions);
+                boolean z4 = q9Var.c == -1;
+                q9Var.c = -1;
+                k6 k6Var = q9Var.a;
+                k6Var.c(string, z4, true);
+                int w02 = j6.w0(null, j6.o6, false);
+                k6Var.setTextColor(w02);
+                PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN);
+                ImageView imageView = q9Var.b;
+                imageView.setColorFilter(porterDuffColorFilter);
+                if (z4) {
+                    imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(nr.h);
                 } else {
-                    f9 = 12.0f;
-                    f10 = 18.0f;
-                    document = null;
+                    imageView.setRotation(0.0f);
                 }
-                if (document != null) {
-                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, g6.c7, 0.2f);
-                    if (svgThumb != null) {
-                        svgThumb.overrideWidthAndHeight(512, 512);
-                    }
-                    this.d.setImage(ImageLocation.getForDocument(document), "160_160_firstframe", svgThumb, "tgs", stickerSetByName, 1);
-                } else {
-                    MediaDataController.getInstance(UserConfig.selectedAccount).loadStickersByEmojiOrName(str2, false, stickerSetByName == null);
-                }
-            }
-            TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = (TLRPC.TL_messageMediaGiveaway) messageObject.messageOwner.media;
-            this.U = (tL_messageMediaGiveaway2.flags & 32) != 0;
-            int size4 = tL_messageMediaGiveaway2.channels.size();
-            ImageReceiver[] imageReceiverArr2 = this.a;
-            if (imageReceiverArr2.length < size4) {
-                int length = imageReceiverArr2.length;
-                this.a = (ImageReceiver[]) Arrays.copyOf(imageReceiverArr2, size4);
-                this.b = (e9[]) Arrays.copyOf(this.b, size4);
-                this.j = Arrays.copyOf(this.j, size4);
-                this.e = (CharSequence[]) Arrays.copyOf(this.e, size4);
-                this.g = Arrays.copyOf(this.g, size4);
-                this.h = Arrays.copyOf(this.h, size4);
-                this.i = (Rect[]) Arrays.copyOf(this.i, size4);
-                this.f = (TLRPC.Chat[]) Arrays.copyOf(this.f, size4);
-                for (int i16 = length - 1; i16 < size4; i16++) {
-                    this.a[i16] = new ImageReceiver(this.c);
-                    this.a[i16].setAllowLoadingOnAttachedOnly(true);
-                    this.a[i16].setRoundRadius(AndroidUtilities.dp(f9));
-                    this.b[i16] = new e9((c6) null);
-                    this.b[i16].u(AndroidUtilities.dp(f10));
-                    this.i[i16] = new Rect();
-                }
-            }
-            int dp = AndroidUtilities.dp(148.0f);
-            int minTabletSide = AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() - AndroidUtilities.dp(80.0f) : i10 - AndroidUtilities.dp(80.0f);
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            boolean isForwarded = messageObject.isForwarded();
-            TLRPC.Message message = messageObject.messageOwner;
-            boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(messagesController.getChat(Long.valueOf(-MessageObject.getPeerId(isForwarded ? message.fwd_from.from_id : message.peer_id))));
-            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(org.telegram.messenger.R.string.BoostingGiveawayPrizes));
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replaceTags);
-            spannableStringBuilder.setSpan(new RelativeSizeSpan(1.05f), 0, replaceTags.length(), 33);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-            if (this.U) {
-                spannableStringBuilder2.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("BoostingStarsGiveawayMsgInfoPlural1", (int) tL_messageMediaGiveaway2.stars)));
-                spannableStringBuilder2.append((CharSequence) "\n");
-                spannableStringBuilder2.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingStarsGiveawayMsgInfoPlural2", tL_messageMediaGiveaway2.quantity, new Object[0])));
-            } else {
-                spannableStringBuilder2.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("BoostingGiveawayMsgInfoPlural1", tL_messageMediaGiveaway2.quantity)));
-                spannableStringBuilder2.append((CharSequence) "\n");
-                spannableStringBuilder2.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayMsgInfoPlural2", tL_messageMediaGiveaway2.quantity, LocaleController.formatPluralString("BoldMonths", tL_messageMediaGiveaway2.months, new Object[0]))));
-            }
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-            spannableStringBuilder3.append((CharSequence) spannableStringBuilder2);
-            spannableStringBuilder3.append((CharSequence) "\n\n");
-            spannableStringBuilder3.setSpan(new RelativeSizeSpan(0.4f), spannableStringBuilder3.length() - 1, spannableStringBuilder3.length(), 33);
-            SpannableStringBuilder replaceTags2 = AndroidUtilities.replaceTags(LocaleController.getString("BoostingGiveawayMsgParticipants", org.telegram.messenger.R.string.BoostingGiveawayMsgParticipants));
-            spannableStringBuilder3.append((CharSequence) replaceTags2);
-            spannableStringBuilder3.setSpan(new RelativeSizeSpan(1.05f), spannableStringBuilder2.length() + 2, replaceTags2.length() + spannableStringBuilder2.length() + 2, 33);
-            spannableStringBuilder3.append((CharSequence) "\n");
-            if (tL_messageMediaGiveaway2.only_new_subscribers) {
-                spannableStringBuilder3.append((CharSequence) LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingGiveawayMsgNewSubsPlural" : "BoostingGiveawayMsgNewSubsGroupPlural", tL_messageMediaGiveaway2.channels.size(), new Object[0]));
-            } else {
-                spannableStringBuilder3.append((CharSequence) LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingGiveawayMsgAllSubsPlural" : "BoostingGiveawayMsgAllSubsGroupPlural", tL_messageMediaGiveaway2.channels.size(), new Object[0]));
-            }
-            SpannableStringBuilder replaceTags3 = AndroidUtilities.replaceTags(LocaleController.getString("BoostingWinnersDate", org.telegram.messenger.R.string.BoostingWinnersDate));
-            SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(replaceTags3);
-            spannableStringBuilder4.setSpan(new RelativeSizeSpan(1.05f), 0, replaceTags3.length(), 33);
-            Date date = new Date(tL_messageMediaGiveaway2.until_date * 1000);
-            String format = LocaleController.getInstance().getFormatterGiveawayCard().format(date);
-            String format2 = LocaleController.getInstance().getFormatterDay().format(date);
-            spannableStringBuilder4.append((CharSequence) "\n");
-            spannableStringBuilder4.append((CharSequence) LocaleController.formatString("formatDateAtTime", org.telegram.messenger.R.string.formatDateAtTime, format, format2));
-            TextPaint textPaint2 = this.E;
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-            float dp2 = AndroidUtilities.dp(2.0f);
-            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.w = bw0.c(spannableStringBuilder, textPaint2, minTabletSide, alignment, dp2, false, truncateAt, minTabletSide, 10, true);
-            this.y = bw0.c(spannableStringBuilder3, this.E, minTabletSide, alignment, AndroidUtilities.dp(2.0f), false, truncateAt, minTabletSide, 10, true);
-            this.z = bw0.c(spannableStringBuilder4, this.E, minTabletSide, alignment, AndroidUtilities.dp(3.0f), false, truncateAt, minTabletSide, 10, true);
-            int i17 = 0;
-            for (int i18 = 0; i18 < this.w.getLineCount(); i18++) {
-                i17 = (int) Math.max(i17, Math.ceil(this.w.getLineWidth(i18)));
-            }
-            for (int i19 = 0; i19 < this.y.getLineCount(); i19++) {
-                i17 = (int) Math.max(i17, Math.ceil(this.y.getLineWidth(i19)));
-            }
-            for (int i20 = 0; i20 < this.z.getLineCount(); i20++) {
-                i17 = (int) Math.max(i17, Math.ceil(this.z.getLineWidth(i20)));
-            }
-            if (i17 < AndroidUtilities.dp(180.0f)) {
-                i17 = AndroidUtilities.dp(180.0f);
-            }
-            int i21 = i17;
-            String str4 = tL_messageMediaGiveaway2.prize_description;
-            if (str4 != null && !str4.isEmpty()) {
-                StaticLayout c3 = bw0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.quantity, tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false), this.E, i21, Layout.Alignment.ALIGN_CENTER, AndroidUtilities.dp(2.0f), false, TextUtils.TruncateAt.END, i21, 20, true);
-                this.x = c3;
-                this.m = AndroidUtilities.dp(22.0f) + c3.getLineBottom(c3.getLineCount() - 1);
-                String string = LocaleController.getString(org.telegram.messenger.R.string.BoostingGiveawayMsgWithDivider);
-                this.o = string;
-                this.n = this.F.measureText(string, 0, string.length());
-            }
-            if (tL_messageMediaGiveaway2.countries_iso2.size() > 0) {
-                ArrayList arrayList5 = new ArrayList();
-                ArrayList<String> arrayList6 = tL_messageMediaGiveaway2.countries_iso2;
-                int size5 = arrayList6.size();
-                int i22 = 0;
-                while (i22 < size5) {
-                    String str5 = arrayList6.get(i22);
-                    i22++;
-                    String str6 = str5;
-                    String displayCountry = new Locale("", str6).getDisplayCountry(Locale.getDefault());
-                    String languageFlag = LocaleController.getLanguageFlag(str6);
-                    SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
-                    if (languageFlag != null) {
-                        spannableStringBuilder5.append((CharSequence) languageFlag).append((CharSequence) " ");
-                    }
-                    spannableStringBuilder5.append((CharSequence) displayCountry);
-                    arrayList5.add(spannableStringBuilder5);
-                }
-                if (!arrayList5.isEmpty()) {
-                    this.A = bw0.c(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiveAwayFromCountries", org.telegram.messenger.R.string.BoostingGiveAwayFromCountries, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false), this.H, i21, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i21, 10, true);
-                }
-            }
-            int max = Math.max(i11, Math.min(AndroidUtilities.dp(38.0f) + i21, minTabletSide));
-            this.v = max - minTabletSide;
-            float f11 = max;
-            float f12 = dp;
-            float f13 = f12 / 2.0f;
-            this.d.setImageCoords((f11 / 2.0f) - f13, AndroidUtilities.dp(42.0f) - f13, f12, f12);
-            int dp3 = AndroidUtilities.dp(5.0f) + this.w.getLineBottom(r1.getLineCount() - 1);
-            this.p = dp3;
-            this.q = this.y.getLineBottom(r1.getLineCount() - 1) + dp3 + this.m;
-            this.r = this.z.getLineBottom(r1.getLineCount() - 1);
-            StaticLayout staticLayout = this.A;
-            int lineBottom = staticLayout != null ? staticLayout.getLineBottom(staticLayout.getLineCount() - 1) + AndroidUtilities.dp(f9) : 0;
-            this.s = lineBottom;
-            int i23 = this.k + this.q + lineBottom + this.r;
-            this.k = i23;
-            this.k = AndroidUtilities.dp(128.0f) + i23;
-            this.l = max;
-            if (this.U) {
-                if (this.t == null) {
-                    this.t = ApplicationLoader.applicationContext.getResources().getDrawable(org.telegram.messenger.R.drawable.filled_giveaway_stars).mutate();
-                }
-                this.u = LocaleController.formatNumber((int) tL_messageMediaGiveaway2.stars, ',');
-            } else {
-                this.t = null;
-                this.u = "x" + tL_messageMediaGiveaway2.quantity;
-            }
-            TextPaint textPaint3 = this.B;
-            String str7 = this.u;
-            textPaint3.getTextBounds(str7, 0, str7.length(), this.O);
-            if (tL_messageMediaGiveaway2.stars != 0) {
-                Rect rect = this.O;
-                rect.right = AndroidUtilities.dp(20.0f) + rect.right;
-            }
-            Arrays.fill(this.j, false);
-            this.k = AndroidUtilities.dp(30.0f) + this.k;
-            ArrayList arrayList7 = new ArrayList(tL_messageMediaGiveaway2.channels.size());
-            ArrayList<Long> arrayList8 = tL_messageMediaGiveaway2.channels;
-            int size6 = arrayList8.size();
-            int i24 = 0;
-            while (i24 < size6) {
-                Long l11 = arrayList8.get(i24);
-                i24++;
-                Long l12 = l11;
-                if (MessagesController.getInstance(UserConfig.selectedAccount).getChat(l12) != null) {
-                    arrayList7.add(l12);
-                }
-            }
-            float f14 = 0.0f;
-            for (int i25 = 0; i25 < arrayList7.size(); i25++) {
-                Long l13 = (Long) arrayList7.get(i25);
-                long longValue2 = l13.longValue();
-                TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(l13);
-                if (chat != null) {
-                    this.j[i25] = true;
-                    this.f[i25] = chat;
-                    this.e[i25] = TextUtils.ellipsize(Emoji.replaceEmoji(chat.title, this.D.getFontMetricsInt(), false), this.D, 0.8f * f11, TextUtils.TruncateAt.END);
-                    float[] fArr = this.g;
-                    TextPaint textPaint4 = this.D;
-                    CharSequence charSequence = this.e[i25];
-                    fArr[i25] = textPaint4.measureText(charSequence, 0, charSequence.length());
-                    float dp4 = this.g[i25] + AndroidUtilities.dp(40.0f);
-                    f14 += dp4;
-                    if (i25 > 0) {
-                        boolean[] zArr = this.h;
-                        boolean z10 = f14 > 0.9f * f11;
-                        zArr[i25] = z10;
-                        if (z10) {
-                            this.k = AndroidUtilities.dp(30.0f) + this.k;
-                            f14 = dp4;
-                        }
-                    } else {
-                        this.h[i25] = false;
-                    }
-                    this.b[i25].q(chat);
-                    this.a[i25].setForUserOrChat(chat, this.b[i25]);
-                    this.a[i25].setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-                } else {
-                    this.f[i25] = null;
-                    this.j[i25] = false;
-                    this.e[i25] = "";
-                    this.h[i25] = false;
-                    this.g[i25] = AndroidUtilities.dp(20.0f);
-                    this.b[i25].n(longValue2, "", "");
-                }
-            }
+                q9Var.d = false;
+                q9Var.setWillNotDraw(true);
+                view = q9Var;
+                break;
+            default:
+                view = new s(context, f6Var);
+                break;
         }
+        return yh.o(view, view, -1, -2);
     }
 }

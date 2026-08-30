@@ -1,44 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cj implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class cj extends org.telegram.ui.Components.mv {
+    public final /* synthetic */ xn T;
 
-    public /* synthetic */ cj(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cj(xn xnVar, org.telegram.ui.ActionBar.p2 p2Var, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
+        super(p2Var, activity, f6Var, arrayList);
+        this.T = xnVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
-            case 0:
-                tn tnVar = ((ej) this.c).b;
-                if (i10 > 0 && tnVar.getParentActivity() != null) {
-                    org.telegram.ui.Components.tc.a0(tnVar).m(this.b ? org.telegram.ui.Components.sc.C : org.telegram.ui.Components.sc.E, i10, 0, 0, tnVar.aa).j();
-                    break;
-                }
-                break;
-            default:
-                dj djVar = (dj) this.c;
-                tn tnVar2 = djVar.b.b;
-                if (i10 < 50) {
-                    tnVar2.qa(tnVar2.Z3, true);
-                    break;
-                } else {
-                    TLRPC.Chat chat = tnVar2.e;
-                    TLRPC.User user = tnVar2.f;
-                    boolean z10 = this.b;
-                    org.telegram.ui.Components.c5.s(tnVar2, true, chat, user, false, false, false, z10, new c1(djVar, z10));
-                    break;
-                }
-        }
+    @Override // org.telegram.ui.Components.mv, org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        xn xnVar = this.T;
+        xnVar.getClass();
+        xnVar.g8(false, true, 0.0f);
     }
 }

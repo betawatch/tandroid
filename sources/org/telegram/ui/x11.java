@@ -1,28 +1,40 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class x11 extends org.telegram.ui.Components.aj0 {
-    public final /* synthetic */ z11 r;
+public final /* synthetic */ class x11 implements org.telegram.ui.ActionBar.c2, r0.o {
+    public final /* synthetic */ m21 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x11(z11 z11Var, Activity activity) {
-        super(activity);
-        this.r = z11Var;
+    public /* synthetic */ x11(m21 m21Var) {
+        this.a = m21Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.r.O.G) {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
-        } else {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+    @Override // r0.o
+    public r0.m1 N0(View view, r0.m1 m1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        m21 m21Var = this.a;
+        m21Var.N = defaultWindowInsets;
+        m21Var.fragmentView.requestLayout();
+        return r0.m1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        m21 m21Var = this.a;
+        m21Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            m21Var.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

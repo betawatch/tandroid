@@ -1,7 +1,24 @@
 package s7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import j7.f5;
+import r5.c0;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final com.google.android.gms.common.api.e a = d7.c.k;
+public final class d extends c6.a {
+    public static final Parcelable.Creator<d> CREATOR = new c0(5);
+    public final byte[] a;
+
+    public d(byte[] bArr) {
+        this.a = bArr;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.c(parcel, 2, this.a);
+        f5.r(parcel, q10);
+    }
 }

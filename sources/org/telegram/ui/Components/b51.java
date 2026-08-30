@@ -1,19 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b51 extends a51 {
-    public b51(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (h01) null);
+public abstract class b51 {
+    public String[] a = new String[0];
+
+    public boolean a() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.a51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setUnderlineText(false);
+    public String[] b() {
+        return this.a;
+    }
+
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(u41 u41Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(u41 u41Var, k kVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z4);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z4, int i10) {
     }
 }

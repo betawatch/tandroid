@@ -1,56 +1,135 @@
 package org.telegram.ui.web;
 
-import android.webkit.ValueCallback;
+import android.R;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import java.io.File;
-import java.util.ArrayList;
+import java.io.InputStream;
+import k7.b6;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Timer;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y1 implements ValueCallback {
+public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
-    public final /* synthetic */ WebView c;
-    public final /* synthetic */ File d;
-    public final /* synthetic */ x1 e;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ y1(f2 f2Var, WebView webView, File file, x1 x1Var, int i10) {
+    public /* synthetic */ y1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i10) {
         this.a = i10;
-        this.b = f2Var;
-        this.c = webView;
-        this.d = file;
-        this.e = x1Var;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+        this.f = obj5;
     }
 
-    @Override // android.webkit.ValueCallback
-    public final void onReceiveValue(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                File file = this.d;
-                String absolutePath = file.getAbsolutePath();
-                f2 f2Var = this.b;
-                WebView webView = this.c;
-                webView.saveWebArchive(absolutePath, false, new y1(f2Var, webView, file, this.e, 1));
-                break;
-            default:
-                f2 f2Var2 = this.b;
-                File file2 = this.d;
-                x1 x1Var = this.e;
-                this.c.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new g0(1));
-                try {
-                    com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(file2);
-                    f2Var2.b = sVar;
-                    if (!((ArrayList) sVar.c).isEmpty()) {
-                        x1Var.run(((h1) ((ArrayList) f2Var2.b.c).get(0)).a());
+                Timer.Task task = (Timer.Task) this.b;
+                boolean[] zArr = (boolean[]) this.c;
+                Timer timer = (Timer) this.d;
+                g2 g2Var = (g2) this.e;
+                Utilities.Callback callback = (Utilities.Callback) this.f;
+                InputStream inputStream = (InputStream) obj;
+                Timer.done(task);
+                if (!zArr[0]) {
+                    Timer.Task start = Timer.start(timer, "readHTML");
+                    String str = g2Var.a;
+                    final y1 y1Var = new y1(start, zArr, timer, g2Var, callback, 1);
+                    if (inputStream != null) {
+                        Context context = LaunchActivity.D1;
+                        if (context == null) {
+                            context = ApplicationLoader.applicationContext;
+                        }
+                        Activity findActivity = AndroidUtilities.findActivity(context);
+                        if (findActivity != null) {
+                            View rootView = findActivity.findViewById(R.id.content).getRootView();
+                            if (!(rootView instanceof ViewGroup)) {
+                                y1Var.run(null);
+                                break;
+                            } else {
+                                final a2 a2Var = new a2(context);
+                                ((ViewGroup) rootView).addView(a2Var);
+                                final WebView webView = new WebView(context);
+                                WebSettings settings = webView.getSettings();
+                                settings.setAllowContentAccess(false);
+                                settings.setDatabaseEnabled(false);
+                                settings.setAllowFileAccess(false);
+                                settings.setJavaScriptEnabled(true);
+                                settings.setSaveFormData(false);
+                                settings.setGeolocationEnabled(false);
+                                settings.setDomStorageEnabled(false);
+                                settings.setAllowFileAccessFromFileURLs(false);
+                                settings.setAllowUniversalAccessFromFileURLs(false);
+                                webView.setWebViewClient(new b2(g2Var, inputStream));
+                                webView.setWebChromeClient(new c2());
+                                a2Var.addView(webView, b6.c(-1.0f, -1));
+                                final boolean[] zArr2 = {false};
+                                webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
+                                    @JavascriptInterface
+                                    public void done(String str2) {
+                                        AndroidUtilities.runOnUIThread(new z(zArr2, webView, a2Var, str2, y1Var));
+                                    }
+                                }, "Instant");
+                                webView.loadUrl(str);
+                                break;
+                            }
+                        } else {
+                            y1Var.run(null);
+                            break;
+                        }
+                    } else {
+                        y1Var.run(null);
                         break;
                     }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
                 }
-                x1Var.run(null);
+                break;
+            case 1:
+                Timer.Task task2 = (Timer.Task) this.b;
+                boolean[] zArr3 = (boolean[]) this.c;
+                Timer timer2 = (Timer) this.d;
+                g2 g2Var2 = (g2) this.e;
+                Utilities.Callback callback2 = (Utilities.Callback) this.f;
+                JSONObject jSONObject = (JSONObject) obj;
+                Timer.done(task2);
+                if (!zArr3[0]) {
+                    Timer.Task start2 = Timer.start(timer2, "parseJSON");
+                    try {
+                        g2Var2.c = g2Var2.i(g2Var2.a, jSONObject);
+                    } catch (Exception e) {
+                        Timer.log(timer2, "error: " + e);
+                        FileLog.e(e);
+                    }
+                    Timer.done(start2);
+                    callback2.run(g2Var2);
+                    TLRPC.TL_webPage tL_webPage = g2Var2.c;
+                    if (tL_webPage != null) {
+                        g2.e.put(tL_webPage, g2Var2);
+                    }
+                    Timer.finish(timer2);
+                    break;
+                }
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new kh.e1((a1) this.b, (File) obj, (org.telegram.ui.ActionBar.d2) this.c, (String) this.d, (String) this.e, (String) this.f, 19, false));
                 break;
         }
     }

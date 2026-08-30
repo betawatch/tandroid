@@ -1,52 +1,56 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kt0 extends org.telegram.ui.Cells.f7 {
-    public final /* synthetic */ int h0;
-    public final /* synthetic */ il0 i0;
+public final class kt0 extends LinearLayout {
+    public final TextView a;
+    public final ImageView b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kt0(il0 il0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, 0, c6Var);
-        this.h0 = i10;
-        this.i0 = il0Var;
+    public kt0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        setOrientation(1);
+        setGravity(17);
+        addView(imageView, k7.b6.n(-2, -2));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
+        textView.setGravity(17);
+        textView.setTextSize(1, 17.0f);
+        textView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        addView(textView, k7.b6.t(-2, -2, 17, 0, 24, 0, 0));
     }
 
-    @Override // org.telegram.ui.Cells.f7
-    public final boolean d(MessageObject messageObject) {
-        switch (this.h0) {
-            case 0:
-                lt0 lt0Var = (lt0) this.i0;
-                if (!messageObject.isVoice() && !messageObject.isRoundVideo()) {
-                    if (messageObject.isMusic()) {
-                        return MediaController.getInstance().setPlaylist(lt0Var.d, messageObject, lt0Var.v.Y0);
-                    }
-                    return false;
-                }
-                boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-                MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? lt0Var.d : null, false);
-                if (messageObject.isRoundVideo()) {
-                    MediaController.getInstance().setCurrentVideoVisible(false);
-                }
-                return playMessage;
-            default:
-                du0 du0Var = (du0) this.i0;
-                int i10 = du0Var.d;
-                qu0 qu0Var = du0Var.f;
-                if (messageObject.isVoice() || messageObject.isRoundVideo()) {
-                    boolean playMessage2 = MediaController.getInstance().playMessage(messageObject);
-                    MediaController.getInstance().setVoiceMessagesPlaylist(playMessage2 ? qu0Var.p1[i10].a : null, false);
-                    return playMessage2;
-                }
-                if (messageObject.isMusic()) {
-                    return MediaController.getInstance().setPlaylist(qu0Var.p1[i10].a, messageObject, qu0Var.Y0);
-                }
-                return false;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+        this.c = true;
+        if (AndroidUtilities.isTablet()) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        } else if (rotation == 3 || rotation == 1) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
+        } else {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
         }
+        this.c = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
+        }
+        super.requestLayout();
     }
 }

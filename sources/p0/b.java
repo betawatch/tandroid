@@ -3,7 +3,7 @@ package p0;
 import android.text.SpannableStringBuilder;
 import c2.u;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -20,9 +20,9 @@ public final class b {
         e = new b(true);
     }
 
-    public b(boolean z10) {
+    public b(boolean z4) {
         u uVar = f.a;
-        this.a = z10;
+        this.a = z4;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0085, code lost:
@@ -199,9 +199,9 @@ public final class b {
         String str = "";
         String str2 = c;
         String str3 = b;
-        boolean z10 = this.a;
-        spannableStringBuilder.append((CharSequence) ((z10 || !(g11 || a(charSequence) == 1)) ? (!z10 || (g11 && a(charSequence) != -1)) ? "" : str2 : str3));
-        if (g10 != z10) {
+        boolean z4 = this.a;
+        spannableStringBuilder.append((CharSequence) ((z4 || !(g11 || a(charSequence) == 1)) ? (!z4 || (g11 && a(charSequence) != -1)) ? "" : str2 : str3));
+        if (g10 != z4) {
             spannableStringBuilder.append(g10 ? (char) 8235 : (char) 8234);
             spannableStringBuilder.append(charSequence);
             spannableStringBuilder.append((char) 8236);
@@ -209,9 +209,9 @@ public final class b {
             spannableStringBuilder.append(charSequence);
         }
         boolean g12 = (g10 ? f.b : f.a).g(charSequence.length(), charSequence);
-        if (!z10 && (g12 || b(charSequence) == 1)) {
+        if (!z4 && (g12 || b(charSequence) == 1)) {
             str = str3;
-        } else if (z10 && (!g12 || b(charSequence) == -1)) {
+        } else if (z4 && (!g12 || b(charSequence) == -1)) {
             str = str2;
         }
         spannableStringBuilder.append((CharSequence) str);

@@ -11,7 +11,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private e0.t builder;
@@ -52,10 +52,10 @@ public class LocationSharingService extends Service implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onCreate$1() {
         this.handler.postDelayed(this.runnable, 1000L);
-        Utilities.stageQueue.postRunnable(new w1(13));
+        Utilities.stageQueue.postRunnable(new x1(13));
     }
 
-    private void updateNotification(boolean z10) {
+    private void updateNotification(boolean z4) {
         String formatPluralString;
         String string;
         if (this.builder == null) {
@@ -81,8 +81,8 @@ public class LocationSharingService extends Service implements NotificationCente
         String format = String.format(string, LocaleController.getString(R.string.AttachLiveLocation), formatPluralString);
         this.builder.p(format);
         this.builder.f(format);
-        if (z10) {
-            new e0.n0(ApplicationLoader.applicationContext).d(6, this.builder.b());
+        if (z4) {
+            new e0.m0(ApplicationLoader.applicationContext).d(6, this.builder.b());
         }
     }
 
@@ -92,7 +92,7 @@ public class LocationSharingService extends Service implements NotificationCente
         if (i10 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
             return;
         }
-        handler.post(new v5(this, 1));
+        handler.post(new w5(this, 1));
     }
 
     @Override // android.app.Service
@@ -105,9 +105,9 @@ public class LocationSharingService extends Service implements NotificationCente
         super.onCreate();
         Handler handler = new Handler();
         this.handler = handler;
-        v5 v5Var = new v5(this, 0);
-        this.runnable = v5Var;
-        handler.postDelayed(v5Var, 1000L);
+        w5 w5Var = new w5(this, 0);
+        this.runnable = w5Var;
+        handler.postDelayed(w5Var, 1000L);
     }
 
     @Override // android.app.Service
@@ -118,7 +118,7 @@ public class LocationSharingService extends Service implements NotificationCente
             handler.removeCallbacks(this.runnable);
         }
         stopForeground(true);
-        new e0.n0(ApplicationLoader.applicationContext).b(6);
+        new e0.m0(ApplicationLoader.applicationContext).b(6);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.liveLocationsChanged);
     }
 

@@ -1,74 +1,81 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.text.TextUtils;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.R;
-import org.telegram.ui.th;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class u5 extends FrameLayout {
-    public final org.telegram.ui.Components.t9 a;
-    public final TextView b;
-    public final TextView c;
-    public final View d;
-    public final /* synthetic */ w5 e;
+    public final TextView a;
+    public final LinearLayout b;
+    public View.OnClickListener c;
+    public int d;
+    public final int[] e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u5(w5 w5Var, Context context) {
+    public u5(Context context) {
         super(context);
-        this.e = w5Var;
-        org.telegram.ui.Components.t9 t9Var = new org.telegram.ui.Components.t9(context);
-        this.a = t9Var;
-        addView(t9Var, i7.f6.c(-1.0f, -1));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setBackgroundResource(R.drawable.album_shadow);
-        addView(linearLayout, i7.f6.e(-1, 60, 83));
+        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
         TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 13.0f);
+        this.a = textView;
+        textView.setGravity(5);
         textView.setTextColor(-1);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
+        textView.setTextSize(1, 12.0f);
         textView.setMaxLines(1);
-        textView.setGravity(80);
-        TextView i10 = th.i(linearLayout, textView, i7.f6.m(1.0f, 0, -1, 8, 0, 5), context);
-        this.c = i10;
-        i10.setTextSize(1, 13.0f);
-        i10.setTextColor(-1);
-        i10.setSingleLine(true);
-        i10.setEllipsize(truncateAt);
-        i10.setMaxLines(1);
-        i10.setGravity(80);
-        linearLayout.addView(i10, i7.f6.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
-        View view = new View(context);
-        this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.K0(false));
-        addView(view, i7.f6.c(-1.0f, -1));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.t9 t9Var = this.a;
-        if (t9Var.getImageReceiver().hasNotThumb() && t9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
-            return;
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, k7.b6.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        for (int i10 = 0; i10 < this.e.length; i10++) {
+            RadioButton radioButton = new RadioButton(context);
+            radioButton.setSize(AndroidUtilities.dp(20.0f));
+            radioButton.setTag(Integer.valueOf(i10));
+            this.b.addView(radioButton, k7.b6.l(1.0f / this.e.length, 0, -1));
+            radioButton.setOnClickListener(new a(this, 8));
         }
-        w5 w5Var = this.e;
-        w5Var.e.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.X9, false));
-        canvas.drawRect(0.0f, 0.0f, t9Var.getMeasuredWidth(), t9Var.getMeasuredHeight(), w5Var.e);
+        addView(this.b, k7.b6.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
+    }
+
+    public final void a(int i10, String str) {
+        this.d = i10;
+        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        b(false);
+    }
+
+    public final void b(boolean z4) {
+        LinearLayout linearLayout = this.b;
+        int childCount = linearLayout.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = linearLayout.getChildAt(i10);
+            if (childAt instanceof RadioButton) {
+                RadioButton radioButton = (RadioButton) childAt;
+                int intValue = ((Integer) radioButton.getTag()).intValue();
+                int[] iArr = this.e;
+                radioButton.a(this.d == iArr[intValue], z4);
+                radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
+            }
+        }
+    }
+
+    public int getCurrentColor() {
+        return this.d;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
-        return super.onTouchEvent(motionEvent);
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.c = onClickListener;
     }
 }

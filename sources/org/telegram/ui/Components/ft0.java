@@ -1,48 +1,30 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gt0 b;
-    public final /* synthetic */ String c;
+public final class ft0 extends vu0 {
+    public final /* synthetic */ yu0 D;
 
-    public /* synthetic */ ft0(gt0 gt0Var, String str, int i10) {
-        this.a = i10;
-        this.b = gt0Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ft0(yu0 yu0Var, Context context) {
+        super(yu0Var, context, 0, false);
+        this.D = yu0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                gt0 gt0Var = this.b;
-                String str = this.c;
-                gt0Var.getClass();
-                AndroidUtilities.runOnUIThread(new ft0(gt0Var, str, 1));
-                break;
-            default:
-                gt0 gt0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                gt0Var2.f = null;
-                if (!ChatObject.isChannel(gt0Var2.n) && gt0Var2.s.Z0 != null) {
-                    arrayList = new ArrayList(gt0Var2.s.Z0.participants.participants);
-                }
-                gt0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new g(gt0Var2, str2, arrayList, 27));
-                } else {
-                    gt0Var2.r = 1;
-                }
-                gt0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(gt0Var2.n) ? gt0Var2.n.id : 0L, false, 2, 1);
-                break;
+    @Override // org.telegram.ui.Components.vu0, f2.o0
+    public final void l() {
+        super.l();
+        yu0 yu0Var = this.D;
+        qt0 W = yu0Var.W(8);
+        if (W != null && W.r.getVisibility() == 0) {
+            yu0Var.a0.l();
+        }
+        if (W != null) {
+            hs0 hs0Var = W.w;
+            nh.l6 l6Var = this.s;
+            hs0Var.e(l6Var != null && (l6Var.k() || (yu0Var.i0() && this.s.g() > 0)), true);
         }
     }
 }

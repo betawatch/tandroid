@@ -1,40 +1,102 @@
 package l3;
 
-import jh.d3;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
-    public final /* synthetic */ Exception c;
+public final class k {
+    public final s8.v a;
+    public final ArrayList b = new ArrayList();
+    public ByteBuffer[] c = new ByteBuffer[0];
+    public boolean d;
 
-    public /* synthetic */ k(n nVar, Exception exc, int i10) {
-        this.a = i10;
-        this.b = nVar;
-        this.c = exc;
+    public k(s8.v vVar) {
+        this.a = vVar;
+        l lVar = l.e;
+        this.d = false;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Exception exc = this.c;
-        n nVar = this.b;
-        switch (i10) {
-            case 0:
-                o oVar = nVar.b;
-                int i11 = f5.d0.a;
-                k3.f fVar = ((j3.h0) oVar).a.r;
-                k3.a k9 = fVar.k();
-                fVar.l(k9, 1029, new d3(k9, exc, 2));
+    public final void a() {
+        ArrayList arrayList = this.b;
+        arrayList.clear();
+        this.d = false;
+        int i10 = 0;
+        while (true) {
+            s8.v vVar = this.a;
+            if (i10 >= vVar.size()) {
                 break;
-            default:
-                o oVar2 = nVar.b;
-                int i12 = f5.d0.a;
-                k3.f fVar2 = ((j3.h0) oVar2).a.r;
-                k3.a k10 = fVar2.k();
-                fVar2.l(k10, 1014, new d3(k10, exc, 29));
-                break;
+            }
+            n nVar = (n) vVar.get(i10);
+            nVar.flush();
+            if (nVar.isActive()) {
+                arrayList.add(nVar);
+            }
+            i10++;
         }
+        this.c = new ByteBuffer[arrayList.size()];
+        for (int i11 = 0; i11 <= b(); i11++) {
+            this.c[i11] = ((n) arrayList.get(i11)).a();
+        }
+    }
+
+    public final int b() {
+        return this.c.length - 1;
+    }
+
+    public final boolean c() {
+        return this.d && ((n) this.b.get(b())).d() && !this.c[b()].hasRemaining();
+    }
+
+    public final boolean d() {
+        return !this.b.isEmpty();
+    }
+
+    public final void e(ByteBuffer byteBuffer) {
+        boolean z4;
+        for (boolean z10 = true; z10; z10 = z4) {
+            z4 = false;
+            int i10 = 0;
+            while (i10 <= b()) {
+                if (!this.c[i10].hasRemaining()) {
+                    ArrayList arrayList = this.b;
+                    n nVar = (n) arrayList.get(i10);
+                    if (!nVar.d()) {
+                        ByteBuffer byteBuffer2 = i10 > 0 ? this.c[i10 - 1] : byteBuffer.hasRemaining() ? byteBuffer : n.a;
+                        long remaining = byteBuffer2.remaining();
+                        nVar.b(byteBuffer2);
+                        this.c[i10] = nVar.a();
+                        z4 |= remaining - ((long) byteBuffer2.remaining()) > 0 || this.c[i10].hasRemaining();
+                    } else if (!this.c[i10].hasRemaining() && i10 < b()) {
+                        ((n) arrayList.get(i10 + 1)).c();
+                    }
+                }
+                i10++;
+            }
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof k)) {
+            return false;
+        }
+        s8.v vVar = ((k) obj).a;
+        s8.v vVar2 = this.a;
+        if (vVar2.size() != vVar.size()) {
+            return false;
+        }
+        for (int i10 = 0; i10 < vVar2.size(); i10++) {
+            if (vVar2.get(i10) != vVar.get(i10)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

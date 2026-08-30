@@ -1,57 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class sr0 extends f2.v0 {
-    public final /* synthetic */ lr0 a;
-    public final /* synthetic */ qu0 b;
+public final class sr0 extends org.telegram.ui.j11 {
+    public final /* synthetic */ yu0 E;
 
-    public sr0(qu0 qu0Var, lr0 lr0Var) {
-        this.b = qu0Var;
-        this.a = lr0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sr0(yu0 yu0Var, Context context, qv0 qv0Var, nh.h6 h6Var, rr0 rr0Var) {
+        super(context, qv0Var, h6Var, rr0Var);
+        this.E = yu0Var;
     }
 
-    @Override // f2.v0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.k1 k1Var) {
-        lr0 lr0Var = this.a;
-        if (lr0Var.h.getAdapter() == this.b.K) {
-            recyclerView.getClass();
-            int R = RecyclerView.R(view);
-            rect.left = 0;
-            rect.bottom = 0;
-            mr0 mr0Var = lr0Var.x;
-            mr0Var.B1();
-            if (R <= mr0Var.U) {
-                rect.top = 0;
-            } else {
-                rect.top = AndroidUtilities.dp(2.0f);
+    @Override // org.telegram.ui.j11
+    public final void a() {
+        wr0 wr0Var;
+        int measuredWidth = getMeasuredWidth();
+        int visualHeight = (int) getVisualHeight();
+        Rect rect = this.C;
+        rect.set(0, 0, measuredWidth, visualHeight);
+        setClipBounds(rect);
+        invalidate();
+        yu0 yu0Var = this.E;
+        qt0[] qt0VarArr = yu0Var.h0;
+        if (qt0VarArr != null) {
+            for (qt0 qt0Var : qt0VarArr) {
+                if (qt0Var != null && (wr0Var = qt0Var.h) != null) {
+                    int paddingLeft = wr0Var.getPaddingLeft();
+                    int Z = yu0Var.Z(qt0Var.C);
+                    int paddingRight = qt0Var.h.getPaddingRight();
+                    wr0 wr0Var2 = qt0Var.h;
+                    int Y = yu0Var.Y(yu0Var.v0());
+                    wr0Var2.b3 = Y;
+                    wr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
+                }
             }
-            rect.right = lr0Var.x.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
-            return;
         }
-        if (!(view instanceof org.telegram.ui.Cells.p7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
-        }
-        org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
-        lr0Var.h.getClass();
-        int R2 = RecyclerView.R(p7Var);
-        int i10 = lr0Var.x.J;
-        p7Var.T = R2 < i10;
-        int i11 = R2 % i10;
-        p7Var.R = i11 == 0;
-        p7Var.S = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        yu0Var.K();
     }
 }

@@ -2,32 +2,30 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class v20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ WindowManager c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ View e;
-    public final /* synthetic */ w20 f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a30 b;
 
-    public v20(w20 w20Var, t20 t20Var, bg.x2 x2Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.s7 s7Var) {
-        this.f = w20Var;
-        this.a = t20Var;
-        this.b = x2Var;
-        this.c = windowManager;
-        this.d = frameLayout;
-        this.e = s7Var;
+    public /* synthetic */ v20(a30 a30Var, int i10) {
+        this.a = i10;
+        this.b = a30Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        NotificationCenter.getInstance(this.f.h).doOnIdle(new u20(this.a, this.b, this.c, this.d, this.e));
+        switch (this.a) {
+            case 0:
+                a30 a30Var = this.b;
+                a30Var.b.setVisibility(8);
+                a30Var.y = false;
+                a30Var.B = 0.0f;
+                break;
+            default:
+                this.b.e.setVisibility(8);
+                break;
+        }
     }
 }

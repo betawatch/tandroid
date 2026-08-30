@@ -6,7 +6,7 @@ import android.view.View;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class t implements View.OnClickListener {
     public final View a;
@@ -35,10 +35,10 @@ public final class t implements View.OnClickListener {
                     } else {
                         str = " with id '" + view2.getContext().getResources().getResourceEntryName(id2) + "'";
                     }
-                    StringBuilder s10 = a4.w.s("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
-                    s10.append(view2.getClass());
-                    s10.append(str);
-                    throw new IllegalStateException(s10.toString());
+                    StringBuilder t6 = android.support.v4.media.a.t("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
+                    t6.append(view2.getClass());
+                    t6.append(str);
+                    throw new IllegalStateException(t6.toString());
                 }
                 try {
                     if (!context.isRestricted() && (method = context.getClass().getMethod(str2, View.class)) != null) {
@@ -52,10 +52,10 @@ public final class t implements View.OnClickListener {
         }
         try {
             this.c.invoke(this.d, view);
-        } catch (IllegalAccessException e10) {
-            throw new IllegalStateException("Could not execute non-public method for android:onClick", e10);
-        } catch (InvocationTargetException e11) {
-            throw new IllegalStateException("Could not execute method for android:onClick", e11);
+        } catch (IllegalAccessException e) {
+            throw new IllegalStateException("Could not execute non-public method for android:onClick", e);
+        } catch (InvocationTargetException e6) {
+            throw new IllegalStateException("Could not execute method for android:onClick", e6);
         }
     }
 }

@@ -1,51 +1,114 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mc b;
+public final class za extends FrameLayout {
+    public final nb a;
+    public final Rect b;
+    public final GestureDetector c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public float h;
+    public float n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean w;
+    public final /* synthetic */ FrameLayout x;
+    public final /* synthetic */ ic y;
 
-    public /* synthetic */ za(mc mcVar, int i10) {
-        this.a = i10;
-        this.b = mcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public za(ic icVar, nb nbVar, FrameLayout frameLayout) {
+        super(nbVar.getContext());
+        this.y = icVar;
+        this.x = frameLayout;
+        this.b = new Rect();
+        this.a = nbVar;
+        GestureDetector gestureDetector = new GestureDetector(nbVar.getContext(), new xb(this, nbVar));
+        this.c = gestureDetector;
+        gestureDetector.setIsLongpressEnabled(false);
+        addView(nbVar);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b();
-                break;
-            case 1:
-                mc mcVar = this.b;
-                FrameLayout frameLayout = mcVar.h;
-                rb rbVar = mcVar.e;
-                kb kbVar = mcVar.p;
-                if (kbVar != null && !rbVar.top) {
-                    kbVar.c(0.0f);
-                    mcVar.p.d(mcVar);
-                }
-                rbVar.transitionRunningExit = false;
-                rbVar.onExitTransitionEnd();
-                rbVar.onHide();
-                frameLayout.removeView(mcVar.f);
-                frameLayout.removeOnLayoutChangeListener(mcVar.c);
-                rbVar.onDetach();
-                Runnable runnable = mcVar.v;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                mc mcVar2 = this.b;
-                FrameLayout frameLayout2 = mcVar2.h;
-                frameLayout2.removeView(mcVar2.f);
-                frameLayout2.removeOnLayoutChangeListener(mcVar2.c);
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        View.OnClickListener onClickListener;
+        boolean z4 = this.e;
+        nb nbVar = this.a;
+        if (!z4) {
+            float x10 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            Rect rect = this.b;
+            nbVar.getHitRect(rect);
+            if (!rect.contains((int) x10, (int) y10)) {
+                return false;
+            }
         }
+        this.c.onTouchEvent(motionEvent);
+        int actionMasked = motionEvent.getActionMasked();
+        FrameLayout frameLayout = this.x;
+        ic icVar = this.y;
+        if (actionMasked == 0) {
+            if (!this.e && !this.s) {
+                nbVar.animate().cancel();
+                this.n = 0.0f;
+                this.h = 0.0f;
+                this.r = false;
+                this.f = nbVar.getTranslationX();
+                System.currentTimeMillis();
+                ic icVar2 = nbVar.bulletin;
+                this.d = icVar2 == null || icVar2.m;
+                this.e = true;
+                icVar.i(false);
+                if (frameLayout.getParent() != null) {
+                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                if (nbVar.onClickListener != null) {
+                    nbVar.setPressed(true);
+                    return true;
+                }
+            }
+        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
+            if (!this.s) {
+                if (Math.abs(this.f) > nbVar.getWidth() / 3.0f) {
+                    float signum = Math.signum(this.f) * nbVar.getWidth();
+                    float f10 = this.f;
+                    nbVar.animate().translationX(signum).alpha(((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.d0(this, signum, 1)).start();
+                    this.e = false;
+                    icVar.i(true);
+                    if (frameLayout.getParent() != null) {
+                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
+                    }
+                    if (nbVar.onClickListener != null) {
+                        nbVar.setPressed(false);
+                    }
+                } else {
+                    nbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
+                }
+            }
+            if (actionMasked == 1 && nbVar.isPressed() && (onClickListener = nbVar.onClickListener) != null && !this.r) {
+                onClickListener.onClick(nbVar);
+            }
+            this.e = false;
+            icVar.i(true);
+            if (frameLayout.getParent() != null) {
+            }
+            if (nbVar.onClickListener != null) {
+            }
+        }
+        return true;
     }
 }

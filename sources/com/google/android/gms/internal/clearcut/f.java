@@ -16,19 +16,19 @@ public final class f extends d {
     public final /* synthetic */ Object d(String str) {
         switch (this.i) {
             case 0:
-                if (g2.c.matcher(str).matches()) {
+                if (f2.c.matcher(str).matches()) {
                     return Boolean.TRUE;
                 }
-                if (g2.d.matcher(str).matches()) {
+                if (f2.d.matcher(str).matches()) {
                     return Boolean.FALSE;
                 }
                 String str2 = this.b;
-                StringBuilder sb2 = new StringBuilder(str.length() + String.valueOf(str2).length() + 28);
-                sb2.append("Invalid boolean value for ");
-                sb2.append(str2);
-                sb2.append(": ");
-                sb2.append(str);
-                Log.e("PhenotypeFlag", sb2.toString());
+                StringBuilder sb = new StringBuilder(str.length() + String.valueOf(str2).length() + 28);
+                sb.append("Invalid boolean value for ");
+                sb.append(str2);
+                sb.append(": ");
+                sb.append(str);
+                Log.e("PhenotypeFlag", sb.toString());
                 return null;
             default:
                 return str;

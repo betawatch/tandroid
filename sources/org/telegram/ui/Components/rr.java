@@ -1,54 +1,49 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.PopupWindow;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class rr {
-    public final org.telegram.ui.ActionBar.o1 a;
-    public boolean b;
+public final class rr extends View {
+    public final TextPaint a;
+    public final TextPaint b;
+    public final String c;
+    public final String d;
+    public final Rect e;
 
-    public rr(Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z10 ? 1 : 0, context, c6Var);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new pr(this, 0));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new u(this, 27));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
-        b(actionBarPopupWindow$ActionBarPopupWindowLayout);
-        org.telegram.ui.ActionBar.o1 o1Var = new org.telegram.ui.ActionBar.o1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.a = o1Var;
-        o1Var.b = false;
-        o1Var.setAnimationStyle(R.style.PopupContextAnimation2);
-        o1Var.setOutsideTouchable(true);
-        o1Var.setClippingEnabled(true);
-        o1Var.setInputMethodMode(2);
-        o1Var.setSoftInputMode(0);
-        o1Var.getContentView().setFocusableInTouchMode(true);
-        if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-            o1Var.setFocusable(true);
-        }
-        o1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.qr
-            @Override // android.widget.PopupWindow.OnDismissListener
-            public final void onDismiss() {
-                rr rrVar = rr.this;
-                rrVar.c();
-                rrVar.b = false;
-            }
-        });
+    public rr(Context context, String str, String str2) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        this.e = new Rect();
+        this.c = str;
+        this.d = str2;
+        textPaint.setTextSize(AndroidUtilities.dp(24.0f));
+        textPaint2.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        textPaint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
     }
 
-    public final void a() {
-        org.telegram.ui.ActionBar.o1 o1Var = this.a;
-        if (o1Var != null) {
-            o1Var.dismiss();
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.b;
+        String str = this.d;
+        float measureText = textPaint.measureText(str);
+        TextPaint textPaint2 = this.a;
+        String str2 = this.c;
+        float measureText2 = textPaint2.measureText(str2);
+        int length = str2.length();
+        Rect rect = this.e;
+        textPaint2.getTextBounds(str2, 0, length, rect);
+        textPaint.getTextBounds(str, 0, str.length(), rect);
+        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
+        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
     }
-
-    public abstract void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout);
-
-    public abstract void c();
 }

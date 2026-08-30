@@ -2,23 +2,23 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.ao0;
-import org.telegram.ui.pb1;
+import org.telegram.ui.Components.ko0;
+import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j0 extends ao0 {
-    public final /* synthetic */ int h0;
+public final class j0 extends ko0 {
+    public final /* synthetic */ int i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(int i10, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        super(context, c6Var, z10);
-        this.h0 = i10;
+    public /* synthetic */ j0(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+        super(context, f6Var, z4);
+        this.i0 = i10;
     }
 
-    @Override // org.telegram.ui.Components.ao0, android.view.View
+    @Override // org.telegram.ui.Components.ko0, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.h0) {
+        switch (this.i0) {
             case 0:
                 if (motionEvent.getAction() == 0) {
                     getParent().requestDisallowInterceptTouchEvent(true);
@@ -46,12 +46,12 @@ public final class j0 extends ao0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ j0(Context context) {
         super(context);
-        this.h0 = 1;
+        this.i0 = 1;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(Context context, pb1 pb1Var) {
-        super(context, pb1Var, false);
-        this.h0 = 3;
+    public j0(Context context, cc1 cc1Var) {
+        super(context, cc1Var, false);
+        this.i0 = 3;
     }
 }

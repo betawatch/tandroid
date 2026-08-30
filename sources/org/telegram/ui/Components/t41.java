@@ -1,56 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t41 extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
+public final class t41 extends en0 {
+    public final /* synthetic */ e51 h;
 
-    public t41(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t41(e51 e51Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 14.0f, f6Var);
+        this.h = e51Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = this.c;
-        if (i10 >= 0) {
-            this.b = org.telegram.ui.ActionBar.g6.w0(null, i10, false);
+    @Override // org.telegram.ui.Components.en0
+    public final void a(String str) {
+        tf.m1 m1Var = this.h.v;
+        tf.l1 l1Var = m1Var.P;
+        int i10 = m1Var.c;
+        if (m1Var.K != 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(m1Var.K, true);
+            m1Var.K = 0;
         }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
+        if (m1Var.L != 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(m1Var.L, true);
+            m1Var.L = 0;
         }
-        int i11 = this.b;
-        if (i11 != 0) {
-            textPaint.setColor(i11);
+        if (TextUtils.isEmpty(str)) {
+            m1Var.O = null;
+            m1Var.C.clear();
+            m1Var.F.clear();
+            m1Var.B.clear();
+            m1Var.e.b(false);
+            m1Var.l();
+        } else {
+            m1Var.O = str.toLowerCase();
         }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    public t41() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
-    }
-
-    public t41(Typeface typeface, int i10) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i10;
+        AndroidUtilities.cancelRunOnUIThread(l1Var);
+        AndroidUtilities.runOnUIThread(l1Var, 300L);
     }
 }

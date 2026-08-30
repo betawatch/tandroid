@@ -1,323 +1,205 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.text.Layout;
-import android.view.MotionEvent;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Rect;
+import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.OverScroller;
-import android.widget.TextView;
-import androidx.core.widget.NestedScrollView;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import android.view.ViewTreeObserver;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ClippingImageView;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class kt0 extends NestedScrollView {
-    public final Paint S;
-    public final o1.k T;
-    public boolean U;
-    public float V;
-    public float W;
-    public float a0;
-    public final Method b0;
-    public final OverScroller c0;
-    public boolean d0;
-    public int e0;
-    public int f0;
-    public float g0;
-    public boolean h0;
-    public int i0;
-    public final nt0 j0;
-    public final FrameLayout k0;
+public final class kt0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ClippingImageView[] a;
+    public final /* synthetic */ ViewGroup.LayoutParams b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ ju0 d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ hu0 f;
+    public final /* synthetic */ ArrayList h;
+    public final /* synthetic */ Integer n;
+    public final /* synthetic */ PhotoViewer r;
 
-    public kt0(Context context, nt0 nt0Var, FrameLayout frameLayout) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.S = paint;
-        this.g0 = 1.0f;
-        this.i0 = -1;
-        this.j0 = nt0Var;
-        this.k0 = frameLayout;
-        setClipChildren(false);
-        int i10 = 2;
-        setOverScrollMode(2);
-        paint.setColor(-16777216);
-        setFadingEdgeLength(AndroidUtilities.dp(12.0f));
-        setVerticalFadingEdgeEnabled(true);
-        setWillNotDraw(false);
-        o1.k kVar = new o1.k(nt0Var, o1.i.n, 0.0f);
-        this.T = kVar;
-        kVar.u.b(100.0f);
-        kVar.j = 1.0f;
-        kVar.b(new cd0(this, i10));
-        kVar.a(new k9(this, i10));
-        kVar.u.a(1.0f);
-        try {
-            Method declaredMethod = NestedScrollView.class.getDeclaredMethod("d", null);
-            this.b0 = declaredMethod;
-            declaredMethod.setAccessible(true);
-        } catch (Exception e10) {
-            this.b0 = null;
-            FileLog.e(e10);
-        }
-        try {
-            Field declaredField = NestedScrollView.class.getDeclaredField("d");
-            declaredField.setAccessible(true);
-            this.c0 = (OverScroller) declaredField.get(this);
-        } catch (Exception e11) {
-            this.c0 = null;
-            FileLog.e(e11);
-        }
+    public kt0(PhotoViewer photoViewer, ClippingImageView[] clippingImageViewArr, ViewGroup.LayoutParams layoutParams, float f10, ju0 ju0Var, float f11, hu0 hu0Var, ArrayList arrayList, Integer num) {
+        this.r = photoViewer;
+        this.a = clippingImageViewArr;
+        this.b = layoutParams;
+        this.c = f10;
+        this.d = ju0Var;
+        this.e = f11;
+        this.f = hu0Var;
+        this.h = arrayList;
+        this.n = num;
     }
 
-    @Override // androidx.core.widget.NestedScrollView
-    public final void B(int i10) {
-        OverScroller overScroller;
-        if (this.U && i10 == 0) {
-            this.U = false;
-            if (this.V != 0.0f && (overScroller = this.c0) != null && overScroller.isFinished()) {
-                float f9 = this.a0;
-                o1.k kVar = this.T;
-                if (!kVar.f) {
-                    kVar.a = f9;
-                    kVar.f();
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        char c3;
+        float r22;
+        float d;
+        float d10;
+        boolean z4;
+        PhotoViewer photoViewer = this.r;
+        Rect rect = photoViewer.p2;
+        PhotoViewer.BackgroundDrawable backgroundDrawable = photoViewer.I0;
+        float[][] fArr = photoViewer.h4;
+        ClippingImageView[] clippingImageViewArr = this.a;
+        if (clippingImageViewArr.length > 1) {
+            clippingImageViewArr[1].setAlpha(1.0f);
+            clippingImageViewArr[1].setAdditionalTranslationX(-rect.left);
+        }
+        ClippingImageView clippingImageView = clippingImageViewArr[0];
+        clippingImageView.setTranslationX(clippingImageView.getTranslationX() + rect.left);
+        photoViewer.d0.getViewTreeObserver().removeOnPreDrawListener(this);
+        int i10 = photoViewer.Z1;
+        ViewGroup.LayoutParams layoutParams = this.b;
+        if (i10 == 1) {
+            float f10 = !photoViewer.s ? AndroidUtilities.statusBarHeight : 0;
+            float measuredHeight = (photoViewer.z1.getMeasuredHeight() - AndroidUtilities.dp(64.0f)) - f10;
+            c3 = 0;
+            float min = Math.min(photoViewer.z1.getMeasuredWidth(), measuredHeight) - (AndroidUtilities.dp(16.0f) * 2);
+            float measuredWidth = photoViewer.z1.getMeasuredWidth() / 2.0f;
+            float f11 = (measuredHeight / 2.0f) + f10;
+            float f12 = min / 2.0f;
+            float f13 = f11 - f12;
+            float f14 = (f11 + f12) - f13;
+            r22 = Math.max(((measuredWidth + f12) - (measuredWidth - f12)) / layoutParams.width, f14 / layoutParams.height);
+            d = ((f14 - (layoutParams.height * r22)) / 2.0f) + f13;
+            int measuredWidth2 = photoViewer.d0.getMeasuredWidth();
+            d10 = e2.c.d(layoutParams.width, r22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
+        } else {
+            c3 = 0;
+            float min2 = Math.min(photoViewer.d0.getMeasuredWidth() / layoutParams.width, (AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0)) / layoutParams.height);
+            r22 = photoViewer.Z1 == 11 ? photoViewer.r2(true) * min2 : min2;
+            d = e2.c.d(layoutParams.height, r22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
+            d10 = e2.c.d(layoutParams.width, r22, photoViewer.d0.getMeasuredWidth(), 2.0f);
+            photoViewer.Y5 = 0.0f;
+            photoViewer.c6 = 0.0f;
+        }
+        ju0 ju0Var = this.d;
+        int abs = (int) Math.abs(this.c - ju0Var.a.getImageX());
+        float imageY = ju0Var.a.getImageY();
+        float f15 = this.e;
+        int abs2 = (int) Math.abs(f15 - imageY);
+        if (ju0Var.a.isAspectFit()) {
+            abs = 0;
+        }
+        int[] iArr = new int[2];
+        ju0Var.d.getLocationInWindow(iArr);
+        float f16 = ju0Var.c + f15;
+        int i11 = (int) ((iArr[1] - f16) + ju0Var.j);
+        if (i11 < 0) {
+            i11 = 0;
+        }
+        int height = (int) (((f16 + layoutParams.height) - (ju0Var.d.getHeight() + r10)) + ju0Var.i);
+        if (height < 0) {
+            height = 0;
+        }
+        int max = Math.max(i11, abs2);
+        int max2 = Math.max(height, abs2);
+        fArr[c3][c3] = photoViewer.e0.getScaleX();
+        fArr[c3][1] = photoViewer.e0.getScaleY();
+        fArr[c3][2] = photoViewer.e0.getTranslationX();
+        fArr[c3][3] = photoViewer.e0.getTranslationY();
+        float[] fArr2 = fArr[c3];
+        float f17 = abs;
+        float f18 = ju0Var.k;
+        fArr2[4] = f17 * f18;
+        fArr2[5] = max * f18;
+        fArr2[6] = max2 * f18;
+        int[] radius = photoViewer.e0.getRadius();
+        int i12 = 0;
+        for (int i13 = 4; i12 < i13; i13 = 4) {
+            fArr[c3][i12 + 7] = radius != null ? radius[i12] : 0.0f;
+            i12++;
+        }
+        float[] fArr3 = fArr[c3];
+        float f19 = ju0Var.k;
+        fArr3[11] = abs2 * f19;
+        fArr3[12] = f17 * f19;
+        float[] fArr4 = fArr[1];
+        fArr4[c3] = r22;
+        fArr4[1] = r22;
+        fArr4[2] = d10;
+        fArr4[3] = d;
+        fArr4[4] = 0.0f;
+        fArr4[5] = 0.0f;
+        fArr4[6] = 0.0f;
+        fArr4[7] = 0.0f;
+        fArr4[8] = 0.0f;
+        fArr4[9] = 0.0f;
+        fArr4[10] = 0.0f;
+        fArr4[11] = 0.0f;
+        fArr4[12] = 0.0f;
+        for (ClippingImageView clippingImageView2 : clippingImageViewArr) {
+            clippingImageView2.setAnimationProgress(0.0f);
+        }
+        backgroundDrawable.setAlpha(0);
+        photoViewer.b0.setAlpha(0.0f);
+        photoViewer.g0.setAlpha(0.0f);
+        org.telegram.ui.Components.jy0 jy0Var = new org.telegram.ui.Components.jy0(this, clippingImageViewArr, this.h, this.n, this.f, 21);
+        photoViewer.m4 = jy0Var;
+        if (photoViewer.i2) {
+            jy0Var.run();
+            photoViewer.m4 = null;
+            photoViewer.b0.setAlpha(1.0f);
+            backgroundDrawable.setAlpha(255);
+            for (ClippingImageView clippingImageView3 : clippingImageViewArr) {
+                clippingImageView3.setAnimationProgress(1.0f);
+            }
+            if (photoViewer.Z1 == 1) {
+                photoViewer.z1.setAlpha(1.0f);
+            }
+        } else {
+            AnimatorSet animatorSet = new AnimatorSet();
+            ArrayList arrayList = new ArrayList((photoViewer.Z1 != 1 ? 2 : 3) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
+            for (int i14 = 0; i14 < clippingImageViewArr.length; i14++) {
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i14], org.telegram.ui.Components.n6.f, 0.0f, 1.0f);
+                if (i14 == 0) {
+                    ofFloat.addUpdateListener(new e3(this, 23));
                 }
+                arrayList.add(ofFloat);
             }
-            D();
-        }
-    }
-
-    public boolean C() {
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void H(int i10, int i11) {
-        int i12;
-        int fontMetricsInt;
-        int dp;
-        if (i10 != 0 && i11 != 0) {
-            nt0 nt0Var = this.j0;
-            TextView currentView = nt0Var.getCurrentView();
-            CharSequence text = currentView.getText();
-            int hashCode = text.hashCode();
-            Point point = AndroidUtilities.displaySize;
-            boolean z10 = point.x > point.y;
-            if (this.e0 != hashCode || this.d0 != z10 || this.f0 != i11) {
-                this.e0 = hashCode;
-                this.d0 = z10;
-                this.f0 = i11;
-                currentView.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-                Layout layout = currentView.getLayout();
-                int lineCount = layout.getLineCount();
-                if ((!z10 || lineCount > 2) && (z10 || lineCount > 5)) {
-                    int min = Math.min(z10 ? 2 : 5, lineCount);
-                    loop0: while (min > 1) {
-                        int i13 = min - 1;
-                        for (int lineStart = layout.getLineStart(i13); lineStart < layout.getLineEnd(i13); lineStart++) {
-                            if (!Character.isWhitespace(text.charAt(lineStart))) {
-                                break loop0;
-                            }
-                        }
-                        min--;
-                    }
-                    fontMetricsInt = i11 - (currentView.getPaint().getFontMetricsInt(null) * min);
-                    dp = AndroidUtilities.dp(8.0f);
-                } else {
-                    fontMetricsInt = i11 - currentView.getMeasuredHeight();
-                    dp = nt0Var.getPaddingBottom();
-                }
-                i12 = fontMetricsInt - dp;
-                if (i12 < 0) {
-                    if (this.h0) {
-                        this.i0 = i12;
-                        return;
-                    } else {
-                        ((ViewGroup.MarginLayoutParams) this.k0.getLayoutParams()).topMargin = i12;
-                        this.i0 = -1;
-                        return;
-                    }
-                }
-                return;
+            if (clippingImageViewArr.length > 1) {
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.e0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
             }
-        }
-        i12 = -1;
-        if (i12 < 0) {
-        }
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void computeScroll() {
-        OverScroller overScroller;
-        super.computeScroll();
-        if (!this.U && this.V != 0.0f && (overScroller = this.c0) != null && overScroller.isFinished()) {
-            o1.k kVar = this.T;
-            if (!kVar.f) {
-                kVar.a = 0.0f;
-                kVar.f();
+            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.n6.d, 0, 255));
+            bu0 bu0Var = photoViewer.b0;
+            Property property = View.ALPHA;
+            arrayList.add(ObjectAnimator.ofFloat(bu0Var, (Property<bu0, Float>) property, 0.0f, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(photoViewer.g0, (Property<View, Float>) property, 0.0f, 1.0f));
+            if (photoViewer.Z1 == 1) {
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.z1, (Property<org.telegram.ui.Components.ye0, Float>) property, 0.0f, 1.0f));
             }
+            animatorSet.playTogether(arrayList);
+            animatorSet.setDuration(200L);
+            animatorSet.addListener(new ls0(this, 6));
+            photoViewer.b0.setLayerType(2, null);
+            photoViewer.y2(false);
+            photoViewer.l4 = System.currentTimeMillis();
+            AndroidUtilities.runOnUIThread(new zq0(7, this, animatorSet));
         }
-        G();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void draw(Canvas canvas) {
-        int width = getWidth();
-        int height = getHeight();
-        int scrollY = getScrollY();
-        int save = canvas.save();
-        int i10 = height + scrollY;
-        canvas.clipRect(0, scrollY, width, i10);
-        int i11 = (int) (this.g0 * 127.0f);
-        Paint paint = this.S;
-        paint.setAlpha(i11);
-        canvas.drawRect(0.0f, this.j0.getTranslationY() + this.k0.getTop(), width, i10, paint);
-        super.draw(canvas);
-        canvas.restoreToCount(save);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean g(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
-        iArr[1] = 0;
-        if (this.U) {
-            float f9 = this.V;
-            if ((f9 > 0.0f && i11 > 0) || (f9 < 0.0f && i11 < 0)) {
-                float f10 = i11;
-                float f11 = f9 - f10;
-                if (f9 > 0.0f) {
-                    if (f11 < 0.0f) {
-                        this.V = 0.0f;
-                        iArr[1] = (int) (f10 + f11 + 0);
-                    } else {
-                        this.V = f11;
-                        iArr[1] = i11;
-                    }
-                } else if (f11 > 0.0f) {
-                    this.V = 0.0f;
-                    iArr[1] = (int) (f10 + f11 + 0);
-                } else {
-                    this.V = f11;
-                    iArr[1] = i11;
-                }
-                G();
-                this.j0.setTranslationY(this.V);
-                return true;
-            }
+        backgroundDrawable.d = new zq0(8, this, ju0Var);
+        xn xnVar = photoViewer.i4;
+        if (xnVar == null || xnVar.getFragmentView() == null) {
+            return true;
         }
-        return false;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public float getBottomFadingEdgeStrength() {
-        return 1.0f;
-    }
-
-    public int getPendingMarginTopDiff() {
-        int i10 = this.i0;
-        if (i10 >= 0) {
-            return i10 - ((ViewGroup.MarginLayoutParams) this.k0.getLayoutParams()).topMargin;
+        xn xnVar2 = photoViewer.i4;
+        xnVar2.Q7();
+        UndoView undoView = xnVar2.v3;
+        if (undoView != null) {
+            z4 = true;
+            undoView.e(1, false);
+        } else {
+            z4 = true;
         }
-        return 0;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public float getTopFadingEdgeStrength() {
-        return 1.0f;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void h(int i10, int i11, int i12, int i13, int[] iArr, int i14, int[] iArr2) {
-        float f9;
-        if (i13 != 0) {
-            int round = Math.round((1.0f - Math.abs((-this.V) / (this.k0.getTop() - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + (C() ? AndroidUtilities.statusBarHeight : 0))))) * i13);
-            if (round != 0) {
-                boolean z10 = this.U;
-                nt0 nt0Var = this.j0;
-                if (z10) {
-                    float f10 = this.V - round;
-                    this.V = f10;
-                    nt0Var.setTranslationY(f10);
-                } else {
-                    o1.k kVar = this.T;
-                    if (!kVar.f) {
-                        OverScroller overScroller = this.c0;
-                        float currVelocity = overScroller != null ? overScroller.getCurrVelocity() : Float.NaN;
-                        if (Float.isNaN(currVelocity)) {
-                            f9 = 0.0f;
-                        } else {
-                            Point point = AndroidUtilities.displaySize;
-                            float min = Math.min(point.x > point.y ? 3000.0f : 5000.0f, currVelocity);
-                            round = (int) ((round * min) / currVelocity);
-                            f9 = min * (-this.W);
-                        }
-                        if (round != 0) {
-                            float f11 = this.V - round;
-                            this.V = f11;
-                            nt0Var.setTranslationY(f11);
-                        }
-                        if (!kVar.f) {
-                            kVar.a = f9;
-                            kVar.f();
-                        }
-                    }
-                }
-            }
-            G();
-        }
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void k(int i10) {
-        super.k(i10);
-        this.W = Math.signum(i10);
-        this.a0 = 0.0f;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        H(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            if (motionEvent.getY() < this.j0.getTranslationY() + (this.k0.getTop() - getScrollY())) {
-                return false;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean z(int i10, int i11) {
-        if (i11 == 0) {
-            this.T.c();
-            this.U = true;
-            this.V = this.j0.getTranslationY();
-            F();
-        }
-        return true;
-    }
-
-    public void D() {
-    }
-
-    public void F() {
-    }
-
-    public void G() {
+        photoViewer.i4.getFragmentView().invalidate();
+        return z4;
     }
 }

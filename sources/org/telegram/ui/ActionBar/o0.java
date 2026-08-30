@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class o0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -23,12 +23,12 @@ public final class o0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 w0 w0Var = this.c;
-                w0Var.B.setAlpha(0.0f);
+                w0Var.C.setAlpha(0.0f);
                 int i10 = 0;
                 while (true) {
                     ArrayList arrayList = this.b;
                     if (i10 >= arrayList.size()) {
-                        w0Var.B.setVisibility(8);
+                        w0Var.C.setVisibility(8);
                         break;
                     } else {
                         ((View) arrayList.get(i10)).setAlpha(1.0f);
@@ -36,7 +36,7 @@ public final class o0 extends AnimatorListenerAdapter {
                     }
                 }
             default:
-                this.c.B.setAlpha(1.0f);
+                this.c.C.setAlpha(1.0f);
                 int i11 = 0;
                 while (true) {
                     ArrayList arrayList2 = this.b;

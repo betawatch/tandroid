@@ -1,78 +1,51 @@
 package l7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g extends com.google.android.gms.internal.cast.v0 implements ListIterator {
-    public final int b;
-    public int c;
-    public final i d;
+public abstract class g implements u {
+    public transient a a;
+    public transient xa b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(i iVar, int i10) {
-        super(8);
-        int size = iVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(i7.r.c(i10, size, "index"));
+    public final Map a() {
+        xa xaVar = this.b;
+        if (xaVar != null) {
+            return xaVar;
         }
-        this.b = size;
-        this.c = i10;
-        this.d = iVar;
+        h hVar = (h) this;
+        xa xaVar2 = new xa(hVar, hVar.c, 0);
+        this.b = xaVar2;
+        return xaVar2;
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    public final Set b() {
+        a aVar = this.a;
+        if (aVar != null) {
+            return aVar;
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
+        h hVar = (h) this;
+        a aVar2 = new a(hVar, hVar.c);
+        this.a = aVar2;
+        return aVar2;
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
+        if (obj instanceof u) {
+            return a().equals(((g) ((u) obj)).a());
+        }
+        return false;
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
+    public final int hashCode() {
+        return ((xa) a()).b.hashCode();
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public final String toString() {
+        return ((xa) a()).b.toString();
     }
 }

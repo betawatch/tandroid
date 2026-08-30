@@ -1,33 +1,24 @@
 package eg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ Utilities.Callback c;
+public final class g0 extends c1 {
+    public final /* synthetic */ v0 M;
 
-    public /* synthetic */ g0(Utilities.Callback callback, Utilities.Callback callback2, int i10) {
-        this.a = i10;
-        this.b = callback;
-        this.c = callback2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(v0 v0Var, Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        this.M = v0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b(tL_error, this.b, this.c, 7));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.c(tL_error, this.b, tLObject, this.c, 4));
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.M.c0) {
+            return;
         }
+        super.invalidate();
     }
 }

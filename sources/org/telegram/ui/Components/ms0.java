@@ -1,46 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ms0 implements org.telegram.ui.Cells.i7 {
-    public final /* synthetic */ qu0 a;
+public final class ms0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qt0 b;
+    public final /* synthetic */ yu0 c;
 
-    public ms0(qu0 qu0Var) {
-        this.a = qu0Var;
+    public /* synthetic */ ms0(yu0 yu0Var, qt0 qt0Var, int i10) {
+        this.a = i10;
+        this.c = yu0Var;
+        this.b = qt0Var;
     }
 
-    @Override // org.telegram.ui.Cells.i7
-    public final void a(String str, boolean z10) {
-        qu0 qu0Var = this.a;
-        org.telegram.ui.ActionBar.o2 o2Var = qu0Var.r1;
-        if (!z10) {
-            qu0Var.R0(str);
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.c.k1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
+            default:
+                this.c.k1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
         }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(o2Var.getParentActivity(), null, false, false);
-        f3Var.fixNavigationBar();
-        f3Var.title = str;
-        f3Var.bigTitle = false;
-        CharSequence[] charSequenceArr = {LocaleController.getString("Open", R.string.Open), LocaleController.getString("Copy", R.string.Copy)};
-        ag.y1 y1Var = new ag.y1(6, this, str);
-        f3Var.items = charSequenceArr;
-        f3Var.onClickListener = y1Var;
-        o2Var.showDialog(f3Var);
-    }
-
-    @Override // org.telegram.ui.Cells.i7
-    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
-        qu0 qu0Var = this.a;
-        mu.I(qu0Var.r1, messageObject, qu0Var.n1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // org.telegram.ui.Cells.i7
-    public final boolean c() {
-        return !this.a.y1;
     }
 }

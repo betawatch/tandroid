@@ -1,9 +1,31 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import org.telegram.messenger.voip.VoIPService;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class v0 {
-    public static long a(VoIPServiceState voIPServiceState) {
-        return 0L;
+    public static void a(VoIPService.StateListener stateListener) {
+    }
+
+    public static void b(VoIPService.StateListener stateListener) {
+    }
+
+    public static void c(VoIPService.StateListener stateListener, boolean z4) {
+    }
+
+    public static void e(VoIPService.StateListener stateListener, boolean z4) {
+    }
+
+    public static void f(VoIPService.StateListener stateListener, int i10) {
+    }
+
+    public static void g(VoIPService.StateListener stateListener, int i10) {
+    }
+
+    public static void h(VoIPService.StateListener stateListener, boolean z4) {
+    }
+
+    public static void d(VoIPService.StateListener stateListener, int i10, int i11) {
     }
 }

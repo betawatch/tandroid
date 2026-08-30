@@ -1,57 +1,97 @@
 package j7;
 
-import java.util.Map;
+import java.io.OutputStream;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class f implements Map.Entry {
+public final class f extends OutputStream {
     public final /* synthetic */ int a;
+    public long b;
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
+    @Override // java.io.OutputStream
+    public final void write(int i10) {
         switch (this.a) {
             case 0:
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    if (!h7.t8.a(getKey(), entry.getKey()) || !h7.t8.a(getValue(), entry.getValue())) {
-                    }
-                }
+                this.b++;
+                break;
+            case 1:
+                this.b++;
+                break;
+            case 2:
+                this.b++;
+                break;
+            case 3:
+                this.b++;
                 break;
             default:
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry2 = (Map.Entry) obj;
-                    if (!i7.q.a(getKey(), entry2.getKey()) || !i7.q.a(getValue(), entry2.getValue())) {
-                    }
-                }
+                this.b++;
                 break;
         }
-        return false;
     }
 
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
+    @Override // java.io.OutputStream
+    public final void write(byte[] bArr) {
         switch (this.a) {
             case 0:
-                Object key = getKey();
-                Object value = getValue();
-                return (key == null ? 0 : key.hashCode()) ^ (value != null ? value.hashCode() : 0);
+                this.b += bArr.length;
+                break;
+            case 1:
+                this.b += bArr.length;
+                break;
+            case 2:
+                this.b += bArr.length;
+                break;
+            case 3:
+                this.b += bArr.length;
+                break;
             default:
-                Object key2 = getKey();
-                Object value2 = getValue();
-                return (key2 == null ? 0 : key2.hashCode()) ^ (value2 != null ? value2.hashCode() : 0);
+                this.b += bArr.length;
+                break;
         }
     }
 
-    public final String toString() {
+    @Override // java.io.OutputStream
+    public final void write(byte[] bArr, int i10, int i11) {
+        int length;
+        int i12;
+        int length2;
+        int i13;
+        int length3;
+        int i14;
+        int length4;
+        int i15;
+        int i16;
         switch (this.a) {
             case 0:
-                return getKey() + "=" + getValue();
+                if (i10 >= 0 && i10 <= (length = bArr.length) && i11 >= 0 && (i12 = i10 + i11) <= length && i12 >= 0) {
+                    this.b += i11;
+                    return;
+                }
+                throw new IndexOutOfBoundsException();
+            case 1:
+                if (i10 >= 0 && i10 <= (length2 = bArr.length) && i11 >= 0 && (i13 = i10 + i11) <= length2 && i13 >= 0) {
+                    this.b += i11;
+                    return;
+                }
+                throw new IndexOutOfBoundsException();
+            case 2:
+                if (i10 >= 0 && i10 <= (length3 = bArr.length) && i11 >= 0 && (i14 = i10 + i11) <= length3 && i14 >= 0) {
+                    this.b += i11;
+                    return;
+                }
+                throw new IndexOutOfBoundsException();
+            case 3:
+                if (i10 >= 0 && i10 <= (length4 = bArr.length) && i11 >= 0 && (i15 = i10 + i11) <= length4 && i15 >= 0) {
+                    this.b += i11;
+                    return;
+                }
+                throw new IndexOutOfBoundsException();
             default:
-                return a4.w.y(String.valueOf(getKey()), "=", String.valueOf(getValue()));
+                if (i10 >= 0 && i10 <= bArr.length && i11 >= 0 && (i16 = i10 + i11) <= bArr.length && i16 >= 0) {
+                    this.b += i11;
+                    return;
+                }
+                throw new IndexOutOfBoundsException();
         }
-    }
-
-    public /* synthetic */ f(int i10, boolean z10) {
-        this.a = i10;
     }
 }

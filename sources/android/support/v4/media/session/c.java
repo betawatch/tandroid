@@ -6,19 +6,19 @@ import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public IBinder a;
 
     @Override // android.support.v4.media.session.d
-    public final void D() {
+    public final void B() {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
             if (!this.a.transact(18, obtain, obtain2, 0)) {
-                int i10 = v.b;
+                int i10 = u.b;
             }
             obtain2.readException();
             obtain2.recycle();
@@ -31,19 +31,19 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final MediaMetadataCompat F() {
+    public final MediaMetadataCompat C() {
         throw null;
     }
 
     @Override // android.support.v4.media.session.d
-    public final void I(b bVar) {
+    public final void F(b bVar) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
             obtain.writeStrongBinder((g) bVar);
             if (!this.a.transact(4, obtain, obtain2, 0)) {
-                int i10 = v.b;
+                int i10 = u.b;
             }
             obtain2.readException();
             obtain2.recycle();
@@ -67,7 +67,7 @@ public final class c implements d {
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
             if (!this.a.transact(28, obtain, obtain2, 0)) {
-                int i10 = v.b;
+                int i10 = u.b;
             }
             obtain2.readException();
             PlaybackStateCompat createFromParcel = obtain2.readInt() != 0 ? PlaybackStateCompat.CREATOR.createFromParcel(obtain2) : null;
@@ -82,14 +82,14 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void k(b bVar) {
+    public final void j(b bVar) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
             obtain.writeStrongBinder((g) bVar);
             if (!this.a.transact(3, obtain, obtain2, 0)) {
-                int i10 = v.b;
+                int i10 = u.b;
             }
             obtain2.readException();
             obtain2.recycle();
@@ -102,13 +102,13 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void o0() {
+    public final void p0() {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
             if (!this.a.transact(13, obtain, obtain2, 0)) {
-                int i10 = v.b;
+                int i10 = u.b;
             }
             obtain2.readException();
             obtain2.recycle();
@@ -121,12 +121,12 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final List q0() {
+    public final PendingIntent r() {
         throw null;
     }
 
     @Override // android.support.v4.media.session.d
-    public final PendingIntent r() {
+    public final List r0() {
         throw null;
     }
 
@@ -137,7 +137,7 @@ public final class c implements d {
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
             if (!this.a.transact(19, obtain, obtain2, 0)) {
-                int i10 = v.b;
+                int i10 = u.b;
             }
             obtain2.readException();
             obtain2.recycle();

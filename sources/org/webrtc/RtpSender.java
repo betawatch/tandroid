@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class RtpSender {
     private MediaStreamTrack cachedTrack;
@@ -100,7 +100,7 @@ public class RtpSender {
         nativeSetStreams(this.nativeRtpSender, list);
     }
 
-    public boolean setTrack(MediaStreamTrack mediaStreamTrack, boolean z10) {
+    public boolean setTrack(MediaStreamTrack mediaStreamTrack, boolean z4) {
         checkRtpSenderExists();
         if (!nativeSetTrack(this.nativeRtpSender, mediaStreamTrack == null ? 0L : mediaStreamTrack.getNativeMediaStreamTrack())) {
             return false;
@@ -110,7 +110,7 @@ public class RtpSender {
             mediaStreamTrack2.dispose();
         }
         this.cachedTrack = mediaStreamTrack;
-        this.ownsTrack = z10;
+        this.ownsTrack = z4;
         return true;
     }
 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
     public static final g c = new g(a0.b);
@@ -27,12 +27,12 @@ public class g implements Iterable, Serializable {
         int length = bArr.length;
         if (((i12 - i10) | i10 | i12 | (length - i12)) < 0) {
             if (i10 < 0) {
-                throw new IndexOutOfBoundsException(j7.l1.l(i10, "Beginning index: ", " < 0"));
+                throw new IndexOutOfBoundsException(kh.a2.k(i10, "Beginning index: ", " < 0"));
             }
             if (i12 < i10) {
-                throw new IndexOutOfBoundsException(a4.w.k(i10, i12, "Beginning index larger than ending index: ", ", "));
+                throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, i12, "Beginning index larger than ending index: ", ", "));
             }
-            throw new IndexOutOfBoundsException(a4.w.k(i12, length, "End index: ", " >= "));
+            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i12, length, "End index: ", " >= "));
         }
         switch (d.a) {
             case 0:
@@ -70,9 +70,9 @@ public class g implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > gVar.size()) {
-            StringBuilder o10 = j7.l1.o(size, "Ran off end of other: 0, ", ", ");
-            o10.append(gVar.size());
-            throw new IllegalArgumentException(o10.toString());
+            StringBuilder m9 = kh.a2.m(size, "Ran off end of other: 0, ", ", ");
+            m9.append(gVar.size());
+            throw new IllegalArgumentException(m9.toString());
         }
         byte[] bArr = gVar.b;
         int n10 = n() + size;

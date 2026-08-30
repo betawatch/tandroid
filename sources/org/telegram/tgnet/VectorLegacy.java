@@ -3,14 +3,14 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public class VectorLegacy {
     private VectorLegacy() {
     }
 
-    public static ArrayList<Long> deserialize_IntAsLong(InputSerializedData inputSerializedData, boolean z10) {
-        ArrayList<Integer> deserializeInt = Vector.deserializeInt(inputSerializedData, z10);
+    public static ArrayList<Long> deserialize_IntAsLong(InputSerializedData inputSerializedData, boolean z4) {
+        ArrayList<Integer> deserializeInt = Vector.deserializeInt(inputSerializedData, z4);
         ArrayList<Long> arrayList = new ArrayList<>(deserializeInt.size());
         int size = deserializeInt.size();
         int i10 = 0;
@@ -22,8 +22,8 @@ public class VectorLegacy {
         return arrayList;
     }
 
-    public static ArrayList<TLRPC.Peer> deserialize_IntUserIdAsPeer(InputSerializedData inputSerializedData, boolean z10) {
-        ArrayList<Integer> deserializeInt = Vector.deserializeInt(inputSerializedData, z10);
+    public static ArrayList<TLRPC.Peer> deserialize_IntUserIdAsPeer(InputSerializedData inputSerializedData, boolean z4) {
+        ArrayList<Integer> deserializeInt = Vector.deserializeInt(inputSerializedData, z4);
         ArrayList<TLRPC.Peer> arrayList = new ArrayList<>(deserializeInt.size());
         int size = deserializeInt.size();
         int i10 = 0;
@@ -38,8 +38,8 @@ public class VectorLegacy {
         return arrayList;
     }
 
-    public static ArrayList<TLRPC.Peer> deserialize_LongUserIdAsPeer(InputSerializedData inputSerializedData, boolean z10) {
-        ArrayList<Long> deserializeLong = Vector.deserializeLong(inputSerializedData, z10);
+    public static ArrayList<TLRPC.Peer> deserialize_LongUserIdAsPeer(InputSerializedData inputSerializedData, boolean z4) {
+        ArrayList<Long> deserializeLong = Vector.deserializeLong(inputSerializedData, z4);
         ArrayList<TLRPC.Peer> arrayList = new ArrayList<>(deserializeLong.size());
         int size = deserializeLong.size();
         int i10 = 0;

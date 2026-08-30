@@ -1,20 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import i7.b7;
-import i7.c7;
-import jd.e0;
+import k7.o7;
+import k7.p7;
+import ld.e0;
 import org.telegram.tgnet.TLObject;
-import qc.c;
-import qc.g;
+import sc.c;
+import sc.g;
+import vc.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i10 = zzby.zza;
-        this.zza = b7.a(zzie.zza);
+        this.zza = o7.a(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -26,7 +27,7 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, sc.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, uc.c cVar) {
         zzic zzicVar;
         int i10;
         if (cVar instanceof zzic) {
@@ -35,31 +36,31 @@ public final class zzif {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 zzicVar.zzc = i11 - TLObject.FLAG_31;
                 Object obj = zzicVar.zza;
-                tc.a aVar = tc.a.a;
+                a aVar = a.a;
                 i10 = zzicVar.zzc;
                 if (i10 == 0) {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    c7.b(obj);
+                    p7.b(obj);
                     return obj;
                 }
-                c7.b(obj);
+                p7.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
-                Object f9 = e0.f(zzidVar, zzicVar);
-                return f9 == aVar ? aVar : f9;
+                Object f10 = e0.f(zzidVar, zzicVar);
+                return f10 == aVar ? aVar : f10;
             }
         }
         zzicVar = new zzic(zzifVar, cVar);
         Object obj2 = zzicVar.zza;
-        tc.a aVar2 = tc.a.a;
+        a aVar2 = a.a;
         i10 = zzicVar.zzc;
         if (i10 == 0) {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, sc.c cVar) {
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, uc.c cVar) {
         return zzc(this, zzcyVar, zzyeVar, cVar);
     }
 }

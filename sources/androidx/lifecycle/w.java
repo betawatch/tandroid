@@ -1,14 +1,14 @@
 package androidx.lifecycle;
 
-import i7.m7;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import k7.s7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -18,19 +18,19 @@ public abstract class w {
         try {
             kotlin.jvm.internal.j.d(constructor.newInstance(sVar), "{\n            constructo…tance(`object`)\n        }");
             throw new ClassCastException();
-        } catch (IllegalAccessException e10) {
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e6) {
+            throw new RuntimeException(e6);
+        } catch (InvocationTargetException e10) {
             throw new RuntimeException(e10);
-        } catch (InstantiationException e11) {
-            throw new RuntimeException(e11);
-        } catch (InvocationTargetException e12) {
-            throw new RuntimeException(e12);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static int b(Class cls) {
         Constructor constructor;
-        boolean z10;
+        boolean z4;
         HashMap hashMap = a;
         Integer num = (Integer) hashMap.get(cls);
         if (num != null) {
@@ -50,7 +50,7 @@ public abstract class w {
                     kotlin.jvm.internal.j.d(name, "this as java.lang.String).substring(startIndex)");
                 }
                 kotlin.jvm.internal.j.d(name, "if (fullPackage.isEmpty(…g(fullPackage.length + 1)");
-                String concat = hd.j.g(name, ".", "_").concat("_LifecycleAdapter");
+                String concat = jd.j.g(name, ".", "_").concat("_LifecycleAdapter");
                 if (fullPackage.length() != 0) {
                     concat = fullPackage + '.' + concat;
                 }
@@ -60,18 +60,18 @@ public abstract class w {
                 }
             } catch (ClassNotFoundException unused) {
                 constructor = null;
-            } catch (NoSuchMethodException e10) {
-                throw new RuntimeException(e10);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, m7.a(constructor));
+                hashMap2.put(cls, s7.a(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;
                 Boolean bool = (Boolean) hashMap3.get(cls);
                 if (bool != null) {
-                    z10 = bool.booleanValue();
+                    z4 = bool.booleanValue();
                 } else {
                     try {
                         Method[] declaredMethods = cls.getDeclaredMethods();
@@ -80,21 +80,21 @@ public abstract class w {
                         while (true) {
                             if (i11 >= length) {
                                 hashMap3.put(cls, Boolean.FALSE);
-                                z10 = false;
+                                z4 = false;
                                 break;
                             }
                             if (((b0) declaredMethods[i11].getAnnotation(b0.class)) != null) {
                                 dVar.a(cls, declaredMethods);
-                                z10 = true;
+                                z4 = true;
                                 break;
                             }
                             i11++;
                         }
-                    } catch (NoClassDefFoundError e11) {
-                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e11);
+                    } catch (NoClassDefFoundError e6) {
+                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e6);
                     }
                 }
-                if (!z10) {
+                if (!z4) {
                     Class superclass = cls.getSuperclass();
                     if (superclass != null && s.class.isAssignableFrom(superclass)) {
                         kotlin.jvm.internal.j.d(superclass, "superclass");

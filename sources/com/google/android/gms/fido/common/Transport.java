@@ -1,14 +1,13 @@
 package com.google.android.gms.fido.common;
 
-import a4.w;
 import android.os.Parcel;
 import android.os.Parcelable;
+import b7.m1;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import i4.g;
-import m6.a;
-import z6.h1;
+import l4.j;
+import o6.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public enum Transport implements ReflectedParcelable {
     /* JADX INFO: Fake field, exist only in values array */
@@ -26,7 +25,7 @@ public enum Transport implements ReflectedParcelable {
     /* JADX INFO: Fake field, exist only in values array */
     EF68("hybrid");
 
-    public static final Parcelable.Creator<Transport> CREATOR = new g(25);
+    public static final Parcelable.Creator<Transport> CREATOR = new j(18);
     public final String a;
 
     Transport(String str) {
@@ -35,7 +34,7 @@ public enum Transport implements ReflectedParcelable {
 
     public static Transport a(String str) {
         if (str.equals("hybrid")) {
-            h1.a.a();
+            m1.a.b();
             throw null;
         }
         for (Transport transport : values()) {
@@ -43,7 +42,7 @@ public enum Transport implements ReflectedParcelable {
                 return transport;
             }
         }
-        throw new a(w.n("Transport ", str, " not supported"));
+        throw new a(android.support.v4.media.a.o("Transport ", str, " not supported"));
     }
 
     @Override // android.os.Parcelable

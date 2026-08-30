@@ -1,59 +1,114 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.util.Iterator;
-import java.util.Map;
+import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
-public final class h1 implements Iterator {
-    public final /* synthetic */ int a;
-    public Iterator b;
+public final class h1 extends j1 {
+    public final /* synthetic */ int b;
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-        }
-        return this.b.hasNext();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h1(Unsafe unsafe, int i10) {
+        super(unsafe);
+        this.b = i10;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-        }
-        return ((Map.Entry) this.b.next()).getValue();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void c(Object obj, long j10, double d) {
+        switch (this.b) {
             case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                this.b.remove();
-                return;
-            case 2:
-                this.b.remove();
-                return;
+                e(obj, j10, Double.doubleToLongBits(d));
+                break;
             default:
-                this.b.remove();
-                return;
+                e(obj, j10, Double.doubleToLongBits(d));
+                break;
         }
     }
 
-    public h1(Iterator it, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 2:
-                it.getClass();
-                this.b = it;
-                break;
-            case 3:
-                it.getClass();
-                this.b = it;
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void d(Object obj, long j10, float f10) {
+        switch (this.b) {
+            case 0:
+                b(j10, obj, Float.floatToIntBits(f10));
                 break;
             default:
-                it.getClass();
-                this.b = it;
+                b(j10, obj, Float.floatToIntBits(f10));
                 break;
         }
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void f(Object obj, long j10, boolean z4) {
+        switch (this.b) {
+            case 0:
+                if (!k1.h) {
+                    k1.e(obj, j10, z4 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    k1.c(obj, j10, z4 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+            default:
+                if (!k1.h) {
+                    k1.e(obj, j10, z4 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    k1.c(obj, j10, z4 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+        }
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final boolean i(Object obj, long j10) {
+        switch (this.b) {
+            case 0:
+                if (k1.h) {
+                    if (k1.l(obj, j10) != 0) {
+                    }
+                } else if (k1.m(obj, j10) != 0) {
+                }
+                break;
+            default:
+                if (k1.h) {
+                    if (k1.l(obj, j10) != 0) {
+                    }
+                } else if (k1.m(obj, j10) != 0) {
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final float j(Object obj, long j10) {
+        switch (this.b) {
+        }
+        return Float.intBitsToFloat(g(obj, j10));
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final double k(Object obj, long j10) {
+        switch (this.b) {
+        }
+        return Double.longBitsToDouble(h(obj, j10));
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final byte l(Object obj, long j10) {
+        switch (this.b) {
+            case 0:
+                if (!k1.h) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!k1.h) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return k1.m(obj, j10);
     }
 }

@@ -1,44 +1,50 @@
 package j3;
 
-import android.net.Uri;
-import h7.n8;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c1 {
-    public final Uri a;
-    public final String b;
-    public final List c;
-    public final String d;
-    public final q8.z e;
-    public final Object f;
+public final class c1 implements g {
+    public static final c1 h;
+    public static final String n;
+    public static final String r;
+    public static final String s;
+    public static final String v;
+    public static final String w;
+    public static final String x;
+    public static final f0.d y;
+    public final String a;
+    public final y0 b;
+    public final x0 c;
+    public final e1 d;
+    public final u0 e;
+    public final z0 f;
 
-    public c1(Uri uri, String str, n8 n8Var, List list, String str2, q8.z zVar, Object obj) {
-        this.a = uri;
-        this.b = str;
-        this.c = list;
-        this.d = str2;
-        this.e = zVar;
-        q8.x xVar = q8.z.b;
-        q8.l.a(4, "initialCapacity");
-        Object[] objArr = new Object[4];
-        int i10 = 0;
-        int i11 = 0;
-        while (i10 < zVar.size()) {
-            ((e1) zVar.get(i10)).getClass();
-            e1 e1Var = new e1();
-            int i12 = i11 + 1;
-            if (objArr.length < i12) {
-                objArr = Arrays.copyOf(objArr, q8.w.d(objArr.length, i12));
-            }
-            objArr[i11] = e1Var;
-            i10++;
-            i11 = i12;
-        }
-        q8.z.s(i11, objArr);
-        this.f = obj;
+    static {
+        s0 s0Var = new s0();
+        s8.t tVar = s8.v.b;
+        s8.i0 i0Var = s8.i0.e;
+        List list = Collections.EMPTY_LIST;
+        s8.i0 i0Var2 = s8.i0.e;
+        h = new c1("", new u0(s0Var), null, new x0(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -3.4028235E38f, -3.4028235E38f), e1.V, z0.c);
+        int i10 = h5.d0.a;
+        n = Integer.toString(0, 36);
+        r = Integer.toString(1, 36);
+        s = Integer.toString(2, 36);
+        v = Integer.toString(3, 36);
+        w = Integer.toString(4, 36);
+        x = Integer.toString(5, 36);
+        y = new f0.d(29);
+    }
+
+    public c1(String str, u0 u0Var, y0 y0Var, x0 x0Var, e1 e1Var, z0 z0Var) {
+        this.a = str;
+        this.b = y0Var;
+        this.c = x0Var;
+        this.d = e1Var;
+        this.e = u0Var;
+        this.f = z0Var;
     }
 
     public final boolean equals(Object obj) {
@@ -49,16 +55,12 @@ public final class c1 {
             return false;
         }
         c1 c1Var = (c1) obj;
-        return this.a.equals(c1Var.a) && f5.d0.a(this.b, c1Var.b) && f5.d0.a(null, null) && this.c.equals(c1Var.c) && f5.d0.a(this.d, c1Var.d) && this.e.equals(c1Var.e) && f5.d0.a(this.f, c1Var.f);
+        return h5.d0.a(this.a, c1Var.a) && this.e.equals(c1Var.e) && h5.d0.a(this.b, c1Var.b) && h5.d0.a(this.c, c1Var.c) && h5.d0.a(this.d, c1Var.d) && h5.d0.a(this.f, c1Var.f);
     }
 
     public final int hashCode() {
         int hashCode = this.a.hashCode() * 31;
-        String str = this.b;
-        int hashCode2 = (this.c.hashCode() + ((hashCode + (str == null ? 0 : str.hashCode())) * 29791)) * 31;
-        String str2 = this.d;
-        int hashCode3 = (this.e.hashCode() + ((hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31)) * 31;
-        Object obj = this.f;
-        return hashCode3 + (obj != null ? obj.hashCode() : 0);
+        y0 y0Var = this.b;
+        return this.f.hashCode() + ((this.d.hashCode() + ((this.e.hashCode() + ((this.c.hashCode() + ((hashCode + (y0Var != null ? y0Var.hashCode() : 0)) * 31)) * 31)) * 31)) * 31);
     }
 }

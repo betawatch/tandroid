@@ -1,46 +1,54 @@
 package j3;
 
 import android.net.Uri;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d1 implements g {
-    public static final d1 c = new d1(new androidx.biometric.e(20, false));
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public static final d0 h;
-    public final Uri a;
-    public final String b;
+public final class d1 {
+    public Integer A;
+    public Integer B;
+    public CharSequence C;
+    public CharSequence D;
+    public CharSequence E;
+    public Integer F;
+    public Bundle G;
+    public CharSequence a;
+    public CharSequence b;
+    public CharSequence c;
+    public CharSequence d;
+    public CharSequence e;
+    public CharSequence f;
+    public CharSequence g;
+    public f2 h;
+    public f2 i;
+    public byte[] j;
+    public Integer k;
+    public Uri l;
+    public Integer m;
+    public Integer n;
+    public Integer o;
+    public Boolean p;
+    public Boolean q;
+    public Integer r;
+    public Integer s;
+    public Integer t;
+    public Integer u;
+    public Integer v;
+    public Integer w;
+    public CharSequence x;
+    public CharSequence y;
+    public CharSequence z;
 
-    static {
-        int i10 = f5.d0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
-        h = new d0(6);
-    }
-
-    public d1(androidx.biometric.e eVar) {
-        this.a = (Uri) eVar.b;
-        this.b = (String) eVar.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a(int i10, byte[] bArr) {
+        if (this.j != null) {
+            Integer valueOf = Integer.valueOf(i10);
+            int i11 = h5.d0.a;
+            if (!valueOf.equals(3) && h5.d0.a(this.k, 3)) {
+                return;
+            }
         }
-        if (!(obj instanceof d1)) {
-            return false;
-        }
-        d1 d1Var = (d1) obj;
-        return f5.d0.a(this.a, d1Var.a) && f5.d0.a(this.b, d1Var.b);
-    }
-
-    public final int hashCode() {
-        Uri uri = this.a;
-        int hashCode = (uri == null ? 0 : uri.hashCode()) * 31;
-        String str = this.b;
-        return hashCode + (str != null ? str.hashCode() : 0);
+        this.j = (byte[]) bArr.clone();
+        this.k = Integer.valueOf(i10);
     }
 }

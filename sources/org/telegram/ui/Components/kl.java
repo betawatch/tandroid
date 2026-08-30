@@ -4,19 +4,19 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kl implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ xl e;
+    public final /* synthetic */ zl e;
 
-    public /* synthetic */ kl(pl plVar, boolean z10, boolean z11, int i10) {
-        this.e = plVar;
-        this.b = z10;
-        this.c = z11;
+    public /* synthetic */ kl(ql qlVar, boolean z4, boolean z10, int i10) {
+        this.e = qlVar;
+        this.b = z4;
+        this.c = z10;
         this.d = i10;
     }
 
@@ -25,51 +25,51 @@ public final /* synthetic */ class kl implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 Long l10 = (Long) obj;
-                ni niVar = ((sl) this.e).b.b;
-                if (niVar != null) {
-                    niVar.E1 = true;
+                li liVar = ((ul) this.e).b.b;
+                if (liVar != null) {
+                    liVar.F1 = true;
                 }
-                niVar.V1.B1(7, true, this.b, this.d, 0, 0L, niVar.s1(), this.c, l10.longValue());
-                HashMap hashMap = ChatAttachAlertPhotoLayout.o1;
+                liVar.W1.H(7, true, this.b, this.d, 0, 0L, liVar.s1(), this.c, l10.longValue());
+                HashMap hashMap = ChatAttachAlertPhotoLayout.p1;
                 hashMap.clear();
-                ChatAttachAlertPhotoLayout.n1.clear();
-                ChatAttachAlertPhotoLayout.p1.clear();
+                ChatAttachAlertPhotoLayout.o1.clear();
+                ChatAttachAlertPhotoLayout.q1.clear();
                 hashMap.clear();
                 PhotoViewer.t1();
-                PhotoViewer.t1().G0(PhotoViewer.t1().L, false);
-                PhotoViewer.t1().q2 = true;
+                PhotoViewer.t1().G0(PhotoViewer.t1().M, false);
+                PhotoViewer.t1().r2 = true;
                 break;
             default:
-                pl plVar = (pl) this.e;
+                ql qlVar = (ql) this.e;
                 Long l11 = (Long) obj;
                 PhotoViewer.t1();
-                PhotoViewer.t1().K = false;
-                PhotoViewer.t1().q2 = false;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = plVar.c;
-                ni niVar2 = chatAttachAlertPhotoLayout.b;
-                niVar2.o2 = true;
-                niVar2.E1 = true;
+                PhotoViewer.t1().L = false;
+                PhotoViewer.t1().r2 = false;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = qlVar.c;
+                li liVar2 = chatAttachAlertPhotoLayout.b;
+                liVar2.p2 = true;
+                liVar2.F1 = true;
                 chatAttachAlertPhotoLayout.a0(false);
-                li liVar = niVar2.V1;
-                boolean z10 = this.b;
-                liVar.B1(z10 ? 4 : 8, true, this.c, this.d, 0, 0L, niVar2.s1(), z10, l11.longValue());
-                ChatAttachAlertPhotoLayout.n1.clear();
-                ChatAttachAlertPhotoLayout.p1.clear();
+                ji jiVar = liVar2.W1;
+                boolean z4 = this.b;
+                jiVar.H(z4 ? 4 : 8, true, this.c, this.d, 0, 0L, liVar2.s1(), z4, l11.longValue());
                 ChatAttachAlertPhotoLayout.o1.clear();
-                chatAttachAlertPhotoLayout.C.l();
+                ChatAttachAlertPhotoLayout.q1.clear();
+                ChatAttachAlertPhotoLayout.p1.clear();
+                chatAttachAlertPhotoLayout.D.l();
                 chatAttachAlertPhotoLayout.v.l();
-                niVar2.dismiss(true);
+                liVar2.dismiss(true);
                 PhotoViewer.t1();
-                PhotoViewer.t1().G0(PhotoViewer.t1().L, false);
-                PhotoViewer.t1().q2 = true;
+                PhotoViewer.t1().G0(PhotoViewer.t1().M, false);
+                PhotoViewer.t1().r2 = true;
                 break;
         }
     }
 
-    public /* synthetic */ kl(sl slVar, boolean z10, int i10, boolean z11) {
-        this.e = slVar;
-        this.b = z10;
+    public /* synthetic */ kl(ul ulVar, boolean z4, int i10, boolean z10) {
+        this.e = ulVar;
+        this.b = z4;
         this.d = i10;
-        this.c = z11;
+        this.c = z10;
     }
 }

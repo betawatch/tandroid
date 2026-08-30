@@ -1,10 +1,10 @@
 package org.telegram.messenger.voip;
 
 import android.media.AudioTrack;
-import j7.l1;
 import java.nio.ByteBuffer;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class AudioTrackJNI {
     private AudioTrack audioTrack;
@@ -42,8 +42,8 @@ public class AudioTrackJNI {
                         nativeCallback(this.buffer);
                         this.audioTrack.write(this.buffer, 0, 1920);
                     }
-                } catch (Exception e10) {
-                    VLog.e(e10);
+                } catch (Exception e) {
+                    VLog.e(e);
                 }
                 if (!this.running) {
                     this.audioTrack.stop();
@@ -52,8 +52,8 @@ public class AudioTrackJNI {
                 continue;
             }
             VLog.i("audiotrack thread exits");
-        } catch (Exception e11) {
-            VLog.e("error starting AudioTrack", e11);
+        } catch (Exception e6) {
+            VLog.e("error starting AudioTrack", e6);
         }
     }
 
@@ -64,7 +64,7 @@ public class AudioTrackJNI {
             throw new IllegalStateException("thread already started");
         }
         this.running = true;
-        Thread thread = new Thread(new r0(this, 2));
+        Thread thread = new Thread(new s0(this, 2));
         this.thread = thread;
         thread.start();
     }
@@ -82,7 +82,7 @@ public class AudioTrackJNI {
             } catch (Throwable unused) {
             }
             int bufferSize = getBufferSize(i13 * 6, 44100);
-            VLog.d(l1.k(bufferSize, "buffer size: "));
+            VLog.d(a2.j(bufferSize, "buffer size: "));
             this.audioTrack = new AudioTrack(0, 44100, i12 == 1 ? 4 : 12, 2, bufferSize, 1);
             this.needResampling = true;
         }
@@ -94,8 +94,8 @@ public class AudioTrackJNI {
         if (thread != null) {
             try {
                 thread.join();
-            } catch (InterruptedException e10) {
-                VLog.e(e10);
+            } catch (InterruptedException e) {
+                VLog.e(e);
             }
             this.thread = null;
         }

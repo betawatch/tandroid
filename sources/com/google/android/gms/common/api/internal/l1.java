@@ -1,21 +1,26 @@
 package com.google.android.gms.common.api.internal;
 
-import android.app.AlertDialog;
-import h7.p5;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class l1 extends p5 {
-    public final /* synthetic */ AlertDialog a;
-    public final /* synthetic */ ag.q1 b;
+public abstract class l1 {
+    public final int a;
 
-    public l1(ag.q1 q1Var, AlertDialog alertDialog) {
-        this.b = q1Var;
-        this.a = alertDialog;
+    public l1(int i10) {
+        this.a = i10;
     }
 
-    @Override // h7.p5
-    public final void a() {
-        throw null;
+    public static Status e(RemoteException remoteException) {
+        return new Status(19, remoteException.getClass().getSimpleName() + ": " + remoteException.getLocalizedMessage(), null, null);
     }
+
+    public abstract void a(Status status);
+
+    public abstract void b(Exception exc);
+
+    public abstract void c(p0 p0Var);
+
+    public abstract void d(h1 h1Var, boolean z4);
 }

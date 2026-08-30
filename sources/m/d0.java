@@ -1,47 +1,110 @@
 package m;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.SeekBar;
+import j7.h8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class d0 extends SeekBar {
-    public final e0 a;
+public final class d0 extends y {
+    public final c0 e;
+    public Drawable f;
+    public ColorStateList g;
+    public PorterDuff.Mode h;
+    public boolean i;
+    public boolean j;
 
-    public d0(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
-        d3.a(this, getContext());
-        e0 e0Var = new e0(this);
-        this.a = e0Var;
-        e0Var.b(attributeSet, i10);
+    public d0(c0 c0Var) {
+        super(c0Var);
+        this.g = null;
+        this.h = null;
+        this.i = false;
+        this.j = false;
+        this.e = c0Var;
     }
 
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public void drawableStateChanged() {
-        super.drawableStateChanged();
-        e0 e0Var = this.a;
-        d0 d0Var = e0Var.e;
-        Drawable drawable = e0Var.f;
-        if (drawable != null && drawable.isStateful() && drawable.setState(d0Var.getDrawableState())) {
-            d0Var.invalidateDrawable(drawable);
+    @Override // m.y
+    public final void b(AttributeSet attributeSet, int i10) {
+        super.b(attributeSet, i10);
+        c0 c0Var = this.e;
+        Context context = c0Var.getContext();
+        int[] iArr = f.a.g;
+        l7.w0 y10 = l7.w0.y(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) y10.c;
+        r0.j0.j(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) y10.c, i10);
+        Drawable u10 = y10.u(0);
+        if (u10 != null) {
+            c0Var.setThumb(u10);
         }
-    }
-
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        Drawable drawable = this.a.f;
+        Drawable t6 = y10.t(1);
+        Drawable drawable = this.f;
         if (drawable != null) {
-            drawable.jumpToCurrentState();
+            drawable.setCallback(null);
+        }
+        this.f = t6;
+        if (t6 != null) {
+            t6.setCallback(c0Var);
+            h8.b(c0Var.getLayoutDirection(), t6);
+            if (t6.isStateful()) {
+                t6.setState(c0Var.getDrawableState());
+            }
+            f();
+        }
+        c0Var.invalidate();
+        if (typedArray.hasValue(3)) {
+            this.h = m1.b(typedArray.getInt(3, -1), this.h);
+            this.j = true;
+        }
+        if (typedArray.hasValue(2)) {
+            this.g = y10.r(2);
+            this.i = true;
+        }
+        y10.A();
+        f();
+    }
+
+    public final void f() {
+        Drawable drawable = this.f;
+        if (drawable != null) {
+            if (this.i || this.j) {
+                Drawable d = h8.d(drawable.mutate());
+                this.f = d;
+                if (this.i) {
+                    d.setTintList(this.g);
+                }
+                if (this.j) {
+                    this.f.setTintMode(this.h);
+                }
+                if (this.f.isStateful()) {
+                    this.f.setState(this.e.getDrawableState());
+                }
+            }
         }
     }
 
-    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final synchronized void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.g(canvas);
+    public final void g(Canvas canvas) {
+        if (this.f != null) {
+            int max = this.e.getMax();
+            if (max > 1) {
+                int intrinsicWidth = this.f.getIntrinsicWidth();
+                int intrinsicHeight = this.f.getIntrinsicHeight();
+                int i10 = intrinsicWidth >= 0 ? intrinsicWidth / 2 : 1;
+                int i11 = intrinsicHeight >= 0 ? intrinsicHeight / 2 : 1;
+                this.f.setBounds(-i10, -i11, i10, i11);
+                float width = ((r0.getWidth() - r0.getPaddingLeft()) - r0.getPaddingRight()) / max;
+                int save = canvas.save();
+                canvas.translate(r0.getPaddingLeft(), r0.getHeight() / 2);
+                for (int i12 = 0; i12 <= max; i12++) {
+                    this.f.draw(canvas);
+                    canvas.translate(width, 0.0f);
+                }
+                canvas.restoreToCount(save);
+            }
+        }
     }
 }

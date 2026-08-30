@@ -1,53 +1,65 @@
 package org.telegram.ui;
 
-import android.text.Editable;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class dp0 implements yp0 {
-    public final /* synthetic */ hp0 a;
+public final class dp0 {
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public Path i;
+    public Paint j;
+    public Drawable k;
+    public final org.telegram.ui.Components.rc l;
+    public boolean m;
+    public final org.telegram.ui.Components.z5 n;
+    public int o;
+    public final /* synthetic */ ep0 r;
+    public final Paint a = new Paint(1);
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint(1);
+    public final Path d = new Path();
+    public final Path e = new Path();
+    public final RectF p = new RectF();
+    public final RectF q = new RectF();
 
-    public dp0(hp0 hp0Var) {
-        this.a = hp0Var;
+    public dp0(ep0 ep0Var) {
+        this.r = ep0Var;
+        this.l = new org.telegram.ui.Components.rc(ep0Var);
+        this.n = new org.telegram.ui.Components.z5(ep0Var, 0L, 320L, org.telegram.ui.Components.nr.h);
     }
 
-    @Override // org.telegram.ui.yp0
-    public final void a() {
-        hp0 hp0Var = this.a;
-        if (hp0Var.b.size() != 0) {
-            hp0Var.M.invalidate();
-            hp0Var.W(true);
-        } else {
-            hp0Var.M.setPivotX(0.0f);
-            hp0Var.M.setPivotY(0.0f);
-            hp0Var.W(false);
-        }
-    }
-
-    @Override // org.telegram.ui.yp0
-    public final void b(Editable editable) {
-        hp0 hp0Var = this.a;
-        org.telegram.ui.Components.au auVar = hp0Var.I;
-        hp0Var.a = editable;
-        auVar.setText(editable);
-    }
-
-    @Override // org.telegram.ui.yp0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.yp0
-    public final void h(int i10, boolean z10, boolean z11) {
-        hp0 hp0Var = this.a;
-        hp0Var.removeSelfFromStack();
-        if (z10) {
+    public final void a(MessagesController.PeerColor peerColor) {
+        ep0 ep0Var = this.r;
+        org.telegram.ui.ActionBar.f6 f6Var = ep0Var.a;
+        if (peerColor == null) {
             return;
         }
-        hp0Var.V(hp0Var.b, hp0Var.c, z11, i10);
-    }
-
-    @Override // org.telegram.ui.yp0
-    public final /* synthetic */ void g() {
+        boolean q10 = f6Var == null ? org.telegram.ui.ActionBar.j6.I.q() : f6Var.a();
+        int i10 = ep0Var.c;
+        Paint paint = this.b;
+        Paint paint2 = this.a;
+        if (i10 != 1) {
+            paint2.setColor(peerColor.getColor(0, f6Var));
+            paint.setColor(peerColor.hasColor6(q10) ? peerColor.getColor(1, f6Var) : peerColor.getColor(0, f6Var));
+            this.f = peerColor.hasColor6(q10);
+            this.g = false;
+            return;
+        }
+        if (q10 && peerColor.hasColor2() && !peerColor.hasColor3()) {
+            paint2.setColor(peerColor.getColor(1, f6Var));
+            paint.setColor(peerColor.getColor(0, f6Var));
+        } else {
+            paint2.setColor(peerColor.getColor(0, f6Var));
+            paint.setColor(peerColor.getColor(1, f6Var));
+        }
+        this.c.setColor(peerColor.getColor(2, f6Var));
+        this.f = peerColor.hasColor2(q10);
+        this.g = peerColor.hasColor3(q10);
     }
 }

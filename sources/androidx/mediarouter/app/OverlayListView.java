@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -22,48 +22,48 @@ public final class OverlayListView extends ListView {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        boolean z10;
+        boolean z4;
         super.onDraw(canvas);
         ArrayList arrayList = this.a;
         if (arrayList.size() > 0) {
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                n0 n0Var = (n0) it.next();
-                BitmapDrawable bitmapDrawable = n0Var.a;
+                q0 q0Var = (q0) it.next();
+                BitmapDrawable bitmapDrawable = q0Var.a;
                 if (bitmapDrawable != null) {
                     bitmapDrawable.draw(canvas);
                 }
                 long drawingTime = getDrawingTime();
-                BitmapDrawable bitmapDrawable2 = n0Var.a;
-                Rect rect = n0Var.c;
-                if (n0Var.k) {
-                    z10 = false;
+                BitmapDrawable bitmapDrawable2 = q0Var.a;
+                Rect rect = q0Var.c;
+                if (q0Var.k) {
+                    z4 = false;
                 } else {
-                    float max = n0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - n0Var.i) / n0Var.e)) : 0.0f;
-                    Interpolator interpolator = n0Var.d;
+                    float max = q0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - q0Var.i) / q0Var.e)) : 0.0f;
+                    Interpolator interpolator = q0Var.d;
                     float interpolation = interpolator == null ? max : interpolator.getInterpolation(max);
-                    int i10 = (int) (n0Var.g * interpolation);
-                    Rect rect2 = n0Var.f;
+                    int i10 = (int) (q0Var.g * interpolation);
+                    Rect rect2 = q0Var.f;
                     rect.top = rect2.top + i10;
                     rect.bottom = rect2.bottom + i10;
-                    float z11 = com.google.android.recaptcha.internal.a.z(n0Var.h, 1.0f, interpolation, 1.0f);
-                    n0Var.b = z11;
+                    float w10 = e2.c.w(q0Var.h, 1.0f, interpolation, 1.0f);
+                    q0Var.b = w10;
                     if (bitmapDrawable2 != null) {
-                        bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
+                        bitmapDrawable2.setAlpha((int) (w10 * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
-                    if (n0Var.j && max >= 1.0f) {
-                        n0Var.k = true;
-                        ze.b bVar = n0Var.l;
+                    if (q0Var.j && max >= 1.0f) {
+                        q0Var.k = true;
+                        bf.b bVar = q0Var.l;
                         if (bVar != null) {
-                            s sVar = (s) bVar.b;
-                            sVar.V.remove((c2.b0) bVar.a);
-                            sVar.R.notifyDataSetChanged();
+                            v vVar = (v) bVar.c;
+                            vVar.W.remove((c2.a0) bVar.b);
+                            vVar.S.notifyDataSetChanged();
                         }
                     }
-                    z10 = !n0Var.k;
+                    z4 = !q0Var.k;
                 }
-                if (!z10) {
+                if (!z4) {
                     it.remove();
                 }
             }

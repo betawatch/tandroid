@@ -1,56 +1,56 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzuq {
     public static String zza(zzqm zzqmVar) {
-        StringBuilder sb2 = new StringBuilder(zzqmVar.zzd());
+        StringBuilder sb = new StringBuilder(zzqmVar.zzd());
         for (int i10 = 0; i10 < zzqmVar.zzd(); i10++) {
             byte zza = zzqmVar.zza(i10);
             if (zza == 34) {
-                sb2.append("\\\"");
+                sb.append("\\\"");
             } else if (zza == 39) {
-                sb2.append("\\'");
+                sb.append("\\'");
             } else if (zza != 92) {
                 switch (zza) {
                     case 7:
-                        sb2.append("\\a");
+                        sb.append("\\a");
                         break;
                     case 8:
-                        sb2.append("\\b");
+                        sb.append("\\b");
                         break;
                     case 9:
-                        sb2.append("\\t");
+                        sb.append("\\t");
                         break;
                     case 10:
-                        sb2.append("\\n");
+                        sb.append("\\n");
                         break;
                     case 11:
-                        sb2.append("\\v");
+                        sb.append("\\v");
                         break;
                     case 12:
-                        sb2.append("\\f");
+                        sb.append("\\f");
                         break;
                     case 13:
-                        sb2.append("\\r");
+                        sb.append("\\r");
                         break;
                     default:
                         if (zza < 32 || zza > 126) {
-                            sb2.append('\\');
-                            sb2.append((char) (((zza >>> 6) & 3) + 48));
-                            sb2.append((char) (((zza >>> 3) & 7) + 48));
-                            sb2.append((char) ((zza & 7) + 48));
+                            sb.append('\\');
+                            sb.append((char) (((zza >>> 6) & 3) + 48));
+                            sb.append((char) (((zza >>> 3) & 7) + 48));
+                            sb.append((char) ((zza & 7) + 48));
                             break;
                         } else {
-                            sb2.append((char) zza);
+                            sb.append((char) zza);
                             break;
                         }
                         break;
                 }
             } else {
-                sb2.append("\\\\");
+                sb.append("\\\\");
             }
         }
-        return sb2.toString();
+        return sb.toString();
     }
 }

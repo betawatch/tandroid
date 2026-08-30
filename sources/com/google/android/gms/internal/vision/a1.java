@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a1 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -12,50 +12,50 @@ public final class a1 implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int A = ce.b.A(parcel);
+                int z4 = j7.l0.z(parcel);
                 int i10 = 0;
                 boolean z10 = false;
-                while (parcel.dataPosition() < A) {
+                while (parcel.dataPosition() < z4) {
                     int readInt = parcel.readInt();
                     char c3 = (char) readInt;
                     if (c3 == 2) {
-                        i10 = ce.b.v(parcel, readInt);
+                        i10 = j7.l0.u(parcel, readInt);
                     } else if (c3 != 3) {
-                        ce.b.z(parcel, readInt);
+                        j7.l0.y(parcel, readInt);
                     } else {
-                        z10 = ce.b.o(parcel, readInt);
+                        z10 = j7.l0.n(parcel, readInt);
                     }
                 }
-                ce.b.n(parcel, A);
+                j7.l0.m(parcel, z4);
                 x1 x1Var = new x1();
                 x1Var.a = i10;
                 x1Var.b = z10;
                 return x1Var;
             default:
-                int A2 = ce.b.A(parcel);
+                int z11 = j7.l0.z(parcel);
                 int i11 = 0;
                 long j10 = 0;
                 int i12 = 0;
                 int i13 = 0;
                 int i14 = 0;
-                while (parcel.dataPosition() < A2) {
+                while (parcel.dataPosition() < z11) {
                     int readInt2 = parcel.readInt();
-                    char c6 = (char) readInt2;
-                    if (c6 == 2) {
-                        i11 = ce.b.v(parcel, readInt2);
-                    } else if (c6 == 3) {
-                        i12 = ce.b.v(parcel, readInt2);
-                    } else if (c6 == 4) {
-                        i13 = ce.b.v(parcel, readInt2);
-                    } else if (c6 == 5) {
-                        j10 = ce.b.x(parcel, readInt2);
-                    } else if (c6 != 6) {
-                        ce.b.z(parcel, readInt2);
+                    char c10 = (char) readInt2;
+                    if (c10 == 2) {
+                        i11 = j7.l0.u(parcel, readInt2);
+                    } else if (c10 == 3) {
+                        i12 = j7.l0.u(parcel, readInt2);
+                    } else if (c10 == 4) {
+                        i13 = j7.l0.u(parcel, readInt2);
+                    } else if (c10 == 5) {
+                        j10 = j7.l0.w(parcel, readInt2);
+                    } else if (c10 != 6) {
+                        j7.l0.y(parcel, readInt2);
                     } else {
-                        i14 = ce.b.v(parcel, readInt2);
+                        i14 = j7.l0.u(parcel, readInt2);
                     }
                 }
-                ce.b.n(parcel, A2);
+                j7.l0.m(parcel, z11);
                 f3 f3Var = new f3();
                 f3Var.a = i11;
                 f3Var.b = i12;

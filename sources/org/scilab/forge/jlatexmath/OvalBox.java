@@ -5,7 +5,7 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class OvalBox extends FramedBox {
     public OvalBox(FramedBox framedBox) {
@@ -13,19 +13,19 @@ public class OvalBox extends FramedBox {
     }
 
     @Override // org.scilab.forge.jlatexmath.FramedBox, org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f9, float f10) {
-        this.box.draw(graphics2D, this.space + f9 + this.thickness, f10);
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        this.box.draw(graphics2D, this.space + f10 + this.thickness, f11);
         Stroke stroke = graphics2D.getStroke();
         graphics2D.setStroke(new BasicStroke(this.thickness, 0, 0));
-        float f11 = this.thickness;
-        float f12 = f11 / 2.0f;
-        float min = Math.min(this.width - f11, (this.height + this.depth) - f11) * 0.5f;
-        float f13 = f9 + f12;
-        float f14 = this.height;
-        float f15 = (f10 - f14) + f12;
-        float f16 = this.width;
-        float f17 = this.thickness;
-        graphics2D.draw(new RoundRectangle2D.Float(f13, f15, f16 - f17, (f14 + this.depth) - f17, min, min));
+        float f12 = this.thickness;
+        float f13 = f12 / 2.0f;
+        float min = Math.min(this.width - f12, (this.height + this.depth) - f12) * 0.5f;
+        float f14 = f10 + f13;
+        float f15 = this.height;
+        float f16 = (f11 - f15) + f13;
+        float f17 = this.width;
+        float f18 = this.thickness;
+        graphics2D.draw(new RoundRectangle2D.Float(f14, f16, f17 - f18, (f15 + this.depth) - f18, min, min));
         graphics2D.setStroke(stroke);
     }
 

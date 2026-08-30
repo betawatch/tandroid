@@ -1,50 +1,39 @@
 package w3;
 
-import f5.w;
-import i7.h0;
+import r3.r;
+import r3.s;
+import r3.t;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c {
-    public final int a;
-    public int b;
-    public int c;
-    public long d;
-    public final boolean e;
-    public final w f;
-    public final w g;
-    public int h;
-    public int i;
+public final class c implements s {
+    public final /* synthetic */ s a;
+    public final /* synthetic */ f2.c b;
 
-    public c(w wVar, w wVar2, boolean z10) {
-        this.g = wVar;
-        this.f = wVar2;
-        this.e = z10;
-        wVar2.C(12);
-        this.a = wVar2.u();
-        wVar.C(12);
-        this.i = wVar.u();
-        h0.a("first_chunk must be 1", wVar.e() == 1);
-        this.b = -1;
+    public c(f2.c cVar, s sVar) {
+        this.b = cVar;
+        this.a = sVar;
     }
 
-    public final boolean a() {
-        int i10 = this.b + 1;
-        this.b = i10;
-        if (i10 == this.a) {
-            return false;
-        }
-        boolean z10 = this.e;
-        w wVar = this.f;
-        this.d = z10 ? wVar.v() : wVar.s();
-        if (this.b == this.h) {
-            w wVar2 = this.g;
-            this.c = wVar2.u();
-            wVar2.D(4);
-            int i11 = this.i - 1;
-            this.i = i11;
-            this.h = i11 > 0 ? wVar2.u() - 1 : -1;
-        }
-        return true;
+    @Override // r3.s
+    public final boolean c() {
+        return this.a.c();
+    }
+
+    @Override // r3.s
+    public final r f(long j10) {
+        r f10 = this.a.f(j10);
+        t tVar = f10.a;
+        long j11 = tVar.a;
+        long j12 = tVar.b;
+        long j13 = this.b.b;
+        t tVar2 = new t(j11, j12 + j13);
+        t tVar3 = f10.b;
+        return new r(tVar2, new t(tVar3.a, tVar3.b + j13));
+    }
+
+    @Override // r3.s
+    public final long g() {
+        return this.a.g();
     }
 }

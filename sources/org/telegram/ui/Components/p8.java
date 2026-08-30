@@ -1,34 +1,21 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p8 extends org.telegram.ui.ActionBar.f3 {
-    public final /* synthetic */ b9 b;
+public final class p8 extends v8 {
+    public final /* synthetic */ o8 D;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p8(b9 b9Var, Activity activity) {
-        super(activity, true);
-        this.b = b9Var;
+    public p8(w8 w8Var, Activity activity, o8 o8Var) {
+        super(w8Var, activity);
+        this.D = o8Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        b9 b9Var = this.b;
-        b9Var.F.w1(b9Var.U);
-        b9Var.f = true;
-        b9Var.fragmentView.invalidate();
-        b9Var.e.animate().setListener(new org.telegram.ui.bm(this, 8)).alpha(0.0f).setDuration(200L).start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        b9 b9Var = this.b;
-        AndroidUtilities.requestAdjustResize(b9Var.getParentActivity(), b9Var.getClassGuid());
-        b9Var.O = null;
+    @Override // org.telegram.ui.Components.v8, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.D.invalidate();
     }
 }

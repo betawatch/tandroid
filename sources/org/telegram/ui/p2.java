@@ -1,44 +1,11 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p2 extends m2.g {
-    public final /* synthetic */ u2 s0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p2(u2 u2Var, Context context) {
-        super(context);
-        this.s0 = u2Var;
-    }
-
-    @Override // m2.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        u2 u2Var = this.s0;
-        if (actionMasked == 0) {
-            u2Var.x.b0.requestDisallowInterceptTouchEvent(true);
-        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            u2Var.x.b0.requestDisallowInterceptTouchEvent(false);
-        }
-        u2Var.x.k();
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // m2.g, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        u2 u2Var = this.s0;
-        if (actionMasked == 0) {
-            u2Var.x.b0.requestDisallowInterceptTouchEvent(true);
-        }
-        boolean onTouchEvent = super.onTouchEvent(motionEvent);
-        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
-            return onTouchEvent;
-        }
-        u2Var.x.b0.requestDisallowInterceptTouchEvent(false);
-        return onTouchEvent;
-    }
+public final class p2 {
+    public TL_iv.PageBlock a;
+    public FrameLayout b;
 }

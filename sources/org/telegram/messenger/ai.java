@@ -1,31 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.RichMessageLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ai implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ TLRPC.EncryptedChat c;
+public final /* synthetic */ class ai implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ RichMessageLayout.Text b;
+    public final /* synthetic */ RichMessageLayout c;
+    public final /* synthetic */ View d;
 
-    public /* synthetic */ ai(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
-        this.a = i10;
-        this.b = secretChatHelper;
-        this.c = encryptedChat;
+    public /* synthetic */ ai(RichMessageLayout.Text text, View view, RichMessageLayout richMessageLayout) {
+        this.b = text;
+        this.d = view;
+        this.c = richMessageLayout;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$acceptSecretChat$22(this.c, tLObject, tL_error);
+                this.b.lambda$revealSpoilers$4(this.d, this.c);
                 break;
             default:
-                this.b.lambda$acceptSecretChat$23(this.c, tLObject, tL_error);
+                this.b.lambda$revealSpoilers$3(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ ai(RichMessageLayout.Text text, RichMessageLayout richMessageLayout, View view) {
+        this.b = text;
+        this.c = richMessageLayout;
+        this.d = view;
     }
 }

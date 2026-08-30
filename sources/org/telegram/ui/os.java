@@ -1,35 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class os extends rf.d1 {
-    public final /* synthetic */ ContactsActivity G;
+public final /* synthetic */ class os implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsActivity b;
 
-    public os(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z10, boolean z11, boolean z12) {
-        this.G = contactsActivity;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.D = new ArrayList();
-        this.c = context;
-        this.h = hVar;
-        this.r = z10;
-        this.s = z11;
-        this.x = 0;
-        this.v = z12;
-        this.w = true;
-        rf.k1 k1Var = new rf.k1(true);
-        this.f = k1Var;
-        k1Var.a = new rf.b1(this);
+    public /* synthetic */ os(ContactsActivity contactsActivity, int i10) {
+        this.a = i10;
+        this.b = contactsActivity;
     }
 
-    @Override // rf.d1
-    public final void F() {
-        if (this.y || this.f.e() || h() != 0) {
-            return;
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.getClass();
+                contactsActivity.Y = i10 != 0;
+                if (i10 != 0) {
+                    contactsActivity.f0(false);
+                    break;
+                }
+                break;
+            default:
+                ContactsActivity.W(this.b, i10);
+                break;
         }
-        this.G.e.e(false, true);
     }
 }

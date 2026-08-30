@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class Row implements q {
     public static final int IMAGE_TYPE_ICON = 4;
@@ -94,19 +94,19 @@ public final class Row implements q {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[title: ");
-        sb2.append(CarText.toShortString(this.mTitle));
-        sb2.append(", text count: ");
+        StringBuilder sb = new StringBuilder("[title: ");
+        sb.append(CarText.toShortString(this.mTitle));
+        sb.append(", text count: ");
         List<CarText> list = this.mTexts;
-        sb2.append(list != null ? list.size() : 0);
-        sb2.append(", image: ");
-        sb2.append(this.mImage);
-        sb2.append(", isBrowsable: ");
-        sb2.append(this.mIsBrowsable);
-        sb2.append(", isEnabled: ");
-        sb2.append(this.mIsEnabled);
-        sb2.append("]");
-        return sb2.toString();
+        sb.append(list != null ? list.size() : 0);
+        sb.append(", image: ");
+        sb.append(this.mImage);
+        sb.append(", isBrowsable: ");
+        sb.append(this.mIsBrowsable);
+        sb.append(", isEnabled: ");
+        sb.append(this.mIsEnabled);
+        sb.append("]");
+        return sb.toString();
     }
 
     public CharSequence yourBoat() {

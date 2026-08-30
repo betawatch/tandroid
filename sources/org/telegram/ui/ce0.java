@@ -1,56 +1,33 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ce0 implements Runnable {
+public final /* synthetic */ class ce0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fe0 b;
+    public final /* synthetic */ de0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ ce0(fe0 fe0Var, int i10) {
+    public /* synthetic */ ce0(de0 de0Var, String str, String str2, int i10) {
         this.a = i10;
-        this.b = fe0Var;
+        this.b = de0Var;
+        this.c = str;
+        this.d = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                fe0 fe0Var = this.b;
-                ig.f fVar = fe0Var.c;
-                fVar.requestFocus();
-                String str = fe0Var.G;
-                if (str != null) {
-                    if (str.length() > 1) {
-                        String obj = fVar.getText().toString();
-                        int length = obj.length();
-                        int i10 = 0;
-                        while (i10 < length && obj.charAt(i10) <= ' ') {
-                            i10++;
-                        }
-                        int length2 = fe0Var.G.length() + i10;
-                        fVar.setSelection(Utilities.clamp(length2 + ((length2 < 0 || length2 >= obj.length() || obj.charAt(length2) != ' ') ? 0 : 1), obj.length(), 0), fVar.getText().length());
-                        break;
-                    }
-                }
-                fVar.setSelection(0, fVar.getText().length());
-                break;
-            case 1:
-                this.b.q(true);
-                break;
-            case 2:
-                this.b.o(false);
+                AndroidUtilities.runOnUIThread(new zd0(this.b, tL_error, this.c, this.d, tLObject));
                 break;
             default:
-                ig.f fVar2 = this.b.c;
-                if (fVar2 != null) {
-                    fVar2.requestFocus();
-                    fVar2.setSelection(fVar2.length());
-                    AndroidUtilities.showKeyboard(fVar2);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new zd0(this.b, tL_error, tLObject, this.c, this.d));
                 break;
         }
     }

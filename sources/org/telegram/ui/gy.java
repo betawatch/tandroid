@@ -1,41 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.DownloadController;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class gy implements DownloadController.FileDownloadProgressListener {
-    public long a;
-    public long b;
-    public final String c;
-    public final /* synthetic */ hy d;
+public final /* synthetic */ class gy implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hy b;
 
-    public gy(hy hyVar, String str) {
-        this.d = hyVar;
-        this.c = str;
+    public /* synthetic */ gy(hy hyVar, int i10) {
+        this.a = i10;
+        this.b = hyVar;
     }
 
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final int getObserverTag() {
-        return 0;
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressDownload(String str, long j10, long j11) {
-        this.b = j10;
-        this.a = j11;
-        this.d.c();
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onSuccessDownload(String str) {
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onFailedDownload(String str, boolean z10) {
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressUpload(String str, long j10, long j11, boolean z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                hy hyVar = this.b;
+                oy oyVar = hyVar.B0;
+                Context context = hyVar.getContext();
+                i10 = ((org.telegram.ui.ActionBar.p2) oyVar).currentAccount;
+                oyVar.showDialog(new eg.v0(3, i10, context, oyVar, null));
+                break;
+            default:
+                oy oyVar2 = this.b.B0;
+                lx lxVar = oyVar2.J0;
+                if (lxVar != null) {
+                    lxVar.dismiss();
+                    oyVar2.J0 = null;
+                    break;
+                }
+                break;
+        }
     }
 }

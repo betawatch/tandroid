@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class OverUnderDelimiter extends Atom {
     private final Atom base;
@@ -9,13 +9,13 @@ public class OverUnderDelimiter extends Atom {
     private Atom script;
     private final SymbolAtom symbol;
 
-    public OverUnderDelimiter(Atom atom, Atom atom2, SymbolAtom symbolAtom, int i10, float f9, boolean z10) {
+    public OverUnderDelimiter(Atom atom, Atom atom2, SymbolAtom symbolAtom, int i10, float f10, boolean z4) {
         this.type = 7;
         this.base = atom;
         this.script = atom2;
         this.symbol = symbolAtom;
-        this.kern = new SpaceAtom(i10, 0.0f, f9, 0.0f);
-        this.over = z10;
+        this.kern = new SpaceAtom(i10, 0.0f, f10, 0.0f);
+        this.over = z4;
     }
 
     private static float getMaxWidth(Box box, Box box2, Box box3) {

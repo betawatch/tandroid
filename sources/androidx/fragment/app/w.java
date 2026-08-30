@@ -5,7 +5,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class w extends AnimationSet implements Runnable {
     public final ViewGroup a;
@@ -36,9 +36,9 @@ public final class w extends AnimationSet implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z10 = this.b;
+        boolean z4 = this.b;
         ViewGroup viewGroup = this.a;
-        if (z10 || !this.d) {
+        if (z4 || !this.d) {
             viewGroup.endViewTransition(null);
             this.c = true;
         } else {
@@ -48,12 +48,12 @@ public final class w extends AnimationSet implements Runnable {
     }
 
     @Override // android.view.animation.Animation
-    public final boolean getTransformation(long j10, Transformation transformation, float f9) {
+    public final boolean getTransformation(long j10, Transformation transformation, float f10) {
         this.d = true;
         if (this.b) {
             return !this.c;
         }
-        if (!super.getTransformation(j10, transformation, f9)) {
+        if (!super.getTransformation(j10, transformation, f10)) {
             this.b = true;
             r0.q.a(this.a, this);
         }

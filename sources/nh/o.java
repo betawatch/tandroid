@@ -1,38 +1,34 @@
 package nh;
 
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import org.telegram.ui.gx;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements Utilities.Callback {
+public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wa b;
+    public final /* synthetic */ p b;
 
-    public /* synthetic */ o(wa waVar, int i10) {
+    public /* synthetic */ o(p pVar, int i10) {
         this.a = i10;
-        this.b = waVar;
+        this.b = pVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Integer num = (Integer) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int intValue = num.intValue();
-                wa waVar = this.b;
-                waVar.setPeriod(intValue);
-                Utilities.Callback callback = waVar.x1;
-                if (callback != null) {
-                    callback.run(num);
-                    break;
+                gx gxVar = this.b.V;
+                ValueAnimator valueAnimator = gxVar.g0;
+                if (valueAnimator != null) {
+                    valueAnimator.start();
                 }
+                gxVar.h0 = null;
                 break;
             default:
-                Utilities.Callback callback2 = this.b.y1;
-                if (callback2 != null) {
-                    callback2.run(num);
-                    break;
-                }
+                p pVar = this.b;
+                pVar.w = false;
+                pVar.invalidate();
                 break;
         }
     }

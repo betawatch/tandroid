@@ -1,6 +1,5 @@
 package w;
 
-import a4.w;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -8,7 +7,7 @@ import android.os.Parcelable;
 import android.util.ArrayMap;
 import android.util.Log;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.p0;
+import e0.o0;
 import j$.util.Objects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -24,9 +23,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.ui.th;
+import org.telegram.ui.yh;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -76,20 +76,20 @@ public abstract class g {
     public static Object b(Bundle bundle, e eVar) {
         String string = bundle.getString("tag_value");
         if (string == null) {
-            throw new f(w.n("Missing enum name [", string, "]"), eVar);
+            throw new f(android.support.v4.media.a.o("Missing enum name [", string, "]"), eVar);
         }
         String string2 = bundle.getString("tag_class_name");
         if (string2 == null) {
-            throw new f(w.n("Missing enum className [", string2, "]"), eVar);
+            throw new f(android.support.v4.media.a.o("Missing enum className [", string2, "]"), eVar);
         }
         try {
             return g(Class.forName(string2), "valueOf", eVar).invoke(null, string);
-        } catch (ClassNotFoundException e10) {
-            throw new f(w.n("Enum class [", string2, "] not found"), eVar, e10);
-        } catch (IllegalArgumentException e11) {
-            throw new f(th.j("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e11);
-        } catch (ReflectiveOperationException e12) {
-            throw new f(w.n("Enum of class [", string2, "] missing valueOf method"), eVar, e12);
+        } catch (ClassNotFoundException e) {
+            throw new f(android.support.v4.media.a.o("Enum class [", string2, "] not found"), eVar, e);
+        } catch (IllegalArgumentException e6) {
+            throw new f(yh.l("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e6);
+        } catch (ReflectiveOperationException e10) {
+            throw new f(android.support.v4.media.a.o("Enum of class [", string2, "] missing valueOf method"), eVar, e10);
         }
     }
 
@@ -108,10 +108,10 @@ public abstract class g {
                 return invoke;
             }
             throw new f("Failed to get interface from binder", eVar);
-        } catch (ClassNotFoundException e10) {
-            throw new f("Binder for unknown IInterface: ".concat(string), eVar, e10);
-        } catch (ReflectiveOperationException e11) {
-            throw new f("Method to create IInterface from a Binder is not accessible for interface: ".concat(string), eVar, e11);
+        } catch (ClassNotFoundException e) {
+            throw new f("Binder for unknown IInterface: ".concat(string), eVar, e);
+        } catch (ReflectiveOperationException e6) {
+            throw new f("Method to create IInterface from a Binder is not accessible for interface: ".concat(string), eVar, e6);
         }
     }
 
@@ -167,14 +167,14 @@ public abstract class g {
                 }
             }
             return newInstance;
-        } catch (ClassNotFoundException e10) {
-            throw new f("Object for unknown class: ".concat(string), eVar, e10);
-        } catch (IllegalArgumentException e11) {
-            throw new f("Failed to deserialize class: ".concat(string), eVar, e11);
-        } catch (NoSuchMethodException e12) {
-            throw new f("Object missing no args constructor: ".concat(string), eVar, e12);
-        } catch (ReflectiveOperationException e13) {
-            throw new f("Constructor or field is not accessible: ".concat(string), eVar, e13);
+        } catch (ClassNotFoundException e) {
+            throw new f("Object for unknown class: ".concat(string), eVar, e);
+        } catch (IllegalArgumentException e6) {
+            throw new f("Failed to deserialize class: ".concat(string), eVar, e6);
+        } catch (NoSuchMethodException e10) {
+            throw new f("Object missing no args constructor: ".concat(string), eVar, e10);
+        } catch (ReflectiveOperationException e11) {
+            throw new f("Constructor or field is not accessible: ".concat(string), eVar, e11);
         }
     }
 
@@ -228,9 +228,9 @@ public abstract class g {
                     eVar2.close();
                     return arrayList;
                 case 5:
-                    Object e10 = e(bundle, eVar2);
+                    Object e = e(bundle, eVar2);
                     eVar2.close();
-                    return e10;
+                    return e;
                 case 6:
                     Bundle bundle2 = bundle.getBundle("tag_value");
                     if (bundle2 == null) {
@@ -255,8 +255,8 @@ public abstract class g {
                         Class<?> cls = Class.forName(string);
                         eVar2.close();
                         return cls;
-                    } catch (ClassNotFoundException e11) {
-                        throw new f("Class name is unknown: ".concat(string), eVar2, e11);
+                    } catch (ClassNotFoundException e6) {
+                        throw new f("Class name is unknown: ".concat(string), eVar2, e6);
                     }
                 case 9:
                     IBinder binder = bundle.getBinder("tag_value");
@@ -266,7 +266,7 @@ public abstract class g {
                     eVar2.close();
                     return binder;
                 case 10:
-                    p0 a10 = p0.a(bundle);
+                    o0 a10 = o0.a(bundle);
                     eVar2.close();
                     return a10;
                 default:
@@ -342,8 +342,8 @@ public abstract class g {
             bundle.putString("tag_value", (String) g(obj.getClass(), "name", eVar).invoke(obj, null));
             bundle.putString("tag_class_name", obj.getClass().getName());
             return bundle;
-        } catch (ReflectiveOperationException e10) {
-            throw new f("Enum missing name method", eVar, e10);
+        } catch (ReflectiveOperationException e) {
+            throw new f("Enum missing name method", eVar, e);
         }
     }
 
@@ -380,19 +380,19 @@ public abstract class g {
                 i10++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String k9 = u3.c.k(field.getDeclaringClass().getName(), field.getName());
+                String k10 = v2.k(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
-                        bundle.putParcelable(k9, o(obj3, field.getName(), eVar));
+                        bundle.putParcelable(k10, o(obj3, field.getName(), eVar));
                     }
-                } catch (IllegalAccessException e10) {
-                    throw new f(u3.c.e("Field is not accessible: ", k9), eVar, e10);
+                } catch (IllegalAccessException e) {
+                    throw new f(v2.e("Field is not accessible: ", k10), eVar, e);
                 }
             }
             return bundle;
-        } catch (NoSuchMethodException e11) {
-            throw new f("Class to deserialize is missing a no args constructor: ".concat(name), eVar, e11);
+        } catch (NoSuchMethodException e6) {
+            throw new f("Class to deserialize is missing a no args constructor: ".concat(name), eVar, e6);
         }
     }
 
@@ -500,9 +500,9 @@ public abstract class g {
                     return j11;
                 }
                 if (obj.getClass().isEnum()) {
-                    Bundle k9 = k(obj, eVar2);
+                    Bundle k10 = k(obj, eVar2);
                     eVar2.close();
-                    return k9;
+                    return k10;
                 }
                 if (obj instanceof Class) {
                     Bundle bundle4 = new Bundle(2);
@@ -514,12 +514,12 @@ public abstract class g {
                 if (obj.getClass().isArray()) {
                     throw new f("Object serializing contains an array, use a list or a set instead", eVar2);
                 }
-                if (!(obj instanceof p0)) {
-                    Bundle m10 = m(obj, eVar2);
+                if (!(obj instanceof o0)) {
+                    Bundle m9 = m(obj, eVar2);
                     eVar2.close();
-                    return m10;
+                    return m9;
                 }
-                Bundle c3 = ((p0) obj).c();
+                Bundle c3 = ((o0) obj).c();
                 c3.putInt("tag_class_type", 10);
                 eVar2.close();
                 return c3;

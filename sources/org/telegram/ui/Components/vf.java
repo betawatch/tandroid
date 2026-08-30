@@ -1,72 +1,290 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class vf implements Runnable {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ TLRPC.User e;
-    public final /* synthetic */ ChatActivityEnterView f;
+public final class vf implements org.telegram.ui.hu0 {
+    public boolean a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ MediaController.PhotoEntry d;
+    public final /* synthetic */ xf e;
 
-    public vf(ChatActivityEnterView chatActivityEnterView, MessageObject messageObject, long j10, TL_keyboard.KeyboardButtonProto keyboardButtonProto, MessageObject messageObject2, TLRPC.User user) {
-        this.f = chatActivityEnterView;
-        this.a = messageObject;
-        this.b = j10;
-        this.c = keyboardButtonProto;
-        this.d = messageObject2;
-        this.e = user;
+    public vf(xf xfVar, Object obj, Object obj2, MediaController.PhotoEntry photoEntry) {
+        this.e = xfVar;
+        this.b = obj;
+        this.c = obj2;
+        this.d = photoEntry;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        org.telegram.ui.tn tnVar = chatActivityEnterView.K2;
-        if (chatActivityEnterView.h1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.t0()) {
-            chatActivityEnterView.m0(false);
-            AndroidUtilities.hideKeyboard(chatActivityEnterView);
-            AndroidUtilities.runOnUIThread(this, 150L);
+    @Override // org.telegram.ui.hu0
+    public final boolean A() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final CharSequence C(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final org.telegram.ui.ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void F(boolean z4) {
+        this.a = z4;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final int H() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean J() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean K() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean M() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean N() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final int Q(Object obj) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final int R(int i10) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean T() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final MessageObject U() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean Y() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final String a0() {
+        return "";
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final CharSequence b0(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final ArrayList c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void d() {
+        ph.f fVar;
+        bd f12 = PhotoViewer.t1().f1();
+        if (f12 == null || (fVar = f12.f) == null) {
             return;
         }
-        if (tnVar == null) {
-            return;
-        }
-        int i10 = chatActivityEnterView.M;
-        long j10 = this.a.messageOwner.dialog_id;
-        TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
-        String text = keyboardButtonProto.getText();
-        String url = keyboardButtonProto.getUrl();
-        boolean c3 = kf.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
-        MessageObject messageObject = this.d;
-        ph.y3 b10 = ph.y3.b(i10, j10, this.b, text, url, c3 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, tnVar == null ? 0L : tnVar.N8(), null, false, null, null, 0, false, false);
-        LaunchActivity launchActivity = LaunchActivity.C1;
-        if (launchActivity != null && launchActivity.P() != null && LaunchActivity.C1.P().m(b10) != null) {
-            ph.z zVar = chatActivityEnterView.h0;
-            if (zVar != null) {
-                zVar.setOpened(false);
-                return;
-            }
-            return;
-        }
-        TLRPC.User user = this.e;
-        String restrictionReason = user == null ? null : MessagesController.getInstance(chatActivityEnterView.M).getRestrictionReason(user.restriction_reason);
-        if (!TextUtils.isEmpty(restrictionReason)) {
-            MessagesController.getInstance(chatActivityEnterView.M);
-            MessagesController.showCantOpenAlert(tnVar, restrictionReason);
-        } else {
-            ph.p2 p2Var = new ph.p2(chatActivityEnterView.getContext(), chatActivityEnterView.R3);
-            p2Var.g0 = chatActivityEnterView.J2;
-            p2Var.s(tnVar, b10);
-            p2Var.show();
-        }
+        yt ytVar = fVar.a;
+        ytVar.requestFocus();
+        AndroidUtilities.showKeyboard(ytVar);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean l() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
+        this.e.B(null, this.b, null, this.c, z4, i11, i12, this.d, this.a);
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean r() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean u() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final HashMap v() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean x(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final int y() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final boolean z() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void B(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void D() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void G() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ void I() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void L(VideoEditedInfo videoEditedInfo) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ void V() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void W(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ void X(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void Z(int i10) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void e(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ void i() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ void m() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void n() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.hu0
+    public final void f(String str, String str2, boolean z4) {
     }
 }

@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public static final Unsafe a;
@@ -31,25 +31,25 @@ public abstract class x2 {
         Class<?> cls;
         Class<?> cls2;
         Class<?> cls3;
-        boolean z10;
+        boolean z4;
         Unsafe unsafe;
-        boolean z11;
+        boolean z10;
         Class<?> cls4;
-        Field m10;
+        Field m9;
         w2 w2Var2;
         Unsafe g10 = g();
         a = g10;
         b = m0.a;
         Class<?> cls5 = Long.TYPE;
-        boolean k9 = k(cls5);
+        boolean k10 = k(cls5);
         Class<?> cls6 = Integer.TYPE;
-        boolean k10 = k(cls6);
+        boolean k11 = k(cls6);
         if (g10 != null) {
             if (!m0.a()) {
                 w2Var = new v2(g10);
-            } else if (k9) {
-                w2Var = new u2(g10, 1);
             } else if (k10) {
+                w2Var = new u2(g10, 1);
+            } else if (k11) {
                 w2Var = new u2(g10, 0);
             }
             c = w2Var;
@@ -73,16 +73,16 @@ public abstract class x2 {
                     Level level = Level.WARNING;
                     String valueOf = String.valueOf(th);
                     cls2 = cls6;
-                    StringBuilder sb2 = new StringBuilder(valueOf.length() + 71);
-                    sb2.append("platform method missing - proto runtime falling back to safer methods: ");
-                    sb2.append(valueOf);
-                    logger.logp(level, "com.google.protobuf.UnsafeUtil", "supportsUnsafeByteBufferOperations", sb2.toString());
-                    z10 = false;
-                    d = z10;
+                    StringBuilder sb = new StringBuilder(valueOf.length() + 71);
+                    sb.append("platform method missing - proto runtime falling back to safer methods: ");
+                    sb.append(valueOf);
+                    logger.logp(level, "com.google.protobuf.UnsafeUtil", "supportsUnsafeByteBufferOperations", sb.toString());
+                    z4 = false;
+                    d = z4;
                     unsafe = a;
                     if (unsafe != null) {
                     }
-                    e = z11;
+                    e = z10;
                     f = f(byte[].class);
                     f(boolean[].class);
                     h(boolean[].class);
@@ -96,8 +96,8 @@ public abstract class x2 {
                     h(double[].class);
                     f(Object[].class);
                     h(Object[].class);
-                    m10 = m();
-                    if (m10 != null) {
+                    m9 = m();
+                    if (m9 != null) {
                     }
                     g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                 }
@@ -113,11 +113,11 @@ public abstract class x2 {
                         cls3.getMethod("copyMemory", Object.class, cls, Object.class, cls, cls);
                     }
                     cls2 = cls6;
-                    z10 = true;
-                    d = z10;
+                    z4 = true;
+                    d = z4;
                     unsafe = a;
                     if (unsafe != null) {
-                        z11 = false;
+                        z10 = false;
                     } else {
                         try {
                             cls4 = unsafe.getClass();
@@ -143,12 +143,12 @@ public abstract class x2 {
                                 Logger logger2 = Logger.getLogger(x2.class.getName());
                                 Level level2 = Level.WARNING;
                                 String valueOf2 = String.valueOf(th);
-                                StringBuilder sb3 = new StringBuilder(valueOf2.length() + 71);
-                                sb3.append("platform method missing - proto runtime falling back to safer methods: ");
-                                sb3.append(valueOf2);
-                                logger2.logp(level2, "com.google.protobuf.UnsafeUtil", "supportsUnsafeArrayOperations", sb3.toString());
-                                z11 = false;
-                                e = z11;
+                                StringBuilder sb2 = new StringBuilder(valueOf2.length() + 71);
+                                sb2.append("platform method missing - proto runtime falling back to safer methods: ");
+                                sb2.append(valueOf2);
+                                logger2.logp(level2, "com.google.protobuf.UnsafeUtil", "supportsUnsafeArrayOperations", sb2.toString());
+                                z10 = false;
+                                e = z10;
                                 f = f(byte[].class);
                                 f(boolean[].class);
                                 h(boolean[].class);
@@ -162,8 +162,8 @@ public abstract class x2 {
                                 h(double[].class);
                                 f(Object[].class);
                                 h(Object[].class);
-                                m10 = m();
-                                if (m10 != null) {
+                                m9 = m();
+                                if (m9 != null) {
                                 }
                                 g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                             }
@@ -203,8 +203,8 @@ public abstract class x2 {
                             clsArr9[1] = cls;
                             cls4.getMethod("getDouble", clsArr9);
                             cls4.getMethod("putDouble", Object.class, cls, Double.TYPE);
-                            z11 = true;
-                            e = z11;
+                            z10 = true;
+                            e = z10;
                             f = f(byte[].class);
                             f(boolean[].class);
                             h(boolean[].class);
@@ -218,15 +218,15 @@ public abstract class x2 {
                             h(double[].class);
                             f(Object[].class);
                             h(Object[].class);
-                            m10 = m();
-                            if (m10 != null && (w2Var2 = c) != null) {
-                                w2Var2.a.objectFieldOffset(m10);
+                            m9 = m();
+                            if (m9 != null && (w2Var2 = c) != null) {
+                                w2Var2.a.objectFieldOffset(m9);
                             }
                             g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                         }
-                        z11 = true;
+                        z10 = true;
                     }
-                    e = z11;
+                    e = z10;
                     f = f(byte[].class);
                     f(boolean[].class);
                     h(boolean[].class);
@@ -240,20 +240,20 @@ public abstract class x2 {
                     h(double[].class);
                     f(Object[].class);
                     h(Object[].class);
-                    m10 = m();
-                    if (m10 != null) {
-                        w2Var2.a.objectFieldOffset(m10);
+                    m9 = m();
+                    if (m9 != null) {
+                        w2Var2.a.objectFieldOffset(m9);
                     }
                     g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                 }
             }
             cls2 = cls6;
-            z10 = false;
-            d = z10;
+            z4 = false;
+            d = z4;
             unsafe = a;
             if (unsafe != null) {
             }
-            e = z11;
+            e = z10;
             f = f(byte[].class);
             f(boolean[].class);
             h(boolean[].class);
@@ -267,8 +267,8 @@ public abstract class x2 {
             h(double[].class);
             f(Object[].class);
             h(Object[].class);
-            m10 = m();
-            if (m10 != null) {
+            m9 = m();
+            if (m9 != null) {
             }
             g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
         }
@@ -278,12 +278,12 @@ public abstract class x2 {
         if (g10 != null) {
         }
         cls2 = cls6;
-        z10 = false;
-        d = z10;
+        z4 = false;
+        d = z4;
         unsafe = a;
         if (unsafe != null) {
         }
-        e = z11;
+        e = z10;
         f = f(byte[].class);
         f(boolean[].class);
         h(boolean[].class);
@@ -297,8 +297,8 @@ public abstract class x2 {
         h(double[].class);
         f(Object[].class);
         h(Object[].class);
-        m10 = m();
-        if (m10 != null) {
+        m9 = m();
+        if (m9 != null) {
         }
         g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
     }
@@ -310,8 +310,8 @@ public abstract class x2 {
     public static Object b(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e10) {
-            throw new IllegalStateException(e10);
+        } catch (InstantiationException e6) {
+            throw new IllegalStateException(e6);
         }
     }
 
@@ -350,9 +350,9 @@ public abstract class x2 {
 
     public static void i(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int k9 = c.k(obj, j11);
+        int k10 = c.k(obj, j11);
         int i10 = ((~((int) j10)) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i10) | (k9 & (~(255 << i10))));
+        c(j11, obj, ((255 & b10) << i10) | (k10 & (~(255 << i10))));
     }
 
     public static void j(Object obj, long j10, byte b10) {

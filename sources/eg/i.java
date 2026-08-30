@@ -1,40 +1,81 @@
 package eg;
 
-import jh.h5;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.t91;
-import org.telegram.ui.v5;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ TLRPC.Chat b;
+public final class i extends fg.i {
+    public final /* synthetic */ int V;
 
-    public /* synthetic */ i(h5 h5Var, TLRPC.Chat chat) {
-        this.b = chat;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i(Context context, int i10, int i11, int i12) {
+        super(context, i10, i11);
+        this.V = i12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Chat chat = this.b;
-                if (chat != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    LaunchActivity.R().showAsSheet(new v5(-chat.id), m2Var);
-                    break;
-                }
+    @Override // fg.i
+    public void k() {
+        switch (this.V) {
+            case 3:
                 break;
             default:
-                h5.d2(t91.d0(this.b, true));
+                super.k();
                 break;
         }
     }
 
-    public /* synthetic */ i(TLRPC.Chat chat) {
-        this.b = chat;
+    @Override // fg.i, android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.V) {
+            case 0:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 3:
+            default:
+                super.onAttachedToWindow();
+                break;
+            case 4:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+        }
+    }
+
+    @Override // fg.i, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.V) {
+            case 0:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 3:
+            default:
+                super.onDetachedFromWindow();
+                break;
+            case 4:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+        }
+    }
+
+    private final void l() {
     }
 }

@@ -1,25 +1,27 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.io.File;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class uh1 implements org.telegram.ui.Components.f81 {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class uh1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ai1 a;
 
-    public uh1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    public uh1(ai1 ai1Var) {
+        this.a = ai1Var;
     }
 
-    @Override // org.telegram.ui.Components.f81
-    public final void b(File file, Bitmap bitmap, boolean z10) {
-        qc1 qc1Var = new qc1(new ai1(file, file, ""), bitmap, false);
-        qc1Var.c1(0L);
-        this.a.presentFragment(qc1Var, z10);
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ai1 ai1Var = this.a;
+        c2.p pVar = ai1Var.i1;
+        if (pVar != null) {
+            pVar.run();
+            ai1Var.i1 = null;
+        }
     }
 
-    @Override // org.telegram.ui.Components.f81
-    public final void a() {
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

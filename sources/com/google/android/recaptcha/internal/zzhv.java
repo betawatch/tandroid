@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import hd.j;
-import i7.c7;
-import sc.c;
-import uc.i;
+import dd.p;
+import jd.j;
+import k7.p7;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzhv extends i implements p {
     int zza;
@@ -21,33 +22,33 @@ final class zzhv extends i implements p {
         this.zzc = zzxnVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzhv zzhvVar = new zzhv(this.zzb, this.zzc, cVar);
         zzhvVar.zzd = obj;
         return zzhvVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhv) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzhv) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x003b, code lost:
     
         if (r9 != r0) goto L15;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                c7.b(obj);
+                p7.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzib zzibVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -58,11 +59,11 @@ final class zzhv extends i implements p {
                 obj = new zzhg(new zzhw(zzibVar, zzN, zzM, null));
             } else {
                 if (i10 != 1) {
-                    c7.b(obj);
+                    p7.b(obj);
                     return j.g(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
                 }
                 zzhkVar = (zzhk) this.zzd;
-                c7.b(obj);
+                p7.b(obj);
             }
             this.zzd = null;
             this.zza = 2;
@@ -71,11 +72,11 @@ final class zzhv extends i implements p {
                 return aVar;
             }
             return j.g(this.zzc.zzl(), "JAVASCRIPT_TAG", (String) obj);
-        } catch (Exception e10) {
-            if (e10 instanceof zzcg) {
-                throw e10;
+        } catch (Exception e) {
+            if (e instanceof zzcg) {
+                throw e;
             }
-            throw new zzcg(zzce.zzb, zzcd.zzL, e10.getMessage(), null, 8, null);
+            throw new zzcg(zzce.zzb, zzcd.zzL, e.getMessage(), null, 8, null);
         }
     }
 }

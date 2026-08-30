@@ -1,67 +1,113 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kg extends j1.b {
-    public final /* synthetic */ lg o;
+public final class kg extends View {
+    public float a;
+    public long b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public final gj0 f;
+    public boolean h;
+    public final /* synthetic */ ChatActivityEnterView n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kg(lg lgVar, lg lgVar2) {
-        super(lgVar2);
-        this.o = lgVar;
+    public kg(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.n = chatActivityEnterView;
+        int i10 = R.raw.chat_audio_record_delete_2;
+        gj0 gj0Var = new gj0(i10, kh.a2.j(i10, ""), AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.f = gj0Var;
+        gj0Var.m0 = true;
+        a();
     }
 
-    @Override // j1.b
-    public final int g(float f9, float f10) {
-        lg lgVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = lgVar.R;
-        if (chatActivityEnterView.n4 && chatActivityEnterView.I1 != null && chatActivityEnterView.N3.contains(f9, f10)) {
-            return 2;
-        }
-        return (!chatActivityEnterView.L || chatActivityEnterView.I1 == null || chatActivityEnterView.i4 <= 0.1f || !lgVar.F.contains(f9, f10)) ? -1 : 4;
+    public final void a() {
+        int i10 = org.telegram.ui.ActionBar.j6.jf;
+        int i11 = ChatActivityEnterView.j5;
+        ChatActivityEnterView chatActivityEnterView = this.n;
+        int i02 = chatActivityEnterView.i0(i10);
+        int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.Sd);
+        chatActivityEnterView.s3.setColor(i02);
+        gj0 gj0Var = this.f;
+        gj0Var.X = true;
+        gj0Var.O(i02, "Cup Red");
+        gj0Var.O(i02, "Box");
+        gj0Var.O(i03, "Line 1");
+        gj0Var.O(i03, "Line 2");
+        gj0Var.O(i03, "Line 3");
+        gj0Var.m();
     }
 
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        ChatActivityEnterView chatActivityEnterView = this.o.R;
-        if (chatActivityEnterView.n4) {
-            arrayList.add(2);
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.d = true;
+        boolean z4 = this.e;
+        gj0 gj0Var = this.f;
+        if (z4) {
+            gj0Var.start();
         }
-        if (!chatActivityEnterView.L || chatActivityEnterView.I1 == null || chatActivityEnterView.i4 <= 0.1f) {
-            return;
-        }
-        arrayList.add(4);
+        gj0Var.s0 = this;
     }
 
-    @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        return true;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.d = false;
+        gj0 gj0Var = this.f;
+        gj0Var.stop();
+        gj0Var.s0 = null;
     }
 
-    @Override // j1.b
-    public final void l(int i10, s0.c cVar) {
-        lg lgVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = lgVar.R;
-        if (i10 == 2) {
-            Rect rect = chatActivityEnterView.P3;
-            RectF rectF = chatActivityEnterView.N3;
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            cVar.h(chatActivityEnterView.P3);
-            cVar.o(LocaleController.getString(chatActivityEnterView.k4 > 0.5f ? R.string.AccActionResume : R.string.AccActionPause));
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.n.s3;
+        boolean z4 = this.e;
+        gj0 gj0Var = this.f;
+        if (z4) {
+            gj0Var.setAlpha((int) (this.a * 255.0f));
         }
-        if (i10 == 4) {
-            Rect rect2 = chatActivityEnterView.P3;
-            RectF rectF2 = lgVar.F;
-            rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-            cVar.h(chatActivityEnterView.P3);
-            cVar.o(LocaleController.getString(chatActivityEnterView.K ? R.string.AccActionOnceDeactivate : R.string.AccActionOnceActivate));
+        paint.setAlpha((int) (this.a * 255.0f));
+        long currentTimeMillis = System.currentTimeMillis() - this.b;
+        if (this.h) {
+            this.a = 1.0f;
+        } else if (this.c || this.e) {
+            float f10 = (currentTimeMillis / 600.0f) + this.a;
+            this.a = f10;
+            if (f10 >= 1.0f) {
+                this.a = 1.0f;
+                this.c = false;
+            }
+        } else {
+            float f11 = this.a - (currentTimeMillis / 600.0f);
+            this.a = f11;
+            if (f11 <= 0.0f) {
+                this.a = 0.0f;
+                this.c = true;
+            }
         }
+        this.b = System.currentTimeMillis();
+        if (this.e) {
+            gj0Var.draw(canvas);
+        }
+        if (!this.e || !gj0Var.s()) {
+            canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 }

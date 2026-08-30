@@ -1,11 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class nc1 {
-    public final /* synthetic */ oc1 a;
+import android.widget.EditText;
 
-    public nc1(oc1 oc1Var) {
-        this.a = oc1Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class nc1 extends org.telegram.ui.ActionBar.h5 {
+    @Override // org.telegram.ui.ActionBar.h5
+    public final void m() {
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5
+    public final void n() {
+    }
+
+    @Override // org.telegram.ui.ActionBar.h5
+    public final void q(EditText editText) {
     }
 }

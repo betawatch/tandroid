@@ -1,5 +1,6 @@
 package g0;
 
+import a4.k;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.graphics.Bitmap;
@@ -10,9 +11,8 @@ import android.graphics.Shader;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
-import e0.i0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static Paint a(Bitmap bitmap) {
@@ -27,8 +27,8 @@ public abstract class a {
         return paint;
     }
 
-    public static void b(Canvas canvas, i0 i0Var, int i10, Paint paint) {
-        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i10 * 8, (float[]) i0Var.b, 0, (float[]) i0Var.c, 0, (int[]) i0Var.e, 0, (short[]) i0Var.d, 0, i10 * 6, paint);
+    public static void b(Canvas canvas, k kVar, int i10, Paint paint) {
+        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i10 * 8, (float[]) kVar.b, 0, (float[]) kVar.c, 0, (int[]) kVar.e, 0, (short[]) kVar.d, 0, i10 * 6, paint);
     }
 
     public static Object c(Bundle bundle) {

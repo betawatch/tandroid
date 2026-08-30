@@ -8,8 +8,8 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Log;
-import h7.f8;
-import h7.g8;
+import j7.a8;
+import j7.z7;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,26 +18,26 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class f extends f8 {
+public class f extends z7 {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
     public static Method d = null;
     public static boolean e = false;
 
-    public static boolean g(Object obj, String str, int i10, boolean z10) {
+    public static boolean g(Object obj, String str, int i10, boolean z4) {
         h();
         try {
             try {
-                return ((Boolean) c.invoke(obj, str, Integer.valueOf(i10), Boolean.valueOf(z10))).booleanValue();
-            } catch (InvocationTargetException e10) {
-                e = e10;
+                return ((Boolean) c.invoke(obj, str, Integer.valueOf(i10), Boolean.valueOf(z4))).booleanValue();
+            } catch (InvocationTargetException e6) {
+                e = e6;
                 throw new RuntimeException(e);
             }
-        } catch (IllegalAccessException | InvocationTargetException e11) {
-            e = e11;
+        } catch (IllegalAccessException | InvocationTargetException e10) {
+            e = e10;
         }
     }
 
@@ -56,8 +56,8 @@ public class f extends f8 {
             method2 = cls.getMethod("addFontWeightStyle", String.class, Integer.TYPE, Boolean.TYPE);
             method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
             constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e10) {
-            Log.e("TypefaceCompatApi21Impl", e10.getClass().getName(), e10);
+        } catch (ClassNotFoundException | NoSuchMethodException e6) {
+            Log.e("TypefaceCompatApi21Impl", e6.getClass().getName(), e6);
             method = null;
             cls = null;
             method2 = null;
@@ -68,18 +68,18 @@ public class f extends f8 {
         d = method;
     }
 
-    @Override // h7.f8
+    @Override // j7.z7
     public Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d10 = g8.d(context);
+                File d10 = a8.d(context);
                 if (d10 == null) {
                     return null;
                 }
                 try {
-                    if (!g8.b(d10, resources, fVar.f)) {
+                    if (!a8.b(d10, resources, fVar.f)) {
                         return null;
                     }
                     if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
@@ -97,21 +97,21 @@ public class f extends f8 {
                 Object newInstance2 = Array.newInstance((Class<?>) a, 1);
                 Array.set(newInstance2, 0, newInstance);
                 return (Typeface) d.invoke(null, newInstance2);
-            } catch (IllegalAccessException | InvocationTargetException e10) {
-                throw new RuntimeException(e10);
+            } catch (IllegalAccessException | InvocationTargetException e6) {
+                throw new RuntimeException(e6);
             }
-        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e11) {
-            throw new RuntimeException(e11);
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e10) {
+            throw new RuntimeException(e10);
         }
     }
 
-    @Override // h7.f8
-    public Typeface b(Context context, o0.j[] jVarArr, int i10) {
+    @Override // j7.z7
+    public Typeface b(Context context, o0.i[] iVarArr, int i10) {
         File file;
         String readlink;
-        if (jVarArr.length >= 1) {
+        if (iVarArr.length >= 1) {
             try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(jVarArr, i10).a, "r", null);
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(iVarArr, i10).a, "r", null);
                 if (openFileDescriptor != null) {
                     try {
                         try {

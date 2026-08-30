@@ -1,199 +1,131 @@
 package nh;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.FileRefController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jr;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.ks;
+import org.telegram.ui.Components.yu0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ct;
+import org.telegram.ui.hi0;
+import org.telegram.ui.n70;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public abstract class b8 extends FrameLayout implements o2 {
-    public final a8 a;
-    public final FrameLayout b;
-    public final TextView c;
-    public final FrameLayout d;
-    public final TextView e;
-    public final FrameLayout f;
-    public final TextView h;
-    public float n;
-    public float r;
-    public int s;
-    public ValueAnimator v;
-    public Utilities.Callback w;
-    public Utilities.Callback x;
+public final /* synthetic */ class b8 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public b8(Context context) {
-        super(context);
-        a8 a8Var = new a8(this, context);
-        this.a = a8Var;
-        a8Var.setOrientation(0);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        textView.setText(LocaleController.getString(R.string.StoryLive));
-        frameLayout.addView(textView, i7.f6.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        a8Var.addView(frameLayout, i7.f6.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
-        final int i10 = 0;
-        frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: nh.z7
-            public final /* synthetic */ b8 b;
+    public /* synthetic */ b8(int i10, hi0 hi0Var, org.telegram.ui.ActionBar.p2 p2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+        this.a = 6;
+        this.b = i10;
+        this.c = hi0Var;
+        this.d = p2Var;
+        this.e = tL_payments_assignPlayMarketTransaction;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i10) {
-                    case 0:
-                        this.b.b(-1);
-                        break;
-                    case 1:
-                        this.b.b(0);
-                        break;
-                    default:
-                        this.b.b(1);
-                        break;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        switch (i10) {
+            case 0:
+                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj2;
+                lf.i0 i0Var = (lf.i0) obj;
+                if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && obj3 != null) {
+                    FileRefController.getInstance(this.b).requestReference(obj3, tL_messages_getAttachedStickers, i0Var);
+                    break;
+                } else {
+                    i0Var.run(tLObject, tL_error);
+                    break;
                 }
-            }
-        });
-        i7.h6.a(frameLayout);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.d = frameLayout2;
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextColor(-1);
-        textView2.setText(LocaleController.getString(R.string.StoryPhoto));
-        frameLayout2.addView(textView2, i7.f6.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        a8Var.addView(frameLayout2, i7.f6.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
-        final int i11 = 1;
-        frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: nh.z7
-            public final /* synthetic */ b8 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i11) {
-                    case 0:
-                        this.b.b(-1);
-                        break;
-                    case 1:
-                        this.b.b(0);
-                        break;
-                    default:
-                        this.b.b(1);
-                        break;
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new lf.j0((n70) obj3, (org.telegram.ui.j4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.e1) obj));
+                break;
+            case 2:
+                SharedPreferences sharedPreferences = (SharedPreferences) obj3;
+                org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) obj2;
+                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj;
+                if (tL_error != null) {
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c2(d2Var, 0));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new dg.f3(sharedPreferences, (TLRPC.TL_help_support) tLObject, d2Var, this.b, p2Var, 17));
+                    break;
                 }
-            }
-        });
-        i7.h6.a(frameLayout2);
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.f = frameLayout3;
-        TextView textView3 = new TextView(context);
-        this.h = textView3;
-        textView3.setTextSize(1, 14.0f);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextColor(-1);
-        textView3.setText(LocaleController.getString(R.string.StoryVideo));
-        frameLayout3.addView(textView3, i7.f6.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        a8Var.addView(frameLayout3, i7.f6.t(-2, -1, 112, 0, 0, 0, 0));
-        final int i12 = 2;
-        frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: nh.z7
-            public final /* synthetic */ b8 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        this.b.b(-1);
-                        break;
-                    case 1:
-                        this.b.b(0);
-                        break;
-                    default:
-                        this.b.b(1);
-                        break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new dg.f3((es) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 18));
+                break;
+            case 4:
+                yu0 yu0Var = (yu0) obj3;
+                TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
+                AndroidUtilities.runOnUIThread(new ks((org.telegram.ui.ActionBar.d2[]) obj2, 2));
+                int i11 = this.b;
+                if (tL_error != null) {
+                    AndroidUtilities.runOnUIThread(new cg.v1(yu0Var, i11, tL_error, tL_messages_editMessage, 24));
+                    break;
+                } else {
+                    MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);
+                    break;
                 }
-            }
-        });
-        i7.h6.a(frameLayout3);
-        addView(a8Var, i7.f6.e(-2, -1, 113));
-    }
-
-    public final void a(int i10) {
-        if (this.s == i10) {
-            return;
-        }
-        this.s = i10;
-        ValueAnimator valueAnimator = this.v;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, i10);
-        this.v = ofFloat;
-        ofFloat.addUpdateListener(new lh.d5(this, 13));
-        this.v.setDuration(320L);
-        this.v.setInterpolator(jr.h);
-        this.v.start();
-    }
-
-    public final void b(int i10) {
-        if (this.s == i10) {
-            return;
-        }
-        a(i10);
-        Utilities.Callback callback = this.w;
-        if (callback != null) {
-            callback.run(Integer.valueOf(i10));
+            case 5:
+                Pattern pattern = LaunchActivity.y1;
+                AndroidUtilities.runOnUIThread(new dg.f3((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.d2) obj, 20), 2L);
+                break;
+            case 6:
+                hi0 hi0Var = (hi0) obj3;
+                org.telegram.ui.ActionBar.p2 p2Var2 = (org.telegram.ui.ActionBar.p2) obj2;
+                TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
+                boolean z4 = tLObject instanceof TLRPC.Updates;
+                int i12 = this.b;
+                if (!z4) {
+                    if (tL_error != null) {
+                        AndroidUtilities.runOnUIThread(new ct(i12, tL_error, p2Var2, tL_payments_assignPlayMarketTransaction, 9));
+                        break;
+                    }
+                } else {
+                    MessagesController.getInstance(i12).processUpdates((TLRPC.Updates) tLObject, false);
+                    AndroidUtilities.runOnUIThread(hi0Var);
+                    break;
+                }
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new lf.j0((org.telegram.ui.web.a1) obj3, (String) obj2, tLObject, tL_error, this.b, (org.telegram.ui.web.w0) obj));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new dg.f3(tLObject, (boolean[]) obj3, (Utilities.Callback) obj2, this.b, (TL_account.updateEmojiStatus) obj, 27));
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (((z9) this).y.I()) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    public /* synthetic */ b8(Object obj, int i10, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, lf.i0 i0Var) {
+        this.a = 0;
+        this.c = obj;
+        this.b = i10;
+        this.d = tL_messages_getAttachedStickers;
+        this.e = i0Var;
     }
 
-    @Override // android.view.View, nh.o2
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-    }
-
-    @Override // nh.o2
-    public void setInvert(float f9) {
-        this.n = f9;
-        this.c.setTextColor(i0.a.d(f9, -1, -16777216));
-        this.e.setTextColor(i0.a.d(f9, -1, -16777216));
-        this.h.setTextColor(i0.a.d(f9, -1, -16777216));
-    }
-
-    public void setOnSwitchModeListener(Utilities.Callback<Integer> callback) {
-        this.w = callback;
-    }
-
-    public void setOnSwitchingModeListener(Utilities.Callback<Float> callback) {
-        this.x = callback;
+    public /* synthetic */ b8(Object obj, Object obj2, int i10, Object obj3, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.d = obj2;
+        this.b = i10;
+        this.e = obj3;
     }
 }

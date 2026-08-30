@@ -1,336 +1,144 @@
 package cg;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.ContextWrapper;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import ih.e6;
-import jh.h5;
-import lh.d4;
-import lh.i9;
-import lh.m4;
-import nh.c5;
-import nh.t5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.ev;
-import org.telegram.ui.Components.vc0;
-import org.telegram.ui.Components.vx;
-import org.telegram.ui.Components.xt;
-import org.telegram.ui.Components.yt;
-import org.telegram.ui.LaunchActivity;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class z1 extends org.telegram.ui.ActionBar.o2 {
-    public final /* synthetic */ int a;
-    public final Object b;
+public final class z1 {
+    public static final DispatchQueue m = new DispatchQueue("ShapeDetector");
+    public static final double n = Math.sqrt(125000.0d) / 2.0d;
+    public int a;
+    public ArrayList b;
+    public ArrayList c;
+    public boolean d;
+    public h0 e;
+    public Context f;
+    public SharedPreferences g;
+    public boolean h;
+    public ArrayList i;
+    public AtomicBoolean j;
+    public AtomicBoolean k;
+    public t1 l;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z1(Object obj, int i10) {
-        super(null);
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public View createView(Context context) {
-        switch (this.a) {
-            case 11:
-                this.hasOwnBackground = true;
-                this.actionBar.setAddToContainer(false);
-                View view = new View(context);
-                view.setBackgroundColor(0);
-                return view;
-            default:
-                return super.createView(context);
+    public static x1 a(ArrayList arrayList) {
+        if (arrayList.size() <= 0) {
+            return null;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public Context getContext() {
-        switch (this.a) {
-            case 3:
-                return ((h5) this.b).getContext();
-            case 4:
-            case 6:
-            default:
-                return super.getContext();
-            case 5:
-                return ((m4) this.b).b.getContext();
-            case 7:
-                return ((t5) this.b).getContext();
-            case 8:
-                return ((yt) this.b).a.getContext();
+        double d = ((w1) arrayList.get(0)).a;
+        double d10 = ((w1) arrayList.get(0)).b;
+        x1 x1Var = new x1();
+        x1Var.a = d;
+        x1Var.b = d10;
+        x1Var.c = d;
+        x1Var.d = d10;
+        for (int i10 = 1; i10 < arrayList.size(); i10++) {
+            w1 w1Var = (w1) arrayList.get(i10);
+            double d11 = w1Var.a;
+            double d12 = w1Var.b;
+            if (x1Var.a >= d11) {
+                x1Var.a = d11;
+            }
+            if (x1Var.b >= d12) {
+                x1Var.b = d12;
+            }
+            if (x1Var.c <= d11) {
+                x1Var.c = d11;
+            }
+            if (x1Var.d <= d12) {
+                x1Var.d = d12;
+            }
         }
+        return x1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public int getCurrentAccount() {
-        switch (this.a) {
-            case 0:
-                return this.currentAccount;
-            case 1:
-            case 2:
-            case 4:
-            case 6:
-            default:
-                return super.getCurrentAccount();
-            case 3:
-                return this.currentAccount;
-            case 5:
-                return this.currentAccount;
-            case 7:
-                return this.currentAccount;
-            case 8:
-                return this.currentAccount;
-            case 9:
-                return this.currentAccount;
-            case 10:
-                return ((vx) this.b).A.Y0;
+    public static w1 b(ArrayList arrayList) {
+        w1 w1Var = new w1(0.0d, 0.0d);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            w1 w1Var2 = (w1) arrayList.get(i10);
+            w1Var.a += w1Var2.a;
+            w1Var.b += w1Var2.b;
         }
+        w1Var.a /= arrayList.size();
+        w1Var.b /= arrayList.size();
+        return w1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public View getFragmentView() {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        switch (this.a) {
-            case 0:
-                viewGroup = ((f3) ((f2) this.b)).containerView;
-                return viewGroup;
-            case 9:
-                viewGroup2 = ((f3) ((ev) this.b).x).containerView;
-                return viewGroup2;
-            case 10:
-                return ((vx) this.b).A.r;
-            default:
-                return super.getFragmentView();
+    public static double d(ArrayList arrayList, w1 w1Var, ArrayList arrayList2, double d) {
+        w1 w1Var2 = w1Var;
+        double cos = Math.cos(d);
+        double sin = Math.sin(d);
+        int min = Math.min(arrayList.size(), arrayList2.size());
+        double d10 = 0.0d;
+        int i10 = 0;
+        while (i10 < min) {
+            w1 w1Var3 = (w1) arrayList.get(i10);
+            w1 w1Var4 = (w1) arrayList2.get(i10);
+            double d11 = w1Var3.a;
+            double d12 = cos;
+            double d13 = w1Var2.a;
+            double d14 = d11 - d13;
+            double d15 = w1Var3.b;
+            double d16 = w1Var2.b;
+            double d17 = d15 - d16;
+            d10 += w1Var4.a(((d14 * d12) - (d17 * sin)) + d13, (d17 * d12) + (d14 * sin) + d16);
+            i10++;
+            w1Var2 = w1Var;
+            cos = d12;
         }
+        return d10 / arrayList.size();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public FrameLayout getLayoutContainer() {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                return ((f2) this.b).I0;
-            case 9:
-                viewGroup = ((f3) ((ev) this.b).x).containerView;
-                return (FrameLayout) viewGroup;
-            case 10:
-                return ((vx) this.b).A.r;
-            default:
-                return super.getLayoutContainer();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2, org.telegram.ui.Components.l50
-    public Activity getParentActivity() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.o2 o2Var = ((f2) this.b).p0;
-                if (o2Var == null) {
-                    return null;
+    public static int e(int i10, ArrayList arrayList) {
+        int max = Math.max(1, arrayList.size() / 4);
+        while (max < arrayList.size() - 1) {
+            w1 w1Var = (w1) arrayList.get(max - 1);
+            w1 w1Var2 = (w1) arrayList.get(max);
+            int i11 = max + 1;
+            w1 w1Var3 = (w1) arrayList.get(i11);
+            w1Var.getClass();
+            double a2 = w1Var.a(w1Var2.a, w1Var2.b);
+            double a10 = w1Var.a(w1Var3.a, w1Var3.b);
+            double a11 = w1Var2.a(w1Var3.a, w1Var3.b);
+            if ((Math.acos((((a10 * a10) + (a2 * a2)) - (a11 * a11)) / ((a2 * 2.0d) * a10)) / 3.141592653589793d) * 180.0d > 18.0d) {
+                if (i10 <= 0) {
+                    return max;
                 }
-                return o2Var.getParentActivity();
-            case 1:
-                return ((org.telegram.ui.ActionBar.o2) this.b).getParentActivity();
-            case 2:
-                e6 e6Var = (e6) this.b;
-                Activity ownerActivity = e6Var.getOwnerActivity();
-                if (ownerActivity == null) {
-                    ownerActivity = LaunchActivity.C1;
-                }
-                return ownerActivity == null ? AndroidUtilities.findActivity(e6Var.getContext()) : ownerActivity;
-            case 3:
-                for (Context context = ((h5) this.b).getContext(); context instanceof ContextWrapper; context = ((ContextWrapper) context).getBaseContext()) {
-                    if (context instanceof Activity) {
-                        return (Activity) context;
-                    }
-                }
-                return null;
-            case 4:
-                Activity findActivity = AndroidUtilities.findActivity(((d4) this.b).getContext());
-                return findActivity == null ? LaunchActivity.C1 : findActivity;
-            case 5:
-            case 9:
-            case 10:
-            case 11:
-            default:
-                return super.getParentActivity();
-            case 6:
-                return LaunchActivity.C1;
-            case 7:
-                return AndroidUtilities.findActivity(((t5) this.b).getContext());
-            case 8:
-                for (Context context2 = getContext(); context2 instanceof ContextWrapper; context2 = ((ContextWrapper) context2).getBaseContext()) {
-                    if (context2 instanceof Activity) {
-                        return (Activity) context2;
-                    }
-                }
-                return null;
-            case 12:
-                return ((org.telegram.ui.web.z0) this.b).S;
+                i10--;
+            }
+            max = i11;
         }
+        return -1;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public c6 getResourceProvider() {
-        c6 c6Var;
-        c6 c6Var2;
-        c6 c6Var3;
-        switch (this.a) {
-            case 1:
-                return new oc.i(new lh.b());
-            case 2:
-                c6Var = ((f3) ((e6) this.b)).resourcesProvider;
-                return c6Var;
-            case 3:
-            case 8:
-            case 11:
-            default:
-                return super.getResourceProvider();
-            case 4:
-                return new lh.l2(0, ((d4) this.b).x0);
-            case 5:
-                return ((m4) this.b).b.s;
-            case 6:
-                c6Var2 = ((f3) ((c5) this.b)).resourcesProvider;
-                return new lh.l2(5, c6Var2);
-            case 7:
-                return ((t5) this.b).C1;
-            case 9:
-                c6Var3 = ((f3) ((ev) this.b).x).resourcesProvider;
-                return c6Var3;
-            case 10:
-                return ((vx) this.b).A.V1;
-            case 12:
-                return new lh.l2(9, ((org.telegram.ui.web.z0) this.b).e);
+    public static ArrayList f(ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            w1 w1Var = (w1) arrayList.get(i10);
+            arrayList2.add(new w1(w1Var.a, w1Var.b));
         }
+        return arrayList2;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public Dialog getVisibleDialog() {
-        switch (this.a) {
-            case 8:
-                return new xt(this, ((yt) this.b).a.getContext());
-            default:
-                return super.getVisibleDialog();
+    public final void c() {
+        ArrayList arrayList;
+        synchronized (this) {
+            this.b.clear();
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public boolean isLightStatusBar() {
-        switch (this.a) {
-            case 1:
-                return false;
-            case 4:
-                return false;
-            case 6:
-                return false;
-            case 12:
-                return false;
-            default:
-                return super.isLightStatusBar();
+        m.cancelRunnable(this.l);
+        this.k.set(false);
+        this.d = false;
+        if (!this.h || (arrayList = this.i) == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        switch (this.a) {
-            case 11:
-                if (z10 && z11) {
-                    ((vc0) this.b).dismiss();
-                    break;
-                }
-                break;
-            default:
-                super.onTransitionAnimationEnd(z10, z11);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public boolean presentFragment(org.telegram.ui.ActionBar.o2 o2Var) {
-        switch (this.a) {
-            case 1:
-                return false;
-            case 4:
-                i9 i9Var = ((d4) this.b).F0;
-                if (i9Var == null) {
-                    return true;
-                }
-                i9Var.H(o2Var);
-                return true;
-            case 7:
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
-                if (R == null) {
-                    return false;
-                }
-                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                m2Var.a = true;
-                R.showAsSheet(o2Var, m2Var);
-                return true;
-            default:
-                return super.presentFragment(o2Var);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o2
-    public Dialog showDialog(Dialog dialog) {
-        switch (this.a) {
-            case 0:
-                dialog.show();
-                return dialog;
-            case 3:
-                dialog.show();
-                return dialog;
-            case 4:
-                i9 i9Var = ((d4) this.b).F0;
-                if (i9Var != null) {
-                    i9Var.showDialog(dialog);
-                } else if (dialog != null) {
-                    dialog.show();
-                }
-                return dialog;
-            case 6:
-                dialog.show();
-                return dialog;
-            case 12:
-                dialog.show();
-                return dialog;
-            default:
-                return super.showDialog(dialog);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(org.telegram.ui.ActionBar.o2 o2Var) {
-        super(null);
-        this.a = 1;
-        this.b = o2Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(c5 c5Var) {
-        super(null);
-        int i10;
-        this.a = 6;
-        this.b = c5Var;
-        i10 = ((f3) c5Var).currentAccount;
-        this.currentAccount = i10;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(org.telegram.ui.web.z0 z0Var) {
-        super(null);
-        this.a = 12;
-        this.b = z0Var;
-        this.currentAccount = z0Var.I;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.f);
+        alertDialog$Builder.a.O = "Shape?";
+        alertDialog$Builder.f(new String[]{"Log all", "Circle", "Rectangle", "Star", "Bubble", "Arrow", "None"}, new u1(0, this, arrayList));
+        alertDialog$Builder.o();
+        this.i = null;
     }
 }

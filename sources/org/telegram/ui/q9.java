@@ -1,17 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MrzRecognizer;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface q9 {
-    String E0();
+public final class q9 extends v9 {
+    public final /* synthetic */ r9 c0;
 
-    void J(String str);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q9(r9 r9Var, int i10) {
+        super(i10);
+        this.c0 = r9Var;
+    }
 
-    void S0(MrzRecognizer.Result result);
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void finishFragment() {
+        setFinishing(true);
+        this.c0.dismiss();
+    }
 
-    boolean d1(String str, i9 i9Var);
-
-    void onDismiss();
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void removeSelfFromStack() {
+        this.c0.dismiss();
+    }
 }

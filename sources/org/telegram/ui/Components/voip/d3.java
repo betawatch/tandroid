@@ -1,29 +1,49 @@
 package org.telegram.ui.Components.voip;
 
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d3 extends Drawable {
-    public final int a = -15130842;
+public final class d3 extends ph.f3 {
+    public final Paint I0;
+    public final n1 J0;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.drawColor(this.a);
+    public d3(Activity activity, int i10, n1 n1Var, boolean z4) {
+        super(activity, i10);
+        Paint paint = new Paint(1);
+        this.I0 = paint;
+        this.J0 = n1Var;
+        n1Var.a(this);
+        paint.setPathEffect(new CornerPathEffect(this.v));
+        if (z4) {
+            i();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // ph.f3
+    public final void c(Canvas canvas, float f10) {
+        n1 n1Var = this.J0;
+        Shader shader = n1Var.b().getShader();
+        Paint paint = this.I0;
+        paint.setShader(shader);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.C.getAlpha(), n1Var.b().getAlpha()) * f10), 31);
+        Path path = this.q0;
+        canvas.drawPath(path, paint);
+        if (n1Var.e) {
+            paint.setShader(((Paint) n1Var.d.a).getShader());
+            canvas.drawPath(path, paint);
+        }
+        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // ph.f3, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        this.J0.d(getX(), getY());
+        super.dispatchDraw(canvas);
     }
 }

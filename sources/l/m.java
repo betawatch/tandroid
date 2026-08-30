@@ -14,11 +14,11 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import h7.l8;
-import h7.s7;
+import j7.h8;
+import j7.r7;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -61,9 +61,9 @@ public final class m implements l0.a {
         this.y = i14;
     }
 
-    public static void c(StringBuilder sb2, int i10, int i11, String str) {
+    public static void c(StringBuilder sb, int i10, int i11, String str) {
         if ((i10 & i11) == i11) {
-            sb2.append(str);
+            sb.append(str);
         }
     }
 
@@ -74,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new za.c(this, 22);
+            nVar2.b = new a3.c(this, 21);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;
@@ -102,7 +102,7 @@ public final class m implements l0.a {
 
     public final Drawable d(Drawable drawable) {
         if (drawable != null && this.w && (this.u || this.v)) {
-            drawable = l8.d(drawable).mutate();
+            drawable = h8.d(drawable).mutate();
             if (this.u) {
                 drawable.setTintList(this.s);
             }
@@ -137,8 +137,8 @@ public final class m implements l0.a {
         return false;
     }
 
-    public final void f(boolean z10) {
-        if (z10) {
+    public final void f(boolean z4) {
+        if (z4) {
             this.x |= 32;
         } else {
             this.x &= -33;
@@ -195,7 +195,7 @@ public final class m implements l0.a {
         if (i10 == 0) {
             return null;
         }
-        Drawable b10 = s7.b(this.n.a, i10);
+        Drawable b10 = r7.b(this.n.a, i10);
         this.m = 0;
         this.l = b10;
         return d(b10);
@@ -323,9 +323,9 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setCheckable(boolean z10) {
+    public final MenuItem setCheckable(boolean z4) {
         int i10 = this.x;
-        int i11 = (z10 ? 1 : 0) | (i10 & (-2));
+        int i11 = (z4 ? 1 : 0) | (i10 & (-2));
         this.x = i11;
         if (i10 != i11) {
             this.n.p(false);
@@ -334,12 +334,12 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setChecked(boolean z10) {
+    public final MenuItem setChecked(boolean z4) {
         int i10 = this.x;
         int i11 = i10 & 4;
         k kVar = this.n;
         if (i11 == 0) {
-            int i12 = (i10 & (-3)) | (z10 ? 2 : 0);
+            int i12 = (i10 & (-3)) | (z4 ? 2 : 0);
             this.x = i12;
             if (i10 != i12) {
                 kVar.p(false);
@@ -352,9 +352,9 @@ public final class m implements l0.a {
         for (int i13 = 0; i13 < size; i13++) {
             m mVar = (m) arrayList.get(i13);
             if (mVar.b == this.b && (mVar.x & 4) != 0 && mVar.isCheckable()) {
-                boolean z11 = mVar == this;
+                boolean z10 = mVar == this;
                 int i14 = mVar.x;
-                int i15 = (z11 ? 2 : 0) | (i14 & (-3));
+                int i15 = (z10 ? 2 : 0) | (i14 & (-3));
                 mVar.x = i15;
                 if (i14 != i15) {
                     mVar.n.p(false);
@@ -372,8 +372,8 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setEnabled(boolean z10) {
-        if (z10) {
+    public final MenuItem setEnabled(boolean z4) {
+        if (z4) {
             this.x |= 16;
         } else {
             this.x &= -17;
@@ -438,9 +438,9 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c3, char c6) {
+    public final MenuItem setShortcut(char c3, char c10) {
         this.h = c3;
-        this.j = Character.toLowerCase(c6);
+        this.j = Character.toLowerCase(c10);
         this.n.p(false);
         return this;
     }
@@ -488,9 +488,9 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setVisible(boolean z10) {
+    public final MenuItem setVisible(boolean z4) {
         int i10 = this.x;
-        int i11 = (z10 ? 0 : 8) | (i10 & (-9));
+        int i11 = (z4 ? 0 : 8) | (i10 & (-9));
         this.x = i11;
         if (i10 != i11) {
             k kVar = this.n;
@@ -545,10 +545,10 @@ public final class m implements l0.a {
     }
 
     @Override // l0.a, android.view.MenuItem
-    public final MenuItem setShortcut(char c3, char c6, int i10, int i11) {
+    public final MenuItem setShortcut(char c3, char c10, int i10, int i11) {
         this.h = c3;
         this.i = KeyEvent.normalizeMetaState(i10);
-        this.j = Character.toLowerCase(c6);
+        this.j = Character.toLowerCase(c10);
         this.k = KeyEvent.normalizeMetaState(i11);
         this.n.p(false);
         return this;

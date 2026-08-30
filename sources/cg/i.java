@@ -1,81 +1,28 @@
 package cg;
 
-import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class i extends dg.i {
-    public final /* synthetic */ int U;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(Context context, int i10, int i11, int i12) {
-        super(context, i10, i11);
-        this.U = i12;
+public final class i extends l {
+    @Override // cg.m
+    public final int e() {
+        return R.drawable.photo_circle;
     }
 
-    @Override // dg.i
-    public void k() {
-        switch (this.U) {
-            case 3:
-                break;
-            default:
-                super.k();
-                break;
-        }
+    @Override // cg.l
+    public final int m() {
+        return R.drawable.photo_circle_fill;
     }
 
-    @Override // dg.i, android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.U) {
-            case 0:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 3:
-            default:
-                super.onAttachedToWindow();
-                break;
-            case 4:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-        }
+    @Override // cg.l
+    public final String n() {
+        return LocaleController.getString(R.string.PaintCircle);
     }
 
-    @Override // dg.i, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.U) {
-            case 0:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 3:
-            default:
-                super.onDetachedFromWindow();
-                break;
-            case 4:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-        }
-    }
-
-    private final void l() {
+    @Override // cg.l
+    public final int o() {
+        return 0;
     }
 }

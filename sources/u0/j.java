@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j {
     public static r0.h a(View view, r0.h hVar) {
@@ -22,14 +22,14 @@ public final class j {
             return hVar;
         }
         ClipData a2 = gVar.a();
-        int f9 = gVar.f();
+        int f10 = gVar.f();
         TextView textView = (TextView) view;
         Editable editable = (Editable) textView.getText();
         Context context = textView.getContext();
-        boolean z10 = false;
+        boolean z4 = false;
         for (int i10 = 0; i10 < a2.getItemCount(); i10++) {
             ClipData.Item itemAt = a2.getItemAt(i10);
-            if ((f9 & 1) != 0) {
+            if ((f10 & 1) != 0) {
                 coerceToStyledText = itemAt.coerceToText(context);
                 if (coerceToStyledText instanceof Spanned) {
                     coerceToStyledText = coerceToStyledText.toString();
@@ -38,7 +38,7 @@ public final class j {
                 coerceToStyledText = itemAt.coerceToStyledText(context);
             }
             if (coerceToStyledText != null) {
-                if (z10) {
+                if (z4) {
                     editable.insert(Selection.getSelectionEnd(editable), "\n");
                     editable.insert(Selection.getSelectionEnd(editable), coerceToStyledText);
                 } else {
@@ -48,7 +48,7 @@ public final class j {
                     int max2 = Math.max(0, Math.max(selectionStart, selectionEnd));
                     Selection.setSelection(editable, max2);
                     editable.replace(max, max2, coerceToStyledText);
-                    z10 = true;
+                    z4 = true;
                 }
             }
         }

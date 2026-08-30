@@ -3,7 +3,7 @@ package o0;
 import android.util.Base64;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d {
     public final String a;
@@ -24,23 +24,23 @@ public final class d {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("FontRequest {mProviderAuthority: " + this.a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mCertificates:");
+        StringBuilder sb = new StringBuilder();
+        sb.append("FontRequest {mProviderAuthority: " + this.a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mCertificates:");
         int i10 = 0;
         while (true) {
             List list = this.d;
             if (i10 >= list.size()) {
-                sb2.append("}mCertificatesArray: 0");
-                return sb2.toString();
+                sb.append("}mCertificatesArray: 0");
+                return sb.toString();
             }
-            sb2.append(" [");
+            sb.append(" [");
             List list2 = (List) list.get(i10);
             for (int i11 = 0; i11 < list2.size(); i11++) {
-                sb2.append(" \"");
-                sb2.append(Base64.encodeToString((byte[]) list2.get(i11), 0));
-                sb2.append("\"");
+                sb.append(" \"");
+                sb.append(Base64.encodeToString((byte[]) list2.get(i11), 0));
+                sb.append("\"");
             }
-            sb2.append(" ]");
+            sb.append(" ]");
             i10++;
         }
     }

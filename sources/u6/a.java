@@ -1,20 +1,26 @@
 package u6;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import h7.o5;
+import android.os.Parcel;
+import android.os.Parcelable;
+import j7.f5;
+import r5.c0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a extends com.google.android.gms.common.api.internal.i {
-    public final /* synthetic */ TaskCompletionSource b;
+public final class a extends c6.a {
+    public static final Parcelable.Creator<a> CREATOR = new c0(15);
+    public final boolean a;
 
-    public a(TaskCompletionSource taskCompletionSource) {
-        this.b = taskCompletionSource;
+    public a(boolean z4) {
+        this.a = z4;
     }
 
-    @Override // com.google.android.gms.common.api.internal.j
-    public final void B(Status status) {
-        o5.a(status, null, this.b);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int q10 = f5.q(dest, 20293);
+        f5.s(dest, 1, 4);
+        dest.writeInt(this.a ? 1 : 0);
+        f5.r(dest, q10);
     }
 }

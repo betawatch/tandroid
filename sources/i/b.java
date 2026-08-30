@@ -12,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.SparseArray;
 import android.util.StateSet;
-import h7.l8;
+import j7.h8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -27,7 +27,7 @@ public final class b extends Drawable.ConstantState {
     public int[][] H;
     public h I;
     public l J;
-    public final f a;
+    public final g a;
     public Resources b;
     public int c;
     public int d;
@@ -63,7 +63,7 @@ public final class b extends Drawable.ConstantState {
         this.a = eVar;
         this.b = resources != null ? resources : bVar != null ? bVar.b : null;
         int i10 = bVar != null ? bVar.c : 0;
-        int i11 = f.x;
+        int i11 = g.x;
         i10 = resources != null ? resources.getDisplayMetrics().densityDpi : i10;
         i10 = i10 == 0 ? 160 : i10;
         this.c = i10;
@@ -213,7 +213,7 @@ public final class b extends Drawable.ConstantState {
                 Drawable[] drawableArr = this.g;
                 Drawable newDrawable = constantState.newDrawable(this.b);
                 if (Build.VERSION.SDK_INT >= 23) {
-                    l8.b(this.x, newDrawable);
+                    h8.b(this.x, newDrawable);
                 }
                 Drawable mutate = newDrawable.mutate();
                 mutate.setCallback(this.a);
@@ -253,7 +253,7 @@ public final class b extends Drawable.ConstantState {
         }
         Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
         if (Build.VERSION.SDK_INT >= 23) {
-            l8.b(this.x, newDrawable);
+            h8.b(this.x, newDrawable);
         }
         Drawable mutate = newDrawable.mutate();
         mutate.setCallback(this.a);

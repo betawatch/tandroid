@@ -1,69 +1,80 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class nb1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ qc1 c;
+public final class nb1 extends org.telegram.ui.Components.rl0 {
+    public final Context c;
+    public org.telegram.ui.ActionBar.i6 d;
+    public ArrayList e;
+    public final /* synthetic */ ThemeActivity f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nb1(qc1 qc1Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = qc1Var;
-                super(context);
-                this.b = new RectF();
-                break;
-            default:
-                this.c = qc1Var;
-                this.b = new RectF();
-                break;
+    public nb1(ThemeActivity themeActivity, Context context) {
+        this.f = themeActivity;
+        this.c = context;
+        l();
+    }
+
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return false;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        if (this.e.isEmpty()) {
+            return 0;
+        }
+        return this.e.size() + 1;
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return i10 == h() - 1 ? 1 : 0;
+    }
+
+    @Override // f2.o0
+    public final void l() {
+        this.d = this.f.f == 1 ? org.telegram.ui.ActionBar.j6.J : org.telegram.ui.ActionBar.j6.A0();
+        this.e = new ArrayList(this.d.Y);
+        super.l();
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        View view = l1Var.a;
+        int j10 = j(i10);
+        if (j10 == 0) {
+            ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
+            org.telegram.ui.ActionBar.i6 i6Var = this.d;
+            org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.e.get(i10);
+            innerAccentView.d = i6Var;
+            innerAccentView.e = h6Var;
+            innerAccentView.a(false);
+            return;
+        }
+        if (j10 != 1) {
+            return;
+        }
+        db1 db1Var = (db1) view;
+        org.telegram.ui.ActionBar.i6 i6Var2 = this.d;
+        int i11 = db1.c;
+        db1Var.getClass();
+        if (i6Var2.T >= 8) {
+            db1Var.b = new int[]{i6Var2.l(6), i6Var2.l(4), i6Var2.l(7), i6Var2.l(2), i6Var2.l(0), i6Var2.l(5), i6Var2.l(3)};
+        } else {
+            db1Var.b = new int[7];
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                qc1 qc1Var = this.c;
-                nb1 nb1Var = qc1Var.z0;
-                fc1 fc1Var = qc1Var.t0;
-                pb1 pb1Var = qc1Var.a;
-                org.telegram.ui.ActionBar.g6.s(nb1Var, fc1Var, pb1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pb1Var.G("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.g6.a1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pb1Var.G("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
-            default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                qc1 qc1Var2 = this.c;
-                nb1 nb1Var2 = qc1Var2.A0;
-                fc1 fc1Var2 = qc1Var2.t0;
-                pb1 pb1Var2 = qc1Var2.a;
-                org.telegram.ui.ActionBar.g6.s(nb1Var2, fc1Var2, pb1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pb1Var2.G("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.g6.a1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pb1Var2.G("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
-        }
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        Context context = this.c;
+        return i10 != 0 ? new org.telegram.ui.Components.el0(new db1(context)) : new org.telegram.ui.Components.el0(new ThemeActivity.InnerAccentView(context));
     }
 }

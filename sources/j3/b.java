@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b extends BroadcastReceiver implements Runnable {
-    public final h0 a;
+    public final c0 a;
     public final Handler b;
-    public final /* synthetic */ androidx.activity.n c;
+    public final /* synthetic */ androidx.activity.o c;
 
-    public b(androidx.activity.n nVar, Handler handler, h0 h0Var) {
-        this.c = nVar;
+    public b(androidx.activity.o oVar, Handler handler, c0 c0Var) {
+        this.c = oVar;
         this.b = handler;
-        this.a = h0Var;
+        this.a = c0Var;
     }
 
     @Override // android.content.BroadcastReceiver
@@ -28,7 +28,7 @@ public final class b extends BroadcastReceiver implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         if (this.c.a) {
-            this.a.a.n0(-1, 3, false);
+            this.a.a.g0(-1, 3, false);
         }
     }
 }

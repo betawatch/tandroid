@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b {
     public final f a;
@@ -80,17 +80,17 @@ public abstract class b {
         }
         try {
             return (d) c(readString).invoke(null, a());
-        } catch (ClassNotFoundException e10) {
-            throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
-        } catch (IllegalAccessException e11) {
-            throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
-        } catch (NoSuchMethodException e12) {
-            throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
-        } catch (InvocationTargetException e13) {
-            if (e13.getCause() instanceof RuntimeException) {
-                throw ((RuntimeException) e13.getCause());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e);
+        } catch (IllegalAccessException e6) {
+            throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e6);
+        } catch (NoSuchMethodException e10) {
+            throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e10);
+        } catch (InvocationTargetException e11) {
+            if (e11.getCause() instanceof RuntimeException) {
+                throw ((RuntimeException) e11.getCause());
             }
-            throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
+            throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e11);
         }
     }
 
@@ -125,20 +125,20 @@ public abstract class b {
                     parcel.writeInt(dataPosition - i11);
                     parcel.setDataPosition(dataPosition);
                 }
-            } catch (ClassNotFoundException e10) {
-                throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
-            } catch (IllegalAccessException e11) {
-                throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
-            } catch (NoSuchMethodException e12) {
-                throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
-            } catch (InvocationTargetException e13) {
-                if (!(e13.getCause() instanceof RuntimeException)) {
-                    throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e);
+            } catch (IllegalAccessException e6) {
+                throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e6);
+            } catch (NoSuchMethodException e10) {
+                throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e10);
+            } catch (InvocationTargetException e11) {
+                if (!(e11.getCause() instanceof RuntimeException)) {
+                    throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e11);
                 }
-                throw ((RuntimeException) e13.getCause());
+                throw ((RuntimeException) e11.getCause());
             }
-        } catch (ClassNotFoundException e14) {
-            throw new RuntimeException(dVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e14);
+        } catch (ClassNotFoundException e12) {
+            throw new RuntimeException(dVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e12);
         }
     }
 }

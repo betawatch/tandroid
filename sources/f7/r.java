@@ -1,38 +1,76 @@
 package f7;
 
-import android.content.Context;
-import j$.util.Objects;
-import java.util.HashMap;
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Collection;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r {
-    public static final l b = l.b(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
-    public final String a;
+public abstract class r extends AbstractCollection implements Serializable {
+    public static final Object[] a = new Object[0];
 
-    public r(Context context, ab.l lVar) {
-        new HashMap();
-        new HashMap();
-        context.getPackageName();
-        ab.c.a(context);
-        synchronized (v.class) {
-            if (v.b == null) {
-                v.b = new v(0);
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract int i(Object[] objArr);
+
+    public abstract int n();
+
+    public abstract int o();
+
+    public abstract boolean p();
+
+    public abstract Object[] q();
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] q10 = q();
+            if (q10 != null) {
+                return Arrays.copyOfRange(q10, o(), n(), objArr.getClass());
             }
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
+        } else if (length > size) {
+            objArr[size] = null;
         }
-        this.a = "common";
-        ab.g a2 = ab.g.a();
-        p pVar = new p(this, 0);
-        a2.getClass();
-        ab.g.b(pVar);
-        ab.g a10 = ab.g.a();
-        Objects.requireNonNull(lVar);
-        q qVar = new q(lVar, 0);
-        a10.getClass();
-        ab.g.b(qVar);
-        l lVar2 = b;
-        if (lVar2.containsKey("common")) {
-            k6.e.d(context, (String) lVar2.get("common"), false);
-        }
+        i(objArr);
+        return objArr;
     }
 }

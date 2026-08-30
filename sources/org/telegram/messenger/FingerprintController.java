@@ -12,7 +12,7 @@ import java.security.KeyStoreException;
 import java.util.Locale;
 import javax.crypto.Cipher;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
@@ -32,8 +32,8 @@ public class FingerprintController {
         } catch (KeyPermanentlyInvalidatedException unused) {
             hasChangedFingerprints = Boolean.TRUE;
             return true;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             hasChangedFingerprints = Boolean.FALSE;
             return false;
         }
@@ -46,15 +46,15 @@ public class FingerprintController {
     public static void deleteInvalidKey() {
         try {
             getKeyStore().deleteEntry(KEY_ALIAS);
-        } catch (KeyStoreException e10) {
-            FileLog.e(e10);
+        } catch (KeyStoreException e) {
+            FileLog.e(e);
         }
         hasChangedFingerprints = null;
         checkKeyReady(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void generateNewKey(boolean z10) {
+    public static void generateNewKey(boolean z4) {
         KeyPairGenerator keyPairGenerator2 = getKeyPairGenerator();
         if (keyPairGenerator2 != null) {
             try {
@@ -63,14 +63,14 @@ public class FingerprintController {
                 keyPairGenerator2.initialize(new KeyGenParameterSpec.Builder(KEY_ALIAS, 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
                 keyPairGenerator2.generateKeyPair();
                 setLocale(locale);
-                AndroidUtilities.runOnUIThread(new y3(1, z10));
-            } catch (InvalidAlgorithmParameterException e10) {
-                FileLog.e(e10);
-            } catch (Exception e11) {
-                if (e11.getClass().getName().equals("android.security.KeyStoreException")) {
+                AndroidUtilities.runOnUIThread(new z3(1, z4));
+            } catch (InvalidAlgorithmParameterException e) {
+                FileLog.e(e);
+            } catch (Exception e6) {
+                if (e6.getClass().getName().equals("android.security.KeyStoreException")) {
                     return;
                 }
-                FileLog.e(e11);
+                FileLog.e(e6);
             }
         }
     }
@@ -84,8 +84,8 @@ public class FingerprintController {
             KeyPairGenerator keyPairGenerator3 = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
             keyPairGenerator = keyPairGenerator3;
             return keyPairGenerator3;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -100,8 +100,8 @@ public class FingerprintController {
             keyStore = keyStore3;
             keyStore3.load(null);
             return keyStore;
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -109,15 +109,15 @@ public class FingerprintController {
     public static boolean isKeyReady() {
         try {
             return getKeyStore().containsAlias(KEY_ALIAS);
-        } catch (KeyStoreException e10) {
-            FileLog.e(e10);
+        } catch (KeyStoreException e) {
+            FileLog.e(e);
             return false;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$generateNewKey$0(boolean z10) {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didGenerateFingerprintKeyPair, Boolean.valueOf(z10));
+    public static /* synthetic */ void lambda$generateNewKey$0(boolean z4) {
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didGenerateFingerprintKeyPair, Boolean.valueOf(z4));
     }
 
     private static void setLocale(Locale locale) {
@@ -128,14 +128,14 @@ public class FingerprintController {
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
     }
 
-    public static void checkKeyReady(boolean z10) {
+    public static void checkKeyReady(boolean z4) {
         if (isKeyReady() || !AndroidUtilities.isKeyguardSecure()) {
             return;
         }
         Context context = ApplicationLoader.applicationContext;
-        hf.a aVar = hf.b.a;
-        if (aVar.H0(context) && aVar.d(ApplicationLoader.applicationContext)) {
-            Utilities.globalQueue.postRunnable(new y3(0, z10));
+        kf.a aVar = kf.b.a;
+        if (aVar.l(context) && aVar.b(ApplicationLoader.applicationContext)) {
+            Utilities.globalQueue.postRunnable(new z3(0, z4));
         }
     }
 }

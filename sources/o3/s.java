@@ -1,44 +1,51 @@
 package o3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class s {
-    public final u a;
-    public final u b;
+import java.util.UUID;
 
-    public s(u uVar, u uVar2) {
-        this.a = uVar;
-        this.b = uVar2;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class s implements i {
+    public final h a;
+
+    public s(h hVar) {
+        this.a = hVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && s.class == obj.getClass()) {
-            s sVar = (s) obj;
-            if (this.a.equals(sVar.a) && this.b.equals(sVar.b)) {
-                return true;
-            }
-        }
+    @Override // o3.i
+    public final UUID a() {
+        return j3.h.a;
+    }
+
+    @Override // o3.i
+    public final boolean b() {
         return false;
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    @Override // o3.i
+    public final int e() {
+        return 1;
     }
 
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("[");
-        u uVar = this.a;
-        sb2.append(uVar);
-        u uVar2 = this.b;
-        if (uVar.equals(uVar2)) {
-            str = "";
-        } else {
-            str = ", " + uVar2;
-        }
-        return a4.w.q(sb2, str, "]");
+    @Override // o3.i
+    public final boolean f(String str) {
+        return false;
+    }
+
+    @Override // o3.i
+    public final h g() {
+        return this.a;
+    }
+
+    @Override // o3.i
+    public final n3.b h() {
+        return null;
+    }
+
+    @Override // o3.i
+    public final void c(l lVar) {
+    }
+
+    @Override // o3.i
+    public final void d(l lVar) {
     }
 }

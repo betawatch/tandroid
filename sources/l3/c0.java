@@ -1,11 +1,25 @@
 package l3;
 
+import android.media.AudioDeviceInfo;
 import android.media.AudioTrack;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static void a(AudioTrack audioTrack, e0 e0Var) {
-        audioTrack.setPreferredDevice(e0Var == null ? null : e0Var.a);
+    public static void a(v vVar, Object obj) {
+        f0 f0Var;
+        AudioDeviceInfo b10 = k3.e.b(obj);
+        k0 k0Var = (k0) vVar;
+        if (b10 == null) {
+            f0Var = null;
+        } else {
+            k0Var.getClass();
+            f0Var = new f0(b10);
+        }
+        k0Var.Z = f0Var;
+        AudioTrack audioTrack = k0Var.v;
+        if (audioTrack != null) {
+            d0.a(audioTrack, f0Var);
+        }
     }
 }

@@ -290,11 +290,11 @@ public abstract /* synthetic */ class a {
         if (b0Var == null) {
             return null;
         }
-        boolean z10 = b0Var.a;
-        if (!z10) {
+        boolean z4 = b0Var.a;
+        if (!z4) {
             return OptionalDouble.empty();
         }
-        if (z10) {
+        if (z4) {
             return OptionalDouble.of(b0Var.b);
         }
         throw new NoSuchElementException("No value present");
@@ -304,11 +304,11 @@ public abstract /* synthetic */ class a {
         if (c0Var == null) {
             return null;
         }
-        boolean z10 = c0Var.a;
-        if (!z10) {
+        boolean z4 = c0Var.a;
+        if (!z4) {
             return OptionalInt.empty();
         }
-        if (z10) {
+        if (z4) {
             return OptionalInt.of(c0Var.b);
         }
         throw new NoSuchElementException("No value present");
@@ -318,11 +318,11 @@ public abstract /* synthetic */ class a {
         if (d0Var == null) {
             return null;
         }
-        boolean z10 = d0Var.a;
-        if (!z10) {
+        boolean z4 = d0Var.a;
+        if (!z4) {
             return OptionalLong.empty();
         }
-        if (z10) {
+        if (z4) {
             return OptionalLong.of(d0Var.b);
         }
         throw new NoSuchElementException("No value present");

@@ -82,9 +82,9 @@ public final class r8 extends v8 implements DoubleConsumer, j$.util.u0 {
     public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
         switch (this.f) {
             case 0:
-                boolean z10 = this.c;
+                boolean z4 = this.c;
                 Spliterator spliterator = this.a;
-                if (z10) {
+                if (z4) {
                     this.c = false;
                     boolean tryAdvance = ((j$.util.u0) spliterator).tryAdvance((DoubleConsumer) this);
                     if (tryAdvance && a()) {

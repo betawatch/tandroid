@@ -1,149 +1,69 @@
 package lg;
 
-import android.graphics.RecordingCanvas;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.support.v4.media.session.z;
-import org.telegram.messenger.MediaDataController;
+import android.content.Context;
+import android.graphics.Canvas;
+import gg.p0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.va;
+import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c {
-    public final RenderNode a = z.c();
-    public final RenderNode[] b;
-    public final RenderNode[] c;
-    public final boolean d;
-    public int e;
-    public int f;
-    public float g;
-    public float h;
-    public long i;
-    public final /* synthetic */ e j;
+public final class c extends va {
+    public final a U;
+    public TL_stories.PrepaidGiveaway V;
 
-    public c(e eVar, String str, int i10, boolean z10) {
-        this.j = eVar;
-        int i11 = i10 + 1;
-        this.b = new RenderNode[i11];
-        for (int i12 = 0; i12 < i11; i12++) {
-            RenderNode[] renderNodeArr = this.b;
-            z.i();
-            renderNodeArr[i12] = z.d(str + "_down_" + i10);
-        }
-        if (i10 > 0 || z10) {
-            this.c = new RenderNode[i11];
-            for (int i13 = 0; i13 < i11; i13++) {
-                this.c[i13] = z.c();
-            }
-        } else {
-            this.c = this.b;
-        }
-        this.d = this.c == this.b;
-        this.f = 1;
-        this.e = 1;
+    public c(Context context) {
+        super(context, 0, 0, false);
+        this.U = new a(context);
     }
 
-    public final void a(RenderNode renderNode) {
-        boolean z10;
-        int width = renderNode.getWidth();
-        int height = renderNode.getHeight();
-        float f9 = width;
-        e eVar = this.j;
-        int round = Math.round((eVar.d * f9) / this.e);
-        float f10 = height;
-        int round2 = Math.round((eVar.d * f10) / this.f);
-        float f11 = round;
-        float f12 = f11 / f9;
-        float f13 = round2;
-        float f14 = f13 / f10;
-        int i10 = eVar.d;
-        float f15 = (f9 * i10) / f11;
-        float f16 = (f10 * i10) / f13;
-        long calcHash = MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(0L, renderNode.getUniqueId()), round), round2), width), height);
-        boolean z11 = (this.a.hasDisplayList() && this.b[0].hasDisplayList()) ? false : true;
-        int i11 = 0;
-        while (true) {
-            int length = this.b.length;
-            z10 = this.d;
-            if (i11 >= length) {
-                break;
-            }
-            z11 |= !r15[i11].hasDisplayList();
-            if (!z10) {
-                z11 |= !this.c[i11].hasDisplayList();
-            }
-            i11++;
+    @Override // org.telegram.ui.Cells.va
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
+        return this.V;
+    }
+
+    @Override // org.telegram.ui.Cells.va, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.P) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, j6.k0);
         }
-        if (this.i == calcHash && !z11) {
-            return;
-        }
-        this.i = calcHash;
-        int i12 = 0;
-        this.a.setPosition(0, 0, width, height);
-        this.a.beginRecording(width, height).drawRenderNode(renderNode);
-        this.a.endRecording();
-        this.b[0].setPosition(0, 0, round, round2);
-        RecordingCanvas beginRecording = this.b[0].beginRecording(round, round2);
-        beginRecording.scale(f12, f14);
-        beginRecording.drawRenderNode(this.a);
-        this.b[0].endRecording();
-        int i13 = 0;
-        while (true) {
-            RenderNode[] renderNodeArr = this.b;
-            if (i13 >= renderNodeArr.length) {
-                return;
-            }
-            renderNodeArr[i13].setPosition(i12, i12, round, round2);
-            RecordingCanvas beginRecording2 = this.b[i13].beginRecording(round, round2);
-            if (i13 > 0) {
-                beginRecording2.drawRenderNode(this.b[i12]);
+    }
+
+    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        this.V = prepaidGiveaway;
+        boolean z4 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
+        z8 z8Var = this.B;
+        if (z4) {
+            z8Var.g(26);
+            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
+            a aVar = this.U;
+            aVar.f = valueOf;
+            aVar.e = aVar.a.measureText(valueOf);
+            aVar.invalidateSelf();
+        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+            z8Var.g(16);
+            int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
+            if (i10 == 12) {
+                z8Var.i(-31392, -2796986);
+            } else if (i10 == 6) {
+                z8Var.i(-10703110, -12481584);
             } else {
-                beginRecording2.scale(f12, f14);
-                beginRecording2.drawRenderNode(this.a);
+                z8Var.i(-6631068, -11945404);
             }
-            this.b[i13].endRecording();
-            if (z10) {
-                this.b[i13].setScaleX(f15);
-                this.b[i13].setScaleY(f16);
-                this.b[i13].setPivotX(0.0f);
-                this.b[i13].setPivotY(0.0f);
-            } else {
-                this.c[i13].setPosition(0, 0, width, height);
-                RecordingCanvas beginRecording3 = this.c[i13].beginRecording(width, height);
-                beginRecording3.scale(f15, f16);
-                beginRecording3.drawRenderNode(this.b[i13]);
-                this.c[i13].endRecording();
-            }
-            i13++;
-            i12 = 0;
+            String valueOf2 = String.valueOf(p0.g() * prepaidGiveaway.quantity);
+            a aVar2 = this.U;
+            aVar2.f = valueOf2;
+            aVar2.e = aVar2.a.measureText(valueOf2);
+            aVar2.invalidateSelf();
         }
-    }
-
-    public final void b(float f9, float f10) {
-        int i10 = this.e;
-        float f11 = i10 >= 2 ? (this.g + f9) % i10 : 0.0f;
-        this.g = f11;
-        int i11 = this.f;
-        this.h = i11 >= 2 ? (this.h + f10) % i11 : 0.0f;
-        if (this.j.b) {
-            this.a.setTranslationX(f11);
-            this.a.setTranslationY(this.h);
-            for (RenderNode renderNode : this.c) {
-                renderNode.setTranslationX(-this.g);
-                renderNode.setTranslationY(-this.h);
-            }
-        }
-    }
-
-    public final void c(float f9) {
-        this.b[0].setRenderEffect(RenderEffect.createBlurEffect(e.a(f9, this.e), e.a(f9, this.f), Shader.TileMode.CLAMP));
-    }
-
-    public final void d(float f9, RenderEffect renderEffect) {
-        this.b[0].setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(e.a(f9, this.e), e.a(f9, this.f), Shader.TileMode.CLAMP), renderEffect));
-    }
-
-    public final void e(RenderEffect renderEffect) {
-        this.b[1].setRenderEffect(renderEffect);
+        this.b.i(this.U);
     }
 }

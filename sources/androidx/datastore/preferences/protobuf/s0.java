@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static final f1 a = new f1();
@@ -42,133 +42,133 @@ public abstract class s0 {
     }
 
     public static final String d(String str) {
-        StringBuilder sb2 = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (int i10 = 0; i10 < str.length(); i10++) {
             char charAt = str.charAt(i10);
             if (Character.isUpperCase(charAt)) {
-                sb2.append("_");
+                sb.append("_");
             }
-            sb2.append(Character.toLowerCase(charAt));
+            sb.append(Character.toLowerCase(charAt));
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     public static String g(g gVar) {
-        StringBuilder sb2 = new StringBuilder(gVar.size());
+        StringBuilder sb = new StringBuilder(gVar.size());
         for (int i10 = 0; i10 < gVar.size(); i10++) {
             byte b10 = gVar.b[i10];
             if (b10 == 34) {
-                sb2.append("\\\"");
+                sb.append("\\\"");
             } else if (b10 == 39) {
-                sb2.append("\\'");
+                sb.append("\\'");
             } else if (b10 != 92) {
                 switch (b10) {
                     case 7:
-                        sb2.append("\\a");
+                        sb.append("\\a");
                         break;
                     case 8:
-                        sb2.append("\\b");
+                        sb.append("\\b");
                         break;
                     case 9:
-                        sb2.append("\\t");
+                        sb.append("\\t");
                         break;
                     case 10:
-                        sb2.append("\\n");
+                        sb.append("\\n");
                         break;
                     case 11:
-                        sb2.append("\\v");
+                        sb.append("\\v");
                         break;
                     case 12:
-                        sb2.append("\\f");
+                        sb.append("\\f");
                         break;
                     case 13:
-                        sb2.append("\\r");
+                        sb.append("\\r");
                         break;
                     default:
                         if (b10 < 32 || b10 > 126) {
-                            sb2.append('\\');
-                            sb2.append((char) (((b10 >>> 6) & 3) + 48));
-                            sb2.append((char) (((b10 >>> 3) & 7) + 48));
-                            sb2.append((char) ((b10 & 7) + 48));
+                            sb.append('\\');
+                            sb.append((char) (((b10 >>> 6) & 3) + 48));
+                            sb.append((char) (((b10 >>> 3) & 7) + 48));
+                            sb.append((char) ((b10 & 7) + 48));
                             break;
                         } else {
-                            sb2.append((char) b10);
+                            sb.append((char) b10);
                             break;
                         }
                         break;
                 }
             } else {
-                sb2.append("\\\\");
+                sb.append("\\\\");
             }
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     public static boolean h(byte b10) {
         return b10 > -65;
     }
 
-    public static final void j(StringBuilder sb2, int i10, String str, Object obj) {
+    public static final void j(StringBuilder sb, int i10, String str, Object obj) {
         if (obj instanceof List) {
             Iterator it = ((List) obj).iterator();
             while (it.hasNext()) {
-                j(sb2, i10, str, it.next());
+                j(sb, i10, str, it.next());
             }
             return;
         }
         if (obj instanceof Map) {
             Iterator it2 = ((Map) obj).entrySet().iterator();
             while (it2.hasNext()) {
-                j(sb2, i10, str, (Map.Entry) it2.next());
+                j(sb, i10, str, (Map.Entry) it2.next());
             }
             return;
         }
-        sb2.append('\n');
+        sb.append('\n');
         int i11 = 0;
         for (int i12 = 0; i12 < i10; i12++) {
-            sb2.append(' ');
+            sb.append(' ');
         }
-        sb2.append(str);
+        sb.append(str);
         if (obj instanceof String) {
-            sb2.append(": \"");
+            sb.append(": \"");
             g gVar = g.c;
-            sb2.append(g(new g(((String) obj).getBytes(a0.a))));
-            sb2.append('\"');
+            sb.append(g(new g(((String) obj).getBytes(a0.a))));
+            sb.append('\"');
             return;
         }
         if (obj instanceof g) {
-            sb2.append(": \"");
-            sb2.append(g((g) obj));
-            sb2.append('\"');
+            sb.append(": \"");
+            sb.append(g((g) obj));
+            sb.append('\"');
             return;
         }
         if (obj instanceof x) {
-            sb2.append(" {");
-            k((x) obj, sb2, i10 + 2);
-            sb2.append("\n");
+            sb.append(" {");
+            k((x) obj, sb, i10 + 2);
+            sb.append("\n");
             while (i11 < i10) {
-                sb2.append(' ');
+                sb.append(' ');
                 i11++;
             }
-            sb2.append("}");
+            sb.append("}");
             return;
         }
         if (!(obj instanceof Map.Entry)) {
-            sb2.append(": ");
-            sb2.append(obj.toString());
+            sb.append(": ");
+            sb.append(obj.toString());
             return;
         }
-        sb2.append(" {");
+        sb.append(" {");
         Map.Entry entry = (Map.Entry) obj;
         int i13 = i10 + 2;
-        j(sb2, i13, "key", entry.getKey());
-        j(sb2, i13, "value", entry.getValue());
-        sb2.append("\n");
+        j(sb, i13, "key", entry.getKey());
+        j(sb, i13, "value", entry.getValue());
+        sb.append("\n");
         while (i11 < i10) {
-            sb2.append(' ');
+            sb.append(' ');
             i11++;
         }
-        sb2.append("}");
+        sb.append("}");
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:68:0x01ae, code lost:
@@ -190,7 +190,7 @@ public abstract class s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void k(x xVar, StringBuilder sb2, int i10) {
+    public static void k(x xVar, StringBuilder sb, int i10) {
         boolean equals;
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
@@ -208,19 +208,19 @@ public abstract class s0 {
         while (it.hasNext()) {
             String str = (String) it.next();
             String replaceFirst = str.replaceFirst("get", "");
-            boolean z10 = true;
+            boolean z4 = true;
             if (replaceFirst.endsWith("List") && !replaceFirst.endsWith("OrBuilderList") && !replaceFirst.equals("List")) {
                 String str2 = replaceFirst.substring(0, 1).toLowerCase() + replaceFirst.substring(1, replaceFirst.length() - 4);
                 Method method2 = (Method) hashMap.get(str);
                 if (method2 != null && method2.getReturnType().equals(List.class)) {
-                    j(sb2, i10, d(str2), x.f(method2, xVar, new Object[0]));
+                    j(sb, i10, d(str2), x.f(method2, xVar, new Object[0]));
                 }
             }
             if (replaceFirst.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !replaceFirst.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL)) {
                 String str3 = replaceFirst.substring(0, 1).toLowerCase() + replaceFirst.substring(1, replaceFirst.length() - 3);
                 Method method3 = (Method) hashMap.get(str);
                 if (method3 != null && method3.getReturnType().equals(Map.class) && !method3.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method3.getModifiers())) {
-                    j(sb2, i10, d(str3), x.f(method3, xVar, new Object[0]));
+                    j(sb, i10, d(str3), x.f(method3, xVar, new Object[0]));
                 }
             }
             if (((Method) hashMap2.get("set".concat(replaceFirst))) != null) {
@@ -232,25 +232,25 @@ public abstract class s0 {
                 Method method4 = (Method) hashMap.get("get".concat(replaceFirst));
                 Method method5 = (Method) hashMap.get("has".concat(replaceFirst));
                 if (method4 != null) {
-                    Object f9 = x.f(method4, xVar, new Object[0]);
+                    Object f10 = x.f(method4, xVar, new Object[0]);
                     if (method5 == null) {
-                        if (f9 instanceof Boolean) {
-                            equals = !((Boolean) f9).booleanValue();
-                        } else if (!(f9 instanceof Integer)) {
-                            if (!(f9 instanceof Float)) {
-                                if (!(f9 instanceof Double)) {
-                                    equals = f9 instanceof String ? f9.equals("") : f9 instanceof g ? f9.equals(g.c) : !(f9 instanceof a) ? false : false;
+                        if (f10 instanceof Boolean) {
+                            equals = !((Boolean) f10).booleanValue();
+                        } else if (!(f10 instanceof Integer)) {
+                            if (!(f10 instanceof Float)) {
+                                if (!(f10 instanceof Double)) {
+                                    equals = f10 instanceof String ? f10.equals("") : f10 instanceof g ? f10.equals(g.c) : !(f10 instanceof a) ? false : false;
                                 }
                             }
                         }
                         if (equals) {
-                            z10 = false;
+                            z4 = false;
                         }
                     } else {
-                        z10 = ((Boolean) x.f(method5, xVar, new Object[0])).booleanValue();
+                        z4 = ((Boolean) x.f(method5, xVar, new Object[0])).booleanValue();
                     }
-                    if (z10) {
-                        j(sb2, i10, d(str4), f9);
+                    if (z4) {
+                        j(sb, i10, d(str4), f10);
                     }
                 }
             }
@@ -258,7 +258,7 @@ public abstract class s0 {
         j1 j1Var = xVar.unknownFields;
         if (j1Var != null) {
             for (int i11 = 0; i11 < j1Var.a; i11++) {
-                j(sb2, i10, String.valueOf(j1Var.b[i11] >>> 3), j1Var.c[i11]);
+                j(sb, i10, String.valueOf(j1Var.b[i11] >>> 3), j1Var.c[i11]);
             }
         }
     }

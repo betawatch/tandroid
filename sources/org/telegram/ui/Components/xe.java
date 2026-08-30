@@ -1,22 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class xe implements k71, b5 {
-    public final /* synthetic */ ChatActivityEnterView a;
+import android.app.Dialog;
+import android.view.ViewTreeObserver;
 
-    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class xe implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Dialog b;
+    public final /* synthetic */ ChatActivityEnterView c;
+
+    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i10) {
+        this.a = i10;
+        this.c = chatActivityEnterView;
+        this.b = dialog;
     }
 
-    @Override // org.telegram.ui.Components.b5
-    public void I(int i10, int i11, boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
-        ff ffVar = chatActivityEnterView.H0;
-        if (ffVar != null) {
-            ffVar.h(!T0);
-            chatActivityEnterView.H0 = null;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                chatActivityEnterView.m0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView.m0.postDelayed(new fg(this.b, 18), 100L);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                chatActivityEnterView2.m0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView2.m0.postDelayed(new fg(this.b, 18), 100L);
+                break;
         }
+        return true;
     }
 }

@@ -1,18 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface ha0 {
-    void b(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
-
-    Paint.FontMetricsInt n();
-
-    void p(TLRPC.TL_document tL_document, String str, Object obj);
-
-    void r(int i10, int i11, CharSequence charSequence, boolean z10);
-
-    void s(String str);
+public final /* synthetic */ class ha0 implements o1.f {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z4, float f10, float f11) {
+        int i10 = pa0.R;
+    }
 }

@@ -1,35 +1,14 @@
 package eg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+public final class o0 extends p0 {
+    public final int g;
+    public final boolean h;
 
-    public /* synthetic */ o0(int i10, Utilities.Callback callback) {
-        this.a = i10;
-        this.b = callback;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new o0(2, this.b));
-                break;
-            case 1:
-                this.b.run(null);
-                break;
-            case 2:
-                this.b.run(null);
-                break;
-            default:
-                this.b.run(LaunchActivity.U());
-                break;
-        }
+    public o0(int i10, boolean z4) {
+        super(-1, -1, -1, null, null);
+        this.g = i10;
+        this.h = z4;
     }
 }

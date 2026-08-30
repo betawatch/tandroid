@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class f1 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -12,9 +12,9 @@ public final class f1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int d;
     public final /* synthetic */ g1 e;
 
-    public f1(g1 g1Var, boolean z10, int i10, int i11, int i12) {
+    public f1(g1 g1Var, boolean z4, int i10, int i11, int i12) {
         this.e = g1Var;
-        this.a = z10;
+        this.a = z4;
         this.b = i10;
         this.c = i11;
         this.d = i12;
@@ -22,12 +22,12 @@ public final class f1 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        float f9 = this.a ? 1.0f : 0.0f;
+        float f10 = this.a ? 1.0f : 0.0f;
         int i10 = this.b;
         int i11 = this.c;
-        int d = i0.a.d(f9, i10, i11);
+        int d = i0.a.d(f10, i10, i11);
         g1 g1Var = this.e;
         g1Var.setTextColor(d);
-        g1Var.setIconColor(i0.a.d(f9, this.d, i11));
+        g1Var.setIconColor(i0.a.d(f10, this.d, i11));
     }
 }

@@ -1,46 +1,46 @@
 package tb;
 
-import java.lang.reflect.Array;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r4v1 tb.b, still in use, count: 1, list:
+  (r4v1 tb.b) from 0x0031: FILLED_NEW_ARRAY (r1v1 tb.b), (r0v0 tb.b), (r5v1 tb.b), (r4v1 tb.b) A[WRAPPED] (LINE:50) elemType: tb.b
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b {
-    public final byte[][] a;
-    public final int b;
-    public final int c;
+    b(1),
+    c(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(2);
 
-    public b(int i10, int i11) {
-        this.a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, i11, i10);
-        this.b = i10;
-        this.c = i11;
+    public static final b[] d;
+    public final int a;
+
+    static {
+        b bVar = b;
+        b bVar2 = c;
+        d = new b[]{bVar2, bVar, r5, r4};
     }
 
-    public final byte a(int i10, int i11) {
-        return this.a[i11][i10];
+    public b(int i10) {
+        this.a = i10;
     }
 
-    public final void b(int i10, int i11, int i12) {
-        this.a[i11][i10] = (byte) i12;
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
     }
 
-    public final String toString() {
-        int i10 = this.b;
-        int i11 = this.c;
-        StringBuilder sb2 = new StringBuilder((i10 * 2 * i11) + 2);
-        for (int i12 = 0; i12 < i11; i12++) {
-            byte[] bArr = this.a[i12];
-            for (int i13 = 0; i13 < i10; i13++) {
-                byte b10 = bArr[i13];
-                if (b10 == 0) {
-                    sb2.append(" 0");
-                } else if (b10 != 1) {
-                    sb2.append("  ");
-                } else {
-                    sb2.append(" 1");
-                }
-            }
-            sb2.append('\n');
-        }
-        return sb2.toString();
+    public static b[] values() {
+        return (b[]) e.clone();
     }
 }

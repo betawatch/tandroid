@@ -1,55 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mr implements Drawable.Callback {
+public final /* synthetic */ class mr implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Drawable b;
+    public final /* synthetic */ or b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ mr(int i10, Drawable drawable) {
+    public /* synthetic */ mr(or orVar, String str, int i10) {
         this.a = i10;
-        this.b = drawable;
+        this.b = orVar;
+        this.c = str;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ih ihVar;
         switch (this.a) {
             case 0:
-                ((nr) this.b).invalidateSelf();
+                or orVar = this.b;
+                orVar.getClass();
+                AndroidUtilities.runOnUIThread(new mr(orVar, this.c, 1));
                 break;
             default:
-                org.telegram.ui.Cells.v0 v0Var = ((h01) this.b).h;
-                if (v0Var != null) {
-                    v0Var.invalidate();
-                    break;
+                or orVar2 = this.b;
+                orVar2.n = null;
+                pr prVar = orVar2.y;
+                TLRPC.Chat chat = prVar.r;
+                int i10 = prVar.b1;
+                ArrayList arrayList = (ChatObject.isChannel(chat) || prVar.s == null) ? null : new ArrayList(prVar.s.participants.participants);
+                ArrayList arrayList2 = i10 == 1 ? new ArrayList(prVar.getContactsController().contacts) : null;
+                String str = this.c;
+                if (arrayList == null && arrayList2 == null) {
+                    orVar2.s = false;
+                    ihVar = null;
+                } else {
+                    ihVar = new ih(orVar2, str, arrayList, arrayList2, 5);
                 }
+                orVar2.h.h(str, i10 != 0, false, true, false, false, ChatObject.isChannel(prVar.r) ? prVar.K : 0L, false, prVar.L, 1, 0L, ihVar);
                 break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                ((nr) this.b).scheduleSelf(runnable, j10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((nr) this.b).unscheduleSelf(runnable);
-                break;
-        }
-    }
-
-    private final void b(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void a(Drawable drawable, Runnable runnable, long j10) {
     }
 }

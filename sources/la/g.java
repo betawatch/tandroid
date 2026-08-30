@@ -1,25 +1,20 @@
 package la;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g extends uc.c {
-    public h a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ h c;
-    public int d;
+public final class g implements u9.d {
+    public static final g a = new g();
+    public static final u9.c b = u9.c.c("eventType");
+    public static final u9.c c = u9.c.c("sessionData");
+    public static final u9.c d = u9.c.c("applicationInfo");
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(h hVar, uc.c cVar) {
-        super(cVar);
-        this.c = hVar;
-    }
-
-    @Override // uc.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.b(this);
+    @Override // u9.a
+    public final void a(Object obj, Object obj2) {
+        b0 b0Var = (b0) obj;
+        u9.e eVar = (u9.e) obj2;
+        b0Var.getClass();
+        eVar.e(b, k.b);
+        eVar.e(c, b0Var.a);
+        eVar.e(d, b0Var.b);
     }
 }

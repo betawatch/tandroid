@@ -28,9 +28,9 @@ public final class d1 extends e5 {
         LongStream longStream = (LongStream) ((j$.time.t) this.d.t).apply(j10);
         if (longStream != null) {
             try {
-                boolean z10 = this.b;
+                boolean z4 = this.b;
                 j$.util.m0 m0Var = this.c;
-                if (!z10) {
+                if (!z4) {
                     longStream.sequential().forEach(m0Var);
                 } else {
                     j$.util.a1 spliterator = longStream.sequential().spliterator();

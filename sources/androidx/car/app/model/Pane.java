@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class Pane {
     private final List<Action> mActionList;
@@ -50,13 +50,13 @@ public final class Pane {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[ rows: ");
+        StringBuilder sb = new StringBuilder("[ rows: ");
         List<Row> list = this.mRows;
-        sb2.append(list != null ? list.toString() : null);
-        sb2.append(", action list: ");
-        sb2.append(this.mActionList);
-        sb2.append("]");
-        return sb2.toString();
+        sb.append(list != null ? list.toString() : null);
+        sb.append(", action list: ");
+        sb.append(this.mActionList);
+        sb.append("]");
+        return sb.toString();
     }
 
     private Pane() {

@@ -1,17 +1,61 @@
 package hf;
 
-import android.os.Build;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final a a;
+public final class b extends Binder implements IInterface {
+    public final Handler a;
+    public final /* synthetic */ cb.b b;
 
-    static {
-        if (Build.VERSION.SDK_INT >= 23) {
-            a = new ya.a(8);
-        } else {
-            a = new ab.b(9);
+    public b(cb.b bVar) {
+        this.b = bVar;
+        attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
+        this.a = new Handler(Looper.getMainLooper());
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        Handler handler = this.a;
+        if (i10 == 2) {
+            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+            handler.post(new a(this, parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
+            parcel2.writeNoException();
+            return true;
         }
+        if (i10 == 3) {
+            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+            handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 1));
+            parcel2.writeNoException();
+            return true;
+        }
+        if (i10 == 4) {
+            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+            handler.post(new a(this, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
+            parcel2.writeNoException();
+            return true;
+        }
+        if (i10 != 5) {
+            if (i10 != 1598968902) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            parcel2.writeString("android.support.customtabs.ICustomTabsCallback");
+            return true;
+        }
+        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+        handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 3));
+        parcel2.writeNoException();
+        return true;
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 }

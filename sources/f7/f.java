@@ -1,38 +1,22 @@
 package f7;
 
-import java.util.Iterator;
-import java.util.Set;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import j7.r5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class f extends a implements Set, j$.util.Set {
-    public transient d b;
+public final class f extends com.google.android.gms.common.api.internal.i {
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+    public f(Boolean bool, TaskCompletionSource taskCompletionSource) {
+        this.b = bool;
+        this.c = taskCompletionSource;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i10 += next != null ? next.hashCode() : 0;
-        }
-        return i10;
+    @Override // com.google.android.gms.common.api.internal.j
+    public final void z(Status status) {
+        r5.a(status, this.b, this.c);
     }
 }

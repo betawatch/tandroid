@@ -4,16 +4,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import bd.l;
-import i7.m7;
+import dd.l;
 import java.util.ArrayList;
 import java.util.List;
+import k7.s7;
 import kotlin.jvm.internal.f;
 import kotlin.jvm.internal.j;
-import rc.g;
-import rc.o;
+import tc.g;
+import tc.o;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -56,7 +56,7 @@ public final class zzgo extends SQLiteOpenHelper {
             return 0;
         }
         return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(g.h(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
-            @Override // bd.l
+            @Override // dd.l
             public final Object invoke(Object obj) {
                 zzgn zzgnVar = zzgo.zza;
                 return String.valueOf(((zzgp) obj).zza());
@@ -102,6 +102,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(m7.a(zzgpVar)) == 1;
+        return zza(s7.a(zzgpVar)) == 1;
     }
 }

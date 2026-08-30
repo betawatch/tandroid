@@ -1,102 +1,82 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.KeyEvent;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pb implements org.telegram.ui.Components.zk0 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ KeyEvent.Callback d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public abstract class pb extends org.telegram.ui.Components.qv0 {
+    public final /* synthetic */ sb t0;
 
-    public /* synthetic */ pb(wb wbVar, Context context, long j10, org.telegram.ui.ActionBar.c6 c6Var, t91 t91Var) {
-        this.d = wbVar;
-        this.c = context;
-        this.b = j10;
-        this.e = c6Var;
-        this.f = t91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pb(sb sbVar, Context context) {
+        super(context, null);
+        this.t0 = sbVar;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public final void c(int i10, View view) {
-        switch (this.a) {
-            case 0:
-                wb wbVar = (wb) this.d;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.e;
-                t91 t91Var = (t91) this.f;
-                boolean z10 = view instanceof jg.b;
-                long j10 = this.b;
-                if (z10) {
-                    jg.b bVar = (jg.b) view;
-                    TL_stories.Boost boost = bVar.getBoost();
-                    boolean z11 = boost.giveaway;
-                    if (!z11 || boost.stars <= 0) {
-                        boolean z12 = boost.gift;
-                        if (((z12 || z11) && boost.user_id >= 0) || boost.unclaimed) {
-                            TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
-                            tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
-                            tL_payments_checkedGiftCode.to_id = boost.user_id;
-                            tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-wbVar.F.id);
-                            int i11 = boost.date;
-                            tL_payments_checkedGiftCode.date = i11;
-                            tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
-                            int i12 = boost.expires - i11;
-                            tL_payments_checkedGiftCode.days = i12 / 86400;
-                            tL_payments_checkedGiftCode.months = (i12 / 30) / 86400;
-                            if (boost.unclaimed) {
-                                tL_payments_checkedGiftCode.to_id = -1L;
-                                tL_payments_checkedGiftCode.flags = -1;
-                            } else {
-                                tL_payments_checkedGiftCode.boost = boost;
-                            }
-                            new eg.f1(t91Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
-                        } else if (z11 && boost.user_id == -1) {
-                            org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(t91Var.getParentActivity(), t91Var.getResourceProvider());
-                            ubVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                            ubVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
-                            ubVar.b.setSingleLine(false);
-                            ubVar.b.setMaxLines(2);
-                            org.telegram.ui.Components.mc.g(t91Var, ubVar, 2750).j();
-                        } else if (!z12 && !z11) {
-                            t91Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
-                        }
-                    } else {
-                        jh.ia.e1(this.c, wbVar.b, j10, boost, c6Var);
-                    }
-                }
-                if (view instanceof org.telegram.ui.Cells.m8) {
-                    eg.y.m(t91Var, c6Var, j10, null);
-                }
-                if (view instanceof jg.c) {
-                    eg.y.m(t91Var, c6Var, j10, ((jg.c) view).getPrepaidGiveaway());
-                }
-                if (((vb) wbVar.x.get(i10)).a == 9) {
-                    wbVar.c(Boolean.valueOf(wbVar.y == 1));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Components.x60.L((org.telegram.ui.Components.x60) this.d, this.b, (org.telegram.ui.ActionBar.o2) this.e, (a0.h) this.f, this.c, i10);
-                break;
+    public final void Z(Canvas canvas, RectF rectF) {
+        boolean z4;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        sb sbVar = this.t0;
+        if (sbVar.B.Z0()) {
+            canvas.save();
+            canvas.clipRect(rectF);
+            drawChild(canvas, sbVar.B, uptimeMillis);
+            canvas.restore();
+            return;
         }
+        canvas.save();
+        canvas.clipRect(rectF);
+        canvas.translate(0.0f, sbVar.B.getY());
+        sbVar.B.getClass();
+        for (int i10 = 0; i10 < sbVar.B.getChildCount(); i10++) {
+            View childAt = sbVar.B.getChildAt(i10);
+            RectF rectF2 = sbVar.T0;
+            if (rectF == null || sbVar.B == null || childAt == null) {
+                z4 = false;
+            } else {
+                rectF2.set(childAt.getX(), sbVar.B.getY() + childAt.getY(), childAt.getX() + childAt.getWidth(), sbVar.B.getY() + childAt.getY() + childAt.getHeight());
+                z4 = !rectF2.intersect(rectF);
+            }
+            if (!z4) {
+                if (childAt instanceof org.telegram.ui.Cells.t1) {
+                    canvas.save();
+                    canvas.translate(childAt.getX(), childAt.getY());
+                    org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) childAt;
+                    if (t1Var.C1()) {
+                        canvas.save();
+                        canvas.translate(0.0f, t1Var.S);
+                        t1Var.D1(canvas, true, false);
+                        canvas.restore();
+                    }
+                    canvas.restore();
+                    sbVar.B.drawChild(canvas, childAt, uptimeMillis);
+                    if (t1Var.U2()) {
+                        canvas.save();
+                        canvas.translate(t1Var.getX(), t1Var.getY());
+                        t1Var.X1(canvas);
+                        canvas.restore();
+                    }
+                } else if (childAt instanceof org.telegram.ui.Cells.v0) {
+                    sbVar.B.drawChild(canvas, childAt, uptimeMillis);
+                    canvas.save();
+                    canvas.translate(childAt.getX(), childAt.getY());
+                    ((org.telegram.ui.Cells.v0) childAt).A(canvas);
+                    canvas.restore();
+                } else {
+                    sbVar.B.drawChild(canvas, childAt, uptimeMillis);
+                }
+            }
+        }
+        sbVar.B.getClass();
+        canvas.restore();
     }
 
-    public /* synthetic */ pb(org.telegram.ui.Components.x60 x60Var, long j10, org.telegram.ui.ActionBar.o2 o2Var, a0.h hVar, Context context) {
-        this.d = x60Var;
-        this.b = j10;
-        this.e = o2Var;
-        this.f = hVar;
-        this.c = context;
+    @Override // org.telegram.ui.Components.qv0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 }

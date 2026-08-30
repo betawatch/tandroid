@@ -1,13 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ux0 {
-    public int a;
-    public Paint b;
-    public boolean c;
-    public boolean d;
-    public long e;
+public interface ux0 {
+    boolean b();
+
+    boolean c();
+
+    void d(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z4, boolean z10, int i10, int i11);
 }

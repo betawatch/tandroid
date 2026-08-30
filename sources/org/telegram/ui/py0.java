@@ -1,43 +1,33 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class py0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ProfileActivity a;
+public final /* synthetic */ class py0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sy0 b;
 
-    public py0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ py0(sy0 sy0Var, int i10) {
+        this.a = i10;
+        this.b = sy0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.l lVar;
-        ProfileActivity profileActivity = this.a;
-        lVar = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
-        lVar.B(profileActivity.l2 ? 1090519039 : profileActivity.M5 != null ? 553648127 : org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.f8, profileActivity.v0), false);
-        ly0 ly0Var = profileActivity.a0;
-        ImageReceiver imageReceiver = ly0Var.Q;
-        org.telegram.ui.Components.c6 animation = imageReceiver.getAnimation();
-        if (animation != null) {
-            animation.w(ly0Var);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                sy0 sy0Var = this.b;
+                sy0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new py0(sy0Var, 1));
+                break;
+            default:
+                this.b.c.getMessagesController().loadAppConfig();
+                break;
         }
-        imageReceiver.clearImage();
-        ImageReceiver.BitmapHolder bitmapHolder = ly0Var.S;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            ly0Var.S = null;
-        }
-        ly0Var.R = 0.0f;
-        ly0Var.invalidate();
-        profileActivity.D0 = false;
-        profileActivity.l5(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
     }
 }

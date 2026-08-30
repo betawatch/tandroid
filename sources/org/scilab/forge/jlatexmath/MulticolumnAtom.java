@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class MulticolumnAtom extends Atom {
     protected int afterVlines;
@@ -22,7 +22,7 @@ public class MulticolumnAtom extends Atom {
         int length = str.length();
         int i10 = 0;
         int i11 = 2;
-        boolean z10 = true;
+        boolean z4 = true;
         while (i10 < length) {
             char charAt = str.charAt(i10);
             if (charAt == 'c') {
@@ -31,7 +31,7 @@ public class MulticolumnAtom extends Atom {
                 i11 = 0;
             } else if (charAt != 'r') {
                 if (charAt == '|') {
-                    if (z10) {
+                    if (z4) {
                         this.beforeVlines = 1;
                     } else {
                         this.afterVlines = 1;
@@ -45,7 +45,7 @@ public class MulticolumnAtom extends Atom {
                         if (str.charAt(i12) != '|') {
                             break;
                         }
-                        if (z10) {
+                        if (z4) {
                             this.beforeVlines++;
                         } else {
                             this.afterVlines++;
@@ -57,7 +57,7 @@ public class MulticolumnAtom extends Atom {
             } else {
                 i11 = 1;
             }
-            z10 = false;
+            z4 = false;
             i10++;
         }
         return i11;
@@ -91,7 +91,7 @@ public class MulticolumnAtom extends Atom {
         this.col = i11;
     }
 
-    public void setWidth(float f9) {
-        this.w = f9;
+    public void setWidth(float f10) {
+        this.w = f10;
     }
 }

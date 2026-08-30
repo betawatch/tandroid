@@ -1,34 +1,61 @@
 package we;
 
-import java.io.FilterInputStream;
+import android.graphics.Bitmap;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.RandomAccessFile;
+import ye.l;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class a extends ue.a {
-    public static String b(int i10, int i11, byte[] bArr) {
-        try {
-            String str = new String(bArr, i10, i11, "ISO-8859-1");
-            int indexOf = str.indexOf(0);
-            return indexOf < 0 ? str : str.substring(0, indexOf);
-        } catch (Exception unused) {
-            return "";
-        }
-    }
+public abstract class a {
+    public String a;
+    public long b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public short g;
+    public String h;
+    public String i;
+    public short j;
+    public short k;
+    public String l;
+    public String m;
+    public String n;
+    public Bitmap o;
+    public Bitmap p;
+    public File q;
 
-    public static boolean c(FilterInputStream filterInputStream) {
-        boolean z10;
-        filterInputStream.mark(3);
+    public static a a(File file) {
+        byte b10;
         try {
-            if (filterInputStream.read() == 84 && filterInputStream.read() == 65) {
-                if (filterInputStream.read() == 71) {
-                    z10 = true;
-                    return z10;
-                }
+            byte[] bArr = new byte[12];
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            randomAccessFile.readFully(bArr, 0, 8);
+            randomAccessFile.close();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
+                return new xe.a(bufferedInputStream);
             }
-            z10 = false;
-            return z10;
-        } finally {
-            filterInputStream.reset();
+            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
+                b bVar = new b(file);
+                if (bVar.s) {
+                    return null;
+                }
+                return bVar;
+            }
+            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
+                b bVar2 = new b(file);
+                if (bVar2.s) {
+                    return null;
+                }
+                return bVar2;
+            }
+            return new l(bufferedInputStream, file.length());
+        } catch (Exception unused) {
+            return null;
         }
     }
 }

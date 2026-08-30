@@ -1,13 +1,62 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class e4 {
-    public static final e4 c = new e4();
-    public volatile Thread a;
-    public volatile e4 b;
+import j7.s6;
 
-    public e4() {
-        f4.f.b(this, Thread.currentThread());
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class e4 extends s6 {
+    @Override // j7.s6
+    public final void a(f4 f4Var, f4 f4Var2) {
+        f4Var.b = f4Var2;
+    }
+
+    @Override // j7.s6
+    public final void b(f4 f4Var, Thread thread) {
+        f4Var.a = thread;
+    }
+
+    @Override // j7.s6
+    public final boolean c(g4 g4Var, v2 v2Var, v2 v2Var2) {
+        synchronized (g4Var) {
+            try {
+                if (g4Var.b != v2Var) {
+                    return false;
+                }
+                g4Var.b = v2Var2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // j7.s6
+    public final boolean d(g4 g4Var, Object obj, Object obj2) {
+        synchronized (g4Var) {
+            try {
+                if (g4Var.a != obj) {
+                    return false;
+                }
+                g4Var.a = obj2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // j7.s6
+    public final boolean e(g4 g4Var, f4 f4Var, f4 f4Var2) {
+        synchronized (g4Var) {
+            try {
+                if (g4Var.c != f4Var) {
+                    return false;
+                }
+                g4Var.c = f4Var2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 }

@@ -1,20 +1,20 @@
 package x1;
 
 import android.util.Log;
-import f7.p;
+import h2.f;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b extends FutureTask {
     public final /* synthetic */ a a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(a aVar, p pVar) {
-        super(pVar);
+    public b(a aVar, f fVar) {
+        super(fVar);
         this.a = aVar;
     }
 
@@ -28,15 +28,15 @@ public final class b extends FutureTask {
                 return;
             }
             aVar.b(obj);
-        } catch (InterruptedException e10) {
-            Log.w("AsyncTask", e10);
+        } catch (InterruptedException e) {
+            Log.w("AsyncTask", e);
         } catch (CancellationException unused) {
             if (atomicBoolean.get()) {
                 return;
             }
             aVar.b(null);
-        } catch (ExecutionException e11) {
-            throw new RuntimeException("An error occurred while executing doInBackground()", e11.getCause());
+        } catch (ExecutionException e6) {
+            throw new RuntimeException("An error occurred while executing doInBackground()", e6.getCause());
         } catch (Throwable th2) {
             throw new RuntimeException("An error occurred while executing doInBackground()", th2);
         }

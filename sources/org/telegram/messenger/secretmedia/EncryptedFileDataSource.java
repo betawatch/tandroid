@@ -1,18 +1,18 @@
 package org.telegram.messenger.secretmedia;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.upstream.g;
-import com.google.android.exoplayer2.upstream.n;
-import com.google.android.exoplayer2.upstream.q;
-import com.google.android.exoplayer2.upstream.y0;
+import g5.g;
+import g5.n;
+import g5.p;
+import g5.v0;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 import org.telegram.messenger.FileLoader;
-import u3.c;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends g {
     private int bytesRemaining;
@@ -20,7 +20,7 @@ public final class EncryptedFileDataSource extends g {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);
@@ -31,12 +31,12 @@ public final class EncryptedFileDataSource extends g {
         super(false);
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
+    @Override // g5.m
     public void close() {
         try {
             this.fileInputStream.close();
-        } catch (IOException e10) {
-            e10.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         if (this.opened) {
             this.opened = false;
@@ -46,28 +46,28 @@ public final class EncryptedFileDataSource extends g {
         this.uri = null;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.g, com.google.android.exoplayer2.upstream.m
+    @Override // g5.g, g5.m
     public Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
+    @Override // g5.m
     public Uri getUri() {
         return this.uri;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
-    public long open(q qVar) {
-        Uri uri = qVar.a;
-        long j10 = qVar.f;
-        long j11 = qVar.e;
+    @Override // g5.m
+    public long open(p pVar) {
+        Uri uri = pVar.a;
+        long j10 = pVar.f;
+        long j11 = pVar.e;
         this.uri = uri;
-        File file = new File(qVar.a.getPath());
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(FileLoader.getInternalCacheDir(), c.k(file.getName(), ".key")));
+        File file = new File(pVar.a.getPath());
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(FileLoader.getInternalCacheDir(), v2.k(file.getName(), ".key")));
         this.fileInputStream = encryptedFileInputStream;
         encryptedFileInputStream.skip(j11);
         int length = (int) file.length();
-        transferInitializing(qVar);
+        transferInitializing(pVar);
         long j12 = length;
         if (j11 > j12) {
             throw new n(2008);
@@ -78,11 +78,11 @@ public final class EncryptedFileDataSource extends g {
             this.bytesRemaining = (int) Math.min(i10, j10);
         }
         this.opened = true;
-        transferStarted(qVar);
+        transferStarted(pVar);
         return j10 != -1 ? j10 : this.bytesRemaining;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.j
+    @Override // g5.j
     public int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
@@ -94,8 +94,8 @@ public final class EncryptedFileDataSource extends g {
         int min = Math.min(i11, i12);
         try {
             this.fileInputStream.read(bArr, i10, min);
-        } catch (IOException e10) {
-            e10.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         this.bytesRemaining -= min;
         bytesTransferred(min);
@@ -103,10 +103,10 @@ public final class EncryptedFileDataSource extends g {
     }
 
     @Deprecated
-    public EncryptedFileDataSource(y0 y0Var) {
+    public EncryptedFileDataSource(v0 v0Var) {
         this();
-        if (y0Var != null) {
-            addTransferListener(y0Var);
+        if (v0Var != null) {
+            addTransferListener(v0Var);
         }
     }
 }

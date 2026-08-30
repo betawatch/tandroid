@@ -1,6 +1,5 @@
 package androidx.car.app.utils;
 
-import a4.w;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static IOnDoneCallback a() {
@@ -41,8 +40,8 @@ public abstract class j {
     public static void d(String str, e eVar) {
         try {
             e(str, eVar);
-        } catch (RemoteException e10) {
-            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e10);
+        } catch (RemoteException e) {
+            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e);
         }
     }
 
@@ -52,10 +51,10 @@ public abstract class j {
                 Log.d("CarApp", "Dispatching call " + str + " to host");
             }
             eVar.call();
-        } catch (SecurityException e10) {
-            throw e10;
-        } catch (RuntimeException e11) {
-            throw new a6.b(w.n("Remote ", str, " call failed"), e11);
+        } catch (SecurityException e) {
+            throw e;
+        } catch (RuntimeException e6) {
+            throw new a7.b(android.support.v4.media.a.o("Remote ", str, " call failed"), e6);
         }
     }
 

@@ -2,7 +2,7 @@ package m;
 
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b2 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,8 +31,8 @@ public final class b2 implements Runnable {
                 if (s1Var2 != null) {
                     WeakHashMap weakHashMap = r0.j0.a;
                     if (s1Var2.isAttachedToWindow() && e2Var.c.getCount() > e2Var.c.getChildCount() && e2Var.c.getChildCount() <= e2Var.x) {
-                        e2Var.K.setInputMethodMode(2);
-                        e2Var.h();
+                        e2Var.L.setInputMethodMode(2);
+                        e2Var.g();
                         break;
                     }
                 }

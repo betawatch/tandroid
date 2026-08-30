@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.play_billing;
 
-import h7.c6;
 import j$.util.Objects;
+import j7.g6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class v extends r {
     public static final v e = new v(0, new Object[0]);
@@ -17,7 +17,7 @@ public final class v extends r {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        c6.a(i10, this.d);
+        g6.a(i10, this.d);
         Object obj = this.c[i10];
         Objects.requireNonNull(obj);
         return obj;

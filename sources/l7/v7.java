@@ -1,19 +1,21 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class v7 implements s9.d {
-    public static final v7 a = new v7();
+public final class v7 {
+    public final o9 a;
+    public final u7 b;
+    public final s7 c;
+    public final m8 d;
+    public final l8 e;
+    public final y0 f;
 
-    static {
-        com.google.android.recaptcha.internal.a.t(j7.l1.q(w.class, j7.l1.r(4, j7.l1.q(w.class, j7.l1.r(3, j7.l1.q(w.class, j7.l1.r(2, j7.l1.q(w.class, new s(1)))))))));
-    }
-
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public /* synthetic */ v7(a9.a aVar) {
+        this.a = (o9) aVar.a;
+        this.b = (u7) aVar.b;
+        this.c = (s7) aVar.c;
+        this.d = (m8) aVar.d;
+        this.e = (l8) aVar.e;
+        this.f = (y0) aVar.f;
     }
 }

@@ -2,19 +2,20 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 import android.webkit.WebView;
-import i7.b7;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import jd.d2;
-import jd.e0;
-import jd.s;
-import jd.t;
+import k7.o7;
 import kotlin.jvm.internal.j;
-import qc.c;
-import qc.g;
-import qc.i;
+import ld.d2;
+import ld.e0;
+import ld.s;
+import ld.t;
+import sc.c;
+import sc.g;
+import sc.i;
+import vc.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzly extends zzg {
     public s zza;
@@ -35,13 +36,13 @@ public final class zzly extends zzg {
 
     public zzly() {
         int i10 = zzby.zza;
-        this.zzi = b7.a(zzlm.zza);
-        this.zzj = b7.a(zzln.zza);
-        this.zzk = b7.a(zzlo.zza);
-        this.zzl = b7.a(zzlp.zza);
-        this.zzm = b7.a(zzlq.zza);
-        this.zzn = b7.a(zzlr.zza);
-        this.zzo = b7.a(zzls.zza);
+        this.zzi = o7.a(zzlm.zza);
+        this.zzj = o7.a(zzln.zza);
+        this.zzk = o7.a(zzlo.zza);
+        this.zzl = o7.a(zzlp.zza);
+        this.zzm = o7.a(zzlq.zza);
+        this.zzn = o7.a(zzlr.zza);
+        this.zzo = o7.a(zzls.zza);
     }
 
     private final Application zzC() {
@@ -69,14 +70,14 @@ public final class zzly extends zzg {
         return (zzig) ((g) zzlyVar.zzk).a();
     }
 
-    public static final /* synthetic */ Object zzu(zzly zzlyVar, sc.c cVar) {
+    public static final /* synthetic */ Object zzu(zzly zzlyVar, uc.c cVar) {
         return new zzhg(new zzlu(zzlyVar, null));
     }
 
     public final zzip zzB(zzxn zzxnVar, zzdo zzdoVar, WebView webView) {
         zzis zzisVar = new zzis(webView, zzD().zzb());
         zzku zzkuVar = new zzku();
-        zzkuVar.zzb(rc.g.n(zzxnVar.zzQ()));
+        zzkuVar.zzb(tc.g.n(zzxnVar.zzQ()));
         zzjb zzjbVar = new zzjb(zzisVar, zzdoVar, new zzct());
         zzkv zzkvVar = new zzkv(zzkuVar, new zzks());
         zzjbVar.zze(3, zzC());
@@ -90,30 +91,30 @@ public final class zzly extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, sc.c cVar) {
+    public final Object zza(String str, uc.c cVar) {
         zzxw zzf = zzxx.zzf();
         zzf.zze(str);
         return zzf.zzk();
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, sc.c cVar) {
+    public final Object zzb(String str, uc.c cVar) {
         return new zzhg(new zzlk(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzc(zzcg zzcgVar, sc.c cVar) {
+    public final Object zzc(zzcg zzcgVar, uc.c cVar) {
         j.a(zzcgVar.zza(), zzcd.zzb);
         return i.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, sc.c cVar) {
+    public final Object zzd(zzxn zzxnVar, uc.c cVar) {
         return new zzhg(new zzll(zzxnVar, this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zze(String str, long j10, Exception exc, sc.c cVar) {
+    public final Object zze(String str, long j10, Exception exc, uc.c cVar) {
         exc.getMessage();
         s sVar = (s) this.zzd.remove(str);
         if (sVar != null) {
@@ -123,7 +124,7 @@ public final class zzly extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzf(Exception exc, sc.c cVar) {
+    public final Object zzf(Exception exc, uc.c cVar) {
         return ((exc instanceof d2) && this.zzh.zza() == null) ? new zzcg(zzce.zzc, zzcd.zzH, null, null, 12, null) : zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzV, exc.getMessage(), null, 8, null));
     }
 
@@ -145,13 +146,13 @@ public final class zzly extends zzg {
         return this.zzh;
     }
 
-    public final Object zzv(sc.c cVar) {
+    public final Object zzv(uc.c cVar) {
         return e0.w(zzD().zzb().c(), new zzma((zzmb) ((g) this.zzi).a(), zzC(), null), cVar);
     }
 
-    public final Object zzw(sc.c cVar) {
+    public final Object zzw(uc.c cVar) {
         Object w10 = e0.w(zzD().zzb().c(), new zzlf(this, null), cVar);
-        return w10 == tc.a.a ? w10 : i.a;
+        return w10 == a.a ? w10 : i.a;
     }
 
     public final s zzz() {

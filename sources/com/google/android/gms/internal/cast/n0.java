@@ -1,31 +1,60 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class n0 extends h0 {
-    public final /* synthetic */ o0 c;
+public final class n0 extends j0 {
+    public final transient i0 d;
+    public final transient Object[] e;
+    public final transient int f;
 
-    public n0(o0 o0Var) {
-        this.c = o0Var;
+    public n0(i0 i0Var, Object[] objArr, int i10) {
+        this.d = i0Var;
+        this.e = objArr;
+        this.f = i10;
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        o0 o0Var = this.c;
-        h7.s5.a(i10, o0Var.f);
-        Object[] objArr = o0Var.e;
-        int i11 = i10 + i10;
-        Object obj = objArr[i11];
-        obj.getClass();
-        Object obj2 = objArr[i11 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.d.get(key))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int i(Object[] objArr) {
+        g0 g0Var = this.b;
+        if (g0Var == null) {
+            g0Var = s();
+            this.b = g0Var;
+        }
+        return g0Var.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        g0 g0Var = this.b;
+        if (g0Var == null) {
+            g0Var = s();
+            this.b = g0Var;
+        }
+        return g0Var.listIterator(0);
+    }
+
+    public final g0 s() {
+        return new m0(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.c.f;
+        return this.f;
     }
 }

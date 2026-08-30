@@ -1,40 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class md0 extends sr {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class md0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ze0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ md0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public /* synthetic */ md0(ze0 ze0Var, int i10) {
+        this.a = i10;
+        this.b = ze0Var;
     }
 
-    @Override // org.telegram.ui.sr
-    public final void a() {
-        switch (this.h) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((pd0) this.n).h(null);
+                this.b.I.n();
                 break;
             case 1:
-                ((ie0) this.n).h(null);
+                ze0 ze0Var = this.b;
+                ze0Var.J = null;
+                ze0Var.K = null;
+                ze0Var.p(true);
+                ze0Var.e.h(null, null, ze0Var.f, null);
+                kd kdVar = ze0Var.n;
+                org.telegram.ui.Components.gj0 gj0Var = ze0Var.F;
+                kdVar.setAnimation(gj0Var);
+                gj0Var.K(0);
+                ze0Var.H = true;
                 break;
             case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
-                if (passcodeActivity.A != 0) {
-                    passcodeActivity.g0();
-                    break;
-                } else {
-                    postDelayed(new vk0(this, 0), 260L);
+                this.b.H = true;
+                break;
+            default:
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
                     break;
                 }
-            default:
-                ((cg1) this.n).C0();
                 break;
         }
     }

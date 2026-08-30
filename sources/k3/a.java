@@ -1,33 +1,33 @@
 package k3;
 
-import i7.o6;
-import j3.r2;
+import j3.o2;
 import java.util.Arrays;
-import l4.c0;
+import k7.a7;
+import o4.v;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a {
     public final long a;
-    public final r2 b;
+    public final o2 b;
     public final int c;
-    public final c0 d;
+    public final v d;
     public final long e;
-    public final r2 f;
+    public final o2 f;
     public final int g;
-    public final c0 h;
+    public final v h;
     public final long i;
     public final long j;
 
-    public a(long j10, r2 r2Var, int i10, c0 c0Var, long j11, r2 r2Var2, int i11, c0 c0Var2, long j12, long j13) {
+    public a(long j10, o2 o2Var, int i10, v vVar, long j11, o2 o2Var2, int i11, v vVar2, long j12, long j13) {
         this.a = j10;
-        this.b = r2Var;
+        this.b = o2Var;
         this.c = i10;
-        this.d = c0Var;
+        this.d = vVar;
         this.e = j11;
-        this.f = r2Var2;
+        this.f = o2Var2;
         this.g = i11;
-        this.h = c0Var2;
+        this.h = vVar2;
         this.i = j12;
         this.j = j13;
     }
@@ -38,7 +38,7 @@ public final class a {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && o6.a(this.b, aVar.b) && o6.a(this.d, aVar.d) && o6.a(this.f, aVar.f) && o6.a(this.h, aVar.h)) {
+            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && a7.a(this.b, aVar.b) && a7.a(this.d, aVar.d) && a7.a(this.f, aVar.f) && a7.a(this.h, aVar.h)) {
                 return true;
             }
         }

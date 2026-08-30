@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class g implements Collection, Set {
     public int[] a = b0.a.a;
@@ -54,16 +54,16 @@ public final class g implements Collection, Set {
                 throw new ConcurrentModificationException();
             }
             if (iArr2.length != 0) {
-                rc.f.b(0, 0, iArr.length, iArr, iArr2);
-                rc.f.d(0, objArr.length, 6, objArr, this.b);
+                tc.f.b(0, 0, iArr.length, iArr, iArr2);
+                tc.f.d(0, objArr.length, 6, objArr, this.b);
             }
         }
         if (i12 < i11) {
             int[] iArr3 = this.a;
             int i14 = i12 + 1;
-            rc.f.b(i14, i12, i11, iArr3, iArr3);
+            tc.f.b(i14, i12, i11, iArr3, iArr3);
             Object[] objArr2 = this.b;
-            rc.f.c(i14, i12, i11, objArr2, objArr2);
+            tc.f.c(i14, i12, i11, objArr2, objArr2);
         }
         int i15 = this.c;
         if (i11 == i15) {
@@ -84,15 +84,15 @@ public final class g implements Collection, Set {
         int size = elements.size() + this.c;
         int i10 = this.c;
         int[] iArr = this.a;
-        boolean z10 = false;
+        boolean z4 = false;
         if (iArr.length < size) {
             Object[] objArr = this.b;
             int[] iArr2 = new int[size];
             this.a = iArr2;
             this.b = new Object[size];
             if (i10 > 0) {
-                rc.f.b(0, 0, i10, iArr, iArr2);
-                rc.f.d(0, this.c, 6, objArr, this.b);
+                tc.f.b(0, 0, i10, iArr, iArr2);
+                tc.f.d(0, this.c, 6, objArr, this.b);
             }
         }
         if (this.c != i10) {
@@ -100,9 +100,9 @@ public final class g implements Collection, Set {
         }
         Iterator it = elements.iterator();
         while (it.hasNext()) {
-            z10 |= add(it.next());
+            z4 |= add(it.next());
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -179,9 +179,9 @@ public final class g implements Collection, Set {
         if (iArr.length <= 8 || i11 >= iArr.length / 3) {
             if (i10 < i12) {
                 int i13 = i10 + 1;
-                rc.f.b(i10, i13, i11, iArr, iArr);
+                tc.f.b(i10, i13, i11, iArr, iArr);
                 Object[] objArr2 = this.b;
-                rc.f.c(i10, i13, i11, objArr2, objArr2);
+                tc.f.c(i10, i13, i11, objArr2, objArr2);
             }
             this.b[i12] = null;
         } else {
@@ -190,13 +190,13 @@ public final class g implements Collection, Set {
             this.a = iArr2;
             this.b = new Object[i14];
             if (i10 > 0) {
-                rc.f.b(0, 0, i10, iArr, iArr2);
-                rc.f.d(0, i10, 6, objArr, this.b);
+                tc.f.b(0, 0, i10, iArr, iArr2);
+                tc.f.d(0, i10, 6, objArr, this.b);
             }
             if (i10 < i12) {
                 int i15 = i10 + 1;
-                rc.f.b(i10, i15, i11, iArr, this.a);
-                rc.f.c(i10, i15, i11, objArr, this.b);
+                tc.f.b(i10, i15, i11, iArr, this.a);
+                tc.f.c(i10, i15, i11, objArr, this.b);
             }
         }
         if (i11 != this.c) {
@@ -229,28 +229,28 @@ public final class g implements Collection, Set {
     public final boolean removeAll(Collection elements) {
         kotlin.jvm.internal.j.e(elements, "elements");
         Iterator it = elements.iterator();
-        boolean z10 = false;
+        boolean z4 = false;
         while (it.hasNext()) {
-            z10 |= remove(it.next());
+            z4 |= remove(it.next());
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection, java.util.Set
     public final boolean retainAll(Collection elements) {
-        boolean z10;
+        boolean z4;
         kotlin.jvm.internal.j.e(elements, "elements");
         int i10 = this.c - 1;
-        boolean z11 = false;
+        boolean z10 = false;
         while (true) {
             int i11 = -1;
             if (-1 >= i10) {
-                return z11;
+                return z10;
             }
             Object obj = this.b[i10];
             Collection collection = elements;
             if (collection instanceof Collection) {
-                z10 = collection.contains(obj);
+                z4 = collection.contains(obj);
             } else {
                 if (!(collection instanceof List)) {
                     Iterator it = collection.iterator();
@@ -272,11 +272,11 @@ public final class g implements Collection, Set {
                 } else {
                     i11 = ((List) collection).indexOf(obj);
                 }
-                z10 = i11 >= 0;
+                z4 = i11 >= 0;
             }
-            if (!z10) {
+            if (!z4) {
                 i(i10);
-                z11 = true;
+                z10 = true;
             }
             i10--;
         }
@@ -305,24 +305,24 @@ public final class g implements Collection, Set {
         if (isEmpty()) {
             return "{}";
         }
-        StringBuilder sb2 = new StringBuilder(this.c * 14);
-        sb2.append('{');
+        StringBuilder sb = new StringBuilder(this.c * 14);
+        sb.append('{');
         int i10 = this.c;
         for (int i11 = 0; i11 < i10; i11++) {
             if (i11 > 0) {
-                sb2.append(", ");
+                sb.append(", ");
             }
             Object obj = this.b[i11];
             if (obj != this) {
-                sb2.append(obj);
+                sb.append(obj);
             } else {
-                sb2.append("(this Set)");
+                sb.append("(this Set)");
             }
         }
-        sb2.append('}');
-        String sb3 = sb2.toString();
-        kotlin.jvm.internal.j.d(sb3, "StringBuilder(capacity).…builderAction).toString()");
-        return sb3;
+        sb.append('}');
+        String sb2 = sb.toString();
+        kotlin.jvm.internal.j.d(sb2, "StringBuilder(capacity).…builderAction).toString()");
+        return sb2;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -334,7 +334,7 @@ public final class g implements Collection, Set {
         } else if (array.length > i10) {
             array[i10] = null;
         }
-        rc.f.c(0, 0, this.c, this.b, array);
+        tc.f.c(0, 0, this.c, this.b, array);
         return array;
     }
 }

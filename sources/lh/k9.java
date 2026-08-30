@@ -1,96 +1,34 @@
 package lh;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.xi0;
+import android.app.Activity;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class k9 extends j9 {
-    public final o8 a;
-    public final TL_stories.TL_mediaAreaSuggestedReaction b;
-    public final kg.h0 c;
-    public final /* synthetic */ n9 d;
+public final class k9 extends w51 {
+    public final /* synthetic */ ja K;
 
-    public k9(n9 n9Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction) {
-        this.d = n9Var;
-        o8 o8Var = new o8(null);
-        this.a = o8Var;
-        kg.h0 h0Var = new kg.h0(null);
-        this.c = h0Var;
-        this.b = tL_mediaAreaSuggestedReaction;
-        if (tL_mediaAreaSuggestedReaction.flipped) {
-            o8Var.b(true, false);
-        }
-        if (tL_mediaAreaSuggestedReaction.dark) {
-            o8Var.a();
-        }
-        h0Var.i = true;
-        h0Var.e(kg.q0.d(tL_mediaAreaSuggestedReaction.reaction));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k9(ja jaVar, sl0 sl0Var, Activity activity, int i10, int i11, dg.r1 r1Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(sl0Var, activity, i10, i11, true, r1Var, f6Var);
+        this.K = jaVar;
     }
 
-    @Override // lh.j9
-    public final void a(Canvas canvas, float f9) {
-        kg.h0 h0Var = this.c;
-        org.telegram.ui.Components.p5 p5Var = h0Var.b;
-        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : h0Var.a;
-        if (imageReceiver != null && imageReceiver.hasImageSet() && imageReceiver.hasImageLoaded()) {
-            xi0 lottieAnimation = imageReceiver.getLottieAnimation();
-            if (lottieAnimation == null || !lottieAnimation.w()) {
-                n9 n9Var = this.d;
-                double d = n9Var.b;
-                double d10 = n9Var.d;
-                TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction = this.b;
-                TL_stories.MediaAreaCoordinates mediaAreaCoordinates = tL_mediaAreaSuggestedReaction.coordinates;
-                float f10 = (float) (((mediaAreaCoordinates.x * d10) / 100.0d) + d);
-                double d11 = n9Var.c;
-                double d12 = n9Var.e;
-                float f11 = (float) (((mediaAreaCoordinates.y * d12) / 100.0d) + d11);
-                float f12 = ((float) ((d10 * mediaAreaCoordinates.w) / 100.0d)) / 2.0f;
-                float f13 = ((float) ((d12 * mediaAreaCoordinates.h) / 100.0d)) / 2.0f;
-                o8 o8Var = this.a;
-                o8Var.setBounds((int) (f10 - f12), (int) (f11 - f13), (int) (f12 + f10), (int) (f13 + f11));
-                o8Var.e = (int) (255.0f * f9);
-                canvas.save();
-                double d13 = tL_mediaAreaSuggestedReaction.coordinates.rotation;
-                if (d13 != 0.0d) {
-                    canvas.rotate((float) d13, f10, f11);
-                }
-                Rect rect = AndroidUtilities.rectTmp2;
-                float height = (o8Var.getBounds().height() * 0.61f) / 2.0f;
-                rect.set((int) (o8Var.getBounds().centerX() - height), (int) (o8Var.getBounds().centerY() - height), (int) (o8Var.getBounds().centerX() + height), (int) (o8Var.getBounds().centerY() + height));
-                o8Var.c(1.0f);
-                o8Var.draw(canvas);
-                h0Var.c(rect);
-                h0Var.h = f9;
-                h0Var.d(o8Var.a == 1 ? -1 : -16777216);
-                h0Var.a(canvas);
-                canvas.restore();
-            }
+    @Override // org.telegram.ui.Components.w51, f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.f6 f6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
         }
-    }
-
-    @Override // lh.j9
-    public final void b(boolean z10) {
-        this.c.b(z10);
-    }
-
-    @Override // lh.j9
-    public final void c(View view) {
-        kg.h0 h0Var = this.c;
-        if (h0Var.f == view) {
-            return;
-        }
-        if (!h0Var.g) {
-            h0Var.f = view;
-            return;
-        }
-        h0Var.b(false);
-        h0Var.f = view;
-        h0Var.b(true);
+        ja jaVar = this.K;
+        Activity parentActivity = jaVar.getParentActivity();
+        int i11 = org.telegram.ui.ActionBar.j6.L6;
+        f6Var = ((org.telegram.ui.ActionBar.p2) jaVar).resourceProvider;
+        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, f6Var);
+        m4Var.setHeight(25);
+        return new el0(m4Var);
     }
 }

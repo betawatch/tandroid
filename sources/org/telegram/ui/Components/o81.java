@@ -1,307 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class o81 extends FrameLayout {
-    public static final /* synthetic */ int E = 0;
-    public int A;
-    public int B;
-    public final o61 C;
-    public final /* synthetic */ s81 D;
-    public final ImageReceiver a;
-    public boolean b;
-    public final TextPaint c;
-    public StaticLayout d;
-    public StaticLayout e;
-    public final Paint f;
-    public final Paint h;
-    public final Paint n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
-    public boolean x;
-    public AnimatorSet y;
+public final class o81 implements SensorEventListener {
+    public final float[] a = new float[3];
+    public final float[] b = new float[3];
+    public int c;
+    public final WindowManager d;
+    public final SensorManager e;
+    public final Sensor f;
+    public boolean h;
+    public n81 n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o81(s81 s81Var, Context context) {
-        super(context);
-        this.D = s81Var;
-        this.x = true;
-        this.C = new o61(this, 4);
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-15095832);
-        Paint paint2 = new Paint();
-        this.h = paint2;
-        paint2.setColor(-6975081);
-        Paint paint3 = new Paint(1);
-        this.n = paint3;
-        paint3.setColor(-1);
-        this.a = new ImageReceiver(this);
+    public o81(Context context) {
+        this.d = (WindowManager) context.getSystemService("window");
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.e = sensorManager;
+        this.f = sensorManager.getDefaultSensor(1);
     }
 
-    public final void a() {
-        o61 o61Var = this.C;
-        AndroidUtilities.cancelRunOnUIThread(o61Var);
-        if (this.x && this.D.a.z()) {
-            AndroidUtilities.runOnUIThread(o61Var, 3000L);
-        }
+    public static float a(int i10, int i11) {
+        float f10 = i10;
+        float dp = AndroidUtilities.dp(16.0f) * 2;
+        float f11 = (f10 + dp) / f10;
+        float f12 = i11;
+        return Math.max(f11, (dp + f12) / f12);
     }
 
-    public final void b(int i10) {
-        if (this.s == i10 || i10 < 0 || this.D.D) {
-            return;
-        }
-        this.s = i10;
-        StaticLayout staticLayout = new StaticLayout(AndroidUtilities.formatShortDuration(this.s), this.c, AndroidUtilities.dp(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.d = staticLayout;
-        if (staticLayout.getLineCount() > 0) {
-            this.r = (int) Math.ceil(this.d.getLineWidth(0));
-        }
-        invalidate();
+    public final void b(qb1 qb1Var) {
+        this.n = qb1Var;
     }
 
-    public final void c(int i10) {
-        if (this.b || i10 < 0 || this.D.D) {
-            return;
-        }
-        this.v = i10;
-        this.e = new StaticLayout(AndroidUtilities.formatShortDuration(this.v), this.c, AndroidUtilities.dp(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        invalidate();
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        if (this.x == z10) {
-            return;
-        }
-        this.x = z10;
-        AnimatorSet animatorSet = this.y;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        boolean z12 = this.x;
-        Property property = View.ALPHA;
-        if (z12) {
-            if (z11) {
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                this.y = animatorSet2;
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<o81, Float>) property, 1.0f));
-                this.y.setDuration(150L);
-                this.y.addListener(new n81(this, 0));
-                this.y.start();
-            } else {
-                setAlpha(1.0f);
-            }
-        } else if (z11) {
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            this.y = animatorSet3;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(this, (Property<o81, Float>) property, 0.0f));
-            this.y.setDuration(150L);
-            this.y.addListener(new n81(this, 1));
-            this.y.start();
-        } else {
-            setAlpha(0.0f);
-        }
-        a();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int dp;
-        int dp2;
-        Canvas canvas2;
-        int i10;
-        s81 s81Var = this.D;
-        if (s81Var.L) {
-            if (s81Var.I && s81Var.J != 0.0f) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j10 = currentTimeMillis - s81Var.H;
-                s81Var.H = currentTimeMillis;
-                float f9 = s81Var.J - (j10 / 150.0f);
-                s81Var.J = f9;
-                if (f9 < 0.0f) {
-                    s81Var.J = 0.0f;
-                }
-                invalidate();
-            }
-            float f10 = s81Var.J;
-            ImageReceiver imageReceiver = this.a;
-            imageReceiver.setAlpha(f10);
-            imageReceiver.draw(canvas);
-        }
-        if (s81Var.a.d == null || s81Var.D) {
-            return;
-        }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        if (!s81Var.Q) {
-            if (this.d != null) {
-                canvas.save();
-                canvas.translate((measuredWidth - AndroidUtilities.dp(58.0f)) - this.r, measuredHeight - AndroidUtilities.dp((s81Var.P ? 6 : 10) + 29));
-                this.d.draw(canvas);
-                canvas.restore();
-            }
-            if (this.e != null) {
-                canvas.save();
-                canvas.translate(AndroidUtilities.dp(18.0f), measuredHeight - AndroidUtilities.dp((s81Var.P ? 6 : 10) + 29));
-                this.e.draw(canvas);
-                canvas.restore();
-            }
-        }
-        if (this.s != 0) {
-            int i11 = 0;
-            if (s81Var.Q) {
-                dp = measuredHeight - AndroidUtilities.dp(3.0f);
-                dp2 = AndroidUtilities.dp(7.0f);
-            } else if (s81Var.P) {
-                dp = measuredHeight - AndroidUtilities.dp(29.0f);
-                i11 = AndroidUtilities.dp(36.0f) + this.r;
-                measuredWidth = (measuredWidth - AndroidUtilities.dp(76.0f)) - this.r;
-                dp2 = AndroidUtilities.dp(28.0f);
-            } else {
-                dp = measuredHeight - AndroidUtilities.dp(13.0f);
-                dp2 = AndroidUtilities.dp(12.0f);
-            }
-            int i12 = measuredHeight - dp2;
-            boolean z10 = s81Var.P;
-            Paint paint = this.h;
-            if (z10) {
-                canvas.drawRect(i11, dp, measuredWidth, AndroidUtilities.dp(3.0f) + dp, paint);
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-            }
-            int i13 = this.b ? this.B : ((int) ((this.v / this.s) * (measuredWidth - i11))) + i11;
-            int i14 = this.w;
-            if (i14 != 0 && (i10 = this.s) != 0) {
-                float f11 = i11;
-                float f12 = dp;
-                float c3 = u3.c.c(i14, i10, measuredWidth - i11, f11);
-                float dp3 = AndroidUtilities.dp(3.0f) + dp;
-                if (s81Var.P) {
-                    paint = this.n;
-                }
-                canvas2.drawRect(f11, f12, c3, dp3, paint);
-            }
-            float f13 = i13;
-            float dp4 = AndroidUtilities.dp(3.0f) + dp;
-            Paint paint2 = this.f;
-            canvas2.drawRect(i11, dp, f13, dp4, paint2);
-            if (s81Var.Q) {
+    public final void c(boolean z4) {
+        if (this.h != z4) {
+            this.h = z4;
+            Sensor sensor = this.f;
+            if (sensor == null) {
                 return;
             }
-            canvas2.drawCircle(f13, i12, AndroidUtilities.dp(this.b ? 7.0f : 5.0f), paint2);
+            SensorManager sensorManager = this.e;
+            if (z4) {
+                sensorManager.registerListener(this, sensor, 1);
+            } else {
+                sensorManager.unregisterListener(this);
+            }
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0) {
-            return super.onInterceptTouchEvent(motionEvent);
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        n81 n81Var;
+        float f10;
+        int rotation = this.d.getDefaultDisplay().getRotation();
+        float[] fArr = sensorEvent.values;
+        float f11 = fArr[0] / 9.80665f;
+        float f12 = fArr[1] / 9.80665f;
+        float f13 = fArr[2] / 9.80665f;
+        float f14 = f13 * f13;
+        float atan2 = (float) ((Math.atan2(f11, Math.sqrt((f12 * f12) + f14)) / 3.141592653589793d) * 2.0d);
+        float atan22 = (float) ((Math.atan2(f12, Math.sqrt((f11 * f11) + f14)) / 3.141592653589793d) * 2.0d);
+        if (rotation != 1) {
+            if (rotation == 2) {
+                float f15 = -atan22;
+                atan22 = -atan2;
+                atan2 = f15;
+            } else if (rotation != 3) {
+                atan2 = atan22;
+                atan22 = atan2;
+            } else {
+                atan2 = -atan2;
+            }
         }
-        if (this.x) {
-            onTouchEvent(motionEvent);
-            return this.b;
+        int i10 = this.c;
+        float[] fArr2 = this.a;
+        fArr2[i10] = atan2;
+        float[] fArr3 = this.b;
+        fArr3[i10] = atan22;
+        this.c = (i10 + 1) % fArr2.length;
+        float f16 = 0.0f;
+        float f17 = 0.0f;
+        for (int i11 = 0; i11 < fArr2.length; i11++) {
+            f16 += fArr2[i11];
+            f17 += fArr3[i11];
         }
-        d(true, true);
-        return true;
+        float length = f16 / fArr2.length;
+        float length2 = f17 / fArr2.length;
+        if (length <= 1.0f) {
+            f10 = length < -1.0f ? -2.0f : 2.0f;
+            int round = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
+            int round2 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
+            float max = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
+            float max2 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
+            float sqrt = (float) Math.sqrt((max2 * max2) + (max * max));
+            float f18 = max / sqrt;
+            float f19 = max2 / sqrt;
+            Math.atan2((f18 * (-1.0f)) - (f19 * 0.0f), (f19 * (-1.0f)) + (f18 * 0.0f));
+            n81Var = this.n;
+            if (n81Var == null) {
+                n81Var.d(round, round2);
+                return;
+            }
+            return;
+        }
+        length = f10 - length;
+        int round3 = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
+        int round22 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
+        float max3 = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
+        float max22 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
+        float sqrt2 = (float) Math.sqrt((max22 * max22) + (max3 * max3));
+        float f182 = max3 / sqrt2;
+        float f192 = max22 / sqrt2;
+        Math.atan2((f182 * (-1.0f)) - (f192 * 0.0f), (f192 * (-1.0f)) + (f182 * 0.0f));
+        n81Var = this.n;
+        if (n81Var == null) {
+        }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int measuredWidth;
-        int measuredHeight;
-        int i10;
-        int i11;
-        s81 s81Var = this.D;
-        x61 x61Var = s81Var.a;
-        if (s81Var.P) {
-            i10 = AndroidUtilities.dp(36.0f) + this.r;
-            measuredWidth = (getMeasuredWidth() - AndroidUtilities.dp(76.0f)) - this.r;
-            measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(28.0f);
-        } else {
-            measuredWidth = getMeasuredWidth();
-            measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(12.0f);
-            i10 = 0;
-        }
-        int i12 = this.s;
-        if (i12 != 0) {
-            i11 = (int) ((this.v / i12) * (measuredWidth - i10));
-        } else {
-            i11 = 0;
-        }
-        int i13 = i11 + i10;
-        int action = motionEvent.getAction();
-        o61 o61Var = this.C;
-        if (action == 0) {
-            if (!this.x || s81Var.Q || s81Var.D) {
-                d(true, true);
-            } else if (this.s != 0) {
-                int x4 = (int) motionEvent.getX();
-                int y8 = (int) motionEvent.getY();
-                if (x4 >= i13 - AndroidUtilities.dp(10.0f) && x4 <= AndroidUtilities.dp(10.0f) + i13 && y8 >= measuredHeight - AndroidUtilities.dp(10.0f) && y8 <= AndroidUtilities.dp(10.0f) + measuredHeight) {
-                    this.b = true;
-                    this.A = x4;
-                    this.B = i13;
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
-                }
-            }
-            AndroidUtilities.cancelRunOnUIThread(o61Var);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (s81Var.w && x61Var.z()) {
-                AndroidUtilities.runOnUIThread(o61Var, 3000L);
-            }
-            if (this.b) {
-                this.b = false;
-                if (s81Var.w) {
-                    int i14 = (int) (((this.B - i10) / (measuredWidth - i10)) * this.s);
-                    this.v = i14;
-                    x61Var.M(i14 * 1000, false);
-                }
-            }
-        } else if (motionEvent.getAction() == 2 && this.b) {
-            int x10 = (int) motionEvent.getX();
-            int i15 = this.B - (this.A - x10);
-            this.B = i15;
-            this.A = x10;
-            if (i15 < i10) {
-                this.B = i10;
-            } else if (i15 > measuredWidth) {
-                this.B = measuredWidth;
-            }
-            c((int) (((this.B - i10) / (measuredWidth - i10)) * this.s * MediaDataController.MAX_STYLE_RUNS_COUNT));
-            invalidate();
-        }
-        super.onTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void requestDisallowInterceptTouchEvent(boolean z10) {
-        super.requestDisallowInterceptTouchEvent(z10);
-        a();
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

@@ -54,11 +54,11 @@ public final class k7 extends x6 implements j$.util.a1 {
         if (a2) {
             q6 q6Var = (q6) this.h;
             long j11 = this.g;
-            int k9 = q6Var.k(j11);
-            if (q6Var.c == 0 && k9 == 0) {
+            int k10 = q6Var.k(j11);
+            if (q6Var.c == 0 && k10 == 0) {
                 j10 = ((long[]) q6Var.e)[(int) j11];
             } else {
-                j10 = ((long[][]) q6Var.f)[k9][(int) (j11 - q6Var.d[k9])];
+                j10 = ((long[][]) q6Var.f)[k10][(int) (j11 - q6Var.d[k10])];
             }
             longConsumer.accept(j10);
         }

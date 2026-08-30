@@ -1,58 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class s21 extends Drawable {
-    public final xi0 a;
-    public int b;
-    public final TextPaint c;
+public final class s21 {
+    public static final s21 a;
+    public static final s21 b;
+    public static final s21 c;
+    public static final /* synthetic */ s21[] d;
 
-    public s21(TextPaint textPaint) {
-        hg.a aVar = new hg.a(this, 9);
-        this.c = textPaint;
-        float textSize = textPaint.getTextSize() * 0.89f;
-        xi0 xi0Var = new xi0(R.raw.dots_loading, (int) textSize, "dots_loading", (int) (textSize * 1.25f));
-        this.a = xi0Var;
-        xi0Var.setCallback(aVar);
-        xi0Var.I(1);
-        xi0Var.K((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        xi0Var.H(true);
-        xi0Var.start();
+    static {
+        s21 s21Var = new s21("TOP", 0);
+        a = s21Var;
+        s21 s21Var2 = new s21("LEFT", 1);
+        b = s21Var2;
+        s21 s21Var3 = new s21("BOTTOM", 2);
+        c = s21Var3;
+        d = new s21[]{s21Var, s21Var2, s21Var3};
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int color = this.c.getColor();
-        int i10 = this.b;
-        xi0 xi0Var = this.a;
-        if (color != i10) {
-            xi0Var.W = true;
-            xi0Var.O(color, "Comp 1");
-            xi0Var.m();
-            xi0Var.H(true);
-            xi0Var.S(0L);
-            this.b = color;
-        }
-        xi0Var.draw(canvas);
+    public static s21 valueOf(String str) {
+        return (s21) Enum.valueOf(s21.class, str);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public static s21[] values() {
+        return (s21[]) d.clone();
     }
 }

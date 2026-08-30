@@ -1,46 +1,44 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.th1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class x0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b1 b;
+public final class x0 extends GestureDetector.SimpleOnGestureListener {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ th1 c;
 
-    public /* synthetic */ x0(b1 b1Var, int i10) {
-        this.a = i10;
-        this.b = b1Var;
+    public x0(th1 th1Var) {
+        this.c = th1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                b1 b1Var = this.b;
-                if (b1Var.getParent() != null) {
-                    ((ViewGroup) b1Var.getParent()).removeView(b1Var);
-                    break;
-                }
-                break;
-            case 1:
-                b1 b1Var2 = this.b;
-                if (b1Var2.getParent() != null) {
-                    ((ViewGroup) b1Var2.getParent()).removeView(b1Var2);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                b1 b1Var3 = this.b;
-                if (b1Var3.getParent() != null) {
-                    ((ViewGroup) b1Var3.getParent()).removeView(b1Var3);
-                    break;
-                }
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        this.a = true;
+        return super.onDown(motionEvent);
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        float x10 = motionEvent.getX() - motionEvent2.getX();
+        float y10 = motionEvent.getY() - motionEvent2.getY();
+        if (Math.abs(x10) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(x10) / 3.0f > y10 && this.a && !this.b) {
+            this.a = false;
+            org.telegram.ui.d0 d0Var = new org.telegram.ui.d0(this, x10, 2);
+            th1 th1Var = this.c;
+            ValueAnimator valueAnimator = th1Var.R;
+            if (valueAnimator != null) {
+                this.b = true;
+                AndroidUtilities.runOnUIThread(d0Var, (valueAnimator.getDuration() - th1Var.R.getCurrentPlayTime()) + 50);
+            } else {
+                d0Var.run();
+            }
         }
+        return super.onScroll(motionEvent, motionEvent2, f10, f11);
     }
 }

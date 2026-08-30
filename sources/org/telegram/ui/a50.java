@@ -1,106 +1,92 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class a50 extends Dialog {
-    public final lh.z2 a;
-    public final cg.h0 b;
-    public Bitmap c;
-    public Paint d;
-    public BitmapShader e;
-    public final Matrix f;
-    public float h;
-    public ValueAnimator n;
-    public boolean r;
+public final /* synthetic */ class a50 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.w70 {
+    public final /* synthetic */ g50 a;
 
-    public a50(Context context, cg.h0 h0Var) {
-        super(context, R.style.TransparentDialog);
-        this.f = new Matrix();
-        this.b = h0Var;
-        h0Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new tm(22, this, h0Var), 14.0f);
-        lh.z2 z2Var = new lh.z2(this, context, h0Var);
-        this.a = z2Var;
-        z2Var.setOnClickListener(new a(this, 29));
+    public /* synthetic */ a50(g50 g50Var) {
+        this.a = g50Var;
     }
 
-    public final void b(float f9, z40 z40Var) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.n = null;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f9);
-        this.n = ofFloat;
-        ofFloat.addUpdateListener(new g3(this, 16));
-        this.n.addListener(new jh.l5(this, f9, z40Var, 4));
-        this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.jr.h);
-        this.n.start();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.r) {
+    @Override // org.telegram.ui.Components.w70
+    public void a(TLRPC.InputPeer inputPeer, boolean z4, boolean z10, boolean z11) {
+        c60 c60Var = this.a.b;
+        ChatObject.Call call = c60Var.X0;
+        AccountInstance accountInstance = c60Var.d;
+        if (call == null) {
             return;
         }
-        this.r = true;
-        b(0.0f, new z40(this, 0));
-        try {
-            WindowManager.LayoutParams attributes = getWindow().getAttributes();
-            attributes.flags |= 16;
-            getWindow().setAttributes(attributes);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        boolean z12 = inputPeer instanceof TLRPC.TL_inputPeerUser;
+        TLObject user = z12 ? accountInstance.getMessagesController().getUser(Long.valueOf(inputPeer.user_id)) : inputPeer instanceof TLRPC.TL_inputPeerChat ? accountInstance.getMessagesController().getChat(Long.valueOf(inputPeer.chat_id)) : accountInstance.getMessagesController().getChat(Long.valueOf(inputPeer.channel_id));
+        if (!c60Var.X0.isScheduled()) {
+            if (VoIPService.getSharedInstance() == null || !z4) {
+                return;
+            }
+            VoIPService.getSharedInstance().setGroupCallPeer(inputPeer);
+            c60Var.y0 = user;
+            return;
         }
+        c60Var.k1().k(0L, 37, user, c60Var.W0, null, null);
+        if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
+            TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+            c60Var.x0 = tL_peerChannel;
+            tL_peerChannel.channel_id = inputPeer.channel_id;
+        } else if (z12) {
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            c60Var.x0 = tL_peerUser;
+            tL_peerUser.user_id = inputPeer.user_id;
+        } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
+            TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
+            c60Var.x0 = tL_peerChat;
+            tL_peerChat.chat_id = inputPeer.chat_id;
+        }
+        c60Var.V0 = inputPeer;
+        TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(c60Var.i1());
+        if (chatFull != null) {
+            chatFull.groupcall_default_join_as = c60Var.x0;
+            if (chatFull instanceof TLRPC.TL_chatFull) {
+                chatFull.flags |= 32768;
+            } else {
+                chatFull.flags |= 67108864;
+            }
+        }
+        TL_phone.saveDefaultGroupCallJoinAs savedefaultgroupcalljoinas = new TL_phone.saveDefaultGroupCallJoinAs();
+        savedefaultgroupcalljoinas.peer = MessagesController.getInputPeer(c60Var.W0);
+        savedefaultgroupcalljoinas.join_as = inputPeer;
+        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new nh.p5(4));
+        c60Var.I1();
     }
 
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.softInputMode = 48;
-        attributes.flags = (-2013069056) | i10;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | (-2013060864);
-            AndroidUtilities.logFlagSecure();
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        g50 g50Var = this.a;
+        c60 c60Var = g50Var.b;
+        ChatObject.Call call = c60Var.X0;
+        AccountInstance accountInstance = c60Var.d;
+        if (call.isScheduled()) {
+            TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(c60Var.i1());
+            if (chatFull != null) {
+                chatFull.flags &= -2097153;
+                chatFull.call = null;
+                accountInstance.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(c60Var.i1()), Long.valueOf(c60Var.X0.call.id), Boolean.FALSE);
+            }
+            TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
+            discardgroupcall.call = c60Var.X0.getInputGroupCall();
+            accountInstance.getConnectionsManager().sendRequest(discardgroupcall, new o(g50Var, 8));
+        } else if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().hangUp(1);
         }
-        attributes.flags |= 1152;
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        super.show();
-        b(1.0f, null);
-        AndroidUtilities.runOnUIThread(new z40(this, 1), 16L);
+        c60Var.dismiss();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedCall, new Object[0]);
     }
 }

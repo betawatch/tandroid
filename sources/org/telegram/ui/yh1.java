@@ -1,34 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Intent;
+import android.os.Build;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yh1 extends View {
-    public int a;
-    public final /* synthetic */ WallpapersListActivity b;
+public final class yh1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ ai1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yh1(WallpapersListActivity wallpapersListActivity, Context context) {
-        super(context);
-        this.b = wallpapersListActivity;
+    public yh1(ai1 ai1Var) {
+        this.a = ai1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        WallpapersListActivity wallpapersListActivity = this.b;
-        wallpapersListActivity.w.setColor(this.a);
-        canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.w);
-        if (this.a == org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d6, false)) {
-            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.x);
+    public final void a() {
+        ai1 ai1Var = this.a;
+        if (ai1Var.m0 != 17) {
+            if (Build.VERSION.SDK_INT >= 23 && ai1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                ai1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    ai1Var.r(new vy0(this, 26));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(ai1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", ai1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", ai1Var.R0);
+        intent.putExtra("can_video_call", ai1Var.R0);
+        intent.putExtra("account", ai1Var.a);
+        try {
+            ai1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
+    public final void b() {
+        ai1 ai1Var = this.a;
+        if (ai1Var.m0 == 17) {
+            ai1Var.r0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            ai1Var.r0.b();
+        }
     }
 }

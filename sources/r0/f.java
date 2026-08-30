@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.ContentInfo;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class f implements e, g {
     public final /* synthetic */ int a = 0;
@@ -64,21 +64,21 @@ public final class f implements e, g {
         switch (this.a) {
             case 1:
                 Uri uri = this.e;
-                StringBuilder sb2 = new StringBuilder("ContentInfoCompat{clip=");
-                sb2.append(this.b.getDescription());
-                sb2.append(", source=");
+                StringBuilder sb = new StringBuilder("ContentInfoCompat{clip=");
+                sb.append(this.b.getDescription());
+                sb.append(", source=");
                 int i10 = this.c;
-                sb2.append(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? String.valueOf(i10) : "SOURCE_PROCESS_TEXT" : "SOURCE_AUTOFILL" : "SOURCE_DRAG_AND_DROP" : "SOURCE_INPUT_METHOD" : "SOURCE_CLIPBOARD" : "SOURCE_APP");
-                sb2.append(", flags=");
+                sb.append(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? String.valueOf(i10) : "SOURCE_PROCESS_TEXT" : "SOURCE_AUTOFILL" : "SOURCE_DRAG_AND_DROP" : "SOURCE_INPUT_METHOD" : "SOURCE_CLIPBOARD" : "SOURCE_APP");
+                sb.append(", flags=");
                 int i11 = this.d;
-                sb2.append((i11 & 1) != 0 ? "FLAG_CONVERT_TO_PLAIN_TEXT" : String.valueOf(i11));
+                sb.append((i11 & 1) != 0 ? "FLAG_CONVERT_TO_PLAIN_TEXT" : String.valueOf(i11));
                 if (uri == null) {
                     str = "";
                 } else {
                     str = ", hasLinkUri(" + uri.toString().length() + ")";
                 }
-                sb2.append(str);
-                return a4.w.q(sb2, this.f != null ? ", hasExtras" : "", "}");
+                sb.append(str);
+                return android.support.v4.media.a.r(sb, this.f != null ? ", hasExtras" : "", "}");
             default:
                 return super.toString();
         }

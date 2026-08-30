@@ -1,20 +1,34 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class q51 extends f2.j0 {
-    public final /* synthetic */ u51 I;
+public final /* synthetic */ class q51 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UndoView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q51(u51 u51Var, int i10) {
-        super(i10, false);
-        this.I = u51Var;
+    public /* synthetic */ q51(UndoView undoView, int i10) {
+        this.a = i10;
+        this.b = undoView;
     }
 
-    @Override // f2.j0
-    public final int W0(f2.k1 k1Var) {
-        return this.I.W2 ? AndroidUtilities.displaySize.y : super.W0(k1Var);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        UndoView undoView = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = UndoView.b0;
+                if (undoView.a()) {
+                    undoView.e(1, false);
+                    break;
+                }
+                break;
+            default:
+                int i12 = UndoView.b0;
+                undoView.e(1, false);
+                break;
+        }
     }
 }

@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import a4.w;
+import android.support.v4.media.a;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
     private static final boolean[] zza;
@@ -29,7 +29,7 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
     }
 
     private final String zzh(int i10) {
-        return w.k(i10, this.zzc, "Index:", ", Size:");
+        return a.k(i10, this.zzc, "Index:", ", Size:");
     }
 
     private final void zzi(int i10) {
@@ -151,13 +151,13 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         zza();
         zzi(i10);
         boolean[] zArr = this.zzb;
-        boolean z10 = zArr[i10];
+        boolean z4 = zArr[i10];
         if (i10 < this.zzc - 1) {
             System.arraycopy(zArr, i10 + 1, zArr, i10, (r2 - i10) - 1);
         }
         this.zzc--;
         ((AbstractList) this).modCount++;
-        return Boolean.valueOf(z10);
+        return Boolean.valueOf(z4);
     }
 
     @Override // java.util.AbstractList
@@ -178,9 +178,9 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         zza();
         zzi(i10);
         boolean[] zArr = this.zzb;
-        boolean z10 = zArr[i10];
+        boolean z4 = zArr[i10];
         zArr[i10] = booleanValue;
-        return Boolean.valueOf(z10);
+        return Boolean.valueOf(z4);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -196,7 +196,7 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         throw new IllegalArgumentException();
     }
 
-    public final void zze(boolean z10) {
+    public final void zze(boolean z4) {
         zza();
         int i10 = this.zzc;
         int length = this.zzb.length;
@@ -208,7 +208,7 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         boolean[] zArr2 = this.zzb;
         int i11 = this.zzc;
         this.zzc = i11 + 1;
-        zArr2[i11] = z10;
+        zArr2[i11] = z4;
     }
 
     public final boolean zzf(int i10) {
@@ -216,8 +216,8 @@ final class zzqd extends zzpz implements RandomAccess, zzsu, zzub {
         return this.zzb[i10];
     }
 
-    private zzqd(boolean[] zArr, int i10, boolean z10) {
-        super(z10);
+    private zzqd(boolean[] zArr, int i10, boolean z4) {
+        super(z4);
         this.zzb = zArr;
         this.zzc = i10;
     }

@@ -82,9 +82,9 @@ public final class s8 extends v8 implements IntConsumer, j$.util.x0 {
     public final boolean tryAdvance(IntConsumer intConsumer) {
         switch (this.f) {
             case 0:
-                boolean z10 = this.c;
+                boolean z4 = this.c;
                 Spliterator spliterator = this.a;
-                if (z10) {
+                if (z4) {
                     this.c = false;
                     boolean tryAdvance = ((j$.util.x0) spliterator).tryAdvance((IntConsumer) this);
                     if (tryAdvance && a()) {

@@ -1,85 +1,72 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yy0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class yy0 extends org.telegram.ui.Components.z80 {
+    public final /* synthetic */ ProfileActivity M0;
 
-    public /* synthetic */ yy0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yy0(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.M0 = profileActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 2:
-                ProfileActivity profileActivity = this.b;
-                profileActivity.K1 = false;
-                profileActivity.a.J0 = true;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        this.M0.B3();
+    }
+
+    @Override // org.telegram.ui.ActionBar.k5
+    public final void setTextColor(int i10) {
+        int l1;
+        super.setTextColor(i10);
+        ProfileActivity profileActivity = this.M0;
+        org.telegram.ui.ActionBar.k5[] k5VarArr = profileActivity.r;
+        org.telegram.ui.ActionBar.k5 k5Var = k5VarArr[2];
+        if (k5Var != null) {
+            k5Var.setTextColor(i10);
+            k5VarArr[3].setTextColor(i10);
+        }
+        s01 s01Var = profileActivity.Y5;
+        if (s01Var == null || s01Var.c == (l1 = org.telegram.ui.ActionBar.j6.l1(1.4f, org.telegram.ui.ActionBar.j6.b(-0.02f, 0.15f, i10)))) {
+            return;
+        }
+        s01Var.c = l1;
+        s01Var.invalidateSelf();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        super.setTranslationX(f10);
+        ProfileActivity profileActivity = this.M0;
+        profileActivity.Z3();
+        profileActivity.getClass();
+        profileActivity.r[2].setTranslationX(f10);
+        profileActivity.r[3].setTranslationX(f10);
+        org.telegram.ui.Components.jw0 jw0Var = profileActivity.Q;
+        if (jw0Var != null) {
+            jw0Var.setTranslationX(f10 - profileActivity.Z3());
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                this.b.k4(true);
-                break;
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                AnimatorSet animatorSet = profileActivity.w;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    profileActivity.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                ProfileActivity profileActivity2 = this.b;
-                profileActivity2.K1 = false;
-                profileActivity2.a.J0 = true;
-                profileActivity2.f2.removeListener(this);
-                profileActivity2.Z0.setBackgroundColor(-16777216);
-                profileActivity2.U.setVisibility(8);
-                profileActivity2.j0.setVisibility(0);
-                profileActivity2.j0.setAlpha(1.0f);
-                break;
-            case 3:
-                ProfileActivity profileActivity3 = this.b;
-                profileActivity3.f2.removeListener(this);
-                profileActivity3.j0.setVisibility(8);
-                profileActivity3.j0.setAlpha(1.0f);
-                break;
-            default:
-                ProfileActivity profileActivity4 = this.b;
-                profileActivity4.s0 = null;
-                profileActivity4.fragmentView.invalidate();
-                break;
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        ProfileActivity profileActivity = this.M0;
+        org.telegram.ui.ActionBar.k5[] k5VarArr = profileActivity.r;
+        if (profileActivity.Q != null) {
+            AndroidUtilities.dp(3.0f);
+            profileActivity.Q.getVisibilityFactor();
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 2:
-                ProfileActivity profileActivity = this.b;
-                ProfileActivity.s3(profileActivity, false);
-                profileActivity.j0.setAnimatedFileMaybe(profileActivity.a0.getImageReceiver().getAnimation());
-                profileActivity.j0.L();
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        k5VarArr[2].setTranslationY(f10);
+        k5VarArr[3].setTranslationY(f10);
+        org.telegram.ui.Components.jw0 jw0Var = profileActivity.Q;
+        if (jw0Var != null) {
+            jw0Var.setTranslationY(f10 - AndroidUtilities.dp(5.0f));
         }
     }
 }

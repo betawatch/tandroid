@@ -1,17 +1,18 @@
 package com.google.android.recaptcha.internal;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import i7.b7;
-import i7.c7;
-import jd.h0;
-import jd.s;
-import jd.t;
+import k7.o7;
+import k7.p7;
+import ld.h0;
+import ld.s;
+import ld.t;
 import org.telegram.tgnet.TLObject;
-import qc.c;
-import qc.g;
-import sd.e;
+import sc.c;
+import sc.g;
+import ud.a;
+import ud.e;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzbo {
     public s zza;
@@ -19,7 +20,7 @@ public final class zzbo {
     private zzbp zzc;
     private final c zzd;
     private long zze;
-    private final sd.a zzf;
+    private final a zzf;
     private boolean zzg;
 
     public zzbo() {
@@ -36,7 +37,7 @@ public final class zzbo {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzl(sc.c cVar) {
+    public final Object zzl(uc.c cVar) {
         zzbc zzbcVar;
         int i10;
         if (cVar instanceof zzbc) {
@@ -45,16 +46,16 @@ public final class zzbo {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 zzbcVar.zzc = i11 - TLObject.FLAG_31;
                 Object obj = zzbcVar.zza;
-                tc.a aVar = tc.a.a;
+                vc.a aVar = vc.a.a;
                 i10 = zzbcVar.zzc;
                 if (i10 == 0) {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    c7.b(obj);
+                    p7.b(obj);
                     return obj;
                 }
-                c7.b(obj);
+                p7.b(obj);
                 h0 zza = zzdf.zza(((StandardIntegrityManager) ((g) this.zzd).a()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
                 zzbcVar.zzc = 1;
                 Object await = zza.await(zzbcVar);
@@ -63,7 +64,7 @@ public final class zzbo {
         }
         zzbcVar = new zzbc(this, cVar);
         Object obj2 = zzbcVar.zza;
-        tc.a aVar2 = tc.a.a;
+        vc.a aVar2 = vc.a.a;
         i10 = zzbcVar.zzc;
         if (i10 == 0) {
         }
@@ -87,7 +88,7 @@ public final class zzbo {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzm(String str, sc.c cVar) {
+    public final Object zzm(String str, uc.c cVar) {
         zzbg zzbgVar;
         int i10;
         if (cVar instanceof zzbg) {
@@ -96,10 +97,10 @@ public final class zzbo {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 zzbgVar.zzc = i11 - TLObject.FLAG_31;
                 Object obj = zzbgVar.zza;
-                tc.a aVar = tc.a.a;
+                vc.a aVar = vc.a.a;
                 i10 = zzbgVar.zzc;
                 if (i10 != 0) {
-                    c7.b(obj);
+                    p7.b(obj);
                     s zzf = zzf();
                     zzbgVar.zzd = str;
                     zzbgVar.zzc = 1;
@@ -109,11 +110,11 @@ public final class zzbo {
                         if (i10 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        c7.b(obj);
+                        p7.b(obj);
                         return ((StandardIntegrityManager.StandardIntegrityToken) obj).token();
                     }
                     str = zzbgVar.zzd;
-                    c7.b(obj);
+                    p7.b(obj);
                 }
                 h0 zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
                 zzbgVar.zzd = null;
@@ -123,7 +124,7 @@ public final class zzbo {
         }
         zzbgVar = new zzbg(this, cVar);
         Object obj2 = zzbgVar.zza;
-        tc.a aVar2 = tc.a.a;
+        vc.a aVar2 = vc.a.a;
         i10 = zzbgVar.zzc;
         if (i10 != 0) {
         }
@@ -133,7 +134,7 @@ public final class zzbo {
         obj2 = zza2.await(zzbgVar);
     }
 
-    public final Object zze(sc.c cVar) {
+    public final Object zze(uc.c cVar) {
         return new zzhg(new zzbn(this, null));
     }
 
@@ -151,9 +152,9 @@ public final class zzbo {
 
     public zzbo(long j10) {
         int i10 = zzby.zza;
-        this.zzb = b7.a(zzbk.zza);
+        this.zzb = o7.a(zzbk.zza);
         this.zzc = zzbp.zza;
-        this.zzd = b7.a(zzbl.zza);
+        this.zzd = o7.a(zzbl.zza);
         this.zzf = e.a();
     }
 }

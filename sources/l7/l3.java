@@ -1,19 +1,25 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class l3 implements s9.d {
+public final class l3 implements u9.d {
     public static final l3 a = new l3();
+    public static final u9.c b = new u9.c("maxMs", vh.v2.h(kh.a2.o(h0.class, new e0(1))));
+    public static final u9.c c = new u9.c("minMs", vh.v2.h(kh.a2.o(h0.class, new e0(2))));
+    public static final u9.c d = new u9.c("avgMs", vh.v2.h(kh.a2.o(h0.class, new e0(3))));
+    public static final u9.c e = new u9.c("firstQuartileMs", vh.v2.h(kh.a2.o(h0.class, new e0(4))));
+    public static final u9.c f = new u9.c("medianMs", vh.v2.h(kh.a2.o(h0.class, new e0(5))));
+    public static final u9.c g = new u9.c("thirdQuartileMs", vh.v2.h(kh.a2.o(h0.class, new e0(6))));
 
-    static {
-        com.google.android.recaptcha.internal.a.t(j7.l1.q(w.class, j7.l1.r(3, j7.l1.q(w.class, j7.l1.r(2, j7.l1.q(w.class, new s(1)))))));
-    }
-
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // u9.a
+    public final void a(Object obj, Object obj2) {
+        g7 g7Var = (g7) obj;
+        u9.e eVar = (u9.e) obj2;
+        eVar.e(b, g7Var.a);
+        eVar.e(c, g7Var.b);
+        eVar.e(d, g7Var.c);
+        eVar.e(e, g7Var.d);
+        eVar.e(f, g7Var.e);
+        eVar.e(g, g7Var.f);
     }
 }

@@ -1,10 +1,10 @@
 package n0;
 
 import android.os.Build;
-import androidx.emoji2.text.v;
+import androidx.emoji2.text.x;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c b = a(new Locale[0]);
@@ -15,7 +15,7 @@ public final class c {
     }
 
     public static c a(Locale... localeArr) {
-        return Build.VERSION.SDK_INT >= 24 ? new c(new f(v.d(localeArr))) : new c(new d(localeArr));
+        return Build.VERSION.SDK_INT >= 24 ? new c(new f(x.d(localeArr))) : new c(new d(localeArr));
     }
 
     public static c b(String str) {

@@ -10,7 +10,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class s implements b0, x, AdapterView.OnItemClickListener {
     public Rect a;
@@ -46,7 +46,7 @@ public abstract class s implements b0, x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final boolean c(m mVar) {
+    public final boolean b(m mVar) {
         return false;
     }
 
@@ -59,7 +59,7 @@ public abstract class s implements b0, x, AdapterView.OnItemClickListener {
 
     public abstract void n(View view);
 
-    public abstract void o(boolean z10);
+    public abstract void o(boolean z4);
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
@@ -73,7 +73,7 @@ public abstract class s implements b0, x, AdapterView.OnItemClickListener {
 
     public abstract void r(PopupWindow.OnDismissListener onDismissListener);
 
-    public abstract void s(boolean z10);
+    public abstract void s(boolean z4);
 
     public abstract void t(int i10);
 

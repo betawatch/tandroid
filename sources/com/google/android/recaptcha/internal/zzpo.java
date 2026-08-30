@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
 import j$.util.Objects;
-import j7.l1;
 import java.math.RoundingMode;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 class zzpo extends zzpp {
     public static final /* synthetic */ int zzc = 0;
@@ -35,20 +35,20 @@ class zzpo extends zzpp {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("BaseEncoding.");
+        StringBuilder sb = new StringBuilder("BaseEncoding.");
         zzpk zzpkVar = this.zza;
-        sb2.append(zzpkVar);
+        sb.append(zzpkVar);
         if (8 % zzpkVar.zzb != 0) {
             Character ch2 = this.zzb;
             if (ch2 == null) {
-                sb2.append(".omitPadding()");
+                sb.append(".omitPadding()");
             } else {
-                sb2.append(".withPadChar('");
-                sb2.append(ch2);
-                sb2.append("')");
+                sb.append(".withPadChar('");
+                sb.append(ch2);
+                sb.append("')");
             }
         }
-        return sb2.toString();
+        return sb.toString();
     }
 
     @Override // com.google.android.recaptcha.internal.zzpp
@@ -58,7 +58,7 @@ class zzpo extends zzpp {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(l1.k(zze.length(), "Invalid input length "));
+            throw new zzpn(a2.j(zze.length(), "Invalid input length "));
         }
         int i11 = 0;
         int i12 = 0;

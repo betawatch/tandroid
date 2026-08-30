@@ -8,37 +8,37 @@ public final class f8 extends f5 implements o8 {
     public final /* synthetic */ e8 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f8(e8 e8Var, j5 j5Var, boolean z10) {
+    public f8(e8 e8Var, j5 j5Var, boolean z4) {
         super(j5Var);
         this.e = e8Var;
-        this.d = z10;
+        this.d = z4;
     }
 
     @Override // java.util.function.Consumer
     public final void accept(Object obj) {
+        boolean z4;
         boolean z10;
-        boolean z11;
         if (!this.c) {
             boolean test = this.e.t.test(obj);
             this.c = !test;
             if (test) {
-                z10 = false;
-                z11 = this.d;
-                if (z11 && !z10) {
+                z4 = false;
+                z10 = this.d;
+                if (z10 && !z4) {
                     this.b++;
                 }
-                if (!z11 || z10) {
+                if (!z10 || z4) {
                     this.a.accept((j5) obj);
                 }
                 return;
             }
         }
-        z10 = true;
-        z11 = this.d;
-        if (z11) {
+        z4 = true;
+        z10 = this.d;
+        if (z10) {
             this.b++;
         }
-        if (z11) {
+        if (z10) {
         }
         this.a.accept((j5) obj);
     }

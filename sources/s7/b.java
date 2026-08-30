@@ -1,90 +1,80 @@
 package s7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.accounts.Account;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.text.TextUtils;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import j8.p;
+import m.s3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b extends a6.a {
-    public static final Parcelable.Creator<b> CREATOR = new s6.i(14);
-    public final long a;
-    public final int b;
-    public final boolean c;
-    public final String d;
-    public final d7.j e;
+public final class b extends b6.g {
+    public final Context R;
+    public final int S;
+    public final String T;
+    public final int U;
+    public final boolean V;
 
-    public b(long j10, int i10, boolean z10, String str, d7.j jVar) {
-        this.a = j10;
-        this.b = i10;
-        this.c = z10;
-        this.d = str;
-        this.e = jVar;
+    public b(Context context, Looper looper, s3 s3Var, k kVar, l lVar, int i10) {
+        super(context, looper, 4, s3Var, kVar, lVar, 0);
+        this.R = context;
+        this.S = i10;
+        this.T = null;
+        this.U = 1;
+        this.V = true;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        return this.a == bVar.a && this.b == bVar.b && this.c == bVar.c && z5.l.l(this.d, bVar.d) && z5.l.l(this.e, bVar.e);
+    @Override // b6.g
+    public final boolean C() {
+        return true;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Boolean.valueOf(this.c)});
+    public final Bundle G() {
+        String packageName = this.R.getPackageName();
+        Bundle bundle = new Bundle();
+        bundle.putInt("com.google.android.gms.wallet.EXTRA_ENVIRONMENT", this.S);
+        bundle.putBoolean("com.google.android.gms.wallet.EXTRA_USING_ANDROID_PAY_BRAND", this.V);
+        bundle.putString("androidPackageName", packageName);
+        String str = this.T;
+        if (!TextUtils.isEmpty(str)) {
+            bundle.putParcelable("com.google.android.gms.wallet.EXTRA_BUYER_ACCOUNT", new Account(str, "com.google"));
+        }
+        bundle.putInt("com.google.android.gms.wallet.EXTRA_THEME", this.U);
+        return bundle;
     }
 
-    public final String toString() {
-        String str;
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("LastLocationRequest[");
-        long j10 = this.a;
-        if (j10 != Long.MAX_VALUE) {
-            n10.append("maxAge=");
-            d7.p.a(n10, j10);
-        }
-        int i10 = this.b;
-        if (i10 != 0) {
-            n10.append(", ");
-            if (i10 == 0) {
-                str = "GRANULARITY_PERMISSION_LEVEL";
-            } else if (i10 == 1) {
-                str = "GRANULARITY_COARSE";
-            } else {
-                if (i10 != 2) {
-                    throw new IllegalArgumentException();
-                }
-                str = "GRANULARITY_FINE";
-            }
-            n10.append(str);
-        }
-        if (this.c) {
-            n10.append(", bypass");
-        }
-        String str2 = this.d;
-        if (str2 != null) {
-            n10.append(", moduleId=");
-            n10.append(str2);
-        }
-        d7.j jVar = this.e;
-        if (jVar != null) {
-            n10.append(", impersonation=");
-            n10.append(jVar);
-        }
-        n10.append(']');
-        return n10.toString();
+    @Override // b6.g, com.google.android.gms.common.api.c
+    public final int k() {
+        return 12600000;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
-        com.google.android.gms.internal.cast.o.s(parcel, 1, 8);
-        parcel.writeLong(this.a);
-        com.google.android.gms.internal.cast.o.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        com.google.android.gms.internal.cast.o.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        com.google.android.gms.internal.cast.o.l(parcel, 4, this.d);
-        com.google.android.gms.internal.cast.o.k(parcel, 5, this.e, i10);
-        com.google.android.gms.internal.cast.o.r(parcel, q6);
+    @Override // b6.g
+    public final /* synthetic */ IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.wallet.internal.IOwService");
+        return queryLocalInterface instanceof i ? (i) queryLocalInterface : new i(iBinder);
+    }
+
+    @Override // b6.g
+    public final y5.c[] r() {
+        return p.c;
+    }
+
+    @Override // b6.g
+    public final String v() {
+        return "com.google.android.gms.wallet.internal.IOwService";
+    }
+
+    @Override // b6.g
+    public final String w() {
+        return "com.google.android.gms.wallet.service.BIND";
     }
 }

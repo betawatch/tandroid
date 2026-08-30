@@ -1,61 +1,59 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ly extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public boolean d;
-    public final /* synthetic */ fz e;
+public final class ly extends h51 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ly(fz fzVar, Context context) {
-        super(context);
-        this.e = fzVar;
-        ImageView imageView = new ImageView(getContext());
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.gif_empty);
-        int i10 = org.telegram.ui.ActionBar.g6.Le;
-        imageView.setColorFilter(new PorterDuffColorFilter(fzVar.A(i10), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, i7.f6.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setText(LocaleController.getString(R.string.NoGIFsFound));
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(fzVar.A(i10));
-        addView(textView, i7.f6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
-        RadialProgressView radialProgressView = new RadialProgressView(context, fzVar.V1);
-        this.c = radialProgressView;
-        radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(fzVar.A(org.telegram.ui.ActionBar.g6.h6));
-        addView(radialProgressView, i7.f6.e(-2, -2, 17));
+    static {
+        h51.setup(new ly());
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            this.a.setVisibility(z10 ? 8 : 0);
-            this.b.setVisibility(z10 ? 8 : 0);
-            this.c.setVisibility(z10 ? 0 : 8);
+    public static i51 a(TLRPC.StickerSetCovered stickerSetCovered, ay ayVar, boolean z4) {
+        i51 J = i51.J(ly.class);
+        long j10 = stickerSetCovered.set.id;
+        long j11 = 1 + j10;
+        J.d = (int) (j11 ^ (j11 >>> 32));
+        J.B = j10;
+        J.G = stickerSetCovered;
+        J.H = ayVar;
+        J.e = z4;
+        return J;
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        ah.e eVar = (ah.e) view;
+        Object obj = i51Var.G;
+        if (obj instanceof TLRPC.TL_messages_stickerSet) {
+            eVar.setPack((TLRPC.TL_messages_stickerSet) obj);
+        } else if (obj instanceof TLRPC.StickerSetCovered) {
+            TLRPC.Document document = ((ay) i51Var.H).e;
+            eVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
+            eVar.c.d(document, null, null, null, false, false);
         }
+        eVar.a(i51Var.e, false);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.ui.b.x(8.0f, r0 - r4.X0, 3) * 1.7f) : this.e.d0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.h51
+    public final boolean contentsEquals(i51 i51Var, i51 i51Var2) {
+        return i51Var.B == i51Var2.B && i51Var.e == i51Var2.e;
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        ah.e eVar = new ah.e(context, f6Var);
+        eVar.setLayoutParams(new f2.w0(AndroidUtilities.dp(64.0f), -1));
+        return eVar;
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(i51 i51Var, i51 i51Var2) {
+        return i51Var.B == i51Var2.B;
     }
 }

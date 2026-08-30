@@ -1,23 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p80 extends h9 {
-    public final /* synthetic */ bg.z3 e;
+public final /* synthetic */ class p80 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x80 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p80(bg.z3 z3Var, Context context) {
-        super(context, false);
-        this.e = z3Var;
+    public /* synthetic */ p80(x80 x80Var, int i10) {
+        this.a = i10;
+        this.b = x80Var;
     }
 
-    @Override // org.telegram.ui.Components.h9, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((r80) this.e.b).w) == 0 ? 0 : com.google.android.recaptcha.internal.a.f(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                w80 w80Var = this.b.r;
+                if (w80Var != null) {
+                    w80Var.j();
+                    break;
+                }
+                break;
+            default:
+                w80 w80Var2 = this.b.r;
+                if (w80Var2 != null) {
+                    w80Var2.c();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n1
+    public void n(KeyEvent keyEvent) {
+        x80 x80Var = this.b;
+        x80Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && x80Var.s.isShowing()) {
+            x80Var.s.d(true);
+        }
     }
 }

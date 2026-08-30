@@ -1,124 +1,44 @@
 package d4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import b4.b;
-import f5.d0;
-import j3.g1;
-import j3.s0;
-import j3.t0;
-import java.util.Arrays;
+import android.media.MediaCodec;
+import android.os.Handler;
+import android.os.Message;
+import h5.d0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public static final Parcelable.Creator<a> CREATOR;
-    public static final t0 h;
-    public static final t0 n;
-    public final String a;
-    public final String b;
-    public final long c;
-    public final long d;
-    public final byte[] e;
-    public int f;
+public final /* synthetic */ class a implements MediaCodec.OnFrameRenderedListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i5.i b;
 
-    static {
-        s0 s0Var = new s0();
-        s0Var.o = "application/id3";
-        h = new t0(s0Var);
-        s0 s0Var2 = new s0();
-        s0Var2.o = "application/x-scte35";
-        n = new t0(s0Var2);
-        CREATOR = new w.a(27);
+    public /* synthetic */ a(k kVar, i5.i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
     }
 
-    public a(String str, String str2, long j10, long j11, byte[] bArr) {
-        this.a = str;
-        this.b = str2;
-        this.c = j10;
-        this.d = j11;
-        this.e = bArr;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.c == aVar.c && this.d == aVar.d && d0.a(this.a, aVar.a) && d0.a(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // b4.b
-    public final byte[] getWrappedMetadataBytes() {
-        if (getWrappedMetadataFormat() != null) {
-            return this.e;
-        }
-        return null;
-    }
-
-    @Override // b4.b
-    public final t0 getWrappedMetadataFormat() {
-        String str = this.a;
-        str.getClass();
-        switch (str) {
-            case "urn:scte:scte35:2014:bin":
-                return n;
-            case "https://aomedia.org/emsg/ID3":
-            case "https://developer.apple.com/streaming/emsg-id3":
-                return h;
+    @Override // android.media.MediaCodec.OnFrameRenderedListener
+    public final void onFrameRendered(MediaCodec mediaCodec, long j10, long j11) {
+        switch (this.a) {
+            case 0:
+                i5.i iVar = this.b;
+                Handler handler = iVar.a;
+                if (d0.a >= 30) {
+                    iVar.a(j10);
+                    break;
+                } else {
+                    handler.sendMessageAtFrontOfQueue(Message.obtain(handler, 0, (int) (j10 >> 32), (int) j10));
+                    break;
+                }
             default:
-                return null;
+                i5.i iVar2 = this.b;
+                Handler handler2 = iVar2.a;
+                if (d0.a >= 30) {
+                    iVar2.a(j10);
+                    break;
+                } else {
+                    handler2.sendMessageAtFrontOfQueue(Message.obtain(handler2, 0, (int) (j10 >> 32), (int) j10));
+                    break;
+                }
         }
-    }
-
-    public final int hashCode() {
-        if (this.f == 0) {
-            String str = this.a;
-            int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
-            String str2 = this.b;
-            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-            long j10 = this.c;
-            int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
-            long j11 = this.d;
-            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
-        }
-        return this.f;
-    }
-
-    public final String toString() {
-        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeString(this.b);
-        parcel.writeLong(this.c);
-        parcel.writeLong(this.d);
-        parcel.writeByteArray(this.e);
-    }
-
-    public a(Parcel parcel) {
-        String readString = parcel.readString();
-        int i10 = d0.a;
-        this.a = readString;
-        this.b = parcel.readString();
-        this.c = parcel.readLong();
-        this.d = parcel.readLong();
-        this.e = parcel.createByteArray();
-    }
-
-    @Override // b4.b
-    public final /* synthetic */ void populateMediaMetadata(g1 g1Var) {
     }
 }

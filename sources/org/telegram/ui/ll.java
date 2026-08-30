@@ -1,31 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.util.ArrayList;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ll extends pt0 {
-    public final /* synthetic */ Bitmap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ tn c;
+public final class ll extends ViewOutlineProvider {
+    public final /* synthetic */ xn a;
 
-    public ll(tn tnVar, Bitmap bitmap, ArrayList arrayList) {
-        this.c = tnVar;
-        this.a = bitmap;
-        this.b = arrayList;
+    public ll(xn xnVar) {
+        this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
-    }
-
-    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i11, 0, z11, 0L);
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
+        if (imageReceiver == null) {
+            xn xnVar = this.a;
+            outline.setOval(0, 0, AndroidUtilities.roundPlayingMessageSize(xnVar.C9()), AndroidUtilities.roundPlayingMessageSize(xnVar.C9()));
+            return;
+        }
+        int[] roundRadius = imageReceiver.getRoundRadius();
+        int i10 = 0;
+        for (int i11 = 0; i11 < 4; i11++) {
+            i10 = Math.max(i10, roundRadius[i11]);
+        }
+        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i10);
     }
 }

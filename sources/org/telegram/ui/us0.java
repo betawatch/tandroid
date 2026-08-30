@@ -1,48 +1,78 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class us0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class us0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ PhotoViewer c;
+    public final /* synthetic */ vs0 b;
 
-    public /* synthetic */ us0(PhotoViewer photoViewer, int i10, int i11) {
-        this.a = i11;
-        this.c = photoViewer;
-        this.b = i10;
+    public /* synthetic */ us0(vs0 vs0Var, int i10) {
+        this.a = i10;
+        this.b = vs0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L32;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        i5.b bVar;
         switch (this.a) {
             case 0:
-                PhotoViewer photoViewer = this.c;
-                vs0 vs0Var = photoViewer.J1;
-                vs0Var.e.setVisibility(0);
-                FrameLayout frameLayout = vs0Var.r;
-                frameLayout.setVisibility(0);
-                frameLayout.setTranslationY(AndroidUtilities.dp(18.0f));
-                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                org.telegram.ui.Components.jr jrVar = org.telegram.ui.Components.jr.h;
-                b.q(translationY, jrVar, 320L);
-                vs0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(jrVar).setDuration(320L).start();
-                photoViewer.q4 = this.b;
-                photoViewer.m6 = null;
-                photoViewer.k6 = -1;
+                PhotoViewer photoViewer = this.b.b;
+                au0 au0Var = photoViewer.B2;
+                if (au0Var != null) {
+                    org.telegram.ui.Components.i71 i71Var = photoViewer.C2;
+                    if (au0Var.e != i71Var) {
+                        au0Var.c = false;
+                        au0Var.d = false;
+                        if (au0Var.b) {
+                            au0Var.a++;
+                            au0Var.b = false;
+                        }
+                        au0Var.setImageResource(R.color.transparent);
+                    }
+                    if (i71Var != null) {
+                        j3.f0 f0Var = i71Var.d;
+                        if (f0Var != null) {
+                            try {
+                                f0Var.j0();
+                                j3.n0 n0Var = f0Var.N;
+                                if (n0Var != null && (bVar = n0Var.O) != null) {
+                                    int i10 = bVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p10 = i71Var.p() - i71Var.n();
+                        if (!au0Var.c && !au0Var.d && !au0Var.b && p10 < 5250.0f) {
+                            Uri uri = i71Var.C;
+                            int i11 = au0Var.a + 1;
+                            au0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new zt0(au0Var, uri, i11, 0));
+                            au0Var.b = true;
+                        }
+                    }
+                    au0Var.e = i71Var;
+                    break;
+                }
+                break;
+            case 1:
+                au0.a(this.b.b.B2);
                 break;
             default:
-                int i10 = this.b;
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.q4 = i10;
-                photoViewer2.m6 = null;
-                photoViewer2.k6 = -1;
+                au0.a(this.b.b.B2);
                 break;
         }
     }

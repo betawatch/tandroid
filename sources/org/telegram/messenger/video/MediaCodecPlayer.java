@@ -7,7 +7,7 @@ import android.media.MediaFormat;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class MediaCodecPlayer {
     private final MediaCodec codec;
@@ -63,13 +63,13 @@ public class MediaCodecPlayer {
         if (this.done) {
             return false;
         }
-        boolean z10 = this.first;
+        boolean z4 = this.first;
         this.first = false;
         long j11 = j10 * 1000;
-        if (!z10 && j11 <= this.lastPositionUs) {
+        if (!z4 && j11 <= this.lastPositionUs) {
             return false;
         }
-        if (this.extractor.getSampleTime() > j11 || (z10 && j11 > 1000000)) {
+        if (this.extractor.getSampleTime() > j11 || (z4 && j11 > 1000000)) {
             this.extractor.seekTo(j11, 0);
         }
         while (true) {

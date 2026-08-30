@@ -78,40 +78,40 @@ public final class Duration implements Comparable<Duration>, Serializable {
         long j11 = j10 / 3600;
         int i10 = (int) ((j10 % 3600) / 60);
         int i11 = (int) (j10 % 60);
-        StringBuilder sb2 = new StringBuilder(24);
-        sb2.append("PT");
+        StringBuilder sb = new StringBuilder(24);
+        sb.append("PT");
         if (j11 != 0) {
-            sb2.append(j11);
-            sb2.append('H');
+            sb.append(j11);
+            sb.append('H');
         }
         if (i10 != 0) {
-            sb2.append(i10);
-            sb2.append('M');
+            sb.append(i10);
+            sb.append('M');
         }
-        if (i11 == 0 && this.b == 0 && sb2.length() > 2) {
-            return sb2.toString();
+        if (i11 == 0 && this.b == 0 && sb.length() > 2) {
+            return sb.toString();
         }
         if (this.a >= 0 || this.b <= 0) {
-            sb2.append(i11);
+            sb.append(i11);
         } else if (i11 == 0) {
-            sb2.append("-0");
+            sb.append("-0");
         } else {
-            sb2.append(i11);
+            sb.append(i11);
         }
         if (this.b > 0) {
-            int length = sb2.length();
+            int length = sb.length();
             if (this.a < 0) {
-                sb2.append(2000000000 - this.b);
+                sb.append(2000000000 - this.b);
             } else {
-                sb2.append(this.b + 1000000000);
+                sb.append(this.b + 1000000000);
             }
-            while (sb2.charAt(sb2.length() - 1) == '0') {
-                sb2.setLength(sb2.length() - 1);
+            while (sb.charAt(sb.length() - 1) == '0') {
+                sb.setLength(sb.length() - 1);
             }
-            sb2.setCharAt(length, '.');
+            sb.setCharAt(length, '.');
         }
-        sb2.append('S');
-        return sb2.toString();
+        sb.append('S');
+        return sb.toString();
     }
 
     private Object writeReplace() {

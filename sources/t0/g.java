@@ -4,7 +4,7 @@ import android.content.ClipDescription;
 import android.net.Uri;
 import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class g implements h {
     public final InputContentInfo a;
@@ -14,33 +14,33 @@ public final class g implements h {
     }
 
     @Override // t0.h
-    public final Uri c() {
+    public final Uri a() {
         return this.a.getContentUri();
     }
 
     @Override // t0.h
-    public final void d() {
+    public final void b() {
         this.a.requestPermission();
     }
 
     @Override // t0.h
-    public final Uri f() {
+    public final Uri c() {
         return this.a.getLinkUri();
+    }
+
+    @Override // t0.h
+    public final Object d() {
+        return this.a;
+    }
+
+    @Override // t0.h
+    public final void e() {
+        this.a.releasePermission();
     }
 
     @Override // t0.h
     public final ClipDescription getDescription() {
         return this.a.getDescription();
-    }
-
-    @Override // t0.h
-    public final Object k() {
-        return this.a;
-    }
-
-    @Override // t0.h
-    public final void l() {
-        this.a.releasePermission();
     }
 
     public g(Uri uri, ClipDescription clipDescription, Uri uri2) {

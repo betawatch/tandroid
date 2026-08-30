@@ -1,23 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j51 extends View {
-    public int a;
+public final class j51 extends m51 {
+    public static boolean h = true;
+    public final int e;
+    public final s01 f;
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    public j51(String str, int i10, s01 s01Var) {
+        super(str, (s01) null);
+        this.e = i10;
+        this.f = s01Var;
     }
 
-    public void setHeight(int i10) {
-        if (this.a == i10) {
-            return;
+    @Override // org.telegram.ui.Components.m51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i10 = this.e;
+        if (i10 == 2) {
+            textPaint.setColor(-1);
+        } else if (i10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, h ? org.telegram.ui.ActionBar.j6.hc : org.telegram.ui.ActionBar.j6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, h ? org.telegram.ui.ActionBar.j6.gc : org.telegram.ui.ActionBar.j6.ec, false));
         }
-        this.a = i10;
-        requestLayout();
+        s01 s01Var = this.f;
+        if (s01Var != null) {
+            s01Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
+        }
     }
 }

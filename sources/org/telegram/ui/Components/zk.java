@@ -1,39 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
+import org.telegram.messenger.IMapsProvider;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zk extends TextView {
-    public final /* synthetic */ int a;
-    public float b;
-    public float c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zk(Context context, int i10) {
-        super(context);
-        this.a = i10;
-    }
-
-    @Override // android.view.View
-    public final float getTranslationX() {
-        switch (this.a) {
-        }
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f9) {
-        switch (this.a) {
-            case 0:
-                this.b = f9;
-                setTranslationY(this.c + f9);
-                break;
-            default:
-                this.b = f9;
-                setTranslationY(this.c + f9);
-                break;
-        }
-    }
+public final class zk {
+    public int a;
+    public IMapsProvider.IMarker b;
+    public TLRPC.TL_messageMediaVenue c;
 }

@@ -1,22 +1,25 @@
 package b6;
 
-import com.google.android.gms.common.api.e;
-import com.google.android.gms.common.api.internal.v;
-import com.google.android.gms.common.api.internal.w;
-import com.google.android.gms.common.api.j;
-import com.google.android.gms.tasks.Task;
-import z5.o;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c extends j {
-    public static final e k = new e("ClientTelemetry.API", new b(0), new com.google.android.gms.common.api.d());
+public final class c implements b {
+    public final /* synthetic */ c8.a a;
 
-    public final Task f(o oVar) {
-        v b10 = w.b();
-        b10.d = new w5.c[]{w6.b.a};
-        b10.b = false;
-        b10.c = new za.c(oVar, 4);
-        return e(2, b10.b());
+    public c(c8.a aVar) {
+        this.a = aVar;
+    }
+
+    @Override // b6.b
+    public final void a(y5.a aVar) {
+        boolean f10 = aVar.f();
+        c8.a aVar2 = this.a;
+        if (f10) {
+            aVar2.i(null, aVar2.P);
+            return;
+        }
+        n nVar = aVar2.H;
+        if (nVar != null) {
+            ((com.google.android.gms.common.api.l) nVar.a).onConnectionFailed(aVar);
+        }
     }
 }

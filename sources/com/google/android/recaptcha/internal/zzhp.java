@@ -1,24 +1,24 @@
 package com.google.android.recaptcha.internal;
 
-import i7.b7;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
+import k7.o7;
 import kotlin.jvm.internal.j;
-import qc.c;
-import qc.g;
+import sc.c;
+import sc.g;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
 
     public zzhp() {
         int i10 = zzby.zza;
-        this.zza = b7.a(zzho.zza);
+        this.zza = o7.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -34,20 +34,20 @@ public final class zzhp implements zzhn {
                 zzxn zzxnVar = (zzxn) zza;
                 zzhlVar.zzd();
                 return zzxnVar;
-            } catch (zzcg e10) {
+            } catch (zzcg e) {
                 if (zzhlVar == null) {
-                    throw e10;
+                    throw e;
                 }
-                if (!j.a(e10.zza(), zzcd.zzax)) {
-                    throw e10;
+                if (!j.a(e.zza(), zzcd.zzax)) {
+                    throw e;
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e11) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e11.getMessage(), null, 8, null);
+                } catch (Exception e6) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e6.getMessage(), null, 8, null);
                 }
-            } catch (Exception e12) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e12.getMessage(), null, 8, null);
+            } catch (Exception e10) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e10.getMessage(), null, 8, null);
             }
         } finally {
         }

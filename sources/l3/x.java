@@ -1,19 +1,53 @@
 package l3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.media.AudioTrack;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class x {
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final w a;
+    public int b;
+    public long c;
+    public long d;
+    public long e;
+    public long f;
+
+    public x(AudioTrack audioTrack) {
+        if (h5.d0.a >= 19) {
+            this.a = new w(audioTrack);
+            a();
+        } else {
+            this.a = null;
+            b(3);
         }
-        if (obj == null || x.class != obj.getClass()) {
-            return false;
-        }
-        return Float.compare(0.0f, 0.0f) == 0;
     }
 
-    public final int hashCode() {
-        return Float.floatToIntBits(0.0f) + 16337;
+    public final void a() {
+        if (this.a != null) {
+            b(0);
+        }
+    }
+
+    public final void b(int i10) {
+        this.b = i10;
+        if (i10 == 0) {
+            this.e = 0L;
+            this.f = -1L;
+            this.c = System.nanoTime() / 1000;
+            this.d = 10000L;
+            return;
+        }
+        if (i10 == 1) {
+            this.d = 10000L;
+            return;
+        }
+        if (i10 == 2 || i10 == 3) {
+            this.d = 10000000L;
+        } else {
+            if (i10 != 4) {
+                throw new IllegalStateException();
+            }
+            this.d = 500000L;
+        }
     }
 }

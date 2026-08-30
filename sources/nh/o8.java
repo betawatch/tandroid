@@ -1,57 +1,155 @@
 package nh;
 
-import org.telegram.ui.Components.mc;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.nr;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y8 b;
+public final class o8 extends Drawable {
+    public int a;
+    public final View b;
+    public final Paint c;
+    public final Paint d;
+    public final org.telegram.ui.Components.z5 g;
+    public boolean h;
+    public Paint i;
+    public int e = 255;
+    public final float[] f = new float[15];
+    public final Path j = new Path();
 
-    public /* synthetic */ o8(y8 y8Var, int i10) {
-        this.a = i10;
-        this.b = y8Var;
+    public o8(View view) {
+        this.b = view;
+        this.g = new org.telegram.ui.Components.z5(view, 350L, nr.h);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, 0.0f, 1593835520);
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        paint2.setColor(-1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e9 e9Var = this.b.S;
-                mc.h(e9Var.container);
-                super/*org.telegram.ui.ActionBar.f3*/.dismiss();
-                break;
-            case 1:
-                y8 y8Var = this.b;
-                y8Var.v.setLoading(false);
-                e9 e9Var2 = y8Var.S;
-                e9Var2.f1();
-                e9Var2.b.D(0);
-                break;
-            case 2:
-                this.b.Q = false;
-                break;
-            case 3:
-                e9 e9Var3 = this.b.S;
-                e9Var3.I = 6;
-                e9Var3.b.D(1);
-                break;
-            case 4:
-                y8 y8Var2 = this.b;
-                y8Var2.n.m(2);
-                y8Var2.f.forceLayout();
-                y8Var2.j();
-                break;
-            default:
-                y8 y8Var3 = this.b;
-                e9 e9Var4 = y8Var3.S;
-                if (y8Var3.a != 0) {
-                    e9Var4.onBackPressed();
-                    break;
-                } else {
-                    e9Var4.dismiss();
-                    break;
-                }
+    public final void a() {
+        int i10 = this.a + 1;
+        this.a = i10;
+        if (i10 >= 2) {
+            this.a = 0;
         }
+    }
+
+    public final void b(boolean z4, boolean z10) {
+        this.h = z4;
+        if (z10) {
+            this.b.invalidate();
+        } else {
+            this.g.d(z4 ? 1.0f : 0.0f, true);
+        }
+    }
+
+    public final void c(float f10) {
+        this.c.setShadowLayer(AndroidUtilities.dp(2.0f) / f10, 0.0f, AndroidUtilities.dpf2(0.7f) / f10, i0.a.k(-16777216, 45));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float centerX = getBounds().centerX();
+        float[] fArr = this.f;
+        int i10 = 0;
+        fArr[0] = centerX;
+        int i11 = 1;
+        fArr[1] = getBounds().centerY();
+        int i12 = 2;
+        fArr[2] = getBounds().height() / 2.0f;
+        int i13 = 3;
+        fArr[3] = (getBounds().width() * 1.027f) + getBounds().left;
+        int i14 = 4;
+        fArr[4] = (getBounds().height() * 0.956f) + getBounds().top;
+        fArr[5] = getBounds().height() * 0.055f;
+        fArr[6] = (getBounds().width() * 0.843f) + getBounds().left;
+        fArr[7] = (getBounds().height() * 0.812f) + getBounds().top;
+        fArr[8] = getBounds().height() * 0.132f;
+        fArr[9] = (getBounds().width() * (-0.02699995f)) + getBounds().left;
+        fArr[10] = (getBounds().height() * 0.956f) + getBounds().top;
+        fArr[11] = getBounds().height() * 0.055f;
+        fArr[12] = (getBounds().width() * 0.157f) + getBounds().left;
+        fArr[13] = (getBounds().height() * 0.812f) + getBounds().top;
+        fArr[14] = getBounds().height() * 0.132f;
+        float d = this.g.d(this.h ? 1.0f : 0.0f, false);
+        int i15 = this.a;
+        Paint paint = this.d;
+        if (i15 == 0) {
+            paint.setColor(-1);
+        } else if (i15 == 1) {
+            if (this.i == null) {
+                Paint paint2 = new Paint(1);
+                this.i = paint2;
+                paint2.setColor(-16777216);
+                this.i.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                this.i.setStrokeWidth(AndroidUtilities.dp(3.0f));
+            }
+            paint.setColor(i0.a.k(-16777216, 127));
+        }
+        if (this.e != 255 || this.a == 1) {
+            canvas.saveLayerAlpha(getBounds().left - (getBounds().width() * 0.2f), getBounds().top, (getBounds().width() * 0.2f) + getBounds().right, (getBounds().height() * 0.2f) + getBounds().bottom, this.e, 31);
+        } else {
+            canvas.save();
+        }
+        Path path = this.j;
+        path.rewind();
+        int i16 = 0;
+        while (i16 < i12) {
+            if (this.a != i11 || i16 != 0) {
+                Paint paint3 = i16 == 0 ? this.c : paint;
+                int i17 = i16 == 0 ? 1 : 0;
+                while (i10 < 5) {
+                    if (i10 == i11 || i10 == i12) {
+                        if (d != 1.0f) {
+                            int i18 = i10 * 3;
+                            path.addCircle(fArr[i18], fArr[i18 + 1], ((1.0f - d) * fArr[i18 + 2]) - i17, Path.Direction.CW);
+                        }
+                    } else if (i10 != i13 && i10 != i14) {
+                        int i19 = i10 * 3;
+                        path.addCircle(fArr[i19], fArr[i19 + 1], fArr[i19 + 2] - i17, Path.Direction.CW);
+                    } else if (d != 0.0f) {
+                        int i20 = i10 * 3;
+                        path.addCircle(fArr[i20], fArr[i20 + 1], (fArr[i20 + 2] * d) - i17, Path.Direction.CW);
+                    }
+                    i10++;
+                    i13 = 3;
+                    i11 = 1;
+                    i12 = 2;
+                    i14 = 4;
+                }
+                canvas.drawPath(path, paint3);
+            }
+            i16++;
+            i13 = 3;
+            i10 = 0;
+            i11 = 1;
+            i12 = 2;
+            i14 = 4;
+        }
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.e = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

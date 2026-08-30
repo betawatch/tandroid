@@ -1,26 +1,60 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class js implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsActivity b;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ js(ContactsActivity contactsActivity, int i10) {
-        this.a = i10;
-        this.b = contactsActivity;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class js extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ns a;
+
+    public js(ns nsVar) {
+        this.a = nsVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.g0();
-                break;
-            default:
-                ContactsActivity contactsActivity = this.b;
-                contactsActivity.f.postOnAnimation(new js(contactsActivity, 0));
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        ns nsVar = this.a;
+        if (i10 == -1) {
+            nsVar.finishFragment();
+            return;
+        }
+        if (i10 != 1 || nsVar.b.getText().length() == 0) {
+            return;
+        }
+        TLRPC.User user = nsVar.getMessagesController().getUser(Long.valueOf(nsVar.E));
+        TLRPC.UserFull userFull = nsVar.getMessagesController().getUserFull(nsVar.E);
+        user.first_name = nsVar.b.getText().toString();
+        user.last_name = nsVar.c.getText().toString();
+        user.contact = true;
+        TLRPC.TL_textWithEntities textWithEntities = nsVar.d.getTextWithEntities();
+        nsVar.getMessagesController().putUser(user, false);
+        nsVar.getContactsController().addContact(user, textWithEntities, nsVar.H && nsVar.U);
+        i11 = ((org.telegram.ui.ActionBar.p2) nsVar).currentAccount;
+        MessagesController.getNotificationsSettings(i11).edit().putInt("dialog_bar_vis3" + nsVar.E, 3).commit();
+        nsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
+        nsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(nsVar.E));
+        if (userFull != null) {
+            if (textWithEntities == null || textWithEntities.text.length() <= 0) {
+                userFull.flags2 &= -4194305;
+                userFull.note = null;
+            } else {
+                userFull.flags2 |= TLObject.FLAG_22;
+                userFull.note = textWithEntities;
+            }
+            i12 = ((org.telegram.ui.ActionBar.p2) nsVar).currentAccount;
+            MessagesStorage.getInstance(i12).updateUserInfo(userFull, true);
+            nsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(userFull.id), userFull);
+        }
+        nsVar.finishFragment();
+        ms msVar = nsVar.L;
+        if (msVar != null) {
+            msVar.a();
         }
     }
 }

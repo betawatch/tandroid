@@ -1,30 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.R;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class eq extends AnimatorListenerAdapter {
-    public final /* synthetic */ gq a;
+public abstract class eq implements InputFilter {
+    public final int a;
 
-    public eq(gq gqVar) {
-        this.a = gqVar;
+    public eq(int i10) {
+        this.a = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        gq gqVar = this.a;
-        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = gqVar.v;
-        if (gqVar.G == 1) {
-            gqVar.B.setVisibility(4);
+    @Override // android.text.InputFilter
+    public CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        int codePointCount = this.a - (Character.codePointCount(spanned, 0, spanned.length()) - Character.codePointCount(spanned, i12, i13));
+        if (codePointCount <= 0) {
+            return "";
         }
-        for (int i10 = 0; i10 < colorPicker$RadioButtonArr.length; i10++) {
-            if (colorPicker$RadioButtonArr[i10].getTag(R.id.index_tag) == null) {
-                colorPicker$RadioButtonArr[i10].setVisibility(4);
-            }
+        if (codePointCount >= Character.codePointCount(charSequence, i10, i11)) {
+            return null;
         }
-        gqVar.y = null;
+        int i14 = codePointCount + i10;
+        return (Character.isHighSurrogate(charSequence.charAt(i14 + (-1))) && (i14 = i14 + (-1)) == i10) ? "" : charSequence.subSequence(i10, i14);
     }
 }

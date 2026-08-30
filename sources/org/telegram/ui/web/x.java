@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class x implements Runnable {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("status", strArr[0]);
-                        z0.u(i10, w0Var, "phone_requested", jSONObject);
+                        a1.u(i10, w0Var, "phone_requested", jSONObject);
                         break;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                         return;
                     }
                 }
@@ -44,10 +44,10 @@ public final /* synthetic */ class x implements Runnable {
                 try {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("status", strArr2[0]);
-                    z0.u(i11, w0Var2, "write_access_requested", jSONObject2);
+                    a1.u(i11, w0Var2, "write_access_requested", jSONObject2);
                     break;
-                } catch (Exception e11) {
-                    FileLog.e(e11);
+                } catch (Exception e6) {
+                    FileLog.e(e6);
                 }
         }
     }

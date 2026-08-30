@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class d1 {
     public static final Class a;
@@ -25,13 +25,13 @@ public abstract class d1 {
         d = new k1();
     }
 
-    public static void A(int i10, List list, l0 l0Var, boolean z10) {
+    public static void A(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 double doubleValue = ((Double) list.get(i11)).doubleValue();
                 kVar.getClass();
@@ -54,13 +54,13 @@ public abstract class d1 {
         }
     }
 
-    public static void B(int i10, List list, l0 l0Var, boolean z10) {
+    public static void B(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.M(i10, ((Integer) list.get(i11)).intValue());
                 i11++;
@@ -79,13 +79,13 @@ public abstract class d1 {
         }
     }
 
-    public static void C(int i10, List list, l0 l0Var, boolean z10) {
+    public static void C(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.I(i10, ((Integer) list.get(i11)).intValue());
                 i11++;
@@ -106,13 +106,13 @@ public abstract class d1 {
         }
     }
 
-    public static void D(int i10, List list, l0 l0Var, boolean z10) {
+    public static void D(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.K(i10, ((Long) list.get(i11)).longValue());
                 i11++;
@@ -133,13 +133,13 @@ public abstract class d1 {
         }
     }
 
-    public static void E(int i10, List list, l0 l0Var, boolean z10) {
+    public static void E(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 float floatValue = ((Float) list.get(i11)).floatValue();
                 kVar.getClass();
@@ -172,13 +172,13 @@ public abstract class d1 {
         }
     }
 
-    public static void G(int i10, List list, l0 l0Var, boolean z10) {
+    public static void G(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.M(i10, ((Integer) list.get(i11)).intValue());
                 i11++;
@@ -197,13 +197,13 @@ public abstract class d1 {
         }
     }
 
-    public static void H(int i10, List list, l0 l0Var, boolean z10) {
+    public static void H(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.U(i10, ((Long) list.get(i11)).longValue());
                 i11++;
@@ -232,13 +232,13 @@ public abstract class d1 {
         }
     }
 
-    public static void J(int i10, List list, l0 l0Var, boolean z10) {
+    public static void J(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.I(i10, ((Integer) list.get(i11)).intValue());
                 i11++;
@@ -259,13 +259,13 @@ public abstract class d1 {
         }
     }
 
-    public static void K(int i10, List list, l0 l0Var, boolean z10) {
+    public static void K(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.K(i10, ((Long) list.get(i11)).longValue());
                 i11++;
@@ -286,13 +286,13 @@ public abstract class d1 {
         }
     }
 
-    public static void L(int i10, List list, l0 l0Var, boolean z10) {
+    public static void L(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 kVar.S(i10, (intValue >> 31) ^ (intValue << 1));
@@ -314,13 +314,13 @@ public abstract class d1 {
         }
     }
 
-    public static void M(int i10, List list, l0 l0Var, boolean z10) {
+    public static void M(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 long longValue = ((Long) list.get(i11)).longValue();
                 kVar.U(i10, (longValue >> 63) ^ (longValue << 1));
@@ -367,13 +367,13 @@ public abstract class d1 {
         }
     }
 
-    public static void O(int i10, List list, l0 l0Var, boolean z10) {
+    public static void O(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.S(i10, ((Integer) list.get(i11)).intValue());
                 i11++;
@@ -392,13 +392,13 @@ public abstract class d1 {
         }
     }
 
-    public static void P(int i10, List list, l0 l0Var, boolean z10) {
+    public static void P(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.U(i10, ((Long) list.get(i11)).longValue());
                 i11++;
@@ -422,11 +422,11 @@ public abstract class d1 {
         if (size == 0) {
             return 0;
         }
-        int y8 = k.y(i10) * size;
+        int y10 = k.y(i10) * size;
         for (int i11 = 0; i11 < list.size(); i11++) {
-            y8 += k.s((g) list.get(i11));
+            y10 += k.s((g) list.get(i11));
         }
-        return y8;
+        return y10;
     }
 
     public static int b(int i10, List list) {
@@ -535,12 +535,12 @@ public abstract class d1 {
         if (size == 0) {
             return 0;
         }
-        int y8 = k.y(i10) * size;
+        int y10 = k.y(i10) * size;
         for (int i11 = 0; i11 < size; i11++) {
             int b10 = ((a) list.get(i11)).b(c1Var);
-            y8 += k.z(b10) + b10;
+            y10 += k.z(b10) + b10;
         }
-        return y8;
+        return y10;
     }
 
     public static int m(int i10, List list) {
@@ -601,32 +601,32 @@ public abstract class d1 {
         if (size == 0) {
             return 0;
         }
-        int y8 = k.y(i10) * size;
+        int y10 = k.y(i10) * size;
         if (!(list instanceof f0)) {
             while (i11 < size) {
                 Object obj = list.get(i11);
                 if (obj instanceof g) {
                     int size2 = ((g) obj).size();
-                    y8 = k.z(size2) + size2 + y8;
+                    y10 = k.z(size2) + size2 + y10;
                 } else {
-                    y8 = k.x((String) obj) + y8;
+                    y10 = k.x((String) obj) + y10;
                 }
                 i11++;
             }
-            return y8;
+            return y10;
         }
         f0 f0Var = (f0) list;
         while (i11 < size) {
             Object l10 = f0Var.l(i11);
             if (l10 instanceof g) {
                 int size3 = ((g) l10).size();
-                y8 = k.z(size3) + size3 + y8;
+                y10 = k.z(size3) + size3 + y10;
             } else {
-                y8 = k.x((String) l10) + y8;
+                y10 = k.x((String) l10) + y10;
             }
             i11++;
         }
-        return y8;
+        return y10;
     }
 
     public static int r(int i10, List list) {
@@ -681,7 +681,7 @@ public abstract class d1 {
         return i10;
     }
 
-    public static k1 v(boolean z10) {
+    public static k1 v(boolean z4) {
         Class<?> cls;
         try {
             cls = Class.forName("androidx.datastore.preferences.protobuf.UnknownFieldSetSchema");
@@ -690,7 +690,7 @@ public abstract class d1 {
         }
         if (cls != null) {
             try {
-                return (k1) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z10));
+                return (k1) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z4));
             } catch (Throwable unused2) {
             }
         }
@@ -720,13 +720,13 @@ public abstract class d1 {
         return true;
     }
 
-    public static void y(int i10, List list, l0 l0Var, boolean z10) {
+    public static void y(int i10, List list, l0 l0Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         k kVar = (k) l0Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 kVar.F(i10, ((Boolean) list.get(i11)).booleanValue());
                 i11++;

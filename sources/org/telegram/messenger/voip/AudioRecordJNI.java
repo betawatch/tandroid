@@ -8,9 +8,9 @@ import android.media.audiofx.NoiseSuppressor;
 import android.text.TextUtils;
 import java.nio.ByteBuffer;
 import java.util.regex.Pattern;
-import nh.b6;
+import nh.n4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class AudioRecordJNI {
     private AcousticEchoCanceler aec;
@@ -74,8 +74,8 @@ public class AudioRecordJNI {
                 } else {
                     this.audioRecord.read(this.buffer, 1920);
                 }
-            } catch (Exception e10) {
-                VLog.e(e10);
+            } catch (Exception e) {
+                VLog.e(e);
             }
             if (!this.running) {
                 this.audioRecord.stop();
@@ -93,8 +93,8 @@ public class AudioRecordJNI {
         }
         try {
             return Pattern.compile(string);
-        } catch (Exception e10) {
-            VLog.e(e10);
+        } catch (Exception e) {
+            VLog.e(e);
             return null;
         }
     }
@@ -106,7 +106,7 @@ public class AudioRecordJNI {
             throw new IllegalStateException("thread already started");
         }
         this.running = true;
-        Thread thread = new Thread(new b6(20, this, this.needResampling ? ByteBuffer.allocateDirect(1764) : null));
+        Thread thread = new Thread(new n4(29, this, this.needResampling ? ByteBuffer.allocateDirect(1764) : null));
         this.thread = thread;
         thread.start();
     }
@@ -126,17 +126,17 @@ public class AudioRecordJNI {
             } catch (Exception unused) {
             }
         }
-        VLog.i(a4.w.k(i10, i11, "Trying to initialize AudioRecord with source=", " and sample rate="));
+        VLog.i(android.support.v4.media.a.k(i10, i11, "Trying to initialize AudioRecord with source=", " and sample rate="));
         try {
             i12 = i11;
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e) {
+            e = e;
             i12 = i11;
         }
         try {
             this.audioRecord = new AudioRecord(i10, i12, 16, 2, getBufferSize(this.bufferSize, 48000));
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e6) {
+            e = e6;
             VLog.e("AudioRecord init failed!", e);
             this.needResampling = i12 == 48000;
             audioRecord = this.audioRecord;
@@ -162,7 +162,7 @@ public class AudioRecordJNI {
         }
         this.bufferSize = i13;
         boolean tryInit = tryInit(7, 48000);
-        boolean z10 = true;
+        boolean z4 = true;
         if (!tryInit) {
             tryInit = tryInit(1, 48000);
         }
@@ -205,9 +205,9 @@ public class AudioRecordJNI {
                     this.aec = create3;
                     if (create3 != null) {
                         if (!Instance.getGlobalServerConfig().useSystemAec || !isGoodAudioEffect(this.aec)) {
-                            z10 = false;
+                            z4 = false;
                         }
-                        create3.setEnabled(z10);
+                        create3.setEnabled(z4);
                     }
                 } else {
                     VLog.w("AcousticEchoCanceler is not available on this device");
@@ -225,8 +225,8 @@ public class AudioRecordJNI {
         if (thread != null) {
             try {
                 thread.join();
-            } catch (InterruptedException e10) {
-                VLog.e(e10);
+            } catch (InterruptedException e) {
+                VLog.e(e);
             }
             this.thread = null;
         }
@@ -267,8 +267,8 @@ public class AudioRecordJNI {
                     this.audioRecord.startRecording();
                 }
                 return true;
-            } catch (Exception e10) {
-                VLog.e("Error initializing AudioRecord", e10);
+            } catch (Exception e) {
+                VLog.e("Error initializing AudioRecord", e);
             }
         }
         return false;

@@ -1,68 +1,70 @@
 package s5;
 
-import android.os.SystemClock;
-import android.text.TextUtils;
-import java.util.AbstractCollection;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.regex.Pattern;
-import org.json.JSONObject;
-import org.telegram.ui.th;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.RemoteException;
+import j7.f5;
+import r5.c0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
-    public static final Random b = new Random(SystemClock.elapsedRealtime());
+public final class a extends c6.a {
+    public final String a;
+    public final String b;
+    public final k c;
+    public final f d;
+    public final boolean e;
+    public final boolean f;
+    public static final u5.b h = new u5.b("CastMediaOptions", null);
+    public static final Parcelable.Creator<a> CREATOR = new c0(1);
 
-    public static String a(String str, JSONObject jSONObject) {
-        if (jSONObject == null || !jSONObject.has(str)) {
-            return null;
+    public a(String str, String str2, IBinder iBinder, f fVar, boolean z4, boolean z10) {
+        k kVar;
+        this.a = str;
+        this.b = str2;
+        if (iBinder == null) {
+            kVar = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.IImagePicker");
+            kVar = queryLocalInterface instanceof k ? (k) queryLocalInterface : new k(iBinder, "com.google.android.gms.cast.framework.media.IImagePicker", 1);
         }
-        return jSONObject.optString(str);
+        this.c = kVar;
+        this.d = fVar;
+        this.e = z4;
+        this.f = z10;
     }
 
-    public static void b(String str) {
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("Namespace cannot be null or empty");
-        }
-        if (str.length() > 128) {
-            throw new IllegalArgumentException("Invalid namespace length");
-        }
-        if (!str.startsWith("urn:x-cast:")) {
-            throw new IllegalArgumentException("Namespace must begin with the prefix \"urn:x-cast:\"");
-        }
-        if (str.length() == 11) {
-            throw new IllegalArgumentException("Namespace must begin with the prefix \"urn:x-cast:\" and have non-empty suffix");
+    public final void e() {
+        k kVar = this.c;
+        if (kVar != null) {
+            try {
+                Parcel O0 = kVar.O0(kVar.M0(), 2);
+                l6.a J0 = l6.b.J0(O0.readStrongBinder());
+                O0.recycle();
+                if (l6.b.K0(J0) == null) {
+                } else {
+                    throw new ClassCastException();
+                }
+            } catch (RemoteException e) {
+                h.a(e, "Unable to call %s on %s.", "getWrappedClientObject", k.class.getSimpleName());
+            }
         }
     }
 
-    public static ArrayList c(int[] iArr) {
-        ArrayList arrayList = new ArrayList();
-        int length = iArr.length;
-        int i10 = 0;
-        while (i10 < length) {
-            i10 = th.d(iArr[i10], i10, 1, arrayList);
-        }
-        return arrayList;
-    }
-
-    public static boolean d(Object obj, Object obj2) {
-        if (obj == null && obj2 == null) {
-            return true;
-        }
-        return (obj == null || obj2 == null || !obj.equals(obj2)) ? false : true;
-    }
-
-    public static int[] e(AbstractCollection abstractCollection) {
-        int[] iArr = new int[abstractCollection.size()];
-        Iterator it = abstractCollection.iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            iArr[i10] = ((Integer) it.next()).intValue();
-            i10++;
-        }
-        return iArr;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 2, this.a);
+        f5.l(parcel, 3, this.b);
+        k kVar = this.c;
+        f5.f(parcel, 4, kVar == null ? null : kVar.b);
+        f5.k(parcel, 5, this.d, i10);
+        f5.s(parcel, 6, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        f5.s(parcel, 7, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        f5.r(parcel, q10);
     }
 }

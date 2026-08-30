@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
@@ -43,7 +43,7 @@ public final class i0 {
         kotlin.jvm.internal.j.e(linkedHashMap2, "<this>");
         int size = linkedHashMap2.size();
         if (size == 0) {
-            map = rc.p.a;
+            map = tc.p.a;
         } else if (size != 1) {
             map = new LinkedHashMap(linkedHashMap2);
         } else {
@@ -63,10 +63,10 @@ public final class i0 {
                     arrayList.add(str);
                     arrayList2.add(linkedHashMap.get(str));
                 }
-                qc.d[] dVarArr = {new qc.d("keys", arrayList), new qc.d("values", arrayList2)};
+                sc.d[] dVarArr = {new sc.d("keys", arrayList), new sc.d("values", arrayList2)};
                 Bundle bundle = new Bundle(2);
                 while (i10 < 2) {
-                    qc.d dVar = dVarArr[i10];
+                    sc.d dVar = dVarArr[i10];
                     String str2 = (String) dVar.a;
                     Object obj = dVar.b;
                     if (obj == null) {
@@ -161,9 +161,9 @@ public final class i0 {
             } else {
                 linkedHashMap.put(key, a2);
             }
-            md.k kVar = (md.k) i0Var.d.get(key);
+            od.k kVar = (od.k) i0Var.d.get(key);
             if (kVar != null) {
-                ((md.m) kVar).d(a2);
+                ((od.m) kVar).d(a2);
             }
         }
     }

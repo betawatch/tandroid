@@ -5,75 +5,75 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m4 b;
+    public final /* synthetic */ l4 b;
 
-    public /* synthetic */ t(m4 m4Var, int i10) {
+    public /* synthetic */ t(l4 l4Var, int i10) {
         this.a = i10;
-        this.b = m4Var;
+        this.b = l4Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                m4 m4Var = this.b;
-                bh.d dVar = m4Var.m0;
-                float f9 = -((Integer) obj).intValue();
-                m4Var.l0 = f9;
-                dVar.setTranslationY(((1.0f - m4Var.U0) * AndroidUtilities.dp(51.0f)) + f9);
+                l4 l4Var = this.b;
+                dh.d dVar = l4Var.n0;
+                float f10 = -((Integer) obj).intValue();
+                l4Var.m0 = f10;
+                dVar.setTranslationY(((1.0f - l4Var.V0) * AndroidUtilities.dp(51.0f)) + f10);
                 break;
             case 1:
                 String str = (String) obj;
                 if (!TextUtils.isEmpty(str)) {
-                    m4 m4Var2 = this.b;
-                    m4Var2.d0.U.setText(str);
-                    jh.m mVar = m4Var2.d0.U;
-                    mVar.setSelection(mVar.getText().length());
-                    AndroidUtilities.showKeyboard(m4Var2.d0.U);
+                    l4 l4Var2 = this.b;
+                    l4Var2.e0.V.setText(str);
+                    lh.n nVar = l4Var2.e0.V;
+                    nVar.setSelection(nVar.getText().length());
+                    AndroidUtilities.showKeyboard(l4Var2.e0.V);
                     break;
                 }
                 break;
             case 2:
                 String str2 = (String) obj;
-                m4 m4Var3 = this.b;
-                if (m4Var3.H != null && str2 != null) {
-                    m4Var3.d0.k(false);
-                    if (!ye.d.f(Uri.parse(str2), false, null)) {
-                        if (!ye.d.l(m4Var3.H, str2, false)) {
-                            q3 q3Var = m4Var3.q0[0];
-                            if (q3Var != null && q3Var.getWebView() != null) {
-                                m4Var3.q0[0].getWebView().loadUrl(str2);
+                l4 l4Var3 = this.b;
+                if (l4Var3.I != null && str2 != null) {
+                    l4Var3.e0.k(false);
+                    if (!af.g.f(Uri.parse(str2), false, null)) {
+                        if (!af.g.l(l4Var3.I, str2, false)) {
+                            p3 p3Var = l4Var3.r0[0];
+                            if (p3Var != null && p3Var.getWebView() != null) {
+                                l4Var3.r0[0].getWebView().loadUrl(str2);
                                 break;
                             } else {
-                                ye.d.n(str2);
+                                af.g.n(str2);
                                 break;
                             }
                         }
                     } else {
-                        z3 z3Var = m4Var3.G;
-                        if (z3Var != null) {
-                            z3Var.dismiss(true);
+                        y3 y3Var = l4Var3.H;
+                        if (y3Var != null) {
+                            y3Var.dismiss(true);
                         }
-                        ye.d.k(m4Var3.H, str2, false, false, null);
+                        af.g.k(l4Var3.I, str2, false, false, null);
                         break;
                     }
                 }
                 break;
             default:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj;
-                m4 m4Var4 = this.b;
-                if (m4Var4.H != null && a1Var != null) {
-                    m4Var4.d0.k(false);
-                    q3 q3Var2 = m4Var4.q0[0];
-                    if (q3Var2 != null && q3Var2.getWebView() != null) {
-                        m4Var4.q0[0].getWebView().e(a1Var.c, a1Var.d);
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
+                l4 l4Var4 = this.b;
+                if (l4Var4.I != null && b1Var != null) {
+                    l4Var4.e0.k(false);
+                    p3 p3Var2 = l4Var4.r0[0];
+                    if (p3Var2 != null && p3Var2.getWebView() != null) {
+                        l4Var4.r0[0].getWebView().e(b1Var.c, b1Var.d);
                         break;
                     } else {
-                        ye.d.n(a1Var.c);
+                        af.g.n(b1Var.c);
                         break;
                     }
                 }

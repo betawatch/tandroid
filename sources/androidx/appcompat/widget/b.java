@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class b implements View.OnKeyListener {
     public final /* synthetic */ SearchView a;
@@ -17,15 +17,15 @@ public final class b implements View.OnKeyListener {
     @Override // android.view.View.OnKeyListener
     public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
         SearchView searchView = this.a;
-        SearchView.SearchAutoComplete searchAutoComplete = searchView.B;
-        if (searchView.n0 != null) {
+        SearchView.SearchAutoComplete searchAutoComplete = searchView.C;
+        if (searchView.o0 != null) {
             if (!searchAutoComplete.isPopupShowing() || searchAutoComplete.getListSelection() == -1) {
                 if (TextUtils.getTrimmedLength(searchAutoComplete.getText()) != 0 && keyEvent.hasNoModifiers() && keyEvent.getAction() == 1 && i10 == 66) {
                     view.cancelLongPress();
                     searchView.getContext().startActivity(searchView.i("android.intent.action.SEARCH", null, null, searchAutoComplete.getText().toString()));
                     return true;
                 }
-            } else if (searchView.n0 != null && searchView.d0 != null && keyEvent.getAction() == 0 && keyEvent.hasNoModifiers()) {
+            } else if (searchView.o0 != null && searchView.e0 != null && keyEvent.getAction() == 0 && keyEvent.hasNoModifiers()) {
                 if (i10 == 66 || i10 == 84 || i10 == 61) {
                     searchView.m(searchAutoComplete.getListSelection());
                     return true;

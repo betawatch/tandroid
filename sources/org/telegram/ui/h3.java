@@ -1,100 +1,277 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.view.Surface;
+import android.view.SurfaceView;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class h3 extends FrameLayout {
-    public final LinearLayout a;
-    public boolean b;
-    public final org.telegram.ui.Components.t9 c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
-    public final nh.d h;
-    public ValueAnimator n;
-    public boolean r;
+public final class h3 extends yt0 {
+    public final int[] a = new int[2];
+    public final List b;
+    public final /* synthetic */ l4 c;
 
-    public h3(Context context) {
-        super(context);
-        this.r = true;
-        setVisibility(8);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f));
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(3);
-        addView(linearLayout, i7.f6.e(-2, -2, 17));
-        org.telegram.ui.Components.t9 t9Var = new org.telegram.ui.Components.t9(context);
-        this.c = t9Var;
-        linearLayout.addView(t9Var, i7.f6.n(100, 100));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 19.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        TextView i10 = th.i(linearLayout, textView, i7.f6.t(-2, -2, 3, 0, 4, 0, 2), context);
-        this.e = i10;
-        i10.setTextSize(1, 15.0f);
-        i10.setTextColor(-1);
-        i10.setSingleLine(false);
-        i10.setMaxLines(3);
-        TextView i11 = th.i(linearLayout, i10, i7.f6.t(-2, -2, 3, 0, 0, 0, 1), context);
-        this.f = i11;
-        i11.setTextSize(1, 12.0f);
-        i11.setTextColor(-1);
-        i11.setAlpha(0.4f);
-        linearLayout.addView(i11, i7.f6.q(-2, -2, 3));
-        nh.d dVar = new nh.d(context, null, true);
-        this.h = dVar;
-        dVar.setMinWidth(AndroidUtilities.dp(140.0f));
-        dVar.g(LocaleController.getString(R.string.Refresh), false, true);
-        linearLayout.addView(dVar, i7.f6.t(-2, 40, 3, 0, 12, 0, 0));
+    public h3(l4 l4Var, List list) {
+        this.c = l4Var;
+        this.b = list;
     }
 
-    public final void a(String str, String str2) {
-        this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        b.p(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
-        this.f.setText(str2);
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final void D() {
+        this.c.n();
     }
 
-    public final void b(boolean z10, boolean z11) {
-        if (this.r == z10) {
-            return;
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+        if (i10 < 0) {
+            return null;
         }
-        this.r = z10;
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        List list = this.b;
+        if (i10 >= list.size()) {
+            return null;
         }
-        if (!z11) {
-            this.d.setTextColor(!z10 ? -16777216 : -1);
-            this.e.setTextColor(!z10 ? -16777216 : -1);
-            this.f.setTextColor(z10 ? -1 : -16777216);
-        } else {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
-            this.n = ofFloat;
-            ofFloat.addUpdateListener(new g3(this, 0));
-            this.n.start();
+        l4 l4Var = this.c;
+        k3 k3Var = l4Var.r0[0].b;
+        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) list.get(i10);
+        int[] iArr = this.a;
+        ImageReceiver c02 = c0(k3Var, pageBlock, iArr);
+        if (c02 == null) {
+            return null;
         }
+        ju0 ju0Var = new ju0();
+        ju0Var.b = iArr[0];
+        ju0Var.c = iArr[1];
+        ju0Var.d = l4Var.r0[0].b;
+        ju0Var.a = c02;
+        ju0Var.e = c02.getBitmapSafe();
+        ju0Var.h = c02.getRoundRadius(true);
+        ju0Var.j = l4Var.F0;
+        return ju0Var;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 != 0 || this.b) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0049 A[EDGE_INSN: B:46:0x0049->B:14:0x0049 BREAK  A[LOOP:0: B:7:0x0034->B:44:0x0046], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0036  */
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void X(int i10) {
+        TL_iv.PageBlock pageBlock;
+        org.telegram.ui.Components.i71 i71Var;
+        TextureView textureView;
+        a0.h hVar;
+        int i11;
+        int childCount;
+        a3 a3Var;
+        Bitmap bitmap;
+        a3 a3Var2;
+        Bitmap bitmap2;
+        z2 z2Var = null;
+        if (i10 >= 0) {
+            List list = this.b;
+            if (i10 < list.size()) {
+                pageBlock = (TL_iv.PageBlock) list.get(i10);
+                i71Var = PhotoViewer.t1().C2;
+                textureView = PhotoViewer.t1().y2;
+                SurfaceView surfaceView = PhotoViewer.t1().z2;
+                l4 l4Var = this.c;
+                p3[] p3VarArr = l4Var.r0;
+                hVar = l4Var.y;
+                i11 = 0;
+                k3 k3Var = p3VarArr[0].b;
+                childCount = k3Var.getChildCount();
+                while (true) {
+                    if (i11 < childCount) {
+                        break;
+                    }
+                    View childAt = k3Var.getChildAt(i11);
+                    if (childAt instanceof z2) {
+                        z2 z2Var2 = (z2) childAt;
+                        if (z2Var2.I == pageBlock) {
+                            z2Var = z2Var2;
+                            break;
+                        }
+                    }
+                    i11++;
+                }
+                if (z2Var != null && i71Var != null && textureView != null) {
+                    long j10 = z2Var.I.video_id;
+                    a3 a3Var3 = new a3();
+                    a3Var3.a = i71Var.n();
+                    if (textureView.getSurfaceTexture() != null) {
+                        if (Build.VERSION.SDK_INT >= 24) {
+                            Surface surface = new Surface(textureView.getSurfaceTexture());
+                            Bitmap createBitmap = Bitmap.createBitmap(textureView.getMeasuredWidth(), textureView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                            AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
+                            surface.release();
+                            a3Var3.b = createBitmap;
+                        } else {
+                            a3Var3.b = textureView.getBitmap();
+                        }
+                    }
+                    z2Var.c(a3Var3);
+                    hVar.k(a3Var3, j10);
+                    int i12 = z2.S;
+                    z2Var.n.setAlpha(0.0f);
+                    a3Var2 = z2Var.J;
+                    if (a3Var2 != null && (bitmap2 = a3Var2.b) != null) {
+                        z2Var.e.setImageBitmap(bitmap2);
+                    }
+                }
+                if (z2Var != null && i71Var != null && surfaceView != null) {
+                    long j11 = z2Var.I.video_id;
+                    a3 a3Var4 = new a3();
+                    a3Var4.a = i71Var.n();
+                    if (Build.VERSION.SDK_INT >= 24) {
+                        Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                        AndroidUtilities.getBitmapFromSurface(surfaceView, createBitmap2);
+                        a3Var4.b = createBitmap2;
+                    }
+                    z2Var.c(a3Var4);
+                    hVar.k(a3Var4, j11);
+                    int i13 = z2.S;
+                    z2Var.n.setAlpha(0.0f);
+                    a3Var = z2Var.J;
+                    if (a3Var != null && (bitmap = a3Var.b) != null) {
+                        z2Var.e.setImageBitmap(bitmap);
+                    }
+                }
+                l4Var.n();
+            }
         }
-        this.b = true;
-        MediaDataController.getInstance(UserConfig.selectedAccount).setPlaceholderImage(this.c, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, "🧐", "100_100");
+        pageBlock = null;
+        i71Var = PhotoViewer.t1().C2;
+        textureView = PhotoViewer.t1().y2;
+        SurfaceView surfaceView2 = PhotoViewer.t1().z2;
+        l4 l4Var2 = this.c;
+        p3[] p3VarArr2 = l4Var2.r0;
+        hVar = l4Var2.y;
+        i11 = 0;
+        k3 k3Var2 = p3VarArr2[0].b;
+        childCount = k3Var2.getChildCount();
+        while (true) {
+            if (i11 < childCount) {
+            }
+            i11++;
+        }
+        if (z2Var != null) {
+            long j102 = z2Var.I.video_id;
+            a3 a3Var32 = new a3();
+            a3Var32.a = i71Var.n();
+            if (textureView.getSurfaceTexture() != null) {
+            }
+            z2Var.c(a3Var32);
+            hVar.k(a3Var32, j102);
+            int i122 = z2.S;
+            z2Var.n.setAlpha(0.0f);
+            a3Var2 = z2Var.J;
+            if (a3Var2 != null) {
+                z2Var.e.setImageBitmap(bitmap2);
+            }
+        }
+        if (z2Var != null) {
+            long j112 = z2Var.I.video_id;
+            a3 a3Var42 = new a3();
+            a3Var42.a = i71Var.n();
+            if (Build.VERSION.SDK_INT >= 24) {
+            }
+            z2Var.c(a3Var42);
+            hVar.k(a3Var42, j112);
+            int i132 = z2.S;
+            z2Var.n.setAlpha(0.0f);
+            a3Var = z2Var.J;
+            if (a3Var != null) {
+                z2Var.e.setImageBitmap(bitmap);
+            }
+        }
+        l4Var2.n();
+    }
+
+    public final ImageReceiver c0(ViewGroup viewGroup, TL_iv.PageBlock pageBlock, int[] iArr) {
+        int childCount = viewGroup.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            ImageReceiver d02 = d0(viewGroup.getChildAt(i10), pageBlock, iArr);
+            if (d02 != null) {
+                return d02;
+            }
+        }
+        return null;
+    }
+
+    public final ImageReceiver d0(View view, TL_iv.PageBlock pageBlock, int[] iArr) {
+        org.telegram.ui.Components.el0 el0Var;
+        ImageReceiver d02;
+        ImageReceiver d03;
+        VideoPlayerHolderBase videoPlayerHolderBase;
+        if (view instanceof e2) {
+            e2 e2Var = (e2) view;
+            if (e2Var.K != pageBlock) {
+                return null;
+            }
+            view.getLocationInWindow(iArr);
+            return e2Var.e;
+        }
+        if (view instanceof z2) {
+            z2 z2Var = (z2) view;
+            ImageReceiver imageReceiver = z2Var.e;
+            TextureView textureView = z2Var.n;
+            if (z2Var.I != pageBlock) {
+                return null;
+            }
+            view.getLocationInWindow(iArr);
+            l4 l4Var = this.c;
+            if (z2Var == l4Var.x && (videoPlayerHolderBase = l4Var.w) != null && videoPlayerHolderBase.firstFrameRendered && textureView.getSurfaceTexture() != null) {
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Surface surface = new Surface(textureView.getSurfaceTexture());
+                    Bitmap createBitmap = Bitmap.createBitmap(textureView.getMeasuredWidth(), textureView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                    AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
+                    surface.release();
+                    imageReceiver.setImageBitmap(createBitmap);
+                } else {
+                    imageReceiver.setImageBitmap(textureView.getBitmap());
+                }
+                int i10 = z2.S;
+                textureView.setAlpha(0.0f);
+            }
+            return imageReceiver;
+        }
+        if (view instanceof l1) {
+            ImageReceiver c02 = c0(((l1) view).a, pageBlock, iArr);
+            if (c02 != null) {
+                return c02;
+            }
+            return null;
+        }
+        if (view instanceof s2) {
+            ImageReceiver c03 = c0(((s2) view).a, pageBlock, iArr);
+            if (c03 != null) {
+                return c03;
+            }
+            return null;
+        }
+        if (view instanceof z1) {
+            org.telegram.ui.Components.el0 el0Var2 = ((z1) view).d;
+            if (el0Var2 == null || (d03 = d0(el0Var2.a, pageBlock, iArr)) == null) {
+                return null;
+            }
+            return d03;
+        }
+        if (!(view instanceof c2) || (el0Var = ((c2) view).d) == null || (d02 = d0(el0Var.a, pageBlock, iArr)) == null) {
+            return null;
+        }
+        return d02;
     }
 }

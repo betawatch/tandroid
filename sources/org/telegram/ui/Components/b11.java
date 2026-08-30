@@ -2,499 +2,270 @@ package org.telegram.ui.Components;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-import android.graphics.SweepGradient;
-import android.graphics.drawable.Drawable;
-import android.text.InputFilter;
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class b11 extends FrameLayout {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public final DecelerateInterpolator D;
-    public final /* synthetic */ ThemeEditorView.EditorAlert E;
-    public final LinearLayout a;
-    public final int b;
-    public final Paint c;
-    public final Paint d;
-    public final Paint e;
-    public final Drawable f;
-    public Bitmap h;
-    public final EditTextBoldCursor[] n;
-    public int r;
-    public final float[] s;
-    public float v;
-    public final float[] w;
-    public LinearGradient x;
-    public LinearGradient y;
+    public static final /* synthetic */ int e = 0;
+    public float a;
+    public float b;
+    public boolean c;
+    public final /* synthetic */ ThemeEditorView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b11(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.E = editorAlert;
-        this.b = AndroidUtilities.dp(20.0f);
-        this.n = new EditTextBoldCursor[4];
-        this.s = new float[]{0.0f, 0.0f, 1.0f};
-        this.v = 1.0f;
-        this.w = new float[3];
-        this.D = new DecelerateInterpolator();
-        setWillNotDraw(false);
-        this.e = new Paint(1);
-        this.f = context.getResources().getDrawable(R.drawable.knob_shadow).mutate();
-        Paint paint = new Paint();
-        this.c = paint;
-        paint.setAntiAlias(true);
-        paint.setDither(true);
-        Paint paint2 = new Paint();
-        this.d = paint2;
-        paint2.setAntiAlias(true);
-        paint2.setDither(true);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(0);
-        addView(linearLayout, i7.f6.e(-2, -2, 49));
-        int i10 = 0;
-        while (i10 < 4) {
-            this.n[i10] = new EditTextBoldCursor(context);
-            this.n[i10].setInputType(2);
-            this.n[i10].setTextColor(-14606047);
-            this.n[i10].setCursorColor(-14606047);
-            this.n[i10].setCursorSize(AndroidUtilities.dp(20.0f));
-            this.n[i10].setCursorWidth(1.5f);
-            this.n[i10].setTextSize(1, 18.0f);
-            this.n[i10].setBackground(null);
-            this.n[i10].setLineColors(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.u5, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.v5, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
-            this.n[i10].setMaxLines(1);
-            this.n[i10].setTag(Integer.valueOf(i10));
-            this.n[i10].setGravity(17);
-            if (i10 == 0) {
-                this.n[i10].setHint("red");
-            } else if (i10 == 1) {
-                this.n[i10].setHint("green");
-            } else if (i10 == 2) {
-                this.n[i10].setHint("blue");
-            } else if (i10 == 3) {
-                this.n[i10].setHint("alpha");
-            }
-            this.n[i10].setImeOptions((i10 == 3 ? 6 : 5) | TLObject.FLAG_28);
-            this.n[i10].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
-            this.a.addView(this.n[i10], i7.f6.k(0.0f, 0.0f, i10 != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
-            this.n[i10].addTextChangedListener(new a11(this, i10));
-            this.n[i10].setOnEditorActionListener(new ag.b0(4));
-            i10++;
-        }
+    public b11(ThemeEditorView themeEditorView, Activity activity) {
+        super(activity);
+        this.d = themeEditorView;
     }
 
-    public final void a(Canvas canvas, int i10, int i11, int i12) {
-        int dp = AndroidUtilities.dp(13.0f);
-        Drawable drawable = this.f;
-        drawable.setBounds(i10 - dp, i11 - dp, i10 + dp, dp + i11);
-        drawable.draw(canvas);
-        Paint paint = this.e;
-        paint.setColor(-1);
-        float f9 = i10;
-        float f10 = i11;
-        canvas.drawCircle(f9, f10, AndroidUtilities.dp(11.0f), paint);
-        paint.setColor(i12);
-        canvas.drawCircle(f9, f10, AndroidUtilities.dp(9.0f), paint);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
     }
 
-    public final int b() {
-        return (Color.HSVToColor(this.s) & 16777215) | (((int) (this.v * 255.0f)) << 24);
-    }
-
-    public final void c(int i10) {
-        int red = Color.red(i10);
-        int green = Color.green(i10);
-        int blue = Color.blue(i10);
-        int alpha = Color.alpha(i10);
-        ThemeEditorView.EditorAlert editorAlert = this.E;
-        if (!editorAlert.G) {
-            editorAlert.G = true;
-            EditTextBoldCursor[] editTextBoldCursorArr = this.n;
-            editTextBoldCursorArr[0].setText("" + red);
-            editTextBoldCursorArr[1].setText("" + green);
-            editTextBoldCursorArr[2].setText("" + blue);
-            editTextBoldCursorArr[3].setText("" + alpha);
-            for (int i11 = 0; i11 < 4; i11++) {
-                EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i11];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-            }
-            editorAlert.G = false;
-        }
-        this.y = null;
-        this.x = null;
-        this.v = alpha / 255.0f;
-        Color.colorToHSV(i10, this.s);
-        invalidate();
-    }
-
-    public final void d(boolean z10) {
-        org.telegram.ui.ActionBar.e3 e3Var;
-        ViewGroup viewGroup;
-        ThemeEditorView.EditorAlert editorAlert = this.E;
-        if (editorAlert.F == z10) {
-            return;
-        }
-        AnimatorSet animatorSet = editorAlert.E;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        editorAlert.F = z10;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        editorAlert.E = animatorSet2;
-        e3Var = ((org.telegram.ui.ActionBar.f3) editorAlert).backDrawable;
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(e3Var, r6.d, z10 ? 0 : 51);
-        viewGroup = ((org.telegram.ui.ActionBar.f3) editorAlert).containerView;
-        animatorSet2.playTogether(ofInt, ObjectAnimator.ofFloat(viewGroup, (Property<ViewGroup, Float>) View.ALPHA, z10 ? 0.2f : 1.0f));
-        editorAlert.E.setDuration(150L);
-        editorAlert.E.setInterpolator(this.D);
-        editorAlert.E.start();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        char c3;
-        int width = getWidth() / 2;
-        int i10 = this.b;
-        int i11 = width - (i10 * 2);
-        int height = (getHeight() / 2) - AndroidUtilities.dp(8.0f);
-        Bitmap bitmap = this.h;
-        int i12 = this.r;
-        canvas.drawBitmap(bitmap, i11 - i12, height - i12, (Paint) null);
-        float[] fArr = this.s;
-        double radians = (float) Math.toRadians(fArr[0]);
-        int i13 = ((int) ((-Math.cos(radians)) * fArr[1] * this.r)) + i11;
-        double d = -Math.sin(radians);
-        float f9 = fArr[1];
-        float f10 = fArr[0];
-        float[] fArr2 = this.w;
-        fArr2[0] = f10;
-        fArr2[1] = f9;
-        fArr2[2] = 1.0f;
-        a(canvas, i13, ((int) (d * f9 * this.r)) + height, Color.HSVToColor(fArr2));
-        int i14 = this.r;
-        int i15 = i11 + i14 + i10;
-        int i16 = height - i14;
-        int dp = AndroidUtilities.dp(9.0f);
-        int i17 = this.r * 2;
-        if (this.x == null) {
-            c3 = 2;
-            this.x = new LinearGradient(i15, i16, i15 + dp, i16 + i17, new int[]{-16777216, Color.HSVToColor(fArr2)}, (float[]) null, Shader.TileMode.CLAMP);
-        } else {
-            c3 = 2;
-        }
-        LinearGradient linearGradient = this.x;
-        Paint paint = this.d;
-        paint.setShader(linearGradient);
-        float f11 = i16;
-        float f12 = i16 + i17;
-        canvas.drawRect(i15, f11, i15 + dp, f12, paint);
-        int i18 = dp / 2;
-        float f13 = i17;
-        a(canvas, i15 + i18, (int) ((fArr[c3] * f13) + f11), Color.HSVToColor(fArr));
-        int i19 = (i10 * 2) + i15;
-        if (this.y == null) {
-            int HSVToColor = Color.HSVToColor(fArr2);
-            this.y = new LinearGradient(i19, f11, i19 + dp, f12, new int[]{HSVToColor, HSVToColor & 16777215}, (float[]) null, Shader.TileMode.CLAMP);
-        }
-        paint.setShader(this.y);
-        canvas.drawRect(i19, f11, dp + i19, f12, paint);
-        a(canvas, i19 + i18, (int) com.google.android.recaptcha.internal.a.z(1.0f, this.v, f13, f11), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.v * 255.0f)) << 24));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        measureChild(this.a, i10, i11);
-        setMeasuredDimension(min, min);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int d = j7.l1.d(20.0f, (i10 / 2) - (this.b * 2), 1);
-        this.r = d;
-        int i14 = d * 2;
-        int i15 = d * 2;
-        Bitmap createBitmap = Bitmap.createBitmap(i14, i15, Bitmap.Config.ARGB_8888);
-        int[] iArr = new int[13];
-        float[] fArr = {0.0f, 1.0f, 1.0f};
-        for (int i16 = 0; i16 < 13; i16++) {
-            fArr[0] = ((i16 * 30) + 180) % 360;
-            iArr[i16] = Color.HSVToColor(fArr);
-        }
-        iArr[12] = iArr[0];
-        float f9 = i14 / 2;
-        float f10 = i15 / 2;
-        ComposeShader composeShader = new ComposeShader(new SweepGradient(f9, f10, iArr, (float[]) null), new RadialGradient(f9, f10, this.r, -1, 16777215, Shader.TileMode.CLAMP), PorterDuff.Mode.SRC_OVER);
-        Paint paint = this.c;
-        paint.setShader(composeShader);
-        new Canvas(createBitmap).drawCircle(f9, f10, this.r, paint);
-        this.h = createBitmap;
-        this.x = null;
-        this.y = null;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0069, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:116:0x008e, code lost:
     
-        if (r14 <= r21.r) goto L21;
+        if (r15.getFragmentStack().isEmpty() != false) goto L33;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x00c8, code lost:
-    
-        if (r10 <= (r4 + r11)) goto L42;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0011, code lost:
-    
-        if (r3 != 2) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x010f, code lost:
-    
-        if (r10 <= (r4 + r11)) goto L65;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00ae  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x01a2  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x02d5  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0143  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        int i11;
-        float f9;
+        org.telegram.ui.ActionBar.e5 e5Var;
+        ArrayList<org.telegram.ui.ActionBar.l6> themeDescriptions;
+        AnimatorSet animatorSet;
+        ArrayList arrayList;
+        boolean z4;
         boolean z10;
-        int i12;
-        float f10;
-        ThemeEditorView.EditorAlert editorAlert = this.E;
-        ThemeEditorView themeEditorView = ThemeEditorView.this;
+        int i10;
+        ThemeEditorView themeEditorView = this.d;
+        int i11 = themeEditorView.e;
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
         int action = motionEvent.getAction();
-        if (action != 0) {
-            if (action == 1) {
-                this.C = false;
-                this.B = false;
-                this.A = false;
-                d(false);
-            }
-            return super.onTouchEvent(motionEvent);
-        }
-        int x4 = (int) motionEvent.getX();
-        int y8 = (int) motionEvent.getY();
-        int width = getWidth() / 2;
-        int i13 = this.b;
-        int i14 = i13 * 2;
-        int i15 = width - i14;
-        int height = (getHeight() / 2) - AndroidUtilities.dp(8.0f);
-        int i16 = x4 - i15;
-        int i17 = y8 - height;
-        double sqrt = Math.sqrt((i17 * i17) + (i16 * i16));
-        boolean z11 = this.A;
-        float[] fArr = this.s;
-        if (!z11) {
-            if (this.C || this.B) {
-                i10 = y8;
-            } else {
-                i10 = y8;
-            }
-            if (this.B) {
-                if (!this.A && !this.C) {
-                    int i18 = this.r;
-                    int i19 = i15 + i18;
-                    if (x4 >= i19 + i13 && x4 <= i14 + i19) {
-                        i11 = i10;
-                        if (i11 >= height - i18) {
+        int i12 = 4;
+        Property property = View.ALPHA;
+        if (action == 0) {
+            this.a = rawX;
+            this.b = rawY;
+        } else if (motionEvent.getAction() != 2 || this.c) {
+            if (motionEvent.getAction() == 1 && !this.c && themeEditorView.l == null) {
+                LaunchActivity launchActivity = (LaunchActivity) themeEditorView.b;
+                if (AndroidUtilities.isTablet()) {
+                    e5Var = launchActivity.o0;
+                    if (e5Var != null && e5Var.getFragmentStack().isEmpty()) {
+                        e5Var = null;
+                    }
+                    if (e5Var == null) {
+                        e5Var = launchActivity.p0;
+                        if (e5Var != null) {
                         }
-                        if (!this.C) {
-                            if (!this.A && !this.B) {
-                                int i20 = this.r;
-                                int i21 = i15 + i20;
-                                if (x4 >= (i13 * 3) + i21) {
-                                    if (x4 <= (i13 * 4) + i21) {
-                                        if (i11 >= height - i20) {
+                    }
+                    if (e5Var == null) {
+                        e5Var = launchActivity.O();
+                    }
+                    if (e5Var != null) {
+                        org.telegram.ui.ActionBar.p2 p2Var = !e5Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.p2) e5Var.getFragmentStack().get(e5Var.getFragmentStack().size() - 1) : null;
+                        if (p2Var != null && (themeDescriptions = p2Var.getThemeDescriptions()) != null) {
+                            ThemeEditorView.EditorAlert editorAlert = themeEditorView.new EditorAlert(themeEditorView.b, themeDescriptions);
+                            themeEditorView.l = editorAlert;
+                            editorAlert.setOnDismissListener(new dg.e0(i12));
+                            themeEditorView.l.setOnDismissListener(new b1(this, 9));
+                            themeEditorView.l.show();
+                            if (themeEditorView.b != null) {
+                                try {
+                                    animatorSet = new AnimatorSet();
+                                    try {
+                                    } catch (Exception unused) {
+                                        if (this.c) {
+                                        }
+                                        return true;
+                                    }
+                                } catch (Exception unused2) {
+                                }
+                                try {
+                                    animatorSet.playTogether(ObjectAnimator.ofFloat(themeEditorView.a, (Property<b11, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(themeEditorView.a, (Property<b11, Float>) View.SCALE_X, 1.0f, 0.0f), ObjectAnimator.ofFloat(themeEditorView.a, (Property<b11, Float>) View.SCALE_Y, 1.0f, 0.0f));
+                                    animatorSet.setInterpolator(themeEditorView.i);
+                                    animatorSet.setDuration(150L);
+                                    animatorSet.addListener(new d11(themeEditorView, 0));
+                                    animatorSet.start();
+                                } catch (Exception unused3) {
+                                    if (this.c) {
+                                    }
+                                    return true;
+                                }
+                                if (this.c) {
+                                    float f10 = 1.0f;
+                                    if (motionEvent.getAction() == 2) {
+                                        float f11 = rawX - this.a;
+                                        float f12 = rawY - this.b;
+                                        WindowManager.LayoutParams layoutParams = themeEditorView.g;
+                                        int i13 = (int) (layoutParams.x + f11);
+                                        layoutParams.x = i13;
+                                        layoutParams.y = (int) (layoutParams.y + f12);
+                                        int i14 = i11 / 2;
+                                        int i15 = -i14;
+                                        if (i13 < i15) {
+                                            layoutParams.x = i15;
+                                        } else {
+                                            int i16 = (AndroidUtilities.displaySize.x - layoutParams.width) + i14;
+                                            if (i13 > i16) {
+                                                layoutParams.x = i16;
+                                            }
+                                        }
+                                        int i17 = layoutParams.x;
+                                        if (i17 < 0) {
+                                            f10 = vh.v2.c(i17, i14, 0.5f, 1.0f);
+                                        } else {
+                                            if (i17 > AndroidUtilities.displaySize.x - layoutParams.width) {
+                                                f10 = org.telegram.messenger.y3.A((i17 - r9) + r8, i14, 0.5f, 1.0f);
+                                            }
+                                        }
+                                        if (themeEditorView.a.getAlpha() != f10) {
+                                            themeEditorView.a.setAlpha(f10);
+                                        }
+                                        WindowManager.LayoutParams layoutParams2 = themeEditorView.g;
+                                        int i18 = layoutParams2.y;
+                                        if (i18 < 0) {
+                                            layoutParams2.y = 0;
+                                        } else {
+                                            int i19 = AndroidUtilities.displaySize.y - layoutParams2.height;
+                                            if (i18 > i19) {
+                                                layoutParams2.y = i19;
+                                            }
+                                        }
+                                        themeEditorView.h.updateViewLayout(themeEditorView.a, layoutParams2);
+                                        this.a = rawX;
+                                        this.b = rawY;
+                                    } else {
+                                        if (motionEvent.getAction() != 1) {
+                                            return true;
+                                        }
+                                        this.c = false;
+                                        int b10 = ThemeEditorView.b(true, 0, 0.0f, i11);
+                                        int b11 = ThemeEditorView.b(true, 1, 0.0f, i11);
+                                        int i20 = themeEditorView.f;
+                                        int b12 = ThemeEditorView.b(false, 0, 0.0f, i20);
+                                        int b13 = ThemeEditorView.b(false, 1, 0.0f, i20);
+                                        SharedPreferences.Editor edit = themeEditorView.j.edit();
+                                        int dp = AndroidUtilities.dp(20.0f);
+                                        if (Math.abs(b10 - themeEditorView.g.x) <= dp || ((i10 = themeEditorView.g.x) < 0 && i10 > (-i11) / 4)) {
+                                            arrayList = new ArrayList();
+                                            edit.putInt("sidex", 0);
+                                            if (themeEditorView.a.getAlpha() != 1.0f) {
+                                                arrayList.add(ObjectAnimator.ofFloat(themeEditorView.a, (Property<b11, Float>) property, 1.0f));
+                                            }
+                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "x", b10));
+                                        } else {
+                                            if (Math.abs(b11 - i10) > dp) {
+                                                int i21 = themeEditorView.g.x;
+                                                int i22 = AndroidUtilities.displaySize.x;
+                                                if (i21 <= i22 - i11 || i21 >= i22 - ((i11 / 4) * 3)) {
+                                                    if (themeEditorView.a.getAlpha() != 1.0f) {
+                                                        arrayList = new ArrayList();
+                                                        if (themeEditorView.g.x < 0) {
+                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "x", -i11));
+                                                        } else {
+                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "x", AndroidUtilities.displaySize.x));
+                                                        }
+                                                        z4 = true;
+                                                    } else {
+                                                        edit.putFloat("px", (themeEditorView.g.x - b10) / (b11 - b10));
+                                                        edit.putInt("sidex", 2);
+                                                        z4 = false;
+                                                        arrayList = null;
+                                                    }
+                                                    if (!z4) {
+                                                        if (Math.abs(b12 - themeEditorView.g.y) <= dp || themeEditorView.g.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
+                                                            if (arrayList == null) {
+                                                                arrayList = new ArrayList();
+                                                            }
+                                                            edit.putInt("sidey", 0);
+                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "y", b12));
+                                                        } else if (Math.abs(b13 - themeEditorView.g.y) <= dp) {
+                                                            if (arrayList == null) {
+                                                                arrayList = new ArrayList();
+                                                            }
+                                                            edit.putInt("sidey", 1);
+                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "y", b13));
+                                                        } else {
+                                                            edit.putFloat("py", (themeEditorView.g.y - b12) / (b13 - b12));
+                                                            edit.putInt("sidey", 2);
+                                                        }
+                                                        edit.commit();
+                                                    }
+                                                    if (arrayList != null) {
+                                                        if (themeEditorView.i == null) {
+                                                            themeEditorView.i = new DecelerateInterpolator();
+                                                        }
+                                                        AnimatorSet animatorSet2 = new AnimatorSet();
+                                                        animatorSet2.setInterpolator(themeEditorView.i);
+                                                        animatorSet2.setDuration(150L);
+                                                        if (z4) {
+                                                            z10 = true;
+                                                            arrayList.add(ObjectAnimator.ofFloat(themeEditorView.a, (Property<b11, Float>) property, 0.0f));
+                                                            animatorSet2.addListener(new d11(themeEditorView, 1 == true ? 1 : 0));
+                                                        } else {
+                                                            z10 = true;
+                                                        }
+                                                        animatorSet2.playTogether(arrayList);
+                                                        animatorSet2.start();
+                                                        return z10;
+                                                    }
+                                                }
+                                            }
+                                            ArrayList arrayList2 = new ArrayList();
+                                            edit.putInt("sidex", 1);
+                                            if (themeEditorView.a.getAlpha() != 1.0f) {
+                                                arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.a, (Property<b11, Float>) property, 1.0f));
+                                            }
+                                            arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", b11));
+                                            arrayList = arrayList2;
+                                        }
+                                        z4 = false;
+                                        if (!z4) {
+                                        }
+                                        if (arrayList != null) {
                                         }
                                     }
                                 }
+                                return true;
                             }
-                            z10 = true;
-                            if (this.C && !this.B && !this.A) {
-                                return z10;
-                            }
-                            d(z10);
-                            int b10 = b();
-                            for (i12 = 0; i12 < themeEditorView.c.size(); i12++) {
-                                int i22 = ((org.telegram.ui.ActionBar.i6) themeEditorView.c.get(i12)).f;
-                                if ((i12 == 0 && i22 == org.telegram.ui.ActionBar.g6.Nd) || i22 == org.telegram.ui.ActionBar.g6.Od || i22 == org.telegram.ui.ActionBar.g6.Pd || i22 == org.telegram.ui.ActionBar.g6.Qd || i22 == org.telegram.ui.ActionBar.g6.d6 || i22 == org.telegram.ui.ActionBar.g6.a7) {
-                                    b10 |= -16777216;
-                                }
-                                ((org.telegram.ui.ActionBar.i6) themeEditorView.c.get(i12)).d(b10, false, true);
-                            }
-                            int red = Color.red(b10);
-                            int green = Color.green(b10);
-                            int blue = Color.blue(b10);
-                            int alpha = Color.alpha(b10);
-                            if (!editorAlert.G) {
-                                editorAlert.G = true;
-                                EditTextBoldCursor[] editTextBoldCursorArr = this.n;
-                                editTextBoldCursorArr[0].setText("" + red);
-                                editTextBoldCursorArr[1].setText("" + green);
-                                editTextBoldCursorArr[2].setText("" + blue);
-                                editTextBoldCursorArr[3].setText("" + alpha);
-                                for (int i23 = 0; i23 < 4; i23++) {
-                                    EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i23];
-                                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                                }
-                                editorAlert.G = false;
-                            }
-                            invalidate();
-                            return true;
                         }
-                        f9 = 1.0f - ((i11 - (height - r3)) / (this.r * 2.0f));
-                        this.v = f9;
-                        if (f9 >= 0.0f) {
-                            this.v = 0.0f;
-                        } else if (f9 > 1.0f) {
-                            this.v = 1.0f;
-                        }
-                        z10 = true;
-                        this.C = true;
-                        if (this.C) {
-                        }
-                        d(z10);
-                        int b102 = b();
-                        while (i12 < themeEditorView.c.size()) {
-                        }
-                        int red2 = Color.red(b102);
-                        int green2 = Color.green(b102);
-                        int blue2 = Color.blue(b102);
-                        int alpha2 = Color.alpha(b102);
-                        if (!editorAlert.G) {
-                        }
-                        invalidate();
-                        return true;
                     }
                 }
-                i11 = i10;
-                if (!this.C) {
+                e5Var = null;
+                if (e5Var == null) {
                 }
-                f9 = 1.0f - ((i11 - (height - r3)) / (this.r * 2.0f));
-                this.v = f9;
-                if (f9 >= 0.0f) {
+                if (e5Var != null) {
                 }
-                z10 = true;
-                this.C = true;
-                if (this.C) {
-                }
-                d(z10);
-                int b1022 = b();
-                while (i12 < themeEditorView.c.size()) {
-                }
-                int red22 = Color.red(b1022);
-                int green22 = Color.green(b1022);
-                int blue22 = Color.blue(b1022);
-                int alpha22 = Color.alpha(b1022);
-                if (!editorAlert.G) {
-                }
-                invalidate();
-                return true;
             }
-            i11 = i10;
-            f10 = (i11 - (height - r4)) / (this.r * 2.0f);
-            if (f10 >= 0.0f) {
-                f10 = 0.0f;
-            } else if (f10 > 1.0f) {
-                f10 = 1.0f;
-            }
-            fArr[2] = f10;
-            this.B = true;
-            if (!this.C) {
-            }
-            f9 = 1.0f - ((i11 - (height - r3)) / (this.r * 2.0f));
-            this.v = f9;
-            if (f9 >= 0.0f) {
-            }
-            z10 = true;
-            this.C = true;
-            if (this.C) {
-            }
-            d(z10);
-            int b10222 = b();
-            while (i12 < themeEditorView.c.size()) {
-            }
-            int red222 = Color.red(b10222);
-            int green222 = Color.green(b10222);
-            int blue222 = Color.blue(b10222);
-            int alpha222 = Color.alpha(b10222);
-            if (!editorAlert.G) {
-            }
-            invalidate();
-            return true;
+        } else if (Math.abs(this.a - rawX) >= AndroidUtilities.getPixelsInCM(0.3f, true) || Math.abs(this.b - rawY) >= AndroidUtilities.getPixelsInCM(0.3f, false)) {
+            this.c = true;
+            this.a = rawX;
+            this.b = rawY;
         }
-        i10 = y8;
-        double d = this.r;
-        if (sqrt > d) {
-            sqrt = d;
+        if (this.c) {
         }
-        this.A = true;
-        fArr[0] = (float) (Math.toDegrees(Math.atan2(i17, i16)) + 180.0d);
-        fArr[1] = Math.max(0.0f, Math.min(1.0f, (float) (sqrt / this.r)));
-        this.x = null;
-        this.y = null;
-        if (this.B) {
-        }
-        f10 = (i11 - (height - r4)) / (this.r * 2.0f);
-        if (f10 >= 0.0f) {
-        }
-        fArr[2] = f10;
-        this.B = true;
-        if (!this.C) {
-        }
-        f9 = 1.0f - ((i11 - (height - r3)) / (this.r * 2.0f));
-        this.v = f9;
-        if (f9 >= 0.0f) {
-        }
-        z10 = true;
-        this.C = true;
-        if (this.C) {
-        }
-        d(z10);
-        int b102222 = b();
-        while (i12 < themeEditorView.c.size()) {
-        }
-        int red2222 = Color.red(b102222);
-        int green2222 = Color.green(b102222);
-        int blue2222 = Color.blue(b102222);
-        int alpha2222 = Color.alpha(b102222);
-        if (!editorAlert.G) {
-        }
-        invalidate();
         return true;
     }
 }

@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class s1 {
     public static final Logger a = Logger.getLogger(s1.class.getName());
@@ -27,9 +27,9 @@ public abstract class s1 {
     /* JADX WARN: Removed duplicated region for block: B:29:0x010f A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         Class<?> cls;
-        boolean z10;
+        boolean z4;
         Unsafe unsafe;
-        boolean z11;
+        boolean z10;
         Class<?> cls2;
         Field d10;
         r1 r1Var;
@@ -37,16 +37,16 @@ public abstract class s1 {
         b = i10;
         c = c.a;
         Class<?> cls3 = Long.TYPE;
-        boolean e10 = e(cls3);
+        boolean e6 = e(cls3);
         Class<?> cls4 = Integer.TYPE;
-        boolean e11 = e(cls4);
+        boolean e10 = e(cls4);
         r1 r1Var2 = null;
         if (i10 != null) {
             if (!c.a()) {
                 r1Var2 = new q1(i10);
-            } else if (e10) {
+            } else if (e6) {
                 r1Var2 = new p1(i10, 1);
-            } else if (e11) {
+            } else if (e10) {
                 r1Var2 = new p1(i10, 0);
             }
         }
@@ -71,11 +71,11 @@ public abstract class s1 {
                     cls.getMethod("copyMemory", cls3, cls3, cls3);
                     cls.getMethod("copyMemory", Object.class, cls3, Object.class, cls3, cls3);
                 }
-                z10 = true;
-                e = z10;
+                z4 = true;
+                e = z4;
                 unsafe = b;
                 if (unsafe != null) {
-                    z11 = false;
+                    z10 = false;
                 } else {
                     try {
                         cls2 = unsafe.getClass();
@@ -99,8 +99,8 @@ public abstract class s1 {
                         } catch (Throwable th3) {
                             th = th3;
                             a.log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
-                            z11 = false;
-                            f = z11;
+                            z10 = false;
+                            f = z10;
                             g = b(byte[].class);
                             b(boolean[].class);
                             c(boolean[].class);
@@ -155,8 +155,8 @@ public abstract class s1 {
                         clsArr9[1] = cls3;
                         cls2.getMethod("getDouble", clsArr9);
                         cls2.getMethod("putDouble", Object.class, cls3, Double.TYPE);
-                        z11 = true;
-                        f = z11;
+                        z10 = true;
+                        f = z10;
                         g = b(byte[].class);
                         b(boolean[].class);
                         c(boolean[].class);
@@ -176,9 +176,9 @@ public abstract class s1 {
                         }
                         h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                     }
-                    z11 = true;
+                    z10 = true;
                 }
-                f = z11;
+                f = z10;
                 g = b(byte[].class);
                 b(boolean[].class);
                 c(boolean[].class);
@@ -199,12 +199,12 @@ public abstract class s1 {
                 h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
             }
         }
-        z10 = false;
-        e = z10;
+        z4 = false;
+        e = z4;
         unsafe = b;
         if (unsafe != null) {
         }
-        f = z11;
+        f = z10;
         g = b(byte[].class);
         b(boolean[].class);
         c(boolean[].class);
@@ -227,8 +227,8 @@ public abstract class s1 {
     public static Object a(Class cls) {
         try {
             return b.allocateInstance(cls);
-        } catch (InstantiationException e10) {
-            throw new IllegalStateException(e10);
+        } catch (InstantiationException e6) {
+            throw new IllegalStateException(e6);
         }
     }
 

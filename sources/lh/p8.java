@@ -1,165 +1,59 @@
 package lh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ry;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class p8 extends k8 {
-    public final kg.q0 E;
-    public final o8 F;
-    public final kg.h0 G;
-    public final ImageReceiver H;
-    public final org.telegram.ui.Components.d6 I;
-    public final org.telegram.ui.Components.n6 J;
-    public boolean K;
+public final /* synthetic */ class p8 implements View.OnClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ ph.d d;
+    public final /* synthetic */ EditTextBoldCursor e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g3[] f;
 
-    public p8(Context context, m8 m8Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, ry ryVar) {
-        super(context, m8Var, tL_mediaAreaSuggestedReaction);
-        TLRPC.TL_availableReaction tL_availableReaction;
-        ArrayList arrayList;
-        o8 o8Var = new o8(this);
-        this.F = o8Var;
-        kg.h0 h0Var = new kg.h0(this);
-        this.G = h0Var;
-        this.H = new ImageReceiver(this);
-        this.I = new org.telegram.ui.Components.d6(this);
-        this.J = new org.telegram.ui.Components.n6(false, false, false, false);
-        kg.q0 d = kg.q0.d(tL_mediaAreaSuggestedReaction.reaction);
-        this.E = d;
-        if (tL_mediaAreaSuggestedReaction.flipped) {
-            o8Var.b(true, false);
-        }
-        o8Var.c(getScaleX());
-        h0Var.e(d);
-        ryVar.getClass();
-        String str = d.f;
-        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.p5.f(ryVar.b, d.g)) : str;
-        if (str != null && (arrayList = (ArrayList) ryVar.e.get(str)) != null && !arrayList.isEmpty()) {
-            int min = Math.min(1, arrayList.size());
-            for (int i10 = 0; i10 < min; i10++) {
-                ryVar.m((TLRPC.Document) arrayList.get(i10));
-            }
-        }
-        if (this.E.f != null && (tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(this.E.f)) != null) {
-            this.H.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
-        }
-        org.telegram.ui.Components.n6 n6Var = this.J;
-        n6Var.b = 17;
-        n6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
-        this.J.t(AndroidUtilities.dp(18.0f));
-        this.J.G = AndroidUtilities.displaySize.x;
-        if (tL_mediaAreaSuggestedReaction.dark) {
-            this.F.a();
-            this.J.r(-1);
-        }
+    public /* synthetic */ p8(boolean[] zArr, Utilities.Callback2 callback2, EditTextBoldCursor editTextBoldCursor, ph.d dVar, org.telegram.ui.ActionBar.g3[] g3VarArr) {
+        this.b = zArr;
+        this.c = callback2;
+        this.e = editTextBoldCursor;
+        this.d = dVar;
+        this.f = g3VarArr;
     }
 
-    @Override // lh.k8
-    public final void a(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        o8 o8Var = this.F;
-        o8Var.setBounds(0, 0, measuredWidth, measuredHeight);
-        o8Var.draw(canvas);
-        float measuredWidth2 = ((int) (getMeasuredWidth() * 0.61f)) / 2.0f;
-        float centerX = o8Var.getBounds().centerX() - measuredWidth2;
-        float centerY = o8Var.getBounds().centerY() - measuredWidth2;
-        float centerX2 = o8Var.getBounds().centerX() + measuredWidth2;
-        float centerY2 = o8Var.getBounds().centerY() + measuredWidth2;
-        float height = (o8Var.getBounds().height() * 0.427f) + o8Var.getBounds().top;
-        float f9 = height - measuredWidth2;
-        float f10 = height + measuredWidth2;
-        float d = this.I.d(this.K ? 1.0f : 0.0f, false);
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.set((int) centerX, (int) AndroidUtilities.lerp(centerY, f9, d), (int) centerX2, (int) AndroidUtilities.lerp(centerY2, f10, d));
-        int i10 = o8Var.a == 1 ? -1 : -16777216;
-        kg.h0 h0Var = this.G;
-        h0Var.d(i10);
-        h0Var.c(rect);
-        h0Var.a(canvas);
-        float height2 = (o8Var.getBounds().height() * 0.839f) + o8Var.getBounds().top;
-        org.telegram.ui.Components.n6 n6Var = this.J;
-        n6Var.setBounds(o8Var.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), o8Var.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
-        canvas.save();
-        canvas.scale(d, d, o8Var.getBounds().centerX(), height2);
-        n6Var.draw(canvas);
-        canvas.restore();
-    }
-
-    public final void c(TL_stories.StoryViews storyViews, boolean z10) {
-        org.telegram.ui.Components.d6 d6Var = this.I;
-        if (storyViews != null) {
-            for (int i10 = 0; i10 < storyViews.reactions.size(); i10++) {
-                if (kg.s0.c(storyViews.reactions.get(i10).reaction, this.E)) {
-                    boolean z11 = z10 && this.K;
-                    this.K = storyViews.reactions.get(i10).count > 0;
-                    this.J.q(AndroidUtilities.formatWholeNumber(storyViews.reactions.get(i10).count, 0), z11, true);
-                    if (z10) {
-                        return;
-                    }
-                    d6Var.d(this.K ? 1.0f : 0.0f, true);
-                    return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    EditTextBoldCursor editTextBoldCursor = this.e;
+                    String obj = editTextBoldCursor.getText().toString();
+                    zArr[0] = true;
+                    this.d.setLoading(true);
+                    this.c.run(Long.valueOf(TextUtils.isEmpty(obj) ? 0L : Long.parseLong(obj)), new q8(editTextBoldCursor, this.f, 1));
+                    break;
                 }
-            }
-        }
-        this.K = false;
-        invalidate();
-        if (z10) {
-            return;
-        }
-        d6Var.d(this.K ? 1.0f : 0.0f, true);
-    }
-
-    public org.telegram.ui.Components.p5 getAnimatedEmojiDrawable() {
-        return this.G.b;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        if (getParent() instanceof View) {
-            ((View) getParent()).invalidate();
+                break;
+            default:
+                boolean[] zArr2 = this.b;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    this.d.setLoading(true);
+                    this.c.run(0L, new p6(zArr2, this.e, this.f, 1));
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.G.b(true);
-        this.H.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.G.b(false);
-        this.H.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.J.t(Math.min(AndroidUtilities.dp(18.0f), getMeasuredHeight() * 0.156f));
-    }
-
-    @Override // android.view.View
-    public void setScaleX(float f9) {
-        if (getScaleX() != f9) {
-            this.F.c(f9);
-            super.setScaleX(f9);
-        }
+    public /* synthetic */ p8(boolean[] zArr, Utilities.Callback2 callback2, ph.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.g3[] g3VarArr) {
+        this.b = zArr;
+        this.c = callback2;
+        this.d = dVar;
+        this.e = editTextBoldCursor;
+        this.f = g3VarArr;
     }
 }

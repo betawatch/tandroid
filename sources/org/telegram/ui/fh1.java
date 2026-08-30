@@ -1,23 +1,16 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fh1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ oh1 a;
+public final class fh1 {
+    public final org.telegram.ui.ActionBar.p2 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public float f;
 
-    public fh1(oh1 oh1Var) {
-        this.a = oh1Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        oh1 oh1Var = this.a;
-        oh1Var.A.setText(LocaleController.getString(R.string.VoipCallEnded));
-        oh1Var.A.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
+    public fh1(org.telegram.ui.ActionBar.p2 p2Var) {
+        this.a = p2Var;
     }
 }

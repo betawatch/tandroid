@@ -1,25 +1,39 @@
 package lh;
 
-import java.util.List;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j6 implements Utilities.CallbackReturn {
-    public final /* synthetic */ k6 a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ List d;
+public final /* synthetic */ class j6 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t7 b;
 
-    public /* synthetic */ j6(k6 k6Var, boolean z10, int i10, List list) {
-        this.a = k6Var;
-        this.b = z10;
-        this.c = i10;
-        this.d = list;
+    public /* synthetic */ j6(t7 t7Var, int i10) {
+        this.a = i10;
+        this.b = t7Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        return Boolean.valueOf(this.a.q(this.c, this.d, this.b));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new r6(this.b, tLObject, 0));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new r6(this.b, tLObject, 1));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new r6(this.b, tLObject, 2));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new r6(this.b, tLObject, 3));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new r6(this.b, tLObject, 4));
+                break;
+        }
     }
 }

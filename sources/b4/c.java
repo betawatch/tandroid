@@ -1,104 +1,122 @@
 package b4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import f5.d0;
-import i7.q7;
-import java.util.Arrays;
-import java.util.List;
+import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c implements Parcelable {
-    public static final Parcelable.Creator<c> CREATOR = new a();
-    public final b[] a;
-    public final long b;
+public final class c implements r3.k {
+    public final b a = new b(null, 1);
+    public final h5.w b = new h5.w(16384);
+    public boolean c;
 
-    public c(b... bVarArr) {
-        this(-9223372036854775807L, bVarArr);
+    @Override // r3.k
+    public final void d(long j10, long j11) {
+        this.c = false;
+        this.a.b();
     }
 
-    public final c a(c cVar) {
-        if (cVar != null) {
-            b[] bVarArr = cVar.a;
-            if (bVarArr.length != 0) {
-                int i10 = d0.a;
-                b[] bVarArr2 = this.a;
-                Object[] copyOf = Arrays.copyOf(bVarArr2, bVarArr2.length + bVarArr.length);
-                System.arraycopy(bVarArr, 0, copyOf, bVarArr2.length, bVarArr.length);
-                return new c(this.b, (b[]) copyOf);
-            }
+    @Override // r3.k
+    public final void e(r3.m mVar) {
+        this.a.c(mVar, new h0(0, 1));
+        mVar.f1();
+        mVar.g2(new r3.n(-9223372036854775807L));
+    }
+
+    @Override // r3.k
+    public final int h(r3.l lVar, jb jbVar) {
+        h5.w wVar = this.b;
+        int read = ((r3.h) lVar).read(wVar.a, 0, 16384);
+        if (read == -1) {
+            return -1;
         }
-        return this;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
+        wVar.F(0);
+        wVar.E(read);
+        boolean z4 = this.c;
+        b bVar = this.a;
+        if (!z4) {
+            bVar.e(4, 0L);
+            this.c = true;
+        }
+        bVar.a(wVar);
         return 0;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && c.class == obj.getClass()) {
-            c cVar = (c) obj;
-            if (Arrays.equals(this.a, cVar.a) && this.b == cVar.b) {
-                return true;
-            }
-        }
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
+    
+        r5.f = 0;
+        r1 = r1 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
+    
+        if ((r1 - r3) < 8192) goto L13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0088, code lost:
+    
         return false;
-    }
-
-    public final int hashCode() {
-        return q7.a(this.b) + (Arrays.hashCode(this.a) * 31);
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("entries=");
-        sb2.append(Arrays.toString(this.a));
-        long j10 = this.b;
-        if (j10 == -9223372036854775807L) {
-            str = "";
-        } else {
-            str = ", presentationTimeUs=" + j10;
-        }
-        sb2.append(str);
-        return sb2.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        b[] bVarArr = this.a;
-        parcel.writeInt(bVarArr.length);
-        for (b bVar : bVarArr) {
-            parcel.writeParcelable(bVar, 0);
-        }
-        parcel.writeLong(this.b);
-    }
-
-    public c(long j10, b... bVarArr) {
-        this.b = j10;
-        this.a = bVarArr;
-    }
-
-    public c(List list) {
-        this((b[]) list.toArray(new b[0]));
-    }
-
-    public c(Parcel parcel) {
-        this.a = new b[parcel.readInt()];
-        int i10 = 0;
+     */
+    @Override // r3.k
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean i(r3.l lVar) {
+        r3.h hVar;
+        int i10;
+        h5.w wVar = new h5.w(10);
+        int i11 = 0;
         while (true) {
-            b[] bVarArr = this.a;
-            if (i10 < bVarArr.length) {
-                bVarArr[i10] = (b) parcel.readParcelable(b.class.getClassLoader());
-                i10++;
-            } else {
-                this.b = parcel.readLong();
-                return;
+            hVar = (r3.h) lVar;
+            hVar.h(wVar.a, 0, 10, false);
+            wVar.F(0);
+            if (wVar.w() != 4801587) {
+                break;
             }
+            wVar.G(3);
+            int t6 = wVar.t();
+            i11 += t6 + 10;
+            hVar.a(t6, false);
         }
+        hVar.f = 0;
+        hVar.a(i11, false);
+        int i12 = i11;
+        loop1: while (true) {
+            int i13 = 0;
+            while (true) {
+                int i14 = 7;
+                hVar.h(wVar.a, 0, 7, false);
+                wVar.F(0);
+                int z4 = wVar.z();
+                if (z4 != 44096 && z4 != 44097) {
+                    break;
+                }
+                i13++;
+                if (i13 >= 4) {
+                    return true;
+                }
+                byte[] bArr = wVar.a;
+                if (bArr.length < 7) {
+                    i10 = -1;
+                } else {
+                    int i15 = ((bArr[2] & 255) << 8) | (bArr[3] & 255);
+                    if (i15 == 65535) {
+                        i15 = ((bArr[4] & 255) << 16) | ((bArr[5] & 255) << 8) | (bArr[6] & 255);
+                    } else {
+                        i14 = 4;
+                    }
+                    if (z4 == 44097) {
+                        i14 += 2;
+                    }
+                    i10 = i15 + i14;
+                }
+                if (i10 == -1) {
+                    break loop1;
+                }
+                hVar.a(i10 - 7, false);
+            }
+            hVar.a(i12, false);
+        }
+    }
+
+    @Override // r3.k
+    public final void release() {
     }
 }

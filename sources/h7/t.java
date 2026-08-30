@@ -1,16 +1,9 @@
 package h7;
 
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
-import android.util.Log;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class t {
-    public static void a() {
-        int glGetError = GLES20.glGetError();
-        if (glGetError != 0) {
-            Log.d("Paint", GLUtils.getEGLErrorString(glGetError));
-        }
-    }
+    public static final HashMap a = new HashMap();
 }

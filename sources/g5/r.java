@@ -1,75 +1,39 @@
 package g5;
 
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
-import android.os.Message;
-import android.view.Choreographer;
-import f5.d0;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r implements Choreographer.FrameCallback, Handler.Callback {
-    public static final r e = new r();
-    public volatile long a = -9223372036854775807L;
-    public final Handler b;
-    public Choreographer c;
-    public int d;
+public final /* synthetic */ class r {
+    public final /* synthetic */ s a;
 
-    public r() {
-        HandlerThread handlerThread = new HandlerThread("ExoPlayer:FrameReleaseChoreographer");
-        handlerThread.start();
-        Looper looper = handlerThread.getLooper();
-        int i10 = d0.a;
-        Handler handler = new Handler(looper, this);
-        this.b = handler;
-        handler.sendEmptyMessage(0);
-    }
-
-    @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j10) {
-        this.a = j10;
-        Choreographer choreographer = this.c;
-        choreographer.getClass();
-        choreographer.postFrameCallbackDelayed(this, 500L);
-    }
-
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        int i10 = message.what;
-        if (i10 == 0) {
-            try {
-                this.c = Choreographer.getInstance();
-                return true;
-            } catch (RuntimeException e10) {
-                f5.a.L("VideoFrameReleaseHelper", "Vsync sampling disabled due to platform error", e10);
-                return true;
-            }
-        }
-        if (i10 == 1) {
-            Choreographer choreographer = this.c;
-            if (choreographer != null) {
-                int i11 = this.d + 1;
-                this.d = i11;
-                if (i11 == 1) {
-                    choreographer.postFrameCallback(this);
-                }
-            }
-        } else {
-            if (i10 != 2) {
-                return false;
-            }
-            Choreographer choreographer2 = this.c;
-            if (choreographer2 != null) {
-                int i12 = this.d - 1;
-                this.d = i12;
-                if (i12 == 0) {
-                    choreographer2.removeFrameCallback(this);
-                    this.a = -9223372036854775807L;
-                    return true;
+    public final void a(int i10) {
+        s sVar = this.a;
+        synchronized (sVar) {
+            synchronized (sVar) {
+                int i11 = sVar.i;
+                if (i11 == 0 || sVar.e) {
+                    if (i11 == i10) {
+                        return;
+                    }
+                    sVar.i = i10;
+                    if (i10 != 1 && i10 != 0 && i10 != 8) {
+                        sVar.l = sVar.a(i10);
+                        sVar.d.getClass();
+                        long elapsedRealtime = SystemClock.elapsedRealtime();
+                        sVar.c(sVar.f > 0 ? (int) (elapsedRealtime - sVar.g) : 0, sVar.h, sVar.l);
+                        sVar.g = elapsedRealtime;
+                        sVar.h = 0L;
+                        sVar.k = 0L;
+                        sVar.j = 0L;
+                        t0 t0Var = sVar.c;
+                        t0Var.b.clear();
+                        t0Var.d = -1;
+                        t0Var.e = 0;
+                        t0Var.f = 0;
+                    }
                 }
             }
         }
-        return true;
     }
 }

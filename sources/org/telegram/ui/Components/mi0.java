@@ -1,169 +1,164 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.view.View;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mi0 {
-    public final View a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final qi0 e;
-    public final TextPaint f;
-    public RectF g;
+public final class mi0 extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public final Paint c;
+    public final RectF d;
+    public int e;
+    public long f;
+    public float g;
+    public boolean h;
+    public boolean i;
 
-    public mi0(ut utVar, Layout layout, Spanned spanned, qi0 qi0Var) {
-        int i10;
-        int i11;
-        this.a = utVar;
-        this.e = qi0Var;
-        this.f = layout.getPaint();
-        qi0Var.c = spanned.getSpanStart(qi0Var);
-        boolean z10 = qi0Var.a;
-        int spanEnd = spanned.getSpanEnd(qi0Var);
-        qi0Var.d = spanEnd;
-        if (spanEnd - 1 >= 0 && spanEnd < spanned.length() && spanned.charAt(qi0Var.d) != '\n' && spanned.charAt(qi0Var.d - 1) == '\n') {
-            qi0Var.d--;
-        }
-        int lineForOffset = layout.getLineForOffset(qi0Var.c);
-        int lineForOffset2 = layout.getLineForOffset(qi0Var.d);
-        qi0Var.f = lineForOffset2 - lineForOffset < 1;
-        qi0Var.h = lineForOffset <= 0;
-        qi0Var.n = lineForOffset2 + 1 >= layout.getLineCount();
-        if (z10) {
-            int lineTop = layout.getLineTop(lineForOffset);
-            if (qi0Var.f) {
-                i10 = 0;
-            } else {
-                i10 = (qi0Var.h ? 2 : 0) + 3;
-            }
-            this.b = AndroidUtilities.dp(3 - i10) + lineTop;
-            int lineBottom = layout.getLineBottom(lineForOffset2);
-            if (qi0Var.f) {
-                i11 = 0;
-            } else {
-                i11 = (qi0Var.n ? 2 : 0) + 3;
-            }
-            this.c = lineBottom - AndroidUtilities.dp(2 - i11);
-        } else {
-            this.b = AndroidUtilities.dp(3 - (qi0Var.f ? 1 : 2)) + layout.getLineTop(lineForOffset);
-            this.c = layout.getLineBottom(lineForOffset2) - AndroidUtilities.dp(2 - (qi0Var.f ? 1 : 2));
-        }
-        qi0Var.r = false;
-        float f9 = 0.0f;
-        while (lineForOffset <= lineForOffset2) {
-            f9 = Math.max(f9, layout.getLineRight(lineForOffset));
-            if (layout.getLineLeft(lineForOffset) > 0.0f) {
-                qi0Var.r = true;
-            }
-            lineForOffset++;
-        }
-        this.d = (int) Math.ceil(f9);
-        if (z10 && utVar != null && qi0Var.F == null) {
-            qi0Var.F = new hi0(utVar);
-        }
+    public mi0(Context context) {
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new RectF();
+        this.e = 0;
+        this.a = context.getResources().getDrawable(R.drawable.outline_shield_plain_24).mutate();
+        this.b = context.getResources().getDrawable(R.drawable.outline_shield_check).mutate();
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        this.f = SystemClock.elapsedRealtime();
     }
 
-    public final void a(Canvas canvas, int i10, int i11) {
-        RectF rectF;
-        int i12;
-        int i13;
-        Path.Direction direction;
-        qi0 qi0Var = this.e;
-        int i14 = qi0Var.E;
-        float[] fArr = qi0Var.y;
-        boolean z10 = qi0Var.a;
-        Paint paint = qi0Var.x;
-        Paint paint2 = qi0Var.B;
-        Path path = qi0Var.D;
-        float[] fArr2 = qi0Var.C;
-        Path path2 = qi0Var.A;
-        Drawable drawable = qi0Var.w;
-        if (i14 != i11) {
-            qi0Var.E = i11;
-            drawable.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
-            paint2.setColor(i11);
-            paint.setColor(i0.a.k(i11, 30));
+    public final void a(Drawable drawable) {
+        Rect bounds = getBounds();
+        drawable.setBounds(org.telegram.ui.b.u(2, bounds.centerX(), drawable), org.telegram.ui.b.f(2, bounds.centerY(), drawable), org.telegram.ui.b.A(2, bounds.centerX(), drawable), org.telegram.ui.b.y(2, bounds.centerY(), drawable));
+    }
+
+    public final void b(boolean z4, boolean z10, boolean z11) {
+        this.i = z4;
+        this.h = z10;
+        this.f = SystemClock.elapsedRealtime();
+        if (!z11) {
+            this.g = this.h ? 1.0f : 0.0f;
         }
-        int dp = z10 ? i10 : AndroidUtilities.dp(32.0f) + this.d;
-        int i15 = ((double) dp) >= ((double) i10) * 0.95d ? i10 : dp;
-        canvas.save();
-        canvas.translate(0.0f, 0.0f);
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        int i16 = this.b;
-        float f9 = i16;
-        float f10 = i15;
-        int i17 = i15;
-        int i18 = this.c;
-        float f11 = i18;
-        rectF2.set(0.0f, f9, f10, f11);
-        fArr[7] = 0.0f;
-        fArr[6] = 0.0f;
-        fArr[1] = 0.0f;
-        fArr[0] = 0.0f;
-        float dp2 = AndroidUtilities.dp(4.0f);
-        fArr[5] = dp2;
-        fArr[4] = dp2;
-        fArr[3] = dp2;
-        fArr[2] = dp2;
-        path2.rewind();
-        Path.Direction direction2 = Path.Direction.CW;
-        path2.addRoundRect(rectF2, fArr, direction2);
-        canvas.drawPath(path2, paint);
-        if (!z10 || this.a == null || qi0Var.F == null) {
-            rectF = rectF2;
-            i12 = i16;
-            i13 = i18;
-            direction = direction2;
-        } else {
-            if (this.g == null) {
-                this.g = new RectF();
-            }
-            int dp3 = AndroidUtilities.dp(3.333f);
-            i12 = i16;
-            i13 = i18;
-            direction = direction2;
-            rectF = rectF2;
-            qi0Var.F.a(canvas, this.g, i17 - dp3, i18 - dp3, i11, qi0Var.e, b());
-        }
-        rectF.set(-AndroidUtilities.dp(3.0f), f9, 0.0f, f11);
-        float dp4 = AndroidUtilities.dp(4.0f);
-        fArr2[7] = dp4;
-        fArr2[6] = dp4;
-        fArr2[1] = dp4;
-        fArr2[0] = dp4;
-        fArr2[5] = 0.0f;
-        fArr2[4] = 0.0f;
-        fArr2[3] = 0.0f;
-        fArr2[2] = 0.0f;
-        path.rewind();
-        path.addRoundRect(rectF, fArr2, direction);
-        canvas.drawPath(path, paint2);
-        if (!qi0Var.r) {
-            int intrinsicHeight = (int) (((i12 + i13) - drawable.getIntrinsicHeight()) / 2.0f);
-            if (intrinsicHeight > AndroidUtilities.dp(8.0f) + i12) {
-                intrinsicHeight = AndroidUtilities.dp(4.0f) + i12;
-            }
-            drawable.setBounds((i17 - drawable.getIntrinsicWidth()) - AndroidUtilities.dp(4.0f), intrinsicHeight, i17 - AndroidUtilities.dp(4.0f), drawable.getIntrinsicHeight() + intrinsicHeight);
-            drawable.setAlpha((int) 255.0f);
+        invalidateSelf();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z4;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = elapsedRealtime - this.f;
+        this.f = elapsedRealtime;
+        boolean z10 = this.i;
+        Drawable drawable = this.a;
+        if (!z10) {
+            a(drawable);
             drawable.draw(canvas);
+        } else if (!this.h || this.g != 1.0f) {
+            a(drawable);
+            drawable.draw(canvas);
+            int i10 = (int) ((1.0f - this.g) * 255.0f);
+            Paint paint = this.c;
+            paint.setAlpha(i10);
+            this.e += (int) ((360 * j10) / 1000.0f);
+            int width = getBounds().width();
+            int height = getBounds().height();
+            int dp = AndroidUtilities.dp(4.0f);
+            RectF rectF = this.d;
+            rectF.set((width / 2) - dp, (height / 2) - dp, r0 + dp + dp, r4 + dp + dp);
+            canvas2 = canvas;
+            canvas2.drawArc(rectF, this.e - 90, 90.0f, false, paint);
+            invalidateSelf();
+            if (this.i && (this.h || this.g != 0.0f)) {
+                int i11 = (int) (this.g * 255.0f);
+                Drawable drawable2 = this.b;
+                drawable2.setAlpha(i11);
+                a(drawable2);
+                drawable2.draw(canvas2);
+            }
+            z4 = this.h;
+            if (z4) {
+                float f10 = this.g;
+                if (f10 != 1.0f) {
+                    float f11 = (j10 / 300.0f) + f10;
+                    this.g = f11;
+                    if (f11 > 1.0f) {
+                        this.g = 1.0f;
+                    }
+                    invalidateSelf();
+                    return;
+                }
+            }
+            if (z4) {
+                float f12 = this.g;
+                if (f12 != 0.0f) {
+                    float f13 = f12 - (j10 / 300.0f);
+                    this.g = f13;
+                    if (f13 < 0.0f) {
+                        this.g = 0.0f;
+                    }
+                    invalidateSelf();
+                    return;
+                }
+                return;
+            }
+            return;
         }
-        canvas.restore();
+        canvas2 = canvas;
+        if (this.i) {
+            int i112 = (int) (this.g * 255.0f);
+            Drawable drawable22 = this.b;
+            drawable22.setAlpha(i112);
+            a(drawable22);
+            drawable22.draw(canvas2);
+        }
+        z4 = this.h;
+        if (z4) {
+        }
+        if (z4) {
+        }
     }
 
-    public final boolean b() {
-        return this.e.a && ((float) (this.c - this.b)) > (this.f.getTextSize() * 1.3f) * ((float) 3);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
+        this.c.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

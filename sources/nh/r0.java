@@ -1,86 +1,34 @@
 package nh;
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.VideoEncodingService;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class r0 implements NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final File b;
-    public MessageObject c;
-    public final p0 d;
-    public final q0 e;
-    public final o0 f;
+public final class r0 extends h51 {
+    public static final /* synthetic */ int a = 0;
 
-    public r0(int i10, o7 o7Var, File file, p0 p0Var, q0 q0Var, o0 o0Var) {
-        this.a = i10;
-        this.b = file;
-        this.d = p0Var;
-        this.e = q0Var;
-        this.f = o0Var;
-        if (this.c != null) {
-            return;
-        }
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingStarted);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileNewChunkAvailable);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingFailed);
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.id = 1;
-        tL_message.attachPath = file.getAbsolutePath();
-        this.c = new MessageObject(i10, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
-        o7Var.s(new b0(this, 1));
+    static {
+        h51.setup(new r0());
     }
 
-    public final void a(boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        int i10 = this.a;
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.filePreparingStarted);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileNewChunkAvailable);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.filePreparingFailed);
-        if (z10) {
-            MediaController.getInstance().cancelVideoConvert(this.c);
-        }
-        this.c = null;
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        ((s0) view).set((u0) i51Var.G);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.filePreparingStarted) {
-            return;
-        }
-        if (i10 != NotificationCenter.fileNewChunkAvailable) {
-            if (i10 == NotificationCenter.filePreparingFailed && ((MessageObject) objArr[0]) == this.c) {
-                a(false);
-                try {
-                    File file = this.b;
-                    if (file != null) {
-                        file.delete();
-                    }
-                } catch (Exception unused) {
-                }
-                this.f.run();
-                return;
-            }
-            return;
-        }
-        if (((MessageObject) objArr[0]) == this.c) {
-            ((Long) objArr[2]).getClass();
-            long longValue = ((Long) objArr[3]).longValue();
-            Float f9 = (Float) objArr[4];
-            f9.getClass();
-            this.e.run(f9);
-            if (longValue > 0) {
-                this.d.run();
-                VideoEncodingService.stop();
-                a(false);
-            }
-        }
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new s0(context);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(i51 i51Var, i51 i51Var2) {
+        return i51Var.G == i51Var2.G;
     }
 }

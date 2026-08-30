@@ -1,239 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fr extends xa {
-    public final boolean T;
-    public final r70 U;
-    public TLRPC.InputPeer V;
-    public final boolean W;
-    public String X;
-    public String Y;
-    public SpannableStringBuilder Z;
-    public k51 a0;
-    public final boolean b0;
-    public er c0;
+public final /* synthetic */ class fr implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jr b;
+    public final /* synthetic */ ph.d c;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, org.telegram.ui.ActionBar.f3, org.telegram.ui.Components.fr, org.telegram.ui.Components.xa] */
-    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.ActionBar.f3] */
-    public fr(Context context, int i10, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ih.b1 b1Var, lh.b bVar) {
-        int i11;
-        fr xaVar = new xa(context, null, false, false, false, 1, bVar);
-        xaVar.T = true;
-        xaVar.v = 0.126f;
-        xaVar.U = null;
-        xaVar.W = false;
-        long peerDialogId = DialogObject.getPeerDialogId(getgroupcallstreamrtmpurl.peer);
-        boolean z10 = b1Var != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId))));
-        if (b1Var != null) {
-            xaVar.b0 = true;
-            nh.d dVar = new nh.d(context, bVar, true);
-            dVar.g(LocaleController.getString(R.string.LiveStoryRTMPEnable), false, true);
-            xaVar.containerView.addView(dVar, i7.f6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
-            dVar.setOnClickListener(new bg.q(xaVar, b1Var, dVar, 24));
-            if (z10) {
-                nh.d dVar2 = new nh.d(context, bVar, false);
-                dVar2.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.r7, false));
-                dVar2.d.u(AndroidUtilities.bold());
-                dVar2.g(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false, true);
-                xaVar = this;
-                dVar2.setOnClickListener(new jh.r8(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i10, 3));
-                xaVar.containerView.addView(dVar2, i7.f6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
-            }
+    public /* synthetic */ fr(jr jrVar, ph.d dVar, int i10) {
+        this.a = i10;
+        this.b = jrVar;
+        this.c = dVar;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final jr jrVar = this.b;
+                final ph.d dVar = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.gr
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                jr jrVar2 = jrVar;
+                                jrVar2.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    jrVar2.Y = groupcallstreamrtmpurl.url;
+                                    jrVar2.Z = groupcallstreamrtmpurl.key;
+                                    jrVar2.a0 = new SpannableStringBuilder(jrVar2.Z);
+                                    jrVar2.b0.N(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                jr jrVar3 = jrVar;
+                                jrVar3.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    jrVar3.Y = groupcallstreamrtmpurl2.url;
+                                    jrVar3.Z = groupcallstreamrtmpurl2.key;
+                                    jrVar3.a0 = new SpannableStringBuilder(jrVar3.Z);
+                                    jrVar3.b0.N(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 1;
+                final jr jrVar2 = this.b;
+                final ph.d dVar2 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.gr
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                jr jrVar22 = jrVar2;
+                                jrVar22.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    jrVar22.Y = groupcallstreamrtmpurl.url;
+                                    jrVar22.Z = groupcallstreamrtmpurl.key;
+                                    jrVar22.a0 = new SpannableStringBuilder(jrVar22.Z);
+                                    jrVar22.b0.N(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                jr jrVar3 = jrVar2;
+                                jrVar3.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    jrVar3.Y = groupcallstreamrtmpurl2.url;
+                                    jrVar3.Z = groupcallstreamrtmpurl2.key;
+                                    jrVar3.a0 = new SpannableStringBuilder(jrVar3.Z);
+                                    jrVar3.b0.N(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        f2.l lVar = new f2.l();
-        lVar.m = false;
-        lVar.C = false;
-        lVar.o(jr.h);
-        lVar.n(350L);
-        xaVar.d.setItemAnimator(lVar);
-        jl0 jl0Var = xaVar.d;
-        int i12 = xaVar.backgroundPaddingLeft;
-        if (xaVar.b0) {
-            i11 = AndroidUtilities.dp(z10 ? 124.0f : 72.0f);
-        } else {
-            i11 = 0;
-        }
-        jl0Var.setPadding(i12, 0, i12, i11);
-        xaVar.fixNavigationBar();
-        xaVar.M();
-        xaVar.X = groupcallstreamrtmpurl.url;
-        xaVar.Y = groupcallstreamrtmpurl.key;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xaVar.Y);
-        xaVar.Z = spannableStringBuilder;
-        h01 h01Var = new h01();
-        h01Var.a |= 256;
-        h01Var.b = 0;
-        h01Var.c = spannableStringBuilder.length();
-        xaVar.Z.setSpan(new i01(h01Var, 0), 0, xaVar.Z.length(), 0);
-        xaVar.a0.N(false);
-    }
-
-    public static /* synthetic */ void P(fr frVar, TLRPC.Peer peer) {
-        frVar.V = MessagesController.getInstance(frVar.currentAccount).getInputPeer(MessageObject.getPeerId(peer));
-        frVar.dismiss();
-    }
-
-    public static void Q(fr frVar, nh.d dVar, long j10) {
-        if (dVar.J) {
-            return;
-        }
-        dVar.setLoading(true);
-        TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-        getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(frVar.currentAccount).getInputPeer(j10);
-        getgroupcallstreamrtmpurl.revoke = true;
-        ConnectionsManager.getInstance(frVar.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new br(frVar, dVar, 0));
-    }
-
-    public static void R(fr frVar, ArrayList arrayList) {
-        String str = null;
-        if (frVar.c0 == null) {
-            Context context = frVar.getContext();
-            org.telegram.ui.ActionBar.c6 c6Var = frVar.resourcesProvider;
-            er erVar = new er(context);
-            erVar.setOrientation(1);
-            aj0 aj0Var = new aj0(context);
-            aj0Var.setAutoRepeat(true);
-            aj0Var.f(R.raw.utyan_streaming, 112, 112, null);
-            aj0Var.d();
-            erVar.addView(aj0Var, i7.f6.t(112, 112, 49, 0, 24, 0, 0));
-            TextView textView = new TextView(context);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setText(LocaleController.formatString(R.string.Streaming, new Object[0]));
-            textView.setTextSize(1, 20.0f);
-            textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-            erVar.addView(textView, i7.f6.t(-2, -2, 1, 0, 14, 0, 7));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setGravity(1);
-            textView2.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.j5, c6Var));
-            textView2.setText(LocaleController.formatString(R.string.VoipStreamStart, new Object[0]));
-            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            erVar.addView(textView2, i7.f6.t(-2, -2, 1, 28, 0, 28, 17));
-            frVar.c0 = erVar;
-        }
-        arrayList.add(w41.k(frVar.c0));
-        arrayList.add(w41.B(null));
-        org.telegram.ui.th.p(R.string.VoipChatStreamSettings, arrayList);
-        String str2 = frVar.X;
-        String string = LocaleController.getString(R.string.VoipChatStreamServerUrl);
-        int i10 = dr.a;
-        w41 J = w41.J(dr.class);
-        J.l = str2;
-        J.n = string;
-        J.j = false;
-        J.g = false;
-        arrayList.add(J);
-        SpannableStringBuilder spannableStringBuilder = frVar.Z;
-        String string2 = LocaleController.getString(R.string.VoipChatStreamKey);
-        w41 J2 = w41.J(dr.class);
-        J2.l = spannableStringBuilder;
-        J2.n = string2;
-        J2.j = true;
-        J2.g = false;
-        arrayList.add(J2);
-        if (frVar.b0) {
-            str = LocaleController.getString(frVar.T ? R.string.VoipChatStreamWithAnotherAppDescriptionStory : R.string.VoipChatStreamWithAnotherAppDescription);
-        }
-        arrayList.add(w41.B(str));
-    }
-
-    public static void S(fr frVar, Context context, nh.d dVar, long j10) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, frVar.resourcesProvider);
-        alertDialog$Builder.a.N = LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle);
-        alertDialog$Builder.a.P = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new d9.a(frVar, dVar, j10, 7));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.d(-1);
-        alertDialog$Builder.o();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        TLRPC.InputPeer inputPeer;
-        super.dismissInternal();
-        r70 r70Var = this.U;
-        if (r70Var == null || (inputPeer = this.V) == null) {
-            return;
-        }
-        r70Var.a(inputPeer, this.W, false, true);
-    }
-
-    @Override // org.telegram.ui.Components.xa
-    public final il0 v(jl0 jl0Var) {
-        k51 k51Var = new k51(jl0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
-        this.a0 = k51Var;
-        return k51Var;
-    }
-
-    @Override // org.telegram.ui.Components.xa
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.Streaming);
-    }
-
-    public fr(org.telegram.ui.ActionBar.o2 o2Var, TLRPC.Peer peer, long j10, boolean z10, r70 r70Var) {
-        super(o2Var, false);
-        this.T = false;
-        this.v = 0.26f;
-        this.U = r70Var;
-        this.W = z10;
-        Context context = this.containerView.getContext();
-        boolean isCreator = ChatObject.isCreator(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)));
-        this.b0 = true;
-        TextView textView = new TextView(context);
-        textView.setGravity(17);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setSingleLine(true);
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setText(LocaleController.getString(R.string.VoipChannelStartStreaming));
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Sh, this.resourcesProvider));
-        int dp = AndroidUtilities.dp(8.0f);
-        int v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Oh, this.resourcesProvider);
-        int k9 = i0.a.k(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d6, false), 120);
-        textView.setBackground(org.telegram.ui.ActionBar.g6.i0(dp, dp, dp, dp, v02, k9, k9));
-        this.containerView.addView(textView, i7.f6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (isCreator ? 52 : 0) + 12));
-        textView.setOnClickListener(new t2(14, this, peer));
-        if (isCreator) {
-            nh.d dVar = new nh.d(context, this.resourcesProvider, false);
-            dVar.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.r7, false));
-            dVar.d.u(AndroidUtilities.bold());
-            dVar.g(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false, true);
-            dVar.setOnClickListener(new eg.a1(this, context, dVar, j10, 1));
-            this.containerView.addView(dVar, i7.f6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
-        }
-        jl0 jl0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        jl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp((isCreator ? 52 : 0) + 72));
-        f2.l lVar = new f2.l();
-        lVar.m = false;
-        lVar.C = false;
-        lVar.o(jr.h);
-        lVar.n(350L);
-        this.d.setItemAnimator(lVar);
-        fixNavigationBar();
-        M();
-        TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-        getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j10);
-        getgroupcallstreamrtmpurl.revoke = false;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new a2(this, 2));
     }
 }

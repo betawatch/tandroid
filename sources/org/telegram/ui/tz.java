@@ -1,30 +1,37 @@
 package org.telegram.ui;
 
+import android.view.KeyEvent;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tz implements RequestDelegate {
+public final /* synthetic */ class tz implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p00 b;
+    public final /* synthetic */ AlertDialog$Builder b;
 
-    public /* synthetic */ tz(p00 p00Var, int i10) {
+    public /* synthetic */ tz(AlertDialog$Builder alertDialog$Builder, int i10) {
         this.a = i10;
-        this.b = p00Var;
+        this.b = alertDialog$Builder;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.o(19, this.b, tLObject));
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
+            case 1:
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new lq(this.b, tL_error, tLObject, 6));
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
                 break;
         }
+        return false;
     }
 }

@@ -1,14 +1,37 @@
 package d7;
 
-import java.util.concurrent.Executor;
+import android.os.IBinder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Executor {
-    public static final /* synthetic */ b a = new b();
+public final class b extends b6.g {
+    @Override // b6.g
+    public final boolean C() {
+        return true;
+    }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        runnable.run();
+    @Override // b6.g, com.google.android.gms.common.api.c
+    public final int k() {
+        return 12600000;
+    }
+
+    @Override // b6.g
+    public final /* bridge */ /* synthetic */ IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch");
+        return queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(iBinder);
+    }
+
+    @Override // b6.g
+    public final String v() {
+        return "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch";
+    }
+
+    @Override // b6.g
+    public final String w() {
+        return "com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE";
     }
 }

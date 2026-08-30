@@ -1,22 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class tp extends LinearLayout {
-    public final /* synthetic */ wp a;
+public abstract class tp extends m2.a {
+    public abstract int j();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tp(wp wpVar, Context context) {
-        super(context);
-        this.a = wpVar;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        wp.m(this.a);
+    public final int k(int i10) {
+        int size = ((uh0) this).c.size();
+        int j10 = j();
+        if (i10 < j10) {
+            return ((size - (j10 * 2)) - ((j10 - i10) - 1)) - 1;
+        }
+        int i11 = size - j10;
+        return i10 >= i11 ? i10 - i11 : i10 - j10;
     }
 }

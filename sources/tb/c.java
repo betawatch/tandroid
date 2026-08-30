@@ -1,136 +1,58 @@
 package tb;
 
-import com.google.firebase.messaging.r;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import nb.h;
-import p2.u;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
-    public static final Charset b = StandardCharsets.ISO_8859_1;
+public final class c {
+    public static final int[][] c = {new int[]{21522, 0}, new int[]{20773, 1}, new int[]{24188, 2}, new int[]{23371, 3}, new int[]{17913, 4}, new int[]{16590, 5}, new int[]{20375, 6}, new int[]{19104, 7}, new int[]{30660, 8}, new int[]{29427, 9}, new int[]{32170, 10}, new int[]{30877, 11}, new int[]{26159, 12}, new int[]{25368, 13}, new int[]{27713, 14}, new int[]{26998, 15}, new int[]{5769, 16}, new int[]{5054, 17}, new int[]{7399, 18}, new int[]{6608, 19}, new int[]{1890, 20}, new int[]{597, 21}, new int[]{3340, 22}, new int[]{2107, 23}, new int[]{13663, 24}, new int[]{12392, 25}, new int[]{16177, 26}, new int[]{14854, 27}, new int[]{9396, 28}, new int[]{8579, 29}, new int[]{11994, 30}, new int[]{11245, 31}};
+    public final b a;
+    public final byte b;
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x004d A[LOOP:0: B:13:0x0022->B:20:0x004d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005c A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void a(String str, rb.d dVar, nb.a aVar, Charset charset) {
-        int i10;
-        int ordinal = dVar.ordinal();
-        int i11 = 0;
-        if (ordinal == 1) {
-            int length = str.length();
-            while (i11 < length) {
-                int charAt = str.charAt(i11) - '0';
-                int i12 = i11 + 2;
-                if (i12 < length) {
-                    aVar.b(((str.charAt(i11 + 1) - '0') * 10) + (charAt * 100) + (str.charAt(i12) - '0'), 10);
-                    i11 += 3;
-                } else {
-                    i11++;
-                    if (i11 < length) {
-                        aVar.b((charAt * 10) + (str.charAt(i11) - '0'), 7);
-                        i11 = i12;
-                    } else {
-                        aVar.b(charAt, 4);
-                    }
-                }
-            }
-            return;
+    public c(int i10) {
+        int i11 = (i10 >> 3) & 3;
+        if (i11 < 0 || i11 >= 4) {
+            throw new IllegalArgumentException();
         }
-        if (ordinal == 2) {
-            int length2 = str.length();
-            while (i11 < length2) {
-                char charAt2 = str.charAt(i11);
-                int[] iArr = a;
-                int i13 = charAt2 < '`' ? iArr[charAt2] : -1;
-                if (i13 == -1) {
-                    throw new r();
-                }
-                int i14 = i11 + 1;
-                if (i14 < length2) {
-                    char charAt3 = str.charAt(i14);
-                    int i15 = charAt3 < '`' ? iArr[charAt3] : -1;
-                    if (i15 == -1) {
-                        throw new r();
-                    }
-                    aVar.b((i13 * 45) + i15, 11);
-                    i11 += 2;
-                } else {
-                    aVar.b(i13, 6);
-                    i11 = i14;
-                }
-            }
-            return;
-        }
-        if (ordinal == 4) {
-            byte[] bytes = str.getBytes(charset);
-            int length3 = bytes.length;
-            while (i11 < length3) {
-                aVar.b(bytes[i11], 8);
-                i11++;
-            }
-            return;
-        }
-        if (ordinal != 6) {
-            throw new r("Invalid mode: " + dVar);
-        }
-        Charset charset2 = h.b;
-        if (charset2 == null) {
-            throw new r("SJIS Charset not supported on this platform");
-        }
-        byte[] bytes2 = str.getBytes(charset2);
-        if (bytes2.length % 2 != 0) {
-            throw new r("Kanji byte size not even");
-        }
-        int length4 = bytes2.length - 1;
-        while (i11 < length4) {
-            int i16 = ((bytes2[i11] & 255) << 8) | (bytes2[i11 + 1] & 255);
-            int i17 = 33088;
-            if (i16 < 33088 || i16 > 40956) {
-                if (i16 < 57408 || i16 > 60351) {
-                    i10 = -1;
-                    if (i10 != -1) {
-                        throw new r("Invalid byte sequence");
-                    }
-                    aVar.b(((i10 >> 8) * 192) + (i10 & 255), 13);
-                    i11 += 2;
-                } else {
-                    i17 = 49472;
-                }
-            }
-            i10 = i16 - i17;
-            if (i10 != -1) {
-            }
-        }
+        this.a = b.d[i11];
+        this.b = (byte) (i10 & 7);
     }
 
-    public static boolean b(String str) {
-        byte[] bytes = str.getBytes(h.b);
-        int length = bytes.length;
-        if (length % 2 != 0) {
+    public static c a(int i10, int i11) {
+        int bitCount;
+        int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i13 = 0;
+        for (int i14 = 0; i14 < 32; i14++) {
+            int[] iArr = c[i14];
+            int i15 = iArr[0];
+            if (i15 == i10 || i15 == i11) {
+                return new c(iArr[1]);
+            }
+            int bitCount2 = Integer.bitCount(i10 ^ i15);
+            if (bitCount2 < i12) {
+                i13 = iArr[1];
+                i12 = bitCount2;
+            }
+            if (i10 != i11 && (bitCount = Integer.bitCount(i15 ^ i11)) < i12) {
+                i13 = iArr[1];
+                i12 = bitCount;
+            }
+        }
+        if (i12 <= 3) {
+            return new c(i13);
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof c)) {
             return false;
         }
-        for (int i10 = 0; i10 < length; i10 += 2) {
-            int i11 = bytes[i10] & 255;
-            if ((i11 < 129 || i11 > 159) && (i11 < 224 || i11 > 235)) {
-                return false;
-            }
-        }
-        return true;
+        c cVar = (c) obj;
+        return this.a == cVar.a && this.b == cVar.b;
     }
 
-    public static boolean c(int i10, rb.e eVar, rb.b bVar) {
-        int i11 = eVar.d;
-        u uVar = eVar.c[bVar.ordinal()];
-        int i12 = uVar.b;
-        int i13 = 0;
-        for (a5.e eVar2 : (a5.e[]) uVar.c) {
-            i13 += eVar2.a;
-        }
-        return i11 - (i13 * i12) >= (i10 + 7) / 8;
+    public final int hashCode() {
+        return (this.a.ordinal() << 3) | this.b;
     }
 }

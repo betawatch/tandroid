@@ -1,55 +1,29 @@
 package j7;
 
-import java.util.Iterator;
-import java.util.Map;
+import android.content.Context;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class y extends t {
-    public final transient com.google.android.gms.internal.cast.j0 c;
-    public final transient Object[] d;
-    public final transient int e = 1;
-
-    public y(com.google.android.gms.internal.cast.j0 j0Var, Object[] objArr) {
-        this.c = j0Var;
-        this.d = objArr;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
+public abstract class y {
+    public static int a(Context context) {
+        float fraction;
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        boolean z4 = displayMetrics.widthPixels < displayMetrics.heightPixels;
+        TypedValue typedValue = new TypedValue();
+        context.getResources().getValue(z4 ? R.dimen.mr_dialog_fixed_width_minor : R.dimen.mr_dialog_fixed_width_major, typedValue, true);
+        int i10 = typedValue.type;
+        if (i10 == 5) {
+            fraction = typedValue.getDimension(displayMetrics);
+        } else {
+            if (i10 != 6) {
+                return -2;
             }
+            int i11 = displayMetrics.widthPixels;
+            fraction = typedValue.getFraction(i11, i11);
         }
-        return false;
-    }
-
-    @Override // j7.o
-    public final int i(Object[] objArr) {
-        s sVar = this.b;
-        if (sVar == null) {
-            sVar = new x(this);
-            this.b = sVar;
-        }
-        return sVar.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        s sVar = this.b;
-        if (sVar == null) {
-            sVar = new x(this);
-            this.b = sVar;
-        }
-        return sVar.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
+        return (int) fraction;
     }
 }

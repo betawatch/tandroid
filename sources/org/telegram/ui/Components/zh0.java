@@ -1,79 +1,109 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.os.Build;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.NotchInfoUtils;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zh0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai0 b;
+public final class zh0 extends FrameLayout {
+    public final Paint a;
+    public final Path b;
+    public final yh0 c;
+    public float d;
+    public float e;
+    public float f;
+    public boolean h;
+    public NotchInfoUtils.NotchInfo n;
 
-    public /* synthetic */ zh0(ai0 ai0Var, int i10) {
-        this.a = i10;
-        this.b = ai0Var;
+    public zh0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        paint.setColor(-16777216);
+        if (Build.VERSION.SDK_INT < 31 || SharedConfig.getDevicePerformanceClass() < 1) {
+            this.c = new wh0(this);
+        } else {
+            this.c = new xh0(this, SharedConfig.getDevicePerformanceClass() == 2 ? 1.0f : 1.5f);
+        }
+        setIntensity(15.0f);
+        setBlurIntensity(0.0f);
+        setWillNotDraw(false);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                ai0 ai0Var = this.b;
-                AnimatorSet animatorSet = ai0Var.s;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    ai0Var.s = null;
-                    ai0Var.getClass();
-                    break;
-                }
-                break;
-            case 2:
-                ai0 ai0Var2 = this.b;
-                AnimatorSet animatorSet2 = ai0Var2.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ai0Var2.s = null;
-                    ai0Var2.getClass();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public static /* synthetic */ void a(zh0 zh0Var, Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(32.0f));
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (!this.h) {
+            super.draw(canvas);
+        } else {
+            this.c.c(new fv(this, 12), canvas);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        ai0 ai0Var = this.b;
-        switch (i10) {
-            case 0:
-                AnimatorSet animatorSet = ai0Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    ai0Var.h = null;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            case 1:
-                AnimatorSet animatorSet2 = ai0Var.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ai0Var.s = null;
-                    if (ai0Var.w) {
-                        ai0Var.setLayerType(0, null);
-                    }
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            default:
-                AnimatorSet animatorSet3 = ai0Var.s;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    ai0Var.s = null;
-                    AndroidUtilities.runOnUIThread(new xb0(this, 14));
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
+    public float getAvatarEndScale() {
+        float min;
+        int dp;
+        NotchInfoUtils.NotchInfo notchInfo = this.n;
+        if (notchInfo == null) {
+            return 0.8f;
         }
+        if (notchInfo.isLikelyCircle) {
+            min = notchInfo.bounds.width() - AndroidUtilities.dp(2.0f);
+            dp = AndroidUtilities.dp(100.0f);
+        } else {
+            min = Math.min(notchInfo.bounds.width(), this.n.bounds.height());
+            dp = AndroidUtilities.dp(100.0f);
+        }
+        return Math.min(0.8f, min / dp);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        NotchInfoUtils.NotchInfo info = NotchInfoUtils.getInfo(getContext());
+        this.n = info;
+        if ((info != null && info.gravity != 17) || getWidth() > getHeight()) {
+            this.n = null;
+        }
+        this.c.d(i10, i11);
+    }
+
+    public void setBlurIntensity(float f10) {
+        this.f = f10;
+        this.c.b(f10);
+        invalidate();
+    }
+
+    public void setGooeyEnabled(boolean z4) {
+        if (this.h == z4) {
+            return;
+        }
+        this.h = z4;
+        invalidate();
+    }
+
+    public void setIntensity(float f10) {
+        this.d = f10;
+        this.c.a(f10);
+        invalidate();
+    }
+
+    public void setPullProgress(float f10) {
+        this.e = f10;
+        invalidate();
     }
 }

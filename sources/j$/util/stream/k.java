@@ -62,9 +62,9 @@ public final class k extends f5 {
                 Stream stream = (Stream) ((j$.time.t) ((q) this.d).t).apply((j$.time.t) obj);
                 if (stream != null) {
                     try {
-                        boolean z10 = this.c;
+                        boolean z4 = this.c;
                         j5 j5Var2 = this.a;
-                        if (!z10) {
+                        if (!z4) {
                             ((Stream) stream.sequential()).forEach(j5Var2);
                         } else {
                             Spliterator spliterator = ((Stream) stream.sequential()).spliterator();

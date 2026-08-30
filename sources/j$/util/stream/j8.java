@@ -9,7 +9,7 @@ public final class j8 extends e5 implements o8 {
         return 0L;
     }
 
-    public j8(d6 d6Var, j5 j5Var, boolean z10) {
+    public j8(d6 d6Var, j5 j5Var, boolean z4) {
         super(j5Var);
     }
 

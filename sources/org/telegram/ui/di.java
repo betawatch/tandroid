@@ -1,48 +1,91 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import android.view.View;
+import java.util.List;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class di extends jh0 {
-    public final /* synthetic */ tn e;
+public final class di extends m2.a {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ SparseArray d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ List f;
+    public final /* synthetic */ MessageObject g;
+    public final /* synthetic */ org.telegram.ui.Components.oj0 h;
+    public final /* synthetic */ MessageObject i;
+    public final /* synthetic */ SparseIntArray j;
+    public final /* synthetic */ int k;
+    public final /* synthetic */ m2.h l;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
+    public final /* synthetic */ int[] n;
+    public final /* synthetic */ int o;
+    public final /* synthetic */ xn p;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public di(tn tnVar, Context context, int i10, MessageObject messageObject) {
-        super(context);
-        this.e = tnVar;
-        this.a = null;
-        if (!messageObject.isRoundVideo()) {
-            messageObject.isVoice();
+    public di(xn xnVar, int i10, SparseArray sparseArray, boolean z4, List list, MessageObject messageObject, org.telegram.ui.Components.oj0 oj0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, m2.h hVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
+        this.p = xnVar;
+        this.c = i10;
+        this.d = sparseArray;
+        this.e = z4;
+        this.f = list;
+        this.g = messageObject;
+        this.h = oj0Var;
+        this.i = messageObject2;
+        this.j = sparseIntArray;
+        this.k = i11;
+        this.l = hVar;
+        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.n = iArr;
+        this.o = i12;
+    }
+
+    @Override // m2.a
+    public final void a(m2.h hVar, Object obj) {
+        hVar.removeView((View) obj);
+    }
+
+    @Override // m2.a
+    public final int b() {
+        return this.c;
+    }
+
+    @Override // m2.a
+    public final Object e(m2.h hVar, int i10) {
+        int i11;
+        SparseArray sparseArray = this.d;
+        View view = (View) sparseArray.get(i10);
+        if (view != null) {
+            hVar.addView(view);
+            return view;
         }
-        org.telegram.ui.Components.p00 p00Var = new org.telegram.ui.Components.p00(context, null);
-        this.c = p00Var;
-        p00Var.f(org.telegram.ui.ActionBar.g6.G8, org.telegram.ui.ActionBar.g6.i6, -1);
-        p00Var.setViewType(13);
-        p00Var.setIsSingleCell(false);
-        addView(p00Var, i7.f6.c(-1.0f, -2));
-        org.telegram.ui.Components.y80 y80Var = new org.telegram.ui.Components.y80(context, null);
-        this.b = y80Var;
-        y80Var.setTextSize(1, 14.0f);
-        y80Var.setGravity(19);
-        y80Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.E8, false));
-        y80Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.gc, false));
-        y80Var.setEllipsize(TextUtils.TruncateAt.END);
-        y80Var.setSingleLine();
-        y80Var.setLines(1);
-        y80Var.setMaxLines(1);
-        addView(y80Var, i7.f6.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
-        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
-        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
-        tL_channels_getMessageAuthor.id = messageObject.getId();
-        y80Var.setAlpha(0.0f);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new jh.s1(this, i10, 7));
-        setBackground(org.telegram.ui.ActionBar.g6.Y(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.I5, false), 6, 0));
-        setEnabled(false);
+        int i12 = this.e ? i10 - 1 : i10;
+        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
+        Context context = hVar.getContext();
+        xn xnVar = this.p;
+        vn vnVar = xnVar.ba;
+        i11 = ((org.telegram.ui.ActionBar.p2) xnVar).currentAccount;
+        org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context, vnVar, i11, this.g, reactionCount, true);
+        org.telegram.ui.Components.oj0 oj0Var = this.h;
+        yj0Var.h(oj0Var.getSeenUsers());
+        yj0Var.D = new a1(this, 16);
+        yj0Var.B = new mg.w(17, this, this.i);
+        yj0Var.y = new gg.d(this.j, i10, this.k, this.l, this.m, this.n);
+        if (i12 < 0) {
+            yj0Var.setPredictiveCount(this.o);
+            oj0Var.setSeenCallback(new j3(yj0Var, 1));
+        }
+        hVar.addView(yj0Var);
+        sparseArray.put(i10, yj0Var);
+        return yj0Var;
+    }
+
+    @Override // m2.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

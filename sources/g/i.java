@@ -7,7 +7,7 @@ import java.util.WeakHashMap;
 import r0.j0;
 import r0.o0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i extends o0 {
     public final /* synthetic */ int a;
@@ -47,19 +47,19 @@ public final class i extends o0 {
             case 0:
                 q qVar = ((h) obj).b;
                 qVar.y.setAlpha(1.0f);
-                qVar.C.d(null);
-                qVar.C = null;
+                qVar.D.d(null);
+                qVar.D = null;
                 break;
             case 1:
                 q qVar2 = (q) obj;
                 qVar2.y.setAlpha(1.0f);
-                qVar2.C.d(null);
-                qVar2.C = null;
+                qVar2.D.d(null);
+                qVar2.D = null;
                 break;
             default:
-                q qVar3 = (q) ((ze.b) obj).b;
+                q qVar3 = (q) ((f7.b) obj).c;
                 qVar3.y.setVisibility(8);
-                PopupWindow popupWindow = qVar3.A;
+                PopupWindow popupWindow = qVar3.B;
                 if (popupWindow != null) {
                     popupWindow.dismiss();
                 } else if (qVar3.y.getParent() instanceof View) {
@@ -68,9 +68,9 @@ public final class i extends o0 {
                     r0.z.c(view);
                 }
                 qVar3.y.e();
-                qVar3.C.d(null);
-                qVar3.C = null;
-                ViewGroup viewGroup = qVar3.F;
+                qVar3.D.d(null);
+                qVar3.D = null;
+                ViewGroup viewGroup = qVar3.G;
                 WeakHashMap weakHashMap2 = j0.a;
                 r0.z.c(viewGroup);
                 break;

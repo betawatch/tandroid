@@ -6,12 +6,11 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.AnimationDrawable;
 import android.util.AttributeSet;
 import android.view.View;
-import h7.e5;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class MediaRouteExpandCollapseButton extends m.v {
+public class MediaRouteExpandCollapseButton extends m.u {
     public final AnimationDrawable d;
     public final AnimationDrawable e;
     public final String f;
@@ -38,7 +37,7 @@ public class MediaRouteExpandCollapseButton extends m.v {
         this.d = animationDrawable;
         AnimationDrawable animationDrawable2 = (AnimationDrawable) context.getDrawable(R.drawable.mr_group_collapse);
         this.e = animationDrawable2;
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(e5.b(context, i10), PorterDuff.Mode.SRC_IN);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(j7.z.b(context, i10), PorterDuff.Mode.SRC_IN);
         animationDrawable.setColorFilter(porterDuffColorFilter);
         animationDrawable2.setColorFilter(porterDuffColorFilter);
         String string = context.getString(R.string.mr_controller_expand_group);
@@ -46,6 +45,6 @@ public class MediaRouteExpandCollapseButton extends m.v {
         this.h = context.getString(R.string.mr_controller_collapse_group);
         setImageDrawable(animationDrawable.getFrame(0));
         setContentDescription(string);
-        super.setOnClickListener(new v(this, 4));
+        super.setOnClickListener(new y(this, 4));
     }
 }

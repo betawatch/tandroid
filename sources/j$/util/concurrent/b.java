@@ -104,7 +104,7 @@ public abstract class b implements Collection, Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("[");
+        StringBuilder sb = new StringBuilder("[");
         Iterator it = iterator();
         if (it.hasNext()) {
             while (true) {
@@ -112,15 +112,15 @@ public abstract class b implements Collection, Serializable {
                 if (next == this) {
                     next = "(this Collection)";
                 }
-                sb2.append(next);
+                sb.append(next);
                 if (!it.hasNext()) {
                     break;
                 }
-                sb2.append(", ");
+                sb.append(", ");
             }
         }
-        sb2.append(']');
-        return sb2.toString();
+        sb.append(']');
+        return sb.toString();
     }
 
     @Override // java.util.Collection
@@ -140,7 +140,7 @@ public abstract class b implements Collection, Serializable {
     public boolean removeAll(Collection collection) {
         collection.getClass();
         l[] lVarArr = this.a.a;
-        boolean z10 = false;
+        boolean z4 = false;
         if (lVarArr == null) {
             return false;
         }
@@ -149,29 +149,29 @@ public abstract class b implements Collection, Serializable {
             while (it.hasNext()) {
                 if (collection.contains(it.next())) {
                     it.remove();
-                    z10 = true;
+                    z4 = true;
                 }
             }
-            return z10;
+            return z4;
         }
         Iterator it2 = collection.iterator();
         while (it2.hasNext()) {
-            z10 |= remove(it2.next());
+            z4 |= remove(it2.next());
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection
     public final boolean retainAll(Collection collection) {
         collection.getClass();
         Iterator it = iterator();
-        boolean z10 = false;
+        boolean z4 = false;
         while (it.hasNext()) {
             if (!collection.contains(it.next())) {
                 it.remove();
-                z10 = true;
+                z4 = true;
             }
         }
-        return z10;
+        return z4;
     }
 }

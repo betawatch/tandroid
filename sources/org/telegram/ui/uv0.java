@@ -1,258 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.widget.RelativeLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class uv0 extends FrameLayout {
-    public boolean a;
-    public boolean b;
-    public final Paint c;
-    public final /* synthetic */ PremiumPreviewFragment d;
+public final class uv0 extends RelativeLayout {
+    public final /* synthetic */ PopupNotificationActivity a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uv0(PremiumPreviewFragment premiumPreviewFragment, Context context) {
-        super(context);
-        this.d = premiumPreviewFragment;
-        this.c = new Paint(1);
+    public uv0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
+        super(popupNotificationActivity2);
+        this.a = popupNotificationActivity;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v12 */
-    /* JADX WARN: Type inference failed for: r11v13, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r11v14 */
-    /* JADX WARN: Type inference failed for: r11v20 */
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        org.telegram.ui.ActionBar.l lVar3;
-        org.telegram.ui.ActionBar.l lVar4;
-        ?? r11;
-        Canvas canvas2;
-        org.telegram.ui.ActionBar.b5 b5Var;
-        org.telegram.ui.ActionBar.b5 b5Var2;
-        org.telegram.ui.ActionBar.l lVar5;
-        org.telegram.ui.ActionBar.l lVar6;
-        org.telegram.ui.ActionBar.l lVar7;
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        boolean z10 = premiumPreviewFragment.d0;
-        cg.r1 r1Var = premiumPreviewFragment.i0;
-        if (Build.VERSION.SDK_INT >= 31 && premiumPreviewFragment.q0 != null) {
-            premiumPreviewFragment.j0();
-        }
-        if (!premiumPreviewFragment.V) {
-            if (premiumPreviewFragment.W) {
-                float f9 = premiumPreviewFragment.X + 0.016f;
-                premiumPreviewFragment.X = f9;
-                if (f9 > 3.0f) {
-                    premiumPreviewFragment.W = false;
-                }
-            } else {
-                float f10 = premiumPreviewFragment.X - 0.016f;
-                premiumPreviewFragment.X = f10;
-                if (f10 < 1.0f) {
-                    premiumPreviewFragment.W = true;
-                }
+    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getTag() instanceof String) {
+                int left = childAt.getLeft();
+                PopupNotificationActivity popupNotificationActivity = this.a;
+                childAt.layout(left, AndroidUtilities.dp(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
             }
         }
-        View m10 = premiumPreviewFragment.a.getLayoutManager() != null ? premiumPreviewFragment.a.getLayoutManager().m(0) : null;
-        premiumPreviewFragment.Y = m10 == null ? 0 : m10.getBottom();
-        lVar = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-        int dp = AndroidUtilities.dp(16.0f) + lVar.getBottom();
-        float f11 = 1.0f - ((premiumPreviewFragment.Y - dp) / (premiumPreviewFragment.U - dp));
-        premiumPreviewFragment.b0 = f11;
-        premiumPreviewFragment.b0 = Utilities.clamp(f11, 1.0f, 0.0f);
-        lVar2 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-        int dp2 = AndroidUtilities.dp(16.0f) + lVar2.getBottom();
-        if (premiumPreviewFragment.Y < dp2) {
-            premiumPreviewFragment.Y = dp2;
-        }
-        float f12 = premiumPreviewFragment.m0;
-        premiumPreviewFragment.m0 = 0.0f;
-        if (premiumPreviewFragment.Y < AndroidUtilities.dp(30.0f) + dp2) {
-            premiumPreviewFragment.m0 = ((AndroidUtilities.dp(30.0f) + dp2) - premiumPreviewFragment.Y) / AndroidUtilities.dp(30.0f);
-        }
-        if (premiumPreviewFragment.S) {
-            premiumPreviewFragment.m0 = 1.0f;
-            premiumPreviewFragment.b0 = 1.0f;
-        }
-        if (f12 != premiumPreviewFragment.m0) {
-            premiumPreviewFragment.a.invalidate();
-        }
-        int i10 = premiumPreviewFragment.Y;
-        lVar3 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-        float dp3 = AndroidUtilities.dp(24.0f) + AndroidUtilities.dp(premiumPreviewFragment.Q.e.getVisibility() == 0 ? 24.0f : 16.0f) + (i10 - ((premiumPreviewFragment.Q.getMeasuredHeight() + lVar3.getMeasuredHeight()) - premiumPreviewFragment.T));
-        lVar4 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-        float max = Math.max((((((lVar4.getMeasuredHeight() - premiumPreviewFragment.T) - premiumPreviewFragment.Q.a.getMeasuredHeight()) / 2.0f) + premiumPreviewFragment.T) - premiumPreviewFragment.Q.getTop()) - premiumPreviewFragment.Q.a.getTop(), dp3);
-        float dp4 = ((-max) / 4.0f) + AndroidUtilities.dp(16.0f);
-        premiumPreviewFragment.Q.setTranslationY(max);
-        premiumPreviewFragment.Q.d.setTranslationY(dp4 + AndroidUtilities.dp(premiumPreviewFragment.c0 == 1 ? 9.0f : 16.0f));
-        float f13 = premiumPreviewFragment.b0;
-        float z11 = com.google.android.recaptcha.internal.a.z(1.0f, f13, 0.4f, 0.6f);
-        float f14 = 1.0f - (f13 > 0.5f ? (f13 - 0.5f) / 0.5f : 0.0f);
-        premiumPreviewFragment.Q.d.setScaleX(z11);
-        premiumPreviewFragment.Q.d.setScaleY(z11);
-        premiumPreviewFragment.Q.d.setAlpha(f14);
-        premiumPreviewFragment.Q.b.setAlpha(f14);
-        premiumPreviewFragment.Q.e.setAlpha(f14);
-        premiumPreviewFragment.R.setAlpha(1.0f - premiumPreviewFragment.b0);
-        premiumPreviewFragment.R.setTranslationY(premiumPreviewFragment.Q.c.getY() + premiumPreviewFragment.Q.getY() + ((-(r1.getMeasuredHeight() - premiumPreviewFragment.Q.d.getMeasuredWidth())) / 2.0f));
-        float dp5 = AndroidUtilities.dp(72.0f) - premiumPreviewFragment.Q.a.getLeft();
-        float f15 = premiumPreviewFragment.b0;
-        premiumPreviewFragment.Q.a.setTranslationX((1.0f - org.telegram.ui.Components.jr.h.getInterpolation(1.0f - (f15 > 0.3f ? (f15 - 0.3f) / 0.7f : 0.0f))) * dp5);
-        ew0 ew0Var = premiumPreviewFragment.Q;
-        ew0Var.d.b.p = (((getMeasuredWidth() * 0.1f) * premiumPreviewFragment.X) + (premiumPreviewFragment.Q.c.getX() + ew0Var.getX())) / getMeasuredWidth();
-        ew0 ew0Var2 = premiumPreviewFragment.Q;
-        ew0Var2.d.b.q = (premiumPreviewFragment.Q.c.getY() + ew0Var2.getY()) / getMeasuredHeight();
-        if (!premiumPreviewFragment.V) {
-            invalidate();
-            premiumPreviewFragment.G.invalidate();
-            premiumPreviewFragment.F.invalidate();
-        }
-        r1Var.d(0, (-getMeasuredWidth()) * 0.1f * premiumPreviewFragment.X, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
-        if (z10) {
-            int i11 = org.telegram.ui.ActionBar.g6.a7;
-            int themedColor = premiumPreviewFragment.getThemedColor(i11);
-            Paint paint = this.c;
-            paint.setColor(themedColor);
-            r11 = 0;
-            r11 = 0;
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-            if (premiumPreviewFragment.m0 > 0.0f) {
-                lVar6 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-                if (lVar6 != null) {
-                    paint.setColor(i0.a.d(premiumPreviewFragment.m0, premiumPreviewFragment.getThemedColor(i11), premiumPreviewFragment.getThemedColor(org.telegram.ui.ActionBar.g6.d6)));
-                    float measuredWidth = getMeasuredWidth();
-                    lVar7 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-                    float height = lVar7.getHeight();
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, measuredWidth, height, paint);
-                }
-            }
-            canvas2 = canvas;
-        } else {
-            r11 = 0;
-            canvas2 = canvas;
-            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), r1Var.f);
-        }
-        super.dispatchDraw(canvas);
-        if (premiumPreviewFragment.F.getVisibility() != 0) {
-            premiumPreviewFragment.p0.b(premiumPreviewFragment.k0.d, r11);
-            premiumPreviewFragment.p0.setBounds(r11, getHeight() - premiumPreviewFragment.k0.d, getWidth(), getHeight());
-            premiumPreviewFragment.p0.draw(canvas2);
-        }
-        b5Var = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).parentLayout;
-        if (b5Var == null || !z10) {
-            return;
-        }
-        b5Var2 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).parentLayout;
-        int i12 = (int) (premiumPreviewFragment.m0 * 255.0f);
-        lVar5 = ((org.telegram.ui.ActionBar.o2) premiumPreviewFragment).actionBar;
-        ((ActionBarLayout) b5Var2).p(canvas2, i12, lVar5.getBottom());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        float x4 = premiumPreviewFragment.Q.c.getX() + premiumPreviewFragment.Q.getX();
-        float y8 = premiumPreviewFragment.Q.c.getY() + premiumPreviewFragment.Q.getY();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(x4, y8, (premiumPreviewFragment.Q.d == null ? 0 : r4.getMeasuredWidth()) + x4, (premiumPreviewFragment.Q.d == null ? 0 : r6.getMeasuredHeight()) + y8);
-        if ((rectF.contains(motionEvent.getX(), motionEvent.getY()) || this.a) && !premiumPreviewFragment.a.G1) {
-            motionEvent.offsetLocation(-x4, -y8);
-            if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-                this.a = true;
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.a = false;
-            }
-            premiumPreviewFragment.Q.d.dispatchTouchEvent(motionEvent);
-            return true;
-        }
-        float x10 = premiumPreviewFragment.Q.e.getX() + premiumPreviewFragment.Q.getX();
-        float y10 = premiumPreviewFragment.Q.e.getY() + premiumPreviewFragment.Q.getY();
-        rectF.set(x10, y10, premiumPreviewFragment.Q.e.getWidth() + x10, premiumPreviewFragment.Q.e.getHeight() + y10);
-        if (premiumPreviewFragment.m0 < 1.0f && ((rectF.contains(motionEvent.getX(), motionEvent.getY()) || this.b) && !premiumPreviewFragment.a.G1)) {
-            motionEvent.offsetLocation(-x10, -y10);
-            if (motionEvent.getAction() == 0) {
-                this.b = true;
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.b = false;
-            }
-            premiumPreviewFragment.Q.e.dispatchTouchEvent(motionEvent);
-            if (this.b) {
-                return true;
-            }
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        premiumPreviewFragment.Q.d.b.r = r3.getMeasuredWidth() / getMeasuredWidth();
-        premiumPreviewFragment.Q.d.b.s = r3.getMeasuredHeight() / getMeasuredHeight();
-        ew0 ew0Var = premiumPreviewFragment.Q;
-        ew0Var.d.b.p = (premiumPreviewFragment.Q.d.getX() + ew0Var.getX()) / getMeasuredWidth();
-        ew0 ew0Var2 = premiumPreviewFragment.Q;
-        ew0Var2.d.b.q = (premiumPreviewFragment.Q.d.getY() + ew0Var2.getY()) / getMeasuredHeight();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.widget.RelativeLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int i12 = 0;
-        boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        premiumPreviewFragment.S = z10;
-        premiumPreviewFragment.T = AndroidUtilities.statusBarHeight;
-        premiumPreviewFragment.Q.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
-        premiumPreviewFragment.R.getLayoutParams().height = premiumPreviewFragment.Q.getMeasuredHeight();
-        FrameLayout frameLayout = premiumPreviewFragment.F;
-        if (frameLayout != null && frameLayout.getVisibility() != 8) {
-            i12 = AndroidUtilities.dp(68.0f);
-        }
-        org.telegram.ui.Components.kz kzVar = premiumPreviewFragment.L;
-        kzVar.M = (premiumPreviewFragment.T + i12) - AndroidUtilities.dp(16.0f);
-        kzVar.p1();
-        premiumPreviewFragment.L.S = i12;
         super.onMeasure(i10, i11);
-        if (((getMeasuredWidth() + getMeasuredHeight()) << 16) != 0) {
-            premiumPreviewFragment.s0();
+        PopupNotificationActivity popupNotificationActivity = this.a;
+        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
+        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt.getTag() instanceof String) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.dp(3.0f), TLObject.FLAG_30));
+            }
         }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        PremiumPreviewFragment premiumPreviewFragment = this.d;
-        ArrayList arrayList = premiumPreviewFragment.c;
-        ArrayList arrayList2 = premiumPreviewFragment.b;
-        int i14 = 0;
-        for (int i15 = 0; i15 < arrayList2.size(); i15++) {
-            premiumPreviewFragment.H.a((fw0) arrayList2.get(i15), false);
-            premiumPreviewFragment.H.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            ((fw0) arrayList2.get(i15)).e = i14;
-            i14 += premiumPreviewFragment.H.getMeasuredHeight();
-        }
-        for (int i16 = 0; i16 < arrayList.size(); i16++) {
-            premiumPreviewFragment.H.a((fw0) arrayList.get(i16), false);
-            premiumPreviewFragment.H.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            ((fw0) arrayList.get(i16)).e = i14;
-            i14 += premiumPreviewFragment.H.getMeasuredHeight();
-        }
-        premiumPreviewFragment.J = i14;
     }
 }

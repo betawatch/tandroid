@@ -1,38 +1,89 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qa implements mg.a {
+public final /* synthetic */ class qa implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ sb b;
 
-    public /* synthetic */ qa(Object obj, int i10) {
+    public /* synthetic */ qa(sb sbVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = sbVar;
     }
 
-    @Override // mg.a
-    public final void e(Canvas canvas, RectF rectF) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((lb) this.b).Z(canvas, rectF);
+                AndroidUtilities.runOnUIThread(new s1(this.b, tL_error, tLObject, 9));
+                break;
+            case 1:
+                if (tLObject != null) {
+                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults = (TLRPC.TL_channels_adminLogResults) tLObject;
+                    final int i10 = 1;
+                    final sb sbVar = this.b;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.sa
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    sb.U(sbVar, tL_channels_adminLogResults);
+                                    break;
+                                default:
+                                    sb.Y(sbVar, tL_channels_adminLogResults);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
+            case 2:
+                sb sbVar2 = this.b;
+                sbVar2.getClass();
+                if (tLObject instanceof Vector) {
+                    ArrayList<T> arrayList = ((Vector) tLObject).objects;
+                    ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        if (arrayList.get(i11) instanceof TLRPC.User) {
+                            arrayList2.add((TLRPC.User) arrayList.get(i11));
+                        }
+                    }
+                    sbVar2.getMessagesController().putUsers(arrayList2, false);
+                    break;
+                }
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.b(29, this.b, tLObject));
                 break;
             default:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.jl0 jl0Var = premiumPreviewFragment.a;
-                rg.c.b(jl0Var, canvas, rectF, jl0Var, premiumPreviewFragment.Z);
+                if (tLObject != null) {
+                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = (TLRPC.TL_channels_adminLogResults) tLObject;
+                    final int i12 = 0;
+                    final sb sbVar3 = this.b;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.sa
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i12) {
+                                case 0:
+                                    sb.U(sbVar3, tL_channels_adminLogResults2);
+                                    break;
+                                default:
+                                    sb.Y(sbVar3, tL_channels_adminLogResults2);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // mg.a
-    public final void g(g.x xVar, RectF rectF) {
-        switch (this.a) {
-        }
-        xVar.b = true;
     }
 }

@@ -42,10 +42,10 @@ public abstract class s6 extends c implements Iterable {
         }
         if (j10 > j11) {
             if (this.f == null) {
-                Object[] m10 = m();
-                this.f = m10;
+                Object[] m9 = m();
+                this.f = m9;
                 this.d = new long[8];
-                m10[0] = this.e;
+                m9[0] = this.e;
             }
             int i11 = this.c + 1;
             while (j10 > j11) {
@@ -122,10 +122,10 @@ public abstract class s6 extends c implements Iterable {
         long j10;
         if (this.b == j(this.e)) {
             if (this.f == null) {
-                Object[] m10 = m();
-                this.f = m10;
+                Object[] m9 = m();
+                this.f = m9;
                 this.d = new long[8];
-                m10[0] = this.e;
+                m9[0] = this.e;
             }
             int i10 = this.c;
             int i11 = i10 + 1;

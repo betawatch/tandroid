@@ -1,54 +1,70 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mb0 b;
-    public final /* synthetic */ String c;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Emoji;
 
-    public /* synthetic */ hb0(mb0 mb0Var, String str, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class hb0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nb0 b;
+
+    public /* synthetic */ hb0(nb0 nb0Var, int i10) {
         this.a = i10;
-        this.b = mb0Var;
-        this.c = str;
+        this.b = nb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                mb0 mb0Var = this.b;
-                mb0Var.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    mb0Var.o("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    mb0Var.o("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    mb0Var.o("emailRow");
-                    break;
-                }
+                Emoji.replaceEmoji(editable, this.b.H.getPaint().getFontMetricsInt(), false);
                 break;
             default:
-                mb0 mb0Var2 = this.b;
-                mb0Var2.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    mb0Var2.o("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    mb0Var2.o("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    mb0Var2.o("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    mb0Var2.o("fingerprintRow");
-                    break;
+                nb0 nb0Var = this.b;
+                if (!nb0Var.L) {
+                    if (editable.toString().equals("0")) {
+                        nb0Var.C.setText("");
+                        break;
+                    } else {
+                        try {
+                            int parseInt = Integer.parseInt(editable.toString());
+                            if (parseInt <= 100000) {
+                                nb0Var.W(parseInt);
+                                break;
+                            } else {
+                                nb0Var.X();
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            nb0Var.X();
+                        }
+                    }
                 }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

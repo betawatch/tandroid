@@ -1,27 +1,11 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class x4 {
-    public static final x4 a;
-    public static final x4 b;
-    public static final /* synthetic */ x4[] c;
+public interface x4 {
+    void addStyle(int i10, int i11, int i12);
 
-    static {
-        x4 x4Var = new x4("BACK", 0);
-        a = x4Var;
-        x4 x4Var2 = new x4("MENU", 1);
-        b = x4Var2;
-        c = new x4[]{x4Var, x4Var2};
-    }
+    int getCurrentStyle(int i10, int i11);
 
-    public static x4 valueOf(String str) {
-        return (x4) Enum.valueOf(x4.class, str);
-    }
-
-    public static x4[] values() {
-        return (x4[]) c.clone();
-    }
+    void removeStyle(int i10, int i11, int i12);
 }

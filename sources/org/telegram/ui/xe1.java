@@ -1,282 +1,71 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class xe1 extends org.telegram.ui.Components.fa {
-    public static final /* synthetic */ int d3 = 0;
-    public boolean Z2;
-    public boolean a3;
-    public float b3;
-    public final /* synthetic */ ze1 c3;
+public final class xe1 extends f2.l {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ kf1 H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xe1(ze1 ze1Var, Context context) {
-        super(context, null);
-        this.c3 = ze1Var;
-        this.Z2 = true;
-        new Paint();
-        new RectF();
-        this.d1 = true;
-        this.X2 = AndroidUtilities.dp(200.0f);
+    public xe1(kf1 kf1Var) {
+        this.H = kf1Var;
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final boolean F0(View view) {
-        return !(view instanceof org.telegram.ui.Cells.k4) || view.isClickable();
-    }
-
-    @Override // android.view.ViewGroup
-    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
-        super.addView(view, i10, layoutParams);
-        view.setTranslationY(this.b3);
-        view.setTranslationX(0.0f);
-        view.setAlpha(1.0f);
-    }
-
-    @Override // org.telegram.ui.Components.fa, org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ze1 ze1Var = this.c3;
-        if (ze1Var.X0 != null) {
-            canvas.save();
-            canvas.translate(ze1Var.X0.getLeft(), ze1Var.X0.getY());
-            ze1Var.X0.draw(canvas);
-            canvas.restore();
-        }
-        super.dispatchDraw(canvas);
-        y1();
-    }
-
-    @Override // org.telegram.ui.Components.fa, org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        y1();
-        if (this.c3.X0 == view) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        ze1 ze1Var = this.c3;
-        if (ze1Var.w != null && this.b3 != 0.0f) {
-            int paddingTop = getPaddingTop();
-            if (paddingTop != 0) {
-                canvas.save();
-                canvas.translate(0.0f, paddingTop);
-            }
-            ze1Var.w.c(canvas, true);
-            if (paddingTop != 0) {
-                canvas.restore();
+    @Override // f2.l
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().setAnimationInProgress(this.G, null, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                AndroidUtilities.cancelRunOnUIThread(runnable);
+                this.F = null;
             }
         }
-        super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.l lVar;
-        if (!this.T1) {
-            HashSet hashSet = ze1.j1;
-            ze1 ze1Var = this.c3;
-            if (ze1Var.getParentLayout() == null || !((ActionBarLayout) ze1Var.getParentLayout()).y()) {
-                if (motionEvent.getAction() == 0) {
-                    lVar = ((org.telegram.ui.ActionBar.o2) ze1Var).actionBar;
-                    lVar.getClass();
-                    f2.p0 adapter = getAdapter();
-                    if (ze1Var.c != adapter.h()) {
-                        this.a3 = true;
-                        adapter.l();
-                        this.a3 = false;
-                    }
-                }
-                return super.onInterceptTouchEvent(motionEvent);
+    @Override // f2.l
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.F = null;
+        }
+        we1 we1Var = new we1(this, 0);
+        this.F = we1Var;
+        AndroidUtilities.runOnUIThread(we1Var);
+    }
+
+    @Override // f2.l, f2.t0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        we1 we1Var = new we1(this, 1);
+        this.F = we1Var;
+        AndroidUtilities.runOnUIThread(we1Var);
+    }
+
+    @Override // f2.l
+    public final void z(f2.l1 l1Var) {
+        kf1 kf1Var = this.H;
+        View view = kf1Var.Y0;
+        if (view == l1Var.a) {
+            view.setTranslationX(0.0f);
+            ne1 ne1Var = kf1Var.L;
+            if (ne1Var != null) {
+                ne1Var.C.clear();
             }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        HashSet hashSet = ze1.j1;
-        ze1 ze1Var = this.c3;
-        ze1Var.getClass();
-        ze1Var.getClass();
-        ze1Var.getClass();
-    }
-
-    @Override // org.telegram.ui.Components.fa, org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        org.telegram.ui.ActionBar.l lVar;
-        if (this.Z2) {
-            ze1 ze1Var = this.c3;
-            if (ze1Var.getMessagesController().dialogsLoaded) {
-                if (ze1Var.x > 0) {
-                    this.a3 = true;
-                    f2.j0 j0Var = (f2.j0) getLayoutManager();
-                    lVar = ((org.telegram.ui.ActionBar.o2) ze1Var).actionBar;
-                    j0Var.h1(1, (int) lVar.getTranslationY());
-                    this.a3 = false;
-                }
-                this.Z2 = false;
+            View view2 = kf1Var.Y0;
+            if (view2 instanceof hf1) {
+                hf1 hf1Var = (hf1) view2;
+                hf1Var.setTopicIcon(hf1Var.V4);
             }
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        f2.j0 j0Var;
-        int L0;
-        if (!this.T1) {
-            HashSet hashSet = ze1.j1;
-            ze1 ze1Var = this.c3;
-            if (ze1Var.getParentLayout() == null || !((ActionBarLayout) ze1Var.getParentLayout()).y()) {
-                int action = motionEvent.getAction();
-                if (action == 0) {
-                    setOverScrollMode(0);
-                }
-                if (action == 1 || action == 3) {
-                    be1 be1Var = ze1Var.K;
-                    if (be1Var.y != 0 && ze1Var.L.d && be1Var.f(null, 4) != 0) {
-                        ze1Var.L.getClass();
-                    }
-                }
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if ((action == 1 || action == 3) && ze1Var.y == 2 && ze1Var.x > 0 && (L0 = (j0Var = (f2.j0) getLayoutManager()).L0()) == 0) {
-                    int paddingTop = getPaddingTop();
-                    View m10 = j0Var.m(L0);
-                    int dp = (int) (AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) * 0.85f);
-                    int measuredHeight = m10.getMeasuredHeight() + (m10.getTop() - paddingTop);
-                    long currentTimeMillis = System.currentTimeMillis() - ze1Var.U;
-                    if (measuredHeight < dp || currentTimeMillis < 200) {
-                        v0(0, measuredHeight, org.telegram.ui.Components.jr.h);
-                        ze1Var.y = 2;
-                    } else if (ze1Var.y != 1) {
-                        if (this.b3 == 0.0f) {
-                            v0(0, m10.getTop() - paddingTop, org.telegram.ui.Components.jr.h);
-                        }
-                        if (!ze1Var.V) {
-                            ze1Var.V = true;
-                            try {
-                                performHapticFeedback(3, 2);
-                            } catch (Exception unused) {
-                            }
-                            mw mwVar = ze1Var.w;
-                            if (mwVar != null) {
-                                mwVar.a(true);
-                            }
-                        }
-                        ((org.telegram.ui.Cells.p2) m10).a0();
-                        ze1Var.y = 1;
-                    }
-                    float f9 = this.b3;
-                    if (f9 != 0.0f) {
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(f9, 0.0f);
-                        ofFloat.addUpdateListener(new w01(this, 19));
-                        ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.x3.A(this.b3, AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
-                        ofFloat.setInterpolator(org.telegram.ui.Components.jr.h);
-                        setScrollEnabled(false);
-                        ofFloat.addListener(new cc1(this, 2));
-                        ofFloat.start();
-                    }
-                }
-                return onTouchEvent;
-            }
-        }
-        return false;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewManager
-    public final void removeView(View view) {
-        super.removeView(view);
-        view.setTranslationY(0.0f);
-        view.setTranslationX(0.0f);
-        view.setAlpha(1.0f);
-    }
-
-    @Override // org.telegram.ui.Components.fa, org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a3) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView
-    public final void setAdapter(f2.p0 p0Var) {
-        super.setAdapter(p0Var);
-        this.Z2 = true;
-    }
-
-    public final void setViewsOffset(float f9) {
-        View m10;
-        this.b3 = f9;
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            getChildAt(i10).setTranslationY(f9);
-        }
-        if (this.A1 != -1 && (m10 = getLayoutManager().m(this.A1)) != null) {
-            int left = m10.getLeft();
-            int top = (int) (m10.getTop() + f9);
-            int right = m10.getRight();
-            int bottom = (int) (m10.getBottom() + f9);
-            Rect rect = this.C1;
-            rect.set(left, top, right, bottom);
-            this.z1.setBounds(rect);
-        }
-        invalidate();
-    }
-
-    public final void y1() {
-        if (getItemAnimator() == null || !getItemAnimator().k()) {
-            return;
-        }
-        HashSet hashSet = ze1.j1;
-    }
-
-    public final void z1(boolean z10, org.telegram.ui.Cells.p2 p2Var) {
-        int i10;
-        ze1 ze1Var = this.c3;
-        ze1Var.A = z10;
-        if (z10) {
-            ze1Var.B.h1(0, 0);
-            i10 = ze1Var.A ? 0 : 2;
-            ze1Var.y = i10;
-            mw mwVar = ze1Var.w;
-            if (mwVar != null) {
-                mwVar.X = i10 != 0;
-            }
-            if (p2Var != null) {
-                p2Var.U();
-                p2Var.invalidate();
-            }
-        } else if (p2Var != null) {
-            ze1Var.B.h1(1, 0);
-            i10 = ze1Var.A ? 0 : 2;
-            ze1Var.y = i10;
-            mw mwVar2 = ze1Var.w;
-            if (mwVar2 != null) {
-                mwVar2.X = i10 != 0;
-            }
-        }
-        me1 me1Var = ze1Var.A0;
-        if (me1Var != null) {
-            me1Var.forceLayout();
+            kf1Var.Y0 = null;
         }
     }
 }

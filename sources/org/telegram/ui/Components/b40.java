@@ -1,58 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b40 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.c6 b;
-    public ArrayList c;
-    public final FrameLayout d;
-    public final u51 e;
-    public final k51 f;
-    public Utilities.Callback h;
+public final class b40 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d40 b;
 
-    public b40(int i10, Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity);
+    public /* synthetic */ b40(d40 d40Var, int i10) {
         this.a = i10;
-        this.b = c6Var;
-        u51 u51Var = new u51(activity, i10, 0, false, new d(this, 15), new a40(this), new a40(this), c6Var);
-        this.e = u51Var;
-        u51Var.setClipToPadding(false);
-        k51 k51Var = (k51) u51Var.getAdapter();
-        this.f = k51Var;
-        k51Var.r = false;
-        addView(u51Var, -1, -1);
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.d = frameLayout;
-        ImageView imageView = new ImageView(activity);
-        int i11 = org.telegram.ui.ActionBar.g6.m6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.v0(i11, c6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.large_hashtags);
-        frameLayout.addView(imageView, i7.f6.e(56, 56, 49));
-        TextView textView = new TextView(activity);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
-        org.telegram.ui.b.i(R.string.HashtagSearchPlaceholder, textView, 17);
-        frameLayout.addView(textView, i7.f6.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
-        addView(frameLayout, i7.f6.e(210, -2, 17));
-        u51Var.setEmptyView(frameLayout);
+        this.b = d40Var;
     }
 
-    public void setOnHashtagClickListener(Utilities.Callback<String> callback) {
-        this.h = callback;
-    }
-
-    public void setOnScrollListener(f2.a1 a1Var) {
-        this.e.j(a1Var);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.yn ynVar;
+        lh.e1 e1Var;
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d40 d40Var = this.b;
+                d40Var.w = floatValue;
+                d40Var.e.setTranslationY(floatValue * AndroidUtilities.dp(48.0f));
+                d40Var.e.setPadding(0, 0, 0, (int) (d40Var.w * AndroidUtilities.dp(48.0f)));
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d40 d40Var2 = this.b;
+                d40Var2.B = floatValue2;
+                d40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
+                d40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, d40Var2.B));
+                org.telegram.ui.fk fkVar = d40Var2.f;
+                if (fkVar != null && (ynVar = fkVar.a) != null && (e1Var = ynVar.I3) != null) {
+                    e1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, d40Var2.B));
+                    d40Var2.f.a.I3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, d40Var2.B));
+                }
+                d40Var2.h.setAlpha(d40Var2.B);
+                break;
+        }
     }
 }

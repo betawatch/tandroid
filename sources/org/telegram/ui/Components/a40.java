@@ -1,58 +1,67 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a40 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ b40 a;
+public final class a40 extends yu0 {
+    public final /* synthetic */ d40 c2;
 
-    public /* synthetic */ a40(b40 b40Var) {
-        this.a = b40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a40(d40 d40Var, Context context, qu0 qu0Var, d40 d40Var2, z30 z30Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 0L, qu0Var, 0, null, null, null, 8, 0, d40Var2, z30Var, 0, f6Var, null);
+        this.c2 = d40Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((w41) obj).d;
-        b40 b40Var = this.a;
-        if (i10 == 0) {
-            HashtagSearchController.getInstance(b40Var.a).clearHistory();
-            b40Var.f.N(true);
-        } else {
-            Utilities.Callback callback = b40Var.h;
-            if (callback != null) {
-                callback.run((String) b40Var.c.get(i10 - 1));
-            }
-        }
+    @Override // org.telegram.ui.Components.yu0
+    public final int getInitialTab() {
+        return 8;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((w41) obj).d;
-        boolean z10 = false;
-        if (i10 != 0) {
-            b40 b40Var = this.a;
-            String str = (String) b40Var.c.get(i10 - 1);
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b40Var.getContext(), 0, b40Var.b);
-            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
-            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-            c2Var.N = string;
-            c2Var.P = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new j1(21, b40Var, str));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            c2Var.show();
-            z10 = true;
-        }
-        return Boolean.valueOf(z10);
+    @Override // org.telegram.ui.Components.yu0
+    public final String getStoriesHashtag() {
+        return this.c2.b;
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final String getStoriesHashtagUsername() {
+        return this.c2.c;
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final boolean t0() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void D0(SparseArray sparseArray) {
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void K0(boolean z4) {
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void M0(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void N0(boolean z4) {
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void b1(boolean z4) {
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void o0() {
+    }
+
+    @Override // org.telegram.ui.Components.yu0
+    public final void P(Canvas canvas, float f10, Rect rect, Paint paint) {
     }
 }

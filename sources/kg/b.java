@@ -2,60 +2,24 @@ package kg;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class b extends ReplacementSpan {
-    public final TextPaint a;
-    public final RectF b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public int f;
+    public final int a;
 
-    public b(c6 c6Var) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new RectF();
-        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(g6.v0(g6.C6, c6Var));
-    }
-
-    public final void a() {
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.ReactionAddReactionsHint), this.a, AndroidUtilities.displaySize.x, LocaleController.isRTL ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineWidth(0);
-            this.e = this.c.getHeight();
-        }
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
-        a();
-        Rect clipBounds = canvas.getClipBounds();
-        RectF rectF = this.b;
-        rectF.set(clipBounds);
-        canvas.saveLayerAlpha(rectF, this.f, 31);
-        canvas.translate(f9 + AndroidUtilities.dp(4.0f), (((i14 - i12) / 2.0f) + i12) - (this.e / 2.0f));
-        this.c.draw(canvas);
-        canvas.restore();
+    public b(int i10) {
+        this.a = i10;
     }
 
     @Override // android.text.style.ReplacementSpan
     public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        a();
-        return (int) (AndroidUtilities.dp(8.0f) + this.d);
+        return AndroidUtilities.dp(this.a);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
     }
 }

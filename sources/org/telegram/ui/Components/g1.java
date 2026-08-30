@@ -1,38 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements DialogInterface.OnShowListener {
+public final /* synthetic */ class g1 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ g1(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ g1(LaunchActivity launchActivity, int i10) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = launchActivity;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                this.b.p0(new LanguageSelectActivity());
                 break;
             case 1:
-                EditTextBoldCursor editTextBoldCursor2 = this.b;
-                editTextBoldCursor2.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor2);
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new s1(0, this.b));
+                this.b.p0(new org.telegram.ui.b7());
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new s1(6, this.b));
-                break;
+                LaunchActivity launchActivity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    launchActivity.startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
         }
     }
 }

@@ -1,25 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class l3 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.y1[] a;
+public final class l3 extends m51 {
+    public final /* synthetic */ AlertDialog$Builder e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(Activity activity, org.telegram.ui.Cells.y1[] y1VarArr) {
-        super(activity);
-        this.a = y1VarArr;
+    public l3(String str, AlertDialog$Builder alertDialog$Builder) {
+        super(str, (s01) null);
+        this.e = alertDialog$Builder;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.y1[] y1VarArr = this.a;
-        if (y1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), y1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-        }
+    @Override // org.telegram.ui.Components.m51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.e.a.I0.run();
+        super.onClick(view);
     }
 }

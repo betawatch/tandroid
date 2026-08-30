@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class EmojiCompatInitializer implements i2.b {
     @Override // i2.b
@@ -19,13 +19,13 @@ public class EmojiCompatInitializer implements i2.b {
 
     @Override // i2.b
     public final Object b(Context context) {
-        q qVar = new q(new androidx.biometric.t(context, 1));
-        qVar.a = 1;
+        r rVar = new r(new androidx.biometric.u(context, 1));
+        rVar.a = 1;
         if (l.j == null) {
             synchronized (l.i) {
                 try {
                     if (l.j == null) {
-                        l.j = new l(qVar);
+                        l.j = new l(rVar);
                     }
                 } finally {
                 }
@@ -49,12 +49,12 @@ public class EmojiCompatInitializer implements i2.b {
                 throw th2;
             }
         }
-        final androidx.lifecycle.o m10 = ((androidx.lifecycle.t) obj).m();
-        m10.a(new androidx.lifecycle.e(this) { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
+        final androidx.lifecycle.o m9 = ((androidx.lifecycle.t) obj).m();
+        m9.a(new androidx.lifecycle.e(this) { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
             @Override // androidx.lifecycle.e
             public final void a(androidx.lifecycle.t tVar) {
-                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new ab.n(1), 500L);
-                m10.b(this);
+                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new n(0), 500L);
+                m9.b(this);
             }
 
             @Override // androidx.lifecycle.e

@@ -1,47 +1,64 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-    public /* synthetic */ gl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gl implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
+
+    public /* synthetic */ gl(int i10, Object obj, boolean z4) {
         this.a = i10;
-        this.b = chatAttachAlertPhotoLayout;
+        this.b = obj;
+        this.c = z4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         int i10 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        boolean z4 = false;
+        boolean z10 = this.c;
+        Object obj2 = this.b;
         switch (i10) {
             case 0:
-                boolean z10 = ChatAttachAlertPhotoLayout.m1;
-                chatAttachAlertPhotoLayout.b.getContainer().removeView(chatAttachAlertPhotoLayout.L);
-                chatAttachAlertPhotoLayout.L = null;
+                ArrayList arrayList = (ArrayList) obj2;
+                View view = (View) obj;
+                boolean z11 = ChatAttachAlertPhotoLayout.n1;
+                if (view instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                    MediaController.PhotoEntry photoEntry = t5Var.getPhotoEntry();
+                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.imageId)) && z10) {
+                        z4 = true;
+                    }
+                    t5Var.setHasSpoiler(z4);
+                    break;
+                }
                 break;
             case 1:
-                chatAttachAlertPhotoLayout.w.setVisibility(8);
-                break;
-            case 2:
-                chatAttachAlertPhotoLayout.C.l();
-                break;
-            case 3:
-                boolean z11 = ChatAttachAlertPhotoLayout.m1;
-                chatAttachAlertPhotoLayout.t0(false);
-                chatAttachAlertPhotoLayout.j0 = null;
-                break;
-            case 4:
-                boolean z12 = ChatAttachAlertPhotoLayout.m1;
-                chatAttachAlertPhotoLayout.t0(false);
-                chatAttachAlertPhotoLayout.j0 = null;
-                break;
-            case 5:
-                ChatAttachAlertPhotoLayout.P(chatAttachAlertPhotoLayout);
+                ArrayList arrayList2 = (ArrayList) obj2;
+                View view2 = (View) obj;
+                boolean z12 = ChatAttachAlertPhotoLayout.n1;
+                if (view2 instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var2 = (org.telegram.ui.Cells.t5) view2;
+                    MediaController.PhotoEntry photoEntry2 = t5Var2.getPhotoEntry();
+                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.imageId)) && z10) {
+                        z4 = true;
+                    }
+                    t5Var2.setHighQuality(z4);
+                    break;
+                }
                 break;
             default:
-                ChatAttachAlertPhotoLayout.O(chatAttachAlertPhotoLayout);
+                Float f10 = (Float) obj;
+                fb fbVar = ((ab) obj2).b.p;
+                if (fbVar != null && !z10) {
+                    fbVar.c(r0.e.getHeight() - f10.floatValue());
+                    break;
+                }
                 break;
         }
     }

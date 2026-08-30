@@ -17,12 +17,11 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.InflateException;
 import android.view.animation.AnimationUtils;
-import h7.c8;
-import j7.l1;
+import j7.y7;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -121,7 +120,7 @@ public abstract class a {
         while (true) {
             int next = xmlPullParser.next();
             int i17 = 3;
-            boolean z10 = false;
+            boolean z4 = false;
             if (next == 3 && xmlPullParser.getDepth() <= depth) {
                 break;
             }
@@ -144,10 +143,10 @@ public abstract class a {
                     XmlPullParser xmlPullParser3 = xmlPullParser;
                     if (name.equals("set")) {
                         AnimatorSet animatorSet2 = new AnimatorSet();
-                        TypedArray f9 = h0.b.f(resources3, theme3, attributeSet, h);
+                        TypedArray f10 = h0.b.f(resources3, theme3, attributeSet, h);
                         if (xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "ordering") != null) {
                             theme2 = theme3;
-                            i16 = f9.getInt(0, 0);
+                            i16 = f10.getInt(0, 0);
                             attributeSet3 = attributeSet;
                             xmlPullParser2 = xmlPullParser3;
                             resources2 = resources3;
@@ -160,9 +159,9 @@ public abstract class a {
                         }
                         a(context, resources2, theme2, xmlPullParser2, attributeSet3, animatorSet2, i16);
                         valueAnimator2 = animatorSet2;
-                        f9.recycle();
+                        f10.recycle();
                         i11 = depth;
-                        if (animatorSet != null && !z10) {
+                        if (animatorSet != null && !z4) {
                             if (arrayList == null) {
                                 arrayList = new ArrayList();
                             }
@@ -185,9 +184,9 @@ public abstract class a {
                                 xmlPullParser3.next();
                             } else {
                                 if (xmlPullParser3.getName().equals(str3)) {
-                                    TypedArray f10 = h0.b.f(resources3, theme3, asAttributeSet, i);
-                                    String b10 = h0.b.b(f10, xmlPullParser3, "propertyName", i17);
-                                    int i20 = xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "valueType") != null ? f10.getInt(i19, 4) : 4;
+                                    TypedArray f11 = h0.b.f(resources3, theme3, asAttributeSet, i);
+                                    String b10 = h0.b.b(f11, xmlPullParser3, "propertyName", i17);
+                                    int i20 = xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "valueType") != null ? f11.getInt(i19, 4) : 4;
                                     attributeSet2 = asAttributeSet;
                                     int i21 = i20;
                                     ArrayList arrayList3 = null;
@@ -201,31 +200,31 @@ public abstract class a {
                                             int[] iArr = j;
                                             str2 = str3;
                                             if (i21 == 4) {
-                                                TypedArray f11 = h0.b.f(resources3, theme3, Xml.asAttributeSet(xmlPullParser3), iArr);
-                                                TypedValue peekValue = !h0.b.c(xmlPullParser3, "value") ? null : f11.peekValue(0);
+                                                TypedArray f12 = h0.b.f(resources3, theme3, Xml.asAttributeSet(xmlPullParser3), iArr);
+                                                TypedValue peekValue = !h0.b.c(xmlPullParser3, "value") ? null : f12.peekValue(0);
                                                 int i22 = (peekValue == null || !c(peekValue.type)) ? 0 : 3;
-                                                f11.recycle();
+                                                f12.recycle();
                                                 i21 = i22;
                                             }
-                                            TypedArray f12 = h0.b.f(resources3, theme3, Xml.asAttributeSet(xmlPullParser3), iArr);
-                                            float f13 = h0.b.c(xmlPullParser3, "fraction") ? f12.getFloat(3, -1.0f) : -1.0f;
-                                            TypedValue peekValue2 = !h0.b.c(xmlPullParser3, "value") ? null : f12.peekValue(0);
-                                            boolean z11 = peekValue2 != null;
-                                            int i23 = i21 == 4 ? (z11 && c(peekValue2.type)) ? 3 : 0 : i21;
-                                            if (!z11) {
-                                                ofFloat = i23 == 0 ? Keyframe.ofFloat(f13) : Keyframe.ofInt(f13);
+                                            TypedArray f13 = h0.b.f(resources3, theme3, Xml.asAttributeSet(xmlPullParser3), iArr);
+                                            float f14 = h0.b.c(xmlPullParser3, "fraction") ? f13.getFloat(3, -1.0f) : -1.0f;
+                                            TypedValue peekValue2 = !h0.b.c(xmlPullParser3, "value") ? null : f13.peekValue(0);
+                                            boolean z10 = peekValue2 != null;
+                                            int i23 = i21 == 4 ? (z10 && c(peekValue2.type)) ? 3 : 0 : i21;
+                                            if (!z10) {
+                                                ofFloat = i23 == 0 ? Keyframe.ofFloat(f14) : Keyframe.ofInt(f14);
                                             } else if (i23 == 0) {
-                                                ofFloat = Keyframe.ofFloat(f13, xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "value") != null ? f12.getFloat(0, 0.0f) : 0.0f);
+                                                ofFloat = Keyframe.ofFloat(f14, xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "value") != null ? f13.getFloat(0, 0.0f) : 0.0f);
                                             } else if (i23 == 1 || i23 == 3) {
-                                                ofFloat = Keyframe.ofInt(f13, xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "value") != null ? f12.getInt(0, 0) : 0);
+                                                ofFloat = Keyframe.ofInt(f14, xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "value") != null ? f13.getInt(0, 0) : 0);
                                             } else {
                                                 ofFloat = null;
                                             }
-                                            int resourceId = xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "interpolator") != null ? f12.getResourceId(1, 0) : 0;
+                                            int resourceId = xmlPullParser3.getAttributeValue("http://schemas.android.com/apk/res/android", "interpolator") != null ? f13.getResourceId(1, 0) : 0;
                                             if (resourceId > 0) {
                                                 ofFloat.setInterpolator(AnimationUtils.loadInterpolator(context, resourceId));
                                             }
-                                            f12.recycle();
+                                            f13.recycle();
                                             if (ofFloat != null) {
                                                 if (arrayList3 == null) {
                                                     arrayList3 = new ArrayList();
@@ -321,7 +320,7 @@ public abstract class a {
                                         }
                                     }
                                     if (propertyValuesHolder == null) {
-                                        propertyValuesHolder = b(f10, i20, 0, 1, b10);
+                                        propertyValuesHolder = b(f11, i20, 0, 1, b10);
                                     }
                                     if (propertyValuesHolder != null) {
                                         if (arrayList2 == null) {
@@ -329,7 +328,7 @@ public abstract class a {
                                         }
                                         arrayList2.add(propertyValuesHolder);
                                     }
-                                    f10.recycle();
+                                    f11.recycle();
                                 } else {
                                     attributeSet2 = asAttributeSet;
                                     i12 = depth;
@@ -360,7 +359,7 @@ public abstract class a {
                         if (propertyValuesHolderArr != null && (valueAnimator2 instanceof ValueAnimator)) {
                             valueAnimator2.setValues(propertyValuesHolderArr);
                         }
-                        z10 = true;
+                        z4 = true;
                         if (animatorSet != null) {
                             if (arrayList == null) {
                             }
@@ -381,43 +380,43 @@ public abstract class a {
     public static PropertyValuesHolder b(TypedArray typedArray, int i10, int i11, int i12, String str) {
         PropertyValuesHolder ofFloat;
         TypedValue peekValue = typedArray.peekValue(i11);
-        boolean z10 = peekValue != null;
-        int i13 = z10 ? peekValue.type : 0;
+        boolean z4 = peekValue != null;
+        int i13 = z4 ? peekValue.type : 0;
         TypedValue peekValue2 = typedArray.peekValue(i12);
-        boolean z11 = peekValue2 != null;
-        int i14 = z11 ? peekValue2.type : 0;
+        boolean z10 = peekValue2 != null;
+        int i14 = z10 ? peekValue2.type : 0;
         if (i10 == 4) {
-            i10 = ((z10 && c(i13)) || (z11 && c(i14))) ? 3 : 0;
+            i10 = ((z4 && c(i13)) || (z10 && c(i14))) ? 3 : 0;
         }
-        boolean z12 = i10 == 0;
+        boolean z11 = i10 == 0;
         PropertyValuesHolder propertyValuesHolder = null;
         if (i10 == 2) {
             String string = typedArray.getString(i11);
             String string2 = typedArray.getString(i12);
-            i0.d[] c3 = c8.c(string);
-            i0.d[] c6 = c8.c(string2);
-            if (c3 != null || c6 != null) {
+            i0.d[] c3 = y7.c(string);
+            i0.d[] c10 = y7.c(string2);
+            if (c3 != null || c10 != null) {
                 if (c3 != null) {
                     e eVar = new e();
-                    if (c6 == null) {
+                    if (c10 == null) {
                         return PropertyValuesHolder.ofObject(str, eVar, c3);
                     }
-                    if (c8.a(c3, c6)) {
-                        return PropertyValuesHolder.ofObject(str, eVar, c3, c6);
+                    if (y7.a(c3, c10)) {
+                        return PropertyValuesHolder.ofObject(str, eVar, c3, c10);
                     }
-                    throw new InflateException(l1.n(" Can't morph from ", string, " to ", string2));
+                    throw new InflateException(e2.c.k(" Can't morph from ", string, " to ", string2));
                 }
-                if (c6 != null) {
-                    return PropertyValuesHolder.ofObject(str, new e(), c6);
+                if (c10 != null) {
+                    return PropertyValuesHolder.ofObject(str, new e(), c10);
                 }
             }
             return null;
         }
         f fVar = i10 == 3 ? f.a : null;
-        if (z12) {
-            if (z10) {
+        if (z11) {
+            if (z4) {
                 float dimension = i13 == 5 ? typedArray.getDimension(i11, 0.0f) : typedArray.getFloat(i11, 0.0f);
-                if (z11) {
+                if (z10) {
                     ofFloat = PropertyValuesHolder.ofFloat(str, dimension, i14 == 5 ? typedArray.getDimension(i12, 0.0f) : typedArray.getFloat(i12, 0.0f));
                 } else {
                     ofFloat = PropertyValuesHolder.ofFloat(str, dimension);
@@ -426,14 +425,14 @@ public abstract class a {
                 ofFloat = PropertyValuesHolder.ofFloat(str, i14 == 5 ? typedArray.getDimension(i12, 0.0f) : typedArray.getFloat(i12, 0.0f));
             }
             propertyValuesHolder = ofFloat;
-        } else if (z10) {
+        } else if (z4) {
             int dimension2 = i13 == 5 ? (int) typedArray.getDimension(i11, 0.0f) : c(i13) ? typedArray.getColor(i11, 0) : typedArray.getInt(i11, 0);
-            if (z11) {
+            if (z10) {
                 propertyValuesHolder = PropertyValuesHolder.ofInt(str, dimension2, i14 == 5 ? (int) typedArray.getDimension(i12, 0.0f) : c(i14) ? typedArray.getColor(i12, 0) : typedArray.getInt(i12, 0));
             } else {
                 propertyValuesHolder = PropertyValuesHolder.ofInt(str, dimension2);
             }
-        } else if (z11) {
+        } else if (z10) {
             propertyValuesHolder = PropertyValuesHolder.ofInt(str, i14 == 5 ? (int) typedArray.getDimension(i12, 0.0f) : c(i14) ? typedArray.getColor(i12, 0) : typedArray.getInt(i12, 0));
         }
         if (propertyValuesHolder != null && fVar != null) {
@@ -459,79 +458,79 @@ public abstract class a {
         int i10;
         int resourceId;
         ValueAnimator valueAnimator2;
-        TypedArray f9 = h0.b.f(resources, theme, attributeSet, g);
-        TypedArray f10 = h0.b.f(resources, theme, attributeSet, k);
+        TypedArray f10 = h0.b.f(resources, theme, attributeSet, g);
+        TypedArray f11 = h0.b.f(resources, theme, attributeSet, k);
         ValueAnimator valueAnimator3 = objectAnimator == null ? new ValueAnimator() : objectAnimator;
-        long j10 = h0.b.c(xmlPullParser, "duration") ? f9.getInt(1, 300) : 300;
-        boolean z10 = false;
-        long j11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f9.getInt(2, 0) : 0;
-        int i11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueType") != null ? f9.getInt(7, 4) : 4;
+        long j10 = h0.b.c(xmlPullParser, "duration") ? f10.getInt(1, 300) : 300;
+        boolean z4 = false;
+        long j11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f10.getInt(2, 0) : 0;
+        int i11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueType") != null ? f10.getInt(7, 4) : 4;
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueFrom") != null && xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueTo") != null) {
             if (i11 == 4) {
-                TypedValue peekValue = f9.peekValue(5);
-                boolean z11 = peekValue != null;
-                int i12 = z11 ? peekValue.type : 0;
-                TypedValue peekValue2 = f9.peekValue(6);
-                boolean z12 = peekValue2 != null;
-                i11 = ((z11 && c(i12)) || (z12 && c(z12 ? peekValue2.type : 0))) ? 3 : 0;
+                TypedValue peekValue = f10.peekValue(5);
+                boolean z10 = peekValue != null;
+                int i12 = z10 ? peekValue.type : 0;
+                TypedValue peekValue2 = f10.peekValue(6);
+                boolean z11 = peekValue2 != null;
+                i11 = ((z10 && c(i12)) || (z11 && c(z11 ? peekValue2.type : 0))) ? 3 : 0;
             }
-            PropertyValuesHolder b10 = b(f9, i11, 5, 6, "");
+            PropertyValuesHolder b10 = b(f10, i11, 5, 6, "");
             if (b10 != null) {
                 valueAnimator3.setValues(b10);
             }
         }
         valueAnimator3.setDuration(j10);
         valueAnimator3.setStartDelay(j11);
-        valueAnimator3.setRepeatCount(xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "repeatCount") != null ? f9.getInt(3, 0) : 0);
-        valueAnimator3.setRepeatMode(xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "repeatMode") != null ? f9.getInt(4, 1) : 1);
-        if (f10 != null) {
+        valueAnimator3.setRepeatCount(xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "repeatCount") != null ? f10.getInt(3, 0) : 0);
+        valueAnimator3.setRepeatMode(xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "repeatMode") != null ? f10.getInt(4, 1) : 1);
+        if (f11 != null) {
             ObjectAnimator objectAnimator2 = (ObjectAnimator) valueAnimator3;
-            String b11 = h0.b.b(f10, xmlPullParser, "pathData", 1);
+            String b11 = h0.b.b(f11, xmlPullParser, "pathData", 1);
             if (b11 == null) {
                 valueAnimator = valueAnimator3;
                 i10 = 0;
-                objectAnimator2.setPropertyName(h0.b.b(f10, xmlPullParser, "propertyName", 0));
-                resourceId = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "interpolator") == null ? f9.getResourceId(i10, i10) : 0;
+                objectAnimator2.setPropertyName(h0.b.b(f11, xmlPullParser, "propertyName", 0));
+                resourceId = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "interpolator") == null ? f10.getResourceId(i10, i10) : 0;
                 if (resourceId <= 0) {
                     valueAnimator2 = valueAnimator;
                     valueAnimator2.setInterpolator(AnimationUtils.loadInterpolator(context, resourceId));
                 } else {
                     valueAnimator2 = valueAnimator;
                 }
-                f9.recycle();
-                if (f10 != null) {
-                    f10.recycle();
+                f10.recycle();
+                if (f11 != null) {
+                    f11.recycle();
                 }
                 return valueAnimator2;
             }
-            String b12 = h0.b.b(f10, xmlPullParser, "propertyXName", 2);
-            String b13 = h0.b.b(f10, xmlPullParser, "propertyYName", 3);
+            String b12 = h0.b.b(f11, xmlPullParser, "propertyXName", 2);
+            String b13 = h0.b.b(f11, xmlPullParser, "propertyYName", 3);
             if (i11 != 2) {
             }
             if (b12 == null && b13 == null) {
-                throw new InflateException(f10.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
+                throw new InflateException(f11.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
             }
-            Path d10 = c8.d(b11);
+            Path d10 = y7.d(b11);
             PathMeasure pathMeasure = new PathMeasure(d10, false);
             ArrayList arrayList = new ArrayList();
             arrayList.add(Float.valueOf(0.0f));
-            float f11 = 0.0f;
+            float f12 = 0.0f;
             while (true) {
-                f11 += pathMeasure.getLength();
-                arrayList.add(Float.valueOf(f11));
+                f12 += pathMeasure.getLength();
+                arrayList.add(Float.valueOf(f12));
                 if (!pathMeasure.nextContour()) {
                     break;
                 }
-                z10 = false;
+                z4 = false;
             }
-            PathMeasure pathMeasure2 = new PathMeasure(d10, z10);
-            int min = Math.min(100, ((int) (f11 / 0.5f)) + 1);
+            PathMeasure pathMeasure2 = new PathMeasure(d10, z4);
+            int min = Math.min(100, ((int) (f12 / 0.5f)) + 1);
             float[] fArr = new float[min];
             float[] fArr2 = new float[min];
             float[] fArr3 = new float[2];
-            float f12 = f11 / (min - 1);
+            float f13 = f12 / (min - 1);
             valueAnimator = valueAnimator3;
-            float f13 = 0.0f;
+            float f14 = 0.0f;
             int i13 = 0;
             int i14 = 0;
             while (true) {
@@ -539,12 +538,12 @@ public abstract class a {
                     break;
                 }
                 int i15 = min;
-                pathMeasure2.getPosTan(f13 - ((Float) arrayList.get(i14)).floatValue(), fArr3, null);
+                pathMeasure2.getPosTan(f14 - ((Float) arrayList.get(i14)).floatValue(), fArr3, null);
                 fArr[i13] = fArr3[0];
                 fArr2[i13] = fArr3[1];
                 int i16 = i14 + 1;
-                f13 += f12;
-                if (i16 < arrayList.size() && f13 > ((Float) arrayList.get(i16)).floatValue()) {
+                f14 += f13;
+                if (i16 < arrayList.size() && f14 > ((Float) arrayList.get(i16)).floatValue()) {
                     pathMeasure2.nextContour();
                     i14 = i16;
                 }
@@ -568,8 +567,8 @@ public abstract class a {
         }
         if (resourceId <= 0) {
         }
-        f9.recycle();
-        if (f10 != null) {
+        f10.recycle();
+        if (f11 != null) {
         }
         return valueAnimator2;
     }

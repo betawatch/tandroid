@@ -1,82 +1,109 @@
 package o1;
 
-import android.os.Looper;
-import android.util.AndroidRuntimeException;
-import android.view.Choreographer;
-import java.util.ArrayList;
-import l3.g0;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class k extends i {
-    public l u;
-    public float v;
+public final class k {
+    public double a;
+    public double b;
+    public boolean c;
+    public double d;
+    public double e;
+    public double f;
+    public double g;
+    public double h;
+    public double i;
+    public final e j;
 
-    public k(ib.a aVar) {
-        super(aVar);
-        this.u = null;
-        this.v = Float.MAX_VALUE;
+    public k() {
+        this.a = Math.sqrt(1500.0d);
+        this.b = 0.5d;
+        this.c = false;
+        this.i = Double.MAX_VALUE;
+        this.j = new e();
     }
 
-    public final void f() {
-        l lVar = this.u;
-        if (lVar == null) {
-            throw new UnsupportedOperationException("Incomplete SpringAnimation: Either final position or a spring force needs to be set.");
+    public final void a(float f10) {
+        if (f10 < 0.0f) {
+            throw new IllegalArgumentException("Damping ratio must be non-negative");
         }
-        double d = (float) lVar.i;
-        if (d > this.g) {
-            throw new UnsupportedOperationException("Final position of the spring cannot be greater than the max value.");
+        this.b = f10;
+        this.c = false;
+    }
+
+    public final void b(float f10) {
+        if (f10 <= 0.0f) {
+            throw new IllegalArgumentException("Spring stiffness constant must be positive.");
         }
-        if (d < this.h) {
-            throw new UnsupportedOperationException("Final position of the spring cannot be less than the min value.");
-        }
-        double abs = Math.abs(this.j * 0.75f);
-        lVar.d = abs;
-        lVar.e = abs * 62.5d;
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AndroidRuntimeException("Animations may only be started on the main thread");
-        }
-        boolean z10 = this.f;
-        if (z10 || z10) {
-            return;
-        }
-        this.f = true;
+        this.a = Math.sqrt(f10);
+        this.c = false;
+    }
+
+    public final e c(double d, double d10, long j10) {
+        double sin;
+        double cos;
         if (!this.c) {
-            this.b = this.e.a(this.d);
-        }
-        float f9 = this.b;
-        if (f9 > this.g || f9 < this.h) {
-            throw new IllegalArgumentException("Starting value need to be in between min value and max value");
-        }
-        ThreadLocal threadLocal = c.f;
-        if (threadLocal.get() == null) {
-            threadLocal.set(new c());
-        }
-        c cVar = (c) threadLocal.get();
-        ArrayList arrayList = cVar.b;
-        if (arrayList.size() == 0) {
-            if (cVar.d == null) {
-                cVar.d = new g0(cVar.c);
+            if (this.i == Double.MAX_VALUE) {
+                throw new IllegalStateException("Error: Final position of the spring must be set before the animation starts");
             }
-            g0 g0Var = cVar.d;
-            ((Choreographer) g0Var.c).postFrameCallback((b) g0Var.d);
+            double d11 = this.b;
+            if (d11 > 1.0d) {
+                double d12 = this.a;
+                this.f = (Math.sqrt((d11 * d11) - 1.0d) * d12) + ((-d11) * d12);
+                double d13 = this.b;
+                double d14 = this.a;
+                this.g = ((-d13) * d14) - (Math.sqrt((d13 * d13) - 1.0d) * d14);
+            } else if (d11 >= 0.0d && d11 < 1.0d) {
+                this.h = Math.sqrt(1.0d - (d11 * d11)) * this.a;
+            }
+            this.c = true;
         }
-        if (arrayList.contains(this)) {
-            return;
+        double d15 = j10 / 1000.0d;
+        double d16 = d - this.i;
+        double d17 = this.b;
+        if (d17 > 1.0d) {
+            double d18 = this.g;
+            double d19 = ((d18 * d16) - d10) / (d18 - this.f);
+            double d20 = d16 - d19;
+            sin = (Math.pow(2.718281828459045d, this.f * d15) * d19) + (Math.pow(2.718281828459045d, d18 * d15) * d20);
+            double d21 = this.g;
+            double pow = Math.pow(2.718281828459045d, d21 * d15) * d20 * d21;
+            double d22 = this.f;
+            cos = (Math.pow(2.718281828459045d, d22 * d15) * d19 * d22) + pow;
+        } else if (d17 == 1.0d) {
+            double d23 = this.a;
+            double d24 = (d23 * d16) + d10;
+            double d25 = (d24 * d15) + d16;
+            double pow2 = Math.pow(2.718281828459045d, (-d23) * d15) * d25;
+            double pow3 = Math.pow(2.718281828459045d, (-this.a) * d15) * d25;
+            double d26 = -this.a;
+            cos = (Math.pow(2.718281828459045d, d26 * d15) * d24) + (pow3 * d26);
+            sin = pow2;
+        } else {
+            double d27 = 1.0d / this.h;
+            double d28 = this.a;
+            double d29 = ((d17 * d28 * d16) + d10) * d27;
+            sin = ((Math.sin(this.h * d15) * d29) + (Math.cos(this.h * d15) * d16)) * Math.pow(2.718281828459045d, (-d17) * d28 * d15);
+            double d30 = this.a;
+            double d31 = this.b;
+            double d32 = (-d30) * sin * d31;
+            double pow4 = Math.pow(2.718281828459045d, (-d31) * d30 * d15);
+            double d33 = this.h;
+            double sin2 = Math.sin(d33 * d15) * (-d33) * d16;
+            double d34 = this.h;
+            cos = (((Math.cos(d34 * d15) * d29 * d34) + sin2) * pow4) + d32;
         }
-        arrayList.add(this);
+        float f10 = (float) (sin + this.i);
+        e eVar = this.j;
+        eVar.a = f10;
+        eVar.b = (float) cos;
+        return eVar;
     }
 
-    public k(Object obj, j jVar) {
-        super(obj, jVar);
-        this.u = null;
-        this.v = Float.MAX_VALUE;
-    }
-
-    public k(Object obj, j jVar, float f9) {
-        super(obj, jVar);
-        this.u = null;
-        this.v = Float.MAX_VALUE;
-        this.u = new l(f9);
+    public k(float f10) {
+        this.a = Math.sqrt(1500.0d);
+        this.b = 0.5d;
+        this.c = false;
+        this.j = new e();
+        this.i = f10;
     }
 }

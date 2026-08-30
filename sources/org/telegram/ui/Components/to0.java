@@ -1,32 +1,31 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class to0 implements o1.h {
+public final class to0 extends LinearLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int[] b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ to0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, View view, int[] iArr, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public to0(Context context, int i10, int i11) {
+        super(context);
         this.a = i10;
-        this.c = notificationCenterDelegate;
-        this.d = view;
-        this.b = iArr;
+        this.b = i11;
     }
 
-    @Override // o1.h
-    public final void a(o1.i iVar, float f9, float f10) {
-        switch (this.a) {
-            case 0:
-                ((dq0) this.c).Q0((org.telegram.ui.Cells.c7) this.d, this.b, f9 / 1000.0f);
-                break;
-            default:
-                ((jp0) this.c).d.Q0(this.d, this.b, f9 / 1000.0f);
-                break;
-        }
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return AndroidUtilities.dp(260.0f);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
     }
 }

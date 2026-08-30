@@ -1,24 +1,13 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public enum s7 implements f0 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3);
-
-    public final int a;
-
-    s7(int i10) {
-        this.a = i10;
-    }
-
-    @Override // j7.f0
-    public final int zza() {
-        return this.a;
+public abstract class s7 {
+    public static void a(int i10, Object[] objArr) {
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (objArr[i11] == null) {
+                throw new NullPointerException(kh.a2.j(i11, "at index "));
+            }
+        }
     }
 }

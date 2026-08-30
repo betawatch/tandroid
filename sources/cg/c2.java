@@ -1,75 +1,62 @@
 package cg;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.Emoji;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.y80;
+import k7.n6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c2 extends y80 {
-    public final /* synthetic */ int H;
+public final class c2 extends d2 {
+    public final s1 f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ e2 i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c2(Context context, int i10, c6 c6Var) {
-        super(context, c6Var);
-        this.H = i10;
+    public c2(e2 e2Var, s1 s1Var, boolean z4, boolean z10) {
+        this.i = e2Var;
+        this.b = false;
+        this.f = s1Var;
+        this.g = z4 ? -1.0f : 1.0f;
+        this.h = z10 ? -1.0f : 1.0f;
+        a();
     }
 
-    @Override // org.telegram.ui.Components.y80
-    public int a() {
-        switch (this.H) {
-            case 0:
-                return 3;
-            default:
-                return super.a();
+    @Override // cg.d2
+    public final void a() {
+        s1 s1Var = this.f;
+        if (s1Var != null) {
+            float f10 = (this.g * s1Var.d) + s1Var.b;
+            float f11 = (this.h * s1Var.e) + s1Var.c;
+            e2 e2Var = this.i;
+            e2Var.c(f10, f11, true);
+            float[] fArr = e2Var.p;
+            float f12 = fArr[0];
+            float f13 = fArr[1];
+            this.d = f12;
+            this.e = f13;
         }
     }
 
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.H) {
-            case 5:
-                if (getAlpha() < 0.9f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.y80, android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.H) {
-            case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.y80, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.H) {
-            case 2:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 3:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 4:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
+    @Override // cg.d2
+    public final void b(float f10, float f11) {
+        this.d = f10;
+        this.e = f11;
+        s1 s1Var = this.f;
+        float f12 = ((-this.g) * s1Var.d) + s1Var.b;
+        float f13 = ((-this.h) * s1Var.e) + s1Var.c;
+        e2 e2Var = this.i;
+        e2Var.c(f10, f11, false);
+        e2Var.c(f12, f13, true);
+        float[] fArr = e2Var.p;
+        float f14 = fArr[0];
+        float f15 = fArr[1];
+        double atan2 = (3.141592653589793d - Math.atan2(f11 - f15, f10 - f14)) - s1Var.h;
+        double cos = Math.cos(atan2) * n6.a(f10, f11, f14, f15);
+        double sin = Math.sin(atan2) * n6.a(f10, f11, f14, f15);
+        s1Var.d = ((float) Math.abs(cos)) / 2.0f;
+        s1Var.e = ((float) Math.abs(sin)) / 2.0f;
+        s1Var.b = (f10 + f14) / 2.0f;
+        s1Var.c = (f11 + f15) / 2.0f;
+        for (int i10 = 0; i10 < e2Var.m.size(); i10++) {
+            ((d2) e2Var.m.get(i10)).a();
         }
     }
 }

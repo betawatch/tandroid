@@ -55,20 +55,20 @@ public class o implements Serializable, Iterable {
         int size = size();
         if (size > oVar.size()) {
             int size2 = size();
-            StringBuilder sb2 = new StringBuilder(40);
-            sb2.append("Length too large: ");
-            sb2.append(size);
-            sb2.append(size2);
-            throw new IllegalArgumentException(sb2.toString());
+            StringBuilder sb = new StringBuilder(40);
+            sb.append("Length too large: ");
+            sb.append(size);
+            sb.append(size2);
+            throw new IllegalArgumentException(sb.toString());
         }
         if (size > oVar.size()) {
             int size3 = oVar.size();
-            StringBuilder sb3 = new StringBuilder(59);
-            sb3.append("Ran off end of other: 0, ");
-            sb3.append(size);
-            sb3.append(", ");
-            sb3.append(size3);
-            throw new IllegalArgumentException(sb3.toString());
+            StringBuilder sb2 = new StringBuilder(59);
+            sb2.append("Ran off end of other: 0, ");
+            sb2.append(size);
+            sb2.append(", ");
+            sb2.append(size3);
+            throw new IllegalArgumentException(sb2.toString());
         }
         byte[] bArr = oVar.b;
         int i12 = i() + size;

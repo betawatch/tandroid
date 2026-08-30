@@ -1,43 +1,45 @@
 package lh;
 
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.jq;
+import android.os.Bundle;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.ga1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class h2 extends jq {
-    public final /* synthetic */ int y;
+public final /* synthetic */ class h2 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
+    public final /* synthetic */ long c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h2(Drawable drawable, Drawable drawable2, int i10) {
-        super(drawable, drawable2);
-        this.y = i10;
+    public /* synthetic */ h2(long j10, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.c = j10;
+        this.b = p2Var;
     }
 
-    @Override // org.telegram.ui.Components.jq, android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.y;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                Bundle bundle = new Bundle();
+                long j10 = this.c;
+                if (j10 >= 0) {
+                    bundle.putLong("user_id", j10);
+                } else {
+                    bundle.putLong("chat_id", -j10);
+                }
+                bundle.putBoolean("my_profile", true);
+                bundle.putBoolean("open_gifts", true);
+                this.b.presentFragment(new ProfileActivity(bundle, null));
+                break;
+            default:
+                org.telegram.ui.ActionBar.p2 p2Var = this.b;
+                p2Var.presentFragment(ga1.d0(p2Var.getMessagesController().getChat(Long.valueOf(-this.c)), true));
+                break;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h2(Drawable drawable, Drawable drawable2, int i10, int i11) {
-        super(drawable, drawable2, i10, i11);
-        this.y = 3;
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
-    }
-
-    private final void e(ColorFilter colorFilter) {
+    public /* synthetic */ h2(org.telegram.ui.ActionBar.p2 p2Var, long j10) {
+        this.b = p2Var;
+        this.c = j10;
     }
 }

@@ -1,48 +1,36 @@
 package hg;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.s1;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.tn;
+import gg.d1;
+import org.telegram.messenger.y3;
+import org.telegram.ui.oy;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ TLRPC.TL_messageMediaGiveawayResults d;
+    public final /* synthetic */ e b;
 
-    public /* synthetic */ c(d dVar, MessageObject messageObject, TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults, int i10) {
+    public /* synthetic */ c(e eVar, int i10) {
         this.a = i10;
-        this.b = dVar;
-        this.c = messageObject;
-        this.d = tL_messageMediaGiveawayResults;
+        this.b = eVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new c(this.b, this.c, this.d, 1));
+                this.b.E();
                 break;
             default:
-                s1 s1Var = this.b.c;
-                long dialogId = this.c.getDialogId();
-                TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = this.d;
-                if (dialogId != (-tL_messageMediaGiveawayResults.channel_id)) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", tL_messageMediaGiveawayResults.channel_id);
-                    bundle.putInt("message_id", tL_messageMediaGiveawayResults.launch_msg_id);
-                    LaunchActivity.R().presentFragment(new tn(bundle));
-                    break;
-                } else {
-                    s1Var.getDelegate().b2(s1Var, tL_messageMediaGiveawayResults.launch_msg_id, 0.0f, 0.0f, false);
-                    break;
-                }
+                StringBuilder sb = new StringBuilder("https://t.me/giftcode/");
+                e eVar = this.b;
+                sb.append(eVar.h);
+                String sb2 = sb.toString();
+                oy oyVar = new oy(y3.e(3, "onlySelect", "dialogsType", true));
+                oyVar.z2 = new c1.b(17, eVar, sb2);
+                eVar.e.presentFragment(oyVar);
+                ((d1) eVar).r.dismiss();
+                break;
         }
     }
 }

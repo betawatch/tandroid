@@ -1,10 +1,29 @@
 package g5;
 
-import android.media.MediaFormat;
-import j3.t0;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface n {
-    void a(long j10, long j11, t0 t0Var, MediaFormat mediaFormat);
+public class n extends IOException {
+    public static final /* synthetic */ int b = 0;
+    public final int a;
+
+    public n(int i10) {
+        this.a = i10;
+    }
+
+    public n(Exception exc, int i10) {
+        super(exc);
+        this.a = i10;
+    }
+
+    public n(String str, int i10) {
+        super(str);
+        this.a = i10;
+    }
+
+    public n(String str, Exception exc, int i10) {
+        super(str, exc);
+        this.a = i10;
+    }
 }

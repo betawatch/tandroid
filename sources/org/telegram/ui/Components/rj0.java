@@ -1,50 +1,67 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rj0 implements f5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fk0 b;
+public final class rj0 extends f2.o0 {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ yj0 h;
 
-    public /* synthetic */ rj0(fk0 fk0Var, int i10) {
-        this.a = i10;
-        this.b = fk0Var;
+    public rj0(yj0 yj0Var, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+        this.h = yj0Var;
+        this.c = i10;
+        this.d = context;
+        this.e = f6Var;
+        this.f = z4;
     }
 
-    @Override // f5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                fk0 fk0Var = this.b;
-                ArrayList arrayList = fk0Var.d;
-                fk0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof dk0)) {
-                    ((dk0) view).f(((wj0) arrayList.get(R)).c, true);
-                    break;
-                }
-                break;
-            default:
-                if (view instanceof dk0) {
-                    dk0 dk0Var = (dk0) view;
-                    ck0 ck0Var = dk0Var.b;
-                    dk0Var.J = false;
-                    ck0Var.setAlpha(1.0f);
-                    if (!this.b.J0) {
-                        dk0Var.d();
-                        break;
-                    } else {
-                        ck0Var.setScaleX(dk0Var.E * (dk0Var.w ? 0.76f : 1.0f));
-                        ck0Var.setScaleY(dk0Var.E * (dk0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
-                }
-                break;
+    @Override // f2.o0
+    public final int h() {
+        yj0 yj0Var = this.h;
+        return yj0Var.n.size() + ((yj0Var.E.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return i10 < this.h.n.size() ? 0 : 1;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        if (l1Var.f == 0) {
+            ((org.telegram.ui.Cells.n6) l1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
         }
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout n6Var;
+        if (i10 != 0) {
+            yj0 yj0Var = this.h;
+            va0 va0Var = yj0Var.G;
+            if (va0Var == null) {
+                yj0Var.i();
+            } else if (va0Var.getParent() != null) {
+                ((ViewGroup) yj0Var.G.getParent()).removeView(yj0Var.G);
+            }
+            Context context = this.d;
+            n6Var = new FrameLayout(context);
+            View view = new View(context);
+            view.setBackgroundColor(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, this.e)));
+            n6Var.addView(view, k7.b6.c(8.0f, -1));
+            n6Var.addView(yj0Var.G, k7.b6.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+        } else {
+            n6Var = new org.telegram.ui.Cells.n6(0, this.c, this.d, this.e, true, this.f);
+        }
+        return new el0(n6Var);
     }
 }

@@ -8,7 +8,7 @@ import android.os.ResultReceiver;
 import androidx.versionedparcelable.ParcelImpl;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
@@ -23,7 +23,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
         synchronized (hVar.b) {
             MediaSessionCompat$Token mediaSessionCompat$Token = hVar.e;
             IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
-            int i11 = v.b;
+            int i11 = u.b;
             l2.d dVar2 = null;
             if (binder == null) {
                 dVar = null;
@@ -37,7 +37,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
                     dVar = (d) queryLocalInterface;
                 }
             }
-            mediaSessionCompat$Token.b(dVar);
+            mediaSessionCompat$Token.e(dVar);
             MediaSessionCompat$Token mediaSessionCompat$Token2 = hVar.e;
             try {
                 Bundle bundle2 = (Bundle) bundle.getParcelable("android.support.v4.media.session.SESSION_TOKEN2");
@@ -51,7 +51,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
                 }
             } catch (RuntimeException unused) {
             }
-            mediaSessionCompat$Token2.c(dVar2);
+            mediaSessionCompat$Token2.f(dVar2);
             hVar.a();
         }
     }

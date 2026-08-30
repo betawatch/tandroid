@@ -1,45 +1,41 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.DownloadController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class py implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ qy a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ ry d;
+public final class py implements DownloadController.FileDownloadProgressListener {
+    public long a;
+    public long b;
+    public final String c;
+    public final /* synthetic */ qy d;
 
-    public py(ry ryVar, qy qyVar, boolean z10, MessageObject messageObject) {
-        this.d = ryVar;
-        this.a = qyVar;
-        this.b = z10;
-        this.c = messageObject;
+    public py(qy qyVar, String str) {
+        this.d = qyVar;
+        this.c = str;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        qy qyVar = this.a;
-        if (qyVar.r.getLottieAnimation() != null) {
-            qyVar.r.getLottieAnimation().L(0, false, true);
-        }
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final int getObserverTag() {
+        return 0;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.i5.a(this, i10, str, drawable);
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j10, long j11) {
+        this.b = j10;
+        this.a = j11;
+        this.d.c();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void onAnimationReady(ImageReceiver imageReceiver) {
-        MessageObject messageObject;
-        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
-            try {
-                this.d.C.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
-            }
-        }
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z4) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j10, long j11, boolean z4) {
     }
 }

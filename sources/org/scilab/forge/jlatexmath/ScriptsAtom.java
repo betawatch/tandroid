@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ScriptsAtom extends Atom {
     private static final int MAX_WRAP_DEPTH = 64;
@@ -38,13 +38,13 @@ public class ScriptsAtom extends Atom {
         float subDrop;
         float italic;
         HorizontalBox horizontalBox;
-        float f9;
-        StrutBox strutBox;
         float f10;
+        StrutBox strutBox;
         float f11;
-        Atom atom;
         float f12;
+        Atom atom;
         float f13;
+        float f14;
         int i10;
         int i11 = boxWrapDepth;
         int i12 = i11 + 1;
@@ -93,9 +93,9 @@ public class ScriptsAtom extends Atom {
                             horizontalBox3.add(new StrutBox(italic2, 0.0f, 0.0f, 0.0f));
                         }
                         float height2 = horizontalBox3.getHeight() - teXFont.getSupDrop(supStyle.getStyle());
-                        f10 = italic2;
-                        f11 = horizontalBox3.getDepth() + teXFont.getSubDrop(subStyle.getStyle());
-                        f9 = height2;
+                        f11 = italic2;
+                        f12 = horizontalBox3.getDepth() + teXFont.getSubDrop(subStyle.getStyle());
+                        f10 = height2;
                         horizontalBox = horizontalBox3;
                         strutBox = createBox;
                     } else if (atom4 instanceof CharSymbol) {
@@ -107,10 +107,10 @@ public class ScriptsAtom extends Atom {
                                 italic = 0.0f;
                             }
                             horizontalBox = horizontalBox2;
-                            f9 = 0.0f;
+                            f10 = 0.0f;
                             strutBox = strutBox3;
-                            f10 = italic;
-                            f11 = 0.0f;
+                            f11 = italic;
+                            f12 = 0.0f;
                         }
                         italic = teXFont.getChar(charFont, style).getItalic();
                         if (italic > 1.0E-7f) {
@@ -118,10 +118,10 @@ public class ScriptsAtom extends Atom {
                             italic = 0.0f;
                         }
                         horizontalBox = horizontalBox2;
-                        f9 = 0.0f;
+                        f10 = 0.0f;
                         strutBox = strutBox3;
-                        f10 = italic;
-                        f11 = 0.0f;
+                        f11 = italic;
+                        f12 = 0.0f;
                     } else {
                         height = strutBox2.getHeight() - teXFont.getSupDrop(supStyle.getStyle());
                         depth = strutBox2.getDepth();
@@ -130,7 +130,7 @@ public class ScriptsAtom extends Atom {
                     atom = this.superscript;
                     if (atom != null) {
                         Box createBox2 = this.subscript.createBox(subStyle);
-                        createBox2.setShift(Math.max(Math.max(f11, teXFont.getSub1(style)), createBox2.getHeight() - ((Math.abs(teXFont.getXHeight(style, lastFontId)) * 4.0f) / 5.0f)));
+                        createBox2.setShift(Math.max(Math.max(f12, teXFont.getSub1(style)), createBox2.getHeight() - ((Math.abs(teXFont.getXHeight(style, lastFontId)) * 4.0f) / 5.0f)));
                         horizontalBox.add(createBox2);
                         horizontalBox.add(strutBox);
                         i10 = boxWrapDepth - 1;
@@ -139,17 +139,17 @@ public class ScriptsAtom extends Atom {
                         float width = createBox3.getWidth();
                         Atom atom5 = this.subscript;
                         if (atom5 != null) {
-                            f12 = 0.0f;
+                            f13 = 0.0f;
                             if (this.align == 1) {
                                 width = Math.max(width, atom5.createBox(subStyle).getWidth());
                             }
                         } else {
-                            f12 = 0.0f;
+                            f13 = 0.0f;
                         }
                         HorizontalBox horizontalBox4 = new HorizontalBox(createBox3, width, this.align);
                         SpaceAtom spaceAtom = SCRIPT_SPACE;
                         horizontalBox4.add(spaceAtom.createBox(teXEnvironment));
-                        float max = Math.max(Math.max(f9, style == 0 ? teXFont.getSup1(style) : teXEnvironment.crampStyle().getStyle() == style ? teXFont.getSup3(style) : teXFont.getSup2(style)), (Math.abs(teXFont.getXHeight(style, lastFontId)) / 4.0f) + createBox3.getDepth());
+                        float max = Math.max(Math.max(f10, style == 0 ? teXFont.getSup1(style) : teXEnvironment.crampStyle().getStyle() == style ? teXFont.getSup3(style) : teXFont.getSup2(style)), (Math.abs(teXFont.getXHeight(style, lastFontId)) / 4.0f) + createBox3.getDepth());
                         Atom atom6 = this.subscript;
                         if (atom6 == null) {
                             horizontalBox4.setShift(-max);
@@ -158,26 +158,26 @@ public class ScriptsAtom extends Atom {
                             Box createBox4 = atom6.createBox(subStyle);
                             HorizontalBox horizontalBox5 = new HorizontalBox(createBox4, width, this.align);
                             horizontalBox5.add(spaceAtom.createBox(teXEnvironment));
-                            float max2 = Math.max(f11, teXFont.getSub2(style));
+                            float max2 = Math.max(f12, teXFont.getSub2(style));
                             float defaultRuleThickness = teXFont.getDefaultRuleThickness(style);
                             float depth2 = ((max - createBox3.getDepth()) + max2) - createBox4.getHeight();
-                            float f14 = defaultRuleThickness * 4.0f;
-                            if (depth2 < f14) {
-                                f13 = (f14 - depth2) + max;
-                                float abs = ((Math.abs(teXFont.getXHeight(style, lastFontId)) * 4.0f) / 5.0f) - (f13 - createBox3.getDepth());
-                                if (abs > f12) {
-                                    f13 += abs;
+                            float f15 = defaultRuleThickness * 4.0f;
+                            if (depth2 < f15) {
+                                f14 = (f15 - depth2) + max;
+                                float abs = ((Math.abs(teXFont.getXHeight(style, lastFontId)) * 4.0f) / 5.0f) - (f14 - createBox3.getDepth());
+                                if (abs > f13) {
+                                    f14 += abs;
                                     max2 -= abs;
                                 }
                             } else {
-                                f13 = max;
+                                f14 = max;
                             }
                             VerticalBox verticalBox = new VerticalBox();
-                            horizontalBox4.setShift(f10);
+                            horizontalBox4.setShift(f11);
                             verticalBox.add(horizontalBox4);
-                            verticalBox.add(new StrutBox(0.0f, ((f13 - createBox3.getDepth()) + max2) - createBox4.getHeight(), 0.0f, 0.0f));
+                            verticalBox.add(new StrutBox(0.0f, ((f14 - createBox3.getDepth()) + max2) - createBox4.getHeight(), 0.0f, 0.0f));
                             verticalBox.add(horizontalBox5);
-                            verticalBox.setHeight(f13 + createBox3.getHeight());
+                            verticalBox.setHeight(f14 + createBox3.getHeight());
                             verticalBox.setDepth(max2 + createBox4.getDepth());
                             horizontalBox.add(verticalBox);
                         }
@@ -191,11 +191,11 @@ public class ScriptsAtom extends Atom {
                 height = createBox5.getHeight() - teXFont.getSupDrop(supStyle.getStyle());
                 depth = createBox5.getDepth();
                 subDrop = teXFont.getSubDrop(subStyle.getStyle());
-                f11 = depth + subDrop;
-                f9 = height;
+                f12 = depth + subDrop;
+                f10 = height;
                 horizontalBox = horizontalBox2;
                 strutBox = strutBox3;
-                f10 = 0.0f;
+                f11 = 0.0f;
                 atom = this.superscript;
                 if (atom != null) {
                 }
@@ -221,9 +221,9 @@ public class ScriptsAtom extends Atom {
         return this.base.getRightType();
     }
 
-    public ScriptsAtom(Atom atom, Atom atom2, Atom atom3, boolean z10) {
+    public ScriptsAtom(Atom atom, Atom atom2, Atom atom3, boolean z4) {
         this(atom, atom2, atom3);
-        if (z10) {
+        if (z4) {
             return;
         }
         this.align = 1;

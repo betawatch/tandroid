@@ -1,37 +1,7 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class tc0 extends uc0 {
-    public final ig.f H;
-
-    public tc0(Context context) {
-        super(context, null);
-        ig.f fVar = new ig.f(this, context, 6);
-        this.H = fVar;
-        fVar.setTextSize(1, 18.0f);
-        fVar.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        fVar.setHintTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.H6, false));
-        fVar.setBackground(null);
-        fVar.setSingleLine(true);
-        fVar.setInputType(1);
-        fVar.setTypeface(Typeface.DEFAULT);
-        fVar.setCursorColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.l6, false));
-        fVar.setCursorWidth(1.5f);
-        fVar.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
-        e(fVar);
-        addView(fVar, i7.f6.e(-1, -2, 16));
-    }
-
-    public EditTextBoldCursor getEditText() {
-        return this.H;
-    }
-
-    public void setHint(String str) {
-        setText(str);
-    }
+public interface tc0 {
+    void m(int i10);
 }

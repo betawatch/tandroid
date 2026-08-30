@@ -1,91 +1,82 @@
 package h7;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import com.google.android.gms.internal.cast.i4;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class m {
-    public static void a(ArrayList arrayList) {
-        HashMap hashMap = new HashMap(arrayList.size());
-        int size = arrayList.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            a9.b bVar = (a9.b) obj;
-            a9.k kVar = new a9.k(bVar);
-            for (a9.v vVar : bVar.b) {
-                boolean z10 = bVar.e == 0;
-                a9.l lVar = new a9.l(vVar, !z10);
-                if (!hashMap.containsKey(lVar)) {
-                    hashMap.put(lVar, new HashSet());
-                }
-                Set set = (Set) hashMap.get(lVar);
-                if (!set.isEmpty() && z10) {
-                    throw new IllegalArgumentException("Multiple components provide " + vVar + ".");
-                }
-                set.add(kVar);
-            }
-        }
-        Iterator it = hashMap.values().iterator();
-        while (it.hasNext()) {
-            for (a9.k kVar2 : (Set) it.next()) {
-                for (a9.m mVar : kVar2.a.c) {
-                    if (mVar.c == 0) {
-                        Set<a9.k> set2 = (Set) hashMap.get(new a9.l(mVar.a, mVar.b == 2));
-                        if (set2 != null) {
-                            for (a9.k kVar3 : set2) {
-                                kVar2.b.add(kVar3);
-                                kVar3.c.add(kVar2);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        HashSet hashSet = new HashSet();
-        Iterator it2 = hashMap.values().iterator();
-        while (it2.hasNext()) {
-            hashSet.addAll((Set) it2.next());
-        }
-        HashSet hashSet2 = new HashSet();
-        Iterator it3 = hashSet.iterator();
-        while (it3.hasNext()) {
-            a9.k kVar4 = (a9.k) it3.next();
-            if (kVar4.c.isEmpty()) {
-                hashSet2.add(kVar4);
-            }
-        }
-        while (!hashSet2.isEmpty()) {
-            a9.k kVar5 = (a9.k) hashSet2.iterator().next();
-            hashSet2.remove(kVar5);
-            i10++;
-            Iterator it4 = kVar5.b.iterator();
-            while (it4.hasNext()) {
-                a9.k kVar6 = (a9.k) it4.next();
-                kVar6.c.remove(kVar5);
-                if (kVar6.c.isEmpty()) {
-                    hashSet2.add(kVar6);
-                }
-            }
-        }
-        if (i10 == arrayList.size()) {
-            return;
-        }
-        ArrayList arrayList2 = new ArrayList();
-        Iterator it5 = hashSet.iterator();
-        while (it5.hasNext()) {
-            a9.k kVar7 = (a9.k) it5.next();
-            if (!kVar7.c.isEmpty() && !kVar7.b.isEmpty()) {
-                arrayList2.add(kVar7.a);
-            }
-        }
-        throw new a9.n("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
+public abstract class m implements ExecutorService, AutoCloseable {
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
+        return ((cb.i) this).a.awaitTermination(j10, timeUnit);
+    }
+
+    @Override // java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        i4.f(this);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final List invokeAll(Collection collection) {
+        return ((cb.i) this).a.invokeAll(collection);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final Object invokeAny(Collection collection) {
+        return ((cb.i) this).a.invokeAny(collection);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isShutdown() {
+        return ((cb.i) this).a.isShutdown();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isTerminated() {
+        return ((cb.i) this).a.isTerminated();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final void shutdown() {
+        ((cb.i) this).a.shutdown();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final List shutdownNow() {
+        return ((cb.i) this).a.shutdownNow();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final Future submit(Runnable runnable) {
+        return ((cb.i) this).a.submit(runnable);
+    }
+
+    public final String toString() {
+        return ((cb.i) this).a.toString();
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final List invokeAll(Collection collection, long j10, TimeUnit timeUnit) {
+        return ((cb.i) this).a.invokeAll(collection, j10, timeUnit);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final Object invokeAny(Collection collection, long j10, TimeUnit timeUnit) {
+        return ((cb.i) this).a.invokeAny(collection, j10, timeUnit);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final Future submit(Runnable runnable, Object obj) {
+        return ((cb.i) this).a.submit(runnable, obj);
+    }
+
+    @Override // java.util.concurrent.ExecutorService
+    public final Future submit(Callable callable) {
+        return ((cb.i) this).a.submit(callable);
     }
 }

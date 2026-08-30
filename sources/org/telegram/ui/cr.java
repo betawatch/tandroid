@@ -1,16 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface cr {
-    void a(TLRPC.User user);
+public final class cr extends f2.l {
+    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
+    public final /* synthetic */ pr G;
 
-    void b(long j10);
+    public cr(pr prVar) {
+        this.G = prVar;
+    }
 
-    void c(long j10, TLObject tLObject);
+    @Override // f2.l
+    public final void N() {
+        this.F.unlock();
+    }
 
-    void d(long j10);
+    @Override // f2.l
+    public final void O() {
+        this.G.c.invalidate();
+    }
+
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        this.G.c.invalidate();
+    }
+
+    @Override // f2.l, f2.t0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            this.F.lock();
+        }
+        super.m();
+    }
 }

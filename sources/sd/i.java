@@ -1,12 +1,13 @@
 package sd;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final int a = od.a.j(100, 12, "kotlinx.coroutines.semaphore.maxSpinCycles");
-    public static final fc.a b = new fc.a("PERMIT", 2);
-    public static final fc.a c = new fc.a("TAKEN", 2);
-    public static final fc.a d = new fc.a("BROKEN", 2);
-    public static final fc.a e = new fc.a("CANCELLED", 2);
-    public static final int f = od.a.j(16, 12, "kotlinx.coroutines.semaphore.segmentSize");
+public abstract class i implements Runnable {
+    public long a;
+    public c5.c b;
+
+    public i(long j10, c5.c cVar) {
+        this.a = j10;
+        this.b = cVar;
+    }
 }

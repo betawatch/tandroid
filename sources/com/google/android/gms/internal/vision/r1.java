@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class r1 extends n0 implements t1, RandomAccess {
     public final ArrayList b;
@@ -61,8 +61,8 @@ public final class r1 extends n0 implements t1, RandomAccess {
         }
         q0 q0Var = (q0) obj;
         String str2 = q0Var.n() == 0 ? "" : new String(q0Var.b, q0Var.r(), q0Var.n(), j1.a);
-        int r6 = q0Var.r();
-        if (a3.a.s(r6, q0Var.n() + r6, q0Var.b)) {
+        int r10 = q0Var.r();
+        if (a3.a.s(r10, q0Var.n() + r10, q0Var.b)) {
             arrayList.set(i10, str2);
         }
         return str2;

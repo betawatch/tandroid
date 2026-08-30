@@ -1,19 +1,24 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class r5 implements s9.d {
-    public static final r5 a = new r5();
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(h0.class, l1.h(8, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(7, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(6, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(5, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(4, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(3, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(2, com.google.android.recaptcha.internal.a.r(h0.class, new e0(1)))))))))))))))));
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public abstract class r5 {
+    public static void a(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        if (status.e()) {
+            taskCompletionSource.setResult(obj);
+        } else {
+            taskCompletionSource.setException(b6.m.m(status));
+        }
     }
 
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static void b(Status status, Object obj, TaskCompletionSource taskCompletionSource) {
+        if (status.e()) {
+            taskCompletionSource.trySetResult(obj);
+        } else {
+            taskCompletionSource.trySetException(b6.m.m(status));
         }
-        throw null;
     }
 }

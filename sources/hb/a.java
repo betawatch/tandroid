@@ -1,64 +1,100 @@
 package hb;
 
+import android.graphics.Bitmap;
+import android.os.SystemClock;
 import androidx.biometric.e;
-import java.util.Arrays;
-import z5.l;
+import b6.j;
+import b6.m;
+import cb.o;
+import com.google.android.gms.common.api.internal.s1;
+import com.google.android.gms.tasks.Task;
+import f7.b;
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+import k7.d7;
+import k7.e7;
+import k7.ha;
+import k7.j7;
+import k7.ka;
+import k7.ma;
+import k7.y6;
+import m.s3;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a {
-    public final String a;
-    public final float b;
+    public volatile Bitmap a;
+    public final int b;
     public final int c;
-    public final String d;
+    public final int d;
+    public final int e;
 
-    public a(float f9, int i10, String str, String str2) {
-        int i11 = k7.b.a;
-        this.a = str == null ? "" : str;
-        this.b = f9;
-        this.c = i10;
-        this.d = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public a(Bitmap bitmap, int i10) {
+        m.h(bitmap);
+        this.a = bitmap;
+        this.b = bitmap.getWidth();
+        this.c = bitmap.getHeight();
+        boolean z4 = true;
+        if (i10 != 0 && i10 != 90 && i10 != 180 && i10 != 270) {
+            z4 = false;
         }
-        if (!(obj instanceof a)) {
-            return false;
+        m.a("Invalid rotation. Only 0, 90, 180, 270 are supported currently.", z4);
+        this.d = i10;
+        this.e = -1;
+    }
+
+    public static a a(Bitmap bitmap, int i10) {
+        ka a2;
+        Task task;
+        a aVar;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        a aVar2 = new a(bitmap, i10);
+        int height = bitmap.getHeight();
+        int width = bitmap.getWidth();
+        int allocationByteCount = bitmap.getAllocationByteCount();
+        synchronized (ma.class) {
+            byte b10 = (byte) (((byte) 1) | 2);
+            if (b10 != 3) {
+                StringBuilder sb = new StringBuilder();
+                if ((b10 & 1) == 0) {
+                    sb.append(" enableFirelog");
+                }
+                if ((b10 & 2) == 0) {
+                    sb.append(" firelogEventType");
+                }
+                throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
+            }
+            a2 = ma.a(new ha());
         }
-        a aVar = (a) obj;
-        return l.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && l.l(this.d, aVar.d);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
-    }
-
-    public final String toString() {
-        e eVar = new e(a.class.getSimpleName(), 27);
-        e eVar2 = new e(26, false);
-        ((e) eVar.d).d = eVar2;
-        eVar.d = eVar2;
-        eVar2.c = this.a;
-        eVar2.b = "text";
-        String valueOf = String.valueOf(this.b);
-        boolean z10 = false;
-        k7.a aVar = new k7.a(26, z10);
-        ((e) eVar.d).d = aVar;
-        eVar.d = aVar;
-        aVar.c = valueOf;
-        aVar.b = "confidence";
-        String valueOf2 = String.valueOf(this.c);
-        k7.a aVar2 = new k7.a(26, z10);
-        ((e) eVar.d).d = aVar2;
-        aVar2.c = valueOf2;
-        aVar2.b = "index";
-        e eVar3 = new e(26, z10);
-        aVar2.d = eVar3;
-        eVar.d = eVar3;
-        eVar3.c = this.d;
-        eVar3.b = "mid";
-        return eVar.toString();
+        long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
+        j7 j7Var = j7.b;
+        Task task2 = a2.e;
+        long elapsedRealtime3 = SystemClock.elapsedRealtime();
+        HashMap hashMap = a2.i;
+        if (hashMap.get(j7Var) == null) {
+            task = task2;
+            aVar = aVar2;
+        } else {
+            task = task2;
+            aVar = aVar2;
+            if (elapsedRealtime3 - ((Long) hashMap.get(j7Var)).longValue() <= TimeUnit.SECONDS.toMillis(30L)) {
+                return aVar;
+            }
+        }
+        hashMap.put(j7Var, Long.valueOf(elapsedRealtime3));
+        s3 s3Var = new s3();
+        s3Var.c = y6.b;
+        s3Var.b = d7.b;
+        s3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        s3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        s3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        s3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
+        s3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        e7 e7Var = new e7(s3Var);
+        e eVar = new e(27, false);
+        eVar.d = e7Var;
+        o.a.execute(new s1(a2, new b(eVar), task.isSuccessful() ? (String) task.getResult() : j.c.a(a2.g)));
+        return aVar;
     }
 }

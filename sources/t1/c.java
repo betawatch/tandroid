@@ -5,7 +5,7 @@ import androidx.fragment.app.j0;
 import androidx.fragment.app.s;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final b a = b.a;
@@ -15,7 +15,7 @@ public abstract class c {
             if (sVar.t()) {
                 sVar.p();
             }
-            sVar = sVar.I;
+            sVar = sVar.J;
         }
         return a;
     }

@@ -1,56 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.LaunchActivity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b2 implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class b2 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ EditTextBoldCursor e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ b2(int i10, int[] iArr, org.telegram.ui.x60 x60Var) {
+    public /* synthetic */ b2(EditTextBoldCursor editTextBoldCursor, int i10, Object obj, org.telegram.ui.ActionBar.d2[] d2VarArr, View view, int i11) {
+        this.a = i11;
+        this.e = editTextBoldCursor;
         this.b = i10;
-        this.c = iArr;
-        this.d = x60Var;
+        this.f = obj;
+        this.c = d2VarArr;
+        this.d = view;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        Runnable runnable = this.d;
-        int[] iArr = this.c;
-        int i11 = this.b;
-        switch (i10) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
             case 0:
-                for (int i12 : iArr) {
-                    if (i12 != 0) {
-                        ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                MessagesStorage.StringCallback stringCallback = (MessagesStorage.StringCallback) this.f;
+                if (i10 == 6) {
+                    EditTextBoldCursor editTextBoldCursor = this.e;
+                    String obj = editTextBoldCursor.getText().toString();
+                    if (obj.length() <= this.b) {
+                        stringCallback.run(obj);
+                        org.telegram.ui.ActionBar.d2 d2Var = this.c[0];
+                        if (d2Var != null) {
+                            d2Var.dismiss();
+                        }
+                        View view = this.d;
+                        if (view != null) {
+                            view.requestFocus();
+                            break;
+                        }
+                    } else {
+                        AndroidUtilities.shakeView(editTextBoldCursor);
+                        break;
                     }
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
                 }
                 break;
             default:
-                Pattern pattern = LaunchActivity.x1;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+                uf.n nVar = (uf.n) this.e;
+                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.f;
+                if (i10 == 6) {
+                    String obj2 = nVar.getText().toString();
+                    if (obj2.length() <= 32) {
+                        uf.t d = uf.t.d(this.b);
+                        TL_account.TL_businessChatLink c3 = d.c(tL_businessChatLink.link);
+                        if (c3 != null) {
+                            TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
+                            tL_inputBusinessChatLink.message = c3.message;
+                            tL_inputBusinessChatLink.entities = c3.entities;
+                            tL_inputBusinessChatLink.title = obj2;
+                            d.b(c3, tL_inputBusinessChatLink, null);
+                        }
+                        org.telegram.ui.ActionBar.d2[] d2VarArr = this.c;
+                        org.telegram.ui.ActionBar.d2 d2Var2 = d2VarArr[0];
+                        if (d2Var2 != null) {
+                            d2Var2.dismiss();
+                        }
+                        if (d2VarArr[0] == uf.q.d) {
+                            uf.q.d = null;
+                        }
+                        View view2 = this.d;
+                        if (view2 != null) {
+                            view2.requestFocus();
+                            break;
+                        }
+                    } else {
+                        AndroidUtilities.shakeView(nVar);
+                        break;
+                    }
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ b2(int[] iArr, Runnable runnable, int i10) {
-        this.c = iArr;
-        this.b = i10;
-        this.d = runnable;
+        return false;
     }
 }

@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -19,7 +19,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -50,15 +50,16 @@ public class PushListenerController {
             FirebaseMessaging firebaseMessaging;
             try {
                 SharedConfig.pushStringGetTimeStart = SystemClock.elapsedRealtime();
-                u8.g.f(ApplicationLoader.applicationContext);
-                com.google.firebase.messaging.u uVar = FirebaseMessaging.l;
+                w8.g.f(ApplicationLoader.applicationContext);
+                com.google.firebase.messaging.t tVar = FirebaseMessaging.l;
                 synchronized (FirebaseMessaging.class) {
-                    firebaseMessaging = FirebaseMessaging.getInstance(u8.g.c());
+                    firebaseMessaging = FirebaseMessaging.getInstance(w8.g.c());
                 }
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                firebaseMessaging.f.execute(new a1.e(21, firebaseMessaging, taskCompletionSource));
-                taskCompletionSource.getTask().addOnCompleteListener(new d(this, 12));
+                int i10 = 12;
+                firebaseMessaging.f.execute(new a1.e(i10, firebaseMessaging, taskCompletionSource));
+                taskCompletionSource.getTask().addOnCompleteListener(new d(this, i10));
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
@@ -78,9 +79,9 @@ public class PushListenerController {
         public boolean hasServices() {
             if (this.hasServices == null) {
                 try {
-                    this.hasServices = Boolean.valueOf(w5.d.d.d(ApplicationLoader.applicationContext, w5.e.a) == 0);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                    this.hasServices = Boolean.valueOf(y5.d.d.d(ApplicationLoader.applicationContext, y5.e.a) == 0);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     this.hasServices = Boolean.FALSE;
                 }
             }
@@ -97,11 +98,11 @@ public class PushListenerController {
             } else if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED) {
                 FileLog.d("FCM regId = " + str);
             }
-            Utilities.globalQueue.postRunnable(new ug(this, 5));
+            Utilities.globalQueue.postRunnable(new xg(this, 5));
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -112,7 +113,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }
@@ -251,7 +252,7 @@ public class PushListenerController {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(str + " POST INIT APP");
         }
-        Utilities.stageQueue.postRunnable(new sh(0, j10, str, str2));
+        Utilities.stageQueue.postRunnable(new vh(0, j10, str, str2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -261,16 +262,16 @@ public class PushListenerController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$sendRegistrationToServer$1(String str, int i10) {
-        boolean z10;
+        boolean z4;
         ConnectionsManager.setRegId(str, i10, SharedConfig.pushStringStatus);
         if (str == null) {
             return;
         }
         if (SharedConfig.pushStringGetTimeStart == 0 || SharedConfig.pushStringGetTimeEnd == 0 || (SharedConfig.pushStatSent && TextUtils.equals(SharedConfig.pushString, str))) {
-            z10 = false;
+            z4 = false;
         } else {
             SharedConfig.pushStatSent = false;
-            z10 = true;
+            z4 = true;
         }
         SharedConfig.pushString = str;
         SharedConfig.pushType = i10;
@@ -279,7 +280,7 @@ public class PushListenerController {
             userConfig.registeredForPush = false;
             userConfig.saveConfig(false);
             if (userConfig.getClientUserId() != 0) {
-                if (z10) {
+                if (z4) {
                     String str2 = i10 == 2 ? "fcm" : "hcm";
                     TLRPC.TL_help_saveAppLog tL_help_saveAppLog = new TLRPC.TL_help_saveAppLog();
                     TLRPC.TL_inputAppEvent tL_inputAppEvent = new TLRPC.TL_inputAppEvent();
@@ -297,9 +298,9 @@ public class PushListenerController {
                     SharedConfig.pushStatSent = true;
                     SharedConfig.saveConfig();
                     ConnectionsManager.getInstance(i11).sendRequest(tL_help_saveAppLog, null);
-                    z10 = false;
+                    z4 = false;
                 }
-                AndroidUtilities.runOnUIThread(new t6(i11, i10, str));
+                AndroidUtilities.runOnUIThread(new u6(i11, i10, str));
             }
         }
     }
@@ -320,19 +321,19 @@ public class PushListenerController {
             FileLog.d(str2.concat(" PRE START PROCESSING"));
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        AndroidUtilities.runOnUIThread(new sh(1, j10, str2, str));
+        AndroidUtilities.runOnUIThread(new vh(1, j10, str2, str));
         try {
             countDownLatch.await();
         } catch (Throwable unused) {
         }
         if (BuildVars.DEBUG_VERSION) {
-            StringBuilder s10 = a4.w.s("finished ", str2, " service, time = ");
-            s10.append(SystemClock.elapsedRealtime() - elapsedRealtime);
-            FileLog.d(s10.toString());
+            StringBuilder t6 = android.support.v4.media.a.t("finished ", str2, " service, time = ");
+            t6.append(SystemClock.elapsedRealtime() - elapsedRealtime);
+            FileLog.d(t6.toString());
         }
     }
 
     public static void sendRegistrationToServer(int i10, String str) {
-        Utilities.stageQueue.postRunnable(new r6(str, i10, 8));
+        Utilities.stageQueue.postRunnable(new s6(str, i10, 8));
     }
 }

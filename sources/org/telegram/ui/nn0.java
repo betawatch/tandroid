@@ -1,63 +1,82 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class nn0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ bo0 a;
+public final class nn0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int[] d;
 
-    public nn0(bo0 bo0Var) {
-        this.a = bo0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nn0(Context context, int i10, int[] iArr, int[] iArr2) {
+        super(context);
+        this.b = i10;
+        this.c = iArr;
+        this.d = iArr2;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        bo0 bo0Var = this.a;
-        if (i10 == -1) {
-            if (bo0Var.L0) {
-                return;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.a = true;
+        int dp = AndroidUtilities.dp(9.0f);
+        int i12 = this.b;
+        int i13 = (i12 - 1) * dp;
+        int[] iArr = this.c;
+        float f10 = 1.0f;
+        if ((iArr[0] * i12) + i13 <= size) {
+            setWeightSum(1.0f);
+            int childCount = getChildCount();
+            for (int i14 = 0; i14 < childCount; i14++) {
+                getChildAt(i14).getLayoutParams().width = 0;
+                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
             }
-            bo0Var.finishFragment();
-            return;
-        }
-        if (i10 != 1 || bo0Var.L0) {
-            return;
-        }
-        if (bo0Var.q0 != 3) {
-            AndroidUtilities.hideKeyboard(bo0Var.getParentActivity().getCurrentFocus());
-        }
-        int i11 = bo0Var.q0;
-        if (i11 == 0) {
-            bo0Var.D0(true);
-            bo0.m0(bo0Var);
-            return;
-        }
-        int i12 = 0;
-        if (i11 == 1) {
-            while (true) {
-                org.telegram.ui.Cells.h6[] h6VarArr = bo0Var.h;
-                if (i12 >= h6VarArr.length) {
-                    break;
-                }
-                if (h6VarArr[i12].b.f) {
-                    bo0Var.C0 = bo0Var.A0.shipping_options.get(i12);
-                    break;
-                }
-                i12++;
+        } else if (this.d[0] + i13 <= size) {
+            setWeightSum(1.0f);
+            int i15 = size - i13;
+            int childCount2 = getChildCount();
+            for (int i16 = 0; i16 < childCount2; i16++) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
+                layoutParams.width = 0;
+                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i15;
+                layoutParams.weight = intValue;
+                f10 -= intValue;
             }
-            bo0Var.t0();
-            return;
-        }
-        if (i11 == 2) {
-            bo0.j0(bo0Var);
-        } else if (i11 == 3) {
-            bo0.k0(bo0Var);
+            float f11 = f10 / (i12 - 1);
+            if (f11 > 0.0f) {
+                int childCount3 = getChildCount();
+                for (int i17 = 0; i17 < childCount3; i17++) {
+                    View childAt = getChildAt(i17);
+                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
+                        layoutParams2.weight += f11;
+                    }
+                }
+            }
         } else {
-            if (i11 != 6) {
-                return;
+            setWeightSum(0.0f);
+            int childCount4 = getChildCount();
+            for (int i18 = 0; i18 < childCount4; i18++) {
+                getChildAt(i18).getLayoutParams().width = -2;
+                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
             }
-            bo0Var.A0(false);
         }
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

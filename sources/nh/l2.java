@@ -1,32 +1,29 @@
 package nh;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l2 implements Runnable {
+public final class l2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p2 b;
-    public final /* synthetic */ b0 c;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ l2(p2 p2Var, b0 b0Var, int i10) {
+    public /* synthetic */ l2(int i10, View view) {
         this.a = i10;
-        this.b = p2Var;
-        this.c = b0Var;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                p2 p2Var = this.b;
-                p2Var.getClass();
-                AndroidUtilities.runOnUIThread(new l2(p2Var, this.c, 1), 320L);
+                AndroidUtilities.removeFromParent(this.b);
                 break;
             default:
-                p2 p2Var2 = this.b;
-                p2Var2.getClass();
-                this.c.run(new b0(p2Var2, 2));
+                AndroidUtilities.removeFromParent(this.b);
                 break;
         }
     }

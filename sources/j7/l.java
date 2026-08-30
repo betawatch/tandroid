@@ -1,82 +1,98 @@
 package j7;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class l extends f {
-    public final Object b;
-    public int c;
-    public final /* synthetic */ n d;
+public final class l implements u9.g {
+    public final /* synthetic */ int a;
+    public boolean b = false;
+    public boolean c = false;
+    public u9.c d;
+    public final u9.e e;
 
-    public l(n nVar, int i10) {
-        super(0, false);
-        this.d = nVar;
-        Object[] objArr = nVar.c;
-        objArr.getClass();
-        this.b = objArr[i10];
-        this.c = i10;
+    public /* synthetic */ l(u9.e eVar, int i10) {
+        this.a = i10;
+        this.e = eVar;
     }
 
-    public final void a() {
-        int i10 = this.c;
-        Object obj = this.b;
-        n nVar = this.d;
-        if (i10 != -1 && i10 < nVar.size()) {
-            int i11 = this.c;
-            Object[] objArr = nVar.c;
-            objArr.getClass();
-            if (h7.t8.a(obj, objArr[i11])) {
-                return;
-            }
+    @Override // u9.g
+    public final u9.g f(String str) {
+        switch (this.a) {
+            case 0:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((k) this.e).g(this.d, str, this.c);
+                return this;
+            case 1:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((k7.f) this.e).g(this.d, str, this.c);
+                return this;
+            case 2:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((l7.j0) this.e).g(this.d, str, this.c);
+                return this;
+            case 3:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((n7.y) this.e).g(this.d, str, this.c);
+                return this;
+            default:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((x9.e) this.e).h(this.d, str, this.c);
+                return this;
         }
-        Object obj2 = n.s;
-        this.c = nVar.e(obj);
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        n nVar = this.d;
-        Map a2 = nVar.a();
-        if (a2 != null) {
-            return a2.get(this.b);
+    @Override // u9.g
+    public final u9.g g(boolean z4) {
+        switch (this.a) {
+            case 0:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((k) this.e).h(this.d, z4 ? 1 : 0, this.c);
+                return this;
+            case 1:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((k7.f) this.e).h(this.d, z4 ? 1 : 0, this.c);
+                return this;
+            case 2:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((l7.j0) this.e).h(this.d, z4 ? 1 : 0, this.c);
+                return this;
+            case 3:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((n7.y) this.e).h(this.d, z4 ? 1 : 0, this.c);
+                return this;
+            default:
+                if (this.b) {
+                    throw new u9.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((x9.e) this.e).g(this.d, z4 ? 1 : 0, this.c);
+                return this;
         }
-        a();
-        int i10 = this.c;
-        if (i10 == -1) {
-            return null;
-        }
-        Object[] objArr = nVar.d;
-        objArr.getClass();
-        return objArr[i10];
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        n nVar = this.d;
-        Map a2 = nVar.a();
-        Object obj2 = this.b;
-        if (a2 != null) {
-            return a2.put(obj2, obj);
-        }
-        a();
-        int i10 = this.c;
-        if (i10 == -1) {
-            nVar.put(obj2, obj);
-            return null;
-        }
-        Object[] objArr = nVar.d;
-        objArr.getClass();
-        Object obj3 = objArr[i10];
-        int i11 = this.c;
-        Object[] objArr2 = nVar.d;
-        objArr2.getClass();
-        objArr2[i11] = obj;
-        return obj3;
     }
 }

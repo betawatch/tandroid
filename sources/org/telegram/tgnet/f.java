@@ -10,9 +10,9 @@ import java.util.List;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.i5;
+import org.telegram.messenger.j5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements OnSuccessListener, OnFailureListener, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
@@ -33,19 +33,19 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
         List list;
         Bitmap bitmap;
         Utilities.Callback callback = (Utilities.Callback) this.d;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
         ImageReceiver.BitmapHolder drawableSafe = imageReceiver.getDrawableSafe();
-        if (!z10 || bitmapSafe == null) {
+        if (!z4 || bitmapSafe == null) {
             return;
         }
         if (drawableSafe != null) {
             Drawable drawable = drawableSafe.drawable;
-            if (drawable instanceof of.b) {
-                list = ((of.b) drawable).a;
+            if (drawable instanceof qf.b) {
+                list = ((qf.b) drawable).a;
                 bitmap = bitmapSafe.bitmap;
                 if (bitmap == null) {
                     Drawable drawable2 = bitmapSafe.drawable;
@@ -53,7 +53,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
                         bitmap = ((BitmapDrawable) drawable2).getBitmap();
                     }
                 }
-                of.a aVar = new of.a(bitmap, this.a, list);
+                qf.a aVar = new qf.a(bitmap, this.a, list);
                 if (callback != null) {
                     callback.run(aVar);
                 }
@@ -64,7 +64,7 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
         bitmap = bitmapSafe.bitmap;
         if (bitmap == null) {
         }
-        of.a aVar2 = new of.a(bitmap, this.a, list);
+        qf.a aVar2 = new qf.a(bitmap, this.a, list);
         if (callback != null) {
         }
         ChatThemeController.getInstance(this.c).saveWallpaperBitmap(aVar2, this.b);
@@ -72,12 +72,12 @@ public final /* synthetic */ class f implements OnSuccessListener, OnFailureList
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        i5.a(this, i10, str, drawable);
+        j5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        i5.b(this, imageReceiver);
+        j5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

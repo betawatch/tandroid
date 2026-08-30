@@ -1,66 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rq0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ qu0 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ int e;
+public final class rq0 extends View {
+    public Random a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public float f;
+    public float h;
+    public float n;
 
-    public /* synthetic */ rq0(qu0 qu0Var, org.telegram.ui.ActionBar.c6 c6Var, int i10, MessageObject messageObject) {
-        this.b = qu0Var;
-        this.c = c6Var;
-        this.e = i10;
-        this.d = messageObject;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.c2[] c2VarArr = {new org.telegram.ui.ActionBar.c2(this.b.getContext(), 3, this.c)};
-                int i10 = this.e;
-                int sendVote = SendMessagesHelper.getInstance(i10).sendVote(this.d, null, new gs(c2VarArr, 1));
-                if (sendVote != 0) {
-                    AndroidUtilities.runOnUIThread(new vq0(c2VarArr, i10, sendVote, 0), 500L);
-                    break;
-                }
-                break;
-            default:
-                qu0 qu0Var = this.b;
-                Context context = qu0Var.getContext();
-                org.telegram.ui.ActionBar.c6 c6Var = this.c;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, c6Var);
-                org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-                c2Var.L0 = false;
-                MessageObject messageObject = this.d;
-                if (messageObject.isQuiz()) {
-                    c2Var.N = LocaleController.getString(R.string.StopQuizAlertTitle);
-                    c2Var.P = LocaleController.getString(R.string.StopQuizAlertText);
-                } else {
-                    c2Var.N = LocaleController.getString(R.string.StopPollAlertTitle);
-                    c2Var.P = LocaleController.getString(R.string.StopPollAlertText);
-                }
-                alertDialog$Builder.k(LocaleController.getString(R.string.Stop), new eg.b0(qu0Var, c6Var, messageObject, this.e, 6));
-                j7.l1.u(R.string.Cancel, alertDialog$Builder, null);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        Paint paint2 = this.b;
+        super.onDraw(canvas);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
+        float f10 = 3.0f;
+        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
+        int i10 = 7;
+        int dp = AndroidUtilities.dp(1.0f) + ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7);
+        nr nrVar = nr.g;
+        float f11 = this.f;
+        float interpolation = nrVar.getInterpolation(f11 > 0.4f ? (f11 - 0.4f) / 0.6f : 0.0f);
+        float f12 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
+        canvas.save();
+        canvas.translate(0.0f, (-org.telegram.messenger.y3.z(4.0f, getMeasuredHeight(), dp)) * f12);
+        int i11 = 0;
+        while (i11 < i10) {
+            int dp2 = ((AndroidUtilities.dp(1.0f) + measuredWidth) * i11) + AndroidUtilities.dp(f10);
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f13 = dp2;
+            float f14 = dp2 + measuredWidth;
+            rectF.set(0.0f, f13, measuredWidth, f14);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f13, org.telegram.messenger.y3.C(1.0f, measuredWidth, measuredWidth), f14);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            i11++;
+            i10 = 7;
+            f10 = 3.0f;
         }
-    }
-
-    public /* synthetic */ rq0(qu0 qu0Var, org.telegram.ui.ActionBar.c6 c6Var, MessageObject messageObject, int i10) {
-        this.b = qu0Var;
-        this.c = c6Var;
-        this.d = messageObject;
-        this.e = i10;
+        canvas.restore();
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.d);
+        canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(4.0f));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.e);
+        canvas.restore();
+        float measuredHeight = ((getMeasuredHeight() - AndroidUtilities.dp(21.0f)) * f12) + AndroidUtilities.dp(3.0f);
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(getMeasuredWidth() - AndroidUtilities.dp(3.0f), measuredHeight, getMeasuredWidth(), AndroidUtilities.dp(15.0f) + measuredHeight);
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), paint);
+        float centerY = rectF2.centerY();
+        float dp3 = AndroidUtilities.dp(0.5f) + measuredWidth;
+        rectF2.set(dp3 - AndroidUtilities.dp(8.0f), centerY - AndroidUtilities.dp(3.0f), dp3 + AndroidUtilities.dp(8.0f), centerY + AndroidUtilities.dp(3.0f));
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint);
+        float f15 = this.f + 0.016f;
+        this.f = f15;
+        if (f15 > 1.0f) {
+            this.h = this.n;
+            float g10 = org.telegram.ui.yh.g(this.a, 1001) / 1000.0f;
+            this.n = g10;
+            if (g10 > this.h) {
+                this.n = g10 + 0.3f;
+            } else {
+                this.n = g10 - 0.3f;
+            }
+            this.n = Math.max(0.0f, Math.min(1.0f, this.n));
+            this.f = 0.0f;
+        }
+        invalidate();
     }
 }

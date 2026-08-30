@@ -21,8 +21,8 @@ public abstract class a0 {
             if ((0 - 0) + length > Integer.MAX_VALUE) {
                 throw d0.a();
             }
-        } catch (d0 e10) {
-            throw new IllegalArgumentException(e10);
+        } catch (d0 e) {
+            throw new IllegalArgumentException(e);
         }
     }
 

@@ -1,309 +1,114 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.app.Activity;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class n61 extends Drawable {
-    public static final int[] r = {10, 7, 26, 16, 10, 25};
-    public final Paint a;
-    public final TextPaint b;
-    public final Path c;
-    public boolean d;
-    public final boolean e;
-    public Path f;
-    public int g;
-    public float h;
-    public float i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public long m;
-    public m61 n;
-    public long o;
-    public String p;
-    public float q;
+public final class n61 extends IUpdateLayout {
+    public FrameLayout a;
+    public RadialProgress2 b;
+    public org.telegram.ui.Cells.w1 c;
+    public final Activity d;
+    public final ViewGroup e;
 
-    public n61(boolean z10) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        Path path = new Path();
-        this.c = path;
-        this.q = 1.0f;
-        this.e = z10;
-        paint.setColor(-1);
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        path.reset();
-        for (int i10 = 0; i10 < 3; i10++) {
-            int[] iArr = r;
-            if (i10 == 0) {
-                int i11 = i10 * 2;
-                this.c.moveTo(AndroidUtilities.dp(iArr[i11]), AndroidUtilities.dp(iArr[i11 + 1]));
+    public n61(Activity activity, ViewGroup viewGroup) {
+        super(activity, viewGroup);
+        this.d = activity;
+        this.e = viewGroup;
+    }
+
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void createUpdateUI(int i10) {
+        ViewGroup viewGroup = this.e;
+        if (viewGroup == null || this.a != null) {
+            return;
+        }
+        Activity activity = this.d;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        frameLayout.setVisibility(4);
+        this.a.setTranslationY(AndroidUtilities.dp(44.0f));
+        this.a.setBackground(org.telegram.ui.ActionBar.j6.f0(1090519039, 2, -1));
+        viewGroup.addView(this.a, k7.b6.e(-1, 44, 83));
+        this.a.setOnClickListener(new lh.y0(this, i10, 11));
+        org.telegram.ui.Cells.w1 w1Var = new org.telegram.ui.Cells.w1(this, activity);
+        this.c = w1Var;
+        w1Var.setTextSize(AndroidUtilities.dp(15.0f));
+        this.c.setTypeface(AndroidUtilities.bold());
+        this.c.setTextColor(-1);
+        this.c.setGravity(17);
+        this.a.addView(this.c, k7.b6.g());
+        this.c.c(LocaleController.getString(R.string.AppUpdateBeta), false, true);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
+        this.b = radialProgress2;
+        int i11 = org.telegram.ui.ActionBar.j6.Oh;
+        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        this.b.q(0, 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f));
+        this.b.setCircleRadius(AndroidUtilities.dp(11.0f));
+        this.b.setAsMini();
+    }
+
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateAppUpdateViews(int i10, boolean z4) {
+        if (this.e == null) {
+            return;
+        }
+        if (ApplicationLoader.applicationLoaderInstance.getUpdate() == null) {
+            FrameLayout frameLayout = this.a;
+            if (frameLayout == null || frameLayout.getTag() == null) {
+                return;
+            }
+            this.a.setTag(null);
+            if (z4) {
+                this.a.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(nr.g).setListener(new nd0(this, 26)).setDuration(180L).start();
+                return;
             } else {
-                int i12 = i10 * 2;
-                this.c.lineTo(AndroidUtilities.dp(iArr[i12]), AndroidUtilities.dp(iArr[i12 + 1]));
+                this.a.setTranslationY(AndroidUtilities.dp(44.0f));
+                this.a.setVisibility(4);
+                return;
             }
         }
-        this.c.close();
-    }
-
-    public final void a() {
-        m61 m61Var = this.n;
-        if (m61Var != null) {
-            m61Var.invalidate();
+        createUpdateUI(i10);
+        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
+        if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
+            this.b.setIcon(15, true, z4);
+            this.c.c(LocaleController.getString(R.string.AppUpdateNow), z4, true);
+        } else if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+            this.b.setIcon(3, true, z4);
+            this.b.o(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
+            this.c.c(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f))), z4, true);
         } else {
-            invalidateSelf();
+            this.b.setIcon(2, true, z4);
+            this.c.c(LocaleController.getString(R.string.AppUpdateBeta), z4, true);
         }
-    }
-
-    public final boolean b() {
-        return this.j;
-    }
-
-    public final void c(org.telegram.ui.pr0 pr0Var) {
-        this.n = pr0Var;
-    }
-
-    public final void d(boolean z10) {
-        boolean z11 = this.d;
-        if (z11 == z10 && this.h >= 1.0f && this.k) {
+        if (this.a.getTag() != null) {
             return;
         }
-        if (z11 != z10) {
-            this.o = 0L;
-            this.p = null;
+        this.a.setVisibility(0);
+        this.a.setTag(1);
+        if (z4) {
+            this.a.animate().translationY(0.0f).setInterpolator(nr.g).setListener(null).setDuration(180L).start();
+        } else {
+            this.a.setTranslationY(0.0f);
         }
-        this.d = z10;
-        this.j = true;
-        this.h = 0.0f;
-        invalidateSelf();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0281  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0284  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float f9;
-        Rect bounds = getBounds();
-        int width = ((bounds.width() - AndroidUtilities.dp(32.0f)) / 2) + bounds.left;
-        int height = ((bounds.height() - AndroidUtilities.dp(32.0f)) / 2) + bounds.top;
-        int z10 = this.d ? org.telegram.messenger.x3.z(16.0f, bounds.width() / 4, width) : org.telegram.messenger.x3.C(16.0f, bounds.width() / 4, width);
-        canvas.save();
-        if (this.e) {
-            if (this.f == null) {
-                this.f = new Path();
-            }
-            int i10 = bounds.left + (bounds.top << 8) + (bounds.bottom << 16) + (bounds.right << 24);
-            if (this.g != i10) {
-                this.f.reset();
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(bounds);
-                this.f.addOval(rectF, Path.Direction.CCW);
-                this.g = i10;
-            }
-            canvas.clipPath(this.f);
-        } else {
-            canvas.clipRect(bounds.left, bounds.top, bounds.right, bounds.bottom);
-        }
-        boolean z11 = this.k;
-        TextPaint textPaint = this.b;
-        Paint paint = this.a;
-        if (z11) {
-            float f10 = this.h;
-            if (f10 <= 0.7f) {
-                paint.setAlpha((int) (Math.min(1.0f, f10 / 0.3f) * 80.0f));
-                textPaint.setAlpha((int) (Math.min(1.0f, this.h / 0.3f) * 255.0f));
-            } else {
-                paint.setAlpha((int) ((1.0f - ((f10 - 0.7f) / 0.3f)) * 80.0f));
-                textPaint.setAlpha((int) ((1.0f - ((this.h - 0.7f) / 0.3f)) * 255.0f));
-            }
-        } else {
-            paint.setAlpha((int) (this.i * 80.0f));
-            textPaint.setAlpha((int) (this.i * 255.0f));
-        }
-        canvas.drawCircle(((Math.max(bounds.width(), bounds.height()) / 4) * (this.d ? -1 : 1)) + z10, AndroidUtilities.dp(16.0f) + height, Math.max(bounds.width(), bounds.height()) / 2, paint);
-        canvas.restore();
-        String str = this.p;
-        if (str != null) {
-            canvas.drawText(str, (AndroidUtilities.dp(32.0f) * (this.d ? -1 : 1)) + z10, AndroidUtilities.dp(15.0f) + AndroidUtilities.dp(32.0f) + height, textPaint);
-        }
-        canvas.save();
-        float f11 = this.q;
-        float f12 = z10;
-        float f13 = height;
-        canvas.scale(f11, f11, f12, (AndroidUtilities.dp(32.0f) / 2.0f) + f13);
-        if (this.d) {
-            canvas.rotate(180.0f, f12, (AndroidUtilities.dp(32.0f) / 2) + height);
-        }
-        canvas.translate(f12, f13);
-        float f14 = this.h;
-        Path path = this.c;
-        if (f14 <= 0.6f) {
-            int min = f14 < 0.4f ? Math.min(255, (int) ((f14 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f14 - 0.4f) / 0.2f)) * 255.0f);
-            if (!this.k) {
-                min = (int) (min * this.i);
-            }
-            paint.setAlpha(min);
-            canvas.drawPath(path, paint);
-        }
-        canvas.translate(AndroidUtilities.dp(18.0f), 0.0f);
-        float f15 = this.h;
-        if (f15 >= 0.2f && f15 <= 0.8f) {
-            float f16 = f15 - 0.2f;
-            int min2 = f16 < 0.4f ? Math.min(255, (int) ((f16 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f16 - 0.4f) / 0.2f)) * 255.0f);
-            if (!this.k) {
-                min2 = (int) (min2 * this.i);
-            }
-            paint.setAlpha(min2);
-            canvas.drawPath(path, paint);
-        }
-        canvas.translate(AndroidUtilities.dp(18.0f), 0.0f);
-        float f17 = this.h;
-        if (f17 >= 0.4f && f17 <= 1.0f) {
-            float f18 = f17 - 0.4f;
-            int min3 = f18 < 0.4f ? Math.min(255, (int) ((f18 * 255.0f) / 0.2f)) : (int) ((1.0f - ((f18 - 0.4f) / 0.2f)) * 255.0f);
-            if (!this.k) {
-                min3 = (int) (min3 * this.i);
-            }
-            paint.setAlpha(min3);
-            canvas.drawPath(path, paint);
-        }
-        canvas.restore();
-        if (!this.j) {
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateFileProgress(Object[] objArr) {
+        if (this.a == null || this.c == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
             return;
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.m;
-        if (j10 > 17) {
-            j10 = 17;
-        }
-        this.m = currentTimeMillis;
-        float f19 = this.h;
-        if (f19 < 1.0f) {
-            float f20 = (j10 / 800.0f) + f19;
-            this.h = f20;
-            if (this.k) {
-                if (f20 >= 1.0f) {
-                    this.h = 0.0f;
-                    this.j = false;
-                    this.o = 0L;
-                    this.p = null;
-                }
-            } else if (f20 >= 1.0f) {
-                if (this.l) {
-                    this.h = 0.0f;
-                } else {
-                    this.h = 1.0f;
-                }
-            }
-            a();
-        }
-        if (this.k) {
-            return;
-        }
-        boolean z12 = this.l;
-        if (z12) {
-            float f21 = this.i;
-            if (f21 != 1.0f) {
-                this.i = f21 + 0.10666667f;
-                a();
-                f9 = this.i;
-                if (f9 >= 0.0f) {
-                    this.i = 0.0f;
-                    return;
-                } else {
-                    if (f9 > 1.0f) {
-                        this.i = 1.0f;
-                        return;
-                    }
-                    return;
-                }
-            }
-        }
-        if (!z12) {
-            float f22 = this.i;
-            if (f22 != 0.0f) {
-                this.i = f22 - 0.10666667f;
-                a();
-            }
-        }
-        f9 = this.i;
-        if (f9 >= 0.0f) {
-        }
-    }
-
-    public final void e(boolean z10) {
-        if (this.k != z10) {
-            this.k = z10;
-            this.p = null;
-            this.o = 0L;
-            this.h = 0.0f;
-        }
-    }
-
-    public final void f(boolean z10) {
-        this.l = z10;
-        a();
-    }
-
-    public final void g(long j10) {
-        this.o = j10;
-        if (j10 >= 1000) {
-            this.p = LocaleController.formatPluralString("Seconds", (int) (j10 / 1000), new Object[0]);
-        } else {
-            this.p = null;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        return AndroidUtilities.dp(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        return AndroidUtilities.dp(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-        this.b.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
+        this.b.o(downloadingUpdateProgress, true);
+        this.c.setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
+        this.a.invalidate();
     }
 }

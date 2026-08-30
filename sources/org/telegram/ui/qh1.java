@@ -1,36 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class qh1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Cells.s1 a;
-    public final /* synthetic */ org.telegram.ui.Components.mi b;
-    public final /* synthetic */ rh1 c;
+public final class qh1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ai1 a;
 
-    public qh1(rh1 rh1Var, org.telegram.ui.Cells.s1 s1Var, org.telegram.ui.Components.mi miVar) {
-        this.c = rh1Var;
-        this.a = s1Var;
-        this.b = miVar;
+    public qh1(ai1 ai1Var) {
+        this.a = ai1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.setEnterTransitionInProgress(false);
-        org.telegram.ui.Components.mi miVar = this.b;
-        ArrayList arrayList = (ArrayList) miVar.c;
-        rh1 rh1Var = this.c;
-        arrayList.remove(rh1Var);
-        miVar.a();
-        ((ViewGroup) miVar.d).invalidate();
-        ChatActivityEnterView.RecordCircle recordCircle = rh1Var.g;
-        if (recordCircle != null) {
-            recordCircle.J = false;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ai1 ai1Var = this.a;
+        c2.p pVar = ai1Var.i1;
+        if (pVar != null) {
+            pVar.run();
+            ai1Var.i1 = null;
         }
+        AndroidUtilities.runOnUIThread(new vy0(this, 24));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

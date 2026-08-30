@@ -1,33 +1,41 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ri implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ CharSequence b;
+    public final /* synthetic */ AccountInstance c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ long r;
 
-    public /* synthetic */ ri(SendMessagesHelper sendMessagesHelper, long j10, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = sendMessagesHelper;
-        this.c = j10;
-        this.d = arrayList;
+    public /* synthetic */ ri(CharSequence charSequence, AccountInstance accountInstance, long j10, long j11, boolean z4, int i10, int i11, long j12, int i12) {
+        this.a = i12;
+        this.b = charSequence;
+        this.c = accountInstance;
+        this.d = j10;
+        this.e = j11;
+        this.f = z4;
+        this.h = i10;
+        this.n = i11;
+        this.r = j12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$sendMessage$11(this.c, this.d);
+                SendMessagesHelper.lambda$prepareSendingText$126(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r);
                 break;
             case 1:
-                this.b.lambda$performSendMessageRequestMulti$69(this.c, this.d);
+                SendMessagesHelper.lambda$prepareSendingText$124(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r);
                 break;
             default:
-                this.b.lambda$performSendMessageRequest$97(this.c, this.d);
+                SendMessagesHelper.lambda$prepareSendingText$125(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r);
                 break;
         }
     }

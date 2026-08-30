@@ -6,7 +6,7 @@ import androidx.datastore.preferences.protobuf.w;
 import androidx.datastore.preferences.protobuf.x;
 import androidx.datastore.preferences.protobuf.x0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class k extends x {
     public static final int BOOLEAN_FIELD_NUMBER = 1;
@@ -50,14 +50,14 @@ public final class k extends x {
         kVar.value_ = Double.valueOf(d);
     }
 
-    public static void m(k kVar, boolean z10) {
+    public static void m(k kVar, boolean z4) {
         kVar.valueCase_ = 1;
-        kVar.value_ = Boolean.valueOf(z10);
+        kVar.value_ = Boolean.valueOf(z4);
     }
 
-    public static void n(k kVar, float f9) {
+    public static void n(k kVar, float f10) {
         kVar.valueCase_ = 2;
-        kVar.value_ = Float.valueOf(f9);
+        kVar.value_ = Float.valueOf(f10);
     }
 
     public static void o(k kVar, int i10) {

@@ -1,13 +1,13 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public interface TeXFont {
     public static final int NO_FONT = -1;
 
     TeXFont copy();
 
-    TeXFont deriveFont(float f9);
+    TeXFont deriveFont(float f10);
 
     float getAxisHeight(int i10);
 
@@ -95,15 +95,15 @@ public interface TeXFont {
 
     boolean isExtensionChar(Char r12);
 
-    TeXFont scaleFont(float f9);
+    TeXFont scaleFont(float f10);
 
-    void setBold(boolean z10);
+    void setBold(boolean z4);
 
-    void setIt(boolean z10);
+    void setIt(boolean z4);
 
-    void setRoman(boolean z10);
+    void setRoman(boolean z4);
 
-    void setSs(boolean z10);
+    void setSs(boolean z4);
 
-    void setTt(boolean z10);
+    void setTt(boolean z4);
 }

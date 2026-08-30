@@ -1,74 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class h01 {
-    public int a;
-    public int b;
-    public int c;
-    public TLRPC.MessageEntity d;
-    public boolean e;
+public final /* synthetic */ class h01 implements org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j01 b;
 
-    public h01() {
+    public /* synthetic */ h01(j01 j01Var, int i10) {
+        this.a = i10;
+        this.b = j01Var;
     }
 
-    public final void a(TextPaint textPaint) {
-        Typeface typeface;
-        if (this.e) {
-            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
-        } else {
-            int i10 = this.a;
-            if ((i10 & 4) == 0 && (i10 & 2048) == 0) {
-                int i11 = i10 & 1;
-                typeface = (i11 == 0 || (i10 & 2) == 0) ? i11 != 0 ? AndroidUtilities.bold() : (i10 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            } else {
-                typeface = Typeface.MONOSPACE;
-            }
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.a();
+                break;
+            case 1:
+                j01 j01Var = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(j01Var.getContext());
+                alertDialog$Builder.a.Q = LocaleController.getString(R.string.TosDeclineDeleteAccount);
+                alertDialog$Builder.a.O = LocaleController.getString(R.string.AppName);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new h01(j01Var, 2));
+                kh.a2.u(R.string.Cancel, alertDialog$Builder, null);
+                break;
+            default:
+                j01 j01Var2 = this.b;
+                org.telegram.ui.ActionBar.d2 d2Var2 = new org.telegram.ui.ActionBar.d2(j01Var2.getContext(), 3, null);
+                d2Var2.d0 = false;
+                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
+                deleteaccount.reason = "Decline ToS update";
+                ConnectionsManager.getInstance(j01Var2.d).sendRequest(deleteaccount, new org.telegram.ui.lo(16, j01Var2, d2Var2));
+                d2Var2.show();
+                break;
         }
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        if ((this.a & 16) != 0) {
-            textPaint.setFlags(textPaint.getFlags() | 8);
-        } else {
-            textPaint.setFlags(textPaint.getFlags() & (-9));
-        }
-        int i12 = this.a;
-        if ((i12 & 8) == 0 && (i12 & 8192) == 0) {
-            textPaint.setFlags(textPaint.getFlags() & (-17));
-        } else {
-            textPaint.setFlags(textPaint.getFlags() | 16);
-        }
-        if ((this.a & 512) != 0) {
-            textPaint.bgColor = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.R9, false);
-        }
-        int i13 = this.a;
-        if ((i13 & 8192) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
-        } else if ((i13 & 4096) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Oh, false));
-        }
-    }
-
-    public final void b(h01 h01Var) {
-        TLRPC.MessageEntity messageEntity;
-        this.a |= h01Var.a;
-        if (this.d != null || (messageEntity = h01Var.d) == null) {
-            return;
-        }
-        this.d = messageEntity;
-    }
-
-    public h01(h01 h01Var) {
-        this.a = h01Var.a;
-        this.b = h01Var.b;
-        this.c = h01Var.c;
-        this.d = h01Var.d;
-        this.e = h01Var.e;
     }
 }

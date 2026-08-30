@@ -2,23 +2,23 @@ package org.telegram.ui;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class g30 extends f2.l {
-    public final /* synthetic */ r50 F;
+    public final /* synthetic */ c60 F;
 
-    public g30(r50 r50Var) {
-        this.F = r50Var;
+    public g30(c60 c60Var) {
+        this.F = c60Var;
     }
 
     @Override // f2.l
-    public final void P(f2.n1 n1Var) {
+    public final void P(f2.l1 l1Var) {
         ViewGroup viewGroup;
-        r50 r50Var = this.F;
-        r50Var.M.invalidate();
-        r50Var.W1.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) r50Var).containerView;
+        c60 c60Var = this.F;
+        c60Var.N.invalidate();
+        c60Var.X1.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.g3) c60Var).containerView;
         viewGroup.invalidate();
-        r50.J0(r50Var);
+        c60.J0(c60Var);
     }
 }

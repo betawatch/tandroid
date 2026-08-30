@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class VlineAtom extends Atom {
     private float height;
@@ -44,11 +44,11 @@ public class VlineAtom extends Atom {
         return 0.0f;
     }
 
-    public void setHeight(float f9) {
-        this.height = f9;
+    public void setHeight(float f10) {
+        this.height = f10;
     }
 
-    public void setShift(float f9) {
-        this.shift = f9;
+    public void setShift(float f10) {
+        this.shift = f10;
     }
 }

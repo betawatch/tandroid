@@ -3,6 +3,7 @@ package com.google.android.gms.vision.clearcut;
 import android.content.Context;
 import android.util.Log;
 import com.google.android.gms.common.api.internal.r;
+import com.google.android.gms.internal.clearcut.x1;
 import com.google.android.gms.internal.vision.c;
 import com.google.android.gms.internal.vision.e0;
 import com.google.android.gms.internal.vision.f0;
@@ -12,11 +13,11 @@ import com.google.android.gms.internal.vision.r0;
 import com.google.android.gms.internal.vision.u0;
 import com.google.android.gms.internal.vision.y1;
 import com.google.android.gms.internal.vision.z0;
-import h7.k5;
+import j7.d7;
 import java.io.IOException;
-import u5.a;
+import w5.a;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -58,11 +59,11 @@ public class VisionClearcutLogger {
                     a aVar = this.zza;
                     aVar.getClass();
                     r rVar = new r(aVar, bArr);
-                    ((com.google.android.gms.internal.clearcut.y1) rVar.e).c = i10;
+                    ((x1) rVar.e).c = i10;
                     rVar.b();
                     return;
                 }
-                e0 k9 = f0.k();
+                e0 k10 = f0.k();
                 try {
                     u0 u0Var2 = u0.b;
                     if (u0Var2 == null) {
@@ -78,25 +79,25 @@ public class VisionClearcutLogger {
                         }
                         u0Var2 = u0Var;
                     }
-                    k9.c(bArr, h, u0Var2);
-                    String obj = k9.toString();
+                    k10.c(bArr, h, u0Var2);
+                    String obj = k10.toString();
                     if (Log.isLoggable("Vision", 6)) {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
-                } catch (Exception e10) {
-                    k5.a(e10, "Parsing error", new Object[0]);
+                } catch (Exception e) {
+                    d7.a(e, "Parsing error", new Object[0]);
                 }
-            } catch (Exception e11) {
-                c.a.q(e11);
-                k5.a(e11, "Failed to log", new Object[0]);
+            } catch (Exception e6) {
+                c.a.q(e6);
+                d7.a(e6, "Failed to log", new Object[0]);
             }
-        } catch (IOException e12) {
+        } catch (IOException e10) {
             String name = f0.class.getName();
-            StringBuilder sb2 = new StringBuilder(name.length() + 72);
-            sb2.append("Serializing ");
-            sb2.append(name);
-            sb2.append(" to a byte array threw an IOException (should never happen).");
-            throw new RuntimeException(sb2.toString(), e12);
+            StringBuilder sb = new StringBuilder(name.length() + 72);
+            sb.append("Serializing ");
+            sb.append(name);
+            sb.append(" to a byte array threw an IOException (should never happen).");
+            throw new RuntimeException(sb.toString(), e10);
         }
     }
 }

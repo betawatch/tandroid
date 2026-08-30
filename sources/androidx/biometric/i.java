@@ -2,57 +2,57 @@ package androidx.biometric;
 
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+    public final /* synthetic */ r b;
 
-    public /* synthetic */ i(q qVar, int i10) {
+    public /* synthetic */ i(r rVar, int i10) {
         this.a = i10;
-        this.b = qVar;
+        this.b = rVar;
     }
 
     @Override // androidx.lifecycle.a0
-    public final void S(Object obj) {
+    public final void m0(Object obj) {
         int i10 = this.a;
         CharSequence charSequence = null;
-        q qVar = this.b;
+        r rVar = this.b;
         switch (i10) {
             case 0:
-                u uVar = (u) obj;
-                if (uVar != null) {
-                    qVar.V(uVar);
-                    z zVar = qVar.h0;
-                    if (zVar.r == null) {
-                        zVar.r = new androidx.lifecycle.z();
+                v vVar = (v) obj;
+                if (vVar != null) {
+                    rVar.V(vVar);
+                    a0 a0Var = rVar.i0;
+                    if (a0Var.r == null) {
+                        a0Var.r = new androidx.lifecycle.z();
                     }
-                    z.h(zVar.r, null);
+                    a0.h(a0Var.r, null);
                     break;
                 }
                 break;
             default:
                 if (((Boolean) obj).booleanValue()) {
-                    if (qVar.Q()) {
-                        qVar.S();
+                    if (rVar.Q()) {
+                        rVar.S();
                     } else {
-                        z zVar2 = qVar.h0;
-                        String str = zVar2.k;
+                        a0 a0Var2 = rVar.i0;
+                        String str = a0Var2.k;
                         if (str != null) {
                             charSequence = str;
                         } else {
-                            v5.l lVar = zVar2.f;
-                            if (lVar != null && (charSequence = (CharSequence) lVar.d) == null) {
+                            x5.k kVar = a0Var2.f;
+                            if (kVar != null && (charSequence = (CharSequence) kVar.d) == null) {
                                 charSequence = "";
                             }
                         }
                         if (charSequence == null) {
-                            charSequence = qVar.q(R.string.default_error_msg);
+                            charSequence = rVar.q(R.string.default_error_msg);
                         }
-                        qVar.T(13, charSequence);
-                        qVar.N(2);
+                        rVar.T(13, charSequence);
+                        rVar.N(2);
                     }
-                    qVar.h0.g(false);
+                    rVar.i0.g(false);
                     break;
                 }
                 break;

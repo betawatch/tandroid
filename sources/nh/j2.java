@@ -1,147 +1,83 @@
 package nh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class j2 extends View {
-    public final RectF A;
-    public float B;
-    public d1 C;
-    public int D;
-    public final TextPaint a;
-    public final Paint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public StaticLayout f;
-    public float h;
-    public float n;
-    public StaticLayout r;
-    public float s;
-    public float v;
-    public final RectF w;
-    public final RectF x;
-    public final RectF y;
+public final class j2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ d4 c;
 
-    public j2(Context context) {
-        super(context);
-        this.a = new TextPaint(1);
-        this.b = new Paint(1);
-        this.w = new RectF();
-        this.x = new RectF();
-        this.y = new RectF();
-        this.A = new RectF();
+    public /* synthetic */ j2(d4 d4Var, boolean z4, int i10) {
+        this.a = i10;
+        this.c = d4Var;
+        this.b = z4;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawColor(-14737633);
-        Paint paint = this.b;
-        paint.setColor(-13224394);
-        float f9 = this.B;
-        int i10 = (int) f9;
-        RectF rectF = this.y;
-        RectF rectF2 = this.x;
-        RectF rectF3 = this.w;
-        RectF rectF4 = i10 <= 0 ? rectF3 : i10 == 1 ? rectF2 : rectF;
-        int ceil = (int) Math.ceil(f9);
-        RectF rectF5 = ceil <= 0 ? rectF3 : ceil == 1 ? rectF2 : rectF;
-        float f10 = this.B;
-        RectF rectF6 = this.A;
-        AndroidUtilities.lerp(rectF4, rectF5, f10 - ((int) f10), rectF6);
-        canvas.drawRoundRect(rectF6, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
-        StaticLayout staticLayout = this.c;
-        TextPaint textPaint = this.a;
-        if (staticLayout != null) {
-            canvas.save();
-            canvas.translate((rectF3.left + AndroidUtilities.dp(12.0f)) - this.e, com.google.android.recaptcha.internal.a.A(rectF3.height(), this.c.getHeight(), 2.0f, rectF3.top));
-            textPaint.setColor(i0.a.d(Utilities.clamp(1.0f - Math.abs(this.B - 0.0f), 1.0f, 0.0f), -8158333, -1));
-            this.c.draw(canvas);
-            canvas.restore();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        float hideInterfaceAlpha;
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    d4 d4Var = this.c;
+                    d4Var.o3.setVisibility(8);
+                    d4Var.o3.n();
+                    break;
+                }
+                break;
+            default:
+                d4 d4Var2 = this.c;
+                n8 n8Var = d4Var2.z0;
+                dh.d dVar = d4Var2.v0;
+                ImageView imageView = d4Var2.u0;
+                ImageView imageView2 = d4Var2.t0;
+                z3 z3Var = d4Var2.l1;
+                d4Var2.a4 = this.b ? 1.0f : 0.0f;
+                z3Var.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.a4);
+                z3Var.setAlpha(1.0f - d4Var2.a4);
+                imageView2.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.a4);
+                imageView2.setAlpha(1.0f - d4Var2.a4);
+                imageView.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.a4);
+                imageView.setAlpha(1.0f - d4Var2.a4);
+                dVar.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.a4);
+                dVar.setAlpha((1.0f - d4Var2.a4) * d4Var2.b3);
+                z2 z2Var = d4Var2.T1;
+                if (z2Var != null) {
+                    z2Var.setTranslationY(AndroidUtilities.dp(8.0f) * d4Var2.a4);
+                    d4Var2.T1.setAlpha(1.0f - d4Var2.a4);
+                }
+                if (n8Var != null) {
+                    n8Var.setTranslationY((-AndroidUtilities.dp(8.0f)) * d4Var2.a4);
+                    n8Var.setAlpha(1.0f - d4Var2.a4);
+                }
+                d4Var2.H0.setAlpha(1.0f - d4Var2.a4);
+                x3 x3Var = d4Var2.N1;
+                float f10 = x3Var != null ? ((z8) x3Var).d.S : 0.0f;
+                hideInterfaceAlpha = d4Var2.getHideInterfaceAlpha();
+                z2 z2Var2 = d4Var2.A0;
+                if (z2Var2 != null) {
+                    z2Var2.setAlpha((1.0f - d4Var2.a4) * (1.0f - f10) * hideInterfaceAlpha);
+                }
+                ImageView imageView3 = d4Var2.K0;
+                if (imageView3 != null) {
+                    imageView3.setAlpha((1.0f - d4Var2.a4) * (1.0f - f10) * hideInterfaceAlpha);
+                }
+                z2 z2Var3 = d4Var2.M0;
+                if (z2Var3 != null) {
+                    z2Var3.setAlpha((1.0f - d4Var2.a4) * (1.0f - f10) * hideInterfaceAlpha);
+                }
+                o2 o2Var = d4Var2.Y1;
+                if (o2Var != null) {
+                    o2Var.setAlpha(1.0f - d4Var2.a4);
+                    d4Var2.invalidate();
+                }
+                d4Var2.Z0.invalidate();
+                break;
         }
-        if (this.f != null) {
-            canvas.save();
-            canvas.translate((rectF2.left + AndroidUtilities.dp(12.0f)) - this.n, com.google.android.recaptcha.internal.a.A(rectF2.height(), this.f.getHeight(), 2.0f, rectF2.top));
-            textPaint.setColor(i0.a.d(Utilities.clamp(1.0f - Math.abs(this.B - 1.0f), 1.0f, 0.0f), -8158333, -1));
-            this.f.draw(canvas);
-            canvas.restore();
-        }
-        if (this.r != null) {
-            canvas.save();
-            canvas.translate((rectF.left + AndroidUtilities.dp(12.0f)) - this.v, com.google.android.recaptcha.internal.a.A(rectF.height(), this.r.getHeight(), 2.0f, rectF.top));
-            textPaint.setColor(i0.a.d(Utilities.clamp(1.0f - Math.abs(this.B - 2.0f), 1.0f, 0.0f), -8158333, -1));
-            this.r.draw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(40.0f) + AndroidUtilities.navigationBarHeight);
-        if (getMeasuredWidth() != this.D || this.c == null) {
-            float dp = AndroidUtilities.dp(14.0f);
-            TextPaint textPaint = this.a;
-            textPaint.setTextSize(dp);
-            textPaint.setTypeface(AndroidUtilities.bold());
-            String string = LocaleController.getString("Emoji");
-            int measuredWidth = getMeasuredWidth();
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            StaticLayout staticLayout = new StaticLayout(string, textPaint, measuredWidth, alignment, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineCount() >= 1 ? this.c.getLineWidth(0) : 0.0f;
-            this.e = this.c.getLineCount() >= 1 ? this.c.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout2 = new StaticLayout(LocaleController.getString("AccDescrStickers"), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
-            this.f = staticLayout2;
-            this.h = staticLayout2.getLineCount() >= 1 ? this.f.getLineWidth(0) : 0.0f;
-            this.n = this.f.getLineCount() >= 1 ? this.f.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout3 = new StaticLayout(LocaleController.getString(R.string.AccDescrGIFs), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
-            this.r = staticLayout3;
-            this.s = staticLayout3.getLineCount() >= 1 ? this.r.getLineWidth(0) : 0.0f;
-            this.v = this.r.getLineCount() >= 1 ? this.r.getLineLeft(0) : 0.0f;
-            float dp2 = AndroidUtilities.dp(14.0f) / 2.0f;
-            float dp3 = AndroidUtilities.dp(66.0f) / 2.0f;
-            float measuredWidth2 = (getMeasuredWidth() - ((((((AndroidUtilities.dp(12.0f) + this.d) + AndroidUtilities.dp(36.0f)) + this.h) + AndroidUtilities.dp(36.0f)) + this.s) + AndroidUtilities.dp(12.0f))) / 2.0f;
-            this.w.set(measuredWidth2, dp2, this.d + measuredWidth2 + AndroidUtilities.dp(24.0f), dp3);
-            float dp4 = this.d + AndroidUtilities.dp(36.0f) + measuredWidth2;
-            this.x.set(dp4, dp2, this.h + dp4 + AndroidUtilities.dp(24.0f), dp3);
-            float dp5 = this.h + AndroidUtilities.dp(36.0f) + dp4;
-            this.y.set(dp5, dp2, this.s + dp5 + AndroidUtilities.dp(24.0f), dp3);
-            AndroidUtilities.dp(36.0f);
-        }
-        this.D = getMeasuredWidth();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0) {
-            if (motionEvent.getAction() != 1 || this.C == null) {
-                return super.onTouchEvent(motionEvent);
-            }
-            if (this.w.contains(motionEvent.getX(), motionEvent.getY())) {
-                this.C.run(0);
-                return true;
-            }
-            if (this.x.contains(motionEvent.getX(), motionEvent.getY())) {
-                this.C.run(1);
-                return true;
-            }
-            if (this.y.contains(motionEvent.getX(), motionEvent.getY())) {
-                this.C.run(2);
-            }
-        }
-        return true;
     }
 }

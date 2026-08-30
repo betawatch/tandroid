@@ -1,28 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class hw extends ez {
-    public final /* synthetic */ fz d;
+public final class hw implements View.OnFocusChangeListener {
+    public final /* synthetic */ kz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hw(fz fzVar) {
-        super(fzVar, 2);
-        this.d = fzVar;
+    public hw(kz kzVar) {
+        this.a = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.ez, f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        fz fzVar;
-        lg.e eVar;
-        super.b(recyclerView, i10, i11);
-        if (Build.VERSION.SDK_INT < 31 || (eVar = (fzVar = this.d).f2) == null) {
-            return;
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z4) {
+        if (z4) {
+            String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+            kz kzVar = this.a;
+            kzVar.T0 = currentKeyboardLanguage;
+            MediaDataController.getInstance(kzVar.Z0).fetchNewEmojiKeywords(kzVar.T0);
         }
-        eVar.f(i10, i11);
-        fzVar.C();
     }
 }

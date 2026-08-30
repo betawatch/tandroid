@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h1 {
     public static final RectF l = new RectF();
@@ -83,8 +83,8 @@ public final class h1 {
             method.setAccessible(true);
             concurrentHashMap.put(str, method);
             return method;
-        } catch (Exception e10) {
-            Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e10);
+        } catch (Exception e) {
+            Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e);
             return null;
         }
     }
@@ -92,8 +92,8 @@ public final class h1 {
     public static Object e(Object obj, String str, Object obj2) {
         try {
             return d(str).invoke(obj, null);
-        } catch (Exception e10) {
-            Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#" + str + "() method", e10);
+        } catch (Exception e) {
+            Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#" + str + "() method", e);
             return obj2;
         }
     }
@@ -172,9 +172,9 @@ public final class h1 {
         return j() && this.a != 0;
     }
 
-    public final void g(float f9, int i10) {
+    public final void g(float f10, int i10) {
         Context context = this.j;
-        float applyDimension = TypedValue.applyDimension(i10, f9, (context == null ? Resources.getSystem() : context.getResources()).getDisplayMetrics());
+        float applyDimension = TypedValue.applyDimension(i10, f10, (context == null ? Resources.getSystem() : context.getResources()).getDisplayMetrics());
         TextView textView = this.i;
         if (applyDimension != textView.getPaint().getTextSize()) {
             textView.getPaint().setTextSize(applyDimension);
@@ -186,8 +186,8 @@ public final class h1 {
                     if (d != null) {
                         d.invoke(textView, null);
                     }
-                } catch (Exception e10) {
-                    Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#nullLayouts() method", e10);
+                } catch (Exception e) {
+                    Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#nullLayouts() method", e);
                 }
                 if (a2) {
                     textView.forceLayout();
@@ -217,35 +217,35 @@ public final class h1 {
     }
 
     public final boolean i() {
-        boolean z10 = this.f.length > 0;
-        this.g = z10;
-        if (z10) {
+        boolean z4 = this.f.length > 0;
+        this.g = z4;
+        if (z4) {
             this.a = 1;
             this.d = r0[0];
             this.e = r0[r1 - 1];
             this.c = -1.0f;
         }
-        return z10;
+        return z4;
     }
 
     public final boolean j() {
-        return !(this.i instanceof t);
+        return !(this.i instanceof s);
     }
 
-    public final void k(float f9, float f10, float f11) {
-        if (f9 <= 0.0f) {
-            throw new IllegalArgumentException("Minimum auto-size text size (" + f9 + "px) is less or equal to (0px)");
+    public final void k(float f10, float f11, float f12) {
+        if (f10 <= 0.0f) {
+            throw new IllegalArgumentException("Minimum auto-size text size (" + f10 + "px) is less or equal to (0px)");
         }
-        if (f10 <= f9) {
-            throw new IllegalArgumentException("Maximum auto-size text size (" + f10 + "px) is less or equal to minimum auto-size text size (" + f9 + "px)");
+        if (f11 <= f10) {
+            throw new IllegalArgumentException("Maximum auto-size text size (" + f11 + "px) is less or equal to minimum auto-size text size (" + f10 + "px)");
         }
-        if (f11 <= 0.0f) {
-            throw new IllegalArgumentException("The auto-size step granularity (" + f11 + "px) is less or equal to (0px)");
+        if (f12 <= 0.0f) {
+            throw new IllegalArgumentException("The auto-size step granularity (" + f12 + "px) is less or equal to (0px)");
         }
         this.a = 1;
-        this.d = f9;
-        this.e = f10;
-        this.c = f11;
+        this.d = f10;
+        this.e = f11;
+        this.c = f12;
         this.g = false;
     }
 }

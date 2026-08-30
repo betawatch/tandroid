@@ -1,19 +1,19 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_ephemeral;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ FileRefController b;
-    public final /* synthetic */ TL_ephemeral.TL_sendMessage c;
+    public final /* synthetic */ TLRPC.TL_messages_sendMedia c;
     public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ l3(FileRefController fileRefController, TL_ephemeral.TL_sendMessage tL_sendMessage, Object[] objArr, int i10) {
+    public /* synthetic */ l3(FileRefController fileRefController, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr, int i10) {
         this.a = i10;
         this.b = fileRefController;
-        this.c = tL_sendMessage;
+        this.c = tL_messages_sendMedia;
         this.d = objArr;
     }
 
@@ -21,10 +21,10 @@ public final /* synthetic */ class l3 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onUpdateObjectReference$32(this.c, this.d);
+                this.b.lambda$onUpdateObjectReference$31(this.c, this.d);
                 break;
             default:
-                this.b.lambda$sendErrorToObject$43(this.c, this.d);
+                this.b.lambda$sendErrorToObject$42(this.c, this.d);
                 break;
         }
     }

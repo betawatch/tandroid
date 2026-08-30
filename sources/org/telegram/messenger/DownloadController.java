@@ -22,10 +22,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.g71;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class DownloadController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static final int AUTODOWNLOAD_TYPE_AUDIO = 2;
@@ -71,7 +71,7 @@ public class DownloadController extends BaseController implements NotificationCe
     private ArrayList<DownloadObject> videoDownloadQueue;
     public Preset wifiPreset;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public class DownloadingDocumentEntry {
         int hash;
         long id;
@@ -80,15 +80,15 @@ public class DownloadController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface FileDownloadProgressListener {
         int getObserverTag();
 
-        void onFailedDownload(String str, boolean z10);
+        void onFailedDownload(String str, boolean z4);
 
         void onProgressDownload(String str, long j10, long j11);
 
-        void onProgressUpload(String str, long j10, long j11, boolean z10);
+        void onProgressUpload(String str, long j10, long j11, boolean z4);
 
         void onSuccessDownload(String str);
     }
@@ -148,7 +148,7 @@ public class DownloadController extends BaseController implements NotificationCe
             int i11 = 0;
             for (int i12 = 4; i11 < i12; i12 = 4) {
                 int i13 = i11;
-                StringBuilder sb2 = new StringBuilder("mobileDataDownloadMask");
+                StringBuilder sb = new StringBuilder("mobileDataDownloadMask");
                 Object obj2 = "";
                 if (i13 == 0) {
                     obj = "";
@@ -156,16 +156,16 @@ public class DownloadController extends BaseController implements NotificationCe
                     obj = "";
                     obj2 = Integer.valueOf(i13);
                 }
-                sb2.append(obj2);
-                String sb3 = sb2.toString();
-                if (i13 == 0 || mainSettings.contains(sb3)) {
-                    iArr[i13] = mainSettings.getInt(sb3, 13);
-                    StringBuilder sb4 = new StringBuilder("wifiDownloadMask");
+                sb.append(obj2);
+                String sb2 = sb.toString();
+                if (i13 == 0 || mainSettings.contains(sb2)) {
+                    iArr[i13] = mainSettings.getInt(sb2, 13);
+                    StringBuilder sb3 = new StringBuilder("wifiDownloadMask");
+                    sb3.append(i13 == 0 ? obj : Integer.valueOf(i13));
+                    iArr2[i13] = mainSettings.getInt(sb3.toString(), 13);
+                    StringBuilder sb4 = new StringBuilder("roamingDownloadMask");
                     sb4.append(i13 == 0 ? obj : Integer.valueOf(i13));
-                    iArr2[i13] = mainSettings.getInt(sb4.toString(), 13);
-                    StringBuilder sb5 = new StringBuilder("roamingDownloadMask");
-                    sb5.append(i13 == 0 ? obj : Integer.valueOf(i13));
-                    iArr3[i13] = mainSettings.getInt(sb5.toString(), 1);
+                    iArr3[i13] = mainSettings.getInt(sb4.toString(), 1);
                 } else {
                     iArr[i13] = iArr[0];
                     iArr2[i13] = iArr2[0];
@@ -179,10 +179,10 @@ public class DownloadController extends BaseController implements NotificationCe
             jArr2[3] = mainSettings.getLong("wifiMaxDownloadSize3", this.highPreset.sizes[2]);
             jArr3[2] = mainSettings.getLong("roamingMaxDownloadSize2", this.lowPreset.sizes[1]);
             jArr3[3] = mainSettings.getLong("roamingMaxDownloadSize3", this.lowPreset.sizes[2]);
-            boolean z10 = mainSettings.getBoolean("globalAutodownloadEnabled", true);
-            this.mobilePreset = new Preset(iArr, this.mediumPreset.sizes[0], jArr[2], jArr[3], true, true, z10, false, 100, false);
-            this.wifiPreset = new Preset(iArr2, this.highPreset.sizes[0], jArr2[2], jArr2[3], true, true, z10, false, 100, true);
-            this.roamingPreset = new Preset(iArr3, this.lowPreset.sizes[0], jArr3[2], jArr3[3], false, false, z10, true, 50, true);
+            boolean z4 = mainSettings.getBoolean("globalAutodownloadEnabled", true);
+            this.mobilePreset = new Preset(iArr, this.mediumPreset.sizes[0], jArr[2], jArr[3], true, true, z4, false, 100, false);
+            this.wifiPreset = new Preset(iArr2, this.highPreset.sizes[0], jArr2[2], jArr2[3], true, true, z4, false, 100, true);
+            this.roamingPreset = new Preset(iArr3, this.lowPreset.sizes[0], jArr3[2], jArr3[3], false, false, z4, true, 50, true);
             SharedPreferences.Editor edit = mainSettings.edit();
             edit.putBoolean("newConfig", true);
             edit.putString("mobilePreset", this.mobilePreset.toString());
@@ -196,7 +196,7 @@ public class DownloadController extends BaseController implements NotificationCe
             edit.putInt("currentRoamingPreset", 3);
             edit.commit();
         }
-        AndroidUtilities.runOnUIThread(new z1(this, 1));
+        AndroidUtilities.runOnUIThread(new a2(this, 1));
         BroadcastReceiver broadcastReceiver = new BroadcastReceiver() { // from class: org.telegram.messenger.DownloadController.1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
@@ -246,7 +246,7 @@ public class DownloadController extends BaseController implements NotificationCe
         TLRPC.Message message2;
         int i11;
         long j10;
-        v61 v61Var;
+        g71 g71Var;
         long messageSize;
         if (messageObject == null || (message = messageObject.messageOwner) == null) {
             return 0;
@@ -311,12 +311,12 @@ public class DownloadController extends BaseController implements NotificationCe
                     i11 = 0;
                     j10 = currentMobilePreset.sizes[typeToIndex(i10)];
                 }
-                v61Var = messageObject.highestQuality;
-                if (v61Var != null) {
-                    messageSize = v61Var.g.size;
+                g71Var = messageObject.highestQuality;
+                if (g71Var != null) {
+                    messageSize = g71Var.g.size;
                 } else {
-                    v61 v61Var2 = messageObject.thumbQuality;
-                    messageSize = v61Var2 != null ? v61Var2.g.size : MessageObject.getMessageSize(message2);
+                    g71 g71Var2 = messageObject.thumbQuality;
+                    messageSize = g71Var2 != null ? g71Var2.g.size : MessageObject.getMessageSize(message2);
                 }
                 if (!isVideoMessage && currentMobilePreset.preloadVideo && messageSize > j10 && j10 > 2097152) {
                     if ((i12 & i10) != 0) {
@@ -336,8 +336,8 @@ public class DownloadController extends BaseController implements NotificationCe
             int i122 = currentMobilePreset.mask[c3];
             if (i10 == 2) {
             }
-            v61Var = messageObject.highestQuality;
-            if (v61Var != null) {
+            g71Var = messageObject.highestQuality;
+            if (g71Var != null) {
             }
             if (!isVideoMessage) {
             }
@@ -352,8 +352,8 @@ public class DownloadController extends BaseController implements NotificationCe
         int i1222 = currentMobilePreset.mask[c3];
         if (i10 == 2) {
         }
-        v61Var = messageObject.highestQuality;
-        if (v61Var != null) {
+        g71Var = messageObject.highestQuality;
+        if (g71Var != null) {
         }
         if (!isVideoMessage) {
         }
@@ -441,8 +441,8 @@ public class DownloadController extends BaseController implements NotificationCe
     public /* synthetic */ void lambda$clearRecentDownloadedFiles$12() {
         try {
             getMessagesStorage().getDatabase().executeFast("DELETE FROM downloading_documents WHERE state = 1").stepThis().dispose();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -457,13 +457,13 @@ public class DownloadController extends BaseController implements NotificationCe
                 executeFast.step();
                 try {
                     FileLoader.getInstance(this.currentAccount).getPathToMessage(((MessageObject) arrayList.get(i10)).messageOwner).delete();
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
             }
             executeFast.dispose();
-        } catch (Exception e11) {
-            FileLog.e(e11);
+        } catch (Exception e6) {
+            FileLog.e(e6);
         }
     }
 
@@ -508,7 +508,7 @@ public class DownloadController extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadAutoDownloadConfig$2(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new c2(1, this, tLObject));
+        AndroidUtilities.runOnUIThread(new d2(1, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -545,12 +545,12 @@ public class DownloadController extends BaseController implements NotificationCe
                 }
             }
             queryFinalized.dispose();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         getFileLoader().checkMediaExistance(arrayList);
         getFileLoader().checkMediaExistance(arrayList2);
-        AndroidUtilities.runOnUIThread(new f0((BaseController) this, (ArrayList) arrayList, (Object) arrayList2, 17));
+        AndroidUtilities.runOnUIThread(new g0((BaseController) this, (ArrayList) arrayList, (Object) arrayList2, 17));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -596,8 +596,8 @@ public class DownloadController extends BaseController implements NotificationCe
                 }
                 executeFast.dispose();
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -619,7 +619,7 @@ public class DownloadController extends BaseController implements NotificationCe
                     }
                 }
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
-                getMessagesStorage().getStorageQueue().postRunnable(new a2(this, messageObject, 2));
+                getMessagesStorage().getStorageQueue().postRunnable(new b2(this, messageObject, 2));
                 return;
             }
         }
@@ -655,8 +655,8 @@ public class DownloadController extends BaseController implements NotificationCe
             executeFast.bindLong(2, messageObject.getDocument().id);
             executeFast.step();
             executeFast.dispose();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -674,15 +674,15 @@ public class DownloadController extends BaseController implements NotificationCe
             executeFast.step();
             executeFast.dispose();
             nativeByteBuffer.reuse();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startDownloadFile$5(TLRPC.Document document, MessageObject messageObject) {
+        boolean z4;
         boolean z10;
-        boolean z11;
         TLRPC.Document document2;
         TLRPC.Document document3;
         if (document == null) {
@@ -690,19 +690,19 @@ public class DownloadController extends BaseController implements NotificationCe
         }
         int i10 = 0;
         while (true) {
-            z10 = true;
+            z4 = true;
             if (i10 >= this.recentDownloadingFiles.size()) {
-                z11 = false;
+                z10 = false;
                 break;
             }
             MessageObject messageObject2 = this.recentDownloadingFiles.get(i10);
             if (messageObject2 != null && (document3 = messageObject2.getDocument()) != null && document3.id == document.id) {
-                z11 = true;
+                z10 = true;
                 break;
             }
             i10++;
         }
-        if (!z11) {
+        if (!z10) {
             for (int i11 = 0; i11 < this.downloadingFiles.size(); i11++) {
                 MessageObject messageObject3 = this.downloadingFiles.get(i11);
                 if (messageObject3 != null && (document2 = messageObject3.getDocument()) != null && document2.id == document.id) {
@@ -710,10 +710,10 @@ public class DownloadController extends BaseController implements NotificationCe
                 }
             }
         }
-        z10 = z11;
-        if (!z10) {
+        z4 = z10;
+        if (!z4) {
             this.downloadingFiles.add(0, messageObject);
-            getMessagesStorage().getStorageQueue().postRunnable(new a2(this, messageObject, 0));
+            getMessagesStorage().getStorageQueue().postRunnable(new b2(this, messageObject, 0));
         }
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
     }
@@ -914,7 +914,7 @@ public class DownloadController extends BaseController implements NotificationCe
     public void clearRecentDownloadedFiles() {
         this.recentDownloadingFiles.clear();
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
-        getMessagesStorage().getStorageQueue().postRunnable(new z1(this, 0));
+        getMessagesStorage().getStorageQueue().postRunnable(new a2(this, 0));
     }
 
     public void clearUnviewedDownloads() {
@@ -950,7 +950,7 @@ public class DownloadController extends BaseController implements NotificationCe
             FileLoader.getInstance(this.currentAccount).cancelLoadFile(arrayList.get(i10).getDocument(), true);
         }
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
-        getMessagesStorage().getStorageQueue().postRunnable(new c2(0, this, arrayList));
+        getMessagesStorage().getStorageQueue().postRunnable(new d2(0, this, arrayList));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -1086,8 +1086,8 @@ public class DownloadController extends BaseController implements NotificationCe
                         }
                     }
                 }
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
@@ -1226,18 +1226,18 @@ public class DownloadController extends BaseController implements NotificationCe
         return false;
     }
 
-    public void loadAutoDownloadConfig(boolean z10) {
+    public void loadAutoDownloadConfig(boolean z4) {
         if (this.loadingAutoDownloadConfig) {
             return;
         }
-        if (z10 || Math.abs(System.currentTimeMillis() - getUserConfig().autoDownloadConfigLoadTime) >= 86400000) {
+        if (z4 || Math.abs(System.currentTimeMillis() - getUserConfig().autoDownloadConfigLoadTime) >= 86400000) {
             this.loadingAutoDownloadConfig = true;
-            getConnectionsManager().sendRequest(new TL_account.getAutoDownloadSettings(), new g0(this, 2));
+            getConnectionsManager().sendRequest(new TL_account.getAutoDownloadSettings(), new h0(this, 2));
         }
     }
 
     public void loadDownloadingFiles() {
-        getMessagesStorage().getStorageQueue().postRunnable(new z1(this, 2));
+        getMessagesStorage().getStorageQueue().postRunnable(new a2(this, 2));
     }
 
     public void newDownloadObjectsAvailable(int i10) {
@@ -1261,15 +1261,15 @@ public class DownloadController extends BaseController implements NotificationCe
         if (messageObject == null || messageObject.getDocument() == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new b2(this, messageObject.getDocument(), messageObject, 0));
+        AndroidUtilities.runOnUIThread(new c2(this, messageObject.getDocument(), messageObject, 0));
     }
 
     public void onDownloadFail(MessageObject messageObject, int i10) {
         if (messageObject == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new r4(this, messageObject, i10, 2));
-        getMessagesStorage().getStorageQueue().postRunnable(new a2(this, messageObject, 1));
+        AndroidUtilities.runOnUIThread(new s4(this, messageObject, i10, 2));
+        getMessagesStorage().getStorageQueue().postRunnable(new b2(this, messageObject, 1));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1353,17 +1353,17 @@ public class DownloadController extends BaseController implements NotificationCe
 
     public void savePresetToServer(int i10) {
         Preset currentRoamingPreset;
-        boolean z10;
+        boolean z4;
         TL_account.saveAutoDownloadSettings saveautodownloadsettings = new TL_account.saveAutoDownloadSettings();
         if (i10 == 0) {
             currentRoamingPreset = getCurrentMobilePreset();
-            z10 = this.mobilePreset.enabled;
+            z4 = this.mobilePreset.enabled;
         } else if (i10 == 1) {
             currentRoamingPreset = getCurrentWiFiPreset();
-            z10 = this.wifiPreset.enabled;
+            z4 = this.wifiPreset.enabled;
         } else {
             currentRoamingPreset = getCurrentRoamingPreset();
-            z10 = this.roamingPreset.enabled;
+            z4 = this.roamingPreset.enabled;
         }
         TLRPC.TL_autoDownloadSettings tL_autoDownloadSettings = new TLRPC.TL_autoDownloadSettings();
         saveautodownloadsettings.settings = tL_autoDownloadSettings;
@@ -1371,11 +1371,11 @@ public class DownloadController extends BaseController implements NotificationCe
         tL_autoDownloadSettings.video_preload_large = currentRoamingPreset.preloadVideo;
         tL_autoDownloadSettings.phonecalls_less_data = currentRoamingPreset.lessCallData;
         tL_autoDownloadSettings.video_upload_maxbitrate = currentRoamingPreset.maxVideoBitrate;
-        tL_autoDownloadSettings.disabled = !z10;
+        tL_autoDownloadSettings.disabled = !z4;
         int i11 = 0;
+        boolean z10 = false;
         boolean z11 = false;
         boolean z12 = false;
-        boolean z13 = false;
         while (true) {
             int[] iArr = currentRoamingPreset.mask;
             if (i11 >= iArr.length) {
@@ -1383,25 +1383,25 @@ public class DownloadController extends BaseController implements NotificationCe
             }
             int i12 = iArr[i11];
             if ((i12 & 1) != 0) {
-                z11 = true;
+                z10 = true;
             }
             if ((i12 & 4) != 0) {
-                z12 = true;
+                z11 = true;
             }
             if ((i12 & 8) != 0) {
-                z13 = true;
+                z12 = true;
             }
-            if (z11 && z12 && z13) {
+            if (z10 && z11 && z12) {
                 break;
             } else {
                 i11++;
             }
         }
         TLRPC.TL_autoDownloadSettings tL_autoDownloadSettings2 = saveautodownloadsettings.settings;
-        tL_autoDownloadSettings2.photo_size_max = z11 ? (int) currentRoamingPreset.sizes[0] : 0;
-        tL_autoDownloadSettings2.video_size_max = z12 ? currentRoamingPreset.sizes[1] : 0L;
-        tL_autoDownloadSettings2.file_size_max = z13 ? currentRoamingPreset.sizes[2] : 0L;
-        getConnectionsManager().sendRequest(saveautodownloadsettings, new e5(3));
+        tL_autoDownloadSettings2.photo_size_max = z10 ? (int) currentRoamingPreset.sizes[0] : 0;
+        tL_autoDownloadSettings2.video_size_max = z11 ? currentRoamingPreset.sizes[1] : 0L;
+        tL_autoDownloadSettings2.file_size_max = z12 ? currentRoamingPreset.sizes[2] : 0L;
+        getConnectionsManager().sendRequest(saveautodownloadsettings, new f5(3));
     }
 
     public void startDownloadFile(TLRPC.Document document, MessageObject messageObject) {
@@ -1409,7 +1409,7 @@ public class DownloadController extends BaseController implements NotificationCe
         if (messageObject == null || (document2 = messageObject.getDocument()) == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new b2(this, document2, messageObject, 1));
+        AndroidUtilities.runOnUIThread(new c2(this, document2, messageObject, 1));
     }
 
     public void swapLoadingPriority(MessageObject messageObject, MessageObject messageObject2) {
@@ -1453,7 +1453,7 @@ public class DownloadController extends BaseController implements NotificationCe
         this.observersByTag.put(fileDownloadProgressListener.getObserverTag(), str);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class Preset {
         public boolean enabled;
         public boolean lessCallData;
@@ -1464,7 +1464,7 @@ public class DownloadController extends BaseController implements NotificationCe
         public boolean preloadVideo;
         public long[] sizes;
 
-        public Preset(int[] iArr, long j10, long j11, long j12, boolean z10, boolean z11, boolean z12, boolean z13, int i10, boolean z14) {
+        public Preset(int[] iArr, long j10, long j11, long j12, boolean z4, boolean z10, boolean z11, boolean z12, int i10, boolean z13) {
             int[] iArr2 = new int[4];
             this.mask = iArr2;
             this.sizes = new long[4];
@@ -1474,12 +1474,12 @@ public class DownloadController extends BaseController implements NotificationCe
             jArr[1] = j11;
             jArr[2] = j12;
             jArr[3] = 524288;
-            this.preloadVideo = z10;
-            this.preloadMusic = z11;
-            this.lessCallData = z13;
+            this.preloadVideo = z4;
+            this.preloadMusic = z10;
+            this.lessCallData = z12;
             this.maxVideoBitrate = i10;
-            this.enabled = z12;
-            this.preloadStories = z14;
+            this.enabled = z11;
+            this.preloadStories = z13;
         }
 
         public boolean equals(Preset preset) {
@@ -1886,7 +1886,7 @@ public class DownloadController extends BaseController implements NotificationCe
     */
     public int canDownloadMedia(TLRPC.Message message, TLRPC.MessageMedia messageMedia) {
         int i10;
-        boolean z10;
+        boolean z4;
         char c3;
         int autodownloadNetworkType;
         Preset currentMobilePreset;
@@ -1896,7 +1896,7 @@ public class DownloadController extends BaseController implements NotificationCe
         }
         if (MessageObject.isVideoDocument(messageMedia.document)) {
             i10 = 4;
-            z10 = true;
+            z4 = true;
         } else {
             if (MessageObject.isVoiceDocument(messageMedia.document)) {
                 i10 = 2;
@@ -1908,7 +1908,7 @@ public class DownloadController extends BaseController implements NotificationCe
                 }
                 i10 = 8;
             }
-            z10 = false;
+            z4 = false;
         }
         TLRPC.Peer peer = message.peer_id;
         if (peer != null) {
@@ -1951,7 +1951,7 @@ public class DownloadController extends BaseController implements NotificationCe
                     j10 = currentMobilePreset.sizes[typeToIndex(i10)];
                 }
                 long mediaSize = MessageObject.getMediaSize(messageMedia);
-                return (z10 || !currentMobilePreset.preloadVideo || mediaSize <= j10 || j10 <= 2097152) ? ((i10 != 1 || (mediaSize != 0 && mediaSize <= j10)) && (i10 == 2 || (i11 & i10) != 0)) ? 1 : 0 : (i11 & i10) != 0 ? 2 : 0;
+                return (z4 || !currentMobilePreset.preloadVideo || mediaSize <= j10 || j10 <= 2097152) ? ((i10 != 1 || (mediaSize != 0 && mediaSize <= j10)) && (i10 == 2 || (i11 & i10) != 0)) ? 1 : 0 : (i11 & i10) != 0 ? 2 : 0;
             }
             c3 = 0;
             autodownloadNetworkType = ApplicationLoader.getAutodownloadNetworkType();
@@ -1961,7 +1961,7 @@ public class DownloadController extends BaseController implements NotificationCe
             if (i10 == 2) {
             }
             long mediaSize2 = MessageObject.getMediaSize(messageMedia);
-            if (z10) {
+            if (z4) {
             }
         }
         c3 = 1;
@@ -1972,7 +1972,7 @@ public class DownloadController extends BaseController implements NotificationCe
         if (i10 == 2) {
         }
         long mediaSize22 = MessageObject.getMediaSize(messageMedia);
-        if (z10) {
+        if (z4) {
         }
     }
 }

@@ -1,10 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gw0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class gw0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ jw0 b;
 
@@ -13,25 +14,25 @@ public final /* synthetic */ class gw0 implements ValueAnimator.AnimatorUpdateLi
         this.b = jw0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
                 jw0 jw0Var = this.b;
-                jw0Var.getClass();
-                jw0Var.A = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 jw0Var.invalidate();
-                break;
-            case 1:
-                jw0 jw0Var2 = this.b;
-                jw0Var2.getClass();
-                jw0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                AndroidUtilities.runOnUIThread(new gw0(jw0Var, 1));
                 break;
             default:
-                jw0 jw0Var3 = this.b;
-                jw0Var3.getClass();
-                jw0Var3.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jw0Var3.invalidate();
+                jw0 jw0Var2 = this.b;
+                iw0 iw0Var = jw0Var2.e;
+                if (iw0Var != null) {
+                    jw0Var2.getVisibilityFactor();
+                    ProfileActivity profileActivity = ((org.telegram.ui.px0) iw0Var).b;
+                    org.telegram.ui.ActionBar.k5[] k5VarArr = profileActivity.r;
+                    k5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.W5));
+                    k5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.X5));
+                    break;
+                }
                 break;
         }
     }

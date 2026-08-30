@@ -1,27 +1,38 @@
 package j3;
 
-import java.util.ArrayList;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r1 implements l1 {
-    public final l4.w a;
-    public int d;
-    public boolean e;
-    public final ArrayList c = new ArrayList();
-    public final Object b = new Object();
+public class r1 extends IOException {
+    public final boolean a;
+    public final int b;
 
-    public r1(l4.a aVar, boolean z10) {
-        this.a = new l4.w(aVar, z10);
+    public r1(String str, Throwable th2, boolean z4, int i10) {
+        super(str, th2);
+        this.a = z4;
+        this.b = i10;
     }
 
-    @Override // j3.l1
-    public final Object a() {
-        return this.b;
+    public static r1 a(String str, Exception exc) {
+        return new r1(str, exc, true, 1);
     }
 
-    @Override // j3.l1
-    public final r2 b() {
-        return this.a.o;
+    public static r1 b(String str, Exception exc) {
+        return new r1(str, exc, true, 4);
+    }
+
+    public static r1 c(String str) {
+        return new r1(str, null, false, 1);
+    }
+
+    @Override // java.lang.Throwable
+    public final String getMessage() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.getMessage());
+        sb.append("{contentIsMalformed=");
+        sb.append(this.a);
+        sb.append(", dataType=");
+        return android.support.v4.media.a.m(this.b, "}", sb);
     }
 }

@@ -1,8 +1,6 @@
 package f3;
 
-import a4.w;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a f = new a(200, 10485760, 604800000, 10000, 81920);
@@ -41,15 +39,15 @@ public final class a {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("EventStoreConfig{maxStorageSizeInBytes=");
-        sb2.append(this.a);
-        sb2.append(", loadBatchSize=");
-        sb2.append(this.b);
-        sb2.append(", criticalSectionEnterTimeoutMs=");
-        sb2.append(this.c);
-        sb2.append(", eventCleanUpAge=");
-        sb2.append(this.d);
-        sb2.append(", maxBlobByteSizePerRow=");
-        return w.l(this.e, "}", sb2);
+        StringBuilder sb = new StringBuilder("EventStoreConfig{maxStorageSizeInBytes=");
+        sb.append(this.a);
+        sb.append(", loadBatchSize=");
+        sb.append(this.b);
+        sb.append(", criticalSectionEnterTimeoutMs=");
+        sb.append(this.c);
+        sb.append(", eventCleanUpAge=");
+        sb.append(this.d);
+        sb.append(", maxBlobByteSizePerRow=");
+        return android.support.v4.media.a.m(this.e, "}", sb);
     }
 }

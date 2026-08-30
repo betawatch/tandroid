@@ -1,34 +1,52 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gl implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Runnable f;
+    public final /* synthetic */ long h;
 
-    public /* synthetic */ gl(TranslateController translateController, long j10, String str) {
-        this.b = translateController;
-        this.c = j10;
-        this.d = str;
+    public /* synthetic */ gl(TopicsController topicsController, TLObject tLObject, long j10, TLRPC.TL_messages_forumTopics tL_messages_forumTopics, a0.h hVar, Runnable runnable) {
+        this.a = 2;
+        this.b = topicsController;
+        this.c = tLObject;
+        this.h = j10;
+        this.d = tL_messages_forumTopics;
+        this.e = hVar;
+        this.f = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$invalidateTranslation$9((MessageObject) this.d, this.c);
+                ((TranslateController) this.b).lambda$translatePhoto$43((MessageObject) this.c, (String) this.d, (TranslateController.MessageKey) this.e, this.f, this.h);
+                break;
+            case 1:
+                ((TranslateController) this.b).lambda$translatePhoto$45((MessageObject) this.c, (String) this.d, (TranslateController.MessageKey) this.e, this.f, this.h);
                 break;
             default:
-                this.b.lambda$setDialogTranslateTo$0(this.c, (String) this.d);
+                ((TopicsController) this.b).lambda$reloadTopics$14((TLObject) this.c, this.h, (TLRPC.TL_messages_forumTopics) this.d, (a0.h) this.e, this.f);
                 break;
         }
     }
 
-    public /* synthetic */ gl(TranslateController translateController, MessageObject messageObject, long j10) {
+    public /* synthetic */ gl(TranslateController translateController, MessageObject messageObject, String str, TranslateController.MessageKey messageKey, Runnable runnable, long j10, int i10) {
+        this.a = i10;
         this.b = translateController;
-        this.d = messageObject;
-        this.c = j10;
+        this.c = messageObject;
+        this.d = str;
+        this.e = messageKey;
+        this.f = runnable;
+        this.h = j10;
     }
 }

@@ -20,14 +20,14 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
-import com.google.android.gms.common.api.internal.q1;
+import com.google.android.gms.common.api.internal.s1;
 import java.util.WeakHashMap;
 import m.w1;
 import org.telegram.messenger.beta.R;
 import r0.c0;
 import r0.j0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class f extends s implements DialogInterface {
     public final e f;
@@ -46,7 +46,7 @@ public class f extends s implements DialogInterface {
         return typedValue.resourceId;
     }
 
-    @Override // g.s, androidx.activity.m, android.app.Dialog
+    @Override // g.s, androidx.activity.n, android.app.Dialog
     public void onCreate(Bundle bundle) {
         int i10;
         ListAdapter listAdapter;
@@ -65,11 +65,11 @@ public class f extends s implements DialogInterface {
         if (view == null) {
             view = null;
         }
-        boolean z10 = view != null;
-        if (!z10 || !e.a(view)) {
+        boolean z4 = view != null;
+        if (!z4 || !e.a(view)) {
             window.setFlags(131072, 131072);
         }
-        if (z10) {
+        if (z4) {
             FrameLayout frameLayout = (FrameLayout) window.findViewById(R.id.custom);
             frameLayout.addView(view, new ViewGroup.LayoutParams(-1, -1));
             if (eVar.g) {
@@ -85,13 +85,13 @@ public class f extends s implements DialogInterface {
         View findViewById7 = viewGroup.findViewById(R.id.contentPanel);
         View findViewById8 = viewGroup.findViewById(R.id.buttonPanel);
         ViewGroup c3 = e.c(findViewById6, findViewById3);
-        ViewGroup c6 = e.c(findViewById7, findViewById4);
-        ViewGroup c10 = e.c(findViewById8, findViewById5);
+        ViewGroup c10 = e.c(findViewById7, findViewById4);
+        ViewGroup c11 = e.c(findViewById8, findViewById5);
         NestedScrollView nestedScrollView = (NestedScrollView) window.findViewById(R.id.scrollView);
         eVar.m = nestedScrollView;
         nestedScrollView.setFocusable(false);
         eVar.m.setNestedScrollingEnabled(false);
-        TextView textView = (TextView) c6.findViewById(android.R.id.message);
+        TextView textView = (TextView) c10.findViewById(android.R.id.message);
         eVar.q = textView;
         if (textView != null) {
             textView.setVisibility(8);
@@ -102,13 +102,13 @@ public class f extends s implements DialogInterface {
                 viewGroup2.removeViewAt(indexOfChild);
                 viewGroup2.addView(eVar.e, indexOfChild, new ViewGroup.LayoutParams(-1, -1));
             } else {
-                c6.setVisibility(8);
+                c10.setVisibility(8);
             }
         }
-        Button button = (Button) c10.findViewById(android.R.id.button1);
+        Button button = (Button) c11.findViewById(android.R.id.button1);
         eVar.h = button;
-        androidx.mediarouter.app.v vVar = eVar.A;
-        button.setOnClickListener(vVar);
+        androidx.mediarouter.app.y yVar = eVar.A;
+        button.setOnClickListener(yVar);
         if (TextUtils.isEmpty(null)) {
             eVar.h.setVisibility(8);
             i10 = 0;
@@ -117,9 +117,9 @@ public class f extends s implements DialogInterface {
             eVar.h.setVisibility(0);
             i10 = 1;
         }
-        Button button2 = (Button) c10.findViewById(android.R.id.button2);
+        Button button2 = (Button) c11.findViewById(android.R.id.button2);
         eVar.i = button2;
-        button2.setOnClickListener(vVar);
+        button2.setOnClickListener(yVar);
         if (TextUtils.isEmpty(eVar.j)) {
             eVar.i.setVisibility(8);
         } else {
@@ -127,9 +127,9 @@ public class f extends s implements DialogInterface {
             eVar.i.setVisibility(0);
             i10 |= 2;
         }
-        Button button3 = (Button) c10.findViewById(android.R.id.button3);
+        Button button3 = (Button) c11.findViewById(android.R.id.button3);
         eVar.l = button3;
-        button3.setOnClickListener(vVar);
+        button3.setOnClickListener(yVar);
         if (TextUtils.isEmpty(null)) {
             eVar.l.setVisibility(8);
         } else {
@@ -161,7 +161,7 @@ public class f extends s implements DialogInterface {
             }
         }
         if (i10 == 0) {
-            c10.setVisibility(8);
+            c11.setVisibility(8);
         }
         if (eVar.r != null) {
             c3.addView(eVar.r, 0, new ViewGroup.LayoutParams(-1, -2));
@@ -185,10 +185,10 @@ public class f extends s implements DialogInterface {
                 }
             }
         }
-        boolean z11 = viewGroup.getVisibility() != 8;
+        boolean z10 = viewGroup.getVisibility() != 8;
         int i11 = (c3 == null || c3.getVisibility() == 8) ? 0 : 1;
-        boolean z12 = c10.getVisibility() != 8;
-        if (!z12 && (findViewById = c6.findViewById(R.id.textSpacerNoButtons)) != null) {
+        boolean z11 = c11.getVisibility() != 8;
+        if (!z11 && (findViewById = c10.findViewById(R.id.textSpacerNoButtons)) != null) {
             findViewById.setVisibility(0);
         }
         if (i11 != 0) {
@@ -201,7 +201,7 @@ public class f extends s implements DialogInterface {
                 findViewById9.setVisibility(0);
             }
         } else {
-            View findViewById10 = c6.findViewById(R.id.textSpacerNoTitle);
+            View findViewById10 = c10.findViewById(R.id.textSpacerNoTitle);
             if (findViewById10 != null) {
                 findViewById10.setVisibility(0);
             }
@@ -209,17 +209,17 @@ public class f extends s implements DialogInterface {
         AlertController$RecycleListView alertController$RecycleListView = eVar.e;
         if (alertController$RecycleListView != null) {
             alertController$RecycleListView.getClass();
-            if (!z12 || i11 == 0) {
-                alertController$RecycleListView.setPadding(alertController$RecycleListView.getPaddingLeft(), i11 != 0 ? alertController$RecycleListView.getPaddingTop() : alertController$RecycleListView.a, alertController$RecycleListView.getPaddingRight(), z12 ? alertController$RecycleListView.getPaddingBottom() : alertController$RecycleListView.b);
+            if (!z11 || i11 == 0) {
+                alertController$RecycleListView.setPadding(alertController$RecycleListView.getPaddingLeft(), i11 != 0 ? alertController$RecycleListView.getPaddingTop() : alertController$RecycleListView.a, alertController$RecycleListView.getPaddingRight(), z11 ? alertController$RecycleListView.getPaddingBottom() : alertController$RecycleListView.b);
             }
         }
-        if (!z11) {
+        if (!z10) {
             View view2 = eVar.e;
             if (view2 == null) {
                 view2 = eVar.m;
             }
             if (view2 != null) {
-                int i12 = i11 | (z12 ? 2 : 0);
+                int i12 = i11 | (z11 ? 2 : 0);
                 View findViewById11 = window.findViewById(R.id.scrollIndicatorUp);
                 View findViewById12 = window.findViewById(R.id.scrollIndicatorDown);
                 int i13 = Build.VERSION.SDK_INT;
@@ -229,31 +229,31 @@ public class f extends s implements DialogInterface {
                         c0.b(view2, i12, 3);
                     }
                     if (findViewById11 != null) {
-                        c6.removeView(findViewById11);
+                        c10.removeView(findViewById11);
                     }
                     if (findViewById12 != null) {
-                        c6.removeView(findViewById12);
+                        c10.removeView(findViewById12);
                     }
                 } else {
                     if (findViewById11 != null && (i12 & 1) == 0) {
-                        c6.removeView(findViewById11);
+                        c10.removeView(findViewById11);
                         findViewById11 = null;
                     }
                     if (findViewById12 != null && (i12 & 2) == 0) {
-                        c6.removeView(findViewById12);
+                        c10.removeView(findViewById12);
                         findViewById12 = null;
                     }
                     if (findViewById11 != null || findViewById12 != null) {
                         AlertController$RecycleListView alertController$RecycleListView2 = eVar.e;
                         if (alertController$RecycleListView2 != null) {
                             alertController$RecycleListView2.setOnScrollListener(new a(findViewById11, findViewById12));
-                            eVar.e.post(new q1(eVar, findViewById11, findViewById12, 1));
+                            eVar.e.post(new s1(eVar, findViewById11, findViewById12, 1));
                         } else {
                             if (findViewById11 != null) {
-                                c6.removeView(findViewById11);
+                                c10.removeView(findViewById11);
                             }
                             if (findViewById12 != null) {
-                                c6.removeView(findViewById12);
+                                c10.removeView(findViewById12);
                             }
                         }
                     }

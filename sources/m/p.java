@@ -2,87 +2,128 @@ package m;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.text.InputFilter;
 import android.util.AttributeSet;
-import android.widget.CheckBox;
-import h7.s7;
-import i7.v6;
+import android.view.ActionMode;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.widget.CheckedTextView;
+import j7.r7;
+import k7.x7;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class p extends CheckBox implements u0.k {
+public final class p extends CheckedTextView implements u0.k {
     public final g2.e a;
-    public final n b;
+    public final m b;
     public final x0 c;
-    public u d;
+    public t d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0085 A[Catch: all -> 0x0064, TryCatch #1 {all -> 0x0064, blocks: (B:3:0x004b, B:5:0x0052, B:8:0x0058, B:9:0x007e, B:11:0x0085, B:12:0x008c, B:14:0x0093, B:21:0x0067, B:23:0x006d, B:25:0x0073), top: B:2:0x004b }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0093 A[Catch: all -> 0x0064, TRY_LEAVE, TryCatch #1 {all -> 0x0064, blocks: (B:3:0x004b, B:5:0x0052, B:8:0x0058, B:9:0x007e, B:11:0x0085, B:12:0x008c, B:14:0x0093, B:21:0x0067, B:23:0x006d, B:25:0x0073), top: B:2:0x004b }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public p(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.checkboxStyle);
+        super(context, attributeSet, R.attr.checkedTextViewStyle);
+        int resourceId;
+        int resourceId2;
         e3.a(context);
         d3.a(this, getContext());
-        g2.e eVar = new g2.e(this);
-        this.a = eVar;
-        eVar.e(attributeSet, R.attr.checkboxStyle);
-        n nVar = new n(this);
-        this.b = nVar;
-        nVar.d(attributeSet, R.attr.checkboxStyle);
         x0 x0Var = new x0(this);
         this.c = x0Var;
-        x0Var.f(attributeSet, R.attr.checkboxStyle);
-        getEmojiTextViewHelper().a(attributeSet, R.attr.checkboxStyle);
+        x0Var.f(attributeSet, R.attr.checkedTextViewStyle);
+        x0Var.b();
+        m mVar = new m(this);
+        this.b = mVar;
+        mVar.d(attributeSet, R.attr.checkedTextViewStyle);
+        this.a = new g2.e(this);
+        Context context2 = getContext();
+        int[] iArr = f.a.l;
+        l7.w0 y10 = l7.w0.y(context2, attributeSet, iArr, R.attr.checkedTextViewStyle);
+        TypedArray typedArray = (TypedArray) y10.c;
+        r0.j0.j(this, getContext(), iArr, attributeSet, (TypedArray) y10.c, R.attr.checkedTextViewStyle);
+        try {
+            if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
+                try {
+                    setCheckMarkDrawable(r7.b(getContext(), resourceId2));
+                } catch (Resources.NotFoundException unused) {
+                }
+                if (typedArray.hasValue(2)) {
+                    setCheckMarkTintList(y10.r(2));
+                }
+                if (typedArray.hasValue(3)) {
+                    setCheckMarkTintMode(m1.b(typedArray.getInt(3, -1), null));
+                }
+                y10.A();
+                getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
+            }
+            if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
+                setCheckMarkDrawable(r7.b(getContext(), resourceId));
+            }
+            if (typedArray.hasValue(2)) {
+            }
+            if (typedArray.hasValue(3)) {
+            }
+            y10.A();
+            getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
+        } catch (Throwable th2) {
+            y10.A();
+            throw th2;
+        }
     }
 
-    private u getEmojiTextViewHelper() {
+    private t getEmojiTextViewHelper() {
         if (this.d == null) {
-            this.d = new u(this);
+            this.d = new t(this);
         }
         return this.d;
     }
 
-    @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
+    @Override // android.widget.CheckedTextView, android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        n nVar = this.b;
-        if (nVar != null) {
-            nVar.a();
-        }
         x0 x0Var = this.c;
         if (x0Var != null) {
             x0Var.b();
         }
-    }
-
-    @Override // android.widget.CompoundButton, android.widget.TextView
-    public int getCompoundPaddingLeft() {
-        int compoundPaddingLeft = super.getCompoundPaddingLeft();
+        m mVar = this.b;
+        if (mVar != null) {
+            mVar.a();
+        }
         g2.e eVar = this.a;
         if (eVar != null) {
-            eVar.getClass();
+            eVar.b();
         }
-        return compoundPaddingLeft;
+    }
+
+    @Override // android.widget.TextView
+    public ActionMode.Callback getCustomSelectionActionModeCallback() {
+        return x7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        n nVar = this.b;
-        if (nVar != null) {
-            return nVar.b();
+        m mVar = this.b;
+        if (mVar != null) {
+            return mVar.b();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        n nVar = this.b;
-        if (nVar != null) {
-            return nVar.c();
+        m mVar = this.b;
+        if (mVar != null) {
+            return mVar.c();
         }
         return null;
     }
 
-    public ColorStateList getSupportButtonTintList() {
+    public ColorStateList getSupportCheckMarkTintList() {
         g2.e eVar = this.a;
         if (eVar != null) {
             return (ColorStateList) eVar.e;
@@ -90,7 +131,7 @@ public final class p extends CheckBox implements u0.k {
         return null;
     }
 
-    public PorterDuff.Mode getSupportButtonTintMode() {
+    public PorterDuff.Mode getSupportCheckMarkTintMode() {
         g2.e eVar = this.a;
         if (eVar != null) {
             return (PorterDuff.Mode) eVar.f;
@@ -106,40 +147,47 @@ public final class p extends CheckBox implements u0.k {
         return this.c.e();
     }
 
+    @Override // android.widget.TextView, android.view.View
+    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        k7.l.a(editorInfo, onCreateInputConnection, this);
+        return onCreateInputConnection;
+    }
+
     @Override // android.widget.TextView
-    public void setAllCaps(boolean z10) {
-        super.setAllCaps(z10);
-        getEmojiTextViewHelper().b(z10);
+    public void setAllCaps(boolean z4) {
+        super.setAllCaps(z4);
+        getEmojiTextViewHelper().b(z4);
     }
 
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        n nVar = this.b;
-        if (nVar != null) {
-            nVar.e();
+        m mVar = this.b;
+        if (mVar != null) {
+            mVar.e();
         }
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        n nVar = this.b;
-        if (nVar != null) {
-            nVar.f(i10);
+        m mVar = this.b;
+        if (mVar != null) {
+            mVar.f(i10);
         }
     }
 
-    @Override // android.widget.CompoundButton
-    public void setButtonDrawable(Drawable drawable) {
-        super.setButtonDrawable(drawable);
+    @Override // android.widget.CheckedTextView
+    public void setCheckMarkDrawable(Drawable drawable) {
+        super.setCheckMarkDrawable(drawable);
         g2.e eVar = this.a;
         if (eVar != null) {
             if (eVar.c) {
                 eVar.c = false;
             } else {
                 eVar.c = true;
-                eVar.a();
+                eVar.b();
             }
         }
     }
@@ -162,44 +210,44 @@ public final class p extends CheckBox implements u0.k {
         }
     }
 
-    public void setEmojiCompatEnabled(boolean z10) {
-        getEmojiTextViewHelper().c(z10);
+    @Override // android.widget.TextView
+    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
+        super.setCustomSelectionActionModeCallback(x7.e(callback, this));
     }
 
-    @Override // android.widget.TextView
-    public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((v6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+    public void setEmojiCompatEnabled(boolean z4) {
+        getEmojiTextViewHelper().c(z4);
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        n nVar = this.b;
-        if (nVar != null) {
-            nVar.h(colorStateList);
+        m mVar = this.b;
+        if (mVar != null) {
+            mVar.h(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        n nVar = this.b;
-        if (nVar != null) {
-            nVar.i(mode);
+        m mVar = this.b;
+        if (mVar != null) {
+            mVar.i(mode);
         }
     }
 
-    public void setSupportButtonTintList(ColorStateList colorStateList) {
+    public void setSupportCheckMarkTintList(ColorStateList colorStateList) {
         g2.e eVar = this.a;
         if (eVar != null) {
             eVar.e = colorStateList;
             eVar.a = true;
-            eVar.a();
+            eVar.b();
         }
     }
 
-    public void setSupportButtonTintMode(PorterDuff.Mode mode) {
+    public void setSupportCheckMarkTintMode(PorterDuff.Mode mode) {
         g2.e eVar = this.a;
         if (eVar != null) {
             eVar.f = mode;
             eVar.b = true;
-            eVar.a();
+            eVar.b();
         }
     }
 
@@ -217,8 +265,17 @@ public final class p extends CheckBox implements u0.k {
         x0Var.b();
     }
 
-    @Override // android.widget.CompoundButton
-    public void setButtonDrawable(int i10) {
-        setButtonDrawable(s7.b(getContext(), i10));
+    @Override // android.widget.TextView
+    public final void setTextAppearance(Context context, int i10) {
+        super.setTextAppearance(context, i10);
+        x0 x0Var = this.c;
+        if (x0Var != null) {
+            x0Var.g(context, i10);
+        }
+    }
+
+    @Override // android.widget.CheckedTextView
+    public void setCheckMarkDrawable(int i10) {
+        setCheckMarkDrawable(r7.b(getContext(), i10));
     }
 }

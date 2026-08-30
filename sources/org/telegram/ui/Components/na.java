@@ -1,54 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class na {
-    public final int a;
-    public final xi0 b;
-    public final org.telegram.ui.Cells.z c;
-    public final TextPaint d;
-    public final StaticLayout e;
-    public final float f;
-    public final float g;
-    public final RectF h;
-    public final d6 i;
-    public final int j;
-    public final int k;
-    public boolean l;
-    public int m;
-    public final /* synthetic */ x90 n;
+public final class na extends oc0 {
+    public final /* synthetic */ boolean A0;
+    public final /* synthetic */ boolean B0;
+    public final /* synthetic */ sa C0;
 
-    public na(x90 x90Var, int i10, int i11, int i12, int i13, String str) {
-        this.n = x90Var;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        this.h = new RectF();
-        this.i = new d6(x90Var, 0L, 200L, jr.h);
-        this.m = -1;
-        this.a = i10;
-        this.j = i12;
-        this.k = i13;
-        xi0 xi0Var = new xi0(i11, AndroidUtilities.dp(29.0f), j7.l1.k(i11, ""), AndroidUtilities.dp(29.0f));
-        this.b = xi0Var;
-        xi0Var.r0 = x90Var;
-        xi0Var.H(true);
-        xi0Var.h = true;
-        xi0Var.I(0);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        int i14 = org.telegram.ui.ActionBar.g6.G6;
-        org.telegram.ui.ActionBar.c6 c6Var = x90Var.a;
-        textPaint.setColor(org.telegram.ui.ActionBar.g6.v0(i14, c6Var));
-        StaticLayout staticLayout = new StaticLayout(str, textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.e = staticLayout;
-        this.f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
-        this.g = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        this.c = org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.l1(0.1f, org.telegram.ui.ActionBar.g6.v0(i14, c6Var)), 7, AndroidUtilities.dp(16.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public na(sa saVar, Context context, boolean z4, boolean z10) {
+        super(context);
+        this.C0 = saVar;
+        this.A0 = z4;
+        this.B0 = z10;
+    }
+
+    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        sa saVar = this.C0;
+        saVar.H(canvas, this);
+        super.dispatchDraw(canvas);
+        saVar.G(canvas, this);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        Drawable drawable;
+        if (motionEvent.getAction() == 0) {
+            float y10 = motionEvent.getY();
+            sa saVar = this.C0;
+            drawable = ((org.telegram.ui.ActionBar.g3) saVar).shadowDrawable;
+            if (y10 < drawable.getBounds().top) {
+                saVar.dismiss();
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (!this.B0) {
+            this.C0.getClass();
+        }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // org.telegram.ui.Components.oc0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i11);
+        sa saVar = this.C0;
+        saVar.h = size;
+        saVar.D(i10, i11);
+        if (this.A0) {
+            i11 = View.MeasureSpec.makeMeasureSpec(saVar.h, TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
     }
 }

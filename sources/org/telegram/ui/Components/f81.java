@@ -1,12 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import java.io.File;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public interface f81 {
-    void a();
+public final class f81 extends f2.l {
+    public final /* synthetic */ k81 F;
 
-    void b(File file, Bitmap bitmap, boolean z10);
+    public f81(k81 k81Var) {
+        this.F = k81Var;
+    }
+
+    @Override // f2.l
+    public final void P(f2.l1 l1Var) {
+        this.F.invalidate();
+    }
 }

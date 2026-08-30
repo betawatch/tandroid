@@ -7,12 +7,12 @@ import androidx.car.app.messaging.model.IConversationCallback;
 import androidx.car.app.utils.j;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 class ConversationCallbackDelegateImpl implements c {
     private final IConversationCallback mConversationCallbackBinder;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class ConversationCallbackStub extends IConversationCallback.Stub {
         private final b mConversationCallback;
 
@@ -66,8 +66,8 @@ class ConversationCallbackDelegateImpl implements c {
             IConversationCallback iConversationCallback = this.mConversationCallbackBinder;
             Objects.requireNonNull(iConversationCallback);
             iConversationCallback.onMarkAsRead(j.a());
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -76,8 +76,8 @@ class ConversationCallbackDelegateImpl implements c {
             IConversationCallback iConversationCallback = this.mConversationCallbackBinder;
             Objects.requireNonNull(iConversationCallback);
             iConversationCallback.onTextReply(j.a(), str);
-        } catch (RemoteException e10) {
-            throw new RuntimeException(e10);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 

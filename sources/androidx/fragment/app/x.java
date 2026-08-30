@@ -17,7 +17,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import r0.m1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class x extends FrameLayout {
     public final ArrayList a;
@@ -43,26 +43,26 @@ public final class x extends FrameLayout {
         s C = j0Var.C(id2);
         if (classAttribute != null && C == null) {
             if (id2 == -1) {
-                throw new IllegalStateException(a4.w.n("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
+                throw new IllegalStateException(android.support.v4.media.a.o("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
             }
             c0 H = j0Var.H();
             context.getClassLoader();
             s a2 = H.a(classAttribute);
             kotlin.jvm.internal.j.d(a2, "fm.fragmentFactory.insta…ontext.classLoader, name)");
-            a2.J = id2;
             a2.K = id2;
-            a2.L = string;
-            a2.F = j0Var;
+            a2.L = id2;
+            a2.M = string;
+            a2.G = j0Var;
             u uVar = j0Var.w;
-            a2.G = uVar;
-            a2.Q = true;
+            a2.H = uVar;
+            a2.R = true;
             if ((uVar == null ? null : uVar.a) != null) {
-                a2.Q = true;
+                a2.R = true;
             }
             a aVar = new a(j0Var);
             aVar.o = true;
-            a2.R = this;
-            a2.B = true;
+            a2.S = this;
+            a2.C = true;
             aVar.f(getId(), a2, string);
             if (aVar.g) {
                 throw new IllegalStateException("This transaction is already being added to the back stack");
@@ -106,12 +106,12 @@ public final class x extends FrameLayout {
                 }
             }
         }
-        ArrayList s10 = j0Var.c.s();
-        int size2 = s10.size();
+        ArrayList x10 = j0Var.c.x();
+        int size2 = x10.size();
         while (i10 < size2) {
-            Object obj2 = s10.get(i10);
+            Object obj2 = x10.get(i10);
             i10++;
-            int i12 = ((p0) obj2).c.K;
+            int i12 = ((p0) obj2).c.L;
             getId();
         }
     }
@@ -137,7 +137,7 @@ public final class x extends FrameLayout {
     public final WindowInsets dispatchApplyWindowInsets(WindowInsets insets) {
         m1 h;
         kotlin.jvm.internal.j.e(insets, "insets");
-        m1 h10 = m1.h(null, insets);
+        m1 h9 = m1.h(null, insets);
         View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.c;
         if (onApplyWindowInsetsListener != null) {
             kotlin.jvm.internal.j.b(onApplyWindowInsetsListener);
@@ -145,7 +145,7 @@ public final class x extends FrameLayout {
             kotlin.jvm.internal.j.d(onApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
             h = m1.h(null, onApplyWindowInsets);
         } else {
-            h = r0.j0.h(this, h10);
+            h = r0.j0.h(this, h9);
         }
         kotlin.jvm.internal.j.d(h, "if (applyWindowInsetsLis…, insetsCompat)\n        }");
         if (!h.a.n()) {
@@ -199,7 +199,7 @@ public final class x extends FrameLayout {
     public final <F extends s> F getFragment() {
         v vVar;
         s sVar;
-        j0 s10;
+        j0 s6;
         View view = this;
         while (true) {
             vVar = null;
@@ -230,14 +230,14 @@ public final class x extends FrameLayout {
             if (vVar == null) {
                 throw new IllegalStateException("View " + this + " is not within a subclass of FragmentActivity.");
             }
-            s10 = vVar.s();
+            s6 = vVar.s();
         } else {
             if (!sVar.t()) {
                 throw new IllegalStateException("The Fragment " + sVar + " that owns View " + this + " has already been destroyed. Nested fragments should always use the child FragmentManager.");
             }
-            s10 = sVar.l();
+            s6 = sVar.l();
         }
-        return (F) s10.C(getId());
+        return (F) s6.C(getId());
     }
 
     @Override // android.view.View
@@ -306,8 +306,8 @@ public final class x extends FrameLayout {
         super.removeViewsInLayout(i10, i11);
     }
 
-    public final void setDrawDisappearingViewsLast(boolean z10) {
-        this.d = z10;
+    public final void setDrawDisappearingViewsLast(boolean z4) {
+        this.d = z4;
     }
 
     @Override // android.view.ViewGroup

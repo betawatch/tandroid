@@ -1,31 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.app.Activity;
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zb1 implements hc1 {
-    public boolean a;
-    public final /* synthetic */ tn b;
-
-    public zb1(tn tnVar, boolean z10) {
-        this.b = tnVar;
-        this.a = z10;
+public final class zb1 extends ph.o6 {
+    public zb1(Activity activity) {
+        super(activity, 3);
     }
 
-    @Override // org.telegram.ui.hc1
-    public final boolean U0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.hc1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.hc1
-    public final void j1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        rn rnVar = this.b.aa;
-        rnVar.i(rnVar.f, rnVar.h, z10, Boolean.valueOf(z11), false);
+    @Override // ph.o6, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

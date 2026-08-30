@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -62,8 +62,8 @@ public abstract class zzqv extends zzqe {
             int length = bytes.length;
             zzt(length);
             zzl(bytes, 0, length);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(e10);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(e);
         }
     }
 
@@ -71,7 +71,7 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzb(byte b10);
 
-    public abstract void zzd(int i10, boolean z10);
+    public abstract void zzd(int i10, boolean z4);
 
     public abstract void zze(int i10, zzqm zzqmVar);
 

@@ -1,83 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.ColorFilter;
-import android.util.SparseIntArray;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class z41 extends org.telegram.ui.Components.tv {
-    public final /* synthetic */ int c0;
-    public final /* synthetic */ d61 d0;
+public final class z41 extends f2.v {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ q61 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z41(d61 d61Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10, boolean z11, int i10, t31 t31Var, int i11, int i12) {
-        super(context, c6Var, z10, z11, false, true, i10, t31Var, i11, false);
-        this.d0 = d61Var;
-        this.c0 = i12;
+    public /* synthetic */ z41(q61 q61Var, int i10) {
+        this.c = i10;
+        this.d = q61Var;
     }
 
-    @Override // org.telegram.ui.Components.tv
-    public final ColorFilter getEmojiColorFilter() {
-        return this.d0.g1;
-    }
-
-    @Override // org.telegram.ui.Components.tv
-    public final boolean h(int i10) {
+    @Override // f2.v
+    public final int i(int i10) {
         int i11;
-        r51 r51Var;
-        d61 d61Var = this.d0;
-        SparseIntArray sparseIntArray = d61Var.t0;
-        if (d61Var.s1) {
-            return false;
-        }
-        int i12 = this.c0;
-        if (i12 == 4 && i10 == 0) {
-            d61Var.M = !d61Var.M;
-            d61Var.W.setVisibility(8);
-            org.telegram.ui.Components.tv tvVar = d61Var.V[d61Var.M ? 1 : 0];
-            d61Var.W = tvVar;
-            tvVar.setVisibility(0);
-            d61Var.W.x.setDrawable(getContext().getDrawable(d61Var.M ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
-            d61Var.W.x.setContentDescription(LocaleController.getString(d61Var.M ? R.string.AccDescrStickers : R.string.Emoji));
-            d61Var.B(true, false, false);
-            d61Var.n0.h1(0, 0);
-            return true;
-        }
-        org.telegram.ui.Components.pv pvVar = this.A;
-        int i13 = ((pvVar == null || !this.U) ? 0 : 1) + 1;
-        if (pvVar != null && this.U && i10 == 1) {
-            i11 = d61Var.n;
-        } else {
-            if ((i12 != 4 || i10 != 0) && i10 > 0) {
-                int i14 = i10 - i13;
-                if (sparseIntArray.indexOfKey(i14) >= 0) {
-                    i11 = sparseIntArray.get(i14);
+        ArrayList arrayList;
+        int i12;
+        switch (this.c) {
+            case 0:
+                q61 q61Var = this.d;
+                return (q61Var.t0.indexOfKey(i10) >= 0 || q61Var.w0.indexOfKey(i10) >= 0 || i10 == q61Var.f || i10 == q61Var.y || i10 == q61Var.n || i10 == q61Var.h || i10 == q61Var.v || i10 == q61Var.a || i10 == q61Var.x) ? q61Var.o0.J : ((i10 < q61Var.B || i10 >= q61Var.C) && !q61Var.N) ? 5 : 8;
+            default:
+                q61 q61Var2 = this.d;
+                z51 z51Var = q61Var2.n0;
+                int j10 = z51Var.j(i10);
+                if (j10 == 6) {
+                    return q61Var2.o0.J;
                 }
-            }
-            i11 = 0;
-        }
-        d61.a(d61Var, i11, AndroidUtilities.dp((i12 == 6 ? 7 : 0) - 2));
-        d61Var.W.j(i10, true);
-        d61Var.d0.H1 = true;
-        d61Var.v(null, true, true);
-        u41 u41Var = d61Var.b0;
-        if (u41Var != null && (r51Var = u41Var.n) != null) {
-            r51Var.F1(null);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.tv
-    public final void i(org.telegram.ui.Components.pv pvVar) {
-        ValueAnimator valueAnimator = this.d0.Q1;
-        if (valueAnimator == null || valueAnimator.isRunning()) {
-            pvVar.setScaleX(0.0f);
-            pvVar.setScaleY(0.0f);
+                if (j10 != 5) {
+                    q61 q61Var3 = z51Var.s;
+                    if (q61Var3.T != 14 ? i10 <= (i11 = z51Var.c) || (i10 - i11) - 1 >= q61Var3.z1.size() : (arrayList = q61Var3.y1) == null || i10 < (i12 = z51Var.c) || i10 - i12 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
         }
     }
 }

@@ -1,38 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xv0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ aw0 b;
+    public final /* synthetic */ TLRPC.Document b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 e;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    public /* synthetic */ xv0(aw0 aw0Var, int i10) {
-        this.a = i10;
-        this.b = aw0Var;
+    public /* synthetic */ xv0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
+        this.a = i11;
+        this.b = document;
+        this.c = i10;
+        this.d = messageObject;
+        this.e = t1Var;
+        this.f = tL_messages_stickerSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                aw0 aw0Var = this.b;
-                aw0Var.invalidate();
-                AndroidUtilities.runOnUIThread(new xv0(aw0Var, 1));
+                TLRPC.Document document = this.b;
+                String attachFileName = FileLoader.getAttachFileName(document);
+                int i10 = this.c;
+                DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.d, this.e);
+                FileLoader.getInstance(i10).loadFile(document, this.f, 1, 1);
                 break;
             default:
-                aw0 aw0Var2 = this.b;
-                zv0 zv0Var = aw0Var2.e;
-                if (zv0Var != null) {
-                    aw0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.ex0) zv0Var).b;
-                    org.telegram.ui.ActionBar.h5[] h5VarArr = profileActivity.r;
-                    h5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.V5));
-                    h5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.W5));
-                    break;
-                }
+                TLRPC.Document document2 = this.b;
+                String attachFileName2 = FileLoader.getAttachFileName(document2);
+                int i11 = this.c;
+                DownloadController.getInstance(i11).addLoadingFileObserver(attachFileName2, this.d, this.e);
+                FileLoader.getInstance(i11).loadFile(document2, this.f, 1, 1);
                 break;
         }
     }

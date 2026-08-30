@@ -55,19 +55,19 @@ public abstract class z extends a implements c0 {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
-        return t3.b0(aVar, spliterator, z10);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z4, IntFunction intFunction) {
+        return t3.b0(aVar, spliterator, z4);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
-        return new g7(aVar, supplier, z10);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z4) {
+        return new g7(aVar, supplier, z4);
     }
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         DoubleConsumer e0Var;
-        boolean q6;
+        boolean q10;
         j$.util.u0 U0 = U0(spliterator);
         if (j5Var instanceof DoubleConsumer) {
             e0Var = (DoubleConsumer) j5Var;
@@ -80,12 +80,12 @@ public abstract class z extends a implements c0 {
             e0Var = new j$.util.e0(j5Var, 1);
         }
         do {
-            q6 = j5Var.q();
-            if (q6) {
+            q10 = j5Var.q();
+            if (q10) {
                 break;
             }
         } while (U0.tryAdvance(e0Var));
-        return q6;
+        return q10;
     }
 
     @Override // j$.util.stream.t3

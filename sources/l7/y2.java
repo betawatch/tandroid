@@ -1,19 +1,19 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class y2 implements s9.d {
+public final class y2 implements u9.d {
     public static final y2 a = new y2();
-    public static final s9.c b = new s9.c("logEventKey", u3.c.h(j7.l1.q(w.class, new s(1))));
-    public static final s9.c c = new s9.c("eventCount", u3.c.h(j7.l1.q(w.class, new s(2))));
-    public static final s9.c d = new s9.c("inferenceDurationStats", u3.c.h(j7.l1.q(w.class, new s(3))));
 
-    @Override // s9.a
-    public final void a(Object obj, Object obj2) {
-        j1 j1Var = (j1) obj;
-        s9.e eVar = (s9.e) obj2;
-        eVar.e(b, j1Var.a);
-        eVar.e(c, j1Var.b);
-        eVar.e(d, j1Var.c);
+    static {
+        e2.c.r(kh.a2.o(h0.class, kh.a2.q(3, kh.a2.o(h0.class, kh.a2.q(2, kh.a2.o(h0.class, new e0(1)))))));
+    }
+
+    @Override // u9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

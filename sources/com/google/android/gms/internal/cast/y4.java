@@ -3,12 +3,12 @@ package com.google.android.gms.internal.cast;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class y4 extends h7.a6 {
+public final class y4 extends j7.d6 {
     public static final Logger e = Logger.getLogger(y4.class.getName());
-    public static final boolean f = s6.e;
-    public u5 a;
+    public static final boolean f = r6.e;
+    public t5 a;
     public final byte[] b;
     public final int c;
     public int d;
@@ -33,9 +33,9 @@ public final class y4 extends h7.a6 {
     public static int n(String str) {
         int length;
         try {
-            length = u6.c(str);
-        } catch (t6 unused) {
-            length = str.getBytes(l5.a).length;
+            length = t6.c(str);
+        } catch (s6 unused) {
+            length = str.getBytes(k5.a).length;
         }
         return o(length) + length;
     }
@@ -80,8 +80,8 @@ public final class y4 extends h7.a6 {
             int i10 = this.d;
             this.d = i10 + 1;
             bArr[i10] = b10;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
+        } catch (IndexOutOfBoundsException e6) {
+            throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e6);
         }
     }
 
@@ -89,8 +89,8 @@ public final class y4 extends h7.a6 {
         try {
             System.arraycopy(bArr, 0, this.b, this.d, i10);
             this.d += i10;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), Integer.valueOf(i10)), e10);
+        } catch (IndexOutOfBoundsException e6) {
+            throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), Integer.valueOf(i10)), e6);
         }
     }
 
@@ -120,8 +120,8 @@ public final class y4 extends h7.a6 {
             bArr[i13] = (byte) ((i10 >> 16) & 255);
             this.d = i11 + 4;
             bArr[i14] = (byte) ((i10 >> 24) & 255);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
+        } catch (IndexOutOfBoundsException e6) {
+            throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e6);
         }
     }
 
@@ -157,8 +157,8 @@ public final class y4 extends h7.a6 {
             bArr[i16] = (byte) (((int) (j10 >> 48)) & 255);
             this.d = i10 + 8;
             bArr[i17] = (byte) (((int) (j10 >> 56)) & 255);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
+        } catch (IndexOutOfBoundsException e6) {
+            throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e6);
         }
     }
 
@@ -171,30 +171,30 @@ public final class y4 extends h7.a6 {
             int i12 = this.c;
             byte[] bArr = this.b;
             if (o11 != o10) {
-                j(u6.c(str));
+                j(t6.c(str));
                 int i13 = this.d;
-                this.d = u6.b(str, bArr, i13, i12 - i13);
+                this.d = t6.b(str, bArr, i13, i12 - i13);
             } else {
                 int i14 = i11 + o11;
                 this.d = i14;
-                int b10 = u6.b(str, bArr, i14, i12 - i14);
+                int b10 = t6.b(str, bArr, i14, i12 - i14);
                 this.d = i11;
                 j((b10 - i11) - o11);
                 this.d = b10;
             }
-        } catch (t6 e10) {
+        } catch (s6 e6) {
             this.d = i11;
-            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
-            byte[] bytes = str.getBytes(l5.a);
+            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e6);
+            byte[] bytes = str.getBytes(k5.a);
             try {
                 int length = bytes.length;
                 j(length);
                 b(length, bytes);
-            } catch (IndexOutOfBoundsException e11) {
-                throw new z4(e11);
+            } catch (IndexOutOfBoundsException e10) {
+                throw new b7.y0(e10);
             }
-        } catch (IndexOutOfBoundsException e12) {
-            throw new z4(e12);
+        } catch (IndexOutOfBoundsException e11) {
+            throw new b7.y0(e11);
         }
     }
 
@@ -217,11 +217,11 @@ public final class y4 extends h7.a6 {
                     this.d = i13 + 1;
                     bArr[i13] = (byte) ((i10 & 127) | 128);
                     i10 >>>= 7;
-                } catch (IndexOutOfBoundsException e10) {
-                    throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
+                } catch (IndexOutOfBoundsException e6) {
+                    throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e6);
                 }
             }
-            throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
+            throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e6);
         }
     }
 
@@ -231,18 +231,18 @@ public final class y4 extends h7.a6 {
     }
 
     public final void l(long j10) {
-        boolean z10 = f;
+        boolean z4 = f;
         int i10 = this.c;
         byte[] bArr = this.b;
-        if (!z10 || i10 - this.d < 10) {
+        if (!z4 || i10 - this.d < 10) {
             while ((j10 & (-128)) != 0) {
                 try {
                     int i11 = this.d;
                     this.d = i11 + 1;
                     bArr[i11] = (byte) ((((int) j10) & 127) | 128);
                     j10 >>>= 7;
-                } catch (IndexOutOfBoundsException e10) {
-                    throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(i10), 1), e10);
+                } catch (IndexOutOfBoundsException e6) {
+                    throw new b7.y0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(i10), 1), e6);
                 }
             }
             int i12 = this.d;
@@ -255,12 +255,12 @@ public final class y4 extends h7.a6 {
             if ((j10 & (-128)) == 0) {
                 int i14 = this.d;
                 this.d = i14 + 1;
-                s6.c.d(bArr, s6.f + i14, (byte) i13);
+                r6.c.d(bArr, r6.f + i14, (byte) i13);
                 return;
             } else {
                 int i15 = this.d;
                 this.d = i15 + 1;
-                s6.c.d(bArr, s6.f + i15, (byte) ((i13 & 127) | 128));
+                r6.c.d(bArr, r6.f + i15, (byte) ((i13 & 127) | 128));
                 j10 >>>= 7;
             }
         }

@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import bd.p;
-import i7.c7;
-import jd.t;
-import sc.c;
-import uc.i;
+import dd.p;
+import k7.p7;
+import ld.t;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzli extends i implements p {
     Object zza;
@@ -22,27 +23,27 @@ final class zzli extends i implements p {
         this.zzd = str;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         return new zzli(this.zzc, this.zzd, cVar);
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         String zza;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                c7.b(obj);
+                p7.b(obj);
                 zza = str;
             } else {
-                c7.b(obj);
+                p7.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;
@@ -53,9 +54,9 @@ final class zzli extends i implements p {
                 }
             }
             ((WebView) obj).loadDataWithBaseURL(zza, this.zzd, "text/html", "utf-8", null);
-            return qc.i.a;
-        } catch (Exception e10) {
-            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e10.getMessage(), null, 8, null);
+            return sc.i.a;
+        } catch (Exception e) {
+            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e.getMessage(), null, 8, null);
             ((t) this.zzc.zzz()).L(zzcgVar);
             throw zzcgVar;
         }

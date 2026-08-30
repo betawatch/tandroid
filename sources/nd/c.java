@@ -1,35 +1,19 @@
 package nd;
 
-import bd.p;
+import dd.p;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c implements sc.h {
-    public final Throwable a;
-    public final /* synthetic */ sc.h b;
+public final /* synthetic */ class c extends kotlin.jvm.internal.i implements p {
+    public static final c a = new c(2, d.class, "createSegment", "createSegment(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;", 1);
 
-    public c(Throwable th2, sc.h hVar) {
-        this.a = th2;
-        this.b = hVar;
-    }
-
-    @Override // sc.h
-    public final Object fold(Object obj, p pVar) {
-        return this.b.fold(obj, pVar);
-    }
-
-    @Override // sc.h
-    public final sc.f get(sc.g gVar) {
-        return this.b.get(gVar);
-    }
-
-    @Override // sc.h
-    public final sc.h minusKey(sc.g gVar) {
-        return this.b.minusKey(gVar);
-    }
-
-    @Override // sc.h
-    public final sc.h plus(sc.h hVar) {
-        return this.b.plus(hVar);
+    @Override // dd.p
+    public final Object invoke(Object obj, Object obj2) {
+        long longValue = ((Number) obj).longValue();
+        h hVar = (h) obj2;
+        h hVar2 = d.a;
+        b bVar = hVar.e;
+        kotlin.jvm.internal.j.b(bVar);
+        return new h(longValue, hVar, bVar, 0);
     }
 }

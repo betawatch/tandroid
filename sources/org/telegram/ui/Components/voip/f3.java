@@ -1,50 +1,35 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Shader;
-import nh.t3;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f3 extends t3 {
-    public final Paint H0;
-    public final o1 I0;
+public final /* synthetic */ class f3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k3 b;
+    public final /* synthetic */ int c;
 
-    public f3(Activity activity, int i10, o1 o1Var, boolean z10) {
-        super(activity, i10);
-        Paint paint = new Paint(1);
-        this.H0 = paint;
-        this.I0 = o1Var;
-        o1Var.a(this);
-        paint.setPathEffect(new CornerPathEffect(this.v));
-        if (z10) {
-            i();
-        }
+    public /* synthetic */ f3(k3 k3Var, int i10, int i11) {
+        this.a = i11;
+        this.b = k3Var;
+        this.c = i10;
     }
 
-    @Override // nh.t3
-    public final void c(Canvas canvas, float f9) {
-        o1 o1Var = this.I0;
-        Shader shader = o1Var.b().getShader();
-        Paint paint = this.H0;
-        paint.setShader(shader);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.B.getAlpha(), o1Var.b().getAlpha()) * f9), 31);
-        Path path = this.p0;
-        canvas.drawPath(path, paint);
-        if (o1Var.e) {
-            paint.setShader(((Paint) o1Var.d.d).getShader());
-            canvas.drawPath(path, paint);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new f3(this.b, this.c, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new f3(this.b, this.c, 3));
+                break;
+            case 2:
+                this.b.c(this.c);
+                break;
+            default:
+                this.b.a(this.c);
+                break;
         }
-        canvas.restore();
-    }
-
-    @Override // nh.t3, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        this.I0.d(getX(), getY());
-        super.dispatchDraw(canvas);
     }
 }

@@ -1,24 +1,82 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class gi extends org.telegram.ui.Components.jv {
-    public final /* synthetic */ tn S;
+public final class gi implements org.telegram.ui.Components.ll0 {
+    public final /* synthetic */ xn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gi(tn tnVar, org.telegram.ui.ActionBar.o2 o2Var, Activity activity, org.telegram.ui.ActionBar.c6 c6Var, ArrayList arrayList) {
-        super(o2Var, activity, c6Var, arrayList);
-        this.S = tnVar;
+    public gi(xn xnVar) {
+        this.a = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.jv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        tn tnVar = this.S;
-        tnVar.getClass();
-        tnVar.g8(false, true, 0.0f);
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
+    @Override // org.telegram.ui.Components.ll0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean c(float f10, float f11, int i10, View view) {
+        boolean z4;
+        boolean z10;
+        org.telegram.ui.ActionBar.k kVar;
+        View view2;
+        boolean z11;
+        xn xnVar = this.a;
+        qm qmVar = xnVar.Z8;
+        if ((qmVar == null || !qmVar.z) && !xnVar.b9()) {
+            z4 = ((org.telegram.ui.ActionBar.p2) xnVar).inPreviewMode;
+            if (!z4 && !xnVar.La) {
+                xnVar.A4 = true;
+                if (view instanceof org.telegram.ui.Cells.v0) {
+                    org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) view;
+                    MessageObject messageObject = v0Var.getMessageObject();
+                    if (messageObject != null) {
+                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && v0Var.getMessageObject().type != 21 && !v0Var.getMessageObject().isWallpaperAction() && v0Var.getMessageObject().type != 30) {
+                            z10 = false;
+                            kVar = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
+                            if (!kVar.s() || (xnVar.A9() && !z10)) {
+                                view2 = view;
+                                xn.b2(xnVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f10) : false, f10, f11);
+                                z11 = true;
+                            } else {
+                                view2 = view;
+                                z11 = xnVar.I7(view2, false, true, f10, f11, true, true, false);
+                            }
+                            if (view2 instanceof org.telegram.ui.Cells.t1) {
+                                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
+                                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().type != 27) {
+                                    xn.c2(xnVar, i10);
+                                    return true;
+                                }
+                            }
+                            return z11;
+                        }
+                    }
+                }
+                z10 = true;
+                kVar = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
+                if (kVar.s()) {
+                }
+                view2 = view;
+                xn.b2(xnVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f10) : false, f10, f11);
+                z11 = true;
+                if (view2 instanceof org.telegram.ui.Cells.t1) {
+                }
+                return z11;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public final /* synthetic */ void h() {
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public final /* synthetic */ void p(float f10) {
     }
 }

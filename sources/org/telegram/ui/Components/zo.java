@@ -1,28 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.bd1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zo extends aj0 {
-    public final /* synthetic */ gp r;
+public final /* synthetic */ class zo implements bd1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ap b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo(gp gpVar, Context context) {
-        super(context);
-        this.r = gpVar;
+    public /* synthetic */ zo(ap apVar, int i10) {
+        this.a = i10;
+        this.b = apVar;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.r.J) {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
-        } else {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+    @Override // org.telegram.ui.bd1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                kp kpVar = this.b.a;
+                kpVar.V.dismissInternal();
+                kpVar.dismiss();
+                break;
+            default:
+                kp kpVar2 = this.b.a;
+                kpVar2.V.dismissInternal();
+                kpVar2.dismiss();
+                break;
         }
     }
 }

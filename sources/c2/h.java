@@ -14,7 +14,7 @@ import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h extends r {
     public final String f;
@@ -26,7 +26,7 @@ public final class h extends r {
     public final /* synthetic */ l p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final a4.g m = new a4.g(this, 23);
+    public final ag.d m = new ag.d(this, 10);
     public int n = -1;
 
     public h(l lVar, MediaRouter2.RoutingController routingController, String str) {
@@ -35,7 +35,7 @@ public final class h extends r {
         this.f = str;
         Messenger n10 = l.n(routingController);
         this.h = n10;
-        this.i = n10 == null ? null : new Messenger(new a4.d(this));
+        this.i = n10 == null ? null : new Messenger(new androidx.mediarouter.app.d(this));
         this.k = new Handler(Looper.getMainLooper());
     }
 
@@ -53,9 +53,9 @@ public final class h extends r {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        a4.g gVar = this.m;
-        handler.removeCallbacks(gVar);
-        handler.postDelayed(gVar, 1000L);
+        ag.d dVar = this.m;
+        handler.removeCallbacks(dVar);
+        handler.postDelayed(dVar, 1000L);
     }
 
     @Override // c2.s
@@ -72,9 +72,9 @@ public final class h extends r {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        a4.g gVar = this.m;
-        handler.removeCallbacks(gVar);
-        handler.postDelayed(gVar, 1000L);
+        ag.d dVar = this.m;
+        handler.removeCallbacks(dVar);
+        handler.postDelayed(dVar, 1000L);
     }
 
     @Override // c2.r
@@ -144,8 +144,8 @@ public final class h extends r {
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e10) {
-            Log.e("MR2Provider", "Could not send control request to service.", e10);
+        } catch (RemoteException e) {
+            Log.e("MR2Provider", "Could not send control request to service.", e);
         }
     }
 
@@ -167,8 +167,8 @@ public final class h extends r {
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e10) {
-            Log.e("MR2Provider", "Could not send control request to service.", e10);
+        } catch (RemoteException e) {
+            Log.e("MR2Provider", "Could not send control request to service.", e);
         }
     }
 }

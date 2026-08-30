@@ -1,19 +1,33 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class s4 implements s9.d {
-    public static final s4 a = new s4();
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    static {
-        com.google.android.recaptcha.internal.a.t(j7.l1.q(w.class, j7.l1.r(3, j7.l1.q(w.class, j7.l1.r(2, j7.l1.q(w.class, new s(1)))))));
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class s4 extends c6.a {
+    public static final Parcelable.Creator<s4> CREATOR = new t5(0);
+    public final String a;
+    public final String b;
+    public final float c;
+    public final int d;
+
+    public s4(float f10, int i10, String str, String str2) {
+        this.b = str2;
+        this.c = f10;
+        this.a = str;
+        this.d = i10;
     }
 
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = j7.f5.q(parcel, 20293);
+        j7.f5.l(parcel, 2, this.b);
+        j7.f5.s(parcel, 3, 4);
+        parcel.writeFloat(this.c);
+        j7.f5.l(parcel, 4, this.a);
+        j7.f5.s(parcel, 5, 4);
+        parcel.writeInt(this.d);
+        j7.f5.r(parcel, q10);
     }
 }

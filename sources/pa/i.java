@@ -1,67 +1,31 @@
 package pa;
 
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.io.IOException;
+import java.io.StringWriter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class i implements Iterator {
-    public k a;
-    public k b = null;
-    public int c;
-    public final /* synthetic */ l d;
-    public final /* synthetic */ int e;
-
-    public i(l lVar, int i10) {
-        this.e = i10;
-        this.d = lVar;
-        this.a = lVar.f.d;
-        this.c = lVar.e;
-    }
-
-    public final Object a() {
-        return b();
-    }
-
-    public final k b() {
-        k kVar = this.a;
-        l lVar = this.d;
-        if (kVar == lVar.f) {
-            throw new NoSuchElementException();
+public abstract class i {
+    public final l i() {
+        if (this instanceof l) {
+            return (l) this;
         }
-        if (lVar.e != this.c) {
-            throw new ConcurrentModificationException();
-        }
-        this.a = kVar.d;
-        this.b = kVar;
-        return kVar;
+        throw new IllegalStateException("Not a JSON Object: " + this);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a != this.d.f;
+    public String n() {
+        throw new UnsupportedOperationException(getClass().getSimpleName());
     }
 
-    @Override // java.util.Iterator
-    public Object next() {
-        switch (this.e) {
-            case 1:
-                return b().f;
-            default:
-                return a();
+    public final String toString() {
+        try {
+            StringWriter stringWriter = new StringWriter();
+            xa.b bVar = new xa.b(stringWriter);
+            bVar.n = 1;
+            ra.d.l(this, bVar);
+            return stringWriter.toString();
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        k kVar = this.b;
-        if (kVar == null) {
-            throw new IllegalStateException();
-        }
-        l lVar = this.d;
-        lVar.c(kVar, true);
-        this.b = null;
-        this.c = lVar.e;
     }
 }

@@ -62,9 +62,9 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.temporal.Temporal
     public b d(long j10, j$.time.temporal.q qVar) {
-        boolean z10 = qVar instanceof ChronoUnit;
-        if (!z10) {
-            if (!z10) {
+        boolean z4 = qVar instanceof ChronoUnit;
+        if (!z4) {
+            if (!z4) {
                 return G(a(), qVar.j(this, j10));
             }
             throw new j$.time.temporal.r("Unsupported unit: " + qVar);
@@ -99,29 +99,29 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
     @Override // j$.time.chrono.b, j$.time.temporal.Temporal
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         Objects.requireNonNull(temporal, "endExclusive");
-        b x4 = a().x(temporal);
+        b x10 = a().x(temporal);
         if (!(qVar instanceof ChronoUnit)) {
             Objects.requireNonNull(qVar, "unit");
-            return qVar.between(this, x4);
+            return qVar.between(this, x10);
         }
         switch (c.a[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return x4.z() - z();
+                return x10.z() - z();
             case 2:
-                return (x4.z() - z()) / 7;
+                return (x10.z() - z()) / 7;
             case 3:
-                return I(x4);
+                return I(x10);
             case 4:
-                return I(x4) / 12;
+                return I(x10) / 12;
             case 5:
-                return I(x4) / 120;
+                return I(x10) / 120;
             case 6:
-                return I(x4) / 1200;
+                return I(x10) / 1200;
             case 7:
-                return I(x4) / 12000;
+                return I(x10) / 12000;
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return x4.y(aVar) - y(aVar);
+                return x10.y(aVar) - y(aVar);
             default:
                 throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
@@ -132,9 +132,9 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
             throw new IllegalStateException("ChronoLocalDateImpl only supports Chronologies with 12 months per year");
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.PROLEPTIC_MONTH;
-        long y8 = y(aVar) * 32;
+        long y10 = y(aVar) * 32;
         j$.time.temporal.a aVar2 = j$.time.temporal.a.DAY_OF_MONTH;
-        return (((bVar.y(aVar) * 32) + bVar.j(aVar2)) - (y8 + j$.time.temporal.p.a(this, aVar2))) / 32;
+        return (((bVar.y(aVar) * 32) + bVar.j(aVar2)) - (y10 + j$.time.temporal.p.a(this, aVar2))) / 32;
     }
 
     public boolean equals(Object obj) {
@@ -146,8 +146,8 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.chrono.b
     public int hashCode() {
-        long z10 = z();
-        return a().hashCode() ^ ((int) (z10 ^ (z10 >>> 32)));
+        long z4 = z();
+        return a().hashCode() ^ ((int) (z4 ^ (z4 >>> 32)));
     }
 
     @Override // j$.time.temporal.Temporal
@@ -158,20 +158,20 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.chrono.b
     public final String toString() {
-        long y8 = y(j$.time.temporal.a.YEAR_OF_ERA);
-        long y10 = y(j$.time.temporal.a.MONTH_OF_YEAR);
-        long y11 = y(j$.time.temporal.a.DAY_OF_MONTH);
-        StringBuilder sb2 = new StringBuilder(30);
-        sb2.append(a().toString());
-        sb2.append(" ");
-        sb2.append(H());
-        sb2.append(" ");
-        sb2.append(y8);
-        sb2.append(y10 < 10 ? "-0" : "-");
-        sb2.append(y10);
-        sb2.append(y11 < 10 ? "-0" : "-");
-        sb2.append(y11);
-        return sb2.toString();
+        long y10 = y(j$.time.temporal.a.YEAR_OF_ERA);
+        long y11 = y(j$.time.temporal.a.MONTH_OF_YEAR);
+        long y12 = y(j$.time.temporal.a.DAY_OF_MONTH);
+        StringBuilder sb = new StringBuilder(30);
+        sb.append(a().toString());
+        sb.append(" ");
+        sb.append(H());
+        sb.append(" ");
+        sb.append(y10);
+        sb.append(y11 < 10 ? "-0" : "-");
+        sb.append(y11);
+        sb.append(y12 < 10 ? "-0" : "-");
+        sb.append(y12);
+        return sb.toString();
     }
 
     @Override // j$.time.temporal.Temporal

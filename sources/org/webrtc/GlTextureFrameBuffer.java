@@ -1,9 +1,9 @@
 package org.webrtc;
 
 import android.opengl.GLES20;
-import j7.l1;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class GlTextureFrameBuffer {
     private int frameBufferId;
@@ -22,7 +22,7 @@ public class GlTextureFrameBuffer {
                 this.height = 0;
                 return;
             default:
-                throw new IllegalArgumentException(l1.k(i10, "Invalid pixel format: "));
+                throw new IllegalArgumentException(a2.j(i10, "Invalid pixel format: "));
         }
     }
 
@@ -53,7 +53,7 @@ public class GlTextureFrameBuffer {
 
     public void setSize(int i10, int i11) {
         if (i10 <= 0 || i11 <= 0) {
-            throw new IllegalArgumentException(a4.w.k(i10, i11, "Invalid size: ", "x"));
+            throw new IllegalArgumentException(android.support.v4.media.a.k(i10, i11, "Invalid size: ", "x"));
         }
         if (i10 == this.width && i11 == this.height) {
             return;
@@ -78,7 +78,7 @@ public class GlTextureFrameBuffer {
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, this.textureId, 0);
         int glCheckFramebufferStatus = GLES20.glCheckFramebufferStatus(36160);
         if (glCheckFramebufferStatus != 36053) {
-            throw new IllegalStateException(l1.k(glCheckFramebufferStatus, "Framebuffer not complete, status: "));
+            throw new IllegalStateException(a2.j(glCheckFramebufferStatus, "Framebuffer not complete, status: "));
         }
         GLES20.glBindFramebuffer(36160, 0);
     }

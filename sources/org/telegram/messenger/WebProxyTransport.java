@@ -36,12 +36,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import org.json.JSONObject;
-import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.g10;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class WebProxyTransport implements b10 {
+public final class WebProxyTransport implements f10 {
     private static final String BRIDGE_OBJECT = "TelegramWebProxy";
     private static final int DATA_CHUNK = 65536;
     private static final int FRAME_BYE = 31;
@@ -80,7 +80,7 @@ public final class WebProxyTransport implements b10 {
     private final Map<Integer, Stream> streams = new HashMap();
     private final ArrayDeque<byte[]> outbound = new ArrayDeque<>();
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static final class Stream {
         private final int id;
         private boolean opened;
@@ -123,14 +123,14 @@ public final class WebProxyTransport implements b10 {
     private WebProxyTransport(String str, String str2, byte[] bArr) {
         this.host = str;
         this.secret = str2;
-        String e10 = u3.c.e("https://", str);
-        this.origin = e10;
+        String e = vh.v2.e("https://", str);
+        this.origin = e;
         String randomToken = randomToken(32);
         this.androidNonce = randomToken;
-        String e11 = u3.c.e("tdesktop-web-proxy-bridge-v1\n", str);
+        String e6 = vh.v2.e("tdesktop-web-proxy-bridge-v1\n", str);
         Mac mac = Mac.getInstance("HmacSHA256");
         mac.init(new SecretKeySpec(bArr, "HmacSHA256"));
-        this.bridgeUrl = e10 + "/?bridge=" + Base64.encodeToString(mac.doFinal(e11.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + randomToken;
+        this.bridgeUrl = e + "/?bridge=" + Base64.encodeToString(mac.doFinal(e6.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + randomToken;
         this.serverSocket = new ServerSocket(0, 64, InetAddress.getByName("127.0.0.1"));
     }
 
@@ -150,19 +150,19 @@ public final class WebProxyTransport implements b10 {
                                 stream.opened = true;
                                 sendFrame(1, allocateStreamId, null);
                             }
-                            this.ioExecutor.execute(new d3(11, this, stream));
+                            this.ioExecutor.execute(new e3(11, this, stream));
                         }
                         closeSocket(accept);
                     } finally {
                     }
                 }
-            } catch (Exception e10) {
+            } catch (Exception e) {
                 synchronized (this.lock) {
                     try {
                         if (this.stopped) {
                             return;
                         }
-                        FileLog.e(e10);
+                        FileLog.e(e);
                         failCarrier();
                         return;
                     } finally {
@@ -174,7 +174,7 @@ public final class WebProxyTransport implements b10 {
 
     private int allocateStreamId() {
         while (true) {
-            int andUpdate = DesugarAtomicInteger.getAndUpdate(this.nextStreamId, new vl());
+            int andUpdate = DesugarAtomicInteger.getAndUpdate(this.nextStreamId, new zl());
             if (andUpdate != 0 && !this.streams.containsKey(Integer.valueOf(andUpdate))) {
                 return andUpdate;
             }
@@ -188,17 +188,17 @@ public final class WebProxyTransport implements b10 {
         }
     }
 
-    private void closeStream(Stream stream, boolean z10) {
+    private void closeStream(Stream stream, boolean z4) {
         synchronized (this.lock) {
             try {
                 if (this.streams.get(Integer.valueOf(stream.id)) != stream) {
                     return;
                 }
                 this.streams.remove(Integer.valueOf(stream.id));
-                boolean z11 = z10 && this.carrierConnected && stream.opened;
+                boolean z10 = z4 && this.carrierConnected && stream.opened;
                 this.lock.notifyAll();
                 closeSocket(stream.socket);
-                if (z11) {
+                if (z10) {
                     sendFrame(3, stream.id, null);
                 }
             } catch (Throwable th2) {
@@ -213,8 +213,8 @@ public final class WebProxyTransport implements b10 {
         synchronized (this.lock) {
             try {
                 if (!this.stopped && this.webView == null) {
-                    c10 c10Var = c10.getInstance();
-                    if (c10Var != null && c10Var.isBackground()) {
+                    g10 g10Var = g10.getInstance();
+                    if (g10Var != null && g10Var.isBackground()) {
                         this.restartScheduled = true;
                         return;
                     }
@@ -275,7 +275,7 @@ public final class WebProxyTransport implements b10 {
                         HashSet hashSet = new HashSet();
                         hashSet.add(this.origin);
                         d dVar = new d(this, 15);
-                        boolean z10 = n2.c.a;
+                        boolean z4 = n2.c.a;
                         if (!o2.k.c.b()) {
                             throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
                         }
@@ -289,10 +289,10 @@ public final class WebProxyTransport implements b10 {
                         } else {
                             mVar = new o2.m(o2.l.a.createWebView(webView));
                         }
-                        mVar.a.addWebMessageListener(BRIDGE_OBJECT, (String[]) hashSet.toArray(new String[0]), new ce.a(new m5.i(dVar, 29)));
+                        mVar.a.addWebMessageListener(BRIDGE_OBJECT, (String[]) hashSet.toArray(new String[0]), new ee.a(new a3.c(dVar, 27)));
                         webView.loadUrl(this.bridgeUrl);
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                         failCarrier();
                     }
                 }
@@ -337,8 +337,8 @@ public final class WebProxyTransport implements b10 {
                 webView.loadUrl("about:blank");
                 webView.removeAllViews();
                 webView.destroy();
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
@@ -358,9 +358,9 @@ public final class WebProxyTransport implements b10 {
                     if (!o2.k.a.b()) {
                         throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
                     }
-                    fVar.a.postMessageWithPayload(new ce.a(new o2.h(removeFirst)));
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                    fVar.a.postMessageWithPayload(new ee.a(new o2.h(removeFirst)));
+                } catch (Exception e) {
+                    FileLog.e(e);
                     failCarrier();
                     return;
                 }
@@ -386,7 +386,7 @@ public final class WebProxyTransport implements b10 {
                     i10++;
                     closeSocket(((Stream) obj).socket);
                 }
-                AndroidUtilities.runOnUIThread(new wl(this, 3));
+                AndroidUtilities.runOnUIThread(new am(this, 3));
             }
         }
     }
@@ -426,8 +426,8 @@ public final class WebProxyTransport implements b10 {
 
     public static boolean isSupported() {
         try {
-            if (i7.d0.a("WEB_MESSAGE_LISTENER")) {
-                if (i7.d0.a("WEB_MESSAGE_ARRAY_BUFFER")) {
+            if (k7.x.a("WEB_MESSAGE_LISTENER")) {
+                if (k7.x.a("WEB_MESSAGE_ARRAY_BUFFER")) {
                     return true;
                 }
             }
@@ -458,7 +458,7 @@ public final class WebProxyTransport implements b10 {
                 if (this.stopped) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new wl(this, 0), 1000L);
+                AndroidUtilities.runOnUIThread(new am(this, 0), 1000L);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -487,7 +487,7 @@ public final class WebProxyTransport implements b10 {
         }
         String trim = str.trim();
         if (trim.endsWith(".")) {
-            trim = com.google.android.recaptcha.internal.a.m(trim, 1, 0);
+            trim = e2.c.j(trim, 1, 0);
         }
         try {
             String lowerCase = IDN.toASCII(trim, 2).toLowerCase(Locale.US);
@@ -505,9 +505,9 @@ public final class WebProxyTransport implements b10 {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void onWebMessage(WebView webView, n2.b bVar, Uri uri, boolean z10, n2.a aVar) {
+    public void onWebMessage(WebView webView, n2.b bVar, Uri uri, boolean z4, n2.a aVar) {
         n2.a aVar2;
-        if (webView == this.webView && z10 && this.origin.equals(uri.toString())) {
+        if (webView == this.webView && z4 && this.origin.equals(uri.toString())) {
             int i10 = bVar.c;
             if (i10 == 0) {
                 bVar.a(0);
@@ -520,7 +520,7 @@ public final class WebProxyTransport implements b10 {
                         bVar.a(1);
                         byte[] bArr = bVar.b;
                         Objects.requireNonNull(bArr);
-                        this.carrierExecutor.execute(new vg(17, this, bArr));
+                        this.carrierExecutor.execute(new yg(17, this, bArr));
                     }
                 }
             }
@@ -528,7 +528,7 @@ public final class WebProxyTransport implements b10 {
     }
 
     private boolean processFrame(int i10, int i11, byte[] bArr) {
-        boolean z10 = true;
+        boolean z4 = true;
         int i12 = 0;
         if (i11 == 0) {
             if (i10 != 17 || bArr.length != 0) {
@@ -567,9 +567,9 @@ public final class WebProxyTransport implements b10 {
                 Stream stream2 = this.streams.get(Integer.valueOf(i11));
                 if (stream2 == null) {
                     if (i10 != 2 && i10 != 4 && i10 != 3) {
-                        z10 = false;
+                        z4 = false;
                     }
-                    return z10;
+                    return z4;
                 }
                 if (i10 == 2) {
                     if (bArr.length == 0) {
@@ -721,7 +721,7 @@ public final class WebProxyTransport implements b10 {
             if (!this.stopped && this.outbound.size() < 8192 && this.outboundBytes <= 67108864 - array.length) {
                 this.outbound.add(array);
                 this.outboundBytes += array.length;
-                AndroidUtilities.runOnUIThread(new wl(this, 1));
+                AndroidUtilities.runOnUIThread(new am(this, 1));
                 return;
             }
             failCarrier();
@@ -750,8 +750,8 @@ public final class WebProxyTransport implements b10 {
                     instance = webProxyTransport3;
                     webProxyTransport3.startInternal();
                     return instance.serverSocket.getLocalPort();
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     WebProxyTransport webProxyTransport4 = instance;
                     if (webProxyTransport4 != null) {
                         webProxyTransport4.stopInternal();
@@ -766,12 +766,12 @@ public final class WebProxyTransport implements b10 {
     }
 
     private void startInternal() {
-        c10 c10Var = c10.getInstance();
-        if (c10Var != null) {
-            c10Var.addListener(this);
+        g10 g10Var = g10.getInstance();
+        if (g10Var != null) {
+            g10Var.addListener(this);
         }
-        this.ioExecutor.execute(new wl(this, 4));
-        AndroidUtilities.runOnUIThread(new wl(this, 0));
+        this.ioExecutor.execute(new am(this, 4));
+        AndroidUtilities.runOnUIThread(new am(this, 0));
     }
 
     public static void stop() {
@@ -807,9 +807,9 @@ public final class WebProxyTransport implements b10 {
                     this.serverSocket.close();
                 } catch (Exception unused) {
                 }
-                c10 c10Var = c10.getInstance();
-                if (c10Var != null) {
-                    c10Var.removeListener(this);
+                g10 g10Var = g10.getInstance();
+                if (g10Var != null) {
+                    g10Var.removeListener(this);
                 }
                 int size = arrayList.size();
                 while (i10 < size) {
@@ -817,7 +817,7 @@ public final class WebProxyTransport implements b10 {
                     i10++;
                     closeSocket(((Stream) obj).socket);
                 }
-                AndroidUtilities.runOnUIThread(new wl(this, 2));
+                AndroidUtilities.runOnUIThread(new am(this, 2));
                 this.ioExecutor.shutdownNow();
                 this.carrierExecutor.shutdownNow();
             } catch (Throwable th2) {
@@ -830,12 +830,12 @@ public final class WebProxyTransport implements b10 {
         return ByteBuffer.allocate(4).putInt(i10).array();
     }
 
-    @Override // org.telegram.ui.Components.b10
+    @Override // org.telegram.ui.Components.f10
     public void onBecameForeground() {
-        AndroidUtilities.runOnUIThread(new wl(this, 0));
+        AndroidUtilities.runOnUIThread(new am(this, 0));
     }
 
-    @Override // org.telegram.ui.Components.b10
+    @Override // org.telegram.ui.Components.f10
     public void onBecameBackground() {
     }
 }

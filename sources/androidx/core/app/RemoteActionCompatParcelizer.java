@@ -8,13 +8,13 @@ import l2.b;
 import l2.c;
 import l2.d;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class RemoteActionCompatParcelizer {
     public static RemoteActionCompat read(b bVar) {
         RemoteActionCompat remoteActionCompat = new RemoteActionCompat();
         d dVar = remoteActionCompat.a;
-        boolean z10 = true;
+        boolean z4 = true;
         if (bVar.e(1)) {
             dVar = bVar.h();
         }
@@ -30,18 +30,18 @@ public class RemoteActionCompatParcelizer {
         }
         remoteActionCompat.c = charSequence2;
         remoteActionCompat.d = (PendingIntent) bVar.g(remoteActionCompat.d, 4);
-        boolean z11 = remoteActionCompat.e;
+        boolean z10 = remoteActionCompat.e;
         if (bVar.e(5)) {
-            z11 = ((c) bVar).e.readInt() != 0;
+            z10 = ((c) bVar).e.readInt() != 0;
         }
-        remoteActionCompat.e = z11;
-        boolean z12 = remoteActionCompat.f;
+        remoteActionCompat.e = z10;
+        boolean z11 = remoteActionCompat.f;
         if (!bVar.e(6)) {
-            z10 = z12;
+            z4 = z11;
         } else if (((c) bVar).e.readInt() == 0) {
-            z10 = false;
+            z4 = false;
         }
-        remoteActionCompat.f = z10;
+        remoteActionCompat.f = z4;
         return remoteActionCompat;
     }
 
@@ -58,11 +58,11 @@ public class RemoteActionCompatParcelizer {
         bVar.i(3);
         TextUtils.writeToParcel(charSequence2, parcel, 0);
         bVar.k(remoteActionCompat.d, 4);
-        boolean z10 = remoteActionCompat.e;
+        boolean z4 = remoteActionCompat.e;
         bVar.i(5);
-        parcel.writeInt(z10 ? 1 : 0);
-        boolean z11 = remoteActionCompat.f;
+        parcel.writeInt(z4 ? 1 : 0);
+        boolean z10 = remoteActionCompat.f;
         bVar.i(6);
-        parcel.writeInt(z11 ? 1 : 0);
+        parcel.writeInt(z10 ? 1 : 0);
     }
 }

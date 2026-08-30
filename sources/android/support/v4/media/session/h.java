@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class h {
     public final MediaController a;
@@ -40,35 +40,35 @@ public class h {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            androidx.mediarouter.app.p pVar = (androidx.mediarouter.app.p) obj;
-            g gVar = new g(pVar);
-            this.d.put(pVar, gVar);
-            pVar.c = gVar;
+            androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) obj;
+            g gVar = new g(sVar);
+            this.d.put(sVar, gVar);
+            sVar.c = gVar;
             try {
-                mediaSessionCompat$Token.a().k(gVar);
-                pVar.e(13, null, null);
-            } catch (RemoteException e10) {
-                Log.e("MediaControllerCompat", "Dead object in registerCallback.", e10);
+                mediaSessionCompat$Token.a().j(gVar);
+                sVar.e(13, null, null);
+            } catch (RemoteException e) {
+                Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
             }
         }
         arrayList.clear();
     }
 
-    public final void b(androidx.mediarouter.app.p pVar) {
-        this.a.unregisterCallback(pVar.a);
+    public final void b(androidx.mediarouter.app.s sVar) {
+        this.a.unregisterCallback(sVar.a);
         synchronized (this.b) {
             if (this.e.a() != null) {
                 try {
-                    g gVar = (g) this.d.remove(pVar);
+                    g gVar = (g) this.d.remove(sVar);
                     if (gVar != null) {
-                        pVar.c = null;
-                        this.e.a().I(gVar);
+                        sVar.c = null;
+                        this.e.a().F(gVar);
                     }
-                } catch (RemoteException e10) {
-                    Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e10);
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
                 }
             } else {
-                this.c.remove(pVar);
+                this.c.remove(sVar);
             }
         }
     }

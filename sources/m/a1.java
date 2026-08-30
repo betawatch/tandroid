@@ -17,31 +17,31 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
-import h7.f8;
-import h7.s7;
-import i7.d8;
-import i7.v6;
+import j7.r7;
+import j7.z7;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import k7.k6;
+import k7.x7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class a1 extends TextView implements u0.k {
-    public final n a;
+    public final m a;
     public final x0 b;
-    public final z c;
-    public u d;
+    public final y c;
+    public t d;
     public boolean e;
-    public za.c f;
+    public ja.c f;
     public Future h;
 
     public a1(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.textViewStyle);
     }
 
-    private u getEmojiTextViewHelper() {
+    private t getEmojiTextViewHelper() {
         if (this.d == null) {
-            this.d = new u(this);
+            this.d = new t(this);
         }
         return this.d;
     }
@@ -49,9 +49,9 @@ public class a1 extends TextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.a();
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.a();
         }
         x0 x0Var = this.b;
         if (x0Var != null) {
@@ -118,7 +118,7 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return d8.d(super.getCustomSelectionActionModeCallback());
+        return x7.d(super.getCustomSelectionActionModeCallback());
     }
 
     @Override // android.widget.TextView
@@ -137,24 +137,24 @@ public class a1 extends TextView implements u0.k {
             if (i10 >= 28) {
                 this.f = new z0(this);
             } else if (i10 >= 26) {
-                this.f = new za.c(this, 25);
+                this.f = new ja.c(this, 18);
             }
         }
         return this.f;
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        n nVar = this.a;
-        if (nVar != null) {
-            return nVar.b();
+        m mVar = this.a;
+        if (mVar != null) {
+            return mVar.b();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        n nVar = this.a;
-        if (nVar != null) {
-            return nVar.c();
+        m mVar = this.a;
+        if (mVar != null) {
+            return mVar.c();
         }
         return null;
     }
@@ -179,7 +179,7 @@ public class a1 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                d8.a(this);
+                x7.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -189,16 +189,16 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public TextClassifier getTextClassifier() {
-        z zVar;
-        if (Build.VERSION.SDK_INT >= 28 || (zVar = this.c) == null) {
+        y yVar;
+        if (Build.VERSION.SDK_INT >= 28 || (yVar = this.c) == null) {
             return super.getTextClassifier();
         }
-        TextClassifier textClassifier = (TextClassifier) zVar.c;
-        return textClassifier == null ? r0.a((TextView) zVar.b) : textClassifier;
+        TextClassifier textClassifier = (TextClassifier) yVar.c;
+        return textClassifier == null ? r0.a((TextView) yVar.b) : textClassifier;
     }
 
     public p0.c getTextMetricsParamsCompat() {
-        return d8.a(this);
+        return x7.a(this);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -206,13 +206,13 @@ public class a1 extends TextView implements u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         x0.h(editorInfo, onCreateInputConnection, this);
-        i7.u.a(editorInfo, onCreateInputConnection, this);
+        k7.l.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
         x0 x0Var = this.b;
         if (x0Var == null || v3.b) {
             return;
@@ -232,7 +232,7 @@ public class a1 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                d8.a(this);
+                x7.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -254,9 +254,9 @@ public class a1 extends TextView implements u0.k {
     }
 
     @Override // android.widget.TextView
-    public void setAllCaps(boolean z10) {
-        super.setAllCaps(z10);
-        getEmojiTextViewHelper().b(z10);
+    public void setAllCaps(boolean z4) {
+        super.setAllCaps(z4);
+        getEmojiTextViewHelper().b(z4);
     }
 
     @Override // android.widget.TextView
@@ -298,18 +298,18 @@ public class a1 extends TextView implements u0.k {
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.e();
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.e();
         }
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.f(i10);
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.f(i10);
         }
     }
 
@@ -351,33 +351,33 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(d8.e(callback, this));
+        super.setCustomSelectionActionModeCallback(x7.e(callback, this));
     }
 
-    public void setEmojiCompatEnabled(boolean z10) {
-        getEmojiTextViewHelper().c(z10);
+    public void setEmojiCompatEnabled(boolean z4) {
+        getEmojiTextViewHelper().c(z4);
     }
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((v6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((k6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().g(i10);
+            getSuperCaller().c(i10);
         } else {
-            d8.b(i10, this);
+            x7.b(i10, this);
         }
     }
 
     @Override // android.widget.TextView
     public void setLastBaselineToBottomHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().e(i10);
+            getSuperCaller().a(i10);
         } else {
-            d8.c(i10, this);
+            x7.c(i10, this);
         }
     }
 
@@ -395,21 +395,21 @@ public class a1 extends TextView implements u0.k {
         if (Build.VERSION.SDK_INT >= 29) {
             throw null;
         }
-        d8.a(this);
+        x7.a(this);
         throw null;
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.h(colorStateList);
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.h(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        n nVar = this.a;
-        if (nVar != null) {
-            nVar.i(mode);
+        m mVar = this.a;
+        if (mVar != null) {
+            mVar.i(mode);
         }
     }
 
@@ -438,11 +438,11 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setTextClassifier(TextClassifier textClassifier) {
-        z zVar;
-        if (Build.VERSION.SDK_INT >= 28 || (zVar = this.c) == null) {
+        y yVar;
+        if (Build.VERSION.SDK_INT >= 28 || (yVar = this.c) == null) {
             super.setTextClassifier(textClassifier);
         } else {
-            zVar.c = textClassifier;
+            yVar.c = textClassifier;
         }
     }
 
@@ -490,19 +490,19 @@ public class a1 extends TextView implements u0.k {
     }
 
     @Override // android.widget.TextView
-    public final void setTextSize(int i10, float f9) {
-        boolean z10 = v3.b;
-        if (z10) {
-            super.setTextSize(i10, f9);
+    public final void setTextSize(int i10, float f10) {
+        boolean z4 = v3.b;
+        if (z4) {
+            super.setTextSize(i10, f10);
             return;
         }
         x0 x0Var = this.b;
         if (x0Var != null) {
             h1 h1Var = x0Var.i;
-            if (z10 || h1Var.f()) {
+            if (z4 || h1Var.f()) {
                 return;
             }
-            h1Var.g(f9, i10);
+            h1Var.g(f10, i10);
         }
     }
 
@@ -516,7 +516,7 @@ public class a1 extends TextView implements u0.k {
             typeface2 = null;
         } else {
             Context context = getContext();
-            f8 f8Var = i0.e.a;
+            z7 z7Var = i0.e.a;
             if (context == null) {
                 throw new IllegalArgumentException("Context cannot be null");
             }
@@ -540,23 +540,23 @@ public class a1 extends TextView implements u0.k {
         this.e = false;
         this.f = null;
         d3.a(this, getContext());
-        n nVar = new n(this);
-        this.a = nVar;
-        nVar.d(attributeSet, i10);
+        m mVar = new m(this);
+        this.a = mVar;
+        mVar.d(attributeSet, i10);
         x0 x0Var = new x0(this);
         this.b = x0Var;
         x0Var.f(attributeSet, i10);
         x0Var.b();
-        z zVar = new z();
-        zVar.b = this;
-        this.c = zVar;
+        y yVar = new y();
+        yVar.b = this;
+        this.c = yVar;
         getEmojiTextViewHelper().a(attributeSet, i10);
     }
 
     @Override // android.widget.TextView
     public final void setCompoundDrawablesRelativeWithIntrinsicBounds(int i10, int i11, int i12, int i13) {
         Context context = getContext();
-        setCompoundDrawablesRelativeWithIntrinsicBounds(i10 != 0 ? s7.b(context, i10) : null, i11 != 0 ? s7.b(context, i11) : null, i12 != 0 ? s7.b(context, i12) : null, i13 != 0 ? s7.b(context, i13) : null);
+        setCompoundDrawablesRelativeWithIntrinsicBounds(i10 != 0 ? r7.b(context, i10) : null, i11 != 0 ? r7.b(context, i11) : null, i12 != 0 ? r7.b(context, i12) : null, i13 != 0 ? r7.b(context, i13) : null);
         x0 x0Var = this.b;
         if (x0Var != null) {
             x0Var.b();
@@ -566,7 +566,7 @@ public class a1 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public final void setCompoundDrawablesWithIntrinsicBounds(int i10, int i11, int i12, int i13) {
         Context context = getContext();
-        setCompoundDrawablesWithIntrinsicBounds(i10 != 0 ? s7.b(context, i10) : null, i11 != 0 ? s7.b(context, i11) : null, i12 != 0 ? s7.b(context, i12) : null, i13 != 0 ? s7.b(context, i13) : null);
+        setCompoundDrawablesWithIntrinsicBounds(i10 != 0 ? r7.b(context, i10) : null, i11 != 0 ? r7.b(context, i11) : null, i12 != 0 ? r7.b(context, i12) : null, i13 != 0 ? r7.b(context, i13) : null);
         x0 x0Var = this.b;
         if (x0Var != null) {
             x0Var.b();

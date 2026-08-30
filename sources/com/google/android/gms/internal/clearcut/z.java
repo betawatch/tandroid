@@ -8,22 +8,22 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public abstract class z extends j {
     private static Map<Object, z> zzjr = new ConcurrentHashMap();
-    protected d1 zzjp;
+    protected c1 zzjp;
     private int zzjq;
 
     public z() {
         this.zzex = 0;
-        this.zzjp = d1.e;
+        this.zzjp = c1.e;
         this.zzjq = -1;
     }
 
     public static Object b(Method method, z zVar, Object... objArr) {
         try {
             return method.invoke(zVar, objArr);
-        } catch (IllegalAccessException e10) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
-        } catch (InvocationTargetException e11) {
-            Throwable cause = e11.getCause();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e6) {
+            Throwable cause = e6.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -44,8 +44,8 @@ public abstract class z extends j {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 zVar = zzjr.get(cls);
-            } catch (ClassNotFoundException e10) {
-                throw new IllegalStateException("Class initialization cannot fail.", e10);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
         if (zVar != null) {
@@ -64,9 +64,9 @@ public abstract class z extends j {
         if (!((z) a(6)).getClass().isInstance(obj)) {
             return false;
         }
-        w0 w0Var = w0.c;
-        w0Var.getClass();
-        return w0Var.a(getClass()).d(this, (z) obj);
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        return v0Var.a(getClass()).d(this, (z) obj);
     }
 
     public final int hashCode() {
@@ -74,19 +74,19 @@ public abstract class z extends j {
         if (i10 != 0) {
             return i10;
         }
-        w0 w0Var = w0.c;
-        w0Var.getClass();
-        int e10 = w0Var.a(getClass()).e(this);
-        this.zzex = e10;
-        return e10;
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        int e = v0Var.a(getClass()).e(this);
+        this.zzex = e;
+        return e;
     }
 
     public final String toString() {
         String obj = super.toString();
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("# ");
-        sb2.append(obj);
-        o1.i(this, sb2, 0);
-        return sb2.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("# ");
+        sb.append(obj);
+        n1.i(this, sb, 0);
+        return sb.toString();
     }
 }

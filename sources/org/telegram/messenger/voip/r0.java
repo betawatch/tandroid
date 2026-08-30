@@ -1,35 +1,38 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.voip.VoIPService;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.g3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements Runnable {
+public final /* synthetic */ class r0 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ r0(Object obj, int i10) {
+    public /* synthetic */ r0(KeyEvent.Callback callback, Object obj, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = callback;
+        this.c = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                ((VoIPService.1) this.b).lambda$run$0();
-                break;
-            case 1:
-                ((VoIPService.9) this.b).lambda$run$0();
-                break;
-            case 2:
-                ((AudioTrackJNI) this.b).lambda$startThread$0();
-                break;
-            case 3:
-                ((VoIPPendingCall) this.b).lambda$new$1();
+                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((g3) this.b, (Integer) this.c, dialogInterface);
                 break;
             default:
-                ((NativeInstance) this.b).stopGroup();
+                View view = (View) this.b;
+                uf.n nVar = (uf.n) this.c;
+                if (view != null) {
+                    view.clearFocus();
+                }
+                nVar.requestFocus();
+                AndroidUtilities.showKeyboard(nVar);
                 break;
         }
     }

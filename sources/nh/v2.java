@@ -1,134 +1,60 @@
 package nh;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.FrameLayout;
+import android.content.Intent;
+import android.net.Uri;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.jr;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessageChatArguments;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.xj;
+import org.telegram.ui.nn;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class v2 extends org.telegram.ui.ActionBar.e5 {
-    public AnimatorSet f;
-    public final /* synthetic */ n3 h;
+public final class v2 implements xj {
+    public final /* synthetic */ d4 a;
 
-    public v2(n3 n3Var) {
-        this.h = n3Var;
+    public v2(d4 d4Var) {
+        this.a = d4Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void m() {
-        n3 n3Var = this.h;
-        w2 w2Var = n3Var.d;
-        c3 c3Var = n3Var.B;
-        AnimatorSet animatorSet = this.f;
-        if (animatorSet != null) {
-            animatorSet.cancel();
+    @Override // org.telegram.ui.Components.xj
+    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z4, int i10, long j10, boolean z10, long j11) {
+        AccountInstance accountInstance;
+        d4 d4Var = this.a;
+        TL_stories.StoryItem storyItem = d4Var.L1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
         }
-        ArrayList arrayList = new ArrayList();
-        c3Var.setVisibility(0);
-        Property property = View.SCALE_X;
-        int i10 = 1;
-        arrayList.add(ObjectAnimator.ofFloat(c3Var, (Property<c3, Float>) property, 1.0f));
-        Property property2 = View.SCALE_Y;
-        arrayList.add(ObjectAnimator.ofFloat(c3Var, (Property<c3, Float>) property2, 1.0f));
-        Property property3 = View.ALPHA;
-        arrayList.add(ObjectAnimator.ofFloat(c3Var, (Property<c3, Float>) property3, 1.0f));
-        EditTextBoldCursor searchField = n3Var.C.getSearchField();
-        if (searchField != null) {
-            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property, 0.8f));
-            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property2, 0.8f));
-            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property3, 0.0f));
-        }
-        w2Var.setVisibility(0);
-        arrayList.add(ObjectAnimator.ofFloat(w2Var, (Property<w2, Float>) property3, 1.0f));
-        w2Var.setFastScrollVisible(true);
-        arrayList.add(ObjectAnimator.ofFloat(n3Var.h, (Property<FrameLayout, Float>) property3, 0.0f));
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new u2(this, i10));
-        arrayList.add(ofFloat);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.f = animatorSet2;
-        animatorSet2.setDuration(320L);
-        this.f.setInterpolator(jr.h);
-        this.f.playTogether(arrayList);
-        this.f.addListener(new bg.c3(7, this, searchField));
-        this.f.start();
+        accountInstance = d4Var.getAccountInstance();
+        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, d4Var.y1, (MessageObject) null, (MessageObject) null, storyItem, (nn) null, (MessageObject) null, z4, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j11);
+        d4Var.k0(j11 <= 0);
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void n() {
-        n3 n3Var = this.h;
-        w2 w2Var = n3Var.d;
-        FrameLayout frameLayout = n3Var.h;
-        c3 c3Var = n3Var.B;
-        AnimatorSet animatorSet = this.f;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        ArrayList arrayList = new ArrayList();
-        Property property = View.SCALE_X;
-        int i10 = 0;
-        arrayList.add(ObjectAnimator.ofFloat(c3Var, (Property<c3, Float>) property, 0.8f));
-        Property property2 = View.SCALE_Y;
-        arrayList.add(ObjectAnimator.ofFloat(c3Var, (Property<c3, Float>) property2, 0.8f));
-        Property property3 = View.ALPHA;
-        arrayList.add(ObjectAnimator.ofFloat(c3Var, (Property<c3, Float>) property3, 0.0f));
-        EditTextBoldCursor searchField = n3Var.C.getSearchField();
-        if (searchField != null) {
-            searchField.setVisibility(0);
-            searchField.setHandlesColor(-1);
-            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property2, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property3, 1.0f));
-        }
-        frameLayout.setVisibility(0);
-        arrayList.add(ObjectAnimator.ofFloat(w2Var, (Property<w2, Float>) property3, 0.0f));
-        w2Var.setFastScrollVisible(false);
-        arrayList.add(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property3, 1.0f));
-        n3Var.s.setVisibility(0);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new u2(this, i10));
-        arrayList.add(ofFloat);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.f = animatorSet2;
-        animatorSet2.setDuration(320L);
-        this.f.setInterpolator(jr.h);
-        this.f.playTogether(arrayList);
-        this.f.addListener(new ag.m0(this, 28));
-        this.f.start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void q(EditText editText) {
-        String obj = editText.getText().toString();
-        d3 d3Var = this.h.r;
-        lh.m5 m5Var = d3Var.v;
-        if (!TextUtils.equals(d3Var.f, obj)) {
-            if (d3Var.e != -1) {
-                ConnectionsManager.getInstance(d3Var.w.a).cancelRequest(d3Var.e, true);
-                d3Var.e = -1;
+    @Override // org.telegram.ui.Components.xj
+    public final void x() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+            intent.setType("*/*");
+            org.telegram.ui.ActionBar.p2 p2Var = this.a.G0.f;
+            if (p2Var.getParentActivity() == null) {
+                return;
             }
-            d3Var.d = false;
-            d3Var.h = null;
+            p2Var.getParentActivity().startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        d3Var.f = obj;
-        AndroidUtilities.cancelRunOnUIThread(m5Var);
-        if (!TextUtils.isEmpty(obj)) {
-            d3Var.F(true);
-            AndroidUtilities.runOnUIThread(m5Var, 1500L);
-        } else {
-            d3Var.c.clear();
-            d3Var.F(false);
-            d3Var.l();
-        }
+    }
+
+    @Override // org.telegram.ui.Components.xj
+    public final /* synthetic */ void O() {
+    }
+
+    @Override // org.telegram.ui.Components.xj
+    public final /* synthetic */ void m(long j10, ArrayList arrayList, boolean z4, int i10) {
     }
 }

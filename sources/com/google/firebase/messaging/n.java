@@ -9,10 +9,10 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.t4;
-import org.telegram.ui.ActionBar.v4;
+import org.telegram.ui.ActionBar.w4;
+import org.telegram.ui.ActionBar.y4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class n {
     public int a;
@@ -26,9 +26,9 @@ public final class n {
         this.c = context;
     }
 
-    public static String c(u8.g gVar) {
+    public static String c(w8.g gVar) {
         gVar.a();
-        u8.i iVar = gVar.c;
+        w8.i iVar = gVar.c;
         String str = iVar.e;
         if (str != null) {
             return str;
@@ -74,8 +74,8 @@ public final class n {
     public PackageInfo d(String str) {
         try {
             return this.c.getPackageManager().getPackageInfo(str, 0);
-        } catch (PackageManager.NameNotFoundException e10) {
-            Log.w("FirebaseMessaging", "Failed to find package " + e10);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w("FirebaseMessaging", "Failed to find package " + e);
             return null;
         }
     }
@@ -90,7 +90,7 @@ public final class n {
                     Log.e("FirebaseMessaging", "Google Play services missing or without correct permission.");
                     i10 = 0;
                 } else {
-                    if (!g6.b.d()) {
+                    if (!i6.b.d()) {
                         Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
                         intent.setPackage("com.google.android.gms");
                         List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
@@ -104,7 +104,7 @@ public final class n {
                     List<ResolveInfo> queryBroadcastReceivers = packageManager.queryBroadcastReceivers(intent2, 0);
                     if (queryBroadcastReceivers == null || queryBroadcastReceivers.size() <= 0) {
                         Log.w("FirebaseMessaging", "Failed to resolve IID implementation package, falling back");
-                        if (g6.b.d()) {
+                        if (i6.b.d()) {
                             this.b = 2;
                         } else {
                             this.b = 1;
@@ -128,13 +128,13 @@ public final class n {
         }
     }
 
-    public n(t4 t4Var, Context context, int i10) {
-        this.e = t4Var;
+    public n(w4 w4Var, Context context, int i10) {
+        this.e = w4Var;
         this.c = context;
         this.a = i10;
         int dp = AndroidUtilities.dp(18.0f);
         this.b = dp;
-        LinearLayout b10 = v4.b(t4Var.Q, context, null, true, false, false);
+        LinearLayout b10 = y4.b(w4Var.Q, context, null, true, false, false);
         b10.setPadding(dp, 0, dp, 0);
         this.d = b10;
     }

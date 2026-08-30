@@ -2,82 +2,125 @@ package com.google.android.gms.internal.clearcut;
 
 import android.content.ContentResolver;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
-import j$.util.Objects;
-import java.io.IOException;
-import java.util.AbstractCollection;
 import java.util.HashMap;
-import java.util.Iterator;
-import org.telegram.ui.th;
+import org.json.JSONObject;
+import org.telegram.ui.yh;
 
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h {
+public final /* synthetic */ class e implements h, ra.m {
     public final String a;
 
-    public e(String str, int i10) {
-        switch (i10) {
-            case 1:
-                str.getClass();
-                this.a = str;
-                break;
-            default:
-                this.a = str;
-                break;
+    public /* synthetic */ e(String str) {
+        this.a = str;
+    }
+
+    public static void a(l7.w0 w0Var, p9.c cVar) {
+        String str = cVar.a;
+        if (str != null) {
+            w0Var.w("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+        }
+        w0Var.w("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        w0Var.w("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        w0Var.w("Accept", "application/json");
+        String str2 = cVar.b;
+        if (str2 != null) {
+            w0Var.w("X-CRASHLYTICS-DEVICE-MODEL", str2);
+        }
+        String str3 = cVar.c;
+        if (str3 != null) {
+            w0Var.w("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+        }
+        String str4 = cVar.d;
+        if (str4 != null) {
+            w0Var.w("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+        }
+        String str5 = cVar.e.b().a;
+        if (str5 != null) {
+            w0Var.w("X-CRASHLYTICS-INSTALLATION-ID", str5);
         }
     }
 
-    public void a(StringBuilder sb2, AbstractCollection abstractCollection) {
-        Iterator it = abstractCollection.iterator();
-        try {
-            if (it.hasNext()) {
-                Object next = it.next();
-                Objects.requireNonNull(next);
-                sb2.append(next instanceof CharSequence ? (CharSequence) next : next.toString());
-                while (it.hasNext()) {
-                    sb2.append((CharSequence) this.a);
-                    Object next2 = it.next();
-                    Objects.requireNonNull(next2);
-                    sb2.append(next2 instanceof CharSequence ? (CharSequence) next2 : next2.toString());
-                }
-            }
-        } catch (IOException e10) {
-            throw new AssertionError(e10);
+    public static HashMap b(p9.c cVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("build_version", cVar.h);
+        hashMap.put("display_version", cVar.g);
+        hashMap.put("source", Integer.toString(cVar.i));
+        String str = cVar.f;
+        if (!TextUtils.isEmpty(str)) {
+            hashMap.put("instance", str);
         }
+        return hashMap;
+    }
+
+    public JSONObject c(z0 z0Var) {
+        int i10 = z0Var.b;
+        f9.b bVar = f9.b.a;
+        bVar.c("Settings response code was: " + i10);
+        String str = this.a;
+        if (i10 != 200 && i10 != 201 && i10 != 202 && i10 != 203) {
+            String str2 = "Settings request failed; (status: " + i10 + ") from " + str;
+            if (bVar.a(6)) {
+                Log.e("FirebaseCrashlytics", str2, null);
+            }
+            return null;
+        }
+        String str3 = z0Var.c;
+        try {
+            return new JSONObject(str3);
+        } catch (Exception e) {
+            bVar.d("Failed to parse settings JSON from " + str, e);
+            bVar.d("Settings response " + str3, null);
+            return null;
+        }
+    }
+
+    @Override // ra.m
+    public Object s2() {
+        throw new pa.j(this.a);
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
     public Object zzp() {
         Object obj;
-        boolean z10;
+        boolean z4;
         String str = this.a;
         ContentResolver contentResolver = d.g.getContentResolver();
-        Uri uri = g2.a;
-        synchronized (g2.class) {
-            g2.c(contentResolver);
-            obj = g2.k;
+        Uri uri = f2.a;
+        synchronized (f2.class) {
+            f2.c(contentResolver);
+            obj = f2.k;
         }
-        HashMap hashMap = g2.g;
+        HashMap hashMap = f2.g;
         Boolean bool = Boolean.FALSE;
-        Boolean bool2 = (Boolean) g2.a(hashMap, str, bool);
+        Boolean bool2 = (Boolean) f2.a(hashMap, str, bool);
         if (bool2 != null) {
-            z10 = bool2.booleanValue();
+            z4 = bool2.booleanValue();
         } else {
-            String b10 = g2.b(contentResolver, str);
-            boolean z11 = false;
+            String b10 = f2.b(contentResolver, str);
+            boolean z10 = false;
             if (b10 != null && !b10.equals("")) {
-                if (g2.c.matcher(b10).matches()) {
+                if (f2.c.matcher(b10).matches()) {
                     bool = Boolean.TRUE;
-                    z11 = true;
-                } else if (!g2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", th.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                    z10 = true;
+                } else if (!f2.d.matcher(b10).matches()) {
+                    Log.w("Gservices", yh.l("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
-                g2.e(obj, hashMap, str, bool);
-                z10 = z11;
+                f2.e(obj, hashMap, str, bool);
+                z4 = z10;
             }
             bool = bool2;
-            g2.e(obj, hashMap, str, bool);
-            z10 = z11;
+            f2.e(obj, hashMap, str, bool);
+            z4 = z10;
         }
-        return Boolean.valueOf(z10);
+        return Boolean.valueOf(z4);
+    }
+
+    public e(String str, db.a aVar) {
+        if (str == null) {
+            throw new IllegalArgumentException("url must not be null.");
+        }
+        this.a = str;
     }
 }

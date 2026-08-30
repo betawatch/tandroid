@@ -3,13 +3,13 @@ package h1;
 import android.database.DataSetObserver;
 import m.c3;
 import m.e2;
-import m2.g;
+import m2.h;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ky0;
-import org.telegram.ui.yz0;
+import org.telegram.ui.j01;
+import org.telegram.ui.vy0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -30,29 +30,29 @@ public final class a extends DataSetObserver {
                 break;
             case 1:
                 e2 e2Var = (e2) this.b;
-                if (e2Var.K.isShowing()) {
-                    e2Var.h();
+                if (e2Var.L.isShowing()) {
+                    e2Var.g();
                     break;
                 }
                 break;
             case 2:
-                ((g) this.b).f();
+                ((h) this.b).f();
                 break;
             default:
-                yz0 yz0Var = (yz0) this.b;
-                ProfileActivity profileActivity = yz0Var.n;
-                int realCount = profileActivity.j0.getRealCount();
-                if (profileActivity.w0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.J.A) {
-                    profileActivity.w0 = 1;
+                j01 j01Var = (j01) this.b;
+                ProfileActivity profileActivity = j01Var.n;
+                int realCount = profileActivity.k0.getRealCount();
+                if (profileActivity.x0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.K.B) {
+                    profileActivity.x0 = 1;
                 }
-                yz0Var.a(false);
-                yz0Var.b(1.0f);
-                if (profileActivity.m0 != null) {
-                    if (!profileActivity.P0.t()) {
-                        yz0Var.c();
+                j01Var.a(false);
+                j01Var.b(1.0f);
+                if (profileActivity.n0 != null) {
+                    if (!profileActivity.Q0.t()) {
+                        j01Var.c();
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new ky0(yz0Var, 3), 500L);
+                        AndroidUtilities.runOnUIThread(new vy0(j01Var, 3), 500L);
                         break;
                     }
                 }
@@ -72,7 +72,7 @@ public final class a extends DataSetObserver {
                 ((e2) this.b).dismiss();
                 break;
             case 2:
-                ((g) this.b).f();
+                ((h) this.b).f();
                 break;
             default:
                 super.onInvalidated();

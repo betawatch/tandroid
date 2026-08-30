@@ -1,6 +1,6 @@
 package androidx.startup;
 
-import a6.b;
+import a7.b;
 import android.content.ComponentName;
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -9,10 +9,10 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Trace;
-import h7.m8;
 import i2.a;
+import j7.i8;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -43,11 +43,11 @@ public class InitializationProvider extends ContentProvider {
         Context context2 = c3.c;
         try {
             try {
-                m8.a("Startup");
+                i8.a("Startup");
                 c3.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
                 return true;
-            } catch (PackageManager.NameNotFoundException e10) {
-                throw new b(e10);
+            } catch (PackageManager.NameNotFoundException e) {
+                throw new b(e);
             }
         } finally {
             Trace.endSection();

@@ -1,35 +1,28 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class q0 extends k0 {
-    public final transient s0 d;
-    public final transient r0 e;
+public final class q0 extends g0 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
 
-    public q0(s0 s0Var, r0 r0Var) {
-        this.d = s0Var;
-        this.e = r0Var;
+    public q0(int i10, int i11, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
+        this.e = i11;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.get(obj) != null;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        j7.v5.a(i10, this.e);
+        Object obj = this.c[i10 + i10 + this.d];
+        obj.getClass();
+        return obj;
     }
 
-    @Override // com.google.android.gms.internal.cast.e0
-    public final int i(Object[] objArr) {
-        return this.e.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.e.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d.h;
+        return this.e;
     }
 }

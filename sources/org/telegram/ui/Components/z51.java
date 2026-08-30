@@ -1,103 +1,158 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.ui.hh1;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class z51 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public KeyEvent.Callback b;
+public final class z51 extends qv0 {
+    public final /* synthetic */ int t0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z51(Context context) {
-        super(context);
-        this.a = 2;
+    public /* synthetic */ z51(Context context, org.telegram.ui.ActionBar.e5 e5Var, int i10) {
+        super(context, e5Var);
+        this.t0 = i10;
     }
 
-    @Override // android.view.ViewGroup
-    public void addView(View view, int i10, int i11) {
-        switch (this.a) {
-            case 3:
-                super.addView(view, i10, i11);
-                ((sg.f) this.b).e();
-                break;
-            default:
-                super.addView(view, i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                b61 b61Var = (b61) this.b;
-                int i11 = b61Var.h;
-                i10 = ((org.telegram.ui.ActionBar.f3) b61Var).backgroundPaddingTop;
-                int translationY = (int) ((i11 - i10) - getTranslationY());
-                Drawable drawable = b61Var.b;
-                drawable.setBounds(0, translationY, getMeasuredWidth(), getMeasuredHeight());
-                drawable.draw(canvas);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                b61 b61Var = (b61) this.b;
-                if (motionEvent.getAction() != 0 || b61Var.h == 0 || motionEvent.getY() >= b61Var.h) {
-                    return super.onInterceptTouchEvent(motionEvent);
-                }
-                b61Var.dismiss();
-                return true;
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                return !((b61) this.b).isDismissed() && super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.qv0
+    public boolean P() {
+        switch (this.t0) {
             case 1:
-                ((hh1) this.b).P.onTouchEvent(motionEvent);
-                return super.onTouchEvent(motionEvent);
+                return false;
+            case 2:
+                return false;
+            case 3:
             default:
-                return super.onTouchEvent(motionEvent);
+                return super.P();
+            case 4:
+                return false;
         }
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f9) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup
+    public void addView(View view) {
+        switch (this.t0) {
+            case 3:
+                if (view instanceof kz) {
+                    ViewGroup.LayoutParams layoutParams = ((kz) view).getLayoutParams();
+                    if (layoutParams == null) {
+                        layoutParams = new FrameLayout.LayoutParams(-1, -2);
+                    }
+                    if (layoutParams instanceof FrameLayout.LayoutParams) {
+                        ((FrameLayout.LayoutParams) layoutParams).gravity = 87;
+                    }
+                    view.setLayoutParams(layoutParams);
+                }
+                super.addView(view);
+                break;
+            default:
+                super.addView(view);
+                break;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
+    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        switch (this.t0) {
+            case 3:
+                int childCount = getChildCount();
+                int R = R();
+                int paddingLeft = getPaddingLeft();
+                int paddingRight = (i12 - i10) - getPaddingRight();
+                int paddingTop = getPaddingTop();
+                int i21 = i13 - i11;
+                int paddingBottom = i21 - getPaddingBottom();
+                for (int i22 = 0; i22 < childCount; i22++) {
+                    View childAt = getChildAt(i22);
+                    if (childAt.getVisibility() != 8) {
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                        int measuredWidth = childAt.getMeasuredWidth();
+                        int measuredHeight = childAt.getMeasuredHeight();
+                        int i23 = layoutParams.gravity;
+                        if (i23 == -1) {
+                            i23 = 51;
+                        }
+                        int absoluteGravity = Gravity.getAbsoluteGravity(i23, getLayoutDirection());
+                        int i24 = i23 & 112;
+                        int i25 = absoluteGravity & 7;
+                        if (i25 == 1) {
+                            i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
+                            i15 = layoutParams.rightMargin;
+                        } else if (i25 != 5) {
+                            i16 = layoutParams.leftMargin + paddingLeft;
+                            if (i24 == 16) {
+                                if (i24 == 48) {
+                                    i20 = layoutParams.topMargin;
+                                } else if (i24 != 80) {
+                                    i20 = layoutParams.topMargin;
+                                } else {
+                                    i17 = paddingBottom - measuredHeight;
+                                    i18 = layoutParams.bottomMargin;
+                                }
+                                i19 = i20 + paddingTop;
+                                if (childAt instanceof kz) {
+                                    i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
+                                }
+                                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                            } else {
+                                i17 = (((paddingBottom - paddingTop) - measuredHeight) / 2) + paddingTop + layoutParams.topMargin;
+                                i18 = layoutParams.bottomMargin;
+                            }
+                            i19 = i17 - i18;
+                            if (childAt instanceof kz) {
+                            }
+                            childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                        } else {
+                            i14 = paddingRight - measuredWidth;
+                            i15 = layoutParams.rightMargin;
+                        }
+                        i16 = i14 - i15;
+                        if (i24 == 16) {
+                        }
+                        i19 = i17 - i18;
+                        if (childAt instanceof kz) {
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                    }
+                }
+                S();
+                break;
+            default:
+                super.onLayout(z4, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.t0) {
             case 0:
-                super.setTranslationY(f9);
-                b61.m((b61) this.b);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
                 break;
             default:
-                super.setTranslationY(f9);
+                super.onMeasure(i10, i11);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z51(KeyEvent.Callback callback, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = callback;
     }
 }

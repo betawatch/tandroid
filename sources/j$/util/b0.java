@@ -24,9 +24,9 @@ public final class b0 {
             return false;
         }
         b0 b0Var = (b0) obj;
-        boolean z10 = b0Var.a;
-        boolean z11 = this.a;
-        return (z11 && z10) ? Double.compare(this.b, b0Var.b) == 0 : z11 == z10;
+        boolean z4 = b0Var.a;
+        boolean z10 = this.a;
+        return (z10 && z4) ? Double.compare(this.b, b0Var.b) == 0 : z10 == z4;
     }
 
     public final int hashCode() {

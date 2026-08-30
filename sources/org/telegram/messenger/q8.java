@@ -1,49 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ BaseController h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ q8(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10, long j10, int i11, Runnable runnable) {
-        this.h = mediaDataController;
-        this.f = z10;
-        this.b = arrayList;
-        this.d = i10;
-        this.c = j10;
-        this.e = i11;
-        this.n = runnable;
+    public /* synthetic */ q8(MediaDataController mediaDataController, int i10, int i11) {
+        this.a = i11;
+        this.b = mediaDataController;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.h).lambda$processLoadedStickers$107(this.f, this.b, this.d, this.c, this.e, (Runnable) this.n);
+                this.b.lambda$processLoadedStickers$103(this.c);
                 break;
             default:
-                ((NotificationsController) this.h).lambda$processReadMessages$21((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
+                this.b.lambda$fetchEmojiStatuses$231(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ q8(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, long j10, int i10, int i11, boolean z10) {
-        this.h = notificationsController;
-        this.n = longSparseIntArray;
-        this.b = arrayList;
-        this.c = j10;
-        this.d = i10;
-        this.e = i11;
-        this.f = z10;
     }
 }

@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import bd.l;
-import i7.c7;
+import dd.l;
+import k7.p7;
 import kotlin.jvm.internal.q;
-import sc.c;
-import uc.i;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzev extends i implements l {
     Object zza;
@@ -25,31 +26,31 @@ final class zzev extends i implements l {
         this.zzf = qVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(c cVar) {
         return new zzev(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // bd.l
+    @Override // dd.l
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzev) create((c) obj)).invokeSuspend(qc.i.a);
+        return ((zzev) create((c) obj)).invokeSuspend(sc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0031, code lost:
     
         if (r6 != r0) goto L15;
      */
-    @Override // uc.a
+    @Override // wc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                c7.b(obj);
+                p7.b(obj);
                 zzgrVar = this.zzc;
                 zzfp zzfpVar = this.zzd;
                 zzye zzyeVar = this.zze;
@@ -58,11 +59,11 @@ final class zzev extends i implements l {
                 obj = new zzhf(48, new zzes(zzfpVar, zzyeVar, null), null);
             } else {
                 if (i10 != 1) {
-                    c7.b(obj);
+                    p7.b(obj);
                     return (zzyg) obj;
                 }
                 zzgrVar = (zzgr) this.zza;
-                c7.b(obj);
+                p7.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
@@ -71,9 +72,9 @@ final class zzev extends i implements l {
                 return aVar;
             }
             return (zzyg) obj;
-        } catch (zzcg e10) {
-            this.zzf.a = e10;
-            throw e10;
+        } catch (zzcg e) {
+            this.zzf.a = e;
+            throw e;
         }
     }
 }

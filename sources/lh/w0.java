@@ -1,388 +1,262 @@
 package lh;
 
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.content.Context;
+import android.text.InputFilter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AppGlobalConfig;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ad0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d1 b;
+public final class w0 extends org.telegram.ui.ActionBar.g3 {
+    public mf.a B;
+    public int C;
+    public final ad0 b;
+    public final EditTextBoldCursor c;
+    public final TextView d;
+    public final org.telegram.ui.Components.k6 e;
+    public final ph.d f;
+    public final org.telegram.ui.Components.k6 h;
+    public final org.telegram.ui.Cells.t8 n;
+    public final ImageView r;
+    public final ImageView s;
+    public final mf.a v;
+    public final mf.a w;
+    public final mf.a x;
+    public final mf.a y;
 
-    public /* synthetic */ w0(d1 d1Var, int i10) {
-        this.a = i10;
-        this.b = d1Var;
+    public w0(Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10, mf.a aVar, kh.a1 a1Var) {
+        super(context, f6Var, true, false);
+        this.currentAccount = i10;
+        this.smoothKeyboardAnimationEnabled = true;
+        this.waitingKeyboard = true;
+        AppGlobalConfig appGlobalConfig = MessagesController.getInstance(i10).config;
+        long max = Math.max(appGlobalConfig.tonStarGiftResaleAmountMin.get(), 10000000L);
+        mf.b bVar = mf.b.b;
+        this.x = mf.a.i(max, bVar);
+        this.y = mf.a.i(appGlobalConfig.tonStarGiftResaleAmountMax.get(), bVar);
+        long j10 = appGlobalConfig.starsStarGiftResaleAmountMin.get();
+        mf.b bVar2 = mf.b.a;
+        this.v = mf.a.g(j10, bVar2);
+        this.w = mf.a.g(appGlobalConfig.starsStarGiftResaleAmountMax.get(), bVar2);
+        fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        LinearLayout f10 = org.telegram.messenger.y3.f(context, 0);
+        linearLayout.addView(f10, k7.b6.t(-1, 56, 55, 0, 0, 0, 0));
+        org.telegram.ui.Components.k6 k6Var = new org.telegram.ui.Components.k6(context, false, false, false);
+        this.e = k6Var;
+        int i11 = org.telegram.ui.ActionBar.j6.G6;
+        k6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        k6Var.setTextSize(AndroidUtilities.dp(20.0f));
+        k6Var.setGravity(8388627);
+        k6Var.setTypeface(AndroidUtilities.bold());
+        f10.addView(k6Var, k7.b6.p(-1, -1, 1.0f, 119, 22, 0, 22, 0));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        linearLayout.addView(linearLayout2, k7.b6.l(1.0f, -1, -2));
+        ad0 ad0Var = new ad0(context, null);
+        this.b = ad0Var;
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.c = editTextBoldCursor;
+        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setImeOptions(268435462);
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setBackground(null);
+        editTextBoldCursor.setPadding(AndroidUtilities.dp(42.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        editTextBoldCursor.requestFocus();
+        ad0Var.setLeftPadding(AndroidUtilities.dp(28.0f));
+        ad0Var.e(editTextBoldCursor);
+        ad0Var.b(1.0f, aVar != null && !aVar.k() ? 1.0f : 0.0f, false);
+        ad0Var.setForceUseCenter2(true);
+        editTextBoldCursor.setOnFocusChangeListener(new cg.z(this, 5));
+        ad0Var.addView(editTextBoldCursor, k7.b6.e(-1, -2, 48));
+        linearLayout2.addView(ad0Var, k7.b6.k(18.0f, 0.0f, 18.0f, 0.0f, -1, 58));
+        ImageView imageView = new ImageView(context);
+        this.r = imageView;
+        imageView.setImageResource(R.drawable.star_small_inner);
+        ad0Var.addView(imageView, k7.b6.d(22, 22.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.s = imageView2;
+        imageView2.setImageResource(R.drawable.mini_gram_72);
+        imageView2.setColorFilter(-13397548);
+        ad0Var.addView(imageView2, k7.b6.d(22, 22.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.k6 k6Var2 = new org.telegram.ui.Components.k6(context, false, false, false);
+        this.h = k6Var2;
+        int i12 = org.telegram.ui.ActionBar.j6.y6;
+        k6Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        k6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        k6Var2.setGravity(5);
+        ad0Var.addView(k6Var2, k7.b6.d(-2, -1.0f, 21, 0.0f, 0.0f, 16.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        textView.setTextSize(1, 13.0f);
+        linearLayout2.addView(textView, k7.b6.t(-1, -2, 55, 33, 4, 33, 0));
+        org.telegram.ui.Cells.t8 t8Var = new org.telegram.ui.Cells.t8(context);
+        this.n = t8Var;
+        t8Var.c.setLayoutParams(k7.b6.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 22.0f, 22.0f, 22.0f, 0.0f));
+        t8Var.b(LocaleController.getString(R.string.ResellGiftPriceOnlyTON), LocaleController.getString(R.string.ResellGiftPriceHintOnlyTON), true, false);
+        t8Var.setOnClickListener(new androidx.mediarouter.app.c(this, 16));
+        linearLayout2.addView(t8Var, k7.b6.t(-1, -2, 55, 0, 16, 0, 16));
+        LinearLayout linearLayout3 = new LinearLayout(context);
+        linearLayout3.setOrientation(1);
+        linearLayout.addView(linearLayout3, k7.b6.q(-1, -2, 80));
+        ph.d p10 = org.telegram.messenger.y3.p(24, context, f6Var, true);
+        this.f = p10;
+        p10.setOnClickListener(new cg.n(18, this, a1Var));
+        p10.g(LocaleController.getString(R.string.ResellGiftButton), false, true);
+        linearLayout3.addView(p10, k7.b6.k(18.0f, 0.0f, 18.0f, 8.0f, -1, 48));
+        if (aVar != null) {
+            n(mf.a.i(aVar.b, aVar.a), !aVar.k(), true, false);
+        } else {
+            n(mf.a.i(0L, bVar2), false, true, false);
+        }
+        setCustomView(linearLayout);
+        editTextBoldCursor.addTextChangedListener(new v0(this));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01bc A[LOOP:4: B:78:0x01ba->B:79:0x01bc, LOOP_END] */
-    @Override // org.telegram.tgnet.RequestDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        int size;
-        int i10;
-        ArrayList arrayList;
-        TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo;
-        switch (this.a) {
-            case 0:
-                d1 d1Var = this.b;
-                TLRPC.InputGroupCall inputGroupCall = d1Var.f;
-                int i11 = d1Var.e;
-                if (!(tLObject instanceof TLRPC.Updates)) {
-                    if (tL_error != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new y0(d1Var, 4));
-                        break;
-                    }
-                } else {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    MessagesController.getInstance(i11).putUsers(updates.users, false);
-                    MessagesController.getInstance(i11).putChats(updates.chats, false);
-                    ArrayList findUpdates = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCall.class);
-                    int size2 = findUpdates.size();
-                    int i12 = 0;
-                    while (i12 < size2) {
-                        Object obj = findUpdates.get(i12);
-                        i12++;
-                        d1Var.v = ((TL_update.TL_updateGroupCall) obj).call;
-                    }
-                    AndroidUtilities.runOnUIThread(new jh.w2(26, d1Var, MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCallMessage.class)));
-                    MessagesController.getInstance(i11).processUpdates(updates, false);
-                    TLRPC.GroupCall groupCall = d1Var.v;
-                    boolean z10 = groupCall != null && groupCall.rtmp_stream;
-                    ArrayList findUpdates2 = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCallParticipants.class);
-                    int size3 = findUpdates2.size();
-                    int i13 = 0;
-                    while (i13 < size3) {
-                        Object obj2 = findUpdates2.get(i13);
-                        i13++;
-                        TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) obj2;
-                        if (tL_updateGroupCallParticipants.call.id != d1Var.g() || z10) {
-                            arrayList = findUpdates2;
-                        } else {
-                            int i14 = 0;
-                            while (true) {
-                                if (i14 < tL_updateGroupCallParticipants.participants.size()) {
-                                    arrayList = findUpdates2;
-                                    if (DialogObject.getPeerDialogId(tL_updateGroupCallParticipants.participants.get(i14).peer) == d1Var.b) {
-                                        d1Var.C = tL_updateGroupCallParticipants.participants.get(i14);
-                                    } else {
-                                        i14++;
-                                        findUpdates2 = arrayList;
-                                    }
-                                } else {
-                                    arrayList = findUpdates2;
-                                }
-                            }
-                            if (d1Var.C != null) {
-                                ArrayList findUpdates3 = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCallConnection.class);
-                                size = findUpdates3.size();
-                                TLRPC.TL_dataJSON tL_dataJSON = null;
-                                i10 = 0;
-                                while (i10 < size) {
-                                    Object obj3 = findUpdates3.get(i10);
-                                    i10++;
-                                    tL_dataJSON = ((TL_update.TL_updateGroupCallConnection) obj3).params;
-                                }
-                                j7.l1.x(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
-                                d1Var.x = true;
-                                if (d1Var.w && d1Var.A != null) {
-                                    if (tL_dataJSON == null || tL_dataJSON.data.startsWith("{\"stream\":true")) {
-                                        d1Var.A.prepareForStream(z10);
-                                    } else {
-                                        d1Var.A.setJoinResponsePayload(tL_dataJSON.data);
-                                    }
-                                    if (d1Var.n) {
-                                        d1Var.A.setMuteMicrophone(d1Var.r);
-                                        d1Var.A.activateVideoCapturer(d1Var.F);
-                                        d1Var.A.setupOutgoingVideoCreated(d1Var.F);
-                                    } else {
-                                        TLRPC.GroupCallParticipant groupCallParticipant = d1Var.C;
-                                        if (groupCallParticipant != null) {
-                                            TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo2 = groupCallParticipant.video;
-                                            if (tL_groupCallParticipantVideo2 != null) {
-                                                NativeInstance nativeInstance = d1Var.A;
-                                                String str = tL_groupCallParticipantVideo2.endpoint;
-                                                NativeInstance.SsrcGroup[] d = d1.d(tL_groupCallParticipantVideo2);
-                                                d1Var.r(d);
-                                                nativeInstance.addIncomingVideoOutput(2, str, d, d1Var.D, DialogObject.getPeerDialogId(d1Var.C.peer));
-                                            } else {
-                                                AndroidUtilities.runOnUIThread(new y0(d1Var, 2));
-                                            }
-                                        } else if (z10) {
-                                            TL_phone.getGroupCallStreamChannels getgroupcallstreamchannels = new TL_phone.getGroupCallStreamChannels();
-                                            getgroupcallstreamchannels.call = inputGroupCall;
-                                            ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamchannels, new v0(d1Var, 1), 65536, 2, d1Var.h());
-                                        } else {
-                                            TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
-                                            getgroupcall.call = inputGroupCall;
-                                            getgroupcall.limit = 10;
-                                            ConnectionsManager.getInstance(i11).sendRequest(getgroupcall, new w0(d1Var, 2));
-                                        }
-                                    }
-                                    AndroidUtilities.runOnUIThread(new y0(d1Var, 3));
-                                    break;
-                                } else {
-                                    TL_phone.leaveGroupCall leavegroupcall = new TL_phone.leaveGroupCall();
-                                    leavegroupcall.call = inputGroupCall;
-                                    ConnectionsManager.getInstance(i11).sendRequest(leavegroupcall, new bg.h3(11, d1Var, updates));
-                                    break;
-                                }
-                            }
-                        }
-                        findUpdates2 = arrayList;
-                    }
-                    ArrayList findUpdates32 = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCallConnection.class);
-                    size = findUpdates32.size();
-                    TLRPC.TL_dataJSON tL_dataJSON2 = null;
-                    i10 = 0;
-                    while (i10 < size) {
-                    }
-                    j7.l1.x(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
-                    d1Var.x = true;
-                    if (d1Var.w) {
-                    }
-                    TL_phone.leaveGroupCall leavegroupcall2 = new TL_phone.leaveGroupCall();
-                    leavegroupcall2.call = inputGroupCall;
-                    ConnectionsManager.getInstance(i11).sendRequest(leavegroupcall2, new bg.h3(11, d1Var, updates));
-                }
-                break;
-            case 1:
-                final int i15 = 0;
-                final d1 d1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: lh.z0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i15) {
-                            case 0:
-                                d1 d1Var3 = d1Var2;
-                                TLObject tLObject2 = tLObject;
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                int i16 = d1Var3.e;
-                                if (!d1Var3.w) {
-                                    if (tLObject2 instanceof TL_phone.groupCall) {
-                                        TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
-                                        MessagesController.getInstance(i16).putUsers(groupcall.users, false);
-                                        MessagesController.getInstance(i16).putChats(groupcall.chats, false);
-                                        d1Var3.v = groupcall.call;
-                                        NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d1Var3.v.id));
-                                    } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
-                                        AndroidUtilities.runOnUIThread(new y0(d1Var3, 4));
-                                    }
-                                    if (d1Var3.L) {
-                                        Runnable runnable = d1Var3.N;
-                                        if (runnable != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(runnable);
-                                        }
-                                        y0 y0Var = new y0(d1Var3, 11);
-                                        d1Var3.N = y0Var;
-                                        AndroidUtilities.runOnUIThread(y0Var, d1Var3.l() ? 5000 : 20000);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                d1 d1Var4 = d1Var2;
-                                TLObject tLObject3 = tLObject;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (!d1Var4.w) {
-                                    if (tLObject3 instanceof Vector) {
-                                        if (!((Vector) tLObject3).toIntArray().contains(Integer.valueOf(d1Var4.G))) {
-                                            if (d1Var4.A != null) {
-                                                DispatchQueue dispatchQueue = Utilities.globalQueue;
-                                                NativeInstance nativeInstance2 = d1Var4.A;
-                                                Objects.requireNonNull(nativeInstance2);
-                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance2, 4));
-                                                d1Var4.I.clear();
-                                                d1Var4.A = null;
-                                            }
-                                            d1Var4.k();
-                                        }
-                                    } else if (tLObject3 instanceof TL_phone.groupCall) {
-                                        TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject3;
-                                        MessagesController.getInstance(d1Var4.e).putUsers(groupcall2.users, false);
-                                        MessagesController.getInstance(d1Var4.e).putChats(groupcall2.chats, false);
-                                        d1Var4.v = groupcall2.call;
-                                        NotificationCenter.getInstance(d1Var4.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d1Var4.v.id));
-                                    } else if (tL_error3 != null) {
-                                        if ("GROUPCALL_JOIN_MISSING".equals(tL_error3.text)) {
-                                            FileLog.d("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
-                                            AndroidUtilities.runOnUIThread(new y0(d1Var4, 9));
-                                        } else if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error3.text)) {
-                                            AndroidUtilities.runOnUIThread(new y0(d1Var4, 4));
-                                        }
-                                    }
-                                    if (d1Var4.L) {
-                                        Runnable runnable2 = d1Var4.M;
-                                        if (runnable2 != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(runnable2);
-                                        }
-                                        y0 y0Var2 = new y0(d1Var4, 10);
-                                        d1Var4.M = y0Var2;
-                                        AndroidUtilities.runOnUIThread(y0Var2, 4000L);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                d1 d1Var3 = this.b;
-                int i16 = d1Var3.e;
-                if (tLObject instanceof TL_phone.groupCall) {
-                    TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-                    int i17 = 0;
-                    MessagesController.getInstance(i16).putUsers(groupcall.users, false);
-                    MessagesController.getInstance(i16).putChats(groupcall.chats, false);
-                    if (d1Var3.A != null && !d1Var3.w) {
-                        while (true) {
-                            if (i17 < groupcall.participants.size()) {
-                                if (DialogObject.getPeerDialogId(groupcall.participants.get(i17).peer) == d1Var3.b) {
-                                    d1Var3.C = groupcall.participants.get(i17);
-                                } else {
-                                    i17++;
-                                }
-                            }
-                        }
-                        TLRPC.GroupCallParticipant groupCallParticipant2 = d1Var3.C;
-                        if (groupCallParticipant2 != null && (tL_groupCallParticipantVideo = groupCallParticipant2.video) != null) {
-                            NativeInstance nativeInstance2 = d1Var3.A;
-                            String str2 = tL_groupCallParticipantVideo.endpoint;
-                            NativeInstance.SsrcGroup[] d10 = d1.d(tL_groupCallParticipantVideo);
-                            d1Var3.r(d10);
-                            nativeInstance2.addIncomingVideoOutput(2, str2, d10, d1Var3.D, DialogObject.getPeerDialogId(d1Var3.C.peer));
-                            break;
-                        } else {
-                            AndroidUtilities.runOnUIThread(new y0(d1Var3, 7));
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                final int i18 = 1;
-                final d1 d1Var4 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: lh.z0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i18) {
-                            case 0:
-                                d1 d1Var32 = d1Var4;
-                                TLObject tLObject2 = tLObject;
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                int i162 = d1Var32.e;
-                                if (!d1Var32.w) {
-                                    if (tLObject2 instanceof TL_phone.groupCall) {
-                                        TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject2;
-                                        MessagesController.getInstance(i162).putUsers(groupcall2.users, false);
-                                        MessagesController.getInstance(i162).putChats(groupcall2.chats, false);
-                                        d1Var32.v = groupcall2.call;
-                                        NotificationCenter.getInstance(i162).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d1Var32.v.id));
-                                    } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
-                                        AndroidUtilities.runOnUIThread(new y0(d1Var32, 4));
-                                    }
-                                    if (d1Var32.L) {
-                                        Runnable runnable = d1Var32.N;
-                                        if (runnable != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(runnable);
-                                        }
-                                        y0 y0Var = new y0(d1Var32, 11);
-                                        d1Var32.N = y0Var;
-                                        AndroidUtilities.runOnUIThread(y0Var, d1Var32.l() ? 5000 : 20000);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                d1 d1Var42 = d1Var4;
-                                TLObject tLObject3 = tLObject;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (!d1Var42.w) {
-                                    if (tLObject3 instanceof Vector) {
-                                        if (!((Vector) tLObject3).toIntArray().contains(Integer.valueOf(d1Var42.G))) {
-                                            if (d1Var42.A != null) {
-                                                DispatchQueue dispatchQueue = Utilities.globalQueue;
-                                                NativeInstance nativeInstance22 = d1Var42.A;
-                                                Objects.requireNonNull(nativeInstance22);
-                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance22, 4));
-                                                d1Var42.I.clear();
-                                                d1Var42.A = null;
-                                            }
-                                            d1Var42.k();
-                                        }
-                                    } else if (tLObject3 instanceof TL_phone.groupCall) {
-                                        TL_phone.groupCall groupcall22 = (TL_phone.groupCall) tLObject3;
-                                        MessagesController.getInstance(d1Var42.e).putUsers(groupcall22.users, false);
-                                        MessagesController.getInstance(d1Var42.e).putChats(groupcall22.chats, false);
-                                        d1Var42.v = groupcall22.call;
-                                        NotificationCenter.getInstance(d1Var42.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d1Var42.v.id));
-                                    } else if (tL_error3 != null) {
-                                        if ("GROUPCALL_JOIN_MISSING".equals(tL_error3.text)) {
-                                            FileLog.d("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
-                                            AndroidUtilities.runOnUIThread(new y0(d1Var42, 9));
-                                        } else if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error3.text)) {
-                                            AndroidUtilities.runOnUIThread(new y0(d1Var42, 4));
-                                        }
-                                    }
-                                    if (d1Var42.L) {
-                                        Runnable runnable2 = d1Var42.M;
-                                        if (runnable2 != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(runnable2);
-                                        }
-                                        y0 y0Var2 = new y0(d1Var42, 10);
-                                        d1Var42.M = y0Var2;
-                                        AndroidUtilities.runOnUIThread(y0Var2, 4000L);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                d1 d1Var5 = this.b;
-                int i19 = d1Var5.e;
-                if (!(tLObject instanceof TLRPC.Updates)) {
-                    if (tL_error != null && "GROUPCALL_ALREADY_DISCARDED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new y0(d1Var5, 4));
-                        break;
-                    }
-                } else {
-                    TLRPC.Updates updates2 = (TLRPC.Updates) tLObject;
-                    MessagesController.getInstance(i19).putUsers(updates2.users, false);
-                    MessagesController.getInstance(i19).putChats(updates2.chats, false);
-                    MessagesController.getInstance(i19).processUpdates(updates2, false);
-                    break;
-                }
-                break;
-            default:
-                boolean z11 = tLObject instanceof TLRPC.Updates;
-                d1 d1Var6 = this.b;
-                if (!z11) {
-                    d1Var6.getClass();
-                    break;
-                } else {
-                    MessagesController.getInstance(d1Var6.e).processUpdates((TLRPC.Updates) tLObject, false);
-                    break;
-                }
+    public final mf.a m() {
+        return this.B.a == mf.b.b ? this.y : this.w;
+    }
+
+    public final void n(mf.a aVar, boolean z4, boolean z10, boolean z11) {
+        long j10;
+        mf.a aVar2;
+        char c3;
+        mf.a aVar3 = this.B;
+        int i10 = this.C;
+        this.C = 0;
+        if (aVar != null) {
+            this.B = aVar;
+        } else {
+            this.B = mf.a.i(0L, aVar3.a);
+            this.C |= 1;
         }
+        long j11 = m().b;
+        mf.a aVar4 = this.B;
+        if (j11 < aVar4.b) {
+            this.C |= 4;
+        }
+        boolean k10 = aVar4.k();
+        mf.a aVar5 = this.v;
+        mf.a aVar6 = this.x;
+        mf.b bVar = mf.b.b;
+        if (k10) {
+            j10 = 0;
+        } else {
+            mf.a aVar7 = this.B;
+            j10 = 0;
+            if ((aVar7.a == bVar ? aVar6 : aVar5).b > aVar7.b) {
+                this.C |= 2;
+            }
+        }
+        boolean z12 = z10 || aVar3.a != this.B.a;
+        boolean z13 = z10 || aVar3.b != this.B.b;
+        boolean z14 = z10 || i10 != this.C;
+        ad0 ad0Var = this.b;
+        if (z14) {
+            ad0Var.a((this.C & (-9)) == 0 ? 0.0f : 1.0f);
+        }
+        mf.b bVar2 = mf.b.a;
+        long j12 = j10;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (z12) {
+            c3 = 0;
+            mf.b bVar3 = this.B.a;
+            org.telegram.ui.Components.k6 k6Var = this.e;
+            if (bVar3 == bVar2) {
+                k6Var.c(LocaleController.getString(R.string.ResellGiftTitle), z11, true);
+                editTextBoldCursor.setInputType(2);
+                editTextBoldCursor.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Long.toString(m().a()).length())});
+            } else if (bVar3 == bVar) {
+                k6Var.c(LocaleController.getString(R.string.ResellGiftTitleTON), z11, true);
+                editTextBoldCursor.setInputType(8194);
+                editTextBoldCursor.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Long.toString(m().a()).length() + 3)});
+            }
+            this.n.c.a(this.B.a == bVar, z11);
+            ImageView imageView = this.s;
+            ImageView imageView2 = this.r;
+            if (z11) {
+                aVar2 = aVar5;
+                imageView2.animate().alpha(this.B.a == bVar2 ? 1.0f : 0.0f).scaleX(this.B.a == bVar2 ? 1.0f : 0.0f).scaleY(this.B.a == bVar2 ? 1.0f : 0.0f).setDuration(180L).start();
+                imageView.animate().alpha(this.B.a == bVar ? 1.0f : 0.0f).scaleX(this.B.a == bVar ? 1.0f : 0.0f).scaleY(this.B.a == bVar ? 1.0f : 0.0f).setDuration(180L).start();
+            } else {
+                aVar2 = aVar5;
+                imageView2.setAlpha(this.B.a == bVar2 ? 1.0f : 0.0f);
+                imageView.setAlpha(this.B.a == bVar ? 1.0f : 0.0f);
+            }
+        } else {
+            aVar2 = aVar5;
+            c3 = 0;
+        }
+        if (z12 || z14) {
+            int i11 = this.C;
+            if ((i11 & 4) != 0) {
+                int i12 = R.string.ResellGiftPriceTooMuch;
+                Object[] objArr = new Object[1];
+                objArr[c3] = m().f();
+                ad0Var.setText(LocaleController.formatString(i12, objArr));
+            } else if ((i11 & 2) != 0) {
+                int i13 = R.string.ResellGiftPriceTooSmall;
+                Object[] objArr2 = new Object[1];
+                objArr2[c3] = (this.B.a == bVar ? aVar6 : aVar2).f();
+                ad0Var.setText(LocaleController.formatString(i13, objArr2));
+            } else {
+                ad0Var.setText(LocaleController.getString(this.B.a == bVar2 ? R.string.ResellGiftPriceTitle : R.string.ResellGiftPriceTitleTON));
+            }
+        }
+        if (z12 || z13 || z14) {
+            boolean z15 = this.C == 0 && this.B.b > j12;
+            ph.d dVar = this.f;
+            if (dVar.T != z15) {
+                dVar.setEnabled(z15);
+                dVar.setClickable(z15);
+                if (z11) {
+                    dVar.animate().alpha(z15 ? 1.0f : 0.6f).setDuration(180L).start();
+                } else {
+                    dVar.setAlpha(z15 ? 1.0f : 0.6f);
+                }
+            }
+        }
+        if (z12 || z13) {
+            AppGlobalConfig appGlobalConfig = MessagesController.getInstance(this.currentAccount).config;
+            mf.a aVar8 = this.B;
+            mf.b bVar4 = aVar8.a;
+            mf.b bVar5 = aVar8.a;
+            long j13 = aVar8.b;
+            TextView textView = this.d;
+            if (bVar4 == bVar2) {
+                textView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("ResellGiftInfo", (int) mf.a.i((j13 * appGlobalConfig.starsStarGiftResaleCommissionPermille.get()) / 1000, bVar5).a(), new Object[0])));
+            } else if (bVar4 == bVar) {
+                org.telegram.ui.b.o(R.string.ResellGiftInfoTON, new Object[]{mf.a.i((j13 * appGlobalConfig.tonStarGiftResaleCommissionPermille.get()) / 1000, bVar5).b()}, textView);
+            }
+            StringBuilder sb = new StringBuilder(10);
+            sb.append('~');
+            sb.append(BillingController.getInstance().formatCurrency((long) (this.B.c() * (this.B.a == bVar ? MessagesController.getInstance(this.currentAccount).config.tonUsdRate.get() : MessagesController.getInstance(this.currentAccount).starsUsdWithdrawRate1000 * 1.0E-5d) * 100.0d), "USD", 2));
+            this.h.c(sb, z11, true);
+        }
+        if (z4 && z13) {
+            String b10 = this.B.b();
+            editTextBoldCursor.setText(b10);
+            editTextBoldCursor.setSelection(b10.length());
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog
+    public final void show() {
+        super.show();
+        AndroidUtilities.runOnUIThread(new b(this, 5), 50L);
     }
 }

@@ -1,205 +1,123 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableString;
-import android.view.KeyEvent;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.XiaomiUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yt implements fy {
-    public final /* synthetic */ au a;
+public final class yt extends vt {
+    public Drawable c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ du e;
 
-    public yt(au auVar) {
-        this.a = auVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yt(du duVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, f6Var);
+        this.e = duVar;
+        this.d = i10;
+        this.c = null;
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ boolean A() {
-        return false;
+    @Override // org.telegram.ui.Components.xt
+    public final int emojiCacheType() {
+        return this.e.h();
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ long a() {
-        return 0L;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void extendActionMode(ActionMode actionMode, Menu menu) {
+        du duVar = this.e;
+        if (duVar.a()) {
+            org.telegram.ui.xn.k8(menu, null, duVar.I == 3, true, true, true);
+        } else {
+            duVar.i(menu);
+        }
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ boolean b() {
-        return false;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final int getActionModeStyle() {
+        int i10 = this.d;
+        if (i10 == 2 || i10 == 3) {
+            return 2;
+        }
+        return super.getActionModeStyle();
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ boolean c() {
-        return false;
+    @Override // org.telegram.ui.Components.vt
+    public final void onLineCountChanged(int i10, int i11) {
+        this.e.q(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ int f() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final void i(int i10) {
-        au auVar = this.a;
-        if (auVar.b()) {
-            auVar.x = i10 != 0;
-            auVar.y();
-            hv0 hv0Var = auVar.f;
-            if (hv0Var != null) {
-                hv0Var.S();
+    @Override // org.telegram.ui.Components.xt, android.widget.TextView
+    public final void onSelectionChanged(int i10, int i11) {
+        super.onSelectionChanged(i10, i11);
+        du duVar = this.e;
+        yl0 yl0Var = duVar.c;
+        if (yl0Var != null) {
+            boolean z4 = false;
+            boolean z10 = i11 != i10;
+            if (duVar.a() && z10) {
+                XiaomiUtilities.isMIUI();
+                z4 = true;
+            }
+            if (duVar.n != z4) {
+                duVar.n = z4;
+                if (z4) {
+                    this.c = yl0Var.d;
+                    yl0Var.a(R.drawable.msg_edit, true);
+                } else {
+                    yl0Var.b(this.c, true);
+                    this.c = null;
+                }
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final boolean k() {
-        vt vtVar = this.a.a;
-        if (vtVar.length() == 0) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        zt ztVar;
+        du duVar = this.e;
+        if (duVar.e && motionEvent.getAction() == 0) {
+            duVar.u();
+            if (!duVar.x || (ztVar = duVar.d) == null) {
+                duVar.x(AndroidUtilities.usingHardwareInput ? 0 : 2);
+            } else {
+                ztVar.t(false);
+                duVar.x = false;
+                duVar.k(true);
+                AndroidUtilities.showKeyboard(this);
+            }
+            duVar.v();
+        }
+        if (motionEvent.getAction() == 0) {
+            boolean isFocused = isFocused();
+            requestFocus();
+            if (!AndroidUtilities.showKeyboard(this)) {
+                clearFocus();
+                requestFocus();
+            }
+            if (!isFocused) {
+                setSelection(getText().length());
+            }
+        }
+        try {
+            return super.onTouchEvent(motionEvent);
+        } catch (Exception e) {
+            FileLog.e(e);
             return false;
         }
-        vtVar.dispatchKeyEvent(new KeyEvent(0, 67));
-        return true;
     }
 
-    @Override // org.telegram.ui.Components.fy
-    public final void l(String str) {
-        vt vtVar = this.a.a;
-        int selectionEnd = vtVar.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
+    @Override // android.view.View
+    public final void scrollTo(int i10, int i11) {
+        if (this.e.t(i11)) {
+            super.scrollTo(i10, i11);
         }
-        try {
-            CharSequence replaceEmoji = Emoji.replaceEmoji(str, vtVar.getPaint().getFontMetricsInt(), false);
-            vtVar.setText(vtVar.getText().insert(selectionEnd, replaceEmoji));
-            int length = selectionEnd + replaceEmoji.length();
-            vtVar.setSelection(length, length);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final void n() {
-        au auVar = this.a;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(auVar.getContext(), 0, auVar.I);
-        alertDialog$Builder.a.N = LocaleController.getString(R.string.ClearRecentEmojiTitle);
-        alertDialog$Builder.a.P = LocaleController.getString(R.string.ClearRecentEmojiText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new i81(this));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.o2 o2Var = auVar.h;
-        if (o2Var != null) {
-            o2Var.showDialog(alertDialog$Builder.a);
-        } else {
-            alertDialog$Builder.o();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ float p() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final void q() {
-        org.telegram.ui.ActionBar.o2 o2Var = this.a.h;
-        if (o2Var == null) {
-            new cg.p1((org.telegram.ui.ActionBar.o2) new cg.z1(this, 8), 11, false).show();
-        } else {
-            o2Var.showDialog(new cg.p1(o2Var, 11, false));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
-        au auVar = this.a;
-        vt vtVar = auVar.a;
-        int selectionEnd = vtVar.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            SpannableString spannableString = new SpannableString(str);
-            y5 y5Var = document != null ? new y5(document, vtVar.getPaint().getFontMetricsInt()) : new y5(j10, vtVar.getPaint().getFontMetricsInt());
-            y5Var.cacheType = auVar.d.c;
-            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
-            vtVar.setText(vtVar.getText().insert(selectionEnd, spannableString));
-            int length = selectionEnd + spannableString.length();
-            vtVar.setSelection(length, length);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        } catch (Throwable th2) {
-            throw th2;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final boolean z() {
-        return this.a.x;
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void o(s41 s41Var) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void y(long j10) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void e(Object obj, Object obj2) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.fy
-    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
     }
 }

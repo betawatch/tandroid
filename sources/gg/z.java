@@ -1,30 +1,45 @@
 package gg;
 
-import android.content.Context;
-import i7.f6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.k4;
-import org.telegram.ui.Components.jr;
-import org.telegram.ui.Components.o6;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class z extends k4 {
-    public final o6 r;
+public final /* synthetic */ class z implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.Chat b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Utilities.Callback e;
 
-    public z(Context context, c6 c6Var) {
-        super(context, c6Var);
-        o6 o6Var = new o6(context, true, true, true);
-        this.r = o6Var;
-        o6Var.b(0.45f, 240L, jr.h);
-        o6Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        o6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        o6Var.setTypeface(AndroidUtilities.bold());
-        o6Var.setTextColor(g6.v0(g6.L6, c6Var));
-        addView(o6Var, f6.d(-2, 24.0f, (LocaleController.isRTL ? 3 : 5) | 80, 24.0f, 0.0f, 24.0f, 0.0f));
-        setBackgroundColor(g6.v0(g6.h5, c6Var));
+    public /* synthetic */ z(TLRPC.Chat chat, int i10, ArrayList arrayList, Utilities.Callback callback, int i11) {
+        this.a = i11;
+        this.b = chat;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = callback;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                TLRPC.Chat chat = this.b;
+                ArrayList arrayList = this.d;
+                if (chat == null) {
+                    p0.m(this.c, arrayList);
+                }
+                this.e.run(arrayList);
+                break;
+            default:
+                TLRPC.Chat chat2 = this.b;
+                ArrayList arrayList2 = this.d;
+                if (chat2 == null) {
+                    p0.m(this.c, arrayList2);
+                }
+                this.e.run(arrayList2);
+                break;
+        }
     }
 }

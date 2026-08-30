@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class AutoMessageHeardReceiver extends BroadcastReceiver {
     /* JADX INFO: Access modifiers changed from: private */
@@ -17,7 +17,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onReceive$1(AccountInstance accountInstance, long j10, int i10, int i11) {
-        AndroidUtilities.runOnUIThread(new t(accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), i10, j10, i11, 0));
+        AndroidUtilities.runOnUIThread(new u(accountInstance, accountInstance.getMessagesStorage().getUserSync(j10), i10, j10, i11, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -29,7 +29,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onReceive$3(AccountInstance accountInstance, long j10, int i10, int i11) {
-        AndroidUtilities.runOnUIThread(new t(accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), i10, j10, i11, 1));
+        AndroidUtilities.runOnUIThread(new u(accountInstance, accountInstance.getMessagesStorage().getChatSync(-j10), i10, j10, i11, 1));
     }
 
     @Override // android.content.BroadcastReceiver
@@ -45,7 +45,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
         if (DialogObject.isUserDialog(longExtra)) {
             if (accountInstance.getMessagesController().getUser(Long.valueOf(longExtra)) == null) {
                 final int i10 = 0;
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.s
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.t
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
@@ -62,7 +62,7 @@ public class AutoMessageHeardReceiver extends BroadcastReceiver {
             }
         } else if (DialogObject.isChatDialog(longExtra) && accountInstance.getMessagesController().getChat(Long.valueOf(-longExtra)) == null) {
             final int i11 = 1;
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.s
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.t
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i11) {

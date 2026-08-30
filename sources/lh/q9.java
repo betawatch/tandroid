@@ -1,61 +1,54 @@
 package lh;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.support.LongSparseLongArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.sa;
-import org.telegram.ui.Components.fa;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class q9 {
-    public static final q9[] f = new q9[4];
-    public final int a;
-    public final LongSparseLongArray b = new LongSparseLongArray();
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final p9 e;
+public final class q9 extends FrameLayout {
+    public final org.telegram.ui.Components.k6 a;
+    public final ImageView b;
+    public int c;
+    public boolean d;
 
-    public q9(int i10) {
-        new ArrayList();
-        this.e = new p9(this);
-        this.a = i10;
+    public q9(Context context) {
+        super(context);
+        org.telegram.ui.Components.k6 k6Var = new org.telegram.ui.Components.k6(context, false, false, false);
+        this.a = k6Var;
+        k6Var.getDrawable().o(true, true, false);
+        k6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        addView(k6Var, k7.b6.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.arrow_more);
+        addView(imageView, k7.b6.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
     }
 
-    public final void a(fa faVar) {
-        TLRPC.UserStatus userStatus;
-        long currentTimeMillis = System.currentTimeMillis();
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        for (int i10 = 0; i10 < faVar.getChildCount(); i10++) {
-            View childAt = faVar.getChildAt(i10);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.p2 ? ((org.telegram.ui.Cells.p2) childAt).getDialogId() : childAt instanceof sa ? ((sa) childAt).getDialogId() : 0L;
-            int i11 = this.a;
-            LongSparseLongArray longSparseLongArray = this.b;
-            if (dialogId > 0) {
-                TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(dialogId));
-                if (user != null && !user.bot && !user.self && !user.contact && (userStatus = user.status) != null && !(userStatus instanceof TLRPC.TL_userStatusEmpty) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
-                    longSparseLongArray.put(dialogId, currentTimeMillis);
-                    arrayList.add(Long.valueOf(dialogId));
-                }
-            } else {
-                TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-dialogId));
-                if (ChatObject.isChannel(chat) && !ChatObject.isMonoForum(chat) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
-                    longSparseLongArray.put(dialogId, currentTimeMillis);
-                    arrayList.add(Long.valueOf(dialogId));
-                }
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.c = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.d) {
+            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
         }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        this.d.addAll(arrayList);
-        p9 p9Var = this.e;
-        AndroidUtilities.cancelRunOnUIThread(p9Var);
-        AndroidUtilities.runOnUIThread(p9Var, 300L);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

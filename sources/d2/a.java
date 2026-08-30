@@ -1,81 +1,75 @@
 package d2;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import f2.p;
-import f2.r;
-import j$.util.Objects;
-import java.util.Comparator;
-import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class a implements Comparator {
-    public final /* synthetic */ int a;
+public final class a {
+    public final int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public final /* synthetic */ b j;
 
-    public /* synthetic */ a(int i10) {
+    public a(b bVar, int i10, int i11) {
+        this.j = bVar;
         this.a = i10;
+        this.b = i11;
+        a();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0095 A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0097 A[RETURN, SYNTHETIC] */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((b) obj2).b() - ((b) obj).b();
-            case 1:
-                p pVar = (p) obj;
-                p pVar2 = (p) obj2;
-                int i10 = pVar.a - pVar2.a;
-                return i10 == 0 ? pVar.b - pVar2.b : i10;
-            case 2:
-                r rVar = (r) obj;
-                r rVar2 = (r) obj2;
-                RecyclerView recyclerView = rVar.d;
-                if ((recyclerView == null) != (rVar2.d == null)) {
-                    return recyclerView == null ? 1 : -1;
-                }
-                boolean z10 = rVar.a;
-                if (z10 == rVar2.a) {
-                    int i11 = rVar2.b - rVar.b;
-                    if (i11 != 0) {
-                        return i11;
-                    }
-                    int i12 = rVar.c - rVar2.c;
-                    if (i12 != 0) {
-                        return i12;
-                    }
-                    return 0;
-                }
-                if (z10) {
-                }
-            case 3:
-                return ((m2.c) obj).b - ((m2.c) obj2).b;
-            case 4:
-                m2.d dVar = (m2.d) ((View) obj).getLayoutParams();
-                m2.d dVar2 = (m2.d) ((View) obj2).getLayoutParams();
-                boolean z11 = dVar.a;
-                return z11 != dVar2.a ? z11 ? 1 : -1 : dVar.e - dVar2.e;
-            case 5:
-                return ((Comparable) obj).compareTo((Comparable) obj2);
-            case 6:
-                Runnable runnable = (Runnable) obj;
-                Runnable runnable2 = (Runnable) obj2;
-                return (runnable2 instanceof pe.b ? ((pe.b) runnable2).a : 1) - (runnable instanceof pe.b ? ((pe.b) runnable).a : 1);
-            default:
-                Map.Entry entry = (Map.Entry) obj;
-                Map.Entry entry2 = (Map.Entry) obj2;
-                Objects.requireNonNull(entry);
-                Objects.requireNonNull(entry2);
-                Comparable comparable = (Comparable) entry.getKey();
-                Comparable comparable2 = (Comparable) entry2.getKey();
-                comparable.getClass();
-                comparable2.getClass();
-                return comparable.compareTo(comparable2);
+    public final void a() {
+        b bVar = this.j;
+        int[] iArr = (int[]) bVar.a;
+        int[] iArr2 = (int[]) bVar.b;
+        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i13 = TLObject.FLAG_31;
+        int i14 = TLObject.FLAG_31;
+        int i15 = TLObject.FLAG_31;
+        int i16 = 0;
+        for (int i17 = this.a; i17 <= this.b; i17++) {
+            int i18 = iArr[i17];
+            i16 += iArr2[i18];
+            int i19 = (i18 >> 10) & 31;
+            int i20 = (i18 >> 5) & 31;
+            int i21 = i18 & 31;
+            if (i19 > i13) {
+                i13 = i19;
+            }
+            if (i19 < i10) {
+                i10 = i19;
+            }
+            if (i20 > i14) {
+                i14 = i20;
+            }
+            if (i20 < i11) {
+                i11 = i20;
+            }
+            if (i21 > i15) {
+                i15 = i21;
+            }
+            if (i21 < i12) {
+                i12 = i21;
+            }
         }
+        this.d = i10;
+        this.e = i13;
+        this.f = i11;
+        this.g = i14;
+        this.h = i12;
+        this.i = i15;
+        this.c = i16;
+    }
+
+    public final int b() {
+        return ((this.i - this.h) + 1) * ((this.g - this.f) + 1) * ((this.e - this.d) + 1);
     }
 }

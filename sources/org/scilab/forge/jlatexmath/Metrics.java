@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class Metrics {
     private final float d;
@@ -9,12 +9,12 @@ public class Metrics {
     private final float s;
     private final float w;
 
-    public Metrics(float f9, float f10, float f11, float f12, float f13, float f14) {
-        this.w = f9 * f13;
-        this.h = f10 * f13;
-        this.d = f11 * f13;
-        this.i = f12 * f13;
-        this.s = f14;
+    public Metrics(float f10, float f11, float f12, float f13, float f14, float f15) {
+        this.w = f10 * f14;
+        this.h = f11 * f14;
+        this.d = f12 * f14;
+        this.i = f13 * f14;
+        this.s = f15;
     }
 
     public float getDepth() {

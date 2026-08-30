@@ -1,83 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
+import android.content.Context;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
-import java.lang.ref.WeakReference;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pr implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class pr extends ImageView {
+    public final /* synthetic */ int a = 1;
+    public Object b;
+    public final /* synthetic */ ViewGroup c;
 
-    public /* synthetic */ pr(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pr(sr srVar, Context context, org.telegram.ui.Cells.f1 f1Var) {
+        super(context);
+        this.c = srVar;
+        this.b = f1Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        e70 e70Var;
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.o1 o1Var = ((rr) this.b).a;
-                if (motionEvent.getActionMasked() != 1 || o1Var == null || !o1Var.isShowing()) {
-                    return false;
+                sr srVar = (sr) this.c;
+                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (srVar.n || srVar.f)) {
+                    srVar.n = false;
+                    srVar.f = false;
+                    removeCallbacks(srVar.r);
+                    removeCallbacks(srVar.h);
                 }
-                Rect rect = AndroidUtilities.rectTmp2;
-                view.getHitRect(rect);
-                if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                    return false;
-                }
-                o1Var.d(true);
-                return false;
-            case 1:
-                j70 j70Var = (j70) ((WeakReference) this.b).get();
-                if (j70Var == null || (e70Var = j70Var.m) == null || !e70Var.isShowing()) {
-                    view.setOnTouchListener(null);
-                    return false;
-                }
-                if (view.getParent() != null) {
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                int actionMasked = motionEvent.getActionMasked();
-                if (actionMasked == 2) {
-                    j70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                } else if (actionMasked == 1) {
-                    j70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                    View view2 = j70Var.p0;
-                    if (view2 != null) {
-                        j70Var.p0 = null;
-                        view2.setPressed(false);
-                        view2.performClick();
-                    }
-                    view.setOnTouchListener(null);
-                    j70Var.o0 = null;
-                } else if (actionMasked == 3) {
-                    View view3 = j70Var.p0;
-                    if (view3 != null) {
-                        view3.setPressed(false);
-                        j70Var.p0 = null;
-                    }
-                    view.setOnTouchListener(null);
-                    j70Var.o0 = null;
-                }
-                return true;
-            case 2:
-                ka0 ka0Var = (ka0) this.b;
-                ka0Var.getClass();
-                return org.telegram.ui.ht.q().s(motionEvent, ka0Var.getListView(), ka0Var.w, null, ka0Var.a);
-            case 3:
-                lb0 lb0Var = (lb0) this.b;
-                lb0Var.getClass();
-                if (motionEvent.getAction() == 1) {
-                    lb0Var.V.a(true);
-                }
-                return true;
+                super.onTouchEvent(motionEvent);
+                return ((GestureDetector) ((org.telegram.ui.Cells.f1) this.b).b).onTouchEvent(motionEvent);
             default:
-                return nx0.v((nx0) this.b, motionEvent);
+                return super.onTouchEvent(motionEvent);
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pr(pk0 pk0Var, Context context) {
+        super(context);
+        this.c = pk0Var;
     }
 }

@@ -1,20 +1,21 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ok extends ry {
-    public final /* synthetic */ tn J;
+public final class ok extends wg.e {
+    public final /* synthetic */ xn I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ok(tn tnVar, tn tnVar2, FrameLayout frameLayout, lj ljVar, int i10, long j10, long j11) {
-        super(tnVar2, frameLayout, ljVar, i10, j10, j11);
-        this.J = tnVar;
+    public ok(xn xnVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, fj fjVar, ng.a aVar) {
+        super(context, aVar, f6Var, fjVar);
+        this.I = xnVar;
     }
 
-    @Override // org.telegram.ui.ry
-    public final void i() {
-        this.J.uc();
+    @Override // wg.e, android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        this.I.yc.h(3, i10 == 0, getMeasuredWidth() > 0);
     }
 }

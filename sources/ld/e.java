@@ -1,31 +1,16 @@
 package ld;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class e extends f {
-    public final Throwable a;
+public final class e {
+    public static final /* synthetic */ AtomicIntegerFieldUpdater b = AtomicIntegerFieldUpdater.newUpdater(e.class, "notCompletedCount$volatile");
+    public final h0[] a;
+    private volatile /* synthetic */ int notCompletedCount$volatile;
 
-    public e(Throwable th2) {
-        this.a = th2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof e) {
-            return kotlin.jvm.internal.j.a(this.a, ((e) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        Throwable th2 = this.a;
-        if (th2 != null) {
-            return th2.hashCode();
-        }
-        return 0;
-    }
-
-    @Override // ld.f
-    public final String toString() {
-        return "Closed(" + this.a + ')';
+    public e(h0[] h0VarArr) {
+        this.a = h0VarArr;
+        this.notCompletedCount$volatile = h0VarArr.length;
     }
 }

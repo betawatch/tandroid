@@ -1,34 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t40 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public aj0 c;
-    public LinearLayout d;
+public final class t40 extends org.telegram.ui.yt0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ w40 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public t40(w40 w40Var, ArrayList arrayList) {
+        this.b = w40Var;
+        this.a = arrayList;
     }
 
-    public void setGravity(int i10) {
-        this.b.setGravity(i10);
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final org.telegram.ui.ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+        v40 v40Var = this.b.b;
+        if (v40Var == null) {
+            return null;
+        }
+        return v40Var.getCloseIntoObject();
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final boolean S() {
+        return false;
     }
 
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
+        this.b.t((MediaController.PhotoEntry) this.a.get(0));
+    }
+
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    public final boolean z() {
+        return false;
     }
 }

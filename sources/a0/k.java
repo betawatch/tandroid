@@ -1,11 +1,11 @@
 package a0;
 
-import j7.l1;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
+import kh.a2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class k {
     public int[] a;
@@ -109,7 +109,7 @@ public class k {
 
     public final Object e(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(l1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(a2.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[i10 << 1];
     }
@@ -126,11 +126,11 @@ public class k {
                 }
                 k kVar = (k) obj;
                 for (int i11 = 0; i11 < i10; i11++) {
-                    Object e10 = e(i11);
+                    Object e = e(i11);
                     Object h = h(i11);
-                    Object obj2 = kVar.get(e10);
+                    Object obj2 = kVar.get(e);
                     if (h == null) {
-                        if (obj2 != null || !kVar.containsKey(e10)) {
+                        if (obj2 != null || !kVar.containsKey(e)) {
                             return false;
                         }
                     } else if (!h.equals(obj2)) {
@@ -144,14 +144,14 @@ public class k {
             }
             int i12 = this.c;
             for (int i13 = 0; i13 < i12; i13++) {
-                Object e11 = e(i13);
-                Object h10 = h(i13);
-                Object obj3 = ((Map) obj).get(e11);
-                if (h10 == null) {
-                    if (obj3 != null || !((Map) obj).containsKey(e11)) {
+                Object e6 = e(i13);
+                Object h9 = h(i13);
+                Object obj3 = ((Map) obj).get(e6);
+                if (h9 == null) {
+                    if (obj3 != null || !((Map) obj).containsKey(e6)) {
                         return false;
                     }
-                } else if (!h10.equals(obj3)) {
+                } else if (!h9.equals(obj3)) {
                     return false;
                 }
             }
@@ -164,7 +164,7 @@ public class k {
     public final Object f(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.c)) {
-            throw new IllegalArgumentException(l1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(a2.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         Object[] objArr = this.b;
         int i12 = i10 << 1;
@@ -178,9 +178,9 @@ public class k {
         if (iArr.length <= 8 || i11 >= iArr.length / 3) {
             if (i10 < i13) {
                 int i14 = i10 + 1;
-                rc.f.b(i10, i14, i11, iArr, iArr);
+                tc.f.b(i10, i14, i11, iArr, iArr);
                 Object[] objArr2 = this.b;
-                rc.f.c(i12, i14 << 1, i11 << 1, objArr2, objArr2);
+                tc.f.c(i12, i14 << 1, i11 << 1, objArr2, objArr2);
             }
             Object[] objArr3 = this.b;
             int i15 = i13 << 1;
@@ -198,13 +198,13 @@ public class k {
                 throw new ConcurrentModificationException();
             }
             if (i10 > 0) {
-                rc.f.b(0, 0, i10, iArr, this.a);
-                rc.f.c(0, 0, i12, objArr, this.b);
+                tc.f.b(0, 0, i10, iArr, this.a);
+                tc.f.c(0, 0, i12, objArr, this.b);
             }
             if (i10 < i13) {
                 int i17 = i10 + 1;
-                rc.f.b(i10, i17, i11, iArr, this.a);
-                rc.f.c(i12, i17 << 1, i11 << 1, objArr, this.b);
+                tc.f.b(i10, i17, i11, iArr, this.a);
+                tc.f.c(i12, i17 << 1, i11 << 1, objArr, this.b);
             }
         }
         if (i11 != this.c) {
@@ -216,7 +216,7 @@ public class k {
 
     public final Object g(int i10, Object obj) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(l1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(a2.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         int i11 = (i10 << 1) + 1;
         Object[] objArr = this.b;
@@ -240,7 +240,7 @@ public class k {
 
     public final Object h(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(l1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(a2.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[(i10 << 1) + 1];
     }
@@ -298,9 +298,9 @@ public class k {
         if (i12 < i10) {
             int[] iArr2 = this.a;
             int i14 = i12 + 1;
-            rc.f.b(i14, i12, i10, iArr2, iArr2);
+            tc.f.b(i14, i12, i10, iArr2, iArr2);
             Object[] objArr2 = this.b;
-            rc.f.c(i14 << 1, i12 << 1, this.c << 1, objArr2, objArr2);
+            tc.f.c(i14 << 1, i12 << 1, this.c << 1, objArr2, objArr2);
         }
         int i15 = this.c;
         if (i10 == i15) {
@@ -347,31 +347,31 @@ public class k {
         if (isEmpty()) {
             return "{}";
         }
-        StringBuilder sb2 = new StringBuilder(this.c * 28);
-        sb2.append('{');
+        StringBuilder sb = new StringBuilder(this.c * 28);
+        sb.append('{');
         int i10 = this.c;
         for (int i11 = 0; i11 < i10; i11++) {
             if (i11 > 0) {
-                sb2.append(", ");
+                sb.append(", ");
             }
-            Object e10 = e(i11);
-            if (e10 != sb2) {
-                sb2.append(e10);
+            Object e = e(i11);
+            if (e != sb) {
+                sb.append(e);
             } else {
-                sb2.append("(this Map)");
+                sb.append("(this Map)");
             }
-            sb2.append('=');
+            sb.append('=');
             Object h = h(i11);
-            if (h != sb2) {
-                sb2.append(h);
+            if (h != sb) {
+                sb.append(h);
             } else {
-                sb2.append("(this Map)");
+                sb.append("(this Map)");
             }
         }
-        sb2.append('}');
-        String sb3 = sb2.toString();
-        kotlin.jvm.internal.j.d(sb3, "StringBuilder(capacity).…builderAction).toString()");
-        return sb3;
+        sb.append('}');
+        String sb2 = sb.toString();
+        kotlin.jvm.internal.j.d(sb2, "StringBuilder(capacity).…builderAction).toString()");
+        return sb2;
     }
 
     public final boolean remove(Object obj, Object obj2) {

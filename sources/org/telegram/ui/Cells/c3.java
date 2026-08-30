@@ -1,63 +1,44 @@
 package org.telegram.ui.Cells;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.st;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c3 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ st b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ d3 d;
+public final class c3 extends View {
+    public boolean a;
+    public final Paint b;
+    public final org.telegram.ui.ActionBar.f6 c;
 
-    public c3(d3 d3Var, int i10, st stVar, boolean z10) {
-        this.d = d3Var;
-        this.a = i10;
-        this.b = stVar;
-        this.c = z10;
+    public c3(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.b = new Paint();
+        this.c = f6Var;
+        setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        d3 d3Var = this.d;
-        boolean z10 = d3Var.a;
-        int i10 = this.a;
-        if (!z10) {
-            if (i10 > 0 && editable != null && editable.length() > i10) {
-                d3Var.a = true;
-                CharSequence subSequence = editable.subSequence(0, i10);
-                st stVar = this.b;
-                stVar.setText(subSequence);
-                stVar.setSelection(stVar.length());
-                d3Var.a = false;
-            }
-            d3Var.b();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        boolean z4 = this.a;
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        Paint paint = this.b;
+        if (z4) {
+            paint.setColor(i0.a.d(0.2f, -16777216, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ug, f6Var)));
+        } else {
+            paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, f6Var));
         }
-        if (this.c) {
-            while (true) {
-                int indexOf = editable.toString().indexOf("\n");
-                if (indexOf < 0) {
-                    break;
-                } else {
-                    editable.delete(indexOf, indexOf + 1);
-                }
-            }
-        }
-        org.telegram.ui.Components.n6 n6Var = d3Var.v;
-        if (n6Var == null || i10 <= 0) {
-            return;
-        }
-        n6Var.b();
-        d3Var.c();
+        canvas.drawLine(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop(), paint);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), getPaddingBottom() + getPaddingTop() + 1);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public void setForceDarkTheme(boolean z4) {
+        this.a = z4;
     }
 }

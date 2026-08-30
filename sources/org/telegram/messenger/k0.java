@@ -1,37 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k0 implements Utilities.Callback2 {
+public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ BotForumHelper b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ k0(int i10) {
-        this.a = i10;
+    public /* synthetic */ k0(BotForumHelper botForumHelper, long j10, int i10, long j11, int i11) {
+        this.a = i11;
+        this.b = botForumHelper;
+        this.c = j10;
+        this.d = i10;
+        this.e = j11;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                BotForumHelper.lambda$stopStreaming$2((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                MessagesController.lambda$revertWelcomeEphemeralMessage$126((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 2:
-                MessagesController.lambda$toggleCommunityCollapsedInDialogs$254((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 3:
-                MessagesController.lambda$deleteEphemeralMessage$127((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 4:
-                MessagesController.lambda$deleteEphemeralMessage$128((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$onBotForumDraftUpdate$1(this.c, this.d, this.e);
                 break;
             default:
-                MessagesController.lambda$deleteAllReactionsFrom$131((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$onBotForumDraftUpdate$0(this.c, this.d, this.e);
                 break;
         }
     }

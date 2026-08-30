@@ -1,35 +1,196 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.util.Pair;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class o2 extends r2 {
-    @Override // j3.r2
-    public final int b(Object obj) {
-        return -1;
+public abstract class o2 implements g {
+    public static final l2 a = new l2();
+
+    static {
+        int i10 = h5.d0.a;
+        Integer.toString(0, 36);
+        Integer.toString(1, 36);
+        Integer.toString(2, 36);
     }
 
-    @Override // j3.r2
-    public final p2 f(int i10, p2 p2Var, boolean z10) {
-        throw new IndexOutOfBoundsException();
+    public int a(boolean z4) {
+        return p() ? -1 : 0;
     }
 
-    @Override // j3.r2
-    public final int h() {
-        return 0;
+    public abstract int b(Object obj);
+
+    public int c(boolean z4) {
+        if (p()) {
+            return -1;
+        }
+        return o() - 1;
     }
 
-    @Override // j3.r2
-    public final Object l(int i10) {
-        throw new IndexOutOfBoundsException();
+    public final int d(int i10, m2 m2Var, n2 n2Var, int i11, boolean z4) {
+        int i12 = f(i10, m2Var, false).c;
+        if (m(i12, n2Var, 0L).C != i10) {
+            return i10 + 1;
+        }
+        int e = e(i12, i11, z4);
+        if (e == -1) {
+            return -1;
+        }
+        return m(e, n2Var, 0L).B;
     }
 
-    @Override // j3.r2
-    public final q2 m(int i10, q2 q2Var, long j10) {
-        throw new IndexOutOfBoundsException();
+    public int e(int i10, int i11, boolean z4) {
+        if (i11 == 0) {
+            if (i10 == c(z4)) {
+                return -1;
+            }
+            return i10 + 1;
+        }
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i11 == 2) {
+            return i10 == c(z4) ? a(z4) : i10 + 1;
+        }
+        throw new IllegalStateException();
     }
 
-    @Override // j3.r2
-    public final int o() {
-        return 0;
+    public final boolean equals(Object obj) {
+        int c3;
+        if (this != obj) {
+            if (obj instanceof o2) {
+                o2 o2Var = (o2) obj;
+                if (o2Var.o() == o() && o2Var.h() == h()) {
+                    n2 n2Var = new n2();
+                    m2 m2Var = new m2();
+                    n2 n2Var2 = new n2();
+                    m2 m2Var2 = new m2();
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 >= o()) {
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 >= h()) {
+                                    int a2 = a(true);
+                                    if (a2 == o2Var.a(true) && (c3 = c(true)) == o2Var.c(true)) {
+                                        while (a2 != c3) {
+                                            int e = e(a2, 0, true);
+                                            if (e == o2Var.e(a2, 0, true)) {
+                                                a2 = e;
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (!f(i11, m2Var, true).equals(o2Var.f(i11, m2Var2, true))) {
+                                        break;
+                                    }
+                                    i11++;
+                                }
+                            }
+                        } else {
+                            if (!m(i10, n2Var, 0L).equals(o2Var.m(i10, n2Var2, 0L))) {
+                                break;
+                            }
+                            i10++;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public abstract m2 f(int i10, m2 m2Var, boolean z4);
+
+    public m2 g(Object obj, m2 m2Var) {
+        return f(b(obj), m2Var, true);
+    }
+
+    public abstract int h();
+
+    public final int hashCode() {
+        n2 n2Var = new n2();
+        m2 m2Var = new m2();
+        int o10 = o() + 217;
+        for (int i10 = 0; i10 < o(); i10++) {
+            o10 = (o10 * 31) + m(i10, n2Var, 0L).hashCode();
+        }
+        int h = h() + (o10 * 31);
+        for (int i11 = 0; i11 < h(); i11++) {
+            h = (h * 31) + f(i11, m2Var, true).hashCode();
+        }
+        int a2 = a(true);
+        while (a2 != -1) {
+            h = (h * 31) + a2;
+            a2 = e(a2, 0, true);
+        }
+        return h;
+    }
+
+    public final Pair i(n2 n2Var, m2 m2Var, int i10, long j10) {
+        Pair j11 = j(n2Var, m2Var, i10, j10, 0L);
+        j11.getClass();
+        return j11;
+    }
+
+    public final Pair j(n2 n2Var, m2 m2Var, int i10, long j10, long j11) {
+        h5.a.h(i10, o());
+        m(i10, n2Var, j11);
+        if (j10 == -9223372036854775807L) {
+            j10 = n2Var.x;
+            if (j10 == -9223372036854775807L) {
+                return null;
+            }
+        }
+        int i11 = n2Var.B;
+        f(i11, m2Var, false);
+        while (i11 < n2Var.C && m2Var.e != j10) {
+            int i12 = i11 + 1;
+            if (f(i12, m2Var, false).e > j10) {
+                break;
+            }
+            i11 = i12;
+        }
+        f(i11, m2Var, true);
+        long j12 = j10 - m2Var.e;
+        long j13 = m2Var.d;
+        if (j13 != -9223372036854775807L) {
+            j12 = Math.min(j12, j13 - 1);
+        }
+        long max = Math.max(0L, j12);
+        Object obj = m2Var.b;
+        obj.getClass();
+        return Pair.create(obj, Long.valueOf(max));
+    }
+
+    public int k(int i10, int i11, boolean z4) {
+        if (i11 == 0) {
+            if (i10 == a(z4)) {
+                return -1;
+            }
+            return i10 - 1;
+        }
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i11 == 2) {
+            return i10 == a(z4) ? c(z4) : i10 - 1;
+        }
+        throw new IllegalStateException();
+    }
+
+    public abstract Object l(int i10);
+
+    public abstract n2 m(int i10, n2 n2Var, long j10);
+
+    public final void n(int i10, n2 n2Var) {
+        m(i10, n2Var, 0L);
+    }
+
+    public abstract int o();
+
+    public final boolean p() {
+        return o() == 0;
     }
 }

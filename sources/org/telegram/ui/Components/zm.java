@@ -1,123 +1,24 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class zm implements li {
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ xm c;
+public final class zm extends li {
+    public final /* synthetic */ Runnable M2;
 
-    public zm(Utilities.Callback callback, org.telegram.ui.ActionBar.o2 o2Var, xm xmVar) {
-        this.a = o2Var;
-        this.b = callback;
-        this.c = xmVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zm(Context context, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable) {
+        super(context, p2Var, false, false, true, f6Var);
+        this.M2 = runnable;
     }
 
-    @Override // org.telegram.ui.Components.li
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        xm xmVar = this.c;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = xmVar.f0;
-        Utilities.Callback callback = this.b;
-        if (i10 == 15) {
-            org.telegram.ui.ActionBar.o2 o2Var = this.a;
-            c5.g0(o2Var.getContext(), o2Var.getResourceProvider(), null, null, new ym(0, callback), null);
-        } else if (i10 == 7 || i10 == 8) {
-            HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
-            ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
-            if (selectedPhotosOrder.size() > 0) {
-                Object obj = selectedPhotos.get(selectedPhotosOrder.get(0));
-                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-                if (obj instanceof MediaController.PhotoEntry) {
-                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                    String str = photoEntry.imagePath;
-                    if (str != null) {
-                        sendingMediaInfo.path = str;
-                    } else {
-                        sendingMediaInfo.path = photoEntry.path;
-                    }
-                    sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-                    sendingMediaInfo.coverPath = photoEntry.coverPath;
-                    sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
-                    sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-                    sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-                    sendingMediaInfo.discardLivePhoto = true;
-                    sendingMediaInfo.isVideo = photoEntry.isVideo;
-                    CharSequence charSequence = photoEntry.caption;
-                    sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                    sendingMediaInfo.entities = photoEntry.entities;
-                    sendingMediaInfo.masks = photoEntry.stickers;
-                    sendingMediaInfo.ttl = photoEntry.ttl;
-                    sendingMediaInfo.emojiMarkup = photoEntry.emojiMarkup;
-                    sendingMediaInfo.originalPhotoEntry = photoEntry;
-                } else if (obj instanceof MediaController.SearchImage) {
-                    MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                    String str2 = searchImage.imagePath;
-                    if (str2 != null) {
-                        sendingMediaInfo.path = str2;
-                    } else {
-                        sendingMediaInfo.searchImage = searchImage;
-                    }
-                    sendingMediaInfo.thumbPath = searchImage.thumbPath;
-                    sendingMediaInfo.coverPath = searchImage.coverPath;
-                    sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-                    CharSequence charSequence2 = searchImage.caption;
-                    sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
-                    sendingMediaInfo.entities = searchImage.entities;
-                    sendingMediaInfo.masks = searchImage.stickers;
-                    sendingMediaInfo.ttl = searchImage.ttl;
-                    TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-                    if (botInlineResult != null && searchImage.type == 1) {
-                        sendingMediaInfo.inlineResult = botInlineResult;
-                        sendingMediaInfo.params = searchImage.params;
-                    }
-                    searchImage.date = (int) (System.currentTimeMillis() / 1000);
-                }
-                callback.run(new ch.d(sendingMediaInfo));
-            }
+    @Override // org.telegram.ui.Components.li, org.telegram.ui.ActionBar.g3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        Runnable runnable = this.M2;
+        if (runnable != null) {
+            runnable.run();
         }
-        xmVar.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final /* synthetic */ boolean T1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final boolean a0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final void x0(zg zgVar) {
-        NotificationCenter.getInstance(this.a.getCurrentAccount()).doOnIdle(zgVar);
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final void L0() {
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final /* synthetic */ void U0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.li
-    public final /* synthetic */ void X1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 }

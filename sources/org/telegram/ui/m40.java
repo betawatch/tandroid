@@ -1,29 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class m40 extends org.telegram.ui.Components.dq0 {
-    public final /* synthetic */ r50 X0;
+public final class m40 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.wc0 b;
+    public final /* synthetic */ i40 c;
+    public final /* synthetic */ j40 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m40(r50 r50Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.X0 = r50Var;
+    public m40(LaunchActivity launchActivity, org.telegram.ui.Components.wc0 wc0Var, i40 i40Var, j40 j40Var) {
+        super(launchActivity);
+        this.b = wc0Var;
+        this.c = i40Var;
+        this.d = j40Var;
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.Components.dq0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = hVar.m();
-            r50 r50Var = this.X0;
-            if (m10 == 1) {
-                r50Var.k1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
-            } else {
-                r50Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
-            }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        org.telegram.ui.Components.wc0 wc0Var = this.b;
+        wc0Var.setItemCount(5);
+        i40 i40Var = this.c;
+        i40Var.setItemCount(5);
+        j40 j40Var = this.d;
+        j40Var.setItemCount(5);
+        wc0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        i40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        j40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

@@ -1,268 +1,67 @@
 package c2;
 
-import ag.q1;
-import android.content.Context;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.support.v4.media.session.MediaSessionCompat$Token;
-import android.util.Log;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import j3.v1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d0 {
-    public static e c;
-    public final Context a;
-    public final ArrayList b = new ArrayList();
+public final class d0 implements h5.n {
+    public boolean a;
+    public long b;
+    public long c;
+    public final Object d;
+    public Object e;
 
-    static {
-        Log.isLoggable("AxMediaRouter", 3);
+    public d0(ag.d dVar) {
+        this.d = new Handler(Looper.getMainLooper());
+        this.e = dVar;
     }
 
-    public d0(Context context) {
-        this.a = context;
-    }
-
-    public static void b() {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new IllegalStateException("The media router service must only be accessed on the application's main thread.");
-        }
-    }
-
-    public static e c() {
-        e eVar = c;
-        if (eVar != null) {
-            return eVar;
-        }
-        throw new IllegalStateException("getGlobalRouter cannot be called when sGlobal is null");
-    }
-
-    public static d0 d(Context context) {
-        if (context == null) {
-            throw new IllegalArgumentException("context must not be null");
-        }
-        b();
-        if (c == null) {
-            c = new e(context.getApplicationContext());
-        }
-        ArrayList arrayList = c.i;
-        int size = arrayList.size();
-        while (true) {
-            size--;
-            if (size < 0) {
-                d0 d0Var = new d0(context);
-                arrayList.add(new WeakReference(d0Var));
-                return d0Var;
-            }
-            d0 d0Var2 = (d0) ((WeakReference) arrayList.get(size)).get();
-            if (d0Var2 == null) {
-                arrayList.remove(size);
-            } else if (d0Var2.a == context) {
-                return d0Var2;
-            }
+    public void a(long j10) {
+        this.b = j10;
+        if (this.a) {
+            ((h5.y) this.d).getClass();
+            this.c = SystemClock.elapsedRealtime();
         }
     }
 
-    public static MediaSessionCompat$Token e() {
-        e eVar = c;
-        if (eVar == null) {
-            return null;
+    public void b() {
+        if (this.a) {
+            return;
         }
-        androidx.biometric.e eVar2 = eVar.C;
-        if (eVar2 != null) {
-            android.support.v4.media.session.d0 d0Var = (android.support.v4.media.session.d0) eVar2.b;
-            if (d0Var != null) {
-                return d0Var.a.b;
-            }
-            return null;
-        }
-        android.support.v4.media.session.d0 d0Var2 = eVar.D;
-        if (d0Var2 != null) {
-            return d0Var2.a.b;
-        }
-        return null;
+        ((h5.y) this.d).getClass();
+        this.c = SystemClock.elapsedRealtime();
+        this.a = true;
     }
 
-    public static b0 f() {
-        b();
-        return c().e();
+    @Override // h5.n
+    public void c(v1 v1Var) {
+        if (this.a) {
+            a(e());
+        }
+        this.e = v1Var;
     }
 
-    public static boolean g() {
-        Bundle bundle;
-        if (c == null) {
-            return false;
-        }
-        g0 g0Var = c().u;
-        return g0Var == null || (bundle = g0Var.e) == null || bundle.getBoolean("androidx.mediarouter.media.MediaRouterParams.ENABLE_GROUP_VOLUME_UX", true);
+    @Override // h5.n
+    public v1 d() {
+        return (v1) this.e;
     }
 
-    public static void i(g0 g0Var) {
-        b();
-        e c3 = c();
-        g0 g0Var2 = c3.u;
-        b bVar = c3.a;
-        c3.u = g0Var;
-        if (c3.f()) {
-            if (c3.r == null) {
-                l lVar = new l(c3.h, new za.c(c3, 6));
-                c3.r = lVar;
-                c3.a(lVar, true);
-                c3.k();
-                b1 b1Var = c3.c;
-                ((Handler) b1Var.d).post((q1) b1Var.h);
-            }
-            if ((g0Var2 != null && g0Var2.d) != g0Var.d) {
-                l lVar2 = c3.r;
-                lVar2.h = c3.A;
-                if (!lVar2.b) {
-                    lVar2.b = true;
-                    ((a4.d) lVar2.e).sendEmptyMessage(2);
-                }
-            }
-        } else {
-            l lVar3 = c3.r;
-            if (lVar3 != null) {
-                a0 d = c3.d(lVar3);
-                if (d != null) {
-                    b();
-                    lVar3.f = null;
-                    lVar3.h(null);
-                    c3.m(d, null);
-                    bVar.b(514, d);
-                    c3.l.remove(d);
-                }
-                c3.r = null;
-                b1 b1Var2 = c3.c;
-                ((Handler) b1Var2.d).post((q1) b1Var2.h);
-            }
+    @Override // h5.n
+    public long e() {
+        long j10 = this.b;
+        if (!this.a) {
+            return j10;
         }
-        bVar.b(769, g0Var);
+        ((h5.y) this.d).getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime() - this.c;
+        return (((v1) this.e).a == 1.0f ? h5.d0.G(elapsedRealtime) : elapsedRealtime * r4.c) + j10;
     }
 
-    public static void j(int i10) {
-        if (i10 < 0 || i10 > 3) {
-            throw new IllegalArgumentException("Unsupported reason to unselect route");
-        }
-        b();
-        e c3 = c();
-        b0 c6 = c3.c();
-        if (c3.e() != c6) {
-            c3.i(c6, i10);
-        }
-    }
-
-    public final void a(w wVar, x xVar, int i10) {
-        y yVar;
-        boolean z10;
-        w wVar2;
-        if (wVar == null) {
-            throw new IllegalArgumentException("selector must not be null");
-        }
-        if (xVar == null) {
-            throw new IllegalArgumentException("callback must not be null");
-        }
-        b();
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            if (i12 >= size) {
-                i12 = -1;
-                break;
-            } else if (((y) arrayList.get(i12)).b == xVar) {
-                break;
-            } else {
-                i12++;
-            }
-        }
-        if (i12 < 0) {
-            yVar = new y(this, xVar);
-            arrayList.add(yVar);
-        } else {
-            yVar = (y) arrayList.get(i12);
-        }
-        boolean z11 = true;
-        if (i10 != yVar.d) {
-            yVar.d = i10;
-            z10 = true;
-        } else {
-            z10 = false;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if ((i10 & 1) != 0) {
-            z10 = true;
-        }
-        yVar.e = elapsedRealtime;
-        w wVar3 = yVar.c;
-        wVar3.a();
-        wVar.a();
-        if (wVar3.b.containsAll(wVar.b)) {
-            z11 = z10;
-        } else {
-            w wVar4 = yVar.c;
-            if (wVar4 == null) {
-                throw new IllegalArgumentException("selector must not be null");
-            }
-            wVar4.a();
-            ArrayList<String> arrayList2 = !wVar4.b.isEmpty() ? new ArrayList<>(wVar4.b) : null;
-            ArrayList c3 = wVar.c();
-            if (!c3.isEmpty()) {
-                int size2 = c3.size();
-                while (i11 < size2) {
-                    Object obj = c3.get(i11);
-                    i11++;
-                    String str = (String) obj;
-                    if (str == null) {
-                        throw new IllegalArgumentException("category must not be null");
-                    }
-                    if (arrayList2 == null) {
-                        arrayList2 = new ArrayList<>();
-                    }
-                    if (!arrayList2.contains(str)) {
-                        arrayList2.add(str);
-                    }
-                }
-            }
-            if (arrayList2 == null) {
-                wVar2 = w.c;
-            } else {
-                Bundle bundle = new Bundle();
-                bundle.putStringArrayList("controlCategories", arrayList2);
-                wVar2 = new w(bundle, arrayList2);
-            }
-            yVar.c = wVar2;
-        }
-        if (z11) {
-            c().k();
-        }
-    }
-
-    public final void h(x xVar) {
-        if (xVar == null) {
-            throw new IllegalArgumentException("callback must not be null");
-        }
-        b();
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (true) {
-            if (i10 >= size) {
-                i10 = -1;
-                break;
-            } else if (((y) arrayList.get(i10)).b == xVar) {
-                break;
-            } else {
-                i10++;
-            }
-        }
-        if (i10 >= 0) {
-            arrayList.remove(i10);
-            c().k();
-        }
+    public d0(h5.y yVar) {
+        this.d = yVar;
+        this.e = v1.d;
     }
 }

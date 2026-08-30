@@ -1,6 +1,5 @@
 package androidx.fragment.app;
 
-import ag.q1;
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentCallbacks;
@@ -22,43 +21,44 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, g2.f {
-    public static final Object f0 = new Object();
-    public boolean A;
+    public static final Object g0 = new Object();
     public boolean B;
     public boolean C;
     public boolean D;
-    public int E;
-    public j0 F;
-    public u G;
-    public s I;
-    public int J;
+    public boolean E;
+    public int F;
+    public j0 G;
+    public u H;
+    public s J;
     public int K;
-    public String L;
-    public boolean M;
+    public int L;
+    public String M;
     public boolean N;
     public boolean O;
-    public boolean Q;
-    public ViewGroup R;
-    public boolean S;
-    public r U;
-    public boolean V;
+    public boolean P;
+    public boolean R;
+    public ViewGroup S;
+    public boolean T;
+    public r V;
     public boolean W;
-    public String X;
-    public androidx.lifecycle.n Y;
-    public androidx.lifecycle.v Z;
-    public final androidx.lifecycle.z a0;
+    public boolean X;
+    public String Y;
+    public androidx.lifecycle.n Z;
+    public androidx.lifecycle.v a0;
     public Bundle b;
-    public androidx.lifecycle.n0 b0;
+    public final androidx.lifecycle.z b0;
     public SparseArray c;
-    public androidx.activity.n c0;
+    public androidx.lifecycle.n0 c0;
     public Bundle d;
-    public final ArrayList d0;
-    public final q e0;
+    public androidx.activity.o d0;
+    public final ArrayList e0;
     public Bundle f;
+    public final q f0;
     public s h;
     public int r;
     public boolean v;
@@ -69,49 +69,49 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     public String e = UUID.randomUUID().toString();
     public String n = null;
     public Boolean s = null;
-    public k0 H = new k0();
-    public final boolean P = true;
-    public boolean T = true;
+    public k0 I = new k0();
+    public final boolean Q = true;
+    public boolean U = true;
 
     public s() {
-        new q1(this, 4);
-        this.Y = androidx.lifecycle.n.e;
-        this.a0 = new androidx.lifecycle.z();
+        new androidx.activity.i(this, 3);
+        this.Z = androidx.lifecycle.n.e;
+        this.b0 = new androidx.lifecycle.z();
         new AtomicInteger();
-        this.d0 = new ArrayList();
-        this.e0 = new q(this);
+        this.e0 = new ArrayList();
+        this.f0 = new q(this);
         r();
     }
 
     public void A() {
-        this.Q = true;
+        this.R = true;
     }
 
     public void B() {
-        this.Q = true;
+        this.R = true;
     }
 
     public void C() {
-        this.Q = true;
+        this.R = true;
     }
 
     public LayoutInflater D(Bundle bundle) {
-        u uVar = this.G;
+        u uVar = this.H;
         if (uVar == null) {
             throw new IllegalStateException("onGetLayoutInflater() cannot be executed until the Fragment is attached to the FragmentManager.");
         }
         v vVar = uVar.e;
         LayoutInflater cloneInContext = vVar.getLayoutInflater().cloneInContext(vVar);
-        cloneInContext.setFactory2(this.H.f);
+        cloneInContext.setFactory2(this.I.f);
         return cloneInContext;
     }
 
     public void E() {
-        this.Q = true;
+        this.R = true;
     }
 
     public void F() {
-        this.Q = true;
+        this.R = true;
     }
 
     public abstract void H();
@@ -119,8 +119,8 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     public abstract void I();
 
     public void J(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.H.R();
-        this.D = true;
+        this.I.R();
+        this.E = true;
         f();
     }
 
@@ -133,7 +133,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final void L(int i10, int i11, int i12, int i13) {
-        if (this.U == null && i10 == 0 && i11 == 0 && i12 == 0 && i13 == 0) {
+        if (this.V == null && i10 == 0 && i11 == 0 && i12 == 0 && i13 == 0) {
             return;
         }
         j().b = i10;
@@ -143,7 +143,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final void M(Bundle bundle) {
-        j0 j0Var = this.F;
+        j0 j0Var = this.G;
         if (j0Var != null) {
             if (j0Var == null ? false : j0Var.P()) {
                 throw new IllegalStateException("Fragment already added and state has been saved");
@@ -155,10 +155,10 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     @Override // androidx.lifecycle.i
     public final androidx.lifecycle.s0 c() {
         Application application;
-        if (this.F == null) {
+        if (this.G == null) {
             throw new IllegalStateException("Can't access ViewModels from detached fragment");
         }
-        if (this.b0 == null) {
+        if (this.c0 == null) {
             Context applicationContext = K().getApplicationContext();
             while (true) {
                 if (!(applicationContext instanceof ContextWrapper)) {
@@ -174,9 +174,9 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             if (application == null && j0.K(3)) {
                 Log.d("FragmentManager", "Could not find Application instance from Context " + K().getApplicationContext() + ", you will need CreationExtras to use AndroidViewModel with the default ViewModelProvider.Factory");
             }
-            this.b0 = new androidx.lifecycle.n0(application, this, this.f);
+            this.c0 = new androidx.lifecycle.n0(application, this, this.f);
         }
-        return this.b0;
+        return this.c0;
     }
 
     @Override // androidx.lifecycle.i
@@ -217,13 +217,13 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
 
     @Override // androidx.lifecycle.u0
     public final androidx.lifecycle.t0 f() {
-        if (this.F == null) {
+        if (this.G == null) {
             throw new IllegalStateException("Can't access ViewModels from detached fragment");
         }
         if (o() == 1) {
             throw new IllegalStateException("Calling getViewModelStore() before a Fragment reaches onCreate() when using setMaxLifecycle(INITIALIZED) is not supported");
         }
-        HashMap hashMap = this.F.O.f;
+        HashMap hashMap = this.G.O.f;
         androidx.lifecycle.t0 t0Var = (androidx.lifecycle.t0) hashMap.get(this.e);
         if (t0Var != null) {
             return t0Var;
@@ -235,10 +235,10 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
 
     @Override // g2.f
     public final g2.e g() {
-        return (g2.e) this.c0.c;
+        return (g2.e) this.d0.c;
     }
 
-    public h7.i0 h() {
+    public j7.w h() {
         return new o(this);
     }
 
@@ -246,18 +246,18 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         String str2;
         printWriter.print(str);
         printWriter.print("mFragmentId=#");
-        printWriter.print(Integer.toHexString(this.J));
-        printWriter.print(" mContainerId=#");
         printWriter.print(Integer.toHexString(this.K));
+        printWriter.print(" mContainerId=#");
+        printWriter.print(Integer.toHexString(this.L));
         printWriter.print(" mTag=");
-        printWriter.println(this.L);
+        printWriter.println(this.M);
         printWriter.print(str);
         printWriter.print("mState=");
         printWriter.print(this.a);
         printWriter.print(" mWho=");
         printWriter.print(this.e);
         printWriter.print(" mBackStackNesting=");
-        printWriter.println(this.E);
+        printWriter.println(this.F);
         printWriter.print(str);
         printWriter.print("mAdded=");
         printWriter.print(this.v);
@@ -266,35 +266,35 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         printWriter.print(" mFromLayout=");
         printWriter.print(this.y);
         printWriter.print(" mInLayout=");
-        printWriter.println(this.A);
+        printWriter.println(this.B);
         printWriter.print(str);
         printWriter.print("mHidden=");
-        printWriter.print(this.M);
-        printWriter.print(" mDetached=");
         printWriter.print(this.N);
+        printWriter.print(" mDetached=");
+        printWriter.print(this.O);
         printWriter.print(" mMenuVisible=");
-        printWriter.print(this.P);
+        printWriter.print(this.Q);
         printWriter.print(" mHasMenu=");
         printWriter.println(false);
         printWriter.print(str);
         printWriter.print("mRetainInstance=");
-        printWriter.print(this.O);
+        printWriter.print(this.P);
         printWriter.print(" mUserVisibleHint=");
-        printWriter.println(this.T);
-        if (this.F != null) {
-            printWriter.print(str);
-            printWriter.print("mFragmentManager=");
-            printWriter.println(this.F);
-        }
+        printWriter.println(this.U);
         if (this.G != null) {
             printWriter.print(str);
-            printWriter.print("mHost=");
+            printWriter.print("mFragmentManager=");
             printWriter.println(this.G);
         }
-        if (this.I != null) {
+        if (this.H != null) {
+            printWriter.print(str);
+            printWriter.print("mHost=");
+            printWriter.println(this.H);
+        }
+        if (this.J != null) {
             printWriter.print(str);
             printWriter.print("mParentFragment=");
-            printWriter.println(this.I);
+            printWriter.println(this.J);
         }
         if (this.f != null) {
             printWriter.print(str);
@@ -318,8 +318,8 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         }
         s sVar = this.h;
         if (sVar == null) {
-            j0 j0Var = this.F;
-            sVar = (j0Var == null || (str2 = this.n) == null) ? null : j0Var.c.p(str2);
+            j0 j0Var = this.G;
+            sVar = (j0Var == null || (str2 = this.n) == null) ? null : j0Var.c.u(str2);
         }
         if (sVar != null) {
             printWriter.print(str);
@@ -330,64 +330,64 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         }
         printWriter.print(str);
         printWriter.print("mPopDirection=");
-        r rVar = this.U;
+        r rVar = this.V;
         printWriter.println(rVar == null ? false : rVar.a);
-        r rVar2 = this.U;
+        r rVar2 = this.V;
         if ((rVar2 == null ? 0 : rVar2.b) != 0) {
             printWriter.print(str);
             printWriter.print("getEnterAnim=");
-            r rVar3 = this.U;
+            r rVar3 = this.V;
             printWriter.println(rVar3 == null ? 0 : rVar3.b);
         }
-        r rVar4 = this.U;
+        r rVar4 = this.V;
         if ((rVar4 == null ? 0 : rVar4.c) != 0) {
             printWriter.print(str);
             printWriter.print("getExitAnim=");
-            r rVar5 = this.U;
+            r rVar5 = this.V;
             printWriter.println(rVar5 == null ? 0 : rVar5.c);
         }
-        r rVar6 = this.U;
+        r rVar6 = this.V;
         if ((rVar6 == null ? 0 : rVar6.d) != 0) {
             printWriter.print(str);
             printWriter.print("getPopEnterAnim=");
-            r rVar7 = this.U;
+            r rVar7 = this.V;
             printWriter.println(rVar7 == null ? 0 : rVar7.d);
         }
-        r rVar8 = this.U;
+        r rVar8 = this.V;
         if ((rVar8 == null ? 0 : rVar8.e) != 0) {
             printWriter.print(str);
             printWriter.print("getPopExitAnim=");
-            r rVar9 = this.U;
+            r rVar9 = this.V;
             printWriter.println(rVar9 != null ? rVar9.e : 0);
         }
-        if (this.R != null) {
+        if (this.S != null) {
             printWriter.print(str);
             printWriter.print("mContainer=");
-            printWriter.println(this.R);
+            printWriter.println(this.S);
         }
         if (n() != null) {
-            new v5.n(this, f()).i(str, printWriter);
+            new q5.g0(this, f()).y(str, printWriter);
         }
         printWriter.print(str);
-        printWriter.println("Child " + this.H + ":");
-        this.H.w(u3.c.k(str, "  "), fileDescriptor, printWriter, strArr);
+        printWriter.println("Child " + this.I + ":");
+        this.I.w(v2.k(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {
-        if (this.U == null) {
+        if (this.V == null) {
             r rVar = new r();
-            Object obj = f0;
+            Object obj = g0;
             rVar.g = obj;
             rVar.h = obj;
             rVar.i = obj;
             rVar.j = null;
-            this.U = rVar;
+            this.V = rVar;
         }
-        return this.U;
+        return this.V;
     }
 
     public final v k() {
-        u uVar = this.G;
+        u uVar = this.H;
         if (uVar == null) {
             return null;
         }
@@ -395,19 +395,19 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final j0 l() {
-        if (this.G != null) {
-            return this.H;
+        if (this.H != null) {
+            return this.I;
         }
         throw new IllegalStateException("Fragment " + this + " has not been attached yet.");
     }
 
     @Override // androidx.lifecycle.t
     public final androidx.lifecycle.o m() {
-        return this.Z;
+        return this.a0;
     }
 
     public final Context n() {
-        u uVar = this.G;
+        u uVar = this.H;
         if (uVar == null) {
             return null;
         }
@@ -415,20 +415,20 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final int o() {
-        androidx.lifecycle.n nVar = this.Y;
-        return (nVar == androidx.lifecycle.n.b || this.I == null) ? nVar.ordinal() : Math.min(nVar.ordinal(), this.I.o());
+        androidx.lifecycle.n nVar = this.Z;
+        return (nVar == androidx.lifecycle.n.b || this.J == null) ? nVar.ordinal() : Math.min(nVar.ordinal(), this.J.o());
     }
 
     @Override // android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
-        this.Q = true;
+        this.R = true;
     }
 
     @Override // android.view.View.OnCreateContextMenuListener
     public final void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-        v k9 = k();
-        if (k9 != null) {
-            k9.onCreateContextMenu(contextMenu, view, contextMenuInfo);
+        v k10 = k();
+        if (k10 != null) {
+            k10.onCreateContextMenu(contextMenu, view, contextMenuInfo);
             return;
         }
         throw new IllegalStateException("Fragment " + this + " not attached to an activity.");
@@ -436,11 +436,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
 
     @Override // android.content.ComponentCallbacks
     public final void onLowMemory() {
-        this.Q = true;
+        this.R = true;
     }
 
     public final j0 p() {
-        j0 j0Var = this.F;
+        j0 j0Var = this.G;
         if (j0Var != null) {
             return j0Var;
         }
@@ -452,11 +452,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final void r() {
-        this.Z = new androidx.lifecycle.v(this);
-        this.c0 = new androidx.activity.n(this);
-        this.b0 = null;
-        ArrayList arrayList = this.d0;
-        q qVar = this.e0;
+        this.a0 = new androidx.lifecycle.v(this);
+        this.d0 = new androidx.activity.o(this);
+        this.c0 = null;
+        ArrayList arrayList = this.e0;
+        q qVar = this.f0;
         if (arrayList.contains(qVar)) {
             return;
         }
@@ -469,26 +469,26 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
 
     public final void s() {
         r();
-        this.X = this.e;
+        this.Y = this.e;
         this.e = UUID.randomUUID().toString();
         this.v = false;
         this.w = false;
         this.y = false;
-        this.A = false;
-        this.C = false;
-        this.E = 0;
-        this.F = null;
-        this.H = new k0();
+        this.B = false;
+        this.D = false;
+        this.F = 0;
         this.G = null;
-        this.J = 0;
+        this.I = new k0();
+        this.H = null;
         this.K = 0;
-        this.L = null;
-        this.M = false;
+        this.L = 0;
+        this.M = null;
         this.N = false;
+        this.O = false;
     }
 
     public final void startActivityForResult(Intent intent, int i10) {
-        if (this.G == null) {
+        if (this.H == null) {
             throw new IllegalStateException("Fragment " + this + " not attached to Activity");
         }
         j0 p10 = p();
@@ -511,35 +511,35 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final boolean t() {
-        return this.G != null && this.v;
+        return this.H != null && this.v;
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(128);
-        sb2.append(getClass().getSimpleName());
-        sb2.append("{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append("} (");
-        sb2.append(this.e);
-        if (this.J != 0) {
-            sb2.append(" id=0x");
-            sb2.append(Integer.toHexString(this.J));
+        StringBuilder sb = new StringBuilder(128);
+        sb.append(getClass().getSimpleName());
+        sb.append("{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append("} (");
+        sb.append(this.e);
+        if (this.K != 0) {
+            sb.append(" id=0x");
+            sb.append(Integer.toHexString(this.K));
         }
-        if (this.L != null) {
-            sb2.append(" tag=");
-            sb2.append(this.L);
+        if (this.M != null) {
+            sb.append(" tag=");
+            sb.append(this.M);
         }
-        sb2.append(")");
-        return sb2.toString();
+        sb.append(")");
+        return sb.toString();
     }
 
     public final boolean u() {
-        if (this.M) {
+        if (this.N) {
             return true;
         }
-        j0 j0Var = this.F;
+        j0 j0Var = this.G;
         if (j0Var != null) {
-            s sVar = this.I;
+            s sVar = this.J;
             j0Var.getClass();
             if (sVar == null ? false : sVar.u()) {
                 return true;
@@ -549,11 +549,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public final boolean v() {
-        return this.E > 0;
+        return this.F > 0;
     }
 
     public void w() {
-        this.Q = true;
+        this.R = true;
     }
 
     public void x(int i10, int i11, Intent intent) {
@@ -563,26 +563,26 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     public void y(Context context) {
-        this.Q = true;
-        u uVar = this.G;
+        this.R = true;
+        u uVar = this.H;
         if ((uVar == null ? null : uVar.a) != null) {
-            this.Q = true;
+            this.R = true;
         }
     }
 
     public void z(Bundle bundle) {
         Bundle bundle2;
-        this.Q = true;
+        this.R = true;
         Bundle bundle3 = this.b;
         if (bundle3 != null && (bundle2 = bundle3.getBundle("childFragmentManager")) != null) {
-            this.H.X(bundle2);
-            k0 k0Var = this.H;
+            this.I.X(bundle2);
+            k0 k0Var = this.I;
             k0Var.H = false;
             k0Var.I = false;
             k0Var.O.i = false;
             k0Var.u(1);
         }
-        k0 k0Var2 = this.H;
+        k0 k0Var2 = this.I;
         if (k0Var2.v >= 1) {
             return;
         }

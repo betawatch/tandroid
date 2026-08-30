@@ -1,13 +1,40 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class xm extends MessageObject {
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean canDeleteMessage(boolean z10, TLRPC.Chat chat) {
-        return false;
+public final /* synthetic */ class xm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jn b;
+    public final /* synthetic */ TLRPC.Chat c;
+
+    public /* synthetic */ xm(jn jnVar, TLRPC.Chat chat, int i10) {
+        this.a = i10;
+        this.b = jnVar;
+        this.c = chat;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.Chat chat = this.c;
+        jn jnVar = this.b;
+        switch (i10) {
+            case 0:
+                jnVar.v(chat);
+                break;
+            case 1:
+                jnVar.b(chat);
+                break;
+            case 2:
+                jnVar.a.ka(chat);
+                break;
+            default:
+                org.telegram.ui.Components.qc.a0(jnVar.a).Q(R.raw.contact_check, 36, LocaleController.formatString(R.string.YouJoinedChannel, chat == null ? "" : chat.title)).k(true);
+                break;
+        }
     }
 }

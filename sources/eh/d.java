@@ -1,35 +1,67 @@
 package eh;
 
 import android.graphics.Canvas;
-import androidx.recyclerview.widget.RecyclerView;
-import f2.v0;
-import jf.b0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class d extends v0 {
-    public final b0 a = new b0(2);
-    public final /* synthetic */ c6 b;
-    public final /* synthetic */ f c;
+public final class d extends dh.h {
+    public final MediaController.PhotoEntry b;
+    public final SendMessagesHelper.SendingMediaInfo c;
 
-    public d(f fVar, c6 c6Var) {
-        this.c = fVar;
-        this.b = c6Var;
+    /* JADX WARN: Removed duplicated region for block: B:6:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0090  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public d(SendMessagesHelper.SendingMediaInfo sendingMediaInfo) {
+        ImageLocation imageLocation;
+        ImageLocation imageLocation2;
+        this.c = sendingMediaInfo;
+        MediaController.PhotoEntry photoEntry = sendingMediaInfo.originalPhotoEntry;
+        this.b = photoEntry;
+        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setOrientation(0, true);
+        String str = photoEntry.coverPath;
+        if (str != null) {
+            imageLocation = ImageLocation.getForPath(str);
+        } else {
+            String str2 = photoEntry.thumbPath;
+            if (str2 != null) {
+                imageLocation = ImageLocation.getForPath(str2);
+            } else if (photoEntry.path == null) {
+                imageReceiver.clearImage();
+                imageLocation = null;
+            } else {
+                if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
+                    ImageLocation forPath = ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path);
+                    imageReceiver.setOrientation(photoEntry.orientation, photoEntry.invert, true);
+                    imageLocation2 = forPath;
+                    if (imageLocation2 == null) {
+                        imageReceiver.setImage(imageLocation2, null, null, null, null, 0);
+                        return;
+                    } else {
+                        imageReceiver.clearImage();
+                        return;
+                    }
+                }
+                imageLocation = ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path);
+            }
+        }
+        imageLocation2 = imageLocation;
+        if (imageLocation2 == null) {
+        }
     }
 
-    @Override // f2.v0
-    public final void c(Canvas canvas, RecyclerView recyclerView) {
-        f fVar = this.c;
-        int max = Math.max(0, AndroidUtilities.dp(80.0f) + ((int) fVar.c0.getTranslationY()) + ((int) fVar.T.e));
-        int v02 = g6.v0(g6.h5, this.b);
-        b0 b0Var = this.a;
-        b0Var.b(v02);
-        b0Var.setBounds(0, max, recyclerView.getWidth(), AndroidUtilities.dp(8.0f) + max);
-        b0Var.draw(canvas);
-        fVar.Q();
-        fVar.R();
+    @Override // dh.h
+    public final void c(Canvas canvas, int i10, int i11) {
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(0.0f, 0.0f, i10, i11);
+        imageReceiver.draw(canvas);
     }
 }

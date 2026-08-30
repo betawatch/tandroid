@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Set;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzob implements zznu {
     private final String zza;
@@ -12,7 +12,7 @@ public final class zzob implements zznu {
     private final zznl zzd;
     private final int zze;
 
-    private zzob(String str, boolean z10, int i10, Level level, boolean z11, Set set, zznl zznlVar) {
+    private zzob(String str, boolean z4, int i10, Level level, boolean z10, Set set, zznl zznlVar) {
         this.zza = "";
         this.zze = 2;
         this.zzb = level;
@@ -25,7 +25,7 @@ public final class zzob implements zznu {
         return new zzoe(this.zza, str, true, 2, this.zzb, this.zzc, this.zzd, null);
     }
 
-    public final zzob zzb(boolean z10) {
+    public final zzob zzb(boolean z4) {
         Set set = this.zzc;
         zznl zznlVar = this.zzd;
         return new zzob(this.zza, true, 2, Level.OFF, false, set, zznlVar);

@@ -12,7 +12,7 @@ public final class i0 extends h0 {
     @Override // com.google.android.gms.internal.clearcut.h0
     public final void a(Object obj, long j10) {
         Object unmodifiableList;
-        List list = (List) l1.k(obj, j10);
+        List list = (List) k1.k(obj, j10);
         if (list instanceof g0) {
             unmodifiableList = ((g0) list).k();
         } else if (c.isAssignableFrom(list.getClass())) {
@@ -20,30 +20,30 @@ public final class i0 extends h0 {
         } else {
             unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
-        l1.d(obj, j10, unmodifiableList);
+        k1.d(obj, j10, unmodifiableList);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.android.gms.internal.clearcut.h0
     public final void b(Object obj, long j10, Object obj2) {
         f0 f0Var;
-        List list = (List) l1.k(obj2, j10);
+        List list = (List) k1.k(obj2, j10);
         int size = list.size();
-        List list2 = (List) l1.k(obj, j10);
+        List list2 = (List) k1.k(obj, j10);
         if (list2.isEmpty()) {
             list2 = list2 instanceof g0 ? new f0(size) : new ArrayList(size);
-            l1.d(obj, j10, list2);
+            k1.d(obj, j10, list2);
         } else {
             if (c.isAssignableFrom(list2.getClass())) {
                 ArrayList arrayList = new ArrayList(list2.size() + size);
                 arrayList.addAll(list2);
                 f0Var = arrayList;
-            } else if (list2 instanceof f1) {
+            } else if (list2 instanceof e1) {
                 f0 f0Var2 = new f0(list2.size() + size);
-                f0Var2.addAll((f1) list2);
+                f0Var2.addAll((e1) list2);
                 f0Var = f0Var2;
             }
-            l1.d(obj, j10, f0Var);
+            k1.d(obj, j10, f0Var);
             list2 = f0Var;
         }
         int size2 = list2.size();
@@ -54,6 +54,6 @@ public final class i0 extends h0 {
         if (size2 > 0) {
             list = list2;
         }
-        l1.d(obj, j10, list);
+        k1.d(obj, j10, list);
     }
 }

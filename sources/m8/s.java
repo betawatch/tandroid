@@ -1,32 +1,28 @@
 package m8;
 
-import android.os.BadParcelableException;
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.l1;
+import j7.f5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class s {
-    public static final /* synthetic */ int a = 0;
+public final class s extends c6.a {
+    public static final Parcelable.Creator<s> CREATOR = new c(14);
+    public final int a;
+    public final boolean b;
 
-    static {
-        s.class.getClassLoader();
+    public s(int i10, boolean z4) {
+        this.a = i10;
+        this.b = z4;
     }
 
-    public static Parcelable a(Parcel parcel) {
-        Parcelable.Creator creator = Bundle.CREATOR;
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(l1.k(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        f5.s(parcel, 3, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        f5.r(parcel, q10);
     }
 }

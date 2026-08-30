@@ -1,27 +1,55 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Serializable n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ n6(MediaController mediaController, boolean z10, int i10) {
-        this.a = i10;
-        this.b = mediaController;
-        this.c = z10;
+    public /* synthetic */ n6(MediaController mediaController, File file, TLRPC.TL_document tL_document, int i10, boolean z4, int i11, boolean z10, long j10) {
+        this.h = mediaController;
+        this.n = file;
+        this.r = tL_document;
+        this.c = i10;
+        this.b = z4;
+        this.e = i11;
+        this.f = z10;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleRecordingPause$28(this.c);
+                ((MediaController) this.h).lambda$stopRecordingInternal$40((File) this.n, (TLRPC.TL_document) this.r, this.c, this.b, this.e, this.f, this.d);
                 break;
             default:
-                this.b.lambda$toggleRecordingPause$32(this.c);
+                ((MessagesStorage) this.h).lambda$updatePinnedMessages$138(this.b, (HashMap) this.n, this.c, this.d, (ArrayList) this.r, this.e, this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ n6(MessagesStorage messagesStorage, boolean z4, HashMap hashMap, int i10, long j10, ArrayList arrayList, int i11, boolean z10) {
+        this.h = messagesStorage;
+        this.b = z4;
+        this.n = hashMap;
+        this.c = i10;
+        this.d = j10;
+        this.r = arrayList;
+        this.e = i11;
+        this.f = z10;
     }
 }

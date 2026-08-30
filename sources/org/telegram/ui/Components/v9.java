@@ -1,144 +1,113 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.graphics.drawable.GradientDrawable;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class v9 extends Drawable {
-    public TextPaint a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final float e;
-    public float f;
-    public float g;
-    public final RectF h;
-    public ValueAnimator i;
+public final class v9 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public TextView a;
+    public TextView b;
+    public dg.u2 c;
+    public dg.u2 d;
+    public kj0 e;
+    public ScrollView f;
+    public AnimatorSet h;
+    public TLRPC.TL_help_appUpdate n;
+    public String r;
+    public int s;
+    public int v;
+    public GradientDrawable w;
+    public GradientDrawable x;
 
-    public v9() {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new Paint(1);
-        this.d = new Paint(1);
-        this.e = 1.0f;
-        this.f = 0.0f;
-        this.g = 1.0f;
-        this.h = new RectF();
-        paint.setStyle(Paint.Style.STROKE);
+    public final void a(boolean z4) {
+        dg.u2 u2Var = this.d;
+        TextView textView = this.b;
+        dg.u2 u2Var2 = this.c;
+        AnimatorSet animatorSet = this.h;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        this.h = new AnimatorSet();
+        Property property = View.ALPHA;
+        Property property2 = View.SCALE_Y;
+        Property property3 = View.SCALE_X;
+        if (z4) {
+            u2Var2.setVisibility(0);
+            u2Var.setEnabled(false);
+            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property3, 1.0f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property2, 1.0f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property, 1.0f));
+        } else {
+            textView.setVisibility(0);
+            u2Var.setEnabled(true);
+            this.h.playTogether(ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property3, 0.1f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property2, 0.1f), ObjectAnimator.ofFloat(u2Var2, (Property<dg.u2, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
+        }
+        this.h.addListener(new dg.w2(22, this, z4));
+        this.h.setDuration(150L);
+        this.h.start();
     }
 
-    public final void a(float f9, boolean z10) {
-        float max = Math.max(Math.min(f9, 1.0f), 0.0f);
-        ValueAnimator valueAnimator = this.i;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.i = null;
-        }
-        if (!z10) {
-            this.g = max;
-            invalidateSelf();
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.fileLoaded) {
+            String str = (String) objArr[0];
+            String str2 = this.r;
+            if (str2 == null || !str2.equals(str)) {
+                return;
+            }
+            a(false);
+            ApplicationLoader.applicationLoaderInstance.openApkInstall((Activity) getContext(), this.n.document);
             return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.g, max);
-        this.i = ofFloat;
-        ofFloat.addUpdateListener(new j6(this, 5));
-        this.i.addListener(new org.telegram.ui.ActionBar.a1(this, max, 4));
-        this.i.setInterpolator(jr.h);
-        this.i.setDuration(200L);
-        this.i.start();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (getBounds() == null) {
+        if (i10 == NotificationCenter.fileLoadFailed) {
+            String str3 = (String) objArr[0];
+            String str4 = this.r;
+            if (str4 == null || !str4.equals(str3)) {
+                return;
+            }
+            a(false);
             return;
         }
-        int i10 = getBounds().left;
-        int i11 = getBounds().top + ((int) this.f);
-        int width = getBounds().width();
-        int height = getBounds().height();
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY() + ((int) this.f);
-        TextPaint textPaint = this.a;
-        Paint paint = this.d;
-        Paint paint2 = this.c;
-        Paint paint3 = this.b;
-        if (textPaint != null) {
-            int color = textPaint.getColor();
-            paint3.setColor(color);
-            paint2.setColor(color);
-            paint.setColor(color);
-        }
-        if (this.e != 1.0f) {
-            canvas.save();
-            float f9 = this.e;
-            canvas.scale(f9, f9, centerX, centerY);
-        }
-        paint3.setStrokeWidth(AndroidUtilities.dpf2(1.1f));
-        float f10 = i10;
-        float f11 = width;
-        float dpf2 = (((f11 - AndroidUtilities.dpf2(16.33f)) / 2.0f) + f10) - AndroidUtilities.dpf2(1.33f);
-        float f12 = i11;
-        float f13 = height;
-        float dpf22 = ((f13 - AndroidUtilities.dpf2(10.33f)) / 2.0f) + f12;
-        float dpf23 = (((AndroidUtilities.dpf2(16.33f) + f11) / 2.0f) + f10) - AndroidUtilities.dpf2(1.33f);
-        float dpf24 = ((AndroidUtilities.dpf2(10.33f) + f13) / 2.0f) + f12;
-        RectF rectF = this.h;
-        rectF.set(dpf2, dpf22, dpf23, dpf24);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(2.33f), AndroidUtilities.dpf2(2.33f), paint3);
-        rectF.set((((f11 - AndroidUtilities.dpf2(13.0f)) / 2.0f) + f10) - AndroidUtilities.dpf2(1.66f), ((f13 - AndroidUtilities.dpf2(7.33f)) / 2.0f) + f12, Math.max(AndroidUtilities.dpf2(1.1f), this.g * AndroidUtilities.dpf2(13.0f)) + ((((f11 - AndroidUtilities.dpf2(13.0f)) / 2.0f) + f10) - AndroidUtilities.dpf2(1.66f)), ((AndroidUtilities.dpf2(7.33f) + f13) / 2.0f) + f12);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(0.83f), AndroidUtilities.dpf2(0.83f), paint);
-        float f14 = centerY;
-        rectF.set((((AndroidUtilities.dpf2(17.5f) + f11) - AndroidUtilities.dpf2(4.66f)) / 2.0f) + f10, f14 - AndroidUtilities.dpf2(2.65f), ((AndroidUtilities.dpf2(4.66f) + (AndroidUtilities.dpf2(17.5f) + f11)) / 2.0f) + f10, AndroidUtilities.dpf2(2.65f) + f14);
-        canvas.drawArc(rectF, -90.0f, 180.0f, false, paint2);
-        if (this.e != 1.0f) {
-            canvas.restore();
+        if (i10 == NotificationCenter.fileLoadProgressChanged) {
+            String str5 = (String) objArr[0];
+            String str6 = this.r;
+            if (str6 == null || !str6.equals(str5)) {
+                return;
+            }
+            this.e.e(Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue()), true);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(this.e * 24.0f);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        GradientDrawable gradientDrawable = this.w;
+        ScrollView scrollView = this.f;
+        gradientDrawable.setBounds(scrollView.getLeft(), scrollView.getTop(), scrollView.getRight(), AndroidUtilities.dp(16.0f) + scrollView.getTop());
+        gradientDrawable.draw(canvas);
+        GradientDrawable gradientDrawable2 = this.x;
+        gradientDrawable2.setBounds(scrollView.getLeft(), scrollView.getBottom() - AndroidUtilities.dp(18.0f), scrollView.getRight(), scrollView.getBottom());
+        gradientDrawable2.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(this.e * 24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-        this.c.setAlpha(i10);
-        this.d.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
-    }
-
-    public v9(float f9, int i10) {
-        this();
-        a(f9, false);
-        this.b.setColor(-1);
-        this.c.setColor(-1);
-        this.d.setColor(i10);
-        this.e = 1.3f;
-        invalidateSelf();
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 8) {
+            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoaded);
+            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoadFailed);
+            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoadProgressChanged);
+        }
     }
 }

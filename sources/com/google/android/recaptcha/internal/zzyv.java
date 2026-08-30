@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzyv extends zzsh implements zztt {
     private zzyv() {
         throw null;
     }
 
-    public final zzyv zze(boolean z10) {
+    public final zzyv zze(boolean z4) {
         zzn();
-        zzyw.zzi((zzyw) this.zza, z10);
+        zzyw.zzi((zzyw) this.zza, z4);
         return this;
     }
 
@@ -31,9 +31,9 @@ public final class zzyv extends zzsh implements zztt {
         return this;
     }
 
-    public final zzyv zzs(float f9) {
+    public final zzyv zzs(float f10) {
         zzn();
-        zzyw.zzM((zzyw) this.zza, f9);
+        zzyw.zzM((zzyw) this.zza, f10);
         return this;
     }
 

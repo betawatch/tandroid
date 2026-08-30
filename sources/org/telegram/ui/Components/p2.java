@@ -1,46 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Base64;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p2 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class p2 implements org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
 
-    public /* synthetic */ p2(Context context, String str, long j10, boolean z10, ye.c cVar) {
-        this.d = context;
-        this.e = str;
-        this.b = j10;
-        this.c = z10;
-        this.f = cVar;
+    public /* synthetic */ p2(int i10, org.telegram.ui.ActionBar.p2 p2Var) {
+        this.a = i10;
+        this.b = p2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0084  */
+    @Override // org.telegram.ui.ActionBar.c2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        TLRPC.User user;
+        String string;
         switch (this.a) {
             case 0:
-                Context context = (Context) this.d;
-                String str = (String) this.e;
-                ye.d.q(context, Uri.parse(str), this.b == 0, this.c, (ye.c) this.f);
+                org.telegram.ui.ActionBar.p2 p2Var = this.b;
+                MessagesController.getInstance(p2Var.getCurrentAccount()).openByUserName("spambot", p2Var, 1);
                 break;
             default:
-                g8.A((g8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
+                org.telegram.ui.ActionBar.p2 p2Var2 = this.b;
+                int currentAccount = p2Var2.getCurrentAccount();
+                SharedPreferences mainSettings = MessagesController.getMainSettings(currentAccount);
+                long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(mainSettings, "support_id2", 0L);
+                if (prefIntOrLong != 0) {
+                    user = MessagesController.getInstance(currentAccount).getUser(Long.valueOf(prefIntOrLong));
+                    if (user == null && (string = mainSettings.getString("support_user", null)) != null) {
+                        try {
+                            byte[] decode = Base64.decode(string, 0);
+                            if (decode != null) {
+                                SerializedData serializedData = new SerializedData(decode);
+                                TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(serializedData, serializedData.readInt32(false), false);
+                                if (TLdeserialize != null && TLdeserialize.id == 333000) {
+                                    TLdeserialize = null;
+                                }
+                                serializedData.cleanup();
+                                user = TLdeserialize;
+                            }
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                    }
+                    if (user == null) {
+                        MessagesController.getInstance(currentAccount).putUser(user, true);
+                        Bundle bundle = new Bundle();
+                        bundle.putLong("user_id", user.id);
+                        p2Var2.presentFragment(new org.telegram.ui.xn(bundle));
+                        break;
+                    } else {
+                        org.telegram.ui.ActionBar.d2 d2Var2 = new org.telegram.ui.ActionBar.d2(p2Var2.getParentActivity(), 3, null);
+                        d2Var2.d0 = false;
+                        d2Var2.show();
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new nh.b8(mainSettings, d2Var2, currentAccount, p2Var2, 2));
+                        break;
+                    }
+                }
+                user = null;
+                if (user == null) {
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ p2(g8 g8Var, long j10, boolean z10, TLRPC.Document document, Runnable runnable) {
-        this.d = g8Var;
-        this.b = j10;
-        this.c = z10;
-        this.e = document;
-        this.f = runnable;
     }
 }

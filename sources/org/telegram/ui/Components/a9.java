@@ -1,249 +1,265 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.os.Build;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class a9 extends FrameLayout {
-    public float A;
-    public final /* synthetic */ b9 B;
-    public long a;
-    public TLRPC.Document b;
-    public final lh.y3 c;
-    public final k20 d;
-    public final k20 e;
-    public float f;
-    public x8 h;
-    public boolean n;
-    public final PorterDuffColorFilter r;
-    public final d6 s;
-    public boolean v;
-    public float w;
-    public float x;
-    public float y;
+public final class a9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(b9 b9Var, Context context) {
-        super(context);
-        this.B = b9Var;
-        this.d = new k20();
-        this.e = new k20();
-        this.f = 1.0f;
-        this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
-        this.s = new d6(this, 200L, jr.g);
-        this.w = -1.0f;
-        lh.y3 y3Var = new lh.y3(this, context, 6);
-        this.c = y3Var;
-        y3Var.getImageReceiver().setAutoRepeatCount(1);
-        y3Var.getImageReceiver().setAspectFit(true);
-        setClipChildren(false);
-        addView(y3Var, i7.f6.e(70, 70, 17));
+    public /* synthetic */ a9(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a(Canvas canvas, float f9, float f10, float f11, float f12, Paint paint) {
-        float f13 = this.s.c;
-        if (f13 == 0.0f) {
-            canvas.drawCircle(f9, f10, f12, paint);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 8:
+                ((tl) this.b).a.L = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        float lerp = AndroidUtilities.lerp(f11, 0.0f, f13);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f9 - f12, f10 - f12, f9 + f12, f10 + f12);
-        canvas.drawRoundRect(rectF, lerp, lerp, paint);
     }
 
-    public final void b(x8 x8Var, boolean z10) {
-        x8 x8Var2 = this.h;
-        if (x8Var2 != null) {
-            this.e.d(x8Var2.c, x8Var2.d, x8Var2.e, x8Var2.f);
-            this.f = 0.0f;
-            this.B.n = true;
-        }
-        this.h = x8Var;
-        this.n = z10;
-        if (Build.VERSION.SDK_INT >= 23) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        }
-        invalidate();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:22:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x018c  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0130  */
-    @Override // android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dispatchDraw(Canvas canvas) {
-        a9 a9Var;
-        Canvas canvas2;
-        p5 p5Var;
-        this.y = getMeasuredWidth() / 2.0f;
-        this.A = getMeasuredHeight() / 2.0f;
-        b9 b9Var = this.B;
-        float measuredWidth = b9Var.Q ? getMeasuredWidth() * 0.3f : AndroidUtilities.dp(50.0f);
-        float f9 = this.v ? 1.0f : 0.0f;
-        d6 d6Var = this.s;
-        d6Var.d(f9, false);
-        float f10 = this.w;
-        if (f10 >= 0.0f) {
-            d6Var.d(f10, true);
-        }
-        float lerp = AndroidUtilities.lerp(measuredWidth, getMeasuredWidth() / 2.0f, d6Var.c);
-        this.x = lerp;
-        this.x = AndroidUtilities.lerp(lerp, AndroidUtilities.dp(21.0f), b9Var.J);
-        this.y = AndroidUtilities.lerp(this.y, (getMeasuredWidth() - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(21.0f), b9Var.J);
-        canvas.save();
-        canvas.clipRect(0.0f, (-r2) / 2.0f, getMeasuredWidth(), (((b9Var.d - b9Var.c) / 2.0f) * b9Var.A) + getMeasuredHeight());
-        x8 x8Var = this.h;
-        if (x8Var != null) {
-            int i10 = x8Var.c;
-            int i11 = x8Var.d;
-            int i12 = x8Var.e;
-            int i13 = x8Var.f;
-            k20 k20Var = this.d;
-            k20Var.d(i10, i11, i12, i13);
-            Paint paint = k20Var.c;
-            float f11 = this.y;
-            float f12 = this.x;
-            float f13 = this.A;
-            k20Var.b(f11 - f12, f13 - f12, f11 + f12, f13 + f12);
-            if (this.f == 1.0f) {
-                a9Var = this;
-                paint.setAlpha(255);
-                canvas2 = canvas;
-                a9Var.a(canvas2, a9Var.y, a9Var.A, measuredWidth, a9Var.x, paint);
-                float lerp2 = AndroidUtilities.lerp(AndroidUtilities.lerp(!b9Var.Q ? (int) ((measuredWidth * 2.0f) * 0.7f) : AndroidUtilities.dp(70.0f), (int) (getMeasuredWidth() * 0.7f), d6Var.c), (int) (AndroidUtilities.dp(42.0f) * 0.7f), b9Var.J) / 2.0f;
-                lh.y3 y3Var = a9Var.c;
-                p5Var = y3Var.e;
-                if (p5Var != null) {
-                    ImageReceiver imageReceiver = y3Var.a;
-                    float f14 = a9Var.y - lerp2;
-                    float f15 = a9Var.A - lerp2;
-                    float f16 = lerp2 * 2.0f;
-                    imageReceiver.setImageCoords(f14, f15, f16, f16);
-                    y3Var.a.setRoundRadius((int) (f16 * 0.13f));
-                    y3Var.a.draw(canvas2);
-                    return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                c9 c9Var = (c9) this.b;
+                if (c9Var.f != null) {
+                    c9Var.e = 1.0f;
+                    c9Var.n();
+                    if (c9Var.g) {
+                        c9Var.g = false;
+                        Runnable runnable = c9Var.j;
+                        if (runnable != null) {
+                            runnable.run();
+                        }
+                    }
+                    c9Var.f();
                 }
-                lh.x2 x2Var = p5Var.k;
-                if (x2Var != null) {
-                    x2Var.setRoundRadius((int) (2.0f * lerp2 * 0.13f));
+                c9Var.f = null;
+                break;
+            case 1:
+                ((hf) this.b).f.V.setVisibility(8);
+                break;
+            case 2:
+                ((lg) this.b).a0 = 1.0f;
+                break;
+            case 3:
+                ((sh) this.b).c.s.setVisibility(8);
+                break;
+            case 4:
+                ((uh) this.b).d.v.setVisibility(8);
+                break;
+            case 5:
+                li liVar = (li) this.b;
+                liVar.W0 = null;
+                if (!liVar.n1) {
+                    if (liVar.U0.getTag() == null && liVar.N0 == 0 && !liVar.Q0) {
+                        liVar.X0.setVisibility(4);
+                    }
+                    liVar.f1.setVisibility(4);
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.w0 w0Var = liVar.b1;
+                    if (w0Var != null) {
+                        w0Var.setVisibility(4);
+                        break;
+                    }
                 }
-                p5 p5Var2 = y3Var.e;
-                float f17 = a9Var.y;
-                float f18 = a9Var.A;
-                p5Var2.setBounds((int) (f17 - lerp2), (int) (f18 - lerp2), (int) (f17 + lerp2), (int) (f18 + lerp2));
-                y3Var.e.setColorFilter(a9Var.r);
-                y3Var.e.draw(canvas2);
-                return;
-            }
-            float f19 = this.y;
-            float f20 = this.x;
-            float f21 = f19 - f20;
-            float f22 = this.A;
-            float f23 = f22 - f20;
-            float f24 = f19 + f20;
-            float f25 = f22 + f20;
-            k20 k20Var2 = this.e;
-            k20Var2.b(f21, f23, f24, f25);
-            Paint paint2 = k20Var2.c;
-            paint2.setAlpha(255);
-            a9Var = this;
-            a9Var.a(canvas, this.y, this.A, measuredWidth, this.x, paint2);
-            paint.setAlpha((int) (a9Var.f * 255.0f));
-            a9Var.a(canvas, a9Var.y, a9Var.A, measuredWidth, a9Var.x, paint);
-            canvas = canvas;
-            float f26 = a9Var.f + 0.064f;
-            a9Var.f = f26;
-            if (f26 > 1.0f) {
-                a9Var.f = 1.0f;
-            }
-            invalidate();
-        } else {
-            a9Var = this;
+                break;
+            case 6:
+                super.onAnimationEnd(animator);
+                hk hkVar = (hk) this.b;
+                hkVar.s.setVisibility(8);
+                hkVar.n = 0;
+                vj vjVar = hkVar.r;
+                vjVar.setAlpha(1.0f);
+                vjVar.setScaleX(1.0f);
+                vjVar.setScaleY(1.0f);
+                vjVar.setTranslationX(0.0f);
+                vjVar.invalidate();
+                break;
+            case 7:
+                gk gkVar = (gk) this.b;
+                if (gkVar.U.E.getTag() == null) {
+                    gkVar.U.E.setVisibility(4);
+                }
+                gkVar.U.F = null;
+                break;
+            case 8:
+                tl tlVar = (tl) this.b;
+                if (animator.equals(tlVar.a.L)) {
+                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tlVar.a;
+                    chatAttachAlertPhotoLayout.W = true;
+                    chatAttachAlertPhotoLayout.L = null;
+                    break;
+                }
+                break;
+            case 9:
+                nm nmVar = (nm) this.b;
+                om omVar = nmVar.M;
+                omVar.G = null;
+                omVar.H = false;
+                nmVar.invalidate();
+                break;
+            case 10:
+                kp kpVar = (kp) this.b;
+                uo uoVar = kpVar.O;
+                if (uoVar != null) {
+                    if (uoVar.getParent() != null) {
+                        ((ViewGroup) kpVar.O.getParent()).removeView(kpVar.O);
+                    }
+                    kpVar.O = null;
+                }
+                kpVar.Q = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 11:
+                CheckBox checkBox = (CheckBox) this.b;
+                if (animator.equals(checkBox.s)) {
+                    checkBox.s = null;
+                }
+                if (!checkBox.x) {
+                    checkBox.D = null;
+                    break;
+                }
+                break;
+            case 12:
+                CheckBoxBase checkBoxBase = (CheckBoxBase) this.b;
+                if (animator.equals(checkBoxBase.p)) {
+                    checkBoxBase.p = null;
+                }
+                if (!checkBoxBase.q) {
+                    checkBoxBase.C = null;
+                    break;
+                }
+                break;
+            case 13:
+                kq kqVar = (kq) this.b;
+                if (kqVar.H == kqVar.I) {
+                    kqVar.D.setVisibility(4);
+                }
+                kqVar.y = null;
+                break;
+            case 14:
+                tq tqVar = (tq) this.b;
+                tqVar.l = 1.0f;
+                tqVar.o = null;
+                tqVar.p = null;
+                tqVar.q = null;
+                View view = tqVar.H;
+                if (view != null) {
+                    if (tqVar.h == 0 && tqVar.G) {
+                        view.setVisibility(8);
+                    }
+                    tqVar.H.invalidate();
+                }
+                tqVar.c = -1;
+                break;
+            case 15:
+                du duVar = (du) this.b;
+                duVar.L = false;
+                duVar.d.setTranslationY(0.0f);
+                duVar.d.setAlpha(0.0f);
+                duVar.c(0.0f);
+                duVar.O = 0.0f;
+                duVar.j();
+                break;
+            case 16:
+                ((lu) this.b).a.L = false;
+                break;
+            case 17:
+                super.onAnimationEnd(animator);
+                ((dv) this.b).d = null;
+                break;
+            case 18:
+                ((kz) this.b).T = null;
+                break;
+            case 19:
+                super.onAnimationEnd(animator);
+                ((sy) this.b).n = null;
+                break;
+            case 20:
+                ((h00) this.b).a();
+                break;
+            case 21:
+                j00 j00Var = (j00) this.b;
+                j00Var.R = j00Var.W;
+                j00Var.V = j00Var.c0;
+                j00Var.S = j00Var.a0;
+                j00Var.T = j00Var.b0;
+                j00Var.W = -1;
+                j00Var.a0 = -1;
+                j00Var.b0 = -1;
+                j00Var.c0 = -1;
+                break;
+            case 22:
+                y00 y00Var = (y00) this.b;
+                y00Var.s = 1.0f;
+                y00Var.invalidate();
+                break;
+            case 23:
+                o70 o70Var = (o70) this.b;
+                m70 m70Var = o70Var.x;
+                if (m70Var != null) {
+                    m70Var.setProgress(1.0f);
+                    o70Var.x.invalidate();
+                }
+                o70Var.m0 = null;
+                break;
+            case 24:
+                k00 k00Var = (k00) this.b;
+                ((y70) k00Var.e).B = false;
+                TextView[] textViewArr = (TextView[]) k00Var.d;
+                TextView textView = textViewArr[0];
+                textViewArr[0] = textViewArr[1];
+                textViewArr[1] = textView;
+                break;
+            case 25:
+                m80 m80Var = (m80) this.b;
+                if (!m80Var.f) {
+                    m80Var.c.setVisibility(8);
+                    break;
+                }
+                break;
+            case 26:
+                t80 t80Var = (t80) this.b;
+                FrameLayout frameLayout = t80Var.b;
+                eg.i0 i0Var = (eg.i0) t80Var.c;
+                if (i0Var.getParent() != null) {
+                    frameLayout.removeView(i0Var);
+                }
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Cells.ba) t80Var.d);
+                break;
+            case 27:
+                qb0 qb0Var = (qb0) this.b;
+                qb0Var.W.h = null;
+                qb0Var.e(qb0Var.P, qb0Var.O);
+                break;
+            case 28:
+                NumberTextView numberTextView = (NumberTextView) this.b;
+                numberTextView.d = null;
+                numberTextView.b.clear();
+                break;
+            default:
+                vd0 vd0Var = (vd0) this.b;
+                vd0Var.setVisibility(8);
+                vd0Var.h();
+                vd0Var.M = 0.0f;
+                vd0Var.f(0.0f);
+                vd0Var.setAlpha(0.0f);
+                break;
         }
-        canvas2 = canvas;
-        if (!b9Var.Q) {
-        }
-        float lerp22 = AndroidUtilities.lerp(AndroidUtilities.lerp(!b9Var.Q ? (int) ((measuredWidth * 2.0f) * 0.7f) : AndroidUtilities.dp(70.0f), (int) (getMeasuredWidth() * 0.7f), d6Var.c), (int) (AndroidUtilities.dp(42.0f) * 0.7f), b9Var.J) / 2.0f;
-        lh.y3 y3Var2 = a9Var.c;
-        p5Var = y3Var2.e;
-        if (p5Var != null) {
-        }
-    }
-
-    public long getDuration() {
-        lh.y3 y3Var = this.c;
-        ImageReceiver imageReceiver = y3Var.getImageReceiver();
-        p5 p5Var = y3Var.e;
-        if (p5Var != null) {
-            imageReceiver = p5Var.k;
-        }
-        if (imageReceiver == null || imageReceiver.getLottieAnimation() == null) {
-            return 5000L;
-        }
-        return imageReceiver.getLottieAnimation().p();
-    }
-
-    public ImageReceiver getImageReceiver() {
-        lh.y3 y3Var = this.c;
-        ImageReceiver imageReceiver = y3Var.getImageReceiver();
-        p5 p5Var = y3Var.e;
-        if (p5Var == null) {
-            return imageReceiver;
-        }
-        lh.x2 x2Var = p5Var.k;
-        p5Var.setColorFilter(this.r);
-        return x2Var;
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        super.invalidate();
-        this.B.fragmentView.invalidate();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (this.B.Q) {
-            super.onMeasure(i10, i11);
-        } else {
-            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(140.0f), TLObject.FLAG_30));
-        }
-    }
-
-    public void setExpanded(boolean z10) {
-        lh.x2 x2Var;
-        if (this.v == z10) {
-            return;
-        }
-        this.v = z10;
-        if (z10) {
-            lh.y3 y3Var = this.c;
-            p5 p5Var = y3Var.e;
-            if (p5Var != null && (x2Var = p5Var.k) != null) {
-                x2Var.startAnimation();
-            }
-            y3Var.a.startAnimation();
-        }
-        if (Build.VERSION.SDK_INT >= 23) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        }
-        invalidate();
     }
 }

@@ -1,6 +1,5 @@
 package o0;
 
-import ag.o1;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -11,34 +10,33 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Trace;
-import h7.m8;
+import j7.i8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import lh.e4;
-import nh.d6;
+import nh.e4;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
-    public static final e4 b = new e4(4);
+    public static final e4 b = new e4(2);
 
-    public static i a(Context context, List list) {
-        m8.a("FontProvider.getFontFamilyResult");
+    public static b4.f a(Context context, List list) {
+        i8.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
                 d dVar = (d) list.get(i10);
                 ProviderInfo b10 = b(context.getPackageManager(), dVar, context.getResources());
                 if (b10 == null) {
-                    return new i();
+                    return new b4.f();
                 }
                 arrayList.add(c(context, dVar, b10.authority));
             }
-            return new i(arrayList);
+            return new b4.f(arrayList);
         } finally {
             Trace.endSection();
         }
@@ -47,7 +45,7 @@ public abstract class c {
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
         e4 e4Var = b;
         a0.j jVar = a;
-        m8.a("FontProvider.getProvider");
+        i8.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -96,19 +94,19 @@ public abstract class c {
         }
     }
 
-    public static j[] c(Context context, d dVar, String str) {
-        m8.a("FontProvider.query");
+    public static i[] c(Context context, d dVar, String str) {
+        i8.a("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a o1Var = Build.VERSION.SDK_INT < 24 ? new o1(context, build) : new d6(context, build);
+            a cVar = Build.VERSION.SDK_INT < 24 ? new ja.c(context, build) : new o5.i(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                m8.a("ContentQueryWrapper.query");
+                i8.a("ContentQueryWrapper.query");
                 try {
-                    cursor = o1Var.m(build, strArr, new String[]{dVar.c});
+                    cursor = cVar.J(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -120,22 +118,22 @@ public abstract class c {
                         int columnIndex6 = cursor.getColumnIndex("font_italic");
                         while (cursor.moveToNext()) {
                             int i10 = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
-                            arrayList2.add(new j(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i10));
+                            arrayList2.add(new i(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i10));
                         }
                         arrayList = arrayList2;
                     }
                     if (cursor != null) {
                         cursor.close();
                     }
-                    o1Var.close();
-                    return (j[]) arrayList.toArray(new j[0]);
+                    cVar.close();
+                    return (i[]) arrayList.toArray(new i[0]);
                 } finally {
                 }
             } catch (Throwable th2) {
                 if (cursor != null) {
                     cursor.close();
                 }
-                o1Var.close();
+                cVar.close();
                 throw th2;
             }
         } finally {

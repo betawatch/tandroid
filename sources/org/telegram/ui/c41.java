@@ -1,48 +1,26 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c41 implements r0.o, org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class c41 implements View.OnApplyWindowInsetsListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f41 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ c41(f41 f41Var, int i10) {
+    public /* synthetic */ c41(Object obj, int i10) {
         this.a = i10;
-        this.b = f41Var;
+        this.b = obj;
     }
 
-    @Override // r0.o
-    public r0.m1 I0(View view, r0.m1 m1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        f41 f41Var = this.b;
-        f41Var.e = defaultWindowInsets;
-        f41Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        f41Var.b.requestLayout();
-        return r0.m1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
         switch (this.a) {
-            case 1:
-                org.telegram.ui.ActionBar.c2 c2Var2 = this.b.Y;
-                if (c2Var2 != null) {
-                    c2Var2.dismiss();
-                    break;
-                }
-                break;
+            case 0:
+                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
             default:
-                f41 f41Var = this.b;
-                org.telegram.ui.ActionBar.c2 c2Var3 = f41Var.Y;
-                if (c2Var3 != null) {
-                    c2Var3.dismiss();
-                    f41Var.Y = null;
-                }
-                f41Var.dismiss();
-                break;
+                return m61.b((e51) this.b, view, windowInsets);
         }
     }
 }

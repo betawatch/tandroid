@@ -1,39 +1,44 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z40 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a50 b;
+public final class z40 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ org.telegram.ui.Components.pp q1;
+    public final /* synthetic */ c60 r1;
 
-    public /* synthetic */ z40(a50 a50Var, int i10) {
-        this.a = i10;
-        this.b = a50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z40(c60 c60Var, LaunchActivity launchActivity, org.telegram.ui.Components.pp ppVar) {
+        super(launchActivity, null);
+        this.r1 = c60Var;
+        this.q1 = ppVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                a50 a50Var = this.b;
-                cg.h0 h0Var = a50Var.b;
-                if (h0Var != null) {
-                    h0Var.setVisibility(0);
-                }
-                AndroidUtilities.runOnUIThread(new z40(a50Var, 2), 16L);
-                break;
-            case 1:
-                cg.h0 h0Var2 = this.b.b;
-                if (h0Var2 != null) {
-                    h0Var2.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                super/*android.app.Dialog*/.dismiss();
-                break;
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
+            canvas.save();
+            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - AndroidUtilities.dp(1.0f));
+            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
+            org.telegram.ui.Components.pp ppVar = this.q1;
+            ppVar.f = alpha;
+            ppVar.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        ViewGroup viewGroup;
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            viewGroup = ((org.telegram.ui.ActionBar.g3) this.r1).containerView;
+            viewGroup.invalidate();
         }
     }
 }

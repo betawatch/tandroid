@@ -1,38 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class tr0 extends org.telegram.ui.tn {
-    public boolean Mc;
-    public final /* synthetic */ int Nc;
-    public final /* synthetic */ qu0 Oc;
+public final class tr0 extends qt0 {
+    public final /* synthetic */ yu0 J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tr0(qu0 qu0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.Oc = qu0Var;
-        this.Nc = i10;
-        this.Mc = true;
+    public tr0(yu0 yu0Var, Context context) {
+        super(context);
+        this.J = yu0Var;
     }
 
-    @Override // org.telegram.ui.tn, org.telegram.ui.ActionBar.o2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        qu0 qu0Var = this.Oc;
-        bu0 bu0Var = qu0Var.O;
-        if (this.Mc) {
-            if (this.f0 != null) {
-                la("");
-                this.f0.H(bu0Var.w, false);
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        qt0 qt0Var;
+        super.setTranslationX(f10);
+        yu0 yu0Var = this.J;
+        qt0[] qt0VarArr = yu0Var.h0;
+        if (yu0Var.d1 && (qt0Var = qt0VarArr[0]) == this) {
+            float abs = Math.abs(qt0Var.getTranslationX()) / qt0VarArr[0].getMeasuredWidth();
+            yu0Var.Z0(abs, qt0VarArr[1].C);
+            if (yu0Var.D()) {
+                int i10 = yu0Var.u0;
+                if (i10 == 2) {
+                    yu0Var.l0 = 1.0f - abs;
+                } else if (i10 == 1) {
+                    yu0Var.l0 = abs;
+                }
+                yu0Var.s1(abs);
+                float a02 = yu0Var.a0(abs);
+                yu0Var.m0 = a02;
+                yu0Var.o0.setVisibility((a02 == 0.0f || !yu0Var.D() || yu0Var.q0()) ? 4 : 0);
+            } else {
+                yu0Var.l0 = 0.0f;
             }
-            org.telegram.ui.pk pkVar = this.k1;
-            if (pkVar != null) {
-                pkVar.e(bu0Var.x, false);
-            }
-            qu0Var.r1.getMediaDataController().portSavedSearchResults(getClassGuid(), bu0Var.x, bu0Var.w, bu0Var.n, bu0Var.h, this.Nc, bu0Var.v, bu0Var.s);
-            this.Mc = false;
+            yu0Var.q1(false);
         }
-        super.onTransitionAnimationStart(z10, z11);
+        yu0Var.I();
+        yu0Var.K();
+        yu0Var.o0();
     }
 }

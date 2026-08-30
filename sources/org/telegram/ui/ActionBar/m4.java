@@ -1,44 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class m4 extends Animation {
+public final /* synthetic */ class m4 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ t4 e;
+    public final /* synthetic */ w4 b;
 
-    public /* synthetic */ m4(t4 t4Var, float f9, float f10, int i10, int i11) {
-        this.a = i11;
-        this.e = t4Var;
-        this.b = f9;
-        this.c = f10;
-        this.d = i10;
+    public /* synthetic */ m4(w4 w4Var, int i10) {
+        this.a = i10;
+        this.b = w4Var;
     }
 
-    @Override // android.view.animation.Animation
-    public final void applyTransformation(float f9, Transformation transformation) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                float f10 = this.b;
-                float z10 = com.google.android.recaptcha.internal.a.z(this.c, f10, f9, f10);
-                t4 t4Var = this.e;
-                t4Var.i.setX(z10 + (t4Var.f.getWidth() - this.d));
-                float f11 = 1.0f - f9;
-                t4Var.l.setAlpha(f11);
-                t4Var.j.setAlpha(f11);
+                this.b.g();
+                break;
+            case 1:
+                this.b.g();
                 break;
             default:
-                float f12 = this.b;
-                float z11 = com.google.android.recaptcha.internal.a.z(this.c, f12, f9, f12);
-                t4 t4Var2 = this.e;
-                t4Var2.i.setX(z11 + (t4Var2.f.getWidth() - this.d));
-                t4Var2.l.setAlpha(f9);
-                t4Var2.j.setAlpha(f9);
+                this.b.g();
                 break;
         }
     }

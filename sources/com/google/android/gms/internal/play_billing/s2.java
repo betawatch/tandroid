@@ -1,23 +1,44 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface s2 {
-    void a(Object obj, byte[] bArr, int i10, int i11, cg.w0 w0Var);
+public final class s2 {
+    public final e1 a;
+    public final String b;
+    public final Object[] c;
+    public final int d;
 
-    int b(u1 u1Var);
+    public s2(e1 e1Var, String str, Object[] objArr) {
+        this.a = e1Var;
+        this.b = str;
+        this.c = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.d = charAt;
+            return;
+        }
+        int i10 = charAt & 8191;
+        int i11 = 1;
+        int i12 = 13;
+        while (true) {
+            int i13 = i11 + 1;
+            char charAt2 = str.charAt(i11);
+            if (charAt2 < 55296) {
+                this.d = i10 | (charAt2 << i12);
+                return;
+            } else {
+                i10 |= (charAt2 & 8191) << i12;
+                i12 += 13;
+                i11 = i13;
+            }
+        }
+    }
 
-    boolean c(Object obj);
-
-    void d(Object obj, h2 h2Var);
-
-    int e(e1 e1Var);
-
-    boolean f(u1 u1Var, u1 u1Var2);
-
-    u1 zze();
-
-    void zzf(Object obj);
-
-    void zzg(Object obj, Object obj2);
+    public final int a() {
+        int i10 = this.d;
+        if ((i10 & 1) != 0) {
+            return 1;
+        }
+        return (i10 & 4) == 4 ? 3 : 2;
+    }
 }

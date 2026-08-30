@@ -1,60 +1,45 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.widget.TextView;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wh1 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class wh1 extends LinearLayout {
+    public final /* synthetic */ ai1 a;
 
-    public wh1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wh1(ai1 ai1Var, Activity activity) {
+        super(activity);
+        this.a = ai1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        WallpapersListActivity wallpapersListActivity = this.a;
-        LongSparseArray longSparseArray = wallpapersListActivity.e0;
-        if (i10 == -1) {
-            lVar = ((org.telegram.ui.ActionBar.o2) wallpapersListActivity).actionBar;
-            if (!lVar.s()) {
-                wallpapersListActivity.finishFragment();
-                return;
-            }
-            longSparseArray.clear();
-            lVar2 = ((org.telegram.ui.ActionBar.o2) wallpapersListActivity).actionBar;
-            lVar2.r();
-            wallpapersListActivity.D0();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.B.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
             return;
         }
-        if (i10 != 4) {
-            if (i10 == 3) {
-                fy fyVar = new fy(org.telegram.messenger.x3.e(3, "onlySelect", "dialogsType", true));
-                fyVar.y2 = new vh1(this);
-                wallpapersListActivity.presentFragment(fyVar);
-                return;
-            }
-            return;
+        StringBuilder sb = new StringBuilder(text);
+        sb.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb.append(LocaleController.getString(R.string.VoipInCallBranding));
+        } else {
+            sb.append(LocaleController.getString(R.string.VoipInVideoCallBranding));
         }
-        if (wallpapersListActivity.getParentActivity() == null) {
-            return;
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb.append(", ");
+            sb.append(LocaleController.formatDuration((int) (callDuration / 1000)));
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
-        alertDialog$Builder.a.N = LocaleController.formatPluralString("DeleteBackground", longSparseArray.size(), new Object[0]);
-        alertDialog$Builder.a.P = LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new vh1(this));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-        wallpapersListActivity.showDialog(c2Var);
-        TextView textView = (TextView) c2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
-        }
+        accessibilityNodeInfo.setText(sb);
     }
 }

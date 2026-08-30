@@ -1,124 +1,109 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.SystemClock;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class o11 {
-    public long a;
-    public boolean b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public final int e;
-    public boolean f;
-    public float g;
-    public float h;
+public final class o11 extends rl0 {
+    public final Context c;
+    public int d;
+    public ArrayList e = new ArrayList();
+    public ArrayList f = new ArrayList();
+    public ey h;
+    public String n;
+    public final /* synthetic */ ThemeEditorView.EditorAlert r;
 
-    public o11() {
-        this(40);
+    public o11(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        this.r = editorAlert;
+        this.c = context;
     }
 
-    public final void a(float f9, float f10, Canvas canvas, Paint paint, RectF rectF) {
-        n11 n11Var;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
+    public static CharSequence E(String str, String str2) {
+        if (TextUtils.isEmpty(str)) {
+            return "";
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        String trim = str.trim();
+        String lowerCase = trim.toLowerCase();
         int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            n11 n11Var2 = (n11) arrayList.get(i11);
-            paint.setAlpha((int) (n11Var2.f * 255.0f * f10));
-            canvas.drawPoint(n11Var2.a, n11Var2.b, paint);
+        while (true) {
+            int indexOf = lowerCase.indexOf(str2, i10);
+            if (indexOf == -1) {
+                break;
+            }
+            int length = str2.length() + indexOf;
+            if (i10 != 0 && i10 != indexOf + 1) {
+                spannableStringBuilder.append((CharSequence) trim.substring(i10, indexOf));
+            } else if (i10 == 0 && indexOf != 0) {
+                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
+            }
+            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
+            if (substring.startsWith(" ")) {
+                spannableStringBuilder.append((CharSequence) " ");
+            }
+            String trim2 = substring.trim();
+            int length2 = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) trim2);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
+            i10 = length;
         }
-        double d = (f9 - 90.0f) * 0.017453292519943295d;
-        double sin = Math.sin(d);
-        double d10 = -Math.cos(d);
-        double width = rectF.width() / 2.0f;
-        float centerX = (float) (((-d10) * width) + rectF.centerX());
-        float centerY = (float) ((width * sin) + rectF.centerY());
-        ArrayList arrayList2 = this.d;
-        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
-        int i12 = 0;
-        while (i12 < clamp) {
-            if (arrayList2.isEmpty()) {
-                n11Var = new n11();
-            } else {
-                n11Var = (n11) arrayList2.get(i10);
-                arrayList2.remove(i10);
-            }
-            if (this.b && this.f) {
-                float f11 = (i12 + 1) / clamp;
-                n11Var.a = AndroidUtilities.lerp(this.g, centerX, f11);
-                n11Var.b = AndroidUtilities.lerp(this.h, centerY, f11);
-            } else {
-                n11Var.a = centerX;
-                n11Var.b = centerY;
-            }
-            double d11 = sin;
-            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
-            if (nextInt < 0.0d) {
-                nextInt += 6.283185307179586d;
-            }
-            n11Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
-            n11 n11Var3 = n11Var;
-            n11Var3.d = (float) j7.l1.b(nextInt, d10, Math.sin(nextInt) * d11);
-            n11Var3.f = 1.0f;
-            n11Var3.h = 0.0f;
-            if (this.b) {
-                n11Var3.g = Utilities.random.nextInt(200) + 600;
-                n11Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
-            } else {
-                n11Var3.g = Utilities.random.nextInt(100) + 400;
-                n11Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
-            }
-            arrayList.add(n11Var3);
-            i12++;
-            sin = d11;
-            i10 = 0;
+        if (i10 != -1 && i10 < trim.length()) {
+            spannableStringBuilder.append((CharSequence) trim.substring(i10));
         }
-        this.f = true;
-        this.g = centerX;
-        this.h = centerY;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long min = Math.min(20L, elapsedRealtime - this.a);
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            n11 n11Var4 = (n11) arrayList.get(i13);
-            float f12 = n11Var4.h;
-            float f13 = n11Var4.g;
-            if (f12 >= f13) {
-                if (arrayList2.size() < this.e) {
-                    arrayList2.add(n11Var4);
-                }
-                arrayList.remove(i13);
-                i13--;
-                size2--;
-            } else {
-                n11Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f12 / f13);
-                float f14 = n11Var4.a;
-                float f15 = n11Var4.c;
-                float f16 = n11Var4.e;
-                float f17 = min;
-                n11Var4.a = a4.w.d(f15 * f16, f17, 200.0f, f14);
-                n11Var4.b = (((n11Var4.d * f16) * f17) / 200.0f) + n11Var4.b;
-                n11Var4.h += f17;
-            }
-            i13++;
-        }
-        this.a = elapsedRealtime;
+        return spannableStringBuilder;
     }
 
-    public o11(int i10) {
-        this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.e = i10;
-        for (int i11 = 0; i11 < i10; i11++) {
-            this.d.add(new n11());
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return true;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        if (this.e.isEmpty()) {
+            return 0;
         }
+        return this.e.size() + 1;
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return i10 == 0 ? 1 : 0;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        if (l1Var.f == 0) {
+            int i11 = i10 - 1;
+            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.e.get(i11)).get(0);
+            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
+            org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) l1Var.a;
+            v8Var.a.setText((CharSequence) this.f.get(i11));
+            v8Var.b = b10;
+            v8Var.setWillNotDraw(b10 == 0);
+            v8Var.invalidate();
+        }
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View v8Var;
+        Context context = this.c;
+        if (i10 != 0) {
+            v8Var = new View(context);
+            v8Var.setLayoutParams(new f2.w0(-1, AndroidUtilities.dp(56.0f)));
+        } else {
+            v8Var = new org.telegram.ui.Cells.v8(context);
+            v8Var.setLayoutParams(new f2.w0(-1, -2));
+        }
+        return new el0(v8Var);
     }
 }

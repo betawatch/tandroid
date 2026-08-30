@@ -4,9 +4,9 @@ import androidx.lifecycle.a0;
 import androidx.lifecycle.t;
 import androidx.lifecycle.z;
 import c2.u;
-import m5.d;
+import o5.d;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a extends z {
     public final d l;
@@ -54,15 +54,15 @@ public final class a extends z {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder(64);
-        sb2.append("LoaderInfo{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append(" #0 : ");
+        StringBuilder sb = new StringBuilder(64);
+        sb.append("LoaderInfo{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append(" #0 : ");
         Class<?> cls = this.l.getClass();
-        sb2.append(cls.getSimpleName());
-        sb2.append("{");
-        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
-        sb2.append("}}");
-        return sb2.toString();
+        sb.append(cls.getSimpleName());
+        sb.append("{");
+        sb.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb.append("}}");
+        return sb.toString();
     }
 }

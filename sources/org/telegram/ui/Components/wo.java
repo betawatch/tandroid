@@ -1,31 +1,31 @@
 package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.pc1;
+import org.telegram.ui.bd1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wo implements pc1 {
+public final /* synthetic */ class wo implements bd1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xo b;
+    public final /* synthetic */ li b;
+    public final /* synthetic */ org.telegram.ui.w3 c;
 
-    public /* synthetic */ wo(xo xoVar, int i10) {
+    public /* synthetic */ wo(li liVar, org.telegram.ui.w3 w3Var, int i10) {
         this.a = i10;
-        this.b = xoVar;
+        this.b = liVar;
+        this.c = w3Var;
     }
 
-    @Override // org.telegram.ui.pc1
+    @Override // org.telegram.ui.bd1
     public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
         switch (this.a) {
             case 0:
-                gp gpVar = this.b.a;
-                gpVar.U.dismissInternal();
-                gpVar.dismiss();
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
                 break;
             default:
-                gp gpVar2 = this.b.a;
-                gpVar2.U.dismissInternal();
-                gpVar2.dismiss();
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
                 break;
         }
     }

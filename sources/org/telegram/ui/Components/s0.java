@@ -1,48 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.LinearLayout;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int[] c;
+public final /* synthetic */ class s0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ s0(LinearLayout linearLayout, int[] iArr) {
-        this.b = linearLayout;
-        this.c = iArr;
+    public /* synthetic */ s0(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.c[0] = ((Integer) view.getTag()).intValue();
-                LinearLayout linearLayout = this.b;
-                int childCount = linearLayout.getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = linearLayout.getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.i6) {
-                        ((org.telegram.ui.Cells.i6) childAt).c.a(childAt == view, true);
-                    }
+                this.b.run();
+                break;
+            case 1:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 2:
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
                 }
                 break;
             default:
-                LinearLayout linearLayout2 = this.b;
-                int childCount2 = linearLayout2.getChildCount();
-                for (int i11 = 0; i11 < childCount2; i11++) {
-                    org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) linearLayout2.getChildAt(i11);
-                    i6Var.c.a(i6Var == view, true);
+                Runnable runnable3 = this.b;
+                if (runnable3 != null) {
+                    runnable3.run();
+                    break;
                 }
-                this.c[0] = org.telegram.ui.Cells.s8.f[((Integer) view.getTag()).intValue()];
                 break;
         }
-    }
-
-    public /* synthetic */ s0(int[] iArr, LinearLayout linearLayout) {
-        this.c = iArr;
-        this.b = linearLayout;
     }
 }

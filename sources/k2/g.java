@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class g extends Drawable implements j0.b {
     public Drawable a;
@@ -100,18 +100,18 @@ public abstract class g extends Drawable implements j0.b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z10) {
+    public final void setFilterBitmap(boolean z4) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setFilterBitmap(z10);
+            drawable.setFilterBitmap(z4);
         }
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f9, float f10) {
+    public final void setHotspot(float f10, float f11) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setHotspot(f9, f10);
+            drawable.setHotspot(f10, f11);
         }
     }
 

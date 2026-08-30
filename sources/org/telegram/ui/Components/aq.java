@@ -1,27 +1,150 @@
 package org.telegram.ui.Components;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class aq implements InputFilter {
-    public final int a;
+public final class aq extends org.telegram.ui.ActionBar.g3 {
+    public final Drawable b;
+    public final xp c;
+    public final zp d;
+    public final boolean e;
+    public int f;
+    public final int[] h;
+    public final int n;
+    public int r;
+    public boolean s;
+    public org.telegram.ui.za v;
 
-    public aq(int i10) {
-        this.a = i10;
+    public aq(Activity activity, TLRPC.Chat chat) {
+        super(activity, null, false, false);
+        this.h = new int[2];
+        this.e = true;
+        setApplyBottomPadding(false);
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(chat.id);
+        int i10 = chatFull != null ? chatFull.ttl_period : 0;
+        if (i10 == 0) {
+            this.n = 0;
+            this.r = 0;
+        } else if (i10 == 86400) {
+            this.n = 1;
+            this.r = 1;
+        } else if (i10 == 604800) {
+            this.n = 2;
+            this.r = 2;
+        } else {
+            this.n = 3;
+            this.r = 3;
+        }
+        Drawable mutate = activity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
+        this.b = mutate;
+        int i11 = org.telegram.ui.ActionBar.j6.h5;
+        mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i11), PorterDuff.Mode.MULTIPLY));
+        wp wpVar = new wp(this, activity);
+        wpVar.setFillViewport(true);
+        wpVar.setWillNotDraw(false);
+        wpVar.setClipToPadding(false);
+        int i12 = this.backgroundPaddingLeft;
+        wpVar.setPadding(i12, 0, i12, 0);
+        this.containerView = wpVar;
+        xp xpVar = new xp(this, activity);
+        this.c = xpVar;
+        xpVar.setOrientation(1);
+        wpVar.addView(xpVar, k7.b6.x(-1, -2, 80));
+        setCustomView(xpVar);
+        UserConfig.getInstance(this.currentAccount).getClientUserId();
+        int i13 = MessagesController.getInstance(this.currentAccount).revokeTimeLimit;
+        jj0 jj0Var = new jj0(activity);
+        jj0Var.setAutoRepeat(false);
+        jj0Var.f(R.raw.utyan_private, 120, 120, null);
+        jj0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
+        jj0Var.d();
+        xpVar.addView(jj0Var, k7.b6.t(160, 160, 49, 17, 0, 17, 0));
+        TextView textView = new TextView(activity);
+        org.telegram.ui.b.g(24.0f, 1, textView);
+        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.j5));
+        textView.setText(LocaleController.getString(R.string.AutoDeleteAlertTitle));
+        xpVar.addView(textView, k7.b6.t(-2, -2, 49, 17, 18, 17, 0));
+        TextView textView2 = new TextView(activity);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.r5));
+        textView2.setGravity(1);
+        if (!ChatObject.isChannel(chat) || chat.megagroup) {
+            textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertGroupInfo));
+        } else {
+            textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertChannelInfo));
+        }
+        xpVar.addView(textView2, k7.b6.t(-2, -2, 49, 30, 22, 30, 20));
+        uv0 uv0Var = new uv0(activity, null);
+        uv0Var.setCallback(new yp(this, wpVar));
+        uv0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
+        xpVar.addView(uv0Var, k7.b6.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
+        FrameLayout frameLayout = new FrameLayout(activity);
+        nq nqVar = new nq(new ColorDrawable(getThemedColor(org.telegram.ui.ActionBar.j6.a7)), org.telegram.ui.ActionBar.j6.V0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
+        nqVar.w = true;
+        frameLayout.setBackgroundDrawable(nqVar);
+        xpVar.addView(frameLayout, k7.b6.n(-1, -2));
+        org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(activity, null);
+        a9Var.setText(LocaleController.getString(R.string.AutoDeleteInfo));
+        frameLayout.addView(a9Var);
+        zp zpVar = new zp(activity);
+        this.d = zpVar;
+        zpVar.setBackgroundColor(getThemedColor(i11));
+        zpVar.setText(LocaleController.getString(R.string.AutoDeleteSet));
+        zpVar.a.setOnClickListener(new g0(this, 9));
+        frameLayout.addView(zpVar);
+        p(false);
     }
 
-    @Override // android.text.InputFilter
-    public CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        int codePointCount = this.a - (Character.codePointCount(spanned, 0, spanned.length()) - Character.codePointCount(spanned, i12, i13));
-        if (codePointCount <= 0) {
-            return "";
+    public static void m(aq aqVar) {
+        View childAt = aqVar.c.getChildAt(0);
+        int[] iArr = aqVar.h;
+        childAt.getLocationInWindow(iArr);
+        int max = Math.max(iArr[1] - AndroidUtilities.dp(aqVar.e ? 6.0f : 19.0f), 0);
+        if (aqVar.f != max) {
+            aqVar.f = max;
+            aqVar.containerView.invalidate();
         }
-        if (codePointCount >= Character.codePointCount(charSequence, i10, i11)) {
-            return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g3
+    public final boolean canDismissWithSwipe() {
+        return false;
+    }
+
+    public final void p(boolean z4) {
+        int i10 = this.n;
+        int i11 = this.r;
+        zp zpVar = this.d;
+        if (i10 != i11 || this.e) {
+            zpVar.setVisibility(0);
+            if (z4) {
+                zpVar.animate().alpha(1.0f).setDuration(180L).start();
+                return;
+            } else {
+                zpVar.setAlpha(1.0f);
+                return;
+            }
         }
-        int i14 = codePointCount + i10;
-        return (Character.isHighSurrogate(charSequence.charAt(i14 + (-1))) && (i14 = i14 + (-1)) == i10) ? "" : charSequence.subSequence(i10, i14);
+        if (z4) {
+            zpVar.animate().alpha(0.0f).setDuration(180L).start();
+        } else {
+            zpVar.setVisibility(4);
+            zpVar.setAlpha(0.0f);
+        }
     }
 }

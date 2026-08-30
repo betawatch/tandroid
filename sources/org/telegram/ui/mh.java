@@ -1,41 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class mh implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ tn c;
-    public final /* synthetic */ boolean d;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ mh(int i10, tn tnVar, boolean z10) {
-        this.b = i10;
-        this.c = tnVar;
-        this.d = z10;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class mh implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ TLRPC.User d;
+
+    public /* synthetic */ mh(xn xnVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, int i10) {
+        this.a = i10;
+        this.b = xnVar;
+        this.c = tL_attachMenuBot;
+        this.d = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.d;
-                this.c.yc(this.b, z10);
+                AndroidUtilities.runOnUIThread(new ph(this.b, this.c, tL_error, this.d));
                 break;
             default:
-                int i10 = this.b;
-                tn tnVar = this.c;
-                if (i10 != 2) {
-                    tnVar.U9();
-                    tnVar.Yb();
-                }
-                qh.p0.f(org.telegram.ui.Components.tc.a0(tnVar), i10, this.d);
+                AndroidUtilities.runOnUIThread(new ph(this.b, tL_error, this.c, this.d));
                 break;
         }
-    }
-
-    public /* synthetic */ mh(tn tnVar, boolean z10, int i10) {
-        this.c = tnVar;
-        this.d = z10;
-        this.b = i10;
     }
 }

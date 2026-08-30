@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class o2 {
     public static final Class a;
@@ -30,12 +30,12 @@ public abstract class o2 {
         return list.size() << 2;
     }
 
-    public static void B(int i10, List list, y1 y1Var, boolean z10) {
+    public static void B(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 r0Var.D(i10, 0);
@@ -66,12 +66,12 @@ public abstract class o2 {
         return list.size() << 3;
     }
 
-    public static void E(int i10, List list, y1 y1Var, boolean z10) {
+    public static void E(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 r0Var.D(i10, 0);
@@ -90,12 +90,12 @@ public abstract class o2 {
         }
     }
 
-    public static void F(int i10, List list, y1 y1Var, boolean z10) {
+    public static void F(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 r0Var.D(i10, 0);
@@ -116,13 +116,13 @@ public abstract class o2 {
         }
     }
 
-    public static void G(int i10, List list, y1 y1Var, boolean z10) {
+    public static void G(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 r0Var.D(i10, 5);
@@ -145,13 +145,13 @@ public abstract class o2 {
         }
     }
 
-    public static void H(int i10, List list, y1 y1Var, boolean z10) {
+    public static void H(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 r0Var.D(i10, 5);
@@ -174,12 +174,12 @@ public abstract class o2 {
         }
     }
 
-    public static void I(int i10, List list, y1 y1Var, boolean z10) {
+    public static void I(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 int intValue = ((Integer) list.get(i11)).intValue();
                 r0Var.D(i10, 0);
@@ -198,12 +198,12 @@ public abstract class o2 {
         }
     }
 
-    public static void J(int i10, List list, y1 y1Var, boolean z10) {
+    public static void J(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 boolean booleanValue = ((Boolean) list.get(i11)).booleanValue();
                 r0Var.D(i10, 0);
@@ -232,7 +232,7 @@ public abstract class o2 {
             c3 = n2Var.zzb(l0Var);
             l0Var.b(c3);
         }
-        return a4.w.z(c3, c3, T);
+        return android.support.v4.media.a.A(c3, c3, T);
     }
 
     public static int b(int i10, List list, n2 n2Var) {
@@ -240,7 +240,7 @@ public abstract class o2 {
         if (size == 0) {
             return 0;
         }
-        int y8 = r0.y(i10) * size;
+        int y10 = r0.y(i10) * size;
         for (int i11 = 0; i11 < size; i11++) {
             l0 l0Var = (l0) list.get(i11);
             int c3 = l0Var.c();
@@ -248,9 +248,9 @@ public abstract class o2 {
                 c3 = n2Var.zzb(l0Var);
                 l0Var.b(c3);
             }
-            y8 = a4.w.z(c3, c3, y8);
+            y10 = android.support.v4.media.a.A(c3, c3, y10);
         }
-        return y8;
+        return y10;
     }
 
     public static int c(List list) {
@@ -271,7 +271,7 @@ public abstract class o2 {
         return i10;
     }
 
-    public static p2 d(boolean z10) {
+    public static p2 d(boolean z4) {
         Class<?> cls;
         try {
             cls = Class.forName("com.google.protobuf.UnknownFieldSetSchema");
@@ -280,7 +280,7 @@ public abstract class o2 {
         }
         if (cls != null) {
             try {
-                return (p2) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z10));
+                return (p2) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z4));
             } catch (Throwable unused2) {
             }
         }
@@ -312,20 +312,20 @@ public abstract class o2 {
                         r0Var.H(a3.a(str));
                         r0Var.e = a3.a.h(str, bArr, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e10) {
+                } catch (b3 e) {
                     r0Var.e = i12;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
                     byte[] bytes = str.getBytes(j1.a);
                     try {
                         r0Var.H(bytes.length);
                         r0Var.L(bytes, 0, bytes.length);
-                    } catch (s0 e11) {
-                        throw e11;
-                    } catch (IndexOutOfBoundsException e12) {
-                        throw new s0(e12);
+                    } catch (s0 e6) {
+                        throw e6;
+                    } catch (IndexOutOfBoundsException e10) {
+                        throw new s0(e10);
                     }
-                } catch (IndexOutOfBoundsException e13) {
-                    throw new s0(e13);
+                } catch (IndexOutOfBoundsException e11) {
+                    throw new s0(e11);
                 }
             }
             return;
@@ -344,28 +344,28 @@ public abstract class o2 {
                     if (T4 == T3) {
                         int i16 = i15 + T4;
                         r0Var.e = i16;
-                        int h10 = a3.a.h(str2, bArr2, i16, r0Var.F());
+                        int h9 = a3.a.h(str2, bArr2, i16, r0Var.F());
                         r0Var.e = i15;
-                        r0Var.H((h10 - i15) - T4);
-                        r0Var.e = h10;
+                        r0Var.H((h9 - i15) - T4);
+                        r0Var.e = h9;
                     } else {
                         r0Var.H(a3.a(str2));
                         r0Var.e = a3.a.h(str2, bArr2, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e14) {
+                } catch (b3 e12) {
                     r0Var.e = i15;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e14);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
                     byte[] bytes2 = str2.getBytes(j1.a);
                     try {
                         r0Var.H(bytes2.length);
                         r0Var.L(bytes2, 0, bytes2.length);
-                    } catch (s0 e15) {
-                        throw e15;
-                    } catch (IndexOutOfBoundsException e16) {
-                        throw new s0(e16);
+                    } catch (s0 e13) {
+                        throw e13;
+                    } catch (IndexOutOfBoundsException e14) {
+                        throw new s0(e14);
                     }
-                } catch (IndexOutOfBoundsException e17) {
-                    throw new s0(e17);
+                } catch (IndexOutOfBoundsException e15) {
+                    throw new s0(e15);
                 }
             } else {
                 q0 q0Var = (q0) a2;
@@ -386,13 +386,13 @@ public abstract class o2 {
         }
     }
 
-    public static void g(int i10, List list, y1 y1Var, boolean z10) {
+    public static void g(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 double doubleValue = ((Double) list.get(i11)).doubleValue();
                 r0Var.getClass();
@@ -446,32 +446,32 @@ public abstract class o2 {
         if (size == 0) {
             return 0;
         }
-        int y8 = r0.y(i10) * size;
+        int y10 = r0.y(i10) * size;
         if (!(list instanceof t1)) {
             while (i11 < size) {
                 Object obj = list.get(i11);
                 if (obj instanceof q0) {
                     int n10 = ((q0) obj).n();
-                    y8 = a4.w.z(n10, n10, y8);
+                    y10 = android.support.v4.media.a.A(n10, n10, y10);
                 } else {
-                    y8 = r0.G((String) obj) + y8;
+                    y10 = r0.G((String) obj) + y10;
                 }
                 i11++;
             }
-            return y8;
+            return y10;
         }
         t1 t1Var = (t1) list;
         while (i11 < size) {
             Object a2 = t1Var.a(i11);
             if (a2 instanceof q0) {
                 int n11 = ((q0) a2).n();
-                y8 = a4.w.z(n11, n11, y8);
+                y10 = android.support.v4.media.a.A(n11, n11, y10);
             } else {
-                y8 = r0.G((String) a2) + y8;
+                y10 = r0.G((String) a2) + y10;
             }
             i11++;
         }
-        return y8;
+        return y10;
     }
 
     public static int k(List list) {
@@ -516,13 +516,13 @@ public abstract class o2 {
         }
     }
 
-    public static void n(int i10, List list, y1 y1Var, boolean z10) {
+    public static void n(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 float floatValue = ((Float) list.get(i11)).floatValue();
                 r0Var.getClass();
@@ -552,12 +552,12 @@ public abstract class o2 {
         if (size == 0) {
             return 0;
         }
-        int y8 = r0.y(i10) * size;
+        int y10 = r0.y(i10) * size;
         for (int i11 = 0; i11 < list.size(); i11++) {
             int n10 = ((q0) list.get(i11)).n();
-            y8 = a4.w.z(n10, n10, y8);
+            y10 = android.support.v4.media.a.A(n10, n10, y10);
         }
-        return y8;
+        return y10;
     }
 
     public static int p(List list) {
@@ -578,12 +578,12 @@ public abstract class o2 {
         return 0;
     }
 
-    public static void q(int i10, List list, y1 y1Var, boolean z10) {
+    public static void q(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 long longValue = ((Long) list.get(i11)).longValue();
                 r0Var.D(i10, 0);
@@ -626,12 +626,12 @@ public abstract class o2 {
         return i12;
     }
 
-    public static void s(int i10, List list, y1 y1Var, boolean z10) {
+    public static void s(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 long longValue = ((Long) list.get(i11)).longValue();
                 r0Var.D(i10, 0);
@@ -674,12 +674,12 @@ public abstract class o2 {
         return i12;
     }
 
-    public static void u(int i10, List list, y1 y1Var, boolean z10) {
+    public static void u(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z4) {
             for (int i11 = 0; i11 < list.size(); i11++) {
                 long longValue = ((Long) list.get(i11)).longValue();
                 r0Var.D(i10, 0);
@@ -724,13 +724,13 @@ public abstract class o2 {
         return i12;
     }
 
-    public static void w(int i10, List list, y1 y1Var, boolean z10) {
+    public static void w(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 long longValue = ((Long) list.get(i11)).longValue();
                 r0Var.D(i10, 1);
@@ -779,13 +779,13 @@ public abstract class o2 {
         return i12;
     }
 
-    public static void y(int i10, List list, y1 y1Var, boolean z10) {
+    public static void y(int i10, List list, y1 y1Var, boolean z4) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i11 = 0;
-        if (!z10) {
+        if (!z4) {
             while (i11 < list.size()) {
                 long longValue = ((Long) list.get(i11)).longValue();
                 r0Var.D(i10, 1);

@@ -1,70 +1,54 @@
 package f2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import m.m3;
-import m.z2;
+import android.util.Log;
+import android.view.animation.Interpolator;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g1 implements Parcelable.ClassLoaderCreator {
-    public final /* synthetic */ int a;
+public final class g1 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public Interpolator e;
+    public boolean f;
+    public int g;
 
-    public /* synthetic */ g1(int i10) {
+    public final void a(RecyclerView recyclerView) {
+        int i10 = this.d;
+        if (i10 >= 0) {
+            this.d = -1;
+            recyclerView.c0(i10);
+            this.f = false;
+            return;
+        }
+        if (!this.f) {
+            this.g = 0;
+            return;
+        }
+        Interpolator interpolator = this.e;
+        if (interpolator != null && this.c < 1) {
+            throw new IllegalStateException("If you provide an interpolator, you must set a positive duration");
+        }
+        int i11 = this.c;
+        if (i11 < 1) {
+            throw new IllegalStateException("Scroll duration must be a positive number");
+        }
+        recyclerView.n0.b(this.a, this.b, i11, interpolator);
+        int i12 = this.g + 1;
+        this.g = i12;
+        if (i12 > 10) {
+            Log.e("RecyclerView", "Smooth Scroll action is being updated too frequently. Make sure you are not changing it unless necessary");
+        }
+        this.f = false;
+    }
+
+    public final void b(int i10, int i11, int i12, Interpolator interpolator) {
         this.a = i10;
-    }
-
-    @Override // android.os.Parcelable.ClassLoaderCreator
-    public final Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        switch (this.a) {
-            case 0:
-                return new h1(parcel, classLoader);
-            case 1:
-                if (parcel.readParcelable(classLoader) == null) {
-                    return i1.b.b;
-                }
-                throw new IllegalStateException("superState must be null");
-            case 2:
-                return new z2(parcel, classLoader);
-            case 3:
-                return new m3(parcel, classLoader);
-            default:
-                return new m2.f(parcel, classLoader);
-        }
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i10) {
-        switch (this.a) {
-            case 0:
-                return new h1[i10];
-            case 1:
-                return new i1.b[i10];
-            case 2:
-                return new z2[i10];
-            case 3:
-                return new m3[i10];
-            default:
-                return new m2.f[i10];
-        }
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        switch (this.a) {
-            case 0:
-                return new h1(parcel, null);
-            case 1:
-                if (parcel.readParcelable(null) == null) {
-                    return i1.b.b;
-                }
-                throw new IllegalStateException("superState must be null");
-            case 2:
-                return new z2(parcel, null);
-            case 3:
-                return new m3(parcel, null);
-            default:
-                return new m2.f(parcel, null);
-        }
+        this.b = i11;
+        this.c = i12;
+        this.e = interpolator;
+        this.f = true;
     }
 }

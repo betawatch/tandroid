@@ -1,30 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ef1 extends zf.a {
-    public final TLRPC.TL_forumTopic c;
+public final class ef1 extends f2.z0 {
+    public final /* synthetic */ int a;
 
-    public ef1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, false);
-        this.c = tL_forumTopic;
+    @Override // f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        int i12 = this.a;
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || ef1.class != obj.getClass()) {
-            return false;
-        }
-        ef1 ef1Var = (ef1) obj;
-        if (this.a != ef1Var.a) {
-            return false;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = ef1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
+    private final void c(RecyclerView recyclerView, int i10, int i11) {
+    }
+
+    private final void d(RecyclerView recyclerView, int i10, int i11) {
     }
 }

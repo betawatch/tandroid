@@ -1,17 +1,35 @@
 package j8;
 
-import java.util.Arrays;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.identity.intents.model.UserAddress;
+import j7.f5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class i implements com.google.android.gms.common.api.b {
-    public static final i a = new i();
+public final class i extends c6.a {
+    public static final Parcelable.Creator<i> CREATOR = new f8.o(23);
+    public String a;
+    public b b;
+    public UserAddress c;
+    public k d;
+    public String e;
+    public Bundle f;
+    public String h;
+    public Bundle n;
 
-    public final boolean equals(Object obj) {
-        return obj instanceof i;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{i.class});
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q10 = f5.q(parcel, 20293);
+        f5.l(parcel, 1, this.a);
+        f5.k(parcel, 2, this.b, i10);
+        f5.k(parcel, 3, this.c, i10);
+        f5.k(parcel, 4, this.d, i10);
+        f5.l(parcel, 5, this.e);
+        f5.b(parcel, 6, this.f);
+        f5.l(parcel, 7, this.h);
+        f5.b(parcel, 8, this.n);
+        f5.r(parcel, q10);
     }
 }

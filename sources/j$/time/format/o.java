@@ -32,7 +32,7 @@ public final class o extends n {
     /* JADX WARN: Type inference failed for: r0v3 */
     /* JADX WARN: Type inference failed for: r0v9 */
     @Override // j$.time.format.n, j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
+    public final boolean j(r rVar, StringBuilder sb) {
         ?? r02;
         String[] strArr;
         ZoneId zoneId = (ZoneId) rVar.b(j$.time.temporal.p.a);
@@ -87,7 +87,7 @@ public final class o extends n {
                 id2 = str;
             }
         }
-        sb2.append(id2);
+        sb.append(id2);
         return true;
     }
 }

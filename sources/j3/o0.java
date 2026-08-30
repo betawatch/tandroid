@@ -1,21 +1,42 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class o0 {
-    public final l4.c0 a;
-    public final long b;
-    public final long c;
-    public final boolean d;
-    public final boolean e;
-    public final boolean f;
+import java.util.Arrays;
 
-    public o0(l4.c0 c0Var, long j10, long j11, boolean z10, boolean z11, boolean z12) {
-        this.a = c0Var;
-        this.b = j10;
-        this.c = j11;
-        this.d = z10;
-        this.e = z11;
-        this.f = z12;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class o0 extends f2 {
+    public static final String e;
+    public static final String f;
+    public static final f0.d h;
+    public final boolean c;
+    public final boolean d;
+
+    static {
+        int i10 = h5.d0.a;
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
+        h = new f0.d(28);
+    }
+
+    public o0() {
+        this.c = false;
+        this.d = false;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof o0)) {
+            return false;
+        }
+        o0 o0Var = (o0) obj;
+        return this.d == o0Var.d && this.c == o0Var.c;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.c), Boolean.valueOf(this.d)});
+    }
+
+    public o0(boolean z4) {
+        this.c = true;
+        this.d = z4;
     }
 }

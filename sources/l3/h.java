@@ -1,39 +1,23 @@
 package l3;
 
-import java.util.Arrays;
+import android.content.Context;
+import android.media.AudioDeviceCallback;
+import android.media.AudioManager;
+import android.os.Handler;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class h {
-    public static final h e = new h(-1, -1, -1);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-
-    public h(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = f5.d0.D(i12) ? f5.d0.w(i12, i11) : -1;
+public abstract class h {
+    public static void a(Context context, AudioDeviceCallback audioDeviceCallback, Handler handler) {
+        AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        audioManager.getClass();
+        audioManager.registerAudioDeviceCallback(audioDeviceCallback, handler);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof h)) {
-            return false;
-        }
-        h hVar = (h) obj;
-        return this.a == hVar.a && this.b == hVar.b && this.c == hVar.c;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        return "AudioFormat[sampleRate=" + this.a + ", channelCount=" + this.b + ", encoding=" + this.c + ']';
+    public static void b(Context context, AudioDeviceCallback audioDeviceCallback) {
+        AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+        audioManager.getClass();
+        audioManager.unregisterAudioDeviceCallback(audioDeviceCallback);
     }
 }

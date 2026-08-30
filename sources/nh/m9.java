@@ -1,35 +1,83 @@
 package nh;
 
+import android.graphics.Canvas;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_stories;
+import ph.za;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gb b;
-    public final /* synthetic */ Runnable c;
+public final class m9 extends j9 {
+    public final l9 a;
+    public final TL_stories.TL_mediaAreaWeather b;
+    public View c;
+    public final /* synthetic */ n9 d;
 
-    public /* synthetic */ m9(gb gbVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = gbVar;
-        this.c = runnable;
+    public m9(n9 n9Var, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
+        this.d = n9Var;
+        this.b = tL_mediaAreaWeather;
+        za zaVar = new za();
+        zaVar.c = tL_mediaAreaWeather.emoji;
+        zaVar.d = (float) tL_mediaAreaWeather.temperature_c;
+        l9 l9Var = new l9(this, ApplicationLoader.applicationContext, AndroidUtilities.density);
+        this.a = l9Var;
+        l9Var.setMaxWidth(AndroidUtilities.displaySize.x);
+        l9Var.setIsVideo(false);
+        l9Var.d(UserConfig.selectedAccount, zaVar.c);
+        l9Var.setText(zaVar.a());
+        l9Var.e(3, tL_mediaAreaWeather.color);
+        l9Var.f();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.c.run();
-                this.b.p0();
-                break;
-            default:
-                gb gbVar = this.b;
-                gbVar.f(false);
-                AndroidUtilities.cancelRunOnUIThread(gbVar.c2);
-                gbVar.c2 = null;
-                gbVar.O1 = false;
-                this.c.run();
-                break;
+    @Override // nh.j9
+    public final void a(Canvas canvas, float f10) {
+        n9 n9Var = this.d;
+        double d = n9Var.b;
+        double d10 = n9Var.d;
+        TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = this.b;
+        TL_stories.MediaAreaCoordinates mediaAreaCoordinates = tL_mediaAreaWeather.coordinates;
+        float f11 = (float) (((mediaAreaCoordinates.x * d10) / 100.0d) + d);
+        double d11 = n9Var.c;
+        double d12 = n9Var.e;
+        float f12 = (float) (((mediaAreaCoordinates.y * d12) / 100.0d) + d11);
+        float f13 = (float) ((d10 * mediaAreaCoordinates.w) / 100.0d);
+        float f14 = (float) ((d12 * mediaAreaCoordinates.h) / 100.0d);
+        canvas.save();
+        canvas.translate(f11, f12);
+        l9 l9Var = this.a;
+        float min = Math.min(f13 / ((l9Var.getWidthInternal() - l9Var.getPaddingLeft()) - l9Var.getPaddingRight()), f14 / ((l9Var.getHeightInternal() - l9Var.getPaddingTop()) - l9Var.getPaddingBottom()));
+        canvas.scale(min, min);
+        double d13 = tL_mediaAreaWeather.coordinates.rotation;
+        if (d13 != 0.0d) {
+            canvas.rotate((float) d13);
         }
+        canvas.translate(((-r3) / 2.0f) - l9Var.getPaddingLeft(), ((-r6) / 2.0f) - l9Var.getPaddingTop());
+        l9Var.a(canvas);
+        canvas.restore();
+    }
+
+    @Override // nh.j9
+    public final void b(boolean z4) {
+        l9 l9Var = this.a;
+        if (!z4) {
+            l9Var.H = false;
+            l9Var.r.onDetachedFromWindow();
+            l9Var.s.onDetachedFromWindow();
+        } else {
+            l9Var.H = true;
+            if (l9Var.I) {
+                l9Var.s.onAttachedToWindow();
+            } else {
+                l9Var.r.onAttachedToWindow();
+            }
+        }
+    }
+
+    @Override // nh.j9
+    public final void c(View view) {
+        this.c = view;
     }
 }

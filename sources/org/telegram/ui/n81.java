@@ -1,84 +1,50 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t91 b;
-    public final /* synthetic */ ArrayList c;
+public final class n81 extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.Components.e90 b;
+    public final org.telegram.ui.Components.e90 c;
+    public final ph.d d;
+    public final ph.d e;
 
-    public /* synthetic */ n81(t91 t91Var, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = t91Var;
-        this.c = arrayList;
+    public n81(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        setOrientation(1);
+        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        org.telegram.ui.Components.e90 a2 = k7.f6.a(context, 15.0f, i10, true, f6Var);
+        this.b = a2;
+        a2.setGravity(17);
+        addView(a2, k7.b6.t(-1, -2, 55, 32, 20, 32, 0));
+        org.telegram.ui.Components.e90 a10 = k7.f6.a(context, 13.0f, i10, false, f6Var);
+        this.c = a10;
+        a10.setGravity(17);
+        addView(a10, k7.b6.r(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        ph.d p10 = org.telegram.messenger.y3.p(24, context, f6Var, true);
+        this.d = p10;
+        ph.d p11 = org.telegram.messenger.y3.p(24, context, f6Var, true);
+        this.e = p11;
+        linearLayout.addView(p10, k7.b6.p(0, 42, 1.0f, 112, 0, 0, 12, 0));
+        linearLayout.addView(p11, k7.b6.p(0, 42, 1.0f, 112, 0, 0, 0, 0));
+        addView(linearLayout, k7.b6.t(-1, -2, 55, 24, 18, 24, 16));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                t91 t91Var = this.b;
-                ArrayList arrayList = t91Var.o0;
-                ArrayList arrayList2 = t91Var.n0;
-                int i10 = 0;
-                t91Var.s0 = false;
-                ArrayList arrayList3 = this.c;
-                if (!arrayList3.isEmpty()) {
-                    int size = arrayList3.size();
-                    for (int i11 = 0; i11 < size; i11++) {
-                        MessageObject messageObject = (MessageObject) arrayList3.get(i11);
-                        int i12 = t91Var.l0.get(messageObject.getId(), -1);
-                        if (i12 >= 0 && ((q91) arrayList2.get(i12)).b() == messageObject.getId()) {
-                            ((q91) arrayList2.get(i12)).b = messageObject;
-                        }
-                    }
-                    arrayList.clear();
-                    int size2 = arrayList2.size();
-                    while (true) {
-                        if (i10 < size2) {
-                            q91 q91Var = (q91) arrayList2.get(i10);
-                            if (q91Var.b == null) {
-                                t91Var.k0 = q91Var.b();
-                            } else {
-                                arrayList.add(q91Var);
-                                i10++;
-                            }
-                        }
-                    }
-                    t91Var.o0();
-                    t91Var.O.setItemAnimator(null);
-                    t91Var.u0.f();
-                    break;
-                }
-                break;
-            default:
-                t91 t91Var2 = this.b;
-                lh.k6 k6Var = t91Var2.v0;
-                k6Var.getClass();
-                ArrayList arrayList4 = this.c;
-                int size3 = arrayList4.size();
-                int i13 = 0;
-                while (true) {
-                    if (i13 < size3) {
-                        Object obj = arrayList4.get(i13);
-                        i13++;
-                        if (!k6Var.j.containsKey((Integer) obj)) {
-                            z10 = true;
-                        }
-                    } else {
-                        z10 = false;
-                    }
-                }
-                if (!k6Var.q(0, arrayList4, z10)) {
-                    t91Var2.j0();
-                    t91Var2.o0();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = org.telegram.ui.ActionBar.j6.G6;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        this.b.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        this.c.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 }

@@ -1,32 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class pi implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ag.z1 b;
-    public final /* synthetic */ tn c;
-    public final /* synthetic */ tn d;
+public final class pi extends org.telegram.ui.Components.fo {
+    public final /* synthetic */ xn J;
 
-    public pi(tn tnVar, int i10, ag.z1 z1Var, tn tnVar2) {
-        this.d = tnVar;
-        this.a = i10;
-        this.b = z1Var;
-        this.c = tnVar2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pi(xn xnVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, i10, document, f6Var);
+        this.J = xnVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int i13 = NotificationCenter.messagesDidLoad;
-        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            AndroidUtilities.runOnUIThread(new j3.f0(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.o2) this.d).currentAccount;
-            NotificationCenter.getInstance(i12).removeObserver(this, i13);
-        }
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        float y10 = getY();
+        xn xnVar = this.J;
+        float y11 = xnVar.O0.getY() + y10;
+        this.G = xnVar.U0.getBackgroundSizeY();
+        this.F = y11;
     }
 }

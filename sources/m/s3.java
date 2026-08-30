@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 import android.widget.LinearLayout;
-import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
-import i7.f6;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,15 +13,17 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicMarkableReference;
+import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.j70;
-import org.telegram.ui.Components.ya0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.q31;
 import org.telegram.ui.LaunchActivity;
-import th.t5;
+import ph.ga;
+import vh.v5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class s3 implements a3.b {
     public Object a;
@@ -36,14 +36,14 @@ public final class s3 implements a3.b {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r2v3, types: [java.util.Map] */
-    public s3(Set set, a0.f fVar, String str, String str2, z7.a aVar) {
+    public s3(Set set, a0.f fVar, String str, String str2, b8.a aVar) {
         Set unmodifiableSet = set == null ? Collections.EMPTY_SET : DesugarCollections.unmodifiableSet(set);
         this.a = unmodifiableSet;
         a0.f fVar2 = fVar == null ? Collections.EMPTY_MAP : fVar;
         this.c = fVar2;
         this.d = str;
         this.e = str2;
-        this.f = aVar == null ? z7.a.a : aVar;
+        this.f = aVar == null ? b8.a.a : aVar;
         HashSet hashSet = new HashSet(unmodifiableSet);
         Iterator it = fVar2.values().iterator();
         if (it.hasNext()) {
@@ -53,36 +53,36 @@ public final class s3 implements a3.b {
         this.b = DesugarCollections.unmodifiableSet(hashSet);
     }
 
-    public void a(af.g gVar) {
-        if (((af.g) this.e) == gVar) {
+    public void a(cf.f fVar) {
+        if (((cf.f) this.e) == fVar) {
             LaunchActivity launchActivity = (LaunchActivity) this.d;
             if (Build.VERSION.SDK_INT >= 26) {
-                if (gVar != null) {
-                    AndroidUtilities.setPictureInPictureParams(launchActivity, gVar.a());
+                if (fVar != null) {
+                    AndroidUtilities.setPictureInPictureParams(launchActivity, fVar.a());
                 } else {
                     AndroidUtilities.resetPictureInPictureParams(launchActivity);
                 }
             }
-            MediaSessionConnector mediaSessionConnector = (MediaSessionConnector) this.h;
-            if (mediaSessionConnector != null) {
-                mediaSessionConnector.setPlayer(gVar.l);
+            q3.c cVar = (q3.c) this.h;
+            if (cVar != null) {
+                cVar.d(fVar.l);
             }
         }
-        ((af.a) this.c).invalidate();
+        ((cf.a) this.c).invalidate();
     }
 
-    public af.a b() {
-        if (((af.a) this.c) == null) {
-            this.c = new af.a((LaunchActivity) this.d);
+    public cf.a b() {
+        if (((cf.a) this.c) == null) {
+            this.c = new cf.a((LaunchActivity) this.d);
         }
-        return (af.a) this.c;
+        return (cf.a) this.c;
     }
 
     public void c() {
         e(null);
-        j70 j70Var = (j70) this.c;
-        if (j70Var != null) {
-            j70Var.u();
+        o70 o70Var = (o70) this.c;
+        if (o70Var != null) {
+            o70Var.u();
             this.c = null;
         }
         this.d = null;
@@ -90,8 +90,8 @@ public final class s3 implements a3.b {
         this.f = null;
     }
 
-    public void d(t5 t5Var, ArrayList arrayList) {
-        c6 c6Var = (c6) this.b;
+    public void d(v5 v5Var, ArrayList arrayList) {
+        f6 f6Var = (f6) this.b;
         LinearLayout linearLayout = (LinearLayout) this.d;
         if (linearLayout == null) {
             return;
@@ -102,131 +102,131 @@ public final class s3 implements a3.b {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            th.k0 k0Var = (th.k0) obj;
-            th.j0 j0Var = new th.j0(t5Var.getContext(), k0Var, c6Var);
+            vh.k0 k0Var = (vh.k0) obj;
+            vh.j0 j0Var = new vh.j0(v5Var.getContext(), k0Var, f6Var);
             j0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
-            j0Var.setBackground(g6.Y(g6.v0(g6.i6, c6Var), 0, 0));
-            j0Var.setOnClickListener(new ya0(this, t5Var, k0Var, 8));
-            ((LinearLayout) this.d).addView(j0Var, f6.n(-1, 48));
+            j0Var.setBackground(j6.Y(j6.v0(j6.i6, f6Var), 0, 0));
+            j0Var.setOnClickListener(new q31(this, v5Var, k0Var, 8));
+            ((LinearLayout) this.d).addView(j0Var, b6.n(-1, 48));
         }
     }
 
-    public void e(t5 t5Var) {
-        t5 t5Var2 = (t5) this.h;
-        if (t5Var2 == t5Var) {
+    public void e(v5 v5Var) {
+        v5 v5Var2 = (v5) this.h;
+        if (v5Var2 == v5Var) {
             return;
         }
-        if (t5Var2 != null) {
-            t5Var2.setShowCommandBackground(false);
+        if (v5Var2 != null) {
+            v5Var2.setShowCommandBackground(false);
         }
-        this.h = t5Var;
-        if (t5Var != null) {
-            t5Var.setShowCommandBackground(true);
+        this.h = v5Var;
+        if (v5Var != null) {
+            v5Var.setShowCommandBackground(true);
         }
     }
 
-    public void f(t5 t5Var, String str) {
-        j70 j70Var;
-        j70 j70Var2;
+    public void f(v5 v5Var, String str) {
+        o70 o70Var;
+        o70 o70Var2;
         if (str == null) {
             c();
             return;
         }
-        ArrayList a2 = th.k0.a(str);
+        ArrayList a2 = vh.k0.a(str);
         if (a2.isEmpty()) {
             c();
             return;
         }
-        e(t5Var);
-        if (((t5) this.f) == t5Var && a2.equals((ArrayList) this.e) && (j70Var2 = (j70) this.c) != null && j70Var2.D()) {
+        e(v5Var);
+        if (((v5) this.f) == v5Var && a2.equals((ArrayList) this.e) && (o70Var2 = (o70) this.c) != null && o70Var2.D()) {
             return;
         }
-        if (((t5) this.f) == t5Var && (j70Var = (j70) this.c) != null && j70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((v5) this.f) == v5Var && (o70Var = (o70) this.c) != null && o70Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
-            d(t5Var, a2);
-            ((j70) this.c).O();
+            d(v5Var, a2);
+            ((o70) this.c).O();
             return;
         }
         c();
-        e(t5Var);
-        this.f = t5Var;
+        e(v5Var);
+        this.f = v5Var;
         this.e = a2;
-        LinearLayout linearLayout = new LinearLayout(t5Var.getContext());
+        LinearLayout linearLayout = new LinearLayout(v5Var.getContext());
         this.d = linearLayout;
         linearLayout.setOrientation(1);
-        d(t5Var, a2);
-        j70 b10 = ((th.l0) this.a).b(t5Var.getEditText());
-        b10.Q = true;
-        b10.s = 0;
-        b10.t = false;
-        b10.r((LinearLayout) this.d, f6.n(220, -2));
-        b10.X = AndroidUtilities.dp(240.0f);
-        b10.i = 3;
-        b10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
-        b10.p = new org.telegram.ui.web.t1(this, 25);
-        b10.d0 = true;
-        if (b10.D()) {
-            b10.C();
+        d(v5Var, a2);
+        o70 a10 = ((vh.l0) this.a).a(v5Var.getEditText());
+        a10.Q = true;
+        a10.s = 0;
+        a10.t = false;
+        a10.r((LinearLayout) this.d, b6.n(220, -2));
+        a10.X = AndroidUtilities.dp(240.0f);
+        a10.i = 3;
+        a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
+        a10.p = new ga(this, 27);
+        a10.d0 = true;
+        if (a10.D()) {
+            a10.C();
         }
-        b10.Z();
-        this.c = b10;
+        a10.Z();
+        this.c = a10;
     }
 
     public void g() {
-        af.g gVar = (af.g) this.e;
-        af.g gVar2 = null;
-        for (af.g gVar3 : ((HashMap) this.a).values()) {
-            if (gVar3.m || gVar3.b.a != 0) {
-                if (gVar2 == null || gVar3.d > gVar2.d) {
-                    gVar2 = gVar3;
+        cf.f fVar = (cf.f) this.e;
+        cf.f fVar2 = null;
+        for (cf.f fVar3 : ((HashMap) this.a).values()) {
+            if (fVar3.m || fVar3.b.a != 0) {
+                if (fVar2 == null || fVar3.d > fVar2.d) {
+                    fVar2 = fVar3;
                 }
             }
         }
-        if (gVar != gVar2) {
-            this.e = gVar2;
+        if (fVar != fVar2) {
+            this.e = fVar2;
             LaunchActivity launchActivity = (LaunchActivity) this.d;
-            StringBuilder sb2 = new StringBuilder("onMaxPrioritySourceChanged ");
-            sb2.append(gVar2 != null ? gVar2.c : null);
-            Log.i("PIP_DEBUG", sb2.toString());
+            StringBuilder sb = new StringBuilder("onMaxPrioritySourceChanged ");
+            sb.append(fVar2 != null ? fVar2.c : null);
+            Log.i("PIP_DEBUG", sb.toString());
             if (Build.VERSION.SDK_INT >= 26) {
-                if (gVar2 != null) {
-                    AndroidUtilities.setPictureInPictureParams(launchActivity, gVar2.a());
+                if (fVar2 != null) {
+                    AndroidUtilities.setPictureInPictureParams(launchActivity, fVar2.a());
                 } else {
                     AndroidUtilities.resetPictureInPictureParams(launchActivity);
                 }
             }
-            if ((gVar != null && gVar.f) != (gVar2 != null && gVar2.f)) {
-                MediaSessionConnector mediaSessionConnector = (MediaSessionConnector) this.h;
-                if (mediaSessionConnector != null) {
-                    mediaSessionConnector.setPlayer(null);
+            if ((fVar != null && fVar.f) != (fVar2 != null && fVar2.f)) {
+                q3.c cVar = (q3.c) this.h;
+                if (cVar != null) {
+                    cVar.d(null);
                     this.h = null;
                 }
-                android.support.v4.media.session.d0 d0Var = (android.support.v4.media.session.d0) this.f;
-                if (d0Var != null) {
-                    d0Var.c(false);
-                    ((android.support.v4.media.session.d0) this.f).b();
+                android.support.v4.media.session.c0 c0Var = (android.support.v4.media.session.c0) this.f;
+                if (c0Var != null) {
+                    c0Var.c(false);
+                    ((android.support.v4.media.session.c0) this.f).b();
                     this.f = null;
                 }
-                if (gVar2 != null) {
-                    android.support.v4.media.session.d0 d0Var2 = new android.support.v4.media.session.d0(launchActivity, "pip-media-session", null, null);
-                    this.f = d0Var2;
-                    d0Var2.g(null);
-                    ((android.support.v4.media.session.d0) this.f).c(true);
-                    this.h = new MediaSessionConnector((android.support.v4.media.session.d0) this.f);
+                if (fVar2 != null) {
+                    android.support.v4.media.session.c0 c0Var2 = new android.support.v4.media.session.c0(launchActivity, "pip-media-session", null, null);
+                    this.f = c0Var2;
+                    c0Var2.g(null);
+                    ((android.support.v4.media.session.c0) this.f).c(true);
+                    this.h = new q3.c((android.support.v4.media.session.c0) this.f);
                 }
             }
-            if (gVar != null) {
-                cf.e eVar = gVar.b;
-                eVar.n = false;
-                eVar.h();
-                af.g gVar4 = eVar.j;
-                s3 s3Var = gVar4.a;
-                af.d dVar = (af.d) s3Var.b;
-                af.d dVar2 = (af.d) s3Var.b;
-                dVar.a.remove(eVar);
-                dVar2.b.remove(eVar);
-                String str = gVar4.c;
-                HashMap hashMap = dVar2.c;
+            if (fVar != null) {
+                ef.f fVar4 = fVar.b;
+                fVar4.n = false;
+                fVar4.h();
+                cf.f fVar5 = fVar4.j;
+                s3 s3Var = fVar5.a;
+                cf.c cVar2 = (cf.c) s3Var.b;
+                cf.c cVar3 = (cf.c) s3Var.b;
+                cVar2.a.remove(fVar4);
+                cVar3.b.remove(fVar4);
+                String str = fVar5.c;
+                HashMap hashMap = cVar3.c;
                 ArrayList arrayList = (ArrayList) hashMap.get(str);
                 if (arrayList != null) {
                     arrayList.remove((Object) null);
@@ -235,70 +235,70 @@ public final class s3 implements a3.b {
                     }
                 }
             }
-            if (gVar2 != null) {
-                MediaSessionConnector mediaSessionConnector2 = (MediaSessionConnector) this.h;
-                if (mediaSessionConnector2 != null) {
-                    mediaSessionConnector2.setPlayer(gVar2.l);
+            if (fVar2 != null) {
+                q3.c cVar4 = (q3.c) this.h;
+                if (cVar4 != null) {
+                    cVar4.d(fVar2.l);
                 }
-                ((af.a) this.c).bringToFront();
-                cf.e eVar2 = gVar2.b;
-                af.g gVar5 = eVar2.j;
-                s3 s3Var2 = gVar5.a;
-                af.d dVar3 = (af.d) s3Var2.b;
-                af.d dVar4 = (af.d) s3Var2.b;
-                dVar3.a.add(eVar2);
-                dVar4.b.add(eVar2);
-                String str2 = gVar5.c;
-                HashMap hashMap2 = dVar4.c;
+                ((cf.a) this.c).bringToFront();
+                ef.f fVar6 = fVar2.b;
+                cf.f fVar7 = fVar6.j;
+                s3 s3Var2 = fVar7.a;
+                cf.c cVar5 = (cf.c) s3Var2.b;
+                cf.c cVar6 = (cf.c) s3Var2.b;
+                cVar5.a.add(fVar6);
+                cVar6.b.add(fVar6);
+                String str2 = fVar7.c;
+                HashMap hashMap2 = cVar6.c;
                 ArrayList arrayList2 = (ArrayList) hashMap2.get(str2);
                 if (arrayList2 == null) {
                     arrayList2 = new ArrayList();
                     hashMap2.put(str2, arrayList2);
                 }
                 arrayList2.add(null);
-            } else if (gVar != null && AndroidUtilities.isInPictureInPictureMode(launchActivity)) {
+            } else if (fVar != null && AndroidUtilities.isInPictureInPictureMode(launchActivity)) {
                 launchActivity.moveTaskToBack(false);
             }
-            ((af.a) this.c).invalidate();
+            ((cf.a) this.c).invalidate();
         }
     }
 
-    @Override // pc.a
+    @Override // rc.a
     public Object get() {
-        Context context = (Context) ((pc.a) this.a).get();
-        z2.d dVar = (z2.d) ((pc.a) this.b).get();
-        f3.d dVar2 = (f3.d) ((pc.a) this.c).get();
+        Context context = (Context) ((rc.a) this.a).get();
+        z2.d dVar = (z2.d) ((rc.a) this.b).get();
+        f3.d dVar2 = (f3.d) ((rc.a) this.c).get();
         androidx.biometric.e eVar = (androidx.biometric.e) ((androidx.biometric.e) this.d).get();
-        Executor executor = (Executor) ((pc.a) this.e).get();
-        g3.c cVar = (g3.c) ((pc.a) this.f).get();
-        f7.v vVar = new f7.v(8);
-        bb.a aVar = new bb.a(8);
-        f3.c cVar2 = (f3.c) ((pc.a) this.h).get();
-        e3.f fVar = new e3.f();
-        fVar.a = context;
-        fVar.b = dVar;
-        fVar.c = dVar2;
-        fVar.d = eVar;
-        fVar.e = executor;
-        fVar.f = cVar;
-        fVar.g = vVar;
-        fVar.h = aVar;
-        fVar.i = cVar2;
-        return fVar;
+        Executor executor = (Executor) ((rc.a) this.e).get();
+        g3.c cVar = (g3.c) ((rc.a) this.f).get();
+        z9.d dVar3 = new z9.d(7);
+        h7.u uVar = new h7.u(7);
+        f3.c cVar2 = (f3.c) ((rc.a) this.h).get();
+        e3.g gVar = new e3.g();
+        gVar.a = context;
+        gVar.b = dVar;
+        gVar.c = dVar2;
+        gVar.d = eVar;
+        gVar.e = executor;
+        gVar.f = cVar;
+        gVar.g = dVar3;
+        gVar.h = uVar;
+        gVar.i = cVar2;
+        return gVar;
     }
 
-    public s3(th.l0 l0Var, c6 c6Var) {
+    public s3(vh.l0 l0Var, f6 f6Var) {
         this.a = l0Var;
-        this.b = c6Var;
+        this.b = f6Var;
     }
 
-    public s3(String str, l9.b bVar, com.google.firebase.messaging.s sVar) {
-        this.d = new ab.m(this, false);
-        this.e = new ab.m(this, true);
-        this.f = new p2.u(7, (byte) 0);
+    public s3(String str, n9.b bVar, com.google.firebase.messaging.r rVar) {
+        this.d = new cb.m(this, false);
+        this.e = new cb.m(this, true);
+        this.f = new p2.w(7, (byte) 0);
         this.h = new AtomicMarkableReference(null, false);
         this.c = str;
-        this.a = new h9.g(bVar);
-        this.b = sVar;
+        this.a = new j9.g(bVar);
+        this.b = rVar;
     }
 }

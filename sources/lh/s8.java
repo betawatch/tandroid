@@ -1,173 +1,241 @@
 package lh;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.mc;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.o70;
+import org.telegram.ui.Components.wc0;
+import org.telegram.ui.Components.zj0;
+import org.telegram.ui.hv0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class s8 implements GestureDetector.OnGestureListener {
-    public final /* synthetic */ i9 a;
+public final /* synthetic */ class s8 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ KeyEvent.Callback c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public s8(i9 i9Var) {
-        this.a = i9Var;
+    public /* synthetic */ s8(int i10, org.telegram.ui.ActionBar.g3 g3Var, org.telegram.ui.ActionBar.f6 f6Var, LinearLayout linearLayout, long[] jArr, dg.f3 f3Var) {
+        this.a = 5;
+        this.b = i10;
+        this.c = g3Var;
+        this.d = f6Var;
+        this.e = linearLayout;
+        this.f = jArr;
+        this.h = f3Var;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        i9 i9Var = this.a;
-        i9Var.c1 = false;
-        return !i9.i(i9Var, i9Var.s, motionEvent.getX(), motionEvent.getY(), false);
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f9, float f10) {
-        i9 i9Var = this.a;
-        if (i9Var.V != 0.0f && i9Var.q1 == null && f10 < -1000.0f && !i9Var.W) {
-            i9Var.W = true;
-            try {
-                i9Var.s.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
-            i9.j(i9Var);
-        }
-        if (i9Var.a0 != 0.0f) {
-            if (f10 < -1000.0f) {
-                i9Var.n(true);
-            } else if (f10 > 1000.0f) {
-                i9Var.n(false);
-            } else {
-                i9Var.n(i9Var.w.f > 0.5f);
-            }
-        }
-        i9Var.c1 = true;
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f9, float f10) {
-        float f11;
-        mc mcVar;
-        i9 i9Var = this.a;
-        if (!i9Var.f0) {
-            return false;
-        }
-        if (i9Var.h0) {
-            i9Var.V += f10;
-            float dp = AndroidUtilities.dp(200.0f);
-            if (i9Var.V > dp && !i9Var.W) {
-                i9Var.W = true;
-                i9.j(i9Var);
-                try {
-                    i9Var.s.performHapticFeedback(3);
-                } catch (Exception unused) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        long j10;
+        int i10 = this.a;
+        JSONObject jSONObject = null;
+        int i11 = this.b;
+        Object obj = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        KeyEvent.Callback callback = this.c;
+        switch (i10) {
+            case 0:
+                ph.d dVar = (ph.d) callback;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) obj4;
+                org.telegram.ui.ActionBar.g3[] g3VarArr = (org.telegram.ui.ActionBar.g3[]) obj3;
+                TLObject tLObject = (TLObject) obj2;
+                String str = (String) obj;
+                if (!dVar.K) {
+                    dVar.setLoading(true);
+                    TL_stars.TL_changeStarsSubscription tL_changeStarsSubscription = new TL_stars.TL_changeStarsSubscription();
+                    tL_changeStarsSubscription.canceled = Boolean.FALSE;
+                    tL_changeStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
+                    tL_changeStarsSubscription.subscription_id = starsSubscription.id;
+                    int i12 = this.b;
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_changeStarsSubscription, new lf.i0(dVar, g3VarArr, i12, tLObject, str, 1));
+                    break;
                 }
-            }
-            i9Var.Z = Utilities.clamp(i9Var.V / dp, 1.0f, 0.0f);
-            if (i9Var.j0.getCurrentPeerView() != null) {
-                i9Var.j0.getCurrentPeerView().invalidate();
-            }
-            if (i9Var.V < 0.0f) {
-                i9Var.V = 0.0f;
-                i9Var.h0 = false;
-            }
-            return true;
-        }
-        if (i9Var.Y) {
-            float f12 = i9Var.a0;
-            if (f12 <= i9Var.w.c || f10 <= 0.0f) {
-                i9Var.a0 = f12 + f10;
-            } else {
-                i9Var.a0 = (0.05f * f10) + f12;
-            }
-            w8 w8Var = i9Var.s;
-            mc mcVar2 = mc.w;
-            if (mcVar2 != null && mcVar2.h == w8Var) {
-                mcVar2.b();
-            }
-            if (i9Var.j0.getCurrentPeerView() != null) {
-                i9Var.j0.getCurrentPeerView().invalidate();
-            }
-            i9Var.v.invalidate();
-            if (i9Var.a0 < 0.0f) {
-                i9Var.a0 = 0.0f;
-                i9Var.Y = false;
-            }
-            return true;
-        }
-        if (i9Var.R > 0.8f) {
-            float f13 = -f10;
-            if ((f13 > 0.0f && i9Var.S > 0.0f) || (f13 < 0.0f && i9Var.S < 0.0f)) {
-                f11 = 0.3f;
-                i9Var.S -= f10 * f11;
-                w8 w8Var2 = i9Var.s;
-                mcVar = mc.w;
-                if (mcVar != null && mcVar.h == w8Var2) {
-                    mcVar.b();
+                break;
+            case 1:
+                m2.h hVar = (m2.h) callback;
+                LinearLayout linearLayout = (LinearLayout) obj4;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) obj3;
+                HorizontalScrollView horizontalScrollView = (HorizontalScrollView) obj2;
+                zj0 zj0Var = (zj0) obj;
+                int currentItem = hVar.getCurrentItem();
+                if (i11 != currentItem) {
+                    zj0 zj0Var2 = (zj0) linearLayout.getChildAt(currentItem);
+                    atomicBoolean.set(true);
+                    hVar.x(i11, true);
+                    float scrollX = horizontalScrollView.getScrollX();
+                    float x10 = zj0Var.getX() - ((horizontalScrollView.getWidth() - zj0Var.getWidth()) / 2.0f);
+                    ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+                    duration.setInterpolator(nr.f);
+                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, zj0Var2, zj0Var));
+                    duration.start();
+                    break;
                 }
-                i9.k(i9Var);
-                return true;
-            }
-        }
-        f11 = 0.6f;
-        i9Var.S -= f10 * f11;
-        w8 w8Var22 = i9Var.s;
-        mcVar = mc.w;
-        if (mcVar != null) {
-            mcVar.b();
-        }
-        i9.k(i9Var);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        d4 currentPeerView;
-        i9 i9Var = this.a;
-        if (i9Var.a0 == 0.0f && i9Var.b0) {
-            if (i9Var.x || i9Var.H0 || i9Var.i1 || i9Var.e1 || i9Var.f1) {
-                y8 y8Var = i9Var.j0;
-                if (y8Var != null && (currentPeerView = y8Var.getCurrentPeerView()) != null) {
-                    currentPeerView.s0();
+                break;
+            case 2:
+                wc0 wc0Var = (wc0) obj3;
+                org.telegram.ui.ActionBar.b3 b3Var = (org.telegram.ui.ActionBar.b3) obj2;
+                Utilities.Callback callback2 = (Utilities.Callback) obj;
+                TL_account.TL_birthday tL_birthday = new TL_account.TL_birthday();
+                tL_birthday.day = ((wc0) callback).getValue();
+                tL_birthday.month = ((wc0) obj4).getValue() + 1;
+                if (wc0Var.getValue() != i11) {
+                    tL_birthday.flags |= 1;
+                    tL_birthday.year = wc0Var.getValue();
                 }
-            } else {
-                d4 t10 = i9Var.t();
-                if (t10 == null || !t10.K1.f) {
-                    boolean z10 = motionEvent.getX() > ((float) i9Var.v.getMeasuredWidth()) * 0.33f;
-                    d4 currentPeerView2 = i9Var.j0.getCurrentPeerView();
-                    if (currentPeerView2 != null && !currentPeerView2.d1(z10)) {
-                        if (i9Var.j0.E(z10)) {
-                            y8 y8Var2 = i9Var.j0;
-                            y8Var2.H0 = true;
-                            y8Var2.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                            m7 m7Var = y8Var2.I0;
-                            AndroidUtilities.cancelRunOnUIThread(m7Var);
-                            AndroidUtilities.runOnUIThread(m7Var, 150L);
-                            return false;
+                b3Var.a.dismissRunnable.run();
+                callback2.run(tL_birthday);
+                break;
+            case 3:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context) obj3, 0, (nh.b) obj2);
+                String string = LocaleController.getString(R.string.LiveStoryRTMPRevokeTitle);
+                org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+                d2Var.O = string;
+                d2Var.Q = LocaleController.getString(R.string.LiveStoryRTMPRevokeText);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new gg.a0((jr) obj4, (ph.d) callback, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 4));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.d(-1);
+                alertDialog$Builder.o();
+                break;
+            case 4:
+                TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) obj4;
+                boolean[] zArr = (boolean[]) obj3;
+                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) obj2;
+                ph.d dVar2 = (ph.d) callback;
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj;
+                if (tL_messages_requestUrlAuth != null && !TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
+                    if (!dVar2.K) {
+                        dVar2.setLoading(true);
+                        if (a1Var != null) {
+                            boolean z4 = org.telegram.ui.web.a1.J0;
+                            try {
+                                jSONObject = new JSONObject();
+                            } catch (Exception unused) {
+                            }
+                            a1Var.v("oauth_result_failed", jSONObject);
                         }
-                        if (z10) {
-                            i9Var.q(true);
-                            return false;
-                        }
-                        h9 h9Var = i9Var.v0;
-                        if (h9Var != null) {
-                            h9Var.loopBack();
-                            return false;
+                        TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
+                        tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
+                        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_messages_declineUrlAuth, new org.telegram.messenger.a(), new dh.v(22, zArr, g3Var));
+                        break;
+                    }
+                } else {
+                    zArr[0] = true;
+                    g3Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.g3 g3Var2 = (org.telegram.ui.ActionBar.g3) callback;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                LinearLayout linearLayout2 = (LinearLayout) obj3;
+                long[] jArr = (long[]) obj2;
+                dg.f3 f3Var = (dg.f3) obj;
+                b0 g10 = b0.g(i11);
+                g10.n();
+                g10.o();
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = g10.j;
+                if (arrayList2 != null) {
+                    arrayList.addAll(arrayList2);
+                }
+                ArrayList arrayList3 = g10.l;
+                if (arrayList3 != null) {
+                    arrayList.addAll(arrayList3);
+                }
+                arrayList.add(0, UserConfig.getInstance(i11).getCurrentUser());
+                o70 F = o70.F(g3Var2.getContainerView(), f6Var, linearLayout2);
+                int size = arrayList.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj5 = arrayList.get(i13);
+                    i13++;
+                    TLObject tLObject2 = (TLObject) obj5;
+                    if (tLObject2 instanceof TLRPC.User) {
+                        j10 = ((TLRPC.User) tLObject2).id;
+                    } else if (tLObject2 instanceof TLRPC.Chat) {
+                        TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
+                        if (ChatObject.isChannelAndNotMegaGroup(chat)) {
+                            j10 = -chat.id;
                         }
                     }
+                    long j11 = j10;
+                    F.g(tLObject2, j11 == jArr[0], new hv0(jArr, j11, f3Var, 2));
                 }
-            }
+                F.t = false;
+                F.s = 0;
+                F.V(5);
+                F.a0(AndroidUtilities.dp(24.0f), 0.0f);
+                F.Z();
+                break;
         }
-        return false;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
+    public /* synthetic */ s8(Object obj, Object obj2, Object obj3, ph.d dVar, Object obj4, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.e = obj2;
+        this.f = obj3;
+        this.c = dVar;
+        this.h = obj4;
+        this.b = i10;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
+    public /* synthetic */ s8(m2.h hVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, zj0 zj0Var) {
+        this.a = 1;
+        this.c = hVar;
+        this.b = i10;
+        this.d = linearLayout;
+        this.e = atomicBoolean;
+        this.f = horizontalScrollView;
+        this.h = zj0Var;
+    }
+
+    public /* synthetic */ s8(wc0 wc0Var, wc0 wc0Var2, wc0 wc0Var3, int i10, org.telegram.ui.ActionBar.b3 b3Var, Utilities.Callback callback) {
+        this.a = 2;
+        this.c = wc0Var;
+        this.d = wc0Var2;
+        this.e = wc0Var3;
+        this.b = i10;
+        this.f = b3Var;
+        this.h = callback;
+    }
+
+    public /* synthetic */ s8(ph.d dVar, TL_stars.StarsSubscription starsSubscription, int i10, org.telegram.ui.ActionBar.g3[] g3VarArr, TLObject tLObject, String str) {
+        this.a = 0;
+        this.c = dVar;
+        this.d = starsSubscription;
+        this.b = i10;
+        this.e = g3VarArr;
+        this.f = tLObject;
+        this.h = str;
     }
 }

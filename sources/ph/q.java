@@ -1,27 +1,23 @@
 package ph;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.w41;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ r a;
+public final class q {
+    public final r a;
+    public final int b;
+    public final int c;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
+    public q(r rVar, int i10, int i11) {
+        this.a = rVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        r.V(this.a, (w41) obj);
+    public final float a(float f10) {
+        return (f10 / this.a.d[this.c]) * this.b;
+    }
+
+    public final float b(float f10) {
+        return (f10 / this.a.d[this.c]) * (this.b + 1);
     }
 }

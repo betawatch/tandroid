@@ -1,78 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class w90 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+public final class w90 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ da0 a;
 
-    public /* synthetic */ w90(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.d = notificationCenterDelegate;
-        this.b = i10;
-        this.c = z10;
+    public w90(da0 da0Var) {
+        this.a = da0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                AnimatorSet[] animatorSetArr = ((nx0) this.d).E;
-                int i10 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i10];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[i10] = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        da0 da0Var = this.a;
+        if (i10 == -1) {
+            if (da0Var.S.L(true)) {
+                return;
+            }
+            da0Var.finishFragment();
+            return;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                y90 y90Var = (y90) this.d;
-                o6[] o6VarArr = y90Var.x;
-                org.telegram.ui.ActionBar.h5[] h5VarArr = y90Var.w;
-                float[] fArr = y90Var.V;
-                boolean z10 = this.c;
-                float f9 = z10 ? 1.0f : 0.0f;
-                int i10 = this.b;
-                fArr[i10] = f9;
-                h5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
-                h5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
-                h5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
-                o6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
-                if (!z10) {
-                    o6VarArr[i10].setVisibility(8);
-                    break;
+        if (i10 != 2) {
+            if (i10 == 10) {
+                aa0 aa0Var = da0Var.S;
+                aa0Var.c1(aa0Var.getClosestTab(), false);
+                return;
+            } else {
+                if (i10 == 11) {
+                    da0Var.S.L(true);
+                    da0Var.S.getSearchItem().z(false);
+                    return;
                 }
-                break;
-            default:
-                nx0 nx0Var = (nx0) this.d;
-                AnimatorSet[] animatorSetArr = nx0Var.E;
-                int i11 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i11];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.c) {
-                        nx0Var.F[i11].setVisibility(4);
-                    }
-                    animatorSetArr[i11] = null;
-                    break;
+                return;
+            }
+        }
+        if (da0Var.F != null) {
+            ArrayList arrayList = new ArrayList();
+            for (int i11 = 0; i11 < da0Var.F.size(); i11++) {
+                TL_stories.StoryItem storyItem = ((MessageObject) da0Var.F.valueAt(i11)).storyItem;
+                if (storyItem != null) {
+                    arrayList.add(storyItem);
                 }
-                break;
+            }
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(da0Var.getParentActivity(), 0, da0Var.getResourceProvider());
+            alertDialog$Builder.a.O = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteStoriesTitle : R.string.DeleteStoryTitle);
+            alertDialog$Builder.a.Q = LocaleController.formatPluralString("DeleteStoriesSubtitle", arrayList.size(), new Object[0]);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new o1(21, this, arrayList));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new k2(16));
+            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+            d2Var.show();
+            d2Var.h();
         }
     }
 }

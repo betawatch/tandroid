@@ -5,9 +5,9 @@ import java.util.concurrent.Executor;
 import v0.i;
 import v0.o;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements bd.a {
+public final /* synthetic */ class b implements dd.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Executor b;
     public final /* synthetic */ i c;
@@ -20,15 +20,15 @@ public final /* synthetic */ class b implements bd.a {
         this.c = iVar;
     }
 
-    @Override // bd.a
+    @Override // dd.a
     public final Object invoke() {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new a1.e(7, this.c, this.d));
+                this.b.execute(new a1.e(3, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new a1.e(8, this.c, (o) this.d));
+                this.b.execute(new a1.e(4, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -53,10 +53,10 @@ public final /* synthetic */ class b implements bd.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new a1.e(25, this.c, cVar));
+                this.b.execute(new a1.e(20, this.c, cVar));
                 break;
         }
-        return qc.i.a;
+        return sc.i.a;
     }
 
     public /* synthetic */ b(Executor executor, i iVar, Object obj, int i10) {

@@ -15,83 +15,83 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.h01;
-import org.telegram.ui.Components.hp;
+import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.s01;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
-    public final org.telegram.ui.Components.t9 a;
-    public final org.telegram.ui.ActionBar.h5 b;
-    public final org.telegram.ui.ActionBar.h5 c;
-    public final org.telegram.ui.Components.e9 d;
+    public final org.telegram.ui.Components.p9 a;
+    public final org.telegram.ui.ActionBar.k5 b;
+    public final org.telegram.ui.ActionBar.k5 c;
+    public final org.telegram.ui.Components.z8 d;
     public final ImageView e;
     public TLRPC.Chat f;
     public boolean h;
     public final int n;
-    public final hp r;
+    public final lp r;
 
-    public n(Context context, View.OnClickListener onClickListener, boolean z10, int i10) {
+    public n(Context context, View.OnClickListener onClickListener, boolean z4, int i10) {
         super(context);
         this.n = UserConfig.selectedAccount;
-        this.d = new org.telegram.ui.Components.e9((org.telegram.ui.ActionBar.c6) null);
-        org.telegram.ui.Components.t9 t9Var = new org.telegram.ui.Components.t9(context);
-        this.a = t9Var;
-        t9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
-        boolean z11 = LocaleController.isRTL;
-        addView(t9Var, i7.f6.d(48, 48.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 12, 6.0f, z11 ? i10 + 12 : 0.0f, 6.0f));
-        if (z10) {
-            hp hpVar = new hp(context, 21, null);
-            this.r = hpVar;
-            hpVar.b(-1, org.telegram.ui.ActionBar.g6.d6, org.telegram.ui.ActionBar.g6.k7);
-            hpVar.setDrawUnchecked(false);
-            hpVar.setDrawBackgroundAsArc(3);
-            boolean z12 = LocaleController.isRTL;
-            addView(hpVar, i7.f6.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i10 + 42, 32.0f, z12 ? i10 + 42 : 0.0f, 0.0f));
+        this.d = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
+        this.a = p9Var;
+        p9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
+        boolean z10 = LocaleController.isRTL;
+        addView(p9Var, k7.b6.d(48, 48.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : i10 + 12, 6.0f, z10 ? i10 + 12 : 0.0f, 6.0f));
+        if (z4) {
+            lp lpVar = new lp(context, 21, null);
+            this.r = lpVar;
+            lpVar.b(-1, org.telegram.ui.ActionBar.j6.d6, org.telegram.ui.ActionBar.j6.k7);
+            lpVar.setDrawUnchecked(false);
+            lpVar.setDrawBackgroundAsArc(3);
+            boolean z11 = LocaleController.isRTL;
+            addView(lpVar, k7.b6.d(24, 24.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 42, 32.0f, z11 ? i10 + 42 : 0.0f, 0.0f));
         }
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.b = h5Var;
-        h5Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        h5Var.setTextSize(17);
-        h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
+        this.b = k5Var;
+        k5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        k5Var.setTextSize(17);
+        k5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        boolean z12 = LocaleController.isRTL;
+        addView(k5Var, k7.b6.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 62 : i10 + 73, 9.5f, z12 ? i10 + 73 : 62, 0.0f));
+        org.telegram.ui.ActionBar.k5 k5Var2 = new org.telegram.ui.ActionBar.k5(context);
+        this.c = k5Var2;
+        k5Var2.setTextSize(14);
+        int i11 = org.telegram.ui.ActionBar.j6.y6;
+        k5Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        k5Var2.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
+        k5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(h5Var, i7.f6.d(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 62 : i10 + 73, 9.5f, z13 ? i10 + 73 : 62, 0.0f));
-        org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
-        this.c = h5Var2;
-        h5Var2.setTextSize(14);
-        int i11 = org.telegram.ui.ActionBar.g6.y6;
-        h5Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i11, false));
-        h5Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.J6, false));
-        h5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        boolean z14 = LocaleController.isRTL;
-        addView(h5Var2, i7.f6.d(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 62 : i10 + 73, 32.5f, z14 ? i10 + 73 : 62, 6.0f));
+        addView(k5Var2, k7.b6.d(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 62 : i10 + 73, 32.5f, z13 ? i10 + 73 : 62, 6.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_panel_clear);
         imageView.setOnClickListener(onClickListener);
-        imageView.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 1, -1));
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
-        boolean z15 = LocaleController.isRTL;
-        addView(imageView, i7.f6.d(48, 48.0f, (z15 ? 3 : 5) | 48, z15 ? 7.0f : 0.0f, 6.0f, z15 ? 0.0f : 7.0f, 0.0f));
+        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 1, -1));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+        boolean z14 = LocaleController.isRTL;
+        addView(imageView, k7.b6.d(48, 48.0f, (z14 ? 3 : 5) | 48, z14 ? 7.0f : 0.0f, 6.0f, z14 ? 0.0f : 7.0f, 0.0f));
     }
 
-    public final void a(TLRPC.Chat chat, boolean z10) {
-        StringBuilder sb2 = new StringBuilder();
+    public final void a(TLRPC.Chat chat, boolean z4) {
+        StringBuilder sb = new StringBuilder();
         int i10 = this.n;
-        String q6 = a4.w.q(sb2, MessagesController.getInstance(i10).linkPrefix, "/");
+        String r10 = android.support.v4.media.a.r(sb, MessagesController.getInstance(i10).linkPrefix, "/");
         this.f = chat;
-        org.telegram.ui.Components.e9 e9Var = this.d;
-        e9Var.k(i10, chat);
+        org.telegram.ui.Components.z8 z8Var = this.d;
+        z8Var.k(i10, chat);
         this.b.l(chat.title, false);
-        StringBuilder n10 = com.google.android.recaptcha.internal.a.n(q6);
-        n10.append(ChatObject.getPublicUsername(chat));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(n10.toString());
-        spannableStringBuilder.setSpan(new a51("", (h01) null), q6.length(), spannableStringBuilder.length(), 33);
+        StringBuilder l10 = e2.c.l(r10);
+        l10.append(ChatObject.getPublicUsername(chat));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(l10.toString());
+        spannableStringBuilder.setSpan(new m51("", (s01) null), r10.length(), spannableStringBuilder.length(), 33);
         this.c.l(spannableStringBuilder, false);
-        this.a.e(chat, e9Var);
-        this.h = z10;
+        this.a.e(chat, z8Var);
+        this.h = z4;
     }
 
     public TLRPC.Chat getCurrentChannel() {
@@ -102,11 +102,11 @@ public final class n extends FrameLayout {
         return this.e;
     }
 
-    public org.telegram.ui.ActionBar.h5 getNameTextView() {
+    public org.telegram.ui.ActionBar.k5 getNameTextView() {
         return this.b;
     }
 
-    public org.telegram.ui.ActionBar.h5 getStatusTextView() {
+    public org.telegram.ui.ActionBar.k5 getStatusTextView() {
         return this.c;
     }
 

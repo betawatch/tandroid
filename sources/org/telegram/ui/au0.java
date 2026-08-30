@@ -1,58 +1,73 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class au0 extends org.telegram.ui.Components.t50 {
-    public final /* synthetic */ bu0 d;
+public final class au0 extends ImageView {
+    public int a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public org.telegram.ui.Components.i71 e;
+    public final org.telegram.ui.Components.nr f;
+    public ValueAnimator h;
+    public final /* synthetic */ PhotoViewer n;
 
-    public au0(bu0 bu0Var) {
-        this.d = bu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public au0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.n = photoViewer;
+        this.a = 0;
+        this.b = false;
+        this.c = false;
+        this.d = false;
+        this.f = org.telegram.ui.Components.nr.i;
+        setAlpha(0.0f);
     }
 
-    @Override // org.telegram.ui.Components.xn0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
-        if (this.d.s.U7 > 0) {
-            sb2.append(", ");
-            sb2.append(this.d.s.T7 + 1);
-            sb2.append(" / ");
-            sb2.append(this.d.s.U7);
-        }
-        sb2.append(", ");
-        sb2.append(this.d.h);
-        sb2.append(" – ");
-        sb2.append(this.d.n);
-        return sb2.toString();
-    }
-
-    @Override // org.telegram.ui.Components.t50
-    public final int i() {
-        return Math.max(0, this.d.s.U7 - 1);
-    }
-
-    @Override // org.telegram.ui.Components.t50
-    public final int j() {
-        return this.d.s.T7;
-    }
-
-    @Override // org.telegram.ui.Components.t50
-    public final void k(int i10) {
-        int max;
-        if (this.d.s.U7 > 0 && (max = Math.max(0, Math.min(this.d.s.U7 - 1, i10))) != this.d.s.T7) {
-            bu0 bu0Var = this.d;
-            bu0Var.r = bu0Var.s.T7;
-            this.d.s.T7 = max;
-            this.d.s.R0();
-            this.d.invalidate();
-            int i11 = this.d.s.T7;
-            bu0 bu0Var2 = this.d;
-            if (i11 != bu0Var2.r) {
-                bu0Var2.s.p2(1);
+    public static void a(au0 au0Var) {
+        PhotoViewer photoViewer = au0Var.n;
+        org.telegram.ui.Components.i71 i71Var = photoViewer.C2;
+        if (i71Var == null || i71Var.p() == -9223372036854775807L) {
+            ValueAnimator valueAnimator = au0Var.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                au0Var.h = null;
             }
+            au0Var.setAlpha(0.0f);
+            return;
+        }
+        long max = Math.max(0L, photoViewer.C2.p() - photoViewer.C2.n());
+        float max2 = 1.0f - Math.max(Math.min(max / 250.0f, 1.0f), 0.0f);
+        if (max2 <= 0.0f) {
+            ValueAnimator valueAnimator2 = au0Var.h;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+                au0Var.h = null;
+            }
+            au0Var.setAlpha(0.0f);
+            return;
+        }
+        if (!photoViewer.C2.y()) {
+            ValueAnimator valueAnimator3 = au0Var.h;
+            if (valueAnimator3 != null) {
+                valueAnimator3.cancel();
+                au0Var.h = null;
+            }
+            au0Var.setAlpha(max2);
+            return;
+        }
+        if (au0Var.h == null) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(max2, 1.0f);
+            au0Var.h = ofFloat;
+            ofFloat.addUpdateListener(new e3(au0Var, 24));
+            au0Var.h.setDuration(max);
+            au0Var.h.setInterpolator(au0Var.f);
+            au0Var.h.start();
+            au0Var.setAlpha(max2);
         }
     }
 }

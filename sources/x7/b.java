@@ -2,35 +2,51 @@ package x7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.internal.cast.o;
-import java.util.Arrays;
-import w5.k;
-import z5.l;
+import com.google.android.gms.maps.model.LatLng;
+import j7.f5;
+import java.util.ArrayList;
+import u6.p;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b extends a6.a {
-    public static final Parcelable.Creator<b> CREATOR = new k(4);
-    public String a;
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof b) {
-            return l.l(this.a, ((b) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
-    }
+public final class b extends c6.a {
+    public static final Parcelable.Creator<b> CREATOR = new p(14);
+    public LatLng a;
+    public double b;
+    public float c;
+    public int d;
+    public int e;
+    public float f;
+    public boolean h;
+    public boolean n;
+    public ArrayList r;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = o.q(parcel, 20293);
-        o.l(parcel, 1, this.a);
-        o.r(parcel, q6);
+        int q10 = f5.q(parcel, 20293);
+        f5.k(parcel, 2, this.a, i10);
+        double d = this.b;
+        f5.s(parcel, 3, 8);
+        parcel.writeDouble(d);
+        float f10 = this.c;
+        f5.s(parcel, 4, 4);
+        parcel.writeFloat(f10);
+        int i11 = this.d;
+        f5.s(parcel, 5, 4);
+        parcel.writeInt(i11);
+        int i12 = this.e;
+        f5.s(parcel, 6, 4);
+        parcel.writeInt(i12);
+        float f11 = this.f;
+        f5.s(parcel, 7, 4);
+        parcel.writeFloat(f11);
+        boolean z4 = this.h;
+        f5.s(parcel, 8, 4);
+        parcel.writeInt(z4 ? 1 : 0);
+        boolean z10 = this.n;
+        f5.s(parcel, 9, 4);
+        parcel.writeInt(z10 ? 1 : 0);
+        f5.p(parcel, 10, this.r);
+        f5.r(parcel, q10);
     }
 }

@@ -1,86 +1,47 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.content.Context;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ks0 extends org.telegram.ui.Components.x61 {
-    public final /* synthetic */ PhotoViewer i0;
+public final class ks0 extends org.telegram.ui.Components.lq0 {
+    public final /* synthetic */ FrameLayout Y0;
+    public final /* synthetic */ boolean Z0;
+    public final /* synthetic */ PhotoViewer a1;
 
-    public ks0(PhotoViewer photoViewer) {
-        this.i0 = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ks0(PhotoViewer photoViewer, Context context, xn xnVar, ArrayList arrayList, String str, Integer num, FrameLayout frameLayout, boolean z4) {
+        super(context, xnVar, arrayList, null, null, false, str, null, false, true, false, num, null);
+        this.a1 = photoViewer;
+        this.Y0 = frameLayout;
+        this.Z0 = z4;
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.i0;
-        if (photoViewer.q4 == 0) {
-            PhotoViewer.Y(photoViewer, false);
+    @Override // org.telegram.ui.Components.lq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
+        if (z4) {
+            AndroidUtilities.runOnUIThread(new ct(this, this.Y0, hVar, i10, 8), 250L);
         }
-        if (photoViewer.J8) {
-            return;
-        }
-        d1.f.D(o());
-        d1.f.x(false);
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final void D() {
-        super.D();
-        PhotoViewer photoViewer = this.i0;
-        PhotoViewer.Y(photoViewer, true);
-        if (photoViewer.J8) {
-            return;
+    @Override // org.telegram.ui.Components.lq0, org.telegram.ui.ActionBar.g3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        if (this.Z0) {
+            AndroidUtilities.runOnUIThread(new el0(this, 17), 50L);
         }
-        d1.f.D(o());
-        d1.f.x(true);
-    }
-
-    @Override // org.telegram.ui.Components.x61
-    public final void L(long j10) {
-        M(j10, false);
-        PhotoViewer photoViewer = this.i0;
-        if (photoViewer.n1) {
-            PhotoViewer.Z(photoViewer, j10);
+        PhotoViewer photoViewer = this.a1;
+        photoViewer.a0.softInputMode = 272;
+        try {
+            ((WindowManager) photoViewer.y.getSystemService("window")).updateViewLayout(photoViewer.d0, photoViewer.a0);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        if (photoViewer.J8) {
-            return;
-        }
-        d1.f.D(j10);
-    }
-
-    @Override // org.telegram.ui.Components.x61
-    public final void R(float f9) {
-        super.R(f9);
-        if (this.i0.J8) {
-            return;
-        }
-        d1.f.z(f9);
-    }
-
-    @Override // org.telegram.ui.Components.x61, j3.a2
-    public final void onRenderedFirstFrame() {
-        j3.x1 playbackParameters;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.i0;
-        boolean z10 = true;
-        photoViewer.N = true;
-        if (photoViewer.z2) {
-            photoViewer.a0.invalidate();
-        }
-        photoViewer.z3();
-        if (!d1.f.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        P(z10);
-        if (photoViewer.J8) {
-            return;
-        }
-        d1.f.D(o());
-        j3.k0 k0Var = this.d;
-        float f9 = 1.0f;
-        if (k0Var != null && (playbackParameters = k0Var.getPlaybackParameters()) != null) {
-            f9 = playbackParameters.a;
-        }
-        d1.f.z(f9);
     }
 }

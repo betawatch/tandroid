@@ -2,14 +2,14 @@ package i1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import f2.g1;
+import f2.e1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class b implements Parcelable {
     public final Parcelable a;
     public static final a b = new a();
-    public static final Parcelable.Creator<b> CREATOR = new g1(1);
+    public static final Parcelable.Creator<b> CREATOR = new e1(1);
 
     public b() {
         this.a = null;

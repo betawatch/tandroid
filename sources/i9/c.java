@@ -1,17 +1,44 @@
 package i9;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c implements s9.d {
-    public static final c a = new c();
-    public static final s9.c b = s9.c.c("key");
-    public static final s9.c c = s9.c.c("value");
+public final class c {
+    public final String a;
+    public final String b;
 
-    @Override // s9.a
-    public final void a(Object obj, Object obj2) {
-        s9.e eVar = (s9.e) obj2;
-        d0 d0Var = (d0) ((h1) obj);
-        eVar.e(b, d0Var.a);
-        eVar.e(c, d0Var.b);
+    public c(String str, String str2) {
+        if (str == null) {
+            throw new NullPointerException("Null crashlyticsInstallId");
+        }
+        this.a = str;
+        this.b = str2;
+    }
+
+    public final boolean equals(Object obj) {
+        String str;
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof c) {
+            c cVar = (c) obj;
+            String str2 = cVar.b;
+            if (this.a.equals(cVar.a) && ((str = this.b) != null ? str.equals(str2) : str2 == null)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
+        String str = this.b;
+        return hashCode ^ (str == null ? 0 : str.hashCode());
+    }
+
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("InstallIds{crashlyticsInstallId=");
+        sb.append(this.a);
+        sb.append(", firebaseInstallationId=");
+        return android.support.v4.media.a.r(sb, this.b, "}");
     }
 }

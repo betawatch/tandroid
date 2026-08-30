@@ -3,13 +3,13 @@ package org.webrtc;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class MediaConstraints {
     public final List<KeyValuePair> mandatory = new ArrayList();
     public final List<KeyValuePair> optional = new ArrayList();
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class KeyValuePair {
         private final String key;
         private final String value;
@@ -50,15 +50,15 @@ public class MediaConstraints {
     }
 
     private static String stringifyKeyValuePairList(List<KeyValuePair> list) {
-        StringBuilder sb2 = new StringBuilder("[");
+        StringBuilder sb = new StringBuilder("[");
         for (KeyValuePair keyValuePair : list) {
-            if (sb2.length() > 1) {
-                sb2.append(", ");
+            if (sb.length() > 1) {
+                sb.append(", ");
             }
-            sb2.append(keyValuePair.toString());
+            sb.append(keyValuePair.toString());
         }
-        sb2.append("]");
-        return sb2.toString();
+        sb.append("]");
+        return sb.toString();
     }
 
     public List<KeyValuePair> getMandatory() {

@@ -1,173 +1,95 @@
 package g5;
 
-import android.graphics.SurfaceTexture;
-import android.opengl.EGL14;
-import android.opengl.EGLConfig;
-import android.opengl.EGLContext;
-import android.opengl.EGLDisplay;
-import android.opengl.EGLSurface;
-import android.opengl.GLES20;
-import android.opengl.GLU;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Message;
-import f5.d0;
-import java.util.Locale;
+import android.net.Uri;
+import android.util.Base64;
+import j3.r1;
+import java.net.URLDecoder;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class k extends HandlerThread implements Handler.Callback {
-    public f5.e a;
-    public Handler b;
-    public Error c;
-    public RuntimeException d;
-    public l e;
+public final class k extends g {
+    public p a;
+    public byte[] b;
+    public int c;
+    public int d;
 
-    public final void a(int i10) {
-        EGLSurface eglCreatePbufferSurface;
-        this.a.getClass();
-        f5.e eVar = this.a;
-        int[] iArr = eVar.b;
-        EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
-        f5.a.g("eglGetDisplay failed", eglGetDisplay != null);
-        int[] iArr2 = new int[2];
-        f5.a.g("eglInitialize failed", EGL14.eglInitialize(eglGetDisplay, iArr2, 0, iArr2, 1));
-        eVar.c = eglGetDisplay;
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr3 = new int[1];
-        boolean eglChooseConfig = EGL14.eglChooseConfig(eglGetDisplay, f5.e.h, 0, eGLConfigArr, 0, 1, iArr3, 0);
-        boolean z10 = eglChooseConfig && iArr3[0] > 0 && eGLConfigArr[0] != null;
-        Object[] objArr = {Boolean.valueOf(eglChooseConfig), Integer.valueOf(iArr3[0]), eGLConfigArr[0]};
-        int i11 = d0.a;
-        f5.a.g(String.format(Locale.US, "eglChooseConfig failed: success=%b, numConfigs[0]=%d, configs[0]=%s", objArr), z10);
-        EGLConfig eGLConfig = eGLConfigArr[0];
-        EGLContext eglCreateContext = EGL14.eglCreateContext(eVar.c, eGLConfig, EGL14.EGL_NO_CONTEXT, i10 == 0 ? new int[]{12440, 2, 12344} : new int[]{12440, 2, 12992, 1, 12344}, 0);
-        f5.a.g("eglCreateContext failed", eglCreateContext != null);
-        eVar.d = eglCreateContext;
-        EGLDisplay eGLDisplay = eVar.c;
-        if (i10 == 1) {
-            eglCreatePbufferSurface = EGL14.EGL_NO_SURFACE;
+    @Override // g5.m
+    public final void close() {
+        if (this.b != null) {
+            this.b = null;
+            transferEnded();
+        }
+        this.a = null;
+    }
+
+    @Override // g5.m
+    public final Uri getUri() {
+        p pVar = this.a;
+        if (pVar != null) {
+            return pVar.a;
+        }
+        return null;
+    }
+
+    @Override // g5.m
+    public final long open(p pVar) {
+        transferInitializing(pVar);
+        this.a = pVar;
+        Uri uri = pVar.a;
+        long j10 = pVar.f;
+        Uri normalizeScheme = uri.normalizeScheme();
+        String scheme = normalizeScheme.getScheme();
+        h5.a.e("Unsupported scheme: " + scheme, "data".equals(scheme));
+        String schemeSpecificPart = normalizeScheme.getSchemeSpecificPart();
+        int i10 = h5.d0.a;
+        String[] split = schemeSpecificPart.split(",", -1);
+        if (split.length != 2) {
+            throw new r1("Unexpected URI format: " + normalizeScheme, null, true, 0);
+        }
+        String str = split[1];
+        if (split[0].contains(";base64")) {
+            try {
+                this.b = Base64.decode(str, 0);
+            } catch (IllegalArgumentException e) {
+                throw new r1(v2.e("Error while parsing Base64 encoded string: ", str), e, true, 0);
+            }
         } else {
-            eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(eGLDisplay, eGLConfig, i10 == 2 ? new int[]{12375, 1, 12374, 1, 12992, 1, 12344} : new int[]{12375, 1, 12374, 1, 12344}, 0);
-            f5.a.g("eglCreatePbufferSurface failed", eglCreatePbufferSurface != null);
+            this.b = URLDecoder.decode(str, r8.d.a.name()).getBytes(r8.d.c);
         }
-        f5.a.g("eglMakeCurrent failed", EGL14.eglMakeCurrent(eGLDisplay, eglCreatePbufferSurface, eglCreatePbufferSurface, eglCreateContext));
-        eVar.e = eglCreatePbufferSurface;
-        GLES20.glGenTextures(1, iArr, 0);
-        StringBuilder sb2 = new StringBuilder();
-        boolean z11 = false;
-        while (true) {
-            int glGetError = GLES20.glGetError();
-            if (glGetError == 0) {
-                break;
-            }
-            if (z11) {
-                sb2.append('\n');
-            }
-            sb2.append("glError: ");
-            sb2.append(GLU.gluErrorString(glGetError));
-            z11 = true;
+        long j11 = pVar.e;
+        byte[] bArr = this.b;
+        if (j11 > bArr.length) {
+            this.b = null;
+            throw new n(2008);
         }
-        if (z11) {
-            throw new f5.h(sb2.toString());
+        int i11 = (int) j11;
+        this.c = i11;
+        int length = bArr.length - i11;
+        this.d = length;
+        if (j10 != -1) {
+            this.d = (int) Math.min(length, j10);
         }
-        SurfaceTexture surfaceTexture = new SurfaceTexture(iArr[0]);
-        eVar.f = surfaceTexture;
-        surfaceTexture.setOnFrameAvailableListener(eVar);
-        SurfaceTexture surfaceTexture2 = this.a.f;
-        surfaceTexture2.getClass();
-        this.e = new l(this, surfaceTexture2, i10 != 0);
+        transferStarted(pVar);
+        return j10 != -1 ? j10 : this.d;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b() {
-        this.a.getClass();
-        f5.e eVar = this.a;
-        eVar.a.removeCallbacks(eVar);
-        try {
-            SurfaceTexture surfaceTexture = eVar.f;
-            if (surfaceTexture != null) {
-                surfaceTexture.release();
-                GLES20.glDeleteTextures(1, eVar.b, 0);
-            }
-        } finally {
-            EGLDisplay eGLDisplay = eVar.c;
-            if (eGLDisplay != null && !eGLDisplay.equals(EGL14.EGL_NO_DISPLAY)) {
-                EGLDisplay eGLDisplay2 = eVar.c;
-                EGLSurface eGLSurface = EGL14.EGL_NO_SURFACE;
-                EGL14.eglMakeCurrent(eGLDisplay2, eGLSurface, eGLSurface, EGL14.EGL_NO_CONTEXT);
-            }
-            EGLSurface eGLSurface2 = eVar.e;
-            if (eGLSurface2 != null && !eGLSurface2.equals(EGL14.EGL_NO_SURFACE)) {
-                EGL14.eglDestroySurface(eVar.c, eVar.e);
-            }
-            EGLContext eGLContext = eVar.d;
-            if (eGLContext != null) {
-                EGL14.eglDestroyContext(eVar.c, eGLContext);
-            }
-            if (d0.a >= 19) {
-                EGL14.eglReleaseThread();
-            }
-            EGLDisplay eGLDisplay3 = eVar.c;
-            if (eGLDisplay3 != null && !eGLDisplay3.equals(EGL14.EGL_NO_DISPLAY)) {
-                EGL14.eglTerminate(eVar.c);
-            }
-            eVar.c = null;
-            eVar.d = null;
-            eVar.e = null;
-            eVar.f = null;
+    @Override // g5.j
+    public final int read(byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
+            return 0;
         }
-    }
-
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        int i10 = message.what;
-        try {
-            if (i10 == 1) {
-                try {
-                    a(message.arg1);
-                    synchronized (this) {
-                        notify();
-                    }
-                    return true;
-                } catch (f5.h e10) {
-                    f5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e10);
-                    this.d = new IllegalStateException(e10);
-                    synchronized (this) {
-                        notify();
-                    }
-                } catch (Error e11) {
-                    f5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e11);
-                    this.c = e11;
-                    synchronized (this) {
-                        notify();
-                    }
-                } catch (RuntimeException e12) {
-                    f5.a.p("PlaceholderSurface", "Failed to initialize placeholder surface", e12);
-                    this.d = e12;
-                    synchronized (this) {
-                        notify();
-                    }
-                }
-            } else if (i10 == 2) {
-                try {
-                    b();
-                    return true;
-                } catch (Throwable th2) {
-                    try {
-                        f5.a.p("PlaceholderSurface", "Failed to release placeholder surface", th2);
-                        return true;
-                    } finally {
-                        quit();
-                    }
-                }
-            }
-            return true;
-        } catch (Throwable th3) {
-            synchronized (this) {
-                notify();
-                throw th3;
-            }
+        int i12 = this.d;
+        if (i12 == 0) {
+            return -1;
         }
+        int min = Math.min(i11, i12);
+        byte[] bArr2 = this.b;
+        int i13 = h5.d0.a;
+        System.arraycopy(bArr2, this.c, bArr, i10, min);
+        this.c += min;
+        this.d -= min;
+        bytesTransferred(min);
+        return min;
     }
 }

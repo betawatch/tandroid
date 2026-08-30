@@ -1,39 +1,116 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class m31 extends org.telegram.ui.Components.o6 {
-    public boolean s;
-    public final org.telegram.ui.Components.d6 v;
-    public final /* synthetic */ SaveToGallerySettingsActivity w;
+public final class m31 extends org.telegram.ui.Components.rl0 {
+    public final Context c;
+    public final boolean d;
+    public final /* synthetic */ n31 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m31(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
-        super(activity, true, true, false);
-        this.w = saveToGallerySettingsActivity;
-        this.v = new org.telegram.ui.Components.d6(this);
-        getDrawable().D = true;
+    public m31(n31 n31Var, Context context, boolean z4) {
+        this.e = n31Var;
+        this.c = context;
+        this.d = z4;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f9 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.d6 d6Var = this.v;
-        d6Var.d(f9, false);
-        int i10 = org.telegram.ui.ActionBar.g6.y6;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
-        setTextColor(i0.a.d(d6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.g6.n6)));
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return l1Var.f == 0;
     }
 
-    public final void e(boolean z10, boolean z11) {
-        if (this.s != z10) {
-            this.s = z10;
-            this.v.d(z10 ? 1.0f : 0.0f, z11);
-            invalidate();
+    @Override // f2.o0
+    public final int h() {
+        boolean z4 = this.d;
+        n31 n31Var = this.e;
+        if (!z4) {
+            return n31Var.h.size() + (n31Var.e >= 0 ? 1 : 0);
         }
+        ArrayList arrayList = n31Var.f;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        return (!this.d && i10 == this.e.e) ? 1 : 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0031, code lost:
+    
+        if (r8 == (r3.f.size() - 1)) goto L16;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0033, code lost:
+    
+        r8 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0057, code lost:
+    
+        if (r8 == (r3.h.size() - 1)) goto L16;
+     */
+    @Override // f2.o0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(f2.l1 l1Var, int i10) {
+        boolean z4;
+        int i11 = l1Var.f;
+        View view = l1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
+            }
+            return;
+        }
+        org.telegram.ui.Cells.t8 t8Var = (org.telegram.ui.Cells.t8) view;
+        boolean z10 = this.d;
+        n31 n31Var = this.e;
+        TranslateController.Language language = null;
+        if (!z10) {
+            int i12 = n31Var.e;
+            if (i12 >= 0 && i10 > i12) {
+                i10--;
+            }
+            if (i10 >= 0 && i10 < n31Var.h.size()) {
+                language = (TranslateController.Language) n31Var.h.get(i10);
+            }
+            z4 = false;
+        } else if (i10 >= 0 && i10 < n31Var.f.size()) {
+            language = (TranslateController.Language) n31Var.f.get(i10);
+        }
+        if (language == null) {
+            return;
+        }
+        String str = language.ownDisplayName;
+        if (str == null) {
+            str = language.displayName;
+        }
+        t8Var.b(str, language.displayName, false, !z4);
+        t8Var.setChecked(n31Var.r.contains(language.code));
+    }
+
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = this.c;
+        if (i10 == 0) {
+            view = new org.telegram.ui.Cells.t8(context);
+        } else if (i10 != 2) {
+            view = new org.telegram.ui.Cells.z6(context, (b) null);
+        } else {
+            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
+            m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
+            view = m4Var;
+        }
+        return new org.telegram.ui.Components.el0(view);
     }
 }

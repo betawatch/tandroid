@@ -1,27 +1,35 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.window.OnBackInvokedCallback;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class za0 extends bg.y3 {
-    public final /* synthetic */ eb0 c;
+public final class za0 implements OnBackInvokedCallback {
+    public final /* synthetic */ LaunchActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public za0(eb0 eb0Var, Context context) {
-        super(context);
-        this.c = eb0Var;
+    public za0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.c.getClass();
-    }
-
-    @Override // bg.y3, android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    @Override // android.window.OnBackInvokedCallback
+    public final void onBackInvoked() {
+        if (AndroidUtilities.isTablet()) {
+            this.a.onBackPressed();
+            return;
+        }
+        if (this.a.c0(true)) {
+            LaunchActivity launchActivity = this.a;
+            ActionBarLayout actionBarLayout = launchActivity.n0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.Z0) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.Z0 = false;
+                actionBarLayout.e(false);
+            }
+        }
     }
 }

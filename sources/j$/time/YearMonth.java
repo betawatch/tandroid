@@ -51,8 +51,8 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
                     temporal = LocalDate.I(temporal);
                 }
                 of2 = of(temporal.j(j$.time.temporal.a.YEAR), temporal.j(j$.time.temporal.a.MONTH_OF_YEAR));
-            } catch (b e10) {
-                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e10);
+            } catch (b e) {
+                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
             }
         }
         if (qVar instanceof ChronoUnit) {
@@ -281,22 +281,22 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     public final String toString() {
         int abs = Math.abs(this.a);
-        StringBuilder sb2 = new StringBuilder(9);
+        StringBuilder sb = new StringBuilder(9);
         if (abs < 1000) {
             int i10 = this.a;
             if (i10 < 0) {
-                sb2.append(i10 - 10000);
-                sb2.deleteCharAt(1);
+                sb.append(i10 - 10000);
+                sb.deleteCharAt(1);
             } else {
-                sb2.append(i10 + 10000);
-                sb2.deleteCharAt(0);
+                sb.append(i10 + 10000);
+                sb.deleteCharAt(0);
             }
         } else {
-            sb2.append(this.a);
+            sb.append(this.a);
         }
-        sb2.append(this.b < 10 ? "-0" : "-");
-        sb2.append(this.b);
-        return sb2.toString();
+        sb.append(this.b < 10 ? "-0" : "-");
+        sb.append(this.b);
+        return sb.toString();
     }
 
     private Object writeReplace() {

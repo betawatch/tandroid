@@ -1,18 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import bd.p;
-import i7.c7;
+import dd.p;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import jd.c0;
-import jd.e0;
-import jd.f1;
-import qc.f;
-import sc.c;
-import uc.i;
+import k7.p7;
+import ld.c0;
+import ld.e0;
+import ld.f1;
+import sc.f;
+import uc.c;
+import vc.a;
+import wc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzaf extends i implements p {
     int zza;
@@ -29,25 +30,25 @@ final class zzaf extends i implements p {
         this.zzd = zzhkVar;
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final c create(Object obj, c cVar) {
         zzaf zzafVar = new zzaf(this.zzb, this.zzc, this.zzd, cVar);
         zzafVar.zze = obj;
         return zzafVar;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaf) create((c0) obj, (c) obj2)).invokeSuspend(qc.i.a);
+        return ((zzaf) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
     }
 
-    @Override // uc.a
+    @Override // wc.a
     public final Object invokeSuspend(Object obj) {
         zzxx zzp;
         List list;
-        tc.a aVar = tc.a.a;
+        a aVar = a.a;
         int i10 = this.zza;
-        c7.b(obj);
+        p7.b(obj);
         if (i10 == 0) {
             c0 c0Var = (c0) this.zze;
             ArrayList arrayList = new ArrayList();

@@ -2,7 +2,7 @@ package ru.noties.jlatexmath.awt.geom;
 
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public class AffineTransform implements Cloneable {
     private final Canvas canvas;
@@ -65,14 +65,14 @@ public class AffineTransform implements Cloneable {
         this.scaleY = d10;
     }
 
-    public void setTranslate(float f9, float f10) {
-        this.translateX = f9;
-        this.translateY = f10;
+    public void setTranslate(float f10, float f11) {
+        this.translateX = f10;
+        this.translateY = f11;
     }
 
-    public void translate(float f9, float f10) {
-        this.canvas.translate(f9, f10);
-        setTranslate(f9, f10);
+    public void translate(float f10, float f11) {
+        this.canvas.translate(f10, f11);
+        setTranslate(f10, f11);
     }
 
     public float translateX() {

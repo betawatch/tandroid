@@ -1,72 +1,172 @@
 package lh;
 
+import android.content.Context;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class p7 implements m2.e {
-    public final /* synthetic */ i9 a;
-    public final /* synthetic */ y8 b;
+public final class p7 {
+    public final org.telegram.ui.ActionBar.p2 a;
+    public final long b;
+    public final ic c;
+    public final cc d;
+    public final gc e;
+    public final bc f;
+    public int g;
+    public long h;
+    public m6 i;
+    public final ArrayList j = new ArrayList();
+    public final HashSet k = new HashSet();
+    public final long l = System.currentTimeMillis();
+    public boolean m = true;
+    public boolean n;
+    public boolean o;
+    public final o7 p;
 
-    public p7(y8 y8Var, i9 i9Var) {
-        this.b = y8Var;
-        this.a = i9Var;
-    }
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Runnable, lh.o7] */
+    public p7(org.telegram.ui.ActionBar.p2 p2Var, long j10) {
+        final int i10 = 0;
+        ?? r22 = new Runnable(this) { // from class: lh.o7
+            public final /* synthetic */ p7 b;
 
-    @Override // m2.e
-    public final void a(int i10) {
-        y8 y8Var = this.b;
-        d4 currentPeerView = y8Var.getCurrentPeerView();
-        if (currentPeerView == null) {
-            return;
-        }
-        ((z8) y8Var.x0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
-        y8Var.F();
-        i9 i9Var = this.a;
-        e9 e9Var = i9Var.p0;
-        if (e9Var != null) {
-            if (i10 < 3) {
-                e9Var.d(false);
-            } else if (i10 > y8Var.v0.b() - 4) {
-                i9Var.p0.d(true);
+            {
+                this.b = this;
             }
-        }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        p7 p7Var = this.b;
+                        if (!p7Var.n && !p7Var.o && p7Var.m) {
+                            p7Var.n = true;
+                            m6 m6Var = p7Var.i;
+                            if (m6Var != null) {
+                                m6Var.run(p7Var.k);
+                            }
+                            if (p7Var.e != null) {
+                                p7Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        this.p = r22;
+        this.a = p2Var;
+        this.b = j10;
+        Context t6 = t7.t(p2Var);
+        cc ccVar = new cc(t6, p2Var.getResourceProvider());
+        this.d = ccVar;
+        ccVar.c(R.raw.stars_topup, new String[0]);
+        bc bcVar = new bc(t6, p2Var.getResourceProvider());
+        this.f = bcVar;
+        bcVar.b = 3000L;
+        bcVar.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, p2Var.getResourceProvider()));
+        gc gcVar = new gc(t6, p2Var.getResourceProvider(), true, false);
+        this.e = gcVar;
+        gcVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        final int i11 = 1;
+        gcVar.a = new Runnable(this) { // from class: lh.o7
+            public final /* synthetic */ p7 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        p7 p7Var = this.b;
+                        if (!p7Var.n && !p7Var.o && p7Var.m) {
+                            p7Var.n = true;
+                            m6 m6Var = p7Var.i;
+                            if (m6Var != null) {
+                                m6Var.run(p7Var.k);
+                            }
+                            if (p7Var.e != null) {
+                                p7Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        gcVar.addView(bcVar, k7.b6.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        gcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        ccVar.setButton(gcVar);
+        ic b10 = qc.a0(p2Var).b(ccVar, -1);
+        this.c = b10;
+        b10.r = false;
+        b10.k(true);
+        final int i12 = 0;
+        b10.v = new Runnable(this) { // from class: lh.o7
+            public final /* synthetic */ p7 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i12) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        p7 p7Var = this.b;
+                        if (!p7Var.n && !p7Var.o && p7Var.m) {
+                            p7Var.n = true;
+                            m6 m6Var = p7Var.i;
+                            if (m6Var != null) {
+                                m6Var.run(p7Var.k);
+                            }
+                            if (p7Var.e != null) {
+                                p7Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        AndroidUtilities.cancelRunOnUIThread(r22);
+        AndroidUtilities.runOnUIThread(r22, 3000L);
     }
 
-    @Override // m2.e
-    public final void b(float f9, int i10, int i11) {
-        y8 y8Var = this.b;
-        y8Var.E0 = i10;
-        y8Var.F0 = i11 > 0 ? i10 + 1 : i10 - 1;
-        y8Var.G0 = f9;
-        long j10 = UserConfig.getInstance(y8Var.u0).clientUserId;
-        int i12 = y8Var.E0;
-        if (i12 >= 0 && (y8Var.t0 != null ? y8Var.s0 == j10 : !(i12 >= y8Var.w0.size() || ((Long) y8Var.w0.get(y8Var.E0)).longValue() != j10))) {
-            ((z8) y8Var.x0).d(1.0f - y8Var.G0);
+    public final void a() {
+        if (this.n || this.o) {
             return;
         }
-        int i13 = y8Var.F0;
-        if (i13 < 0 || (y8Var.t0 != null ? y8Var.s0 != j10 : i13 >= y8Var.w0.size() || ((Long) y8Var.w0.get(y8Var.F0)).longValue() != j10)) {
-            ((z8) y8Var.x0).d(0.0f);
-        } else {
-            ((z8) y8Var.x0).d(y8Var.G0);
+        this.o = true;
+        ArrayList arrayList = this.j;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
         }
-    }
-
-    @Override // m2.e
-    public final void c(int i10) {
-        y8 y8Var = this.b;
-        ((z8) y8Var.x0).d.P();
-        Runnable runnable = y8Var.C0;
-        if (runnable != null && i10 == 0) {
-            runnable.run();
-            y8Var.C0 = null;
-        }
-        y8Var.B0 = i10;
-        i9 i9Var = y8Var.M0;
-        if (i9Var.j0.B0 == 1) {
-            AndroidUtilities.cancelRunOnUIThread(i9Var.X0);
+        if (this.e != null) {
+            this.c.b();
         }
     }
 }

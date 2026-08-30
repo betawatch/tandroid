@@ -1,23 +1,31 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class g60 implements Comparator {
-    public static String a(TLObject tLObject) {
-        if (!(tLObject instanceof TLRPC.User)) {
-            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
-        }
-        TLRPC.User user = (TLRPC.User) tLObject;
-        return ContactsController.formatName(user.first_name, user.last_name);
+public final class g60 extends org.telegram.ui.Components.voip.l {
+    public final /* synthetic */ i60 h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g60(i60 i60Var, Context context) {
+        super(context, true);
+        this.h = i60Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return a((TLObject) obj).compareTo(a((TLObject) obj2));
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        i60 i60Var = this.h;
+        if (!i60Var.r || getParticipant() == null) {
+            return;
+        }
+        i60Var.E(this, true);
+    }
+
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.h.E(this, false);
     }
 }

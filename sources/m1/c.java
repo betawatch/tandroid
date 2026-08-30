@@ -2,20 +2,20 @@ package m1;
 
 import android.content.Context;
 import androidx.lifecycle.k0;
-import bd.l;
-import i7.m7;
+import dd.l;
 import java.util.List;
-import jd.c0;
-import k1.a0;
+import k1.d0;
+import k7.s7;
+import ld.c0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
     public final l b;
     public final c0 c;
     public final Object d;
-    public volatile za.c e;
+    public volatile a3.c e;
 
     public c(String name, l lVar, c0 c0Var) {
         kotlin.jvm.internal.j.e(name, "name");
@@ -25,12 +25,12 @@ public final class c {
         this.d = new Object();
     }
 
-    public final za.c a(Object obj, fd.g property) {
-        za.c cVar;
+    public final a3.c a(Object obj, hd.g property) {
+        a3.c cVar;
         Context thisRef = (Context) obj;
         kotlin.jvm.internal.j.e(thisRef, "thisRef");
         kotlin.jvm.internal.j.e(property, "property");
-        za.c cVar2 = this.e;
+        a3.c cVar2 = this.e;
         if (cVar2 != null) {
             return cVar2;
         }
@@ -44,7 +44,7 @@ public final class c {
                     c0 c0Var = this.c;
                     b bVar = new b(applicationContext, this);
                     kotlin.jvm.internal.j.e(migrations, "migrations");
-                    this.e = new za.c(new a0(new k0(bVar, 2), m7.a(new ja.l(migrations, null, 3)), new ab.b(12), c0Var), 27);
+                    this.e = new a3.c(new d0(new k0(bVar, 2), s7.a(new k1.c(migrations, (uc.c) null, 0)), new cb.b(11), c0Var), 25);
                 }
                 cVar = this.e;
                 kotlin.jvm.internal.j.b(cVar);

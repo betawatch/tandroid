@@ -1,31 +1,33 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import i7.b7;
-import i7.c7;
+import f0.f;
+import k7.o7;
+import k7.p7;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
-import qc.c;
-import qc.g;
-import sd.d;
-import sd.e;
+import sc.c;
+import sc.g;
+import ud.a;
+import ud.d;
+import ud.e;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
-    private final sd.a zzb = e.a();
+    private final a zzb = e.a();
     private zzeq zzc;
     private final c zzd;
 
     public zzeh(Application application) {
         this.zza = application;
         int i10 = zzby.zza;
-        this.zzd = b7.a(zzef.zza);
+        this.zzd = o7.a(zzef.zza);
         zzdp.zza(application);
     }
 
-    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, sc.c cVar, int i10, Object obj) {
+    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, uc.c cVar, int i10, Object obj) {
         if ((i10 & 8) != 0) {
             zzdqVar = zzdq.zza;
         }
@@ -40,7 +42,7 @@ public final class zzeh {
         if (j10 < 5000) {
             throw new zzcg(zzce.zzj, zzcd.zzI, null, null, 12, null);
         }
-        if (f0.e.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
+        if (f.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
             throw new zzcg(zzce.zzc, zzcd.zzao, null, null, 12, null);
         }
     }
@@ -57,10 +59,10 @@ public final class zzeh {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, sc.c cVar) {
+    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, uc.c cVar) {
         zzea zzeaVar;
         Object obj;
-        tc.a aVar;
+        vc.a aVar;
         int i10;
         String str2;
         zzdq zzdqVar2;
@@ -75,11 +77,11 @@ public final class zzeh {
                     zzeaVar.zzg = i11 - TLObject.FLAG_31;
                     zzea zzeaVar2 = zzeaVar;
                     obj = zzeaVar2.zze;
-                    aVar = tc.a.a;
+                    aVar = vc.a.a;
                     i10 = zzeaVar2.zzg;
                     if (i10 != 0) {
-                        c7.b(obj);
-                        sd.a aVar2 = this.zzb;
+                        p7.b(obj);
+                        a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
                         zzeaVar2.zzb = null;
@@ -99,9 +101,9 @@ public final class zzeh {
                         if (i10 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        obj3 = (sd.a) zzeaVar2.zza;
+                        obj3 = (a) zzeaVar2.zza;
                         try {
-                            c7.b(obj);
+                            p7.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).e(null);
                             return zzeqVar;
@@ -112,10 +114,10 @@ public final class zzeh {
                         }
                     }
                     long j12 = zzeaVar2.zzd;
-                    Object obj4 = (sd.a) zzeaVar2.zzc;
+                    Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    c7.b(obj);
+                    p7.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;
@@ -158,7 +160,7 @@ public final class zzeh {
         zzeaVar = new zzea(this, cVar);
         zzea zzeaVar22 = zzeaVar;
         obj = zzeaVar22.zze;
-        aVar = tc.a.a;
+        aVar = vc.a.a;
         i10 = zzeaVar22.zzg;
         if (i10 != 0) {
         }

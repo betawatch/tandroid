@@ -98,8 +98,8 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
         return new ZoneRules(this);
     }
 
-    public static int P(CharSequence charSequence, int i10, boolean z10) {
-        if (z10) {
+    public static int P(CharSequence charSequence, int i10, boolean z4) {
+        if (z4) {
             String str = (String) charSequence;
             if (str.charAt(i10 - 1) != ':') {
                 throw new b("Invalid ID for ZoneOffset, colon not found when expected: " + ((Object) str));
@@ -171,28 +171,28 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
     }
 
     public ZoneOffset(int i10) {
-        String sb2;
+        String sb;
         this.b = i10;
         if (i10 == 0) {
-            sb2 = "Z";
+            sb = "Z";
         } else {
             int abs = Math.abs(i10);
-            StringBuilder sb3 = new StringBuilder();
+            StringBuilder sb2 = new StringBuilder();
             int i11 = abs / 3600;
             int i12 = (abs / 60) % 60;
-            sb3.append(i10 < 0 ? "-" : "+");
-            sb3.append(i11 < 10 ? "0" : "");
-            sb3.append(i11);
-            sb3.append(i12 < 10 ? ":0" : ":");
-            sb3.append(i12);
+            sb2.append(i10 < 0 ? "-" : "+");
+            sb2.append(i11 < 10 ? "0" : "");
+            sb2.append(i11);
+            sb2.append(i12 < 10 ? ":0" : ":");
+            sb2.append(i12);
             int i13 = abs % 60;
             if (i13 != 0) {
-                sb3.append(i13 < 10 ? ":0" : ":");
-                sb3.append(i13);
+                sb2.append(i13 < 10 ? ":0" : ":");
+                sb2.append(i13);
             }
-            sb2 = sb3.toString();
+            sb = sb2.toString();
         }
-        this.c = sb2;
+        this.c = sb;
     }
 
     public int getTotalSeconds() {

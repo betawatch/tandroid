@@ -1,152 +1,112 @@
 package lh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.bj0;
+import android.app.Activity;
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class r8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i9 b;
+public final /* synthetic */ class r8 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ KeyEvent.Callback f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Context r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ r8(i9 i9Var, int i10) {
-        this.a = i10;
-        this.b = i9Var;
+    public /* synthetic */ r8(eb ebVar, MessageObject messageObject, xn xnVar, int i10, boolean z4, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j10, TLRPC.Chat chat) {
+        this.f = ebVar;
+        this.h = messageObject;
+        this.n = xnVar;
+        this.b = i10;
+        this.c = z4;
+        this.r = context;
+        this.d = f6Var;
+        this.e = j10;
+        this.s = chat;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        d4 t10;
-        bj0 bj0Var;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                i9 i9Var = this.b;
-                f9 f9Var = i9Var.o0;
-                x8 x8Var = i9Var.v;
-                if (x8Var != null) {
-                    x8Var.a(true);
-                }
-                i9Var.o();
-                i9Var.F0.unlock();
-                w6 w6Var = i9Var.q1;
-                if (w6Var != null) {
-                    w6Var.b();
-                    AndroidUtilities.removeFromParent(i9Var.q1);
-                    i9Var.q1 = null;
-                }
-                ImageReceiver imageReceiver = f9Var.b;
-                if (imageReceiver != null) {
-                    imageReceiver.setVisible(true, true);
-                    f9Var.b = null;
-                }
-                ImageReceiver imageReceiver2 = f9Var.c;
-                if (imageReceiver2 != null) {
-                    imageReceiver2.setAlpha(1.0f);
-                    f9Var.c.setVisible(true, true);
-                }
-                if (f9Var.d != null && (t10 = i9Var.t()) != null && (bj0Var = t10.k1.d) != null) {
-                    bj0 bj0Var2 = f9Var.d;
-                    bj0Var2.getClass();
-                    bj0Var2.c = bj0Var.c;
-                    bj0Var2.f = bj0Var.f;
-                    bj0Var2.b = bj0Var.b;
-                    bj0Var2.a = System.currentTimeMillis();
-                    bj0Var2.c();
-                }
-                c4 c4Var = i9Var.C0;
-                if (c4Var != null) {
-                    c4Var.a();
-                }
-                SurfaceView surfaceView = i9Var.y0;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(4);
-                }
-                i9Var.I();
-                try {
-                    AndroidUtilities.runOnUIThread(new m5(this, 11));
-                } catch (Exception unused) {
-                }
-                i9Var.i0 = false;
-                i9Var.d = false;
-                j3 j3Var = i9Var.k1;
-                if (j3Var != null) {
-                    j3Var.run();
-                    i9Var.k1 = null;
-                    break;
-                }
-                break;
-            case 1:
-                i9 i9Var2 = this.b;
-                i9Var2.D = null;
-                i9Var2.V = 0.0f;
-                i9Var2.Z = 0.0f;
-                y8 y8Var = i9Var2.j0;
-                d4 currentPeerView = y8Var != null ? y8Var.getCurrentPeerView() : null;
-                if (currentPeerView != null) {
-                    currentPeerView.invalidate();
-                    break;
+                ph.d dVar = (ph.d) this.f;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
+                org.telegram.ui.ActionBar.g3[] g3VarArr = (org.telegram.ui.ActionBar.g3[]) this.n;
+                Activity activity = (Activity) this.r;
+                String str = (String) this.s;
+                if (!dVar.K) {
+                    int i10 = this.b;
+                    t7 y10 = t7.y(i10, false);
+                    long j10 = this.e;
+                    kh.x xVar = new kh.x(dVar, starsSubscription, i10, g3VarArr, j10, 2);
+                    if (y10.f.amount >= starsSubscription.pricing.amount) {
+                        xVar.run();
+                        break;
+                    } else {
+                        new z9(activity, this.d, starsSubscription.pricing.amount, this.c ? 8 : j10 < 0 ? 2 : 7, str, xVar, j10).show();
+                        break;
+                    }
                 }
                 break;
             default:
-                i9 i9Var3 = this.b;
-                f9 f9Var2 = i9Var3.o0;
-                i9Var3.Q = 1.0f;
-                i9Var3.o();
-                i9.t1 = false;
-                x8 x8Var2 = i9Var3.v;
-                if (x8Var2 != null) {
-                    x8Var2.a(true);
-                }
-                w8 w8Var = i9Var3.s;
-                if (w8Var != null) {
-                    w8Var.invalidate();
-                }
-                ImageReceiver imageReceiver3 = f9Var2.b;
-                if (imageReceiver3 != null && !i9Var3.d) {
-                    imageReceiver3.setVisible(true, true);
-                    f9Var2.b = null;
-                }
-                ImageReceiver imageReceiver4 = f9Var2.c;
-                if (imageReceiver4 != null && !i9Var3.d) {
-                    imageReceiver4.setAlpha(1.0f);
-                    f9Var2.c.setVisible(true, true);
-                    f9Var2.c = null;
-                }
-                d4 t11 = i9Var3.t();
-                if (t11 != null) {
-                    t11.f1(false);
-                }
-                d1 d1Var = i9Var3.w0;
-                if (d1Var != null) {
-                    d1Var.v((1.0f - i9Var3.R) * i9Var3.Q);
-                }
-                if (i9Var3.s1) {
-                    i9Var3.s1 = false;
-                    i9Var3.p();
-                    AndroidUtilities.runOnUIThread(new j3(i9Var3, 1), 30L);
-                } else if (!SharedConfig.storiesIntroShown) {
-                    if (i9Var3.q1 == null && i9Var3.v != null) {
-                        w6 w6Var2 = new w6(i9Var3.v.getContext(), i9Var3.s);
-                        i9Var3.q1 = w6Var2;
-                        w6Var2.setAlpha(0.0f);
-                        i9Var3.v.addView(i9Var3.q1);
+                eb ebVar = (eb) this.f;
+                MessageObject messageObject = (MessageObject) this.h;
+                xn xnVar = (xn) this.n;
+                TLRPC.Chat chat = (TLRPC.Chat) this.s;
+                if (!ebVar.O) {
+                    long value = ebVar.r.getValue();
+                    if ((ebVar.M != null || (messageObject != null && xnVar != null)) && ebVar.S == null) {
+                        int i11 = this.b;
+                        if (!MessagesController.getInstance(i11).isFrozen()) {
+                            t7 y11 = t7.y(i11, false);
+                            kh.g1 g1Var = new kh.g1(ebVar, value, y11, messageObject, xnVar, 7);
+                            if (y11.e && y11.p().amount < value) {
+                                boolean z4 = this.c;
+                                Context context = this.r;
+                                org.telegram.ui.ActionBar.f6 f6Var = this.d;
+                                long j11 = this.e;
+                                if (!z4) {
+                                    new z9(context, f6Var, value, 5, chat == null ? "" : chat.title, g1Var, j11).show();
+                                    break;
+                                } else {
+                                    new z9(context, f6Var, value, 17, DialogObject.getShortName(i11, j11), g1Var, j11).show();
+                                    break;
+                                }
+                            } else {
+                                g1Var.run();
+                                break;
+                            }
+                        } else {
+                            org.telegram.ui.c.b(i11);
+                            break;
+                        }
                     }
-                    w6 w6Var3 = i9Var3.q1;
-                    if (w6Var3 != null) {
-                        w6Var3.setOnClickListener(new ag.o(this, 29));
-                        i9Var3.q1.animate().alpha(1.0f).setDuration(150L).setListener(new b9(this, 1)).start();
-                    }
-                    SharedConfig.setStoriesIntroShown(true);
                 }
-                i9Var3.P();
-                i9Var3.F0.unlock();
                 break;
         }
+    }
+
+    public /* synthetic */ r8(ph.d dVar, int i10, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.g3[] g3VarArr, long j10, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, boolean z4, String str) {
+        this.f = dVar;
+        this.b = i10;
+        this.h = starsSubscription;
+        this.n = g3VarArr;
+        this.e = j10;
+        this.r = activity;
+        this.d = f6Var;
+        this.c = z4;
+        this.s = str;
     }
 }

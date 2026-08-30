@@ -5,22 +5,22 @@ import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+    public final /* synthetic */ r b;
 
-    public /* synthetic */ j(q qVar, int i10) {
+    public /* synthetic */ j(r rVar, int i10) {
         this.a = i10;
-        this.b = qVar;
+        this.b = rVar;
     }
 
     @Override // androidx.lifecycle.a0
-    public final void S(Object obj) {
+    public final void m0(Object obj) {
         int i10;
         int i11 = this.a;
-        q qVar = this.b;
+        r rVar = this.b;
         switch (i11) {
             case 0:
                 f fVar = (f) obj;
@@ -48,28 +48,28 @@ public final class j implements androidx.lifecycle.a0 {
                             i12 = 8;
                             break;
                     }
-                    Context n10 = qVar.n();
+                    Context n10 = rVar.n();
                     int i13 = Build.VERSION.SDK_INT;
-                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && h7.y.b(n10) && h7.u.a(qVar.h0.c()))) {
-                        qVar.S();
-                    } else if (qVar.R()) {
+                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && j7.m.b(n10) && com.google.android.gms.internal.cast.n.a(rVar.i0.c()))) {
+                        rVar.S();
+                    } else if (rVar.R()) {
                         if (charSequence == null) {
-                            charSequence = h7.x.a(qVar.n(), i12);
+                            charSequence = h7.s.a(rVar.n(), i12);
                         }
                         if (i12 == 5) {
-                            int i14 = qVar.h0.l;
+                            int i14 = rVar.i0.l;
                             if (i14 == 0 || i14 == 3) {
-                                qVar.U(i12, charSequence);
+                                rVar.U(i12, charSequence);
                             }
-                            qVar.O();
+                            rVar.O();
                         } else {
-                            if (qVar.h0.w) {
-                                qVar.T(i12, charSequence);
+                            if (rVar.i0.w) {
+                                rVar.T(i12, charSequence);
                             } else {
-                                qVar.W(charSequence);
-                                Handler handler = qVar.g0;
-                                g gVar = new g(qVar, i12, charSequence, 1);
-                                Context n11 = qVar.n();
+                                rVar.W(charSequence);
+                                Handler handler = rVar.h0;
+                                g gVar = new g(rVar, i12, charSequence, 1);
+                                Context n11 = rVar.n();
                                 if (n11 != null) {
                                     String str = Build.MODEL;
                                     if (i13 == 28 && str != null) {
@@ -84,27 +84,27 @@ public final class j implements androidx.lifecycle.a0 {
                                 i10 = 2000;
                                 handler.postDelayed(gVar, i10);
                             }
-                            qVar.h0.w = true;
+                            rVar.i0.w = true;
                         }
                     } else {
                         if (charSequence == null) {
-                            charSequence = qVar.q(R.string.default_error_msg) + " " + i12;
+                            charSequence = rVar.q(R.string.default_error_msg) + " " + i12;
                         }
-                        qVar.T(i12, charSequence);
+                        rVar.T(i12, charSequence);
                     }
-                    qVar.h0.d(null);
+                    rVar.i0.d(null);
                     break;
                 }
                 break;
             default:
                 if (((Boolean) obj).booleanValue()) {
-                    qVar.N(1);
-                    qVar.O();
-                    z zVar = qVar.h0;
-                    if (zVar.x == null) {
-                        zVar.x = new androidx.lifecycle.z();
+                    rVar.N(1);
+                    rVar.O();
+                    a0 a0Var = rVar.i0;
+                    if (a0Var.x == null) {
+                        a0Var.x = new androidx.lifecycle.z();
                     }
-                    z.h(zVar.x, Boolean.FALSE);
+                    a0.h(a0Var.x, Boolean.FALSE);
                     break;
                 }
                 break;

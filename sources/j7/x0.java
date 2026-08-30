@@ -1,15 +1,19 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class x0 {
-    public final w0 a;
-    public final Integer b;
-    public final g7 c;
+public final class x0 implements u9.d {
+    public static final x0 a = new x0();
 
-    public /* synthetic */ x0(androidx.biometric.e eVar) {
-        this.a = (w0) eVar.b;
-        this.b = (Integer) eVar.c;
-        this.c = (g7) eVar.d;
+    static {
+        e2.c.r(e2.c.n(i.class, e2.c.f(6, e2.c.n(i.class, e2.c.f(5, e2.c.n(i.class, e2.c.f(4, e2.c.n(i.class, e2.c.f(3, e2.c.n(i.class, e2.c.f(2, e2.c.n(i.class, new e(1)))))))))))));
+    }
+
+    @Override // u9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

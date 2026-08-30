@@ -38,7 +38,7 @@ public abstract class t3 implements b8 {
 
     public abstract boolean g0(Spliterator spliterator, j5 j5Var);
 
-    public abstract e2 j0(Spliterator spliterator, boolean z10, IntFunction intFunction);
+    public abstract e2 j0(Spliterator spliterator, boolean z4, IntFunction intFunction);
 
     public abstract long k0(Spliterator spliterator);
 
@@ -65,8 +65,8 @@ public abstract class t3 implements b8 {
                 try {
                     g gVar = (g) it.next();
                     hashSet.add(gVar == null ? null : gVar == g.CONCURRENT ? Collector.Characteristics.CONCURRENT : gVar == g.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-                } catch (ClassCastException e10) {
-                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e6) {
+                    j$.util.g.a(e6, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -80,8 +80,8 @@ public abstract class t3 implements b8 {
                 try {
                     Collector.Characteristics characteristics = (Collector.Characteristics) it2.next();
                     hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? g.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? g.UNORDERED : g.IDENTITY_FINISH);
-                } catch (ClassCastException e11) {
-                    j$.util.g.a(e11, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e10) {
+                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -104,9 +104,9 @@ public abstract class t3 implements b8 {
         return Long.MAX_VALUE;
     }
 
-    public static y4 E0(Spliterator spliterator, boolean z10) {
+    public static y4 E0(Spliterator spliterator, boolean z4) {
         Objects.requireNonNull(spliterator);
-        return new y4(spliterator, v6.l(spliterator), z10);
+        return new y4(spliterator, v6.l(spliterator), z4);
     }
 
     public static Spliterator X(w6 w6Var, Spliterator spliterator, long j10, long j11) {
@@ -296,13 +296,13 @@ public abstract class t3 implements b8 {
         return new r2(j10);
     }
 
-    public static e2 a0(t3 t3Var, Spliterator spliterator, boolean z10, IntFunction intFunction) {
+    public static e2 a0(t3 t3Var, Spliterator spliterator, boolean z4, IntFunction intFunction) {
         long k02 = t3Var.k0(spliterator);
         if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
             k0 k0Var = new k0();
             k0Var.a = intFunction;
             e2 e2Var = (e2) new j2(t3Var, spliterator, k0Var, new a1(19), 3).invoke();
-            return z10 ? m0(e2Var, intFunction) : e2Var;
+            return z4 ? m0(e2Var, intFunction) : e2Var;
         }
         if (k02 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
@@ -362,11 +362,11 @@ public abstract class t3 implements b8 {
         return s02.build();
     }
 
-    public static a2 c0(t3 t3Var, Spliterator spliterator, boolean z10) {
+    public static a2 c0(t3 t3Var, Spliterator spliterator, boolean z4) {
         long k02 = t3Var.k0(spliterator);
         if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
             a2 a2Var = (a2) new j2(t3Var, spliterator, new a1(15), new a1(16), 1).invoke();
-            return z10 ? o0(a2Var) : a2Var;
+            return z4 ? o0(a2Var) : a2Var;
         }
         if (k02 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
@@ -376,11 +376,11 @@ public abstract class t3 implements b8 {
         return new z2(iArr);
     }
 
-    public static c2 d0(t3 t3Var, Spliterator spliterator, boolean z10) {
+    public static c2 d0(t3 t3Var, Spliterator spliterator, boolean z4) {
         long k02 = t3Var.k0(spliterator);
         if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
             c2 c2Var = (c2) new j2(t3Var, spliterator, new a1(17), new a1(18), 2).invoke();
-            return z10 ? p0(c2Var) : c2Var;
+            return z4 ? p0(c2Var) : c2Var;
         }
         if (k02 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
@@ -433,11 +433,11 @@ public abstract class t3 implements b8 {
         return t02.build();
     }
 
-    public static y1 b0(t3 t3Var, Spliterator spliterator, boolean z10) {
+    public static y1 b0(t3 t3Var, Spliterator spliterator, boolean z4) {
         long k02 = t3Var.k0(spliterator);
         if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
             y1 y1Var = (y1) new j2(t3Var, spliterator, new a1(13), new a1(14), 0).invoke();
-            return z10 ? n0(y1Var) : y1Var;
+            return z4 ? n0(y1Var) : y1Var;
         }
         if (k02 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");

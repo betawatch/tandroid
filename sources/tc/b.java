@@ -1,41 +1,33 @@
 package tc;
 
-import bd.p;
-import i7.c7;
-import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.t;
-import uc.g;
+import java.util.RandomAccess;
+import k7.q7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b extends g {
-    public int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ sc.c c;
+public final class b extends c implements RandomAccess {
+    public final c a;
+    public final int b;
+    public final int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(p pVar, sc.c cVar, sc.c cVar2) {
-        super(cVar);
-        this.b = pVar;
-        this.c = cVar2;
+    public b(c cVar, int i10, int i11) {
+        this.a = cVar;
+        this.b = i10;
+        q7.a(i10, i11, cVar.i());
+        this.c = i11 - i10;
     }
 
-    @Override // uc.a
-    public final Object invokeSuspend(Object obj) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            if (i10 != 1) {
-                throw new IllegalStateException("This coroutine had already completed");
-            }
-            this.a = 2;
-            c7.b(obj);
-            return obj;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        int i11 = this.c;
+        if (i10 < 0 || i10 >= i11) {
+            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, i11, "index: ", ", size: "));
         }
-        this.a = 1;
-        c7.b(obj);
-        p pVar = this.b;
-        j.c(pVar, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted>, kotlin.Any?>");
-        t.a(2, pVar);
-        return pVar.invoke(this.c, this);
+        return this.a.get(this.b + i10);
+    }
+
+    @Override // tc.c
+    public final int i() {
+        return this.c;
     }
 }

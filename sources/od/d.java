@@ -1,66 +1,27 @@
 package od;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import n7.qa;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "_next$volatile");
-    public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "_prev$volatile");
-    private volatile /* synthetic */ Object _next$volatile;
-    private volatile /* synthetic */ Object _prev$volatile;
+public final class d extends wc.c {
+    public /* synthetic */ Object a;
+    public int b;
+    public final /* synthetic */ qa c;
+    public qa d;
+    public c e;
 
-    public d(u uVar) {
-        this._prev$volatile = uVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(qa qaVar, wc.c cVar) {
+        super(cVar);
+        this.c = qaVar;
     }
 
-    public final void b() {
-        b.set(this, null);
-    }
-
-    public final d c() {
-        Object obj = a.get(this);
-        if (obj == a.b) {
-            return null;
-        }
-        return (d) obj;
-    }
-
-    public abstract boolean d();
-
-    public final void e() {
-        d c3;
-        if (c() == null) {
-            return;
-        }
-        while (true) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b;
-            d dVar = (d) atomicReferenceFieldUpdater.get(this);
-            while (dVar != null && dVar.d()) {
-                dVar = (d) atomicReferenceFieldUpdater.get(dVar);
-            }
-            d c6 = c();
-            kotlin.jvm.internal.j.b(c6);
-            while (c6.d() && (c3 = c6.c()) != null) {
-                c6 = c3;
-            }
-            while (true) {
-                Object obj = atomicReferenceFieldUpdater.get(c6);
-                d dVar2 = ((d) obj) == null ? null : dVar;
-                while (!atomicReferenceFieldUpdater.compareAndSet(c6, obj, dVar2)) {
-                    if (atomicReferenceFieldUpdater.get(c6) != obj) {
-                        break;
-                    }
-                }
-            }
-            if (dVar != null) {
-                a.set(dVar, c6);
-            }
-            if (!c6.d() || c6.c() == null) {
-                if (dVar == null || !dVar.d()) {
-                    return;
-                }
-            }
-        }
+    @Override // wc.a
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.b |= TLObject.FLAG_31;
+        return this.c.z(null, this);
     }
 }

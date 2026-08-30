@@ -1,0 +1,260 @@
+package mg;
+
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.gj0;
+import org.telegram.ui.Components.l5;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.bz;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class d {
+    public static int m;
+    public l5 a;
+    public Rect b;
+    public ArrayList c;
+    public View d;
+    public long e;
+    public boolean f;
+    public boolean g;
+    public int h;
+    public boolean i;
+    public ImageReceiver j;
+    public int k;
+    public long l;
+
+    public static d a(l5 l5Var, boolean z4, boolean z10) {
+        int i10 = UserConfig.selectedAccount;
+        d dVar = new d();
+        dVar.b = new Rect();
+        dVar.c = new ArrayList();
+        dVar.g = true;
+        dVar.k = -1;
+        dVar.a = l5Var;
+        dVar.f = z4;
+        dVar.h = i10;
+        dVar.i = z10;
+        dVar.e = System.currentTimeMillis();
+        if (z10 && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_CHAT)) {
+            ImageReceiver imageReceiver = new ImageReceiver();
+            dVar.j = imageReceiver;
+            if (z4) {
+                imageReceiver.setAllowDrawWhileCacheGenerating(true);
+            }
+        }
+        return dVar;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0190 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(Canvas canvas) {
+        float f10;
+        Rect rect = this.b;
+        ImageReceiver imageReceiver = this.j;
+        ArrayList arrayList = this.c;
+        boolean z4 = this.f;
+        if (z4) {
+            long currentTimeMillis = System.currentTimeMillis();
+            if (arrayList.size() < 12) {
+                long j10 = currentTimeMillis - this.e;
+                if (j10 < 1500 && j10 > 200 && currentTimeMillis - this.l > 50 && Utilities.fastRandom.nextInt() % 6 == 0) {
+                    c cVar = new c(this);
+                    cVar.a();
+                    arrayList.add(cVar);
+                    this.l = currentTimeMillis;
+                }
+            }
+        } else if (this.g) {
+            for (int i10 = 0; i10 < 7; i10++) {
+                c cVar2 = new c(this);
+                cVar2.a();
+                arrayList.add(cVar2);
+            }
+        }
+        if (imageReceiver != null && this.i && (imageReceiver.getLottieAnimation() == null || !imageReceiver.getLottieAnimation().y())) {
+            if (z4) {
+                canvas.save();
+                canvas.translate(rect.width() / 3.0f, 0.0f);
+                imageReceiver.draw(canvas);
+                canvas.restore();
+            } else {
+                imageReceiver.draw(canvas);
+            }
+        }
+        canvas.save();
+        canvas.translate(rect.left, rect.top);
+        int i11 = 0;
+        while (i11 < arrayList.size()) {
+            c cVar3 = (c) arrayList.get(i11);
+            float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / cVar3.i) + cVar3.h;
+            cVar3.h = min;
+            float clamp = Utilities.clamp(min, 1.0f, 0.0f);
+            cVar3.h = clamp;
+            nr nrVar = nr.g;
+            float interpolation = nrVar.getInterpolation(clamp);
+            float lerp = AndroidUtilities.lerp(cVar3.a, cVar3.c, interpolation);
+            d dVar = cVar3.l;
+            l5 l5Var = dVar.a;
+            float f11 = cVar3.h;
+            float lerp2 = f11 < 0.3f ? AndroidUtilities.lerp(cVar3.b, cVar3.d, nrVar.getInterpolation(f11 / 0.3f)) : AndroidUtilities.lerp(cVar3.d, cVar3.e, nr.i.getInterpolation((f11 - 0.3f) / 0.7f));
+            float lerp3 = AndroidUtilities.lerp(cVar3.f, cVar3.g, interpolation);
+            if (!dVar.f) {
+                float height = dVar.b.height() * 0.8f;
+                if (lerp2 > height) {
+                    f10 = 1.0f - Utilities.clamp((lerp2 - height) / AndroidUtilities.dp(16.0f), 1.0f, 0.0f);
+                    float f12 = (lerp3 / 2.0f) * f10;
+                    canvas.save();
+                    if (cVar3.j) {
+                        canvas.scale(-1.0f, 1.0f, lerp, lerp2);
+                    }
+                    canvas.rotate(cVar3.k, lerp, lerp2);
+                    l5Var.setAlpha((int) (Utilities.clamp(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
+                    l5Var.setBounds((int) (lerp - f12), (int) (lerp2 - f12), (int) (lerp + f12), (int) (lerp2 + f12));
+                    l5Var.draw(canvas);
+                    l5Var.setAlpha(255);
+                    canvas.restore();
+                    if (((c) arrayList.get(i11)).h < 1.0f) {
+                        arrayList.remove(i11);
+                        i11--;
+                    }
+                    i11++;
+                }
+            }
+            f10 = 1.0f;
+            float f122 = (lerp3 / 2.0f) * f10;
+            canvas.save();
+            if (cVar3.j) {
+            }
+            canvas.rotate(cVar3.k, lerp, lerp2);
+            l5Var.setAlpha((int) (Utilities.clamp(cVar3.h / 0.2f, 1.0f, 0.0f) * f10 * 255.0f));
+            l5Var.setBounds((int) (lerp - f122), (int) (lerp2 - f122), (int) (lerp + f122), (int) (lerp2 + f122));
+            l5Var.draw(canvas);
+            l5Var.setAlpha(255);
+            canvas.restore();
+            if (((c) arrayList.get(i11)).h < 1.0f) {
+            }
+            i11++;
+        }
+        canvas.restore();
+        View view = this.d;
+        if (view != null) {
+            view.invalidate();
+        }
+        this.g = false;
+    }
+
+    public final boolean c() {
+        return System.currentTimeMillis() - this.e > 2500;
+    }
+
+    public final void d(View view) {
+        this.a.o(view);
+        ImageReceiver imageReceiver = this.j;
+        if (imageReceiver != null) {
+            imageReceiver.onDetachedFromWindow();
+            imageReceiver.clearImage();
+        }
+    }
+
+    public final void e(int i10, int i11, int i12, int i13) {
+        Rect rect = this.b;
+        rect.set(i10, i11, i12, i13);
+        ImageReceiver imageReceiver = this.j;
+        if (imageReceiver != null) {
+            imageReceiver.setImageCoords(rect);
+        }
+    }
+
+    public final void f(View view) {
+        boolean z4;
+        boolean z10;
+        TLRPC.TL_availableReaction tL_availableReaction;
+        TLRPC.Document document;
+        boolean z11 = this.f;
+        int i10 = this.h;
+        l5 l5Var = this.a;
+        l5Var.a(view);
+        this.d = view;
+        ImageReceiver imageReceiver = this.j;
+        if (imageReceiver == null || !this.i) {
+            return;
+        }
+        imageReceiver.onAttachedToWindow();
+        TLRPC.Document document2 = l5Var.e;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
+        String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document2, null);
+        if (findAnimatedEmojiEmoticon == null || (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(findAnimatedEmojiEmoticon)) == null || (document = tL_availableReaction.around_animation) == null) {
+            z4 = true;
+            z10 = false;
+        } else {
+            if (z11) {
+                StringBuilder sb = new StringBuilder();
+                int i11 = m;
+                m = i11 + 1;
+                sb.append(i11);
+                sb.append(" ");
+                imageReceiver.setUniqKeyPrefix(sb.toString());
+                int f10 = bz.f();
+                TLRPC.Document document3 = tL_availableReaction.around_animation;
+                z4 = true;
+                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f10 + "_" + f10 + "_pcache_compress", null, null, document3, 0);
+            } else {
+                ImageLocation forDocument = ImageLocation.getForDocument(document);
+                String a2 = m0.a();
+                TLRPC.Document document4 = tL_availableReaction.around_animation;
+                z4 = true;
+                imageReceiver.setImage(forDocument, a2, null, null, document4, 0);
+            }
+            z10 = true;
+        }
+        if (!z10) {
+            String str = UserConfig.getInstance(i10).genericAnimationsStickerPack;
+            if (str != null && (tL_messages_stickerSet = MediaDataController.getInstance(i10).getStickerSetByName(str)) == null) {
+                tL_messages_stickerSet = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(str);
+            }
+            if (tL_messages_stickerSet != null) {
+                if (this.k < 0) {
+                    this.k = Math.abs(Utilities.fastRandom.nextInt() % tL_messages_stickerSet.documents.size());
+                }
+                if (z11) {
+                    StringBuilder sb2 = new StringBuilder();
+                    int i12 = m;
+                    m = i12 + 1;
+                    sb2.append(i12);
+                    sb2.append(" ");
+                    imageReceiver.setUniqKeyPrefix(sb2.toString());
+                    int f11 = bz.f();
+                    imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f11 + "_" + f11 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                } else {
+                    imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                }
+                z10 = true;
+            }
+        }
+        if (z10) {
+            if (imageReceiver.getLottieAnimation() != null) {
+                imageReceiver.getLottieAnimation().L(0, false, z4);
+            }
+            imageReceiver.setAutoRepeat(0);
+        } else {
+            imageReceiver.setImageBitmap(new gj0(R.raw.custom_emoji_reaction, "" + R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+        }
+    }
+}

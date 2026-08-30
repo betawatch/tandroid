@@ -1,65 +1,84 @@
 package o3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import h5.d0;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.UUID;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class g implements t {
-    public final long a;
-    public final long b;
-    public final int c;
-    public final long d;
-    public final int e;
-    public final long f;
-    public final boolean g;
+public final class g implements Comparator, Parcelable {
+    public static final Parcelable.Creator<g> CREATOR = new l4.j(14);
+    public final f[] a;
+    public int b;
+    public final String c;
+    public final int d;
 
-    public g(long j10, int i10, int i11, boolean z10, long j11) {
-        this.a = j10;
-        this.b = j11;
-        this.c = i11 == -1 ? 1 : i11;
-        this.e = i10;
-        this.g = z10;
-        if (j10 == -1) {
-            this.d = -1L;
-            this.f = -9223372036854775807L;
-        } else {
-            long j12 = j10 - j11;
-            this.d = j12;
-            this.f = (Math.max(0L, j12) * 8000000) / i10;
-        }
+    public g(String str, ArrayList arrayList) {
+        this(str, false, (f[]) arrayList.toArray(new f[0]));
     }
 
-    @Override // o3.t
-    public final boolean c() {
-        return this.d != -1 || this.g;
+    public final g a(String str) {
+        return d0.a(this.c, str) ? this : new g(str, false, this.a);
     }
 
-    @Override // o3.t
-    public final s g(long j10) {
-        long j11 = this.b;
-        long j12 = this.d;
-        if (j12 == -1 && !this.g) {
-            u uVar = new u(0L, j11);
-            return new s(uVar, uVar);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        f fVar = (f) obj;
+        f fVar2 = (f) obj2;
+        UUID uuid = j3.h.a;
+        return uuid.equals(fVar.b) ? uuid.equals(fVar2.b) ? 0 : 1 : fVar.b.compareTo(fVar2.b);
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        int i10 = this.e;
-        long j13 = this.c;
-        long j14 = (((i10 * j10) / 8000000) / j13) * j13;
-        if (j12 != -1) {
-            j14 = Math.min(j14, j12 - j13);
-        }
-        long max = Math.max(j14, 0L) + j11;
-        long max2 = (Math.max(0L, max - j11) * 8000000) / i10;
-        u uVar2 = new u(max2, max);
-        if (j12 != -1 && max2 < j10) {
-            long j15 = max + j13;
-            if (j15 < this.a) {
-                return new s(uVar2, new u((Math.max(0L, j15 - j11) * 8000000) / i10, j15));
+        if (obj != null && g.class == obj.getClass()) {
+            g gVar = (g) obj;
+            if (d0.a(this.c, gVar.c) && Arrays.equals(this.a, gVar.a)) {
+                return true;
             }
         }
-        return new s(uVar2, uVar2);
+        return false;
     }
 
-    @Override // o3.t
-    public final long h() {
-        return this.f;
+    public final int hashCode() {
+        if (this.b == 0) {
+            String str = this.c;
+            this.b = ((str == null ? 0 : str.hashCode()) * 31) + Arrays.hashCode(this.a);
+        }
+        return this.b;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.c);
+        parcel.writeTypedArray(this.a, 0);
+    }
+
+    public g(String str, boolean z4, f... fVarArr) {
+        this.c = str;
+        fVarArr = z4 ? (f[]) fVarArr.clone() : fVarArr;
+        this.a = fVarArr;
+        this.d = fVarArr.length;
+        Arrays.sort(fVarArr, this);
+    }
+
+    public g(Parcel parcel) {
+        this.c = parcel.readString();
+        f[] fVarArr = (f[]) parcel.createTypedArray(f.CREATOR);
+        int i10 = d0.a;
+        this.a = fVarArr;
+        this.d = fVarArr.length;
     }
 }

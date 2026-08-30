@@ -3,61 +3,90 @@ package com.google.android.gms.internal.clearcut;
 import java.util.Arrays;
 
 /* loaded from: classes.dex */
-public abstract class c1 {
-    public static final Class a;
-    public static final e1 b;
-    public static final e1 c;
-    public static final e1 d;
+public final class c1 {
+    public static final c1 e = new c1(0, new int[0], new Object[0], false);
+    public int a;
+    public int[] b;
+    public Object[] c;
+    public boolean d;
 
-    static {
-        Class<?> cls;
-        try {
-            cls = Class.forName("com.google.protobuf.GeneratedMessage");
-        } catch (Throwable unused) {
-            cls = null;
-        }
-        a = cls;
-        b = b(false);
-        c = b(true);
-        d = new e1();
+    public c1(int i10, int[] iArr, Object[] objArr, boolean z4) {
+        this.a = i10;
+        this.b = iArr;
+        this.c = objArr;
+        this.d = z4;
     }
 
-    public static void a(e1 e1Var, Object obj, Object obj2) {
-        e1Var.getClass();
-        z zVar = (z) obj;
-        d1 d1Var = zVar.zzjp;
-        d1 d1Var2 = ((z) obj2).zzjp;
-        if (!d1Var2.equals(d1.e)) {
-            int i10 = d1Var.a + d1Var2.a;
-            int[] copyOf = Arrays.copyOf(d1Var.b, i10);
-            System.arraycopy(d1Var2.b, 0, copyOf, d1Var.a, d1Var2.a);
-            Object[] copyOf2 = Arrays.copyOf(d1Var.c, i10);
-            System.arraycopy(d1Var2.c, 0, copyOf2, d1Var.a, d1Var2.a);
-            d1Var = new d1(i10, copyOf, copyOf2, true);
-        }
-        zVar.zzjp = d1Var;
+    public static c1 b() {
+        return new c1(0, new int[8], new Object[8], true);
     }
 
-    public static e1 b(boolean z10) {
-        Class<?> cls;
-        try {
-            cls = Class.forName("com.google.protobuf.UnknownFieldSetSchema");
-        } catch (Throwable unused) {
-            cls = null;
+    public final void a(int i10, Object obj) {
+        if (!this.d) {
+            throw new UnsupportedOperationException();
         }
-        if (cls != null) {
-            try {
-                return (e1) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z10));
-            } catch (Throwable unused2) {
+        int i11 = this.a;
+        int[] iArr = this.b;
+        if (i11 == iArr.length) {
+            int i12 = i11 + (i11 < 4 ? 8 : i11 >> 1);
+            this.b = Arrays.copyOf(iArr, i12);
+            this.c = Arrays.copyOf(this.c, i12);
+        }
+        int[] iArr2 = this.b;
+        int i13 = this.a;
+        iArr2[i13] = i10;
+        this.c[i13] = obj;
+        this.a = i13 + 1;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof c1)) {
+            return false;
+        }
+        c1 c1Var = (c1) obj;
+        int i10 = this.a;
+        if (i10 == c1Var.a) {
+            int[] iArr = this.b;
+            int[] iArr2 = c1Var.b;
+            int i11 = 0;
+            while (true) {
+                if (i11 >= i10) {
+                    Object[] objArr = this.c;
+                    Object[] objArr2 = c1Var.c;
+                    int i12 = this.a;
+                    for (int i13 = 0; i13 < i12; i13++) {
+                        if (objArr[i13].equals(objArr2[i13])) {
+                        }
+                    }
+                    return true;
+                }
+                if (iArr[i11] != iArr2[i11]) {
+                    break;
+                }
+                i11++;
             }
         }
-        return null;
+        return false;
     }
 
-    public static boolean c(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
+    public final int hashCode() {
+        int i10 = this.a;
+        int i11 = (i10 + 527) * 31;
+        int[] iArr = this.b;
+        int i12 = 17;
+        int i13 = 17;
+        for (int i14 = 0; i14 < i10; i14++) {
+            i13 = (i13 * 31) + iArr[i14];
         }
-        return true;
+        int i15 = (i11 + i13) * 31;
+        Object[] objArr = this.c;
+        int i16 = this.a;
+        for (int i17 = 0; i17 < i16; i17++) {
+            i12 = (i12 * 31) + objArr[i17].hashCode();
+        }
+        return i15 + i12;
     }
 }

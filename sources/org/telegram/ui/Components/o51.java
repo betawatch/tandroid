@@ -1,19 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class o51 extends u51 {
-    public final /* synthetic */ p51 b3;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o51(p51 p51Var, p51 p51Var2, d dVar, l51 l51Var, l51 l51Var2) {
-        super(p51Var2, dVar, l51Var, l51Var2);
-        this.b3 = p51Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class o51 extends URLSpan {
+    public final s01 a;
+    public boolean b;
+
+    public o51(String str, s01 s01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = s01Var;
     }
 
-    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.b3.b = -1;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).U0 = true;
+        }
+        af.g.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        s01 s01Var = this.a;
+        if (s01Var != null) {
+            s01Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
+        }
     }
 }

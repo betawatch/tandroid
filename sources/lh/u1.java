@@ -1,41 +1,66 @@
 package lh;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.j70;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u1 implements View.OnLongClickListener {
+public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d4 b;
+    public final /* synthetic */ g5 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ u1(d4 d4Var, int i10) {
+    public /* synthetic */ u1(g5 g5Var, long j10, int i10) {
         this.a = i10;
-        this.b = d4Var;
+        this.b = g5Var;
+        this.c = j10;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                d4 d4Var = this.b;
-                if (!d4Var.D0(true)) {
-                    j70 F = j70.F(d4Var.F0.v, d4Var.x0, view);
-                    F.c(R.drawable.msg_edit, LocaleController.getString(R.string.LiveStoryMessageEditStars), new v1(d4Var, 6), false);
-                    F.l(R.drawable.menu_delete_paid, LocaleController.getString(R.string.LiveStoryMessageRemoveStars), new v1(d4Var, 7), d4Var.H3 > 0);
-                    F.V(5);
-                    F.U = true;
-                    F.Z();
+                g5 g5Var = this.b;
+                t1 t1Var = g5Var.k1;
+                g5Var.q2(1, true, null);
+                if (this.c > 0) {
+                    AndroidUtilities.cancelRunOnUIThread(t1Var);
+                    AndroidUtilities.runOnUIThread(t1Var);
                     break;
                 }
                 break;
+            case 1:
+                this.b.X1(this.c);
+                break;
+            case 2:
+                g5.P0(this.b, this.c);
+                break;
+            case 3:
+                g5.d1(this.b, this.c);
+                break;
+            case 4:
+                this.b.X1(this.c);
+                break;
+            case 5:
+                g5.l0(this.b, this.c);
+                break;
+            case 6:
+                this.b.X1(this.c);
+                break;
+            case 7:
+                g5.P(this.b, this.c);
+                break;
+            case 8:
+                this.b.X1(this.c);
+                break;
+            case 9:
+                g5.A0(this.b, this.c);
+                break;
+            case 10:
+                this.b.X1(this.c);
+                break;
             default:
-                d4 d4Var2 = this.b;
-                d4Var2.H0.k(d4Var2.D0(false));
+                this.b.X1(this.c);
                 break;
         }
-        return true;
     }
 }

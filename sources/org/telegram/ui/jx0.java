@@ -1,41 +1,48 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final /* synthetic */ class jx0 implements GenericProvider, org.telegram.ui.Components.kl0, u60 {
+    public final /* synthetic */ mx0 a;
 
-    public /* synthetic */ jx0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public /* synthetic */ jx0(mx0 mx0Var) {
+        this.a = mx0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b;
-                profileActivity.getClass();
-                profileActivity.J4(valueAnimator.getAnimatedFraction());
-                break;
-            case 1:
-                this.b.t0.setAlpha((int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f));
-                break;
-            case 2:
-                ProfileActivity profileActivity2 = this.b;
-                View view = profileActivity2.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                }
-                profileActivity2.l5(true);
-                break;
-            default:
-                this.b.l5(true);
-                break;
+    @Override // org.telegram.ui.u60
+    public void b(ArrayList arrayList, boolean z4, boolean z10) {
+        Iterator it = arrayList.iterator();
+        if (it.hasNext()) {
+            throw null;
         }
+        this.a.V();
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public boolean f(int i10, View view) {
+        mx0 mx0Var = this.a;
+        if (i10 < mx0Var.r || i10 >= mx0Var.s) {
+            return false;
+        }
+        if (mx0Var.y != 1) {
+            throw null;
+        }
+        mx0Var.U(Long.valueOf(mx0Var.getMessagesController().blockePeers.keyAt(i10 - mx0Var.r)), view);
+        return true;
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        mx0 mx0Var = this.a;
+        mx0Var.getClass();
+        if (((Integer) obj).intValue() == mx0Var.w) {
+            return Integer.valueOf(org.telegram.ui.ActionBar.j6.l1(0.12f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p7, false)));
+        }
+        return null;
     }
 }

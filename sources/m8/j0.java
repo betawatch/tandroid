@@ -1,37 +1,20 @@
 package m8;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class j0 extends h0 {
-    public final /* synthetic */ TaskCompletionSource h;
-    public final /* synthetic */ h0 n;
-    public final /* synthetic */ c r;
+public final class j0 implements com.google.android.gms.common.api.q {
+    public final Status a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(c cVar, TaskCompletionSource taskCompletionSource, TaskCompletionSource taskCompletionSource2, h0 h0Var) {
-        super(taskCompletionSource);
-        this.h = taskCompletionSource2;
-        this.n = h0Var;
-        this.r = cVar;
+    public j0(Status status, int i10) {
+        this.a = status;
+        this.b = i10;
     }
 
-    @Override // m8.h0
-    public final void b() {
-        synchronized (this.r.f) {
-            try {
-                c cVar = this.r;
-                TaskCompletionSource taskCompletionSource = this.h;
-                cVar.e.add(taskCompletionSource);
-                taskCompletionSource.getTask().addOnCompleteListener(new g9.l(cVar, taskCompletionSource, false, 21));
-                if (this.r.l.getAndIncrement() > 0) {
-                    this.r.b.b("Already connected to the service.", new Object[0]);
-                }
-                c.b(this.r, this.n);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    @Override // com.google.android.gms.common.api.q
+    public final Status i() {
+        return this.a;
     }
 }

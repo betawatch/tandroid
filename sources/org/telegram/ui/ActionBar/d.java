@@ -1,36 +1,73 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class d extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ l c;
+public final class d extends z {
+    public final /* synthetic */ k h;
 
-    public /* synthetic */ d(l lVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = lVar;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(k kVar, Context context, k kVar2) {
+        super(context, kVar2);
+        this.h = kVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                float f9 = this.b ? 1.0f : 0.0f;
-                l lVar = this.c;
-                lVar.n1 = f9;
-                lVar.b();
-                break;
-            default:
-                float f10 = this.b ? 1.0f : 0.0f;
-                l lVar2 = this.c;
-                lVar2.n1 = f10;
-                lVar2.b();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        k kVar = this.h;
+        Paint paint = kVar.I0;
+        if (kVar.H0 && this.a && kVar.w != 0) {
+            kVar.J0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            paint.setColor(kVar.w);
+            canvas2 = canvas;
+            kVar.G0.J(canvas2, 0.0f, kVar.J0, paint, true);
+        } else {
+            canvas2 = canvas;
         }
+        super.dispatchDraw(canvas2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        qv0 qv0Var = this.h.G0;
+        if (qv0Var != null) {
+            qv0Var.Q.add(this);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        qv0 qv0Var = this.h.G0;
+        if (qv0Var != null) {
+            qv0Var.Q.remove(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        k kVar = this.h;
+        kVar.invalidate();
+        Runnable runnable = kVar.Q0;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setBackgroundColor(int i10) {
+        k kVar = this.h;
+        kVar.w = i10;
+        if (kVar.H0) {
+            return;
+        }
+        super.setBackgroundColor(i10);
     }
 }

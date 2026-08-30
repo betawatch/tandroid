@@ -1,8 +1,8 @@
 package org.telegram.messenger.video;
 
-import org.telegram.ui.Components.j70;
+import org.telegram.ui.Components.o70;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class a implements Runnable {
                 ((OldVideoPlayerRewinder) this.b).lambda$incrementRewindCount$0();
                 break;
             case 1:
-                ((j70) this.b).u();
+                ((o70) this.b).u();
                 break;
             default:
                 ((VideoFramesRewinder) this.b).lambda$new$2();

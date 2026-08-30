@@ -1,78 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.Intent;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.NotificationsSettingsFacade;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class b11 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ProxyListActivity b;
+public final class b11 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ e11 b;
 
-    public b11(ProxyListActivity proxyListActivity, Context context) {
-        this.b = proxyListActivity;
-        this.a = context;
+    public b11(e11 e11Var, String str) {
+        this.b = e11Var;
+        this.a = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
+    @Override // org.telegram.ui.ActionBar.j
     public final void b(int i10) {
-        ProxyListActivity proxyListActivity = this.b;
-        ArrayList arrayList = proxyListActivity.D;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        e11 e11Var = this.b;
+        long j10 = e11Var.f;
+        long j11 = e11Var.e;
+        String str = this.a;
         if (i10 == -1) {
-            if (arrayList.isEmpty()) {
-                proxyListActivity.finishFragment();
-                return;
+            if (!e11Var.h && e11Var.n) {
+                i17 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
+            }
+        } else if (i10 == 1) {
+            i11 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
+            SharedPreferences.Editor edit = notificationsSettings.edit();
+            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
+            i12 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j11);
+            if (e11Var.n) {
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
+                if (j10 == 0) {
+                    i16 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+                    MessagesStorage.getInstance(i16).setDialogFlags(j11, 0L);
+                    if (dialog != null) {
+                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
+                    }
+                }
             } else {
-                proxyListActivity.a.F();
-                return;
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
+                if (j10 == 0) {
+                    i13 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j11);
+                    i14 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+                    MessagesStorage.getInstance(i14).setDialogFlags(j11, 1L);
+                    if (dialog != null) {
+                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
+                        dialog.notify_settings = tL_peerNotifySettings;
+                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    }
+                }
+            }
+            edit.apply();
+            i15 = ((org.telegram.ui.ActionBar.p2) e11Var).currentAccount;
+            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j11, j10);
+            if (e11Var.r != null) {
+                jk0 jk0Var = new jk0();
+                jk0Var.d = j11;
+                jk0Var.b = true;
+                int c3 = org.telegram.messenger.y3.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
+                jk0Var.c = c3;
+                if (c3 != 0) {
+                    jk0Var.a = org.telegram.messenger.y3.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
+                }
+                e11Var.r.v(jk0Var);
             }
         }
-        int i11 = 0;
-        if (i10 == 0) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
-            alertDialog$Builder.a.P = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteProxyMultiConfirm : R.string.DeleteProxyConfirm);
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder.a.N = LocaleController.getString(R.string.DeleteProxyTitle);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new zk0(this, 14));
-            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-            proxyListActivity.showDialog(c2Var);
-            TextView textView = (TextView) c2Var.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false));
-                return;
-            }
-            return;
-        }
-        if (i10 != 1) {
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder();
-        int size = arrayList.size();
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            SharedConfig.ProxyInfo proxyInfo = (SharedConfig.ProxyInfo) obj;
-            if (sb2.length() > 0) {
-                sb2.append("\n\n");
-            }
-            sb2.append(proxyInfo.getLink());
-        }
-        Intent intent = new Intent("android.intent.action.SEND");
-        intent.setType("text/plain");
-        intent.putExtra("android.intent.extra.TEXT", sb2.toString());
-        Intent createChooser = Intent.createChooser(intent, LocaleController.getString(arrayList.size() > 1 ? R.string.ShareLinks : R.string.ShareLink));
-        createChooser.setFlags(TLObject.FLAG_28);
-        this.a.startActivity(createChooser);
-        c11 c11Var = proxyListActivity.a;
-        if (c11Var != null) {
-            c11Var.F();
-        }
+        e11Var.finishFragment();
     }
 }

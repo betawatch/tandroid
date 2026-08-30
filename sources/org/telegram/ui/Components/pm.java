@@ -1,30 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pm implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class pm implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ on b;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ pm(on onVar, int i10) {
-        this.a = i10;
-        this.b = onVar;
+    public /* synthetic */ pm(qn qnVar, int i10, int i11) {
+        this.a = i11;
+        this.b = qnVar;
+        this.c = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                on onVar = this.b;
-                onVar.getClass();
-                onVar.A.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.e0(this.c, (dh.h) obj);
                 break;
             default:
-                on onVar2 = this.b;
-                onVar2.getClass();
-                onVar2.A.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                qn qnVar = this.b;
+                qnVar.getClass();
+                qnVar.e0(this.c, new eh.e((String) obj));
                 break;
         }
     }

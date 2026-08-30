@@ -1,15 +1,15 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+    public final /* synthetic */ a1 b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ q(z0 z0Var, String str, int i10) {
+    public /* synthetic */ q(a1 a1Var, String str, int i10) {
         this.a = i10;
-        this.b = z0Var;
+        this.b = a1Var;
         this.c = str;
     }
 
@@ -24,17 +24,17 @@ public final /* synthetic */ class q implements Runnable {
                 }
                 break;
             default:
-                z0 z0Var = this.b;
-                z0Var.J = false;
-                z0Var.L = 0L;
-                z0Var.P = false;
+                a1 a1Var = this.b;
+                a1Var.K = false;
+                a1Var.M = 0L;
+                a1Var.Q = false;
                 String str = this.c;
-                z0Var.b = str;
-                z0Var.c();
-                w0 w0Var2 = z0Var.a;
+                a1Var.b = str;
+                a1Var.c();
+                w0 w0Var2 = a1Var.a;
                 if (w0Var2 != null) {
                     w0Var2.onResume();
-                    z0Var.a.loadUrl(str);
+                    a1Var.a.loadUrl(str);
                     break;
                 }
                 break;

@@ -1,71 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t7 extends f2.b0 {
-    public final /* synthetic */ g8 d;
+public final class t7 extends w7 {
+    public final /* synthetic */ Context B;
+    public final /* synthetic */ c8 C;
+    public final /* synthetic */ int y;
 
-    public t7(g8 g8Var) {
-        this.d = g8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t7(c8 c8Var, Context context, Context context2, int i10) {
+        super(context);
+        this.y = i10;
+        this.C = c8Var;
+        this.B = context2;
     }
 
-    @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.n1 n1Var) {
-        super.a(recyclerView, n1Var);
-        View view = n1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.n1 n1Var) {
-        if (n1Var.f != 0) {
-            return 0;
+    @Override // org.telegram.ui.Components.w7
+    public final TextView a() {
+        switch (this.y) {
+            case 0:
+                t90 t90Var = new t90(this.B);
+                t90Var.setTextColor(this.C.getThemedColor(org.telegram.ui.ActionBar.j6.Oi));
+                t90Var.setTextSize(1, 17.0f);
+                t90Var.setTypeface(AndroidUtilities.bold());
+                t90Var.setEllipsize(TextUtils.TruncateAt.END);
+                t90Var.setSingleLine(true);
+                return t90Var;
+            default:
+                t90 t90Var2 = new t90(this.B);
+                int i10 = org.telegram.ui.ActionBar.j6.Si;
+                c8 c8Var = this.C;
+                t90Var2.setTextColor(c8Var.getThemedColor(i10));
+                t90Var2.setTextSize(1, 13.0f);
+                t90Var2.setEllipsize(TextUtils.TruncateAt.END);
+                t90Var2.setSingleLine(true);
+                t90Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+                t90Var2.setBackground(org.telegram.ui.ActionBar.j6.Y(c8Var.getThemedColor(org.telegram.ui.ActionBar.j6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
+                t90Var2.setOnClickListener(new w2(3, this, t90Var2));
+                return t90Var2;
         }
-        return f2.b0.l(3, 0);
-    }
-
-    @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.n1 n1Var, f2.n1 n1Var2) {
-        int b10 = n1Var.b();
-        int b11 = n1Var2.b();
-        g8 g8Var = this.d;
-        if (!g8Var.r0) {
-            g8Var.s0.move(b10, b11);
-        } else {
-            if (b10 <= 0 || b11 <= 0) {
-                return false;
-            }
-            g8Var.s0.move(b10 - 1, b11 - 1);
-        }
-        g8Var.t0.clear();
-        g8Var.t0.addAll(g8Var.s0.list);
-        g8Var.s.p(b10, b11);
-        return true;
-    }
-
-    @Override // f2.b0
-    public final void p(f2.n1 n1Var, int i10) {
-        s7 s7Var = this.d.n;
-        if (n1Var != null) {
-            s7Var.d1(false);
-        }
-        if (i10 != 0) {
-            s7Var.I0(false);
-            if (n1Var != null) {
-                n1Var.a.setPressed(true);
-            }
-        }
-        if (n1Var != null) {
-            n1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
-        }
-    }
-
-    @Override // f2.b0
-    public final void q(f2.n1 n1Var) {
     }
 }

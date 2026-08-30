@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzqr implements zzuf {
     private final zzqq zza;
@@ -573,13 +573,13 @@ final class zzqr implements zzuf {
         this.zzd = i10;
     }
 
-    public final void zzK(List list, boolean z10) {
+    public final void zzK(List list, boolean z4) {
         int zzm;
         int i10;
         if ((this.zzb & 7) != 2) {
             throw new zzsw("Protocol message tag had invalid wire type.");
         }
-        if ((list instanceof zzte) && !z10) {
+        if ((list instanceof zzte) && !z4) {
             zzte zzteVar = (zzte) list;
             do {
                 zzp();
@@ -593,7 +593,7 @@ final class zzqr implements zzuf {
             } while (i10 == this.zzb);
         } else {
             do {
-                list.add(z10 ? zzs() : zzr());
+                list.add(z4 ? zzs() : zzr());
                 zzqq zzqqVar2 = this.zza;
                 if (zzqqVar2.zzC()) {
                     return;

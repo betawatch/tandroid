@@ -1,6 +1,13 @@
 package com.google.android.gms.internal.clearcut;
 
 /* loaded from: classes.dex */
-public abstract class z1 extends p1 implements Cloneable {
-    public static volatile z1[] a;
+public final class z1 extends a7.c {
+    public final /* synthetic */ w1 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z1(w1 w1Var) {
+        super(2);
+        this.b = w1Var;
+        attachInterface(this, "com.google.android.gms.clearcut.internal.IClearcutLoggerCallbacks");
+    }
 }

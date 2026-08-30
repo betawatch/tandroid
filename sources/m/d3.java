@@ -9,9 +9,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import h7.s7;
+import j7.r7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class d3 {
     public static final ThreadLocal a = new ThreadLocal();
@@ -45,8 +45,8 @@ public abstract class d3 {
             threadLocal.set(typedValue);
         }
         context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
-        float f9 = typedValue.getFloat();
-        return i0.a.k(c(context, i10), Math.round(Color.alpha(r4) * f9));
+        float f10 = typedValue.getFloat();
+        return i0.a.k(c(context, i10), Math.round(Color.alpha(r4) * f10));
     }
 
     public static int c(Context context, int i10) {
@@ -67,7 +67,7 @@ public abstract class d3 {
         iArr[0] = i10;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = s7.a(context, resourceId)) == null) {
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = r7.a(context, resourceId)) == null) {
                 colorStateList = obtainStyledAttributes.getColorStateList(0);
             }
             return colorStateList;

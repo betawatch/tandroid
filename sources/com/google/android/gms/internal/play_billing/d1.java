@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d1 implements w1 {
+public final class d1 implements x1 {
     public static final d1 b = new d1(0);
     public static final d1 c = new d1(1);
     public static final d1 d = new d1(2);
@@ -17,7 +17,7 @@ public final class d1 implements w1 {
         this.a = i10;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.w1
+    @Override // com.google.android.gms.internal.play_billing.x1
     public final boolean zza(int i10) {
         switch (this.a) {
             case 0:
@@ -47,11 +47,11 @@ public final class d1 implements w1 {
                         return true;
                 }
             case 2:
-                if (a4.w.b(i10) != 0) {
+                if (android.support.v4.media.a.b(i10) != 0) {
                 }
                 break;
             case 3:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : l3.e : l3.d : l3.c : l3.b) != null) {
+                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : m3.e : m3.d : m3.c : m3.b) != null) {
                 }
                 break;
             case 4:

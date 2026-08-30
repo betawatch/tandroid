@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class p1 extends r1 {
     public final /* synthetic */ int b;
@@ -68,22 +68,22 @@ public final class p1 extends r1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.r1
-    public final void k(Object obj, long j10, boolean z10) {
+    public final void k(Object obj, long j10, boolean z4) {
         switch (this.b) {
             case 0:
                 if (!s1.h) {
-                    s1.l(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    s1.l(obj, j10, z4 ? (byte) 1 : (byte) 0);
                     break;
                 } else {
-                    s1.k(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    s1.k(obj, j10, z4 ? (byte) 1 : (byte) 0);
                     break;
                 }
             default:
                 if (!s1.h) {
-                    s1.l(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    s1.l(obj, j10, z4 ? (byte) 1 : (byte) 0);
                     break;
                 } else {
-                    s1.k(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    s1.k(obj, j10, z4 ? (byte) 1 : (byte) 0);
                     break;
                 }
         }
@@ -124,13 +124,13 @@ public final class p1 extends r1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.r1
-    public final void n(Object obj, long j10, float f9) {
+    public final void n(Object obj, long j10, float f10) {
         switch (this.b) {
             case 0:
-                o(j10, obj, Float.floatToIntBits(f9));
+                o(j10, obj, Float.floatToIntBits(f10));
                 break;
             default:
-                o(j10, obj, Float.floatToIntBits(f9));
+                o(j10, obj, Float.floatToIntBits(f10));
                 break;
         }
     }

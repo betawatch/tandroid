@@ -9,7 +9,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h {
     public final Paint a;
@@ -26,32 +26,32 @@ public final class h {
     public boolean l;
     public float m;
     public float n;
-    public cg.w2 o;
-    public a4.g p;
+    public eg.u2 o;
+    public ef.e p;
 
     public h() {
         this(64, 204, 160);
     }
 
-    public final void a(float f9, Canvas canvas, RectF rectF, View view) {
+    public final void a(float f10, Canvas canvas, RectF rectF, View view) {
         c(view);
-        canvas.drawRoundRect(rectF, f9, f9, this.a);
+        canvas.drawRoundRect(rectF, f10, f10, this.a);
         if (this.k) {
-            boolean z10 = this.l;
+            boolean z4 = this.l;
             Paint paint = this.c;
-            if (z10) {
+            if (z4) {
                 rectF.inset(paint.getStrokeWidth() / 2.0f, paint.getStrokeWidth() / 2.0f);
             }
-            canvas.drawRoundRect(rectF, f9, f9, paint);
+            canvas.drawRoundRect(rectF, f10, f10, paint);
         }
     }
 
     public final void b(int i10, int i11) {
-        float f9 = this.e;
+        float f10 = this.e;
         int[] iArr = {0, i0.a.k(i10, i11), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new LinearGradient(0.0f, 0.0f, f9, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f9, 0.0f, new int[]{0, i0.a.k(i10, 204), 0}, (float[]) null, tileMode);
+        this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.k(i10, 204), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -66,13 +66,13 @@ public final class h {
             if (j10 != 0) {
                 long j11 = currentTimeMillis - j10;
                 if (j11 > 10) {
-                    float f9 = ((j11 / 1200.0f) * this.n) + this.g;
-                    this.g = f9;
-                    if (f9 > this.m) {
+                    float f10 = ((j11 / 1200.0f) * this.n) + this.g;
+                    this.g = f10;
+                    if (f10 > this.m) {
                         this.g = 0.0f;
-                        a4.g gVar = this.p;
-                        if (gVar != null) {
-                            gVar.run();
+                        ef.e eVar = this.p;
+                        if (eVar != null) {
+                            eVar.run();
                         }
                     }
                     this.h = currentTimeMillis;
@@ -82,10 +82,10 @@ public final class h {
             }
         }
         int i10 = this.f;
-        float f10 = (((r0 * 2) + i10) * this.g) - this.e;
+        float f11 = (((r0 * 2) + i10) * this.g) - this.e;
         Matrix matrix = this.i;
         matrix.reset();
-        matrix.setTranslate(f10, 0.0f);
+        matrix.setTranslate(f11, 0.0f);
         this.b.setLocalMatrix(matrix);
         this.d.setLocalMatrix(matrix);
     }
@@ -107,11 +107,11 @@ public final class h {
         this.n = 1.0f;
         int dp = AndroidUtilities.dp(i12);
         this.e = dp;
-        float f9 = dp;
+        float f10 = dp;
         int[] iArr = {0, i0.a.k(-1, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new LinearGradient(0.0f, 0.0f, f9, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f9, 0.0f, new int[]{0, i0.a.k(-1, i11), 0}, (float[]) null, tileMode);
+        this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.k(-1, i11), 0}, (float[]) null, tileMode);
         paint.setShader(this.b);
         paint2.setShader(this.d);
         paint2.setStyle(Paint.Style.STROKE);

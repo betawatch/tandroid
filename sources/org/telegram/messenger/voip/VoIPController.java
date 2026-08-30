@@ -11,9 +11,9 @@ import java.util.Locale;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.voip.h2;
+import org.telegram.ui.Components.voip.f2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class VoIPController {
     public static final int DATA_SAVING_ALWAYS = 2;
@@ -50,14 +50,14 @@ public class VoIPController {
     protected ConnectionStateListener listener;
     protected long nativeInst = nativeInit(new File(ApplicationLoader.applicationContext.getFilesDir(), "voip_persistent_state.json").getAbsolutePath());
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface ConnectionStateListener {
-        void onConnectionStateChanged(int i10, boolean z10);
+        void onConnectionStateChanged(int i10, boolean z4);
 
         void onSignalBarCountChanged(int i10);
     }
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public static class Stats {
         public long bytesRecvdMobile;
         public long bytesRecvdWifi;
@@ -123,15 +123,15 @@ public class VoIPController {
 
     private native void nativeRequestCallUpgrade(long j10);
 
-    private native void nativeSetAudioOutputGainControlEnabled(long j10, boolean z10);
+    private native void nativeSetAudioOutputGainControlEnabled(long j10, boolean z4);
 
-    private native void nativeSetConfig(long j10, double d, double d10, int i10, boolean z10, boolean z11, boolean z12, String str, String str2, boolean z13);
+    private native void nativeSetConfig(long j10, double d, double d10, int i10, boolean z4, boolean z10, boolean z11, String str, String str2, boolean z12);
 
     private native void nativeSetEchoCancellationStrength(long j10, int i10);
 
-    private native void nativeSetEncryptionKey(long j10, byte[] bArr, boolean z10);
+    private native void nativeSetEncryptionKey(long j10, byte[] bArr, boolean z4);
 
-    private native void nativeSetMicMute(long j10, boolean z10);
+    private native void nativeSetMicMute(long j10, boolean z4);
 
     private static native void nativeSetNativeBufferSize(int i10);
 
@@ -214,9 +214,9 @@ public class VoIPController {
         nativeRequestCallUpgrade(this.nativeInst);
     }
 
-    public void setAudioOutputGainControlEnabled(boolean z10) {
+    public void setAudioOutputGainControlEnabled(boolean z4) {
         ensureNativeInstance();
-        nativeSetAudioOutputGainControlEnabled(this.nativeInst, z10);
+        nativeSetAudioOutputGainControlEnabled(this.nativeInst, z4);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0045  */
@@ -225,50 +225,50 @@ public class VoIPController {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void setConfig(double d, double d10, int i10, long j10) {
+        boolean z4;
         boolean z10;
-        boolean z11;
         long j11;
-        boolean z12;
+        boolean z11;
         long j12;
-        boolean z13;
+        boolean z12;
         ensureNativeInstance();
         try {
-            z10 = AcousticEchoCanceler.isAvailable();
+            z4 = AcousticEchoCanceler.isAvailable();
             try {
-                z11 = NoiseSuppressor.isAvailable();
+                z10 = NoiseSuppressor.isAvailable();
             } catch (Throwable unused) {
-                z11 = false;
-                boolean z14 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
+                z10 = false;
+                boolean z13 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
                 j11 = this.nativeInst;
-                z12 = true;
-                if (z10) {
+                z11 = true;
+                if (z4) {
                 }
                 j12 = j11;
-                z13 = true;
-                if (z11) {
-                    z12 = false;
+                z12 = true;
+                if (z10) {
+                    z11 = false;
                 }
                 if (!BuildVars.DEBUG_VERSION) {
                 }
-                nativeSetConfig(j12, d, d10, i10, z13, z12, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(a4.w.m(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z14) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
+                nativeSetConfig(j12, d, d10, i10, z12, z11, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(android.support.v4.media.a.n(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z13) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
             }
         } catch (Throwable unused2) {
-            z10 = false;
+            z4 = false;
         }
-        boolean z142 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
+        boolean z132 = MessagesController.getGlobalMainSettings().getBoolean("dbg_dump_call_stats", false);
         j11 = this.nativeInst;
-        z12 = true;
-        if (z10 || !VoIPServerConfig.getBoolean("use_system_aec", true)) {
+        z11 = true;
+        if (z4 || !VoIPServerConfig.getBoolean("use_system_aec", true)) {
             j12 = j11;
-            z13 = true;
+            z12 = true;
         } else {
             j12 = j11;
-            z13 = false;
-        }
-        if (z11 && VoIPServerConfig.getBoolean("use_system_ns", true)) {
             z12 = false;
         }
-        nativeSetConfig(j12, d, d10, i10, z13, z12, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(a4.w.m(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z142) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
+        if (z10 && VoIPServerConfig.getBoolean("use_system_ns", true)) {
+            z11 = false;
+        }
+        nativeSetConfig(j12, d, d10, i10, z12, z11, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(android.support.v4.media.a.n(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z132) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
     }
 
     public void setConnectionStateListener(ConnectionStateListener connectionStateListener) {
@@ -280,18 +280,18 @@ public class VoIPController {
         nativeSetEchoCancellationStrength(this.nativeInst, i10);
     }
 
-    public void setEncryptionKey(byte[] bArr, boolean z10) {
+    public void setEncryptionKey(byte[] bArr, boolean z4) {
         if (bArr.length == 256) {
             ensureNativeInstance();
-            nativeSetEncryptionKey(this.nativeInst, bArr, z10);
+            nativeSetEncryptionKey(this.nativeInst, bArr, z4);
         } else {
             throw new IllegalArgumentException("key length must be exactly 256 bytes but is " + bArr.length);
         }
     }
 
-    public void setMicMute(boolean z10) {
+    public void setMicMute(boolean z4) {
         ensureNativeInstance();
-        nativeSetMicMute(this.nativeInst, z10);
+        nativeSetMicMute(this.nativeInst, z4);
     }
 
     public void setNetworkType(int i10) {
@@ -313,9 +313,9 @@ public class VoIPController {
     }
 
     private String getLogFilePath(long j10) {
-        File f9 = h2.f();
+        File f10 = f2.f();
         if (!BuildVars.DEBUG_VERSION) {
-            ArrayList arrayList = new ArrayList(Arrays.asList(f9.listFiles()));
+            ArrayList arrayList = new ArrayList(Arrays.asList(f10.listFiles()));
             while (arrayList.size() > 20) {
                 int i10 = 0;
                 File file = (File) arrayList.get(0);
@@ -332,6 +332,6 @@ public class VoIPController {
                 arrayList.remove(file);
             }
         }
-        return new File(f9, j10 + ".log").getAbsolutePath();
+        return new File(f10, j10 + ".log").getAbsolutePath();
     }
 }

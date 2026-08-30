@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -22,7 +22,7 @@ public class StatsController extends BaseController {
     public static final int TYPE_VIDEOS = 2;
     public static final int TYPE_WIFI = 1;
     private byte[] buffer;
-    jf.c0 byteArrayOutputStream;
+    lf.c0 byteArrayOutputStream;
     private int[] callsTotalTime;
     private long lastInternalStatsSaveTime;
     private long[][] receivedBytes;
@@ -52,7 +52,7 @@ public class StatsController extends BaseController {
         this.receivedItems = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
         this.resetStatsDate = new long[3];
         this.callsTotalTime = new int[3];
-        this.byteArrayOutputStream = new jf.c0(32);
+        this.byteArrayOutputStream = new lf.c0(32);
         this.saveRunnable = new Runnable() { // from class: org.telegram.messenger.StatsController.2
             @Override // java.lang.Runnable
             public void run() {
@@ -91,7 +91,7 @@ public class StatsController extends BaseController {
                     }
                     StatsController.this.statsFile.seek(0L);
                     RandomAccessFile randomAccessFile = StatsController.this.statsFile;
-                    jf.c0 c0Var = StatsController.this.byteArrayOutputStream;
+                    lf.c0 c0Var = StatsController.this.byteArrayOutputStream;
                     randomAccessFile.write(c0Var.a, 0, c0Var.b);
                     StatsController.this.statsFile.getFD().sync();
                 } catch (Exception unused) {
@@ -100,14 +100,14 @@ public class StatsController extends BaseController {
         };
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), j7.l1.l(i10, "account", "/"));
+            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), kh.a2.k(i10, "account", "/"));
             filesDirFixed.mkdirs();
         }
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile(new File(filesDirFixed, "stats2.dat"), "rw");
             this.statsFile = randomAccessFile;
             if (randomAccessFile.length() > 0) {
-                boolean z10 = false;
+                boolean z4 = false;
                 for (int i11 = 0; i11 < 3; i11++) {
                     for (int i12 = 0; i12 < 7; i12++) {
                         this.statsFile.readFully(this.buffer, 0, 8);
@@ -126,7 +126,7 @@ public class StatsController extends BaseController {
                     long[] jArr = this.resetStatsDate;
                     if (jArr[i11] == 0) {
                         jArr[i11] = System.currentTimeMillis();
-                        z10 = true;
+                        z4 = true;
                     }
                 }
                 for (int i13 = 0; i13 < 3; i13++) {
@@ -139,7 +139,7 @@ public class StatsController extends BaseController {
                     this.statsFile.readFully(this.buffer, 0, 4);
                     this.receivedItems[i13][7] = bytesToInt(this.buffer);
                 }
-                if (z10) {
+                if (z4) {
                     saveStats();
                     return;
                 }
@@ -148,23 +148,23 @@ public class StatsController extends BaseController {
         } catch (Exception unused) {
         }
         SharedPreferences sharedPreferences = i10 == 0 ? ApplicationLoader.applicationContext.getSharedPreferences("stats", 0) : ApplicationLoader.applicationContext.getSharedPreferences("stats" + i10, 0);
-        boolean z11 = false;
+        boolean z10 = false;
         for (int i14 = 0; i14 < 3; i14++) {
             this.callsTotalTime[i14] = sharedPreferences.getInt("callsTotalTime" + i14, 0);
             this.resetStatsDate[i14] = sharedPreferences.getLong("resetStatsDate" + i14, 0L);
             for (int i15 = 0; i15 < 8; i15++) {
-                this.sentBytes[i14][i15] = sharedPreferences.getLong(a4.w.k(i14, i15, "sentBytes", "_"), 0L);
-                this.receivedBytes[i14][i15] = sharedPreferences.getLong(a4.w.k(i14, i15, "receivedBytes", "_"), 0L);
-                this.sentItems[i14][i15] = sharedPreferences.getInt(a4.w.k(i14, i15, "sentItems", "_"), 0);
-                this.receivedItems[i14][i15] = sharedPreferences.getInt(a4.w.k(i14, i15, "receivedItems", "_"), 0);
+                this.sentBytes[i14][i15] = sharedPreferences.getLong(android.support.v4.media.a.k(i14, i15, "sentBytes", "_"), 0L);
+                this.receivedBytes[i14][i15] = sharedPreferences.getLong(android.support.v4.media.a.k(i14, i15, "receivedBytes", "_"), 0L);
+                this.sentItems[i14][i15] = sharedPreferences.getInt(android.support.v4.media.a.k(i14, i15, "sentItems", "_"), 0);
+                this.receivedItems[i14][i15] = sharedPreferences.getInt(android.support.v4.media.a.k(i14, i15, "receivedItems", "_"), 0);
             }
             long[] jArr2 = this.resetStatsDate;
             if (jArr2[i14] == 0) {
                 jArr2[i14] = System.currentTimeMillis();
-                z11 = true;
+                z10 = true;
             }
         }
-        if (z11) {
+        if (z10) {
             saveStats();
         }
     }

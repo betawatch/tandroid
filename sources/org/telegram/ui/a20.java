@@ -1,72 +1,52 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.voip.NativeInstance;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a20 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.Components.bl0, r0.o, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r50 b;
+public final class a20 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public org.telegram.ui.Components.ei0 c;
+    public boolean d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    public /* synthetic */ a20(r50 r50Var, int i10) {
-        this.a = i10;
-        this.b = r50Var;
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
     }
 
-    @Override // r0.o
-    public r0.m1 I0(View view, r0.m1 m1Var) {
-        return r50.A(this.b, m1Var);
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public boolean c(int i10, View view) {
-        switch (this.a) {
-            case 1:
-                r50 r50Var = this.b;
-                if (r50Var.F1(view)) {
-                    try {
-                        r50Var.M.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                }
-                return false;
-            default:
-                r50 r50Var2 = this.b;
-                if (!r50Var2.r1()) {
-                    if (view instanceof org.telegram.ui.Components.voip.l) {
-                        return r50Var2.F1(view);
-                    }
-                    if (view instanceof org.telegram.ui.Cells.c4) {
-                        r50Var2.I1();
-                        org.telegram.ui.Components.aj0 aj0Var = ((org.telegram.ui.Cells.c4) view).f;
-                        if (aj0Var.isEnabled()) {
-                            aj0Var.callOnClick();
-                            return true;
-                        }
-                    }
-                }
-                return false;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.s0
-    public void i(int i10) {
-        this.b.K.getActionBarMenuOnItemClick().b(i10);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public void o(KeyEvent keyEvent) {
-        r50 r50Var;
-        r40 r40Var;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (r40Var = (r50Var = this.b).b3) != null && r40Var.isShowing()) {
-            r50Var.b3.dismiss();
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
+        measureChildWithMargins(this.c, i10, 0, i11, 0);
+        TextView textView = this.a;
+        org.telegram.ui.Components.ei0 ei0Var = this.c;
+        measureChildWithMargins(textView, i10, ei0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, ei0Var.getMeasuredWidth(), i11, 0);
     }
 
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
-        r50.C(this.b, iArr, fArr);
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
     }
 }

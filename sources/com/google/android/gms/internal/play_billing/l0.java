@@ -1,45 +1,45 @@
 package com.google.android.gms.internal.play_billing;
 
-import h7.m6;
+import j7.q6;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class);
     public static final boolean f;
-    public static final m6 h;
+    public static final q6 h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
-        boolean z10;
-        m6 i0Var;
+        boolean z4;
+        q6 i0Var;
         Throwable th2;
         Throwable th3;
         try {
-            z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+            z4 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
-            z10 = false;
+            z4 = false;
         }
-        f = z10;
+        f = z4;
         String property = System.getProperty("java.runtime.name", "");
         Throwable th4 = null;
         if (property == null || property.contains("Android")) {
             try {
                 i0Var = new j0();
-            } catch (Error | Exception e10) {
+            } catch (Error | Exception e6) {
                 try {
                     i0Var = new h0();
-                } catch (Error | Exception e11) {
-                    th4 = e11;
+                } catch (Error | Exception e10) {
+                    th4 = e10;
                     i0Var = new i0();
                 }
                 th2 = th4;
-                th3 = e10;
+                th3 = e6;
             }
         } else {
             try {

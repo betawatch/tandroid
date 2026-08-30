@@ -1,44 +1,31 @@
 package f5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import h5.d0;
+import j3.g2;
+import j3.q2;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class x {
-    public static final x c = new x(-1, -1);
     public final int a;
-    public final int b;
+    public final g2[] b;
+    public final c[] c;
+    public final q2 d;
+    public final Object e;
 
-    static {
-        new x(0, 0);
+    public x(g2[] g2VarArr, c[] cVarArr, q2 q2Var, s sVar) {
+        this.b = g2VarArr;
+        this.c = (c[]) cVarArr.clone();
+        this.d = q2Var;
+        this.e = sVar;
+        this.a = g2VarArr.length;
     }
 
-    public x(int i10, int i11) {
-        a.f((i10 == -1 || i10 >= 0) && (i11 == -1 || i11 >= 0));
-        this.a = i10;
-        this.b = i11;
+    public final boolean a(x xVar, int i10) {
+        return xVar != null && d0.a(this.b[i10], xVar.b[i10]) && d0.a(this.c[i10], xVar.c[i10]);
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof x) {
-            x xVar = (x) obj;
-            if (this.a == xVar.a && this.b == xVar.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int i10 = this.a;
-        return ((i10 >>> 16) | (i10 << 16)) ^ this.b;
-    }
-
-    public final String toString() {
-        return this.a + "x" + this.b;
+    public final boolean b(int i10) {
+        return this.b[i10] != null;
     }
 }

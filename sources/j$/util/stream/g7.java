@@ -54,11 +54,11 @@ public final class g7 extends x6 implements j$.util.u0 {
         if (a2) {
             m6 m6Var = (m6) this.h;
             long j10 = this.g;
-            int k9 = m6Var.k(j10);
-            if (m6Var.c == 0 && k9 == 0) {
+            int k10 = m6Var.k(j10);
+            if (m6Var.c == 0 && k10 == 0) {
                 d = ((double[]) m6Var.e)[(int) j10];
             } else {
-                d = ((double[][]) m6Var.f)[k9][(int) (j10 - m6Var.d[k9])];
+                d = ((double[][]) m6Var.f)[k10][(int) (j10 - m6Var.d[k10])];
             }
             doubleConsumer.accept(d);
         }

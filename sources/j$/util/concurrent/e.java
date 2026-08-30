@@ -85,14 +85,14 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final boolean addAll(java.util.Collection collection) {
         Iterator it = collection.iterator();
-        boolean z10 = false;
+        boolean z4 = false;
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
             if (this.a.f(entry.getKey(), entry.getValue(), false) == null) {
-                z10 = true;
+                z4 = true;
             }
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection, j$.util.Collection
@@ -100,7 +100,7 @@ public final class e extends b implements Set, j$.util.Set {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
         l[] lVarArr = concurrentHashMap.a;
-        boolean z10 = false;
+        boolean z4 = false;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
@@ -111,11 +111,11 @@ public final class e extends b implements Set, j$.util.Set {
                 Object obj = a2.b;
                 Object obj2 = a2.c;
                 if (predicate.test(new AbstractMap.SimpleImmutableEntry(obj, obj2)) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z10 = true;
+                    z4 = true;
                 }
             }
         }
-        return z10;
+        return z4;
     }
 
     @Override // java.util.Collection, java.util.Set

@@ -1,69 +1,38 @@
 package h7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.content.Context;
+import j$.util.Objects;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class q {
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-     */
-    public static final Class a(fd.c cVar) {
-        kotlin.jvm.internal.j.e(cVar, "<this>");
-        Class a2 = ((kotlin.jvm.internal.d) cVar).a();
-        if (a2.isPrimitive()) {
-            String name = a2.getName();
-            switch (name.hashCode()) {
-                case -1325958191:
-                    if (name.equals("double")) {
-                        return Double.class;
-                    }
-                    break;
-                case 104431:
-                    if (name.equals("int")) {
-                        return Integer.class;
-                    }
-                    break;
-                case 3039496:
-                    if (name.equals("byte")) {
-                        return Byte.class;
-                    }
-                    break;
-                case 3052374:
-                    if (name.equals("char")) {
-                        return Character.class;
-                    }
-                    break;
-                case 3327612:
-                    if (name.equals("long")) {
-                        return Long.class;
-                    }
-                    break;
-                case 3625364:
-                    if (name.equals("void")) {
-                        return Void.class;
-                    }
-                    break;
-                case 64711720:
-                    if (name.equals("boolean")) {
-                        return Boolean.class;
-                    }
-                    break;
-                case 97526364:
-                    if (name.equals("float")) {
-                        return Float.class;
-                    }
-                    break;
-                case 109413500:
-                    if (name.equals("short")) {
-                        return Short.class;
-                    }
-                    break;
+public final class q {
+    public static final l b = l.b(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
+    public final String a;
+
+    public q(Context context, cb.l lVar) {
+        new HashMap();
+        new HashMap();
+        context.getPackageName();
+        cb.c.a(context);
+        synchronized (u.class) {
+            if (u.b == null) {
+                u.b = new u(0);
             }
         }
-        return a2;
+        this.a = "common";
+        cb.g a2 = cb.g.a();
+        h2.f fVar = new h2.f(this, 2);
+        a2.getClass();
+        cb.g.b(fVar);
+        cb.g a10 = cb.g.a();
+        Objects.requireNonNull(lVar);
+        p pVar = new p(lVar, 0);
+        a10.getClass();
+        cb.g.b(pVar);
+        l lVar2 = b;
+        if (lVar2.containsKey("common")) {
+            m6.e.d(context, (String) lVar2.get("common"), false);
+        }
     }
 }

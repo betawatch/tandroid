@@ -1,34 +1,67 @@
 package ih;
 
-import android.content.Context;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import jh.z9;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class n implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class n extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ List b;
+    public final /* synthetic */ o c;
+    public final /* synthetic */ p d;
 
-    public /* synthetic */ n(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        this.a = i10;
-        this.b = context;
-        this.c = c6Var;
+    public n(p pVar, View view, List list, o oVar) {
+        this.d = pVar;
+        this.a = view;
+        this.b = list;
+        this.c = oVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                new z9(this.b, this.c).show();
-                break;
-            case 1:
-                new z9(this.b, this.c).show();
-                break;
-            default:
-                new z9(this.b, this.c).show();
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x10 = (int) motionEvent.getX();
+        int y10 = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y10;
+        int paddingLeft = x10 - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        p pVar = this.d;
+        int i10 = paddingLeft - pVar.c;
+        int i11 = paddingTop - pVar.d;
+        Iterator it = this.b.iterator();
+        while (it.hasNext()) {
+            if (((k) it.next()).getBounds().contains(i10, i11)) {
+                pVar.b = true;
+                return true;
+            }
         }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        p pVar = this.d;
+        if (pVar.b) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            pVar.b = false;
+            int x10 = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x10 - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i10 = paddingLeft - pVar.c;
+            int i11 = paddingTop - pVar.d;
+            for (k kVar : this.b) {
+                if (kVar.getBounds().contains(i10, i11)) {
+                    this.c.o(kVar, i10, i11);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

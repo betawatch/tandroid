@@ -1,625 +1,906 @@
 package dg;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.x3;
-import org.telegram.ui.ActionBar.g6;
+import android.graphics.PointF;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
+import k7.n6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.nr;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.sk0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class j {
-    public static final String[] a0 = {"models/star.binobj"};
-    public static final String[] b0 = {"models/diamond_outer_2.binobj", "models/diamond_outer.binobj", "models/diamond.binobj"};
-    public static final String[] c0 = {"models/coin_outer.binobj", "models/coin_inner.binobj", "models/coin_logo.binobj", "models/coin_stars.binobj"};
-    public static final String[] d0 = {"models/coin_outer.binobj", "models/coin_inner.binobj", "models/deal_logo.binobj", "models/coin_stars.binobj"};
-    public boolean D;
-    public final int E;
-    public final int F;
-    public final int G;
-    public final int H;
-    public final int I;
-    public final int J;
-    public final int K;
-    public final int L;
-    public final int M;
-    public final int N;
-    public final int O;
-    public final int P;
-    public final int Q;
-    public final int R;
-    public final int S;
-    public final int T;
-    public final Bitmap U;
-    public Bitmap V;
-    public final int W;
-    public final int X;
-    public final int[] Y;
-    public final int a;
-    public final int b;
-    public final int c;
-    public final FloatBuffer[] d;
-    public final FloatBuffer[] e;
-    public final FloatBuffer[] f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public final int k;
-    public final int l;
-    public final int m;
-    public final int n;
-    public final int o;
-    public final int p;
-    public final int q;
-    public final int r;
-    public float s;
-    public final int[] t;
-    public int y;
-    public int z;
-    public float u = 0.0f;
-    public float v = 2.0f;
-    public float w = 0.13f;
-    public float x = 1.0f;
-    public float A = 0.2f;
-    public int B = -1;
-    public int C = -1;
-    public float Z = 0.0f;
+public abstract class j extends FrameLayout {
+    public static final List m0 = Arrays.asList(-90, 0, 90, 180);
+    public boolean B;
+    public h C;
+    public PointF D;
+    public i E;
+    public final e F;
+    public final UUID G;
+    public boolean H;
+    public int I;
+    public int J;
+    public af.b K;
+    public float L;
+    public ValueAnimator M;
+    public ValueAnimator N;
+    public int O;
+    public int P;
+    public final e Q;
+    public final e R;
+    public int S;
+    public int T;
+    public ValueAnimator U;
+    public ValueAnimator V;
+    public boolean W;
+    public final rc a;
+    public boolean a0;
+    public float b;
+    public final float[] b0;
+    public float c;
+    public final float[] c0;
+    public float d;
+    public final float[] d0;
+    public float e;
+    public float e0;
+    public float f;
+    public float f0;
+    public float g0;
+    public float h;
+    public ValueAnimator h0;
+    public boolean i0;
+    public ViewGroup j0;
+    public float k0;
+    public ValueAnimator l0;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean w;
+    public boolean x;
+    public boolean y;
 
-    /* JADX WARN: Can't wrap try/catch for region: R(22:0|1|(1:3)(1:(1:123)(1:(1:129)(1:(17:127|5|(2:6|(26:8|9|10|11|12|13|14|(3:16|17|18)|25|26|27|(2:29|30)|31|32|33|(2:35|36)|37|38|39|40|41|43|44|(8:46|(2:48|(1:50)(6:61|52|(3:57|58|59)|60|58|59))(1:62)|51|52|(4:54|57|58|59)|60|58|59)|63|24)(1:75))|76|(1:121)(2:80|(1:82)(1:120))|83|(2:86|84)|87|88|89|90|91|92|(1:117)(3:96|(2:98|99)(3:111|(2:113|114)|115)|100)|(1:102)(1:109)|103|(2:105|106)(1:108))(1:128))))|4|5|(3:6|(0)(0)|24)|76|(1:78)|121|83|(1:84)|87|88|89|90|91|92|(1:94)|117|(0)(0)|103|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x0490, code lost:
+    /* JADX WARN: Type inference failed for: r0v0, types: [dg.e] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [dg.e] */
+    /* JADX WARN: Type inference failed for: r0v4, types: [dg.e] */
+    public j(Context context, PointF pointF) {
+        super(context);
+        this.a = new rc(this);
+        this.n = false;
+        this.r = false;
+        this.s = false;
+        this.v = false;
+        this.w = false;
+        this.x = false;
+        this.y = false;
+        this.B = false;
+        final int i10 = 0;
+        this.F = new Runnable(this) { // from class: dg.e
+            public final /* synthetic */ j b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        j jVar = this.b;
+                        jVar.B = true;
+                        if (jVar.C != null) {
+                            try {
+                                jVar.performHapticFeedback(0);
+                            } catch (Exception unused) {
+                            }
+                            jVar.C.b(jVar);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.n();
+                        break;
+                    default:
+                        this.b.o();
+                        break;
+                }
+            }
+        };
+        this.H = true;
+        this.I = 0;
+        this.J = -1;
+        this.O = 0;
+        this.P = 0;
+        final int i11 = 1;
+        this.Q = new Runnable(this) { // from class: dg.e
+            public final /* synthetic */ j b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        j jVar = this.b;
+                        jVar.B = true;
+                        if (jVar.C != null) {
+                            try {
+                                jVar.performHapticFeedback(0);
+                            } catch (Exception unused) {
+                            }
+                            jVar.C.b(jVar);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.n();
+                        break;
+                    default:
+                        this.b.o();
+                        break;
+                }
+            }
+        };
+        final int i12 = 2;
+        this.R = new Runnable(this) { // from class: dg.e
+            public final /* synthetic */ j b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i12) {
+                    case 0:
+                        j jVar = this.b;
+                        jVar.B = true;
+                        if (jVar.C != null) {
+                            try {
+                                jVar.performHapticFeedback(0);
+                            } catch (Exception unused) {
+                            }
+                            jVar.C.b(jVar);
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.n();
+                        break;
+                    default:
+                        this.b.o();
+                        break;
+                }
+            }
+        };
+        this.b0 = new float[2];
+        this.c0 = new float[2];
+        this.d0 = new float[2];
+        this.e0 = 1.0f;
+        this.i0 = false;
+        this.k0 = 1.0f;
+        this.G = UUID.randomUUID();
+        this.D = pointF;
+    }
+
+    public abstract i a();
+
+    public final float b() {
+        return (float) ((Math.abs(Math.sin((getRotation() / 180.0f) * 3.141592653589793d)) * getMeasuredWidth()) + (Math.abs(Math.cos((getRotation() / 180.0f) * 3.141592653589793d)) * getMeasuredHeight()));
+    }
+
+    public final boolean c(float f10, float f11, boolean z4, float f12, float f13) {
+        h hVar;
+        h hVar2;
+        h hVar3;
+        h hVar4;
+        if (getParent() != null) {
+            float scaleX = ((View) getParent()).getScaleX();
+            float f14 = z4 ? (f10 + f12) / 2.0f : f10;
+            float f15 = z4 ? (f11 + f13) / 2.0f : f11;
+            float f16 = (f14 - this.f) / scaleX;
+            float f17 = (f15 - this.h) / scaleX;
+            if (((float) Math.hypot(f16, f17)) > (this.n ? 6.0f : 16.0f) || z4) {
+                AndroidUtilities.cancelRunOnUIThread(this.F);
+                e(f16, f17);
+                if (z4) {
+                    float a2 = n6.a(f10, f11, f12, f13);
+                    float a10 = n6.a(this.b, this.c, this.d, this.e);
+                    if (a10 > 0.0f) {
+                        j(a2 / a10);
+                    }
+                    f(this.f0 + ((float) Math.toDegrees(Math.atan2(f11 - f13, f10 - f12) - Math.atan2(this.c - this.e, this.b - this.d))));
+                }
+                this.b = f10;
+                this.c = f11;
+                this.f = f14;
+                this.h = f15;
+                if (z4) {
+                    this.d = f12;
+                    this.e = f13;
+                }
+                int i10 = 1;
+                this.n = true;
+                if ((getParent() instanceof d) && (this.O != 0 || this.P != 0)) {
+                    ((d) getParent()).invalidate();
+                }
+                if (!this.v && (hVar4 = this.C) != null) {
+                    this.v = true;
+                    hVar4.C();
+                }
+                if (!this.w && z4 && (hVar3 = this.C) != null) {
+                    this.w = true;
+                    hVar3.k();
+                }
+                if (this.w && !z4 && (hVar2 = this.C) != null) {
+                    this.w = false;
+                    hVar2.j();
+                }
+                if (!this.i0 && !this.x && (hVar = this.C) != null) {
+                    hVar.w(this);
+                    this.x = true;
+                }
+                h hVar5 = this.C;
+                if (hVar5 != null) {
+                    hVar5.B(org.telegram.messenger.y3.A((float) getHeight(), 2.0f, scaleX, this.D.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    this.C.g(vh.v2.c((float) getHeight(), 2.0f, scaleX, this.D.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
+                }
+                h hVar6 = this.C;
+                boolean z10 = (hVar6 == null || hVar6.p()) && !z4 && n6.a(f14, f15, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
+                if (this.y != z10) {
+                    ValueAnimator valueAnimator = this.l0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        this.l0 = null;
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(this.k0, z10 ? 0.5f : 1.0f);
+                    this.l0 = ofFloat;
+                    ofFloat.addUpdateListener(new f(this, i10));
+                    this.l0.setInterpolator(nr.h);
+                    this.l0.setDuration(280L);
+                    this.l0.start();
+                    this.y = z10;
+                    h hVar7 = this.C;
+                    if (hVar7 != null) {
+                        hVar7.m(z10);
+                    }
+                }
+                this.a.c(false);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void d(boolean z4) {
+        h hVar;
+        h hVar2;
+        if (this.v) {
+            this.C.h(this.y);
+            this.v = false;
+        }
+        this.w = false;
+        if (!z4 && !this.B && !this.n && !this.s && !this.x && (hVar2 = this.C) != null) {
+            hVar2.w(this);
+        }
+        if (this.n && (hVar = this.C) != null) {
+            hVar.B(false);
+            this.C.g(false);
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.F);
+        this.B = false;
+        this.n = false;
+        this.s = false;
+        this.r = true;
+        this.x = false;
+        this.J = this.I;
+        af.b bVar = this.K;
+        if (bVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(bVar);
+            this.K = null;
+        }
+        this.S = this.O;
+        AndroidUtilities.cancelRunOnUIThread(this.Q);
+        this.T = this.P;
+        AndroidUtilities.cancelRunOnUIThread(this.R);
+        if (getParent() instanceof d) {
+            ((d) getParent()).invalidate();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        float a2 = this.a.a(getBounceScale());
+        canvas.save();
+        canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
+        if (getParent() instanceof View) {
+            View view = (View) getParent();
+            if (this instanceof b3) {
+                float f10 = this.k0;
+                canvas.scale(f10, f10, getWidth() / 2.0f, getHeight() / 2.0f);
+            } else {
+                float width = (view.getWidth() / 2.0f) - getX();
+                float height = (view.getHeight() - AndroidUtilities.dp(76.0f)) - getY();
+                float f11 = this.k0;
+                canvas.scale(f11, f11, width, height);
+            }
+        }
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0132, code lost:
     
-        r5 = null;
+        if (java.lang.Math.abs(((getScaleY() * ((b() / 2.0f) - getStickyPaddingBottom())) + r9.D.y) - (r10.getMeasuredHeight() - org.telegram.messenger.AndroidUtilities.dp(64.0f))) <= org.telegram.messenger.AndroidUtilities.dp(12.0f)) goto L36;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x04f9  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0548  */
-    /* JADX WARN: Removed duplicated region for block: B:108:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x0533  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0218 A[EDGE_INSN: B:75:0x0218->B:76:0x0218 BREAK  A[LOOP:0: B:6:0x0062->B:24:0x01b7], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03e0 A[LOOP:5: B:84:0x03db->B:86:0x03e0, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x013a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public j(Context context, int i10) {
-        String[] strArr;
-        String[] strArr2;
-        float f9;
-        int i11;
-        float[] fArr;
-        int i12;
-        int i13;
-        int i14;
-        Bitmap bitmap;
-        char c3;
-        float[] fArr2;
-        float[] fArr3;
-        DataInputStream dataInputStream;
-        int readInt;
-        int i15;
-        ArrayList arrayList;
-        float f10;
-        int i16;
-        float f11;
-        this.X = i10;
-        if (i10 == 1) {
-            strArr = c0;
-        } else if (i10 == 3) {
-            strArr = d0;
-        } else if (i10 == 0 || i10 == 2) {
-            strArr = a0;
-        } else {
-            if (i10 == 4) {
-                strArr2 = b0;
-                f9 = 8.0f;
-                int length = strArr2.length;
-                this.W = length;
-                this.d = new FloatBuffer[length];
-                this.e = new FloatBuffer[length];
-                this.f = new FloatBuffer[length];
-                this.t = new int[length];
+    public final void e(float f10, float f11) {
+        int i10;
+        PointF pointF = this.D;
+        pointF.x += f10;
+        pointF.y += f11;
+        if (((View) getParent()) != null) {
+            int i11 = 3;
+            if (!this.W) {
+                if (Math.abs(this.D.x - (r10.getMeasuredWidth() / 2.0f)) > AndroidUtilities.dp(12.0f) || this.D.y >= r10.getMeasuredHeight() - AndroidUtilities.dp(112.0f)) {
+                    if (Math.abs((this.D.x - (getScaleX() * (getStickyPaddingLeft() + (p() / 2.0f)))) - AndroidUtilities.dp(8.0f)) <= AndroidUtilities.dp(12.0f)) {
+                        i10 = 1;
+                    } else {
+                        if (Math.abs(((getScaleX() * ((p() / 2.0f) - getStickyPaddingRight())) + this.D.x) - (r10.getMeasuredWidth() - AndroidUtilities.dp(8.0f))) <= AndroidUtilities.dp(12.0f)) {
+                            i10 = 3;
+                        }
+                    }
+                } else {
+                    i10 = 2;
+                }
+                if (this.S != i10) {
+                    this.S = i10;
+                    if (i10 == 0) {
+                        n();
+                    } else {
+                        AndroidUtilities.runOnUIThread(this.Q, 250L);
+                    }
+                }
+                if (!this.W) {
+                    if (Math.abs(this.D.y - (r10.getMeasuredHeight() / 2.0f)) <= AndroidUtilities.dp(12.0f)) {
+                        i11 = 2;
+                    } else {
+                        if (Math.abs((this.D.y - (getScaleY() * (getStickyPaddingTop() + (b() / 2.0f)))) - AndroidUtilities.dp(64.0f)) <= AndroidUtilities.dp(12.0f)) {
+                            i11 = 1;
+                        }
+                    }
+                    if (this.T != i11) {
+                        this.T = i11;
+                        if (i11 == 0) {
+                            o();
+                        } else {
+                            AndroidUtilities.runOnUIThread(this.R, 250L);
+                        }
+                    }
+                }
                 i11 = 0;
-                while (true) {
-                    fArr = null;
-                    if (i11 < this.W) {
-                        break;
-                    }
-                    String str = strArr2[i11];
-                    ArrayList arrayList2 = new ArrayList();
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    try {
-                        try {
-                            dataInputStream = new DataInputStream(context.getAssets().open(str));
-                            int readInt2 = dataInputStream.readInt();
-                            for (int i17 = 0; i17 < readInt2; i17++) {
-                                try {
-                                    arrayList2.add(Float.valueOf(dataInputStream.readFloat()));
-                                } catch (IOException e10) {
-                                    e = e10;
-                                    fArr2 = null;
-                                    fArr3 = null;
-                                    e.printStackTrace();
-                                    this.d[i11] = x3.l(ByteBuffer.allocateDirect(fArr.length * 4));
-                                    this.d[i11].put(fArr).position(0);
-                                    this.e[i11] = x3.l(ByteBuffer.allocateDirect(fArr2.length * 4));
-                                    this.e[i11].put(fArr2).position(0);
-                                    this.f[i11] = x3.l(ByteBuffer.allocateDirect(fArr3.length * 4));
-                                    this.f[i11].put(fArr3).position(0);
-                                    this.t[i11] = fArr.length;
-                                    i11++;
-                                }
-                            }
-                            int readInt3 = dataInputStream.readInt();
-                            for (int i18 = 0; i18 < readInt3; i18++) {
-                                arrayList4.add(Float.valueOf(dataInputStream.readFloat()));
-                            }
-                            int readInt4 = dataInputStream.readInt();
-                            for (int i19 = 0; i19 < readInt4; i19++) {
-                                arrayList3.add(Float.valueOf(dataInputStream.readFloat()));
-                            }
-                            readInt = dataInputStream.readInt();
-                            i15 = readInt * 3;
-                            fArr3 = new float[i15];
-                            try {
-                                fArr2 = new float[readInt * 2];
-                            } catch (IOException e11) {
-                                e = e11;
-                                fArr2 = null;
-                            }
-                        } catch (IOException e12) {
-                            e = e12;
-                            fArr2 = null;
-                            fArr3 = null;
-                            e.printStackTrace();
-                            this.d[i11] = x3.l(ByteBuffer.allocateDirect(fArr.length * 4));
-                            this.d[i11].put(fArr).position(0);
-                            this.e[i11] = x3.l(ByteBuffer.allocateDirect(fArr2.length * 4));
-                            this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = x3.l(ByteBuffer.allocateDirect(fArr3.length * 4));
-                            this.f[i11].put(fArr3).position(0);
-                            this.t[i11] = fArr.length;
-                            i11++;
-                        }
-                        try {
-                            fArr = new float[i15];
-                            int i20 = 0;
-                            int i21 = 0;
-                            int i22 = 0;
-                            int i23 = 0;
-                            while (i20 < readInt) {
-                                int readInt5 = dataInputStream.readInt() * 3;
-                                int i24 = readInt;
-                                fArr[i21] = ((Float) arrayList2.get(readInt5)).floatValue() * f9;
-                                int i25 = i21 + 2;
-                                fArr[i21 + 1] = ((Float) arrayList2.get(readInt5 + 1)).floatValue() * f9;
-                                i21 += 3;
-                                fArr[i25] = ((Float) arrayList2.get(readInt5 + 2)).floatValue() * f9;
-                                int readInt6 = dataInputStream.readInt() * 2;
-                                int i26 = i22 + 1;
-                                if (readInt6 >= 0) {
-                                    arrayList = arrayList2;
-                                    if (readInt6 < arrayList4.size()) {
-                                        f10 = ((Float) arrayList4.get(readInt6)).floatValue();
-                                        fArr2[i22] = f10;
-                                        i16 = readInt6 + 1;
-                                        i22 += 2;
-                                        if (i16 >= 0 && i16 < arrayList4.size()) {
-                                            f11 = 1.0f - ((Float) arrayList4.get(i16)).floatValue();
-                                            fArr2[i26] = f11;
-                                            int readInt7 = dataInputStream.readInt() * 3;
-                                            fArr3[i23] = ((Float) arrayList3.get(readInt7)).floatValue();
-                                            int i27 = i23 + 2;
-                                            fArr3[i23 + 1] = ((Float) arrayList3.get(readInt7 + 1)).floatValue();
-                                            i23 += 3;
-                                            fArr3[i27] = ((Float) arrayList3.get(readInt7 + 2)).floatValue();
-                                            i20++;
-                                            arrayList2 = arrayList;
-                                            readInt = i24;
-                                        }
-                                        f11 = 0.0f;
-                                        fArr2[i26] = f11;
-                                        int readInt72 = dataInputStream.readInt() * 3;
-                                        fArr3[i23] = ((Float) arrayList3.get(readInt72)).floatValue();
-                                        int i272 = i23 + 2;
-                                        fArr3[i23 + 1] = ((Float) arrayList3.get(readInt72 + 1)).floatValue();
-                                        i23 += 3;
-                                        fArr3[i272] = ((Float) arrayList3.get(readInt72 + 2)).floatValue();
-                                        i20++;
-                                        arrayList2 = arrayList;
-                                        readInt = i24;
-                                    }
-                                } else {
-                                    arrayList = arrayList2;
-                                }
-                                f10 = 0.0f;
-                                fArr2[i22] = f10;
-                                i16 = readInt6 + 1;
-                                i22 += 2;
-                                if (i16 >= 0) {
-                                    f11 = 1.0f - ((Float) arrayList4.get(i16)).floatValue();
-                                    fArr2[i26] = f11;
-                                    int readInt722 = dataInputStream.readInt() * 3;
-                                    fArr3[i23] = ((Float) arrayList3.get(readInt722)).floatValue();
-                                    int i2722 = i23 + 2;
-                                    fArr3[i23 + 1] = ((Float) arrayList3.get(readInt722 + 1)).floatValue();
-                                    i23 += 3;
-                                    fArr3[i2722] = ((Float) arrayList3.get(readInt722 + 2)).floatValue();
-                                    i20++;
-                                    arrayList2 = arrayList;
-                                    readInt = i24;
-                                }
-                                f11 = 0.0f;
-                                fArr2[i26] = f11;
-                                int readInt7222 = dataInputStream.readInt() * 3;
-                                fArr3[i23] = ((Float) arrayList3.get(readInt7222)).floatValue();
-                                int i27222 = i23 + 2;
-                                fArr3[i23 + 1] = ((Float) arrayList3.get(readInt7222 + 1)).floatValue();
-                                i23 += 3;
-                                fArr3[i27222] = ((Float) arrayList3.get(readInt7222 + 2)).floatValue();
-                                i20++;
-                                arrayList2 = arrayList;
-                                readInt = i24;
-                            }
-                        } catch (IOException e13) {
-                            e = e13;
-                            e.printStackTrace();
-                            this.d[i11] = x3.l(ByteBuffer.allocateDirect(fArr.length * 4));
-                            this.d[i11].put(fArr).position(0);
-                            this.e[i11] = x3.l(ByteBuffer.allocateDirect(fArr2.length * 4));
-                            this.e[i11].put(fArr2).position(0);
-                            this.f[i11] = x3.l(ByteBuffer.allocateDirect(fArr3.length * 4));
-                            this.f[i11].put(fArr3).position(0);
-                            this.t[i11] = fArr.length;
-                            i11++;
-                        }
-                    } catch (IOException e14) {
-                        e = e14;
-                    }
-                    this.d[i11] = x3.l(ByteBuffer.allocateDirect(fArr.length * 4));
-                    this.d[i11].put(fArr).position(0);
-                    this.e[i11] = x3.l(ByteBuffer.allocateDirect(fArr2.length * 4));
-                    this.e[i11].put(fArr2).position(0);
-                    this.f[i11] = x3.l(ByteBuffer.allocateDirect(fArr3.length * 4));
-                    this.f[i11].put(fArr3).position(0);
-                    this.t[i11] = fArr.length;
-                    i11++;
+                if (this.T != i11) {
                 }
-                this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(this.U);
-                Paint paint = new Paint();
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{g6.w0(null, g6.Lj, false), g6.w0(null, g6.Mj, false), g6.w0(null, g6.Nj, false), g6.w0(null, g6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
-                canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
-                int[] iArr = new int[1];
-                GLES20.glGenTextures(1, iArr, 0);
-                GLES20.glBindTexture(3553, iArr[0]);
-                GLES20.glTexParameteri(3553, 10241, 9728);
-                GLES20.glTexParameteri(3553, 10240, 9728);
-                GLUtils.texImage2D(3553, 0, this.U, 0);
-                this.p = iArr[0];
-                int[] iArr2 = new int[1];
-                String str2 = (i10 != 0 || i10 == 2) ? "shaders/fragment4.glsl" : i10 == 4 ? "shaders/fragment5.glsl" : "shaders/fragment3.glsl";
-                int a2 = a.a(35633, c(b(context, "shaders/vertex2.glsl")));
-                int a10 = a.a(35632, c(b(context, str2)));
-                int glCreateProgram = GLES20.glCreateProgram();
-                GLES20.glAttachShader(glCreateProgram, a2);
-                GLES20.glAttachShader(glCreateProgram, a10);
-                GLES20.glLinkProgram(glCreateProgram);
-                GLES20.glGetProgramiv(glCreateProgram, 35714, iArr2, 0);
-                this.a = glCreateProgram;
-                i12 = this.X;
-                FloatBuffer[] floatBufferArr = this.d;
-                FloatBuffer[] floatBufferArr2 = this.f;
-                FloatBuffer[] floatBufferArr3 = this.e;
-                GLES20.glUseProgram(glCreateProgram);
-                this.k = GLES20.glGetAttribLocation(glCreateProgram, "vPosition");
-                this.l = GLES20.glGetAttribLocation(glCreateProgram, "a_TexCoordinate");
-                this.m = GLES20.glGetAttribLocation(glCreateProgram, "a_Normal");
-                this.g = GLES20.glGetUniformLocation(glCreateProgram, "u_Texture");
-                this.h = GLES20.glGetUniformLocation(glCreateProgram, "u_NormalMap");
-                this.i = GLES20.glGetUniformLocation(glCreateProgram, "u_BackgroundTexture");
-                this.n = GLES20.glGetUniformLocation(glCreateProgram, "f_xOffset");
-                this.o = GLES20.glGetUniformLocation(glCreateProgram, "f_alpha");
-                this.b = GLES20.glGetUniformLocation(glCreateProgram, "uMVPMatrix");
-                this.c = GLES20.glGetUniformLocation(glCreateProgram, "world");
-                this.q = GLES20.glGetUniformLocation(glCreateProgram, "white");
-                this.r = GLES20.glGetUniformLocation(glCreateProgram, "golden");
-                this.E = GLES20.glGetUniformLocation(glCreateProgram, "spec1");
-                this.F = GLES20.glGetUniformLocation(glCreateProgram, "spec2");
-                this.G = GLES20.glGetUniformLocation(glCreateProgram, "u_diffuse");
-                this.H = GLES20.glGetUniformLocation(glCreateProgram, "gradientColor1");
-                this.I = GLES20.glGetUniformLocation(glCreateProgram, "gradientColor2");
-                this.K = GLES20.glGetUniformLocation(glCreateProgram, "normalSpecColor");
-                this.J = GLES20.glGetUniformLocation(glCreateProgram, "normalSpec");
-                this.L = GLES20.glGetUniformLocation(glCreateProgram, "specColor");
-                this.M = GLES20.glGetUniformLocation(glCreateProgram, "resolution");
-                this.N = GLES20.glGetUniformLocation(glCreateProgram, "gradientPosition");
-                this.O = GLES20.glGetUniformLocation(glCreateProgram, "modelIndex");
-                this.P = GLES20.glGetUniformLocation(glCreateProgram, "modelIndex2");
-                this.Q = GLES20.glGetUniformLocation(glCreateProgram, "behind");
-                this.R = GLES20.glGetUniformLocation(glCreateProgram, TeXSymbolParser.TYPE_ATTR);
-                this.S = GLES20.glGetUniformLocation(glCreateProgram, "night");
-                this.T = GLES20.glGetUniformLocation(glCreateProgram, "time");
-                i13 = this.W;
-                int i28 = i13 * 3;
-                int[] iArr3 = new int[i28];
-                this.Y = iArr3;
-                int i29 = 0;
-                GLES20.glGenBuffers(i28, iArr3, 0);
-                i14 = 0;
-                while (i14 < i13) {
-                    int i30 = i14 * 3;
-                    GLES20.glBindBuffer(34962, this.Y[i30]);
-                    floatBufferArr3[i14].position(i29);
-                    GLES20.glBufferData(34962, floatBufferArr3[i14].capacity() * 4, floatBufferArr3[i14], 35044);
-                    GLES20.glEnableVertexAttribArray(this.l);
-                    floatBufferArr3[i14].clear();
-                    GLES20.glBindBuffer(34962, this.Y[i30 + 1]);
-                    floatBufferArr2[i14].position(0);
-                    GLES20.glBufferData(34962, floatBufferArr2[i14].capacity() * 4, floatBufferArr2[i14], 35044);
-                    GLES20.glEnableVertexAttribArray(this.m);
-                    floatBufferArr2[i14].clear();
-                    GLES20.glBindBuffer(34962, this.Y[i30 + 2]);
-                    floatBufferArr[i14].position(0);
-                    GLES20.glBufferData(34962, floatBufferArr[i14].capacity() * 4, floatBufferArr[i14], 35044);
-                    GLES20.glEnableVertexAttribArray(this.k);
-                    floatBufferArr[i14].clear();
-                    i14++;
-                    i29 = 0;
-                }
-                GLES20.glBindBuffer(34962, 0);
-                int[] iArr4 = new int[1];
-                GLES20.glGenTextures(1, iArr4, 0);
-                int i31 = iArr4[0];
-                this.p = i31;
-                GLES20.glBindTexture(3553, i31);
-                GLES20.glTexParameteri(3553, 10241, 9729);
-                GLES20.glTexParameteri(3553, 10240, 9729);
-                GLES20.glBindTexture(3553, this.p);
-                Bitmap bitmap2 = BitmapFactory.decodeStream(context.getAssets().open("flecks.png"));
-                int[] iArr5 = new int[1];
-                GLES20.glGenTextures(1, iArr5, 0);
-                GLES20.glBindTexture(3553, iArr5[0]);
-                GLES20.glTexParameteri(3553, 10241, 9729);
-                GLES20.glTexParameteri(3553, 10240, 9729);
-                GLUtils.texImage2D(3553, 0, bitmap2, 0);
-                bitmap2.recycle();
-                int[] iArr6 = new int[1];
-                GLES20.glGenTextures(1, iArr6, 0);
-                int i32 = iArr6[0];
-                this.j = i32;
-                GLES20.glBindTexture(3553, i32);
-                GLES20.glTexParameteri(3553, 10241, 9729);
-                GLES20.glTexParameteri(3553, 10240, 9729);
-                GLES20.glBindTexture(3553, this.j);
-                if (i12 != 0 || i12 == 2) {
-                    bitmap = SvgHelper.getBitmap(R.raw.start_texture, 240, 240, -1);
-                } else if (i12 == 1) {
-                    bitmap = BitmapFactory.decodeStream(context.getAssets().open("models/coin_border.png"));
-                } else {
-                    bitmap = i12 == 3 ? BitmapFactory.decodeStream(context.getAssets().open("models/deal_border.png")) : bitmap;
-                    bitmap = null;
-                }
-                if (bitmap == null) {
-                    int[] iArr7 = new int[1];
-                    c3 = 0;
-                    GLES20.glGenTextures(1, iArr7, 0);
-                    GLES20.glBindTexture(3553, iArr7[0]);
-                    GLES20.glTexParameteri(3553, 10241, 9729);
-                    GLES20.glTexParameteri(3553, 10240, 9729);
-                    GLUtils.texImage2D(3553, 0, bitmap, 0);
-                    bitmap.recycle();
-                    GLES20.glActiveTexture(33984);
-                    GLES20.glBindTexture(3553, iArr7[0]);
-                    GLES20.glUniform1i(this.g, 0);
-                    GLES20.glActiveTexture(33985);
-                    GLES20.glBindTexture(3553, iArr5[0]);
-                    GLES20.glUniform1i(this.h, 1);
-                } else {
-                    c3 = 0;
-                }
-                GLES20.glActiveTexture(33986);
-                GLES20.glBindTexture(3553, iArr6[c3]);
-                GLES20.glUniform1i(this.i, 2);
-                if (i12 != 4) {
-                    GLES20.glEnable(2884);
-                    GLES20.glEnable(3042);
-                    GLES20.glBlendFunc(770, 771);
-                    return;
-                }
-                return;
             }
-            strArr = new String[0];
-        }
-        strArr2 = strArr;
-        f9 = 1.0f;
-        int length2 = strArr2.length;
-        this.W = length2;
-        this.d = new FloatBuffer[length2];
-        this.e = new FloatBuffer[length2];
-        this.f = new FloatBuffer[length2];
-        this.t = new int[length2];
-        i11 = 0;
-        while (true) {
-            fArr = null;
-            if (i11 < this.W) {
+            i10 = 0;
+            if (this.S != i10) {
             }
-            this.d[i11] = x3.l(ByteBuffer.allocateDirect(fArr.length * 4));
-            this.d[i11].put(fArr).position(0);
-            this.e[i11] = x3.l(ByteBuffer.allocateDirect(fArr2.length * 4));
-            this.e[i11].put(fArr2).position(0);
-            this.f[i11] = x3.l(ByteBuffer.allocateDirect(fArr3.length * 4));
-            this.f[i11].put(fArr3).position(0);
-            this.t[i11] = fArr.length;
-            i11++;
+            if (!this.W) {
+            }
+            i11 = 0;
+            if (this.T != i11) {
+            }
         }
-        this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-        Canvas canvas2 = new Canvas(this.U);
-        Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{g6.w0(null, g6.Lj, false), g6.w0(null, g6.Mj, false), g6.w0(null, g6.Nj, false), g6.w0(null, g6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
-        canvas2.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint2);
-        int[] iArr8 = new int[1];
-        GLES20.glGenTextures(1, iArr8, 0);
-        GLES20.glBindTexture(3553, iArr8[0]);
-        GLES20.glTexParameteri(3553, 10241, 9728);
-        GLES20.glTexParameteri(3553, 10240, 9728);
-        GLUtils.texImage2D(3553, 0, this.U, 0);
-        this.p = iArr8[0];
-        int[] iArr22 = new int[1];
-        if (i10 != 0) {
-        }
-        int a22 = a.a(35633, c(b(context, "shaders/vertex2.glsl")));
-        int a102 = a.a(35632, c(b(context, str2)));
-        int glCreateProgram2 = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram2, a22);
-        GLES20.glAttachShader(glCreateProgram2, a102);
-        GLES20.glLinkProgram(glCreateProgram2);
-        GLES20.glGetProgramiv(glCreateProgram2, 35714, iArr22, 0);
-        this.a = glCreateProgram2;
-        i12 = this.X;
-        FloatBuffer[] floatBufferArr4 = this.d;
-        FloatBuffer[] floatBufferArr22 = this.f;
-        FloatBuffer[] floatBufferArr32 = this.e;
-        GLES20.glUseProgram(glCreateProgram2);
-        this.k = GLES20.glGetAttribLocation(glCreateProgram2, "vPosition");
-        this.l = GLES20.glGetAttribLocation(glCreateProgram2, "a_TexCoordinate");
-        this.m = GLES20.glGetAttribLocation(glCreateProgram2, "a_Normal");
-        this.g = GLES20.glGetUniformLocation(glCreateProgram2, "u_Texture");
-        this.h = GLES20.glGetUniformLocation(glCreateProgram2, "u_NormalMap");
-        this.i = GLES20.glGetUniformLocation(glCreateProgram2, "u_BackgroundTexture");
-        this.n = GLES20.glGetUniformLocation(glCreateProgram2, "f_xOffset");
-        this.o = GLES20.glGetUniformLocation(glCreateProgram2, "f_alpha");
-        this.b = GLES20.glGetUniformLocation(glCreateProgram2, "uMVPMatrix");
-        this.c = GLES20.glGetUniformLocation(glCreateProgram2, "world");
-        this.q = GLES20.glGetUniformLocation(glCreateProgram2, "white");
-        this.r = GLES20.glGetUniformLocation(glCreateProgram2, "golden");
-        this.E = GLES20.glGetUniformLocation(glCreateProgram2, "spec1");
-        this.F = GLES20.glGetUniformLocation(glCreateProgram2, "spec2");
-        this.G = GLES20.glGetUniformLocation(glCreateProgram2, "u_diffuse");
-        this.H = GLES20.glGetUniformLocation(glCreateProgram2, "gradientColor1");
-        this.I = GLES20.glGetUniformLocation(glCreateProgram2, "gradientColor2");
-        this.K = GLES20.glGetUniformLocation(glCreateProgram2, "normalSpecColor");
-        this.J = GLES20.glGetUniformLocation(glCreateProgram2, "normalSpec");
-        this.L = GLES20.glGetUniformLocation(glCreateProgram2, "specColor");
-        this.M = GLES20.glGetUniformLocation(glCreateProgram2, "resolution");
-        this.N = GLES20.glGetUniformLocation(glCreateProgram2, "gradientPosition");
-        this.O = GLES20.glGetUniformLocation(glCreateProgram2, "modelIndex");
-        this.P = GLES20.glGetUniformLocation(glCreateProgram2, "modelIndex2");
-        this.Q = GLES20.glGetUniformLocation(glCreateProgram2, "behind");
-        this.R = GLES20.glGetUniformLocation(glCreateProgram2, TeXSymbolParser.TYPE_ATTR);
-        this.S = GLES20.glGetUniformLocation(glCreateProgram2, "night");
-        this.T = GLES20.glGetUniformLocation(glCreateProgram2, "time");
-        i13 = this.W;
-        int i282 = i13 * 3;
-        int[] iArr32 = new int[i282];
-        this.Y = iArr32;
-        int i292 = 0;
-        GLES20.glGenBuffers(i282, iArr32, 0);
-        i14 = 0;
-        while (i14 < i13) {
-        }
-        GLES20.glBindBuffer(34962, 0);
-        int[] iArr42 = new int[1];
-        GLES20.glGenTextures(1, iArr42, 0);
-        int i312 = iArr42[0];
-        this.p = i312;
-        GLES20.glBindTexture(3553, i312);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glBindTexture(3553, this.p);
-        Bitmap bitmap22 = BitmapFactory.decodeStream(context.getAssets().open("flecks.png"));
-        int[] iArr52 = new int[1];
-        GLES20.glGenTextures(1, iArr52, 0);
-        GLES20.glBindTexture(3553, iArr52[0]);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLUtils.texImage2D(3553, 0, bitmap22, 0);
-        bitmap22.recycle();
-        int[] iArr62 = new int[1];
-        GLES20.glGenTextures(1, iArr62, 0);
-        int i322 = iArr62[0];
-        this.j = i322;
-        GLES20.glBindTexture(3553, i322);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glBindTexture(3553, this.j);
-        if (i12 != 0) {
-        }
-        bitmap = SvgHelper.getBitmap(R.raw.start_texture, 240, 240, -1);
-        if (bitmap == null) {
-        }
-        GLES20.glActiveTexture(33986);
-        GLES20.glBindTexture(3553, iArr62[c3]);
-        GLES20.glUniform1i(this.i, 2);
-        if (i12 != 4) {
-        }
+        k();
     }
 
-    public static String b(Context context, String str) {
-        StringBuilder sb2 = new StringBuilder();
-        try {
-            InputStream open = context.getAssets().open(str);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(open, StandardCharsets.UTF_8));
+    public final void f(float f10) {
+        int i10 = 0;
+        if (this.O != 0) {
+            this.S = 0;
+            n();
+        }
+        if (this.P != 0) {
+            this.T = 0;
+            o();
+        }
+        this.f0 = f10;
+        boolean z4 = this.H;
+        int i11 = 2;
+        if (!z4 && !this.W) {
+            Iterator it = m0.iterator();
             while (true) {
-                String readLine = bufferedReader.readLine();
-                if (readLine == null) {
+                if (!it.hasNext()) {
                     break;
                 }
-                sb2.append(readLine);
-                sb2.append("\n");
+                int intValue = ((Integer) it.next()).intValue();
+                if (Math.abs(intValue - f10) < 4.0f) {
+                    if (this.J != intValue) {
+                        this.J = intValue;
+                        af.b bVar = this.K;
+                        if (bVar != null) {
+                            AndroidUtilities.cancelRunOnUIThread(bVar);
+                        }
+                        af.b bVar2 = new af.b(this, intValue, i11);
+                        this.K = bVar2;
+                        AndroidUtilities.runOnUIThread(bVar2, 250L);
+                    }
+                }
             }
-            bufferedReader.close();
-            open.close();
-        } catch (IOException e10) {
-            e10.printStackTrace();
+        } else if (z4) {
+            if (Math.abs(this.I - f10) >= 12.0f || this.W) {
+                this.J = -1;
+                af.b bVar3 = this.K;
+                if (bVar3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(bVar3);
+                    this.K = null;
+                }
+                ValueAnimator valueAnimator = this.M;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                ValueAnimator valueAnimator2 = this.N;
+                if (valueAnimator2 != null) {
+                    valueAnimator2.cancel();
+                }
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+                this.N = duration;
+                duration.setInterpolator(nr.f);
+                this.N.addUpdateListener(new f(this, i10));
+                this.N.addListener(new g(this, 3));
+                this.N.start();
+                this.H = false;
+            } else {
+                f10 = this.M != null ? this.L : this.I;
+            }
         }
-        return sb2.toString();
+        ValueAnimator valueAnimator3 = this.N;
+        if (valueAnimator3 != null) {
+            f10 = AndroidUtilities.lerpAngle(0.0f, f10, valueAnimator3.getAnimatedFraction());
+        }
+        g(f10);
     }
 
-    public static String c(String str) {
-        Matcher matcher = Pattern.compile("RGB#([0-9a-fA-F]{6})").matcher(str);
-        StringBuffer stringBuffer = new StringBuffer();
-        while (matcher.find()) {
-            String group = matcher.group(1);
-            matcher.appendReplacement(stringBuffer, String.format(Locale.US, "vec3(%.3f, %.3f, %.3f)", Double.valueOf(Integer.parseInt(group.substring(0, 2), 16) / 255.0d), Double.valueOf(Integer.parseInt(group.substring(2, 4), 16) / 255.0d), Double.valueOf(Integer.parseInt(group.substring(4, 6), 16) / 255.0d)));
+    public final void g(float f10) {
+        setRotation(f10);
+        if (this.O != 0 || this.P != 0) {
+            k();
         }
-        matcher.appendTail(stringBuffer);
-        return stringBuffer.toString();
+        m();
     }
 
-    public final void a(int i10, boolean z10) {
-        int i11 = i10 * 3;
-        GLES20.glBindBuffer(34962, this.Y[i11]);
-        GLES20.glVertexAttribPointer(this.l, 2, 5126, false, 0, 0);
-        GLES20.glBindBuffer(34962, this.Y[i11 + 1]);
-        GLES20.glVertexAttribPointer(this.m, 3, 5126, false, 0, 0);
-        GLES20.glBindBuffer(34962, this.Y[i11 + 2]);
-        GLES20.glVertexAttribPointer(this.k, 3, 5126, false, 0, 0);
-        GLES20.glUniform1i(this.O, i10);
-        GLES20.glUniform1i(this.P, i10);
-        GLES20.glUniform1i(this.Q, z10 ? 1 : 0);
-        GLES20.glUniform1i(this.R, this.X);
-        GLES20.glDrawArrays(4, 0, this.t[i10] / 3);
+    public float getBounceScale() {
+        return 0.04f;
+    }
+
+    public float getMaxScale() {
+        return 100.0f;
+    }
+
+    public float getMinScale() {
+        return 0.0f;
+    }
+
+    public PointF getPosition() {
+        return this.D;
+    }
+
+    public float getPositionX() {
+        float f10;
+        float f11 = this.D.x;
+        if (getParent() != null) {
+            View view = (View) getParent();
+            int i10 = this.O;
+            if (i10 == 1) {
+                f10 = (getScaleX() * ((p() / 2.0f) - getStickyPaddingLeft())) + AndroidUtilities.dp(8.0f);
+            } else if (i10 == 2) {
+                f10 = view.getMeasuredWidth() / 2.0f;
+            } else if (i10 == 3) {
+                f10 = (view.getMeasuredWidth() - AndroidUtilities.dp(8.0f)) - (getScaleX() * (getStickyPaddingRight() + (p() / 2.0f)));
+            } else {
+                f10 = f11;
+            }
+            ValueAnimator valueAnimator = this.U;
+            if (valueAnimator != null) {
+                return AndroidUtilities.lerp(f11, f10, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+            }
+            if (f10 != 0.0f) {
+                return f10;
+            }
+        }
+        return f11;
+    }
+
+    public float getPositionY() {
+        float f10;
+        float f11 = this.D.y;
+        if (getParent() != null) {
+            View view = (View) getParent();
+            int i10 = this.P;
+            if (i10 == 1) {
+                f10 = (getScaleY() * ((b() / 2.0f) - getStickyPaddingTop())) + AndroidUtilities.dp(64.0f);
+            } else if (i10 == 2) {
+                f10 = view.getMeasuredHeight() / 2.0f;
+            } else if (i10 == 3) {
+                f10 = (view.getMeasuredHeight() - AndroidUtilities.dp(64.0f)) - (getScaleY() * (getStickyPaddingBottom() + (b() / 2.0f)));
+            } else {
+                f10 = f11;
+            }
+            ValueAnimator valueAnimator = this.V;
+            if (valueAnimator != null) {
+                return AndroidUtilities.lerp(f11, f10, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+            }
+            if (f10 != 0.0f) {
+                return f10;
+            }
+        }
+        return f11;
+    }
+
+    public float getScale() {
+        return getScaleX();
+    }
+
+    public sk0 getSelectionBounds() {
+        return new sk0(0.0f, 0.0f, 0.0f, 0.0f);
+    }
+
+    public float getStickyPaddingBottom() {
+        return 0.0f;
+    }
+
+    public float getStickyPaddingLeft() {
+        return 0.0f;
+    }
+
+    public float getStickyPaddingRight() {
+        return 0.0f;
+    }
+
+    public float getStickyPaddingTop() {
+        return 0.0f;
+    }
+
+    public final int getStickyX() {
+        return this.O;
+    }
+
+    public final int getStickyY() {
+        return this.P;
+    }
+
+    public UUID getUUID() {
+        return this.G;
+    }
+
+    public final void h(float... fArr) {
+        ValueAnimator valueAnimator = this.U;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
+        this.U = duration;
+        duration.setInterpolator(nr.f);
+        this.U.addUpdateListener(new f(this, 3));
+        this.U.addListener(new g(this, 0));
+        this.U.start();
+    }
+
+    public final void i(float... fArr) {
+        ValueAnimator valueAnimator = this.V;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
+        this.V = duration;
+        duration.setInterpolator(nr.f);
+        this.V.addUpdateListener(new f(this, 4));
+        this.V.addListener(new g(this, 1));
+        this.V.start();
+    }
+
+    @Override // android.view.View
+    public final boolean isSelected() {
+        return this.i0;
+    }
+
+    public final void j(float f10) {
+        float f11 = this.e0;
+        float f12 = f10 * f11;
+        this.e0 = f12;
+        float clamp = Utilities.clamp(Math.max(f12, 0.1f), getMaxScale(), getMinScale());
+        if (!(this instanceof a3)) {
+            if ((clamp >= getMaxScale() || clamp <= getMinScale()) != (f11 >= getMaxScale() || f11 <= getMinScale())) {
+                try {
+                    performHapticFeedback(3, 1);
+                } catch (Exception unused) {
+                }
+            }
+        }
+        setScaleX(clamp);
+        setScaleY(clamp);
+    }
+
+    public void k() {
+        setX(getPositionX() - (getMeasuredWidth() / 2.0f));
+        setY(getPositionY() - (getMeasuredHeight() / 2.0f));
+        m();
+    }
+
+    public final void l(ViewGroup viewGroup, boolean z4) {
+        if (this.i0 != z4) {
+            this.i0 = z4;
+            ValueAnimator valueAnimator = this.h0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.h0 = null;
+            }
+            if (this.E == null) {
+                if (!z4 && viewGroup == null) {
+                    return;
+                }
+                i a2 = a();
+                this.E = a2;
+                a2.f = !this.W;
+                a2.invalidate();
+                viewGroup.addView(this.E);
+                this.g0 = 0.0f;
+            }
+            this.E.b();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.g0, z4 ? 1.0f : 0.0f);
+            this.h0 = ofFloat;
+            ofFloat.addUpdateListener(new f(this, 2));
+            this.h0.addListener(new g(this, 4));
+            this.h0.setDuration(280L);
+            this.h0.setInterpolator(nr.h);
+            this.h0.start();
+        }
+    }
+
+    public final void m() {
+        i iVar = this.E;
+        if (iVar != null) {
+            iVar.b();
+        }
+    }
+
+    public final void n() {
+        AndroidUtilities.cancelRunOnUIThread(this.Q);
+        int i10 = this.O;
+        int i11 = this.S;
+        if (i10 == i11) {
+            return;
+        }
+        this.O = i11;
+        if (getParent() instanceof d) {
+            ((d) getParent()).invalidate();
+        }
+        ValueAnimator valueAnimator = this.U;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (this.S == 0) {
+            h(1.0f, 0.0f);
+        } else {
+            try {
+                performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            h(0.0f, 1.0f);
+        }
+    }
+
+    public final void o() {
+        AndroidUtilities.cancelRunOnUIThread(this.R);
+        int i10 = this.P;
+        int i11 = this.T;
+        if (i10 == i11) {
+            return;
+        }
+        this.P = i11;
+        if (getParent() instanceof d) {
+            ((d) getParent()).invalidate();
+        }
+        ValueAnimator valueAnimator = this.V;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (this.T == 0) {
+            i(1.0f, 0.0f);
+        } else {
+            try {
+                performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            i(0.0f, 1.0f);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return this.C.q();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x010a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0057  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z4;
+        int actionMasked;
+        j jVar;
+        boolean z10;
+        if (this.C.q()) {
+            h hVar = this.C;
+            float rawX = motionEvent.getRawX();
+            float rawY = motionEvent.getRawY();
+            float[] fArr = this.b0;
+            hVar.u(rawX, rawY, fArr);
+            boolean z11 = motionEvent.getPointerCount() > 1;
+            float[] fArr2 = this.c0;
+            if (z11) {
+                if (Build.VERSION.SDK_INT < 29) {
+                    z4 = false;
+                    float[] fArr3 = this.d0;
+                    if (z4) {
+                        fArr3[0] = fArr[0];
+                        fArr3[1] = fArr[1];
+                    } else {
+                        fArr3[0] = (fArr[0] + fArr2[0]) / 2.0f;
+                        fArr3[1] = (fArr[1] + fArr2[1]) / 2.0f;
+                    }
+                    if (this.W != z4) {
+                        this.b = fArr[0];
+                        this.c = fArr[1];
+                        this.d = fArr2[0];
+                        this.e = fArr2[1];
+                        this.f = fArr3[0];
+                        this.h = fArr3[1];
+                        i iVar = this.E;
+                        if (iVar != null) {
+                            iVar.f = !z4;
+                            iVar.invalidate();
+                        }
+                    }
+                    this.W = z4;
+                    float f10 = fArr3[0];
+                    float f11 = fArr3[1];
+                    actionMasked = motionEvent.getActionMasked();
+                    rc rcVar = this.a;
+                    if (actionMasked == 0) {
+                        if (actionMasked != 1) {
+                            if (actionMasked == 2) {
+                                jVar = this;
+                                z10 = jVar.c(fArr[0], fArr[1], z4, fArr2[0], fArr2[1]);
+                            } else if (actionMasked != 3) {
+                                z10 = false;
+                                jVar = this;
+                            }
+                            jVar.a0 = z4;
+                            if (!super.onTouchEvent(motionEvent) || z10) {
+                                return true;
+                            }
+                        }
+                        jVar = this;
+                        d(actionMasked == 3);
+                        rcVar.c(false);
+                        i iVar2 = jVar.E;
+                        if (iVar2 != null) {
+                            iVar2.f = true;
+                            iVar2.invalidate();
+                        }
+                    } else {
+                        jVar = this;
+                        jVar.a0 = false;
+                        jVar.b = fArr[0];
+                        jVar.c = fArr[1];
+                        jVar.f = f10;
+                        jVar.h = f11;
+                        jVar.r = false;
+                        if ((getParent() instanceof d) && (jVar.O != 0 || jVar.P != 0)) {
+                            ((d) getParent()).invalidate();
+                        }
+                        rcVar.c(true);
+                        e eVar = jVar.F;
+                        AndroidUtilities.cancelRunOnUIThread(eVar);
+                        if (!z4) {
+                            AndroidUtilities.runOnUIThread(eVar, ViewConfiguration.getLongPressTimeout());
+                        }
+                    }
+                    z10 = true;
+                    jVar.a0 = z4;
+                    if (!super.onTouchEvent(motionEvent)) {
+                    }
+                    return true;
+                }
+                this.C.u(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
+            }
+            z4 = z11;
+            float[] fArr32 = this.d0;
+            if (z4) {
+            }
+            if (this.W != z4) {
+            }
+            this.W = z4;
+            float f102 = fArr32[0];
+            float f112 = fArr32[1];
+            actionMasked = motionEvent.getActionMasked();
+            rc rcVar2 = this.a;
+            if (actionMasked == 0) {
+            }
+            z10 = true;
+            jVar.a0 = z4;
+            if (!super.onTouchEvent(motionEvent)) {
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public final float p() {
+        return (float) ((Math.abs(Math.sin((getRotation() / 180.0f) * 3.141592653589793d)) * getMeasuredHeight()) + (Math.abs(Math.cos((getRotation() / 180.0f) * 3.141592653589793d)) * getMeasuredWidth()));
+    }
+
+    public void setDelegate(h hVar) {
+        this.C = hVar;
+    }
+
+    public void setPosition(PointF pointF) {
+        this.D = pointF;
+        k();
+    }
+
+    public void setScale(float f10) {
+        this.e0 = f10;
+        setScaleX(f10);
+        setScaleY(f10);
+    }
+
+    public void setSelectionVisibility(boolean z4) {
+        i iVar = this.E;
+        if (iVar == null) {
+            return;
+        }
+        iVar.setVisibility(z4 ? 0 : 8);
+    }
+
+    public void setStickyX(int i10) {
+        this.S = i10;
+        this.O = i10;
+    }
+
+    public void setStickyY(int i10) {
+        this.T = i10;
+        this.P = i10;
+    }
+
+    public void setIsVideo(boolean z4) {
     }
 }

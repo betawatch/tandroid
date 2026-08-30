@@ -1,15 +1,15 @@
 package com.googlecode.mp4parser;
 
-import h7.o;
+import j7.k5;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class a implements s2.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static ac.c LOG = ac.c.a(a.class);
+    private static cc.c LOG = cc.c.a(a.class);
     private ByteBuffer content;
     long contentStartPosition;
     f dataSource;
@@ -61,8 +61,8 @@ public abstract class a implements s2.b {
                 try {
                     LOG.b("mem mapping " + getType());
                     throw null;
-                } catch (IOException e10) {
-                    throw new RuntimeException(e10);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
             }
         } catch (Throwable th2) {
@@ -85,7 +85,7 @@ public abstract class a implements s2.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(o.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(k5.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -112,7 +112,7 @@ public abstract class a implements s2.b {
     }
 
     public String getPath() {
-        return ac.e.a(this, "");
+        return cc.e.a(this, "");
     }
 
     @Override // s2.b

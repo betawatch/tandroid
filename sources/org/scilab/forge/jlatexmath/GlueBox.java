@@ -2,16 +2,16 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class GlueBox extends Box {
     protected float shrink;
     protected float stretch;
 
-    public GlueBox(float f9, float f10, float f11) {
-        this.width = f9;
-        this.stretch = f10;
-        this.shrink = f11;
+    public GlueBox(float f10, float f11, float f12) {
+        this.width = f10;
+        this.stretch = f11;
+        this.shrink = f12;
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
@@ -20,6 +20,6 @@ public class GlueBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f9, float f10) {
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
     }
 }

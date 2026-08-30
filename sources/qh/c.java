@@ -1,36 +1,67 @@
 package qh;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.w41;
-import org.telegram.ui.yu0;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import dg.a0;
+import eg.p2;
+import eg.q2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Utilities.Callback5, Utilities.Callback5Return, MessagesStorage.StringCallback {
-    public final /* synthetic */ g a;
+public final class c extends q2 {
+    public Paint[] n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(Context context, int i10, int i11) {
+        super(context);
+        this.r = i10;
+        this.s = i11;
+        b();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        g.U(this.a, (w41) obj);
+    @Override // eg.q2
+    public final void a() {
+        p2 p2Var = new p2(this.r);
+        this.a = p2Var;
+        p2Var.N = 106;
+        int i10 = 0;
+        p2Var.M = false;
+        p2Var.G = false;
+        p2Var.K = true;
+        p2Var.H = true;
+        p2Var.J = false;
+        p2Var.m = true;
+        p2Var.h = true;
+        if (this.s == 1) {
+            p2Var.k = AndroidUtilities.dp(24.0f);
+        }
+        this.n = new Paint[20];
+        while (true) {
+            Paint[] paintArr = this.n;
+            if (i10 >= paintArr.length) {
+                p2 p2Var2 = this.a;
+                p2Var2.l = new a0(this, 5);
+                p2Var2.r = 17;
+                p2Var2.s = 18;
+                p2Var2.t = 19;
+                p2Var2.P = j6.G6;
+                p2Var2.c();
+                return;
+            }
+            paintArr[i10] = new Paint(1);
+            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.d(i10 / (this.n.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
+            i10++;
+        }
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        g gVar = this.a;
-        gVar.getMessagesController().getChat(Long.valueOf(-gVar.a));
-        gVar.showDialog(new sh.a(gVar.getParentActivity(), null, gVar.a, new yu0(15, gVar, str)));
+    @Override // eg.q2
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

@@ -1,33 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qd implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final /* synthetic */ class qd implements rh.j0, org.telegram.ui.ActionBar.c2, tt, org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        int i10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = ChatActivityEnterView.i5;
-                break;
-            default:
-                jf jfVar = chatActivityEnterView.A0;
-                if (jfVar != null && jfVar.length() > 0) {
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        int i11 = ChatActivityEnterView.j5;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.O();
+        ff ffVar = chatActivityEnterView.B0;
+        if (ffVar != null) {
+            ffVar.setText("");
         }
-        return chatActivityEnterView.F0(view);
+    }
+
+    @Override // org.telegram.ui.Components.tt
+    public void j0() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.B0.invalidateEffects();
+        eg egVar = chatActivityEnterView.V2;
+        if (egVar != null) {
+            egVar.y1(chatActivityEnterView.B0.getTextToUse());
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n1
+    public void n(KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView;
+        bf bfVar;
+        int i10 = ChatActivityEnterView.j5;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (bfVar = (chatActivityEnterView = this.a).K0) != null && bfVar.isShowing()) {
+            chatActivityEnterView.K0.dismiss();
+        }
     }
 }

@@ -1,155 +1,71 @@
 package r5;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.media.session.t;
-import android.view.KeyEvent;
-import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import o5.p;
-import z5.l;
+import android.content.Context;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class g extends t {
-    public final /* synthetic */ h a;
+public final class g {
+    public static final u5.b c = new u5.b("SessionManager", null);
+    public final y a;
+    public final Context b;
 
-    public g(h hVar) {
-        this.a = hVar;
+    public g(y yVar, Context context) {
+        this.a = yVar;
+        this.b = context;
     }
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // android.support.v4.media.session.t
-    public final void onCustomAction(String str, Bundle bundle) {
-        h.v.b("onCustomAction with action = %s", str);
-        int hashCode = str.hashCode();
-        h hVar = this.a;
-        switch (hashCode) {
-            case -1699820260:
-                if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
-                    long j10 = -hVar.e.c;
-                    q5.h hVar2 = hVar.n;
-                    if (hVar2 == null) {
-                        return;
-                    }
-                    long min = Math.min(hVar2.g(), Math.max(0L, hVar2.a() + j10));
-                    q5.h hVar3 = hVar.n;
-                    if (hVar3 == null) {
-                        return;
-                    }
-                    hVar3.q(new p(min));
-                    return;
-                }
-                break;
-            case -668151673:
-                if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                    p5.g gVar = hVar.d;
-                    if (gVar != null) {
-                        gVar.b(true);
-                        return;
-                    }
-                    return;
-                }
-                break;
-            case -124479363:
-                if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                    p5.g gVar2 = hVar.d;
-                    if (gVar2 != null) {
-                        gVar2.b(false);
-                        return;
-                    }
-                    return;
-                }
-                break;
-            case 1362116196:
-                if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
-                    long j11 = hVar.e.c;
-                    q5.h hVar4 = hVar.n;
-                    if (hVar4 == null) {
-                        return;
-                    }
-                    long min2 = Math.min(hVar4.g(), Math.max(0L, hVar4.a() + j11));
-                    q5.h hVar5 = hVar.n;
-                    if (hVar5 == null) {
-                        return;
-                    }
-                    hVar5.q(new p(min2));
-                    return;
-                }
-                break;
-        }
-        Intent intent = new Intent(str);
-        intent.setComponent(hVar.g);
-        hVar.a.sendBroadcast(intent);
-    }
-
-    @Override // android.support.v4.media.session.t
-    public final boolean onMediaButtonEvent(Intent intent) {
-        q5.h hVar;
-        h.v.b("onMediaButtonEvent", new Object[0]);
-        KeyEvent keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT");
-        if (keyEvent == null) {
-            return true;
-        }
-        if ((keyEvent.getKeyCode() != 127 && keyEvent.getKeyCode() != 126) || (hVar = this.a.n) == null) {
-            return true;
-        }
-        hVar.r();
-        return true;
-    }
-
-    @Override // android.support.v4.media.session.t
-    public final void onPause() {
-        h.v.b("onPause", new Object[0]);
-        q5.h hVar = this.a.n;
-        if (hVar != null) {
-            hVar.r();
+    public final void a(h hVar) {
+        b6.m.e("Must be called from the main thread.");
+        try {
+            y yVar = this.a;
+            z zVar = new z(hVar);
+            Parcel M0 = yVar.M0();
+            com.google.android.gms.internal.cast.t.d(M0, zVar);
+            yVar.Q0(M0, 2);
+        } catch (RemoteException e) {
+            c.a(e, "Unable to call %s on %s.", "addSessionManagerListener", y.class.getSimpleName());
         }
     }
 
-    @Override // android.support.v4.media.session.t
-    public final void onPlay() {
-        h.v.b("onPlay", new Object[0]);
-        q5.h hVar = this.a.n;
-        if (hVar != null) {
-            hVar.r();
+    public final void b(boolean z4) {
+        u5.b bVar = c;
+        b6.m.e("Must be called from the main thread.");
+        try {
+            Log.i(bVar.a, bVar.d("End session for %s", this.b.getPackageName()));
+            y yVar = this.a;
+            Parcel M0 = yVar.M0();
+            int i10 = com.google.android.gms.internal.cast.t.a;
+            M0.writeInt(1);
+            M0.writeInt(z4 ? 1 : 0);
+            yVar.Q0(M0, 6);
+        } catch (RemoteException e) {
+            bVar.a(e, "Unable to call %s on %s.", "endCurrentSession", y.class.getSimpleName());
         }
     }
 
-    @Override // android.support.v4.media.session.t
-    public final void onSeekTo(long j10) {
-        h.v.b("onSeekTo %d", Long.valueOf(j10));
-        q5.h hVar = this.a.n;
-        if (hVar == null) {
-            return;
+    public final c c() {
+        b6.m.e("Must be called from the main thread.");
+        f d = d();
+        if (d == null || !(d instanceof c)) {
+            return null;
         }
-        hVar.q(new p(j10));
+        return (c) d;
     }
 
-    @Override // android.support.v4.media.session.t
-    public final void onSkipToNext() {
-        h.v.b("onSkipToNext", new Object[0]);
-        q5.h hVar = this.a.n;
-        if (hVar != null) {
-            l.e("Must be called from the main thread.");
-            if (hVar.w()) {
-                q5.h.x(new q5.i(hVar, 2));
-            } else {
-                q5.h.t();
-            }
-        }
-    }
-
-    @Override // android.support.v4.media.session.t
-    public final void onSkipToPrevious() {
-        h.v.b("onSkipToPrevious", new Object[0]);
-        q5.h hVar = this.a.n;
-        if (hVar != null) {
-            l.e("Must be called from the main thread.");
-            if (hVar.w()) {
-                q5.h.x(new q5.i(hVar, 1));
-            } else {
-                q5.h.t();
-            }
+    public final f d() {
+        b6.m.e("Must be called from the main thread.");
+        try {
+            y yVar = this.a;
+            Parcel O0 = yVar.O0(yVar.M0(), 1);
+            l6.a J0 = l6.b.J0(O0.readStrongBinder());
+            O0.recycle();
+            return (f) l6.b.K0(J0);
+        } catch (RemoteException e) {
+            c.a(e, "Unable to call %s on %s.", "getWrappedCurrentSession", y.class.getSimpleName());
+            return null;
         }
     }
 }

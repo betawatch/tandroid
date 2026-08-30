@@ -9,15 +9,16 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstream.g implements FileLoadOperationStream {
+public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
     private static final ConcurrentHashMap<Long, Integer> priorityMap = new ConcurrentHashMap<>();
     private long bytesRemaining;
@@ -26,8 +27,12 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
     private int currentAccount;
     File currentFile;
     private long currentOffset;
+    private g5.p dataSpec;
     private TLRPC.Document document;
     private RandomAccessFile file;
+    protected boolean isNetwork;
+    private int listenerCount;
+    private final ArrayList<g5.v0> listeners;
     private FileLoadOperation loadOperation;
     private boolean opened;
     private Object parentObject;
@@ -35,7 +40,8 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
     private Uri uri;
 
     public FileStreamLoadOperation() {
-        super(true);
+        this.isNetwork = true;
+        this.listeners = new ArrayList<>(1);
     }
 
     private int getCurrentPriority() {
@@ -61,31 +67,31 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
             return Uri.fromFile(pathToAttach);
         }
         try {
-            StringBuilder sb2 = new StringBuilder("?account=");
-            sb2.append(i10);
-            sb2.append("&id=");
-            sb2.append(document.id);
-            sb2.append("&hash=");
-            sb2.append(document.access_hash);
-            sb2.append("&dc=");
-            sb2.append(document.dc_id);
-            sb2.append("&size=");
-            sb2.append(document.size);
-            sb2.append("&mime=");
-            sb2.append(URLEncoder.encode(document.mime_type, "UTF-8"));
-            sb2.append("&rid=");
-            sb2.append(FileLoader.getInstance(i10).getFileReference(obj));
-            sb2.append("&name=");
-            sb2.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
-            sb2.append("&reference=");
+            StringBuilder sb = new StringBuilder("?account=");
+            sb.append(i10);
+            sb.append("&id=");
+            sb.append(document.id);
+            sb.append("&hash=");
+            sb.append(document.access_hash);
+            sb.append("&dc=");
+            sb.append(document.dc_id);
+            sb.append("&size=");
+            sb.append(document.size);
+            sb.append("&mime=");
+            sb.append(URLEncoder.encode(document.mime_type, "UTF-8"));
+            sb.append("&rid=");
+            sb.append(FileLoader.getInstance(i10).getFileReference(obj));
+            sb.append("&name=");
+            sb.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
+            sb.append("&reference=");
             byte[] bArr = document.file_reference;
             if (bArr == null) {
                 bArr = new byte[0];
             }
-            sb2.append(Utilities.bytesToHex(bArr));
-            return Uri.parse("tg://" + attachFileName + sb2.toString());
-        } catch (UnsupportedEncodingException e10) {
-            FileLog.e(e10);
+            sb.append(Utilities.bytesToHex(bArr));
+            return Uri.parse("tg://" + attachFileName + sb.toString());
+        } catch (UnsupportedEncodingException e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -96,7 +102,39 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         }
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
+    @Override // g5.m
+    public final void addTransferListener(g5.v0 v0Var) {
+        v0Var.getClass();
+        if (this.listeners.contains(v0Var)) {
+            return;
+        }
+        this.listeners.add(v0Var);
+        this.listenerCount++;
+    }
+
+    public final void bytesTransferred(int i10) {
+        g5.p pVar = this.dataSpec;
+        int i11 = h5.d0.a;
+        for (int i12 = 0; i12 < this.listenerCount; i12++) {
+            g5.v0 v0Var = this.listeners.get(i12);
+            boolean z4 = this.isNetwork;
+            g5.s sVar = (g5.s) v0Var;
+            synchronized (sVar) {
+                if (z4) {
+                    if (pVar != null) {
+                        try {
+                            if ((pVar.h & 8) == 8) {
+                            }
+                        } finally {
+                        }
+                    }
+                    sVar.h += i10;
+                }
+            }
+        }
+    }
+
+    @Override // g5.m
     public void close() {
         FileLog.e("FileStreamLoadOperation " + this.document.id + " close me=" + this);
         FileLoadOperation fileLoadOperation = this.loadOperation;
@@ -107,8 +145,8 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
             this.file = null;
         }
@@ -125,12 +163,12 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         }
     }
 
-    @Override // com.google.android.exoplayer2.upstream.g, com.google.android.exoplayer2.upstream.m
+    @Override // g5.m
     public Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
+    @Override // g5.m
     public Uri getUri() {
         return this.uri;
     }
@@ -144,12 +182,12 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         }
     }
 
-    @Override // com.google.android.exoplayer2.upstream.m
-    public long open(com.google.android.exoplayer2.upstream.q qVar) {
-        Uri uri = qVar.a;
-        long j10 = qVar.e;
+    @Override // g5.m
+    public long open(g5.p pVar) {
+        Uri uri = pVar.a;
+        long j10 = pVar.e;
         this.uri = uri;
-        transferInitializing(qVar);
+        transferInitializing(pVar);
         int intValue = Utilities.parseInt((CharSequence) this.uri.getQueryParameter("account")).intValue();
         this.currentAccount = intValue;
         this.parentObject = FileLoader.getInstance(intValue).getParentObject(Utilities.parseInt((CharSequence) this.uri.getQueryParameter("rid")).intValue());
@@ -171,7 +209,7 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         }
         allStreams.put(Long.valueOf(this.document.id), this);
         this.currentOffset = j10;
-        this.requestedLength = qVar.f;
+        this.requestedLength = pVar.f;
         this.loadOperation = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, getCurrentPriority());
         this.bytesTransferred = 0L;
         long j11 = this.document.size - j10;
@@ -181,7 +219,7 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
             this.bytesRemaining = Math.min(j11, j12);
         }
         this.opened = true;
-        transferStarted(qVar);
+        transferStarted(pVar);
         FileLoadOperation fileLoadOperation = this.loadOperation;
         if (fileLoadOperation != null) {
             File currentFile = fileLoadOperation.getCurrentFile();
@@ -213,15 +251,15 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
     
         if (r12.opened == false) goto L21;
      */
-    @Override // com.google.android.exoplayer2.upstream.j
+    @Override // g5.j
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public int read(byte[] bArr, int i10, int i11) {
         Exception exc;
         InterruptedException interruptedException;
-        Exception e10;
-        InterruptedException e11;
+        Exception e;
+        InterruptedException e6;
         FileStreamLoadOperation fileStreamLoadOperation;
         RandomAccessFile randomAccessFile;
         if (i11 == 0) {
@@ -238,12 +276,12 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         while (true) {
             if (i12 == 0) {
                 try {
-                } catch (InterruptedException e12) {
-                    interruptedException = e12;
+                } catch (InterruptedException e10) {
+                    interruptedException = e10;
                     FileLog.e(interruptedException);
                     return -3;
-                } catch (Exception e13) {
-                    exc = e13;
+                } catch (Exception e11) {
+                    exc = e11;
                     throw new IOException(exc);
                 }
             }
@@ -268,14 +306,14 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
                             countDownLatch.await();
                             fileStreamLoadOperation.countDownLatch = null;
                         }
-                    } catch (InterruptedException e14) {
-                        e11 = e14;
-                        interruptedException = e11;
+                    } catch (InterruptedException e12) {
+                        e6 = e12;
+                        interruptedException = e6;
                         FileLog.e(interruptedException);
                         return -3;
-                    } catch (Exception e15) {
-                        e10 = e15;
-                        exc = e10;
+                    } catch (Exception e13) {
+                        e = e13;
+                        exc = e;
                         throw new IOException(exc);
                     }
                 } else {
@@ -321,14 +359,14 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
                         }
                     }
                 }
-            } catch (InterruptedException e16) {
-                e11 = e16;
-                interruptedException = e11;
+            } catch (InterruptedException e14) {
+                e6 = e14;
+                interruptedException = e6;
                 FileLog.e(interruptedException);
                 return -3;
-            } catch (Exception e17) {
-                e10 = e17;
-                exc = e10;
+            } catch (Exception e15) {
+                e = e15;
+                exc = e;
                 throw new IOException(exc);
             }
         }
@@ -346,11 +384,33 @@ public class FileStreamLoadOperation extends com.google.android.exoplayer2.upstr
         return read;
     }
 
+    public final void transferEnded() {
+        g5.p pVar = this.dataSpec;
+        int i10 = h5.d0.a;
+        for (int i11 = 0; i11 < this.listenerCount; i11++) {
+            ((g5.s) this.listeners.get(i11)).e(pVar, this.isNetwork);
+        }
+        this.dataSpec = null;
+    }
+
+    public final void transferInitializing(g5.p pVar) {
+        for (int i10 = 0; i10 < this.listenerCount; i10++) {
+            this.listeners.get(i10).getClass();
+        }
+    }
+
+    public final void transferStarted(g5.p pVar) {
+        this.dataSpec = pVar;
+        for (int i10 = 0; i10 < this.listenerCount; i10++) {
+            ((g5.s) this.listeners.get(i10)).f(pVar, this.isNetwork);
+        }
+    }
+
     @Deprecated
-    public FileStreamLoadOperation(com.google.android.exoplayer2.upstream.y0 y0Var) {
+    public FileStreamLoadOperation(g5.v0 v0Var) {
         this();
-        if (y0Var != null) {
-            addTransferListener(y0Var);
+        if (v0Var != null) {
+            addTransferListener(v0Var);
         }
     }
 }

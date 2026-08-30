@@ -1,60 +1,84 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ServiceConfigurationError;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class s1 implements k2 {
-    public static final s1 b = new s1(0);
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ s1(int i10) {
-        this.a = i10;
-    }
-
-    public static final i2 a(Object obj, Object obj2) {
-        i2 i2Var = (i2) obj;
-        i2 i2Var2 = (i2) obj2;
-        if (!i2Var2.isEmpty()) {
-            if (!i2Var.a) {
-                if (i2Var.isEmpty()) {
-                    i2Var = new i2();
-                } else {
-                    i2 i2Var3 = new i2(i2Var);
-                    i2Var3.a = true;
-                    i2Var = i2Var3;
-                }
+public abstract class s1 {
+    public static o1 d() {
+        String str;
+        ClassLoader classLoader = s1.class.getClassLoader();
+        if (o1.class.equals(o1.class)) {
+            str = "com.google.protobuf.BlazeGeneratedExtensionRegistryLiteLoader";
+        } else {
+            if (!o1.class.getPackage().equals(s1.class.getPackage())) {
+                throw new IllegalArgumentException(o1.class.getName());
             }
-            i2Var.b();
-            if (!i2Var2.isEmpty()) {
-                i2Var.putAll(i2Var2);
-            }
+            str = o1.class.getPackage().getName() + ".BlazeGenerated" + o1.class.getSimpleName() + "Loader";
         }
-        return i2Var;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.k2
-    public r2 zzb(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!u1.class.isAssignableFrom(cls)) {
-                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+        try {
+            try {
+                try {
+                    android.support.v4.media.a.v(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                    throw null;
+                } catch (IllegalAccessException e) {
+                    throw new IllegalStateException(e);
+                } catch (InvocationTargetException e6) {
+                    throw new IllegalStateException(e6);
+                }
+            } catch (InstantiationException e10) {
+                throw new IllegalStateException(e10);
+            } catch (NoSuchMethodException e11) {
+                throw new IllegalStateException(e11);
+            }
+        } catch (ClassNotFoundException unused) {
+            try {
+                Iterator it = Arrays.asList(new s1[0]).iterator();
+                ArrayList arrayList = new ArrayList();
+                while (it.hasNext()) {
+                    try {
+                        if (it.next() == null) {
+                            throw null;
+                        }
+                        throw new ClassCastException();
+                    } catch (ServiceConfigurationError e12) {
+                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e12);
+                    }
+                }
+                if (arrayList.size() == 1) {
+                    return (o1) arrayList.get(0);
+                }
+                if (arrayList.size() == 0) {
+                    return null;
                 }
                 try {
-                    return (r2) u1.h(cls.asSubclass(u1.class)).d(3);
-                } catch (Exception e10) {
-                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
+                    return (o1) o1.class.getMethod("combine", Collection.class).invoke(null, arrayList);
+                } catch (IllegalAccessException e13) {
+                    throw new IllegalStateException(e13);
+                } catch (NoSuchMethodException e14) {
+                    throw new IllegalStateException(e14);
+                } catch (InvocationTargetException e15) {
+                    throw new IllegalStateException(e15);
                 }
-            default:
-                throw new IllegalStateException("This should never be called.");
+            } catch (Throwable th2) {
+                throw new ServiceConfigurationError(th2.getMessage(), th2);
+            }
         }
     }
 
-    @Override // com.google.android.gms.internal.play_billing.k2
-    public boolean zzc(Class cls) {
-        switch (this.a) {
-            case 0:
-                return u1.class.isAssignableFrom(cls);
-            default:
-                return false;
-        }
+    public void b() {
+    }
+
+    public void c(androidx.biometric.v vVar) {
+    }
+
+    public void a(int i10, CharSequence charSequence) {
     }
 }

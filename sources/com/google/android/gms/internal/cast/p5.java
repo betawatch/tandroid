@@ -1,77 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class p5 extends r5 {
-    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
-
-    @Override // com.google.android.gms.internal.cast.r5
+public final class p5 extends q5 {
+    @Override // com.google.android.gms.internal.cast.q5
     public final void a(Object obj, long j10) {
-        Object unmodifiableList;
-        List list = (List) s6.h(obj, j10);
-        if (list instanceof o5) {
-            unmodifiableList = ((o5) list).zzd();
-        } else {
-            if (c.isAssignableFrom(list.getClass())) {
-                return;
-            }
-            if ((list instanceof d6) && (list instanceof k5)) {
-                u4 u4Var = (u4) ((k5) list);
-                boolean z10 = u4Var.a;
-                if (z10 && z10) {
-                    u4Var.a = false;
-                    return;
-                }
-                return;
-            }
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
+        u4 u4Var = (u4) ((j5) r6.h(obj, j10));
+        if (u4Var.a) {
+            u4Var.a = false;
         }
-        s6.l(obj, j10, unmodifiableList);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.android.gms.internal.cast.r5
+    @Override // com.google.android.gms.internal.cast.q5
     public final void b(Object obj, long j10, Object obj2) {
-        n5 n5Var;
-        List list = (List) s6.h(obj2, j10);
-        int size = list.size();
-        List list2 = (List) s6.h(obj, j10);
-        if (list2.isEmpty()) {
-            list2 = list2 instanceof o5 ? new n5(size) : ((list2 instanceof d6) && (list2 instanceof k5)) ? ((k5) list2).zzg(size) : new ArrayList(size);
-            s6.l(obj, j10, list2);
-        } else {
-            if (c.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList = new ArrayList(list2.size() + size);
-                arrayList.addAll(list2);
-                s6.l(obj, j10, arrayList);
-                n5Var = arrayList;
-            } else if (list2 instanceof n6) {
-                n5 n5Var2 = new n5(list2.size() + size);
-                n5Var2.addAll(n5Var2.b.size(), (n6) list2);
-                s6.l(obj, j10, n5Var2);
-                n5Var = n5Var2;
-            } else if ((list2 instanceof d6) && (list2 instanceof k5)) {
-                k5 k5Var = (k5) list2;
-                if (!((u4) k5Var).a) {
-                    list2 = k5Var.zzg(list2.size() + size);
-                    s6.l(obj, j10, list2);
-                }
+        j5 j5Var = (j5) r6.h(obj, j10);
+        j5 j5Var2 = (j5) r6.h(obj2, j10);
+        int size = j5Var.size();
+        int size2 = j5Var2.size();
+        if (size > 0 && size2 > 0) {
+            if (!((u4) j5Var).a) {
+                j5Var = j5Var.zzg(size2 + size);
             }
-            list2 = n5Var;
+            j5Var.addAll(j5Var2);
         }
-        int size2 = list2.size();
-        int size3 = list.size();
-        if (size2 > 0 && size3 > 0) {
-            list2.addAll(list);
+        if (size > 0) {
+            j5Var2 = j5Var;
         }
-        if (size2 > 0) {
-            list = list2;
-        }
-        s6.l(obj, j10, list);
+        r6.l(obj, j10, j5Var2);
     }
 }

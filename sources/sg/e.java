@@ -1,34 +1,26 @@
 package sg;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import i7.f6;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class e extends FrameLayout {
-    public final ug.f a;
+public final class e implements a {
+    public a a;
 
-    public e(Context context) {
-        super(context);
-        ug.f fVar = new ug.f(context);
-        this.a = fVar;
-        addView(fVar, f6.g());
+    @Override // sg.a
+    public final void X(Canvas canvas, float f10, float f11, float f12, float f13) {
+        a aVar = this.a;
+        if (aVar != null) {
+            aVar.X(canvas, f10, f11, f12, f13);
+        }
     }
 
-    public final void a(lg.a aVar, og.d dVar) {
-        ug.f fVar = this.a;
-        fVar.b(aVar, dVar);
-        fVar.setIgnoreFastWay(true);
-        fVar.setFadeHeightTop(AndroidUtilities.dp(48.0f));
-        fVar.setFadeHeightBottom(AndroidUtilities.dp(48.0f));
+    @Override // sg.a
+    public final pg.b k() {
+        return new pg.d(this);
     }
 
-    @Override // android.view.ViewGroup
-    public final void onViewAdded(View view) {
-        super.onViewAdded(view);
-        bringChildToFront(this.a);
+    @Override // sg.a
+    public final /* synthetic */ void f() {
     }
 }

@@ -1,33 +1,18 @@
 package l7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class v4 implements s9.d {
+public final class v4 implements u9.d {
     public static final v4 a = new v4();
-    public static final s9.c b = new s9.c("durationMs", u3.c.h(j7.l1.q(w.class, new s(1))));
-    public static final s9.c c = new s9.c("errorCode", u3.c.h(j7.l1.q(w.class, new s(2))));
-    public static final s9.c d = new s9.c("isColdCall", u3.c.h(j7.l1.q(w.class, new s(3))));
-    public static final s9.c e = new s9.c("autoManageModelOnBackground", u3.c.h(j7.l1.q(w.class, new s(4))));
-    public static final s9.c f = new s9.c("autoManageModelOnLowMemory", u3.c.h(j7.l1.q(w.class, new s(5))));
-    public static final s9.c g = new s9.c("isNnApiEnabled", u3.c.h(j7.l1.q(w.class, new s(6))));
-    public static final s9.c h = new s9.c("eventsCount", u3.c.h(j7.l1.q(w.class, new s(7))));
-    public static final s9.c i = new s9.c("otherErrors", u3.c.h(j7.l1.q(w.class, new s(8))));
-    public static final s9.c j = new s9.c("remoteConfigValueForAcceleration", u3.c.h(j7.l1.q(w.class, new s(9))));
-    public static final s9.c k = new s9.c("isAccelerated", u3.c.h(j7.l1.q(w.class, new s(10))));
+    public static final u9.c b = new u9.c("maxLabels", vh.v2.h(kh.a2.o(h0.class, new e0(1))));
+    public static final u9.c c = new u9.c("confidenceThreshold", vh.v2.h(kh.a2.o(h0.class, new e0(2))));
+    public static final u9.c d = new u9.c("customLocalModelOptions", vh.v2.h(kh.a2.o(h0.class, new e0(3))));
 
-    @Override // s9.a
+    @Override // u9.a
     public final void a(Object obj, Object obj2) {
-        va vaVar = (va) obj;
-        s9.e eVar = (s9.e) obj2;
-        eVar.e(b, vaVar.a);
-        eVar.e(c, vaVar.b);
-        eVar.e(d, vaVar.c);
-        eVar.e(e, null);
-        eVar.e(f, null);
-        eVar.e(g, null);
-        eVar.e(h, null);
-        eVar.e(i, null);
-        eVar.e(j, null);
-        eVar.e(k, null);
+        u9.e eVar = (u9.e) obj2;
+        eVar.e(b, null);
+        eVar.e(c, ((n8) obj).a);
+        eVar.e(d, null);
     }
 }

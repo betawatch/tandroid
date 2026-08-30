@@ -8,12 +8,12 @@ import android.util.Log;
 import androidx.car.app.IOnRequestPermissionsListener;
 import androidx.fragment.app.e0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class CarAppPermissionActivity extends androidx.activity.l {
-    public static final /* synthetic */ int F = 0;
+public class CarAppPermissionActivity extends androidx.activity.m {
+    public static final /* synthetic */ int G = 0;
 
-    @Override // androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.activity.m, e0.h, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
@@ -34,9 +34,9 @@ public class CarAppPermissionActivity extends androidx.activity.l {
         }
         Intent intent = getIntent();
         if (intent == null || !"androidx.car.app.action.REQUEST_PERMISSIONS".equals(intent.getAction())) {
-            StringBuilder sb2 = new StringBuilder("Unexpected intent action for CarAppPermissionActivity: ");
-            sb2.append(intent == null ? "null Intent" : intent.getAction());
-            Log.e("CarApp", sb2.toString());
+            StringBuilder sb = new StringBuilder("Unexpected intent action for CarAppPermissionActivity: ");
+            sb.append(intent == null ? "null Intent" : intent.getAction());
+            Log.e("CarApp", sb.toString());
             finish();
             return;
         }

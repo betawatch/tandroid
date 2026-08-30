@@ -1,69 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ContextThemeWrapper;
-import org.telegram.ui.Components.RadialProgressView;
+import android.view.View;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class fd extends RadialProgressView {
-    public final /* synthetic */ int G;
-    public final /* synthetic */ Object H;
+public final /* synthetic */ class fd implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nd b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fd(org.telegram.ui.Components.r40 r40Var, Context context, int i10) {
-        super(context, null);
-        this.G = i10;
-        this.H = r40Var;
+    public /* synthetic */ fd(nd ndVar, int i10) {
+        this.a = i10;
+        this.b = ndVar;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.G) {
-            case 3:
-                super.invalidate();
-                rt0 rt0Var = ((PhotoViewer) this.H).a0;
-                if (rt0Var != null) {
-                    rt0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
-    public final void setAlpha(float f9) {
-        switch (this.G) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                super.setAlpha(f9);
-                ((hd) this.H).f.invalidate();
+                nd.X(this.b, view);
                 break;
             case 1:
-                super.setAlpha(f9);
-                ((t60) this.H).e.invalidate();
+                nd ndVar = this.b;
+                ndVar.v.o(ndVar.x != null, new ed(ndVar, 1), new v5(ndVar, 2), 0);
+                ndVar.G.K(0);
+                ndVar.G.N(43);
+                ndVar.h.d();
                 break;
             case 2:
-                super.setAlpha(f9);
-                ((pe0) this.H).h.invalidate();
+                nd ndVar2 = this.b;
+                if (!ndVar2.g0) {
+                    ndVar2.f0();
+                    break;
+                } else if (ndVar2.X) {
+                    ndVar2.X = false;
+                    ndVar2.h0();
+                    break;
+                }
                 break;
             default:
-                super.setAlpha(f9);
-                rt0 rt0Var = ((PhotoViewer) this.H).a0;
-                if (rt0Var != null) {
-                    rt0Var.invalidate();
+                nd ndVar3 = this.b;
+                if (!ndVar3.X) {
+                    ndVar3.X = true;
+                    ndVar3.h0();
                     break;
                 }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(contextThemeWrapper, c6Var);
-        this.G = 3;
-        this.H = photoViewer;
     }
 }

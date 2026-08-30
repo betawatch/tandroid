@@ -1,42 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wo0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dq0 b;
+public final class wo0 extends FrameLayout {
+    public final /* synthetic */ ve a;
 
-    public /* synthetic */ wo0(dq0 dq0Var, int i10) {
-        this.a = i10;
-        this.b = dq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wo0(ve veVar, Context context) {
+        super(context);
+        this.a = veVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                dq0 dq0Var = this.b;
-                dq0Var.w0 = true;
-                x10 x10Var = dq0Var.u0;
-                x10Var.r.setText("");
-                AndroidUtilities.showKeyboard(x10Var.r);
-                break;
-            default:
-                g5 g5Var = new g5(14);
-                dq0 dq0Var2 = this.b;
-                if (!dq0Var2.isKeyboardVisible()) {
-                    g5Var.run();
-                    break;
-                } else {
-                    x10 x10Var2 = dq0Var2.u0;
-                    if (x10Var2 != null) {
-                        AndroidUtilities.hideKeyboard(x10Var2.r);
-                    }
-                    AndroidUtilities.runOnUIThread(g5Var, 300L);
-                    break;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ve veVar = this.a;
+        View contentView = veVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + veVar.E;
+        iArr[1] = iArr[1] + veVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
                 }
+            }
         }
+        if (!veVar.A && !veVar.D) {
+            veVar.D = true;
+            veVar.l(new o1.j[0]);
+        }
+        return true;
     }
 }

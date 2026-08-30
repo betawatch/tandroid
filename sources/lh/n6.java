@@ -1,108 +1,72 @@
 package lh;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.Set;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.uf0;
+import org.telegram.ui.b10;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class n6 extends k6 {
-    public final ArrayList C;
+public final /* synthetic */ class n6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public n6(int i10, ArrayList arrayList) {
-        super(i10, 0L, 3, -1, null);
-        this.C = new ArrayList();
-        F(arrayList);
+    public /* synthetic */ n6(Object obj, boolean z4, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = z4;
+        this.c = i10;
     }
 
-    public final void F(ArrayList arrayList) {
-        int i10;
-        ArrayList arrayList2 = this.i;
-        arrayList2.size();
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            int size = arrayList.size();
-            i10 = this.c;
-            if (i11 >= size) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                t7 t7Var = (t7) this.d;
+                if (!this.b) {
+                    t7Var.getClass();
+                    break;
+                } else {
+                    Set set = t7Var.Q;
+                    int i10 = this.c;
+                    set.remove(Integer.valueOf(i10));
+                    Runnable runnable = (Runnable) t7Var.R.remove(Integer.valueOf(i10));
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
                 break;
-            }
-            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i11);
-            if (storyItem != null) {
-                storyItem.messageId = arrayList2.size();
-                MessageObject messageObject = new MessageObject(i10, storyItem);
-                messageObject.generateThumbs(false);
-                ArrayList arrayList3 = new ArrayList();
-                arrayList3.add(Integer.valueOf(arrayList2.size()));
-                this.C.add(arrayList3);
-                arrayList2.add(messageObject);
-                i12++;
-            }
-            i11++;
+            case 1:
+                ((uf0) this.d).a.b.y3(this.c, this.b);
+                break;
+            case 2:
+                fn0 fn0Var = (fn0) this.d;
+                fn0Var.o = null;
+                fn0Var.c(this.c, this.b, true);
+                break;
+            default:
+                qc a02 = qc.a0((b10) this.d);
+                boolean z4 = this.b;
+                int i11 = z4 ? R.raw.folder_in : R.raw.folder_out;
+                int i12 = this.c;
+                ic M = a02.M(z4 ? LocaleController.formatPluralString("FolderLinkAddedChats", i12, new Object[0]) : LocaleController.formatPluralString("FolderLinkRemovedChats", i12, new Object[0]), LocaleController.getString(R.string.FolderLinkChatlistUpdate), i11);
+                M.j = 5000;
+                M.j();
+                break;
         }
-        if (i12 > 0) {
-            NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this);
-        }
     }
 
-    @Override // lh.k6
-    public final MessageObject f(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.i;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        return (MessageObject) arrayList.get(i10);
-    }
-
-    @Override // lh.k6
-    public final int g() {
-        return this.i.size();
-    }
-
-    @Override // lh.k6
-    public final ArrayList h() {
-        return new ArrayList(this.C);
-    }
-
-    @Override // lh.k6
-    public final int i() {
-        return this.i.size();
-    }
-
-    @Override // lh.k6
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // lh.k6
-    public final boolean l() {
-        return false;
-    }
-
-    @Override // lh.k6
-    public final boolean q(int i10, List list, boolean z10) {
-        return false;
-    }
-
-    @Override // lh.k6
-    public final boolean r(int i10) {
-        return false;
-    }
-
-    @Override // lh.k6
-    public final void j() {
-    }
-
-    @Override // lh.k6
-    public final void s() {
-    }
-
-    @Override // lh.k6
-    public final void x() {
+    public /* synthetic */ n6(fn0 fn0Var, int i10, boolean z4) {
+        this.a = 2;
+        this.d = fn0Var;
+        this.c = i10;
+        this.b = z4;
     }
 }

@@ -1,58 +1,43 @@
 package t4;
 
-import java.nio.ByteBuffer;
-import m3.m;
-import org.telegram.tgnet.TLObject;
+import j7.p7;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class e extends m implements g {
-    public final String a;
+public final class e extends q4.e {
+    public byte[] s;
+    public volatile boolean v;
+    public byte[] w;
 
-    public e(String str) {
-        super(new j[2], new k[2]);
-        this.a = str;
-        setInitialInputBufferSize(1024);
-    }
-
-    public abstract f c(int i10, boolean z10, byte[] bArr);
-
-    @Override // m3.m
-    public final m3.i createInputBuffer() {
-        return new j();
-    }
-
-    @Override // m3.m
-    public final m3.k createOutputBuffer() {
-        return new d(this, 1);
-    }
-
-    @Override // m3.m
-    public final m3.g createUnexpectedDecodeException(Throwable th2) {
-        return new h("Unexpected decode error", th2);
-    }
-
-    @Override // m3.m
-    public final m3.g decode(m3.i iVar, m3.k kVar, boolean z10) {
-        j jVar = (j) iVar;
-        k kVar2 = (k) kVar;
+    @Override // g5.j0
+    public final void a() {
         try {
-            ByteBuffer byteBuffer = jVar.b;
-            byteBuffer.getClass();
-            kVar2.a(jVar.d, c(byteBuffer.limit(), z10, byteBuffer.array()), jVar.n);
-            kVar2.clearFlag(TLObject.FLAG_31);
-            return null;
-        } catch (h e10) {
-            return e10;
+            this.r.open(this.b);
+            int i10 = 0;
+            int i11 = 0;
+            while (i10 != -1 && !this.v) {
+                byte[] bArr = this.s;
+                if (bArr.length < i11 + 16384) {
+                    this.s = Arrays.copyOf(bArr, bArr.length + 16384);
+                }
+                i10 = this.r.read(this.s, i11, 16384);
+                if (i10 != -1) {
+                    i11 += i10;
+                }
+            }
+            if (!this.v) {
+                this.w = Arrays.copyOf(this.s, i11);
+            }
+            p7.a(this.r);
+        } catch (Throwable th2) {
+            p7.a(this.r);
+            throw th2;
         }
     }
 
-    @Override // m3.e
-    public final String getName() {
-        return this.a;
-    }
-
-    @Override // t4.g
-    public final void a(long j10) {
+    @Override // g5.j0
+    public final void r() {
+        this.v = true;
     }
 }

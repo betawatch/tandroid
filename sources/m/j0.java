@@ -1,124 +1,181 @@
 package m;
 
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.widget.ListAdapter;
-import androidx.appcompat.app.AlertController$RecycleListView;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.ActionMode;
+import android.view.View;
+import android.view.WindowManager;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.hv0;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.bs;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class j0 implements p0, DialogInterface.OnClickListener {
-    public g.f a;
-    public k0 b;
-    public CharSequence c;
-    public final /* synthetic */ q0 d;
+public final /* synthetic */ class j0 implements NativeInstance.AudioLevelsCallback, gv0, hv0, org.telegram.ui.ActionBar.c2, o3.n, j3.f, v2.e, tv0, Utilities.Callback2Return, ug.g, hl0 {
+    public final /* synthetic */ int a;
 
-    public j0(q0 q0Var) {
-        this.d = q0Var;
+    public /* synthetic */ j0(int i10) {
+        this.a = i10;
     }
 
-    @Override // m.p0
-    public final boolean a() {
-        g.f fVar = this.a;
-        if (fVar != null) {
-            return fVar.isShowing();
+    public static /* bridge */ /* synthetic */ ActionMode.Callback2 f(Object obj) {
+        return (ActionMode.Callback2) obj;
+    }
+
+    @Override // v2.e
+    public Object apply(Object obj) {
+        o9.a.b.getClass();
+        return l9.a.a.e((k9.e2) obj).getBytes(Charset.forName("UTF-8"));
+    }
+
+    @Override // org.telegram.ui.Components.hv0
+    public void b(Object obj, float f10) {
+        switch (this.a) {
+            case 4:
+                nh.j1 j1Var = (nh.j1) obj;
+                WindowManager.LayoutParams layoutParams = j1Var.c;
+                j1Var.K = f10;
+                layoutParams.x = (int) f10;
+                AndroidUtilities.updateViewLayout(j1Var.b, j1Var.d, layoutParams);
+                break;
+            case 6:
+                nh.j1 j1Var2 = (nh.j1) obj;
+                WindowManager.LayoutParams layoutParams2 = j1Var2.c;
+                j1Var2.L = f10;
+                layoutParams2.y = (int) f10;
+                AndroidUtilities.updateViewLayout(j1Var2.b, j1Var2.d, layoutParams2);
+                break;
+            case 26:
+                bs bsVar = (bs) obj;
+                bsVar.b = f10;
+                if (bsVar.getParent() != null) {
+                    ((View) bsVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            default:
+                bs bsVar2 = (bs) obj;
+                bsVar2.c = f10;
+                if (bsVar2.getParent() != null) {
+                    ((View) bsVar2.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
-        return false;
     }
 
-    @Override // m.p0
-    public final int b() {
-        return 0;
-    }
-
-    @Override // m.p0
-    public final void c(int i10) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final CharSequence d() {
-        return this.c;
-    }
-
-    @Override // m.p0
-    public final void dismiss() {
-        g.f fVar = this.a;
-        if (fVar != null) {
-            fVar.dismiss();
-            this.a = null;
+    @Override // j3.f
+    public j3.g c(Bundle bundle) {
+        s8.i0 s6;
+        switch (this.a) {
+            case 11:
+                ArrayList parcelableArrayList = bundle.getParcelableArrayList(o4.s0.f);
+                if (parcelableArrayList == null) {
+                    s8.t tVar = s8.v.b;
+                    s6 = s8.i0.e;
+                } else {
+                    s6 = h5.a.s(j3.n0.G0, parcelableArrayList);
+                }
+                return new o4.s0(bundle.getString(o4.s0.h, ""), (j3.n0[]) s6.toArray(new j3.n0[0]));
+            default:
+                ArrayList parcelableArrayList2 = bundle.getParcelableArrayList(o4.t0.e);
+                return parcelableArrayList2 == null ? new o4.t0(new o4.s0[0]) : new o4.t0((o4.s0[]) h5.a.s(o4.s0.n, parcelableArrayList2).toArray(new o4.s0[0]));
         }
     }
 
-    @Override // m.p0
-    public final Drawable e() {
-        return null;
+    @Override // ug.g
+    public void d(RectF rectF, View view) {
+        view.invalidate();
     }
 
-    @Override // m.p0
-    public final void i(CharSequence charSequence) {
-        this.c = charSequence;
+    @Override // org.telegram.ui.Components.gv0
+    public float get(Object obj) {
+        switch (this.a) {
+            case 3:
+                return ((nh.j1) obj).K;
+            case 5:
+                return ((nh.j1) obj).L;
+            case 25:
+                return ((bs) obj).b;
+            case 27:
+                return ((bs) obj).c;
+            default:
+                return ((bs) obj).d;
+        }
     }
 
-    @Override // m.p0
-    public final void j(Drawable drawable) {
-        Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final void k(int i10) {
-        Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final void l(int i10) {
-        Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
-    }
-
-    @Override // m.p0
-    public final void m(int i10, int i11) {
-        if (this.b == null) {
+    @Override // org.telegram.ui.Components.tv0
+    public void h(int i10) {
+        if (i10 == 0) {
+            SharedConfig.setKeepMedia(3);
             return;
         }
-        q0 q0Var = this.d;
-        p2.u uVar = new p2.u(q0Var.getPopupContext());
-        g.c cVar = (g.c) uVar.c;
-        CharSequence charSequence = this.c;
-        if (charSequence != null) {
-            cVar.d = charSequence;
+        if (i10 == 1) {
+            SharedConfig.setKeepMedia(0);
+        } else if (i10 == 2) {
+            SharedConfig.setKeepMedia(1);
+        } else if (i10 == 3) {
+            SharedConfig.setKeepMedia(2);
         }
-        k0 k0Var = this.b;
-        int selectedItemPosition = q0Var.getSelectedItemPosition();
-        cVar.i = k0Var;
-        cVar.j = this;
-        cVar.m = selectedItemPosition;
-        cVar.l = true;
-        g.f d = uVar.d();
-        this.a = d;
-        AlertController$RecycleListView alertController$RecycleListView = d.f.e;
-        h0.d(alertController$RecycleListView, i10);
-        h0.c(alertController$RecycleListView, i11);
-        this.a.show();
     }
 
-    @Override // m.p0
-    public final int n() {
-        return 0;
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        q0 q0Var = this.d;
-        q0Var.setSelection(i10);
-        if (q0Var.getOnItemClickListener() != null) {
-            q0Var.performItemClick(null, i10, this.b.getItemId(i10));
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 7:
+                d2Var.dismiss();
+                break;
+            case 8:
+                d2Var.dismiss();
+                break;
+            case 15:
+                d2Var.dismiss();
+                break;
+            case 20:
+                d2Var.dismiss();
+                break;
+            default:
+                d2Var.dismiss();
+                break;
         }
-        dismiss();
     }
 
-    @Override // m.p0
-    public final void p(ListAdapter listAdapter) {
-        this.b = (k0) listAdapter;
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback2Return
+    public Object run(Object obj, Object obj2) {
+        Integer num = (Integer) obj;
+        Integer num2 = (Integer) obj2;
+        switch (this.a) {
+            case 18:
+                if (num.intValue() == 0) {
+                    return LocaleController.formatPluralString("MaximumReactionsValue", num2.intValue(), new Object[0]);
+                }
+                return "" + num2;
+            default:
+                if (num.intValue() == 0) {
+                    return LocaleController.formatPluralStringComma("Stars", num2.intValue());
+                }
+                return "" + num2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tv0
+    public /* synthetic */ void m() {
+    }
+
+    @Override // o3.n
+    public void release() {
     }
 }

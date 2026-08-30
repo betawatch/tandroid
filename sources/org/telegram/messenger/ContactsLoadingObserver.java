@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class ContactsLoadingObserver {
     private final Callback callback;
@@ -12,20 +12,20 @@ public final class ContactsLoadingObserver {
     private final int currentAccount;
     private final Handler handler;
     private final NotificationCenter notificationCenter;
-    private final NotificationCenter.NotificationCenterDelegate observer = new x1(this, 0);
+    private final NotificationCenter.NotificationCenterDelegate observer = new y1(this, 0);
     private final Runnable releaseRunnable;
     private boolean released;
 
-    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+    /* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
     public interface Callback {
-        void onResult(boolean z10);
+        void onResult(boolean z4);
     }
 
     private ContactsLoadingObserver(Callback callback) {
         this.callback = callback;
         int i10 = UserConfig.selectedAccount;
         this.currentAccount = i10;
-        this.releaseRunnable = new d1(this, 17);
+        this.releaseRunnable = new e1(this, 17);
         this.contactsController = ContactsController.getInstance(i10);
         this.notificationCenter = NotificationCenter.getInstance(i10);
         this.handler = new Handler(Looper.myLooper());
@@ -47,16 +47,16 @@ public final class ContactsLoadingObserver {
         new ContactsLoadingObserver(callback).start(j10);
     }
 
-    private boolean onContactsLoadingStateUpdated(int i10, boolean z10) {
+    private boolean onContactsLoadingStateUpdated(int i10, boolean z4) {
         if (this.released) {
             return false;
         }
-        boolean z11 = this.contactsController.contactsLoaded;
-        if (!z11 && !z10) {
+        boolean z10 = this.contactsController.contactsLoaded;
+        if (!z10 && !z4) {
             return false;
         }
         release();
-        this.callback.onResult(z11);
+        this.callback.onResult(z10);
         return true;
     }
 

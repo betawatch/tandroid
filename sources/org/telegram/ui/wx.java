@@ -1,38 +1,35 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wx implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xx b;
+public final class wx implements ValueAnimator.AnimatorUpdateListener {
+    public int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ oy d;
 
-    public /* synthetic */ wx(xx xxVar, int i10) {
-        this.a = i10;
-        this.b = xxVar;
+    public wx(oy oyVar, float f10, boolean z4, float f11) {
+        this.d = oyVar;
+        this.b = f10;
+        this.c = f11;
+        this.a = (int) f10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                xx xxVar = this.b;
-                fy fyVar = xxVar.A0;
-                Context context = xxVar.getContext();
-                i10 = ((org.telegram.ui.ActionBar.o2) fyVar).currentAccount;
-                fyVar.showDialog(new cg.v0(3, i10, context, fyVar, null));
-                break;
-            default:
-                fy fyVar2 = this.b.A0;
-                cx cxVar = fyVar2.I0;
-                if (cxVar != null) {
-                    cxVar.dismiss();
-                    fyVar2.I0 = null;
-                    break;
-                }
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        ((Float) valueAnimator.getAnimatedValue()).getClass();
+        int lerp = (int) AndroidUtilities.lerp(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+        int i10 = lerp - this.a;
+        this.a = lerp;
+        oy oyVar = this.d;
+        oyVar.b0[0].a.scrollBy(0, i10);
+        View view = oyVar.fragmentView;
+        if (view != null) {
+            view.invalidate();
         }
     }
 }

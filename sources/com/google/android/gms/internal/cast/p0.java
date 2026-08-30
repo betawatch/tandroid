@@ -1,31 +1,35 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class p0 {
-    public static final s5.b i = new s5.b("ClientCastAnalytics", null);
-    public static final boolean j = true;
-    public final p5.g a;
-    public final t b;
-    public final d c;
-    public Long e;
-    public y2.p g;
-    public int h = 1;
-    public final String d = UUID.randomUUID().toString();
-    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+public final class p0 extends j0 {
+    public final transient r0 d;
+    public final transient q0 e;
 
-    public p0(Context context, s5.s sVar, p5.g gVar, t tVar, d dVar) {
-        this.a = gVar;
-        this.b = tVar;
-        this.c = dVar;
+    public p0(r0 r0Var, q0 q0Var) {
+        this.d = r0Var;
+        this.e = q0Var;
     }
 
-    public final void a(t1 t1Var, int i10) {
-        this.f.execute(new androidx.activity.g(this, t1Var, i10, 3));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.get(obj) != null;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int i(Object[] objArr) {
+        return this.e.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.e.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.d.h;
     }
 }

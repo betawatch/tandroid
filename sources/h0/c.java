@@ -9,13 +9,13 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
-import i7.w;
 import java.lang.reflect.Array;
+import k7.n;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -63,14 +63,14 @@ public abstract class c {
     public static ColorStateList b(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
         int depth;
         int color;
-        float f9;
+        float f10;
         int attributeCount;
         int i10;
-        boolean z10;
+        boolean z4;
         int[] iArr;
         int i11;
         int d;
-        float f10;
+        float f11;
         int i12;
         TypedValue typedValue;
         ?? r02 = resources;
@@ -112,8 +112,8 @@ public abstract class c {
                         } catch (Exception unused) {
                             color = obtainAttributes.getColor(i13, -65281);
                         }
-                        f9 = !obtainAttributes.hasValue(r42) ? obtainAttributes.getFloat(r42, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
-                        float f11 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
+                        f10 = !obtainAttributes.hasValue(r42) ? obtainAttributes.getFloat(r42, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
+                        float f12 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
                         obtainAttributes.recycle();
                         attributeCount = attributeSet2.getAttributeCount();
                         int[] iArr5 = new int[attributeCount];
@@ -130,89 +130,89 @@ public abstract class c {
                             }
                         }
                         int[] trimStateSet = StateSet.trimStateSet(iArr5, i16);
-                        float f12 = 0.0f;
-                        z10 = f11 < 0.0f && f11 <= 100.0f;
-                        if (f9 == 1.0f || z10) {
-                            int b10 = w.b((int) ((Color.alpha(color) * f9) + 0.5f), 0, 255);
-                            if (z10) {
+                        float f13 = 0.0f;
+                        z4 = f12 < 0.0f && f12 <= 100.0f;
+                        if (f10 == 1.0f || z4) {
+                            int b10 = n.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, 255);
+                            if (z4) {
                                 iArr = trimStateSet;
                                 i11 = depth2;
                             } else {
                                 a a2 = a.a(color);
-                                float f13 = a2.a;
-                                float f14 = a2.b;
+                                float f14 = a2.a;
+                                float f15 = a2.b;
                                 l lVar = l.k;
-                                if (f14 < 1.0d || Math.round(f11) <= 0.0d || Math.round(f11) >= 100.0d) {
+                                if (f15 < 1.0d || Math.round(f12) <= 0.0d || Math.round(f12) >= 100.0d) {
                                     iArr = trimStateSet;
                                     i11 = depth2;
-                                    d = b.d(f11);
+                                    d = b.d(f12);
                                 } else {
-                                    float min = f13 < 0.0f ? 0.0f : Math.min(360.0f, f13);
-                                    float f15 = f14;
+                                    float min = f14 < 0.0f ? 0.0f : Math.min(360.0f, f14);
+                                    float f16 = f15;
                                     a aVar = null;
-                                    boolean z11 = true;
+                                    boolean z10 = true;
                                     while (true) {
-                                        if (Math.abs(f12 - f14) >= 0.4f) {
-                                            float f16 = 1000.0f;
+                                        if (Math.abs(f13 - f15) >= 0.4f) {
+                                            float f17 = 1000.0f;
                                             iArr = trimStateSet;
-                                            float f17 = 100.0f;
-                                            float f18 = 0.0f;
-                                            float f19 = 1000.0f;
+                                            float f18 = 100.0f;
+                                            float f19 = 0.0f;
+                                            float f20 = 1000.0f;
                                             a aVar2 = null;
                                             while (true) {
-                                                if (Math.abs(f18 - f17) <= 0.01f) {
+                                                if (Math.abs(f19 - f18) <= 0.01f) {
                                                     i11 = depth2;
                                                     break;
                                                 }
-                                                float A = com.google.android.recaptcha.internal.a.A(f17, f18, 2.0f, f18);
-                                                float f20 = f17;
-                                                int c3 = a.b(A, f15, min).c(l.k);
-                                                float e10 = b.e(Color.red(c3));
-                                                float e11 = b.e(Color.green(c3));
-                                                float e12 = b.e(Color.blue(c3));
+                                                float x10 = e2.c.x(f18, f19, 2.0f, f19);
+                                                float f21 = f18;
+                                                int c3 = a.b(x10, f16, min).c(l.k);
+                                                float e = b.e(Color.red(c3));
+                                                float e6 = b.e(Color.green(c3));
+                                                float e10 = b.e(Color.blue(c3));
                                                 float[] fArr = b.d[1];
-                                                float f21 = (e11 * fArr[1]) + (e10 * fArr[0]);
-                                                float f22 = fArr[2];
+                                                float f22 = (e6 * fArr[1]) + (e * fArr[0]);
+                                                float f23 = fArr[2];
                                                 i11 = depth2;
-                                                float y8 = com.google.android.recaptcha.internal.a.y(e12, f22, f21, 100.0f);
-                                                float cbrt = y8 <= 0.008856452f ? y8 * 903.2963f : (((float) Math.cbrt(y8)) * 116.0f) - 16.0f;
-                                                float abs = Math.abs(f11 - cbrt);
+                                                float v = e2.c.v(e10, f23, f22, 100.0f);
+                                                float cbrt = v <= 0.008856452f ? v * 903.2963f : (((float) Math.cbrt(v)) * 116.0f) - 16.0f;
+                                                float abs = Math.abs(f12 - cbrt);
                                                 if (abs < 0.2f) {
                                                     a a10 = a.a(c3);
-                                                    f10 = cbrt;
+                                                    f11 = cbrt;
                                                     a b11 = a.b(a10.c, a10.b, min);
-                                                    float f23 = a10.d - b11.d;
-                                                    float f24 = a10.e - b11.e;
-                                                    float f25 = a10.f - b11.f;
-                                                    float pow = (float) (Math.pow(Math.sqrt((f25 * f25) + (f24 * f24) + (f23 * f23)), 0.63d) * 1.41d);
+                                                    float f24 = a10.d - b11.d;
+                                                    float f25 = a10.e - b11.e;
+                                                    float f26 = a10.f - b11.f;
+                                                    float pow = (float) (Math.pow(Math.sqrt((f26 * f26) + (f25 * f25) + (f24 * f24)), 0.63d) * 1.41d);
                                                     if (pow <= 1.0f) {
-                                                        f19 = pow;
-                                                        f16 = abs;
+                                                        f20 = pow;
+                                                        f17 = abs;
                                                         aVar2 = a10;
                                                     }
                                                 } else {
-                                                    f10 = cbrt;
+                                                    f11 = cbrt;
                                                 }
-                                                if (f16 == 0.0f && f19 == 0.0f) {
+                                                if (f17 == 0.0f && f20 == 0.0f) {
                                                     break;
                                                 }
-                                                if (f10 < f11) {
-                                                    f17 = f20;
-                                                    f18 = A;
+                                                if (f11 < f12) {
+                                                    f18 = f21;
+                                                    f19 = x10;
                                                 } else {
-                                                    f17 = A;
+                                                    f18 = x10;
                                                 }
                                                 depth2 = i11;
                                             }
                                             a aVar3 = aVar2;
-                                            if (!z11) {
+                                            if (!z10) {
                                                 if (aVar3 == null) {
-                                                    f14 = f15;
+                                                    f15 = f16;
                                                 } else {
                                                     aVar = aVar3;
-                                                    f12 = f15;
+                                                    f13 = f16;
                                                 }
-                                                f15 = com.google.android.recaptcha.internal.a.A(f14, f12, 2.0f, f12);
+                                                f16 = e2.c.x(f15, f13, 2.0f, f13);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
                                             } else {
@@ -220,15 +220,15 @@ public abstract class c {
                                                     d = aVar3.c(lVar);
                                                     break;
                                                 }
-                                                f15 = com.google.android.recaptcha.internal.a.A(f14, f12, 2.0f, f12);
+                                                f16 = e2.c.x(f15, f13, 2.0f, f13);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
-                                                z11 = false;
+                                                z10 = false;
                                             }
                                         } else {
                                             iArr = trimStateSet;
                                             i11 = depth2;
-                                            d = aVar == null ? b.d(f11) : aVar.c(lVar);
+                                            d = aVar == null ? b.d(f12) : aVar.c(lVar);
                                         }
                                     }
                                 }
@@ -274,13 +274,13 @@ public abstract class c {
                 while (i10 < attributeCount) {
                 }
                 int[] trimStateSet2 = StateSet.trimStateSet(iArr52, i162);
-                float f122 = 0.0f;
-                if (f11 < 0.0f) {
+                float f132 = 0.0f;
+                if (f12 < 0.0f) {
                 }
-                if (f9 == 1.0f) {
+                if (f10 == 1.0f) {
                 }
-                int b102 = w.b((int) ((Color.alpha(color) * f9) + 0.5f), 0, 255);
-                if (z10) {
+                int b102 = n.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, 255);
+                if (z4) {
                 }
                 color = (16777215 & color) | (b102 << 24);
                 i12 = i14 + 1;

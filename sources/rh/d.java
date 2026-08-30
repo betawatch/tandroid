@@ -1,6 +1,56 @@
 package rh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_payments;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public interface d {
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
+
+    public /* synthetic */ d(k kVar, int i10) {
+        this.a = i10;
+        this.b = kVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k kVar = this.b;
+                kVar.Q.f(kVar.V.end_date == 0 ? null : kg.n.f((r2 - kVar.getConnectionsManager().getCurrentTime()) * 1000), true);
+                if (kVar.V.end_date != 0 && kVar.Y) {
+                    AndroidUtilities.runOnUIThread(kVar.S, 1000L);
+                    break;
+                }
+                break;
+            case 1:
+                TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
+                k kVar2 = this.b;
+                updatestarrefprogram.bot = kVar2.getMessagesController().getInputUser(kVar2.M);
+                TL_payments.starRefProgram starrefprogram = kVar2.V;
+                updatestarrefprogram.commission_permille = starrefprogram.commission_permille;
+                int i10 = starrefprogram.duration_months;
+                updatestarrefprogram.duration_months = i10;
+                if (i10 > 0) {
+                    updatestarrefprogram.flags |= 1;
+                    starrefprogram.duration_months = i10 | 1;
+                } else {
+                    updatestarrefprogram.flags &= -2;
+                    starrefprogram.duration_months = i10 & (-2);
+                }
+                org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(kVar2.getParentActivity(), 3, null);
+                d2Var.q(150L);
+                kVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(kVar2, d2Var, 1));
+                break;
+            default:
+                k kVar3 = this.b;
+                af.g.s(kVar3.getParentActivity(), LocaleController.getString((kVar3.T || kVar3.V.end_date != 0) ? R.string.AffiliateProgramUpdateInfoLink : R.string.AffiliateProgramStartInfoLink));
+                break;
+        }
+    }
 }

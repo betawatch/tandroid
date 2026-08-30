@@ -1,25 +1,27 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class uf extends ph.l0 {
-    public final /* synthetic */ ChatActivityEnterView y;
+public final class uf extends kz {
+    public final /* synthetic */ ChatActivityEnterView M2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.y = chatActivityEnterView;
+    public uf(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.p2 p2Var, boolean z4, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z10, org.telegram.ui.ActionBar.f6 f6Var, boolean z11, boolean z12) {
+        super(p2Var, z4, true, true, context, true, chatFull, viewGroup, z10, f6Var, z11, z12);
+        this.M2 = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f9) {
-        super.setTranslationY(f9);
-        ChatActivityEnterView chatActivityEnterView = this.y;
-        if (chatActivityEnterView.R0 == null || chatActivityEnterView.j3 != 1) {
+    @Override // org.telegram.ui.Components.kz, android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        ChatActivityEnterView chatActivityEnterView = this.M2;
+        if (chatActivityEnterView.S0 == null || chatActivityEnterView.k3 != 0) {
             return;
         }
-        chatActivityEnterView.U2.v(f9);
+        chatActivityEnterView.V2.x(f10);
     }
 }

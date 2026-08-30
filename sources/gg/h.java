@@ -1,98 +1,64 @@
 package gg;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.ImageView;
-import i7.f6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Emoji;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import java.util.HashMap;
+import java.util.HashSet;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.t9;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.l3;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Cells.sa;
+import org.telegram.ui.n31;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class h extends d {
-    public final ImageView r;
-    public g s;
-    public TLRPC.Chat v;
-    public boolean w;
+public final /* synthetic */ class h implements Utilities.Callback {
+    public final /* synthetic */ int a;
 
-    public h(Context context, c6 c6Var) {
-        super(context, c6Var);
-        this.d.setTypeface(AndroidUtilities.bold());
-        ImageView imageView = new ImageView(context);
-        this.r = imageView;
-        imageView.setFocusable(false);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(g6.f0(g6.w0(null, g6.Vh, false), 1, -1));
-        imageView.setImageResource(R.drawable.poll_remove);
-        imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(null, g6.m6, false), PorterDuff.Mode.MULTIPLY));
-        imageView.setContentDescription(LocaleController.getString(R.string.Delete));
-        boolean z10 = LocaleController.isRTL;
-        addView(imageView, f6.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
-        this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
+    public /* synthetic */ h(int i10) {
+        this.a = i10;
     }
 
-    @Override // gg.d
-    public final boolean b() {
-        return false;
-    }
-
-    public final void f(TLRPC.Chat chat, int i10, boolean z10, int i11) {
-        String string;
-        this.w = z10;
-        this.v = chat;
-        e9 e9Var = this.b;
-        e9Var.q(chat);
-        int dp = AndroidUtilities.dp(20.0f);
-        t9 t9Var = this.c;
-        t9Var.setRoundRadius(dp);
-        t9Var.e(chat, e9Var);
-        String str = chat.title;
-        c cVar = this.d;
-        cVar.k(Emoji.replaceEmoji(str, cVar.getPaint().getFontMetricsInt(), false));
-        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        if (z10) {
-            if (i11 >= 1) {
-                string = LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", i11, new Object[0]);
-            } else {
-                string = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup);
-            }
-            setSubtitle(string);
-        } else {
-            setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", i10, new Object[0]));
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                HashMap hashMap = n3.H;
+                break;
+            case 2:
+                int i10 = l3.r;
+                break;
+            case 3:
+                int i11 = sa.f;
+                break;
+            case 4:
+                ((Boolean) obj).getClass();
+                break;
+            case 5:
+                break;
+            default:
+                HashSet hashSet = (HashSet) obj;
+                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
+                hashSet.addAll(n31.Y());
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
+                    edit.remove("translate_button_restricted_languages");
+                } else {
+                    edit.putStringSet("translate_button_restricted_languages", hashSet);
+                }
+                edit.putInt("translate_button_restricted_languages_version", 2).apply();
+                n31.s = false;
+                for (int i12 = 0; i12 < 4; i12++) {
+                    try {
+                        MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();
+                    } catch (Exception unused) {
+                    }
+                }
+                break;
         }
-        this.e.setTextColor(g6.v0(g6.r5, this.a));
-        setDivider(true);
-        ImageView imageView = this.r;
-        if (z10) {
-            imageView.setVisibility(0);
-        } else {
-            imageView.setVisibility(4);
-        }
-        imageView.setOnClickListener(new ag.n(8, this, chat));
-    }
-
-    public TLRPC.Chat getChat() {
-        return this.v;
-    }
-
-    @Override // gg.d, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.r.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setChatDeleteListener(g gVar) {
-        this.s = gVar;
     }
 }

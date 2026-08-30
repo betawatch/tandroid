@@ -1,267 +1,166 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class lp extends dw0 {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public long c;
-    public boolean d;
-    public float e;
-    public int f;
-    public final Paint g;
-    public final Object h;
+public class lp extends View {
+    public final CheckBoxBase a;
+    public Drawable b;
+    public int c;
 
-    public lp() {
-        this.a = 0;
-        this.c = 0L;
-        this.b = false;
-        this.d = true;
-        Paint paint = new Paint(1);
-        this.g = paint;
-        this.h = new Paint(1);
+    public lp(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.a = new CheckBoxBase(i10, this, f6Var);
+    }
+
+    public final void a(boolean z4, boolean z10) {
+        this.a.f(-1, z4, z10);
+    }
+
+    public final void b(int i10, int i11, int i12) {
+        this.a.h(i10, i11, i12);
+    }
+
+    public CheckBoxBase getCheckBoxBase() {
+        return this.a;
+    }
+
+    public boolean getDrawUnchecked() {
+        return this.a.z;
+    }
+
+    public float getProgress() {
+        return this.a.getProgress();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.l = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.l = false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b == null) {
+            this.a.a(canvas);
+            return;
+        }
+        int measuredWidth = getMeasuredWidth() >> 1;
+        int measuredHeight = getMeasuredHeight() >> 1;
+        Drawable drawable = this.b;
+        drawable.setBounds(org.telegram.ui.b.u(2, measuredWidth, drawable), org.telegram.ui.b.f(2, measuredHeight, this.b), org.telegram.ui.b.A(2, measuredWidth, this.b), org.telegram.ui.b.y(2, measuredHeight, this.b));
+        this.b.draw(canvas);
+        Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.2f));
+        paint.setStrokeWidth(AndroidUtilities.dp(1.2f));
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.U6, false));
+        canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - AndroidUtilities.dp(1.5f), paint);
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public final void b(int i10) {
-        switch (this.a) {
-            case 0:
-                if (this.f != i10) {
-                    ((Paint) this.h).setColor(i10);
-                    this.g.setColor(i10);
-                }
-                this.f = i10;
-                break;
-            default:
-                Paint paint = this.g;
-                if (paint != null) {
-                    paint.setColor(i10);
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Switch");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.a.q);
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        this.a.e(0, 0, i12 - i10, i13 - i11);
+    }
+
+    public void setCirclePaintProvider(GenericProvider<Void, Paint> genericProvider) {
+        CheckBoxBase checkBoxBase = this.a;
+        if (checkBoxBase.G == genericProvider) {
+            return;
+        }
+        checkBoxBase.G = genericProvider;
+        checkBoxBase.b();
+    }
+
+    public void setDrawBackgroundAsArc(int i10) {
+        this.a.d(i10);
+    }
+
+    public void setDrawUnchecked(boolean z4) {
+        this.a.k(z4);
+    }
+
+    public void setDuration(long j10) {
+        this.a.H = j10;
+    }
+
+    @Override // android.view.View
+    public void setEnabled(boolean z4) {
+        CheckBoxBase checkBoxBase = this.a;
+        if (checkBoxBase.k != z4) {
+            checkBoxBase.k = z4;
+            checkBoxBase.b();
+        }
+        super.setEnabled(z4);
+    }
+
+    public void setForbidden(boolean z4) {
+        CheckBoxBase checkBoxBase = this.a;
+        if (checkBoxBase.n == z4) {
+            return;
+        }
+        checkBoxBase.n = z4;
+        checkBoxBase.b();
+    }
+
+    public void setIcon(int i10) {
+        if (i10 != this.c) {
+            this.c = i10;
+            if (i10 == 0) {
+                this.b = null;
+                return;
+            }
+            Drawable mutate = getContext().getDrawable(i10).mutate();
+            this.b = mutate;
+            mutate.setColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.U6, false), PorterDuff.Mode.MULTIPLY);
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public final void c(boolean z10) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                this.b = z10;
-                break;
+    public void setNum(int i10) {
+        String str;
+        CheckBoxBase checkBoxBase = this.a;
+        if (i10 >= 0) {
+            checkBoxBase.getClass();
+            str = "" + (i10 + 1);
+        } else {
+            str = checkBoxBase.p != null ? checkBoxBase.C : null;
         }
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void d() {
-        switch (this.a) {
-            case 0:
-                this.c = System.currentTimeMillis();
-                this.b = true;
-                invalidateSelf();
-                break;
-            default:
-                this.c = System.currentTimeMillis();
-                this.d = true;
-                invalidateSelf();
-                break;
+        String str2 = checkBoxBase.C;
+        if (str2 == null) {
+            if (str == null) {
+                return;
+            }
+        } else if (str2.equals(str)) {
+            return;
         }
+        checkBoxBase.C = str;
+        checkBoxBase.b();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float dp;
-        float dpf2;
-        switch (this.a) {
-            case 0:
-                float min = Math.min(this.e, 1.0f);
-                float interpolation = jr.i.getInterpolation(min < 0.3f ? min / 0.3f : 1.0f);
-                jr jrVar = jr.g;
-                float interpolation2 = jrVar.getInterpolation(min < 0.3f ? 0.0f : (min - 0.3f) / 0.7f);
-                if (this.d) {
-                    dp = com.google.android.recaptcha.internal.a.z(1.0f, interpolation, AndroidUtilities.dp(7.0f) - AndroidUtilities.dp(2.1f), AndroidUtilities.dp(2.1f) * interpolation);
-                    dpf2 = (1.0f - jrVar.getInterpolation(this.e / 2.0f)) * AndroidUtilities.dpf2(1.5f);
-                } else {
-                    dp = ((AndroidUtilities.dp(7.0f) - AndroidUtilities.dp(2.1f)) * interpolation) + ((1.0f - interpolation) * AndroidUtilities.dp(2.1f));
-                    dpf2 = AndroidUtilities.dpf2(1.5f) * jr.h.getInterpolation(this.e / 2.0f);
-                }
-                float dp2 = AndroidUtilities.dp(11.0f) / 2.0f;
-                float dpf22 = AndroidUtilities.dpf2(2.0f);
-                float dpf23 = (AndroidUtilities.dpf2(0.5f) * interpolation) - (AndroidUtilities.dpf2(0.5f) * interpolation2);
-                Paint paint = this.g;
-                if (paint == null) {
-                    paint = org.telegram.ui.ActionBar.g6.d2;
-                }
-                Paint paint2 = (Paint) this.h;
-                if (paint2 == null) {
-                    paint2 = org.telegram.ui.ActionBar.g6.c2;
-                }
-                if (paint.getStrokeWidth() != AndroidUtilities.dp(0.8f)) {
-                    paint.setStrokeWidth(AndroidUtilities.dp(0.8f));
-                }
-                for (int i10 = 0; i10 < 2; i10++) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dpf2(0.2f) + (paint.getStrokeWidth() / 2.0f) + dpf2 + (AndroidUtilities.dp(9.0f) * i10) + getBounds().left, AndroidUtilities.dpf2(2.0f) + (paint.getStrokeWidth() / 2.0f) + getBounds().top);
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(0.0f, dpf23, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(11.0f) - dpf23);
-                    canvas.drawOval(rectF, paint);
-                    canvas.drawCircle(dp, dp2, dpf22, paint2);
-                    canvas.restore();
-                }
-                if (this.b) {
-                    long currentTimeMillis = System.currentTimeMillis();
-                    long j10 = currentTimeMillis - this.c;
-                    this.c = currentTimeMillis;
-                    if (j10 > 50) {
-                        j10 = 50;
-                    }
-                    float f9 = (j10 / 500.0f) + this.e;
-                    this.e = f9;
-                    if (f9 >= 2.0f) {
-                        this.e = 0.0f;
-                        this.d = !this.d;
-                    }
-                    a();
-                    break;
-                }
-                break;
-            default:
-                RectF rectF2 = (RectF) this.h;
-                Paint paint3 = this.g;
-                if (paint3 == null) {
-                    paint3 = org.telegram.ui.ActionBar.g6.d2;
-                }
-                Paint paint4 = paint3;
-                if (paint4.getStrokeWidth() != AndroidUtilities.dp(2.0f)) {
-                    paint4.setStrokeWidth(AndroidUtilities.dp(2.0f));
-                }
-                canvas.save();
-                canvas.translate(0.0f, AndroidUtilities.dp(this.b ? 1.0f : 2.0f) + (AndroidUtilities.dp(14.0f) / 2));
-                for (int i11 = 0; i11 < 4; i11++) {
-                    if (i11 == 0) {
-                        paint4.setAlpha((int) (this.f * this.e));
-                    } else if (i11 == 3) {
-                        paint4.setAlpha((int) ((1.0f - this.e) * this.f));
-                    } else {
-                        paint4.setAlpha(this.f);
-                    }
-                    float dp3 = (AndroidUtilities.dp(4.0f) * this.e) + (AndroidUtilities.dp(4.0f) * i11);
-                    float f10 = -dp3;
-                    rectF2.set(f10, f10, dp3, dp3);
-                    canvas.drawArc(rectF2, -15.0f, 30.0f, false, paint4);
-                }
-                canvas.restore();
-                if (this.d) {
-                    long currentTimeMillis2 = System.currentTimeMillis();
-                    long j11 = currentTimeMillis2 - this.c;
-                    this.c = currentTimeMillis2;
-                    if (j11 > 50) {
-                        j11 = 50;
-                    }
-                    this.e = (j11 / 800.0f) + this.e;
-                    while (true) {
-                        float f11 = this.e;
-                        if (f11 <= 1.0f) {
-                            a();
-                            break;
-                        } else {
-                            this.e = f11 - 1.0f;
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void e() {
-        switch (this.a) {
-            case 0:
-                this.b = false;
-                break;
-            default:
-                this.d = false;
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(18.0f);
-            default:
-                return AndroidUtilities.dp(14.0f);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(20.0f);
-            default:
-                return AndroidUtilities.dp(18.0f);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                this.f = i10;
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.a;
-    }
-
-    public lp(boolean z10) {
-        this.a = 1;
-        this.b = false;
-        this.c = 0L;
-        this.d = false;
-        this.h = new RectF();
-        this.f = 255;
-        if (z10) {
-            Paint paint = new Paint(1);
-            this.g = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        }
-    }
-
-    private final void f(int i10) {
-    }
-
-    private final void g(ColorFilter colorFilter) {
-    }
-
-    private final void h(ColorFilter colorFilter) {
-    }
-
-    private final void i(boolean z10) {
+    public void setProgressDelegate(mp mpVar) {
+        this.a.D = mpVar;
     }
 }

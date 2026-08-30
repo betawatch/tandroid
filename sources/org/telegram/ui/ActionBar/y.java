@@ -1,47 +1,124 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.KeyEvent;
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.xe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class y {
+    public z a;
+    public int b;
+    public int c;
+    public CharSequence d;
+    public int e;
+    public Drawable f;
+    public int g;
+    public f6 h;
+    public float i;
+    public Boolean j;
+    public Boolean k;
+    public int l;
+    public w0 m;
+    public ArrayList n;
+    public Integer o;
 
-    public /* synthetic */ y(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
-        this.b = callback;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                a0 a0Var = (a0) this.b;
-                l lVar = a0Var.b;
-                w0 w0Var = (w0) view;
-                if (!w0Var.q()) {
-                    if (!w0Var.C) {
-                        a0Var.o(((Integer) view.getTag()).intValue());
-                        break;
-                    } else {
-                        lVar.v(w0Var.L(true));
-                        break;
-                    }
-                } else if (lVar.q0.a()) {
-                    w0Var.M(null, null);
+    public final void a() {
+        z zVar = this.a;
+        if (this.m != null) {
+            return;
+        }
+        int childCount = zVar.getChildCount();
+        ArrayList arrayList = zVar.e;
+        int i10 = 0;
+        if (arrayList != null) {
+            int indexOf = arrayList.indexOf(Integer.valueOf(this.b));
+            int i11 = 0;
+            while (true) {
+                if (i11 >= zVar.getChildCount()) {
                     break;
                 }
-                break;
-            case 1:
-                ((g2) this.b).dismiss();
-                break;
-            default:
-                f3 f3Var = (f3) this.b;
-                f3Var.getClass();
-                f3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
-                break;
+                Object tag = zVar.getChildAt(i11).getTag();
+                if (tag instanceof Integer) {
+                    if (zVar.e.indexOf((Integer) tag) > indexOf) {
+                        childCount = i11;
+                        break;
+                    }
+                }
+                i11++;
+            }
+        }
+        w0 f10 = zVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
+        this.m = f10;
+        f10.setVisibility(this.l);
+        CharSequence charSequence = this.d;
+        if (charSequence != null) {
+            this.m.setContentDescription(charSequence);
+        }
+        Boolean bool = this.k;
+        if (bool != null) {
+            this.m.O = bool.booleanValue();
+        }
+        Boolean bool2 = this.j;
+        if (bool2 != null) {
+            this.m.P = bool2.booleanValue();
+        }
+        this.m.setAlpha(this.i);
+        ArrayList arrayList2 = this.n;
+        if (arrayList2 != null) {
+            int size = arrayList2.size();
+            while (i10 < size) {
+                Object obj = arrayList2.get(i10);
+                i10++;
+                ((Utilities.Callback) obj).run(this.m);
+            }
+            this.n = null;
+        }
+    }
+
+    public final void b(xe xeVar) {
+        w0 w0Var = this.m;
+        if (w0Var != null) {
+            xeVar.run(w0Var);
+            return;
+        }
+        if (this.n == null) {
+            this.n = new ArrayList();
+        }
+        this.n.add(xeVar);
+    }
+
+    public final void c() {
+        this.k = Boolean.FALSE;
+        w0 w0Var = this.m;
+        if (w0Var != null) {
+            w0Var.O = false;
+        }
+    }
+
+    public final void d() {
+        this.j = Boolean.TRUE;
+        w0 w0Var = this.m;
+        if (w0Var != null) {
+            w0Var.P = true;
+        }
+    }
+
+    public final void e() {
+        this.o = null;
+    }
+
+    public final void f(int i10) {
+        if (this.l != i10) {
+            this.l = i10;
+            if (i10 == 0) {
+                a();
+            }
+            w0 w0Var = this.m;
+            if (w0Var != null) {
+                w0Var.setVisibility(i10);
+            }
         }
     }
 }

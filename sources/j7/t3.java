@@ -1,33 +1,21 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class t3 implements s9.d {
+public final class t3 implements u9.d {
     public static final t3 a = new t3();
-    public static final s9.c b = new s9.c("durationMs", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(1))));
-    public static final s9.c c = new s9.c("errorCode", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(2))));
-    public static final s9.c d = new s9.c("isColdCall", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(3))));
-    public static final s9.c e = new s9.c("autoManageModelOnBackground", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(4))));
-    public static final s9.c f = new s9.c("autoManageModelOnLowMemory", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(5))));
-    public static final s9.c g = new s9.c("isNnApiEnabled", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(6))));
-    public static final s9.c h = new s9.c("eventsCount", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(7))));
-    public static final s9.c i = new s9.c("otherErrors", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(8))));
-    public static final s9.c j = new s9.c("remoteConfigValueForAcceleration", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(9))));
-    public static final s9.c k = new s9.c("isAccelerated", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(10))));
+    public static final u9.c b = new u9.c("inferenceCommonLogEvent", vh.v2.h(e2.c.n(i.class, new e(1))));
+    public static final u9.c c = new u9.c("options", vh.v2.h(e2.c.n(i.class, new e(2))));
+    public static final u9.c d = new u9.c("identifyLanguageResult", vh.v2.h(e2.c.n(i.class, new e(3))));
+    public static final u9.c e = new u9.c("identifyPossibleLanguagesResult", vh.v2.h(e2.c.n(i.class, new e(4))));
 
-    @Override // s9.a
+    @Override // u9.a
     public final void a(Object obj, Object obj2) {
-        m7 m7Var = (m7) obj;
-        s9.e eVar = (s9.e) obj2;
-        eVar.e(b, m7Var.a);
-        eVar.e(c, m7Var.b);
-        eVar.e(d, m7Var.c);
-        eVar.e(e, m7Var.d);
-        eVar.e(f, m7Var.e);
-        eVar.e(g, null);
-        eVar.e(h, null);
-        eVar.e(i, null);
-        eVar.e(j, null);
-        eVar.e(k, null);
+        j7 j7Var = (j7) obj;
+        u9.e eVar = (u9.e) obj2;
+        eVar.e(b, j7Var.a);
+        eVar.e(c, j7Var.b);
+        eVar.e(d, j7Var.c);
+        eVar.e(e, null);
     }
 }

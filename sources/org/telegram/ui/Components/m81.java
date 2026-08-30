@@ -1,305 +1,238 @@
 package org.telegram.ui.Components;
 
-import android.os.AsyncTask;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
-import org.webrtc.MediaStreamTrack;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class m81 extends AsyncTask {
-    public final /* synthetic */ int a;
-    public String b;
-    public final String[] c;
-    public final /* synthetic */ s81 d;
+public final class m81 extends View {
+    public final View B;
+    public int[] C;
+    public final org.telegram.ui.Cells.c2 D;
+    public final Paint E;
+    public float F;
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final Paint b;
+    public final Paint c;
+    public final TextPaint d;
+    public final Paint e;
+    public String f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public boolean s;
+    public final Canvas v;
+    public final Bitmap w;
+    public float x;
+    public ObjectAnimator y;
 
-    public m81(s81 s81Var, String str, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = s81Var;
-                this.c = new String[4];
-                this.b = str;
-                break;
-            case 2:
-                this.d = s81Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
-            case 3:
-                this.d = s81Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
-            case 4:
-                this.d = s81Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
-            default:
-                this.d = s81Var;
-                this.c = new String[2];
-                this.b = str;
-                break;
+    public m81(Context context, boolean z4, View view, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.C = new int[4];
+        this.D = new org.telegram.ui.Cells.c2(this);
+        this.E = new Paint(1);
+        this.a = f6Var;
+        this.r = new RectF();
+        if (z4) {
+            Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), Bitmap.Config.ARGB_4444);
+            this.w = createBitmap;
+            this.v = new Canvas(createBitmap);
         }
+        this.B = view;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setColor(0);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
+        paint.setXfermode(new PorterDuffXfermode(mode));
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        paint2.setColor(0);
+        paint2.setXfermode(new PorterDuffXfermode(mode));
+        this.e = new Paint(1);
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                String[] strArr = this.c;
-                Locale locale = Locale.US;
-                String str = "http://www.aparat.com/video/video/embed/vt/frame/showvideo/yes/videohash/" + this.b;
-                this.d.getClass();
-                String c3 = s81.c(this, str, null, true);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    Matcher matcher = s81.n0.matcher(c3);
-                    if (matcher.find()) {
-                        JSONArray jSONArray = new JSONArray(matcher.group(1));
-                        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
-                            JSONArray jSONArray2 = jSONArray.getJSONArray(i10);
-                            if (jSONArray2.length() != 0) {
-                                JSONObject jSONObject = jSONArray2.getJSONObject(0);
-                                if (jSONObject.has("file")) {
-                                    strArr[0] = jSONObject.getString("file");
-                                    strArr[1] = "other";
-                                }
-                            }
-                        }
-                    }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr[0];
-            case 1:
-                String[] strArr2 = this.c;
-                Locale locale2 = Locale.US;
-                String str2 = "https://coub.com/api/v2/coubs/" + this.b + ".json";
-                this.d.getClass();
-                String c6 = s81.c(this, str2, null, true);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    JSONObject jSONObject2 = new JSONObject(c6).getJSONObject("file_versions").getJSONObject("mobile");
-                    String string = jSONObject2.getString(MediaStreamTrack.VIDEO_TRACK_KIND);
-                    String string2 = jSONObject2.getJSONArray(MediaStreamTrack.AUDIO_TRACK_KIND).getString(0);
-                    if (string != null && string2 != null) {
-                        strArr2[0] = string;
-                        strArr2[1] = "other";
-                        strArr2[2] = string2;
-                        strArr2[3] = "other";
-                    }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr2[0];
-            case 2:
-                String[] strArr3 = this.c;
-                String str3 = this.b;
-                this.d.getClass();
-                String c10 = s81.c(this, str3, null, false);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    Matcher matcher2 = s81.o0.matcher(c10);
-                    if (matcher2.find()) {
-                        strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
-                        strArr3[1] = "other";
-                    }
-                } catch (Exception e12) {
-                    FileLog.e(e12);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr3[0];
-            case 3:
-                String[] strArr4 = this.c;
-                HashMap hashMap = new HashMap();
-                hashMap.put("Client-ID", "jzkbprff40iqj646a697cyrvl0zt2m6");
-                int indexOf = this.b.indexOf(38);
-                if (indexOf > 0) {
-                    this.b = this.b.substring(0, indexOf);
-                }
-                Locale locale3 = Locale.US;
-                String str4 = "https://api.twitch.tv/kraken/streams/" + this.b + "?stream_type=all";
-                this.d.getClass();
-                String c11 = s81.c(this, str4, hashMap, false);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    new JSONObject(c11).getJSONObject("stream");
-                    JSONObject jSONObject3 = new JSONObject(s81.c(this, "https://api.twitch.tv/api/channels/" + this.b + "/access_token", hashMap, false));
-                    String encode = URLEncoder.encode(jSONObject3.getString("sig"), "UTF-8");
-                    String encode2 = URLEncoder.encode(jSONObject3.getString("token"), "UTF-8");
-                    URLEncoder.encode("https://youtube.googleapis.com/v/" + this.b, "UTF-8");
-                    String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
-                    strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
-                    strArr4[1] = "hls";
-                } catch (Exception e13) {
-                    FileLog.e(e13);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr4[0];
-            default:
-                String[] strArr5 = this.c;
-                Locale locale4 = Locale.US;
-                String str6 = "https://player.vimeo.com/video/" + this.b + "/config";
-                this.d.getClass();
-                String c12 = s81.c(this, str6, null, true);
-                if (isCancelled()) {
-                    return null;
-                }
-                try {
-                    JSONObject jSONObject4 = new JSONObject(c12).getJSONObject("request").getJSONObject("files");
-                    if (jSONObject4.has("hls")) {
-                        JSONObject jSONObject5 = jSONObject4.getJSONObject("hls");
-                        try {
-                            strArr5[0] = jSONObject5.getString("url");
-                        } catch (Exception unused) {
-                            strArr5[0] = jSONObject5.getJSONObject("cdns").getJSONObject(jSONObject5.getString("default_cdn")).getString("url");
-                        }
-                        strArr5[1] = "hls";
-                    } else if (jSONObject4.has("progressive")) {
-                        strArr5[1] = "other";
-                        strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
-                    }
-                } catch (Exception e14) {
-                    FileLog.e(e14);
-                }
-                if (isCancelled()) {
-                    return null;
-                }
-                return strArr5[0];
+    private void setProgress(float f10) {
+        if (this.x == f10) {
+            return;
         }
+        this.x = f10;
+        invalidate();
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        switch (this.a) {
-            case 0:
-                String str = (String) obj;
-                s81 s81Var = this.d;
-                if (str == null) {
-                    if (!isCancelled()) {
-                        s81Var.h();
-                        break;
-                    }
-                } else {
-                    s81Var.w = true;
-                    s81Var.x = str;
-                    s81Var.y = this.c[1];
-                    if (s81Var.s) {
-                        s81Var.i();
-                    }
-                    s81Var.j(false, true);
-                    s81Var.b0.d(true, true);
-                    break;
-                }
-                break;
-            case 1:
-                String str2 = (String) obj;
-                s81 s81Var2 = this.d;
-                if (str2 == null) {
-                    if (!isCancelled()) {
-                        s81Var2.h();
-                        break;
-                    }
-                } else {
-                    s81Var2.w = true;
-                    s81Var2.x = str2;
-                    String[] strArr = this.c;
-                    s81Var2.y = strArr[1];
-                    s81Var2.A = strArr[2];
-                    s81Var2.B = strArr[3];
-                    if (s81Var2.s) {
-                        s81Var2.i();
-                    }
-                    s81Var2.j(false, true);
-                    s81Var2.b0.d(true, true);
-                    break;
-                }
-                break;
-            case 2:
-                String str3 = (String) obj;
-                s81 s81Var3 = this.d;
-                if (str3 == null) {
-                    if (!isCancelled()) {
-                        s81Var3.h();
-                        break;
-                    }
-                } else {
-                    s81Var3.w = true;
-                    s81Var3.x = str3;
-                    s81Var3.y = this.c[1];
-                    if (s81Var3.s) {
-                        s81Var3.i();
-                    }
-                    s81Var3.j(false, true);
-                    s81Var3.b0.d(true, true);
-                    break;
-                }
-                break;
-            case 3:
-                String str4 = (String) obj;
-                s81 s81Var4 = this.d;
-                if (str4 == null) {
-                    if (!isCancelled()) {
-                        s81Var4.h();
-                        break;
-                    }
-                } else {
-                    s81Var4.w = true;
-                    s81Var4.x = str4;
-                    s81Var4.y = this.c[1];
-                    if (s81Var4.s) {
-                        s81Var4.i();
-                    }
-                    s81Var4.j(false, true);
-                    s81Var4.b0.d(true, true);
-                    break;
-                }
-                break;
-            default:
-                String str5 = (String) obj;
-                s81 s81Var5 = this.d;
-                if (str5 == null) {
-                    if (!isCancelled()) {
-                        s81Var5.h();
-                        break;
-                    }
-                } else {
-                    s81Var5.w = true;
-                    s81Var5.x = str5;
-                    s81Var5.y = this.c[1];
-                    if (s81Var5.s) {
-                        s81Var5.i();
-                    }
-                    s81Var5.j(false, true);
-                    s81Var5.b0.d(true, true);
-                    break;
-                }
-                break;
+    public final void a(boolean z4, boolean z10) {
+        if (z4 == this.s) {
+            return;
         }
+        this.s = z4;
+        if (z10) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, this.D, z4 ? 1.0f : 0.0f);
+            this.y = ofFloat;
+            ofFloat.setDuration(300L);
+            this.y.start();
+            return;
+        }
+        ObjectAnimator objectAnimator = this.y;
+        if (objectAnimator != null) {
+            objectAnimator.cancel();
+        }
+        this.x = z4 ? 1.0f : 0.0f;
+        invalidate();
+    }
+
+    public final void b(int i10, int i11) {
+        if (this.C == null) {
+            this.C = new int[4];
+        }
+        this.C[i10] = i11;
+        invalidate();
+    }
+
+    public TextPaint getTextPaint() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        float f11;
+        Canvas canvas2 = canvas;
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.r;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        View view = this.B;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        org.telegram.ui.ActionBar.j6.s(this, view, f6Var);
+        float measuredHeight2 = getMeasuredHeight() / 2;
+        float measuredHeight3 = getMeasuredHeight() / 2;
+        Paint G = f6Var != null ? f6Var.G("paintChatActionBackground") : null;
+        if (G == null) {
+            G = org.telegram.ui.ActionBar.j6.S0("paintChatActionBackground");
+        }
+        canvas2.drawRoundRect(rectF, measuredHeight2, measuredHeight3, G);
+        if (f6Var == null ? org.telegram.ui.ActionBar.j6.a1() : f6Var.m0()) {
+            float measuredHeight4 = getMeasuredHeight() / 2;
+            float measuredHeight5 = getMeasuredHeight() / 2;
+            Paint G2 = f6Var != null ? f6Var.G("paintChatActionBackgroundDarken") : null;
+            if (G2 == null) {
+                G2 = org.telegram.ui.ActionBar.j6.S0("paintChatActionBackgroundDarken");
+            }
+            canvas2.drawRoundRect(rectF, measuredHeight4, measuredHeight5, G2);
+        }
+        if (this.F > 0.0f) {
+            canvas2.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, this.E);
+        }
+        int i10 = org.telegram.ui.ActionBar.j6.ic;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+        TextPaint textPaint = this.d;
+        textPaint.setColor(v02);
+        int x10 = org.telegram.ui.b.x(28.0f, getMeasuredWidth() - this.h, 2);
+        canvas2.drawText(this.f, AndroidUtilities.dp(28.0f) + x10, AndroidUtilities.dp(21.0f), textPaint);
+        canvas2.save();
+        canvas2.translate(x10, AndroidUtilities.dp(7.0f));
+        Bitmap bitmap = this.w;
+        int i11 = 0;
+        Paint paint = this.e;
+        if (bitmap != null) {
+            float f12 = this.x;
+            if (f12 <= 0.5f) {
+                f10 = f12 / 0.5f;
+                f11 = f10;
+            } else {
+                f10 = 2.0f - (f12 / 0.5f);
+                f11 = 1.0f;
+            }
+            float dp = AndroidUtilities.dp(1.0f) * f10;
+            rectF.set(dp, dp, AndroidUtilities.dp(18.0f) - dp, AndroidUtilities.dp(18.0f) - dp);
+            bitmap.eraseColor(0);
+            paint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+            float width = rectF.width() / 2.0f;
+            float height = rectF.height() / 2.0f;
+            Canvas canvas3 = this.v;
+            canvas3.drawRoundRect(rectF, width, height, paint);
+            if (f11 != 1.0f) {
+                float min = Math.min(AndroidUtilities.dp(7.0f), (AndroidUtilities.dp(7.0f) * f11) + dp);
+                rectF.set(AndroidUtilities.dp(2.0f) + min, AndroidUtilities.dp(2.0f) + min, AndroidUtilities.dp(16.0f) - min, AndroidUtilities.dp(16.0f) - min);
+                canvas3.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, this.b);
+            }
+            if (this.x > 0.5f) {
+                float f13 = 1.0f - f10;
+                Paint paint2 = this.c;
+                canvas3.drawLine(AndroidUtilities.dp(7.3f), AndroidUtilities.dp(13.0f), (int) (AndroidUtilities.dp(7.3f) - (AndroidUtilities.dp(2.5f) * f13)), (int) (AndroidUtilities.dp(13.0f) - (AndroidUtilities.dp(2.5f) * f13)), paint2);
+                canvas3.drawLine(AndroidUtilities.dp(7.3f), AndroidUtilities.dp(13.0f), (int) ((AndroidUtilities.dp(6.0f) * f13) + AndroidUtilities.dp(7.3f)), (int) (AndroidUtilities.dp(13.0f) - (AndroidUtilities.dp(6.0f) * f13)), paint2);
+            }
+            canvas2.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+        } else {
+            rectF.set(0.0f, 0.0f, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
+            int[] iArr = this.C;
+            if (iArr[3] != 0) {
+                while (i11 < 4) {
+                    paint.setColor(this.C[i11]);
+                    RectF rectF2 = rectF;
+                    canvas2.drawArc(rectF2, (i11 * 90) - 90, 90.0f, true, paint);
+                    i11++;
+                    rectF = rectF2;
+                    canvas2 = canvas;
+                }
+            } else {
+                RectF rectF3 = rectF;
+                if (iArr[2] != 0) {
+                    while (i11 < 3) {
+                        paint.setColor(this.C[i11]);
+                        RectF rectF4 = rectF3;
+                        canvas.drawArc(rectF4, (i11 * 120) - 90, 120.0f, true, paint);
+                        rectF3 = rectF4;
+                        i11++;
+                    }
+                } else if (iArr[1] != 0) {
+                    while (i11 < 2) {
+                        paint.setColor(this.C[i11]);
+                        RectF rectF5 = rectF3;
+                        canvas.drawArc(rectF5, (i11 * 180) - 90, 180.0f, true, paint);
+                        i11++;
+                        rectF3 = rectF5;
+                    }
+                } else {
+                    canvas2 = canvas;
+                    paint.setColor(iArr[0]);
+                    canvas2.drawRoundRect(rectF3, rectF3.width() / 2.0f, rectF3.height() / 2.0f, paint);
+                }
+            }
+            canvas2 = canvas;
+        }
+        canvas2.restore();
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(org.telegram.ui.b.B(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+    }
+
+    public void setDimAmount(float f10) {
+        this.F = f10;
+        this.E.setColor(i0.a.k(-16777216, (int) (f10 * 255.0f)));
+        invalidate();
     }
 }

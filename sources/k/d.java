@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
-    public ze.b e;
+    public f7.b e;
     public WeakReference f;
     public boolean h;
     public l.k n;
@@ -23,7 +23,7 @@ public final class d extends a implements l.i {
             return;
         }
         this.h = true;
-        this.e.O(this);
+        this.e.u(this);
     }
 
     @Override // k.a
@@ -57,20 +57,20 @@ public final class d extends a implements l.i {
 
     @Override // k.a
     public final void g() {
-        this.e.P(this, this.n);
+        this.e.v(this, this.n);
     }
 
     @Override // k.a
     public final boolean h() {
-        return this.d.E;
+        return this.d.F;
     }
 
     @Override // l.i
     public final void i(l.k kVar) {
         g();
-        m.i iVar = this.d.d;
-        if (iVar != null) {
-            iVar.l();
+        m.h hVar = this.d.d;
+        if (hVar != null) {
+            hVar.l();
         }
     }
 
@@ -101,13 +101,13 @@ public final class d extends a implements l.i {
     }
 
     @Override // k.a
-    public final void o(boolean z10) {
-        this.b = z10;
-        this.d.setTitleOptional(z10);
+    public final void o(boolean z4) {
+        this.b = z4;
+        this.d.setTitleOptional(z4);
     }
 
     @Override // l.i
-    public final boolean q(l.k kVar, MenuItem menuItem) {
-        return ((s) this.e.a).F(this, menuItem);
+    public final boolean p(l.k kVar, MenuItem menuItem) {
+        return ((r) this.e.b).K(this, menuItem);
     }
 }

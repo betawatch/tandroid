@@ -1,25 +1,47 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r extends TextView {
-    public final /* synthetic */ u a;
+public final class r extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(u uVar, Context context) {
-        super(context);
-        this.a = uVar;
+    public /* synthetic */ r(t tVar, int i10) {
+        this.a = i10;
+        this.b = tVar;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (Math.abs(this.a.J.getAlpha() - 1.0f) > 0.001f) {
-            return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                t tVar = this.b;
+                tVar.B = false;
+                tVar.invalidate();
+                break;
+            case 1:
+                t tVar2 = this.b;
+                s sVar = tVar2.V;
+                float f10 = tVar2.T ? 0.0f : 1.0f;
+                tVar2.U = f10;
+                sVar.setAlpha(f10);
+                sVar.setVisibility(tVar2.T ? 8 : 0);
+                tVar2.a.invalidate();
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                t tVar3 = this.b;
+                tVar3.G0 = null;
+                o oVar = tVar3.a;
+                oVar.setRotationY(0.0f);
+                if (!tVar3.H0) {
+                    oVar.d.clearImage();
+                    break;
+                }
+                break;
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

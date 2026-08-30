@@ -1,245 +1,253 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ImageSpan;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.KeyEvent;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class sb0 extends FrameLayout {
-    public final org.telegram.ui.Components.v9 a;
-    public final SpannableStringBuilder b;
-    public final org.telegram.ui.Cells.v1 c;
-    public final TextView d;
-    public final org.telegram.ui.Cells.v1 e;
-    public final TextView f;
-    public final org.telegram.ui.Components.ao0 h;
-    public final qb0 n;
-    public boolean r;
-    public float s;
-    public ValueAnimator v;
-    public float w;
-    public ValueAnimator x;
-    public final /* synthetic */ ub0 y;
+public final /* synthetic */ class sb0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sb0(ub0 ub0Var, Context context) {
-        super(context);
-        this.y = ub0Var;
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setGravity(LocaleController.isRTL ? 5 : 3);
-        linearLayout.setImportantForAccessibility(4);
-        TextView textView = new TextView(context);
-        boolean z10 = true;
-        th.n(15.0f, 1, textView);
-        int i10 = org.telegram.ui.ActionBar.g6.L6;
-        boolean z11 = false;
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i10, false));
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setText(LocaleController.getString("LiteBatteryTitle"));
-        linearLayout.addView(textView, i7.f6.q(-2, -2, 16));
-        org.telegram.ui.Cells.v1 v1Var = new org.telegram.ui.Cells.v1(context, z10, z11, z11);
-        v1Var.v = org.telegram.ui.ActionBar.g6.b0(AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.g6.l1(0.15f, org.telegram.ui.ActionBar.g6.w0(null, i10, false)));
-        this.c = v1Var;
-        v1Var.setTypeface(AndroidUtilities.bold());
-        v1Var.setPadding(AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f));
-        v1Var.setTextSize(AndroidUtilities.dp(12.0f));
-        v1Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i10, false));
-        linearLayout.addView(v1Var, i7.f6.t(-2, 17, 16, 6, 1, 0, 0));
-        addView(linearLayout, i7.f6.d(-1, -2.0f, 55, 21.0f, 17.0f, 21.0f, 0.0f));
-        org.telegram.ui.Components.ao0 ao0Var = new org.telegram.ui.Components.ao0(context, null, true);
-        this.h = ao0Var;
-        ao0Var.setReportChanges(true);
-        ao0Var.setDelegate(new h(this, 23));
-        ao0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
-        ao0Var.setImportantForAccessibility(2);
-        addView(ao0Var, i7.f6.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setImportantForAccessibility(4);
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 13.0f);
-        int i11 = org.telegram.ui.ActionBar.g6.y6;
-        th.s(i11, null, false, textView2, 3);
-        textView2.setText(LocaleController.getString(R.string.LiteBatteryDisabled));
-        frameLayout.addView(textView2, i7.f6.e(-2, -2, 19));
-        org.telegram.ui.Cells.v1 v1Var2 = new org.telegram.ui.Cells.v1(this, context);
-        this.e = v1Var2;
-        v1Var2.b(0.45f, 240L, org.telegram.ui.Components.jr.h);
-        v1Var2.setGravity(1);
-        v1Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        v1Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.n6, false));
-        frameLayout.addView(v1Var2, i7.f6.e(-2, -2, 17));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("b");
-        this.b = spannableStringBuilder;
-        org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9();
-        this.a = v9Var;
-        v9Var.a = v1Var2.getPaint();
-        v9Var.f = AndroidUtilities.dp(1.5f);
-        v9Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(-20.0f), AndroidUtilities.dp(23.0f), 0);
-        spannableStringBuilder.setSpan(new ImageSpan(v9Var, 0), 0, spannableStringBuilder.length(), 33);
-        TextView textView3 = new TextView(context);
-        this.f = textView3;
-        textView3.setTextSize(1, 13.0f);
-        th.s(i11, null, false, textView3, 5);
-        textView3.setText(LocaleController.getString(R.string.LiteBatteryEnabled));
-        frameLayout.addView(textView3, i7.f6.e(-2, -2, 21));
-        addView(frameLayout, i7.f6.d(-1, -2.0f, 55, 21.0f, 52.0f, 21.0f, 0.0f));
-        this.n = new qb0(this);
-        a();
+    public /* synthetic */ sb0(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public final void a() {
-        int powerSaverLevel = LiteMode.getPowerSaverLevel();
-        org.telegram.ui.Cells.v1 v1Var = this.e;
-        v1Var.a();
-        final int i10 = 0;
-        final int i11 = 1;
-        if (powerSaverLevel <= 0) {
-            v1Var.c(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled), !LocaleController.isRTL, true);
-        } else if (powerSaverLevel >= 100) {
-            v1Var.c(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled), !LocaleController.isRTL, true);
-        } else {
-            float f9 = powerSaverLevel;
-            this.a.a(f9 / 100.0f, true);
-            v1Var.c(AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.LiteBatteryWhenBelow), TextUtils.concat(String.format("%d%% ", Integer.valueOf(Math.round(f9))), this.b)), !LocaleController.isRTL, true);
-        }
-        String upperCase = LocaleController.getString(LiteMode.isPowerSaverApplied() ? R.string.LiteBatteryEnabled : R.string.LiteBatteryDisabled).toUpperCase();
-        org.telegram.ui.Cells.v1 v1Var2 = this.c;
-        v1Var2.setText(upperCase);
-        boolean z10 = powerSaverLevel > 0 && powerSaverLevel < 100;
-        if (z10 != this.r) {
-            this.r = z10;
-            v1Var2.clearAnimation();
-            b.q(v1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.jr.h, 220L);
-        }
-        float f10 = powerSaverLevel >= 100 ? 1.0f : 0.0f;
-        if (this.s != f10) {
-            this.s = f10;
-            ValueAnimator valueAnimator = this.v;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.v = null;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, f10);
-            this.v = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.pb0
-                public final /* synthetic */ sb0 b;
-
-                {
-                    this.b = this;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00dd  */
+    @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        String str;
+        String str2;
+        String str3;
+        JSONException jSONException;
+        wf.b e02;
+        long[] jArr;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new a30(this.b, tLObject, this.c, (Object) tL_error, 7));
+                break;
+            case 1:
+                ng0 ng0Var = (ng0) this.b;
+                Bundle bundle = (Bundle) this.c;
+                if (tLObject != null && !(((TLRPC.auth_SentCode) tLObject).type instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms)) {
+                    AndroidUtilities.runOnUIThread(new rq(ng0Var, bundle, tLObject, 24));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new cd0(ng0Var, 2));
+                    break;
                 }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    switch (i10) {
-                        case 0:
-                            sb0 sb0Var = this.b;
-                            TextView textView = sb0Var.f;
-                            int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.y6, false);
-                            int w03 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.n6, false);
-                            float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                            sb0Var.s = floatValue;
-                            textView.setTextColor(i0.a.d(floatValue, w02, w03));
-                            break;
-                        default:
-                            sb0 sb0Var2 = this.b;
-                            TextView textView2 = sb0Var2.d;
-                            int w04 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.y6, false);
-                            int w05 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.n6, false);
-                            float floatValue2 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                            sb0Var2.w = floatValue2;
-                            textView2.setTextColor(i0.a.d(floatValue2, w04, w05));
-                            break;
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new a30(this.b, tLObject, this.c, (Object) tL_error, 10));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new rq((rf0) this.b, tL_error, (TL_account.confirmPhone) this.c, 29));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new hf0((KeyEvent.Callback) this.b, tLObject, this.c, 4));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new a30(this.b, (Object) tL_error, tLObject, this.c, 14));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new hf0((KeyEvent.Callback) this.b, tLObject, this.c, 7));
+                break;
+            case 7:
+                fm0 fm0Var = (fm0) this.b;
+                TLRPC.TL_secureValue tL_secureValue = (TLRPC.TL_secureValue) this.c;
+                fm0Var.getClass();
+                fm0Var.a(tL_error, (TLRPC.TL_secureValue) tLObject, tL_secureValue);
+                break;
+            case 8:
+                AndroidUtilities.runOnUIThread(new hf0(this.b, (Object) tL_error, this.c, 13));
+                break;
+            case 9:
+                jo0 jo0Var = (jo0) this.b;
+                TLObject tLObject2 = (TLObject) this.c;
+                if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
+                    AndroidUtilities.runOnUIThread(new kn0(jo0Var, tL_error, tLObject2, 1));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new fe0(26, jo0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
+                    break;
+                }
+            case 10:
+                jo0 jo0Var2 = (jo0) this.b;
+                TLRPC.TL_payments_sendPaymentForm tL_payments_sendPaymentForm = (TLRPC.TL_payments_sendPaymentForm) this.c;
+                if (tLObject == null) {
+                    h20 h20Var = jo0Var2.b1;
+                    if (h20Var == null || !((Boolean) h20Var.run(tL_error)).booleanValue()) {
+                        AndroidUtilities.runOnUIThread(new hf0(jo0Var2, tL_error, tL_payments_sendPaymentForm, 15));
+                        break;
+                    }
+                } else if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
+                    if (tLObject instanceof TLRPC.TL_payments_paymentVerificationNeeded) {
+                        AndroidUtilities.runOnUIThread(new en0(jo0Var2, tLObject, 1));
+                        break;
+                    }
+                } else {
+                    Utilities.Callback callback = jo0Var2.Z0;
+                    if (callback == null) {
+                        TLRPC.Updates updates = ((TLRPC.TL_payments_paymentResult) tLObject).updates;
+                        TLRPC.Message[] messageArr = new TLRPC.Message[1];
+                        int size = updates.updates.size();
+                        int i10 = 0;
+                        while (true) {
+                            if (i10 < size) {
+                                TLRPC.Update update = updates.updates.get(i10);
+                                if (update instanceof TL_update.TL_updateNewMessage) {
+                                    messageArr[0] = ((TL_update.TL_updateNewMessage) update).message;
+                                } else if (update instanceof TL_update.TL_updateNewChannelMessage) {
+                                    messageArr[0] = ((TL_update.TL_updateNewChannelMessage) update).message;
+                                } else {
+                                    i10++;
+                                }
+                            }
+                        }
+                        jo0Var2.getMessagesController().processUpdates(updates, false);
+                        AndroidUtilities.runOnUIThread(new fe0(27, jo0Var2, messageArr));
+                        break;
+                    } else {
+                        callback.run((TLRPC.TL_payments_paymentResult) tLObject);
+                        break;
                     }
                 }
-            });
-            this.v.addListener(new rb0(this, f10, 0));
-            this.v.setInterpolator(org.telegram.ui.Components.jr.h);
-            this.v.setDuration(320L);
-            this.v.start();
-        }
-        float f11 = powerSaverLevel <= 0 ? 1.0f : 0.0f;
-        if (this.w != f11) {
-            this.w = f11;
-            ValueAnimator valueAnimator2 = this.x;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-                this.x = null;
-            }
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.w, f11);
-            this.x = ofFloat2;
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.pb0
-                public final /* synthetic */ sb0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator22) {
-                    switch (i11) {
-                        case 0:
-                            sb0 sb0Var = this.b;
-                            TextView textView = sb0Var.f;
-                            int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.y6, false);
-                            int w03 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.n6, false);
-                            float floatValue = ((Float) valueAnimator22.getAnimatedValue()).floatValue();
-                            sb0Var.s = floatValue;
-                            textView.setTextColor(i0.a.d(floatValue, w02, w03));
-                            break;
-                        default:
-                            sb0 sb0Var2 = this.b;
-                            TextView textView2 = sb0Var2.d;
-                            int w04 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.y6, false);
-                            int w05 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.n6, false);
-                            float floatValue2 = ((Float) valueAnimator22.getAnimatedValue()).floatValue();
-                            sb0Var2.w = floatValue2;
-                            textView2.setTextColor(i0.a.d(floatValue2, w04, w05));
-                            break;
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new a30(this.b, tLObject, (Object) tL_error, this.c, 18));
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new a30(this.b, (Object) tL_error, tLObject, this.c, 23));
+                break;
+            case 13:
+                AndroidUtilities.runOnUIThread(new a30(this.b, (Object) tL_error, tLObject, this.c, 24));
+                break;
+            case 14:
+                AndroidUtilities.runOnUIThread(new zq0(15, (PrivacySettingsActivity) this.b, (org.telegram.ui.Cells.s8) this.c));
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new a30(this.b, tLObject, (Object) tL_error, this.c, 27));
+                break;
+            case 16:
+                AndroidUtilities.runOnUIThread(new a30(this.b, tLObject, this.c, (Object) tL_error, 28));
+                break;
+            case 17:
+                AndroidUtilities.runOnUIThread(new wx0(this.b, (Object) tL_error, (Object) tLObject, this.c, 0));
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new wx0(this.b, tLObject, this.c, (Object) tL_error, 2));
+                break;
+            case 19:
+                AndroidUtilities.runOnUIThread(new hf0(this.b, (Object) tL_error, this.c, 27));
+                break;
+            case 20:
+                AndroidUtilities.runOnUIThread(new hf0((x71) this.b, tL_error, (TLRPC.TL_authorization) this.c, 28));
+                break;
+            case 21:
+                AndroidUtilities.runOnUIThread(new wx0((z71) this.b, tLObject, tL_error, (m9) this.c, false, 5));
+                break;
+            case 22:
+                AndroidUtilities.runOnUIThread(new wx0(this.b, (Object) tL_error, (Object) tLObject, this.c, 6));
+                break;
+            case 23:
+                AndroidUtilities.runOnUIThread(new l01(13, (o81) this.b, (TLRPC.TL_attachMenuBot) this.c));
+                break;
+            case 24:
+                s91 s91Var = (s91) this.b;
+                Utilities.Callback0Return callback0Return = (Utilities.Callback0Return) this.c;
+                int i11 = s91Var.i;
+                String str4 = null;
+                if (tL_error == null) {
+                    if (tLObject instanceof TL_stats.TL_statsGraph) {
+                        try {
+                            e02 = ga1.e0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i11, s91Var.m);
+                        } catch (JSONException e) {
+                            jSONException = e;
+                            str3 = null;
+                        }
+                        try {
+                            str4 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
+                            if (i11 == 4 && (jArr = e02.a) != null && jArr.length > 0) {
+                                long j10 = jArr[jArr.length - 1];
+                                s91Var.e = new wf.e(e02, j10);
+                                s91Var.c = j10;
+                            }
+                            str3 = str4;
+                            str4 = e02;
+                        } catch (JSONException e6) {
+                            jSONException = e6;
+                            str3 = str4;
+                            str4 = e02;
+                            jSONException.printStackTrace();
+                            if (tLObject instanceof TL_stats.TL_statsGraphError) {
+                            }
+                            str2 = str3;
+                            str = str4;
+                            AndroidUtilities.runOnUIThread(new wx0(8, s91Var, str, callback0Return, str2));
+                            return;
+                        }
+                    } else {
+                        str3 = null;
                     }
+                    if (tLObject instanceof TL_stats.TL_statsGraphError) {
+                        s91Var.l = false;
+                        s91Var.a = true;
+                        s91Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
+                    }
+                    str2 = str3;
+                    str = str4;
+                } else {
+                    str = null;
+                    str2 = null;
                 }
-            });
-            this.x.addListener(new rb0(this, f11, 1));
-            this.x.setInterpolator(org.telegram.ui.Components.jr.h);
-            this.x.setDuration(320L);
-            this.x.start();
+                AndroidUtilities.runOnUIThread(new wx0(8, s91Var, str, callback0Return, str2));
+                break;
+            case 25:
+                AndroidUtilities.runOnUIThread(new ed1((hd1) this.b, (String) this.c, tL_error, 0));
+                break;
+            case 26:
+                hd1 hd1Var = (hd1) this.b;
+                TL_account.updateTheme updatetheme = (TL_account.updateTheme) this.c;
+                if (!(tLObject instanceof TLRPC.TL_theme)) {
+                    AndroidUtilities.runOnUIThread(new ed1(hd1Var, tL_error, updatetheme));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new l01(21, hd1Var, (TLRPC.TL_theme) tLObject));
+                    break;
+                }
+            case 27:
+                AndroidUtilities.runOnUIThread(new ed1((gf1) this.b, (String) this.c, tLObject, 5));
+                break;
+            case 28:
+                AndroidUtilities.runOnUIThread(new wx0(this.b, tLObject, this.c, (Object) tL_error, 11));
+                break;
+            default:
+                og1 og1Var = (og1) this.b;
+                byte[] bArr = (byte[]) this.c;
+                if (tL_error != null) {
+                    AndroidUtilities.runOnUIThread(new jg1(og1Var, tL_error, 3));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new hg1(og1Var, bArr, 1));
+                    break;
+                }
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.n.onInitializeAccessibilityNodeInfo(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(112.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        super.onPopulateAccessibilityEvent(accessibilityEvent);
-        this.n.onPopulateAccessibilityEvent(this, accessibilityEvent);
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return this.n.performAccessibilityAction(this, i10, bundle);
     }
 }

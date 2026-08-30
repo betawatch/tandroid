@@ -1,32 +1,42 @@
 package uc;
 
+import dd.p;
+import java.io.Serializable;
 import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.r;
-import kotlin.jvm.internal.s;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class i extends c implements kotlin.jvm.internal.g {
-    private final int arity;
+public final class i implements h, Serializable {
+    public static final i a = new i();
 
-    public i(int i10, sc.c cVar) {
-        super(cVar);
-        this.arity = i10;
+    @Override // uc.h
+    public final f get(g key) {
+        j.e(key, "key");
+        return null;
     }
 
-    @Override // kotlin.jvm.internal.g
-    public int getArity() {
-        return this.arity;
+    public final int hashCode() {
+        return 0;
     }
 
-    @Override // uc.a
-    public String toString() {
-        if (getCompletion() != null) {
-            return super.toString();
-        }
-        r.a.getClass();
-        String a2 = s.a(this);
-        j.d(a2, "renderLambdaToString(...)");
-        return a2;
+    @Override // uc.h
+    public final h minusKey(g key) {
+        j.e(key, "key");
+        return this;
+    }
+
+    @Override // uc.h
+    public final h plus(h context) {
+        j.e(context, "context");
+        return context;
+    }
+
+    public final String toString() {
+        return "EmptyCoroutineContext";
+    }
+
+    @Override // uc.h
+    public final Object fold(Object obj, p pVar) {
+        return obj;
     }
 }

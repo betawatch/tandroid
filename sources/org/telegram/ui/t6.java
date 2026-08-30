@@ -1,46 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t6 extends org.telegram.ui.Components.zc {
-    public final /* synthetic */ v6 a0;
+public final class t6 extends FrameLayout {
+    public org.telegram.ui.Components.k6 a;
+    public cg.r b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t6(v6 v6Var, Context context) {
-        super(context, 11, org.telegram.ui.Components.zc.S, 0, org.telegram.ui.Components.zc.T);
-        this.a0 = v6Var;
+    public final void a(float f10) {
+        org.telegram.ui.Components.k6 k6Var = this.a;
+        k6Var.a();
+        k6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(k7.n.a(f10, 0.0f, 1.0f) * 100.0f))), !LocaleController.isRTL, true);
+        cg.r rVar = this.b;
+        rVar.d = f10;
+        rVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.zc
-    public final void d(int i10, boolean z10) {
-        x6 x6Var = this.a0.e;
-        if (!z10) {
-            x6Var.b.j1();
-            return;
-        }
-        int i11 = -1;
-        if (i10 == 8) {
-            i10 = -1;
-        }
-        int i12 = 0;
-        while (true) {
-            if (i12 < x6Var.W.size()) {
-                s6 s6Var = (s6) x6Var.W.get(i12);
-                if (s6Var != null && s6Var.a == 11 && s6Var.f == i10) {
-                    i11 = i12;
-                    break;
-                }
-                i12++;
-            } else {
-                break;
-            }
-        }
-        if (i11 >= 0) {
-            x6Var.b.e1(new j3.x(i11, 2), 0, true);
-        } else {
-            x6Var.b.j1();
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(350.0f), TLObject.FLAG_30));
     }
 }

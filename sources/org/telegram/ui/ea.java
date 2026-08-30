@@ -1,72 +1,46 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
-import android.text.TextWatcher;
+import android.view.View;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class ea implements TextWatcher {
-    public final /* synthetic */ fa a;
+public final class ea implements org.telegram.ui.Components.il0 {
+    public final /* synthetic */ pa a;
 
-    public ea(fa faVar) {
-        this.a = faVar;
+    public ea(pa paVar) {
+        this.a = paVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        la laVar = this.a.c;
-        if (laVar.r.startsWith("@")) {
-            laVar.r = laVar.r.substring(1);
-        }
-        if (laVar.r.length() > 0) {
-            StringBuilder sb2 = new StringBuilder("https://");
-            i10 = ((org.telegram.ui.ActionBar.o2) laVar).currentAccount;
-            sb2.append(MessagesController.getInstance(i10).linkPrefix);
-            sb2.append("/");
-            sb2.append(laVar.r);
-            String sb3 = sb2.toString();
-            String formatString = LocaleController.formatString("UsernameHelpLink", R.string.UsernameHelpLink, sb3);
-            int indexOf = formatString.indexOf(sb3);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
-            if (indexOf >= 0) {
-                spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(sb3, laVar, 3), indexOf, sb3.length() + indexOf, 33);
+    @Override // org.telegram.ui.Components.il0
+    public final void f(int i10, View view) {
+        boolean z4 = view instanceof ma;
+        pa paVar = this.a;
+        if (!z4) {
+            if (view instanceof ja) {
+                paVar.e0(true);
+                return;
             }
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        fa faVar = this.a;
-        la laVar = faVar.c;
-        String str = laVar.r;
-        laVar.r = charSequence == null ? "" : charSequence.toString();
-        la laVar2 = faVar.c;
-        ia iaVar = laVar2.A;
-        if (iaVar == null || str == null) {
             return;
         }
-        iaVar.b(laVar2.r);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        fa faVar = this.a;
-        la laVar = faVar.c;
-        String str = laVar.r;
-        laVar.r = charSequence == null ? "" : charSequence.toString();
-        la laVar2 = faVar.c;
-        ia iaVar = laVar2.A;
-        if (iaVar != null && str != null) {
-            iaVar.b(laVar2.r);
-        }
-        if (laVar.n) {
+        ma maVar = (ma) view;
+        TLRPC.TL_username tL_username = maVar.v;
+        if (tL_username == null || maVar.r) {
             return;
         }
-        laVar.d0(laVar.r);
+        if (tL_username.editable && paVar.x == 0) {
+            paVar.b.x0(0);
+            paVar.e0(true);
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(paVar.getParentActivity(), 0, paVar.getResourceProvider());
+        alertDialog$Builder.a.O = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
+        alertDialog$Builder.a.Q = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage);
+        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new gg.a0(this, tL_username, i10, view, 2));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m.j0(20));
+        alertDialog$Builder.o();
     }
 }

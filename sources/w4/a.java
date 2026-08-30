@@ -1,17 +1,15 @@
 package w4;
 
-import f5.w;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class a {
-    public final w a = new w();
-    public final int[] b = new int[256];
-    public boolean c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
+    public final int a;
+    public final boolean b;
+    public int c;
+
+    public a(int i10, boolean z4, int i11) {
+        this.a = i10;
+        this.b = z4;
+        this.c = i11;
+    }
 }

@@ -5,9 +5,9 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import m8.g0;
+import o8.f0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -26,9 +26,9 @@ final class bg extends bm {
         this.e = bnVar;
     }
 
-    @Override // m8.h0
+    @Override // o8.g0
     public final void b() {
-        g0 g0Var;
+        f0 f0Var;
         if (bn.l(this.e)) {
             a(new StandardIntegrityException(-2, null));
             return;
@@ -39,24 +39,24 @@ final class bg extends bm {
         }
         try {
             bn bnVar = this.e;
-            m8.w wVar = (m8.w) bnVar.a.n;
+            o8.v vVar = (o8.v) bnVar.a.n;
             Bundle a2 = bn.a(bnVar, this.a, this.b, this.c, 0);
             bk bkVar = new bk(this.e, this.d, this.b);
-            m8.u uVar = (m8.u) wVar;
-            uVar.getClass();
+            o8.t tVar = (o8.t) vVar;
+            tVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(uVar.c);
-            int i10 = m8.s.a;
+            obtain.writeInterfaceToken(tVar.c);
+            int i10 = o8.r.a;
             obtain.writeInt(1);
             a2.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);
-            uVar.F0(obtain, 3);
-        } catch (RemoteException e10) {
+            tVar.F0(obtain, 3);
+        } catch (RemoteException e) {
             bn bnVar2 = this.e;
             StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest = this.a;
-            g0Var = bnVar2.b;
-            g0Var.a(e10, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
-            this.d.trySetException(new StandardIntegrityException(-100, e10));
+            f0Var = bnVar2.b;
+            f0Var.a(e, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
+            this.d.trySetException(new StandardIntegrityException(-100, e));
         }
     }
 }

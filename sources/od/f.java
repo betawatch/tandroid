@@ -1,22 +1,25 @@
 package od;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.ServiceConfigurationError;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class f {
-    public static final Collection a;
+public final class f extends wc.c {
+    public g a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ g c;
+    public int d;
 
-    static {
-        try {
-            Iterator it = Arrays.asList(new kd.b()).iterator();
-            kotlin.jvm.internal.j.e(it, "<this>");
-            a = gd.d.a(new gd.a(new gd.e(it, 1)));
-        } catch (Throwable th2) {
-            throw new ServiceConfigurationError(th2.getMessage(), th2);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(g gVar, wc.c cVar) {
+        super(cVar);
+        this.c = gVar;
+    }
+
+    @Override // wc.a
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.d |= TLObject.FLAG_31;
+        return this.c.c(null, this);
     }
 }

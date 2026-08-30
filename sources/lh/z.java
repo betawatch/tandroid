@@ -1,178 +1,60 @@
 package lh;
 
-import android.os.Build;
 import android.text.TextUtils;
-import java.io.File;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collections;
-import nh.gb;
-import nh.ja;
-import nh.qb;
-import nh.va;
-import nh.wa;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z implements Utilities.Callback3 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class z {
+    public final int a;
+    public final long b;
+    public int c;
+    public boolean d;
+    public long f;
+    public boolean h;
+    public boolean i;
+    public String j;
+    public final ArrayList e = new ArrayList();
+    public int g = 1;
 
-    public /* synthetic */ z(int i10, Object obj, Object obj2) {
+    public z(int i10, long j10) {
+        this.h = false;
+        this.i = false;
+        this.j = null;
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = j10;
+        if (System.currentTimeMillis() - this.f > 900000) {
+            this.c = 0;
+            this.d = false;
+            this.i = false;
+            this.f = 0L;
+            this.j = null;
+            this.h = false;
+            a();
+        }
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback3
-    public final void run(Object obj, Object obj2, Object obj3) {
-        ja jaVar;
-        switch (this.a) {
-            case 0:
-                f2 f2Var = (f2) this.b;
-                s0 s0Var = (s0) this.c;
-                Boolean bool = (Boolean) obj;
-                Boolean bool2 = (Boolean) obj3;
-                int i10 = f2Var.J;
-                if (((Boolean) obj2).booleanValue()) {
-                    TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
-                    deletegroupcallparticipantmessages.call = f2Var.K;
-                    deletegroupcallparticipantmessages.participant = MessagesController.getInstance(i10).getInputPeer(s0Var.c);
-                    deletegroupcallparticipantmessages.report_spam = bool.booleanValue();
-                    ConnectionsManager.getInstance(i10).sendRequest(deletegroupcallparticipantmessages, null);
-                    long j10 = s0Var.c;
-                    ArrayList arrayList = f2Var.r;
-                    ArrayList arrayList2 = f2Var.s;
-                    int i11 = 0;
-                    boolean z10 = false;
-                    while (i11 < arrayList.size()) {
-                        if (((s0) arrayList.get(i11)).c == j10) {
-                            s0 s0Var2 = (s0) arrayList.get(i11);
-                            int i12 = 0;
-                            while (true) {
-                                if (i12 < arrayList2.size()) {
-                                    if (((t0) arrayList2.get(i12)).f.contains(s0Var2)) {
-                                        ((t0) arrayList2.get(i12)).f.remove(s0Var2);
-                                        if (((t0) arrayList2.get(i12)).f.isEmpty()) {
-                                            arrayList2.remove(i12);
-                                            z10 = true;
-                                        } else {
-                                            f2Var.m();
-                                        }
-                                    } else {
-                                        i12++;
-                                    }
-                                }
-                            }
-                            arrayList.remove(i11);
-                            f2Var.e.N(true);
-                            i11--;
-                        }
-                        i11++;
-                    }
-                    if (z10) {
-                        ConnectionsManager.getInstance(i10).getCurrentTime();
-                        Collections.sort(arrayList2, new c5.e(f2Var, 28));
-                        f2Var.n.N(true);
-                        f2Var.t();
-                    }
-                } else {
-                    TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                    deletegroupcallmessages.call = f2Var.K;
-                    deletegroupcallmessages.messages.add(Integer.valueOf(s0Var.a));
-                    ConnectionsManager.getInstance(i10).sendRequest(deletegroupcallmessages, null);
-                    f2Var.c(s0Var.a);
-                }
-                if (bool2.booleanValue()) {
-                    if (f2Var.I >= 0) {
-                        MessagesController.getInstance(i10).blockPeer(f2Var.I);
-                        return;
-                    } else {
-                        MessagesController.getInstance(i10).deleteParticipantFromChat(-f2Var.I, MessagesController.getInstance(i10).getInputPeer(s0Var.c), false, true);
-                        return;
-                    }
-                }
-                return;
-            case 1:
-                wa waVar = (wa) this.b;
-                nh.p pVar = (nh.p) this.c;
-                File file = (File) obj;
-                String str = (String) obj2;
-                Long l10 = (Long) obj3;
-                gb gbVar = waVar.O1;
-                va vaVar = gbVar.T0;
-                if (vaVar != null) {
-                    vaVar.K = false;
-                    vaVar.c();
-                    va vaVar2 = gbVar.T0;
-                    vaVar2.m(0L);
-                    qb qbVar = vaVar2.B;
-                    if (qbVar != null) {
-                        qbVar.setProgress(0L);
-                    }
-                }
-                nh.o7 o7Var = gbVar.G1;
-                if (o7Var != null) {
-                    o7Var.o0 = file;
-                    o7Var.p0 = str;
-                    o7Var.q0 = l10.longValue();
-                    nh.o7 o7Var2 = gbVar.G1;
-                    o7Var2.s0 = 0.0f;
-                    o7Var2.t0 = 1.0f;
-                    o7Var2.r0 = 0L;
-                    o7Var2.u0 = 1.0f;
-                    gbVar.u();
-                    if (gbVar.T0 == null || (jaVar = gbVar.r1) == null) {
-                        pVar.a(false);
-                        return;
-                    }
-                    bg.f3 m0 = jaVar.m0(gbVar.G1.p0, true);
-                    waVar.setHasRoundVideo(true);
-                    gbVar.T0.s(gbVar.G1, m0, true);
-                    AndroidUtilities.cancelRunOnUIThread(pVar.h);
-                    pVar.a.destroy(true, null);
-                    m0.setDraw(false);
-                    pVar.post(new nh.b6(5, pVar, m0));
-                    return;
-                }
-                return;
-            default:
-                ph.p pVar2 = (ph.p) this.b;
-                Utilities.Callback2 callback2 = (Utilities.Callback2) this.c;
-                Boolean bool3 = (Boolean) obj;
-                androidx.biometric.u uVar = (androidx.biometric.u) obj2;
-                androidx.biometric.v vVar = (androidx.biometric.v) obj3;
-                pVar2.getClass();
-                String str2 = null;
-                if (uVar != null) {
-                    try {
-                        int i13 = Build.VERSION.SDK_INT;
-                        if (i13 < 23) {
-                            str2 = pVar2.g;
-                        } else {
-                            if (i13 >= 30) {
-                                vVar = pVar2.i(true);
-                            }
-                            if (vVar != null) {
-                                str2 = !TextUtils.isEmpty(pVar2.g) ? new String(vVar.b.doFinal(Utilities.hexToBytes(pVar2.g)), StandardCharsets.UTF_8) : pVar2.g;
-                            } else if (!TextUtils.isEmpty(pVar2.g)) {
-                                throw new RuntimeException("No cryptoObject found");
-                            }
-                        }
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        bool3 = Boolean.FALSE;
-                    }
-                }
-                callback2.run(bool3, str2);
-                return;
+    public final void a() {
+        if (this.h || this.i || this.d) {
+            return;
         }
+        this.f = System.currentTimeMillis();
+        this.h = true;
+        TL_payments.getSuggestedStarRefBots getsuggestedstarrefbots = new TL_payments.getSuggestedStarRefBots();
+        int i10 = this.a;
+        getsuggestedstarrefbots.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
+        getsuggestedstarrefbots.limit = 20;
+        int i11 = this.g;
+        getsuggestedstarrefbots.order_by_date = i11 == 3;
+        getsuggestedstarrefbots.order_by_revenue = i11 == 2;
+        if (TextUtils.isEmpty(this.j)) {
+            getsuggestedstarrefbots.offset = "";
+        } else {
+            getsuggestedstarrefbots.offset = this.j;
+        }
+        ConnectionsManager.getInstance(i10).sendRequest(getsuggestedstarrefbots, new gf.a(this, 7));
     }
 }

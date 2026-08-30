@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private e0.t builder;
@@ -55,7 +55,7 @@ public class ImportingService extends Service implements NotificationCenter.Noti
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.n0(ApplicationLoader.applicationContext).b(5);
+        new e0.m0(ApplicationLoader.applicationContext).b(5);
         for (int i10 = 0; i10 < 4; i10++) {
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.historyImportProgressChanged);
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
@@ -96,7 +96,7 @@ public class ImportingService extends Service implements NotificationCenter.Noti
         tVar3.o = 0;
         tVar3.p = true;
         startForeground(5, tVar3.b());
-        new e0.n0(ApplicationLoader.applicationContext).d(5, this.builder.b());
+        new e0.m0(ApplicationLoader.applicationContext).d(5, this.builder.b());
         return 2;
     }
 }

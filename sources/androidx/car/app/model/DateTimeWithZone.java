@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class DateTimeWithZone {
     private static final long MAX_ZONE_OFFSET_SECONDS = TimeUnit.HOURS.toSeconds(1) * 18;
@@ -62,14 +62,14 @@ public final class DateTimeWithZone {
     }
 
     public String toString() {
-        StringBuilder sb2 = new StringBuilder("[time since epoch (ms): ");
-        sb2.append(this.mTimeSinceEpochMillis);
-        sb2.append("( ");
-        sb2.append(new Date(this.mTimeSinceEpochMillis));
-        sb2.append(")  zone offset (s): ");
-        sb2.append(this.mZoneOffsetSeconds);
-        sb2.append(", zone: ");
-        return a4.w.q(sb2, this.mZoneShortName, "]");
+        StringBuilder sb = new StringBuilder("[time since epoch (ms): ");
+        sb.append(this.mTimeSinceEpochMillis);
+        sb.append("( ");
+        sb.append(new Date(this.mTimeSinceEpochMillis));
+        sb.append(")  zone offset (s): ");
+        sb.append(this.mZoneOffsetSeconds);
+        sb.append(", zone: ");
+        return android.support.v4.media.a.r(sb, this.mZoneShortName, "]");
     }
 
     private DateTimeWithZone(long j10, int i10, String str) {

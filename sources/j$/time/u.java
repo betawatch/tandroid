@@ -13,7 +13,7 @@ public final class u extends ZoneId {
     public final String b;
     public final transient ZoneRules c;
 
-    public static u L(String str, boolean z10) {
+    public static u L(String str, boolean z4) {
         ZoneRules zoneRules;
         Objects.requireNonNull(str, "zoneId");
         int length = str.length();
@@ -26,9 +26,9 @@ public final class u extends ZoneId {
             }
             try {
                 zoneRules = j$.time.zone.h.a(str);
-            } catch (j$.time.zone.f e10) {
-                if (z10) {
-                    throw e10;
+            } catch (j$.time.zone.f e) {
+                if (z4) {
+                    throw e;
                 }
                 zoneRules = null;
             }

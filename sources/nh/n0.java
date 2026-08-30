@@ -1,34 +1,36 @@
 package nh;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public abstract class n0 {
-    public static float[] a;
+public final class n0 extends h51 {
+    public static final /* synthetic */ int a = 0;
 
-    public static int a(int i10, boolean z10) {
-        if (a == null) {
-            a = new float[3];
-        }
-        Color.colorToHSV(i10, a);
-        float[] fArr = a;
-        fArr[2] = Utilities.clamp(fArr[2] + (z10 ? -0.05f : 0.07f), 0.85f, 0.15f);
-        float[] fArr2 = a;
-        float f9 = fArr2[1];
-        if (f9 > 0.1f && f9 <= 0.95f) {
-            if (f9 <= 0.5f) {
-                fArr2[1] = Utilities.clamp(f9 + 0.2f, 1.0f, 0.0f);
-            } else if (f9 > 0.8f) {
-                fArr2[1] = Utilities.clamp(f9 - 0.4f, 1.0f, 0.0f);
-            }
-        }
-        return Color.HSVToColor(a);
+    static {
+        h51.setup(new n0());
     }
 
-    public static int[] b(Bitmap bitmap, boolean z10) {
-        return new int[]{a(bitmap.getPixel(bitmap.getWidth() / 2, (int) (bitmap.getHeight() * 0.1f)), z10), a(bitmap.getPixel(bitmap.getWidth() / 2, (int) (bitmap.getHeight() * 0.9f)), z10)};
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        ((o0) view).set((t0) i51Var.G);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        o0 o0Var = new o0(i10, context, false);
+        o0Var.setLayoutParams(new f2.w0(-2, -2));
+        return o0Var;
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final boolean equals(i51 i51Var, i51 i51Var2) {
+        return i51Var.G == i51Var2.G;
     }
 }

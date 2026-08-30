@@ -1,104 +1,95 @@
 package org.telegram.ui.Cells;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.text.TextUtils;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.zn0;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.ui.Components.al;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class t7 implements zn0 {
-    public final /* synthetic */ v7 a;
+public final /* synthetic */ class t7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
 
-    public t7(v7 v7Var) {
-        this.a = v7Var;
+    public /* synthetic */ t7(FrameLayout frameLayout, double d, double d10, int i10) {
+        this.a = i10;
+        this.b = frameLayout;
+        this.c = d;
+        this.d = d10;
     }
 
-    @Override // org.telegram.ui.Components.zn0
-    public final void W(float f9, boolean z10) {
-        int round;
-        v7 v7Var = this.a;
-        u7 u7Var = v7Var.r;
-        if (u7Var == null || v7Var.n == null) {
-            return;
-        }
-        if (u7Var.c != null) {
-            double length = f9 * (r1.length - 1);
-            int clamp = Utilities.clamp((int) Math.floor(length), v7Var.r.c.length - 1, 0);
-            int clamp2 = Utilities.clamp((int) Math.ceil(length), v7Var.r.c.length - 1, 0);
-            int[] iArr = v7Var.r.c;
-            round = Math.round(AndroidUtilities.lerp(iArr[clamp], iArr[clamp2], Math.round(((float) (length - Math.floor(length))) * v7Var.r.d) / v7Var.r.d));
-        } else {
-            round = Math.round(((v7Var.r.a() - v7Var.r.b()) * f9) + u7Var.b());
-        }
-        int i10 = v7Var.h;
-        if (i10 != Integer.MIN_VALUE) {
-            round = Math.max(round, i10);
-        }
-        int i11 = v7Var.f;
-        if (i11 != round) {
-            if (v7Var.c(i11) != v7Var.c(round)) {
-                AndroidUtilities.vibrateCursor(v7Var.e);
-            }
-            v7Var.f = round;
-            v7Var.e(round, true);
-            Utilities.Callback callback = v7Var.n;
-            if (callback != null) {
-                callback.run(Integer.valueOf(v7Var.f));
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zn0
-    public final CharSequence getContentDescription() {
-        Utilities.Callback2Return callback2Return;
-        v7 v7Var = this.a;
-        try {
-            StringBuilder sb2 = new StringBuilder();
-            if (!TextUtils.isEmpty(v7Var.s)) {
-                sb2.append(v7Var.s);
-            }
-            u7 u7Var = v7Var.r;
-            if (u7Var != null && (callback2Return = u7Var.e) != null) {
-                CharSequence charSequence = (CharSequence) callback2Return.run(0, Integer.valueOf(v7Var.f));
-                if (!TextUtils.isEmpty(charSequence)) {
-                    if (sb2.length() > 0) {
-                        sb2.append(", ");
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u7 u7Var = (u7) this.b;
+                double d = this.c;
+                double d10 = this.d;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, LocaleController.getInstance().getCurrentLocale()).getFromLocation(d, d10, 1);
+                    if (fromLocation.isEmpty()) {
+                        String detectOcean = LocationController.detectOcean(d10, d);
+                        u7Var.F = detectOcean;
+                        if (detectOcean == null) {
+                            u7Var.F = "";
+                        } else {
+                            u7Var.F = "🌊 " + ((Object) u7Var.F);
+                        }
+                    } else {
+                        Address address = fromLocation.get(0);
+                        StringBuilder sb = new StringBuilder();
+                        HashSet hashSet = new HashSet();
+                        hashSet.add(address.getSubAdminArea());
+                        hashSet.add(address.getAdminArea());
+                        hashSet.add(address.getLocality());
+                        hashSet.add(address.getCountryName());
+                        Iterator it = hashSet.iterator();
+                        while (it.hasNext()) {
+                            String str = (String) it.next();
+                            if (!TextUtils.isEmpty(str)) {
+                                if (sb.length() > 0) {
+                                    sb.append(", ");
+                                }
+                                sb.append(str);
+                            }
+                        }
+                        u7Var.F = sb.toString();
+                        String countryCodeToEmoji = LocationController.countryCodeToEmoji(address.getCountryCode());
+                        if (countryCodeToEmoji != null && Emoji.getEmojiDrawable(countryCodeToEmoji) != null) {
+                            u7Var.F = countryCodeToEmoji + " " + ((Object) u7Var.F);
+                        }
                     }
-                    sb2.append(charSequence);
+                } catch (Exception unused) {
                 }
-                CharSequence charSequence2 = (CharSequence) v7Var.r.e.run(-1, Integer.valueOf(v7Var.r.b()));
-                CharSequence charSequence3 = (CharSequence) v7Var.r.e.run(1, Integer.valueOf(v7Var.r.a()));
-                if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
-                    if (sb2.length() > 0) {
-                        sb2.append(", ");
-                    }
-                    sb2.append(charSequence2);
-                    sb2.append(" – ");
-                    sb2.append(charSequence3);
-                }
-            }
-            if (sb2.length() > 0) {
-                return sb2.toString();
-            }
-            return null;
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-            return v7Var.s;
+                AndroidUtilities.runOnUIThread(new t7(u7Var, d, d10, 1));
+                break;
+            case 1:
+                u7 u7Var2 = (u7) this.b;
+                double d11 = this.c;
+                double d12 = this.d;
+                u7Var2.C = d11;
+                u7Var2.D = d12;
+                u7Var2.B = false;
+                CharSequence charSequence = u7Var2.F;
+                org.telegram.ui.ActionBar.k5 k5Var = u7Var2.b;
+                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, k5Var.getPaint().getFontMetricsInt(), false);
+                u7Var2.F = replaceEmoji;
+                k5Var.l(replaceEmoji, false);
+                break;
+            default:
+                ((al) this.b).b0(this.c, this.d);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.zn0
-    public final int k0() {
-        u7 u7Var = this.a.r;
-        if (u7Var == null) {
-            return 0;
-        }
-        return u7Var.c != null ? (r1.length - 1) * u7Var.d : u7Var.a() - u7Var.b();
-    }
-
-    @Override // org.telegram.ui.Components.zn0
-    public final /* synthetic */ void v() {
     }
 }

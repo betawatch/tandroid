@@ -1,19 +1,31 @@
 package q4;
 
-import f5.c0;
-import j3.t0;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final o3.n d = new o3.n();
-    public final o3.k a;
-    public final t0 b;
-    public final c0 c;
+public abstract class b implements l {
+    public final long a;
+    public final long b;
+    public long c;
 
-    public b(o3.k kVar, t0 t0Var, c0 c0Var) {
-        this.a = kVar;
-        this.b = t0Var;
-        this.c = c0Var;
+    public b(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
+        this.c = j10 - 1;
+    }
+
+    public final void a() {
+        long j10 = this.c;
+        if (j10 < this.a || j10 > this.b) {
+            throw new NoSuchElementException();
+        }
+    }
+
+    @Override // q4.l
+    public final boolean next() {
+        long j10 = this.c + 1;
+        this.c = j10;
+        return !(j10 > this.b);
     }
 }

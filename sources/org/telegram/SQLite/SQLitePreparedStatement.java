@@ -6,9 +6,9 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.th;
+import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
@@ -89,19 +89,19 @@ public class SQLitePreparedStatement {
         if (BuildVars.LOGS_ENABLED) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.startTime;
             if (elapsedRealtime > 500) {
-                StringBuilder sb2 = new StringBuilder("sqlite query ");
-                sb2.append(this.query);
-                sb2.append(" took ");
-                sb2.append(elapsedRealtime);
-                th.v("ms", sb2);
+                StringBuilder sb = new StringBuilder("sqlite query ");
+                sb.append(this.query);
+                sb.append(" took ");
+                sb.append(elapsedRealtime);
+                yh.w("ms", sb);
             }
         }
         try {
             this.isFinalized = true;
             finalize(this.sqliteStatementHandle);
-        } catch (SQLiteException e10) {
+        } catch (SQLiteException e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e(e10.getMessage(), e10);
+                FileLog.e(e.getMessage(), e);
             }
         }
     }

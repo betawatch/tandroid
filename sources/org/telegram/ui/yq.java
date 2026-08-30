@@ -1,65 +1,47 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yq implements cr {
-    public final /* synthetic */ jr a;
+public final class yq implements gq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ pr d;
 
-    public yq(jr jrVar) {
-        this.a = jrVar;
+    public yq(pr prVar, TLObject tLObject, long j10, boolean z4) {
+        this.d = prVar;
+        this.a = tLObject;
+        this.b = j10;
+        this.c = z4;
     }
 
-    @Override // org.telegram.ui.cr
+    @Override // org.telegram.ui.gq
     public final void a(TLRPC.User user) {
-        jr.c0(this.a, user);
+        pr.c0(this.d, user);
     }
 
-    @Override // org.telegram.ui.cr
-    public final void b(long j10) {
-        jr jrVar = this.a;
-        ArrayList arrayList = jrVar.B;
-        a0.h hVar = jrVar.G;
-        TLRPC.User user = jrVar.getMessagesController().getUser(Long.valueOf(j10));
-        if (user != null) {
-            AndroidUtilities.runOnUIThread(new vf(27, this, user), 200L);
+    @Override // org.telegram.ui.gq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
         }
-        if (hVar.f(j10) == null) {
-            dr w02 = jrVar.w0();
-            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
-            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-            tL_channelParticipantAdmin.peer = tL_peerUser;
-            tL_peerUser.user_id = user.id;
-            tL_channelParticipantAdmin.date = jrVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantAdmin.promoted_by = jrVar.getAccountInstance().getUserConfig().clientUserId;
-            arrayList.add(tL_channelParticipantAdmin);
-            hVar.k(tL_channelParticipantAdmin, user.id);
-            Collections.sort(arrayList, new lh.e4(18));
-            jrVar.A0(w02);
+        pr prVar = this.d;
+        ir irVar = prVar.j1;
+        long j10 = this.b;
+        if (irVar != null && i10 == 1) {
+            irVar.b(j10);
+        } else if (irVar != null) {
+            irVar.c(j10, tLObject);
         }
-    }
-
-    @Override // org.telegram.ui.cr
-    public final void c(long j10, TLObject tLObject) {
-        jr jrVar = this.a;
-        ArrayList arrayList = jrVar.B;
-        a0.h hVar = jrVar.G;
-        if (tLObject == null || hVar.f(j10) != null) {
-            return;
+        if (this.c) {
+            prVar.removeSelfFromStack();
         }
-        dr w02 = jrVar.w0();
-        arrayList.add(tLObject);
-        hVar.k(tLObject, j10);
-        Collections.sort(arrayList, new lh.e4(18));
-        jrVar.A0(w02);
-    }
-
-    @Override // org.telegram.ui.cr
-    public final /* synthetic */ void d(long j10) {
     }
 }

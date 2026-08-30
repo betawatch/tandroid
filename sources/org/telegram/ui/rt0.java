@@ -1,488 +1,336 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.view.MotionEvent;
+import android.animation.AnimatorSet;
+import android.os.StatFs;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class rt0 extends org.telegram.ui.Components.iv0 {
-    public final /* synthetic */ PhotoViewer A0;
-    public final Paint w0;
-    public boolean x0;
-    public boolean y0;
-    public ArrayList z0;
+public final /* synthetic */ class rt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rt0(PhotoViewer photoViewer, Activity activity, Activity activity2) {
-        super(activity, activity2);
-        this.A0 = photoViewer;
-        Paint paint = new Paint();
-        this.w0 = paint;
-        setWillNotDraw(false);
-        paint.setColor(855638016);
-        setLayerType(2, null);
+    public /* synthetic */ rt0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.iv0, org.telegram.ui.Components.hv0
-    public final void S() {
-        super.S();
-        PhotoViewer photoViewer = this.A0;
-        if (photoViewer.n1) {
-            photoViewer.S0[0].e(2, getKeyboardHeight() <= AndroidUtilities.dp(20.0f) ? 1.0f : 0.0f, true);
-        }
-    }
-
-    public final void Z() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            if (this.z0 == null) {
-                this.z0 = new ArrayList();
-            }
-            this.z0.clear();
-            PhotoViewer photoViewer = this.A0;
-            if (photoViewer.q4 == 1 || photoViewer.k6 == 1) {
-                int measuredHeight = getMeasuredHeight();
-                int measuredWidth = getMeasuredWidth();
-                this.z0.add(new Rect(0, b.x(200.0f, measuredHeight, 2), AndroidUtilities.dp(100.0f), (AndroidUtilities.dp(200.0f) + measuredHeight) / 2));
-                this.z0.add(new Rect(measuredWidth - AndroidUtilities.dp(100.0f), b.x(200.0f, measuredHeight, 2), measuredWidth, (AndroidUtilities.dp(200.0f) + measuredHeight) / 2));
-            }
-            setSystemGestureExclusionRects(this.z0);
-            invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.hv0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        PhotoViewer photoViewer = this.A0;
-        photoViewer.M.o(photoViewer.c0.getContext()).draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        PhotoViewer photoViewer = this.A0;
-        org.telegram.ui.Cells.w9 o10 = photoViewer.M.o(getContext());
-        org.telegram.ui.Cells.x9 x9Var = o10.r;
-        if (motionEvent.getAction() == 0) {
-            o10.h = motionEvent.getX();
-            o10.n = motionEvent.getY();
-            x9Var.e = x9Var.y();
-        } else if (x9Var.e && Math.abs(motionEvent.getX() - o10.h) < AndroidUtilities.touchSlop && Math.abs(motionEvent.getY() - o10.n) < AndroidUtilities.touchSlop && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
-            motionEvent.getX();
-            motionEvent.getY();
-            org.telegram.ui.Cells.x9 x9Var2 = o10.r;
-            if (!x9Var2.i && x9Var2.e) {
-                x9Var2.f(false);
-            }
-        }
-        if (!photoViewer.M.y()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        photoViewer.M.o(getContext()).onTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        super.draw(canvas);
-        PhotoViewer photoViewer = this.A0;
-        et0 et0Var = photoViewer.b0;
-        if (et0Var == null || !et0Var.x) {
-            return;
-        }
-        int measuredHeight = ((int) ((photoViewer.W5 - 1.0f) * et0Var.getWebView().getMeasuredHeight())) / 2;
-        org.telegram.ui.Components.n61 n61Var = photoViewer.v1;
-        if (n61Var != null && n61Var.j) {
-            n61Var.setBounds(photoViewer.b0.getLeft(), (photoViewer.b0.getWebView().getTop() - measuredHeight) + ((int) (photoViewer.U5 / photoViewer.W5)), photoViewer.b0.getRight(), photoViewer.b0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.U5 / photoViewer.W5)));
-            photoViewer.v1.draw(canvas);
-        }
-        org.telegram.ui.Components.eo0 eo0Var = photoViewer.w1;
-        if (eo0Var == null || !eo0Var.a()) {
-            return;
-        }
-        photoViewer.w1.setBounds(photoViewer.b0.getLeft(), (int) ((photoViewer.B.getAlpha() * AndroidUtilities.dp(90.0f)) + AndroidUtilities.statusBarHeight), photoViewer.b0.getRight(), photoViewer.b0.getWebView().getBottom() + measuredHeight + ((int) (photoViewer.U5 / photoViewer.W5)));
-        photoViewer.w1.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        PhotoViewer photoViewer = this.A0;
-        if (view == photoViewer.M.o(photoViewer.c0.getContext()) || view == photoViewer.o5 || view == photoViewer.v4 || view == photoViewer.w4 || view == photoViewer.T0) {
-            return false;
-        }
-        FrameLayout frameLayout = photoViewer.M7;
-        if (view == frameLayout && frameLayout.getTranslationY() > 0.0f && photoViewer.L0.getTranslationY() == 0.0f) {
-            canvas.save();
-            canvas.clipRect(photoViewer.M7.getX(), photoViewer.M7.getY(), photoViewer.M7.getX() + photoViewer.M7.getMeasuredWidth(), photoViewer.M7.getBottom());
-            boolean drawChild = super.drawChild(canvas, view, j10);
-            canvas.restore();
-            return drawChild;
-        }
-        try {
-            if (view == photoViewer.u2 || view == photoViewer.u4) {
-                return false;
-            }
-            return super.drawChild(canvas, view, j10);
-        } catch (Throwable unused) {
-            return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.hv0
-    public final int getBottomPadding() {
-        return this.A0.L0.getHeight();
-    }
-
-    @Override // org.telegram.ui.Components.hv0, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.ui.Components.mc.a(this, new w8(this, 6));
-    }
-
-    @Override // org.telegram.ui.Components.hv0, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.ui.Components.mc.h(this);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        cg.m1 m1Var;
-        Canvas canvas2;
-        Drawable[] drawableArr = PhotoViewer.P8;
-        PhotoViewer photoViewer = this.A0;
-        photoViewer.U1(canvas);
-        if (AndroidUtilities.statusBarHeight == 0 || (m1Var = photoViewer.B) == null) {
-            return;
-        }
-        int alpha = (int) (m1Var.getAlpha() * 255.0f * 0.498f);
-        Paint paint = this.w0;
-        paint.setAlpha(alpha);
-        if (getPaddingRight() > 0) {
-            canvas2 = canvas;
-            canvas2.drawRect(getMeasuredWidth() - getPaddingRight(), 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-        } else {
-            canvas2 = canvas;
-        }
-        if (getPaddingLeft() > 0) {
-            canvas2.drawRect(0.0f, 0.0f, getPaddingLeft(), getMeasuredHeight(), paint);
-        }
-        if (getPaddingBottom() > 0) {
-            float alpha2 = (1.0f - photoViewer.B.getAlpha()) * AndroidUtilities.dpf2(24.0f);
-            canvas2.drawRect(0.0f, (getMeasuredHeight() - getPaddingBottom()) + alpha2, getMeasuredWidth(), getMeasuredHeight() + alpha2, paint);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:122:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00d8  */
-    @Override // org.telegram.ui.Components.iv0, org.telegram.ui.Components.hv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0314  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0316  */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int paddingLeft;
-        int paddingRight;
-        int paddingBottom;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        xr0 xr0Var;
-        int top;
-        int dp;
-        int measuredHeight;
-        int dp2;
-        PhotoViewer photoViewer = this.A0;
-        if (photoViewer.q5 != null && photoViewer.t5 != null) {
-            int dp3 = (i12 - i10) - AndroidUtilities.dp(20.0f);
-            photoViewer.t5.setTranslationY(((-dp3) / 2.0f) - AndroidUtilities.dp(47.0f));
-            float f9 = dp3 / 2.0f;
-            photoViewer.q5.setTranslationY(AndroidUtilities.dp(47.0f) + f9);
-            photoViewer.p5.setTranslationY(AndroidUtilities.dp(47.0f) + f9);
-            photoViewer.u5.setTranslationY(f9 + AndroidUtilities.dp(95.0f));
-        }
-        int childCount = getChildCount();
-        R();
-        for (int i20 = 0; i20 < childCount; i20++) {
-            View childAt = getChildAt(i20);
-            if (childAt.getVisibility() != 8) {
-                if (childAt == photoViewer.u2) {
-                    paddingLeft = i10;
-                    paddingRight = i12;
-                    paddingBottom = i13;
-                } else {
-                    paddingLeft = getPaddingLeft() + i10;
-                    paddingRight = i12 - getPaddingRight();
-                    paddingBottom = i13 - getPaddingBottom();
-                }
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                int measuredWidth = childAt.getMeasuredWidth();
-                int measuredHeight2 = childAt.getMeasuredHeight();
-                int i21 = layoutParams.gravity;
-                if (i21 == -1) {
-                    i21 = 51;
-                }
-                int i22 = i21 & 7;
-                int i23 = i21 & 112;
-                if (i22 == 1) {
-                    i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + layoutParams.leftMargin;
-                    i15 = layoutParams.rightMargin;
-                } else if (i22 != 5) {
-                    i16 = layoutParams.leftMargin;
-                    if (i23 != 16) {
-                        i17 = (((paddingBottom - i11) - measuredHeight2) / 2) + layoutParams.topMargin;
-                        i18 = layoutParams.bottomMargin;
-                    } else if (i23 != 80) {
-                        i19 = layoutParams.topMargin;
-                        xr0Var = photoViewer.Q1;
-                        if (childAt != xr0Var.I) {
-                            if (childAt == photoViewer.R1.I) {
-                                i19 += photoViewer.B.getMeasuredHeight();
-                            } else if (xr0Var.f.l(childAt) || photoViewer.R1.f.l(childAt)) {
-                                i19 = ((i13 - i11) - measuredHeight2) + ((photoViewer.s || AndroidUtilities.isInMultiwindow) ? 0 : AndroidUtilities.navigationBarHeight);
-                            } else if (childAt == photoViewer.k1) {
-                                i19 = AndroidUtilities.dp(5.0f) + photoViewer.B.getMeasuredHeight();
-                            } else {
-                                float f10 = 40.0f;
-                                if (childAt == photoViewer.a1 || childAt == photoViewer.b1 || childAt == photoViewer.c1) {
-                                    FrameLayout frameLayout = photoViewer.M7;
-                                    if (frameLayout == null || frameLayout.getVisibility() != 0) {
-                                        top = photoViewer.L0.getTop();
-                                        if (childAt == photoViewer.b1) {
-                                            top -= AndroidUtilities.dp(50.0f);
-                                        }
-                                    } else {
-                                        top = photoViewer.M7.getTop();
-                                    }
-                                    int i24 = photoViewer.Y1;
-                                    if (i24 != 4 && i24 != 5) {
-                                        f10 = 15.0f;
-                                    }
-                                    dp = AndroidUtilities.dp(12.0f) + (top - AndroidUtilities.dp(f10));
-                                    measuredHeight = childAt.getMeasuredHeight();
-                                } else {
-                                    ArrayList arrayList = photoViewer.e1;
-                                    if (arrayList == null || !arrayList.contains(childAt)) {
-                                        ArrayList arrayList2 = photoViewer.d1;
-                                        if (arrayList2 != null && arrayList2.contains(childAt)) {
-                                            FrameLayout frameLayout2 = photoViewer.M7;
-                                            int top2 = (frameLayout2 == null || frameLayout2.getVisibility() != 0) ? photoViewer.L0.getTop() : photoViewer.M7.getTop();
-                                            int i25 = photoViewer.Y1;
-                                            if (i25 != 4 && i25 != 5) {
-                                                f10 = 15.0f;
-                                            }
-                                            dp = (AndroidUtilities.dp(12.0f) + (top2 - AndroidUtilities.dp(f10))) - AndroidUtilities.dp(36.0f);
-                                            measuredHeight = childAt.getMeasuredHeight();
-                                        } else if (childAt == photoViewer.M7) {
-                                            i19 -= photoViewer.L0.getHeight();
-                                            if (photoViewer.Y1 == 1) {
-                                                dp2 = AndroidUtilities.dp(52.0f);
-                                            } else if (photoViewer.Q1.getVisibility() == 0) {
-                                                dp2 = AndroidUtilities.dp(56.0f);
-                                            }
-                                            i19 -= dp2;
-                                        } else if (childAt == photoViewer.T1) {
-                                            dp = ((paddingBottom - i11) - measuredHeight2) - layoutParams.bottomMargin;
-                                            measuredHeight = photoViewer.L0.getHeight();
-                                        } else if (childAt == photoViewer.U1 || childAt == photoViewer.M0) {
-                                            i19 = photoViewer.B.getMeasuredHeight();
-                                        } else if (childAt == photoViewer.N0) {
-                                            dp = ((paddingBottom - i11) - measuredHeight2) - layoutParams.bottomMargin;
-                                            measuredHeight = photoViewer.L0.getHeight();
-                                        } else if (childAt == photoViewer.O7) {
-                                            i19 = b.u(31.0f, photoViewer.L0.getHeight(), i19);
-                                        }
-                                    } else {
-                                        FrameLayout frameLayout3 = photoViewer.M7;
-                                        int top3 = (frameLayout3 == null || frameLayout3.getVisibility() != 0) ? photoViewer.L0.getTop() - AndroidUtilities.dp(50.0f) : photoViewer.M7.getTop();
-                                        int i26 = photoViewer.Y1;
-                                        if (i26 != 4 && i26 != 5) {
-                                            f10 = 15.0f;
-                                        }
-                                        dp = (AndroidUtilities.dp(12.0f) + (top3 - AndroidUtilities.dp(f10))) - AndroidUtilities.dp(36.0f);
-                                        measuredHeight = childAt.getMeasuredHeight();
-                                    }
-                                }
-                                i19 = dp - measuredHeight;
-                            }
-                        }
-                        childAt.layout(i16 + paddingLeft, i19, i16 + measuredWidth + paddingLeft, measuredHeight2 + i19);
-                    } else {
-                        i17 = (paddingBottom - i11) - measuredHeight2;
-                        i18 = layoutParams.bottomMargin;
-                    }
-                    i19 = i17 - i18;
-                    xr0Var = photoViewer.Q1;
-                    if (childAt != xr0Var.I) {
-                    }
-                    childAt.layout(i16 + paddingLeft, i19, i16 + measuredWidth + paddingLeft, measuredHeight2 + i19);
-                } else {
-                    i14 = (paddingRight - paddingLeft) - measuredWidth;
-                    i15 = layoutParams.rightMargin;
-                }
-                i16 = i14 - i15;
-                if (i23 != 16) {
-                }
-                i19 = i17 - i18;
-                xr0Var = photoViewer.Q1;
-                if (childAt != xr0Var.I) {
-                }
-                childAt.layout(i16 + paddingLeft, i19, i16 + measuredWidth + paddingLeft, measuredHeight2 + i19);
-            }
-        }
-        S();
-        Z();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void run() {
+        k3 k3Var;
+        ArrayList arrayList;
+        int i10;
+        int i11;
         int i12;
         int i13;
-        int i14;
-        int bitmapWidth;
-        int bitmapHeight;
-        rt0 rt0Var = this;
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        if (rt0Var.getLayoutParams().height > 0) {
-            size2 = rt0Var.getLayoutParams().height;
-        }
-        int i15 = size2;
-        rt0Var.setMeasuredDimension(size, i15);
-        PhotoViewer photoViewer = rt0Var.A0;
-        boolean z10 = true;
-        if (!photoViewer.n1) {
-            rt0Var.x0 = true;
-            if (photoViewer.e2) {
-                Point point = AndroidUtilities.displaySize;
-                int i16 = point.x > point.y ? 5 : 10;
-                photoViewer.M1.getCurrentView().setMaxLines(i16);
-                photoViewer.M1.getNextView().setMaxLines(i16);
-            } else {
-                photoViewer.M1.getCurrentView().setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-                photoViewer.M1.getNextView().setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-            }
-            rt0Var.x0 = false;
-        }
-        int dp = photoViewer.e0.getVisibility() != 8 ? AndroidUtilities.dp(48.0f) : 0;
-        org.telegram.ui.Components.t30 t30Var = photoViewer.h1;
-        if (t30Var == null || t30Var.getVisibility() == 8) {
-            i12 = i10;
-            i13 = 0;
-        } else {
-            ((ViewGroup.MarginLayoutParams) photoViewer.h1.getLayoutParams()).bottomMargin = dp;
-            i12 = i10;
-            rt0Var.measureChildWithMargins(photoViewer.h1, i12, 0, i11, 0);
-            int measuredHeight = photoViewer.h1.getMeasuredHeight();
-            rt0Var.x0 = true;
-            if (AndroidUtilities.isTablet() || i15 >= size) {
-                if (photoViewer.h1.getVisibility() != 0) {
-                    photoViewer.h1.setVisibility(0);
+        TL_iv.PageBlock pageBlock = null;
+        int i14 = 0;
+        switch (this.a) {
+            case 0:
+                PhotoViewer.BackgroundDrawable backgroundDrawable = (PhotoViewer.BackgroundDrawable) this.b;
+                int i15 = PhotoViewer.BackgroundDrawable.g;
+                backgroundDrawable.a();
+                break;
+            case 1:
+                iu0 iu0Var = (iu0) this.b;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) iu0Var.a.K0.getLayoutParams();
+                ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+                int x10 = b.x(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                PhotoViewer photoViewer = iu0Var.a;
+                int i16 = x10 + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
+                if (i16 != layoutParams.topMargin) {
+                    layoutParams.topMargin = i16;
+                    photoViewer.K0.setLayoutParams(layoutParams);
                 }
-            } else if (photoViewer.h1.getVisibility() != 4) {
-                photoViewer.h1.setVisibility(4);
-            }
-            rt0Var.x0 = false;
-            i13 = measuredHeight;
-        }
-        gu0 gu0Var = photoViewer.e3;
-        if (gu0Var != null) {
-            gu0Var.e = size;
-            gu0Var.f = i15;
-        }
-        int paddingLeft = size - (rt0Var.getPaddingLeft() + rt0Var.getPaddingRight());
-        int paddingBottom = i15 - rt0Var.getPaddingBottom();
-        int childCount = rt0Var.getChildCount();
-        int i17 = 0;
-        while (i17 < childCount) {
-            View childAt = rt0Var.getChildAt(i17);
-            if (childAt.getVisibility() != 8 && childAt != photoViewer.h1) {
-                os0 os0Var = photoViewer.u2;
-                if (childAt == os0Var) {
-                    childAt.measure(i12, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y + AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
-                } else if (childAt == photoViewer.u4) {
-                    if (os0Var == null || os0Var.getVisibility() != 0) {
-                        bitmapWidth = photoViewer.y4.getBitmapWidth();
-                        bitmapHeight = photoViewer.y4.getBitmapHeight();
-                    } else {
-                        View view = photoViewer.z2 ? photoViewer.y2 : photoViewer.x2;
-                        bitmapWidth = view.getMeasuredWidth();
-                        bitmapHeight = view.getMeasuredHeight();
-                    }
-                    if (bitmapWidth == 0 || bitmapHeight == 0) {
-                        bitmapWidth = paddingLeft;
-                        bitmapHeight = paddingBottom;
-                    }
-                    photoViewer.u4.measure(View.MeasureSpec.makeMeasureSpec(bitmapWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(bitmapHeight, TLObject.FLAG_30));
-                } else if (photoViewer.Q1.f.l(childAt) || photoViewer.R1.f.l(childAt)) {
-                    if (photoViewer.s) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30));
-                    } else if (!AndroidUtilities.isInMultiwindow) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height + AndroidUtilities.navigationBarHeight, TLObject.FLAG_30));
-                    } else if (AndroidUtilities.isTablet()) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(320.0f), paddingBottom - AndroidUtilities.statusBarHeight), TLObject.FLAG_30));
-                    } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingBottom - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
-                    }
-                } else if (childAt == photoViewer.P1) {
-                    if (photoViewer.i2) {
-                        if (rt0Var.y0) {
-                            i14 = dp + i13;
-                            int currentActionBarHeight = (paddingBottom - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight)) - i14;
-                            ((ViewGroup.MarginLayoutParams) photoViewer.P1.getLayoutParams()).bottomMargin = i14;
-                            childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight, TLObject.FLAG_30));
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) iu0Var.a.L0.getLayoutParams();
+                int x11 = b.x(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                PhotoViewer photoViewer2 = iu0Var.a;
+                int i17 = x11 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
+                if (layoutParams2.topMargin != i17) {
+                    layoutParams2.topMargin = i17;
+                    photoViewer2.L0.setLayoutParams(layoutParams2);
+                    break;
+                }
+                break;
+            case 2:
+                ((ah.a) this.b).run();
+                break;
+            case 3:
+                n nVar = (n) this.b;
+                nVar.getClass();
+                nVar.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 4:
+                ((AnimatorSet) this.b).start();
+                break;
+            case 5:
+                ((e1) this.b).a(2, false);
+                break;
+            case 6:
+                l4 l4Var = ((t0) this.b).a;
+                l4Var.O0.unlock();
+                Runnable runnable = l4Var.X;
+                if (runnable != null) {
+                    runnable.run();
+                    l4Var.X = null;
+                    break;
+                }
+                break;
+            case 7:
+                u1 u1Var = (u1) ((q1) this.b).b;
+                l4 l4Var2 = u1Var.x;
+                View view = l4Var2.L;
+                if (view != null) {
+                    l4Var2.M.addView(view, k7.b6.c(-1.0f, -1));
+                    u1Var.x.M.setVisibility(0);
+                    break;
+                }
+                break;
+            case 8:
+                af.g.s(((r1) this.b).a.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                break;
+            case 9:
+                ((e2) this.b).requestLayout();
+                break;
+            case 10:
+                y3 y3Var = (y3) this.b;
+                y3Var.release();
+                y3Var.H.s();
+                break;
+            case 11:
+                j4 j4Var = (j4) this.b;
+                ArrayList arrayList2 = new ArrayList(j4Var.d);
+                int size = arrayList2.size();
+                l4 l4Var3 = j4Var.I;
+                int i18 = size + (l4Var3.H == null ? 0 : 1);
+                int[] iArr = new int[i18];
+                int[] iArr2 = new int[i18];
+                p3 p3Var = l4Var3.r0[0];
+                if (p3Var != null && (k3Var = p3Var.b) != null) {
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31);
+                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31);
+                    int i19 = 0;
+                    int i20 = 0;
+                    while (i19 < i18) {
+                        boolean z4 = j4Var.E;
+                        if (z4 && i19 == 0) {
+                            iArr[i14] = i14;
+                        } else {
+                            int i21 = z4 ? i19 - 1 : i19;
+                            TL_iv.PageBlock pageBlock2 = (i21 < 0 || i21 >= arrayList2.size()) ? pageBlock : (TL_iv.PageBlock) arrayList2.get(i21);
+                            if (pageBlock2 == null || pageBlock2.cachedHeight == 0 || pageBlock2.cachedWidth != View.MeasureSpec.getSize(makeMeasureSpec)) {
+                                f2.l1 g10 = j4Var.g(k3Var, j4.I(pageBlock2));
+                                View view2 = g10.a;
+                                int i22 = i20;
+                                TL_iv.PageBlock pageBlock3 = pageBlock2;
+                                arrayList = arrayList2;
+                                i10 = makeMeasureSpec2;
+                                i11 = i19;
+                                i12 = i22;
+                                j4Var.H(g10.f, g10, pageBlock3, i21, arrayList2.size(), true);
+                                view2.measure(makeMeasureSpec, i10);
+                                int measuredHeight = view2.getMeasuredHeight();
+                                iArr[i11] = measuredHeight;
+                                if (pageBlock3 != null) {
+                                    pageBlock3.cachedHeight = measuredHeight;
+                                    pageBlock3.cachedWidth = View.MeasureSpec.getSize(makeMeasureSpec);
+                                }
+                                int i23 = i11 - 1;
+                                iArr2[i11] = (i23 >= 0 ? 0 : iArr2[i23]) + iArr[i11];
+                                i20 = i12 + iArr[i11];
+                                i19 = i11 + 1;
+                                makeMeasureSpec2 = i10;
+                                arrayList2 = arrayList;
+                                pageBlock = null;
+                                i14 = 0;
+                            } else {
+                                iArr[i19] = pageBlock2.cachedHeight;
+                            }
                         }
-                        i14 = dp;
-                        int currentActionBarHeight2 = (paddingBottom - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight)) - i14;
-                        ((ViewGroup.MarginLayoutParams) photoViewer.P1.getLayoutParams()).bottomMargin = i14;
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight2, TLObject.FLAG_30));
-                    } else if (!photoViewer.h1.c() || (!AndroidUtilities.isTablet() && paddingBottom <= paddingLeft)) {
-                        rt0Var.y0 = false;
-                        i14 = dp;
-                        int currentActionBarHeight22 = (paddingBottom - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight)) - i14;
-                        ((ViewGroup.MarginLayoutParams) photoViewer.P1.getLayoutParams()).bottomMargin = i14;
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight22, TLObject.FLAG_30));
-                    } else {
-                        i14 = dp + i13;
-                        rt0Var.y0 = z10;
-                        int currentActionBarHeight222 = (paddingBottom - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight)) - i14;
-                        ((ViewGroup.MarginLayoutParams) photoViewer.P1.getLayoutParams()).bottomMargin = i14;
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(currentActionBarHeight222, TLObject.FLAG_30));
+                        arrayList = arrayList2;
+                        i10 = makeMeasureSpec2;
+                        i11 = i19;
+                        i12 = i20;
+                        int i232 = i11 - 1;
+                        iArr2[i11] = (i232 >= 0 ? 0 : iArr2[i232]) + iArr[i11];
+                        i20 = i12 + iArr[i11];
+                        i19 = i11 + 1;
+                        makeMeasureSpec2 = i10;
+                        arrayList2 = arrayList;
+                        pageBlock = null;
+                        i14 = 0;
                     }
-                } else if (childAt == photoViewer.U1 || childAt == photoViewer.M0) {
-                    childAt.measure(i12, View.MeasureSpec.makeMeasureSpec(paddingBottom - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight), TLObject.FLAG_30));
-                } else if (childAt == photoViewer.R1.I) {
-                    childAt.measure(i12, View.MeasureSpec.makeMeasureSpec(paddingBottom - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight), TLObject.FLAG_30));
-                } else {
-                    rt0Var.measureChildWithMargins(childAt, i12, 0, i11, 0);
+                    AndroidUtilities.runOnUIThread(new ah.a(j4Var, i20, iArr, iArr2));
+                    break;
                 }
-            }
-            i17++;
-            z10 = true;
-            rt0Var = this;
+                break;
+            case 12:
+                e5 e5Var = (e5) this.b;
+                if (!e5Var.w) {
+                    e5Var.w = true;
+                    org.telegram.ui.Components.im0.d(new d5(e5Var, i14));
+                    break;
+                }
+                break;
+            case 13:
+                d6 d6Var = (d6) this.b;
+                d6Var.d.clear();
+                d6Var.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(d6Var.e, d6Var.d);
+                d6Var.U();
+                d6Var.finishFragment();
+                break;
+            case 14:
+                d5 d5Var = (d5) this.b;
+                ArrayList<File> rootDirs = AndroidUtilities.getRootDirs();
+                File file = rootDirs.get(0);
+                file.getAbsolutePath();
+                if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
+                    int size2 = rootDirs.size();
+                    while (i14 < size2) {
+                        File file2 = rootDirs.get(i14);
+                        if (file2.getAbsolutePath().startsWith(SharedConfig.storageCacheDir) && file2.canWrite()) {
+                            file = file2;
+                        } else {
+                            i14++;
+                        }
+                    }
+                }
+                try {
+                    StatFs statFs = new StatFs(file.getPath());
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.m0(statFs.getBlockCountLong(), statFs.getBlockSizeLong(), statFs.getAvailableBlocksLong(), d5Var));
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 15:
+                Utilities.Callback callback = (Utilities.Callback) this.b;
+                b7.h0 = false;
+                long q02 = b7.q0(5, FileLoader.checkDirectory(4));
+                long q03 = b7.q0(4, FileLoader.checkDirectory(4));
+                long q04 = b7.q0(0, FileLoader.checkDirectory(100)) + b7.q0(0, FileLoader.checkDirectory(0));
+                long q05 = b7.q0(0, FileLoader.checkDirectory(101)) + b7.q0(0, FileLoader.checkDirectory(2));
+                long q06 = b7.q0(1, FileLoader.checkDirectory(5)) + b7.q0(1, FileLoader.checkDirectory(3));
+                long q07 = b7.q0(2, FileLoader.checkDirectory(5)) + b7.q0(2, FileLoader.checkDirectory(3));
+                long q08 = b7.q0(3, FileLoader.checkDirectory(4)) + b7.q0(0, new File(FileLoader.checkDirectory(4), "acache"));
+                long q09 = b7.q0(0, FileLoader.checkDirectory(1));
+                long q010 = b7.q0(0, FileLoader.checkDirectory(6));
+                long q011 = b7.q0(1, AndroidUtilities.getLogsDir());
+                if (!BuildVars.DEBUG_VERSION && q011 < 268435456) {
+                    q011 = 0;
+                }
+                long j10 = q02 + q03 + q05 + q09 + q04 + q06 + q07 + q08 + q010 + q011;
+                b7.j0 = Long.valueOf(j10);
+                b7.i0 = System.currentTimeMillis();
+                if (!b7.h0) {
+                    AndroidUtilities.runOnUIThread(new i6(j10, 0, callback));
+                    break;
+                }
+                break;
+            case 16:
+                ((r6) this.b).dismiss();
+                break;
+            case 17:
+                v9 v9Var = (v9) ((z5) this.b).b;
+                try {
+                    CameraView cameraView = v9Var.c;
+                    cameraView.focusToPoint(cameraView.getWidth() / 2, v9Var.c.getHeight() / 2, false);
+                } catch (Exception unused) {
+                }
+                CameraView cameraView2 = v9Var.c;
+                if (cameraView2 != null) {
+                    v9Var.c0(cameraView2.getTextureView().getBitmap());
+                    break;
+                }
+                break;
+            case 18:
+                aa aaVar = (aa) this.b;
+                z9 z9Var = aaVar.a;
+                if (z9Var != null) {
+                    z9Var.requestFocus();
+                    AndroidUtilities.showKeyboard(aaVar.a);
+                    break;
+                }
+                break;
+            case 19:
+                pa paVar = (pa) this.b;
+                String str = paVar.r;
+                if (str == null || str.length() > 0) {
+                    paVar.n = true;
+                    paVar.e0(paVar.v.size() <= 0);
+                    paVar.n = false;
+                    break;
+                }
+                break;
+            case 20:
+                ib ibVar = (ib) this.b;
+                if (ibVar.W != -1) {
+                    ibVar.Y.getNotificationCenter().onAnimationFinish(ibVar.W);
+                    ibVar.W = -1;
+                }
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("admin logs chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            case 21:
+                sb sbVar = ((rb) this.b).f;
+                sbVar.getNotificationCenter().onAnimationFinish(sbVar.L0);
+                break;
+            case 22:
+                org.telegram.ui.Components.qc.b0((TLRPC.TL_error) this.b);
+                break;
+            case 23:
+                AtomicReference atomicReference = (AtomicReference) this.b;
+                if (atomicReference.get() != null) {
+                    ((Runnable) atomicReference.getAndSet(null)).run();
+                    break;
+                }
+                break;
+            case 24:
+                ((org.telegram.ui.ActionBar.k) this.b).invalidate();
+                break;
+            case 25:
+                ((org.telegram.ui.Components.o70) this.b).s();
+                break;
+            case 26:
+                ((a0) this.b).run(Boolean.FALSE);
+                break;
+            case 27:
+                ((org.telegram.ui.ActionBar.p1) this.b).dismiss();
+                break;
+            case 28:
+                ((p6) this.b).run(Boolean.FALSE, null);
+                break;
+            default:
+                dg.l0 l0Var = (dg.l0) this.b;
+                i13 = ((org.telegram.ui.ActionBar.p2) ((xn) l0Var.e)).currentAccount;
+                NotificationCenter.getInstance(i13).onAnimationFinish(l0Var.b);
+                break;
         }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.x0) {
-            return;
-        }
-        super.requestLayout();
     }
 }

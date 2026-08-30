@@ -8,12 +8,12 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Log;
+import b6.m;
 import java.util.concurrent.atomic.AtomicBoolean;
-import u8.a;
-import u8.g;
-import z5.l;
+import w8.a;
+import w8.g;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class FirebaseInitProvider extends ContentProvider {
     public static final a a = new a(System.currentTimeMillis(), SystemClock.elapsedRealtime(), SystemClock.uptimeMillis());
@@ -21,7 +21,7 @@ public class FirebaseInitProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public final void attachInfo(Context context, ProviderInfo providerInfo) {
-        l.i(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
+        m.i(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
         if ("com.google.firebase.firebaseinitprovider".equals(providerInfo.authority)) {
             throw new IllegalStateException("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
         }

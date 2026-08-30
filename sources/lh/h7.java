@@ -1,216 +1,244 @@
 package lh;
 
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.uc;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public class h7 {
-    public int A;
-    public boolean D;
-    public final boolean E;
-    public float G;
-    public uc H;
-    public org.telegram.ui.ActionBar.c6 J;
-    public float K;
-    public boolean L;
-    public float M;
-    public boolean N;
-    public float O;
-    public float P;
-    public r3 Q;
-    public View R;
-    public int c;
-    public TL_stories.StoryItem d;
-    public boolean l;
-    public boolean m;
-    public int n;
-    public boolean o;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public long s;
-    public float t;
-    public boolean v;
-    public boolean w;
-    public long x;
-    public int y;
-    public int z;
-    public boolean a = true;
-    public boolean b = true;
-    public float e = 1.0f;
-    public float f = 0.0f;
-    public float g = 0.0f;
-    public float h = 0.0f;
-    public float i = 0.0f;
-    public float j = 0.0f;
-    public boolean k = true;
-    public float u = 1.0f;
-    public float B = 1.0f;
-    public boolean C = false;
-    public final RectF F = new RectF();
-    public boolean I = false;
+public final /* synthetic */ class h7 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j7 b;
 
-    public h7(org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        this.E = z10;
-        this.J = c6Var;
+    public /* synthetic */ h7(j7 j7Var, int i10) {
+        this.a = i10;
+        this.b = j7Var;
     }
 
-    public final boolean a(MotionEvent motionEvent, View view) {
-        TLRPC.TL_recentStory tL_recentStory;
-        TLRPC.TL_recentStory tL_recentStory2;
-        TLRPC.User user;
-        TLRPC.TL_recentStory tL_recentStory3;
-        boolean z10;
-        TLRPC.TL_recentStory tL_recentStory4;
-        this.R = view;
-        s6 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
-        boolean z11 = false;
-        if (motionEvent.getAction() == 0) {
-            if (this.F.contains(motionEvent.getX(), motionEvent.getY())) {
-                TLRPC.Chat chat = null;
-                if (this.x > 0) {
-                    user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(this.x));
-                } else {
-                    user = null;
-                    chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-this.x));
-                }
-                if (c(chat, user)) {
-                    z10 = true;
-                } else if (this.r) {
-                    z10 = !storiesController.h.isEmpty();
-                } else {
-                    if (this.x <= 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
-                        z11 = true;
-                    }
-                    z10 = z11;
-                }
-                if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && z10) {
-                    uc ucVar = this.H;
-                    if (ucVar == null) {
-                        this.H = new uc(view, 1.5f, 5.0f);
-                    } else {
-                        ucVar.a = view;
-                    }
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                    this.H.c(true);
-                    this.N = true;
-                    this.O = motionEvent.getX();
-                    this.P = motionEvent.getY();
-                    if (this.I) {
-                        r3 r3Var = this.Q;
-                        if (r3Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(r3Var);
-                        }
-                        r3 r3Var2 = new r3(18, this, view);
-                        this.Q = r3Var2;
-                        AndroidUtilities.runOnUIThread(r3Var2, ViewConfiguration.getLongPressTimeout());
-                    }
-                }
-                return this.N;
-            }
-        }
-        if (motionEvent.getAction() == 2 && this.N) {
-            if (Math.abs(this.O - motionEvent.getX()) > AndroidUtilities.touchSlop || Math.abs(this.P - motionEvent.getY()) > AndroidUtilities.touchSlop) {
-                uc ucVar2 = this.H;
-                if (ucVar2 != null) {
-                    ucVar2.a = view;
-                    ucVar2.c(false);
-                }
-                r3 r3Var3 = this.Q;
-                if (r3Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(r3Var3);
-                }
-                view.getParent().requestDisallowInterceptTouchEvent(false);
-                this.N = false;
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            uc ucVar3 = this.H;
-            if (ucVar3 != null) {
-                ucVar3.a = view;
-                ucVar3.c(false);
-            }
-            if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
-                MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-                s6 storiesController2 = messagesController.getStoriesController();
-                if (this.r) {
-                    f(0L);
-                } else if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-                    if (storiesController2.I(this.x)) {
-                        f(this.x);
-                    } else {
-                        long j10 = this.x;
-                        if (j10 > 0) {
-                            TLRPC.User user2 = messagesController.getUser(Long.valueOf(j10));
-                            if (user2 != null && !user2.stories_unavailable && (tL_recentStory2 = user2.stories_max_id) != null && tL_recentStory2.max_id > 0) {
-                                new k7().a(this.x, view, this);
-                            }
-                        } else {
-                            TLRPC.Chat chat2 = messagesController.getChat(Long.valueOf(-j10));
-                            if (chat2 != null && !chat2.stories_unavailable && (tL_recentStory = chat2.stories_max_id) != null && tL_recentStory.max_id > 0) {
-                                new k7().a(this.x, view, this);
-                            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final j7 j7Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: lh.i7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i11 = i10;
+                        TLObject tLObject2 = tLObject;
+                        j7 j7Var2 = j7Var;
+                        switch (i11) {
+                            case 0:
+                                long j10 = j7Var2.b;
+                                int i12 = j7Var2.a;
+                                ArrayList arrayList = j7Var2.e;
+                                if (!(tLObject2 instanceof TL_stars.TL_starGiftCollections)) {
+                                    if (tLObject2 instanceof TL_stars.TL_starGiftCollectionsNotModified) {
+                                        j7Var2.j();
+                                        j7Var2.d = true;
+                                        j7Var2.c = false;
+                                        NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), j7Var2);
+                                        break;
+                                    }
+                                } else {
+                                    arrayList.clear();
+                                    arrayList.addAll(((TL_stars.TL_starGiftCollections) tLObject2).collections);
+                                    j7Var2.j();
+                                    int size = arrayList.size();
+                                    int i13 = 0;
+                                    while (i13 < size) {
+                                        Object obj = arrayList.get(i13);
+                                        i13++;
+                                        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
+                                        if (j7Var2.e(tL_starGiftCollection.collection_id) == null) {
+                                            l7 l7Var = new l7(i12, j10, false);
+                                            int i14 = tL_starGiftCollection.collection_id;
+                                            l7Var.c = true;
+                                            l7Var.d = i14;
+                                            j7Var2.h.put(Integer.valueOf(i14), l7Var);
+                                        }
+                                    }
+                                    j7Var2.d = true;
+                                    j7Var2.c = false;
+                                    NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), j7Var2);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                j7Var2.getClass();
+                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
+                                    TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject2;
+                                    int f10 = j7Var2.f(tL_starGiftCollection2.collection_id);
+                                    if (f10 >= 0) {
+                                        j7Var2.e.set(f10, tL_starGiftCollection2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                j7Var2.getClass();
+                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
+                                    TL_stars.TL_starGiftCollection tL_starGiftCollection3 = (TL_stars.TL_starGiftCollection) tLObject2;
+                                    int f11 = j7Var2.f(tL_starGiftCollection3.collection_id);
+                                    if (f11 >= 0) {
+                                        j7Var2.e.set(f11, tL_starGiftCollection3);
+                                        break;
+                                    }
+                                }
+                                break;
                         }
                     }
-                }
-            }
-            ViewParent parent = view.getParent();
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).requestDisallowInterceptTouchEvent(false);
-            }
-            this.N = false;
-            r3 r3Var4 = this.Q;
-            if (r3Var4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(r3Var4);
-            }
+                });
+                break;
+            case 1:
+                final int i11 = 1;
+                final j7 j7Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: lh.i7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i112 = i11;
+                        TLObject tLObject2 = tLObject;
+                        j7 j7Var22 = j7Var2;
+                        switch (i112) {
+                            case 0:
+                                long j10 = j7Var22.b;
+                                int i12 = j7Var22.a;
+                                ArrayList arrayList = j7Var22.e;
+                                if (!(tLObject2 instanceof TL_stars.TL_starGiftCollections)) {
+                                    if (tLObject2 instanceof TL_stars.TL_starGiftCollectionsNotModified) {
+                                        j7Var22.j();
+                                        j7Var22.d = true;
+                                        j7Var22.c = false;
+                                        NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), j7Var22);
+                                        break;
+                                    }
+                                } else {
+                                    arrayList.clear();
+                                    arrayList.addAll(((TL_stars.TL_starGiftCollections) tLObject2).collections);
+                                    j7Var22.j();
+                                    int size = arrayList.size();
+                                    int i13 = 0;
+                                    while (i13 < size) {
+                                        Object obj = arrayList.get(i13);
+                                        i13++;
+                                        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
+                                        if (j7Var22.e(tL_starGiftCollection.collection_id) == null) {
+                                            l7 l7Var = new l7(i12, j10, false);
+                                            int i14 = tL_starGiftCollection.collection_id;
+                                            l7Var.c = true;
+                                            l7Var.d = i14;
+                                            j7Var22.h.put(Integer.valueOf(i14), l7Var);
+                                        }
+                                    }
+                                    j7Var22.d = true;
+                                    j7Var22.c = false;
+                                    NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), j7Var22);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                j7Var22.getClass();
+                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
+                                    TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject2;
+                                    int f10 = j7Var22.f(tL_starGiftCollection2.collection_id);
+                                    if (f10 >= 0) {
+                                        j7Var22.e.set(f10, tL_starGiftCollection2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                j7Var22.getClass();
+                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
+                                    TL_stars.TL_starGiftCollection tL_starGiftCollection3 = (TL_stars.TL_starGiftCollection) tLObject2;
+                                    int f11 = j7Var22.f(tL_starGiftCollection3.collection_id);
+                                    if (f11 >= 0) {
+                                        j7Var22.e.set(f11, tL_starGiftCollection3);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final j7 j7Var3 = this.b;
+                j7Var3.getClass();
+                final int i12 = 2;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: lh.i7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i112 = i12;
+                        TLObject tLObject2 = tLObject;
+                        j7 j7Var22 = j7Var3;
+                        switch (i112) {
+                            case 0:
+                                long j10 = j7Var22.b;
+                                int i122 = j7Var22.a;
+                                ArrayList arrayList = j7Var22.e;
+                                if (!(tLObject2 instanceof TL_stars.TL_starGiftCollections)) {
+                                    if (tLObject2 instanceof TL_stars.TL_starGiftCollectionsNotModified) {
+                                        j7Var22.j();
+                                        j7Var22.d = true;
+                                        j7Var22.c = false;
+                                        NotificationCenter.getInstance(i122).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), j7Var22);
+                                        break;
+                                    }
+                                } else {
+                                    arrayList.clear();
+                                    arrayList.addAll(((TL_stars.TL_starGiftCollections) tLObject2).collections);
+                                    j7Var22.j();
+                                    int size = arrayList.size();
+                                    int i13 = 0;
+                                    while (i13 < size) {
+                                        Object obj = arrayList.get(i13);
+                                        i13++;
+                                        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
+                                        if (j7Var22.e(tL_starGiftCollection.collection_id) == null) {
+                                            l7 l7Var = new l7(i122, j10, false);
+                                            int i14 = tL_starGiftCollection.collection_id;
+                                            l7Var.c = true;
+                                            l7Var.d = i14;
+                                            j7Var22.h.put(Integer.valueOf(i14), l7Var);
+                                        }
+                                    }
+                                    j7Var22.d = true;
+                                    j7Var22.c = false;
+                                    NotificationCenter.getInstance(i122).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), j7Var22);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                j7Var22.getClass();
+                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
+                                    TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject2;
+                                    int f10 = j7Var22.f(tL_starGiftCollection2.collection_id);
+                                    if (f10 >= 0) {
+                                        j7Var22.e.set(f10, tL_starGiftCollection2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                j7Var22.getClass();
+                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
+                                    TL_stars.TL_starGiftCollection tL_starGiftCollection3 = (TL_stars.TL_starGiftCollection) tLObject2;
+                                    int f11 = j7Var22.f(tL_starGiftCollection3.collection_id);
+                                    if (f11 >= 0) {
+                                        j7Var22.e.set(f11, tL_starGiftCollection3);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        return this.N;
-    }
-
-    public final float b() {
-        uc ucVar = this.H;
-        if (ucVar == null) {
-            return 1.0f;
-        }
-        return ucVar.a(0.08f);
-    }
-
-    public boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return false;
-    }
-
-    public boolean d(long j10) {
-        return false;
-    }
-
-    public void f(long j10) {
-        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
-        if (R == null || this.R == null) {
-            return;
-        }
-        R.getOrCreateStoryViewer().getClass();
-        ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j10, parent instanceof RecyclerView ? b7.a((jl0) parent) : null);
-    }
-
-    public final void g() {
-        this.H = null;
-        this.N = false;
-    }
-
-    public void e() {
     }
 }

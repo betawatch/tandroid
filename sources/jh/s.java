@@ -1,106 +1,28 @@
 package jh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class s implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class s extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ t a;
 
-    public /* synthetic */ s(b0 b0Var, int i10) {
-        this.a = i10;
-        this.b = b0Var;
+    public s(t tVar) {
+        this.a = tVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final b0 b0Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jh.t
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                b0 b0Var2 = b0Var;
-                                b0Var2.getClass();
-                                b0Var2.j = new ArrayList();
-                                b0Var2.i = false;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof Vector) {
-                                    Vector vector = (Vector) tLObject2;
-                                    for (int i11 = 0; i11 < vector.objects.size(); i11++) {
-                                        b0Var2.j.add((TLRPC.User) vector.objects.get(i11));
-                                    }
-                                    MessagesController.getInstance(b0Var2.a).putUsers(b0Var2.j, false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                b0 b0Var3 = b0Var;
-                                int i12 = b0Var3.a;
-                                b0Var3.l = new ArrayList();
-                                b0Var3.k = false;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.messages_Chats) {
-                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
-                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
-                                    b0Var3.l.addAll(messages_chats.chats);
-                                }
-                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 1;
-                final b0 b0Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jh.t
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                b0 b0Var22 = b0Var2;
-                                b0Var22.getClass();
-                                b0Var22.j = new ArrayList();
-                                b0Var22.i = false;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof Vector) {
-                                    Vector vector = (Vector) tLObject2;
-                                    for (int i112 = 0; i112 < vector.objects.size(); i112++) {
-                                        b0Var22.j.add((TLRPC.User) vector.objects.get(i112));
-                                    }
-                                    MessagesController.getInstance(b0Var22.a).putUsers(b0Var22.j, false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                b0 b0Var3 = b0Var2;
-                                int i12 = b0Var3.a;
-                                b0Var3.l = new ArrayList();
-                                b0Var3.k = false;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.messages_Chats) {
-                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
-                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
-                                    b0Var3.l.addAll(messages_chats.chats);
-                                }
-                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        t tVar = this.a;
+        if (!tVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (tVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= tVar.e.f.getRight() || tVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= tVar.e.f.getBottom())) {
+            tVar.e.e(false);
         }
+        return super.onSingleTapUp(motionEvent);
     }
 }

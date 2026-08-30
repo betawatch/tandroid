@@ -26,18 +26,18 @@ public abstract class x6 implements Spliterator {
         return j$.com.android.tools.r8.a.p(this, i10);
     }
 
-    public x6(a aVar, Supplier supplier, boolean z10) {
+    public x6(a aVar, Supplier supplier, boolean z4) {
         this.b = aVar;
         this.c = supplier;
         this.d = null;
-        this.a = z10;
+        this.a = z4;
     }
 
-    public x6(a aVar, Spliterator spliterator, boolean z10) {
+    public x6(a aVar, Spliterator spliterator, boolean z4) {
         this.b = aVar;
         this.c = null;
         this.d = spliterator;
-        this.a = z10;
+        this.a = z4;
     }
 
     public final void c() {
@@ -61,9 +61,9 @@ public abstract class x6 implements Spliterator {
         }
         long j10 = this.g + 1;
         this.g = j10;
-        boolean z10 = j10 < cVar.count();
-        if (z10) {
-            return z10;
+        boolean z4 = j10 < cVar.count();
+        if (z4) {
+            return z4;
         }
         this.g = 0L;
         this.h.clear();

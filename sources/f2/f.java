@@ -5,7 +5,7 @@ import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class f implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class f implements Runnable {
                 ArrayList arrayList3 = this.b;
                 int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 for (int size3 = arrayList3.size() - 1; size3 >= 0; size3--) {
-                    i12 = Math.min(i12, ((n1) arrayList3.get(size3)).b());
+                    i12 = Math.min(i12, ((l1) arrayList3.get(size3)).b());
                 }
                 int size4 = arrayList3.size();
                 while (true) {
@@ -72,14 +72,14 @@ public final class f implements Runnable {
                         lVar3.t.remove(arrayList3);
                         break;
                     } else {
-                        n1 n1Var = (n1) arrayList3.get(size4);
-                        long b10 = (n1Var.b() - i12) * lVar3.D;
-                        View view = n1Var.a;
+                        l1 l1Var = (l1) arrayList3.get(size4);
+                        long b10 = (l1Var.b() - i12) * lVar3.D;
+                        View view = l1Var.a;
                         ViewPropertyAnimator animate = view.animate();
-                        lVar3.y.add(n1Var);
+                        lVar3.y.add(l1Var);
                         animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(lVar3.h()).setStartDelay(b10).setInterpolator(lVar3.h);
-                        animate.setUpdateListener(new d(lVar3, n1Var, 1));
-                        animate.setListener(new g(lVar3, n1Var, view, animate)).start();
+                        animate.setUpdateListener(new d(lVar3, l1Var, 1));
+                        animate.setListener(new g(lVar3, l1Var, view, animate)).start();
                     }
                 }
         }

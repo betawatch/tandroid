@@ -1,136 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class dg0 extends dw0 {
-    public boolean a = false;
-    public final Paint b = new Paint(1);
-    public final int c = UserConfig.selectedAccount;
-    public long d = 0;
-    public boolean e = false;
-    public final RectF f = new RectF();
-    public float g;
-    public final boolean h;
-    public final org.telegram.ui.ActionBar.c6 i;
+public final class dg0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PipRoundVideoView b;
 
-    public dg0(org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        this.h = z10;
-        this.i = c6Var;
+    public /* synthetic */ dg0(PipRoundVideoView pipRoundVideoView, int i10) {
+        this.a = i10;
+        this.b = pipRoundVideoView;
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void d() {
-        this.d = System.currentTimeMillis();
-        this.e = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(10.0f);
-        int dp2 = ((AndroidUtilities.dp(18.0f) - dp) / 2) + getBounds().top;
-        if (!this.a) {
-            dp2 += AndroidUtilities.dp(1.0f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PipRoundVideoView pipRoundVideoView = this.b;
+                if (animator.equals(pipRoundVideoView.r)) {
+                    pipRoundVideoView.r = null;
+                    break;
+                }
+                break;
+            default:
+                PipRoundVideoView pipRoundVideoView2 = this.b;
+                pipRoundVideoView2.a(false);
+                Runnable runnable = pipRoundVideoView2.s;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
-        int i10 = dp2;
-        boolean z10 = this.h;
-        int v02 = org.telegram.ui.ActionBar.g6.v0(z10 ? org.telegram.ui.ActionBar.g6.p9 : org.telegram.ui.ActionBar.g6.pa, this.i);
-        Paint paint = this.b;
-        paint.setColor(v02);
-        RectF rectF = this.f;
-        rectF.set(0.0f, i10, dp, i10 + dp);
-        float f9 = this.g;
-        int c3 = (int) (f9 < 0.5f ? org.telegram.ui.b.c(f9, 0.5f, 1.0f, 35.0f) : ((f9 - 0.5f) * 35.0f) / 0.5f);
-        for (int i11 = 0; i11 < 3; i11++) {
-            float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);
-            float dp4 = AndroidUtilities.dp(5.0f);
-            float f10 = this.g;
-            float f11 = dp3 - (dp4 * f10);
-            if (i11 == 2) {
-                paint.setAlpha(Math.min(255, (int) ((f10 * 255.0f) / 0.5f)));
-            } else if (i11 != 0) {
-                paint.setAlpha(255);
-            } else if (f10 > 0.5f) {
-                paint.setAlpha((int) ((1.0f - ((f10 - 0.5f) / 0.5f)) * 255.0f));
-            } else {
-                paint.setAlpha(255);
-            }
-            canvas.drawCircle(f11, (dp / 2) + i10, AndroidUtilities.dp(1.2f), paint);
-        }
-        paint.setAlpha(255);
-        canvas.drawArc(rectF, c3, 360 - (c3 * 2), true, paint);
-        paint.setColor(org.telegram.ui.ActionBar.g6.w0(null, z10 ? org.telegram.ui.ActionBar.g6.d6 : org.telegram.ui.ActionBar.g6.s8, false));
-        canvas.drawCircle(AndroidUtilities.dp(4.0f), ((dp / 2) + i10) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), paint);
-        f();
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void e() {
-        this.g = 0.0f;
-        this.e = false;
-    }
-
-    public final void f() {
-        if (this.e) {
-            if (NotificationCenter.getInstance(this.c).isAnimationInProgress()) {
-                AndroidUtilities.runOnUIThread(new xb0(this, 13), 100L);
-                return;
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.d;
-            this.d = currentTimeMillis;
-            if (j10 > 50) {
-                j10 = 50;
-            }
-            if (this.g >= 1.0f) {
-                this.g = 0.0f;
-            }
-            float f9 = (j10 / 300.0f) + this.g;
-            this.g = f9;
-            if (f9 > 1.0f) {
-                this.g = 1.0f;
-            }
-            a();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(20.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public final void b(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

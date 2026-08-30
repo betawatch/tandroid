@@ -2,29 +2,29 @@ package c2;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class o {
     public final Bundle a;
-    public w b;
+    public v b;
 
-    public o(w wVar, boolean z10) {
-        if (wVar == null) {
+    public o(v vVar, boolean z4) {
+        if (vVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
         Bundle bundle = new Bundle();
         this.a = bundle;
-        this.b = wVar;
-        bundle.putBundle("selector", wVar.a);
-        bundle.putBoolean("activeScan", z10);
+        this.b = vVar;
+        bundle.putBundle("selector", vVar.a);
+        bundle.putBoolean("activeScan", z4);
     }
 
     public final void a() {
         if (this.b == null) {
-            w b10 = w.b(this.a.getBundle("selector"));
+            v b10 = v.b(this.a.getBundle("selector"));
             this.b = b10;
             if (b10 == null) {
-                this.b = w.c;
+                this.b = v.c;
             }
         }
     }
@@ -37,9 +37,9 @@ public final class o {
         if (obj instanceof o) {
             o oVar = (o) obj;
             a();
-            w wVar = this.b;
+            v vVar = this.b;
             oVar.a();
-            if (wVar.equals(oVar.b) && b() == oVar.b()) {
+            if (vVar.equals(oVar.b) && b() == oVar.b()) {
                 return true;
             }
         }
@@ -52,16 +52,16 @@ public final class o {
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("DiscoveryRequest{ selector=");
+        StringBuilder sb = new StringBuilder("DiscoveryRequest{ selector=");
         a();
-        sb2.append(this.b);
-        sb2.append(", activeScan=");
-        sb2.append(b());
-        sb2.append(", isValid=");
+        sb.append(this.b);
+        sb.append(", activeScan=");
+        sb.append(b());
+        sb.append(", isValid=");
         a();
         this.b.a();
-        sb2.append(!r1.b.contains(null));
-        sb2.append(" }");
-        return sb2.toString();
+        sb.append(!r1.b.contains(null));
+        sb.append(" }");
+        return sb.toString();
     }
 }

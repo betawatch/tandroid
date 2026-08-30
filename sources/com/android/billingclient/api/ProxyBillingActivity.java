@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import com.google.android.gms.internal.play_billing.l3;
+import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.u;
-import l3.a;
 import p2.g;
-import p2.x;
+import p2.h;
+import p2.z;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -26,12 +26,12 @@ public class ProxyBillingActivity extends Activity {
         Intent b10 = b();
         b10.putExtra("RESPONSE_CODE", 6);
         b10.putExtra("DEBUG_MESSAGE", "An internal error occurred.");
-        a a2 = g.a();
+        g a2 = h.a();
         a2.a = 6;
         a2.c = "An internal error occurred.";
-        g a10 = a2.a();
-        int i11 = x.a;
-        b10.putExtra("FAILURE_LOGGING_PAYLOAD", x.b(i10, 2, a10, null, l3.b).a());
+        h e = a2.e();
+        int i11 = z.a;
+        b10.putExtra("FAILURE_LOGGING_PAYLOAD", z.b(i10, 2, e, null, m3.b).a());
         b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
         b10.putExtra("billingClientTransactionId", j10);
         b10.putExtra("wasServiceAutoReconnected", this.f);
@@ -170,8 +170,8 @@ public class ProxyBillingActivity extends Activity {
         try {
             this.b = true;
             startIntentSenderForResult(pendingIntent.getIntentSender(), this.d, new Intent(), 0, 0, 0);
-        } catch (IntentSender.SendIntentException e10) {
-            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e10);
+        } catch (IntentSender.SendIntentException e) {
+            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e);
             ResultReceiver resultReceiver = this.a;
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);

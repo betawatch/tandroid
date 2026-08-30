@@ -1,17 +1,15 @@
 package i9;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class e implements s9.d {
-    public static final e a = new e();
-    public static final s9.c b = s9.c.c("files");
-    public static final s9.c c = s9.c.c("orgId");
+public final class e {
+    public final String a;
+    public final String b;
+    public final String c;
 
-    @Override // s9.a
-    public final void a(Object obj, Object obj2) {
-        s9.e eVar = (s9.e) obj2;
-        e0 e0Var = (e0) ((j1) obj);
-        eVar.e(b, e0Var.a);
-        eVar.e(c, e0Var.b);
+    public e(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 }

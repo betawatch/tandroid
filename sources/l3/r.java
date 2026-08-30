@@ -1,19 +1,17 @@
 package l3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public interface r {
-    void A();
+public final class r extends Exception {
+    public final j3.n0 a;
 
-    void a(long j10);
+    public r(m mVar, j3.n0 n0Var) {
+        super(mVar);
+        this.a = n0Var;
+    }
 
-    void f();
-
-    void o(int i10, long j10, long j11);
-
-    void onSkipSilenceEnabledChanged(boolean z10);
-
-    void v(Exception exc);
-
-    void w();
+    public r(String str, j3.n0 n0Var) {
+        super(str);
+        this.a = n0Var;
+    }
 }

@@ -1,69 +1,84 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p20 extends f2.a1 {
-    public final /* synthetic */ r50 a;
+public final /* synthetic */ class p20 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c60 b;
 
-    public p20(r50 r50Var) {
-        this.a = r50Var;
+    public /* synthetic */ p20(c60 c60Var, int i10) {
+        this.a = i10;
+        this.b = c60Var;
     }
 
-    @Override // f2.a1
-    public final void a(RecyclerView recyclerView, int i10) {
-        int i11;
-        r50 r50Var = this.a;
-        x40 x40Var = r50Var.M;
-        if (i10 != 0) {
-            org.telegram.ui.Components.g40 g40Var = r50Var.i0;
-            if (g40Var != null) {
-                g40Var.b(true);
-            }
-            org.telegram.ui.Components.g40 g40Var2 = r50Var.j0;
-            if (g40Var2 != null) {
-                g40Var2.b(true);
-                return;
-            }
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c60 c60Var = this.b;
+                if (c60Var.r1() && AndroidUtilities.checkInlinePermissions(c60Var.f0) && !org.telegram.ui.Components.voip.g1.a0.S) {
+                    c60Var.dismiss();
+                    AndroidUtilities.runOnUIThread(new p20(c60Var, 4), 100L);
+                    break;
+                }
+                break;
+            case 1:
+                c60 c60Var2 = this.b;
+                if (c60Var2.X0 != null && c60Var2.O1 && VoIPService.getSharedInstance() != null) {
+                    try {
+                        c60Var2.w.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                    c60Var2.J1(1, true);
+                    AndroidUtilities.runOnUIThread(c60Var2.u2, 80L);
+                    c60Var2.O1 = false;
+                    c60Var2.P1 = true;
+                    break;
+                }
+                break;
+            case 2:
+                c60 c60Var3 = this.b;
+                int i10 = c60Var3.Q1;
+                if (i10 == 1 || i10 == 2 || i10 == 6 || i10 == 5) {
+                    c60Var3.N1(true, false);
+                    break;
+                }
+                break;
+            case 3:
+                this.b.v1();
+                break;
+            case 4:
+                org.telegram.ui.Components.voip.g1.n(this.b.f0);
+                break;
+            case 5:
+                this.b.dismiss();
+                break;
+            case 6:
+                c60 c60Var4 = this.b;
+                c60Var4.K1();
+                AndroidUtilities.runOnUIThread(c60Var4.A1, 1000L);
+                break;
+            case 7:
+                y40 y40Var = this.b.o0;
+                if (y40Var != null) {
+                    y40Var.show();
+                    break;
+                }
+                break;
+            case 8:
+                c60.t(this.b);
+                break;
+            case 9:
+                this.b.d.getMessagesController().deleteUserPhoto(null);
+                break;
+            default:
+                c60 c60Var5 = this.b;
+                c60Var5.u3 = null;
+                c60Var5.H1(true);
+                break;
         }
-        float dp = r50Var.u0 - AndroidUtilities.dp(74.0f);
-        i11 = ((org.telegram.ui.ActionBar.f3) r50Var).backgroundPaddingTop;
-        if (dp + i11 >= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() || !x40Var.canScrollVertically(1)) {
-            return;
-        }
-        x40Var.getChildAt(0);
-        org.telegram.ui.Components.vk0 vk0Var = (org.telegram.ui.Components.vk0) x40Var.K(0);
-        if (vk0Var != null) {
-            View view = vk0Var.a;
-            if (view.getTop() > 0) {
-                x40Var.v0(0, view.getTop(), null);
-            }
-        }
-    }
-
-    @Override // f2.a1
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ChatObject.Call call;
-        ViewGroup viewGroup;
-        r50 r50Var = this.a;
-        if (r50Var.M.getChildCount() <= 0 || (call = r50Var.W0) == null) {
-            return;
-        }
-        if (!call.loadingMembers && !call.membersLoadEndReached && r50Var.U.N0() > r50Var.L.B - 5) {
-            r50Var.W0.loadMembers(false);
-        }
-        r50.J0(r50Var);
-        g50 g50Var = r50Var.Q0;
-        if (g50Var != null) {
-            g50Var.invalidate();
-        }
-        viewGroup = ((org.telegram.ui.ActionBar.f3) r50Var).containerView;
-        viewGroup.invalidate();
     }
 }

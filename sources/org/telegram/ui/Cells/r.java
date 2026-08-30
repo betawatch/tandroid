@@ -5,7 +5,7 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -31,58 +31,58 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 e0Var.a.run();
                 break;
             case 2:
-                s1 s1Var = (s1) this.b;
-                s1Var.getClass();
-                s1Var.xb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s1Var.invalidate();
+                t1 t1Var = (t1) this.b;
+                t1Var.getClass();
+                t1Var.yb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t1Var.invalidate();
                 break;
             case 3:
-                e4 e4Var = (e4) this.b;
-                org.telegram.ui.Components.t9 t9Var = e4Var.a;
+                g4 g4Var = (g4) this.b;
+                org.telegram.ui.Components.p9 p9Var = g4Var.a;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f9 = e4Var.D ? 1.0f - (0.18f * floatValue) : 0.82f + (0.18f * floatValue);
-                t9Var.setScaleX(f9);
-                t9Var.setScaleY(f9);
-                if (!e4Var.D) {
+                float f10 = g4Var.E ? 1.0f - (0.18f * floatValue) : 0.82f + (0.18f * floatValue);
+                p9Var.setScaleX(f10);
+                p9Var.setScaleY(f10);
+                if (!g4Var.E) {
                     floatValue = 1.0f - floatValue;
                 }
-                e4Var.E = floatValue;
-                e4Var.invalidate();
+                g4Var.F = floatValue;
+                g4Var.invalidate();
                 break;
             case 4:
-                l6 l6Var = (l6) this.b;
-                l6Var.getClass();
-                l6Var.A = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l6Var.invalidate();
+                n6 n6Var = (n6) this.b;
+                n6Var.getClass();
+                n6Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n6Var.invalidate();
                 break;
             case 5:
-                p7 p7Var = (p7) this.b;
-                p7Var.getClass();
-                p7Var.e0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p7Var.invalidate();
+                r7 r7Var = (r7) this.b;
+                r7Var.getClass();
+                r7Var.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r7Var.invalidate();
                 break;
             case 6:
-                v7 v7Var = (v7) this.b;
-                v7Var.getClass();
+                x7 x7Var = (x7) this.b;
+                x7Var.getClass();
                 ColorMatrix colorMatrix = new ColorMatrix();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v7Var.v = floatValue2;
+                x7Var.v = floatValue2;
                 colorMatrix.setSaturation(floatValue2);
-                if (org.telegram.ui.ActionBar.g6.I.q()) {
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - v7Var.v) * (-0.3f));
+                if (org.telegram.ui.ActionBar.j6.I.q()) {
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - x7Var.v) * (-0.3f));
                 }
-                v7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                x7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 7:
-                x9 x9Var = (x9) this.b;
-                x9Var.getClass();
-                x9Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x9Var.C.invalidate();
+                z9 z9Var = (z9) this.b;
+                z9Var.getClass();
+                z9Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z9Var.C.invalidate();
                 break;
             default:
-                aa aaVar = (aa) ((z9) this.b).b;
-                aaVar.a.getTransitionParams().K1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aaVar.a.invalidate();
+                ca caVar = (ca) ((ba) this.b).b;
+                caVar.a.getTransitionParams().K1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                caVar.a.invalidate();
                 break;
         }
     }

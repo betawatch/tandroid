@@ -1,25 +1,33 @@
 package x7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.internal.cast.o;
-import w5.k;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class c extends a6.a {
-    public static final Parcelable.Creator<c> CREATOR = new k(5);
+public final class c extends h {
+    public final /* synthetic */ int c;
+    public final float d;
 
-    public final boolean equals(Object obj) {
-        return this == obj || (obj instanceof c);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(float f10, int i10) {
+        super(0, Float.valueOf(Math.max(f10, 0.0f)));
+        this.c = i10;
+        switch (i10) {
+            case 1:
+                super(2, Float.valueOf(Math.max(f10, 0.0f)));
+                this.d = Math.max(f10, 0.0f);
+                break;
+            default:
+                this.d = Math.max(f10, 0.0f);
+                break;
+        }
     }
 
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        o.r(parcel, o.q(parcel, 20293));
+    @Override // x7.h
+    public final String toString() {
+        switch (this.c) {
+            case 0:
+                return "[Dash: length=" + this.d + "]";
+            default:
+                return "[Gap: length=" + this.d + "]";
+        }
     }
 }

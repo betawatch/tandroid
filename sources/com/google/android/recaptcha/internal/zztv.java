@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+import android.support.v4.media.a;
 import androidx.car.app.navigation.model.Maneuver;
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -11,10 +12,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.th;
+import org.telegram.ui.yh;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zztv<T> implements zzug<T> {
     private static final int[] zza = new int[0];
@@ -32,17 +33,17 @@ final class zztv<T> implements zzug<T> {
     private final zzuv zzm;
     private final zzrz zzn;
 
-    private zztv(int[] iArr, Object[] objArr, int i10, int i11, zzts zztsVar, boolean z10, int[] iArr2, int i12, int i13, zzty zztyVar, zztf zztfVar, zzuv zzuvVar, zzrz zzrzVar, zztn zztnVar) {
+    private zztv(int[] iArr, Object[] objArr, int i10, int i11, zzts zztsVar, boolean z4, int[] iArr2, int i12, int i13, zzty zztyVar, zztf zztfVar, zzuv zzuvVar, zzrz zzrzVar, zztn zztnVar) {
         this.zzc = iArr;
         this.zzd = objArr;
         this.zze = i10;
         this.zzf = i11;
         this.zzi = zztsVar instanceof zzsn;
-        boolean z11 = false;
+        boolean z10 = false;
         if (zzrzVar != null && (zztsVar instanceof zzsk)) {
-            z11 = true;
+            z10 = true;
         }
-        this.zzh = z11;
+        this.zzh = z10;
         this.zzj = iArr2;
         this.zzk = i12;
         this.zzl = i13;
@@ -87,7 +88,7 @@ final class zztv<T> implements zzug<T> {
     private static Field zzC(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
-        } catch (NoSuchFieldException e10) {
+        } catch (NoSuchFieldException e) {
             Field[] declaredFields = cls.getDeclaredFields();
             for (Field field : declaredFields) {
                 if (str.equals(field.getName())) {
@@ -96,9 +97,9 @@ final class zztv<T> implements zzug<T> {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder k9 = th.k("Field ", str, " for ", name, " not found. Known fields are ");
-            k9.append(arrays);
-            throw new RuntimeException(k9.toString(), e10);
+            StringBuilder m9 = yh.m("Field ", str, " for ", name, " not found. Known fields are ");
+            m9.append(arrays);
+            throw new RuntimeException(m9.toString(), e);
         }
     }
 
@@ -650,7 +651,7 @@ final class zztv<T> implements zzug<T> {
             if (i86 >= 51) {
                 int i88 = i26 + 1;
                 int charAt26 = zzd.charAt(i26);
-                char c6 = CharacterCompat.MIN_HIGH_SURROGATE;
+                char c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                 if (charAt26 >= 55296) {
                     int i89 = charAt26 & 8191;
                     int i90 = i88;
@@ -658,13 +659,13 @@ final class zztv<T> implements zzug<T> {
                     while (true) {
                         i38 = i90 + 1;
                         charAt11 = zzd.charAt(i90);
-                        if (charAt11 < c6) {
+                        if (charAt11 < c10) {
                             break;
                         }
                         i89 |= (charAt11 & 8191) << i91;
                         i91 += 13;
                         i90 = i38;
-                        c6 = CharacterCompat.MIN_HIGH_SURROGATE;
+                        c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                     }
                     charAt26 = i89 | (charAt11 << i91);
                     i35 = i38;
@@ -1061,14 +1062,14 @@ final class zztv<T> implements zzug<T> {
             switch (zzt) {
                 case 0:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 8, i16);
+                        i16 = a.C(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 1:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 4, i16);
+                        i16 = a.C(i19 << 3, 4, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1109,7 +1110,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 5:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 8, i16);
+                        i16 = a.C(i19 << 3, 8, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1117,7 +1118,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 6:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 4, i16);
+                        i16 = a.C(i19 << 3, 4, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1125,7 +1126,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 7:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 1, i16);
+                        i16 = a.C(i19 << 3, 1, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1176,7 +1177,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 11:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(unsafe.getInt(obj2, j10), zzqv.zzA(i19 << 3), i16);
+                        i16 = a.C(unsafe.getInt(obj2, j10), zzqv.zzA(i19 << 3), i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1195,7 +1196,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 13:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 4, i16);
+                        i16 = a.C(i19 << 3, 4, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1203,7 +1204,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 14:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = a.e(i19 << 3, 8, i16);
+                        i16 = a.C(i19 << 3, 8, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1212,7 +1213,7 @@ final class zztv<T> implements zzug<T> {
                 case 15:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
                         int i24 = unsafe.getInt(obj2, j10);
-                        i16 = a.e((i24 >> 31) ^ (i24 + i24), zzqv.zzA(i19 << 3), i16);
+                        i16 = a.C((i24 >> 31) ^ (i24 + i24), zzqv.zzA(i19 << 3), i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1344,7 +1345,7 @@ final class zztv<T> implements zzug<T> {
                                 Object zzc2 = zzteVar.zzc();
                                 if (zzc2 instanceof zzqm) {
                                     int zzd2 = ((zzqm) zzc2).zzd();
-                                    zzA6 = a.e(zzd2, zzd2, zzA6);
+                                    zzA6 = a.C(zzd2, zzd2, zzA6);
                                 } else {
                                     zzA6 = zzqv.zzz((String) zzc2) + zzA6;
                                 }
@@ -1354,7 +1355,7 @@ final class zztv<T> implements zzug<T> {
                                 Object obj3 = list5.get(i31);
                                 if (obj3 instanceof zzqm) {
                                     int zzd3 = ((zzqm) obj3).zzd();
-                                    zzA6 = a.e(zzd3, zzd3, zzA6);
+                                    zzA6 = a.C(zzd3, zzd3, zzA6);
                                 } else {
                                     zzA6 = zzqv.zzz((String) obj3) + zzA6;
                                 }
@@ -1383,7 +1384,7 @@ final class zztv<T> implements zzug<T> {
                             Object obj4 = list6.get(i33);
                             if (obj4 instanceof zztd) {
                                 int zza3 = ((zztd) obj4).zza();
-                                zzA7 = a.e(zza3, zza3, zzA7);
+                                zzA7 = a.C(zza3, zza3, zzA7);
                             } else {
                                 zzA7 = zzqv.zzy((zzts) obj4, zzx) + zzA7;
                             }
@@ -1401,7 +1402,7 @@ final class zztv<T> implements zzug<T> {
                         zzA6 = zzqv.zzA(i19 << 3) * size5;
                         for (int i35 = 0; i35 < list7.size(); i35++) {
                             int zzd4 = ((zzqm) list7.get(i35)).zzd();
-                            zzA6 = a.e(zzd4, zzd4, zzA6);
+                            zzA6 = a.C(zzd4, zzd4, zzA6);
                         }
                         i16 += zzA6;
                         i13 += 3;
@@ -1730,14 +1731,14 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 51:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 8, i16);
+                        i16 = a.C(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 52:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 4, i16);
+                        i16 = a.C(i19 << 3, 4, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1786,21 +1787,21 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 56:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 8, i16);
+                        i16 = a.C(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 57:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 4, i16);
+                        i16 = a.C(i19 << 3, 4, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 58:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 1, i16);
+                        i16 = a.C(i19 << 3, 1, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1859,7 +1860,7 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 62:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(zzp(obj2, j10), zzqv.zzA(i19 << 3), i16);
+                        i16 = a.C(zzp(obj2, j10), zzqv.zzA(i19 << 3), i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1880,14 +1881,14 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 64:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 4, i16);
+                        i16 = a.C(i19 << 3, 4, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = a.e(i19 << 3, 8, i16);
+                        i16 = a.C(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1895,7 +1896,7 @@ final class zztv<T> implements zzug<T> {
                 case 66:
                     if (zztvVar.zzR(obj2, i19, i13)) {
                         int zzp3 = zzp(obj2, j10);
-                        i16 = a.e((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i19 << 3), i16);
+                        i16 = a.C((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i19 << 3), i16);
                     }
                     i13 += 3;
                     obj2 = obj;

@@ -1,54 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v51 implements Runnable {
+public final /* synthetic */ class v51 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z51 b;
-    public final /* synthetic */ Integer c;
+    public final /* synthetic */ y51 b;
 
-    public /* synthetic */ v51(z51 z51Var, Integer num, int i10) {
+    public /* synthetic */ v51(y51 y51Var, int i10) {
         this.a = i10;
-        this.b = z51Var;
-        this.c = num;
+        this.b = y51Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        z51 z51Var = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                z51.a(z51Var, this.c);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y51 y51Var = this.b;
+                y51Var.K = floatValue;
+                y51Var.S.e0.invalidate();
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y51 y51Var2 = this.b;
+                y51Var2.K = floatValue2;
+                y51Var2.S.e0.invalidate();
                 break;
             default:
-                z51Var.getClass();
-                Integer num = this.c;
-                if (num != null) {
-                    try {
-                        z51Var.L.performHapticFeedback(0, 1);
-                    } catch (Exception unused) {
-                    }
-                    s41 s41Var = (s41) z51Var;
-                    t41 t41Var = s41Var.O;
-                    d61 d61Var = t41Var.e;
-                    List list = d61.V1;
-                    d61Var.l();
-                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                    View view = s41Var.M;
-                    long j10 = ((m51) view).e.documentId;
-                    tL_emojiStatus.document_id = j10;
-                    t41Var.e.p(view, Long.valueOf(j10), ((m51) s41Var.M).e.document, s41Var.N, num);
-                    if (s41Var.N == null) {
-                        MediaDataController.getInstance(t41Var.e.R).pushRecentEmojiStatus(tL_emojiStatus);
-                        break;
-                    }
-                }
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y51 y51Var3 = this.b;
+                y51Var3.K = floatValue3;
+                y51Var3.S.e0.invalidate();
                 break;
         }
     }

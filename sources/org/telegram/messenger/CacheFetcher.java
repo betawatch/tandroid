@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class CacheFetcher<Args, R> {
     private HashMap<Pair<Integer, Args>, R> cachedResults;
@@ -18,17 +18,17 @@ public abstract class CacheFetcher<Args, R> {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private void cacheResult(Pair<Integer, Args> pair, R r6) {
+    private void cacheResult(Pair<Integer, Args> pair, R r10) {
         if (useCache(pair.second)) {
             if (this.cachedResults == null) {
                 this.cachedResults = new HashMap<>();
             }
-            this.cachedResults.put(pair, r6);
+            this.cachedResults.put(pair, r10);
         }
     }
 
-    private void callCallbacks(Pair<Integer, Args> pair, R r6, boolean z10) {
-        AndroidUtilities.runOnUIThread(new tj(this, pair, r6, z10, 1));
+    private void callCallbacks(Pair<Integer, Args> pair, R r10, boolean z4) {
+        AndroidUtilities.runOnUIThread(new xj(this, pair, r10, z4, 1));
     }
 
     private R getCachedResult(Pair<Integer, Args> pair) {
@@ -45,7 +45,7 @@ public abstract class CacheFetcher<Args, R> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$callCallbacks$3(Pair pair, Object obj, boolean z10) {
+    public /* synthetic */ void lambda$callCallbacks$3(Pair pair, Object obj, boolean z4) {
         ArrayList<Utilities.Callback<R>> arrayList;
         HashMap<Pair<Integer, Args>, ArrayList<Utilities.Callback<R>>> hashMap = this.loadingCallbacks;
         if (hashMap == null || (arrayList = hashMap.get(pair)) == null) {
@@ -58,10 +58,10 @@ public abstract class CacheFetcher<Args, R> {
             i10++;
             callback.run(obj);
         }
-        if (z10) {
+        if (z4) {
             arrayList.clear();
         }
-        if (z10) {
+        if (z4) {
             this.loadingCallbacks.remove(pair);
         }
     }
@@ -69,7 +69,7 @@ public abstract class CacheFetcher<Args, R> {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     public /* synthetic */ void lambda$fetch$0(Pair pair, Object obj, int i10, Object obj2, Boolean bool, Object obj3, Long l10, Boolean bool2) {
-        R r6;
+        R r10;
         if (bool2.booleanValue()) {
             saveLastRequested(pair);
         }
@@ -79,13 +79,13 @@ public abstract class CacheFetcher<Args, R> {
             return;
         }
         if (obj3 != 0) {
-            r6 = obj3;
-            setLocal(i10, obj2, r6, l10.longValue());
-            cacheResult(pair, r6);
+            r10 = obj3;
+            setLocal(i10, obj2, r10, l10.longValue());
+            cacheResult(pair, r10);
         } else {
-            r6 = obj3;
+            r10 = obj3;
         }
-        callCallbacks(pair, r6, true);
+        callCallbacks(pair, r10, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -100,7 +100,7 @@ public abstract class CacheFetcher<Args, R> {
             cacheResult(pair, obj2);
             callCallbacks(pair, obj2, false);
         }
-        getRemote(i10, obj, l10.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.o0
+        getRemote(i10, obj, l10.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.p0
             @Override // org.telegram.messenger.Utilities.Callback4
             public final void run(Object obj3, Object obj4, Object obj5, Object obj6) {
                 CacheFetcher.this.lambda$fetch$0(pair, obj2, i10, obj, (Boolean) obj3, obj4, (Long) obj5, (Boolean) obj6);
@@ -127,7 +127,7 @@ public abstract class CacheFetcher<Args, R> {
         if (callback == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new f0(this, pair, callback, 9));
+        AndroidUtilities.runOnUIThread(new g0(this, pair, callback, 9));
     }
 
     private void saveLastRequested(Pair<Integer, Args> pair) {
@@ -163,7 +163,7 @@ public abstract class CacheFetcher<Args, R> {
         R cachedResult = getCachedResult(pair);
         if (cachedResult == null || shouldRequest(pair)) {
             saveCallback(pair, callback);
-            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.p0
+            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.q0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     CacheFetcher.this.lambda$fetch$1(pair, args, i10, (Long) obj, obj2);
@@ -211,6 +211,6 @@ public abstract class CacheFetcher<Args, R> {
     public void getRemote(int i10, Args args, long j10, Utilities.Callback4<Boolean, R, Long, Boolean> callback4) {
     }
 
-    public void setLocal(int i10, Args args, R r6, long j10) {
+    public void setLocal(int i10, Args args, R r10, long j10) {
     }
 }

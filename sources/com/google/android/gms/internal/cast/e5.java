@@ -1,62 +1,163 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public abstract class e5 implements Cloneable {
-    public final f5 a;
-    public f5 b;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-    public e5(f5 f5Var) {
-        this.a = f5Var;
-        if (f5Var.g()) {
-            throw new IllegalArgumentException("Default instance must be immutable.");
-        }
-        this.b = (f5) f5Var.h(4, null);
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public abstract class e5 extends t4 {
+    private static final Map zzb = new ConcurrentHashMap();
+    protected i6 zzc;
+    private int zzd;
+
+    public e5() {
+        this.zza = 0;
+        this.zzd = -1;
+        this.zzc = i6.e;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
-    
-        if (r3 != false) goto L12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final f5 a() {
-        f5 b10 = b();
-        byte byteValue = ((Byte) b10.h(1, null)).byteValue();
-        if (byteValue != 1) {
-            if (byteValue != 0) {
-                boolean f9 = e6.c.a(b10.getClass()).f(b10);
-                b10.h(2, true == f9 ? b10 : null);
+    public static j5 b(j5 j5Var) {
+        int size = j5Var.size();
+        return j5Var.zzg(size == 0 ? 10 : size + size);
+    }
+
+    public static Object c(Method method, e5 e5Var, Object... objArr) {
+        try {
+            return method.invoke(e5Var, objArr);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e6) {
+            Throwable cause = e6.getCause();
+            if (cause instanceof RuntimeException) {
+                throw ((RuntimeException) cause);
             }
-            throw new a6.b("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+            if (cause instanceof Error) {
+                throw ((Error) cause);
+            }
+            throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
         }
+    }
+
+    public static void e(Class cls, e5 e5Var) {
+        e5Var.d();
+        zzb.put(cls, e5Var);
+    }
+
+    public static e5 k(Class cls) {
+        Map map = zzb;
+        e5 e5Var = (e5) map.get(cls);
+        if (e5Var == null) {
+            try {
+                Class.forName(cls.getName(), true, cls.getClassLoader());
+                e5Var = (e5) map.get(cls);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
+            }
+        }
+        if (e5Var != null) {
+            return e5Var;
+        }
+        e5 e5Var2 = (e5) ((e5) r6.g(cls)).h(6, null);
+        if (e5Var2 == null) {
+            throw new IllegalStateException();
+        }
+        map.put(cls, e5Var2);
+        return e5Var2;
+    }
+
+    @Override // com.google.android.gms.internal.cast.t4
+    public final int a(g6 g6Var) {
+        if (g()) {
+            int g10 = g6Var.g(this);
+            if (g10 >= 0) {
+                return g10;
+            }
+            throw new IllegalStateException(kh.a2.j(g10, "serialized size must be non-negative, was "));
+        }
+        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i10 != Integer.MAX_VALUE) {
+            return i10;
+        }
+        int g11 = g6Var.g(this);
+        if (g11 < 0) {
+            throw new IllegalStateException(kh.a2.j(g11, "serialized size must be non-negative, was "));
+        }
+        this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
+        return g11;
+    }
+
+    public final void d() {
+        this.zzd &= ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        return d6.c.a(getClass()).c(this, (e5) obj);
+    }
+
+    public final void f() {
+        this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    public final boolean g() {
+        return (this.zzd & TLObject.FLAG_31) != 0;
+    }
+
+    public abstract Object h(int i10, e5 e5Var);
+
+    public final int hashCode() {
+        if (g()) {
+            return d6.c.a(getClass()).b(this);
+        }
+        int i10 = this.zza;
+        if (i10 != 0) {
+            return i10;
+        }
+        int b10 = d6.c.a(getClass()).b(this);
+        this.zza = b10;
         return b10;
     }
 
-    public final f5 b() {
-        if (!this.b.g()) {
-            return this.b;
+    public final int i() {
+        if (g()) {
+            int g10 = d6.c.a(getClass()).g(this);
+            if (g10 >= 0) {
+                return g10;
+            }
+            throw new IllegalStateException(kh.a2.j(g10, "serialized size must be non-negative, was "));
         }
-        f5 f5Var = this.b;
-        f5Var.getClass();
-        e6.c.a(f5Var.getClass()).a(f5Var);
-        f5Var.d();
-        return this.b;
+        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i10 != Integer.MAX_VALUE) {
+            return i10;
+        }
+        int g11 = d6.c.a(getClass()).g(this);
+        if (g11 < 0) {
+            throw new IllegalStateException(kh.a2.j(g11, "serialized size must be non-negative, was "));
+        }
+        this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
+        return g11;
     }
 
-    public final void c() {
-        if (this.b.g()) {
-            return;
-        }
-        f5 f5Var = (f5) this.a.h(4, null);
-        e6.c.a(f5Var.getClass()).d(f5Var, this.b);
-        this.b = f5Var;
+    public final d5 j() {
+        return (d5) h(5, null);
     }
 
-    public final Object clone() {
-        e5 e5Var = (e5) this.a.h(5, null);
-        e5Var.b = b();
-        return e5Var;
+    public final String toString() {
+        String obj = super.toString();
+        char[] cArr = x5.a;
+        StringBuilder sb = new StringBuilder();
+        sb.append("# ");
+        sb.append(obj);
+        x5.c(this, sb, 0);
+        return sb.toString();
     }
 }

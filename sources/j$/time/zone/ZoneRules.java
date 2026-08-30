@@ -218,10 +218,10 @@ public final class ZoneRules implements Serializable {
         if (this.f.length > 0) {
             LocalDateTime localDateTime2 = this.d[r0.length - 1];
             if (localDateTime2 == null) {
-                long z10 = localDateTime.a.z();
-                long z11 = localDateTime2.a.z();
-                if (z10 <= z11) {
-                    if (z10 == z11) {
+                long z4 = localDateTime.a.z();
+                long z10 = localDateTime2.a.z();
+                if (z4 <= z10) {
+                    if (z4 == z10) {
                     }
                 }
                 b[] b11 = b(localDateTime.a.getYear());
@@ -308,10 +308,10 @@ public final class ZoneRules implements Serializable {
                     }
                     ZoneOffset h = h(offset);
                     int offset2 = this.g.getOffset(w10 * j14);
-                    ZoneOffset h10 = h(offset2);
-                    if (c(w10, h10) == i10) {
+                    ZoneOffset h9 = h(offset2);
+                    if (c(w10, h9) == i10) {
                         bVarArr = (b[]) Arrays.copyOf(bVarArr, bVarArr.length + 1);
-                        bVarArr[bVarArr.length - 1] = new b(w10, h, h10);
+                        bVarArr[bVarArr.length - 1] = new b(w10, h, h9);
                     }
                     offset = offset2;
                 } else {

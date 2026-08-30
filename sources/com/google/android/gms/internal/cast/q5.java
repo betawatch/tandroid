@@ -1,31 +1,12 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class q5 extends r5 {
-    @Override // com.google.android.gms.internal.cast.r5
-    public final void a(Object obj, long j10) {
-        u4 u4Var = (u4) ((k5) s6.h(obj, j10));
-        if (u4Var.a) {
-            u4Var.a = false;
-        }
-    }
+public abstract class q5 {
+    public static final o5 a = new o5();
+    public static final p5 b = new p5();
 
-    @Override // com.google.android.gms.internal.cast.r5
-    public final void b(Object obj, long j10, Object obj2) {
-        k5 k5Var = (k5) s6.h(obj, j10);
-        k5 k5Var2 = (k5) s6.h(obj2, j10);
-        int size = k5Var.size();
-        int size2 = k5Var2.size();
-        if (size > 0 && size2 > 0) {
-            if (!((u4) k5Var).a) {
-                k5Var = k5Var.zzg(size2 + size);
-            }
-            k5Var.addAll(k5Var2);
-        }
-        if (size > 0) {
-            k5Var2 = k5Var;
-        }
-        s6.l(obj, j10, k5Var2);
-    }
+    public abstract void a(Object obj, long j10);
+
+    public abstract void b(Object obj, long j10, Object obj2);
 }

@@ -1,12 +1,10 @@
 package androidx.activity.result;
 
-import a4.w;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import androidx.activity.l;
+import androidx.activity.m;
 import androidx.fragment.app.e0;
-import androidx.lifecycle.m;
 import androidx.lifecycle.n;
 import androidx.lifecycle.r;
 import androidx.lifecycle.t;
@@ -14,7 +12,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -34,7 +32,7 @@ public abstract class f {
         if (dVar != null) {
             b bVar = dVar.a;
             if (this.d.contains(str)) {
-                bVar.l(dVar.b.a(intent, i11));
+                bVar.f(dVar.b.a(intent, i11));
                 this.d.remove(str);
                 return true;
             }
@@ -46,10 +44,10 @@ public abstract class f {
 
     public abstract void b(int i10, e0 e0Var, Object obj);
 
-    public final c c(final String str, l lVar, final e0 e0Var, final b bVar) {
-        v vVar = lVar.d;
+    public final c c(final String str, m mVar, final e0 e0Var, final b bVar) {
+        v vVar = mVar.d;
         if (vVar.c.compareTo(n.d) >= 0) {
-            throw new IllegalStateException("LifecycleOwner " + lVar + " is attempting to register while current state is " + vVar.c + ". LifecycleOwners must call register before they are STARTED.");
+            throw new IllegalStateException("LifecycleOwner " + mVar + " is attempting to register while current state is " + vVar.c + ". LifecycleOwners must call register before they are STARTED.");
         }
         e(str);
         HashMap hashMap = this.c;
@@ -59,16 +57,16 @@ public abstract class f {
         }
         r rVar = new r() { // from class: androidx.activity.result.ActivityResultRegistry$1
             @Override // androidx.lifecycle.r
-            public final void d(t tVar, m mVar) {
-                boolean equals = m.ON_START.equals(mVar);
+            public final void d(t tVar, androidx.lifecycle.m mVar2) {
+                boolean equals = androidx.lifecycle.m.ON_START.equals(mVar2);
                 String str2 = str;
                 f fVar = f.this;
                 if (!equals) {
-                    if (m.ON_STOP.equals(mVar)) {
+                    if (androidx.lifecycle.m.ON_STOP.equals(mVar2)) {
                         fVar.e.remove(str2);
                         return;
                     } else {
-                        if (m.ON_DESTROY.equals(mVar)) {
+                        if (androidx.lifecycle.m.ON_DESTROY.equals(mVar2)) {
                             fVar.f(str2);
                             return;
                         }
@@ -84,12 +82,12 @@ public abstract class f {
                 if (hashMap3.containsKey(str2)) {
                     Object obj = hashMap3.get(str2);
                     hashMap3.remove(str2);
-                    bVar2.l(obj);
+                    bVar2.f(obj);
                 }
                 a aVar = (a) bundle.getParcelable(str2);
                 if (aVar != null) {
                     bundle.remove(str2);
-                    bVar2.l(e0Var2.a(aVar.b, aVar.a));
+                    bVar2.f(e0Var2.a(aVar.b, aVar.a));
                 }
             }
         };
@@ -106,13 +104,13 @@ public abstract class f {
         if (hashMap.containsKey(str)) {
             Object obj = hashMap.get(str);
             hashMap.remove(str);
-            bVar.l(obj);
+            bVar.f(obj);
         }
         Bundle bundle = this.g;
         a aVar = (a) bundle.getParcelable(str);
         if (aVar != null) {
             bundle.remove(str);
-            bVar.l(e0Var.a(aVar.b, aVar.a));
+            bVar.f(e0Var.a(aVar.b, aVar.a));
         }
         return new c(this, str, e0Var, 1);
     }
@@ -122,8 +120,8 @@ public abstract class f {
         if (((Integer) hashMap.get(str)) != null) {
             return;
         }
-        cd.a aVar = cd.e.a;
-        int nextInt = cd.e.a.a().nextInt(2147418112);
+        ed.a aVar = ed.d.a;
+        int nextInt = ed.d.a.a().nextInt(2147418112);
         while (true) {
             int i10 = nextInt + 65536;
             Integer valueOf = Integer.valueOf(i10);
@@ -133,8 +131,8 @@ public abstract class f {
                 hashMap.put(str, Integer.valueOf(i10));
                 return;
             } else {
-                cd.a aVar2 = cd.e.a;
-                nextInt = cd.e.a.a().nextInt(2147418112);
+                ed.a aVar2 = ed.d.a;
+                nextInt = ed.d.a.a().nextInt(2147418112);
             }
         }
     }
@@ -147,16 +145,16 @@ public abstract class f {
         this.e.remove(str);
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
-            StringBuilder s10 = w.s("Dropping pending result for request ", str, ": ");
-            s10.append(hashMap.get(str));
-            Log.w("ActivityResultRegistry", s10.toString());
+            StringBuilder t6 = android.support.v4.media.a.t("Dropping pending result for request ", str, ": ");
+            t6.append(hashMap.get(str));
+            Log.w("ActivityResultRegistry", t6.toString());
             hashMap.remove(str);
         }
         Bundle bundle = this.g;
         if (bundle.containsKey(str)) {
-            StringBuilder s11 = w.s("Dropping pending result for request ", str, ": ");
-            s11.append(bundle.getParcelable(str));
-            Log.w("ActivityResultRegistry", s11.toString());
+            StringBuilder t9 = android.support.v4.media.a.t("Dropping pending result for request ", str, ": ");
+            t9.append(bundle.getParcelable(str));
+            Log.w("ActivityResultRegistry", t9.toString());
             bundle.remove(str);
         }
         HashMap hashMap2 = this.c;

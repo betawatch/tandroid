@@ -1,19 +1,17 @@
 package l3;
 
-import j3.x1;
+import j3.v1;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h0 {
-    public final x1 a;
-    public final boolean b;
+    public final v1 a;
+    public final long b;
     public final long c;
-    public final long d;
 
-    public h0(x1 x1Var, boolean z10, long j10, long j11) {
-        this.a = x1Var;
-        this.b = z10;
-        this.c = j10;
-        this.d = j11;
+    public h0(v1 v1Var, long j10, long j11) {
+        this.a = v1Var;
+        this.b = j10;
+        this.c = j11;
     }
 }

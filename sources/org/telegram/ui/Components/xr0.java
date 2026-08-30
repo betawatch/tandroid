@@ -1,60 +1,181 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class xr0 extends p00 {
-    public final /* synthetic */ lr0 Q;
-    public final /* synthetic */ qu0 R;
+public final class xr0 extends org.telegram.ui.yt0 {
+    public final /* synthetic */ yu0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xr0(qu0 qu0Var, Context context, lr0 lr0Var) {
-        super(context, null);
-        this.R = qu0Var;
-        this.Q = lr0Var;
+    public xr0(yu0 yu0Var) {
+        this.a = yu0Var;
     }
 
-    @Override // org.telegram.ui.Components.p00
-    public final int getColumnsCount() {
-        return this.R.i1[qu0.p0(this.Q.B) ? 1 : 0];
-    }
-
-    @Override // org.telegram.ui.Components.p00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i10 = this.Q.B;
-        if (i10 == 0 || i10 == 5) {
-            return 2;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 != 2 && i10 != 4) {
-            if (i10 == 3) {
-                return 5;
-            }
-            if (i10 != 7) {
-                if (i10 == 6) {
-                    if (this.R.E0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0124 A[SYNTHETIC] */
+    @Override // org.telegram.ui.yt0, org.telegram.ui.hu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final org.telegram.ui.ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+        ImageReceiver imageReceiver;
+        char c3;
+        char c10;
+        org.telegram.ui.Cells.l7 l7Var;
+        MessageObject message;
+        ImageReceiver linkImageView;
+        ImageReceiver photoImage;
+        View pinnedHeader;
+        yu0 yu0Var = this.a;
+        jt0 jt0Var = yu0Var.A1;
+        js0 js0Var = yu0Var.O0;
+        qt0[] qt0VarArr = yu0Var.h0;
+        if (messageObject != null) {
+            char c11 = 0;
+            qt0 qt0Var = qt0VarArr[0];
+            int i11 = qt0Var.C;
+            if (i11 == 0 || i11 == 1 || i11 == 3 || i11 == 5) {
+                wr0 wr0Var = qt0Var.h;
+                int childCount = wr0Var.getChildCount();
+                int i12 = -1;
+                int i13 = 0;
+                int i14 = -1;
+                int i15 = -1;
+                while (i13 < childCount) {
+                    View childAt = wr0Var.getChildAt(i13);
+                    int measuredHeight = qt0VarArr[c11].h.getMeasuredHeight();
+                    View view = (View) yu0Var.getParent();
+                    if (view != null) {
+                        imageReceiver = null;
+                        if (yu0Var.getY() + yu0Var.getMeasuredHeight() > view.getMeasuredHeight()) {
+                            measuredHeight -= yu0Var.getBottom() - view.getMeasuredHeight();
+                        }
+                    } else {
+                        imageReceiver = null;
                     }
-                } else if (qu0.p0(i10)) {
-                    return 27;
+                    if (childAt.getTop() < measuredHeight) {
+                        int R = RecyclerView.R(childAt);
+                        if (R < i14 || i14 == i12) {
+                            i14 = R;
+                        }
+                        if (R > i15 || i15 == i12) {
+                            i15 = R;
+                        }
+                        int[] iArr = new int[2];
+                        if (childAt instanceof org.telegram.ui.Cells.r7) {
+                            org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) childAt;
+                            linkImageView = r7Var.c;
+                            MessageObject messageObject2 = r7Var.getMessageObject();
+                            if (messageObject2 != null) {
+                                c3 = 0;
+                                int id2 = messageObject2.getId();
+                                c10 = 1;
+                                if (id2 == messageObject.getId()) {
+                                    r7Var.getLocationInWindow(iArr);
+                                    iArr[0] = Math.round(linkImageView.getImageX()) + iArr[0];
+                                    iArr[1] = Math.round(linkImageView.getImageY()) + iArr[1];
+                                    if (linkImageView != null) {
+                                        org.telegram.ui.ju0 ju0Var = new org.telegram.ui.ju0();
+                                        ju0Var.b = iArr[c3];
+                                        ju0Var.c = iArr[c10];
+                                        ju0Var.d = wr0Var;
+                                        qt0 qt0Var2 = qt0VarArr[c3];
+                                        ju0Var.m = qt0Var2.y;
+                                        qt0Var2.h.getLocationInWindow(iArr);
+                                        ju0Var.n = -iArr[c10];
+                                        ju0Var.a = linkImageView;
+                                        ju0Var.o = true;
+                                        ju0Var.h = linkImageView.getRoundRadius(true);
+                                        ju0Var.e = ju0Var.a.getBitmapSafe();
+                                        ju0Var.d.getLocationInWindow(iArr);
+                                        ju0Var.j = 0;
+                                        ju0Var.q = yu0Var.q1[0].m;
+                                        if (js0Var != null && js0Var.getVisibility() == 0) {
+                                            ju0Var.j = AndroidUtilities.dp(36.0f) + ju0Var.j;
+                                        }
+                                        if (PhotoViewer.M1(messageObject) && (pinnedHeader = wr0Var.getPinnedHeader()) != null) {
+                                            int height = (js0Var == null || js0Var.getVisibility() != 0) ? 0 : js0Var.getHeight() - AndroidUtilities.dp(2.5f);
+                                            boolean z11 = childAt instanceof org.telegram.ui.Cells.i7;
+                                            if (z11) {
+                                                height += AndroidUtilities.dp(8.0f);
+                                            }
+                                            int i16 = height - ju0Var.c;
+                                            if (i16 > childAt.getHeight()) {
+                                                wr0Var.scrollBy(0, -(pinnedHeader.getHeight() + i16));
+                                                return ju0Var;
+                                            }
+                                            int height2 = ju0Var.c - wr0Var.getHeight();
+                                            if (z11) {
+                                                height2 -= AndroidUtilities.dp(8.0f);
+                                            }
+                                            if (height2 >= 0) {
+                                                wr0Var.scrollBy(0, childAt.getHeight() + height2);
+                                            }
+                                        }
+                                        return ju0Var;
+                                    }
+                                }
+                                linkImageView = imageReceiver;
+                                if (linkImageView != null) {
+                                }
+                            }
+                        } else {
+                            c3 = 0;
+                            c10 = 1;
+                            if (childAt instanceof org.telegram.ui.Cells.i7) {
+                                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) childAt;
+                                if (i7Var.getMessage().getId() == messageObject.getId()) {
+                                    p9 imageView = i7Var.getImageView();
+                                    photoImage = imageView.getImageReceiver();
+                                    imageView.getLocationInWindow(iArr);
+                                    linkImageView = photoImage;
+                                }
+                                linkImageView = imageReceiver;
+                            } else {
+                                if (childAt instanceof org.telegram.ui.Cells.e2) {
+                                    org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) childAt;
+                                    MessageObject messageObject3 = (MessageObject) e2Var.getParentObject();
+                                    if (messageObject3 != null && messageObject3.getId() == messageObject.getId()) {
+                                        photoImage = e2Var.getPhotoImage();
+                                        e2Var.getLocationInWindow(iArr);
+                                        linkImageView = photoImage;
+                                    }
+                                } else if ((childAt instanceof org.telegram.ui.Cells.l7) && (message = (l7Var = (org.telegram.ui.Cells.l7) childAt).getMessage()) != null && message.getId() == messageObject.getId()) {
+                                    linkImageView = l7Var.getLinkImageView();
+                                    l7Var.getLocationInWindow(iArr);
+                                }
+                                linkImageView = imageReceiver;
+                            }
+                            if (linkImageView != null) {
+                            }
+                        }
+                    }
+                    i13++;
+                    c11 = 0;
+                    i12 = -1;
                 }
-                return 1;
+                if (qt0VarArr[0].C != 0 || i14 < 0 || i15 < 0) {
+                    return null;
+                }
+                int L = yu0Var.E.L(i10);
+                if (L <= i14) {
+                    qt0VarArr[0].x.h1(L, 0);
+                    jt0Var.E();
+                    return null;
+                }
+                if (L < i15 || i15 < 0) {
+                    return null;
+                }
+                qt0VarArr[0].x.i1(L, 0, true);
+                jt0Var.E();
+                return null;
             }
         }
-        return 6;
-    }
-
-    @Override // org.telegram.ui.Components.p00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        qu0 qu0Var = this.R;
-        qu0Var.P0.setColor(qu0Var.h0(org.telegram.ui.ActionBar.g6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), qu0Var.P0);
-        super.onDraw(canvas);
+        return null;
     }
 }

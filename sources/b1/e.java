@@ -2,12 +2,12 @@ package b1;
 
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import bd.p;
-import h7.g5;
+import dd.p;
+import j7.b0;
 import kotlin.jvm.internal.j;
-import qc.i;
+import sc.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements p {
     public final /* synthetic */ int a;
@@ -16,45 +16,45 @@ public final /* synthetic */ class e implements p {
         this.a = i10;
     }
 
-    @Override // bd.p
+    @Override // dd.p
     public final Object invoke(Object obj, Object obj2) {
-        sc.b bVar;
+        uc.b bVar;
         int i10 = this.a;
         i iVar = i.a;
         switch (i10) {
             case 0:
-                bd.a f9 = (bd.a) obj2;
-                j.e(f9, "f");
+                dd.a f10 = (dd.a) obj2;
+                j.e(f10, "f");
                 int i11 = d.d;
-                g5.a((CancellationSignal) obj, f9);
+                b0.a((CancellationSignal) obj, f10);
                 return iVar;
             case 1:
-                bd.a f10 = (bd.a) obj2;
-                j.e(f10, "f");
-                CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.g.a((CancellationSignal) obj)) {
-                    f10.invoke();
-                }
-                return iVar;
-            case 2:
-                bd.a f11 = (bd.a) obj2;
+                dd.a f11 = (dd.a) obj2;
                 j.e(f11, "f");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.g.a((CancellationSignal) obj)) {
                     f11.invoke();
                 }
                 return iVar;
-            case 3:
-                bd.a f12 = (bd.a) obj2;
+            case 2:
+                dd.a f12 = (dd.a) obj2;
                 j.e(f12, "f");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.g.a((CancellationSignal) obj)) {
                     f12.invoke();
                 }
                 return iVar;
+            case 3:
+                dd.a f13 = (dd.a) obj2;
+                j.e(f13, "f");
+                CredentialProviderPlayServicesImpl.Companion.getClass();
+                if (!a1.g.a((CancellationSignal) obj)) {
+                    f13.invoke();
+                }
+                return iVar;
             case 4:
                 String acc = (String) obj;
-                sc.f element = (sc.f) obj2;
+                uc.f element = (uc.f) obj2;
                 j.e(acc, "acc");
                 j.e(element, "element");
                 if (acc.length() == 0) {
@@ -62,25 +62,25 @@ public final /* synthetic */ class e implements p {
                 }
                 return acc + ", " + element;
             default:
-                sc.h acc2 = (sc.h) obj;
-                sc.f element2 = (sc.f) obj2;
+                uc.h acc2 = (uc.h) obj;
+                uc.f element2 = (uc.f) obj2;
                 j.e(acc2, "acc");
                 j.e(element2, "element");
-                sc.h minusKey = acc2.minusKey(element2.getKey());
-                sc.i iVar2 = sc.i.a;
+                uc.h minusKey = acc2.minusKey(element2.getKey());
+                uc.i iVar2 = uc.i.a;
                 if (minusKey == iVar2) {
                     return element2;
                 }
-                sc.d dVar = sc.d.a;
-                sc.e eVar = (sc.e) minusKey.get(dVar);
+                uc.d dVar = uc.d.a;
+                uc.e eVar = (uc.e) minusKey.get(dVar);
                 if (eVar == null) {
-                    bVar = new sc.b(element2, minusKey);
+                    bVar = new uc.b(element2, minusKey);
                 } else {
-                    sc.h minusKey2 = minusKey.minusKey(dVar);
+                    uc.h minusKey2 = minusKey.minusKey(dVar);
                     if (minusKey2 == iVar2) {
-                        return new sc.b(eVar, element2);
+                        return new uc.b(eVar, element2);
                     }
-                    bVar = new sc.b(eVar, new sc.b(element2, minusKey2));
+                    bVar = new uc.b(eVar, new uc.b(element2, minusKey2));
                 }
                 return bVar;
         }

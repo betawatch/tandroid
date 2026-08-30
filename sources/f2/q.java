@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public abstract class q {
-    public static final d2.a a = new d2.a(1);
+    public static final b7.r a = new b7.r(2);
 
     /* JADX WARN: Code restructure failed: missing block: B:101:0x0185, code lost:
     
@@ -137,36 +137,36 @@ public abstract class q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m c(q qVar, boolean z10) {
+    public static m c(q qVar, boolean z4) {
         int i10;
         int[] iArr;
         int[] iArr2;
         p pVar;
         int i11;
-        boolean z11;
+        boolean z10;
         int i12;
         int i13;
         int i14;
         int i15;
         int i16;
-        int e10 = qVar.e();
+        int e = qVar.e();
         int d = qVar.d();
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         o oVar = new o();
         int i17 = 0;
         oVar.a = 0;
-        oVar.b = e10;
+        oVar.b = e;
         oVar.c = 0;
         oVar.d = d;
         arrayList2.add(oVar);
-        int abs = Math.abs(e10 - d) + e10 + d;
+        int abs = Math.abs(e - d) + e + d;
         int i18 = abs * 2;
         int[] iArr3 = new int[i18];
         int[] iArr4 = new int[i18];
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
-            o oVar2 = (o) com.google.android.recaptcha.internal.a.j(1, arrayList2);
+            o oVar2 = (o) e2.c.g(1, arrayList2);
             int i19 = oVar2.a;
             int i20 = oVar2.b;
             int i21 = oVar2.c;
@@ -180,11 +180,11 @@ public abstract class q {
                 int i27 = abs + i25 + 1;
                 Arrays.fill(iArr3, i26, i27, i17);
                 Arrays.fill(iArr4, i26 + i24, i27 + i24, i22);
-                boolean z12 = i24 % 2 != 0;
+                boolean z11 = i24 % 2 != 0;
                 int i28 = 0;
                 while (i28 <= i25) {
                     int i29 = -i28;
-                    boolean z13 = z12;
+                    boolean z12 = z11;
                     int i30 = i29;
                     while (true) {
                         if (i30 > i28) {
@@ -200,7 +200,7 @@ public abstract class q {
                                 iArr2 = iArr3;
                             }
                             i11 = iArr2[(i10 + i30) - 1] + 1;
-                            z11 = true;
+                            z10 = true;
                             i12 = i19;
                             i13 = i11 - i30;
                             while (i11 < i22 && i13 < i23) {
@@ -216,12 +216,12 @@ public abstract class q {
                             i14 = i22;
                             int i32 = i10 + i30;
                             iArr2[i32] = i11;
-                            if (!z13 && i30 >= (i24 - i28) + 1 && i30 <= (i24 + i28) - 1 && i11 >= (i15 = iArr[i32])) {
+                            if (!z12 && i30 >= (i24 - i28) + 1 && i30 <= (i24 + i28) - 1 && i11 >= (i15 = iArr[i32])) {
                                 pVar = new p();
                                 pVar.a = i15;
                                 pVar.b = i15 - i30;
                                 pVar.c = i11 - i15;
-                                pVar.d = z11;
+                                pVar.d = z10;
                                 pVar.e = false;
                                 break;
                             }
@@ -235,7 +235,7 @@ public abstract class q {
                             iArr2 = iArr3;
                         }
                         i11 = iArr2[i10 + i30 + 1];
-                        z11 = false;
+                        z10 = false;
                         i12 = i19;
                         i13 = i11 - i30;
                         while (i11 < i22) {
@@ -247,7 +247,7 @@ public abstract class q {
                         i14 = i22;
                         int i322 = i10 + i30;
                         iArr2[i322] = i11;
-                        if (!z13) {
+                        if (!z12) {
                         }
                         i30 += 2;
                         i19 = i12;
@@ -268,7 +268,7 @@ public abstract class q {
                 }
                 pVar.a += oVar2.a;
                 pVar.b += oVar2.c;
-                o oVar3 = arrayList3.isEmpty() ? new o() : (o) com.google.android.recaptcha.internal.a.j(1, arrayList3);
+                o oVar3 = arrayList3.isEmpty() ? new o() : (o) e2.c.g(1, arrayList3);
                 oVar3.a = oVar2.a;
                 oVar3.c = oVar2.c;
                 if (pVar.e) {
@@ -309,7 +309,7 @@ public abstract class q {
         }
         int[] iArr5 = iArr3;
         Collections.sort(arrayList, a);
-        return new m(qVar, arrayList, iArr5, iArr4, z10);
+        return new m(qVar, arrayList, iArr5, iArr4, z4);
     }
 
     public abstract boolean a(int i10, int i11);

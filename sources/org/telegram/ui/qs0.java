@@ -1,55 +1,48 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class qs0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rs0 b;
+public final class qs0 extends org.telegram.ui.Components.u00 {
+    public final /* synthetic */ xr0 e;
+    public final /* synthetic */ PhotoViewer f;
 
-    public qs0(rs0 rs0Var, int i10) {
-        this.b = rs0Var;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qs0(PhotoViewer photoViewer, xr0 xr0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = xr0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.f8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.n1) {
-                photoViewer.B3();
-            }
-        }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.G2(photoViewer2.L4, false, true, true);
-        }
+    @Override // org.telegram.ui.Components.ho0
+    public final CharSequence d() {
+        StringBuilder sb = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.j3;
+        sb.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
+        sb.append(' ');
+        sb.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
+        String sb2 = sb.toString();
+        StringBuilder sb3 = new StringBuilder();
+        int[] iArr2 = photoViewer.k3;
+        sb3.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
+        sb3.append(' ');
+        sb3.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
+        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2, sb3.toString());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.L0.setVisibility(0);
-        if (photoViewer.E3()) {
-            photoViewer.j0.setVisibility(0);
-        } else {
-            photoViewer.O0.setVisibility(0);
-        }
-        photoViewer.B.setVisibility(0);
-        if (photoViewer.e2) {
-            nt0 nt0Var = photoViewer.M1;
-            nt0Var.setVisibility(nt0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.Z1 || photoViewer.a2) {
-            return;
-        }
-        int i10 = photoViewer.Y1;
-        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.c7.size() > 1)) && !photoViewer.b4) {
-            photoViewer.J0.setVisibility(0);
-            photoViewer.K0.setVisibility(0);
-            photoViewer.s3();
-        }
+    @Override // org.telegram.ui.Components.u00
+    public final float k() {
+        return this.f.n3.c();
+    }
+
+    @Override // org.telegram.ui.Components.u00
+    public final void l(float f10) {
+        this.e.b(f10);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.n3.h(f10, false);
+        photoViewer.o3.invalidate();
     }
 }

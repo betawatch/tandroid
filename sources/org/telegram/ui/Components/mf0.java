@@ -1,232 +1,160 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.os.Build;
-import android.provider.Settings;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.graphics.Paint;
+import android.text.TextUtils;
 import android.view.View;
-import android.webkit.WebView;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class mf0 extends FrameLayout {
-    public float A;
-    public boolean B;
-    public boolean C;
-    public int D;
-    public int E;
-    public float F;
-    public boolean G;
-    public xb0 H;
-    public int a;
-    public PhotoViewer b;
-    public LinearLayout c;
-    public TextView d;
-    public TextView e;
-    public gu f;
-    public cg.h0 h;
-    public RadialProgressView n;
-    public View r;
-    public String s;
-    public ArrayList v;
-    public String w;
-    public boolean x;
-    public TLRPC.WebPage y;
+public final class mf0 extends rl0 {
+    public final Context c;
+    public final /* synthetic */ nf0 d;
 
-    public static void a(org.telegram.ui.et0 et0Var, String str) {
-        int videoDuration = et0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = et0Var.v;
-        arrayList.clear();
-        if (videoDuration <= 15) {
-            return;
-        }
-        String[] split = str.split("\\|");
-        String q6 = a4.w.q(new StringBuilder(), split[0].split("\\$")[0], "2/");
-        String str2 = split[0].split("\\$N")[1];
-        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
-        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
-        for (int i10 = 0; i10 < ceil; i10++) {
-            Locale locale = Locale.ROOT;
-            arrayList.add(q6 + "M" + i10 + str2 + "&sigh=" + str3);
-        }
+    public mf0(nf0 nf0Var, Context context) {
+        this.d = nf0Var;
+        this.c = context;
     }
 
-    public final void b(boolean z10) {
-        xb0 xb0Var = this.H;
-        if (!z10 && this.C) {
-            AndroidUtilities.runOnUIThread(xb0Var, 500L);
-        } else {
-            if (!z10 || this.C) {
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.l1 l1Var) {
+        return false;
+    }
+
+    @Override // f2.o0
+    public final int h() {
+        return this.d.C;
+    }
+
+    @Override // f2.o0
+    public final long i(int i10) {
+        return i10;
+    }
+
+    @Override // f2.o0
+    public final int j(int i10) {
+        nf0 nf0Var = this.d;
+        return (i10 == nf0Var.y || i10 == nf0Var.B) ? 1 : 0;
+    }
+
+    @Override // f2.o0
+    public final void v(f2.l1 l1Var, int i10) {
+        int i11 = l1Var.f;
+        View view = l1Var.a;
+        nf0 nf0Var = this.d;
+        if (i11 != 0) {
+            if (i11 != 1) {
                 return;
             }
-            AndroidUtilities.cancelRunOnUIThread(xb0Var);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String c(int i10) {
-        float f9;
-        int i11;
-        ArrayList arrayList = this.v;
-        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        if (videoDuration > 100) {
-            if (videoDuration <= 250) {
-                i11 = ((int) (i10 / 2.0f)) / 25;
-            } else if (videoDuration <= 500) {
-                i11 = ((int) (i10 / 4.0f)) / 25;
-            } else if (videoDuration <= 1000) {
-                i11 = ((int) (i10 / 5.0f)) / 25;
+            org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
+            u5Var.setTag(Integer.valueOf(i10));
+            if (i10 == nf0Var.y) {
+                u5Var.a(nf0Var.K, LocaleController.getString(R.string.TintShadows));
+                return;
             } else {
-                f9 = i10 / 10.0f;
+                if (i10 == nf0Var.B) {
+                    u5Var.a(nf0Var.L, LocaleController.getString(R.string.TintHighlights));
+                    return;
+                }
+                return;
             }
-            if (i11 >= arrayList.size()) {
-                return (String) arrayList.get(i11);
-            }
-            return null;
         }
-        f9 = i10;
-        i11 = (int) (f9 / 25.0f);
-        if (i11 >= arrayList.size()) {
-        }
-    }
-
-    public final boolean d() {
-        return this.x;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.G) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    public final boolean e() {
-        boolean z10 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
-        if (!z10 && Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(getContext())) {
-            c5.B((Activity) getContext(), null, false);
-            return false;
-        }
-        if (this.n.getVisibility() == 0) {
-            return false;
-        }
-        if (bg0.l0.L) {
-            bg0.j(false);
-            AndroidUtilities.runOnUIThread(new hf0(this, 0), 300L);
-            return true;
-        }
-        this.h.setVisibility(0);
-        Activity activity = (Activity) getContext();
-        gu guVar = this.f;
-        TLRPC.WebPage webPage = this.y;
-        if (bg0.x(z10, activity, this, guVar, webPage.embed_width, webPage.embed_height, false)) {
-            bg0.w(PhotoViewer.t1());
-        }
-        return true;
-    }
-
-    public final void f() {
-        if (this.C && this.x) {
-            h("pauseVideo();");
-            this.C = false;
-            b(true);
-        }
-    }
-
-    public final void g() {
-        if (this.C || !this.x) {
+        org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) view;
+        v5Var.setTag(Integer.valueOf(i10));
+        if (i10 == nf0Var.b) {
+            v5Var.a(LocaleController.getString(R.string.Enhance), 0, nf0Var.D);
             return;
         }
-        h("playVideo();");
-        this.C = true;
-        b(false);
-    }
-
-    public float getBufferedPosition() {
-        return this.F;
-    }
-
-    public int getCurrentPosition() {
-        return this.E;
-    }
-
-    public int getVideoDuration() {
-        return this.D;
-    }
-
-    public WebView getWebView() {
-        return this.f;
-    }
-
-    public final void h(String str) {
-        this.f.evaluateJavascript(str, null);
-    }
-
-    public final void i(long j10) {
-        boolean z10 = this.C;
-        this.E = (int) j10;
-        if (z10) {
-            f();
-        }
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new eg.z1(this, j10, 21), 100L);
+        if (i10 == nf0Var.r) {
+            v5Var.a(LocaleController.getString(R.string.Highlights), -100, nf0Var.M);
             return;
         }
-        h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        gu guVar = this.f;
-        if (guVar.getParent() == this) {
-            TLRPC.WebPage webPage = this.y;
-            int i12 = webPage.embed_width;
-            if (i12 == 0) {
-                i12 = 100;
-            }
-            int i13 = webPage.embed_height;
-            int i14 = i13 != 0 ? i13 : 100;
-            int size = View.MeasureSpec.getSize(i10);
-            int size2 = View.MeasureSpec.getSize(i11);
-            float f9 = i12;
-            float f10 = i14;
-            float min = Math.min(size / f9, size2 / f10);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) guVar.getLayoutParams();
-            int i15 = (int) (f9 * min);
-            layoutParams.width = i15;
-            int i16 = (int) (f10 * min);
-            layoutParams.height = i16;
-            layoutParams.topMargin = (size2 - i16) / 2;
-            layoutParams.leftMargin = (size - i15) / 2;
+        if (i10 == nf0Var.d) {
+            v5Var.a(LocaleController.getString(R.string.Contrast), -100, nf0Var.F);
+            return;
         }
-        super.onMeasure(i10, i11);
-    }
-
-    public void setPlaybackSpeed(float f9) {
-        this.A = f9;
-        if (this.n.getVisibility() == 0) {
-            this.B = true;
-        } else if (this.x) {
-            h("setPlaybackSpeed(" + f9 + ");");
+        if (i10 == nf0Var.c) {
+            v5Var.a(LocaleController.getString(R.string.Exposure), -100, nf0Var.E);
+            return;
+        }
+        if (i10 == nf0Var.f) {
+            v5Var.a(LocaleController.getString(R.string.Warmth), -100, nf0Var.G);
+            return;
+        }
+        if (i10 == nf0Var.e) {
+            v5Var.a(LocaleController.getString(R.string.Saturation), -100, nf0Var.H);
+            return;
+        }
+        if (i10 == nf0Var.v) {
+            v5Var.a(LocaleController.getString(R.string.Vignette), 0, nf0Var.O);
+            return;
+        }
+        if (i10 == nf0Var.s) {
+            v5Var.a(LocaleController.getString(R.string.Shadows), -100, nf0Var.N);
+            return;
+        }
+        if (i10 == nf0Var.w) {
+            v5Var.a(LocaleController.getString(R.string.Grain), 0, nf0Var.P);
+            return;
+        }
+        if (i10 == nf0Var.x) {
+            v5Var.a(LocaleController.getString(R.string.Sharpen), 0, nf0Var.R);
+        } else if (i10 == nf0Var.h) {
+            v5Var.a(LocaleController.getString(R.string.Fade), 0, nf0Var.I);
+        } else if (i10 == nf0Var.n) {
+            v5Var.a(LocaleController.getString(R.string.SoftenSkin), 0, nf0Var.J);
         }
     }
 
-    public void setTouchDisabled(boolean z10) {
-        this.G = z10;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // f2.o0
+    public final f2.l1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.u5 u5Var;
+        Context context = this.c;
+        if (i10 == 0) {
+            org.telegram.ui.ActionBar.f6 f6Var = this.d.F0;
+            org.telegram.ui.Cells.v5 v5Var = new org.telegram.ui.Cells.v5(context);
+            v5Var.e = new m2.b(v5Var, 7);
+            TextView textView = new TextView(context);
+            v5Var.a = textView;
+            textView.setGravity(5);
+            textView.setTextColor(-1);
+            textView.setTextSize(1, 12.0f);
+            textView.setMaxLines(1);
+            textView.setSingleLine(true);
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            v5Var.addView(textView, k7.b6.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            TextView textView2 = new TextView(context);
+            v5Var.b = textView2;
+            org.telegram.ui.b.l(org.telegram.ui.ActionBar.j6.zf, f6Var, textView2, 1, 12.0f);
+            textView2.setGravity(5);
+            textView2.setSingleLine(true);
+            v5Var.addView(textView2, k7.b6.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            af0 af0Var = new af0(context);
+            Paint paint = new Paint();
+            af0Var.a = paint;
+            Paint paint2 = new Paint(1);
+            af0Var.b = paint2;
+            af0Var.c = AndroidUtilities.dp(16.0f);
+            af0Var.d = 0;
+            af0Var.e = 0.0f;
+            af0Var.f = false;
+            paint.setColor(-11711155);
+            paint2.setColor(-1);
+            v5Var.c = af0Var;
+            v5Var.addView(af0Var, k7.b6.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
+            v5Var.setSeekBarDelegate(new fv(this, 10));
+            u5Var = v5Var;
+        } else {
+            org.telegram.ui.Cells.u5 u5Var2 = new org.telegram.ui.Cells.u5(context);
+            u5Var2.setOnClickListener(new z70(this, 6));
+            u5Var = u5Var2;
+        }
+        return new el0(u5Var);
     }
 }

@@ -1,45 +1,26 @@
 package s5;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.util.LruCache;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r extends c7.a implements e {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class r extends LruCache {
+    public final /* synthetic */ c a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(int i10, TaskCompletionSource taskCompletionSource) {
-        super("com.google.android.gms.cast.internal.IBundleCallback", 1);
-        this.b = i10;
-        this.c = taskCompletionSource;
+    public r(c cVar) {
+        super(20);
+        this.a = cVar;
     }
 
-    @Override // c7.a
-    public final boolean H0(int i10, Parcel parcel, Parcel parcel2) {
-        if (i10 != 1) {
-            return false;
-        }
-        Bundle bundle = (Bundle) com.google.android.gms.internal.cast.u.a(parcel, Bundle.CREATOR);
-        com.google.android.gms.internal.cast.u.b(parcel);
-        i0(bundle);
-        return true;
-    }
-
-    @Override // s5.e
-    public final void i0(Bundle bundle) {
-        switch (this.b) {
-            case 0:
-                this.c.setResult(bundle);
-                break;
-            case 1:
-                this.c.setResult(bundle);
-                break;
-            default:
-                this.c.setResult(bundle);
-                break;
+    @Override // android.util.LruCache
+    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z4, Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = this.a.g;
+        Integer num = (Integer) obj;
+        if (z4) {
+            b6.m.h(arrayList);
+            arrayList.add(num);
         }
     }
 }

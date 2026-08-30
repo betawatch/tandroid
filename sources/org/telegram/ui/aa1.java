@@ -1,45 +1,100 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class aa1 extends org.telegram.ui.Components.v41 {
-    public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Cells.o7 a;
+public final class aa1 extends LinearLayout {
+    public static final /* synthetic */ int d = 0;
+    public final TextView[] a;
+    public final TextView[] b;
+    public final TextView[] c;
 
-    static {
-        org.telegram.ui.Components.v41.setup(new aa1());
-    }
-
-    @Override // org.telegram.ui.Components.v41
-    public final void attachedView(org.telegram.ui.Components.jl0 jl0Var, View view, org.telegram.ui.Components.w41 w41Var) {
-        ((org.telegram.ui.Cells.p7) view).l(w41Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.v41
-    public final void bindView(View view, org.telegram.ui.Components.w41 w41Var, boolean z10, org.telegram.ui.Components.k51 k51Var, org.telegram.ui.Components.u51 u51Var) {
-        org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
-        p7Var.k((MessageObject) w41Var.G, w41Var.v, false);
-        p7Var.i(w41Var.e, false);
-        p7Var.l(w41Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.v41
-    public final View createView(Context context, org.telegram.ui.Components.jl0 jl0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        if (this.a == null) {
-            this.a = new org.telegram.ui.Cells.o7(context, c6Var);
+    public aa1(Context context, int i10) {
+        super(context);
+        int i11 = i10 * 2;
+        this.a = new TextView[i11];
+        this.b = new TextView[i11];
+        this.c = new TextView[i11];
+        setOrientation(1);
+        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        for (int i12 = 0; i12 < i10; i12++) {
+            LinearLayout f10 = org.telegram.messenger.y3.f(context, 0);
+            for (int i13 = 0; i13 < 2; i13++) {
+                LinearLayout f11 = org.telegram.messenger.y3.f(context, 1);
+                LinearLayout f12 = org.telegram.messenger.y3.f(context, 0);
+                int i14 = (i12 * 2) + i13;
+                this.a[i14] = new TextView(context);
+                this.b[i14] = new TextView(context);
+                this.c[i14] = new TextView(context);
+                this.a[i14].setTypeface(AndroidUtilities.bold());
+                this.a[i14].setTextSize(1, 17.0f);
+                this.c[i14].setTextSize(1, 13.0f);
+                this.c[i14].setGravity(3);
+                this.b[i14].setTextSize(1, 13.0f);
+                this.b[i14].setPadding(AndroidUtilities.dp(4.0f), 0, 0, 0);
+                f12.addView(this.a[i14]);
+                f12.addView(this.b[i14]);
+                f11.addView(f12);
+                f11.addView(this.c[i14]);
+                f10.addView(f11, k7.b6.l(1.0f, -1, -2));
+            }
+            addView(f10, k7.b6.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 16.0f));
         }
-        org.telegram.ui.Cells.p7 p7Var = new org.telegram.ui.Cells.p7(context, this.a, i10);
-        p7Var.s0 = true;
-        p7Var.W = true;
-        return p7Var;
     }
 
-    @Override // org.telegram.ui.Components.v41
-    public final boolean equals(org.telegram.ui.Components.w41 w41Var, org.telegram.ui.Components.w41 w41Var2) {
-        return w41Var.q == w41Var2.q && w41Var.e == w41Var2.e && w41Var.B == w41Var2.B;
+    public final void a(String str, int i10, String str2, String str3) {
+        this.a[i10].setText(str);
+        this.b[i10].setText(str2);
+        this.c[i10].setText(str3);
+        b();
+    }
+
+    public final void b() {
+        int i10 = 0;
+        while (true) {
+            TextView[] textViewArr = this.a;
+            if (i10 >= textViewArr.length) {
+                return;
+            }
+            TextView textView = textViewArr[i10];
+            int i11 = org.telegram.ui.ActionBar.j6.G6;
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            this.c[i10].setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false));
+            TextView[] textViewArr2 = this.b;
+            Integer num = (Integer) textViewArr2[i10].getTag();
+            if (num != null) {
+                textViewArr2[i10].setTextColor(org.telegram.ui.ActionBar.j6.w0(null, num.intValue(), false));
+            } else {
+                textViewArr2[i10].setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            }
+            i10++;
+        }
+    }
+
+    public void setData(ca1 ca1Var) {
+        TextView[] textViewArr = this.a;
+        textViewArr[0].setText(ca1Var.b);
+        textViewArr[1].setText(ca1Var.f);
+        textViewArr[2].setText(ca1Var.j);
+        textViewArr[3].setText(ca1Var.n);
+        TextView[] textViewArr2 = this.b;
+        textViewArr2[0].setText(ca1Var.c);
+        textViewArr2[0].setTag(Integer.valueOf(ca1Var.d ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
+        textViewArr2[1].setText(ca1Var.g);
+        textViewArr2[1].setTag(Integer.valueOf(ca1Var.h ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
+        textViewArr2[2].setText(ca1Var.k);
+        textViewArr2[2].setTag(Integer.valueOf(ca1Var.l ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
+        textViewArr2[3].setText(ca1Var.o);
+        textViewArr2[3].setTag(Integer.valueOf(ca1Var.p ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
+        TextView[] textViewArr3 = this.c;
+        textViewArr3[0].setText(ca1Var.a);
+        textViewArr3[1].setText(ca1Var.e);
+        textViewArr3[2].setText(ca1Var.i);
+        textViewArr3[3].setText(ca1Var.m);
+        b();
     }
 }

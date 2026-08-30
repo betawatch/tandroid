@@ -29,9 +29,9 @@ public final class j implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb2) {
+    public final boolean j(r rVar, StringBuilder sb) {
         Long a2 = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
-        boolean z10 = false;
+        boolean z4 = false;
         if (a2 == null) {
             return false;
         }
@@ -42,42 +42,42 @@ public final class j implements f {
         }
         String str = this.a;
         if (i10 == 0) {
-            sb2.append(str);
+            sb.append(str);
             return true;
         }
         int abs = Math.abs((i10 / 3600) % 100);
         int abs2 = Math.abs((i10 / 60) % 60);
         int abs3 = Math.abs(i10 % 60);
-        int length = sb2.length();
-        sb2.append(i10 < 0 ? "-" : "+");
+        int length = sb.length();
+        sb.append(i10 < 0 ? "-" : "+");
         if (this.b >= 11 && abs < 10) {
-            sb2.append((char) (abs + 48));
+            sb.append((char) (abs + 48));
         } else {
-            a(false, abs, sb2);
+            a(false, abs, sb);
         }
         int i11 = this.c;
         if ((i11 >= 3 && i11 <= 8) || ((i11 >= 9 && abs3 > 0) || (i11 >= 1 && abs2 > 0))) {
-            a(i11 > 0 && i11 % 2 == 0, abs2, sb2);
+            a(i11 > 0 && i11 % 2 == 0, abs2, sb);
             abs += abs2;
             if (i11 == 7 || i11 == 8 || (i11 >= 5 && abs3 > 0)) {
                 if (i11 > 0 && i11 % 2 == 0) {
-                    z10 = true;
+                    z4 = true;
                 }
-                a(z10, abs3, sb2);
+                a(z4, abs3, sb);
                 abs += abs3;
             }
         }
         if (abs == 0) {
-            sb2.setLength(length);
-            sb2.append(str);
+            sb.setLength(length);
+            sb.append(str);
         }
         return true;
     }
 
-    public static void a(boolean z10, int i10, StringBuilder sb2) {
-        sb2.append(z10 ? ":" : "");
-        sb2.append((char) ((i10 / 10) + 48));
-        sb2.append((char) ((i10 % 10) + 48));
+    public static void a(boolean z4, int i10, StringBuilder sb) {
+        sb.append(z4 ? ":" : "");
+        sb.append((char) ((i10 / 10) + 48));
+        sb.append((char) ((i10 % 10) + 48));
     }
 
     public final String toString() {

@@ -1,42 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class yz0 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public TextView a;
-    public xz0 b;
-    public TLRPC.TL_help_termsOfService c;
-    public int d;
+public final class yz0 implements TextWatcher {
+    public final /* synthetic */ f01 a;
 
-    public final void a() {
-        xz0 xz0Var = this.b;
-        int i10 = this.d;
-        org.telegram.ui.fa0 fa0Var = (org.telegram.ui.fa0) xz0Var;
-        fa0Var.getClass();
-        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
-        UserConfig.getInstance(i10).saveConfig(false);
-        LaunchActivity launchActivity = fa0Var.a;
-        ArrayList arrayList = launchActivity.Z;
-        if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.o2) j7.l1.i(1, arrayList)).onResume();
-        }
-        launchActivity.y0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.q00(fa0Var, 15)).start();
-        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
-        tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new lh.o5(13));
+    public yz0(f01 f01Var) {
+        this.a = f01Var;
     }
 
-    public void setDelegate(xz0 xz0Var) {
-        this.b = xz0Var;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        f01 f01Var = this.a;
+        k6 k6Var = f01Var.n;
+        if (f01Var.x) {
+            return;
+        }
+        String trim = editable.toString().trim();
+        if (trim.length() > 16) {
+            k6Var.setText("-" + (trim.length() - 16));
+            trim = trim.substring(0, 16);
+        } else {
+            k6Var.setText("");
+        }
+        Utilities.Callback callback = f01Var.w;
+        if (callback != null) {
+            callback.run(trim);
+        }
+        MessageObject messageObject = f01Var.r;
+        if (messageObject != null) {
+            messageObject.forceUpdate = true;
+            f01Var.d.X3(messageObject, null, false, false, false, false);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

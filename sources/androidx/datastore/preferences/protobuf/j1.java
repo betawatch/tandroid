@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class j1 {
     public static final j1 f = new j1(0, new int[0], new Object[0], false);
@@ -12,11 +12,11 @@ public final class j1 {
     public int d = -1;
     public boolean e;
 
-    public j1(int i10, int[] iArr, Object[] objArr, boolean z10) {
+    public j1(int i10, int[] iArr, Object[] objArr, boolean z4) {
         this.a = i10;
         this.b = iArr;
         this.c = objArr;
-        this.e = z10;
+        this.e = z4;
     }
 
     public static j1 b() {
@@ -24,7 +24,7 @@ public final class j1 {
     }
 
     public final int a() {
-        int y8;
+        int y10;
         int A;
         int u10;
         int i10 = this.d;
@@ -43,7 +43,7 @@ public final class j1 {
                 } else if (i15 == 2) {
                     u10 = k.r(i14, (g) this.c[i12]);
                 } else if (i15 == 3) {
-                    y8 = k.y(i14) * 2;
+                    y10 = k.y(i14) * 2;
                     A = ((j1) this.c[i12]).a();
                 } else {
                     if (i15 != 5) {
@@ -55,10 +55,10 @@ public final class j1 {
                 i11 = u10 + i11;
             } else {
                 long longValue = ((Long) this.c[i12]).longValue();
-                y8 = k.y(i14);
+                y10 = k.y(i14);
                 A = k.A(longValue);
             }
-            i11 = A + y8 + i11;
+            i11 = A + y10 + i11;
         }
         this.d = i11;
         return i11;

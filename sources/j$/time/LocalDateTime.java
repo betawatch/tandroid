@@ -68,8 +68,8 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
         }
         try {
             return new LocalDateTime(LocalDate.I(lVar), h.I(lVar));
-        } catch (b e10) {
-            throw new b("Unable to obtain LocalDateTime from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e10);
+        } catch (b e) {
+            throw new b("Unable to obtain LocalDateTime from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e);
         }
     }
 
@@ -263,16 +263,16 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
             LocalDate localDate = this.a;
             LocalDate localDate2 = H.a;
             localDate.getClass();
-            long z10 = localDate2.z() - localDate.z();
-            if (z10 == 0) {
+            long z4 = localDate2.z() - localDate.z();
+            if (z4 == 0) {
                 return this.b.g(H.b, qVar);
             }
             long R = H.b.R() - this.b.R();
-            if (z10 > 0) {
-                j10 = z10 - 1;
+            if (z4 > 0) {
+                j10 = z4 - 1;
                 j11 = R + 86400000000000L;
             } else {
-                j10 = z10 + 1;
+                j10 = z4 + 1;
                 j11 = R - 86400000000000L;
             }
             switch (f.a[chronoUnit.ordinal()]) {
@@ -336,10 +336,10 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
         if (chronoLocalDateTime instanceof LocalDateTime) {
             return G((LocalDateTime) chronoLocalDateTime) < 0;
         }
-        long z10 = this.a.z();
-        long z11 = chronoLocalDateTime.f().z();
-        if (z10 >= z11) {
-            return z10 == z11 && this.b.R() < chronoLocalDateTime.b().R();
+        long z4 = this.a.z();
+        long z10 = chronoLocalDateTime.f().z();
+        if (z4 >= z10) {
+            return z4 == z10 && this.b.R() < chronoLocalDateTime.b().R();
         }
         return true;
     }

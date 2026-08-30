@@ -1,99 +1,97 @@
 package kg;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.th;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import k7.b6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.lp;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class c {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public long i;
-    public boolean j;
-    public float k;
-    public final /* synthetic */ d l;
+public final class c extends ig.d {
+    public final lp r;
+    public TLRPC.TL_help_country s;
+    public final TextPaint v;
+    public final ef.e w;
 
-    public c(d dVar) {
-        this.l = dVar;
+    public c(Context context, f6 f6Var) {
+        super(context, f6Var);
+        TextPaint textPaint = new TextPaint();
+        this.v = textPaint;
+        this.w = new ef.e(this, 21);
+        textPaint.setTextSize(AndroidUtilities.dp(20.0f));
+        this.f.setVisibility(8);
+        this.c.setVisibility(8);
+        lp lpVar = new lp(context, 21, f6Var);
+        this.r = lpVar;
+        lpVar.b(j6.B5, j6.j7, j6.C5);
+        lpVar.setDrawUnchecked(true);
+        lpVar.setDrawBackgroundAsArc(10);
+        addView(lpVar);
+        lpVar.a(false, false);
+        lpVar.setLayoutParams(b6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
-    public final void a() {
-        d dVar;
-        float f9 = 0.0f;
-        this.h = 0.0f;
-        float b10 = b();
-        float c3 = c();
-        int i10 = 0;
-        while (true) {
-            dVar = this.l;
-            if (i10 >= 20) {
-                break;
-            }
-            float b11 = b();
-            float c6 = c();
-            float f10 = 2.14748365E9f;
-            for (int i11 = 0; i11 < dVar.c.size(); i11++) {
-                float f11 = ((c) dVar.c.get(i11)).c - b11;
-                float f12 = ((c) dVar.c.get(i11)).d - c6;
-                float f13 = (f12 * f12) + (f11 * f11);
-                if (f13 < f10) {
-                    f10 = f13;
-                }
-            }
-            if (f10 > f9) {
-                b10 = b11;
-                c3 = c6;
-                f9 = f10;
-            }
-            i10++;
+    @Override // ig.d
+    public final int a() {
+        return 22;
+    }
+
+    @Override // ig.d
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // ig.d
+    public final void c(boolean z4, boolean z10) {
+        lp lpVar = this.r;
+        if (lpVar.getVisibility() == 0) {
+            lpVar.a(z4, z10);
         }
-        float f14 = dVar.f ? 0.8f : 0.5f;
-        this.c = b10;
-        if (b10 > dVar.b.width() * f14) {
-            this.a = dVar.b.width() * f14;
+    }
+
+    @Override // ig.d
+    public final void d() {
+        boolean z4 = LocaleController.isRTL;
+        this.d.setLayoutParams(b6.d(-1, -2.0f, (z4 ? 5 : 3) | 16, z4 ? 20.0f : 52.0f, 0.0f, z4 ? 52.0f : 20.0f, 0.0f));
+        boolean z10 = LocaleController.isRTL;
+        this.e.setLayoutParams(b6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
+        boolean z11 = LocaleController.isRTL;
+        this.f.setLayoutParams(b6.d(22, 22.0f, (z11 ? 5 : 3) | 16, z11 ? 15.0f : 20.0f, 0.0f, z11 ? 20.0f : 15.0f, 0.0f));
+    }
+
+    public final void f() {
+        TLRPC.TL_help_country tL_help_country = this.s;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        CharSequence replaceWithRestrictedEmoji = Emoji.replaceWithRestrictedEmoji(LocaleController.getLanguageFlag(tL_help_country.iso2), this.v.getFontMetricsInt(), 0, this.w);
+        if (replaceWithRestrictedEmoji != null) {
+            spannableStringBuilder.append(replaceWithRestrictedEmoji).append((CharSequence) " ");
+            spannableStringBuilder.setSpan(new b(16), replaceWithRestrictedEmoji.length(), replaceWithRestrictedEmoji.length() + 1, 0);
         } else {
-            float width = dVar.b.width() * f14;
-            this.a = width;
-            if (this.c > width) {
-                this.c = width - 0.1f;
-            }
+            spannableStringBuilder.append((CharSequence) " ");
+            spannableStringBuilder.setSpan(new b(34), 0, 1, 0);
         }
-        this.b = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
-        if (dVar.f) {
-            float c10 = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
-            this.f = c10;
-            this.g = (((th.f(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * c10;
-            this.d = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
-            this.e = dVar.b.height() + this.f;
-            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
-        } else {
-            float c11 = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
-            this.f = c11;
-            this.g = (((th.f(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * c11;
-            this.d = c3;
-            this.e = c3 + dVar.b.height();
-            this.i = 1800L;
+        String countryName = LocaleController.getCountryName(tL_help_country.iso2);
+        if (TextUtils.isEmpty(countryName)) {
+            countryName = tL_help_country.default_name;
         }
-        this.i = (long) (this.i / 1.75f);
-        this.j = Utilities.fastRandom.nextBoolean();
-        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
+        spannableStringBuilder.append((CharSequence) countryName);
+        this.d.k(spannableStringBuilder);
     }
 
-    public final float b() {
-        if (!this.l.f) {
-            return (th.f(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
-        }
-        return u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
+    public TLRPC.TL_help_country getCountry() {
+        return this.s;
     }
 
-    public final float c() {
-        return (th.f(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
+    @Override // ig.d
+    public int getFullHeight() {
+        return 44;
     }
 }

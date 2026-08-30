@@ -1,9 +1,8 @@
 package y2;
 
-import bg.c2;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class p {
     public final i a;
@@ -28,14 +27,14 @@ public final class p {
         q qVar = this.e;
         d3.b bVar = qVar.c;
         i b10 = this.a.b(aVar.c);
-        c2 c2Var = new c2();
-        c2Var.f = new HashMap();
-        c2Var.d = Long.valueOf(qVar.a.e());
-        c2Var.e = Long.valueOf(qVar.b.e());
-        c2Var.a = this.b;
-        c2Var.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
-        c2Var.b = aVar.a;
-        d3.a aVar2 = (d3.a) bVar;
-        aVar2.b.execute(new androidx.car.app.utils.c(aVar2, b10, gVar, c2Var.i(), 3));
+        a9.a aVar2 = new a9.a();
+        aVar2.f = new HashMap();
+        aVar2.d = Long.valueOf(qVar.a.X());
+        aVar2.e = Long.valueOf(qVar.b.X());
+        aVar2.b = this.b;
+        aVar2.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
+        aVar2.a = aVar.a;
+        d3.a aVar3 = (d3.a) bVar;
+        aVar3.b.execute(new androidx.car.app.utils.c(aVar3, b10, gVar, aVar2.j(), 1));
     }
 }

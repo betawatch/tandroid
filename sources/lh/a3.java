@@ -1,34 +1,82 @@
 package lh;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.zz0;
+import android.content.Context;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.c31;
+import org.telegram.ui.k31;
+import org.telegram.ui.oy;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class a3 extends ReplacementSpan {
-    public final RectF a = new RectF();
-    public final Paint b = new Paint(1);
-    public final zz0 c = new zz0(LocaleController.getString(R.string.LiveStoryBadge), 9.0f, AndroidUtilities.bold());
+public final /* synthetic */ class a3 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
-        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
-        RectF rectF = this.a;
-        rectF.set(f9, dp - AndroidUtilities.dp(7.0f), this.c.l() + f9 + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f) + dp);
-        Paint paint2 = this.b;
-        paint2.setColor(-572850);
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint2);
-        this.c.c(AndroidUtilities.dp(6.0f) + f9, dp, 1.0f, -1, canvas);
+    public /* synthetic */ a3(g5 g5Var, af.f fVar, org.telegram.ui.ActionBar.d2 d2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j10, CharSequence charSequence) {
+        this.f = g5Var;
+        this.h = fVar;
+        this.b = d2Var;
+        this.c = tLObject;
+        this.n = tL_starGiftUnique;
+        this.e = tL_error;
+        this.d = j10;
+        this.r = charSequence;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (this.c.l() + AndroidUtilities.dp(12.0f));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g5.B0((g5) this.f, (af.f) this.h, (org.telegram.ui.ActionBar.d2) this.b, this.c, (TL_stars.TL_starGiftUnique) this.n, (TLRPC.TL_error) this.e, this.d, (CharSequence) this.r);
+                break;
+            case 1:
+                oy.m0((oy) this.f, (org.telegram.ui.ActionBar.d2) this.b, this.c, (TLRPC.User) this.h, (TLRPC.Chat) this.n, this.d, (TLRPC.TL_error) this.e, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
+                break;
+            default:
+                Context context = (Context) this.f;
+                nh.i0 i0Var = (nh.i0) this.h;
+                byte[] bArr = (byte[]) this.b;
+                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.n;
+                qc qcVar = (qc) this.e;
+                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
+                TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.c;
+                k31 k31Var = new k31(context, i0Var, this.d, bArr);
+                k31Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
+                k31Var.s = new c31(aVar, qcVar, context, i0Var, dVar);
+                k31Var.show();
+                break;
+        }
+    }
+
+    public /* synthetic */ a3(TLObject tLObject, Context context, nh.i0 i0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, qc qcVar, org.telegram.messenger.video.d dVar) {
+        this.c = tLObject;
+        this.f = context;
+        this.h = i0Var;
+        this.d = j10;
+        this.b = bArr;
+        this.n = aVar;
+        this.e = qcVar;
+        this.r = dVar;
+    }
+
+    public /* synthetic */ a3(oy oyVar, org.telegram.ui.ActionBar.d2 d2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
+        this.f = oyVar;
+        this.b = d2Var;
+        this.c = tLObject;
+        this.h = user;
+        this.n = chat;
+        this.d = j10;
+        this.e = tL_error;
+        this.r = tL_messages_checkHistoryImportPeer;
     }
 }

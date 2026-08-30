@@ -1,38 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class at extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ dt o;
+public final /* synthetic */ class at implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pt b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public at(dt dtVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = dtVar;
+    public /* synthetic */ at(pt ptVar, int i10) {
+        this.a = i10;
+        this.b = ptVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        ht htVar = this.o.a;
-        htVar.k = null;
-        htVar.K = false;
-        if (htVar.R) {
-            htVar.n();
-        }
-        View view = htVar.h;
-        if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.b8) {
-                ((org.telegram.ui.Cells.b8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.z7) {
-                ((org.telegram.ui.Cells.z7) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.d2) {
-                ((org.telegram.ui.Cells.d2) view).setScaled(false);
-            }
-            htVar.h = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c0 = null;
+                break;
+            case 1:
+                pt ptVar = this.b;
+                ptVar.A.setImageBitmap((Bitmap) null);
+                org.telegram.ui.Components.hd0 hd0Var = ptVar.C;
+                if (hd0Var != null) {
+                    hd0Var.a();
+                    ptVar.z.removeView(ptVar.C);
+                    ptVar.C = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.nr.h).start();
+                break;
         }
     }
 }

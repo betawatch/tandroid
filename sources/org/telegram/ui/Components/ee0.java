@@ -1,18 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final class ee0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ ke0 a;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
 
-    public ee0(ke0 ke0Var) {
-        this.a = ke0Var;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ee0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ Utilities.Callback d;
+
+    public /* synthetic */ ee0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = strArr;
+        this.c = activity;
+        this.d = callback;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        if (i10 == -1) {
-            this.a.dismiss();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        String[] strArr = this.b;
+        switch (i10) {
+            case 0:
+                ge0.a(strArr, this.c, this.d);
+                break;
+            default:
+                ge0.b(strArr, this.c, this.d);
+                break;
         }
     }
 }

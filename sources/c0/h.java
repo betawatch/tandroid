@@ -1,7 +1,6 @@
 package c0;
 
-import a4.w;
-import h7.i5;
+import j7.h0;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -13,20 +12,21 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import vh.v2;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public abstract class h implements t8.a {
+public abstract class h implements v8.a {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final i5 f;
+    public static final h0 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        i5 fVar;
+        h0 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -84,8 +84,8 @@ public abstract class h implements t8.a {
     public static void f(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (RuntimeException e10) {
-            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e10);
+        } catch (RuntimeException e6) {
+            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e6);
         }
     }
 
@@ -107,42 +107,42 @@ public abstract class h implements t8.a {
 
     public static Object h(h hVar) {
         Object obj;
-        boolean z10 = false;
+        boolean z4 = false;
         while (true) {
             try {
                 obj = hVar.get();
                 break;
             } catch (InterruptedException unused) {
-                z10 = true;
+                z4 = true;
             } catch (Throwable th2) {
-                if (z10) {
+                if (z4) {
                     Thread.currentThread().interrupt();
                 }
                 throw th2;
             }
         }
-        if (z10) {
+        if (z4) {
             Thread.currentThread().interrupt();
         }
         return obj;
     }
 
-    public final void b(StringBuilder sb2) {
+    public final void b(StringBuilder sb) {
         try {
-            Object h10 = h(this);
-            sb2.append("SUCCESS, result=[");
-            sb2.append(h10 == this ? "this future" : String.valueOf(h10));
-            sb2.append("]");
+            Object h9 = h(this);
+            sb.append("SUCCESS, result=[");
+            sb.append(h9 == this ? "this future" : String.valueOf(h9));
+            sb.append("]");
         } catch (CancellationException unused) {
-            sb2.append("CANCELLED");
-        } catch (RuntimeException e10) {
-            sb2.append("UNKNOWN, cause=[");
-            sb2.append(e10.getClass());
-            sb2.append(" thrown from get()]");
-        } catch (ExecutionException e11) {
-            sb2.append("FAILURE, cause=[");
-            sb2.append(e11.getCause());
-            sb2.append("]");
+            sb.append("CANCELLED");
+        } catch (RuntimeException e6) {
+            sb.append("UNKNOWN, cause=[");
+            sb.append(e6.getClass());
+            sb.append(" thrown from get()]");
+        } catch (ExecutionException e10) {
+            sb.append("FAILURE, cause=[");
+            sb.append(e10.getCause());
+            sb.append("]");
         }
     }
 
@@ -165,10 +165,10 @@ public abstract class h implements t8.a {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
+    public final boolean cancel(boolean z4) {
         Object obj = this.a;
         if (obj == null) {
-            if (f.b(this, obj, d ? new a(new CancellationException("Future.cancel() was called."), z10) : z10 ? a.c : a.d)) {
+            if (f.b(this, obj, d ? new a(new CancellationException("Future.cancel() was called."), z4) : z4 ? a.c : a.d)) {
                 e(this);
                 return true;
             }
@@ -193,9 +193,9 @@ public abstract class h implements t8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    i5 i5Var = f;
-                    i5Var.d(gVar3, gVar2);
-                    if (i5Var.c(this, gVar2, gVar3)) {
+                    h0 h0Var = f;
+                    h0Var.d(gVar3, gVar2);
+                    if (h0Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -235,31 +235,31 @@ public abstract class h implements t8.a {
         String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = obj4.toLowerCase(locale);
-        StringBuilder r6 = w.r(j10, "Waited ", " ");
-        r6.append(timeUnit.toString().toLowerCase(locale));
-        String sb2 = r6.toString();
+        StringBuilder s6 = android.support.v4.media.a.s(j10, "Waited ", " ");
+        s6.append(timeUnit.toString().toLowerCase(locale));
+        String sb = s6.toString();
         if (nanos + 1000 < 0) {
-            String k9 = u3.c.k(sb2, " (plus ");
+            String k10 = v2.k(sb, " (plus ");
             long j11 = -nanos;
             long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
             long nanos2 = j11 - timeUnit.toNanos(convert);
-            boolean z10 = convert == 0 || nanos2 > 1000;
+            boolean z4 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
-                String str = k9 + convert + " " + lowerCase;
-                if (z10) {
-                    str = u3.c.k(str, ",");
+                String str = k10 + convert + " " + lowerCase;
+                if (z4) {
+                    str = v2.k(str, ",");
                 }
-                k9 = u3.c.k(str, " ");
+                k10 = v2.k(str, " ");
             }
-            if (z10) {
-                k9 = k9 + nanos2 + " nanoseconds ";
+            if (z4) {
+                k10 = k10 + nanos2 + " nanoseconds ";
             }
-            sb2 = u3.c.k(k9, "delay)");
+            sb = v2.k(k10, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(u3.c.k(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(v2.k(sb, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(w.y(sb2, " for ", hVar));
+        throw new TimeoutException(android.support.v4.media.a.z(sb, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -327,31 +327,31 @@ public abstract class h implements t8.a {
 
     public final String toString() {
         String str;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(super.toString());
-        sb2.append("[status=");
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("[status=");
         if (this.a instanceof a) {
-            sb2.append("CANCELLED");
+            sb.append("CANCELLED");
         } else if (isDone()) {
-            b(sb2);
+            b(sb);
         } else {
             try {
                 str = i();
-            } catch (RuntimeException e10) {
-                str = "Exception thrown from implementation: " + e10.getClass();
+            } catch (RuntimeException e6) {
+                str = "Exception thrown from implementation: " + e6.getClass();
             }
             if (str != null && !str.isEmpty()) {
-                sb2.append("PENDING, info=[");
-                sb2.append(str);
-                sb2.append("]");
+                sb.append("PENDING, info=[");
+                sb.append(str);
+                sb.append("]");
             } else if (isDone()) {
-                b(sb2);
+                b(sb);
             } else {
-                sb2.append("PENDING");
+                sb.append("PENDING");
             }
         }
-        sb2.append("]");
-        return sb2.toString();
+        sb.append("]");
+        return sb.toString();
     }
 
     public void d() {
@@ -370,9 +370,9 @@ public abstract class h implements t8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    i5 i5Var = f;
-                    i5Var.d(gVar3, gVar2);
-                    if (i5Var.c(this, gVar2, gVar3)) {
+                    h0 h0Var = f;
+                    h0Var.d(gVar3, gVar2);
+                    if (h0Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

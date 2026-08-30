@@ -1,107 +1,200 @@
 package androidx.mediarouter.app;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import h7.e5;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.SystemClock;
+import android.support.v4.media.MediaDescriptionCompat;
+import android.util.Log;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r extends ArrayAdapter {
-    public final float a;
-    public final /* synthetic */ s b;
+public final class r extends AsyncTask {
+    public final Bitmap a;
+    public final Uri b;
+    public int c;
+    public long d;
+    public final /* synthetic */ v e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(s sVar, Context context, ArrayList arrayList) {
-        super(context, 0, arrayList);
-        this.b = sVar;
-        this.a = e5.c(context);
+    public r(v vVar) {
+        this.e = vVar;
+        MediaDescriptionCompat mediaDescriptionCompat = vVar.i0;
+        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
+        if (bitmap != null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
+            bitmap = null;
+        }
+        this.a = bitmap;
+        MediaDescriptionCompat mediaDescriptionCompat2 = vVar.i0;
+        this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00ac  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00bc  */
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
+    public final BufferedInputStream a(Uri uri) {
+        InputStream openInputStream;
+        String lowerCase = uri.getScheme().toLowerCase();
+        if ("android.resource".equals(lowerCase) || "content".equals(lowerCase) || "file".equals(lowerCase)) {
+            openInputStream = this.e.s.getContentResolver().openInputStream(uri);
+        } else {
+            URLConnection openConnection = new URL(uri.toString()).openConnection();
+            int i10 = v.C0;
+            openConnection.setConnectTimeout(i10);
+            openConnection.setReadTimeout(i10);
+            openInputStream = openConnection.getInputStream();
+        }
+        if (openInputStream == null) {
+            return null;
+        }
+        return new BufferedInputStream(openInputStream);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0028, code lost:
+    
+        if (r5 != null) goto L11;
+     */
+    /* JADX WARN: Not initialized variable reg: 5, insn: 0x002f: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:48), block:B:60:0x002f */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00f6  */
+    @Override // android.os.AsyncTask
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        boolean z10;
-        s sVar = this.b;
-        if (view == null) {
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.mr_controller_volume_item, viewGroup, false);
-        } else {
-            s.o(sVar.a0, (LinearLayout) view.findViewById(R.id.volume_item_container));
-            View findViewById = view.findViewById(R.id.mr_volume_item_icon);
-            ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
-            int i11 = sVar.Z;
-            layoutParams.width = i11;
-            layoutParams.height = i11;
-            findViewById.setLayoutParams(layoutParams);
-        }
-        c2.b0 b0Var = (c2.b0) getItem(i10);
-        if (b0Var != null) {
-            boolean z11 = b0Var.g;
-            TextView textView = (TextView) view.findViewById(R.id.mr_name);
-            textView.setEnabled(z11);
-            textView.setText(b0Var.d);
-            MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
-            Context context = viewGroup.getContext();
-            OverlayListView overlayListView = sVar.Q;
-            int b10 = e5.b(context, 0);
-            if (Color.alpha(b10) != 255) {
-                b10 = i0.a.h(b10, ((Integer) overlayListView.getTag()).intValue());
-            }
-            mediaRouteVolumeSlider.a(b10, b10);
-            mediaRouteVolumeSlider.setTag(b0Var);
-            sVar.d0.put(b0Var, mediaRouteVolumeSlider);
-            mediaRouteVolumeSlider.b(!z11);
-            mediaRouteVolumeSlider.setEnabled(z11);
-            if (z11) {
-                if (sVar.K) {
-                    if (((!b0Var.e() || c2.d0.g()) ? b0Var.o : 0) == 1) {
-                        z10 = true;
-                        if (z10) {
-                            mediaRouteVolumeSlider.setMax(100);
-                            mediaRouteVolumeSlider.setProgress(100);
-                            mediaRouteVolumeSlider.setEnabled(false);
-                        } else {
-                            mediaRouteVolumeSlider.setMax(b0Var.q);
-                            mediaRouteVolumeSlider.setProgress(b0Var.p);
-                            mediaRouteVolumeSlider.setOnSeekBarChangeListener(sVar.X);
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        BufferedInputStream bufferedInputStream;
+        InputStream inputStream2 = null;
+        Bitmap bitmap = this.a;
+        if (bitmap == null) {
+            Uri uri = this.b;
+            try {
+                if (uri != null) {
+                    try {
+                        bufferedInputStream = a(uri);
+                        try {
+                            try {
+                                if (bufferedInputStream == null) {
+                                    Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                } else {
+                                    BitmapFactory.Options options = new BitmapFactory.Options();
+                                    options.inJustDecodeBounds = true;
+                                    BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                    if (options.outWidth != 0 && options.outHeight != 0) {
+                                        try {
+                                            bufferedInputStream.reset();
+                                        } catch (IOException unused) {
+                                            bufferedInputStream.close();
+                                            bufferedInputStream = a(uri);
+                                            if (bufferedInputStream == null) {
+                                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
+                                                if (bufferedInputStream == null) {
+                                                    return null;
+                                                }
+                                            }
+                                        }
+                                        options.inJustDecodeBounds = false;
+                                        options.inSampleSize = Math.max(1, Integer.highestOneBit(options.outHeight / this.e.k(options.outWidth, options.outHeight)));
+                                        if (isCancelled()) {
+                                            bufferedInputStream.close();
+                                            return null;
+                                        }
+                                        bitmap = BitmapFactory.decodeStream(bufferedInputStream, null, options);
+                                        try {
+                                            bufferedInputStream.close();
+                                        } catch (IOException unused2) {
+                                        }
+                                    }
+                                }
+                                bufferedInputStream.close();
+                                return null;
+                            } catch (IOException unused3) {
+                                return null;
+                            }
+                        } catch (IOException e) {
+                            e = e;
+                            Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
+                            if (bufferedInputStream != null) {
+                                try {
+                                    bufferedInputStream.close();
+                                } catch (IOException unused4) {
+                                }
+                            }
+                            bitmap = null;
+                            if (bitmap == null) {
+                            }
+                            if (bitmap != null) {
+                                androidx.emoji2.text.p pVar = new androidx.emoji2.text.p(bitmap);
+                                pVar.a = 1;
+                                List list = (List) pVar.b().a;
+                                this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((d2.d) DesugarCollections.unmodifiableList(list).get(0)).d;
+                            }
+                            return bitmap;
                         }
+                    } catch (IOException e6) {
+                        e = e6;
+                        bufferedInputStream = null;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        if (inputStream2 != null) {
+                            try {
+                                inputStream2.close();
+                            } catch (IOException unused5) {
+                            }
+                        }
+                        throw th;
                     }
                 }
-                z10 = false;
-                if (z10) {
-                }
-            }
-            ((ImageView) view.findViewById(R.id.mr_volume_item_icon)).setAlpha(z11 ? 255 : (int) (this.a * 255.0f));
-            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(sVar.V.contains(b0Var) ? 4 : 0);
-            HashSet hashSet = sVar.T;
-            if (hashSet != null && hashSet.contains(b0Var)) {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
-                alphaAnimation.setDuration(0L);
-                alphaAnimation.setFillEnabled(true);
-                alphaAnimation.setFillAfter(true);
-                view.clearAnimation();
-                view.startAnimation(alphaAnimation);
+                bitmap = null;
+            } catch (Throwable th3) {
+                th = th3;
+                inputStream2 = inputStream;
             }
         }
-        return view;
+        if (bitmap == null && bitmap.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't use recycled bitmap: " + bitmap);
+            return null;
+        }
+        if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
+            androidx.emoji2.text.p pVar2 = new androidx.emoji2.text.p(bitmap);
+            pVar2.a = 1;
+            List list2 = (List) pVar2.b().a;
+            this.c = DesugarCollections.unmodifiableList(list2).isEmpty() ? 0 : ((d2.d) DesugarCollections.unmodifiableList(list2).get(0)).d;
+        }
+        return bitmap;
     }
 
-    @Override // android.widget.BaseAdapter, android.widget.ListAdapter
-    public final boolean isEnabled(int i10) {
-        return false;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        v vVar = this.e;
+        vVar.j0 = null;
+        Bitmap bitmap2 = vVar.k0;
+        Bitmap bitmap3 = this.a;
+        boolean equals = Objects.equals(bitmap2, bitmap3);
+        Uri uri = this.b;
+        if (equals && Objects.equals(vVar.l0, uri)) {
+            return;
+        }
+        vVar.k0 = bitmap3;
+        vVar.n0 = bitmap;
+        vVar.l0 = uri;
+        vVar.o0 = this.c;
+        vVar.m0 = true;
+        vVar.q(SystemClock.uptimeMillis() - this.d > 120);
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPreExecute() {
+        this.d = SystemClock.uptimeMillis();
+        v vVar = this.e;
+        vVar.m0 = false;
+        vVar.n0 = null;
+        vVar.o0 = 0;
     }
 }

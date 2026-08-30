@@ -1,26 +1,25 @@
 package com.google.firebase;
 
-import a9.a;
-import a9.b;
-import a9.m;
-import a9.v;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
+import c9.a;
+import c9.b;
+import c9.l;
+import c9.t;
 import com.google.firebase.components.ComponentRegistrar;
-import eg.c;
-import h7.v7;
+import j3.q0;
+import j7.l8;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import sf.f1;
-import sg.j;
-import u8.g;
-import x9.d;
-import x9.e;
-import x9.f;
+import w8.g;
+import z9.c;
+import z9.d;
+import z9.e;
+import z9.f;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -36,37 +35,36 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public final List getComponents() {
         String str;
         ArrayList arrayList = new ArrayList();
-        a b10 = b.b(ha.b.class);
-        b10.a(new m(2, 0, ha.a.class));
-        int i10 = 16;
-        b10.g = new c(i10);
+        a b10 = b.b(ja.b.class);
+        b10.a(new l(2, 0, ja.a.class));
+        b10.g = new q0(17);
         arrayList.add(b10.b());
-        v vVar = new v(w8.a.class, Executor.class);
-        a aVar = new a(x9.c.class, new Class[]{e.class, f.class});
-        aVar.a(m.b(Context.class));
-        aVar.a(m.b(g.class));
-        aVar.a(new m(2, 0, d.class));
-        aVar.a(new m(1, 1, ha.b.class));
-        aVar.a(new m(vVar, 1, 0));
-        aVar.g = new f1(vVar, i10);
+        t tVar = new t(y8.a.class, Executor.class);
+        a aVar = new a(c.class, new Class[]{e.class, f.class});
+        aVar.a(l.b(Context.class));
+        aVar.a(l.b(g.class));
+        aVar.a(new l(2, 0, d.class));
+        aVar.a(new l(1, 1, ja.b.class));
+        aVar.a(new l(tVar, 1, 0));
+        aVar.g = new rh.e(tVar, 21);
         arrayList.add(aVar.b());
-        arrayList.add(v7.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(v7.a("fire-core", "20.4.2"));
-        arrayList.add(v7.a("device-name", b(Build.PRODUCT)));
-        arrayList.add(v7.a("device-model", b(Build.DEVICE)));
-        arrayList.add(v7.a("device-brand", b(Build.BRAND)));
-        arrayList.add(v7.b("android-target-sdk", new j(6)));
-        arrayList.add(v7.b("android-min-sdk", new j(7)));
-        arrayList.add(v7.b("android-platform", new j(8)));
-        arrayList.add(v7.b("android-installer", new j(9)));
+        arrayList.add(l8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(l8.a("fire-core", "20.4.2"));
+        arrayList.add(l8.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(l8.a("device-model", b(Build.DEVICE)));
+        arrayList.add(l8.a("device-brand", b(Build.BRAND)));
+        arrayList.add(l8.b("android-target-sdk", new s0.b(24)));
+        arrayList.add(l8.b("android-min-sdk", new s0.b(25)));
+        arrayList.add(l8.b("android-platform", new s0.b(26)));
+        arrayList.add(l8.b("android-installer", new s0.b(27)));
         try {
-            qc.b.b.getClass();
+            sc.b.b.getClass();
             str = "2.1.20";
         } catch (NoClassDefFoundError unused) {
             str = null;
         }
         if (str != null) {
-            arrayList.add(v7.a("kotlin", str));
+            arrayList.add(l8.a("kotlin", str));
         }
         return arrayList;
     }

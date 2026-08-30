@@ -1,24 +1,88 @@
 package nh;
 
 import android.content.Context;
-import android.graphics.PointF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bv0;
-import org.telegram.ui.Components.xi0;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class g5 extends bg.v3 {
-    public final /* synthetic */ t5 u0;
+public final class g5 extends m2.h {
+    public boolean t0;
+    public final /* synthetic */ m5 u0;
+    public final /* synthetic */ m5 v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g5(t5 t5Var, Context context, PointF pointF, float f9, float f10, bv0 bv0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f9, f10, bv0Var, document, obj);
-        this.u0 = t5Var;
+    public g5(m5 m5Var, Context context) {
+        super(context);
+        this.v0 = m5Var;
+        this.u0 = m5Var;
     }
 
-    @Override // bg.v3
-    public final void q(xi0 xi0Var) {
-        this.u0.getClass();
+    public final boolean A(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.t0 = true;
+        }
+        if (this.t0 && this.u0.x <= 0) {
+            try {
+                return super.onInterceptTouchEvent(motionEvent);
+            } catch (Exception unused) {
+            }
+        }
+        return false;
+    }
+
+    public final boolean B(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.t0 = true;
+        }
+        if (!this.t0 || this.u0.x > 0) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        float currentTopOffset;
+        float y10 = motionEvent.getY();
+        currentTopOffset = this.v0.getCurrentTopOffset();
+        if (y10 >= currentTopOffset || motionEvent.getAction() != 0) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // m2.h, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        float currentTopOffset;
+        float currentTopOffset2;
+        float y10 = motionEvent.getY();
+        m5 m5Var = this.v0;
+        currentTopOffset = m5Var.getCurrentTopOffset();
+        if (y10 < currentTopOffset) {
+            return false;
+        }
+        currentTopOffset2 = m5Var.getCurrentTopOffset();
+        if (Math.abs(currentTopOffset2 - m5Var.d) > AndroidUtilities.dp(1.0f)) {
+            return false;
+        }
+        return A(motionEvent);
+    }
+
+    @Override // m2.h, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float currentTopOffset;
+        float currentTopOffset2;
+        float y10 = motionEvent.getY();
+        m5 m5Var = this.v0;
+        currentTopOffset = m5Var.getCurrentTopOffset();
+        if (y10 < currentTopOffset) {
+            return false;
+        }
+        currentTopOffset2 = m5Var.getCurrentTopOffset();
+        if (Math.abs(currentTopOffset2 - m5Var.d) > AndroidUtilities.dp(1.0f)) {
+            return false;
+        }
+        return B(motionEvent);
     }
 }

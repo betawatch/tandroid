@@ -1,0 +1,54 @@
+package l6;
+
+import android.os.RemoteException;
+import s5.m;
+import v7.j;
+import w7.g;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class d implements e {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j b;
+
+    public /* synthetic */ d(j jVar, int i10) {
+        this.a = i10;
+        this.b = jVar;
+    }
+
+    @Override // l6.e
+    public final int a() {
+        switch (this.a) {
+            case 0:
+                return 4;
+            default:
+                return 5;
+        }
+    }
+
+    @Override // l6.e
+    public final void b() {
+        switch (this.a) {
+            case 0:
+                m mVar = this.b.a;
+                mVar.getClass();
+                try {
+                    g gVar = (g) mVar.c;
+                    gVar.Q0(gVar.M0(), 12);
+                    return;
+                } catch (RemoteException e) {
+                    throw new a7.b(e);
+                }
+            default:
+                m mVar2 = this.b.a;
+                mVar2.getClass();
+                try {
+                    g gVar2 = (g) mVar2.c;
+                    gVar2.Q0(gVar2.M0(), 3);
+                    return;
+                } catch (RemoteException e6) {
+                    throw new a7.b(e6);
+                }
+        }
+    }
+}

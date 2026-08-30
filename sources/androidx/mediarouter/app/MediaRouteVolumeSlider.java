@@ -8,11 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import h7.e5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public class MediaRouteVolumeSlider extends m.d0 {
+public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
     public boolean c;
     public Drawable d;
@@ -38,15 +37,15 @@ public class MediaRouteVolumeSlider extends m.d0 {
         }
     }
 
-    public final void b(boolean z10) {
-        if (this.c == z10) {
+    public final void b(boolean z4) {
+        if (this.c == z4) {
             return;
         }
-        this.c = z10;
-        super.setThumb(z10 ? null : this.d);
+        this.c = z4;
+        super.setThumb(z4 ? null : this.d);
     }
 
-    @Override // m.d0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
         int i10 = isEnabled() ? 255 : (int) (this.b * 255.0f);
@@ -81,6 +80,6 @@ public class MediaRouteVolumeSlider extends m.d0 {
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        this.b = e5.c(context);
+        this.b = j7.z.c(context);
     }
 }

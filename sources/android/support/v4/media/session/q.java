@@ -1,6 +1,37 @@
 package android.support.v4.media.session;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class q extends t {
+public final class q extends Handler {
+    public final /* synthetic */ s a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q(s sVar, Looper looper) {
+        super(looper);
+        this.a = sVar;
+    }
+
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        t tVar;
+        s sVar;
+        q qVar;
+        if (message.what == 1) {
+            synchronized (this.a.mLock) {
+                tVar = this.a.mSessionImpl.get();
+                sVar = this.a;
+                qVar = sVar.mCallbackHandler;
+            }
+            if (tVar == null || sVar != tVar.a() || qVar == null) {
+                return;
+            }
+            tVar.d((y1.a) message.obj);
+            this.a.handleMediaPlayPauseIfPendingOnHandler(tVar, qVar);
+            tVar.d(null);
+        }
+    }
 }

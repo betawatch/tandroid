@@ -1,32 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class as0 extends org.telegram.ui.Cells.f7 {
-    public final /* synthetic */ qu0 h0;
+public final class as0 extends f2.u0 {
+    public final /* synthetic */ tr0 a;
+    public final /* synthetic */ yu0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public as0(qu0 qu0Var, Context context) {
-        super(context);
-        this.h0 = qu0Var;
+    public as0(yu0 yu0Var, tr0 tr0Var) {
+        this.b = yu0Var;
+        this.a = tr0Var;
     }
 
-    @Override // org.telegram.ui.Cells.f7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        qu0 qu0Var = this.h0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? qu0Var.p1[4].a : null, false);
-            return playMessage;
+    @Override // f2.u0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.i1 i1Var) {
+        tr0 tr0Var = this.a;
+        if (tr0Var.h.getAdapter() == this.b.L) {
+            recyclerView.getClass();
+            int R = RecyclerView.R(view);
+            rect.left = 0;
+            rect.bottom = 0;
+            ur0 ur0Var = tr0Var.x;
+            ur0Var.B1();
+            if (R <= ur0Var.U) {
+                rect.top = 0;
+            } else {
+                rect.top = AndroidUtilities.dp(2.0f);
+            }
+            rect.right = tr0Var.x.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+            return;
         }
-        if (messageObject.isMusic()) {
-            return MediaController.getInstance().setPlaylist(qu0Var.p1[4].a, messageObject, qu0Var.Y0);
+        if (!(view instanceof org.telegram.ui.Cells.r7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-        return false;
+        org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) view;
+        tr0Var.h.getClass();
+        int R2 = RecyclerView.R(r7Var);
+        int i10 = tr0Var.x.J;
+        r7Var.U = R2 < i10;
+        int i11 = R2 % i10;
+        r7Var.S = i11 == 0;
+        r7Var.T = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

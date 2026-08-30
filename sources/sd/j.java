@@ -1,30 +1,37 @@
 package sd;
 
-import java.util.concurrent.atomic.AtomicReferenceArray;
-import od.u;
+import ld.e0;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class j extends u {
-    public final /* synthetic */ AtomicReferenceArray e;
+public final class j extends i {
+    public final Runnable c;
 
-    public j(long j10, j jVar, int i10) {
-        super(j10, jVar, i10);
-        this.e = new AtomicReferenceArray(i.f);
+    public j(Runnable runnable, long j10, c5.c cVar) {
+        super(j10, cVar);
+        this.c = runnable;
     }
 
-    @Override // od.u
-    public final int g() {
-        return i.f;
-    }
-
-    @Override // od.u
-    public final void h(int i10, sc.h hVar) {
-        this.e.set(i10, i.e);
-        i();
+    @Override // java.lang.Runnable
+    public final void run() {
+        try {
+            this.c.run();
+        } finally {
+            this.b.getClass();
+        }
     }
 
     public final String toString() {
-        return "SemaphoreSegment[id=" + this.c + ", hashCode=" + hashCode() + ']';
+        StringBuilder sb = new StringBuilder("Task[");
+        Runnable runnable = this.c;
+        sb.append(runnable.getClass().getSimpleName());
+        sb.append('@');
+        sb.append(e0.k(runnable));
+        sb.append(", ");
+        sb.append(this.a);
+        sb.append(", ");
+        sb.append(this.b);
+        sb.append(']');
+        return sb.toString();
     }
 }

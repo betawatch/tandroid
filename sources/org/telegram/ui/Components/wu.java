@@ -1,22 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class wu extends dq0 {
-    public final /* synthetic */ jv X0;
+public final class wu extends jv {
+    public final /* synthetic */ mv h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wu(jv jvVar, Context context, String str, String str2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, null, str, false, str2, false, c6Var);
-        this.X0 = jvVar;
-    }
-
-    @Override // org.telegram.ui.Components.dq0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        AndroidUtilities.runOnUIThread(new rm(this, hVar, i10, 1), 100L);
+    public wu(int i10, ArrayList arrayList, mv mvVar) {
+        super(i10, arrayList, mvVar);
+        this.h = mvVar;
     }
 }

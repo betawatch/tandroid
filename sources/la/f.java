@@ -1,16 +1,21 @@
 package la;
 
-import kotlin.jvm.internal.m;
-import kotlin.jvm.internal.r;
-
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class f {
-    public static final /* synthetic */ fd.g[] a;
+public final class f implements u9.d {
+    public static final f a = new f();
+    public static final u9.c b = u9.c.c("processName");
+    public static final u9.c c = u9.c.c("pid");
+    public static final u9.c d = u9.c.c("importance");
+    public static final u9.c e = u9.c.c("defaultProcess");
 
-    static {
-        m mVar = new m(f.class);
-        r.a.getClass();
-        a = new fd.g[]{mVar};
+    @Override // u9.a
+    public final void a(Object obj, Object obj2) {
+        p pVar = (p) obj;
+        u9.e eVar = (u9.e) obj2;
+        eVar.e(b, pVar.a);
+        eVar.a(c, pVar.b);
+        eVar.a(d, pVar.c);
+        eVar.d(e, pVar.d);
     }
 }

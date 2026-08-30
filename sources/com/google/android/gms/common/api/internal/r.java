@@ -4,14 +4,12 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.internal.clearcut.c2;
 import com.google.android.gms.internal.clearcut.d2;
-import com.google.android.gms.internal.clearcut.e2;
-import com.google.android.gms.internal.clearcut.t1;
 import com.google.android.gms.internal.clearcut.u1;
-import com.google.android.gms.internal.clearcut.v1;
+import com.google.android.gms.internal.clearcut.w1;
 import com.google.android.gms.internal.clearcut.x1;
 import com.google.android.gms.internal.clearcut.y1;
-import com.google.android.gms.internal.clearcut.z1;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +20,7 @@ import java.util.Random;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class r {
     public int a;
@@ -32,55 +30,55 @@ public final class r {
     public Object e;
     public Object f;
 
-    public r(u5.a aVar, byte[] bArr) {
+    public r(w5.a aVar, byte[] bArr) {
         this.f = aVar;
         this.a = aVar.e;
         this.c = aVar.d;
         this.d = aVar.f;
-        y1 y1Var = new y1();
-        y1Var.a = 0L;
-        y1Var.b = 0L;
-        y1Var.c = 0;
-        if (z1.a == null) {
-            synchronized (com.google.android.gms.internal.clearcut.q1.a) {
+        x1 x1Var = new x1();
+        x1Var.a = 0L;
+        x1Var.b = 0L;
+        x1Var.c = 0;
+        if (y1.a == null) {
+            synchronized (com.google.android.gms.internal.clearcut.p1.a) {
                 try {
-                    if (z1.a == null) {
-                        z1.a = new z1[0];
+                    if (y1.a == null) {
+                        y1.a = new y1[0];
                     }
                 } finally {
                 }
             }
         }
-        y1Var.d = z1.a;
-        byte[] bArr2 = com.google.android.gms.internal.clearcut.o1.d;
-        y1Var.e = bArr2;
-        y1Var.f = bArr2;
-        y1Var.h = "";
-        y1Var.n = "";
-        y1Var.r = "";
-        y1Var.s = 180000L;
-        y1Var.v = bArr2;
-        y1Var.w = "";
-        y1Var.x = com.google.android.gms.internal.clearcut.o1.c;
-        y1Var.y = false;
-        this.e = y1Var;
+        x1Var.d = y1.a;
+        byte[] bArr2 = com.google.android.gms.internal.clearcut.n1.d;
+        x1Var.e = bArr2;
+        x1Var.f = bArr2;
+        x1Var.h = "";
+        x1Var.n = "";
+        x1Var.r = "";
+        x1Var.s = 180000L;
+        x1Var.v = bArr2;
+        x1Var.w = "";
+        x1Var.x = com.google.android.gms.internal.clearcut.n1.c;
+        x1Var.y = false;
+        this.e = x1Var;
         this.b = false;
-        y1Var.y = com.google.android.gms.internal.clearcut.a.a(aVar.a);
+        x1Var.y = com.google.android.gms.internal.clearcut.a.a(aVar.a);
         aVar.h.getClass();
-        y1Var.a = System.currentTimeMillis();
+        x1Var.a = System.currentTimeMillis();
         aVar.h.getClass();
-        y1Var.b = SystemClock.elapsedRealtime();
-        y1Var.s = TimeZone.getDefault().getOffset(y1Var.a) / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        y1Var.f = bArr;
+        x1Var.b = SystemClock.elapsedRealtime();
+        x1Var.s = TimeZone.getDefault().getOffset(x1Var.a) / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        x1Var.f = bArr;
     }
 
-    public g1 a() {
-        z5.l.a("Must set register function", ((s) this.c) != null);
-        z5.l.a("Must set unregister function", ((s) this.d) != null);
-        z5.l.a("Must set holder", ((p) this.e) != null);
+    public h1 a() {
+        b6.m.a("Must set register function", ((s) this.c) != null);
+        b6.m.a("Must set unregister function", ((s) this.d) != null);
+        b6.m.a("Must set holder", ((p) this.e) != null);
         n nVar = ((p) this.e).c;
-        z5.l.i(nVar, "Key must not be null");
-        return new g1(new com.google.android.exoplayer2.upstream.t(this, (p) this.e, (w5.c[]) this.f, this.b, this.a), new g1(this, nVar));
+        b6.m.i(nVar, "Key must not be null");
+        return new h1(new d1(this, (p) this.e, (y5.c[]) this.f, this.b, this.a), new h1(this, nVar));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x016b  */
@@ -88,59 +86,59 @@ public final class r {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b() {
-        List e10;
+        List e;
         String str;
         String str2;
         int i10;
-        u1 u1Var;
+        com.google.android.gms.internal.clearcut.t1 t1Var;
         long parseLong;
         long parseLong2;
-        u5.a aVar = (u5.a) this.f;
+        w5.a aVar = (w5.a) this.f;
         if (this.b) {
             throw new IllegalStateException("do not reuse LogEventBuilder");
         }
-        boolean z10 = true;
+        boolean z4 = true;
         this.b = true;
-        e2 e2Var = new e2(aVar.b, aVar.c, this.a, (String) this.c, (com.google.android.gms.internal.clearcut.r1) this.d);
-        y1 y1Var = (y1) this.e;
-        u5.c cVar = new u5.c(e2Var, y1Var);
+        d2 d2Var = new d2(aVar.b, aVar.c, this.a, (String) this.c, (com.google.android.gms.internal.clearcut.q1) this.d);
+        x1 x1Var = (x1) this.e;
+        w5.c cVar = new w5.c(d2Var, x1Var);
         Context context = aVar.i.a;
-        boolean z11 = false;
-        int i11 = y1Var != null ? y1Var.c : 0;
-        boolean booleanValue = ((Boolean) d2.i.a()).booleanValue();
-        String str3 = e2Var.h;
-        int i12 = e2Var.c;
+        boolean z10 = false;
+        int i11 = x1Var != null ? x1Var.c : 0;
+        boolean booleanValue = ((Boolean) c2.i.a()).booleanValue();
+        String str3 = d2Var.h;
+        int i12 = d2Var.c;
         if (booleanValue) {
             if (str3 == null || str3.isEmpty()) {
                 str3 = i12 >= 0 ? String.valueOf(i12) : null;
             }
             if (str3 != null) {
                 if (context == null) {
-                    e10 = Collections.EMPTY_LIST;
+                    e = Collections.EMPTY_LIST;
                 } else {
-                    ConcurrentHashMap concurrentHashMap = d2.e;
+                    ConcurrentHashMap concurrentHashMap = c2.e;
                     com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.get(str3);
                     if (dVar == null) {
-                        com.google.android.gms.internal.clearcut.i iVar = d2.c;
-                        v1 f9 = v1.f();
+                        com.google.android.gms.internal.clearcut.i iVar = c2.c;
+                        u1 f10 = u1.f();
                         iVar.getClass();
-                        com.google.android.gms.internal.clearcut.g gVar = new com.google.android.gms.internal.clearcut.g(iVar, str3, f9);
+                        com.google.android.gms.internal.clearcut.g gVar = new com.google.android.gms.internal.clearcut.g(iVar, str3, f10);
                         dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.putIfAbsent(str3, gVar);
                         if (dVar == null) {
                             dVar = gVar;
                         }
                     }
-                    e10 = ((v1) dVar.a()).e();
+                    e = ((u1) dVar.a()).e();
                 }
-                Iterator it = e10.iterator();
+                Iterator it = e.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
                     }
-                    u1 u1Var2 = (u1) it.next();
-                    if (!u1Var2.i() || u1Var2.e() == 0 || u1Var2.e() == i11) {
-                        if (!d2.b(d2.a(d2.d(context), u1Var2.j()), u1Var2.k(), u1Var2.l())) {
-                            z10 = false;
+                    com.google.android.gms.internal.clearcut.t1 t1Var2 = (com.google.android.gms.internal.clearcut.t1) it.next();
+                    if (!t1Var2.i() || t1Var2.e() == 0 || t1Var2.e() == i11) {
+                        if (!c2.b(c2.a(c2.d(context), t1Var2.j()), t1Var2.k(), t1Var2.l())) {
+                            z4 = false;
                             break;
                         }
                     }
@@ -151,13 +149,13 @@ public final class r {
                 str3 = i12 >= 0 ? String.valueOf(i12) : null;
             }
             if (str3 != null) {
-                if (context == null || !d2.c(context)) {
+                if (context == null || !c2.c(context)) {
                     str = null;
                 } else {
-                    HashMap hashMap = d2.f;
+                    HashMap hashMap = c2.f;
                     com.google.android.gms.internal.clearcut.d dVar2 = (com.google.android.gms.internal.clearcut.d) hashMap.get(str3);
                     if (dVar2 == null) {
-                        com.google.android.gms.internal.clearcut.i iVar2 = d2.d;
+                        com.google.android.gms.internal.clearcut.i iVar2 = c2.d;
                         iVar2.getClass();
                         com.google.android.gms.internal.clearcut.f fVar = new com.google.android.gms.internal.clearcut.f(iVar2, str3, null, 1);
                         hashMap.put(str3, fVar);
@@ -181,59 +179,59 @@ public final class r {
                         try {
                             parseLong = Long.parseLong(str.substring(i10, indexOf2));
                             parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
-                        } catch (NumberFormatException e11) {
-                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e11);
+                        } catch (NumberFormatException e6) {
+                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e6);
                         }
                         if (parseLong < 0 || parseLong2 < 0) {
-                            StringBuilder sb2 = new StringBuilder(72);
-                            sb2.append("negative values not supported: ");
-                            sb2.append(parseLong);
-                            sb2.append("/");
-                            sb2.append(parseLong2);
-                            Log.e("LogSamplerImpl", sb2.toString());
-                            u1Var = null;
-                            if (u1Var != null) {
-                                z10 = d2.b(d2.a(d2.d(context), u1Var.j()), u1Var.k(), u1Var.l());
+                            StringBuilder sb = new StringBuilder(72);
+                            sb.append("negative values not supported: ");
+                            sb.append(parseLong);
+                            sb.append("/");
+                            sb.append(parseLong2);
+                            Log.e("LogSamplerImpl", sb.toString());
+                            t1Var = null;
+                            if (t1Var != null) {
+                                z4 = c2.b(c2.a(c2.d(context), t1Var.j()), t1Var.k(), t1Var.l());
                             }
                         } else {
-                            t1 m10 = u1.m();
-                            m10.b();
-                            u1.g((u1) m10.b, str2);
-                            m10.b();
-                            u1.f((u1) m10.b, parseLong);
-                            m10.b();
-                            u1.h((u1) m10.b, parseLong2);
-                            com.google.android.gms.internal.clearcut.z c3 = m10.c();
+                            com.google.android.gms.internal.clearcut.s1 m9 = com.google.android.gms.internal.clearcut.t1.m();
+                            m9.b();
+                            com.google.android.gms.internal.clearcut.t1.g((com.google.android.gms.internal.clearcut.t1) m9.b, str2);
+                            m9.b();
+                            com.google.android.gms.internal.clearcut.t1.f((com.google.android.gms.internal.clearcut.t1) m9.b, parseLong);
+                            m9.b();
+                            com.google.android.gms.internal.clearcut.t1.h((com.google.android.gms.internal.clearcut.t1) m9.b, parseLong2);
+                            com.google.android.gms.internal.clearcut.z c3 = m9.c();
                             byte byteValue = ((Byte) c3.a(1)).byteValue();
                             if (byteValue == 1) {
-                                z11 = true;
+                                z10 = true;
                             } else if (byteValue != 0) {
-                                com.google.android.gms.internal.clearcut.w0 w0Var = com.google.android.gms.internal.clearcut.w0.c;
-                                w0Var.getClass();
-                                z11 = w0Var.a(c3.getClass()).g(c3);
+                                com.google.android.gms.internal.clearcut.v0 v0Var = com.google.android.gms.internal.clearcut.v0.c;
+                                v0Var.getClass();
+                                z10 = v0Var.a(c3.getClass()).g(c3);
                                 c3.a(2);
                             }
-                            if (!z11) {
-                                throw new a6.b();
+                            if (!z10) {
+                                throw new a7.b();
                             }
-                            u1Var = (u1) c3;
-                            if (u1Var != null) {
+                            t1Var = (com.google.android.gms.internal.clearcut.t1) c3;
+                            if (t1Var != null) {
                             }
                         }
                     }
                 }
-                u1Var = null;
-                if (u1Var != null) {
+                t1Var = null;
+                if (t1Var != null) {
                 }
             }
         }
-        if (!z10) {
+        if (!z4) {
             new u(null, 0).a(Status.e);
             return;
         }
-        com.google.android.gms.internal.clearcut.v0 v0Var = aVar.g;
-        v0Var.getClass();
-        v0Var.d(2, new x1(cVar, v0Var.h));
+        a8.e eVar = aVar.g;
+        eVar.getClass();
+        eVar.d(2, new w1(cVar, eVar.h));
     }
 
     public Object c() {

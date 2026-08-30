@@ -1,83 +1,43 @@
 package cg;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicReference;
+import dg.x2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class p {
-    public float a;
-    public float b;
-    public int c;
-    public TextPaint d;
-    public final ArrayList e;
-    public Object f;
-    public final Object g;
-    public Object h;
-    public final Object i;
+public final class p extends x2 {
+    public final /* synthetic */ e0 y;
 
-    public p() {
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        this.a = 1.0f;
-        this.f = new HashMap();
-        this.g = new RectF();
-        this.h = new RectF();
-        Paint paint = new Paint();
-        this.i = paint;
-        this.e = new ArrayList();
-        this.b = 1000.0f / AndroidUtilities.screenRefreshRate;
-        this.c = 25;
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setColor(-1);
-        int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
-        if (devicePerformanceClass == 0) {
-            this.a = 0.25f;
-        } else if (devicePerformanceClass != 1) {
-            this.a = 0.75f;
-        } else {
-            this.a = 0.5f;
-        }
-        textPaint.setTextSize(AndroidUtilities.dp(this.a * 24.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p(e0 e0Var, Context context, Bitmap bitmap) {
+        super(context);
+        this.y = e0Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.e = 0.5f;
+        this.f = 0.5f;
+        this.h = new Path();
+        this.n = new Rect();
+        this.r = new RectF();
+        this.a = bitmap;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(AndroidUtilities.dp(4.0f));
         paint.setColor(-1);
-    }
-
-    public void a(CharSequence charSequence, TextPaint textPaint, int i10) {
-        org.telegram.ui.Cells.v0 v0Var;
-        this.d = textPaint;
-        this.c = i10;
-        StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
-        this.f = staticLayout;
-        org.telegram.ui.Cells.v0 v0Var2 = (org.telegram.ui.Cells.v0) this.i;
-        MessageObject messageObject = v0Var2.D0;
-        ArrayList arrayList = this.e;
-        if (messageObject == null || !messageObject.isSpoilersRevealed) {
-            v0Var = v0Var2;
-            gh.k.b(v0Var, staticLayout, -1, i10, null, arrayList);
-        } else {
-            if (arrayList != null) {
-                arrayList.clear();
-            }
-            v0Var = v0Var2;
-        }
-        this.h = y5.update(0, (View) v0Var, false, (u5) this.h, (StaticLayout) this.f);
-    }
-
-    public p(org.telegram.ui.Cells.v0 v0Var) {
-        this.i = v0Var;
-        this.e = new ArrayList();
-        this.g = new AtomicReference();
+        paint2.setStyle(style);
+        paint2.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        paint2.setColor(-1711276033);
+        paint3.setStyle(style);
+        paint3.setStrokeWidth(AndroidUtilities.dp(12.0f));
     }
 }

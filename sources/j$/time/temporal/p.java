@@ -28,11 +28,11 @@ public abstract class p {
         if (l10.a < -2147483648L || l10.d > 2147483647L) {
             throw new r("Invalid field " + oVar + " for get() method, use getLong() instead");
         }
-        long y8 = lVar.y(oVar);
-        if (l10.d(y8)) {
-            return (int) y8;
+        long y10 = lVar.y(oVar);
+        if (l10.d(y10)) {
+            return (int) y10;
         }
-        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l10 + "): " + y8);
+        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l10 + "): " + y10);
     }
 
     public static Object c(l lVar, j$.time.format.a aVar) {

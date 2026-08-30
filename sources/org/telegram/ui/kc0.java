@@ -1,33 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class kc0 extends rf.j0 {
-    public final /* synthetic */ rc0 J;
+public final /* synthetic */ class kc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ad0 b;
+    public final /* synthetic */ IMapsProvider.IMapView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kc0(rc0 rc0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
-        super(context, c6Var, false, z10);
-        this.J = rc0Var;
+    public /* synthetic */ kc0(ad0 ad0Var, IMapsProvider.IMapView iMapView, int i10) {
+        this.a = i10;
+        this.b = ad0Var;
+        this.c = iMapView;
     }
 
-    @Override // f2.p0
-    public final void l() {
-        rc0 rc0Var = this.J;
-        org.telegram.ui.ActionBar.w0 w0Var = rc0Var.w;
-        if (w0Var != null) {
-            w0Var.setShowSearchProgress(rc0Var.S.F);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ad0 ad0Var = this.b;
+                IMapsProvider.IMapView iMapView = this.c;
+                if (ad0Var.H != null && ad0Var.getParentActivity() != null) {
+                    try {
+                        iMapView.onCreate(null);
+                        ApplicationLoader.getMapsProvider().initializeMaps(ApplicationLoader.applicationContext);
+                        ad0Var.H.getMapAsync(new lc0(ad0Var, 0));
+                        ad0Var.r0 = true;
+                        if (ad0Var.s0) {
+                            ad0Var.H.onResume();
+                            break;
+                        }
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                ad0 ad0Var2 = this.b;
+                IMapsProvider.IMapView iMapView2 = this.c;
+                try {
+                    iMapView2.onCreate(null);
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new kc0(ad0Var2, iMapView2, 0));
+                break;
         }
-        TextView textView = rc0Var.r;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, rc0Var.S.x)));
-        }
-        super.l();
     }
 }

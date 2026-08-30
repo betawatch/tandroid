@@ -1,9 +1,21 @@
 package bg;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public interface c {
-    void a();
+import f2.q;
+import java.util.ArrayList;
+import org.telegram.ui.Components.rl0;
 
-    k b();
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public abstract class c extends rl0 {
+    public final a c = new a();
+
+    public final void E(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList2 == null) {
+            arrayList2 = new ArrayList();
+        }
+        a aVar = this.c;
+        aVar.c = arrayList;
+        aVar.d = arrayList2;
+        q.c(aVar, true).b(this);
+    }
 }

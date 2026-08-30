@@ -1,61 +1,50 @@
 package ph;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements RequestDelegate {
+public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
+    public final /* synthetic */ d b;
 
-    public /* synthetic */ b(j jVar, org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    public /* synthetic */ b(d dVar, int i10) {
         this.a = i10;
-        this.b = jVar;
-        this.c = c2Var;
+        this.b = dVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                final int i10 = 1;
-                final j jVar = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ph.c
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                j.y0(jVar, c2Var, tLObject, tL_error);
-                                break;
-                            default:
-                                j.z0(jVar, c2Var, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
+                d dVar = this.b;
+                dVar.getClass();
+                dVar.M = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                dVar.invalidate();
+                break;
+            case 1:
+                d dVar2 = this.b;
+                dVar2.getClass();
+                dVar2.S = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar2.invalidate();
+                break;
+            case 2:
+                d dVar3 = this.b;
+                dVar3.getClass();
+                dVar3.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar3.invalidate();
+                break;
+            case 3:
+                d dVar4 = this.b;
+                dVar4.getClass();
+                dVar4.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar4.invalidate();
                 break;
             default:
-                final int i11 = 0;
-                final j jVar2 = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var2 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ph.c
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                j.y0(jVar2, c2Var2, tLObject, tL_error);
-                                break;
-                            default:
-                                j.z0(jVar2, c2Var2, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
+                d dVar5 = this.b;
+                dVar5.getClass();
+                dVar5.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar5.invalidate();
                 break;
         }
     }

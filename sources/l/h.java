@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import androidx.appcompat.view.menu.ListMenuItemView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class h extends BaseAdapter {
     public final k a;
@@ -17,8 +17,8 @@ public final class h extends BaseAdapter {
     public final LayoutInflater e;
     public final int f;
 
-    public h(k kVar, LayoutInflater layoutInflater, boolean z10, int i10) {
-        this.d = z10;
+    public h(k kVar, LayoutInflater layoutInflater, boolean z4, int i10) {
+        this.d = z4;
         this.e = layoutInflater;
         this.a = kVar;
         this.f = i10;
@@ -46,9 +46,9 @@ public final class h extends BaseAdapter {
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
     public final m getItem(int i10) {
         ArrayList l10;
-        boolean z10 = this.d;
+        boolean z4 = this.d;
         k kVar = this.a;
-        if (z10) {
+        if (z4) {
             kVar.i();
             l10 = kVar.j;
         } else {
@@ -64,9 +64,9 @@ public final class h extends BaseAdapter {
     @Override // android.widget.Adapter
     public final int getCount() {
         ArrayList l10;
-        boolean z10 = this.d;
+        boolean z4 = this.d;
         k kVar = this.a;
-        if (z10) {
+        if (z4) {
             kVar.i();
             l10 = kVar.j;
         } else {
@@ -82,7 +82,7 @@ public final class h extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public final View getView(int i10, View view, ViewGroup viewGroup) {
-        boolean z10 = false;
+        boolean z4 = false;
         if (view == null) {
             view = this.e.inflate(this.f, viewGroup, false);
         }
@@ -91,9 +91,9 @@ public final class h extends BaseAdapter {
         int i13 = i12 >= 0 ? getItem(i12).b : i11;
         ListMenuItemView listMenuItemView = (ListMenuItemView) view;
         if (this.a.m() && i11 != i13) {
-            z10 = true;
+            z4 = true;
         }
-        listMenuItemView.setGroupDividerEnabled(z10);
+        listMenuItemView.setGroupDividerEnabled(z4);
         y yVar = (y) view;
         if (this.c) {
             listMenuItemView.setForceShowIcon(true);

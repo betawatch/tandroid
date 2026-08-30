@@ -1,33 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class r8 extends gq {
-    public final /* synthetic */ int b0;
+public final class r8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ w8 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r8(Context context, boolean z10, fq fqVar, int i10) {
-        super(context, z10, fqVar);
-        this.b0 = i10;
+    public r8(w8 w8Var, float f10, float f11, boolean z4) {
+        this.d = w8Var;
+        this.a = f10;
+        this.b = f11;
+        this.c = z4;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.b0) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        w8 w8Var = this.d;
+        w8Var.K = floatValue;
+        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
+        kVar = ((org.telegram.ui.ActionBar.p2) w8Var).actionBar;
+        kVar.getTitleTextView().setAlpha(w8Var.K);
+        if (w8Var.C && !this.c) {
+            w8Var.i0(1.0f - w8Var.K, false);
         }
+        w8Var.r.setTranslationY(lerp);
+        w8Var.x.setTranslationY(lerp);
+        w8Var.fragmentView.invalidate();
+        kVar2 = ((org.telegram.ui.ActionBar.p2) w8Var).actionBar;
+        kVar2.invalidate();
     }
 }

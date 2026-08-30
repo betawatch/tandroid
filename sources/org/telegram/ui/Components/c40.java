@@ -1,109 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public abstract class c40 extends k51 {
-    public final int J;
-    public final ArrayList K;
-    public boolean L;
-    public lh.e6 M;
-    public boolean N;
-    public boolean O;
-    public int P;
-    public int Q;
-    public boolean R;
-    public int S;
-    public String T;
-    public String U;
-    public int V;
-    public rm W;
-    public final boolean[] X;
+public final class c40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ d40 c;
 
-    public c40(jl0 jl0Var, Context context, int i10) {
-        super(jl0Var, context, i10, 0, false, null, null);
-        this.K = new ArrayList();
-        this.P = 0;
-        this.Q = -1;
-        this.X = new boolean[1];
-        this.s = new d(this, 16);
-        this.J = i10;
+    public /* synthetic */ c40(d40 d40Var, boolean z4, int i10) {
+        this.a = i10;
+        this.c = d40Var;
+        this.b = z4;
     }
 
-    public static String X(String str, boolean[] zArr) {
-        if (zArr != null) {
-            zArr[0] = false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.yn ynVar;
+        lh.e1 e1Var;
+        switch (this.a) {
+            case 0:
+                float f10 = this.b ? 1.0f : 0.0f;
+                d40 d40Var = this.c;
+                d40Var.w = f10;
+                d40Var.e.setTranslationY(f10 * AndroidUtilities.dp(48.0f));
+                d40Var.e.setPadding(0, 0, 0, (int) (d40Var.w * AndroidUtilities.dp(48.0f)));
+                break;
+            default:
+                boolean z4 = this.b;
+                float f11 = z4 ? 1.0f : 0.0f;
+                d40 d40Var2 = this.c;
+                d40Var2.B = f11;
+                d40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, f11));
+                d40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, d40Var2.B));
+                org.telegram.ui.fk fkVar = d40Var2.f;
+                if (fkVar != null && (ynVar = fkVar.a) != null && (e1Var = ynVar.I3) != null) {
+                    e1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, d40Var2.B));
+                    d40Var2.f.a.I3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, d40Var2.B));
+                }
+                d40Var2.h.setAlpha(d40Var2.B);
+                if (!z4) {
+                    d40Var2.h.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        if (str == null || str.isEmpty()) {
-            return null;
-        }
-        String trim = str.trim();
-        if (trim.length() <= 1) {
-            return null;
-        }
-        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
-            return null;
-        }
-        if (zArr != null) {
-            zArr[0] = trim.charAt(0) == '$';
-        }
-        return trim.substring(1);
-    }
-
-    public final void V() {
-        lh.e6 e6Var = this.M;
-        if (e6Var != null && e6Var.I != 0) {
-            ConnectionsManager.getInstance(e6Var.c).cancelRequest(e6Var.I, true);
-            e6Var.I = 0;
-        }
-        this.L = false;
-        if (this.Q >= 0) {
-            ConnectionsManager.getInstance(this.J).cancelRequest(this.Q, true);
-            this.Q = -1;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.W);
-        this.P++;
-        this.O = false;
-    }
-
-    public final void W() {
-        jl0 jl0Var;
-        if (TextUtils.isEmpty(this.T) || this.R || this.O || (jl0Var = this.d) == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < jl0Var.getChildCount(); i10++) {
-            if (jl0Var.getChildAt(i10) instanceof p00) {
-                Y(this.T);
-                return;
-            }
-        }
-    }
-
-    public final void Y(String str) {
-        this.T = str;
-        String X = X(str, this.X);
-        if (!TextUtils.equals(this.U, X)) {
-            this.K.clear();
-            this.R = false;
-            this.S = 0;
-            V();
-        } else if (this.O) {
-            return;
-        }
-        int i10 = this.P + 1;
-        this.P = i10;
-        if (X == null) {
-            return;
-        }
-        this.O = true;
-        N(true);
-        rm rmVar = new rm(this, i10, X, 5);
-        this.W = rmVar;
-        AndroidUtilities.runOnUIThread(rmVar, 300L);
     }
 }

@@ -1,15 +1,15 @@
 package h2;
 
-import ab.o;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
+import androidx.biometric.k;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import c0.l;
-import com.google.android.gms.common.api.internal.q1;
-import e0.p0;
+import com.google.android.gms.common.api.internal.s1;
+import e0.o0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class e implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:26:0x00a8  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00b5  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0116 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0117 A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -49,7 +49,7 @@ public final class e implements Runnable {
         String str;
         String str2;
         g0.c cVar;
-        p0[] p0VarArr;
+        o0[] o0VarArr;
         PersistableBundle persistableBundle;
         switch (this.a) {
             case 0:
@@ -66,7 +66,7 @@ public final class e implements Runnable {
                     i10++;
                     String str3 = (String) obj;
                     shortcutInfoCompatSaverImpl.b.remove(str3);
-                    t8.a aVar = (t8.a) shortcutInfoCompatSaverImpl.c.remove(str3);
+                    v8.a aVar = (v8.a) shortcutInfoCompatSaverImpl.c.remove(str3);
                     if (aVar != null) {
                         aVar.cancel(false);
                     }
@@ -108,9 +108,9 @@ public final class e implements Runnable {
                                     cVar.k = cVar2.k;
                                     cVar.l = cVar2.l;
                                     cVar.m = cVar2.m;
-                                    p0VarArr = cVar2.i;
-                                    if (p0VarArr != null) {
-                                        cVar.i = (p0[]) Arrays.copyOf(p0VarArr, p0VarArr.length);
+                                    o0VarArr = cVar2.i;
+                                    if (o0VarArr != null) {
+                                        cVar.i = (o0[]) Arrays.copyOf(o0VarArr, o0VarArr.length);
                                     }
                                     if (cVar2.j != null) {
                                         cVar.j = new HashSet(cVar2.j);
@@ -125,19 +125,19 @@ public final class e implements Runnable {
                                     }
                                     Intent[] intentArr2 = cVar.c;
                                     if (intentArr2 != null && intentArr2.length != 0) {
-                                        f fVar = new f(cVar, str, str2);
-                                        Bitmap f9 = str2 != null ? cVar2.h.f() : null;
+                                        h hVar = new h(cVar, str, str2);
+                                        Bitmap f10 = str2 != null ? cVar2.h.f() : null;
                                         String str4 = cVar2.b;
-                                        shortcutInfoCompatSaverImpl2.b.put(str4, fVar);
-                                        if (f9 != null) {
-                                            q1 q1Var = new q1(shortcutInfoCompatSaverImpl2, f9, str2, 3);
+                                        shortcutInfoCompatSaverImpl2.b.put(str4, hVar);
+                                        if (f10 != null) {
+                                            s1 s1Var = new s1(shortcutInfoCompatSaverImpl2, f10, str2, 3);
                                             l lVar = new l();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new o(16, lVar, q1Var));
-                                            t8.a aVar2 = (t8.a) shortcutInfoCompatSaverImpl2.c.put(str4, lVar);
+                                            shortcutInfoCompatSaverImpl2.e.submit(new k(lVar, s1Var, false, 15));
+                                            v8.a aVar2 = (v8.a) shortcutInfoCompatSaverImpl2.c.put(str4, lVar);
                                             if (aVar2 != null) {
                                                 aVar2.cancel(false);
                                             }
-                                            lVar.c(new q1(this, str4, lVar), shortcutInfoCompatSaverImpl2.d);
+                                            lVar.c(new s1(this, str4, lVar), shortcutInfoCompatSaverImpl2.d);
                                         }
                                     }
                                 }
@@ -157,8 +157,8 @@ public final class e implements Runnable {
                             cVar.k = cVar2.k;
                             cVar.l = cVar2.l;
                             cVar.m = cVar2.m;
-                            p0VarArr = cVar2.i;
-                            if (p0VarArr != null) {
+                            o0VarArr = cVar2.i;
+                            if (o0VarArr != null) {
                             }
                             if (cVar2.j != null) {
                             }
@@ -184,8 +184,8 @@ public final class e implements Runnable {
                         cVar.k = cVar2.k;
                         cVar.l = cVar2.l;
                         cVar.m = cVar2.m;
-                        p0VarArr = cVar2.i;
-                        if (p0VarArr != null) {
+                        o0VarArr = cVar2.i;
+                        if (o0VarArr != null) {
                         }
                         if (cVar2.j != null) {
                         }

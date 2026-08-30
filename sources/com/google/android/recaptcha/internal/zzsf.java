@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import a4.w;
+import android.support.v4.media.a;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
 final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
     private static final float[] zza;
@@ -29,7 +29,7 @@ final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
     }
 
     private final String zzi(int i10) {
-        return w.k(i10, this.zzc, "Index:", ", Size:");
+        return a.k(i10, this.zzc, "Index:", ", Size:");
     }
 
     private final void zzj(int i10) {
@@ -151,13 +151,13 @@ final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
         zza();
         zzj(i10);
         float[] fArr = this.zzb;
-        float f9 = fArr[i10];
+        float f10 = fArr[i10];
         if (i10 < this.zzc - 1) {
             System.arraycopy(fArr, i10 + 1, fArr, i10, (r2 - i10) - 1);
         }
         this.zzc--;
         ((AbstractList) this).modCount++;
-        return Float.valueOf(f9);
+        return Float.valueOf(f10);
     }
 
     @Override // java.util.AbstractList
@@ -178,9 +178,9 @@ final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
         zza();
         zzj(i10);
         float[] fArr = this.zzb;
-        float f9 = fArr[i10];
+        float f10 = fArr[i10];
         fArr[i10] = floatValue;
-        return Float.valueOf(f9);
+        return Float.valueOf(f10);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -201,7 +201,7 @@ final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
         return this.zzb[i10];
     }
 
-    public final void zzf(float f9) {
+    public final void zzf(float f10) {
         zza();
         int i10 = this.zzc;
         int length = this.zzb.length;
@@ -213,7 +213,7 @@ final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
         float[] fArr2 = this.zzb;
         int i11 = this.zzc;
         this.zzc = i11 + 1;
-        fArr2[i11] = f9;
+        fArr2[i11] = f10;
     }
 
     public final void zzg(int i10) {
@@ -231,8 +231,8 @@ final class zzsf extends zzpz implements RandomAccess, zzsu, zzub {
         this.zzb = Arrays.copyOf(this.zzb, length);
     }
 
-    private zzsf(float[] fArr, int i10, boolean z10) {
-        super(z10);
+    private zzsf(float[] fArr, int i10, boolean z4) {
+        super(z4);
         this.zzb = fArr;
         this.zzc = i10;
     }

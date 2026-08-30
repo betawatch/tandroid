@@ -1,107 +1,52 @@
 package org.telegram.ui.Components;
 
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final class mx extends f2.q {
-    public final /* synthetic */ int b;
-    public ArrayList c;
-    public Object d;
+public final class mx extends jz {
+    public final /* synthetic */ kz d;
 
-    public /* synthetic */ mx() {
-        this.b = 4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mx(kz kzVar) {
+        super(kzVar, 1);
+        this.d = kzVar;
     }
 
-    @Override // f2.q
-    public final boolean a(int i10, int i11) {
-        switch (this.b) {
-            case 0:
-                return true;
-            case 1:
-                return b(i10, i11);
-            case 2:
-                return true;
-            case 3:
-                return ((rf.j) ((rf.l) this.d).J.get(i10)).a == ((rf.j) this.c.get(i11)).a;
-            default:
-                zf.a aVar = (zf.a) this.c.get(i10);
-                zf.a aVar2 = (zf.a) ((ArrayList) this.d).get(i11);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.a(aVar2);
+    @Override // org.telegram.ui.Components.jz, f2.z0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 0) {
+            this.d.c0 = false;
         }
+        super.a(recyclerView, i10);
     }
 
-    @Override // f2.q
-    public final boolean b(int i10, int i11) {
-        TLRPC.TL_contact tL_contact;
-        TLRPC.TL_contact tL_contact2;
-        TLRPC.RecentMeUrl recentMeUrl;
-        String str;
-        switch (this.b) {
-            case 0:
-                return ((Integer) this.c.get(i10)).equals(((nx) this.d).n.get(i11));
-            case 1:
-                return Objects.equals(this.c.get(i10), ((fl0) this.d).n.get(i11));
-            case 2:
-                return ((Long) this.c.get(i10)).equals(((org.telegram.ui.d61) this.d).r0.get(i11));
-            case 3:
-                rf.j jVar = (rf.j) ((rf.l) this.d).J.get(i10);
-                rf.j jVar2 = (rf.j) this.c.get(i11);
-                TLRPC.Dialog dialog = jVar.c;
-                int i12 = jVar.a;
-                int i13 = jVar2.a;
-                TLRPC.Dialog dialog2 = jVar2.c;
-                return i12 == i13 && (i12 != 0 ? i12 != 14 ? i12 != 4 ? i12 != 6 ? i12 != 5 ? i12 != 10 : jVar.j == jVar2.j : !((tL_contact = jVar.e) == null || (tL_contact2 = jVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = jVar.d) == null || jVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && jVar.h == jVar2.h && jVar.f == jVar2.f && jVar.g == jVar2.g);
-            default:
-                zf.a aVar = (zf.a) this.c.get(i10);
-                zf.a aVar2 = (zf.a) ((ArrayList) this.d).get(i11);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.equals(aVar2);
+    @Override // org.telegram.ui.Components.jz, f2.z0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ng.e eVar;
+        kz kzVar = this.d;
+        jy jyVar = kzVar.P;
+        jx jxVar = kzVar.N;
+        kzVar.W(jxVar.I0());
+        if (Build.VERSION.SDK_INT >= 31 && (eVar = kzVar.g2) != null) {
+            eVar.f(i10, i11);
+            kzVar.C();
         }
-    }
-
-    @Override // f2.q
-    public final int d() {
-        switch (this.b) {
-            case 0:
-                return ((nx) this.d).n.size();
-            case 1:
-                return ((fl0) this.d).n.size();
-            case 2:
-                return ((org.telegram.ui.d61) this.d).r0.size();
-            case 3:
-                return this.c.size();
-            default:
-                return ((ArrayList) this.d).size();
+        super.b(recyclerView, i10, i11);
+        if (jyVar == null || kzVar.M.getAdapter() != jyVar) {
+            return;
         }
-    }
-
-    @Override // f2.q
-    public final int e() {
-        switch (this.b) {
-            case 0:
-                return this.c.size();
-            case 1:
-                return this.c.size();
-            case 2:
-                return this.c.size();
-            case 3:
-                return ((rf.l) this.d).J.size();
-            default:
-                return this.c.size();
+        jy jyVar2 = jyVar.x.a;
+        if (jyVar2.C.S.C || jyVar2.B) {
+            return;
         }
-    }
-
-    public /* synthetic */ mx(Object obj, ArrayList arrayList, int i10) {
-        this.b = i10;
-        this.d = obj;
-        this.c = arrayList;
+        if (jxVar.N0() + 20 > jyVar.h()) {
+            iy iyVar = jyVar.x;
+            Objects.requireNonNull(iyVar);
+            AndroidUtilities.runOnUIThread(new ow(iyVar, 1));
+        }
     }
 }

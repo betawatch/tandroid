@@ -1,45 +1,31 @@
 package th;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewTreeObserver;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements ViewTreeObserver.OnGlobalFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h extends h51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ h(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    static {
+        h51.setup(new h());
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
-    public final void onGlobalFocusChanged(View view, View view2) {
-        switch (this.a) {
-            case 0:
-                ((p) this.b).Z();
-                break;
-            case 1:
-                ((x1) this.b).w0();
-                break;
-            case 2:
-                p3 p3Var = (p3) this.b;
-                p3Var.W2 = (view2 == null || p3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof d1) {
-                    p3Var.H3 = (d1) view2;
-                    break;
-                }
-                break;
-            default:
-                g5 g5Var = (g5) this.b;
-                g5Var.x();
-                i5 i5Var = g5Var.v;
-                if (i5Var != null) {
-                    i5Var.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.h51
+    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
+        long j10 = i51Var.B;
+        ((i) view).a((int) j10, (int) (j10 >>> 32), i51Var.k, i51Var.l, i51Var.n, i51Var.q);
+    }
+
+    @Override // org.telegram.ui.Components.h51
+    public final View createView(Context context, sl0 sl0Var, int i10, int i11, f6 f6Var) {
+        return new i(context, f6Var, false);
     }
 }

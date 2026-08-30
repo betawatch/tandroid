@@ -1,11 +1,5 @@
 package a1;
 
-import a4.a0;
-import a4.b0;
-import a4.q;
-import a5.j;
-import ag.m2;
-import ag.s0;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,105 +12,111 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import bg.n3;
-import bg.t3;
-import bg.u3;
-import bg.v3;
-import bg.y2;
-import c2.a1;
-import c2.b1;
+import c2.y0;
+import c2.z0;
+import c5.j;
+import cg.h2;
+import cg.r0;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.c0;
-import com.google.firebase.messaging.e0;
-import com.google.firebase.messaging.s;
-import com.google.firebase.messaging.z;
-import eg.f1;
-import eg.y1;
+import com.google.firebase.messaging.b0;
+import com.google.firebase.messaging.d0;
+import com.google.firebase.messaging.r;
+import d4.n;
+import d4.x;
+import d4.y;
+import dg.j3;
+import dg.p3;
+import dg.q3;
+import dg.r3;
+import dg.v2;
 import f3.h;
-import j3.t0;
+import gg.e1;
+import gg.x1;
+import j3.n0;
+import j7.o5;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
-import nh.m7;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.i5;
+import org.telegram.messenger.j5;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.xi0;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.gj0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gq0;
-import org.telegram.ui.th;
-import org.telegram.ui.ws0;
+import org.telegram.ui.ft0;
+import org.telegram.ui.mq0;
+import org.telegram.ui.yh;
+import ph.s6;
 import y2.i;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, a0, a9.e, s0, m2, b2, m7, ImageReceiver.ImageReceiverDelegate, vd.b, Continuation, OnCompleteListener, z9.a, g3.b {
+public final /* synthetic */ class c implements OnSuccessListener, c9.e, r0, Continuation, OnCompleteListener, x, h2, c2, s6, ImageReceiver.ImageReceiverDelegate, xd.b, g3.b, ba.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ c(b1 b1Var, a1 a1Var) {
-        this.a = 14;
-        this.b = b1Var;
+    public /* synthetic */ c(z0 z0Var, y0 y0Var) {
+        this.a = 2;
+        this.b = z0Var;
     }
 
-    @Override // a9.e
-    public Object I0(j jVar) {
-        return this.b;
+    @Override // xd.b
+    public void L(int i10, float f10, float f11, xd.c cVar) {
+        dh.f.a((dh.f) this.b);
     }
 
-    @Override // vd.b
-    public void N(int i10, float f9, float f10, vd.c cVar) {
-        bh.f.a((bh.f) this.b);
-    }
-
-    @Override // ag.s0
+    @Override // cg.r0
     public Typeface a() {
         Typeface createFromFile;
         createFromFile = Typeface.createFromFile(((Font) this.b).getFile());
         return createFromFile;
     }
 
-    @Override // a4.a0
+    @Override // d4.x
     public int b(Object obj) {
-        t0 t0Var = (t0) this.b;
-        q qVar = (q) obj;
-        String str = qVar.b;
-        return ((str.equals(t0Var.B) || str.equals(b0.b(t0Var))) && qVar.c(t0Var, false)) ? 1 : 0;
+        n0 n0Var = (n0) this.b;
+        n nVar = (n) obj;
+        String str = nVar.b;
+        return ((str.equals(n0Var.C) || str.equals(y.b(n0Var))) && nVar.c(n0Var, false)) ? 1 : 0;
+    }
+
+    @Override // ph.s6
+    public Bitmap c(BitmapFactory.Options options) {
+        return BitmapFactory.decodeFile((String) this.b, options);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        xi0 lottieAnimation;
-        v3 v3Var = (v3) this.b;
-        if (!z10 || z11 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
+    public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
+        gj0 lottieAnimation;
+        r3 r3Var = (r3) this.b;
+        if (!z4 || z10 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
         }
-        v3Var.q(lottieAnimation);
+        r3Var.q(lottieAnimation);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        i5.a(this, i10, str, drawable);
+        j5.a(this, i10, str, drawable);
     }
 
-    @Override // ag.m2
+    @Override // cg.h2
     public void e() {
-        ws0 ws0Var = (ws0) this.b;
-        TextView textView = ws0Var.u1;
-        boolean a2 = ws0Var.B0.a();
-        ImageView imageView = ws0Var.s1;
+        ft0 ft0Var = (ft0) this.b;
+        TextView textView = ft0Var.v1;
+        boolean a2 = ft0Var.C0.a();
+        ImageView imageView = ft0Var.t1;
         imageView.animate().cancel();
         imageView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a2);
@@ -125,38 +125,53 @@ public final /* synthetic */ class c implements OnSuccessListener, a0, a9.e, s0,
         textView.setClickable(a2);
     }
 
+    @Override // ba.a
+    public void f(ba.b bVar) {
+        f9.a aVar = (f9.a) this.b;
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "Crashlytics native component now available.", null);
+        }
+        aVar.b.set((f9.a) bVar.get());
+    }
+
+    @Override // c9.e
+    public Object f0(j jVar) {
+        return this.b;
+    }
+
     @Override // g3.b
-    public Object f() {
+    public Object g() {
         SQLiteDatabase a2;
         int i10 = this.a;
-        boolean z10 = false;
+        int i11 = 1;
+        boolean z4 = false;
         Object obj = this.b;
         switch (i10) {
-            case 23:
+            case 22:
                 h hVar = (h) ((f3.c) obj);
                 hVar.getClass();
-                int i11 = b3.a.e;
-                s sVar = new s(3, z10);
-                sVar.c = null;
-                sVar.d = new ArrayList();
-                sVar.e = null;
-                sVar.b = "";
+                int i12 = b3.a.e;
+                r rVar = new r(3, z4);
+                rVar.c = null;
+                rVar.d = new ArrayList();
+                rVar.e = null;
+                rVar.b = "";
                 HashMap hashMap = new HashMap();
                 a2 = hVar.a();
                 a2.beginTransaction();
                 try {
-                    b3.a aVar = (b3.a) h.h(a2.rawQuery("SELECT log_source, reason, events_dropped_count FROM log_event_dropped", new String[0]), new androidx.car.app.utils.a(hVar, hashMap, sVar, 7));
+                    b3.a aVar = (b3.a) h.h(a2.rawQuery("SELECT log_source, reason, events_dropped_count FROM log_event_dropped", new String[0]), new androidx.car.app.utils.a(hVar, hashMap, rVar, 7));
                     a2.setTransactionSuccessful();
                     return aVar;
                 } finally {
                 }
-            case 24:
+            case 23:
                 h hVar2 = (h) ((f3.d) obj);
-                long e10 = hVar2.b.e() - hVar2.d.d;
+                long X = hVar2.b.X() - hVar2.d.d;
                 a2 = hVar2.a();
                 a2.beginTransaction();
                 try {
-                    String[] strArr = {String.valueOf(e10)};
+                    String[] strArr = {String.valueOf(X)};
                     Cursor rawQuery = a2.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE timestamp_ms < ? GROUP BY transport_name", strArr);
                     while (rawQuery.moveToNext()) {
                         try {
@@ -173,80 +188,63 @@ public final /* synthetic */ class c implements OnSuccessListener, a0, a9.e, s0,
                     return Integer.valueOf(delete);
                 } finally {
                 }
-            case 25:
-                h hVar3 = (h) ((f3.c) ((e3.f) obj).i);
+            case 24:
+                h hVar3 = (h) ((f3.c) ((e3.g) obj).i);
                 a2 = hVar3.a();
                 a2.beginTransaction();
                 try {
                     a2.compileStatement("DELETE FROM log_event_dropped").execute();
-                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + hVar3.b.e()).execute();
+                    a2.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + hVar3.b.X()).execute();
                     a2.setTransactionSuccessful();
                     return null;
                 } finally {
                 }
             default:
-                s sVar2 = (s) obj;
-                Iterator it = ((Iterable) ((h) ((f3.d) sVar2.c)).c(new eg.c(6))).iterator();
+                r rVar2 = (r) obj;
+                Iterator it = ((Iterable) ((h) ((f3.d) rVar2.c)).c(new f0.d(i11))).iterator();
                 while (it.hasNext()) {
-                    ((androidx.biometric.e) sVar2.d).A((i) it.next(), 1, false);
+                    ((androidx.biometric.e) rVar2.d).A((i) it.next(), 1, false);
                 }
                 return null;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void g(c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public void i(d2 d2Var, int i10) {
         switch (this.a) {
-            case 5:
-                ((gq0) this.b).run();
+            case 13:
+                ((mq0) this.b).run();
                 break;
-            case 6:
-                ((bg.s0) this.b).a.b2.r();
-                break;
-            case 27:
-                ((y1) this.b).run();
+            case 14:
+                ((dg.r0) this.b).a.c2.r();
                 break;
             case 28:
+                ((x1) this.b).run();
+                break;
+            default:
                 TLRPC.TL_payments_giveawayInfoResults tL_payments_giveawayInfoResults = (TLRPC.TL_payments_giveawayInfoResults) this.b;
-                o2 R = LaunchActivity.R();
+                p2 R = LaunchActivity.R();
                 if (R != null) {
-                    f1.T(R, tL_payments_giveawayInfoResults.gift_code_slug, null);
+                    e1.T(R, tL_payments_giveawayInfoResults.gift_code_slug, null);
                     break;
                 }
                 break;
-            default:
-                ((eg.t0) this.b).run();
-                break;
         }
-    }
-
-    @Override // nh.m7
-    public Bitmap h(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile((String) this.b, options);
-    }
-
-    @Override // z9.a
-    public void j(z9.b bVar) {
-        d9.b bVar2 = (d9.b) this.b;
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics native component now available.", null);
-        }
-        bVar2.b.set((d9.b) bVar.get());
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        i5.b(this, imageReceiver);
+        j5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task task) {
         switch (this.a) {
-            case 17:
-                c0.b((Intent) this.b);
+            case 7:
+                b0.b((Intent) this.b);
                 break;
-            case 18:
-                ((e0) this.b).b.trySetResult(null);
+            case 8:
+                ((d0) this.b).b.trySetResult(null);
                 break;
             default:
                 ((ScheduledFuture) this.b).cancel(false);
@@ -256,78 +254,81 @@ public final /* synthetic */ class c implements OnSuccessListener, a0, a9.e, s0,
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public void onSuccess(Object obj) {
-        boolean z10;
+        boolean z4;
         switch (this.a) {
             case 0:
                 ((f) this.b).invoke(obj);
                 return;
-            case 8:
-                y2 y2Var = (y2) this.b;
-                y2Var.y0 = true;
-                y2Var.x0 = false;
+            case 1:
+                ((b1.f) this.b).invoke(obj);
                 return;
-            case 9:
-                n3 n3Var = (n3) this.b;
-                kb.b bVar = (kb.b) obj;
-                ArrayList arrayList = new ArrayList();
-                for (int i10 = 0; i10 < bVar.a.size(); i10++) {
-                    kb.a aVar = (kb.a) bVar.a.get(i10);
-                    t3 t3Var = new t3();
-                    t3Var.a = aVar.a;
-                    t3Var.b = aVar.d;
-                    t3Var.c = aVar.e;
-                    t3Var.d = aVar.b;
-                    t3Var.e = aVar.c;
-                    arrayList.add(t3Var);
+            case 5:
+                com.google.firebase.messaging.y yVar = (com.google.firebase.messaging.y) obj;
+                if (!((FirebaseMessaging) this.b).e.o() || yVar.h.a() == null) {
+                    return;
                 }
-                n3Var.run(arrayList);
+                synchronized (yVar) {
+                    z4 = yVar.g;
+                }
+                if (z4) {
+                    return;
+                }
+                yVar.h(0L);
                 return;
             case 10:
-                u3 u3Var = (u3) this.b;
+                ((b1.f) this.b).invoke(obj);
+                return;
+            case 16:
+                v2 v2Var = (v2) this.b;
+                v2Var.z0 = true;
+                v2Var.y0 = false;
+                return;
+            case 17:
+                j3 j3Var = (j3) this.b;
+                mb.b bVar = (mb.b) obj;
+                ArrayList arrayList = new ArrayList();
+                for (int i10 = 0; i10 < bVar.a.size(); i10++) {
+                    mb.a aVar = (mb.a) bVar.a.get(i10);
+                    p3 p3Var = new p3();
+                    p3Var.a = aVar.a;
+                    p3Var.b = aVar.d;
+                    p3Var.c = aVar.e;
+                    p3Var.d = aVar.b;
+                    p3Var.e = aVar.c;
+                    arrayList.add(p3Var);
+                }
+                j3Var.run(arrayList);
+                return;
+            case 18:
+                q3 q3Var = (q3) this.b;
                 List list = (List) obj;
-                u3Var.getClass();
+                q3Var.getClass();
                 if (list.size() <= 0) {
                     FileLog.d("objimg: no objects");
                     return;
                 }
-                int i11 = ((hb.a) list.get(0)).c;
+                int i11 = ((jb.a) list.get(0)).c;
                 String str = null;
-                if (h7.s.a == null) {
-                    h7.s.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
+                if (o5.a == null) {
+                    o5.a = new String[]{"👥", "🔥", "📚", "🏔", "🧊", "🍱", null, "🚰", "🧸", "🗿", "🍔", "🚜", "🛷", "🐠", "🎪", null, "🪑", "🧔", "🌉", "🩰", "🐦", "🚣", "🏞", null, "🏭", "🎓", "🍶", "🌿", "🌸", "🛋", "😎", "🏗", "🎡", "🐠", "🤿", "🐶", "⛵", "🎨", "🏆", "🧗", "🏸", "🦁", "🚲", "🏟", null, "⛵", "🙂", "🏄", "🍟", "🌇", "🌭", "🩳", "🚌", "🐂", "🌌", "🐹", "🪨", "👥", "👗", "👣", null, "🐻", "🍽", "🗼", "🧱", "🗑", "👤", "🏄", "👙", "🎢", "🏕", "🎠", "🚽", "😆", "🎈", "🎤", "👗", "🚧", "📦", "🐠", "🧺", "🌼", "🛒", "🥊", "💍", "💎", "🎰", "🚗", "🪜", "💻", "🍳", "📽️", "🪑", "🖼", "🍷", "🚢", "🛳", "👥", "🧗", "🕳", "👔", "🛠", "🌊", "🤡", "🎉", "🚴", "☄️", "🎓", "🏟", "🎄", "⛪", "🕰", "👨", "🐄", "🌴", "🖥", "🥌", "🍲", "🐱", "🧃", "🍚", null, "👥", "🏙", null, "🧸", "🍪", "🟩", "🕎", "🧶", "🛹", "✂️", "💅", "🥤", "🍴", "📜", null, "👘", "🧸", "📱", "🚦", "❄️", "🇵🇷", "⛓", "💃", "🏜", "🎅", "🦃", "🤵", "👄", "🏜", "🦕", "👳\u200d♂️", "🔥", "🛏", "🥽", "🐉", "🛋", "🛷", "🧢", "📋", "🎩", "🍨", "🐎", "🧶", "👕", "🧣", "🏖", "⚽", "🖤", "🎧", "🏛", "🚘", "🛹", "🦢", "🍖", "🥅", "🧁", "🐕", "🚤", "🌳", "☕", "⚽", "🧸", "🍲", "🧍", "📖", "🍉", "🍜", "✨", "💼", "🌳", "🐕", "🌲", "🚩", "⛵", "🦶", "🧥", null, "🛏", null, "🛁", "🗻", "🤸\u200d♀️", "👂", "🌸", "🐚", "👵", "🏛", "👁️", "🛏", "⚖️", "🎒", "🐎", "✨", "🛸", "💇", "🧸", "👥", "🪟", "🌟", "🐱", "🐄", "🐞", "❄️", "💍", "🚪", "💎", "🧶", "🏺", "🧥", "❤️", "💪", "🏍", "💰", "🕌", "🍽", "💃", "🛶", "🏖", "🧾", "🏞", "🚨", "🐴", "🧥", "📯", "⌚", "🧱", "🤿", "👖", "🏊", "🎸", "🎭", "🤘", "🌕", "🧥", "💍", "📱", "🪖", "🍽", "🎉", "🌌", "📰", "🗞", null, "🎹", "🪴", "🛂", "🐧", "🐕", "🏰", "🏵", "🏇", "📝", "🎶", "⛵", "🍕", "🐾", "🧵", "🐦", "🛹", "🏄", "🏉", "💄", "🏞", "🏁", "🚣", "🛣", "🏃", "🛋", "🏠", "⭐", "🏅", "👟", "🚤", "🪐", "😴", "🤲", "🏊", "🏫", "🍣", "🛋", "🦸", "😎", "⛷", "🚢", "🎵", "📚", "🏙", "🌋", "📺", "🐎", "💉", "🚆", "🚪", "🥤", "🚗", "👜", "💡", "🎫", "🍷", "🍗", "🎡", "🏄", "💻", null, null, "🏡", "🎣", "❤️", "🌱", "☕", "🍞", "🏖", null, "🏛", "🚁", "⛰", "🦆", "🌱", "🐢", "🐊", "🎶", "👟", "🧶", "💍", "🎤", "🎡", "🏂", "🚤", "🧱", "🚀", "🏠", "🏖", "🌈", "🌿", "👨", "🌷", "👗", "🏞", "🐶", "🦸", "🌸", "🍽", "🔊", "⛪", "🏢", "✈️", "🐾", "🐂", "🪑", "🛕", "🦋", "👠", "🏃", "🪡", "🍳", "🏰", "🌌", "🐛", "🏎", null, "✈️", "🚣", "🧵", "🤵", "🎢", "🍲", "🥦", "🚲", "👖", "🪴", "🗄", "🎂", "💺", "✈️", null, "🌫", "🎆", "🚜", "🦭", "📚", "💇", "⚡", "🚐", "🐱", "🚗", "👖", "🌾", "🤿", "☔", "🛣", "⛵", "🐶", "🔳", "🍽", "👰", "💧", null, "🍴", "🚙", "👶", "👓", "🚗", "✈️", "✋", "🐎", "🏞", "🍽", "⚾", "🍷", "👰", "🌿", "🥧", "🎒", "🃏", "🦹", "🪖", "🛶", "🤳", "🛺", "🏚", "🏹", "🚀", null, "⛈", "⛑"};
                 }
                 if (i11 >= 0) {
-                    String[] strArr = h7.s.a;
+                    String[] strArr = o5.a;
                     if (i11 < strArr.length) {
                         str = strArr[i11];
                     }
                 }
-                u3Var.V = str;
-                StringBuilder sb2 = new StringBuilder("objimg: detected #");
-                sb2.append(((hb.a) list.get(0)).c);
-                sb2.append(" ");
-                sb2.append(u3Var.V);
-                sb2.append(" ");
-                th.v(((hb.a) list.get(0)).a, sb2);
-                Emoji.getEmojiDrawable(u3Var.V);
+                q3Var.W = str;
+                StringBuilder sb = new StringBuilder("objimg: detected #");
+                sb.append(((jb.a) list.get(0)).c);
+                sb.append(" ");
+                sb.append(q3Var.W);
+                sb.append(" ");
+                yh.w(((jb.a) list.get(0)).a, sb);
+                Emoji.getEmojiDrawable(q3Var.W);
                 return;
-            case 13:
-                ((b1.f) this.b).invoke(obj);
-                return;
-            case 15:
-                z zVar = (z) obj;
-                if (!((FirebaseMessaging) this.b).e.l() || zVar.h.a() == null) {
-                    return;
-                }
-                synchronized (zVar) {
-                    z10 = zVar.g;
-                }
-                if (z10) {
-                    return;
-                }
-                zVar.h(0L);
-                return;
-            case 20:
-                ((b1.f) this.b).invoke(obj);
+            case 21:
+                ((e1.b) this.b).invoke(obj);
                 return;
             default:
                 ((e1.b) this.b).invoke(obj);
@@ -337,7 +338,7 @@ public final /* synthetic */ class c implements OnSuccessListener, a0, a9.e, s0,
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
-        ((bg.c2) this.b).getClass();
+        ((a9.a) this.b).getClass();
         Bundle bundle = (Bundle) task.getResult(IOException.class);
         if (bundle == null) {
             throw new IOException("SERVICE_NOT_AVAILABLE");
@@ -366,7 +367,7 @@ public final /* synthetic */ class c implements OnSuccessListener, a0, a9.e, s0,
         this.b = obj;
     }
 
-    @Override // vd.b
-    public /* synthetic */ void z(float f9, int i10) {
+    @Override // xd.b
+    public /* synthetic */ void z(float f10, int i10) {
     }
 }

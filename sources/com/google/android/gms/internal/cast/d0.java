@@ -1,53 +1,139 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.CopyOnWriteArraySet;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class d0 implements c0 {
-    public final /* synthetic */ int a;
-    public Object b;
-    public volatile Object c;
+public abstract class d0 extends AbstractCollection implements Serializable, Collection {
+    public static final Object[] a = new Object[0];
 
-    public d0(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = new CopyOnWriteArraySet();
-                break;
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 0:
-                Object obj = (c0) this.c;
-                if (obj == a0.b) {
-                    obj = a4.w.n("<supplier that returned ", String.valueOf(this.b), ">");
-                }
-                return a4.w.n("Suppliers.memoize(", String.valueOf(obj), ")");
-            default:
-                return super.toString();
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // com.google.android.gms.internal.cast.c0
-    public Object zza() {
-        c0 c0Var = (c0) this.c;
-        a0 a0Var = a0.b;
-        if (c0Var != a0Var) {
-            synchronized (this) {
-                try {
-                    if (((c0) this.c) != a0Var) {
-                        Object zza = ((c0) this.c).zza();
-                        this.b = zza;
-                        this.c = a0Var;
-                        return zza;
-                    }
-                } finally {
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    public abstract int i(Object[] objArr);
+
+    public int n() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int o() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Object[] p() {
+        return null;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] p10 = p();
+            if (p10 == null) {
+                if (length != 0) {
+                    objArr = Arrays.copyOf(objArr, 0);
                 }
+                objArr = Arrays.copyOf(objArr, size);
+            } else {
+                return Arrays.copyOfRange(p10, o(), n(), objArr.getClass());
             }
+        } else if (length > size) {
+            objArr[size] = null;
         }
-        return this.b;
+        i(objArr);
+        return objArr;
     }
 }

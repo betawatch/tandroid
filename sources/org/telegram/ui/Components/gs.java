@@ -1,42 +1,84 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gs implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] b;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-    public /* synthetic */ gs(org.telegram.ui.ActionBar.c2[] c2VarArr, int i10) {
-        this.a = i10;
-        this.b = c2VarArr;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes3.dex */
+public final class gs {
+    public final org.telegram.ui.Cells.r2 a;
+    public final ArrayList b = new ArrayList();
+    public final ArrayList c = new ArrayList();
+    public fs d = null;
+
+    public gs(org.telegram.ui.Cells.r2 r2Var) {
+        this.a = r2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.c2 c2Var = this.b[0];
-                if (c2Var != null) {
-                    c2Var.dismiss();
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.c2[] c2VarArr = this.b;
-                try {
-                    c2VarArr[0].dismiss();
-                } catch (Throwable unused) {
-                }
-                c2VarArr[0] = null;
-                break;
-            default:
-                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.b;
-                try {
-                    c2VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
-                }
-                c2VarArr2[0] = null;
-                break;
+    public final void a(Canvas canvas, int i10) {
+        ArrayList arrayList;
+        canvas.clipRect(0, 0, i10, AndroidUtilities.dp(14.66f));
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f10 = i10;
+        rectF.set(0.0f, 0.0f, f10, AndroidUtilities.dp(14.66f));
+        canvas.saveLayerAlpha(rectF, 255, 31);
+        if (LocaleController.isRTL) {
+            canvas.translate(f10, 0.0f);
         }
+        int dp = i10 - AndroidUtilities.dp(25.0f);
+        int i11 = 0;
+        while (true) {
+            arrayList = this.c;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            fs fsVar = (fs) arrayList.get(i11);
+            dp = org.telegram.ui.b.t(4.0f, fsVar.e, dp);
+            if (dp < 0) {
+                break;
+            }
+            if (LocaleController.isRTL) {
+                canvas.translate(-fsVar.e, 0.0f);
+                fsVar.a(canvas);
+                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
+            } else {
+                fsVar.a(canvas);
+                canvas.translate(AndroidUtilities.dp(4.0f) + fsVar.e, 0.0f);
+            }
+            i11++;
+        }
+        if (i11 < arrayList.size()) {
+            int size = arrayList.size() - i11;
+            fs fsVar2 = this.d;
+            if (fsVar2 == null || fsVar2.a != size) {
+                fs fsVar3 = new fs();
+                fsVar3.a = size;
+                k01 k01Var = new k01(kh.a2.j(size, "+"), 10.0f, AndroidUtilities.bold());
+                k01Var.s(this.a);
+                fsVar3.c = k01Var;
+                int dp2 = AndroidUtilities.dp(9.32f);
+                k01 k01Var2 = fsVar3.c;
+                fsVar3.e = dp2 + ((int) k01Var2.c);
+                k01Var2.j();
+                fsVar3.d = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n8, false);
+                this.d = fsVar3;
+            }
+            if (LocaleController.isRTL) {
+                canvas.translate(-this.d.e, 0.0f);
+                this.d.a(canvas);
+                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
+            } else {
+                this.d.a(canvas);
+                canvas.translate(AndroidUtilities.dp(4.0f) + this.d.e, 0.0f);
+            }
+        }
+        canvas.restore();
+    }
+
+    public final boolean b() {
+        return this.c.isEmpty();
     }
 }

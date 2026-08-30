@@ -1,25 +1,58 @@
 package j3;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
-/* loaded from: classes.dex */
-public final class z1 {
-    public final f5.g a;
+import java.util.Arrays;
+import k7.a7;
 
-    public z1(f5.g gVar) {
-        this.a = gVar;
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
+/* loaded from: classes.dex */
+public final class z1 implements g {
+    public final Object a;
+    public final int b;
+    public final c1 c;
+    public final Object d;
+    public final int e;
+    public final long f;
+    public final long h;
+    public final int n;
+    public final int r;
+
+    static {
+        int i10 = h5.d0.a;
+        Integer.toString(0, 36);
+        Integer.toString(1, 36);
+        Integer.toString(2, 36);
+        Integer.toString(3, 36);
+        Integer.toString(4, 36);
+        Integer.toString(5, 36);
+        Integer.toString(6, 36);
+    }
+
+    public z1(Object obj, int i10, c1 c1Var, Object obj2, int i11, long j10, long j11, int i12, int i13) {
+        this.a = obj;
+        this.b = i10;
+        this.c = c1Var;
+        this.d = obj2;
+        this.e = i11;
+        this.f = j10;
+        this.h = j11;
+        this.n = i12;
+        this.r = i13;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof z1) {
-            return this.a.equals(((z1) obj).a);
+        if (obj != null && z1.class == obj.getClass()) {
+            z1 z1Var = (z1) obj;
+            if (this.b == z1Var.b && this.e == z1Var.e && this.f == z1Var.f && this.h == z1Var.h && this.n == z1Var.n && this.r == z1Var.r && a7.a(this.a, z1Var.a) && a7.a(this.d, z1Var.d) && a7.a(this.c, z1Var.c)) {
+                return true;
+            }
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
+        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), this.c, this.d, Integer.valueOf(this.e), Long.valueOf(this.f), Long.valueOf(this.h), Integer.valueOf(this.n), Integer.valueOf(this.r)});
     }
 }

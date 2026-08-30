@@ -1,19 +1,165 @@
 package j7;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class y2 implements s9.d {
+public final class y2 implements u9.d {
     public static final y2 a = new y2();
+    public static final u9.c b = new u9.c("systemInfo", vh.v2.h(e2.c.n(i.class, new e(1))));
+    public static final u9.c c = new u9.c("eventName", vh.v2.h(e2.c.n(i.class, new e(2))));
+    public static final u9.c d = new u9.c("isThickClient", vh.v2.h(e2.c.n(i.class, new e(37))));
+    public static final u9.c e = new u9.c("clientType", vh.v2.h(e2.c.n(i.class, new e(61))));
+    public static final u9.c f = new u9.c("modelDownloadLogEvent", vh.v2.h(e2.c.n(i.class, new e(3))));
+    public static final u9.c g = new u9.c("customModelLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(20))));
+    public static final u9.c h = new u9.c("customModelInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(4))));
+    public static final u9.c i = new u9.c("customModelCreateLogEvent", vh.v2.h(e2.c.n(i.class, new e(29))));
+    public static final u9.c j = new u9.c("onDeviceFaceDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(5))));
+    public static final u9.c k = new u9.c("onDeviceFaceLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(59))));
+    public static final u9.c l = new u9.c("onDeviceTextDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(6))));
+    public static final u9.c m = new u9.c("onDeviceTextDetectionLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(79))));
+    public static final u9.c n = new u9.c("onDeviceBarcodeDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(7))));
+    public static final u9.c o = new u9.c("onDeviceBarcodeLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(58))));
+    public static final u9.c p = new u9.c("onDeviceImageLabelCreateLogEvent", vh.v2.h(e2.c.n(i.class, new e(48))));
+    public static final u9.c q = new u9.c("onDeviceImageLabelLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(49))));
+    public static final u9.c r = new u9.c("onDeviceImageLabelDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(18))));
+    public static final u9.c s = new u9.c("onDeviceObjectCreateLogEvent", vh.v2.h(e2.c.n(i.class, new e(26))));
+    public static final u9.c t = new u9.c("onDeviceObjectLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(27))));
+    public static final u9.c u = new u9.c("onDeviceObjectInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(28))));
+    public static final u9.c v = new u9.c("onDevicePoseDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(44))));
+    public static final u9.c w = new u9.c("onDeviceSegmentationLogEvent", vh.v2.h(e2.c.n(i.class, new e(45))));
+    public static final u9.c x = new u9.c("onDeviceSmartReplyLogEvent", vh.v2.h(e2.c.n(i.class, new e(19))));
+    public static final u9.c y = new u9.c("onDeviceLanguageIdentificationLogEvent", vh.v2.h(e2.c.n(i.class, new e(21))));
+    public static final u9.c z = new u9.c("onDeviceTranslationLogEvent", vh.v2.h(e2.c.n(i.class, new e(22))));
+    public static final u9.c A = new u9.c("cloudFaceDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(8))));
+    public static final u9.c B = new u9.c("cloudCropHintDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(9))));
+    public static final u9.c C = new u9.c("cloudDocumentTextDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(10))));
+    public static final u9.c D = new u9.c("cloudImagePropertiesDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(11))));
+    public static final u9.c E = new u9.c("cloudImageLabelDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(12))));
+    public static final u9.c F = new u9.c("cloudLandmarkDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(13))));
+    public static final u9.c G = new u9.c("cloudLogoDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(14))));
+    public static final u9.c H = new u9.c("cloudSafeSearchDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(15))));
+    public static final u9.c I = new u9.c("cloudTextDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(16))));
+    public static final u9.c J = new u9.c("cloudWebSearchDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(17))));
+    public static final u9.c K = new u9.c("automlImageLabelingCreateLogEvent", vh.v2.h(e2.c.n(i.class, new e(23))));
+    public static final u9.c L = new u9.c("automlImageLabelingLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(24))));
+    public static final u9.c M = new u9.c("automlImageLabelingInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(25))));
+    public static final u9.c N = new u9.c("isModelDownloadedLogEvent", vh.v2.h(e2.c.n(i.class, new e(39))));
+    public static final u9.c O = new u9.c("deleteModelLogEvent", vh.v2.h(e2.c.n(i.class, new e(40))));
+    public static final u9.c P = new u9.c("aggregatedAutomlImageLabelingInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(30))));
+    public static final u9.c Q = new u9.c("aggregatedCustomModelInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(31))));
+    public static final u9.c R = new u9.c("aggregatedOnDeviceFaceDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(32))));
+    public static final u9.c S = new u9.c("aggregatedOnDeviceBarcodeDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(33))));
+    public static final u9.c T = new u9.c("aggregatedOnDeviceImageLabelDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(34))));
+    public static final u9.c U = new u9.c("aggregatedOnDeviceObjectInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(35))));
+    public static final u9.c V = new u9.c("aggregatedOnDeviceTextDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(36))));
+    public static final u9.c W = new u9.c("aggregatedOnDevicePoseDetectionLogEvent", vh.v2.h(e2.c.n(i.class, new e(46))));
+    public static final u9.c X = new u9.c("aggregatedOnDeviceSegmentationLogEvent", vh.v2.h(e2.c.n(i.class, new e(47))));
+    public static final u9.c Y = new u9.c("pipelineAccelerationInferenceEvents", vh.v2.h(e2.c.n(i.class, new e(69))));
+    public static final u9.c Z = new u9.c("remoteConfigLogEvent", vh.v2.h(e2.c.n(i.class, new e(42))));
+    public static final u9.c a0 = new u9.c("inputImageConstructionLogEvent", vh.v2.h(e2.c.n(i.class, new e(50))));
+    public static final u9.c b0 = new u9.c("leakedHandleEvent", vh.v2.h(e2.c.n(i.class, new e(51))));
+    public static final u9.c c0 = new u9.c("cameraSourceLogEvent", vh.v2.h(e2.c.n(i.class, new e(52))));
+    public static final u9.c d0 = new u9.c("imageLabelOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(53))));
+    public static final u9.c e0 = new u9.c("languageIdentificationOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(54))));
+    public static final u9.c f0 = new u9.c("faceDetectionOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(60))));
+    public static final u9.c g0 = new u9.c("nlClassifierOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(55))));
+    public static final u9.c h0 = new u9.c("nlClassifierClientLibraryLogEvent", vh.v2.h(e2.c.n(i.class, new e(56))));
+    public static final u9.c i0 = new u9.c("accelerationAllowlistLogEvent", vh.v2.h(e2.c.n(i.class, new e(57))));
+    public static final u9.c j0 = new u9.c("toxicityDetectionCreateEvent", vh.v2.h(e2.c.n(i.class, new e(62))));
+    public static final u9.c k0 = new u9.c("toxicityDetectionLoadEvent", vh.v2.h(e2.c.n(i.class, new e(63))));
+    public static final u9.c l0 = new u9.c("toxicityDetectionInferenceEvent", vh.v2.h(e2.c.n(i.class, new e(64))));
+    public static final u9.c m0 = new u9.c("barcodeDetectionOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(65))));
+    public static final u9.c n0 = new u9.c("customImageLabelOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(66))));
+    public static final u9.c o0 = new u9.c("codeScannerScanApiEvent", vh.v2.h(e2.c.n(i.class, new e(67))));
+    public static final u9.c p0 = new u9.c("codeScannerOptionalModuleEvent", vh.v2.h(e2.c.n(i.class, new e(68))));
+    public static final u9.c q0 = new u9.c("onDeviceExplicitContentCreateLogEvent", vh.v2.h(e2.c.n(i.class, new e(70))));
+    public static final u9.c r0 = new u9.c("onDeviceExplicitContentLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(71))));
+    public static final u9.c s0 = new u9.c("onDeviceExplicitContentInferenceLogEvent", vh.v2.h(e2.c.n(i.class, new e(72))));
+    public static final u9.c t0 = new u9.c("aggregatedOnDeviceExplicitContentLogEvent", vh.v2.h(e2.c.n(i.class, new e(73))));
+    public static final u9.c u0 = new u9.c("onDeviceSelfieFaceCreateLogEvent", vh.v2.h(e2.c.n(i.class, new e(74))));
+    public static final u9.c v0 = new u9.c("onDeviceSelfieFaceLoadLogEvent", vh.v2.h(e2.c.n(i.class, new e(75))));
+    public static final u9.c w0 = new u9.c("onDeviceSelfieFaceLogEvent", vh.v2.h(e2.c.n(i.class, new e(76))));
+    public static final u9.c x0 = new u9.c("aggregatedOnDeviceSelfieFaceLogEvent", vh.v2.h(e2.c.n(i.class, new e(77))));
+    public static final u9.c y0 = new u9.c("smartReplyOptionalModuleLogEvent", vh.v2.h(e2.c.n(i.class, new e(78))));
 
-    static {
-        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(h0.class, l1.h(3, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(2, com.google.android.recaptcha.internal.a.r(h0.class, new e0(1)))))));
-    }
-
-    @Override // s9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // u9.a
+    public final void a(Object obj, Object obj2) {
+        n6 n6Var = (n6) obj;
+        u9.e eVar = (u9.e) obj2;
+        eVar.e(b, n6Var.a);
+        eVar.e(c, n6Var.b);
+        eVar.e(d, null);
+        eVar.e(e, n6Var.c);
+        eVar.e(f, null);
+        eVar.e(g, null);
+        eVar.e(h, null);
+        eVar.e(i, null);
+        eVar.e(j, null);
+        eVar.e(k, null);
+        eVar.e(l, null);
+        eVar.e(m, null);
+        eVar.e(n, null);
+        eVar.e(o, null);
+        eVar.e(p, null);
+        eVar.e(q, null);
+        eVar.e(r, null);
+        eVar.e(s, null);
+        eVar.e(t, null);
+        eVar.e(u, null);
+        eVar.e(v, null);
+        eVar.e(w, null);
+        eVar.e(x, null);
+        eVar.e(y, n6Var.d);
+        eVar.e(z, null);
+        eVar.e(A, null);
+        eVar.e(B, null);
+        eVar.e(C, null);
+        eVar.e(D, null);
+        eVar.e(E, null);
+        eVar.e(F, null);
+        eVar.e(G, null);
+        eVar.e(H, null);
+        eVar.e(I, null);
+        eVar.e(J, null);
+        eVar.e(K, null);
+        eVar.e(L, null);
+        eVar.e(M, null);
+        eVar.e(N, null);
+        eVar.e(O, null);
+        eVar.e(P, null);
+        eVar.e(Q, null);
+        eVar.e(R, null);
+        eVar.e(S, null);
+        eVar.e(T, null);
+        eVar.e(U, null);
+        eVar.e(V, null);
+        eVar.e(W, null);
+        eVar.e(X, null);
+        eVar.e(Y, null);
+        eVar.e(Z, null);
+        eVar.e(a0, null);
+        eVar.e(b0, null);
+        eVar.e(c0, null);
+        eVar.e(d0, null);
+        eVar.e(e0, null);
+        eVar.e(f0, null);
+        eVar.e(g0, null);
+        eVar.e(h0, null);
+        eVar.e(i0, null);
+        eVar.e(j0, null);
+        eVar.e(k0, null);
+        eVar.e(l0, null);
+        eVar.e(m0, null);
+        eVar.e(n0, null);
+        eVar.e(o0, null);
+        eVar.e(p0, null);
+        eVar.e(q0, null);
+        eVar.e(r0, null);
+        eVar.e(s0, null);
+        eVar.e(t0, null);
+        eVar.e(u0, null);
+        eVar.e(v0, null);
+        eVar.e(w0, null);
+        eVar.e(x0, null);
+        eVar.e(y0, null);
     }
 }

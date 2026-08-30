@@ -1,156 +1,27 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import nh.m6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.jr;
-import org.telegram.ui.Components.rs;
+import android.content.Context;
+import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes.dex */
-public final class r2 extends FrameLayout {
-    public TextView[] a;
-    public TextView b;
-    public FrameLayout c;
-    public v2 d;
-    public CharSequence e;
-    public boolean f;
-    public ValueAnimator h;
-    public boolean n;
+public final class r2 extends TextureViewRenderer {
+    public final /* synthetic */ s2 a;
 
-    public final void a(View view, View view2, Runnable runnable) {
-        view.setVisibility(0);
-        view2.setVisibility(0);
-        view2.setTranslationY(AndroidUtilities.dp(15.0f));
-        view2.setAlpha(0.0f);
-        this.f = true;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new bg.b3(16, view2, view));
-        this.h.addListener(new rs(this, view, view2, runnable, 2));
-        this.h.setDuration(250L).setInterpolator(jr.f);
-        this.h.start();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r2(s2 s2Var, Context context) {
+        super(context);
+        this.a = s2Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(String str, boolean z10, boolean z11) {
-        View view = this.d;
-        TextView[] textViewArr = this.a;
-        if (z10) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-            SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new org.telegram.ui.Components.b0(textViewArr), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) spannableString);
-            str = spannableStringBuilder;
-        }
-        if (TextUtils.isEmpty(textViewArr[0].getText())) {
-            z11 = false;
-        }
-        if (!z11) {
-            ValueAnimator valueAnimator = this.h;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.f = false;
-            textViewArr[0].setText(str);
-            textViewArr[0].setVisibility(0);
-            textViewArr[1].setVisibility(8);
-            view.setVisibility(8);
-            return;
-        }
-        if (this.f) {
-            this.e = str;
-            return;
-        }
-        if (this.n) {
-            textViewArr[0].setText(str);
-            a(view, textViewArr[0], null);
-        } else {
-            if (textViewArr[0].getText().equals(str)) {
-                return;
-            }
-            textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new m6(this, 19));
-        }
+    @Override // org.webrtc.TextureViewRenderer, org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        super.onFirstFrameRendered();
+        this.a.b();
     }
 
-    public final void c(boolean z10) {
-        FrameLayout frameLayout = this.c;
-        if (!z10) {
-            if (frameLayout.getVisibility() == 8) {
-                return;
-            }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(jr.f).setListener(new q2(this, 1)).setDuration(300L).start();
-        } else {
-            if (frameLayout.getVisibility() == 0) {
-                return;
-            }
-            frameLayout.setVisibility(0);
-            frameLayout.setAlpha(0.0f);
-            frameLayout.setScaleY(0.6f);
-            frameLayout.setScaleX(0.6f);
-            frameLayout.animate().setListener(null).cancel();
-            org.telegram.ui.b.q(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), jr.k, 300L);
-        }
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        TextView textView = this.b;
-        if (!z11) {
-            textView.animate().setListener(null).cancel();
-            textView.setVisibility(z10 ? 0 : 8);
-        } else {
-            if (!z10) {
-                textView.animate().alpha(0.0f).setListener(new q2(this, 0)).setDuration(150L).start();
-                return;
-            }
-            if (textView.getVisibility() != 0) {
-                textView.setVisibility(0);
-                textView.setAlpha(0.0f);
-            }
-            textView.animate().setListener(null).cancel();
-            textView.animate().alpha(1.0f).setDuration(150L).start();
-        }
-    }
-
-    public final void e(boolean z10) {
-        v2 v2Var = this.d;
-        TextView[] textViewArr = this.a;
-        if (TextUtils.isEmpty(textViewArr[0].getText())) {
-            z10 = false;
-        }
-        if (this.n) {
-            return;
-        }
-        v2Var.a();
-        if (z10) {
-            if (this.f) {
-                this.e = "timer";
-                return;
-            } else {
-                this.n = true;
-                a(textViewArr[0], v2Var, null);
-                return;
-            }
-        }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.n = true;
-        this.f = false;
-        textViewArr[0].setVisibility(8);
-        textViewArr[1].setVisibility(8);
-        v2Var.setVisibility(0);
-    }
-
-    public void setSignalBarCount(int i10) {
-        this.d.setSignalBarCount(i10);
+    @Override // android.view.TextureView, android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
     }
 }

@@ -1,186 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.io.Serializable;
+import android.text.style.ClickableSpan;
 import java.util.ArrayList;
-import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Serializable h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+public final /* synthetic */ class y31 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g41 b;
 
-    public /* synthetic */ y31(org.telegram.ui.qk qkVar, boolean[] zArr, String str, LinearLayout linearLayout, ArrayList arrayList, String str2, TranslateController translateController, org.telegram.ui.ActionBar.o1 o1Var, ArrayList arrayList2) {
-        this.d = qkVar;
-        this.e = zArr;
-        this.f = str;
-        this.n = linearLayout;
-        this.b = arrayList;
-        this.h = str2;
-        this.r = translateController;
-        this.s = o1Var;
-        this.c = arrayList2;
+    public /* synthetic */ y31(g41 g41Var, int i10) {
+        this.a = i10;
+        this.b = g41Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.g1 g1Var;
-        String y8;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                final org.telegram.ui.qk qkVar = (org.telegram.ui.qk) this.d;
-                boolean[] zArr = (boolean[]) this.e;
-                String str = (String) this.f;
-                LinearLayout linearLayout = (LinearLayout) this.n;
-                String str2 = (String) this.h;
-                final TranslateController translateController = (TranslateController) this.r;
-                final org.telegram.ui.ActionBar.o1 o1Var = (org.telegram.ui.ActionBar.o1) this.s;
-                boolean z10 = false;
-                if (!zArr[0]) {
-                    if (str != null && (y8 = k31.y(k31.D(str, null, null))) != null) {
-                        org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(2, qkVar.getContext(), qkVar.d, false, false);
-                        g1Var2.setChecked(true);
-                        g1Var2.setText(y8);
-                        linearLayout.addView(g1Var2);
+                ArrayList arrayList = (ArrayList) obj;
+                w51 w51Var = (w51) obj2;
+                final g41 g41Var = this.b;
+                String[] strArr = g41Var.f0;
+                arrayList.add(i51.B(null));
+                w51Var.B = 1;
+                w51Var.U();
+                String str = g41Var.b0;
+                arrayList.add(a41.b(3, "", str != null ? v31.y(v31.D(str, null, null)) : LocaleController.getString(R.string.AIEditorOriginalText), null, null));
+                arrayList.add(e41.a(4, g41Var.X, g41Var.h0, new rx0(3, g41Var, w51Var), new d90() { // from class: org.telegram.ui.Components.z31
+                    @Override // org.telegram.ui.Components.d90
+                    public final void a(ClickableSpan clickableSpan) {
+                        g41.Q(g41.this, clickableSpan);
                     }
-                    ArrayList arrayList = this.b;
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        int i11 = i10 + 1;
-                        TranslateController.Language language = (TranslateController.Language) arrayList.get(i10);
-                        final String str3 = language.code;
-                        if (TextUtils.equals(str3, str2)) {
-                            i10 = i11;
-                        } else {
-                            org.telegram.ui.ActionBar.g1 g1Var3 = new org.telegram.ui.ActionBar.g1(2, qkVar.getContext(), qkVar.d, false, false);
-                            if (str != null && str.equals(str3)) {
-                                z10 = true;
-                            }
-                            g1Var3.setChecked(z10);
-                            g1Var3.setText(language.displayName);
-                            if (z10) {
-                                g1Var = g1Var3;
-                            } else {
-                                g1Var = g1Var3;
-                                final int i12 = 0;
-                                g1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.w31
-                                    @Override // android.view.View.OnClickListener
-                                    public final void onClick(View view) {
-                                        switch (i12) {
-                                            case 0:
-                                                org.telegram.ui.qk qkVar2 = qkVar;
-                                                translateController.setDialogTranslateTo(qkVar2.b, str3);
-                                                o1Var.d(true);
-                                                qkVar2.b();
-                                                break;
-                                            default:
-                                                org.telegram.ui.qk qkVar3 = qkVar;
-                                                translateController.setDialogTranslateTo(qkVar3.b, str3);
-                                                o1Var.d(true);
-                                                qkVar3.b();
-                                                break;
-                                        }
-                                    }
-                                });
-                            }
-                            linearLayout.addView(g1Var);
-                            i10 = i11;
-                            z10 = false;
-                        }
+                }, null));
+                StringBuilder sb = new StringBuilder();
+                sb.append(v31.D(g41Var.c0, null, null));
+                sb.append((g41Var.d0 == 1 || strArr == null) ? "" : android.support.v4.media.a.r(new StringBuilder(" ("), strArr[g41Var.d0], ")"));
+                arrayList.add(a41.b(5, "", v31.y(sb.toString()), null, new x31(g41Var, 4)));
+                arrayList.add(e41.a(6, g41Var.Z, false, null, new d90() { // from class: org.telegram.ui.Components.z31
+                    @Override // org.telegram.ui.Components.d90
+                    public final void a(ClickableSpan clickableSpan) {
+                        g41.Q(g41.this, clickableSpan);
                     }
-                    linearLayout.addView(new org.telegram.ui.ActionBar.l1(qkVar.getContext(), qkVar.d), i7.f6.n(-1, 8));
-                    ArrayList arrayList2 = this.c;
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (i13 < size2) {
-                        int i14 = i13 + 1;
-                        TranslateController.Language language2 = (TranslateController.Language) arrayList2.get(i13);
-                        final String str4 = language2.code;
-                        if (!TextUtils.equals(str4, str2)) {
-                            boolean z11 = str != null && str.equals(str4);
-                            org.telegram.ui.ActionBar.g1 g1Var4 = new org.telegram.ui.ActionBar.g1(2, qkVar.getContext(), qkVar.d, false, false);
-                            g1Var4.setChecked(z11);
-                            g1Var4.setText(language2.displayName);
-                            if (!z11) {
-                                final int i15 = 1;
-                                g1Var4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.w31
-                                    @Override // android.view.View.OnClickListener
-                                    public final void onClick(View view) {
-                                        switch (i15) {
-                                            case 0:
-                                                org.telegram.ui.qk qkVar2 = qkVar;
-                                                translateController.setDialogTranslateTo(qkVar2.b, str4);
-                                                o1Var.d(true);
-                                                qkVar2.b();
-                                                break;
-                                            default:
-                                                org.telegram.ui.qk qkVar3 = qkVar;
-                                                translateController.setDialogTranslateTo(qkVar3.b, str4);
-                                                o1Var.d(true);
-                                                qkVar3.b();
-                                                break;
-                                        }
-                                    }
-                                });
-                            }
-                            linearLayout.addView(g1Var4);
-                        }
-                        i13 = i14;
-                    }
-                    zArr[0] = true;
-                    break;
-                }
+                }, null));
+                w51Var.T();
+                arrayList.add(i51.B(null));
+                w51Var.U();
+                arrayList.add(i51.c(1, R.drawable.msg_copy, LocaleController.getString(R.string.TranslateCopy)));
+                w51Var.T();
                 break;
             default:
-                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) this.d;
-                ArrayList<TLRPC.EncryptedChat> arrayList3 = (ArrayList) this.e;
-                ArrayList arrayList4 = (ArrayList) this.f;
-                ArrayList arrayList5 = (ArrayList) this.h;
-                ArrayList arrayList6 = (ArrayList) this.n;
-                ArrayList arrayList7 = (ArrayList) this.r;
-                ArrayList arrayList8 = (ArrayList) this.s;
-                notificationsCustomSettingsActivity.getMessagesController().putUsers(this.b, true);
-                notificationsCustomSettingsActivity.getMessagesController().putChats(this.c, true);
-                notificationsCustomSettingsActivity.getMessagesController().putEncryptedChats(arrayList3, true);
-                int i16 = notificationsCustomSettingsActivity.s;
-                if (i16 == 1) {
-                    notificationsCustomSettingsActivity.w = arrayList4;
-                } else if (i16 == 0) {
-                    notificationsCustomSettingsActivity.w = arrayList5;
-                } else if (i16 == 3) {
-                    notificationsCustomSettingsActivity.w = arrayList6;
-                    notificationsCustomSettingsActivity.v = arrayList7;
-                } else {
-                    notificationsCustomSettingsActivity.w = arrayList8;
-                }
-                notificationsCustomSettingsActivity.l0(true);
+                g41.R(this.b, (TLRPC.TL_messages_translateResult) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ y31(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8) {
-        this.d = notificationsCustomSettingsActivity;
-        this.b = arrayList;
-        this.c = arrayList2;
-        this.e = arrayList3;
-        this.f = arrayList4;
-        this.h = arrayList5;
-        this.n = arrayList6;
-        this.r = arrayList7;
-        this.s = arrayList8;
     }
 }

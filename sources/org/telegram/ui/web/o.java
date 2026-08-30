@@ -2,69 +2,69 @@ package org.telegram.ui.web;
 
 import android.text.TextUtils;
 import android.widget.EditText;
-import nh.m6;
+import nh.n5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.o51;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.a61;
 
-/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* compiled from: r8-map-id-31c59681dc67c50f9c85463306fa4201c22270b60fa73c0aa0aee7d630a89c77 */
 /* loaded from: classes4.dex */
-public final class o extends e5 {
-    public final m6 f = new m6(this, 24);
+public final class o extends h5 {
+    public final n5 f = new n5(this, 29);
     public final /* synthetic */ p h;
 
     public o(p pVar) {
         this.h = pVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void m() {
         p pVar = this.h;
         pVar.s = null;
         AndroidUtilities.cancelRunOnUIThread(this.f);
-        j jVar = pVar.e;
-        if (jVar != null) {
-            jVar.c();
+        i iVar = pVar.e;
+        if (iVar != null) {
+            iVar.c();
             pVar.e = null;
         }
-        o51 o51Var = pVar.a;
-        if (o51Var != null) {
-            o51Var.U2.N(true);
-            pVar.a.T2.h1(0, 0);
+        a61 a61Var = pVar.a;
+        if (a61Var != null) {
+            a61Var.V2.N(true);
+            pVar.a.U2.h1(0, 0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void q(EditText editText) {
         int i10;
         p pVar = this.h;
-        boolean z10 = !TextUtils.isEmpty(pVar.s);
+        boolean z4 = !TextUtils.isEmpty(pVar.s);
         String obj = editText.getText().toString();
         if (!TextUtils.equals(pVar.s, obj)) {
             pVar.s = obj;
-            j jVar = pVar.e;
-            if (jVar != null) {
-                jVar.c();
+            i iVar = pVar.e;
+            if (iVar != null) {
+                iVar.c();
             }
-            i10 = ((o2) pVar).currentAccount;
-            j jVar2 = new j(obj, i10, new m(pVar, 1));
-            pVar.e = jVar2;
-            jVar2.a();
-            m6 m6Var = this.f;
-            AndroidUtilities.cancelRunOnUIThread(m6Var);
-            AndroidUtilities.runOnUIThread(m6Var, 500L);
+            i10 = ((p2) pVar).currentAccount;
+            i iVar2 = new i(obj, i10, new l(pVar, 1));
+            pVar.e = iVar2;
+            iVar2.a();
+            n5 n5Var = this.f;
+            AndroidUtilities.cancelRunOnUIThread(n5Var);
+            AndroidUtilities.runOnUIThread(n5Var, 500L);
         }
-        o51 o51Var = pVar.a;
-        if (o51Var != null) {
-            o51Var.U2.N(true);
-            if (z10 != (!TextUtils.isEmpty(obj))) {
-                pVar.a.T2.h1(0, 0);
+        a61 a61Var = pVar.a;
+        if (a61Var != null) {
+            a61Var.V2.N(true);
+            if (z4 != (!TextUtils.isEmpty(obj))) {
+                pVar.a.U2.h1(0, 0);
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.h5
     public final void n() {
     }
 }
