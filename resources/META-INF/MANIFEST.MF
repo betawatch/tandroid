@@ -3,7 +3,7 @@ Built-By: Signflinger
 Created-By: Android Gradle 8.13.2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: q8N07/vxpy8+aRg1NN9GoMrquCB/GCZeex3bhjvbziw=
+SHA-256-Digest: IsclqqA+TC9aZH8U8t+N6Ld1nRnuudeS3gDs9Y8ueB4=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: hv7NAjXUWDmEUIHB+RyaWLQLCueH8kK9uo+RUNpF0Os=
@@ -281,6 +281,36 @@ SHA-256-Digest: 4D+Z9aMB2T9kx17H5cFnk3AYUPfgpJSziKwF0Wij0kE=
 
 Name: assets/fonts/rmono.ttf
 SHA-256-Digest: qxU96mvrlsJ4htywQUy3vUhxhWQ1jHj9ls3rSbxlEag=
+
+Name: assets/localization_ar.bin
+SHA-256-Digest: E2RdB8uO08hfrwy+9VMxFNy/gOIcD6G67vdHAp4gnKw=
+
+Name: assets/localization_de.bin
+SHA-256-Digest: ECPlUQRn1TzVpiVpOobNhoEE5lD0IWAszjuEZuZ3HWY=
+
+Name: assets/localization_en.bin
+SHA-256-Digest: NKJhDRqz2vKOEY/iQnETohIAQT33ViX0TLlVtfCADao=
+
+Name: assets/localization_es.bin
+SHA-256-Digest: zagb7iUGbzfeYnri6+W6WLRna17vICoYYmT92EmWnao=
+
+Name: assets/localization_it.bin
+SHA-256-Digest: Nf5Fst2dsdfKrzCQ2GpE/TDScjw342e8pW/DxPf52QU=
+
+Name: assets/localization_ko.bin
+SHA-256-Digest: kSvvcBSPupC8GMpBhtOeLS5gnQvS7kcWI75aqC8wsWY=
+
+Name: assets/localization_nl.bin
+SHA-256-Digest: /ZQ3e1lODcwuh0ptcUpbwRDw2RSufOHak8c6K7qtiVk=
+
+Name: assets/localization_pt_br.bin
+SHA-256-Digest: 59+/Nq4H6MaLn0BwQUa1eh7aGsciCEuEYqEAd1rEFCo=
+
+Name: assets/localization_ru.bin
+SHA-256-Digest: ldi6kNo9v9xG3qtb5BNlyNTI/gqipQ+LK/0sOeyqk+o=
+
+Name: assets/localization_uk.bin
+SHA-256-Digest: tdTA4qA54/0d2zGRHSkeibaR6eetdDE9TuQAbSvKR7M=
 
 Name: assets/models/coin_border.png
 SHA-256-Digest: PWOVButO/8X6TWx+0EBKPb8DR5cLGzuJrihMV7Iz/1U=
@@ -21581,7 +21611,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: xqWCaouE8r0YBVgJc0Xzan/HN/Oq7BrXyFux9BXwV7A=
 
 Name: resources.arsc
-SHA-256-Digest: cIuTIHJXOARNzEUKr976g8jupNEKpe/eGtfTOM76TKk=
+SHA-256-Digest: /l6hOX8DMp7/GVrTLscAaLlTv+1FRG7EhIwCZQCBe0I=
 
 Name: version.txt
 SHA-256-Digest: cZQJx0x+5QAGq9BLLED2ycADi2VSsLq3f+qG6DWbzDg=

@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.13.2
-SHA-256-Digest-Manifest: I58fhojW5ou36Jpubj+DR6/9K34oORDEfT3y0wkNg3o=
+SHA-256-Digest-Manifest: T7nF2aS85UXceinDReGUIgI3YDI1YEWP+pJYH706fyI=
 X-Android-APK-Signed: 2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: 9SGVtP5/Z5c3ygy202jpxfmR3k7QW4GTSiXo65HmXrw=
+SHA-256-Digest: iygC5DeQUQAHUwZ02HncWrnCjn6BMkg40Kz1TxiACSY=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: XJYoj9g1jxqW8LSScnHRcHzQEKpqZlq7SOYe/7+BzW4=
@@ -282,6 +282,36 @@ SHA-256-Digest: LSJ300xP4MExgEJ5oWcSDXeRLndZv3k62R8jrcRvhcg=
 
 Name: assets/fonts/rmono.ttf
 SHA-256-Digest: K3sb7ZujZ0VYqGnxGmt4F2X1DFx+OxW/uODjB1wWccQ=
+
+Name: assets/localization_ar.bin
+SHA-256-Digest: HyZk7I4+3wpLayQ2zYzAxpYaW4GaocZCA2MGmC4Llvw=
+
+Name: assets/localization_de.bin
+SHA-256-Digest: A7am5eESgUpojLoXNWz5ekrqYXgHtgYTt1Oe7Vr93wE=
+
+Name: assets/localization_en.bin
+SHA-256-Digest: hIoMZJJmL5BEYYA1B4SaAm99HdWzXEr5kCZaDTpCfzo=
+
+Name: assets/localization_es.bin
+SHA-256-Digest: H1x4SIZRm35qCRuLQwPcnAReR6wqImb6kiTXTmKCvbg=
+
+Name: assets/localization_it.bin
+SHA-256-Digest: aNDwj389HQd9I5X4KZVm1QBS4XpjtJefeo9wXrngO1w=
+
+Name: assets/localization_ko.bin
+SHA-256-Digest: 5qNp919EsI/JeBZjxHlnanipsPRnSI5dtJWcsrVv0gs=
+
+Name: assets/localization_nl.bin
+SHA-256-Digest: 1u54HucyvWYHwnFDsd/o8uztf2qRKMWuXxovykXmPiI=
+
+Name: assets/localization_pt_br.bin
+SHA-256-Digest: EJaStzRV4RG7bz2zRdho0yRXVbXgjP9d6mTzyT+TrG8=
+
+Name: assets/localization_ru.bin
+SHA-256-Digest: pi72elqpOvyn8h3Q9sVZnT6Y80TznqGd0zzernqIWhE=
+
+Name: assets/localization_uk.bin
+SHA-256-Digest: Uc0FDJ9aJgFog0YmJv2Tk1TZClg3szBGN2rP/XOx/oo=
 
 Name: assets/models/coin_border.png
 SHA-256-Digest: Tmep+Cu0mYnf+JeY79YdPNstT2Y1usPUpcMmfklCuws=
@@ -21582,7 +21612,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: E4VAfgYXmJpd0w//sLoB023purpYUbqY97+GnPQ400Y=
 
 Name: resources.arsc
-SHA-256-Digest: 8oRzjmrHa+f/tWOF1fI8z5za4cTkPpEx/4RzflJ3kwg=
+SHA-256-Digest: /F4egbC1Q87QAcPYS7Tsl0jEyhrdIgAn8Zh4sglFwWU=
 
 Name: version.txt
 SHA-256-Digest: p5wDnbLFihlIF5QDi90qOP68wP82L4ISXw+/3WXeeM0=
